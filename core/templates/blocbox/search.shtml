@@ -1,0 +1,171 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+	
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Introducing Blocbox - Never Miss A Package</title>
+
+	<!--Reference Style Sheet -->
+  <link rel="stylesheet" href="{% static 'blocbox/css/standardize.css' %}">
+  <link rel="stylesheet" href="{% static 'blocbox/cssjess/search.css' %}">
+  <!--link rel="stylesheet" href="css/styles.css"-->
+  	
+	<!--Type Kit -->
+  <script type="text/javascript" src="//use.typekit.net/olu7nwz.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+		
+<!--------------------------------------------------------------------------------------------------
+ GOOGLE MAP EMBED SCRIPT - START
+---------------------------------------------------------------------------------------------------->
+
+	<!-- Load the google Maps API -->
+    <script type="text/javascript"
+      	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEzt5IVa62j3CQ10oJ-rNtwzd4GsCHxXI&sensor=true&libraries=places">
+    </script>
+    
+   	<!-- Initialize the map - place markers and so forth
+   	-->
+   	<script type="text/javascript">
+			function initialize() {
+  				var mapOptions = {
+  				//higher/closer zoom is closer
+    			zoom: 13, 
+    			//Center it at 420 Grand Ave, Brookly, NY 11238, 40.686529, -73.949413, approx grand and gates 
+    			center: new google.maps.LatLng(40.686529, -73.949413)
+  				};
+
+  				var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
+				
+				//Content STring for the InfoWindow - 
+				//removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
+			  	var JBcontentString = '<div id="content">'+     			
+      			'<h1 class="InfoWindowName"><b>John</b></h1>'+
+      			'<div class="InfoWindowBody">'+
+      				'<p>Grand and Gates, Brooklyn, NY </p>'+
+      				'<p><a href="/3/hostprofilevisitor/">Connect with John to stop missing packages or get help with other stuff.</a> </p>'+
+      			'</div>'+
+      			'</div>';
+		
+				//define info window
+				var infowindow = new google.maps.InfoWindow({
+     				 content: JBcontentString
+  				});	
+				
+				//define lat long of JB marker
+				var JBLatLong = new google.maps.LatLng(40.685720, -73.962675);
+         	
+				
+				//add a new marker with infowindow
+				var JBmarker = new google.maps.Marker({
+					position: JBLatLong,
+					map: map,
+					title: "John"
+				}); 
+			
+		  		google.maps.event.addListener(JBmarker, 'click', function() {
+    			infowindow.open(map,JBmarker);
+  					});
+  				
+  				
+  				// Create the search box 
+  				var input = /** @type {HTMLInputElement} */( document.getElementById('search-box'));			
+  				map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  				var searchBox = new google.maps.places.SearchBox(/** @type {HTMLInputElement} */(input));
+  				 
+  				// Listen for the event fired when the user selects an item from the
+  				// pick list. Retrieve the matching places for that item.
+  				google.maps.event.addListener(searchBox, 'places_changed', function() {
+  				var places = searchBox.getPlaces();
+  				
+  					var markers = [];
+  					for (var i = 0, marker; marker = markers[i]; i++) {marker.setMap(null); }
+  				
+  				  // For each place, get the icon, place name, and location.
+  				  markers = [];
+  				  var bounds = new google.maps.LatLngBounds();
+  				  for (var i = 0, place; place = places[i]; i++) {
+  				    var image = {
+  				      url: place.icon,
+  				      size: new google.maps.Size(71, 71),
+  				      origin: new google.maps.Point(0, 0),
+  				      anchor: new google.maps.Point(17, 34),
+  				      scaledSize: new google.maps.Size(25, 25)
+  				    };
+  				
+  				    // Create a marker for each place.
+  				    var marker = new google.maps.Marker({
+  				      map: map,
+  				      icon: image,
+  				      title: place.name,
+  				      position: place.geometry.location
+  				    });
+  				
+  				    markers.push(marker);
+  				
+  				    bounds.extend(place.geometry.location);
+  				  }
+  				
+  				  map.fitBounds(bounds);
+  				});
+  				
+  				// Bias the SearchBox results towards places that are within the bounds of the current map's viewport.
+  				google.maps.event.addListener(map, 'bounds_changed', function() {
+  				  var bounds = map.getBounds();
+  				  searchBox.setBounds(bounds);
+  				})
+  					
+			}	/*end initialize function */	
+		   	
+				google.maps.event.addDomListener(window, 'load', initialize);	
+				//window.onload = initialize;
+		 </script> 
+<!--------------------------------------------------------------------------------------------------
+ GOOGLE MAP - END
+---------------------------------------------------------------------------------------------------->
+
+</head>
+
+<!--------------------------------------------------------------------------------------------------
+ END HEAD - START BODY
+---------------------------------------------------------------------------------------------------->
+
+<!--removing the class statement class="body search clearfix" -->
+
+<body>
+
+	<!--ADD TOP HEADER VIA SERVER-SIDE INDLUCDE ------------------------------------------------------------------------------------->
+
+	<!--#include file="navbarbeta_top.html" -->
+ 
+ 
+ 
+ 	<!--Add the search box to the page -->
+ <input  id="search-box" class="controls" name="Address" placeholder="enter your address to find a blocbox near you" type="search">
+
+
+
+ 	<!--The Nudge a Neighbor Box - Note - removing clearfix after nudgeneighborelement
+ 	 * NOTE ON CLEARFIX: clearfix forces an elemetn to "self-clear its children"/ ensures that a div will fully expand to proper height to enclose its floating children
+	 * When an element is floated, its parent no longer contains it
+ 	 ----------------------------------------------------------------------------------->
+   <div class="nudgeneighborelement"> 
+      <p class="nudgeneighbortext">DON'T SEE A BLOCBOX HOST IN YOUR HOOD? NUDGE A NEIGHBOR TO LET THEM KNOW ABOUT THE OPPORTUNITY TO HOST OR HOST A BOX YOURSELF</p>  
+   </div>
+   
+   
+   
+ 	<!--Add the Map - Create a Dividor ad link to the map-canvas id -->
+ 	<div id="map-canvas" ></div> 
+ 	
+ 	
+
+   
+
+  <script src="js/jquery-min.js"></script>
+  <script src="js/rimages.js"></script> 
+
+</body>
+</html>

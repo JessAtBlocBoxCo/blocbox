@@ -1,0 +1,109 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Introducing Blocbox - Never Miss A Package</title>
+  <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" href="{% static 'blocbox/css/standardizemain.css' %}">
+  <link rel="stylesheet" href="{% static 'blocbox/css/stylesmain.css' %}">
+</head>
+<body class="body main clearfix">
+  <button class="_button-8">&nbsp;</button>
+  <a class="name name-1" href="#"></a>
+  <a class="logo logo-1" href="#"></a>
+  <button onClick="window.location='sign-in.html';" class="say-hello say-hello-2">Sign In</button>
+ 
+ 
+<h1>
+	{% if user.is_authenticated %}
+		<p> Welcome, {{userentry.email}}! </p>
+	{% endif %}
+    <p>Neighbors Helping Neighbors</p>
+    <p>Never Miss a Package</p>
+
+</h1>
+ 
+  <h2>Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</h2>
+  <button onClick="window.location='/search';" class="started">Get Started</button>
+  <div class="social social-2 clearfix">
+    <a class="facebook" href="#"></a>
+    <a class="twitter" href="#"></a>
+    <a class="linkedin" href="#"></a>
+  </div>
+  <div class="learn clearfix">
+    <a class="learn-more" href="#">Learn More</a>
+    <a class="arrow1" href="#"></a>
+  </div>
+  <div class="grid"></div>
+  <div class="landing-background landing-background-2"></div>
+  <h3>
+    <p>Stop Missing Packages.</p>
+    <p>Meet the Neighbors.</p>
+</h3>
+  <p class="works-subtitle">Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can conveniently pick up your package when you get home, or whenever you like.</p>
+  <div class="works-graphics clearfix">
+    <div class="element element-30"></div>
+    <div class="element element-33"></div>
+    <div class="element element-36"></div>
+    <div class="element element-41"></div>
+    <div class="element element-44"></div>
+  </div>
+  <div class="works-text clearfix">
+    <p class="text text-64">FIND A BLOCBOX HOST</p>
+    <p class="text text-72">SHIP TO YOUR BOX</p>
+    <p class="text text-77">PICK IT UP NEARBY, WHENEVER</p>
+    <p class="text text-83">Search to determine a conveniently located and verified Blocbox host and connect.</p>
+    <p class="text text-90">As you complete your order, enter the address of your connected Blocbox host.</p>
+    <p class="text text-96">Blocbox will notify you of your package's usccessful receipt. You can then suggest a time you will pick it up, or you can wait till it's convenient for you.</p>
+  </div>
+  <p class="details">More details Coming Soon</p>
+  <div class="arrow2"></div>
+  <p class="learn-host">Learn About Becoming a Host</p>
+  <div class="beyond clearfix">
+    <p class="text text-117">Beyond Packages</p>
+    <p class="text text-122">Solving the hassle of package receipt is just the first way Blocbox can help. We encourage Blocbox hosts to get creative in the ways in which they can help their neighbors. Here's a few possibilities just off the top of our heads.</p>
+    <div class="element element-73"></div>
+    <div class="element element-76"></div>
+    <div class="element element-82"></div>
+    <div class="element element-86"></div>
+    <div class="element element-90"></div>
+    <p class="text text-150">Handy Work</p>
+    <p class="text text-156">House Sitting</p>
+    <p class="text text-162">Storage</p>
+    <p class="text text-166">Pet Care</p>
+    <p class="text text-177">Carpooling</p>
+  </div>
+  <div class="works-background"></div>
+  <div class="host-title clearfix">
+    <p class="text text-198">Become a Blocbox Host</p>
+    <p class="text text-203">Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can conveniently pick up your package when you get home, or whenever you like.</p>
+  </div>
+  <div class="host-graphics host-graphics-2 clearfix">
+    <div class="element element-121"></div>
+    <div class="element element-125"></div>
+    <div class="element element-130"></div>
+    <div class="element element-134"></div>
+    <div class="element element-139"></div>
+  </div>
+  <div class="host-text host-text-2 clearfix">
+    <p class="text text-251">PERFORM TASKS WHILE AT HOME</p>
+    <p class="text text-261">Receive packages and offer other services to neighbors. Hosts must be able to be verified and be at home to receive all scheduled deliveries.</p>
+    <p class="text text-267">Set and arrange times at which your neighbors can pick up their packages at your door. Hosts must be home a minimum amount of hours in the evening to allow neighbors to pick up their packages.</p>
+    <p class="text text-273">MEET YOUR NEIGHBORS</p>
+    <p class="text text-279">Your neighbors get their packages, you get a little extra in your pocket. The neighborhood wins.</p>
+    <p class="text text-281">EARN MONEY</p>
+  </div>
+  <p class="details2">More details Coming Soon</p>
+  <div class="host-background"></div>
+  <footer class="_container _container-147 clearfix">
+    <div class="copyright"></div>
+    <a class="privacy" href="#">Privacy Policy</a>
+    <p class="goodhood">GoodHood LLC</p>
+  </footer>
+
+  <script src="js/jquery-min.js"></script>
+</body>
+</html>

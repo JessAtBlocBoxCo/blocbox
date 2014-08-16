@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>Sign Up and Connect</title>
+  <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!--JMY EDITING THE CSS LINKS
+  <link rel="stylesheet" href="css/standardizemain.css">
+  <link rel="stylesheet" href="css/stylesmain.css"> -->
+  <link rel="stylesheet" href="{% static 'blocbox/css/standardizemain.css' %}">
+  <link rel="stylesheet" href="{% static 'blocbox/css/stylesmain.css' %}">
+  <!--NOTE TO JB - WE'RE USING BOOSTRAP.CSS ADN NORMALIZE.CSS FROM BOOSTRAP - SUPPOSEED TO HELP WITH RENDERING SHIT ACROSS BROWSERS-->
+  <link rel="stylesheet" href="{% static 'blocbox/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'blocbox/css/normalize.css' %}">  
+</head>
+<body class="body sign-up clearfix">
+  <header class="_container _container-40 clearfix">
+    <div class="element element-49"></div>
+    <button class="say-hello say-hello-3">Sign In</button>
+    <div class="element element-55"></div>
+    <button class="_button-28">&nbsp;</button>
+  </header>
+
+ <div class="container _container container-23 clearfix" style="height:100%"> <!--this is the container that surrounds the form, too short -->
+
+        {% if registered %}
+        <p class="text text-112">Thank you for Registering!</p>
+        <a href="/beta/">Return to the homepage.</a><br />
+        {% else %}
+        	<p class="text text-112">Sign Up to Connect with Syliva</p>    			
+    			<div class="element element-63"></div>
+    			<p class="text text-119">In order to connect, we need to ask for some basic information</p>
+
+  		<!--START FORM HERE -->
+       <form id="user_form" method="post" action="/register/" enctype="multipart/form-data" class="_container clearfix">
+
+            {% csrf_token %}
+            
+        
+				{{ user_form.as_p }}
+				
+    	<button type="submit" name="submit" class="btn btn-default">Sign Up and Request to Connect</button>
+    	<p class="text">By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
+    	<!--<p class="text text-322">By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
+  		 		<footer class="_element-142"></footer> -->
+    
+    	
+    			
+    </form>  <!--end form line -->
+    
+    {% endif %} <!--JMY - this was the end of the register.html code -->
+    
+    
+     
+    </div> <!--end of top divider  -->
+    
+        
+
+
+  		
+  		<!--
+  		<p class="text text-220">What other "Favors" are you potentially interested in receiving from Sylvia?</p>
+  	  <label class="checkout-label _container checkout-label-3 clearfix">
+  	    <span class="point-text">PET CARE</span>
+  	    <input class="checkbox" type="checkbox">
+  	  </label>
+  	  <label class="checkout-label _container checkout-label-4 clearfix">
+  	    <span class="point-text">HOUSE SITTING</span>
+  	    <input class="checkbox" type="checkbox">
+  	  </label>
+  	  <label class="checkout-label _container checkout-label-6 clearfix">
+  	    <span class="point-text">LAWN &amp; GARDEN</span>
+  	    <input class="checkbox" type="checkbox">
+  	  </label>
+  	  <label class="checkout-label _container checkout-label-8 clearfix">
+  	    <span class="point-text">OTHER</span>
+  	    <input class="checkbox" type="checkbox">
+  	  </label>
+  	  <textarea class="_textarea-5" placeholder="If you chose "other", please describe what kind of tasks you'd like help with"></textarea>
+  	  <p class="text text-304">&nbsp;</p>
+  		-->
+  	<!-- </div> -->
+
+<!-- <script src="js/jquery-min.js"></script> -->
+</body>
+</html>

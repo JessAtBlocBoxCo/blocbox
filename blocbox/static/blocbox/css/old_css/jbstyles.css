@@ -1,0 +1,526 @@
+.container-15 {
+  position: absolute;
+  top: 14.688em;
+  left: 6%;
+  z-index: 50;
+  width: 20.6666666666%;
+  height: 15.625em;
+  background-image: url('../images/syliva(2).png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+    }
+
+._button-11 {
+  display: inline-block;
+  position: relative;
+  float: right;
+  clear: both;
+  z-index: 63;
+  margin: -2.625em 21.5% 0 0;
+  padding: 0.063em 0.688em;
+  border-radius: 0.188em;
+  background: url('../images/arrow-black.png') rgba(222, 222, 222, 0);
+  background-size: cover;
+  background-position: center center;
+  font-family: 'Brandon Grotesque';
+  font-weight: 400;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.container ._button-14 {
+  position: relative;
+  clear: both;
+  z-index: 61;
+  margin-left: 32.8282828282%;
+}
+
+._button-18 {
+  display: block;
+  position: absolute;
+  top: 0.867em;
+  left: 81%;
+  z-index: 58;
+  width: 126px;
+  height: 2.267em;
+  border: 0.133em solid rgb(253, 198, 20);
+  border-radius: 0.2em;
+  font-size: 0.938em;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(103, 114, 119);
+}
+
+.element-24 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 8%;
+  z-index: 57;
+  width: 248px;
+  height: 3.125em;
+  margin: auto 0;
+  background-image: url('../images/Logo-and-name---orange-drop(2).png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.element-20 {
+  position: absolute;
+  top: 3.125em;
+  left: 2.8571428571%;
+  z-index: 64;
+  width: 94.2857142857%;
+  height: 0.063em;
+  background-color: rgb(236, 240, 241);
+}
+
+.container-9 {
+  position: absolute;
+  top: 64em;
+  left: 0;
+  right: 0;
+  z-index: 38;
+  width: 83%;
+  height: 15.813em;
+  margin: 0 auto;
+}
+
+.element-28 {
+  position: relative;
+  float: left;
+  z-index: 51;
+  width: 100%;
+  height: 4.563em;
+  background-color: rgb(253, 198, 20);
+}
+
+.text-39 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 53;
+  margin: auto 0;
+  padding-top: 0.286em;
+  font-size: 0.875em;
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: 1px;
+  color: rgb(52, 152, 219);
+}
+
+.container-14 {
+  position: absolute;
+  top: 127.375em;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  width: 83%;
+  height: 8.25em;
+  margin: 0 auto;
+}
+
+.text-42 {
+  position: relative;
+  float: left;
+  z-index: 53;
+  width: 16.6666666666%;
+  margin: 0.3em 0 0 1.9047619047%;
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+.text-46 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  margin: auto;
+  padding-top: 1em;
+  font-size: 0.875em;
+  font-weight: 300;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(0,0,0);
+}
+
+.text-49 {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 3.7837837837%;
+  z-index: 44;
+  margin: auto 0;
+  padding-top: 0.636em;
+  font-size: 0.688em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(127, 140, 141);
+}
+
+.text-52 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 36;
+  width: 100%;
+  margin: auto 0;
+  padding-top: 1.5em;
+  font-weight: 500;
+  line-height: 0.1;
+  letter-spacing: 1px;
+  color: rgb(41, 128, 185);
+}
+
+.text-59 {
+  float: left;
+  clear: both;
+  width: 28.313253012%;
+  min-height: 2.533em;
+  font-size: 0.938em;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(103, 114, 119);
+}
+
+.text-64 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 47.1621621621%;
+  z-index: 54;
+  margin: auto 0;
+  padding-top: 1em;
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(0,0,0);
+}
+
+.container-25 {
+  position: absolute;
+  top: 109.813em;
+  left: 0;
+  right: 0;
+  z-index: 43;
+  width: 83%;
+  height: 16.188em;
+  margin: 0 auto;
+}
+
+.element-44 {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 3.125em;
+  background-color: rgb(25, 179, 149);
+}
+
+.element-46 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 8.0833333333%;
+  z-index: 47;
+  width: 20.5%;
+  height: 3.125em;
+  margin: auto 0;
+  background-image: url('../images/Logo-and-name---white-drop.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.element-47 {
+  position: absolute;
+  top: 8.125em;
+  left: 0;
+  right: 0;
+  z-index: 46;
+  width: 78.5%;
+  height: 1.563em;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.element-51 {
+  position: absolute;
+  top: 9em;
+  left: 0;
+  right: 0;
+  z-index: 41;
+  width: 78.1666666666%;
+  height: 1.25em;
+  margin: 0 auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.element-55 {
+  float: left;
+  clear: both;
+  width: 89.1156462585%;
+  height: 0.063em;
+  margin: 0.938em 0 0 5.6122448979%;
+  background-color: rgb(236, 240, 241);
+}
+
+.text-107 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 68.3368869936%;
+  z-index: 37;
+  margin: auto 0;
+  padding-top: 0.071em;
+  font-size: 0.875em;
+  line-height: 1.38;
+  letter-spacing: 1px;
+  color: rgb(182, 187, 191);
+}
+
+.container-31 {
+  position: absolute;
+  top: 24.188em;
+  left: 76.5%;
+  z-index: 35;
+  width: 180px;
+  height: 7.813em;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.element-71 {
+  float: left;
+  clear: both;
+  width: 94.2857142857%;
+  height: 0.063em;
+  margin-left: 2.9761904761%;
+  background-color: rgb(236, 240, 241);
+}
+
+.element-76 {
+  position: relative;
+  float: left;
+  z-index: 32;
+  width: 100%;
+  height: 3.125em;
+  padding-top: 0.438em;
+  background-color: rgb(255, 255, 255);
+}
+
+.element-130,
+.element-60,
+.element-80 {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 3.125em;
+  background-color: rgba(41, 128, 185, 0);
+}
+
+.element-85 {
+  float: left;
+  width: 16.5476190476%;
+  height: 0.063em;
+  margin: 1.563em 0 0 7.2619047619%;
+  background-color: rgb(255, 255, 255);
+}
+
+.element-87 {
+  float: left;
+  width: 10.4679802955%;
+  height: 5.063em;
+  margin: 0.625em 0 0 3.448275862%;
+  background: url('../images/syliva.png') rgba(222, 222, 222, 0);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.container-44 {
+  position: absolute;
+  top: 7.063em;
+  left: 17.1098066298%;
+  z-index: 29;
+  width: 9.3922651933%;
+  height: 1.75em;
+  background-image: url('../images/1397247936_04.svg');
+  background-size: cover;
+  background-position: center center;
+}
+
+.text-150 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 24;
+  min-height: 3.125em;
+  margin: auto 0;
+  padding-top: 0.938em;
+  text-shadow: 0 2px 5px rgb(236, 240, 241);
+  line-height: 1.38;
+  letter-spacing: 1px;
+  color: rgb(52, 152, 219);
+}
+
+._container-49 {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 35;
+  height: 3.75em;
+  margin: 0 auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.text-157 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 24;
+  margin: auto;
+  padding-top: 1.889em;
+  font-size: 1.125em;
+  font-weight: 500;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(251, 249, 249);
+}
+
+.text-162 {
+  position: relative;
+  float: left;
+  z-index: 19;
+  width: 88.1355932203%;
+  min-height: 1.8em;
+  margin: -0.3em 0 0 6.7796610169%;
+  font-size: 0.625em;
+  font-weight: 300;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(0,0,0);
+}
+
+.text-166 {
+  position: absolute;
+  top: 12.063em;
+  left: 0;
+  right: 0;
+  z-index: 21;
+  width: 88.8888888888%;
+  margin: 0 auto;
+  line-height: 1.38;
+  text-align: center;
+  color: rgb(78, 78, 78);
+}
+
+.text-178,
+.text-264 {
+  float: left;
+  width: 56.4039408866%;
+  margin: -3.714em 0 0 28.0788177339%;
+  padding-top: 0.286em;
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(78, 78, 78);
+}
+
+.text-188 {
+  position: absolute;
+  top: 12.5em;
+  left: 31.4930555555%;
+  z-index: 21;
+  width: 119px;
+  height: 2.25em;
+  min-height: 2.25em;
+  line-height: 1.38;
+  color: rgb(103, 114, 119);
+}
+
+.text-196 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 13;
+  min-height: 3.188em;
+  margin: auto;
+  padding-top: 1.5em;
+  padding-right: 1.25em;
+  padding-left: 1.25em;
+  font-weight: 400;
+  line-height: 1.38;
+  color: rgb(78, 78, 78);
+}
+
+.text-206 {
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 15;
+  width: 94.0476190476%;
+  height: 2.5em;
+  margin: -11em 0 0 2.9761904761%;
+  padding-top: 0.9em;
+  padding-right: 0.5em;
+  padding-bottom: 0.5em;
+  background-color: rgba(52, 152, 219, 0);
+  font-size: 1.25em;
+  letter-spacing: 1px;
+  color: rgb(41, 128, 185);
+}
+
+.container-69 {
+  position: absolute;
+  top: 41.375em;
+  left: 0;
+  right: 0;
+  z-index: 15;
+  width: 100%;
+  height: 3.125em;
+  margin: 0 auto;
+}
+
+.element-139 {
+  float: left;
+  width: 18px;
+  height: 1.125em;
+  margin: 1.375em 0 0 0.202020202%;
+  background-image: url('../images/Verified(2).png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left top;
+}
+
+.text-335 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  min-height: 3.125em;
+  margin: auto 0;
+  padding-top: 1em;
+  line-height: 1.38;
+  letter-spacing: 1px;
+  color: rgb(205, 210, 214);
+}
