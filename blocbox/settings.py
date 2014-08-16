@@ -99,3 +99,4 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'admin@blocbox.co'
 EMAIL_HOST_USER = 'GoodHood123'
 DEFAULT_FROM_EMAIL = 'admin@blocbox.co'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' #this is defeault
