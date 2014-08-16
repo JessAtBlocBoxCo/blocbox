@@ -43,8 +43,9 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     imageurl= models.URLField('Profile Picture URL', blank=True)
     host = models.BooleanField(blank=True, default=False) #boolean can't be null if want null need NullBooleanField
     hostinterest = models.BooleanField('Interested in Hosting', blank=True, default=False)
-    hostrating = models.PositiveSmallIntegerField('Host Rating', blank=True, null=True)
-    userrating = models.PositiveSmallIntegerField('User Rating', blank=True, null=True)
+    hostrating = models.PercentField('Host Rating', blank=True, null=True)
+    userrating = models.PercentField('User Rating', blank=True, null=True)
+    favorscompleted = models.IntegerField('Favors Completed',blank=True, null=True)
     FBlink = models.URLField('Facebook Profile Link', blank=True)
     intro_message = models.CharField(max_length=350, blank=True) #Intro Message to Host
     pickup_time = models.CharField(max_length=150, blank=True) 
