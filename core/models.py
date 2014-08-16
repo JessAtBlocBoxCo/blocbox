@@ -71,13 +71,14 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     need_autocare=models.BooleanField('May Need Letting Auto Care', blank=True, default=False)
     need_other=models.BooleanField('May Need Other Task/REquests', blank=True, default=False)
     
-		#Add fields specific ti host 
+		#Add more host-specific fields
 		#!!! Note - maybe move this to host table that is linked to user table - may make it easeri to connect
     services_offered = models.CharField('UPDATE TO CHOICES - SERVICES OFFERED', max_length=250, blank=True)
     neighbors = models.PositiveSmallIntegerField("UPDATE TO COUNT - NEIGHBORS I'M CONNECTED TO", blank=True, null=True)
     host_aboutme = models.CharField("About Me (Host)",max_length=350,blank=True)
     availability = models.CharField("UPDATE DATA TYPE - AVAILABILITY",max_length=250,blank=True)
-	 
+    currentlyhelping = models.IntegerField("Number of Neighbors Currently Helping", blank=True, null=True)
+    
 	 
 	 
 	  #Fields i am adding that were in AUTH user that we should have and populate later 
