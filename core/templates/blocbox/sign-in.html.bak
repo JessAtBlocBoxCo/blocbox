@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0">
-  <title>Sign Up and Connect</title>
+  <title>Sign In </title>
   <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <!--JMY EDITING THE CSS LINKS
@@ -29,7 +29,7 @@
 		     <!-- <p class="text text-112">Sign in to your BlocBox Account</p>    			
     			<div class="element element-63"></div>-->
     			<p>Sign in to your BlocBox Account</p>
-			<p><a href="/signup/">Create a new account</a></p>
+			<p><a href="/signup/">Create a new account--TESTING GIT COMMIT</a></p>
 			<p><a href="/beta/">Return to the homepage (Beta)</a></p>
 
   		<!--START FORM HERE -->
