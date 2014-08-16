@@ -46,6 +46,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     hostrating = models.DecimalField('Host Rating', max_digits=3, decimal_places=2, blank=True, null=True)
     userrating = models.DecimalField('User Rating',max_digits=3,decimal_places=2, blank=True, null=True)
     favorscompleted = models.IntegerField('Favors Completed',blank=True, null=True)
+    favorsrequested = models.IntegerField('Favors Requested',blank=True, null=True)
     FBlink = models.URLField('Facebook Profile Link', blank=True)
     intro_message = models.CharField(max_length=350, blank=True) #Intro Message to Host
     pickup_time = models.CharField(max_length=150, blank=True) 
