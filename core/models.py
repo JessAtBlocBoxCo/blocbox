@@ -71,8 +71,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     need_autocare=models.BooleanField('May Need Letting Auto Care', blank=True, default=False)
     need_other=models.BooleanField('May Need Other Task/REquests', blank=True, default=False)
     
-    neighborhood = models.CharField("Neighborhood Name", blank=True, null=True)
-    phone_number = models.CharField(max_length=12, blank=True, null=True)
+    neighborhood = models.CharField("Neighborhood Name", max_length=100, blank=True, null=True)
+    phone_number = models.CharField("Phone Number", max_length=12, blank=True, null=True)
     
 		#Add more host-specific fields
 		#!!! Note - maybe move this to host table that is linked to user table - may make it easeri to connect
