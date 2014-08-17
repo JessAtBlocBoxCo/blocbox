@@ -1,6 +1,9 @@
-Hello [HOST NAME],
+Hello {{host.first_name}},
+
 
 You have a new request to connect from [USERNAME-REQUESTING-TO-CONNECT].
+
+Test passing arg - shouuld render emailgreeting : {{ emailgreeting }}
 
 Would you like to accept this new neighbor?
 

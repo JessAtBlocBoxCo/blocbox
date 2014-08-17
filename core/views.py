@@ -8,8 +8,9 @@ from core.forms import UserForm, HostForm
 #Important the authentication and login functions -- not sure that i can use with custom model
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
-
-
+##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 def index(request):
     return render(request, 'blocbox/index.html') #loads blocbox/templates/blocbox/index.html 
@@ -181,3 +182,26 @@ def signuphost(request):
 def oldindex(request):
 	    return HttpResponse("OldIndex - This was the first view for the blocbox module" + 
 											"code is at django_project/django_project/bloc/views.py")
+
+#-------------------------------------------------------------
+#Emails
+#-------------------------------------------------------------
+
+#simple mail
+def typical_mail(request, userinfo_id):
+		host = get_object_or_404(UserInfo, pk=userinfo_id)
+    message = "Test Simple Mail Message - defined in core/views.py def typical_mail"
+    subject = "Test Subject for Simple Mail"
+		
+		#from email should be default email defined in settings.py: admin@blocbox.co
+    send_mail(subject, message, from_email, [host.email,]) #last is the to-email
+
+#using .txt file and passing value(s)    
+def dynamic_mail(request, userinfo_id):
+		host = get_object_or_404(UserInfo, pk=userinfo_id)
+    message = render_to_string('emails/message.txt', { 'host':host, 'greeting': "Hello - this is the test greeting"})
+    subject = "Hello"
+    send_mail(subject, message, from_email, [host.email,]) #last is the to-email
+    
+    
+#{'user_form': user_form, 'registered': registered, 'host':host }, context)

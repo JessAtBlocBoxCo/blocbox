@@ -22,8 +22,8 @@ urlpatterns = patterns('',
     url(r'^logout/$', views.user_logout, name='logout'), 		
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well
  		#the carret sasy beginning must match, the $ says end of string must match
- 		#try geeric welcomebeta view - then apply generics to other sites
- 		#Can delete the following - for testing the login view
+ 		#email stuff
+ 		url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.typical_mail, name='sendrequestconnect'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
