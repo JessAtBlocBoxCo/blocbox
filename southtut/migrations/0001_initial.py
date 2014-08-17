@@ -9,21 +9,21 @@ class Migration(SchemaMigration):
 
     def forwards(self, orm):
         # Adding model 'Knight'
-        db.create_table(u'southtutorial_knight', (
+        db.create_table(u'southtut_knight', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=100)),
             ('of_the_round_table', self.gf('django.db.models.fields.BooleanField')()),
         ))
-        db.send_create_signal(u'southtutorial', ['Knight'])
+        db.send_create_signal(u'southtut', ['Knight'])
 
 
     def backwards(self, orm):
         # Deleting model 'Knight'
-        db.delete_table(u'southtutorial_knight')
+        db.delete_table(u'southtut_knight')
 
 
     models = {
-        u'southtutorial.knight': {
+        u'southtut.knight': {
             'Meta': {'object_name': 'Knight'},
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '100'}),
@@ -31,4 +31,4 @@ class Migration(SchemaMigration):
         }
     }
 
-    complete_apps = ['southtutorial']
+    complete_apps = ['southtut']
