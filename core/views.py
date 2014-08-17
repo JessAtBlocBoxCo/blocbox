@@ -197,7 +197,7 @@ def typical_mail(request, userinfo_id):
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
 
 #using .txt file and passing value(s)    
-def dynamic_mail(request, userinfo_id):
+def confirmconnect_mail(request, userinfo_id):
     host = get_object_or_404(UserInfo, pk=userinfo_id)
     message = render_to_string('emails/message.txt', { 'host':host, 'greeting': "Hello - this is the test greeting"})
     subject = "You have a new request to connect from a neighbor"

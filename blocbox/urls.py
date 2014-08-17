@@ -23,7 +23,7 @@ urlpatterns = patterns('',
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well
  		#the carret sasy beginning must match, the $ says end of string must match
  		#email stuff
- 		url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.typical_mail, name='sendrequestconnect'),
+ 		url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.confirmconnect_mail, name='sendrequestconnect'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
