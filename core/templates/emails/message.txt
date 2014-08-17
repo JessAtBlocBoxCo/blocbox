@@ -1,6 +1,6 @@
 [YO. I CAN MAKE THE INTERNET SEND EMAILS FROM A BUTTON NOW]
 
-Hello {{host.first_name}},
+Hello {{ host.first_name }},
 
 You have a new request to connect from [NEED TO FIX - ADD USERNAME-REQUESTING-TO-CONNECT].
 
