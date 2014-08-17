@@ -1,4 +1,4 @@
-Hello [HOST NAME],
+Hello {{host.first_name}},
 
 
 You have a new request to connect from [USERNAME-REQUESTING-TO-CONNECT].
