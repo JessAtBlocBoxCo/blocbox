@@ -97,7 +97,7 @@ STATICFILES_DIRS = (
 #Email Settings
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'admin@blocbox.co'
-EMAIL_HOST_USER = 'GoodHood123'
+EMAIL_HOST_PASSWORD = 'GoodHood123'
 DEFAULT_FROM_EMAIL = 'admin@blocbox.co'
 EMAIL_USE_TLS = True
 EMAIL_PORT = 587
