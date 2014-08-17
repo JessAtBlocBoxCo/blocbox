@@ -189,11 +189,11 @@ def oldindex(request):
 
 #simple mail
 def typical_mail(request, userinfo_id):
-		host = get_object_or_404(UserInfo, pk=userinfo_id)
+    host = get_object_or_404(UserInfo, pk=userinfo_id)
     message = "Test Simple Mail Message - defined in core/views.py def typical_mail"
     subject = "Test Subject for Simple Mail"
 		
-		#from email should be default email defined in settings.py: admin@blocbox.co
+    #from email should be default email defined in settings.py: admin@blocbox.co
     send_mail(subject, message, from_email, [host.email,]) #last is the to-email
 
 #using .txt file and passing value(s)    
