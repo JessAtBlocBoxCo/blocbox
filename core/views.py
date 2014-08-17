@@ -194,14 +194,14 @@ def typical_mail(request, userinfo_id):
     subject = "Test Subject for Simple Mail"
 		
     #from email should be default email defined in settings.py: admin@blocbox.co
-    send_mail(subject, message, from_email, [host.email,]) #last is the to-email
+    send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
 
 #using .txt file and passing value(s)    
 def dynamic_mail(request, userinfo_id):
     host = get_object_or_404(UserInfo, pk=userinfo_id)
     message = render_to_string('emails/message.txt', { 'host':host, 'greeting': "Hello - this is the test greeting"})
     subject = "You have a new request to connect from a neighbor"
-    send_mail(subject, message, from_email, [host.email,]) #last is the to-email
+    send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
     
     
 #{'user_form': user_form, 'registered': registered, 'host':host }, context)
