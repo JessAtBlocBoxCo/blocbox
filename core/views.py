@@ -198,9 +198,9 @@ def typical_mail(request, userinfo_id):
 
 #using .txt file and passing value(s)    
 def dynamic_mail(request, userinfo_id):
-		host = get_object_or_404(UserInfo, pk=userinfo_id)
+    host = get_object_or_404(UserInfo, pk=userinfo_id)
     message = render_to_string('emails/message.txt', { 'host':host, 'greeting': "Hello - this is the test greeting"})
-    subject = "Hello"
+    subject = "You have a new request to connect from a neighbor"
     send_mail(subject, message, from_email, [host.email,]) #last is the to-email
     
     
