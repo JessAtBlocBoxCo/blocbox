@@ -1,0 +1,11 @@
+Hello [HOST NAME],
+
+You have a new request to connect from [USERNAME-REQUESTING-TO-CONNECT].
+
+Would you like to accept this new neighbor?
+
+[INCLUDE A LINK TO 'YES' OR 'NO' BUTTONS]
+
+This is a test email message in blocbox/core/templates/emails/message.txt
+
+Created per the instructions on the blog: http://catherinetenajeros.blogspot.com/2013/03/send-mail.html
