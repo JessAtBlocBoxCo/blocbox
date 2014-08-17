@@ -81,9 +81,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     host_aboutme = models.CharField("About Me (Host)",max_length=350,blank=True)
     availability = models.CharField("UPDATE DATA TYPE - AVAILABILITY",max_length=250,blank=True)
     currentlyhelping = models.IntegerField("Number of Neighbors Currently Helping", blank=True, null=True)    
-    address_approx = models.CharField("Approximate Address for Visitors to See," max_length=100, blank=True, null=True)
-	 
-	 
+    address_approx = models.CharField("Approximate Address for Visitors to See", max_length=100, blank=True, null=True)
+    	 
 	  #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined
     		however, is_active, is_superuser and date_joined are not showing up
