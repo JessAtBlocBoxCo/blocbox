@@ -202,7 +202,7 @@ def confirmconnect_mail(request, userinfo_id):
     message = render_to_string('emails/message.txt', { 'host': host, 'emailgreeting': "Hello - this is the test greeting"})
     subject = "You have a new request to connect from a neighbor"
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
-    
+    return HttpResponse("An email has been sent to the host to request to connect.")
     
 #    return render_to_response(
 # 'blocbox/sign-up-connect.html', {'user_form': user_form, 'registered': registered, 'host':host },context)
