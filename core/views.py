@@ -91,7 +91,7 @@ def signupconnect(request, userinfo_id):
             #profile.picture = request.FILES['picture']       	      
             registered = True #Update our variable to tell the template registration was successful        
             #confirmconnect_mail(request, host.id)
-            confirmconnect_mail(request, host.id, user.intro_message, user.email, user.first_name, user.last_name) #end a request to connect to the host
+            confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
              
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
@@ -198,9 +198,11 @@ def typical_mail(request, userinfo_id):
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
 
 #using .txt file and passing value(s)    
-def confirmconnect_mail(request, userinfo_id, messagetohost, useremail, firstname, lastname):
-    host = get_object_or_404(UserInfo, pk=userinfo_id)
-    message = render_to_string('emails/requestconnect.txt', { 'host': host, 'emailgreeting': messagetohost, 'useremail': useremail, 'firstname':firstname, 'lastname':lastname})
+def confirmconnect_mail(request, hostid, userid, messagetohost, useremail, firstname, lastname):
+    host = get_object_or_404(UserInfo, pk=hostid)
+    enduser = get_object_or_404(UserInfo, pk=userid)
+    message = render_to_string('emails/requestconnect.txt', { 'host': host, 'enduser': enduser, 'emailgreeting': messagetohost, 
+    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname,})
     subject = "You have a new request to connect from a neighbor"
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to request to connect.")
@@ -219,7 +221,7 @@ def confirmrequestconnect(request, host_id, user_id):
     neighborstatus = Connection(host_user=host, end_user=enduser)
     neighborstatus.save()
     return HttpResponse("The neighbor's request to connect has been confirmed.") 
-    #ways to include variable in HttpResponse:looking at question %s." % question_id)
+    #update this to include host and enduser ids, e.g.: HttpResponse:looking at question %s." % question_id)
     
 """
 def denyrequestconnect(request, host_id, user_id):

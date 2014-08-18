@@ -4,9 +4,9 @@ You have a new request to connect from {{firstname}} {{ lastname}} [{{ useremail
 
 Your neighbor's request to connect included the following message: {{ emailgreeting }}
 
-Would you like to accept this new neighbor?
+Click on the following link if you'd like to accept this new neighbor:
 
-[INCLUDE A HYPERLOINK TO A URL THAT CONFIRMS THE CONNECTION]
+http://107.170.128.21/{{host.id}}/requestconnectconfirm/{{ enduser.id}}/
 
 Thanks!
 The BlocBox Team
