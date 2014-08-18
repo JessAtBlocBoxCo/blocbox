@@ -3,10 +3,9 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from core.models import UserInfo, Transaction
+from core.models import UserInfo, Transaction, Connection
 from django.contrib.auth.forms import (UserCreationForm, UserChangeForm,
     AdminPasswordChangeForm)
-#admin.autodiscover()
 
 """# get a way to log the errors:
 import logging
@@ -15,6 +14,20 @@ log = logging.getLogger(__name__)
 from django.utils.encoding import force_text
 """
 
+#Create a simpler admin interface
+class UserInfoAdmin(admin.ModelAdmin):
+    pass
+
+class TransactionAdmin(admin.ModelAdmin):
+    pass
+
+class ConnectionAdmin(admin.ModelAdmin):
+
+admin.site.register(models.UserInfo, UserInfoAdmin)
+admin.site.register(models.Transaction, TransactionAdmin)
+admin.site.register(models.Connection, ConnectionAdmin)
+
+"""
 #class UserCreationFormBB(forms.ModelForm):
 #USERCREATION FORM AT DJANGO.CONTRIB.AUTH.FORMS
 #class BBUserCreation(UserCreationForm):
@@ -45,15 +58,9 @@ class BBUserCreation(forms.ModelForm):
             user.save()
         return user
 
-"""    def is_valid(self):
-        log.info(force_text(self.errors))
-        return super(BBUserCreation, self).is_valid()
-"""
         
 #class UserChangeFormBB(forms.ModelForm):
 class UserChangeFormBB(UserChangeForm):
-    """A form for updating users. Includes all the fields on the user, but replaces the password
-    field with the admin's password hash display field."""
     password = ReadOnlyPasswordHashField()
     
     model = UserInfo
@@ -63,9 +70,11 @@ class UserChangeFormBB(UserChangeForm):
         # Regardless of what the user provides, return the initial value
         # This is done here, rather  than on the field, because the field does not have access to the inital value
         return self.initial['password']
-        
+"""
+      
 #UserAdmin code is at /usr/local/lib/python2.7/dist-packages/django/contrib/auth/admin.py
 #class UserAdmin(admin.ModelAdmin):     
+"""
 class BBUserAdmin(UserAdmin):
     #The forms to add and chage user instances
     add_form = BBUserCreation 
@@ -100,12 +109,10 @@ class BBUserAdmin(UserAdmin):
     #extra = 3 #add eough space for 3 extra entries
     ordering = ('email',) #may need this...
     filter_horizontal = () #may need this...
-    
-"""    def is_valid(self):
-        log.info(force_text(self.errors))
-        return super(BBUserAdmin, self).is_valid()
+
 """
-   
+
+"""   
 class TransactionAdmin(admin.ModelAdmin): #Tabular instead of stacked to save screenspace  
     list_display = ('id', 'payer', 'payee', 'transtype', 'date_requested', 'date_payed')
     list_filter = ['transtype']
@@ -122,9 +129,4 @@ admin.site.register(Transaction, TransactionAdmin)
 #unregister the group model from admin
 admin.site.unregister(Group)
 
-"""#old -- 
-  			fieldsets = [
-        (None,               {'fields': ['question']}),
-        ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
-    ]
 """
