@@ -77,12 +77,14 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
 		#Add more host-specific fields
 		#!!! Note - maybe move this to host table that is linked to user table - may make it easeri to connect
     services_offered = models.CharField('UPDATE TO CHOICES - SERVICES\q OFFERED', max_length=250, blank=True)
-    neighbors = models.PositiveSmallIntegerField("UPDATE TO COUNT - NEIGHBORS I'M CONNECTED TO", blank=True, null=True)
     host_aboutme = models.CharField("About Me (Host)",max_length=350,blank=True)
     availability = models.CharField("UPDATE DATA TYPE - AVAILABILITY",max_length=250,blank=True)
     currentlyhelping = models.IntegerField("Number of Neighbors Currently Helping", blank=True, null=True)    
     address_approx = models.CharField("Approximate Address for Visitors to See", max_length=100, blank=True, null=True)
-    	 
+    
+    #Create manytomany connections - neighbors are those connected to
+    neighbors = models.ManyToManyFields(self, through 'Connections')
+    
 	  #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined
     		however, is_active, is_superuser and date_joined are not showing up
@@ -161,5 +163,8 @@ class Transaction(models.Model):
     
     
     
-
+#Define the connections relation
+class Connections(models.Model):
+    host_neighbor = models.ForeignKey(UserInfo, related_name='host_neighbor_id')
+    user_neighbor = models.ForeignKey(UserInfo, related_name='user_neighbor_id')
     
