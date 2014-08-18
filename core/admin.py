@@ -25,7 +25,10 @@ class TransactionAdmin(admin.ModelAdmin):
     
 
 class ConnectionAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('host_user', 'end_user', 'added')
+    list_filter = ['host_user']
+    search_fields = ['host_user', 'end_user']
+    
     
 admin.site.register(UserInfo, UserInfoAdmin)
 admin.site.register(Transaction, TransactionAdmin)
