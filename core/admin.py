@@ -22,6 +22,7 @@ class TransactionAdmin(admin.ModelAdmin):
     pass
 
 class ConnectionAdmin(admin.ModelAdmin):
+    pass
 
 admin.site.register(models.UserInfo, UserInfoAdmin)
 admin.site.register(models.Transaction, TransactionAdmin)
