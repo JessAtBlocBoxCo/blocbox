@@ -89,12 +89,10 @@ def signupconnect(request, userinfo_id):
     	      
     	      #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
     	      #if 'picture' in request.FILES:
-    	      #    profile.picture = request.FILES['picture']       	      
+            #profile.picture = request.FILES['picture']       	      
             registered = True #Update our variable to tell the template registration was successful   	  		
-            messagetohost = user.intro_message
-            #AND.. send a request to connect to the host
-            #ADD: intro_message (from user) and
-            confirmconnect_mail(request, host.id, messagetohost, user.email)
+            
+            confirmconnect_mail(request, host.id, user.intro_message, user.email) #end a request to connect to the host
              
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
