@@ -2,7 +2,7 @@
 
 Hello {{ host.first_name }},
 
-You have a new request to connect from [NEED TO FIX - ADD USERNAME-REQUESTING-TO-CONNECT].
+You have a new request to connect from {{ useremail }}.
 
 Would you like to accept this new neighbor?
 

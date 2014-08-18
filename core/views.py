@@ -93,9 +93,10 @@ def signupconnect(request, userinfo_id):
     	         	      
     	      registered = True #Update our variable to tell the template registration was successful
     	  		
+    	  		messagetohost = user.intro_message
     	  		#AND.. send a request to connect to the host
-    	  		#url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.confirmconnect_mail, name='sendrequestconnect'),
-    	      confirmconnect_mail(request, host.id)
+    	  		#ADD: intro_message (from user) and
+    	      confirmconnect_mail(request, host.id, messagetohost, user.email)
     	      
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
@@ -202,9 +203,9 @@ def typical_mail(request, userinfo_id):
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
 
 #using .txt file and passing value(s)    
-def confirmconnect_mail(request, userinfo_id):
+def confirmconnect_mail(request, userinfo_id, messagetohost, useremail):
     host = get_object_or_404(UserInfo, pk=userinfo_id)
-    message = render_to_string('emails/message.txt', { 'host': host, 'emailgreeting': "Hello - this is the test greeting"})
+    message = render_to_string('emails/message.txt', { 'host': host, 'emailgreeting': messagetohost, 'useremail': useremail})
     subject = "You have a new request to connect from a neighbor"
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to request to connect.")
