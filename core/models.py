@@ -85,7 +85,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     
     #Create manytomany connections - neighbors are those connected to
     #neighbors = models.ManyToManyField("self", through='Connections') 
-    neighbors = models.ManyToManyField("self")
+    #neighbors = models.ManyToManyField("self")
     
 	  #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined
@@ -165,8 +165,46 @@ class Transaction(models.Model):
     
     
     
-#Define the connections relation
-#class Connections(models.Model):
+#Define the connection relation
+#class Connection(models.Model):
 #    host_neighbor = models.ForeignKey(UserInfo, related_name='host_neighbor_id')
 #    user_neighbor = models.ForeignKey(UserInfo, related_name='user_neighbor_id')
+
+class ConnectionManager(models.Manager):
     
+    def connection_for_user(self, user):
+        connection = []
+        for connection in self.filter(host_user=user).select_related(depth=1):
+            neighbors.append({"neighbor": connection.host_user, "connection": connection})
+        for connection in self.filter(end_user=user).select_related(depth=1):
+            neighbors.append({"neighbor": connection.end_user, "connection": connection})
+        return neighbors
+    
+    def are_neighbors(self, user1, user2):
+        if self.filter(end_user=user1, host_user=user2).count() > 0:
+            return True
+        if self.filter(end_user=user2, host_user=user1).count() > 0:
+            return True
+        return False
+    
+    def remove(self, user1, user2):
+        if self.filter(end_user=user1, host_user=user2):
+            connection = self.filter(end_user=user1, host_user=user2)
+        elif self.filter(end_user=user2, host_user=user1):
+            connection = self.filter(end_user=user2, host_user=user1)
+        connection.delete()
+        
+class Connection(models.Model):
+    #A connection is a bi-directional association between two users who
+    #have both agreed to the association.
+    #from site: https://github.com/jtauber/django-friends/blob/master/friends/models.py
+        
+    host_user = models.ForeignKey(UserInfo, related_name="host_id") #was to_user
+    end_user = models.ForeignKey(UserInfo, related_name="enduser_id") #was from_user
+    # @@@ relationship types
+    added = models.DateField(default=datetime.date.today)
+    
+    objects = ConnectionManager()
+    
+    class Meta:
+        unique_together = (('host_user', 'end_user'),)

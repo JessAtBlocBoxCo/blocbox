@@ -29,5 +29,7 @@ class HostForm(forms.ModelForm):
 	Each Meta class must at a bare minimum supply a model field, which references back to the
 	model the ModelForm inheriting class should relate to. 
 """       
-        
+
+#Create a form for confirming connections
+#class ConfirmConnectForm(forms.ModelForm):
         

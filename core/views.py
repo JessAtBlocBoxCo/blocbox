@@ -207,3 +207,22 @@ def confirmconnect_mail(request, userinfo_id, messagetohost, useremail, firstnam
     
 #    return render_to_response(
 # 'blocbox/sign-up-connect.html', {'user_form': user_form, 'registered': registered, 'host':host },context)
+
+#-----------------------------------------------------------
+# Confirm or deny requests to connect
+#-----------------------------------------------------------
+def confirmrequestconnect(request, host_id, user_id):
+#url(r'^email/(?P<host_id>\d+)/requestconnectconfirm/(?P<user_id>\d+)/$', views.confirmrequestconnect, name='confirmrequestconnect'),
+    context = RequestContext(request)
+    host = get_object_or_404(UserInfo, pk=host_id)
+    enduser = get_object_or_404(UserInfo, pk=user_id)
+    neighborstatus = Connection(host_user=host_id, end_user=user_id)
+    neighborstatus.save()
+ 
+"""   
+def denyrequestconnect(request, host_id, user_id):
+#url(r'^email/(?P<userinfo_id>\d+)/requestconnectdeny/(?P<userinfo_id>\d+)/$', views.denyrequestconnect, name='denyrequestconnect'),
+    context = RequestContext(request)
+    host = get_object_or_404(UserInfo, pk=host_id)
+    enduser = get_object_or_404(UserInfo, pk=user_id)
+"""
