@@ -2427,8 +2427,10 @@ input[type="month"].input-lg {
   position: relative;
   display: block;
   min-height: 20px;
+  /*JMY removing margin around checkboxes
   margin-top: 10px;
   margin-bottom: 10px;
+  */
 }
 .radio label,
 .checkbox label {
