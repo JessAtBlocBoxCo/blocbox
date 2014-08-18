@@ -173,12 +173,12 @@ class Transaction(models.Model):
 class ConnectionManager(models.Manager):
     
     def connection_for_user(self, user):
-        connection = []
+        connections = []
         for connection in self.filter(host_user=user).select_related(depth=1):
-            neighbors.append({"neighbor": connection.host_user, "connection": connection})
+            connections.append({"neighbor": connection.host_user, "connection": connection})
         for connection in self.filter(end_user=user).select_related(depth=1):
-            neighbors.append({"neighbor": connection.end_user, "connection": connection})
-        return neighbors
+            connections.append({"neighbor": connection.end_user, "connection": connection})
+        return connections
     
     def are_neighbors(self, user1, user2):
         if self.filter(end_user=user1, host_user=user2).count() > 0:
