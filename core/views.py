@@ -216,7 +216,7 @@ def confirmrequestconnect(request, host_id, user_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=host_id)
     enduser = get_object_or_404(UserInfo, pk=user_id)
-    neighborstatus = Connection(host_user=host_id, end_user=user_id)
+    neighborstatus = Connection(host_user=host, end_user=enduser)
     neighborstatus.save()
  
 """
