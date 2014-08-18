@@ -18,8 +18,11 @@ from django.utils.encoding import force_text
 class UserInfoAdmin(admin.ModelAdmin):
     pass
 
-class TransactionAdmin(admin.ModelAdmin):
-    pass
+class TransactionAdmin(admin.ModelAdmin): 
+    list_display = ('id', 'payer', 'payee', 'transtype', 'date_requested', 'date_payed')
+    list_filter = ['transtype']
+    search_fields = ['payer', 'payee']
+    
 
 class ConnectionAdmin(admin.ModelAdmin):
     pass
@@ -27,6 +30,9 @@ class ConnectionAdmin(admin.ModelAdmin):
 admin.site.register(UserInfo, UserInfoAdmin)
 admin.site.register(Transaction, TransactionAdmin)
 admin.site.register(Connection, ConnectionAdmin)
+admin.site.unregister(Group)
+
+
 
 """
 #class UserCreationFormBB(forms.ModelForm):
@@ -113,21 +119,3 @@ class BBUserAdmin(UserAdmin):
 
 """
 
-"""   
-class TransactionAdmin(admin.ModelAdmin): #Tabular instead of stacked to save screenspace  
-    list_display = ('id', 'payer', 'payee', 'transtype', 'date_requested', 'date_payed')
-    list_filter = ['transtype']
-    search_fields = ['payer', 'payee']
-    extra = 3 # provide enough fields for 3 
-
-#Cannot register tabularinline as a class - onkly a subclass 
-
-
-
-#unregister and re-resitger
-admin.site.register(UserInfo, BBUserAdmin) #passes PollAdmin object
-admin.site.register(Transaction, TransactionAdmin)
-#unregister the group model from admin
-admin.site.unregister(Group)
-
-"""
