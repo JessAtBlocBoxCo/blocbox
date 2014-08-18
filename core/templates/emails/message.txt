@@ -1,14 +1,12 @@
-[YO. I CAN MAKE THE INTERNET SEND EMAILS FROM A BUTTON NOW]
-
 Hello {{ host.first_name }},
 
-You have a new request to connect from {{ useremail }}.
+You have a new request to connect from {{firstname}} {{ lastname}} [{{ useremail }}].
+
+Your neighbor's request to connect included the following message: {{ emailgreeting }}
 
 Would you like to accept this new neighbor?
 
-[INCLUDE A LINK TO 'YES' OR 'NO' BUTTONS]
+[INCLUDE A HYPERLOINK TO A URL THAT CONFIRMS THE CONNECTION]
 
-Test passing arg - shouuld render emailgreeting : {{ emailgreeting }}
-
-This is a test email message in blocbox/core/templates/emails/message.txt
-
+Thanks!
+The BlocBox Team
