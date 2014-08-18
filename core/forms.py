@@ -23,7 +23,7 @@ class UserForm(forms.ModelForm):
 class HostForm(forms.ModelForm):
     class Meta:
         model = UserInfo
-        fields = ('host_aboutme', 'services_offered', 'availability', 'neighbors', 'hostrating',)
+        fields = ('host_aboutme', 'services_offered', 'availability', 'hostrating',)
 
 """Meta Tags - describes additional properties about the particular ModelForm  class it belongs to. 
 	Each Meta class must at a bare minimum supply a model field, which references back to the
