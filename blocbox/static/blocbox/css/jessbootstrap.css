@@ -2323,9 +2323,8 @@ input[type="search"] {
 }
 input[type="radio"],
 input[type="checkbox"] {
-/*JMY removing the margins around the checkboxes
   margin: 4px 0 0;
-  margin-top: 1px \9; */
+  margin-top: 1px \9; 
   line-height: normal;
 }
 input[type="file"] {
@@ -2427,10 +2426,8 @@ input[type="month"].input-lg {
   position: relative;
   display: block;
   min-height: 20px;
-  /*JMY removing margin around checkboxes
   margin-top: 10px;
   margin-bottom: 10px;
-  */
 }
 .radio label,
 .checkbox label {
