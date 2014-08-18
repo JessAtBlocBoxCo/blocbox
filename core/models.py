@@ -83,7 +83,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     address_approx = models.CharField("Approximate Address for Visitors to See", max_length=100, blank=True, null=True)
     
     #Create manytomany connections - neighbors are those connected to
-    neighbors = models.ManyToManyField("self", through='Connections')
+    #neighbors = models.ManyToManyField("self", through='Connections') 
+    neighbors = models.ManyToManyField("self")
     
 	  #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined
@@ -164,7 +165,7 @@ class Transaction(models.Model):
     
     
 #Define the connections relation
-class Connections(models.Model):
-    host_neighbor = models.ForeignKey(UserInfo, related_name='host_neighbor_id')
-    user_neighbor = models.ForeignKey(UserInfo, related_name='user_neighbor_id')
+#class Connections(models.Model):
+#    host_neighbor = models.ForeignKey(UserInfo, related_name='host_neighbor_id')
+#    user_neighbor = models.ForeignKey(UserInfo, related_name='user_neighbor_id')
     
