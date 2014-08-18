@@ -36,7 +36,7 @@
         <p>Thank you for Registering!</p>
         <p><a href="/login/">Login to return to the homepage.</a></p>
         {% else %}
-        	<p>Sign Up to Connect with {{host.first_name}}</p>    			
+        <p><b>Sign Up to Connect with {{host.first_name}}</b></p>    			
     		<!--	<div class="element element-63"></div> -->
     		<p>In order to connect, we need to ask for some basic information</p>
     			
@@ -99,7 +99,9 @@
  				
 
       	<!-- <div class="container container-44 clearfix"> -->
-  		  <p class="text text-173">Introduce Yourself (Optional)</p>
+      	  <div class="element element-119"></div>
+  		  <!--<p class="text text-173">Introduce Yourself (Optional)</p> -->
+  		  <p><b>Introduce Yourself </b></p>
   		  <!-- <p class="text text-182">(Optional)</p> -->
   		  <div class="element element-108"></div>
   		  <p class="text text-196">Before you connect, {{host.first_name}} will need to confirm your request.  The information you provide below will help Sylvia confirm you as a neighbor</p>
@@ -117,8 +119,9 @@
  			   			
   		  <div class="element element-119"></div>
       
-      <!--ADD OTHER REQUESTS -->
-    <p class="text text-173">What other services are you interested in receiving?</p>
+      <!--ADD OTHER REQUESTS - removing all formatting, was text text-183 -->
+    <p><b>What other services are you interested in receiving?</b></p>
+    <br>
 		<label class="checkbox-inline">
   		<input type="checkbox" id="id_need_storage" name="need_storage"> Storage
 		</label>
