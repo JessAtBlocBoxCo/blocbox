@@ -80,18 +80,18 @@ def signupconnect(request, userinfo_id):
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
     	  user_form = UserForm(data=request.POST)  
     	  if user_form.is_valid(): # Check if the form is valid
-    	      # Save the user's form data to the database
-    	      user = user_form.save()
-    	      # Now we hash the password with the set_passworth method
-    	      # Once hashed, we ca update the user object
-    	      user.set_password(user.password)
-    	      user.save()   	      
-    	      #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
-    	      #if 'picture' in request.FILES:
+            # Save the user's form data to the database
+            user = user_form.save()
+            # Now we hash the password with the set_passworth method
+            # Once hashed, we ca update the user object
+            user.set_password(user.password)
+            user.save()   	      
+            #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
+            #if 'picture' in request.FILES:
             #profile.picture = request.FILES['picture']       	      
             registered = True #Update our variable to tell the template registration was successful        
-            confirmconnect_mail(request, host.id)
-            #confirmconnect_mail(request, host.id, user.intro_message, user.email) #end a request to connect to the host
+            #confirmconnect_mail(request, host.id)
+            confirmconnect_mail(request, host.id, user.intro_message, user.email) #end a request to connect to the host
              
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
