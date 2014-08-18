@@ -219,7 +219,7 @@ def confirmrequestconnect(request, host_id, user_id):
     neighborstatus = Connection(host_user=host_id, end_user=user_id)
     neighborstatus.save()
  
-"""   
+"""
 def denyrequestconnect(request, host_id, user_id):
 #url(r'^email/(?P<userinfo_id>\d+)/requestconnectdeny/(?P<userinfo_id>\d+)/$', views.denyrequestconnect, name='denyrequestconnect'),
     context = RequestContext(request)
