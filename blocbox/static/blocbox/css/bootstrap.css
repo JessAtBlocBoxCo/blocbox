@@ -2321,10 +2321,9 @@ input[type="search"] {
 }
 input[type="radio"],
 input[type="checkbox"] {
-/*JMY removing the margins on the checkboxes to makek the page look better */
-/*  margin: 4px 0 0;
+  margin: 4px 0 0;
   margin-top: 1px \9;
-  line-height: normal; */
+  line-height: normal; 
 }
 input[type="file"] {
   display: block;
