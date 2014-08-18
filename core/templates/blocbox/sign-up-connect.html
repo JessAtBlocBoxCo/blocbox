@@ -12,7 +12,7 @@
   
   <link rel="stylesheet" href="{% static 'blocbox/css/stylesmain.css' %}">
  
-  <!--NOTE TO JB - WE'RE USING BOOSTRAP.CSS ADN NORMALIZE.CSS FROM BOOSTRAP - SUPPOSEED TO HELP WITH RENDERING SHIT ACROSS BROWSERS-->
+  <!--sNOTE TO JB - WE'RE USING BOOSTRAP.CSS ADN NORMALIZE.CSS FROM BOOSTRAP - SUPPOSEED TO HELP WITH RENDERING SHIT ACROSS BROWSERS-->
   <link rel="stylesheet" href="{% static 'blocbox/css/jessbootstrap.css' %}">
   <link rel="stylesheet" href="{% static 'blocbox/css/normalize.css' %}">  
 </head>
@@ -126,7 +126,7 @@
      <br>
      <br>
     <p><b>What other services are you interested in receiving?</b></p>
-		<label class="checkbox-inline">
+		<label class="checkbox-inline" style="text-indent: 15px">
   		<input type="checkbox" id="id_need_storage" name="need_storage"> Storage
 		</label>
 		<label class="checkbox-inline">
@@ -162,10 +162,11 @@
 		<label class="checkbox-inline">
   		<input type="checkbox" id="id_need_autocare" name="need_autocare"> Auto Care
 		</label>
+		<!--
 		<div class="form-group"> 
- 			<label for="id_state">Other Requst (Write In)</label>	
-    				<input type="text" class="form-control" name="need_other" id="id_need_other"  placeholder="Other Request">				
- 		</div>
+ 			<label for="id_state">Other Request (Write In)</label>	-->
+    				<input type="text" class="form-control" name="need_other" id="id_need_other"  placeholder="Other Request (Write In)">				
+ 		<!--</div> -->
 
   <div class="element element-119"></div>
 

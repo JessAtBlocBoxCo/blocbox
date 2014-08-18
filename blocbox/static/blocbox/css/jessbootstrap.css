@@ -2462,6 +2462,17 @@ input[type="month"].input-lg {
   margin-top: 0;
   margin-left: 10px;
 }
+
+/*internet recommended adding a no_indent option so the inline checkbox dont inent */
+.checkbox.inline.no_indent,
+.checkbox.inline.no_indent+.checkbox.inline.no_indent {
+  margin-left: 0;
+  margin-right: 10px;
+}
+.checkbox.inline.no_indent:last-child {
+  margin-right: 0px;
+}
+
 input[type="radio"][disabled],
 input[type="checkbox"][disabled],
 input[type="radio"].disabled,
