@@ -22,10 +22,11 @@ class TransactionAdmin(admin.ModelAdmin):
     pass
 
 class ConnectionAdmin(admin.ModelAdmin):
-
-admin.site.register(models.UserInfo, UserInfoAdmin)
-admin.site.register(models.Transaction, TransactionAdmin)
-admin.site.register(models.Connection, ConnectionAdmin)
+    pass
+    
+admin.site.register(UserInfo, UserInfoAdmin)
+admin.site.register(Transaction, TransactionAdmin)
+admin.site.register(Connection, ConnectionAdmin)
 
 """
 #class UserCreationFormBB(forms.ModelForm):
