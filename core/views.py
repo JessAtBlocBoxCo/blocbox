@@ -218,7 +218,9 @@ def confirmrequestconnect(request, host_id, user_id):
     enduser = get_object_or_404(UserInfo, pk=user_id)
     neighborstatus = Connection(host_user=host, end_user=enduser)
     neighborstatus.save()
- 
+    HttpResponse("The neighbor's request to connect has been confirmed.") 
+    #ways to include variable in HttpResponse:looking at question %s." % question_id)
+    
 """
 def denyrequestconnect(request, host_id, user_id):
 #url(r'^email/(?P<userinfo_id>\d+)/requestconnectdeny/(?P<userinfo_id>\d+)/$', views.denyrequestconnect, name='denyrequestconnect'),
