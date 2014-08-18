@@ -200,7 +200,7 @@ def typical_mail(request, userinfo_id):
 #using .txt file and passing value(s)    
 def confirmconnect_mail(request, userinfo_id, messagetohost, useremail, firstname, lastname):
     host = get_object_or_404(UserInfo, pk=userinfo_id)
-    message = render_to_string('emails/message.txt', { 'host': host, 'emailgreeting': messagetohost, 'useremail': useremail, 'firstname':firstname, 'lastname':lastname})
+    message = render_to_string('emails/requestconnect.txt', { 'host': host, 'emailgreeting': messagetohost, 'useremail': useremail, 'firstname':firstname, 'lastname':lastname})
     subject = "You have a new request to connect from a neighbor"
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to request to connect.")
