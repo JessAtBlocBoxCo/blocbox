@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
 from django.template import RequestContext, loader #allows it to load templates from blocbox/templates
-from core.models import UserInfo, Transaction
+from core.models import UserInfo, Transaction, Connection
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
 from core.forms import UserForm, HostForm
 #Important the authentication and login functions -- not sure that i can use with custom model
