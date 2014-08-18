@@ -92,7 +92,11 @@ def signupconnect(request, userinfo_id):
     	      #    profile.picture = request.FILES['picture']
     	         	      
     	      registered = True #Update our variable to tell the template registration was successful
-    	  
+    	  		
+    	  		#AND.. send a request to connect to the host
+    	  		#url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.confirmconnect_mail, name='sendrequestconnect'),
+    	      confirmconnect_mail(request, host.id)
+    	      
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors
@@ -109,6 +113,7 @@ def signupconnect(request, userinfo_id):
     	      context)
    	#PASS ARGUMENTS
 		#return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
+		
 #Registration Form -- User
 def signupnoconnect(request):
     context = RequestContext(request)
@@ -132,7 +137,7 @@ def signupnoconnect(request):
     	      #    profile.picture = request.FILES['picture']
     	         	      
     	      registered = True #Update our variable to tell the template registration was successful
-    	  
+    	  		
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors

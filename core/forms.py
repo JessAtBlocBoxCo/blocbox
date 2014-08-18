@@ -8,10 +8,6 @@ class UserForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
     zipcode = forms.CharField(label="Zip Code")
-    #hostinterest = forms.BooleanField("Check here if you're interested in learning about serving as a BlocBox host", initial=False)
-    #date_joined = timezone.now()
-    #date_joined = forms.DateTimeField('Date Joined',initial=timezone.now) 
-    #password = forms.CharField(widget=forms.PasswordInput())
 
     class Meta:
         model = UserInfo
