@@ -93,9 +93,9 @@ def signupconnect(request, userinfo_id):
     	         	      
     	      registered = True #Update our variable to tell the template registration was successful
     	  		
-    	  		messagetohost = user.intro_message
-    	  		#AND.. send a request to connect to the host
-    	  		#ADD: intro_message (from user) and
+            messagetohost = user.intro_message
+    	  	  #AND.. send a request to connect to the host
+    	  	  #ADD: intro_message (from user) and
     	      confirmconnect_mail(request, host.id, messagetohost, user.email)
     	      
     	  #Invalid form or forms - print problems to the terminal so they're show to user
