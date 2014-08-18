@@ -28,10 +28,6 @@ admin.site.register(UserInfo, UserInfoAdmin)
 admin.site.register(Transaction, TransactionAdmin)
 admin.site.register(Connection, ConnectionAdmin)
 
-admin.site.register(UserInfo, UserInfoAdmin)
-admin.site.register(Transaction, TransactionAdmin)
-admin.site.register(Connection, ConnectionAdmin)
-
 """
 #class UserCreationFormBB(forms.ModelForm):
 #USERCREATION FORM AT DJANGO.CONTRIB.AUTH.FORMS
