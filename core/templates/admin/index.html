@@ -1,3 +1,4 @@
+<!--this is blocbox/core/templates/admin.index.html -->
 {% extends "admin/base_site.html" %}
 {% load i18n admin_static %}
 
@@ -17,6 +18,7 @@
         <div class="app-{{ app.app_label }} module">
         <table>
         <caption>
+        	<p>TESTING AN EDIT TO THE INDEX PAGE</p>
             <a href="{{ app.app_url }}" class="section" title="{% blocktrans with name=app.name %}Models in the {{ name }} application{% endblocktrans %}">
                 {% blocktrans with name=app.name %}{{ name }}{% endblocktrans %}
             </a>
