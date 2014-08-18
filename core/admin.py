@@ -21,7 +21,7 @@ from django.utils.encoding import force_text
 class BBUserCreation(forms.ModelForm):
     #A form for creating new users. Includes all the required fields, plus a repeated password.
     #can find the base form at /usr/local/lib/python2.7/dist-packages/django/contrib/auth/forms.py
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
+    password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
     zipcode = forms.CharField(label="Zip Code")
     
@@ -31,16 +31,16 @@ class BBUserCreation(forms.ModelForm):
         
     def clean_password2(self):    
         #check that the two password entries match - THIS PART IS WORKING
-        password1 = self.cleaned_data.get("password1")
+        password = self.cleaned_data.get("password")
         password2 = self.cleaned_data.get("password2")
-        if password1 and password2 and password1 != password2:
+        if password and password2 and password != password2:
             raise forms.ValidationError("Passwords don't match")
         return password2
     
     def save(self, commit=True):
         #save the provided password in hashed format
         user = super(BBUserCreation, self).save(commit=False)
-        user.set_password(self.cleaned_data["password1"])
+        user.set_password(self.cleaned_data["password"])
         if commit:
             user.save()
         return user
@@ -93,7 +93,7 @@ class BBUserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-        		'fields': ('email', 'password1', 'password2', 'zipcode')}	
+        		'fields': ('email', 'password', 'password2', 'zipcode')}	
         ),
     )     
     search_fields = ['email', 'zipcode', 'last_name', 'first_name', 'st_address1', 'city'] #adds search box to change list - can search as many fields as you want, but harder with more fields
