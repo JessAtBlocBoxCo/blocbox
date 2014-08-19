@@ -1,0 +1,10 @@
+Hello {{ enduser.first_name }}!
+
+Welcome to Blocbox. Your request to connect with your neighbor, {{ host.first_name }}, has been sent. 
+
+You'll receive a notification when {{ host.first_name }}confirms your request to connect, at which point you can start shipping packages and requesting other neighborhood services.
+
+If you have any questions or feedback in the meantime, don't hesitate to reach out to us at info@blocbox.co. 
+
+Thanks!
+The BlocBox Team
