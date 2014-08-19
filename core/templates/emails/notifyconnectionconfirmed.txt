@@ -1,0 +1,10 @@
+Hello {{ enduser.first_name }}!
+
+We're writing to let you know that your neighbor, {{ host.first_name }}, has confirmed your request to connect.
+
+Log into your account to send a shipment to {{ host.first_name }} or to request other neighborhood tasks.
+
+Thanks!
+The BlocBox Team
+
+Questions or Feedback? info@blocbox.co

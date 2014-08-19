@@ -216,8 +216,14 @@ def requesthasbeensent(request, hostid, userid):
     message = render_to_string('emails/requesthasbeensent.txt', {'host': host, 'enduser': enduser,})
     subject = "Your request to connect has been sent!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
-    
-#    return render_to_response(
+
+def notifyconnectionconfirmed(request, hostid, userid):
+    host = get_object_or_404(UserInfo, pk=hostid)
+    enduser = get_object_or_404(UserInfo, pk=userid)
+    message = render_to_string('emails/notifyconnectionconfirmed.txt', {'host': host, 'enduser': enduser,})
+    subject = "Your request to connect was confirmed!"
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
+#return render_to_response(
 # 'blocbox/sign-up-connect.html', {'user_form': user_form, 'registered': registered, 'host':host },context)
 
 #-----------------------------------------------------------
@@ -229,7 +235,8 @@ def confirmrequestconnect(request, host_id, user_id):
     host = get_object_or_404(UserInfo, pk=host_id)
     enduser = get_object_or_404(UserInfo, pk=user_id)
     neighborstatus, created = Connection.objects.get_or_create(host_user=host, end_user=enduser)
-    neighborstatus.save()
+    neighborstatus.save() #update the Connections table to connect these user
+    notifyconnectionconfirmed(host.id, enduser.id) #notify the enduser that the request was successful
     return HttpResponse("The neighbor's request to connect has been confirmed.") 
     #update this to include host and enduser ids, e.g.: HttpResponse:looking at question %s." % question_id)
 
