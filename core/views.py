@@ -90,9 +90,10 @@ def signupconnect(request, userinfo_id):
             #if 'picture' in request.FILES:
             #profile.picture = request.FILES['picture']       	      
             registered = True #Update our variable to tell the template registration was successful        
-            #confirmconnect_mail(request, host.id)
+            #send an email to the host askig them to confirm the connection
             confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
-             
+            #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
+            requesthasbeensent(request, host.id, user.id)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors
@@ -206,6 +207,14 @@ def confirmconnect_mail(request, hostid, userid, messagetohost, useremail, first
     subject = "You have a new request to connect from a neighbor"
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to request to connect.")
+
+#send an email to the user that requested to connect
+def requesthasbeensent(request, hostid, userid):
+    host = get_object_or_404(UserInfo, pk=hostid)
+    enduser = get_object_or_404(UserInfo, pk=userid)
+    message = render_to_string('emails/requesthasbeensent.txt', {'host': host, 'enduser': enduser,})
+    subject = "Your request to connect has been sent!"
+    send_mail(subject, message, 'admin@blocbox.co', [enduser.email,])
     
 #    return render_to_response(
 # 'blocbox/sign-up-connect.html', {'user_form': user_form, 'registered': registered, 'host':host },context)
@@ -222,6 +231,7 @@ def confirmrequestconnect(request, host_id, user_id):
     neighborstatus.save()
     return HttpResponse("The neighbor's request to connect has been confirmed.") 
     #update this to include host and enduser ids, e.g.: HttpResponse:looking at question %s." % question_id)
+
     
 """
 def denyrequestconnect(request, host_id, user_id):
