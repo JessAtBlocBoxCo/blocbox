@@ -205,7 +205,8 @@ def confirmconnect_mail(request, hostid, userid, messagetohost, useremail, first
     message = render_to_string('emails/requestconnect.txt', { 'host': host, 'enduser': enduser, 'emailgreeting': messagetohost, 
     	'useremail': useremail, 'firstname':firstname, 'lastname':lastname,})
     subject = "You have a new request to connect from a neighbor"
-    send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
+    #'Trinh Nguyen <trinh@example.com>'
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to request to connect.")
 
 #send an email to the user that requested to connect
@@ -214,7 +215,7 @@ def requesthasbeensent(request, hostid, userid):
     enduser = get_object_or_404(UserInfo, pk=userid)
     message = render_to_string('emails/requesthasbeensent.txt', {'host': host, 'enduser': enduser,})
     subject = "Your request to connect has been sent!"
-    send_mail(subject, message, 'admin@blocbox.co', [enduser.email,])
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
     
 #    return render_to_response(
 # 'blocbox/sign-up-connect.html', {'user_form': user_form, 'registered': registered, 'host':host },context)
