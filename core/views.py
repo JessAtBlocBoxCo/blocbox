@@ -236,7 +236,7 @@ def confirmrequestconnect(request, host_id, user_id):
     enduser = get_object_or_404(UserInfo, pk=user_id)
     neighborstatus, created = Connection.objects.get_or_create(host_user=host, end_user=enduser)
     neighborstatus.save() #update the Connections table to connect these user
-    notifyconnectionconfirmed(host.id, enduser.id) #notify the enduser that the request was successful
+    notifyconnectionconfirmed(request, host.id, enduser.id) #notify the enduser that the request was successful
     return HttpResponse("The neighbor's request to connect has been confirmed.") 
     #update this to include host and enduser ids, e.g.: HttpResponse:looking at question %s." % question_id)
 
