@@ -1,3 +1,4 @@
+1. create superuser accounts for john, also maybe me so we dont need to log in as root
 1. transfer the host for blocbox.co to the digitalocean server: 
 1. EDIT host profile page so it looks different if youre  connnecte d- like {%if registered} 
 2. add a forgot password/chnage password
