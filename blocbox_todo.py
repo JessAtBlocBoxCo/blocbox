@@ -1,4 +1,10 @@
+Update Git so that we can push to two remotes, so it automatically pushes to github and it pushes to the server?
+	git remote set-url --add --push origin git://another/repo.git
+	git remote set-url --add --push origin git://one_more/repo.git
+So when you push to origin, it will push to both repositories
+
 1. create superuser accounts for john, also maybe me so we dont need to log in as root
+
 1. transfer the host for blocbox.co to the digitalocean server: 
 1. EDIT host profile page so it looks different if youre  connnecte d- like {%if registered} 
 2. add a forgot password/chnage password
