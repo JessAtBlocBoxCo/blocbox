@@ -20,6 +20,7 @@ urlpatterns = patterns('',
     url(r'signuphost/', views.signuphost, name='signuphost'),
     url(r'login/', views.userlogin, name='login'), # add this for the registration form
     url(r'^logout/$', views.user_logout, name='logout'), 		
+    url(r'^bootstraptest/$', views.bootstraptest, name='bootstraptest'), 		
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well
  		#the carret sasy beginning must match, the $ says end of string must match
  		#email stuff

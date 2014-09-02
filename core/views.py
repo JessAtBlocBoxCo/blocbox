@@ -22,6 +22,7 @@ def beta(request):
 def search(request):
     return render(request, 'blocbox/search.shtml') #load the blocbox/templates/blocbox/beta.html 
 
+    
 #Create the view for the hostprofilevisitor
 def hostprofilevisitor(request, userinfo_id):
     context = RequestContext(request)
@@ -240,6 +241,9 @@ def confirmrequestconnect(request, host_id, user_id):
     return HttpResponse("The neighbor's request to connect has been confirmed.") 
     #update this to include host and enduser ids, e.g.: HttpResponse:looking at question %s." % question_id)
 
+#bootsrap test
+def bootstraptest(request):
+    return render(request, 'blocbox/x_bootstraptest.html') 
     
 """
 def denyrequestconnect(request, host_id, user_id):
