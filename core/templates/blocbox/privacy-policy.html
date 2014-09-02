@@ -1,3 +1,6 @@
+<!-- this is blocbox/core/templates/blocbox/index.html -->
+{% load staticfiles %} 
+
 <!doctype html>
 <html>
 <head>
@@ -6,8 +9,8 @@
   <title>Blocbox Privacy Policy</title>
   <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <link rel="stylesheet" href="css/standardize.css">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="{% static 'blocbox/css/standardize.css' %}">
+  <link rel="stylesheet" href="{% static 'blocbox/css/styles.css' %}">
 </head>
 <body class="body privacy-policy clearfix">
   <div class="container _container container-1 clearfix">
@@ -49,9 +52,9 @@ If you are a California resident, California Civil Code Section 1798.83 permits 
 </div>
   </div>
   <header class="_container _container-5">
-    <button class="_button _button-4">How It Works</button>
-    <button class="_button _button-5">Become a Host</button>
-    <button class="_button _button-6">Say Hello!</button>
+    <button class="_button _button-3">How It Works</button>
+    <button class="_button _button-4">Become a Host</button>
+    <button class="_button _button-5">Say Hello!</button>
     <div onClick="window.location='index.html';" class="element element-1"></div>
   </header>
   <div class="element element-2"></div>
