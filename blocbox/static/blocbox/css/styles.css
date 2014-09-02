@@ -1,6 +1,6 @@
 body {
   background-color: rgb(250, 250, 250);
-  font: 500 1.125em/1.38 brandon-grotesque;
+  font: 300 1.125em/1.38 brandon-grotesque;
   color: rgb(71, 82, 93);
 }
 
@@ -43,12 +43,19 @@ body {
   background-position: center center;
 }
 
+.social-1 a {
+  opacity: 0.5;
+}
+
+.social-1 a:hover {
+  opacity: 1;
+}
+
 .waitlist a {
   position: absolute;
   top: 4.583em;
   left: 64.5833333333%;
   z-index: 63;
-  width: 238px;
   max-width: 238px;
   min-height: 1.583em;
   font-size: 0.667em;
@@ -60,16 +67,16 @@ body {
   display: block;
 }
 
-a {
-  display: block;
-}
-
 button {
   display: block;
   font-weight: 400;
   line-height: 1.38;
   text-align: center;
   letter-spacing: 1px;
+}
+
+div a {
+  display: block;
 }
 
 div button {
@@ -85,6 +92,13 @@ div button {
   background-color: rgb(255, 255, 255);
   font-size: 1.111em;
   color: rgb(243, 194, 1);
+}
+
+div button:hover {
+  border-width: 0.1em;
+  border-style: solid;
+  background-color: rgb(255, 203, 19);
+  color: rgb(255, 255, 255);
 }
 
 footer {
@@ -153,6 +167,7 @@ header {
 }
 
 header a {
+  display: block;
   position: absolute;
   top: 3.6em;
   width: 126px;
@@ -182,8 +197,10 @@ input {
 
 label {
   display: block;
+  position: relative;
   float: left;
   clear: both;
+  z-index: 69;
   width: 61.4583333333%;
   height: 1.778em;
   margin-top: 0.278em;
@@ -205,13 +222,15 @@ span {
 }
 
 ._text-1 p,
-._text-2 p,
+._text-3 p,
 .container-1 p,
 h2 p {
   margin-bottom: 1em;
 }
 
 .-email {
+  position: relative;
+  z-index: 65;
   width: 258px;
   min-width: 258px;
   max-width: 258px;
@@ -246,7 +265,21 @@ h2 p {
   width: 18.320610687%;
   height: 1.333em;
   margin: 0 auto;
-  background-image: url('../images/arrow-white-faded.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.arrowblued {
+  display: none;
+  position: relative;
+  float: left;
+  clear: both;
+  z-index: 62;
+  width: 19.8473282442%;
+  height: 1.444em;
+  margin: -0.167em 0 0 9.53006%;
+  background-image: url('../images/arrow-blue.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -307,7 +340,20 @@ h2 p {
 }
 
 .bahnav {
+  display: block;
+  position: absolute;
+  top: 3.6em;
   left: 74.3333333333%;
+  width: 126px;
+  max-width: 126px;
+  min-height: 2.333em;
+  padding-top: 0.467em;
+  font-size: 0.833em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .beyond-packages {
@@ -435,7 +481,6 @@ h2 p {
 
 .facebook {
   z-index: 57;
-  background-image: url('../images/facebook-faded.png');
 }
 
 .find {
@@ -535,7 +580,20 @@ h2 p {
 }
 
 .hiwnav {
+  display: block;
+  position: absolute;
+  top: 3.6em;
   left: 61.5%;
+  width: 126px;
+  max-width: 126px;
+  min-height: 2.333em;
+  padding-top: 0.467em;
+  font-size: 0.833em;
+  font-weight: 400;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .hiwsubnav {
@@ -630,10 +688,10 @@ h2 p {
 
 .linkedin {
   z-index: 58;
-  background-image: url('../images/linkedin-faded.png');
 }
 
 .logo {
+  display: block;
   position: fixed;
   top: 1.222em;
   left: 1.8333333333%;
@@ -646,6 +704,7 @@ h2 p {
 }
 
 .logoname {
+  display: block;
   position: absolute;
   top: 2.111em;
   left: 9.5%;
@@ -653,6 +712,20 @@ h2 p {
   max-width: 339px;
   height: 3.667em;
   background-image: url('../images/Name-whited(2).png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.logonameblued {
+  display: none;
+  position: relative;
+  float: left;
+  z-index: 78;
+  width: 37.5833333333%;
+  height: 5.111em;
+  margin: 1.222em 0 0 1%;
+  background-image: url('../images/Logo-and-name---blued.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
@@ -685,9 +758,7 @@ h2 p {
 }
 
 .money {
-  position: relative;
   float: left;
-  z-index: 14;
   width: 28.313253012%;
   height: 15.667em;
   background-image: url('../images/money-greened(3).png');
@@ -724,7 +795,6 @@ h2 p {
 
 .nav1 {
   position: absolute;
-  top: 37.556em;
   left: 0;
   right: 0;
   z-index: 62;
@@ -770,9 +840,7 @@ h2 p {
 }
 
 .pickup {
-  position: relative;
   float: left;
-  z-index: 49;
   width: 28.313253012%;
   height: 15.667em;
   background-image: url('../images/pickup-whited(2).png');
@@ -806,9 +874,7 @@ h2 p {
 }
 
 .ship {
-  position: relative;
   float: left;
-  z-index: 48;
   width: 29.4176706827%;
   height: 16.278em;
   background-image: url('../images/Shipping-Entry-whited.png');
@@ -839,7 +905,7 @@ h2 p {
 
 .subtitle2 {
   position: absolute;
-  top: 16.143em;
+  top: 16.357em;
   left: 0;
   right: 0;
   z-index: 71;
@@ -854,12 +920,11 @@ h2 p {
 
 .twitter {
   z-index: 56;
-  background-image: url('../images/twitter-faded.png');
 }
 
 .waitlist {
   position: absolute;
-  top: 31.278em;
+  top: 31.611em;
   left: 0;
   right: 0;
   z-index: 70;
@@ -870,6 +935,8 @@ h2 p {
 }
 
 .zip {
+  position: relative;
+  z-index: 66;
   width: 131px;
   min-width: 131px;
   max-width: 131px;
@@ -892,6 +959,20 @@ h2 p {
   border-radius: 0.2em;
   font-size: 0.833em;
   color: rgb(255, 255, 255);
+}
+
+.arrow1-1 {
+  background-image: url('../images/arrow-white.png');
+  opacity: 0.5;
+}
+
+.arrow1-1:hover {
+  opacity: 1;
+}
+
+.arrow1-2,
+.arrow1-3 {
+  background-image: url('../images/arrow-white-faded.png');
 }
 
 .bahnav-1 {
@@ -917,9 +998,7 @@ h2 p {
   height: 3.889em;
 }
 
-.disco-1,
-.disco-2,
-.disco-3 {
+.disco-2 {
   width: 7.3333333333%;
   height: 4.889em;
   margin: 8.167em 0 0 7.41667%;
@@ -929,9 +1008,34 @@ h2 p {
   background-position: center center;
 }
 
+.disco-1,
+.disco-3 {
+  position: relative;
+  z-index: 31;
+  width: 7.3333333333%;
+  height: 4.889em;
+  margin: 8.167em 0 0 7.41667%;
+  background-image: url('../images/disco.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.disco-5 {
+  width: 9.6666666666%;
+  min-height: 1.067em;
+  margin: 0.133em 0 0 6.75%;
+  font-size: 0.833em;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+}
+
 .disco-4,
-.disco-5,
 .disco-6 {
+  position: relative;
+  z-index: 30;
   width: 9.6666666666%;
   min-height: 1.067em;
   margin: 0.133em 0 0 6.75%;
@@ -972,29 +1076,37 @@ h2 p {
 }
 
 .facebook-1 {
-  top: 0.667em;
+  top: -5.278em;
+  background-image: url('../images/facebook-outline(2).png');
+}
+
+.facebook-1:hover {
+  visible: true;
 }
 
 .facebook-2 {
-  top: 0.611em;
+  top: 0.667em;
+  background-image: url('../images/facebook-faded.png');
 }
 
 .facebook-3 {
-  top: -5.278em;
+  top: 0.611em;
+  background-image: url('../images/facebook-faded.png');
 }
 
-.handy-1 {
-  width: 7.3333333333%;
-  height: 4.889em;
-  margin: 8.167em 0 0 16.58203%;
-  background-image: url('../images/handy.png');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center center;
+.find-subtext-1,
+.find-subtext-3 {
+  position: relative;
+  z-index: 42;
 }
 
-.handy-2,
-.handy-3 {
+.find-title-1,
+.find-title-3 {
+  position: relative;
+  z-index: 40;
+}
+
+.handy-2 {
   width: 7.3333333333%;
   height: 4.889em;
   margin: 8.167em 0 0 16.58073%;
@@ -1004,10 +1116,36 @@ h2 p {
   background-position: center center;
 }
 
-.handy-4,
-.handy-5,
-.handy-6 {
+.handy-1,
+.handy-3 {
+  position: relative;
+  z-index: 33;
+  width: 7.3333333333%;
+  height: 4.889em;
+  margin: 8.167em 0 0 16.58073%;
+  background-image: url('../images/handy.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.handy-5 {
   clear: both;
+  width: 7.8333333333%;
+  min-height: 1.067em;
+  margin: 0.133em 0 0 16%;
+  font-size: 0.833em;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+}
+
+.handy-4,
+.handy-6 {
+  position: relative;
+  clear: both;
+  z-index: 32;
   width: 7.8333333333%;
   min-height: 1.067em;
   margin: 0.133em 0 0 16%;
@@ -1027,13 +1165,27 @@ h2 p {
   z-index: 68;
 }
 
-.linkedin-1,
-.linkedin-2 {
-  top: 7.389em;
+.hiwsubnav-1 {
+  position: relative;
+  z-index: 61;
 }
 
-.linkedin-3 {
+.bahnav-1:hover,
+.hiwnav-1:hover,
+.hiwsubnav-1:hover {
+  visible: true;
+  color: rgb(255, 255, 255);
+}
+
+.linkedin-1 {
   top: 1.778em;
+  background-image: url('../images/linkedin(2).png');
+}
+
+.linkedin-2,
+.linkedin-3 {
+  top: 7.389em;
+  background-image: url('../images/linkedin-faded.png');
 }
 
 .logo-1 {
@@ -1054,10 +1206,7 @@ h2 p {
   z-index: 67;
 }
 
-.meet-neighbors-1 {
-  margin-left: 10.641%;
-}
-
+.meet-neighbors-1,
 .meet-neighbors-2 {
   margin-left: 10.63943%;
 }
@@ -1066,23 +1215,44 @@ h2 p {
   margin-left: 10.6363%;
 }
 
+.meet-text-1 {
+  position: relative;
+  z-index: 8;
+  margin-left: 7.52698%;
+}
+
+.meet-text-3 {
+  position: relative;
+  z-index: 8;
+  margin-left: 7.52385%;
+}
+
+.meet-title-1,
+.meet-title-3 {
+  position: relative;
+  z-index: 9;
+}
+
 .money-1 {
-  margin-left: 8.83377%;
+  margin-left: 8.8322%;
 }
 
 .money-2 {
+  position: relative;
+  z-index: 14;
   margin-left: 8.8322%;
 }
 
 .money-3 {
+  position: relative;
+  z-index: 14;
   margin-left: 8.83064%;
 }
 
-.meet-text-1,
-.money-text-1,
-.pickup-subtext-1,
-.ship-subtext-1 {
-  margin-left: 7.52855%;
+.money-text-1 {
+  position: relative;
+  z-index: 10;
+  margin-left: 7.52698%;
 }
 
 .meet-text-2,
@@ -1092,16 +1262,40 @@ h2 p {
   margin-left: 7.52698%;
 }
 
-.meet-text-3,
-.money-text-3,
-.pickup-subtext-3,
-.ship-subtext-3 {
+.money-text-3 {
+  position: relative;
+  z-index: 10;
   margin-left: 7.52385%;
 }
 
-.pet-care-1,
-.pet-care-2,
-.pet-care-3 {
+.money-title-1,
+.money-title-3 {
+  position: relative;
+  z-index: 11;
+}
+
+.nav1-1 {
+  top: 37.889em;
+}
+
+.nav1-2,
+.nav1-3 {
+  top: 37.556em;
+}
+
+.perform-text-1,
+.perform-text-3 {
+  position: relative;
+  z-index: 6;
+}
+
+.perform-title-1,
+.perform-title-3 {
+  position: relative;
+  z-index: 7;
+}
+
+.pet-care-2 {
   width: 7.3333333333%;
   height: 4.889em;
   margin: 8.167em 0 0 7.41667%;
@@ -1111,10 +1305,23 @@ h2 p {
   background-position: center center;
 }
 
-.pet-care-4 {
+.pet-care-1,
+.pet-care-3 {
+  position: relative;
+  z-index: 29;
+  width: 7.3333333333%;
+  height: 4.889em;
+  margin: 8.167em 0 0 7.41667%;
+  background-image: url('../images/dog.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.pet-care-5 {
   width: 7.8333333333%;
   min-height: 1.067em;
-  margin: 0.133em 0 0 6.5820299999%;
+  margin: 0.133em 0 0 6.58073%;
   font-size: 0.833em;
   line-height: 1.38;
   text-align: center;
@@ -1122,8 +1329,10 @@ h2 p {
   color: rgb(255, 255, 255);
 }
 
-.pet-care-5,
+.pet-care-4,
 .pet-care-6 {
+  position: relative;
+  z-index: 28;
   width: 7.8333333333%;
   min-height: 1.067em;
   margin: 0.133em 0 0 6.58073%;
@@ -1135,32 +1344,74 @@ h2 p {
 }
 
 .pickup-1 {
-  margin-left: 7.02654%;
+  margin-left: 7.02497%;
 }
 
 .pickup-2 {
+  position: relative;
+  z-index: 49;
   margin-left: 7.02497%;
 }
 
 .pickup-3 {
+  position: relative;
+  z-index: 49;
   margin-left: 7.02341%;
 }
 
+.pickup-subtext-1 {
+  position: relative;
+  z-index: 44;
+  margin-left: 7.52698%;
+}
+
+.pickup-subtext-3 {
+  position: relative;
+  z-index: 44;
+  margin-left: 7.52385%;
+}
+
+.pickup-text-1,
+.pickup-text-3 {
+  position: relative;
+  z-index: 45;
+}
+
 .ship-1 {
-  margin-left: 6.92614%;
+  margin-left: 6.92457%;
 }
 
 .ship-2 {
+  position: relative;
+  z-index: 48;
   margin-left: 6.92457%;
 }
 
 .ship-3 {
+  position: relative;
+  z-index: 48;
   margin-left: 6.92144%;
 }
 
-.sitting-1,
-.sitting-2,
-.sitting-3 {
+.ship-subtext-1 {
+  position: relative;
+  z-index: 43;
+  margin-left: 7.52698%;
+}
+
+.ship-subtext-3 {
+  position: relative;
+  z-index: 43;
+  margin-left: 7.52385%;
+}
+
+.ship-text-1,
+.ship-text-3 {
+  position: relative;
+  z-index: 41;
+}
+
+.sitting-2 {
   width: 7.3333333333%;
   height: 4.889em;
   margin: 8.167em 0 0 7.41667%;
@@ -1170,9 +1421,20 @@ h2 p {
   background-position: center center;
 }
 
-.sitting-4,
-.sitting-5,
-.sitting-6 {
+.sitting-1,
+.sitting-3 {
+  position: relative;
+  z-index: 25;
+  width: 7.3333333333%;
+  height: 4.889em;
+  margin: 8.167em 0 0 7.41667%;
+  background-image: url('../images/sitting(2).png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.sitting-5 {
   width: 7.8333333333%;
   min-height: 1.067em;
   margin: 0.133em 0 0 7.5%;
@@ -1183,20 +1445,32 @@ h2 p {
   color: rgb(255, 255, 255);
 }
 
-.social-1,
-.social-2 {
-  top: 28.333em;
-  height: 10.278em;
+.sitting-4,
+.sitting-6 {
+  position: relative;
+  z-index: 24;
+  width: 7.8333333333%;
+  min-height: 1.067em;
+  margin: 0.133em 0 0 7.5%;
+  font-size: 0.833em;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
 }
 
-.social-3 {
+.social-1 {
   top: 34.333em;
   height: 8.889em;
 }
 
-.storage-1,
-.storage-2,
-.storage-3 {
+.social-2,
+.social-3 {
+  top: 28.333em;
+  height: 10.278em;
+}
+
+.storage-2 {
   width: 7.75%;
   height: 5.167em;
   margin: 7.889em 0 0 7.41667%;
@@ -1206,9 +1480,34 @@ h2 p {
   background-position: center center;
 }
 
+.storage-1,
+.storage-3 {
+  position: relative;
+  z-index: 27;
+  width: 7.75%;
+  height: 5.167em;
+  margin: 7.889em 0 0 7.41667%;
+  background-image: url('../images/storage.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+}
+
+.storage-5 {
+  width: 7.3333333333%;
+  min-height: 1.067em;
+  margin: 0.133em 0 0 7.16667%;
+  font-size: 0.833em;
+  line-height: 1.38;
+  text-align: center;
+  letter-spacing: 1px;
+  color: rgb(255, 255, 255);
+}
+
 .storage-4,
-.storage-5,
 .storage-6 {
+  position: relative;
+  z-index: 26;
   width: 7.3333333333%;
   min-height: 1.067em;
   margin: 0.133em 0 0 7.16667%;
@@ -1220,7 +1519,7 @@ h2 p {
 }
 
 .subtitle-1 {
-  top: 13.286em;
+  top: 13.5em;
   z-index: 72;
 }
 
@@ -1317,15 +1616,18 @@ h2 p {
 }
 
 .twitter-1 {
-  top: 4.056em;
+  top: -1.722em;
+  background-image: url('../images/twitter-outline2(2).png');
 }
 
 .twitter-2 {
-  top: 4em;
+  top: 4.056em;
+  background-image: url('../images/twitter-faded.png');
 }
 
 .twitter-3 {
-  top: -1.722em;
+  top: 4em;
+  background-image: url('../images/twitter-faded.png');
 }
 
 ._button-1 {
@@ -1334,6 +1636,11 @@ h2 p {
   max-width: 126px;
   height: 2.333em;
   border: 0.133em solid rgb(255, 255, 255);
+}
+
+._button-1:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 203, 19);
 }
 
 ._button-2,
@@ -1364,29 +1671,25 @@ h2 p {
   border: 0.133em solid rgb(255, 203, 19);
 }
 
-._container-1 {
-  z-index: 79;
-}
-
-._container-10 {
-  top: 57.667em;
-  background-color: rgb(255, 255, 255);
-}
-
-._container-11,
-._container-8,
-._container-9 {
+._container-10,
+._container-7,
+._container-8 {
   top: 151.889em;
   background-color: #27ae60;
 }
 
-._container-2,
-._container-3 {
+._container-1,
+._container-2 {
   z-index: 70;
 }
 
-._container-6 {
+._container-5 {
   z-index: 14;
+}
+
+._container-9 {
+  top: 57.667em;
+  background-color: rgb(255, 255, 255);
 }
 
 ._text-1 {
@@ -1395,20 +1698,29 @@ h2 p {
   line-height: 0.18;
 }
 
-._text-2 {
+._text-3 {
   top: 2.447em;
   z-index: 64;
   line-height: 0.1;
 }
 
-._text-3 {
+._text-4 {
   top: 2.6em;
   z-index: 64;
   width: 636px;
   line-height: 0.18;
 }
 
+.privacy-warning a {
+  text-decoration: none;
+}
+
 @media(max-width: 1020px) {
+  div label {
+    position: relative;
+    z-index: 69;
+  }
+
   h1 {
     left: 0;
     right: 0;
@@ -1417,11 +1729,11 @@ h2 p {
     font-size: 4.167em;
   }
 
-  ._container-11,
+  ._container-1,
+  ._container-10,
   ._container-2,
-  ._container-3,
+  ._container-7,
   ._container-8,
-  ._container-9,
   .babh,
   .babh-background,
   .babh-text,
@@ -1450,9 +1762,11 @@ h2 p {
     margin-left: auto;
   }
 
+  .babh .meet-neighbors {
+    margin-left: 10.63822%;
+  }
+
   .babh .money {
-    position: relative;
-    z-index: 14;
     margin-left: 8.83504%;
   }
 
@@ -1475,16 +1789,20 @@ h2 p {
     margin-left: 7.22565%;
   }
 
+  .bahnav {
+    left: 599.0716911764%;
+  }
+
   .hiw .pickup {
-    position: relative;
-    z-index: 49;
     margin-left: 6.96357%;
   }
 
   .hiw .ship {
-    position: relative;
-    z-index: 48;
     margin-left: 6.8454499999%;
+  }
+
+  .hiwnav {
+    left: 491.9990808823%;
   }
 
   .learn-host .arrow-2 {
@@ -1494,6 +1812,21 @@ h2 p {
   .logoname {
     top: 2.056em;
     left: 10.5744485294%;
+  }
+
+  .logonameblued {
+    position: relative;
+    z-index: 78;
+    width: 37.5827205882%;
+    margin-top: 5.778em;
+    margin-left: 3.91391%;
+  }
+
+  .nav1 .arrowblued {
+    position: relative;
+    z-index: 62;
+    width: 16.8654580152%;
+    margin-left: 15.58922%;
   }
 
   .subtitle {
@@ -1515,17 +1848,37 @@ h2 p {
     font-size: 1.333em;
   }
 
-  .babh .meet-neighbors-1 {
-    margin-left: 10.64006%;
+  .waitlist .-email {
+    position: relative;
+    z-index: 65;
   }
 
-  .babh .meet-neighbors-2,
-  .babh .meet-neighbors-3 {
-    margin-left: 10.63822%;
+  .waitlist .zip {
+    position: relative;
+    z-index: 66;
   }
 
-  .babh-text .money-text-1,
-  .hiwtext .pickup-subtext-1 {
+  .babh .money-2,
+  .babh .money-3 {
+    position: relative;
+    z-index: 14;
+  }
+
+  .babh-text .meet-text-1,
+  .babh-text .meet-text-3 {
+    position: relative;
+    z-index: 8;
+  }
+
+  .babh-text .meet-title-1,
+  .babh-text .meet-title-3 {
+    position: relative;
+    z-index: 9;
+  }
+
+  .babh-text .money-text-1 {
+    position: relative;
+    z-index: 10;
     margin-left: 5.42985%;
   }
 
@@ -1534,18 +1887,44 @@ h2 p {
     margin-left: 5.66609%;
   }
 
-  .babh-text .money-text-3,
-  .hiwtext .pickup-subtext-3 {
+  .babh-text .money-text-3 {
+    position: relative;
+    z-index: 10;
     margin-left: 6.60921%;
   }
 
+  .babh-text .money-title-1,
+  .babh-text .money-title-3 {
+    position: relative;
+    z-index: 11;
+  }
+
+  .babh-text .perform-text-1,
+  .babh-text .perform-text-3 {
+    position: relative;
+    z-index: 6;
+  }
+
+  .babh-text .perform-title-1,
+  .babh-text .perform-title-3 {
+    position: relative;
+    z-index: 7;
+  }
+
+  .beyond-packages .disco-2 {
+    margin-left: 7.35141%;
+  }
+
   .beyond-packages .disco-1,
-  .beyond-packages .disco-2,
   .beyond-packages .disco-3 {
+    position: relative;
+    z-index: 31;
     margin-left: 7.35141%;
   }
 
   .beyond-packages .disco-4 {
+    position: relative;
+    z-index: 30;
     margin-left: 4.90043%;
   }
 
@@ -1554,11 +1933,15 @@ h2 p {
   }
 
   .beyond-packages .disco-6 {
+    position: relative;
+    z-index: 30;
     margin-left: 5.87929%;
   }
 
   .beyond-packages .handy-1 {
-    margin-left: 16.58088%;
+    position: relative;
+    z-index: 33;
+    margin-left: 16.57935%;
   }
 
   .beyond-packages .handy-2 {
@@ -1566,29 +1949,38 @@ h2 p {
   }
 
   .beyond-packages .handy-3 {
+    position: relative;
+    z-index: 33;
     margin-left: 16.57782%;
   }
 
-  .beyond-packages .handy-4 {
-    margin-left: 15.99724%;
-  }
-
-  .beyond-packages .handy-5,
-  .beyond-packages .handy-6 {
+  .beyond-packages .handy-5 {
     margin-left: 15.99571%;
   }
 
-  .beyond-packages .pet-care-1,
+  .beyond-packages .handy-4,
+  .beyond-packages .handy-6 {
+    position: relative;
+    z-index: 32;
+    margin-left: 15.99571%;
+  }
+
   .beyond-packages .pet-care-2,
-  .beyond-packages .pet-care-3,
-  .beyond-packages .sitting-1,
-  .beyond-packages .sitting-2,
-  .beyond-packages .sitting-3 {
+  .beyond-packages .sitting-2 {
+    margin-left: 7.41575%;
+  }
+
+  .beyond-packages .pet-care-1,
+  .beyond-packages .pet-care-3 {
+    position: relative;
+    z-index: 29;
     margin-left: 7.41575%;
   }
 
   .beyond-packages .pet-care-4 {
-    margin-left: 6.58088%;
+    position: relative;
+    z-index: 28;
+    margin-left: 6.57935%;
   }
 
   .beyond-packages .pet-care-5 {
@@ -1596,10 +1988,27 @@ h2 p {
   }
 
   .beyond-packages .pet-care-6 {
+    position: relative;
+    z-index: 28;
     margin-left: 6.57782%;
   }
 
+  .beyond-packages .sitting-1,
+  .beyond-packages .sitting-3 {
+    position: relative;
+    z-index: 25;
+    margin-left: 7.41575%;
+  }
+
+  .beyond-packages .sitting-4,
+  .beyond-packages .sitting-6 {
+    position: relative;
+    z-index: 24;
+  }
+
   .beyond-packages .storage-1 {
+    position: relative;
+    z-index: 27;
     margin-left: 5.58824%;
   }
 
@@ -1608,16 +2017,84 @@ h2 p {
   }
 
   .beyond-packages .storage-3 {
+    position: relative;
+    z-index: 27;
     margin-left: 6.56863%;
   }
 
-  .beyond-packages .storage-4 {
-    margin-left: 7.16452%;
+  .beyond-packages .storage-5 {
+    margin-left: 7.16299%;
   }
 
-  .beyond-packages .storage-5,
+  .beyond-packages .storage-4,
   .beyond-packages .storage-6 {
+    position: relative;
+    z-index: 26;
     margin-left: 7.16299%;
+  }
+
+  .hiw .find-3 {
+    position: relative;
+    z-index: 47;
+  }
+
+  .hiw .pickup-2,
+  .hiw .pickup-3 {
+    position: relative;
+    z-index: 49;
+  }
+
+  .hiw .ship-2,
+  .hiw .ship-3 {
+    position: relative;
+    z-index: 48;
+  }
+
+  .hiwtext .find-subtext-1,
+  .hiwtext .find-subtext-3 {
+    position: relative;
+    z-index: 42;
+  }
+
+  .hiwtext .find-title-1,
+  .hiwtext .find-title-3 {
+    position: relative;
+    z-index: 40;
+  }
+
+  .hiwtext .pickup-subtext-1 {
+    position: relative;
+    z-index: 44;
+    margin-left: 5.42985%;
+  }
+
+  .hiwtext .pickup-subtext-3 {
+    position: relative;
+    z-index: 44;
+    margin-left: 6.60921%;
+  }
+
+  .hiwtext .pickup-text-1,
+  .hiwtext .pickup-text-3 {
+    position: relative;
+    z-index: 45;
+  }
+
+  .hiwtext .ship-subtext-1,
+  .hiwtext .ship-subtext-3 {
+    position: relative;
+    z-index: 43;
+  }
+
+  .hiwtext .ship-text-1,
+  .hiwtext .ship-text-3 {
+    position: relative;
+    z-index: 41;
+  }
+
+  .nav1 .hiwsubnav-1 {
+    position: relative;
+    z-index: 61;
   }
 
   .subtitle-1 {
@@ -1632,19 +2109,15 @@ h2 p {
     top: 12.333em;
   }
 
-  ._container .bahnav-1,
   ._container .bahnav-2,
   ._container .bahnav-3 {
     left: 73.0575980392%;
   }
 
-  ._container .copyright-2 {
-    margin-left: 6.49663%;
-  }
-
   ._container .copyright-1,
+  ._container .copyright-2,
   ._container .copyright-3 {
-    margin-left: 6.49816%;
+    margin-left: 6.49663%;
   }
 
   ._container .goodhood-1,
@@ -1653,7 +2126,6 @@ h2 p {
     margin-left: 0.66483%;
   }
 
-  ._container .hiwnav-1,
   ._container .hiwnav-2,
   ._container .hiwnav-3 {
     left: 60%;
@@ -1665,25 +2137,17 @@ h2 p {
     margin-left: 1.16575%;
   }
 
-  ._container-1 {
-    left: 0;
-    right: 0;
-    width: 820%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   ._text-1 {
     top: 2.573em;
     width: 100%;
   }
 
-  ._text-2 {
+  ._text-3 {
     top: 2.773em;
     width: 612px;
   }
 
-  ._text-3 {
+  ._text-4 {
     top: 2.947em;
     width: 588px;
   }
@@ -1692,6 +2156,11 @@ h2 p {
 @media(max-width: 915px) {
   body {
     font-size: 1.125em;
+  }
+
+  div label {
+    position: relative;
+    z-index: 69;
   }
 
   h1 {
@@ -1703,11 +2172,10 @@ h2 p {
   }
 
   ._container-1,
-  ._container-11,
+  ._container-10,
   ._container-2,
-  ._container-3,
+  ._container-7,
   ._container-8,
-  ._container-9,
   .babh,
   .babh-background,
   .babh-text,
@@ -1742,13 +2210,16 @@ h2 p {
   }
 
   .babh .money {
-    position: relative;
-    z-index: 14;
     margin-left: 8.83261%;
   }
 
   .babh .perform {
     margin-left: 1.2015499999%;
+  }
+
+  .babh-text .meet-title,
+  .hiwtext .ship-text {
+    margin-left: 7.82652%;
   }
 
   .babh-text .meet-text,
@@ -1763,17 +2234,35 @@ h2 p {
     margin-left: 7.2278%;
   }
 
+  .bahnav {
+    left: 579.9231557377%;
+  }
+
   .hiw .pickup {
-    position: relative;
     clear: both;
-    z-index: 49;
     margin-left: 6.96445%;
   }
 
   .hiw .ship {
-    position: relative;
-    z-index: 48;
     margin-left: 6.98091%;
+  }
+
+  .hiwnav {
+    left: 457.943989071%;
+  }
+
+  .logonameblued {
+    position: relative;
+    z-index: 78;
+    width: 37.5819672131%;
+    margin-left: 3.91223%;
+  }
+
+  .nav1 .arrowblued {
+    position: relative;
+    z-index: 62;
+    width: 15.1240458015%;
+    margin-left: 19.13168%;
   }
 
   .subtitle {
@@ -1783,76 +2272,212 @@ h2 p {
     margin-left: auto;
   }
 
+  .waitlist .-email {
+    position: relative;
+    z-index: 65;
+  }
+
+  .waitlist .zip {
+    position: relative;
+    z-index: 66;
+  }
+
+  .babh .money-2,
+  .babh .money-3 {
+    position: relative;
+    z-index: 14;
+  }
+
+  .babh-text .meet-text-1,
+  .babh-text .meet-text-3 {
+    position: relative;
+    z-index: 8;
+  }
+
   .babh-text .meet-title-1,
-  .hiwtext .ship-text-1 {
-    margin-left: 7.82857%;
+  .babh-text .meet-title-3 {
+    position: relative;
+    z-index: 9;
   }
 
-  .babh-text .meet-title-2,
-  .babh-text .meet-title-3,
-  .hiwtext .ship-text-2,
-  .hiwtext .ship-text-3 {
-    margin-left: 7.82652%;
+  .babh-text .money-text-1,
+  .babh-text .money-text-3 {
+    position: relative;
+    z-index: 10;
   }
 
-  .beyond-packages .disco-1,
+  .babh-text .money-title-1,
+  .babh-text .money-title-3 {
+    position: relative;
+    z-index: 11;
+  }
+
+  .babh-text .perform-text-1,
+  .babh-text .perform-text-3 {
+    position: relative;
+    z-index: 6;
+  }
+
+  .babh-text .perform-title-1,
+  .babh-text .perform-title-3 {
+    position: relative;
+    z-index: 7;
+  }
+
   .beyond-packages .disco-2,
-  .beyond-packages .disco-3,
-  .beyond-packages .storage-1,
-  .beyond-packages .storage-2,
-  .beyond-packages .storage-3 {
+  .beyond-packages .storage-2 {
     margin-left: 7.42999%;
   }
 
-  .beyond-packages .disco-4,
-  .beyond-packages .disco-5,
-  .beyond-packages .disco-6 {
+  .beyond-packages .disco-1,
+  .beyond-packages .disco-3 {
+    position: relative;
+    z-index: 31;
+    margin-left: 7.42999%;
+  }
+
+  .beyond-packages .disco-5 {
     margin-left: 6.77596%;
   }
 
-  .beyond-packages .handy-1 {
-    margin-left: 16.58128%;
+  .beyond-packages .disco-4,
+  .beyond-packages .disco-6 {
+    position: relative;
+    z-index: 30;
+    margin-left: 6.77596%;
   }
 
-  .beyond-packages .handy-2,
-  .beyond-packages .handy-3 {
+  .beyond-packages .handy-2 {
     margin-left: 16.57958%;
   }
 
-  .beyond-packages .handy-4,
-  .beyond-packages .handy-5,
-  .beyond-packages .handy-6 {
+  .beyond-packages .handy-1,
+  .beyond-packages .handy-3 {
+    position: relative;
+    z-index: 33;
+    margin-left: 16.57958%;
+  }
+
+  .beyond-packages .handy-5 {
     margin-left: 15.99898%;
   }
 
-  .beyond-packages .pet-care-1,
-  .beyond-packages .pet-care-2,
-  .beyond-packages .pet-care-3 {
+  .beyond-packages .handy-4,
+  .beyond-packages .handy-6 {
+    position: relative;
+    z-index: 32;
+    margin-left: 15.99898%;
+  }
+
+  .beyond-packages .pet-care-2 {
     margin-left: 7.3207%;
   }
 
-  .beyond-packages .pet-care-4 {
-    margin-left: 6.5812799999%;
+  .beyond-packages .pet-care-1,
+  .beyond-packages .pet-care-3 {
+    position: relative;
+    z-index: 29;
+    margin-left: 7.3207%;
   }
 
-  .beyond-packages .pet-care-5,
-  .beyond-packages .pet-care-6 {
+  .beyond-packages .pet-care-5 {
     margin-left: 6.57958%;
   }
 
-  .beyond-packages .sitting-1,
-  .beyond-packages .sitting-2,
-  .beyond-packages .sitting-3 {
+  .beyond-packages .pet-care-4,
+  .beyond-packages .pet-care-6 {
+    position: relative;
+    z-index: 28;
+    margin-left: 6.57958%;
+  }
+
+  .beyond-packages .sitting-2 {
     margin-left: 7.41633%;
   }
 
-  .beyond-packages .storage-4 {
-    margin-left: 7.16359%;
+  .beyond-packages .sitting-1,
+  .beyond-packages .sitting-3 {
+    position: relative;
+    z-index: 25;
+    margin-left: 7.41633%;
   }
 
-  .beyond-packages .storage-5,
-  .beyond-packages .storage-6 {
+  .beyond-packages .sitting-4,
+  .beyond-packages .sitting-6 {
+    position: relative;
+    z-index: 24;
+  }
+
+  .beyond-packages .storage-1,
+  .beyond-packages .storage-3 {
+    position: relative;
+    z-index: 27;
+    margin-left: 7.42999%;
+  }
+
+  .beyond-packages .storage-5 {
     margin-left: 7.16189%;
+  }
+
+  .beyond-packages .storage-4,
+  .beyond-packages .storage-6 {
+    position: relative;
+    z-index: 26;
+    margin-left: 7.16189%;
+  }
+
+  .hiw .find-1,
+  .hiw .find-3 {
+    position: relative;
+    z-index: 47;
+  }
+
+  .hiw .pickup-2,
+  .hiw .pickup-3 {
+    position: relative;
+    z-index: 49;
+  }
+
+  .hiw .ship-2,
+  .hiw .ship-3 {
+    position: relative;
+    z-index: 48;
+  }
+
+  .hiwtext .find-subtext-1,
+  .hiwtext .find-subtext-3 {
+    position: relative;
+    z-index: 42;
+  }
+
+  .hiwtext .find-title-1,
+  .hiwtext .find-title-3 {
+    position: relative;
+    z-index: 40;
+  }
+
+  .hiwtext .pickup-subtext-1,
+  .hiwtext .pickup-subtext-3 {
+    position: relative;
+    z-index: 44;
+  }
+
+  .hiwtext .pickup-text-1,
+  .hiwtext .pickup-text-3 {
+    position: relative;
+    z-index: 45;
+  }
+
+  .hiwtext .ship-subtext-1,
+  .hiwtext .ship-subtext-3 {
+    position: relative;
+    z-index: 43;
+  }
+
+  .hiwtext .ship-text-1,
+  .hiwtext .ship-text-3 {
+    position: relative;
+    z-index: 41;
   }
 
   .learn-host .arrow-2-1,
@@ -1874,6 +2499,11 @@ h2 p {
     left: 11.0809426229%;
   }
 
+  .nav1 .hiwsubnav-1 {
+    position: relative;
+    z-index: 61;
+  }
+
   .subtitle-2 {
     top: 14.208em;
   }
@@ -1882,7 +2512,6 @@ h2 p {
     top: 11.917em;
   }
 
-  ._container .bahnav-1,
   ._container .bahnav-2,
   ._container .bahnav-3 {
     left: 70.7223360655%;
@@ -1900,7 +2529,6 @@ h2 p {
     margin-left: 0.76503%;
   }
 
-  ._container .hiwnav-1,
   ._container .hiwnav-2,
   ._container .hiwnav-3 {
     left: 55.8469945355%;
@@ -1917,19 +2545,19 @@ h2 p {
     width: 816px;
   }
 
-  ._text-2 {
+  ._text-3 {
     top: 3.2em;
   }
 
-  ._text-3 {
+  ._text-4 {
     top: 3.4em;
   }
 }
 
 @media(max-width: 820px) {
-  button {
-    border-radius: 0.25em;
-    font-size: 0.667em;
+  div label {
+    position: relative;
+    z-index: 69;
   }
 
   h1 {
@@ -1940,10 +2568,9 @@ h2 p {
     font-size: 3.056em;
   }
 
-  ._container-1,
-  ._container-11,
+  ._container-10,
+  ._container-7,
   ._container-8,
-  ._container-9,
   .babh,
   .babh-background,
   .babh-text,
@@ -1986,8 +2613,6 @@ h2 p {
   }
 
   .babh .money {
-    position: relative;
-    z-index: 14;
     margin-left: 8.8341999999%;
   }
 
@@ -2013,78 +2638,265 @@ h2 p {
   }
 
   .hiw .pickup {
-    position: relative;
     clear: none;
-    z-index: 49;
   }
 
   .hiw .ship {
-    position: relative;
-    z-index: 48;
     margin-left: 6.89885%;
   }
 
-  .beyond-packages .disco-1,
+  .bahnav,
+  .hiwnav {
+    top: 4.5em;
+    min-height: 2.917em;
+    padding-top: 0.583em;
+    font-size: 0.667em;
+  }
+
+  .logonameblued {
+    position: relative;
+    z-index: 78;
+    width: 37.5819359756%;
+    margin-left: 3.91578%;
+  }
+
+  .nav1 .arrowblued {
+    position: relative;
+    z-index: 62;
+    width: 13.5615458015%;
+    margin-top: 43.389em;
+    margin-left: 282.08492%;
+  }
+
+  .waitlist .-email {
+    position: relative;
+    z-index: 65;
+  }
+
+  .waitlist .zip {
+    position: relative;
+    z-index: 66;
+  }
+
+  .babh .money-2,
+  .babh .money-3 {
+    position: relative;
+    z-index: 14;
+  }
+
+  .babh-text .meet-text-1,
+  .babh-text .meet-text-3 {
+    position: relative;
+    z-index: 8;
+  }
+
+  .babh-text .meet-title-1,
+  .babh-text .meet-title-3 {
+    position: relative;
+    z-index: 9;
+  }
+
+  .babh-text .money-text-1,
+  .babh-text .money-text-3 {
+    position: relative;
+    z-index: 10;
+  }
+
+  .babh-text .money-title-1,
+  .babh-text .money-title-3 {
+    position: relative;
+    z-index: 11;
+  }
+
+  .babh-text .perform-text-1,
+  .babh-text .perform-text-3 {
+    position: relative;
+    z-index: 6;
+  }
+
+  .babh-text .perform-title-1,
+  .babh-text .perform-title-3 {
+    position: relative;
+    z-index: 7;
+  }
+
+  .bahnav-1 {
+    left: 70.722179878%;
+  }
+
   .beyond-packages .disco-2,
-  .beyond-packages .disco-3,
-  .beyond-packages .storage-1,
-  .beyond-packages .storage-2,
-  .beyond-packages .storage-3 {
+  .beyond-packages .storage-2 {
     margin-left: 7.4295%;
   }
 
-  .beyond-packages .disco-4,
-  .beyond-packages .disco-5,
-  .beyond-packages .disco-6 {
+  .beyond-packages .disco-1,
+  .beyond-packages .disco-3 {
+    position: relative;
+    z-index: 31;
+    margin-left: 7.4295%;
+  }
+
+  .beyond-packages .disco-5 {
     margin-left: 6.77401%;
   }
 
-  .beyond-packages .handy-1,
-  .beyond-packages .handy-2,
-  .beyond-packages .handy-3 {
+  .beyond-packages .disco-4,
+  .beyond-packages .disco-6 {
+    position: relative;
+    z-index: 30;
+    margin-left: 6.77401%;
+  }
+
+  .beyond-packages .handy-2 {
     margin-left: 16.57965%;
   }
 
-  .beyond-packages .handy-4,
-  .beyond-packages .handy-5,
-  .beyond-packages .handy-6 {
+  .beyond-packages .handy-1,
+  .beyond-packages .handy-3 {
+    position: relative;
+    z-index: 33;
+    margin-left: 16.57965%;
+  }
+
+  .beyond-packages .handy-5 {
     margin-left: 15.99848%;
   }
 
-  .beyond-packages .pet-care-1,
-  .beyond-packages .pet-care-2,
-  .beyond-packages .pet-care-3 {
+  .beyond-packages .handy-4,
+  .beyond-packages .handy-6 {
+    position: relative;
+    z-index: 32;
+    margin-left: 15.99848%;
+  }
+
+  .beyond-packages .pet-care-2 {
     margin-left: 7.31898%;
   }
 
-  .beyond-packages .pet-care-4,
-  .beyond-packages .pet-care-5,
-  .beyond-packages .pet-care-6 {
+  .beyond-packages .pet-care-1,
+  .beyond-packages .pet-care-3 {
+    position: relative;
+    z-index: 29;
+    margin-left: 7.31898%;
+  }
+
+  .beyond-packages .pet-care-5 {
     margin-left: 6.57965%;
   }
 
-  .beyond-packages .sitting-1,
-  .beyond-packages .sitting-2,
-  .beyond-packages .sitting-3 {
+  .beyond-packages .pet-care-4,
+  .beyond-packages .pet-care-6 {
+    position: relative;
+    z-index: 28;
+    margin-left: 6.57965%;
+  }
+
+  .beyond-packages .sitting-2 {
     margin-left: 7.41616%;
   }
 
-  .beyond-packages .storage-4,
+  .beyond-packages .sitting-1,
+  .beyond-packages .sitting-3 {
+    position: relative;
+    z-index: 25;
+    margin-left: 7.41616%;
+  }
+
+  .beyond-packages .sitting-4,
+  .beyond-packages .sitting-6 {
+    position: relative;
+    z-index: 24;
+  }
+
+  .beyond-packages .storage-1,
+  .beyond-packages .storage-3 {
+    position: relative;
+    z-index: 27;
+    margin-left: 7.4295%;
+  }
+
+  .beyond-packages .storage-4 {
+    position: relative;
+    z-index: 26;
+    margin-left: 7.19322%;
+  }
+
   .beyond-packages .storage-5 {
     margin-left: 7.19322%;
   }
 
   .beyond-packages .storage-6 {
+    position: relative;
+    z-index: 26;
     margin-left: 7.16654%;
   }
 
-  .hiw .pickup-1,
+  .hiw .find-1,
+  .hiw .find-3 {
+    position: relative;
+    z-index: 47;
+  }
+
+  .hiw .pickup-1 {
+    margin-left: 6.89885%;
+  }
+
   .hiw .pickup-2 {
+    position: relative;
+    z-index: 49;
     margin-left: 6.89885%;
   }
 
   .hiw .pickup-3 {
+    position: relative;
+    z-index: 49;
     margin-left: 6.96543%;
+  }
+
+  .hiw .ship-2,
+  .hiw .ship-3 {
+    position: relative;
+    z-index: 48;
+  }
+
+  .hiwnav-1 {
+    left: 55.8460365853%;
+  }
+
+  .hiwtext .find-subtext-1,
+  .hiwtext .find-subtext-3 {
+    position: relative;
+    z-index: 42;
+  }
+
+  .hiwtext .find-title-1,
+  .hiwtext .find-title-3 {
+    position: relative;
+    z-index: 40;
+  }
+
+  .hiwtext .pickup-subtext-1,
+  .hiwtext .pickup-subtext-3 {
+    position: relative;
+    z-index: 44;
+  }
+
+  .hiwtext .pickup-text-1,
+  .hiwtext .pickup-text-3 {
+    position: relative;
+    z-index: 45;
+  }
+
+  .hiwtext .ship-subtext-1,
+  .hiwtext .ship-subtext-3 {
+    position: relative;
+    z-index: 43;
+  }
+
+  .hiwtext .ship-text-1,
+  .hiwtext .ship-text-3 {
+    position: relative;
+    z-index: 41;
   }
 
   .learn-host .arrow-2-1,
@@ -2104,12 +2916,19 @@ h2 p {
     height: 2.889em;
   }
 
+  .nav1 .hiwsubnav-1 {
+    position: relative;
+    z-index: 61;
+  }
+
   ._button-1,
   ._button-2,
   ._button-3 {
     top: 4.5em;
     height: 2.917em;
     border-width: 0.167em;
+    border-radius: 0.25em;
+    font-size: 0.667em;
   }
 
   ._container .copyright-1,
@@ -2130,8 +2949,8 @@ h2 p {
     margin-left: 0.97561%;
   }
 
-  ._container-2,
-  ._container-3 {
+  ._container-1,
+  ._container-2 {
     left: 0;
     right: 0;
     width: 820px;
@@ -2143,12 +2962,992 @@ h2 p {
     top: 3.509em;
   }
 
-  ._text-2 {
+  ._text-3 {
     top: 3.782em;
   }
 
-  ._text-3 {
+  ._text-4 {
     top: 4.018em;
+  }
+}
+
+@media(max-width: 720px) {
+  body {
+    font-size: 1.125em;
+  }
+
+  .hosttitle-3 h3 {
+    width: 77.9166666666%;
+  }
+
+  .waitlist a {
+    top: 17.083em;
+    left: 0;
+    right: 0;
+    max-width: none;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  div button {
+    top: 8.45em;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    background-color: rgb(41, 128, 185);
+    color: rgb(255, 255, 255);
+  }
+
+  div label {
+    position: relative;
+    z-index: 69;
+    width: 99.2307692307%;
+    margin-top: 0.5em;
+  }
+
+  label span {
+    width: 88.7596899224%;
+    height: 2.462em;
+    margin-left: 15px;
+    font-size: 0.722em;
+    color: rgb(41, 128, 185);
+  }
+
+  .logonameblued {
+    display: block;
+    position: relative;
+    z-index: 78;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .nav1 .arrowblued {
+    display: block;
+    position: absolute;
+    float: none;
+    clear: none;
+    left: 0;
+    right: 0;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .subtitle2 {
+    top: 16em;
+    left: 0;
+    right: 0;
+    width: 622px;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: 400;
+    color: rgb(41, 128, 185);
+  }
+
+  .waitlist {
+    top: 27em;
+    left: 0;
+    right: 0;
+    width: 260px;
+    height: 12.444em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .waitlist .-email {
+    position: relative;
+    z-index: 65;
+    border-color: rgb(41, 128, 185);
+    background-color: rgb(52, 152, 219);
+  }
+
+  .waitlist .zip {
+    position: relative;
+    clear: both;
+    z-index: 66;
+    width: 258px;
+    max-width: none;
+    margin-top: 0.5em;
+    margin-left: 0;
+    border-color: rgb(41, 128, 185);
+    background-color: rgb(52, 152, 219);
+  }
+
+  .babh .meet-neighbors-3 {
+    margin-left: 10.63641%;
+  }
+
+  .babh .money-3 {
+    position: relative;
+    z-index: 14;
+    margin-left: 8.8323%;
+  }
+
+  .babh .perform-3 {
+    margin-left: 1.20013%;
+  }
+
+  .babh-3 {
+    top: 121.833em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._container-10,
+  ._text-7,
+  .babh-background-3,
+  .beyond-packages .beyond-title-3,
+  .beyond-packages-3,
+  .details-1-3,
+  .details-2-3,
+  .hiw-background-3,
+  .learn-host-3,
+  .nav1 .arrow1-1 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .babh-text .meet-text-3 {
+    position: relative;
+    z-index: 8;
+    width: 28.244633624%;
+    margin-top: 0.333em;
+    margin-left: 7.5623%;
+    font-weight: 400;
+  }
+
+  .babh-text .meet-title-3 {
+    position: relative;
+    z-index: 9;
+    width: 28.244633624%;
+    margin-left: 7.84569%;
+  }
+
+  .babh-text .money-text-3 {
+    position: relative;
+    z-index: 10;
+    width: 28.244633624%;
+    margin-top: 0.333em;
+    margin-left: 7.53166%;
+    font-weight: 400;
+  }
+
+  .babh-text .money-title-3 {
+    position: relative;
+    z-index: 11;
+    width: 28.4117616336%;
+    margin-left: 7.24571%;
+  }
+
+  .babh-text .perform-text-3 {
+    position: relative;
+    z-index: 6;
+    width: 28.244633624%;
+    margin-top: 0.333em;
+    font-weight: 400;
+  }
+
+  .babh-text .perform-title-3 {
+    position: relative;
+    z-index: 7;
+    width: 28.244633624%;
+  }
+
+  .babh-text-3 {
+    top: 135.111em;
+    left: 0;
+    right: 0;
+    width: 85%;
+    height: 16.389em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .beyond-packages .beyond-text-3 {
+    top: 5.067em;
+    left: 0;
+    right: 0;
+    width: 66.8055555555%;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: 400;
+  }
+
+  .beyond-packages .disco-3 {
+    position: relative;
+    z-index: 31;
+    margin-left: 7.42839%;
+  }
+
+  .beyond-packages .disco-6 {
+    position: relative;
+    z-index: 30;
+    margin-left: 6.75998%;
+  }
+
+  .beyond-packages .handy-3 {
+    position: relative;
+    z-index: 33;
+    margin-left: 16.57335%;
+  }
+
+  .beyond-packages .handy-6 {
+    position: relative;
+    z-index: 32;
+    margin-left: 15.98524%;
+  }
+
+  .beyond-packages .pet-care-3 {
+    position: relative;
+    z-index: 29;
+    margin-left: 7.31771%;
+  }
+
+  .beyond-packages .pet-care-6 {
+    position: relative;
+    z-index: 28;
+    margin-left: 6.56684%;
+  }
+
+  .beyond-packages .sitting-3 {
+    position: relative;
+    z-index: 25;
+    margin-left: 7.40234%;
+  }
+
+  .beyond-packages .sitting-6 {
+    position: relative;
+    z-index: 24;
+  }
+
+  .beyond-packages .storage-3 {
+    position: relative;
+    z-index: 27;
+    margin-left: 7.42839%;
+  }
+
+  .beyond-packages .storage-6 {
+    position: relative;
+    z-index: 26;
+    margin-left: 7.1658%;
+  }
+
+  .h2subtitle-3 {
+    left: 0;
+    right: 0;
+    width: 61.9444444444%;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: 400;
+    line-height: 1.78;
+  }
+
+  .hiw .find-3 {
+    position: relative;
+    z-index: 47;
+  }
+
+  .hiw .pickup-3 {
+    position: relative;
+    z-index: 49;
+    margin-left: 6.96282%;
+  }
+
+  .hiw .ship-3 {
+    position: relative;
+    z-index: 48;
+    margin-left: 6.89745%;
+  }
+
+  .hiw-3 {
+    top: 60.444em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hiwtext .find-subtext-3 {
+    position: relative;
+    z-index: 42;
+    font-weight: 400;
+  }
+
+  .hiwtext .find-title-3 {
+    position: relative;
+    z-index: 40;
+  }
+
+  .hiwtext .pickup-subtext-3 {
+    position: relative;
+    z-index: 44;
+    margin-left: 7.50667%;
+    font-weight: 400;
+  }
+
+  .hiwtext .pickup-text-3 {
+    position: relative;
+    z-index: 45;
+    margin-left: 7.2269%;
+  }
+
+  .hiwtext .ship-subtext-3 {
+    position: relative;
+    z-index: 43;
+    margin-left: 7.50667%;
+    font-weight: 400;
+  }
+
+  .hiwtext .ship-text-3 {
+    position: relative;
+    z-index: 41;
+    margin-left: 7.82827%;
+  }
+
+  .hiwtext-3 {
+    top: 74em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hosttitle .text-3 {
+    left: 0;
+    right: 0;
+    width: 62.5%;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: 400;
+    line-height: 1.58;
+  }
+
+  .hosttitle-3 {
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 7em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .landing-background-1 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(250, 250, 250);
+    font-family: brandon-grotesque;
+    font-style: normal;
+  }
+
+  .learn-host .arrow-2-3 {
+    margin-left: 48.99957%;
+  }
+
+  .learn-host .learn-host-text-3 {
+    left: 0;
+    right: 0;
+    height: 1.867em;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 0.2em;
+    font-size: 0.833em;
+  }
+
+  .logo-1 {
+    visibility: hidden;
+    position: absolute;
+    left: 1.8315972222%;
+    width: 10.0824652777%;
+  }
+
+  .nav1 .hiwsubnav-1 {
+    position: relative;
+    z-index: 61;
+    height: 1.867em;
+    margin-top: 0.733em;
+    border-radius: 0.2em;
+    font-size: 0.833em;
+    color: rgb(41, 128, 185);
+  }
+
+  .nav1-1 {
+    top: 41.389em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .bahnav-1,
+  .hiwnav-1,
+  .logoname-1,
+  .social-1 {
+    visibility: hidden;
+  }
+
+  .subtitle-1 {
+    top: 12.667em;
+    left: 0;
+    right: 0;
+    width: 622px;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: 400;
+    color: rgb(41, 128, 185);
+  }
+
+  ._button-1 {
+    position: absolute;
+    left: 81.1111111111%;
+    width: 15.8333333333%;
+    height: 2.583em;
+    border-color: rgb(52, 152, 219);
+    color: rgb(52, 152, 219);
+  }
+
+  ._container .copyright-3 {
+    margin-left: 6.49957%;
+  }
+
+  ._container .goodhood-3 {
+    width: 12.7777777777%;
+    margin-left: 2.80599%;
+  }
+
+  ._container .privacy-3 {
+    margin-left: 3.90842%;
+  }
+
+  ._text-1 {
+    top: 3.385em;
+    left: 0;
+    right: 0;
+    width: 622px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 2.889em;
+    color: rgb(52, 152, 219);
+  }
+}
+
+@media(max-width: 360px) {
+  .hosttitle-3 h3 {
+    width: 105.5555555555%;
+    min-height: 2.286em;
+    font-size: 1.556em;
+  }
+
+  .waitlist a {
+    top: 19.083em;
+    left: 0;
+    right: 0;
+    min-width: 258px;
+    margin-right: auto;
+    margin-left: auto;
+    color: rgb(52, 152, 219);
+  }
+
+  div button {
+    left: 0.1886792452%;
+    width: 97.358490566%;
+  }
+
+  div label {
+    position: relative;
+    z-index: 69;
+    width: 97.7358490566%;
+    margin-top: 0.611em;
+    margin-left: 0.1886799999%;
+  }
+
+  label span {
+    width: 84.1085271317%;
+    margin-left: 10px;
+  }
+
+  .logonameblued {
+    position: relative;
+    z-index: 78;
+    width: 68.3333333333%;
+    height: 4em;
+    margin-top: 1.778em;
+    margin-left: 1.875%;
+  }
+
+  .nav1 .arrowblued {
+    top: 2.444em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .subtitle2 {
+    top: 18.5em;
+    left: 0;
+    right: 0;
+    width: 300px;
+    min-height: 3.556em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
+    color: rgb(52, 152, 219);
+  }
+
+  .waitlist {
+    top: 24.333em;
+    left: 0;
+    right: 0;
+    width: 265px;
+    height: 11.056em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .waitlist .-email {
+    position: relative;
+    z-index: 65;
+  }
+
+  .waitlist .zip {
+    position: relative;
+    z-index: 66;
+    margin-top: 0.75em;
+    color: rgb(255, 255, 255);
+  }
+
+  .babh .meet-neighbors-3 {
+    margin-left: 10.63441%;
+  }
+
+  .babh .money-3 {
+    position: relative;
+    z-index: 14;
+    margin-left: 8.83152%;
+  }
+
+  .babh .perform-3 {
+    margin-left: 1.1967%;
+  }
+
+  .babh-3 {
+    top: 118.556em;
+    left: 0;
+    right: 0;
+    width: 83.0555555555%;
+    height: 10.5em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  ._container-10,
+  .babh-background-3,
+  .beyond-packages .beyond-title-3,
+  .hiwtext-3,
+  .landing-background-1,
+  .learn-host .learn-host-text-3 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .babh-text .meet-text-3 {
+    position: relative;
+    z-index: 8;
+    min-height: 5em;
+    margin-top: 0;
+    margin-left: 7.49592%;
+    font-size: 0.611em;
+  }
+
+  .babh-text .meet-title-3 {
+    position: relative;
+    z-index: 9;
+    min-height: 2.308em;
+    margin-left: 7.82782%;
+    padding-top: 0.385em;
+    font-size: 0.722em;
+  }
+
+  .babh-text .money-text-3 {
+    position: relative;
+    z-index: 10;
+    min-height: 5em;
+    margin-top: 0;
+    margin-left: 7.49592%;
+    font-size: 0.611em;
+  }
+
+  .babh-text .money-title-3 {
+    position: relative;
+    z-index: 11;
+    min-height: 2.308em;
+    margin-left: 7.22529%;
+    padding-top: 0.385em;
+    font-size: 0.722em;
+  }
+
+  .babh-text .perform-text-3 {
+    position: relative;
+    z-index: 6;
+    min-height: 5em;
+    margin-top: 0;
+    font-size: 0.611em;
+  }
+
+  .babh-text .perform-title-3 {
+    position: relative;
+    z-index: 7;
+    min-height: 2.308em;
+    padding-top: 0.385em;
+    font-size: 0.722em;
+  }
+
+  .babh-text-3 {
+    top: 130.056em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .bahnav-1 {
+    left: 55.8333333333%;
+    width: 180px;
+  }
+
+  .beyond-packages .beyond-text-3 {
+    top: 4.733em;
+    left: 0;
+    right: 0;
+    width: 78.6111111111%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .beyond-packages .disco-3 {
+    position: relative;
+    z-index: 31;
+    margin-top: 10.056em;
+    margin-left: 7.5217%;
+  }
+
+  .beyond-packages .disco-6 {
+    position: relative;
+    z-index: 30;
+    min-height: 1.231em;
+    margin-top: -1.385em;
+    margin-left: 6.90538%;
+    font-size: 0.722em;
+  }
+
+  .beyond-packages .handy-3 {
+    position: relative;
+    z-index: 33;
+    margin-top: 10.056em;
+    margin-left: 16.01563%;
+  }
+
+  .beyond-packages .handy-6 {
+    position: relative;
+    z-index: 32;
+    min-height: 1.231em;
+    margin-top: -1.385em;
+    margin-left: 16.01563%;
+    font-size: 0.722em;
+  }
+
+  .beyond-packages .pet-care-3 {
+    position: relative;
+    z-index: 29;
+    margin-top: 10.056em;
+    margin-left: 7.28733%;
+  }
+
+  .beyond-packages .pet-care-6 {
+    position: relative;
+    z-index: 28;
+    min-height: 1.231em;
+    margin-top: -1.385em;
+    margin-left: 21.30642%;
+    font-size: 0.722em;
+  }
+
+  .beyond-packages .sitting-3 {
+    position: relative;
+    z-index: 25;
+    margin-top: 10.056em;
+    margin-left: 7.50434%;
+  }
+
+  .beyond-packages .sitting-6 {
+    position: relative;
+    z-index: 24;
+    min-height: 1.231em;
+    margin-top: -1.385em;
+    margin-left: 7.65191%;
+    font-size: 0.722em;
+  }
+
+  .beyond-packages .storage-3 {
+    position: relative;
+    z-index: 27;
+    margin-top: 9.778em;
+    margin-left: 7.5217%;
+  }
+
+  .beyond-packages .storage-6 {
+    position: relative;
+    z-index: 26;
+    min-height: 1.231em;
+    margin-top: -1.385em;
+    margin-left: 7.31771%;
+    font-size: 0.722em;
+  }
+
+  .beyond-packages-3 {
+    top: 85.778em;
+    left: 0;
+    right: 0;
+    height: 24.389em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .details-1-3 {
+    top: 98.8em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .details-2-3 {
+    top: 174.733em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .h2subtitle-3 {
+    top: 60.688em;
+    left: 0;
+    right: 0;
+    width: 76.3888888888%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hiw .find-3 {
+    position: relative;
+    z-index: 47;
+  }
+
+  .hiw .pickup-3 {
+    position: relative;
+    z-index: 49;
+    margin-left: 6.95548%;
+  }
+
+  .hiw .ship-3 {
+    position: relative;
+    z-index: 48;
+    margin-left: 6.89277%;
+  }
+
+  .hiw-3 {
+    top: 58.444em;
+    left: 0;
+    right: 0;
+    width: 83.0555555555%;
+    height: 11.278em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hiw-background-3 {
+    left: 0;
+    right: 0;
+    height: 40.278em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hiwtext .find-subtext-3 {
+    position: relative;
+    clear: none;
+    z-index: 42;
+    min-height: 5em;
+    margin-top: -6.636em;
+    font-size: 0.611em;
+  }
+
+  .hiwtext .find-title-3 {
+    position: relative;
+    z-index: 40;
+    min-height: 2.308em;
+    margin-top: -11em;
+    padding-top: 0.385em;
+    font-size: 0.722em;
+  }
+
+  .hiwtext .pickup-subtext-3 {
+    position: relative;
+    z-index: 44;
+    min-height: 5em;
+    margin-top: -6.636em;
+    margin-left: 7.28965%;
+    font-size: 0.611em;
+  }
+
+  .hiwtext .pickup-text-3 {
+    position: relative;
+    z-index: 45;
+    min-height: 2.308em;
+    margin-top: -11em;
+    margin-left: 71.55258%;
+    padding-top: 0.385em;
+    font-size: 0.722em;
+  }
+
+  .hiwtext .ship-subtext-3 {
+    position: relative;
+    z-index: 43;
+    min-height: 5em;
+    margin-top: -6.636em;
+    margin-left: 7.35763%;
+    font-size: 0.611em;
+  }
+
+  .hiwtext .ship-text-3 {
+    position: relative;
+    z-index: 41;
+    min-height: 2.308em;
+    margin-top: -11em;
+    margin-left: 36.13973%;
+    padding-top: 0.385em;
+    font-size: 0.722em;
+  }
+
+  .hosttitle .text-3 {
+    top: 2.733em;
+    left: 0;
+    right: 0;
+    width: 82.2222222222%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .hosttitle-3 {
+    top: 113em;
+    left: 0;
+    right: 0;
+    height: 14em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .learn-host .arrow-2-3 {
+    position: absolute;
+    float: none;
+    left: 0;
+    right: 0;
+    width: 5.8333333333%;
+    height: 3.833em;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .learn-host-3 {
+    top: 104.056em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .nav1 .arrow1-1 {
+    visibility: hidden;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .nav1 .hiwsubnav-1 {
+    position: relative;
+    z-index: 61;
+    margin-top: 0.667em;
+  }
+
+  .nav1-1 {
+    top: 39.667em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .subtitle-1 {
+    top: 13.444em;
+    left: 0;
+    right: 0;
+    width: 300px;
+    min-height: 6.833em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
+    color: rgb(52, 152, 219);
+  }
+
+  ._button-1 {
+    left: 76.3888888888%;
+    width: 21.6666666666%;
+    height: 2.5em;
+  }
+
+  ._container .copyright-3 {
+    margin-left: 6.4974%;
+  }
+
+  ._container .goodhood-3 {
+    width: 25%;
+    margin-left: 3.47222%;
+  }
+
+  ._container .privacy-3 {
+    width: 29.1666666666%;
+    margin-left: 0;
+  }
+
+  ._text-1 {
+    top: 6.077em;
+    left: 0;
+    right: 0;
+    width: 346px;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.444em;
+  }
+
+  ._text-7 {
+    top: 31.929em;
+    left: 0;
+    right: 0;
+    min-height: 2.286em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.556em;
   }
 }
 
@@ -2160,10 +3959,11 @@ h2 p {
   .hosttitle-1 h3,
   .hosttitle-2 h3 {
     top: -1.3em;
+    width: 103.829787234%;
   }
 
   .hosttitle-3 h3 {
-    top: -2.4em;
+    width: 76.25%;
   }
 
   .social a {
@@ -2172,10 +3972,17 @@ h2 p {
   }
 
   .waitlist a {
-    top: 20.417em;
-    left: 11.875%;
-    width: 74.375%;
-    font-size: 0.923em;
+    top: 21.5em;
+    left: 0;
+    right: 0;
+    min-width: 257px;
+    max-width: 257px;
+    min-height: 0;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 0.769em;
+    font-weight: 400;
+    text-decoration: underline;
   }
 
   button {
@@ -2185,10 +3992,11 @@ h2 p {
   }
 
   div button {
-    top: 9.4em;
+    top: 7.95em;
     left: 0;
     right: 0;
-    width: 84.375%;
+    width: 257px;
+    max-width: 257px;
     margin-right: auto;
     margin-left: auto;
     font-size: 1.538em;
@@ -2197,7 +4005,6 @@ h2 p {
   div h3 {
     left: 0;
     right: 0;
-    width: 103.829787234%;
     min-height: 3.2em;
     margin-right: auto;
     margin-left: auto;
@@ -2205,10 +4012,18 @@ h2 p {
   }
 
   div label {
-    width: 90.3125%;
+    position: absolute;
+    float: none;
+    clear: none;
+    top: 8.692em;
+    left: 0;
+    right: 0;
+    width: 257px;
+    max-width: 257px;
     height: 2.462em;
-    margin-top: 1.538em;
-    margin-left: 5.3125%;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   footer {
@@ -2224,7 +4039,6 @@ h2 p {
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.846em;
   }
 
   h2 {
@@ -2248,16 +4062,15 @@ h2 p {
   }
 
   label span {
-    height: 2em;
     margin-left: 5px;
-    font-size: 1.231em;
+    font-size: 1em;
+    font-weight: 400;
   }
 
   .babh {
     left: 0;
     right: 0;
     width: 91.875%;
-    height: 21.692em;
     margin-right: auto;
     margin-left: auto;
   }
@@ -2281,9 +4094,7 @@ h2 p {
   }
 
   .babh .money {
-    position: relative;
     clear: both;
-    z-index: 14;
     width: 66.3265306122%;
     height: 15.769em;
   }
@@ -2293,40 +4104,24 @@ h2 p {
     height: 15em;
   }
 
-  .babh-background {
+  .babh-background,
+  .hiw-background {
     left: 0;
     right: 0;
     margin-right: auto;
     margin-left: auto;
   }
 
-  .babh-text {
-    left: 0;
-    right: 0;
-    width: 91.875%;
-    height: 10em;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh-text .meet-title {
-    width: 73.1292517006%;
-    margin-left: 13.60013%;
+  .bahnav {
+    top: 3.333em;
+    left: 104.8486328125%;
+    font-size: 0.923em;
   }
 
   .beyond-packages {
     left: 0;
     right: 0;
     width: 100.3125%;
-    height: 27.538em;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .beyond-packages .beyond-text {
-    left: 0;
-    right: 0;
-    width: 82.2429906542%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -2342,7 +4137,9 @@ h2 p {
     font-size: 1.538em;
   }
 
-  .container {
+  .babh-text,
+  .container,
+  .hosttitle {
     left: 0;
     right: 0;
     margin-right: auto;
@@ -2389,7 +4186,6 @@ h2 p {
     left: 0;
     right: 0;
     width: 90.9375%;
-    height: 21.692em;
     margin-right: auto;
     margin-left: auto;
   }
@@ -2412,27 +4208,21 @@ h2 p {
   }
 
   .hiw .pickup {
-    position: relative;
     clear: both;
-    z-index: 49;
     width: 74.2268041237%;
     height: 15.692em;
   }
 
   .hiw .ship {
-    position: relative;
     clear: both;
-    z-index: 48;
     width: 83.1615120274%;
     height: 12.769em;
   }
 
-  .hiw-background {
-    top: 54.538em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .hiwnav {
+    top: 5.75em;
+    left: 100%;
+    font-size: 0.923em;
   }
 
   .hiwtext {
@@ -2446,17 +4236,14 @@ h2 p {
 
   .hiwtext .find-title {
     width: 84.58781362%;
-    font-size: 1.154em;
   }
 
   .hiwtext .pickup-subtext {
     width: 83.8709677419%;
-    margin-left: 7.50448%;
   }
 
   .hiwtext .pickup-text {
     width: 97.8494623655%;
-    font-size: 1.154em;
   }
 
   .hiwtext .ship-subtext {
@@ -2465,22 +4252,12 @@ h2 p {
 
   .hiwtext .ship-text {
     width: 79.5698924731%;
-    font-size: 1.154em;
   }
 
-  .hosttitle {
-    left: 0;
-    right: 0;
-    width: 73.4375%;
-    height: 8.846em;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
+  .beyond-packages .beyond-text,
   .hosttitle .text {
     left: 0;
     right: 0;
-    width: 100.4255319148%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -2488,7 +4265,6 @@ h2 p {
   .landing-background {
     left: 0;
     right: 0;
-    height: 54.538em;
     margin-right: auto;
     margin-left: auto;
   }
@@ -2502,12 +4278,8 @@ h2 p {
   }
 
   .learn-host .arrow-2 {
-    float: none;
     width: 6.875%;
-    height: 1.846em;
     margin-top: 2.308em;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .learn-host .learn-host-text {
@@ -2517,11 +4289,19 @@ h2 p {
     margin-right: auto;
     margin-left: auto;
     border-radius: 0.231em;
-    font-size: 13px;
   }
 
-  .logo {
+  .logonameblued {
     position: absolute;
+    float: none;
+    top: 1.538em;
+    left: 0;
+    right: 0;
+    width: 87.1875%;
+    height: 4.308em;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .nav1 {
@@ -2542,8 +4322,15 @@ h2 p {
     margin-left: auto;
   }
 
-  .nav1 .hiwsubnav {
-    font-size: 1.385em;
+  .nav1 .arrowblued {
+    top: 3em;
+    left: 0;
+    right: 0;
+    width: 16.25%;
+    height: 2em;
+    margin-top: 60.077em;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .social {
@@ -2554,25 +4341,26 @@ h2 p {
   .subtitle {
     left: 0;
     right: 0;
-    width: 82.8125%;
-    min-height: noneem;
+    min-height: 0;
     margin-right: auto;
     margin-left: auto;
   }
 
   .subtitle2 {
-    top: 15.313em;
+    top: 15.125em;
     left: 0;
     right: 0;
-    width: 264px;
+    width: 257px;
+    max-width: 257px;
     min-height: 4em;
     margin-right: auto;
     margin-left: auto;
     font-size: 1.231em;
+    color: rgb(41, 128, 185);
   }
 
   .waitlist {
-    top: 26.231em;
+    top: 26.077em;
     left: 0;
     right: 0;
     width: 100%;
@@ -2582,20 +4370,27 @@ h2 p {
   }
 
   .waitlist .-email {
+    position: relative;
     float: none;
+    z-index: 65;
     width: 80.625%;
-    height: 3.846em;
+    height: 2.5em;
     margin-right: auto;
     margin-left: auto;
-    padding: 0 0.769em;
-    border-width: 0.154em;
-    font-size: 1em;
+    font-size: 1.231em;
+    color: rgb(255, 255, 255);
   }
 
   .waitlist .zip {
+    position: absolute;
     float: none;
-    width: 40.9375%;
-    margin-top: 0.625em;
+    clear: none;
+    top: 3.75em;
+    left: 0;
+    right: 0;
+    width: 257px;
+    height: 2.5em;
+    margin-top: 0;
     margin-right: auto;
     margin-left: auto;
     font-size: 1.231em;
@@ -2612,13 +4407,21 @@ h2 p {
     margin-left: 17.67645%;
   }
 
-  .babh .money-1,
+  .babh .money-1 {
+    margin-top: 7.769em;
+    margin-left: 17.34694%;
+  }
+
   .babh .money-2 {
+    position: relative;
+    z-index: 14;
     margin-top: 7.769em;
     margin-left: 17.34694%;
   }
 
   .babh .money-3 {
+    position: relative;
+    z-index: 14;
     margin-top: 11.846em;
     margin-left: 15.97577%;
   }
@@ -2630,6 +4433,8 @@ h2 p {
   }
 
   .babh .perform-3 {
+    position: relative;
+    z-index: 13;
     margin-top: 8.308em;
     margin-left: 18.70217%;
   }
@@ -2637,10 +4442,12 @@ h2 p {
   .babh-1,
   .babh-2 {
     top: 182.538em;
+    height: 21.692em;
   }
 
   .babh-3 {
-    top: 192.231em;
+    top: 189.923em;
+    height: 14.538em;
   }
 
   .babh-background-1,
@@ -2650,11 +4457,20 @@ h2 p {
   }
 
   .babh-background-3 {
-    top: 183.385em;
-    height: 95.077em;
+    top: 180.615em;
+    height: 95.538em;
   }
 
-  .babh-text .meet-text-1,
+  .babh-text .meet-text-1 {
+    position: relative;
+    z-index: 8;
+    width: 61.9047619047%;
+    min-height: 6.111em;
+    margin-top: -11.778em;
+    margin-left: 19.38776%;
+    font-size: 0.692em;
+  }
+
   .babh-text .meet-text-2 {
     width: 61.9047619047%;
     min-height: 6.111em;
@@ -2664,26 +4480,57 @@ h2 p {
   }
 
   .babh-text .meet-text-3 {
-    width: 84.693877551%;
-    margin-top: -10.467em;
-    margin-left: 7.47768%;
-    font-size: 1.154em;
+    position: relative;
+    z-index: 8;
+    width: 77.8125%;
+    min-width: 257px;
+    max-width: 257px;
+    margin-top: -14.091em;
+    margin-left: 9.84375%;
+    font-size: 0.846em;
   }
 
-  .babh-text .meet-title-1,
-  .babh-text .meet-title-2 {
+  .babh-text .meet-title-1 {
+    position: relative;
+    z-index: 9;
+    width: 73.1292517006%;
     min-height: 3.333em;
     margin-top: -14em;
+    margin-left: 13.60013%;
+    padding-top: 0.556em;
+    font-size: 0.692em;
+  }
+
+  .babh-text .meet-title-2 {
+    width: 73.1292517006%;
+    min-height: 3.333em;
+    margin-top: -14em;
+    margin-left: 13.60013%;
     padding-top: 0.556em;
     font-size: 0.692em;
   }
 
   .babh-text .meet-title-3 {
-    margin-top: -5.4em;
-    font-size: 1.154em;
+    position: relative;
+    float: none;
+    z-index: 9;
+    width: 67.1875%;
+    margin-top: 22.846em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
   }
 
-  .babh-text .money-text-1,
+  .babh-text .money-text-1 {
+    position: relative;
+    z-index: 10;
+    width: 64.6258503401%;
+    min-height: 6.111em;
+    margin-top: 23.111em;
+    margin-left: 17.34694%;
+    font-size: 0.692em;
+  }
+
   .babh-text .money-text-2 {
     width: 64.6258503401%;
     min-height: 6.111em;
@@ -2693,13 +4540,28 @@ h2 p {
   }
 
   .babh-text .money-text-3 {
-    width: 100%;
-    margin-top: 13em;
-    margin-left: 0;
-    font-size: 1.154em;
+    position: relative;
+    float: none;
+    z-index: 10;
+    width: 80.3125%;
+    min-width: 257px;
+    max-width: 257px;
+    margin-top: 18.273em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 0.846em;
   }
 
-  .babh-text .money-title-1,
+  .babh-text .money-title-1 {
+    position: relative;
+    z-index: 11;
+    min-height: 3.333em;
+    margin-top: 19.333em;
+    margin-left: 37.4149699999%;
+    padding-top: 0.556em;
+    font-size: 0.692em;
+  }
+
   .babh-text .money-title-2 {
     min-height: 3.333em;
     margin-top: 19.333em;
@@ -2709,13 +4571,26 @@ h2 p {
   }
 
   .babh-text .money-title-3 {
-    width: 80.9523809523%;
-    margin-top: 19.2em;
-    margin-left: 11.22449%;
-    font-size: 1.154em;
+    position: relative;
+    float: none;
+    z-index: 11;
+    width: 74.375%;
+    margin-top: 26.077em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
   }
 
-  .babh-text .perform-text-1,
+  .babh-text .perform-text-1 {
+    position: relative;
+    z-index: 6;
+    width: 79.2517006802%;
+    min-height: 6.111em;
+    margin-top: -42.778em;
+    margin-left: 12.92517%;
+    font-size: 0.692em;
+  }
+
   .babh-text .perform-text-2 {
     width: 79.2517006802%;
     min-height: 6.111em;
@@ -2725,13 +4600,27 @@ h2 p {
   }
 
   .babh-text .perform-text-3 {
-    width: 81.6326530612%;
-    margin-top: -33.667em;
-    margin-left: 11.22449%;
-    font-size: 1.154em;
+    position: relative;
+    z-index: 6;
+    width: 75%;
+    min-width: 257px;
+    max-width: 257px;
+    margin-top: -45.909em;
+    margin-left: 9.84375%;
+    font-size: 0.846em;
   }
 
-  .babh-text .perform-title-1,
+  .babh-text .perform-title-1 {
+    position: relative;
+    z-index: 7;
+    width: 67.3469387755%;
+    min-height: 3.333em;
+    margin-top: -44.444em;
+    margin-left: 17.34694%;
+    padding-top: 0.556em;
+    font-size: 0.692em;
+  }
+
   .babh-text .perform-title-2 {
     width: 67.3469387755%;
     min-height: 3.333em;
@@ -2742,32 +4631,51 @@ h2 p {
   }
 
   .babh-text .perform-title-3 {
-    width: 99.6598639455%;
-    margin-top: -27.2em;
-    font-size: 1.154em;
+    position: relative;
+    float: none;
+    z-index: 7;
+    width: 91.5625%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
   }
 
   .babh-text-1,
   .babh-text-2 {
     top: 220.538em;
+    width: 91.875%;
+    height: 10em;
   }
 
   .babh-text-3 {
-    top: 229.846em;
+    top: 196.154em;
+    width: 100%;
+    height: 75.538em;
   }
 
   .beyond-packages .beyond-text-1,
   .beyond-packages .beyond-text-2 {
     top: 5.462em;
+    width: 82.2429906542%;
     min-height: 2.231em;
     font-size: 1em;
   }
 
   .beyond-packages .beyond-text-3 {
+    width: 264px;
+    min-width: 264px;
+    max-width: 264px;
     font-size: 1.154em;
   }
 
-  .beyond-packages .disco-1,
+  .beyond-packages .disco-1 {
+    position: relative;
+    z-index: 31;
+    height: 6.769em;
+    margin-top: -6.769em;
+    margin-left: 71.33956%;
+  }
+
   .beyond-packages .disco-2 {
     height: 6.769em;
     margin-top: -6.769em;
@@ -2775,12 +4683,22 @@ h2 p {
   }
 
   .beyond-packages .disco-3 {
+    position: relative;
+    z-index: 31;
     height: 6.769em;
     margin-top: 12.769em;
     margin-left: 7.59833%;
   }
 
-  .beyond-packages .disco-4,
+  .beyond-packages .disco-4 {
+    position: relative;
+    z-index: 30;
+    min-height: 1.778em;
+    margin-top: -2.778em;
+    margin-left: 6.23053%;
+    font-size: 0.692em;
+  }
+
   .beyond-packages .disco-5 {
     min-height: 1.778em;
     margin-top: -2.778em;
@@ -2789,13 +4707,22 @@ h2 p {
   }
 
   .beyond-packages .disco-6 {
+    position: relative;
+    z-index: 30;
     min-height: 1.333em;
     margin-top: -2.083em;
     margin-left: 6.31815%;
     font-size: 0.923em;
   }
 
-  .beyond-packages .handy-1,
+  .beyond-packages .handy-1 {
+    position: relative;
+    z-index: 33;
+    height: 6.769em;
+    margin-top: 11.308em;
+    margin-left: 16.57905%;
+  }
+
   .beyond-packages .handy-2 {
     height: 6.769em;
     margin-top: 11.308em;
@@ -2803,12 +4730,23 @@ h2 p {
   }
 
   .beyond-packages .handy-3 {
+    position: relative;
+    z-index: 33;
     height: 6.769em;
     margin-top: 12.769em;
     margin-left: 14.9046%;
   }
 
-  .beyond-packages .handy-4,
+  .beyond-packages .handy-4 {
+    position: relative;
+    clear: none;
+    z-index: 32;
+    min-height: 1.778em;
+    margin-top: -2.111em;
+    margin-left: 15.99981%;
+    font-size: 0.692em;
+  }
+
   .beyond-packages .handy-5 {
     clear: none;
     min-height: 1.778em;
@@ -2818,13 +4756,22 @@ h2 p {
   }
 
   .beyond-packages .handy-6 {
+    position: relative;
+    z-index: 32;
     min-height: 1.333em;
     margin-top: -1.583em;
     margin-left: 14.33022%;
     font-size: 0.923em;
   }
 
-  .beyond-packages .pet-care-1,
+  .beyond-packages .pet-care-1 {
+    position: relative;
+    z-index: 29;
+    height: 6.769em;
+    margin-top: -6.769em;
+    margin-left: 55.76324%;
+  }
+
   .beyond-packages .pet-care-2 {
     height: 6.769em;
     margin-top: -6.769em;
@@ -2832,12 +4779,16 @@ h2 p {
   }
 
   .beyond-packages .pet-care-3 {
+    position: relative;
+    z-index: 29;
     height: 6.769em;
     margin-top: 12.769em;
     margin-left: 8.93692%;
   }
 
   .beyond-packages .pet-care-4 {
+    position: relative;
+    z-index: 28;
     min-height: 1.778em;
     margin-top: -2.111em;
     margin-left: 27.09794%;
@@ -2852,13 +4803,22 @@ h2 p {
   }
 
   .beyond-packages .pet-care-6 {
+    position: relative;
+    z-index: 28;
     min-height: 1.333em;
     margin-top: -1.583em;
     margin-left: 25.31153%;
     font-size: 0.923em;
   }
 
-  .beyond-packages .sitting-1,
+  .beyond-packages .sitting-1 {
+    position: relative;
+    z-index: 25;
+    height: 6.769em;
+    margin-top: 11.308em;
+    margin-left: 8.40635%;
+  }
+
   .beyond-packages .sitting-2 {
     height: 6.769em;
     margin-top: 11.308em;
@@ -2866,12 +4826,22 @@ h2 p {
   }
 
   .beyond-packages .sitting-3 {
+    position: relative;
+    z-index: 25;
     height: 6.769em;
     margin-top: 12.769em;
     margin-left: 9.96885%;
   }
 
-  .beyond-packages .sitting-4,
+  .beyond-packages .sitting-4 {
+    position: relative;
+    z-index: 24;
+    min-height: 1.778em;
+    margin-top: -2.111em;
+    margin-left: 10.58217%;
+    font-size: 0.692em;
+  }
+
   .beyond-packages .sitting-5 {
     min-height: 1.778em;
     margin-top: -2.111em;
@@ -2880,13 +4850,23 @@ h2 p {
   }
 
   .beyond-packages .sitting-6 {
+    position: relative;
+    z-index: 24;
     min-height: 1.333em;
     margin-top: -1.583em;
     margin-left: 8.76655%;
     font-size: 0.923em;
   }
 
-  .beyond-packages .storage-1,
+  .beyond-packages .storage-1 {
+    position: relative;
+    clear: both;
+    z-index: 27;
+    height: 7.154em;
+    margin-top: -7.154em;
+    margin-left: 39.56386%;
+  }
+
   .beyond-packages .storage-2 {
     clear: both;
     height: 7.154em;
@@ -2895,12 +4875,16 @@ h2 p {
   }
 
   .beyond-packages .storage-3 {
+    position: relative;
+    z-index: 27;
     height: 7.154em;
     margin-top: 12.385em;
     margin-left: 8.81523%;
   }
 
   .beyond-packages .storage-4 {
+    position: relative;
+    z-index: 26;
     min-height: 1.778em;
     margin-top: -2.111em;
     margin-left: 11.83801%;
@@ -2915,6 +4899,8 @@ h2 p {
   }
 
   .beyond-packages .storage-6 {
+    position: relative;
+    z-index: 26;
     min-height: 1.333em;
     margin-top: -1.583em;
     margin-left: 7.21379%;
@@ -2924,10 +4910,12 @@ h2 p {
   .beyond-packages-1,
   .beyond-packages-2 {
     top: 146.154em;
+    height: 27.538em;
   }
 
   .beyond-packages-3 {
-    top: 155.846em;
+    top: 153.154em;
+    height: 27.923em;
   }
 
   .container .text-4 {
@@ -2958,7 +4946,7 @@ h2 p {
   }
 
   .details-1-3 {
-    top: 131.133em;
+    top: 129.133em;
   }
 
   .details-2-1,
@@ -2967,7 +4955,7 @@ h2 p {
   }
 
   .details-2-3 {
-    top: 274.615em;
+    top: 273.077em;
   }
 
   .element-2 {
@@ -2982,44 +4970,69 @@ h2 p {
   }
 
   .h2subtitle-3 {
-    top: 54.733em;
+    top: 52.733em;
     min-height: 4.6em;
     font-size: 1.154em;
   }
 
-  .hiw .find-1,
+  .hiw .find-1 {
+    position: relative;
+    z-index: 47;
+    margin-top: -8.308em;
+    margin-left: 14.43299%;
+  }
+
   .hiw .find-2 {
     margin-top: -8.308em;
     margin-left: 14.43299%;
   }
 
   .hiw .find-3 {
+    position: relative;
+    z-index: 47;
     margin-top: -5.231em;
     margin-left: 13.74034%;
   }
 
-  .hiw .pickup-1,
+  .hiw .hiw-line-3,
+  .hiw .hiw-line2-3 {
+    display: none;
+  }
+
+  .hiw .pickup-1 {
+    margin-top: 8.308em;
+    margin-left: 13.74034%;
+  }
+
   .hiw .pickup-2 {
+    position: relative;
+    z-index: 49;
     margin-top: 8.308em;
     margin-left: 13.74034%;
   }
 
   .hiw .pickup-3 {
+    position: relative;
+    z-index: 49;
     margin-top: 9.385em;
-    margin-left: 13.39669%;
+    margin-left: 13.36985%;
   }
 
   .hiw .ship-1 {
     margin-top: 8.231em;
-    margin-left: 9.61662%;
+    margin-left: 9.61125%;
   }
 
   .hiw .ship-2 {
+    position: relative;
+    z-index: 48;
     margin-top: 8.231em;
     margin-left: 9.61125%;
   }
 
   .hiw .ship-3 {
+    position: relative;
+    z-index: 48;
     margin-top: 10.154em;
     margin-left: 8.93471%;
   }
@@ -3027,22 +5040,35 @@ h2 p {
   .hiw-1,
   .hiw-2 {
     top: 82.846em;
+    height: 21.692em;
   }
 
   .hiw-3 {
-    top: 83.615em;
+    top: 81.308em;
+    height: 15.615em;
   }
 
   .hiw-background-1,
   .hiw-background-2 {
+    top: 54.538em;
     height: 91.615em;
   }
 
   .hiw-background-3 {
+    top: 52.231em;
     height: 101.308em;
   }
 
-  .hiwtext .find-subtext-1,
+  .hiwtext .find-subtext-1 {
+    position: relative;
+    z-index: 42;
+    width: 87.8136200716%;
+    min-height: 4.231em;
+    margin-top: -28.154em;
+    margin-left: 8.24373%;
+    font-size: 1em;
+  }
+
   .hiwtext .find-subtext-2 {
     width: 87.8136200716%;
     min-height: 4.231em;
@@ -3052,53 +5078,99 @@ h2 p {
   }
 
   .hiwtext .find-subtext-3 {
+    position: relative;
+    clear: both;
+    z-index: 42;
     width: 83.8709677419%;
-    margin-top: -26.933em;
-    margin-left: 9.13418%;
+    max-width: 257px;
+    margin-top: -37.455em;
+    margin-left: 9.08938%;
+    font-size: 0.846em;
+  }
+
+  .hiwtext .find-title-1 {
+    position: relative;
+    z-index: 40;
+    margin-top: -28em;
+    margin-left: 9.67742%;
     font-size: 1.154em;
   }
 
-  .hiwtext .find-title-1,
   .hiwtext .find-title-2 {
     margin-top: -28em;
     margin-left: 9.67742%;
+    font-size: 1.154em;
   }
 
   .hiwtext .find-title-3 {
-    margin-top: -25.733em;
-    margin-left: 9.09498%;
+    position: relative;
+    z-index: 40;
+    margin-top: -29.692em;
+    margin-left: 9.07258%;
+    font-size: 1em;
   }
 
-  .hiwtext .pickup-subtext-1,
+  .hiwtext .pickup-subtext-1 {
+    position: relative;
+    z-index: 44;
+    min-height: 4.231em;
+    margin-top: 17.385em;
+    margin-left: 7.50448%;
+    font-size: 1em;
+  }
+
   .hiwtext .pickup-subtext-2 {
     min-height: 4.231em;
     margin-top: 17.385em;
+    margin-left: 7.50448%;
     font-size: 1em;
   }
 
   .hiwtext .pickup-subtext-3 {
-    margin-top: 15em;
-    font-size: 1.154em;
+    position: relative;
+    z-index: 44;
+    min-width: 257px;
+    max-width: 257px;
+    margin-top: 19.909em;
+    margin-left: 3.90905%;
+    font-size: 0.846em;
   }
 
   .hiwtext .pickup-text-1 {
+    position: relative;
     clear: both;
+    z-index: 45;
     margin-top: 9.867em;
-    margin-left: -1.42809%;
+    margin-left: -1.42249%;
+    font-size: 1.154em;
   }
 
   .hiwtext .pickup-text-2 {
     clear: both;
     margin-top: 9.867em;
     margin-left: -1.42249%;
+    font-size: 1.154em;
   }
 
   .hiwtext .pickup-text-3 {
-    margin-top: 15em;
-    margin-left: 0;
+    position: relative;
+    float: none;
+    z-index: 45;
+    margin-top: 17.923em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
   }
 
-  .hiwtext .ship-subtext-1,
+  .hiwtext .ship-subtext-1 {
+    position: relative;
+    z-index: 43;
+    min-height: 4.231em;
+    margin-top: -7.154em;
+    margin-left: 9.67742%;
+    font-size: 1em;
+  }
+
   .hiwtext .ship-subtext-2 {
     min-height: 4.231em;
     margin-top: -7.154em;
@@ -3107,24 +5179,34 @@ h2 p {
   }
 
   .hiwtext .ship-subtext-3 {
-    margin-top: -7em;
-    margin-left: 9.09498%;
-    font-size: 1.154em;
+    position: relative;
+    z-index: 43;
+    max-width: 257px;
+    margin-top: -10.091em;
+    margin-left: 6.25%;
+    font-size: 0.846em;
   }
 
   .hiwtext .ship-text-1 {
+    position: relative;
+    z-index: 41;
     margin-top: -7.4em;
-    margin-left: 12.5391999999%;
+    margin-left: 12.5336%;
+    font-size: 1.154em;
   }
 
   .hiwtext .ship-text-2 {
     margin-top: -7.4em;
     margin-left: 12.5336%;
+    font-size: 1.154em;
   }
 
   .hiwtext .ship-text-3 {
-    margin-top: -3.4em;
-    margin-left: 11.25672%;
+    position: relative;
+    z-index: 41;
+    margin-top: -3.923em;
+    margin-left: 11.24552%;
+    font-size: 1em;
   }
 
   .hiwtext-1,
@@ -3133,28 +5215,69 @@ h2 p {
   }
 
   .hiwtext-3 {
-    top: 105.692em;
+    top: 103.385em;
   }
 
   .hosttitle .text-1,
   .hosttitle .text-2 {
     top: 0;
+    width: 100.4255319148%;
     min-height: 5.308em;
     font-size: 1em;
   }
 
   .hosttitle .text-3 {
-    top: -1.267em;
+    top: 1.933em;
+    width: 80%;
+    min-width: 257px;
+    max-width: 257px;
     font-size: 1.154em;
   }
 
   .hosttitle-1,
   .hosttitle-2 {
     top: 179.846em;
+    width: 73.4375%;
+    height: 8.846em;
   }
 
   .hosttitle-3 {
-    top: 189.385em;
+    top: 183.385em;
+    height: 11.462em;
+  }
+
+  .landing-background-1 {
+    height: 52.769em;
+  }
+
+  .landing-background-2,
+  .landing-background-3 {
+    height: 54.538em;
+  }
+
+  .learn-host .arrow-2-1,
+  .learn-host .arrow-2-2 {
+    float: none;
+    height: 1.846em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .learn-host .arrow-2-3 {
+    left: 0;
+    right: 0;
+    height: 5.308em;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .learn-host .learn-host-text-1,
+  .learn-host .learn-host-text-2 {
+    font-size: 13px;
+  }
+
+  .learn-host .learn-host-text-3 {
+    font-size: 1em;
   }
 
   .learn-host-1,
@@ -3163,11 +5286,11 @@ h2 p {
   }
 
   .learn-host-3 {
-    top: 178.231em;
+    top: 175.923em;
   }
 
   .logo-1 {
-    top: 0.923em;
+    top: 2em;
     left: 1.875%;
     width: 25.3125%;
     height: 3.846em;
@@ -3175,6 +5298,7 @@ h2 p {
 
   .logo-2,
   .logo-3 {
+    position: absolute;
     top: 1.385em;
     left: 1.8310546875%;
     width: 16.25%;
@@ -3182,7 +5306,7 @@ h2 p {
   }
 
   .logoname-1 {
-    top: -1.462em;
+    top: -0.385em;
     left: 26.4062499999%;
     width: 64.375%;
     height: 8.538em;
@@ -3196,65 +5320,81 @@ h2 p {
     height: 5.385em;
   }
 
-  .nav1-1,
-  .nav1-2 {
+  .nav1 .hiwsubnav-1 {
+    position: relative;
+    z-index: 61;
+    margin-top: 0.733em;
+    font-size: 1.154em;
+  }
+
+  .nav1 .hiwsubnav-2,
+  .nav1 .hiwsubnav-3 {
+    font-size: 1.385em;
+  }
+
+  .nav1-1 {
+    top: 45.077em;
+  }
+
+  .nav1-2,
+  .nav1-3 {
     top: 42.231em;
   }
 
-  .nav1-3 {
-    top: 48em;
-  }
-
   .social .facebook-1 {
-    top: 0.923em;
-  }
-
-  .social .facebook-2 {
-    top: 0.846em;
-  }
-
-  .social .facebook-3 {
     top: -7.308em;
   }
 
-  .social .linkedin-1,
-  .social .linkedin-2 {
-    top: 10.231em;
+  .social .facebook-2 {
+    top: 0.923em;
   }
 
-  .social .linkedin-3 {
+  .social .facebook-3 {
+    top: 0.846em;
+  }
+
+  .social .linkedin-1 {
     top: 2.462em;
   }
 
+  .social .linkedin-2,
+  .social .linkedin-3 {
+    top: 10.231em;
+  }
+
   .social .twitter-1 {
-    top: 5.615em;
-  }
-
-  .social .twitter-2 {
-    top: 5.538em;
-  }
-
-  .social .twitter-3 {
     top: -2.385em;
   }
 
-  .social-1,
-  .social-2 {
-    height: 14.231em;
+  .social .twitter-2 {
+    top: 5.615em;
   }
 
-  .social-3 {
+  .social .twitter-3 {
+    top: 5.538em;
+  }
+
+  .social-1 {
     height: 12.308em;
+  }
+
+  .social-2,
+  .social-3 {
+    height: 14.231em;
   }
 
   .subtitle-1 {
     top: 10.438em;
+    width: 257px;
+    max-width: 257px;
     font-size: 1.231em;
+    color: rgb(41, 128, 185);
   }
 
   .subtitle-2,
   .subtitle-3 {
     top: 9.333em;
+    width: 82.8125%;
     font-size: 1.154em;
   }
 
@@ -3310,9 +5450,9 @@ h2 p {
     border-width: 0.154em;
   }
 
-  ._container .bahnav-1,
   ._container .bahnav-2,
   ._container .bahnav-3 {
+    top: 3.333em;
     left: 104.849137931%;
   }
 
@@ -3336,22 +5476,17 @@ h2 p {
     margin-top: 0.923em;
   }
 
-  ._container .goodhood-2 {
+  ._container .goodhood-1,
+  ._container .goodhood-2,
+  ._container .goodhood-3 {
     width: 25.7668711656%;
     margin-left: 0.84356%;
     font-size: 0.923em;
   }
 
-  ._container .goodhood-1,
-  ._container .goodhood-3 {
-    width: 25.7668711656%;
-    margin-left: 0.84835%;
-    font-size: 0.923em;
-  }
-
-  ._container .hiwnav-1,
   ._container .hiwnav-2,
   ._container .hiwnav-3 {
+    top: 5.75em;
     left: 100%;
   }
 
@@ -3374,50 +5509,47 @@ h2 p {
     font-size: 0.923em;
   }
 
-  ._container-1 {
-    left: 0;
-    right: auto;
-    width: 100%;
-  }
-
   ._container-10 {
-    top: 38em;
-  }
-
-  ._container-11 {
-    top: 278.462em;
+    top: 276.154em;
     width: 101.875%;
   }
 
-  ._container-2,
-  ._container-3 {
+  ._container-1,
+  ._container-2 {
     left: 0.15625%;
     right: auto;
     width: 99.6875%;
   }
 
-  ._container-6 {
+  ._container-5 {
     left: 0;
     right: 0;
     margin-right: auto;
     margin-left: auto;
   }
 
-  ._container-8,
-  ._container-9 {
+  ._container-7,
+  ._container-8 {
     top: 262.615em;
     width: 101.875%;
   }
 
-  ._text-1 {
-    top: 4.208em;
-    width: 91.875%;
+  ._container-9 {
+    top: 38em;
   }
 
-  ._text-2,
-  ._text-3 {
+  ._text-1 {
+    top: 4.773em;
+    width: 91.875%;
+    font-size: 1.692em;
+    line-height: 0.28;
+  }
+
+  ._text-3,
+  ._text-4 {
     top: 3.583em;
     width: 90.625%;
+    font-size: 1.846em;
   }
 
   ._text-5,
@@ -3428,7 +5560,7 @@ h2 p {
   }
 
   ._text-7 {
-    top: 34.409em;
+    top: 33.545em;
     width: 90.625%;
     min-height: 2.909em;
     font-size: 1.692em;

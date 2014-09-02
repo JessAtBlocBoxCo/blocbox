@@ -1,6 +1,3 @@
-<!-- this is blocbox/core/templates/blocbox/index.html -->
-{% load staticfiles %} 
-
 <!doctype html>
 <html>
 <head>
@@ -9,34 +6,15 @@
   <title>Introducing Blocbox</title>
   <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <link rel="stylesheet" href="{% static 'blocbox/css/standardize.css' %}">
-  <link rel="stylesheet" href="{% static 'blocbox/css/styles.css' %}">
-  <!-- Meta Tags - Describe the Site -->
-   <meta name="Description" 
-   CONTENT="Package Delivery Holding and Receiving, Storage, Pet Care, Dog Walking, Child Care,
-   Mailbox Rental, Missed Packages, 800 USPS, 800 UPS">
-   
-  <!--Google Tracking SNippet --Goes in every page -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  
-    ga('create', 'UA-51513611-1', 'blocbox.co');
-    ga('send', 'pageview');
-  </script>
+  <link rel="stylesheet" href="css/standardize.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body class="body index clearfix">
-  <header class="_container _container-1">
-    <a class="bahnav bahnav-1" href="#hosting">Become a Host</a>
-    <a class="hiwnav hiwnav-1" href="#works">How It Works</a>
-  </header>
-  <a class="logoname logoname-1" href="#top"></a>
-  <form method="post" action="mailto:admin@blocbox.co">
+  <a class="bahnav bahnav-1" href="#">Become a Host  </a>
+  <a class="hiwnav hiwnav-1" href="#">How It Works</a>
+  <a class="logoname logoname-1" href="#"></a>
   <button class="_button _button-1">Say Hello!</button>
-  </form>
-  <a class="logo logo-1" href="#top"></a>
+  <a class="logo logo-1" href="#"></a>
   <h1 class="_text-1">
     <p>Neighbors Helping Neighbors</p>
     <p>Never Miss a Package</p>
@@ -44,49 +22,38 @@
   <p class="subtitle subtitle-1">Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</p>
   <p class="subtitle2">Launching soon in NYC, DC and LA. Spots are limited. Reserve yours by signing up for our waitlist below.</p>
   <div class="waitlist clearfix">
-  
-<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
-method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
-class="validate" target="_blank" novalidate>
-
-  <input class="-email" name="EMAIL" placeholder="EMAIL" type="email">
-  <input class="zip" name="ZIPCODE" placeholder="ZIP" type="text">
-  
-  <button type="submit" value="Join Waitlist" name="subscribe" class="-waitlist">Join Waitlist</button>
-  <div id="mce-responses" class="clear">
-  	<div class="response" id="mce-error-response" style="display:none"></div>
-  	<div class="response" id="mce-success-response" style="display:none"></div>
-  </div> 
-  
-  <label value="1" name="group[1689][1]" class="checkout-label _container clearfix">
-    <input class="checkbox" type="checkbox">
-    <span class="point-text">I'm often at home and I want to learn more about making extra cash as a Blocbox Host</span>
-  </label>
-  </form>
+    <input class="-email" name="Email" placeholder="EMAIL" type="email">
+    <input class="zip" name="Zip" placeholder="ZIP" type="text">
+    <button class="-waitlist">Join Waitlist</button>
+    <label class="checkout-label _container clearfix">
+      <input class="checkbox" type="checkbox">
+      <span class="point-text">I'm often at home and I want to learn more about making extra cash as a Blocbox Host</span>
+    </label>
     <a href="privacy-policy.html" class="privacy-warning">By Signing Up, I Agree to Blocbox's Privacy Policy</a>
   </div>
-  <div class="nav1 nav1-3 clearfix">
-    <a class="hiwsubnav" href="#works">How It Works</a>
-    <a class="arrow1" href="#works"></a>
+  <div class="nav1 nav1-1 clearfix">
+    <a class="hiwsubnav hiwsubnav-1" href="#">How It Works</a>
+    <div class="arrowblued"></div>
+    <a class="arrow1 arrow1-1" href="#"></a>
   </div>
-  <div class="social social-3">
-    <a class="linkedin linkedin-3" href="#"></a>
-    <a class="facebook facebook-3" href="https://www.facebook.com/blocboxco"></a>
-    <a class="twitter twitter-3" href="https://twitter.com/BlocboxCo" target="_blank"></a>
+  <div class="social social-1">
+    <a class="linkedin linkedin-1" href="#"></a>
+    <a class="facebook facebook-1" href="#"></a>
+    <a class="twitter twitter-1" href="#"></a>
   </div>
-  <div class="landing-background"></div>
+  <div class="landing-background landing-background-1"></div>
+  <a class="logonameblued" href="#"></a>
   <h2 class="_text-7">
-<a style="position:relative; top:-65px" name="works"></a>
     <p>Stop Missing Packages.</p>
-    <p>Meet Your Neighbors.</p>
+    <p>Meet the Neighbors.</p>
 </h2>
-  <div class="h2subtitle h2subtitle-3">&nbsp;Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can 
-conveniently &nbsp;pick up your package when you get home, or whenever you like.</div>
+  <p class="h2subtitle h2subtitle-3">&nbsp;Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can 
+conveniently &nbsp;pick up your package when you get home, or whenever you like.  </p>
   <div class="hiw hiw-3 clearfix">
     <div class="find find-3"></div>
-    <div class="hiw-line"></div>
+    <div class="hiw-line hiw-line-3"></div>
     <div class="ship ship-3"></div>
-    <div class="hiw-line2"></div>
+    <div class="hiw-line2 hiw-line2-3"></div>
     <div class="pickup pickup-3"></div>
   </div>
   <div class="hiwtext hiwtext-3 clearfix">
@@ -102,11 +69,11 @@ convenient &nbsp;for you.</div>
   <div class="details-1 details-1-3">More Details Coming Soon</div>
   <div class="hiw-background hiw-background-3"></div>
   <div class="learn-host learn-host-3 clearfix">
-    <div class="learn-host-text">Learn About Becoming a Host</div>
+    <div class="learn-host-text learn-host-text-3">Learn About Becoming a Host</div>
     <div class="arrow-2 arrow-2-3"></div>
   </div>
   <div class="beyond-packages beyond-packages-3 clearfix">
-    <p class="beyond-title">Beyond Packages</p>
+    <p class="beyond-title beyond-title-3">Beyond Packages</p>
     <p class="beyond-text beyond-text-3">Solving the hassle of package receipt is just the first way Blocbox can help. We encourage Blocbox hosts to get creative in the ways in which they can help their neighbors. Here's a few possibilities just off the top of our heads.</p>
     <div class="handy handy-3"></div>
     <div class="sitting sitting-3"></div>
@@ -120,7 +87,6 @@ convenient &nbsp;for you.</div>
     <p class="disco disco-6">Disco Ball Rental</p>
   </div>
   <div class="hosttitle hosttitle-3">
-     <a name="hosting"</a>
     <h3>Become a Blocbox Host</h3>
     <p class="text text-3">&nbsp;Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can 
 conveniently&nbsp;&nbsp;pick up your package when you get home, or whenever you like.</p>
@@ -138,11 +104,11 @@ conveniently&nbsp;&nbsp;pick up your package when you get home, or whenever you 
     <div class="money-title money-title-3">EARN MONEY</div>
     <div class="perform-text perform-text-3">Receive packages and offer other services to neighbors. Hosts must be able to be verified and be at home to receive all scheduled deliveries.</div>
     <div class="meet-text meet-text-3">Set and arrange times at which your neighbors can pick up their packages at your door. Hosts must be home a minimum amount of hours in the evening to allow neighbors to pick up their packages.</div>
-    <div class="money-text money-text-3">Your neighbors get their packages, you get a little extra in your pocket. The neighborhood wins.</div>
+    <p class="money-text money-text-3">Your neighbors get their packages, you get a little extra in your pocket.&nbsp;The neighborhood wins.</p>
   </div>
   <div class="details-2 details-2-3">More Details Coming Soon</div>
   <div class="babh-background babh-background-3"></div>
-  <footer class="_container _container-11 clearfix">
+  <footer class="_container _container-10 clearfix">
     <div class="copyright copyright-3"></div>
     <div class="goodhood goodhood-3">GoodHood LLC</div>
     <div class="privacy privacy-3">Privacy Policy</div>
