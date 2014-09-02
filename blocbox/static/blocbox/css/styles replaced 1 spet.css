@@ -33,30 +33,7 @@ body {
   color: rgb(71, 82, 93);
 }
 
-.hosttitle-1 h3,
-.hosttitle-2 h3 {
-  width: 100%;
-}
-
-.hosttitle-3 h3 {
-  width: 59.5%;
-}
-
-.nav1-1 a {
-  height: 1.444em;
-}
-
-.nav1-1 a:first-child {
-  height: 1.556em;
-}
-
-.nav1-2 a,
-.nav1-3 a {
-  display: block;
-}
-
 .social a {
-  display: block;
   position: absolute;
   left: 0;
   width: 100%;
@@ -75,7 +52,6 @@ body {
 }
 
 .waitlist a {
-  display: block;
   position: absolute;
   top: 4.583em;
   left: 64.5833333333%;
@@ -87,12 +63,20 @@ body {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.waitlist input {
+  display: block;
+}
+
 button {
   display: block;
   font-weight: 400;
   line-height: 1.38;
   text-align: center;
   letter-spacing: 1px;
+}
+
+div a {
+  display: block;
 }
 
 div button {
@@ -161,6 +145,7 @@ h3 {
   left: 0;
   right: 0;
   z-index: 20;
+  width: 100%;
   min-height: 1.231em;
   margin: 0 auto;
   font-size: 2.889em;
@@ -207,7 +192,6 @@ header button {
 }
 
 input {
-  display: block;
   float: left;
 }
 
@@ -220,6 +204,10 @@ label {
   width: 61.4583333333%;
   height: 1.778em;
   margin-top: 0.278em;
+}
+
+label input {
+  display: inline-block;
 }
 
 span {
@@ -257,12 +245,6 @@ h2 p {
   color: rgba(250, 250, 250, 0.98);
 }
 
-.angellist {
-  top: 1.778em;
-  z-index: 58;
-  background-image: url('../images/angellist-Outline(2).png');
-}
-
 .arrow-2 {
   float: left;
   width: 2%;
@@ -275,13 +257,13 @@ h2 p {
 }
 
 .arrow1 {
-  display: block;
   position: absolute;
   top: 1.556em;
   left: 0;
   right: 0;
   z-index: 60;
   width: 18.320610687%;
+  height: 1.333em;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-size: contain;
@@ -295,6 +277,7 @@ h2 p {
   clear: both;
   z-index: 62;
   width: 19.8473282442%;
+  height: 1.444em;
   margin: -0.167em 0 0 9.53006%;
   background-image: url('../images/arrow-blue.png');
   background-repeat: no-repeat;
@@ -304,10 +287,12 @@ h2 p {
 
 .babh {
   position: absolute;
+  top: 123.556em;
   left: 0;
   right: 0;
   z-index: 18;
   width: 83%;
+  height: 15.667em;
   margin: 0 auto;
 }
 
@@ -325,14 +310,20 @@ h2 p {
 
 .babh-line1 {
   position: absolute;
+  top: 7.722em;
+  left: 63.8554216867%;
   z-index: 17;
+  width: 7.8313253012%;
   height: 0.111em;
   background-color: rgb(255, 255, 255);
 }
 
 .babh-line2 {
   position: absolute;
+  top: 7.833em;
+  left: 28.313253012%;
   z-index: 16;
+  width: 7.8313253012%;
   height: 0.111em;
   background-color: rgb(255, 255, 255);
 }
@@ -462,6 +453,7 @@ h2 p {
 
 .details-2 {
   position: absolute;
+  top: 178.533em;
   left: 0;
   right: 0;
   z-index: 5;
@@ -493,6 +485,7 @@ h2 p {
 
 .find {
   float: left;
+  width: 28.313253012%;
   height: 15.667em;
   background-image: url('../images/homesearch-whited(2).png');
   background-repeat: no-repeat;
@@ -501,22 +494,14 @@ h2 p {
 }
 
 .find-subtext {
+  float: left;
+  clear: both;
+  width: 28.313253012%;
   min-height: 3.667em;
   font-size: 0.833em;
   line-height: 1.38;
   text-align: center;
   color: rgb(18, 67, 100);
-}
-
-.find-title {
-  min-height: 2em;
-  padding-top: 0.333em;
-  font-size: 0.833em;
-  font-weight: 500;
-  line-height: 1.38;
-  text-align: center;
-  letter-spacing: 1px;
-  color: rgb(255, 255, 255);
 }
 
 .goodhood {
@@ -533,12 +518,15 @@ h2 p {
 
 .h2subtitle {
   position: absolute;
+  top: 62.688em;
   left: 0;
   right: 0;
   z-index: 53;
   width: 53%;
   max-width: 636px;
+  min-height: 4.313em;
   margin: 0 auto;
+  font-size: 0.889em;
   line-height: 1.38;
   text-align: center;
   color: rgb(18, 67, 100);
@@ -548,25 +536,6 @@ h2 p {
   float: left;
 }
 
-.hello {
-  position: fixed;
-  top: 3.6em;
-  left: 87.0833333333%;
-  z-index: 75;
-  width: 10.5%;
-  max-width: 126px;
-  height: 2.333em;
-  border: 0.133em solid rgb(255, 255, 255);
-  border-radius: 0.2em;
-  font-size: 0.833em;
-  color: rgb(255, 255, 255);
-}
-
-.hello:hover {
-  background-color: rgb(255, 255, 255);
-  color: rgb(255, 203, 19);
-}
-
 .hiw {
   position: absolute;
   top: 61.833em;
@@ -574,6 +543,7 @@ h2 p {
   right: 0;
   z-index: 52;
   width: 83%;
+  height: 15.667em;
   margin: 0 auto;
 }
 
@@ -592,7 +562,9 @@ h2 p {
 .hiw-line {
   position: absolute;
   top: 7.722em;
+  left: 28.313253012%;
   z-index: 51;
+  width: 7.0281124497%;
   height: 0.111em;
   background-color: rgb(250, 250, 250);
 }
@@ -600,7 +572,9 @@ h2 p {
 .hiw-line2 {
   position: absolute;
   top: 7.722em;
+  left: 64.6586345381%;
   z-index: 50;
+  width: 7.0281124497%;
   height: 0.111em;
   background-color: rgb(250, 250, 250);
 }
@@ -623,9 +597,9 @@ h2 p {
 }
 
 .hiwsubnav {
-  display: block;
   float: left;
   width: 99.9999999999%;
+  height: 1.556em;
   border-radius: 0.167em;
   font-size: 1em;
   font-weight: 400;
@@ -652,6 +626,8 @@ h2 p {
   left: 0;
   right: 0;
   z-index: 21;
+  width: 59.5%;
+  height: 6.389em;
   margin: 0 auto;
 }
 
@@ -660,8 +636,11 @@ h2 p {
   left: 0;
   right: 0;
   z-index: 19;
+  width: 89.0756302521%;
   max-width: 636px;
+  min-height: 4.6em;
   margin: 0 auto;
+  font-size: 0.833em;
   line-height: 1.38;
   text-align: center;
   color: rgb(21, 90, 50);
@@ -708,9 +687,7 @@ h2 p {
 }
 
 .linkedin {
-  top: 7.389em;
   z-index: 58;
-  background-image: url('../images/linkedin-faded.png');
 }
 
 .logo {
@@ -756,6 +733,8 @@ h2 p {
 
 .meet-neighbors {
   float: left;
+  width: 25.7028112449%;
+  height: 14.222em;
   margin-top: 0.667em;
   background-image: url('../images/handoff-greened(3).png');
   background-repeat: no-repeat;
@@ -763,17 +742,12 @@ h2 p {
   background-position: center center;
 }
 
-.meet-text {
-  min-height: 3.667em;
-  font-size: 0.833em;
-  line-height: 1.38;
-  text-align: center;
-  color: rgb(21, 90, 50);
-}
-
 .meet-title,
 .ship-text {
+  float: left;
+  width: 28.313253012%;
   min-height: 2em;
+  margin-left: 7.83133%;
   padding-top: 0.333em;
   font-size: 0.833em;
   font-weight: 500;
@@ -785,12 +759,18 @@ h2 p {
 
 .money {
   float: left;
+  width: 28.313253012%;
+  height: 15.667em;
+  background-image: url('../images/money-greened(3).png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
 
+.meet-text,
 .money-text {
+  float: left;
+  width: 28.313253012%;
   min-height: 3.667em;
   font-size: 0.833em;
   line-height: 1.38;
@@ -798,8 +778,12 @@ h2 p {
   color: rgb(21, 90, 50);
 }
 
-.money-title {
+.money-title,
+.pickup-text {
+  float: left;
+  width: 28.313253012%;
   min-height: 2em;
+  margin-left: 7.22892%;
   padding-top: 0.333em;
   font-size: 0.833em;
   font-weight: 500;
@@ -821,7 +805,9 @@ h2 p {
 
 .perform {
   float: left;
-  margin-top: 0.667em;
+  width: 25.3012048192%;
+  height: 14em;
+  margin: 0.667em 0 0 1.20482%;
   background-image: url('../images/packagehold-greened(3).png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -829,6 +815,9 @@ h2 p {
 }
 
 .perform-text {
+  float: left;
+  clear: both;
+  width: 28.313253012%;
   min-height: 3.667em;
   font-size: 0.833em;
   line-height: 1.38;
@@ -836,7 +825,9 @@ h2 p {
   color: rgb(21, 90, 50);
 }
 
+.find-title,
 .perform-title {
+  float: left;
   width: 28.313253012%;
   min-height: 2em;
   padding-top: 0.333em;
@@ -858,23 +849,15 @@ h2 p {
   background-position: center center;
 }
 
-.pickup-subtext {
+.pickup-subtext,
+.ship-subtext {
+  float: left;
+  width: 28.313253012%;
   min-height: 3.667em;
   font-size: 0.833em;
   line-height: 1.38;
   text-align: center;
   color: rgb(18, 67, 100);
-}
-
-.pickup-text {
-  min-height: 2em;
-  padding-top: 0.333em;
-  font-size: 0.833em;
-  font-weight: 500;
-  line-height: 1.38;
-  text-align: center;
-  letter-spacing: 1px;
-  color: rgb(255, 255, 255);
 }
 
 .privacy {
@@ -892,19 +875,12 @@ h2 p {
 
 .ship {
   float: left;
+  width: 29.4176706827%;
   height: 16.278em;
   background-image: url('../images/Shipping-Entry-whited.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
-}
-
-.ship-subtext {
-  min-height: 3.667em;
-  font-size: 0.833em;
-  line-height: 1.38;
-  text-align: center;
-  color: rgb(18, 67, 100);
 }
 
 .social {
@@ -996,45 +972,7 @@ h2 p {
 
 .arrow1-2,
 .arrow1-3 {
-  height: 1.333em;
   background-image: url('../images/arrow-white-faded.png');
-}
-
-.babh-1,
-.babh-2 {
-  top: 123.556em;
-  height: 15.667em;
-}
-
-.babh-3 {
-  top: 123.278em;
-  height: 15.944em;
-}
-
-.babh-line1-1,
-.babh-line1-2 {
-  top: 7.722em;
-  left: 63.8554216867%;
-  width: 7.8313253012%;
-}
-
-.babh-line1-3 {
-  top: 7.778em;
-  left: 65.4618473895%;
-  width: 4.83%;
-}
-
-.babh-line2-1 {
-  top: 7.778em;
-  left: 29.718875502%;
-  width: 4.83%;
-}
-
-.babh-line2-2,
-.babh-line2-3 {
-  top: 7.833em;
-  left: 28.313253012%;
-  width: 7.8313253012%;
 }
 
 .bahnav-1 {
@@ -1058,15 +996,6 @@ h2 p {
   z-index: 6;
   width: 10.9166666666%;
   height: 3.889em;
-}
-
-.details-2-1,
-.details-2-2 {
-  top: 178.533em;
-}
-
-.details-2-3 {
-  top: 179.4em;
 }
 
 .disco-2 {
@@ -1165,64 +1094,16 @@ h2 p {
   background-image: url('../images/facebook-faded.png');
 }
 
-.find-1,
-.find-2 {
-  width: 28.313253012%;
-}
-
-.find-3 {
-  width: 28.31%;
-  margin: -0.056em 0 0 0.19767%;
-}
-
-.find-subtext-1 {
-  position: relative;
-  float: left;
-  clear: both;
-  z-index: 42;
-  width: 28.313253012%;
-}
-
+.find-subtext-1,
 .find-subtext-3 {
-  position: absolute;
-  top: 2em;
-  left: 2.7108433734%;
-  z-index: 42;
-  width: 23.8%;
-  max-width: 282px;
-}
-
-.find-title-1 {
   position: relative;
-  float: left;
-  z-index: 40;
-  width: 28.313253012%;
+  z-index: 42;
 }
 
-.find-title-2 {
-  float: left;
-  width: 28.313253012%;
-}
-
+.find-title-1,
 .find-title-3 {
-  position: absolute;
-  top: 0;
-  left: 3.8152610441%;
+  position: relative;
   z-index: 40;
-  width: 21.5833333333%;
-}
-
-.h2subtitle-1,
-.h2subtitle-2 {
-  top: 62.688em;
-  min-height: 4.313em;
-  font-size: 0.889em;
-}
-
-.h2subtitle-3 {
-  top: 55.722em;
-  min-height: 3.833em;
-  font-size: 1em;
 }
 
 .handy-2 {
@@ -1275,37 +1156,6 @@ h2 p {
   color: rgb(255, 255, 255);
 }
 
-.hiw-1,
-.hiw-2 {
-  height: 15.667em;
-}
-
-.hiw-3 {
-  height: 15.944em;
-}
-
-.hiw-line-1,
-.hiw-line-2 {
-  left: 28.313253012%;
-  width: 7.0281124497%;
-}
-
-.hiw-line-3 {
-  left: 29.3172690763%;
-  width: 4.83%;
-}
-
-.hiw-line2-1,
-.hiw-line2-2 {
-  left: 64.6586345381%;
-  width: 7.0281124497%;
-}
-
-.hiw-line2-3 {
-  left: 65.7630522088%;
-  width: 4.83%;
-}
-
 .hiwnav-1 {
   z-index: 77;
 }
@@ -1327,20 +1177,15 @@ h2 p {
   color: rgb(255, 255, 255);
 }
 
-.hiwsubnav-2,
-.hiwsubnav-3 {
-  height: 1.556em;
+.linkedin-1 {
+  top: 1.778em;
+  background-image: url('../images/linkedin(2).png');
 }
 
-.hosttitle-1,
-.hosttitle-2 {
-  width: 59.5%;
-  height: 6.389em;
-}
-
-.hosttitle-3 {
-  width: 100%;
-  height: 6.556em;
+.linkedin-2,
+.linkedin-3 {
+  top: 7.389em;
+  background-image: url('../images/linkedin-faded.png');
 }
 
 .logo-1 {
@@ -1363,130 +1208,70 @@ h2 p {
 
 .meet-neighbors-1,
 .meet-neighbors-2 {
-  width: 25.7028112449%;
-  height: 14.222em;
   margin-left: 10.63943%;
 }
 
 .meet-neighbors-3 {
-  width: 26.8072289156%;
-  height: 14.833em;
-  margin-left: 8.93261%;
+  margin-left: 10.6363%;
 }
 
 .meet-text-1 {
-  position: absolute;
-  top: 2em;
-  left: 0;
-  right: 0;
-  z-index: 8;
-  width: 23.8%;
-  max-width: 282px;
-  margin: 0 auto;
-}
-
-.meet-text-2 {
   position: relative;
-  float: left;
   z-index: 8;
-  width: 28.313253012%;
   margin-left: 7.52698%;
 }
 
-.meet-title-1 {
+.meet-text-3 {
   position: relative;
-  float: left;
-  z-index: 9;
-  width: 28.313253012%;
-  margin-left: 7.83133%;
+  z-index: 8;
+  margin-left: 7.52385%;
 }
 
-.meet-title-2,
-.ship-text-2 {
-  float: left;
-  width: 28.313253012%;
-  margin-left: 7.83133%;
-}
-
+.meet-title-1,
 .meet-title-3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 9;
-  width: 28.3125%;
-  margin: 0 auto;
 }
 
 .money-1 {
-  width: 28.313253012%;
-  height: 15.667em;
   margin-left: 8.8322%;
-  background-image: url('../images/money-greened(3).png');
 }
 
 .money-2 {
   position: relative;
   z-index: 14;
-  width: 28.313253012%;
-  height: 15.667em;
   margin-left: 8.8322%;
-  background-image: url('../images/money-greened(3).png');
 }
 
 .money-3 {
-  width: 26.8072289156%;
-  height: 14.833em;
-  margin: 0.667em 0 0 8.97026%;
-  background-image: url('../images/money-greened(4).png');
+  position: relative;
+  z-index: 14;
+  margin-left: 8.83064%;
 }
 
 .money-text-1 {
-  position: absolute;
-  top: 2em;
-  left: 74.0963855421%;
-  z-index: 10;
-  width: 23.7951807228%;
-}
-
-.money-text-2 {
   position: relative;
-  float: left;
   z-index: 10;
-  width: 28.313253012%;
   margin-left: 7.52698%;
 }
 
-.meet-text-3,
-.money-text-3,
-.pickup-subtext-3,
-.ship-subtext-3 {
-  float: left;
-  width: 28.313253012%;
+.meet-text-2,
+.money-text-2,
+.pickup-subtext-2,
+.ship-subtext-2 {
   margin-left: 7.52698%;
 }
 
-.money-title-1 {
-  position: absolute;
-  top: 0;
-  left: 71.6867469879%;
-  z-index: 11;
-  width: 28.3125%;
-}
-
-.money-title-2 {
+.money-text-3 {
   position: relative;
-  float: left;
-  z-index: 11;
-  width: 28.313253012%;
-  margin-left: 7.22892%;
+  z-index: 10;
+  margin-left: 7.52385%;
 }
 
-.money-title-3,
-.pickup-text-3 {
-  float: left;
-  width: 28.313253012%;
-  margin-left: 7.22892%;
+.money-title-1,
+.money-title-3 {
+  position: relative;
+  z-index: 11;
 }
 
 .nav1-1 {
@@ -1498,58 +1283,16 @@ h2 p {
   top: 37.556em;
 }
 
-.perform-1,
-.perform-2 {
-  width: 25.3012048192%;
-  height: 14em;
-  margin-left: 1.20482%;
-}
-
-.perform-3 {
-  width: 26.8072289156%;
-  height: 14.833em;
-  margin-left: 0.80008%;
-}
-
-.perform-text-1 {
-  position: relative;
-  float: left;
-  clear: both;
-  z-index: 6;
-  width: 28.313253012%;
-}
-
-.find-subtext-2,
-.perform-text-2 {
-  float: left;
-  clear: both;
-  width: 28.313253012%;
-}
-
+.perform-text-1,
 .perform-text-3 {
-  position: absolute;
-  top: 2em;
-  left: 1.8072289156%;
-  z-index: 6;
-  width: 23.7951807228%;
-}
-
-.perform-title-1 {
   position: relative;
-  float: left;
-  z-index: 7;
+  z-index: 6;
 }
 
-.perform-title-2 {
-  float: left;
-}
-
+.perform-title-1,
 .perform-title-3 {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
   z-index: 7;
-  min-width: 282px;
 }
 
 .pet-care-2 {
@@ -1611,95 +1354,61 @@ h2 p {
 }
 
 .pickup-3 {
-  margin: -0.056em 0 0 6.31903%;
+  position: relative;
+  z-index: 49;
+  margin-left: 7.02341%;
 }
 
 .pickup-subtext-1 {
-  position: absolute;
-  top: 2em;
-  left: 73.6947791164%;
-  z-index: 44;
-  width: 23.8%;
-  max-width: 282px;
-}
-
-.pickup-subtext-2 {
   position: relative;
-  float: left;
   z-index: 44;
-  width: 28.313253012%;
   margin-left: 7.52698%;
 }
 
-.pickup-text-1 {
-  position: absolute;
-  top: 0;
-  left: 72.3895582329%;
-  z-index: 45;
-  width: 26.3052208835%;
-  min-width: 262px;
+.pickup-subtext-3 {
+  position: relative;
+  z-index: 44;
+  margin-left: 7.52385%;
 }
 
-.pickup-text-2 {
+.pickup-text-1,
+.pickup-text-3 {
   position: relative;
-  float: left;
   z-index: 45;
-  width: 28.313253012%;
-  margin-left: 7.22892%;
 }
 
 .ship-1 {
-  width: 29.4176706827%;
   margin-left: 6.92457%;
 }
 
 .ship-2 {
   position: relative;
   z-index: 48;
-  width: 29.4176706827%;
   margin-left: 6.92457%;
 }
 
 .ship-3 {
-  width: 30.1204819277%;
-  margin: -0.389em 0 0 6.43041%;
+  position: relative;
+  z-index: 48;
+  margin-left: 6.92144%;
 }
 
 .ship-subtext-1 {
-  position: absolute;
-  top: 2em;
-  left: 0;
-  right: 0;
-  z-index: 43;
-  width: 23.8%;
-  max-width: 282px;
-  margin: 0 auto;
-}
-
-.ship-subtext-2 {
   position: relative;
-  float: left;
   z-index: 43;
-  width: 28.313253012%;
   margin-left: 7.52698%;
 }
 
-.ship-text-1 {
+.ship-subtext-3 {
   position: relative;
-  float: left;
-  z-index: 41;
-  width: 28.313253012%;
-  margin-left: 7.83133%;
+  z-index: 43;
+  margin-left: 7.52385%;
 }
 
+.ship-text-1,
 .ship-text-3 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   z-index: 41;
-  width: 21.3333333333%;
-  margin: 0 auto;
 }
 
 .sitting-2 {
@@ -1751,7 +1460,7 @@ h2 p {
 }
 
 .social-1 {
-  top: 33.5em;
+  top: 34.333em;
   height: 8.889em;
 }
 
@@ -1827,16 +1536,10 @@ h2 p {
 .text-1,
 .text-2 {
   top: 2.6em;
-  width: 89.0756302521%;
-  min-height: 4.6em;
-  font-size: 0.833em;
 }
 
 .text-3 {
-  top: 2.556em;
-  width: 53%;
-  min-height: 3.833em;
-  font-size: 1em;
+  top: 3.067em;
 }
 
 .text-4 {
@@ -1927,8 +1630,21 @@ h2 p {
   background-image: url('../images/twitter-faded.png');
 }
 
-._button-1,
-._button-2 {
+._button-1 {
+  left: 87.0833333333%;
+  z-index: 75;
+  max-width: 126px;
+  height: 2.333em;
+  border: 0.133em solid rgb(255, 255, 255);
+}
+
+._button-1:hover {
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 203, 19);
+}
+
+._button-2,
+._button-3 {
   left: 87.0833333333%;
   z-index: 66;
   max-width: 126px;
@@ -1936,19 +1652,19 @@ h2 p {
   border: 0.133em solid rgb(255, 255, 255);
 }
 
-._button-3 {
+._button-4 {
   left: 55.5%;
   z-index: 13;
   height: 2.267em;
 }
 
-._button-4 {
+._button-5 {
   left: 68.25%;
   z-index: 12;
   height: 2.267em;
 }
 
-._button-5 {
+._button-6 {
   left: 81%;
   z-index: 11;
   height: 2.333em;
@@ -2000,20 +1716,6 @@ h2 p {
 }
 
 @media(max-width: 1020px) {
-  .hosttitle-3 h3 {
-    width: 97.789414625%;
-    height: 1.524em;
-    min-height: 1.524em;
-    font-size: 2.333em;
-  }
-
-  div h3 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   div label {
     position: relative;
     z-index: 69;
@@ -2024,8 +1726,35 @@ h2 p {
     right: 0;
     margin-right: auto;
     margin-left: auto;
+    font-size: 4.167em;
   }
 
+  ._container-1,
+  ._container-10,
+  ._container-2,
+  ._container-7,
+  ._container-8,
+  .babh,
+  .babh-background,
+  .babh-text,
+  .beyond-packages,
+  .beyond-packages .beyond-text,
+  .beyond-packages .beyond-title,
+  .details-1,
+  .details-2,
+  .h2subtitle,
+  .hiw,
+  .hiw-background,
+  .hiwtext,
+  .hosttitle,
+  .hosttitle .text,
+  .landing-background,
+  .learn-host,
+  .learn-host .learn-host-text,
+  .nav1,
+  .nav1 .arrow1,
+  .waitlist,
+  div h3,
   h2 {
     left: 0;
     right: 0;
@@ -2033,101 +1762,51 @@ h2 p {
     margin-left: auto;
   }
 
-  .babh,
-  .details-1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .babh .meet-neighbors {
+    margin-left: 10.63822%;
   }
 
-  .babh-background {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .babh .money {
+    margin-left: 8.83504%;
   }
 
-  .babh-text,
-  .hiw {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .babh .perform {
+    margin-left: 1.20151%;
+  }
+
+  .babh-text .meet-text,
+  .hiwtext .ship-subtext {
+    margin-left: 7.43605%;
+  }
+
+  .babh-text .meet-title,
+  .hiwtext .ship-text {
+    margin-left: 7.82917%;
+  }
+
+  .babh-text .money-title,
+  .hiwtext .pickup-text {
+    margin-left: 7.22565%;
   }
 
   .bahnav {
-    left: 71.4705882352%;
+    left: 599.0716911764%;
   }
 
-  ._container-1,
-  ._container-2,
-  ._container-7,
-  ._container-8,
-  .beyond-packages,
-  .beyond-packages .beyond-title,
-  .hiw-background,
-  .landing-background,
-  .nav1 .arrow1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .hiw .pickup {
+    margin-left: 6.96357%;
   }
 
-  .beyond-packages .beyond-text {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .details-2,
-  .learn-host,
-  .nav1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .h2subtitle {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .hiw .ship {
+    margin-left: 6.8454499999%;
   }
 
   .hiwnav {
-    left: 55.8823529411%;
+    left: 491.9990808823%;
   }
 
-  .hiwtext {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hosttitle {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hosttitle .text {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .learn-host .learn-host-text {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .learn-host .arrow-2 {
+    margin-left: 48.99816%;
   }
 
   .logoname {
@@ -2160,22 +1839,13 @@ h2 p {
   }
 
   .subtitle2 {
-    top: 16.833em;
+    top: 17.542em;
     left: 0;
     right: 0;
-    width: 622px;
     min-height: 2.667em;
     margin-right: auto;
     margin-left: auto;
     font-size: 1.333em;
-  }
-
-  .waitlist {
-    top: 29.556em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .waitlist .-email {
@@ -2188,185 +1858,57 @@ h2 p {
     z-index: 66;
   }
 
-  .babh .babh-line1-3 {
-    left: 65.7282741738%;
-  }
-
-  .babh .babh-line2-1 {
-    left: 29.9877600979%;
-  }
-
-  .babh .meet-neighbors-1,
-  .babh .meet-neighbors-2 {
-    margin-left: 10.63822%;
-  }
-
-  .babh .meet-neighbors-3 {
-    position: absolute;
-    float: none;
-    top: 0.444em;
-    left: 0;
-    right: 0;
-    width: 26.8053855569%;
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh .money-1 {
-    margin-left: 8.83504%;
-  }
-
-  .babh .money-2 {
+  .babh .money-2,
+  .babh .money-3 {
     position: relative;
     z-index: 14;
-    margin-left: 8.83504%;
   }
 
-  .babh .money-3 {
-    float: right;
-    width: 25.61%;
-    margin-right: 0.71527%;
-    margin-left: 0;
-  }
-
-  .babh .perform-1,
-  .babh .perform-2 {
-    margin-left: 1.20151%;
-  }
-
-  .babh .perform-3 {
-    width: 25.6095291271%;
-    margin-left: 1.22208%;
-  }
-
-  .babh-3 {
-    top: 122.889em;
-    width: 80.0980392156%;
-  }
-
-  .babh-background-3 {
-    height: 42em;
-  }
-
-  .babh-text .meet-text-1 {
-    top: 3.133em;
-    left: 0;
-    right: 0;
-    width: 28.244633624%;
-    max-width: 204px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh-text .meet-text-2 {
+  .babh-text .meet-text-1,
+  .babh-text .meet-text-3 {
     position: relative;
     z-index: 8;
-    margin-left: 7.43605%;
   }
 
-  .babh-text .meet-text-3,
-  .hiwtext .ship-subtext-3 {
-    margin-left: 7.43605%;
-  }
-
-  .babh-text .meet-title-1 {
+  .babh-text .meet-title-1,
+  .babh-text .meet-title-3 {
     position: relative;
     z-index: 9;
-    margin-left: 7.82917%;
-  }
-
-  .babh-text .meet-title-2,
-  .hiwtext .ship-text-2 {
-    margin-left: 7.82917%;
-  }
-
-  .babh-text .meet-title-3 {
-    left: 0;
-    right: 0;
-    width: 28.244633624%;
-    min-height: 2.308em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0.385em;
-    font-size: 0.722em;
-    line-height: 2.98;
   }
 
   .babh-text .money-text-1 {
-    top: 3.133em;
-    left: 74.2962056303%;
-    width: 24.9694002447%;
-    max-width: 204px;
-  }
-
-  .babh-text .money-text-2 {
     position: relative;
     z-index: 10;
     margin-left: 5.42985%;
   }
 
-  .babh-text .money-text-3,
-  .hiwtext .pickup-subtext-3 {
+  .babh-text .money-text-2,
+  .hiwtext .pickup-subtext-2 {
     margin-left: 5.66609%;
   }
 
-  .babh-text .money-title-1 {
-    left: 75.0305997552%;
-    width: 23.5049019607%;
-    min-height: 2.308em;
-    padding-top: 0.385em;
-    font-size: 0.722em;
-    line-height: 2.98;
+  .babh-text .money-text-3 {
+    position: relative;
+    z-index: 10;
+    margin-left: 6.60921%;
   }
 
-  .babh-text .money-title-2 {
+  .babh-text .money-title-1,
+  .babh-text .money-title-3 {
     position: relative;
     z-index: 11;
-    margin-left: 7.22565%;
   }
 
-  .babh-text .money-title-3,
-  .hiwtext .pickup-text-3 {
-    margin-left: 7.22565%;
-  }
-
-  .babh-text .perform-text-1 {
+  .babh-text .perform-text-1,
+  .babh-text .perform-text-3 {
     position: relative;
     z-index: 6;
   }
 
-  .babh-text .perform-text-3 {
-    top: 3.133em;
-    left: 0.917992656%;
-    width: 25.7037943696%;
-    max-width: 204px;
-  }
-
-  .babh-text .perform-title-1 {
+  .babh-text .perform-title-1,
+  .babh-text .perform-title-3 {
     position: relative;
     z-index: 7;
-  }
-
-  .babh-text .perform-title-3 {
-    left: 0.917992656%;
-    width: 27.2949816401%;
-    min-width: 0;
-    min-height: 2.308em;
-    padding-top: 0.385em;
-    font-size: 0.722em;
-  }
-
-  .babh-text-3 {
-    top: 138.056em;
-    width: 80.0980392156%;
-    height: 10.722em;
-  }
-
-  .beyond-packages .beyond-text-3 {
-    top: 5.067em;
-    width: 50%;
-    line-height: 1.48;
   }
 
   .beyond-packages .disco-2 {
@@ -2491,204 +2033,63 @@ h2 p {
     margin-left: 7.16299%;
   }
 
-  .details-1-3 {
-    top: 101.867em;
-    width: 188px;
-  }
-
-  .details-2-3 {
-    top: 179.333em;
-  }
-
-  .h2subtitle-3 {
-    top: 58.529em;
-    width: 61.9444444444%;
-    min-height: 4.059em;
-    font-size: 0.944em;
-    line-height: 1.78;
-  }
-
   .hiw .find-3 {
-    width: 26.81%;
-    margin-top: 0;
-    margin-left: 0.11666%;
+    position: relative;
+    z-index: 47;
   }
 
-  .hiw .hiw-line-3 {
-    left: 28.6063569682%;
-  }
-
-  .hiw .hiw-line2-3 {
-    left: 66.3814180929%;
-  }
-
-  .hiw .pickup-1 {
-    margin-left: 6.96357%;
-  }
-
-  .hiw .pickup-2 {
+  .hiw .pickup-2,
+  .hiw .pickup-3 {
     position: relative;
     z-index: 49;
-    margin-left: 6.96357%;
   }
 
-  .hiw .pickup-3 {
-    width: 26.81%;
-    margin-top: 0;
-    margin-left: 46.26212%;
-  }
-
-  .hiw .ship-1 {
-    margin-left: 6.8454499999%;
-  }
-
-  .hiw .ship-2 {
+  .hiw .ship-2,
+  .hiw .ship-3 {
     position: relative;
     z-index: 48;
-    margin-left: 6.8454499999%;
   }
 
-  .hiw .ship-3 {
-    position: absolute;
-    float: none;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 29.4175187331%;
-    height: 15.056em;
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiw-3 {
-    top: 61.556em;
-    width: 80.1%;
-    height: 16.278em;
-  }
-
-  .hiwtext .find-subtext-1 {
+  .hiwtext .find-subtext-1,
+  .hiwtext .find-subtext-3 {
     position: relative;
     z-index: 42;
   }
 
-  .hiwtext .find-subtext-3 {
-    left: 1.3002364066%;
-    width: 25.8917850479%;
-  }
-
-  .hiwtext .find-title-1 {
+  .hiwtext .find-title-1,
+  .hiwtext .find-title-3 {
     position: relative;
     z-index: 40;
   }
 
-  .hiwtext .find-title-3 {
-    left: 0.1182033096%;
-    width: 28.3745589566%;
-    min-width: 193px;
-    min-height: 2.308em;
-    padding-top: 0.385em;
-    font-size: 0.722em;
-  }
-
   .hiwtext .pickup-subtext-1 {
-    left: 71.2765957446%;
-    width: 28.6110136146%;
-  }
-
-  .hiwtext .pickup-subtext-2 {
     position: relative;
     z-index: 44;
     margin-left: 5.42985%;
   }
 
-  .hiwtext .pickup-text-1 {
-    left: 71.3947990543%;
-    width: 28.2563316276%;
-    min-width: 0;
-    min-height: 2.308em;
-    padding-top: 0.385em;
-    font-size: 0.722em;
+  .hiwtext .pickup-subtext-3 {
+    position: relative;
+    z-index: 44;
+    margin-left: 6.60921%;
   }
 
-  .hiwtext .pickup-text-2 {
+  .hiwtext .pickup-text-1,
+  .hiwtext .pickup-text-3 {
     position: relative;
     z-index: 45;
-    margin-left: 7.22565%;
   }
 
-  .hiwtext .ship-subtext-1 {
-    left: 0;
-    right: 0;
-    width: 28.2563316276%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiwtext .ship-subtext-2 {
+  .hiwtext .ship-subtext-1,
+  .hiwtext .ship-subtext-3 {
     position: relative;
     z-index: 43;
-    margin-left: 7.43605%;
   }
 
-  .hiwtext .ship-text-1 {
+  .hiwtext .ship-text-1,
+  .hiwtext .ship-text-3 {
     position: relative;
     z-index: 41;
-    margin-left: 7.82917%;
-  }
-
-  .hiwtext .ship-text-3 {
-    left: 0;
-    right: 0;
-    width: 28.3745589566%;
-    min-height: 2.308em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0.385em;
-    font-size: 0.722em;
-  }
-
-  .hiwtext-3 {
-    top: 75.833em;
-    height: 6.944em;
-  }
-
-  .hosttitle .text-3 {
-    top: 2.235em;
-    width: 59.5098039215%;
-    min-width: 362px;
-    min-height: 4.059em;
-    font-size: 0.944em;
-    line-height: 1.58;
-  }
-
-  .hosttitle-3 {
-    width: 81.91%;
-  }
-
-  .learn-host .arrow-2-1,
-  .learn-host .arrow-2-2 {
-    margin-left: 48.99816%;
-  }
-
-  .learn-host .arrow-2-3 {
-    position: absolute;
-    float: none;
-    left: 0;
-    right: 0;
-    width: 2.3529411764%;
-    height: 1.722em;
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .learn-host .learn-host-text-3 {
-    font-style: normal;
-  }
-
-  .learn-host-3 {
-    top: 106.056em;
   }
 
   .nav1 .hiwsubnav-1 {
@@ -2696,13 +2097,8 @@ h2 p {
     z-index: 61;
   }
 
-  .nav1-1 {
-    top: 37.722em;
-  }
-
   .subtitle-1 {
-    top: 324px;
-    width: 622px;
+    top: 14.208em;
   }
 
   .subtitle-2 {
@@ -2725,12 +2121,8 @@ h2 p {
   }
 
   ._container .goodhood-1,
-  ._container .goodhood-2 {
-    margin-left: 0.66483%;
-  }
-
+  ._container .goodhood-2,
   ._container .goodhood-3 {
-    width: 12.7777777777%;
     margin-left: 0.66483%;
   }
 
@@ -2745,59 +2137,25 @@ h2 p {
     margin-left: 1.16575%;
   }
 
-  ._container-10 {
-    top: 152.167em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   ._text-1 {
-    top: 2.708em;
+    top: 2.573em;
     width: 100%;
-    font-size: 3.611em;
   }
 
   ._text-3 {
     top: 2.773em;
     width: 612px;
-    font-size: 4.167em;
   }
 
   ._text-4 {
     top: 2.947em;
     width: 588px;
-    font-size: 4.167em;
-  }
-
-  ._text-7 {
-    top: 21.286em;
-    width: 597.9993872549%;
-    max-width: 500px;
-    min-height: 1.524em;
-    font-size: 2.333em;
   }
 }
 
 @media(max-width: 915px) {
   body {
     font-size: 1.125em;
-  }
-
-  .hosttitle-3 h3 {
-    top: 0.882em;
-    width: 74.6341463414%;
-    height: 1.882em;
-    min-height: 1.882em;
-    font-size: 1.889em;
-  }
-
-  div h3 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   div label {
@@ -2810,24 +2168,7 @@ h2 p {
     right: 0;
     margin-right: auto;
     margin-left: auto;
-  }
-
-  h2 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh,
-  .details-1,
-  .hiw,
-  .hosttitle .text,
-  .subtitle {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+    font-size: 3.611em;
   }
 
   ._container-1,
@@ -2835,61 +2176,79 @@ h2 p {
   ._container-2,
   ._container-7,
   ._container-8,
+  .babh,
   .babh-background,
+  .babh-text,
   .beyond-packages,
+  .beyond-packages .beyond-text,
   .beyond-packages .beyond-title,
+  .details-1,
+  .details-2,
+  .h2subtitle,
+  .hiw,
   .hiw-background,
+  .hiwtext,
+  .hosttitle,
+  .hosttitle .text,
   .landing-background,
-  .learn-host .arrow-2-3,
+  .learn-host,
   .learn-host .learn-host-text,
+  .nav1,
   .nav1 .arrow1,
-  .waitlist {
+  .subtitle2,
+  .waitlist,
+  div h3,
+  h2 {
     left: 0;
     right: 0;
     margin-right: auto;
     margin-left: auto;
   }
 
-  .babh-text {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .babh .meet-neighbors {
+    margin-left: 10.6411%;
+  }
+
+  .babh .money {
+    margin-left: 8.83261%;
+  }
+
+  .babh .perform {
+    margin-left: 1.2015499999%;
+  }
+
+  .babh-text .meet-title,
+  .hiwtext .ship-text {
+    margin-left: 7.82652%;
+  }
+
+  .babh-text .meet-text,
+  .babh-text .money-text,
+  .hiwtext .pickup-subtext,
+  .hiwtext .ship-subtext {
+    margin-left: 7.50967%;
+  }
+
+  .babh-text .money-title,
+  .hiwtext .pickup-text {
+    margin-left: 7.2278%;
   }
 
   .bahnav {
-    left: 71.475409836%;
+    left: 579.9231557377%;
   }
 
-  .beyond-packages .beyond-text {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .hiw .pickup {
+    clear: both;
+    margin-left: 6.96445%;
   }
 
-  .details-2,
-  .hiwtext,
-  .hosttitle,
-  .learn-host,
-  .nav1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .hiw .ship {
+    margin-left: 6.98091%;
   }
 
-  .h2subtitle {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  ._container .hiwnav-2,
-  ._container .hiwnav-3,
   .hiwnav {
-    left: 55.8469945355%;
+    left: 457.943989071%;
   }
 
   .logonameblued {
@@ -2906,11 +2265,9 @@ h2 p {
     margin-left: 19.13168%;
   }
 
-  .subtitle2 {
-    top: 16.5em;
+  .subtitle {
     left: 0;
     right: 0;
-    width: 502px;
     margin-right: auto;
     margin-left: auto;
   }
@@ -2925,162 +2282,46 @@ h2 p {
     z-index: 66;
   }
 
-  .babh .babh-line1-3 {
-    left: 66.1664392905%;
-  }
-
-  .babh .babh-line2-1 {
-    left: 30.1500682128%;
-  }
-
-  .babh .meet-neighbors-1,
-  .babh .meet-neighbors-2 {
-    margin-left: 10.6411%;
-  }
-
-  .babh .meet-neighbors-3 {
-    top: 0.389em;
-    left: 0;
-    right: 0;
-    width: 26.0562069607%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh .money-1 {
-    margin-left: 8.83261%;
-  }
-
-  .babh .money-2 {
+  .babh .money-2,
+  .babh .money-3 {
     position: relative;
     z-index: 14;
-    margin-left: 8.83261%;
   }
 
-  .babh .money-3 {
-    margin-top: 0.389em;
-    margin-right: 1.10085%;
-  }
-
-  .babh .perform-1,
-  .babh .perform-2 {
-    margin-left: 1.2015499999%;
-  }
-
-  .babh .perform-3 {
-    width: 25.61%;
-    margin-top: 0.389em;
-    margin-left: 1.21761%;
-  }
-
-  .babh-3 {
-    top: 122.444em;
-    width: 81.9054878048%;
-  }
-
-  .babh-text .meet-text-1 {
-    top: 3em;
-    left: 0;
-    right: 0;
-    width: 26.6479663394%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh-text .meet-text-2 {
+  .babh-text .meet-text-1,
+  .babh-text .meet-text-3 {
     position: relative;
     z-index: 8;
-    margin-left: 7.50967%;
   }
 
-  .babh-text .meet-title-1 {
+  .babh-text .meet-title-1,
+  .babh-text .meet-title-3 {
     position: relative;
     z-index: 9;
-    margin-left: 7.82652%;
   }
 
-  .babh-text .meet-title-2,
-  .hiwtext .ship-text-2 {
-    margin-left: 7.82652%;
-  }
-
-  .babh-text .meet-title-3 {
-    left: 0;
-    right: 0;
-    width: 26.3674614305%;
-    min-height: 3.077em;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh-text .money-text-1 {
-    top: 3em;
-    left: 73.9108520336%;
-    width: 25.9467040673%;
-  }
-
-  .babh-text .money-text-2 {
+  .babh-text .money-text-1,
+  .babh-text .money-text-3 {
     position: relative;
     z-index: 10;
-    margin-left: 7.50967%;
   }
 
-  .babh-text .meet-text-3,
-  .babh-text .money-text-3,
-  .hiwtext .pickup-subtext-3,
-  .hiwtext .ship-subtext-3 {
-    margin-left: 7.50967%;
-  }
-
-  .babh-text .money-title-1 {
-    left: 73.9108520336%;
-    width: 25.9467040673%;
-    min-height: 3.462em;
-  }
-
-  .babh-text .money-title-2 {
+  .babh-text .money-title-1,
+  .babh-text .money-title-3 {
     position: relative;
     z-index: 11;
-    margin-left: 7.2278%;
   }
 
-  .babh-text .money-title-3,
-  .hiwtext .pickup-text-3 {
-    margin-left: 7.2278%;
-  }
-
-  .babh-text .perform-text-1 {
+  .babh-text .perform-text-1,
+  .babh-text .perform-text-3 {
     position: relative;
     z-index: 6;
   }
 
-  .babh-text .perform-text-3 {
-    top: 3em;
-    left: 0;
-    width: 25.7923497267%;
-  }
-
-  .babh-text .perform-title-1 {
+  .babh-text .perform-title-1,
+  .babh-text .perform-title-3 {
     position: relative;
     z-index: 7;
-  }
-
-  .babh-text .perform-title-3 {
-    left: 0;
-    width: 25.8064516129%;
-    min-width: 124px;
-  }
-
-  .babh-text-3 {
-    top: 137.111em;
-    width: 77.9234972677%;
-    height: 8.5em;
-  }
-
-  .beyond-packages .beyond-text-3 {
-    top: 4.6em;
-    width: 66.8055555555%;
-    line-height: 1.78;
   }
 
   .beyond-packages .disco-2,
@@ -3185,166 +2426,58 @@ h2 p {
     margin-left: 7.16189%;
   }
 
-  .details-1-3 {
-    top: 102.6em;
-    width: 218px;
-  }
-
-  .details-2-3 {
-    top: 179em;
-  }
-
-  .h2subtitle-3 {
-    top: 65.867em;
-    min-height: 4.6em;
-    font-size: 0.833em;
-  }
-
-  .hiw .find-1 {
+  .hiw .find-1,
+  .hiw .find-3 {
     position: relative;
     z-index: 47;
   }
 
-  .hiw .find-3 {
-    width: 25.61%;
-    margin-left: 0;
-  }
-
-  .hiw .hiw-line-3 {
-    left: 29.0586630286%;
-  }
-
-  .hiw .hiw-line2-3 {
-    left: 65.3478854024%;
-  }
-
-  .hiw .pickup-1 {
-    clear: both;
-    margin-left: 6.96445%;
-  }
-
-  .hiw .pickup-2 {
-    position: relative;
-    clear: both;
-    z-index: 49;
-    margin-left: 6.96445%;
-  }
-
+  .hiw .pickup-2,
   .hiw .pickup-3 {
-    width: 25.61%;
-    margin-left: 45.64275%;
+    position: relative;
+    z-index: 49;
   }
 
-  .hiw .ship-1 {
-    margin-left: 6.98091%;
-  }
-
-  .hiw .ship-2 {
+  .hiw .ship-2,
+  .hiw .ship-3 {
     position: relative;
     z-index: 48;
-    margin-left: 6.98091%;
   }
 
-  .hiw .ship-3 {
-    left: 0;
-    right: 0;
-    width: 26.81%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiw-3 {
-    top: 61.389em;
-    width: 81.91%;
-  }
-
-  .hiwtext .find-subtext-1 {
+  .hiwtext .find-subtext-1,
+  .hiwtext .find-subtext-3 {
     position: relative;
     z-index: 42;
   }
 
-  .hiwtext .find-subtext-3 {
-    top: 3em;
-    left: 0.7900584314%;
-    width: 23.8334293473%;
-  }
-
-  .hiwtext .find-title-1 {
+  .hiwtext .find-title-1,
+  .hiwtext .find-title-3 {
     position: relative;
     z-index: 40;
   }
 
-  .hiwtext .find-title-3 {
-    left: 0.7905138339%;
-    min-width: 0;
-    max-width: 181px;
-    min-height: 3.462em;
-  }
-
-  .hiwtext .pickup-subtext-1 {
-    top: 3em;
-    left: 72.0557978767%;
-    width: 23.9651057526%;
-  }
-
-  .hiwtext .pickup-subtext-2 {
+  .hiwtext .pickup-subtext-1,
+  .hiwtext .pickup-subtext-3 {
     position: relative;
     z-index: 44;
-    margin-left: 7.50967%;
   }
 
-  .hiwtext .pickup-text-1 {
-    left: 71.3933009628%;
-    width: 25.3047775947%;
-    min-width: 171px;
-  }
-
-  .hiwtext .pickup-text-2 {
+  .hiwtext .pickup-text-1,
+  .hiwtext .pickup-text-3 {
     position: relative;
     z-index: 45;
-    margin-left: 7.2278%;
   }
 
-  .hiwtext .ship-subtext-1 {
-    top: 3em;
-    left: 0;
-    right: 0;
-    width: 23.8334293473%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiwtext .ship-subtext-2 {
+  .hiwtext .ship-subtext-1,
+  .hiwtext .ship-subtext-3 {
     position: relative;
     z-index: 43;
-    margin-left: 7.50967%;
   }
 
-  .hiwtext .ship-text-1 {
+  .hiwtext .ship-text-1,
+  .hiwtext .ship-text-3 {
     position: relative;
     z-index: 41;
-    margin-left: 7.82652%;
-  }
-
-  .hiwtext .ship-text-3 {
-    left: 0;
-    right: 0;
-    min-height: 3.462em;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiwtext-3 {
-    top: 75.444em;
-  }
-
-  .hosttitle .text-3 {
-    top: 3.647em;
-    width: 69.1156235666%;
-  }
-
-  .hosttitle-3 {
-    top: 113em;
   }
 
   .learn-host .arrow-2-1,
@@ -3352,8 +2485,8 @@ h2 p {
     margin-left: 48.96175%;
   }
 
-  .learn-host-3 {
-    top: 106.444em;
+  .learn-host .arrow-2-3 {
+    margin-left: 48.99932%;
   }
 
   .logoname-1 {
@@ -3369,15 +2502,6 @@ h2 p {
   .nav1 .hiwsubnav-1 {
     position: relative;
     z-index: 61;
-  }
-
-  .nav1-1 {
-    top: 39.778em;
-  }
-
-  .subtitle-1 {
-    top: 13em;
-    width: 502px;
   }
 
   .subtitle-2 {
@@ -3405,6 +2529,11 @@ h2 p {
     margin-left: 0.76503%;
   }
 
+  ._container .hiwnav-2,
+  ._container .hiwnav-3 {
+    left: 55.8469945355%;
+  }
+
   ._container .privacy-1,
   ._container .privacy-2,
   ._container .privacy-3 {
@@ -3412,44 +2541,20 @@ h2 p {
   }
 
   ._text-1 {
-    top: 3.327em;
+    top: 2.969em;
     width: 816px;
-    font-size: 3.056em;
   }
 
   ._text-3 {
     top: 3.2em;
-    font-size: 3.611em;
   }
 
   ._text-4 {
     top: 3.4em;
-    font-size: 3.611em;
-  }
-
-  ._text-7 {
-    top: 26.294em;
-    width: 100%;
-    min-height: 1.882em;
-    font-size: 1.889em;
   }
 }
 
 @media(max-width: 820px) {
-  .hosttitle-3 h3 {
-    top: 0;
-    width: 92.9268292682%;
-  }
-
-  .hosttitle .text,
-  .subtitle,
-  div h3 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   div label {
     position: relative;
     z-index: 69;
@@ -3460,8 +2565,35 @@ h2 p {
     right: 0;
     margin-right: auto;
     margin-left: auto;
+    font-size: 3.056em;
   }
 
+  ._container-10,
+  ._container-7,
+  ._container-8,
+  .babh,
+  .babh-background,
+  .babh-text,
+  .beyond-packages,
+  .beyond-packages .beyond-text,
+  .beyond-packages .beyond-title,
+  .details-1,
+  .details-2,
+  .h2subtitle,
+  .hiw,
+  .hiw-background,
+  .hiwtext,
+  .hosttitle,
+  .hosttitle .text,
+  .landing-background,
+  .learn-host,
+  .learn-host .learn-host-text,
+  .nav1,
+  .nav1 .arrow1,
+  .subtitle,
+  .subtitle2,
+  .waitlist,
+  div h3,
   h2 {
     left: 0;
     right: 0;
@@ -3476,54 +2608,41 @@ h2 p {
     font-size: 0.667em;
   }
 
-  ._container-10,
-  ._container-7,
-  ._container-8,
-  .babh-background,
-  .beyond-packages,
-  .beyond-packages .beyond-title,
-  .hiw,
-  .hiw-background,
-  .hiwtext .ship-text-3,
-  .landing-background,
-  .learn-host,
-  .learn-host .arrow-2-3,
-  .learn-host .learn-host-text,
-  .nav1,
-  .nav1 .arrow1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .babh .meet-neighbors {
+    margin-left: 10.63869%;
   }
 
-  .babh-text {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .babh .money {
+    margin-left: 8.8341999999%;
   }
 
-  .babh,
-  .beyond-packages .beyond-text,
-  .details-1,
-  .details-2,
-  .h2subtitle,
-  .hiwtext {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+  .babh .perform {
+    margin-left: 1.2007%;
   }
 
-  ._button-1,
-  ._button-2,
-  .hello {
-    top: 4.5em;
-    height: 2.917em;
-    border-width: 0.167em;
-    border-radius: 0.25em;
-    font-size: 0.667em;
+  .babh-text .meet-title,
+  .hiwtext .ship-text {
+    margin-left: 7.83094%;
+  }
+
+  .babh-text .meet-text,
+  .babh-text .money-text,
+  .hiwtext .pickup-subtext,
+  .hiwtext .ship-subtext {
+    margin-left: 7.50953%;
+  }
+
+  .babh-text .money-title,
+  .hiwtext .pickup-text {
+    margin-left: 7.22715%;
+  }
+
+  .hiw .pickup {
+    clear: none;
+  }
+
+  .hiw .ship {
+    margin-left: 6.89885%;
   }
 
   .bahnav,
@@ -3532,13 +2651,6 @@ h2 p {
     min-height: 2.917em;
     padding-top: 0.583em;
     font-size: 0.667em;
-  }
-
-  .hosttitle {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .logonameblued {
@@ -3556,23 +2668,6 @@ h2 p {
     margin-left: 282.08492%;
   }
 
-  .subtitle2 {
-    top: 16.833em;
-    left: 0;
-    right: 0;
-    width: 532px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .waitlist {
-    top: 30.444em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   .waitlist .-email {
     position: relative;
     z-index: 65;
@@ -3583,163 +2678,50 @@ h2 p {
     z-index: 66;
   }
 
-  .babh .babh-line1-3 {
-    top: 7.722em;
-    left: 66.2202380952%;
-    width: 4.89%;
-  }
-
-  .babh .babh-line2-1 {
-    top: 7.833em;
-    left: 28.869047619%;
-    width: 4.89%;
-  }
-
-  .babh .meet-neighbors-1,
-  .babh .meet-neighbors-2 {
-    margin-left: 10.63869%;
-  }
-
-  .babh .meet-neighbors-3 {
-    top: 0.444em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh .money-1 {
-    margin-left: 8.8341999999%;
-  }
-
-  .babh .money-2 {
+  .babh .money-2,
+  .babh .money-3 {
     position: relative;
     z-index: 14;
-    margin-left: 8.8341999999%;
   }
 
-  .babh .money-3 {
-    margin-top: 0.444em;
-    margin-right: 0;
-  }
-
-  .babh .perform-1,
-  .babh .perform-2 {
-    margin-left: 1.2007%;
-  }
-
-  .babh .perform-3 {
-    margin-top: 0.444em;
-    margin-left: 0;
-  }
-
-  .babh-3 {
-    top: 122.889em;
-  }
-
-  .babh-text .meet-text-1 {
-    top: 3.4em;
-    left: 0;
-    right: 0;
-    width: 26.6505373842%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh-text .meet-text-2 {
+  .babh-text .meet-text-1,
+  .babh-text .meet-text-3 {
     position: relative;
     z-index: 8;
-    margin-left: 7.50953%;
   }
 
-  .babh-text .meet-title-1 {
+  .babh-text .meet-title-1,
+  .babh-text .meet-title-3 {
     position: relative;
     z-index: 9;
-    margin-left: 7.83094%;
   }
 
-  .babh-text .meet-title-2,
-  .hiwtext .ship-text-2 {
-    margin-left: 7.83094%;
-  }
-
-  .babh-text .meet-title-3 {
-    left: 0;
-    right: 0;
-    width: 28.276227075%;
-    margin-right: auto;
-    margin-left: auto;
-    line-height: 1.38;
-  }
-
-  .babh-text .money-text-1 {
-    top: 3.4em;
-    left: 74.1194807611%;
-    width: 25.9061089657%;
-  }
-
-  .babh-text .money-text-2 {
+  .babh-text .money-text-1,
+  .babh-text .money-text-3 {
     position: relative;
     z-index: 10;
-    margin-left: 7.50953%;
   }
 
-  .babh-text .meet-text-3,
-  .babh-text .money-text-3,
-  .hiwtext .pickup-subtext-3,
-  .hiwtext .ship-subtext-3 {
-    margin-left: 7.50953%;
-  }
-
-  .babh-text .money-title-1 {
-    left: 74.1264597776%;
-    width: 25.567322239%;
-    line-height: 1.38;
-  }
-
-  .babh-text .money-title-2 {
+  .babh-text .money-title-1,
+  .babh-text .money-title-3 {
     position: relative;
     z-index: 11;
-    margin-left: 7.22715%;
   }
 
-  .babh-text .money-title-3,
-  .hiwtext .pickup-text-3 {
-    margin-left: 7.22715%;
-  }
-
-  .babh-text .perform-text-1 {
+  .babh-text .perform-text-1,
+  .babh-text .perform-text-3 {
     position: relative;
     z-index: 6;
   }
 
-  .babh-text .perform-text-3 {
-    top: 3.4em;
-    left: -0.0255897269%;
-    width: 25.1616805471%;
-  }
-
-  .babh-text .perform-title-1 {
+  .babh-text .perform-title-1,
+  .babh-text .perform-title-3 {
     position: relative;
     z-index: 7;
   }
 
-  .babh-text .perform-title-3 {
-    width: 26.323751891%;
-  }
-
-  .babh-text-3 {
-    top: 136.444em;
-    width: 81.91%;
-    height: 10.722em;
-  }
-
   .bahnav-1 {
     left: 70.722179878%;
-  }
-
-  .beyond-packages .beyond-text-3 {
-    top: 4.467em;
   }
 
   .beyond-packages .disco-2,
@@ -3849,144 +2831,81 @@ h2 p {
     margin-left: 7.16654%;
   }
 
-  .details-1-3 {
-    top: 102.533em;
-  }
-
-  .details-2-3 {
-    top: 179.467em;
-  }
-
-  .h2subtitle-3 {
-    top: 65.067em;
-  }
-
-  .hiw .find-1 {
+  .hiw .find-1,
+  .hiw .find-3 {
     position: relative;
     z-index: 47;
   }
 
-  .hiw .hiw-line-3 {
-    left: 28.0487804878%;
-    width: 4.89%;
-  }
-
-  .hiw .hiw-line2-3 {
-    left: 67.0731707317%;
-    width: 4.89%;
-  }
-
   .hiw .pickup-1 {
-    clear: none;
     margin-left: 6.89885%;
   }
 
   .hiw .pickup-2 {
     position: relative;
-    clear: none;
     z-index: 49;
     margin-left: 6.89885%;
   }
 
   .hiw .pickup-3 {
-    margin-left: 47.58759%;
+    position: relative;
+    z-index: 49;
+    margin-left: 6.96543%;
   }
 
-  .hiw .ship-1 {
-    margin-left: 6.89885%;
-  }
-
-  .hiw .ship-2 {
+  .hiw .ship-2,
+  .hiw .ship-3 {
     position: relative;
     z-index: 48;
-    margin-left: 6.89885%;
-  }
-
-  .hiw .ship-3 {
-    left: 0;
-    right: 0;
-    width: 29.2320867827%;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .hiwnav-1 {
     left: 55.8460365853%;
   }
 
-  .hiwtext .find-subtext-1 {
+  .hiwtext .find-subtext-1,
+  .hiwtext .find-subtext-3 {
     position: relative;
     z-index: 42;
   }
 
-  .hiwtext .find-subtext-3 {
-    left: 1.4945589788%;
-  }
-
-  .hiwtext .find-title-1 {
+  .hiwtext .find-title-1,
+  .hiwtext .find-title-3 {
     position: relative;
     z-index: 40;
   }
 
-  .hiwtext .pickup-subtext-1 {
-    left: 71.4954772946%;
-    width: 28.5045227053%;
-  }
-
-  .hiwtext .pickup-subtext-2 {
+  .hiwtext .pickup-subtext-1,
+  .hiwtext .pickup-subtext-3 {
     position: relative;
     z-index: 44;
-    margin-left: 7.50953%;
   }
 
-  .hiwtext .pickup-text-1 {
-    left: 73.0882352941%;
-    width: 25%;
-  }
-
-  .hiwtext .pickup-text-2 {
+  .hiwtext .pickup-text-1,
+  .hiwtext .pickup-text-3 {
     position: relative;
     z-index: 45;
-    margin-left: 7.22715%;
   }
 
-  .hiwtext .ship-subtext-1 {
-    left: 0;
-    right: 0;
-    width: 27.6229395289%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiwtext .ship-subtext-2 {
+  .hiwtext .ship-subtext-1,
+  .hiwtext .ship-subtext-3 {
     position: relative;
     z-index: 43;
-    margin-left: 7.50953%;
   }
 
-  .hiwtext .ship-text-1 {
+  .hiwtext .ship-text-1,
+  .hiwtext .ship-text-3 {
     position: relative;
     z-index: 41;
-    margin-left: 7.83094%;
-  }
-
-  .hiwtext-3 {
-    top: 74.667em;
-  }
-
-  .hosttitle .text-3 {
-    top: 2.706em;
-    width: 78.8469690546%;
-  }
-
-  .hosttitle-3 {
-    top: 115.556em;
-    height: 7.889em;
   }
 
   .learn-host .arrow-2-1,
   .learn-host .arrow-2-2 {
     margin-left: 49.0243899999%;
+  }
+
+  .learn-host .arrow-2-3 {
+    margin-left: 48.99962%;
   }
 
   .logoname-2,
@@ -4002,13 +2921,14 @@ h2 p {
     z-index: 61;
   }
 
-  .social-1 {
-    visibility: hidden;
-  }
-
-  .subtitle-1 {
-    top: 13.5em;
-    width: 532px;
+  ._button-1,
+  ._button-2,
+  ._button-3 {
+    top: 4.5em;
+    height: 2.917em;
+    border-width: 0.167em;
+    border-radius: 0.25em;
+    font-size: 0.667em;
   }
 
   ._container .copyright-1,
@@ -4039,23 +2959,15 @@ h2 p {
   }
 
   ._text-1 {
-    top: 3.769em;
-    width: 696px;
-    font-size: 2.889em;
+    top: 3.509em;
   }
 
   ._text-3 {
     top: 3.782em;
-    font-size: 3.056em;
   }
 
   ._text-4 {
     top: 4.018em;
-    font-size: 3.056em;
-  }
-
-  ._text-7 {
-    width: 512px;
   }
 }
 
@@ -4065,14 +2977,7 @@ h2 p {
   }
 
   .hosttitle-3 h3 {
-    width: 511px;
-  }
-
-  .nav1-1 a {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+    width: 77.9166666666%;
   }
 
   .waitlist a {
@@ -4109,23 +3014,12 @@ h2 p {
     color: rgb(41, 128, 185);
   }
 
-  .hello {
-    visibility: hidden;
-    position: absolute;
-    left: 81.1111111111%;
-    width: 15.8333333333%;
-    height: 2.583em;
-    border-color: rgb(52, 152, 219);
-    color: rgb(52, 152, 219);
-  }
-
   .logonameblued {
     display: block;
     position: relative;
     z-index: 78;
-    width: 44.8611111111%;
-    margin-top: 1.222em;
-    margin-left: 1.80556%;
+    margin-top: 0;
+    margin-left: 0;
   }
 
   .nav1 .arrowblued {
@@ -4133,21 +3027,21 @@ h2 p {
     position: absolute;
     float: none;
     clear: none;
-    top: 1.556em;
-    width: 12.213740458%;
-    height: 1.278em;
+    left: 0;
+    right: 0;
     margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .subtitle2 {
-    top: 17.455em;
+    top: 16em;
     left: 0;
     right: 0;
-    width: 500px;
-    min-height: 2.909em;
+    width: 622px;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.222em;
+    font-weight: 400;
     color: rgb(41, 128, 185);
   }
 
@@ -4180,24 +3074,22 @@ h2 p {
     background-color: rgb(52, 152, 219);
   }
 
-  .babh .babh-line1-3 {
-    left: 65.7627118644%;
-  }
-
-  .babh .babh-line2-1 {
-    left: 29.4915254237%;
+  .babh .meet-neighbors-3 {
+    margin-left: 10.63641%;
   }
 
   .babh .money-3 {
-    margin-right: 1.19496%;
+    position: relative;
+    z-index: 14;
+    margin-left: 8.8323%;
   }
 
   .babh .perform-3 {
-    margin-left: 1.18436%;
+    margin-left: 1.20013%;
   }
 
   .babh-3 {
-    top: 122.167em;
+    top: 121.833em;
     left: 0;
     right: 0;
     margin-right: auto;
@@ -4206,77 +3098,81 @@ h2 p {
 
   ._container-10,
   ._text-7,
-  .babh .meet-neighbors-3,
   .babh-background-3,
   .beyond-packages .beyond-title-3,
   .beyond-packages-3,
+  .details-1-3,
+  .details-2-3,
   .hiw-background-3,
-  .hiwtext .ship-text-3,
-  .learn-host-3 {
+  .learn-host-3,
+  .nav1 .arrow1-1 {
     left: 0;
     right: 0;
     margin-right: auto;
     margin-left: auto;
   }
 
-  .babh-text .meet-text-1 {
-    top: 3em;
-    left: 0;
-    right: 0;
-    width: 28.3333333333%;
-    margin-right: auto;
-    margin-left: auto;
+  .babh-text .meet-text-3 {
+    position: relative;
+    z-index: 8;
+    width: 28.244633624%;
+    margin-top: 0.333em;
+    margin-left: 7.5623%;
     font-weight: 400;
-    line-height: 1.58;
   }
 
   .babh-text .meet-title-3 {
-    left: 0;
-    right: 0;
-    width: 28.3333333333%;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 9;
+    width: 28.244633624%;
+    margin-left: 7.84569%;
   }
 
-  .babh-text .money-text-1 {
-    top: 3em;
-    left: 74.0198882985%;
-    width: 25.9801117014%;
+  .babh-text .money-text-3 {
+    position: relative;
+    z-index: 10;
+    width: 28.244633624%;
+    margin-top: 0.333em;
+    margin-left: 7.53166%;
     font-weight: 400;
-    line-height: 1.58;
   }
 
-  .babh-text .money-title-1 {
-    left: 75.6082277618%;
-    width: 23.4722222222%;
+  .babh-text .money-title-3 {
+    position: relative;
+    z-index: 11;
+    width: 28.4117616336%;
+    margin-left: 7.24571%;
   }
 
   .babh-text .perform-text-3 {
-    top: 3em;
-    left: 0;
-    width: 28.1944444444%;
+    position: relative;
+    z-index: 6;
+    width: 28.244633624%;
+    margin-top: 0.333em;
     font-weight: 400;
-    line-height: 1.58;
   }
 
   .babh-text .perform-title-3 {
-    width: 26.7068705578%;
+    position: relative;
+    z-index: 7;
+    width: 28.244633624%;
   }
 
   .babh-text-3 {
-    top: 135.389em;
+    top: 135.111em;
     left: 0;
     right: 0;
-    width: 79.6551724137%;
-    height: 10.444em;
+    width: 85%;
+    height: 16.389em;
     margin-right: auto;
     margin-left: auto;
   }
 
   .beyond-packages .beyond-text-3 {
-    top: 4.6em;
+    top: 5.067em;
     left: 0;
     right: 0;
+    width: 66.8055555555%;
     margin-right: auto;
     margin-left: auto;
     font-weight: 400;
@@ -4291,7 +3187,7 @@ h2 p {
   .beyond-packages .disco-6 {
     position: relative;
     z-index: 30;
-    margin-left: 6.72309%;
+    margin-left: 6.75998%;
   }
 
   .beyond-packages .handy-3 {
@@ -4303,7 +3199,7 @@ h2 p {
   .beyond-packages .handy-6 {
     position: relative;
     z-index: 32;
-    margin-left: 15.94618%;
+    margin-left: 15.98524%;
   }
 
   .beyond-packages .pet-care-3 {
@@ -4321,7 +3217,7 @@ h2 p {
   .beyond-packages .sitting-3 {
     position: relative;
     z-index: 25;
-    margin-left: 7.34809%;
+    margin-left: 7.40234%;
   }
 
   .beyond-packages .sitting-6 {
@@ -4341,58 +3237,35 @@ h2 p {
     margin-left: 7.1658%;
   }
 
-  .details-1-3 {
-    top: 103.8em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .details-2-3 {
-    top: 179.8em;
-    left: 0;
-    right: 0;
-    min-width: 166px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   .h2subtitle-3 {
-    top: 65.733em;
     left: 0;
     right: 0;
+    width: 61.9444444444%;
     margin-right: auto;
     margin-left: auto;
-    font-weight: 500;
+    font-weight: 400;
+    line-height: 1.78;
   }
 
   .hiw .find-3 {
-    margin-left: 0.16162%;
-  }
-
-  .hiw .hiw-line-3 {
-    left: 29.1525423728%;
-  }
-
-  .hiw .hiw-line2-3 {
-    left: 66.1016949152%;
+    position: relative;
+    z-index: 47;
   }
 
   .hiw .pickup-3 {
-    margin-left: 48.61965%;
+    position: relative;
+    z-index: 49;
+    margin-left: 6.96282%;
   }
 
   .hiw .ship-3 {
-    left: 0;
-    right: 0;
-    width: 25%;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 48;
+    margin-left: 6.89745%;
   }
 
   .hiw-3 {
-    top: 60.667em;
+    top: 60.444em;
     left: 0;
     right: 0;
     margin-right: auto;
@@ -4400,33 +3273,44 @@ h2 p {
   }
 
   .hiwtext .find-subtext-3 {
-    left: 2.3411371237%;
+    position: relative;
+    z-index: 42;
     font-weight: 400;
   }
 
-  .hiwtext .pickup-subtext-1 {
-    left: 74.6012654918%;
-    width: 24.5986508393%;
+  .hiwtext .find-title-3 {
+    position: relative;
+    z-index: 40;
+  }
+
+  .hiwtext .pickup-subtext-3 {
+    position: relative;
+    z-index: 44;
+    margin-left: 7.50667%;
     font-weight: 400;
   }
 
-  .hiwtext .pickup-text-1 {
-    left: 74.5986508393%;
-    width: 24.5986508393%;
-    min-width: 147px;
+  .hiwtext .pickup-text-3 {
+    position: relative;
+    z-index: 45;
+    margin-left: 7.2269%;
   }
 
-  .hiwtext .ship-subtext-1 {
-    left: 0;
-    right: 0;
-    width: 21.9212466663%;
-    margin-right: auto;
-    margin-left: auto;
+  .hiwtext .ship-subtext-3 {
+    position: relative;
+    z-index: 43;
+    margin-left: 7.50667%;
     font-weight: 400;
+  }
+
+  .hiwtext .ship-text-3 {
+    position: relative;
+    z-index: 41;
+    margin-left: 7.82827%;
   }
 
   .hiwtext-3 {
-    top: 73.778em;
+    top: 74em;
     left: 0;
     right: 0;
     margin-right: auto;
@@ -4434,18 +3318,19 @@ h2 p {
   }
 
   .hosttitle .text-3 {
-    top: 2.353em;
     left: 0;
     right: 0;
-    width: 66.4%;
+    width: 62.5%;
     margin-right: auto;
     margin-left: auto;
-    font-weight: 500;
+    font-weight: 400;
+    line-height: 1.58;
   }
 
   .hosttitle-3 {
     left: 0;
     right: 0;
+    width: 100%;
     height: 7em;
     margin-right: auto;
     margin-left: auto;
@@ -4462,13 +3347,7 @@ h2 p {
   }
 
   .learn-host .arrow-2-3 {
-    top: 0.833em;
-    left: 0;
-    right: 0;
-    width: 3.3333333333%;
-    height: 2.556em;
-    margin-right: auto;
-    margin-left: auto;
+    margin-left: 48.99957%;
   }
 
   .learn-host .learn-host-text-3 {
@@ -4488,43 +3367,49 @@ h2 p {
     width: 10.0824652777%;
   }
 
-  .bahnav-1,
-  .hiwnav-1,
-  .logoname-1 {
-    visibility: hidden;
-  }
-
   .nav1 .hiwsubnav-1 {
-    position: absolute;
-    float: none;
-    width: 100%;
+    position: relative;
+    z-index: 61;
     height: 1.867em;
+    margin-top: 0.733em;
     border-radius: 0.2em;
     font-size: 0.833em;
     color: rgb(41, 128, 185);
   }
 
   .nav1-1 {
-    top: 41.278em;
+    top: 41.389em;
     left: 0;
     right: 0;
-    min-width: 131px;
-    height: 2.778em;
-    min-height: 2.778em;
     margin-right: auto;
     margin-left: auto;
   }
 
+  .bahnav-1,
+  .hiwnav-1,
+  .logoname-1,
+  .social-1 {
+    visibility: hidden;
+  }
+
   .subtitle-1 {
-    top: 13.818em;
+    top: 12.667em;
     left: 0;
     right: 0;
-    width: 500px;
-    min-height: 5.591em;
+    width: 622px;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.222em;
+    font-weight: 400;
     color: rgb(41, 128, 185);
+  }
+
+  ._button-1 {
+    position: absolute;
+    left: 81.1111111111%;
+    width: 15.8333333333%;
+    height: 2.583em;
+    border-color: rgb(52, 152, 219);
+    color: rgb(52, 152, 219);
   }
 
   ._container .copyright-3 {
@@ -4532,6 +3417,7 @@ h2 p {
   }
 
   ._container .goodhood-3 {
+    width: 12.7777777777%;
     margin-left: 2.80599%;
   }
 
@@ -4540,399 +3426,22 @@ h2 p {
   }
 
   ._text-1 {
-    top: 3.667em;
+    top: 3.385em;
     left: 0;
     right: 0;
-    width: 100%;
+    width: 622px;
     margin-right: auto;
     margin-left: auto;
-    font-size: 2.667em;
+    font-size: 2.889em;
     color: rgb(52, 152, 219);
   }
 }
 
-@media(max-width: 580px) {
+@media(max-width: 360px) {
   .hosttitle-3 h3 {
-    width: 431px;
-  }
-
-  .nav1-1 a {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  ._text-7,
-  .babh .meet-neighbors-3,
-  .babh-text .meet-text-1,
-  .beyond-packages .beyond-text-3,
-  .beyond-packages .beyond-title-3,
-  .beyond-packages-3,
-  .hiw-3,
-  .hiw-background-3,
-  .hiwtext .ship-text-3,
-  .landing-background-1,
-  .learn-host .arrow-2-3,
-  .learn-host .learn-host-text-3,
-  .waitlist a {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  div label {
-    position: relative;
-    z-index: 69;
-  }
-
-  .logonameblued {
-    position: relative;
-    z-index: 78;
-    width: 52.0689655172%;
-    margin-left: 1.89386%;
-  }
-
-  .nav1 .arrowblued {
-    top: 1.611em;
-  }
-
-  .subtitle2 {
-    top: 21.353em;
-    left: 0;
-    right: 0;
-    width: 432px;
-    min-height: 3.765em;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 0.944em;
-    font-weight: 400;
-  }
-
-  .waitlist {
-    top: 25.611em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .waitlist .-email {
-    position: relative;
-    z-index: 65;
-  }
-
-  .waitlist .zip {
-    position: relative;
-    z-index: 66;
-  }
-
-  .babh .babh-line1-3 {
-    left: 65.1260504201%;
-  }
-
-  .babh .babh-line2-1 {
-    left: 29.4117647058%;
-  }
-
-  .babh .money-3 {
-    margin-right: 1.52617%;
-  }
-
-  .babh .perform-3 {
-    margin-left: 1.2531699999%;
-  }
-
-  .babh-3 {
-    top: 121.667em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh-background-3 {
-    left: 0;
-    right: 0;
-    height: 43.833em;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh-text .meet-title-3 {
-    left: 0;
-    right: 0;
-    width: 25.3246753246%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .babh-text .money-text-1 {
-    left: 71.2121212121%;
-    width: 26.6233766233%;
-  }
-
-  .babh-text .money-title-1 {
-    left: 71.2121212121%;
-    width: 26.6233766233%;
-    min-width: 123px;
-  }
-
-  .babh-text .perform-text-3 {
-    width: 26.6233766233%;
-  }
-
-  .babh-text .perform-title-3 {
-    width: 25.3246753246%;
-    min-height: 3.077em;
-  }
-
-  .babh-text-3 {
-    top: 134.111em;
-    left: 0;
-    right: 0;
-    height: 12.944em;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .beyond-packages .disco-3 {
-    position: relative;
-    z-index: 31;
-    margin-top: 8.833em;
-    margin-left: 7.42188%;
-  }
-
-  .beyond-packages .disco-6 {
-    position: relative;
-    z-index: 30;
-    margin-top: -0.667em;
-    margin-left: 6.743%;
-  }
-
-  .beyond-packages .handy-3 {
-    position: relative;
-    z-index: 33;
-    margin-top: 8.833em;
-    margin-left: 17.11207%;
-  }
-
-  .beyond-packages .handy-6 {
-    position: relative;
-    z-index: 32;
-    margin-top: -0.667em;
-    margin-left: 15.96983%;
-  }
-
-  .beyond-packages .pet-care-3 {
-    position: relative;
-    z-index: 29;
-    margin-top: 8.833em;
-    margin-left: 7.28718%;
-  }
-
-  .beyond-packages .pet-care-6 {
-    position: relative;
-    z-index: 28;
-    margin-top: -0.667em;
-    margin-left: 6.5625%;
-  }
-
-  .beyond-packages .sitting-3 {
-    position: relative;
-    z-index: 25;
-    margin-top: 8.833em;
-    margin-left: 7.38955%;
-  }
-
-  .beyond-packages .sitting-6 {
-    position: relative;
-    z-index: 24;
-    margin-top: -0.667em;
-  }
-
-  .beyond-packages .storage-3 {
-    position: relative;
-    z-index: 27;
-    margin-top: 8.556em;
-    margin-left: 7.42996%;
-  }
-
-  .beyond-packages .storage-6 {
-    position: relative;
-    z-index: 26;
-    margin-top: -0.667em;
-    margin-left: 7.16056%;
-  }
-
-  .details-1-3 {
-    top: 104.4em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .details-2-3 {
-    top: 180.867em;
-    left: 0;
-    right: 0;
-    width: 44.6551724137%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .h2subtitle-3 {
-    top: 65.467em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiw .find-3 {
-    margin-left: 1.58532%;
-  }
-
-  .hiw .pickup-3 {
-    margin-left: 45.75056%;
-  }
-
-  .hiw .ship-3 {
-    left: 0;
-    right: 0;
-    width: 26.81%;
-    height: 15.667em;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiwtext .find-subtext-3 {
-    top: 3.333em;
-    left: 1.4963160115%;
-  }
-
-  .hiwtext .pickup-subtext-1 {
-    top: 3.333em;
-    left: 73.6830147034%;
-  }
-
-  .hiwtext .pickup-text-1 {
-    left: 73.0926109919%;
-  }
-
-  .hiwtext .ship-subtext-1 {
-    top: 3.333em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiwtext-3 {
-    top: 73.389em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hosttitle .text-3 {
-    top: 2.706em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hosttitle-3 {
-    top: 114.167em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .learn-host-3 {
-    top: 106.778em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .nav1-1 {
-    top: 40.611em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .subtitle-1 {
-    top: 17.471em;
-    left: 0;
-    right: 0;
-    width: 432px;
-    min-height: 7.235em;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 0.944em;
-    font-weight: 400;
-  }
-
-  ._container .copyright-3 {
-    margin-left: 6.49246%;
-  }
-
-  ._container .goodhood-3 {
-    width: 15.6896551724%;
-    margin-left: 2.8178899999%;
-  }
-
-  ._container .privacy-3 {
-    width: 18.2758620689%;
-    margin-left: 1.03179%;
-  }
-
-  ._container-10 {
-    top: 154em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  ._text-1 {
-    top: 4.4em;
-    left: 0;
-    right: 0;
-    width: 95%;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 2.222em;
-  }
-}
-
-@media(max-width: 500px) {
-  body {
-    font-size: 1.125em;
-  }
-
-  .hosttitle-3 h3 {
-    top: 1.071em;
-    width: 85%;
-    height: 2.286em;
+    width: 105.5555555555%;
     min-height: 2.286em;
     font-size: 1.556em;
-  }
-
-  .nav1-1 a {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
   }
 
   .waitlist a {
@@ -4963,36 +3472,32 @@ h2 p {
     margin-left: 10px;
   }
 
-  .hello {
-    left: 76.3888888888%;
-    width: 21.6666666666%;
-    height: 2.5em;
-  }
-
   .logonameblued {
-    position: absolute;
-    float: none;
-    top: 1.222em;
-    left: 0;
-    right: 0;
-    width: 75%;
-    height: 5em;
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 78;
+    width: 68.3333333333%;
+    height: 4em;
+    margin-top: 1.778em;
+    margin-left: 1.875%;
   }
 
   .nav1 .arrowblued {
     top: 2.444em;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .subtitle2 {
-    top: 19.588em;
+    top: 18.5em;
     left: 0;
     right: 0;
-    width: 286px;
+    width: 300px;
+    min-height: 3.556em;
     margin-right: auto;
     margin-left: auto;
+    font-size: 1em;
     color: rgb(52, 152, 219);
   }
 
@@ -5018,46 +3523,22 @@ h2 p {
     color: rgb(255, 255, 255);
   }
 
-  .babh .babh-line1-3,
-  .babh .babh-line2-1 {
-    display: none;
-  }
-
   .babh .meet-neighbors-3 {
-    top: 24.556em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
+    margin-left: 10.63441%;
   }
 
   .babh .money-3 {
-    position: absolute;
-    float: none;
-    top: 50.167em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 14;
+    margin-left: 8.83152%;
   }
 
   .babh .perform-3 {
-    position: absolute;
-    float: none;
-    top: 0.833em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: auto;
+    margin-left: 1.1967%;
   }
 
   .babh-3 {
-    top: 171.167em;
+    top: 118.556em;
     left: 0;
     right: 0;
     width: 83.0555555555%;
@@ -5066,83 +3547,72 @@ h2 p {
     margin-left: auto;
   }
 
-  .babh-background-3 {
-    top: 155.333em;
+  ._container-10,
+  .babh-background-3,
+  .beyond-packages .beyond-title-3,
+  .hiwtext-3,
+  .landing-background-1,
+  .learn-host .learn-host-text-3 {
     left: 0;
     right: 0;
-    height: 89.222em;
     margin-right: auto;
     margin-left: auto;
   }
 
-  .babh-text .meet-text-1 {
-    top: -8.2em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    max-width: 266px;
-    margin-right: auto;
-    margin-left: auto;
+  .babh-text .meet-text-3 {
+    position: relative;
+    z-index: 8;
+    min-height: 5em;
+    margin-top: 0;
+    margin-left: 7.49592%;
+    font-size: 0.611em;
   }
 
   .babh-text .meet-title-3 {
-    top: -28.867em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    min-height: 2.667em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0.333em;
-    font-size: 0.833em;
+    position: relative;
+    z-index: 9;
+    min-height: 2.308em;
+    margin-left: 7.82782%;
+    padding-top: 0.385em;
+    font-size: 0.722em;
   }
 
-  .babh-text .money-text-1 {
-    top: 22.933em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    max-width: 266px;
-    margin-right: auto;
-    margin-left: auto;
+  .babh-text .money-text-3 {
+    position: relative;
+    z-index: 10;
+    min-height: 5em;
+    margin-top: 0;
+    margin-left: 7.49592%;
+    font-size: 0.611em;
   }
 
-  .babh-text .money-title-1 {
-    top: 1.6em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    min-height: 3em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0.333em;
-    font-size: 0.833em;
+  .babh-text .money-title-3 {
+    position: relative;
+    z-index: 11;
+    min-height: 2.308em;
+    margin-left: 7.22529%;
+    padding-top: 0.385em;
+    font-size: 0.722em;
   }
 
   .babh-text .perform-text-3 {
-    top: -36.6em;
-    left: 0;
-    right: 0;
-    width: 66.7895955117%;
-    max-width: 266px;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 6;
+    min-height: 5em;
+    margin-top: 0;
+    font-size: 0.611em;
   }
 
   .babh-text .perform-title-3 {
-    top: -57.133em;
-    left: 0;
-    right: 0;
-    width: 96.9485614646%;
-    min-height: 2.667em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0.333em;
-    font-size: 0.833em;
+    position: relative;
+    z-index: 7;
+    min-height: 2.308em;
+    padding-top: 0.385em;
+    font-size: 0.722em;
   }
 
   .babh-text-3 {
-    top: 217.778em;
+    top: 130.056em;
     left: 0;
     right: 0;
     margin-right: auto;
@@ -5155,18 +3625,10 @@ h2 p {
   }
 
   .beyond-packages .beyond-text-3 {
-    top: 6em;
+    top: 4.733em;
     left: 0;
     right: 0;
-    width: 67.4%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .beyond-packages .beyond-title-3 {
-    top: 1.179em;
-    left: 0;
-    right: 0;
+    width: 78.6111111111%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -5174,8 +3636,8 @@ h2 p {
   .beyond-packages .disco-3 {
     position: relative;
     z-index: 31;
-    margin-top: 11.111em;
-    margin-left: 7.65%;
+    margin-top: 10.056em;
+    margin-left: 7.5217%;
   }
 
   .beyond-packages .disco-6 {
@@ -5183,15 +3645,15 @@ h2 p {
     z-index: 30;
     min-height: 1.231em;
     margin-top: -1.385em;
-    margin-left: 7.04375%;
+    margin-left: 6.90538%;
     font-size: 0.722em;
   }
 
   .beyond-packages .handy-3 {
     position: relative;
     z-index: 33;
-    margin-top: 11.111em;
-    margin-left: 16.26563%;
+    margin-top: 10.056em;
+    margin-left: 16.01563%;
   }
 
   .beyond-packages .handy-6 {
@@ -5199,15 +3661,15 @@ h2 p {
     z-index: 32;
     min-height: 1.231em;
     margin-top: -1.385em;
-    margin-left: 16.26563%;
+    margin-left: 16.01563%;
     font-size: 0.722em;
   }
 
   .beyond-packages .pet-care-3 {
     position: relative;
     z-index: 29;
-    margin-top: 11.111em;
-    margin-left: 4.60938%;
+    margin-top: 10.056em;
+    margin-left: 7.28733%;
   }
 
   .beyond-packages .pet-care-6 {
@@ -5215,15 +3677,15 @@ h2 p {
     z-index: 28;
     min-height: 1.231em;
     margin-top: -1.385em;
-    margin-left: 20.9375%;
+    margin-left: 21.30642%;
     font-size: 0.722em;
   }
 
   .beyond-packages .sitting-3 {
     position: relative;
     z-index: 25;
-    margin-top: 11.111em;
-    margin-left: 7.925%;
+    margin-top: 10.056em;
+    margin-left: 7.50434%;
   }
 
   .beyond-packages .sitting-6 {
@@ -5231,15 +3693,15 @@ h2 p {
     z-index: 24;
     min-height: 1.231em;
     margin-top: -1.385em;
-    margin-left: 7.81563%;
+    margin-left: 7.65191%;
     font-size: 0.722em;
   }
 
   .beyond-packages .storage-3 {
     position: relative;
     z-index: 27;
-    margin-top: 10.778em;
-    margin-left: 9.85%;
+    margin-top: 9.778em;
+    margin-left: 7.5217%;
   }
 
   .beyond-packages .storage-6 {
@@ -5247,21 +3709,21 @@ h2 p {
     z-index: 26;
     min-height: 1.231em;
     margin-top: -1.385em;
-    margin-left: 6.90938%;
+    margin-left: 7.31771%;
     font-size: 0.722em;
   }
 
   .beyond-packages-3 {
-    top: 133.111em;
+    top: 85.778em;
     left: 0;
     right: 0;
-    height: 22.222em;
+    height: 24.389em;
     margin-right: auto;
     margin-left: auto;
   }
 
   .details-1-3 {
-    top: 156.067em;
+    top: 98.8em;
     left: 0;
     right: 0;
     margin-right: auto;
@@ -5269,74 +3731,45 @@ h2 p {
   }
 
   .details-2-3 {
-    top: 290.467em;
+    top: 174.733em;
     left: 0;
     right: 0;
-    width: 63.8888888888%;
     margin-right: auto;
     margin-left: auto;
   }
 
   .h2subtitle-3 {
-    top: 64.2em;
+    top: 60.688em;
     left: 0;
     right: 0;
-    width: 63.8%;
+    width: 76.3888888888%;
     margin-right: auto;
     margin-left: auto;
   }
 
   .hiw .find-3 {
-    position: absolute;
-    float: none;
-    top: 2.389em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiw .hiw-line-3 {
-    display: none;
-    top: 8em;
-    left: 31.598189415%;
-    width: 5.4803457837%;
-  }
-
-  .hiw .hiw-line2-3 {
-    display: none;
-    top: 8em;
-    left: 63.7012534818%;
-    width: 5.4803457837%;
+    position: relative;
+    z-index: 47;
   }
 
   .hiw .pickup-3 {
-    position: absolute;
-    float: none;
-    top: 44.611em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 49;
+    margin-left: 6.95548%;
   }
 
   .hiw .ship-3 {
-    top: 23.5em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 48;
+    margin-left: 6.89277%;
   }
 
   .hiw-3 {
-    top: 63.056em;
+    top: 58.444em;
     left: 0;
     right: 0;
-    width: 99.7222222222%;
-    height: 21.5em;
+    width: 83.0555555555%;
+    height: 11.278em;
     margin-right: auto;
     margin-left: auto;
   }
@@ -5344,130 +3777,99 @@ h2 p {
   .hiw-background-3 {
     left: 0;
     right: 0;
-    height: 87.278em;
+    height: 40.278em;
     margin-right: auto;
     margin-left: auto;
   }
 
   .hiwtext .find-subtext-3 {
-    top: -46em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    max-width: 266px;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    clear: none;
+    z-index: 42;
+    min-height: 5em;
+    margin-top: -6.636em;
+    font-size: 0.611em;
   }
 
   .hiwtext .find-title-3 {
-    top: -67.067em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    min-height: 3em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0.333em;
-    font-size: 0.833em;
+    position: relative;
+    z-index: 40;
+    min-height: 2.308em;
+    margin-top: -11em;
+    padding-top: 0.385em;
+    font-size: 0.722em;
   }
 
-  .hiwtext .pickup-subtext-1 {
-    top: 4.867em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    max-width: 266px;
-    margin-right: auto;
-    margin-left: auto;
+  .hiwtext .pickup-subtext-3 {
+    position: relative;
+    z-index: 44;
+    min-height: 5em;
+    margin-top: -6.636em;
+    margin-left: 7.28965%;
+    font-size: 0.611em;
   }
 
-  .hiwtext .pickup-text-1 {
-    top: -16.4em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    min-height: 3em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0.333em;
-    font-size: 0.833em;
+  .hiwtext .pickup-text-3 {
+    position: relative;
+    z-index: 45;
+    min-height: 2.308em;
+    margin-top: -11em;
+    margin-left: 71.55258%;
+    padding-top: 0.385em;
+    font-size: 0.722em;
   }
 
-  .hiwtext .ship-subtext-1 {
-    top: -21.333em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    max-width: 266px;
-    margin-right: auto;
-    margin-left: auto;
+  .hiwtext .ship-subtext-3 {
+    position: relative;
+    z-index: 43;
+    min-height: 5em;
+    margin-top: -6.636em;
+    margin-left: 7.35763%;
+    font-size: 0.611em;
   }
 
   .hiwtext .ship-text-3 {
-    top: -40.133em;
-    left: 0;
-    right: 0;
-    width: 85%;
-    min-height: 3em;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 0.333em;
-    font-size: 0.833em;
-  }
-
-  .hiwtext-3 {
-    top: 119.444em;
-    left: 0;
-    right: 0;
-    height: 11.389em;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 41;
+    min-height: 2.308em;
+    margin-top: -11em;
+    margin-left: 36.13973%;
+    padding-top: 0.385em;
+    font-size: 0.722em;
   }
 
   .hosttitle .text-3 {
-    top: 1.647em;
+    top: 2.733em;
     left: 0;
     right: 0;
-    min-width: 0;
+    width: 82.2222222222%;
     margin-right: auto;
     margin-left: auto;
   }
 
   .hosttitle-3 {
-    top: 158.944em;
+    top: 113em;
     left: 0;
     right: 0;
-    width: 100%;
     height: 14em;
     margin-right: auto;
     margin-left: auto;
   }
 
-  .landing-background-1 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   .learn-host .arrow-2-3 {
-    top: 1.944em;
+    position: absolute;
+    float: none;
     left: 0;
     right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .learn-host .learn-host-text-3 {
-    top: 1.467em;
-    left: 0;
-    right: 0;
+    width: 5.8333333333%;
+    height: 3.833em;
+    margin-top: 0;
     margin-right: auto;
     margin-left: auto;
   }
 
   .learn-host-3 {
-    top: 150.722em;
+    top: 104.056em;
     left: 0;
     right: 0;
     margin-right: auto;
@@ -5476,6 +3878,16 @@ h2 p {
 
   .nav1 .arrow1-1 {
     visibility: hidden;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .nav1 .hiwsubnav-1 {
+    position: relative;
+    z-index: 61;
+    margin-top: 0.667em;
   }
 
   .nav1-1 {
@@ -5487,22 +3899,30 @@ h2 p {
   }
 
   .subtitle-1 {
-    top: 14.235em;
+    top: 13.444em;
     left: 0;
     right: 0;
-    width: 286px;
+    width: 300px;
+    min-height: 6.833em;
     margin-right: auto;
     margin-left: auto;
+    font-size: 1em;
     color: rgb(52, 152, 219);
   }
 
+  ._button-1 {
+    left: 76.3888888888%;
+    width: 21.6666666666%;
+    height: 2.5em;
+  }
+
   ._container .copyright-3 {
-    margin-left: 6.49688%;
+    margin-left: 6.4974%;
   }
 
   ._container .goodhood-3 {
     width: 25%;
-    margin-left: 3.4375%;
+    margin-left: 3.47222%;
   }
 
   ._container .privacy-3 {
@@ -5510,18 +3930,11 @@ h2 p {
     margin-left: 0;
   }
 
-  ._container-10 {
-    top: 244.556em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   ._text-1 {
     top: 6.077em;
     left: 0;
     right: 0;
+    width: 346px;
     margin-right: auto;
     margin-left: auto;
     font-size: 1.444em;
@@ -5531,188 +3944,10 @@ h2 p {
     top: 31.929em;
     left: 0;
     right: 0;
-    width: 350px;
     min-height: 2.286em;
     margin-right: auto;
     margin-left: auto;
     font-size: 1.556em;
-  }
-}
-
-@media(max-width: 400px) {
-  .hosttitle-3 h3 {
-    width: 100%;
-  }
-
-  ._container-10,
-  ._text-1,
-  ._text-7,
-  .babh .meet-neighbors-3,
-  .babh .money-3,
-  .babh .perform-3,
-  .babh-3,
-  .babh-background-3,
-  .babh-text .meet-text-1,
-  .babh-text .meet-title-3,
-  .babh-text .money-text-1,
-  .babh-text .money-title-1,
-  .babh-text .perform-text-3,
-  .babh-text-3,
-  .beyond-packages .beyond-title-3,
-  .beyond-packages-3,
-  .details-1-3,
-  .details-2-3,
-  .hiw .find-3,
-  .hiw .pickup-3,
-  .hiw .ship-3,
-  .hiw-3,
-  .hiw-background-3,
-  .hiwtext .find-subtext-3,
-  .hiwtext .find-title-3,
-  .hiwtext .pickup-subtext-1,
-  .hiwtext .pickup-text-1,
-  .hiwtext .ship-subtext-1,
-  .hiwtext .ship-text-3,
-  .hiwtext-3,
-  .landing-background-1,
-  .learn-host .arrow-2-3,
-  .learn-host .learn-host-text-3,
-  .learn-host-3,
-  .logonameblued,
-  .nav1-1,
-  .nav1-1 a,
-  .subtitle-1,
-  .subtitle2,
-  .waitlist,
-  .waitlist a {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  div label {
-    position: relative;
-    z-index: 69;
-  }
-
-  .waitlist .-email {
-    position: relative;
-    z-index: 65;
-  }
-
-  .waitlist .zip {
-    position: relative;
-    z-index: 66;
-  }
-
-  .babh-text .perform-title-3 {
-    left: 0;
-    right: 0;
-    width: 104.5166985434%;
-    min-width: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .beyond-packages .beyond-text-3 {
-    top: 6.538em;
-    left: 0;
-    right: 0;
-    min-height: 2.231em;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 0.722em;
-  }
-
-  .beyond-packages .disco-3 {
-    position: relative;
-    z-index: 31;
-    margin-left: 7.64844%;
-  }
-
-  .beyond-packages .disco-6 {
-    position: relative;
-    z-index: 30;
-    margin-left: 7.04297%;
-  }
-
-  .beyond-packages .handy-3 {
-    position: relative;
-    z-index: 33;
-  }
-
-  .beyond-packages .handy-6 {
-    position: relative;
-    z-index: 32;
-  }
-
-  .beyond-packages .pet-care-3 {
-    position: relative;
-    z-index: 29;
-  }
-
-  .beyond-packages .pet-care-6 {
-    position: relative;
-    z-index: 28;
-  }
-
-  .beyond-packages .sitting-3 {
-    position: relative;
-    z-index: 25;
-    margin-left: 7.92188%;
-  }
-
-  .beyond-packages .sitting-6 {
-    position: relative;
-    z-index: 24;
-    margin-left: 7.8125%;
-  }
-
-  .beyond-packages .storage-3 {
-    position: relative;
-    z-index: 27;
-    margin-left: 9.84766%;
-  }
-
-  .beyond-packages .storage-6 {
-    position: relative;
-    z-index: 26;
-    margin-left: 6.90625%;
-  }
-
-  .h2subtitle-3 {
-    top: 68.429em;
-    left: 0;
-    right: 0;
-    min-height: 4.929em;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 0.778em;
-  }
-
-  .hosttitle .text-3 {
-    top: 2.143em;
-    left: 0;
-    right: 0;
-    width: 90%;
-    max-width: 266px;
-    min-height: 4.929em;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 0.778em;
-  }
-
-  .hosttitle-3 {
-    left: 0;
-    right: 0;
-    width: 90%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  ._container .copyright-3 {
-    margin-left: 6.49219%;
   }
 }
 
@@ -5725,22 +3960,10 @@ h2 p {
   .hosttitle-2 h3 {
     top: -1.3em;
     width: 103.829787234%;
-    min-height: 3.2em;
-    font-size: 1.538em;
   }
 
   .hosttitle-3 h3 {
-    top: 1.154em;
-    height: 2.462em;
-    min-height: 2.462em;
-    font-size: 2em;
-  }
-
-  .nav1-1 a {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+    width: 76.25%;
   }
 
   .social a {
@@ -5782,8 +4005,10 @@ h2 p {
   div h3 {
     left: 0;
     right: 0;
+    min-height: 3.2em;
     margin-right: auto;
     margin-left: auto;
+    font-size: 1.538em;
   }
 
   div label {
@@ -5814,7 +4039,6 @@ h2 p {
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.846em;
   }
 
   h2 {
@@ -5864,14 +4088,19 @@ h2 p {
   }
 
   .babh .meet-neighbors {
+    clear: both;
+    width: 62.925170068%;
     height: 16em;
   }
 
   .babh .money {
+    clear: both;
+    width: 66.3265306122%;
     height: 15.769em;
   }
 
   .babh .perform {
+    width: 60.8843537414%;
     height: 15em;
   }
 
@@ -5897,16 +4126,8 @@ h2 p {
     margin-left: auto;
   }
 
-  .beyond-packages .beyond-text {
-    top: 5.462em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 1em;
-  }
-
   .beyond-packages .beyond-title {
+    top: 1.15em;
     left: 0;
     right: 0;
     min-height: 1.5em;
@@ -5933,6 +4154,7 @@ h2 p {
   .details-1 {
     left: 0;
     right: 0;
+    width: 75.3125%;
     margin-right: auto;
     margin-left: auto;
     font-size: 1.154em;
@@ -5941,6 +4163,7 @@ h2 p {
   .details-2 {
     left: 0;
     right: 0;
+    width: 76.5625%;
     min-height: 1.692em;
     margin-right: auto;
     margin-left: auto;
@@ -5959,11 +4182,6 @@ h2 p {
     margin-left: auto;
   }
 
-  .hello {
-    left: 120.166015625%;
-    width: 78.125%;
-  }
-
   .hiw {
     left: 0;
     right: 0;
@@ -5973,6 +4191,7 @@ h2 p {
   }
 
   .hiw .find {
+    width: 73.5395189003%;
     height: 15.538em;
   }
 
@@ -5989,10 +4208,14 @@ h2 p {
   }
 
   .hiw .pickup {
+    clear: both;
+    width: 74.2268041237%;
     height: 15.692em;
   }
 
   .hiw .ship {
+    clear: both;
+    width: 83.1615120274%;
     height: 12.769em;
   }
 
@@ -6006,18 +4229,21 @@ h2 p {
     left: 0;
     right: 0;
     width: 87.1875%;
+    height: 8.462em;
     margin-right: auto;
     margin-left: auto;
   }
 
   .hiwtext .find-title {
     width: 84.58781362%;
-    font-size: 1.154em;
+  }
+
+  .hiwtext .pickup-subtext {
+    width: 83.8709677419%;
   }
 
   .hiwtext .pickup-text {
     width: 97.8494623655%;
-    font-size: 1.154em;
   }
 
   .hiwtext .ship-subtext {
@@ -6026,9 +4252,9 @@ h2 p {
 
   .hiwtext .ship-text {
     width: 79.5698924731%;
-    font-size: 1.154em;
   }
 
+  .beyond-packages .beyond-text,
   .hosttitle .text {
     left: 0;
     right: 0;
@@ -6066,11 +4292,14 @@ h2 p {
   }
 
   .logonameblued {
-    top: 1.692em;
+    position: absolute;
+    float: none;
+    top: 1.538em;
     left: 0;
     right: 0;
+    width: 87.1875%;
     height: 4.308em;
-    margin-top: 1.692em;
+    margin-top: 0;
     margin-right: auto;
     margin-left: auto;
   }
@@ -6079,33 +4308,34 @@ h2 p {
     left: 0;
     right: 0;
     width: 50%;
+    height: 5.385em;
     margin-right: auto;
     margin-left: auto;
   }
 
   .nav1 .arrow1 {
     top: 2.154em;
+    left: 0;
+    right: 0;
     height: 1.846em;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .nav1 .arrowblued {
     top: 3em;
+    left: 0;
+    right: 0;
     width: 16.25%;
-    height: 1.769em;
+    height: 2em;
     margin-top: 60.077em;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .social {
     top: 42.308em;
     left: 100%;
-  }
-
-  .social .angellist {
-    top: 2.462em;
-  }
-
-  .social .linkedin {
-    top: 10.231em;
   }
 
   .subtitle {
@@ -6166,66 +4396,47 @@ h2 p {
     font-size: 1.231em;
   }
 
-  ._button {
-    left: 105.791015625%;
-  }
-
   .babh .meet-neighbors-1,
   .babh .meet-neighbors-2 {
-    clear: both;
-    width: 62.925170068%;
     margin-top: 5.462em;
     margin-left: 17.34694%;
   }
 
   .babh .meet-neighbors-3 {
-    top: 40.154em;
-    left: 0;
-    right: 0;
-    margin-top: 0.923em;
-    margin-right: auto;
-    margin-left: auto;
+    margin-top: 10.385em;
+    margin-left: 17.67645%;
   }
 
   .babh .money-1 {
-    clear: both;
-    width: 66.3265306122%;
     margin-top: 7.769em;
     margin-left: 17.34694%;
   }
 
   .babh .money-2 {
     position: relative;
-    clear: both;
     z-index: 14;
-    width: 66.3265306122%;
     margin-top: 7.769em;
     margin-left: 17.34694%;
   }
 
   .babh .money-3 {
-    top: 71.154em;
-    left: 0;
-    right: 0;
-    margin-top: 0.615em;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 14;
+    margin-top: 11.846em;
+    margin-left: 15.97577%;
   }
 
   .babh .perform-1,
   .babh .perform-2 {
-    width: 60.8843537414%;
     margin-top: 9.077em;
     margin-left: 19.38776%;
   }
 
   .babh .perform-3 {
-    top: 11.846em;
-    left: 0;
-    right: 0;
-    margin-top: 0.615em;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 13;
+    margin-top: 8.308em;
+    margin-left: 18.70217%;
   }
 
   .babh-1,
@@ -6247,22 +4458,10 @@ h2 p {
 
   .babh-background-3 {
     top: 180.615em;
-    height: 107.615em;
+    height: 95.538em;
   }
 
   .babh-text .meet-text-1 {
-    top: 44.2em;
-    left: 0;
-    right: 0;
-    width: 80.3125%;
-    min-width: 257px;
-    max-width: 257px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 1.154em;
-  }
-
-  .babh-text .meet-text-2 {
     position: relative;
     z-index: 8;
     width: 61.9047619047%;
@@ -6272,12 +4471,23 @@ h2 p {
     font-size: 0.692em;
   }
 
-  .babh-text .meet-text-3 {
+  .babh-text .meet-text-2 {
     width: 61.9047619047%;
     min-height: 6.111em;
     margin-top: -11.778em;
     margin-left: 19.38776%;
     font-size: 0.692em;
+  }
+
+  .babh-text .meet-text-3 {
+    position: relative;
+    z-index: 8;
+    width: 77.8125%;
+    min-width: 257px;
+    max-width: 257px;
+    margin-top: -14.091em;
+    margin-left: 9.84375%;
+    font-size: 0.846em;
   }
 
   .babh-text .meet-title-1 {
@@ -6301,27 +4511,17 @@ h2 p {
   }
 
   .babh-text .meet-title-3 {
-    top: 27.067em;
-    left: 0;
-    right: 0;
+    position: relative;
+    float: none;
+    z-index: 9;
+    width: 67.1875%;
+    margin-top: 22.846em;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.154em;
+    font-size: 1em;
   }
 
   .babh-text .money-text-1 {
-    top: 70.867em;
-    left: 0;
-    right: 0;
-    width: 80.3125%;
-    min-width: 257px;
-    max-width: 257px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 1.154em;
-  }
-
-  .babh-text .money-text-2 {
     position: relative;
     z-index: 10;
     width: 64.6258503401%;
@@ -6331,7 +4531,7 @@ h2 p {
     font-size: 0.692em;
   }
 
-  .babh-text .money-text-3 {
+  .babh-text .money-text-2 {
     width: 64.6258503401%;
     min-height: 6.111em;
     margin-top: 23.111em;
@@ -6339,16 +4539,20 @@ h2 p {
     font-size: 0.692em;
   }
 
-  .babh-text .money-title-1 {
-    top: 53.8em;
-    left: 0;
-    right: 0;
+  .babh-text .money-text-3 {
+    position: relative;
+    float: none;
+    z-index: 10;
+    width: 80.3125%;
+    min-width: 257px;
+    max-width: 257px;
+    margin-top: 18.273em;
     margin-right: auto;
     margin-left: auto;
-    font-size: 1.154em;
+    font-size: 0.846em;
   }
 
-  .babh-text .money-title-2 {
+  .babh-text .money-title-1 {
     position: relative;
     z-index: 11;
     min-height: 3.333em;
@@ -6358,12 +4562,23 @@ h2 p {
     font-size: 0.692em;
   }
 
-  .babh-text .money-title-3 {
+  .babh-text .money-title-2 {
     min-height: 3.333em;
     margin-top: 19.333em;
     margin-left: 37.4149699999%;
     padding-top: 0.556em;
     font-size: 0.692em;
+  }
+
+  .babh-text .money-title-3 {
+    position: relative;
+    float: none;
+    z-index: 11;
+    width: 74.375%;
+    margin-top: 26.077em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
   }
 
   .babh-text .perform-text-1 {
@@ -6385,15 +4600,14 @@ h2 p {
   }
 
   .babh-text .perform-text-3 {
-    top: 18.733em;
-    left: 0;
-    right: 0;
+    position: relative;
+    z-index: 6;
     width: 75%;
     min-width: 257px;
     max-width: 257px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 1.154em;
+    margin-top: -45.909em;
+    margin-left: 9.84375%;
+    font-size: 0.846em;
   }
 
   .babh-text .perform-title-1 {
@@ -6417,11 +4631,13 @@ h2 p {
   }
 
   .babh-text .perform-title-3 {
-    top: 2.733em;
-    left: -8.8235294118%;
-    right: auto;
-    width: 117.6470588235%;
-    font-size: 1.154em;
+    position: relative;
+    float: none;
+    z-index: 7;
+    width: 91.5625%;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
   }
 
   .babh-text-1,
@@ -6432,31 +4648,24 @@ h2 p {
   }
 
   .babh-text-3 {
-    top: 196em;
-    width: 85%;
+    top: 196.154em;
+    width: 100%;
     height: 75.538em;
   }
 
   .beyond-packages .beyond-text-1,
   .beyond-packages .beyond-text-2 {
+    top: 5.462em;
     width: 82.2429906542%;
     min-height: 2.231em;
+    font-size: 1em;
   }
 
   .beyond-packages .beyond-text-3 {
     width: 264px;
     min-width: 264px;
     max-width: 264px;
-    line-height: 1.58;
-  }
-
-  .beyond-packages .beyond-title-1,
-  .beyond-packages .beyond-title-2 {
-    top: 1.15em;
-  }
-
-  .beyond-packages .beyond-title-3 {
-    top: 1.65em;
+    font-size: 1.154em;
   }
 
   .beyond-packages .disco-1 {
@@ -6477,8 +4686,8 @@ h2 p {
     position: relative;
     z-index: 31;
     height: 6.769em;
-    margin-top: 13.462em;
-    margin-left: 7.75896%;
+    margin-top: 12.769em;
+    margin-left: 7.59833%;
   }
 
   .beyond-packages .disco-4 {
@@ -6502,7 +4711,7 @@ h2 p {
     z-index: 30;
     min-height: 1.333em;
     margin-top: -2.083em;
-    margin-left: 6.35709%;
+    margin-left: 6.31815%;
     font-size: 0.923em;
   }
 
@@ -6524,7 +4733,7 @@ h2 p {
     position: relative;
     z-index: 33;
     height: 6.769em;
-    margin-top: 13.462em;
+    margin-top: 12.769em;
     margin-left: 14.9046%;
   }
 
@@ -6573,8 +4782,8 @@ h2 p {
     position: relative;
     z-index: 29;
     height: 6.769em;
-    margin-top: 13.462em;
-    margin-left: 8.89798%;
+    margin-top: 12.769em;
+    margin-left: 8.93692%;
   }
 
   .beyond-packages .pet-care-4 {
@@ -6598,7 +4807,7 @@ h2 p {
     z-index: 28;
     min-height: 1.333em;
     margin-top: -1.583em;
-    margin-left: 25.35047%;
+    margin-left: 25.31153%;
     font-size: 0.923em;
   }
 
@@ -6620,8 +4829,8 @@ h2 p {
     position: relative;
     z-index: 25;
     height: 6.769em;
-    margin-top: 13.462em;
-    margin-left: 10.13435%;
+    margin-top: 12.769em;
+    margin-left: 9.96885%;
   }
 
   .beyond-packages .sitting-4 {
@@ -6645,7 +4854,7 @@ h2 p {
     z-index: 24;
     min-height: 1.333em;
     margin-top: -1.583em;
-    margin-left: 8.81036%;
+    margin-left: 8.76655%;
     font-size: 0.923em;
   }
 
@@ -6669,8 +4878,8 @@ h2 p {
     position: relative;
     z-index: 27;
     height: 7.154em;
-    margin-top: 13.077em;
-    margin-left: 8.6692%;
+    margin-top: 12.385em;
+    margin-left: 8.81523%;
   }
 
   .beyond-packages .storage-4 {
@@ -6694,7 +4903,7 @@ h2 p {
     z-index: 26;
     min-height: 1.333em;
     margin-top: -1.583em;
-    margin-left: 7.25273%;
+    margin-left: 7.21379%;
     font-size: 0.923em;
   }
 
@@ -6734,23 +4943,19 @@ h2 p {
   .details-1-1,
   .details-1-2 {
     top: 123.333em;
-    width: 75.3125%;
   }
 
   .details-1-3 {
-    top: 130.067em;
-    width: 191px;
+    top: 129.133em;
   }
 
   .details-2-1,
   .details-2-2 {
     top: 257.692em;
-    width: 76.5625%;
   }
 
   .details-2-3 {
-    top: 284.769em;
-    width: 49.6875%;
+    top: 273.077em;
   }
 
   .element-2 {
@@ -6765,81 +4970,71 @@ h2 p {
   }
 
   .h2subtitle-3 {
-    top: 56.5em;
-    font-size: 1.077em;
+    top: 52.733em;
+    min-height: 4.6em;
+    font-size: 1.154em;
   }
 
   .hiw .find-1 {
     position: relative;
     z-index: 47;
-    width: 73.5395189003%;
     margin-top: -8.308em;
     margin-left: 14.43299%;
   }
 
   .hiw .find-2 {
-    width: 73.5395189003%;
     margin-top: -8.308em;
     margin-left: 14.43299%;
   }
 
   .hiw .find-3 {
-    top: -2.077em;
-    left: 0;
-    right: 0;
-    margin-top: -0.077em;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 47;
+    margin-top: -5.231em;
+    margin-left: 13.74034%;
+  }
+
+  .hiw .hiw-line-3,
+  .hiw .hiw-line2-3 {
+    display: none;
   }
 
   .hiw .pickup-1 {
-    clear: both;
-    width: 74.2268041237%;
     margin-top: 8.308em;
     margin-left: 13.74034%;
   }
 
   .hiw .pickup-2 {
     position: relative;
-    clear: both;
     z-index: 49;
-    width: 74.2268041237%;
     margin-top: 8.308em;
     margin-left: 13.74034%;
   }
 
   .hiw .pickup-3 {
-    top: 44.385em;
-    left: 0;
-    right: 0;
-    margin-top: -0.077em;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 49;
+    margin-top: 9.385em;
+    margin-left: 13.36985%;
   }
 
   .hiw .ship-1 {
-    clear: both;
-    width: 83.1615120274%;
     margin-top: 8.231em;
     margin-left: 9.61125%;
   }
 
   .hiw .ship-2 {
     position: relative;
-    clear: both;
     z-index: 48;
-    width: 83.1615120274%;
     margin-top: 8.231em;
     margin-left: 9.61125%;
   }
 
   .hiw .ship-3 {
-    top: 22.538em;
-    left: 0;
-    right: 0;
-    margin-top: -0.538em;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 48;
+    margin-top: 10.154em;
+    margin-left: 8.93471%;
   }
 
   .hiw-1,
@@ -6849,8 +5044,8 @@ h2 p {
   }
 
   .hiw-3 {
-    top: 80.846em;
-    height: 29.769em;
+    top: 81.308em;
+    height: 15.615em;
   }
 
   .hiw-background-1,
@@ -6883,14 +5078,14 @@ h2 p {
   }
 
   .hiwtext .find-subtext-3 {
-    top: -7.6em;
-    left: 0;
-    right: 0;
-    width: 83.8653673835%;
+    position: relative;
+    clear: both;
+    z-index: 42;
+    width: 83.8709677419%;
     max-width: 257px;
-    margin-right: auto;
-    margin-left: auto;
-    font-size: 1.154em;
+    margin-top: -37.455em;
+    margin-left: 9.08938%;
+    font-size: 0.846em;
   }
 
   .hiwtext .find-title-1 {
@@ -6898,36 +5093,33 @@ h2 p {
     z-index: 40;
     margin-top: -28em;
     margin-left: 9.67742%;
+    font-size: 1.154em;
   }
 
   .hiwtext .find-title-2 {
     margin-top: -28em;
     margin-left: 9.67742%;
-  }
-
-  .hiwtext .find-title-3 {
-    top: -23.533em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiwtext .pickup-subtext-1 {
-    top: 33.2em;
-    left: 0;
-    right: 0;
-    width: 86.7383512544%;
-    max-width: 257px;
-    margin-right: auto;
-    margin-left: auto;
     font-size: 1.154em;
   }
 
-  .hiwtext .pickup-subtext-2 {
+  .hiwtext .find-title-3 {
+    position: relative;
+    z-index: 40;
+    margin-top: -29.692em;
+    margin-left: 9.07258%;
+    font-size: 1em;
+  }
+
+  .hiwtext .pickup-subtext-1 {
     position: relative;
     z-index: 44;
-    width: 83.8709677419%;
+    min-height: 4.231em;
+    margin-top: 17.385em;
+    margin-left: 7.50448%;
+    font-size: 1em;
+  }
+
+  .hiwtext .pickup-subtext-2 {
     min-height: 4.231em;
     margin-top: 17.385em;
     margin-left: 7.50448%;
@@ -6935,46 +5127,42 @@ h2 p {
   }
 
   .hiwtext .pickup-subtext-3 {
-    width: 83.8709677419%;
-    min-height: 4.231em;
-    margin-top: 17.385em;
-    margin-left: 7.50448%;
-    font-size: 1em;
+    position: relative;
+    z-index: 44;
+    min-width: 257px;
+    max-width: 257px;
+    margin-top: 19.909em;
+    margin-left: 3.90905%;
+    font-size: 0.846em;
   }
 
   .hiwtext .pickup-text-1 {
-    top: 16.6em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-  .hiwtext .pickup-text-2 {
     position: relative;
     clear: both;
     z-index: 45;
     margin-top: 9.867em;
     margin-left: -1.42249%;
-  }
-
-  .hiwtext .pickup-text-3 {
-    clear: both;
-    margin-top: 9.867em;
-    margin-left: -1.42249%;
-  }
-
-  .hiwtext .ship-subtext-1 {
-    top: 11.2em;
-    left: 0;
-    right: 0;
-    max-width: 257px;
-    margin-right: auto;
-    margin-left: auto;
     font-size: 1.154em;
   }
 
-  .hiwtext .ship-subtext-2 {
+  .hiwtext .pickup-text-2 {
+    clear: both;
+    margin-top: 9.867em;
+    margin-left: -1.42249%;
+    font-size: 1.154em;
+  }
+
+  .hiwtext .pickup-text-3 {
+    position: relative;
+    float: none;
+    z-index: 45;
+    margin-top: 17.923em;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1em;
+  }
+
+  .hiwtext .ship-subtext-1 {
     position: relative;
     z-index: 43;
     min-height: 4.231em;
@@ -6983,11 +5171,20 @@ h2 p {
     font-size: 1em;
   }
 
-  .hiwtext .ship-subtext-3 {
+  .hiwtext .ship-subtext-2 {
     min-height: 4.231em;
     margin-top: -7.154em;
     margin-left: 9.67742%;
     font-size: 1em;
+  }
+
+  .hiwtext .ship-subtext-3 {
+    position: relative;
+    z-index: 43;
+    max-width: 257px;
+    margin-top: -10.091em;
+    margin-left: 6.25%;
+    font-size: 0.846em;
   }
 
   .hiwtext .ship-text-1 {
@@ -6995,30 +5192,30 @@ h2 p {
     z-index: 41;
     margin-top: -7.4em;
     margin-left: 12.5336%;
+    font-size: 1.154em;
   }
 
   .hiwtext .ship-text-2 {
     margin-top: -7.4em;
     margin-left: 12.5336%;
+    font-size: 1.154em;
   }
 
   .hiwtext .ship-text-3 {
-    top: -1.933em;
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
+    position: relative;
+    z-index: 41;
+    margin-top: -3.923em;
+    margin-left: 11.24552%;
+    font-size: 1em;
   }
 
   .hiwtext-1,
   .hiwtext-2 {
     top: 104.538em;
-    height: 8.462em;
   }
 
   .hiwtext-3 {
     top: 103.385em;
-    height: 15.769em;
   }
 
   .hosttitle .text-1,
@@ -7030,11 +5227,11 @@ h2 p {
   }
 
   .hosttitle .text-3 {
-    top: 2.071em;
+    top: 1.933em;
     width: 80%;
     min-width: 257px;
     max-width: 257px;
-    font-size: 1.077em;
+    font-size: 1.154em;
   }
 
   .hosttitle-1,
@@ -7045,7 +5242,7 @@ h2 p {
   }
 
   .hosttitle-3 {
-    top: 184.538em;
+    top: 183.385em;
     height: 11.462em;
   }
 
@@ -7067,10 +5264,9 @@ h2 p {
   }
 
   .learn-host .arrow-2-3 {
-    top: 2.154em;
     left: 0;
     right: 0;
-    height: 1.923em;
+    height: 5.308em;
     margin-right: auto;
     margin-left: auto;
   }
@@ -7081,7 +5277,6 @@ h2 p {
   }
 
   .learn-host .learn-host-text-3 {
-    top: 0.538em;
     font-size: 1em;
   }
 
@@ -7125,20 +5320,10 @@ h2 p {
     height: 5.385em;
   }
 
-  .nav1 .arrow1-1 {
-    display: none;
-  }
-
-  ._container-5,
-  .nav1 .arrow1-2,
-  .nav1 .arrow1-3 {
-    left: 0;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
   .nav1 .hiwsubnav-1 {
+    position: relative;
+    z-index: 61;
+    margin-top: 0.733em;
     font-size: 1.154em;
   }
 
@@ -7149,14 +5334,11 @@ h2 p {
 
   .nav1-1 {
     top: 45.077em;
-    height: 3.846em;
-    min-height: 3.846em;
   }
 
   .nav1-2,
   .nav1-3 {
     top: 42.231em;
-    height: 5.385em;
   }
 
   .social .facebook-1 {
@@ -7169,6 +5351,15 @@ h2 p {
 
   .social .facebook-3 {
     top: 0.846em;
+  }
+
+  .social .linkedin-1 {
+    top: 2.462em;
+  }
+
+  .social .linkedin-2,
+  .social .linkedin-3 {
+    top: 10.231em;
   }
 
   .social .twitter-1 {
@@ -7228,24 +5419,30 @@ h2 p {
     font-size: 1em;
   }
 
-  ._button-1,
-  ._button-2 {
+  ._button-1 {
+    left: 120.166015625%;
     width: 78.125%;
   }
 
-  ._container ._button-3 {
+  ._button-2,
+  ._button-3 {
+    left: 105.791015625%;
+    width: 78.125%;
+  }
+
+  ._container ._button-4 {
     top: 4.154em;
     left: 102.4999999999%;
     height: 2.615em;
   }
 
-  ._container ._button-4 {
+  ._container ._button-5 {
     top: 2.154em;
     left: 106.25%;
     height: 2.615em;
   }
 
-  ._container ._button-5 {
+  ._container ._button-6 {
     top: 1.462em;
     left: 65.9375%;
     width: 28.125%;
@@ -7260,16 +5457,11 @@ h2 p {
   }
 
   ._container .copyright-1,
-  ._container .copyright-2 {
-    height: 1.231em;
-    margin-top: 0.923em;
-    margin-left: 6.49444%;
-  }
-
+  ._container .copyright-2,
   ._container .copyright-3 {
     height: 1.231em;
     margin-top: 0.923em;
-    margin-left: 6.48926%;
+    margin-left: 6.49444%;
   }
 
   ._container .element-1 {
@@ -7285,15 +5477,10 @@ h2 p {
   }
 
   ._container .goodhood-1,
-  ._container .goodhood-2 {
-    width: 25.7668711656%;
-    margin-left: 0.84356%;
-    font-size: 0.923em;
-  }
-
+  ._container .goodhood-2,
   ._container .goodhood-3 {
     width: 25.7668711656%;
-    margin-left: 0.83008%;
+    margin-left: 0.84356%;
     font-size: 0.923em;
   }
 
@@ -7304,15 +5491,10 @@ h2 p {
   }
 
   ._container .privacy-1,
-  ._container .privacy-2 {
-    width: 34.9693251533%;
-    margin-left: 3.98773%;
-    font-size: 0.923em;
-  }
-
+  ._container .privacy-2,
   ._container .privacy-3 {
     width: 34.9693251533%;
-    margin-left: 3.98438%;
+    margin-left: 3.98773%;
     font-size: 0.923em;
   }
 
@@ -7328,7 +5510,8 @@ h2 p {
   }
 
   ._container-10 {
-    top: 288.231em;
+    top: 276.154em;
+    width: 101.875%;
   }
 
   ._container-1,
@@ -7336,6 +5519,13 @@ h2 p {
     left: 0.15625%;
     right: auto;
     width: 99.6875%;
+  }
+
+  ._container-5 {
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   ._container-7,
@@ -7349,8 +5539,9 @@ h2 p {
   }
 
   ._text-1 {
-    top: 4.375em;
+    top: 4.773em;
     width: 91.875%;
+    font-size: 1.692em;
     line-height: 0.28;
   }
 
@@ -7358,6 +5549,7 @@ h2 p {
   ._text-4 {
     top: 3.583em;
     width: 90.625%;
+    font-size: 1.846em;
   }
 
   ._text-5,
@@ -7368,9 +5560,9 @@ h2 p {
   }
 
   ._text-7 {
-    top: 28.154em;
+    top: 33.545em;
     width: 90.625%;
-    min-height: 2.462em;
-    font-size: 2em;
+    min-height: 2.909em;
+    font-size: 1.692em;
   }
 }
