@@ -93,7 +93,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     'home/django/blocbox/blocbox/static',
-    'home/django/blocbox/bower_components/bootstrap',
+    'home/django/blocbox/bower_components/bootstrap/dist',
 )
 
 #Email Settings

@@ -8,8 +8,23 @@
   <title>Boostrap Test Page</title>
   <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <!--
   <link rel="stylesheet" href="{% static 'blocbox/css/standardizemain.css' %}">
   <link rel="stylesheet" href="{% static 'blocbox/css/stylesmain.css' %}">
+  
+  
+  <link rel="stylesheet" href="{% static 'dist/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'dist/css/bootstrap-theme.min.css' %}">
+  <!--in settings file i added 'home/django/blocbox/bower_components/bootstrap' to static dirs-->
+  
+  <!--link to john's css overwrides - a new CSS file -->
+  <link rel="stylesheet" href="{% static 'blocbox/css/jb_bootstrap_customization.css' %}">
+  
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
 </head>
 <body class="body main clearfix">
   <button class="_button-8">&nbsp;</button>
@@ -20,6 +35,7 @@
   {% else %}
   <button onClick="window.location='/login';" class="say-hello say-hello-2">Sign In</button>
   {% endif %}
+  <h1>This is a test page that is linked to the bootstrap CSS file - it is a copy of the beta page, except different CSS links</h1>
   <h1>
   {% if user.is_authenticated %}
 		<p>Welcome, </p> 
