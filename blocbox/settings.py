@@ -106,4 +106,4 @@ EMAIL_PORT = 587
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' #this is defeault
 
 #admins for error reporting
-ADMINS = (('BlocBox Admin', 'admin@blocbox.co')
+ADMINS = ('BlocBox Admin', 'admin@blocbox.co')
