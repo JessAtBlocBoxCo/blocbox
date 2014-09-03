@@ -1,4 +1,25 @@
 /*	this is blocbox/static/blocbox/css/jb_boostrap_customization.css
-		to override the settings in bower_components/bootstrap/dist/css/boostrap.min.css
-		see: 	http://ollomedia.com/using-twitter-bootstrap-the-right-way/
+		to override the settings in bower_components/bootstrap/dist/css/boostrap.css
+		for guidancce, see: 	http://bootstrapbay.com/blog/customize-bootstrap/
+		
+		Some notes on customization
+		1. we need to load the customized CSS sheet after we load boostrap.min.css to enable the overrides (e.g., in the head of the html file)
+		2. to customize the style, just re-define the style here. dont add your own style names - use the boostrap style names, with customized properties
+				e.g., the following lines of code will remove the border-radius around ".btn" but keep everythign else the same 
+				
+				.btn {
+						border-radius: 0px;
+				}
+		
+		3. i've started some customizations below
+		
 */
+
+html {
+  font-family: brandon-grotesque;
+}
+
+body {
+  rgb(71, 82, 93);
+  font: 400 1em/1.38 brandon-grotesque;
+}
