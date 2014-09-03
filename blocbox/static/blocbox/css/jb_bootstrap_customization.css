@@ -25,3 +25,8 @@ body {
   font: 300 1.125em/1.38 brandon-grotesque;
   color: rgb(71, 82, 93);
 }
+
+.bluebackground {
+	 background-color: rgb(52, 152, 219);
+}
+
