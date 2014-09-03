@@ -241,7 +241,14 @@ def confirmrequestconnect(request, host_id, user_id):
     return HttpResponse("The neighbor's request to connect has been confirmed.") 
     #update this to include host and enduser ids, e.g.: HttpResponse:looking at question %s." % question_id)
 
-#bootsrap test
+#waitlist almost finished and confirmation
+def waitlist_almostfinished(request):
+		return render(request, 'blocbox/almost-finished.html')
+
+def waitlist_confirmation(request):
+		return render(request, 'blocbox/waitlist-confirmation.html')
+
+#bootsrap test - copy of the waitlist sign-up page
 def bootstraptest(request):
     return render(request, 'blocbox/x_bootstraptest.html') 
     
