@@ -60,56 +60,72 @@
 	<p>test - a second container-fluid div - should have green background</p>
 </div>
 
-<body class="body index clearfix">
+<body>
+<!--<body class="body index clearfix"> -->
+<div class="container-fluid orangebackground"> <!-- start orange container -->
+	
   <a class="bahnav bahnav-1" href="#hosting">Become a Host</a>
   <a class="hiwnav hiwnav-1" href="#works">How It Works</a>
   <a class="logoname logoname-1" href="#top"></a>
-   <form method="post" action="mailto:admin@blocbox.co">
-  <button class="hello">Say Hello!</button>
   
-  </form>
-  <a class="logo logo-1" href="#top"></a>
-  <h1 class="_text-1">
-    <p>Neighbors Helping Neighbors</p>
-    <p>Never Miss a Package</p>
-</h1>
-  <p class="subtitle subtitle-1">Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</p>
-  <p class="subtitle2">Launching soon in NYC, DC and LA. Spots are limited. Reserve yours by signing up for our waitlist below.</p>
-  <div class="waitlist clearfix">
-     <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
-method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
-class="validate" target="_blank" novalidate>
+  	<!--start form for 'say hello' -->
+  	<form method="post" action="mailto:admin@blocbox.co">
+  	<button class="hello">Say Hello!</button>  
+  	</form>
+  	
+  	<a class="logo logo-1" href="#top"></a>
+  	<h1 class="_text-1">
+  	  <p>Neighbors Helping Neighbors</p>
+  	  <p>Never Miss a Package</p>
+		</h1>
+  
+  	<p class="subtitle subtitle-1">Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</p>
+  	<p class="subtitle2">Launching soon in NYC, DC and LA. Spots are limited. Reserve yours by signing up for our waitlist below.</p>
+  
+  
+  	<!--begin waitlist clearfix divider - need to update this because not recognized with bootstrap -->
+  	<div class="waitlist clearfix"> 	
+  			<!--start form -->
+  			<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
+					method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
+					class="validate" target="_blank" novalidate>
+  			
+  			<input class="-email" name="Email" placeholder="EMAIL" type="email">
+  			<input class="zip" name="Zip" placeholder="ZIP" type="text">
+  			
+  			<button type="submit" value="Join Waitlist" name="subscribe" class="-waitlist">Join Waitlist</button>
+  			<div id="mce-responses" class="clear">
+  				<div class="response" id="mce-error-response" style="display:none"></div>
+  				<div class="response" id="mce-success-response" style="display:none"></div>
+  			</div> 
+  			
+  			<label value="1" name="group[1689][1]" class="checkout-label _container clearfix">
+  			  <input class="checkbox" type="checkbox">
+  			  <span class="point-text">I'm often at home and I want to learn more about making extra cash as a Blocbox Host</span>
+  			</label>
+  			</form>
+  			  <a href="privacy-policy.html" class="privacy-warning">By Signing Up, I Agree to Blocbox's Privacy Policy</a>
+  	</div> <!--end waitlist clearfix divider-->
+  	
+  	
+  	<!--begin nav1-1 divider -- need to update because bootstrap doesn't recognize -->
+  	<div class="nav1 nav1-1 clearfix">
+  	  <a class="hiwsubnav hiwsubnav-1" href="#works">How It Works</a>
+  	  <a class="arrowblued" href="#works"></a>
+  	  <a class="arrow1 arrow1-1" href="#works"></a>
+  	</div> <!--end nav1-1 divider -->
+  	
+  	<!--begin social-1 divider - need to update because bootstrap doesn't recognize -->
+  	<div class="social social-1">
+  	  <a class="angellist" href="https://angel.co/blocbox" target="_blank"></a>
+  	  <a class="facebook facebook-1" href="https://www.facebook.com/blocboxco" target="_blank"></a>
+  	  <a class="twitter twitter-1" href="https://twitter.com/BlocboxCo" target="_blank"></a>
+  	</div> <!--end social-1 container-->
 
-  <input class="-email" name="Email" placeholder="EMAIL" type="email">
-  <input class="zip" name="Zip" placeholder="ZIP" type="text">
-  
-  <button type="submit" value="Join Waitlist" name="subscribe" class="-waitlist">Join Waitlist</button>
-  <div id="mce-responses" class="clear">
-  	<div class="response" id="mce-error-response" style="display:none"></div>
-  	<div class="response" id="mce-success-response" style="display:none"></div>
-  </div> 
-  
-  <label value="1" name="group[1689][1]" class="checkout-label _container clearfix">
-    <input class="checkbox" type="checkbox">
-    <span class="point-text">I'm often at home and I want to learn more about making extra cash as a Blocbox Host</span>
-  </label>
-  </form>
-    <a href="privacy-policy.html" class="privacy-warning">By Signing Up, I Agree to Blocbox's Privacy Policy</a>
-  </div>
-  <div class="nav1 nav1-1 clearfix">
-    <a class="hiwsubnav hiwsubnav-1" href="#works">How It Works</a>
-    <a class="arrowblued" href="#works"></a>
-    <a class="arrow1 arrow1-1" href="#works"></a>
-  </div>
-  <div class="social social-1">
-    <a class="angellist" href="https://angel.co/blocbox" target="_blank"></a>
-    <a class="facebook facebook-1" href="https://www.facebook.com/blocboxco" target="_blank"></a>
-    <a class="twitter twitter-1" href="https://twitter.com/BlocboxCo" target="_blank"></a>
-  </div>
-  
-  <!--landing-background was the orange container, 
-  JMY updating to container-fluid orangebackground -->
-  <div class="container-fluid orangebackground"></div>
+</div> <!--end the orangecontainer divider -->  
+ 
+  <!--hiw was blue background, JMY updating this to bluecontainer -->
+  <div class="container-fluid bluebackground">
   <a class="logonameblued" href="#top"></a>
         <a style="position:relative; top:-65px" name="works"></a>
   <h2 class="_text-7">
@@ -134,17 +150,15 @@ convenient &nbsp;for you.</p>
 conveniently&nbsp;&nbsp;located and verified Blocbox host and connect.</p>
     <div class="ship-text ship-text-3">&nbsp;SHIP TO YOUR BOX</div>
     <div class="find-title find-title-3">FIND A BLOCBOX HOST</div>
-  </div>
-  <p class="details-1 details-1-3">More Details Coming Soon</p>
+  </div> <!--end blue container-->
   
+  <!--being another blue container to house the 'more details coming soon' language -->
+  <div class="container-fluid bluebackground">
+  	<p class="details-1 details-1-3">More Details Coming Soon</p>
+	</div> <!--end blue container -->
   
-  <!-HIW background was the blue (not darkblue) background
-  JMY updating to grab the fluid-container -->
-  <div class="container-fluid bluebackground"></div>
-  <div class="learn-host learn-host-3 clearfix">
-    <div class="learn-host-text learn-host-text-3">Learn About Becoming a Host</div>
-    <div class="arrow-2 arrow-2-3"></div>
-  </div>
+
+
   
   <!--the beyond-packages was darkblue
   JMY updating to the container-fluid darkbackground  -->
@@ -161,7 +175,11 @@ conveniently&nbsp;&nbsp;located and verified Blocbox host and connect.</p>
     <p class="storage storage-6">Storage</p>
     <p class="pet-care pet-care-6">Pet Care</p>
     <p class="disco disco-6">Disco Ball Rental</p>
-  </div> <!--end dark-blue-->
+    
+    <div class="learn-host-text learn-host-text-3">Learn About Becoming a Host</div>
+    <div class="arrow-2 arrow-2-3"></div>
+    
+  </div> <!--end dark-blue container-->
   
   <!--the host-title-3 background was the green background
   	JMY updating to container-fluid greenbackground -->
@@ -170,23 +188,25 @@ conveniently&nbsp;&nbsp;located and verified Blocbox host and connect.</p>
     <h3>Become a Blocbox Host</h3>
     <p class="text text-3">&nbsp;Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can 
 				conveniently&nbsp;&nbsp;pick up your package when you get home, or whenever you like.</p>
-  </div>
+  </div> <!--end greenbackground container -->
   
-  <div class="babh babh-3 clearfix">
+  <div class="container-fluid greenbackground">
     <div class="perform perform-3"></div>
     <div class="babh-line2 babh-line2-1"></div>
     <div class="meet-neighbors meet-neighbors-3"></div>
     <div class="babh-line1 babh-line1-3"></div>
     <div class="money money-3"></div>
-  </div>
-  <div class="babh-text babh-text-3">
+  </div> <!--end green background container -->
+  
+  <div class="container-fluid greenbackground">
     <div class="money-title money-title-1">EARN MONEY</div>
     <p class="money-text money-text-1">Your neighbors get their packages, you get a little extra in your pocket.&nbsp;The neighborhood wins.</p>
     <div class="meet-title meet-title-3">MEET YOUR NEIGHBORS</div>
     <p class="meet-text meet-text-1">Set and arrange times at which your neighbors can pick up their packages at your door. Hosts must be home a minimum amount of hours in the evening to allow neighbors to pick up their packages.</p>
     <p class="perform-title perform-title-3">PERFORM TASKS WHILE AT HOME</p>
     <p class="perform-text perform-text-3">Receive packages and offer other services to neighbors. Hosts must be able to be verified and be at home to receive all scheduled deliveries.</p>
-  </div>
+  </div> <!--end greenbackground container -->
+  
   <div class="details-2 details-2-3">More Details Coming Soon</div>
   <div class="babh-background babh-background-3"></div>
   <!--lighter green ends here-->
