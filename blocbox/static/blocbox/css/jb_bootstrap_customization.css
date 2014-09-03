@@ -19,7 +19,9 @@ html {
   font-family: brandon-grotesque;
 }
 
+
 body {
-  rgb(71, 82, 93);
-  font: 400 1em/1.38 brandon-grotesque;
+  background-color: rgb(250, 250, 250);
+  font: 300 1.125em/1.38 brandon-grotesque;
+  color: rgb(71, 82, 93);
 }
