@@ -86,6 +86,16 @@ h2 p {
   color: rgb(255, 255, 255);
 }
 
+.hiwanchor {
+	position: relative;
+	top: -826px;
+	margin: 0;
+	padding: 0;
+	float: left;
+}
+	
+}
+
 .angellist {
   display: block;
   position: absolute;
