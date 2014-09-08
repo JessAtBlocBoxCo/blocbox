@@ -86,26 +86,39 @@
   		<!--<a class="navbar-brand" style="background-image: url('{% static 'blocbox/images/Logo-and-name---orange-drop(2).png' %}');" href="#"></a>-->
   		<a class="navbar-brand" href="#">BlocBox</a>
 	</div> <!--navbar-header-->
-  
-  <li class="active"><span>1 <span class="sr-only">(current)</span></span></li>
-
-  
+   
      <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
       	
-      	<!--navbar title of current page -->
+      	<!--first link - active shading - curent page -->
         <li class="active"><a href="#">{% block navbartitle %} {% endblock %}</a></li>
+        
+        <!--second link - Home -->
         <li><a href='/beta'>Home</a></li>
+        
+        <!--second link - sign out or in -->
+        {% if user.is_authenticated %}
+       		 <li><a href='/logout'>Sign out</a></li>
+       	{% else %}
+           <li><a href='/login'>Sign in</a></li>
+				{% endif %}
+				
+				<!--other links -->
+				<li><a href='/search'>Find a BlocBox</a></li>
+        <li><a href='/userdashboard'>Dashboard</a></li>
+        <li><a href='/inbox'>Inbox</a></li>
+        <li><a href='/profile'>Profile</a></li>
+        <li><a href='/signuphost'>Become a Host</a></li>
         
         <!--Commenmting out this first drop-down i dont think we need it - its redundant and cluttered
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
           	  {% if user.is_authenticated %}
-           			 <li><a href='/login'>Sign in</a></li>
+           			 <li><a href='/logout'>Sign out</a></li>
 						 	{% else %}
-           		 <li><a href='/logout'>Sign out</a></li>
+           		 <li><a href='/login'>Sign in</a></li>
             	{% endif %}
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
@@ -135,9 +148,9 @@
           <ul class="dropdown-menu" role="menu">
           		<!--first item in drop-down menu -->
           	  {% if user.is_authenticated %}
-           			 <li><a href="/login/">Sign in</a></li>
+           			 <li><a href='/logout'>Sign out</a></li>
 						 	{% else %}
-           		 <li><a href="/login/">Sign out</a></li>
+           		 <li><a href='/login'>Sign in</a></li>
             	{% endif %}
             <!--second item in drop-down menu -->
             <li><a href="#">Another action</a></li>
