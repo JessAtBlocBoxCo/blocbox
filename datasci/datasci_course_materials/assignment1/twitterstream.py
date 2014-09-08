@@ -1,12 +1,19 @@
+#this is git/blocbox/datasci/datasci_course_materials_assignment1/twitterstream.py
 import oauth2 as oauth
 import urllib2 as urllib
 
 # See assignment1.html instructions or README for how to get these credentials
-
+"""
 api_key = "<Enter api key>"
 api_secret = "<Enter api secret>"
 access_token_key = "<Enter your access token key here>"
 access_token_secret = "<Enter your access token secret here>"
+"""
+
+api_key = "QpibDcKvGNRTQqc4a51rKaPgi"
+api_secret = "VsgoFMbsj6KZda1G2YcIngVFLzlqtWIArZ93MeSCtWzFWkhwga"
+access_token_key = "205482151-adELNrsrqUPqgya3fWtnKjN6YgO9WTfBld1i8Ivb"
+access_token_secret = "hHmmktGlV5M94FRCHhX5x4LGsKf3qlDAtivjDpgaOq52X"
 
 _debug = 0
 
