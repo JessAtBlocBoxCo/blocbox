@@ -86,14 +86,12 @@
     	</div>
     	
     	<!--insert empty row spanning 4-->
-    	<div class="col-md-4"></div>
+    	<div class="col-md-3"></div>
     	
     	<!--The How It Works Button -->
     	<div class="col-md-2">
     	<button onClick="window.location='/beta';"
- 				style="	/*display: inline-block;
-  							float: right; */
-  							height: 2.533em;
+ 				style="	height: 2.533em;
   							margin: 0.8em 23.5% 0 0;
   							border-radius: 0.667em;
   							background-color: rgba(211, 84, 0, 0);
@@ -108,9 +106,7 @@
     	<!--TThe Login Button - spanning 2-->
     	<div class="col-md-2">
     	<button onClick="window.location='/login';" 
-  			style="	display: inline-block;
-  							float: right;
-  							clear: both;
+  			style="	clear: both;
   							height: 2.533em;
   							margin: -2.533em 16% 0 0;
   							border-radius: 0.667em;
@@ -125,9 +121,7 @@
     	
     	<!--The Info button -- spanning 1 -- to where should this link?-->
     	<div class="col-md-1">
-    	<button style="		display: block;
-  									float: right;
-  									clear: both;
+    	<button style="	
   									width: 42px;
   									height: 2.938em;
   									margin: -2.687em 8.5% 0 0;
@@ -136,11 +130,16 @@
   									background: url(' {% static 'blocbox/images/info-button.png' %}') rgba(222, 222, 222, 0); 
   									background-repeat: no-repeat;
   									background-size: contain;
-  									background-position: center center;
+  									
   									font-family: 'Brandon Grotesque';
   									font-weight: 400;
   									text-align: center;
-  									color: rgb(0, 0, 0);"  		
+  									color: rgb(0, 0, 0);
+  									/*
+  									background-position: center center;
+  									clear: both; 
+  									*/
+  									"  		
     		>&nbsp;</button>
     	</div>
   <!--</header> -->
