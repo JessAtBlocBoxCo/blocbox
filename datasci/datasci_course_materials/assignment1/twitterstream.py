@@ -1,6 +1,7 @@
 #this is git/blocbox/datasci/datasci_course_materials_assignment1/twitterstream.py
 import oauth2 as oauth
 import urllib2 as urllib
+import json
 
 # See assignment1.html instructions or README for how to get these credentials
 """
