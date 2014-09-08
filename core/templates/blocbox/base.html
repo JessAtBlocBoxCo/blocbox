@@ -57,7 +57,7 @@
 {% block header %} 
 
 <div class="container-fluid orangebackground"> <!-- start orange container -->
-  <header	style="		position: fixed; 
+  <header	style="position: fixed; 
  			  				top: 0;
   							width: 100%;
  				 				left: 0;
@@ -76,7 +76,10 @@
   							width: 248px;
   							height: 3.125em;
   							margin: auto 0;
-  							background-image: url('../images/Logo-and-name---orange-drop(2).png');
+  							<!--background-image: url('../images/Logo-and-name---orange-drop(2).png'); -->
+  							background-image: url("{% static 'blocbox/images/Logo-and-name---orange-drop(2).png' %}"); 
+  							
+  							
   							background-repeat: no-repeat;
   							background-size: contain;
   							background-position: center center;">
