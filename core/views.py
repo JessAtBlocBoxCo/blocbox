@@ -251,6 +251,10 @@ def waitlist_confirmation(request):
 #bootsrap test - copy of the waitlist sign-up page
 def bootstraptest(request):
     return render(request, 'blocbox/x_bootstraptest.html') 
+
+#bootsrap test - copy of the waitlist sign-up page
+def jesstest(request):
+    return render(request, 'blocbox/jesstest.html') 
     
 """
 def denyrequestconnect(request, host_id, user_id):

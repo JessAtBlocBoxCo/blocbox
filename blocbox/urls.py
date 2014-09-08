@@ -29,6 +29,8 @@ urlpatterns = patterns('',
  		url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.confirmconnect_mail, name='sendrequestconnect'),
  		url(r'^(?P<host_id>\d+)/requestconnectconfirm/(?P<user_id>\d+)/$', views.confirmrequestconnect, name='confirmrequestconnect'),
  		#url(r'^email/(?P<host_id>\d+)/requestconnectdeny/(?P<user_id>\d+)/$', views.denyrequestconnect, name='denyrequestconnect'),
+ 		
+ 		url(r'^jesstest/$', views.jesstest, name='jesstest'),
  		url(r'^datascience/', include('datasci.urls')),
 )
 
