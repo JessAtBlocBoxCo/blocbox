@@ -141,25 +141,24 @@
       </form>
       -->
       
+      <!--commenting out the right navbar - i dont think we need it
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Link</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-          		<!--first item in drop-down menu -->
           	  {% if user.is_authenticated %}
            			 <li><a href='/logout'>Sign out</a></li>
 						 	{% else %}
            		 <li><a href='/login'>Sign in</a></li>
             	{% endif %}
-            <!--second item in drop-down menu -->
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
-      </ul>
+      </ul> -->  <!--end right navbar -->
       
     	</div> <!--collapse navbar-collapse -->
   	</div> <!--end div navbar-->
