@@ -69,9 +69,15 @@
  				 				
  				 				
 	
-{% block header %} 
+{% block navbar %} 
+<!--NOTE TO JOHN - THE BASE NAVBAR CONTENT APPEARS BETWEEN THIS BLOCK STATEMENT ABOVE
+		AND THE ED BLOCK BELOW ALL THE NABVAR STUFF - I'VE COMMENTED OUT THE STOCK
+		BOOTSTRAP ELEMENTS I DONT THINK WE NEED - IF YOU SUPPORT THAT, LETS DELETE IT FROM THE CODE
+		SO THATS ITS CLEANER
+		
+		read about this herea; http://getbootstrap.com/components/#navbar 
+-->
 
-<!--read about this herea; http://getbootstrap.com/components/#navbar -->
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">	
 	<div class="container-fluid whitebackground"> 
 		<div class="navbar-header">
@@ -110,6 +116,10 @@
         <li><a href='/inbox'>Inbox</a></li>
         <li><a href='/profile'>Profile</a></li>
         <li><a href='/signuphost'>Become a Host</a></li>
+        
+        <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button>  </form>
+        
+        <!--<li><a href='/contactus'>Contact Us</a></li> -->
         
         <!--Commenmting out this first drop-down i dont think we need it - its redundant and cluttered
         <li class="dropdown">
