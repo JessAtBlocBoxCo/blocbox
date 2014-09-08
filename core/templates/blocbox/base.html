@@ -56,16 +56,9 @@
 
 <body>	
 	
-{% block header %} 
-
-<!--read about this herea; http://getbootstrap.com/components/#navbar -->
-<nav class="navbar navbar-default" role="navigation">	
-	<div class="container-fluid whitebackground"> 
-			<div class="navbar-header">
-	
-	<div class="row">
-		
- <!-- <header	style="position: fixed; 
+	 <!-- stuff from old navbar css
+	 
+	  <header	style="position: fixed; 
  			  				top: 0;
   							width: 100%;
  				 				left: 0;
@@ -73,21 +66,80 @@
  				 				height: 3.75em; 
  				 				background-color: rgb(255, 255, 255); 
  				 				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);" -->
+ 				 				
+ 				 				
+	
+{% block header %} 
 
-    	<!--the blocbox logo -->
-    	<div class="col-md-4"
+<!--read about this herea; http://getbootstrap.com/components/#navbar -->
+<nav class="navbar navbar-default" role="navigation">	
+	<div class="container-fluid whitebackground"> 
+		<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        	<span class="sr-only">Toggle navigation</span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      	</button>
+  		<a class="navbar-brand" href="#">INSERT-LOGO</a>
+		</div> <!--navbar-header-->
+  
+  
+     <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+      	
+        <li class="active"><a href="#">Link</a></li>
+        <li><a href="#">Link</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+      
+    	</div> <!--collapse navbar-collapse -->
+  	</div> <!--end div navbar-->
+	</div> <!--end white container -->
+</nav> <!--end nav-->
+
+
+    	<!--the blocbox logo 
     		style="				
   							height: 3.4em;
   							background-image: url('{% static 'blocbox/images/Logo-and-name---orange-drop(2).png' %}'); 
   							background-repeat: no-repeat;
-  							background-size: contain;">
-    	</div>
+  							background-size: contain;">				-->
     	
-    	<!--insert empty row spanning 4-->
-    	<div class="col-md-4"></div>
     	
-    	<!--The How It Works Button -->
-    	<div class="col-md-1">
+    	<!--The How It Works Button 
     	<button onClick="window.location='/beta';"
  				style="	height: 3.4em;
   							border-radius: 0.667em;
@@ -97,11 +149,9 @@
   							letter-spacing: 1px;
   							color: rgb(103, 114, 119);
   							"  		
-    		>How It Works</button>
-    	</div>
+    		>How It Works</button>					-->
     	
-    	<!--TThe Login Button - spanning 2-->
-    	<div class="col-md-1">
+    	<!--TThe Login Button - spanning 2
     	<button onClick="window.location='/login';" 
   			style="	height: 3.4em;
   							border-radius: 0.667em;
@@ -111,11 +161,9 @@
   							letter-spacing: 1px;
   							color: rgb(103, 114, 119);
   							"	
-    			>Log In</button>
-    	</div>
+    			>Log In</button>		-->
     	
-    	<!--The Info button -- spanning 1 -- to where should this link?-->
-    	<div class="col-md-1">
+    	<!--The Info button -- spanning 1 -- to where should this link?
     	<button style="	
   									width: 42px;
   									height: 3.4em;
@@ -129,23 +177,13 @@
   									font-family: 'Brandon Grotesque';
   									font-weight: 400;
   									text-align: center;
-  									color: rgb(0, 0, 0);
-  									/*
-  									padding: 0.5em 0.938em;
-  									margin: -2.687em 8.5% 0 0;
-  									background-position: center center;
-  									clear: both; 
-  									*/
-  									"  		
+  									color: rgb(0, 0, 0);"  		
     		>&nbsp;</button>
-    	</div>
-  <!--</header> -->
+    	</div> -->
+    	
   
   	
-  		</div> <!--end row divider -->
-  	</div> <!--end div navbar-->
-	</div> <!--end white container -->
-</nav> <!--end nav-->
+
 
 {% endblock %}	
 	
