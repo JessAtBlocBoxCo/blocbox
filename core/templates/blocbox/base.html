@@ -57,7 +57,7 @@
 {% block header %} 
 
 <div class="container-fluid whitebackground"
-	style="box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);"> 
+	style="box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12); z-index: 56"> 
 	
 	<div class="row">
 		
@@ -72,14 +72,14 @@
 
     	<!--the blocbox logo -->
     	<div class="col-md-3"
-    		style="	/*position: absolute; */
+    		style="	/*position: absolute; 
   							top: 0;
   							bottom: 0;
   							left: 8%;
-  							z-index: 56;
-  							width: 248px;
+  							width: 248px;  							
+  							margin: auto 0; */
+  							
   							height: 3.125em;
-  							margin: auto 0;
   							background-image: url('{% static 'blocbox/images/Logo-and-name---orange-drop(2).png' %}'); 
   							background-repeat: no-repeat;
   							background-size: contain;">
@@ -91,8 +91,8 @@
     	<!--The How It Works Button -->
     	<div class="col-md-2">
     	<button onClick="window.location='/beta';"
- 				style="	display: inline-block;
-  							float: right;
+ 				style="	/*display: inline-block;
+  							float: right; */
   							height: 2.533em;
   							margin: 0.8em 23.5% 0 0;
   							border-radius: 0.667em;
