@@ -1,0 +1,88 @@
+
+<!--this is blocbox/core/templates/blocbox/base.html -- jess testing the base with block template concept -->
+{% load staticfiles %} 
+<!doctype html>
+<!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"--> 
+
+
+
+
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--title block - should i fill this in?"-->
+  <title>{% block title %}{% endblock %}</title>
+  <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  
+  <!--Adding Bootstrap CSS page and optional theme page-->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+  
+  <!--link to john's css overwrides - a new CSS file - needs to be called after we call the CSS bootstrap -->
+  <link rel="stylesheet" href="{% static 'blocbox/css/jb_bootstrap_customization.css' %}">
+  
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	
+  <!-- Meta Tags - Describe the Site -->
+   <meta name="Description" 
+   CONTENT="Package Delivery Holding and Receiving, Storage, Pet Care, Dog Walking, Child Care,
+   Mailbox Rental, Missed Packages, 800 USPS, 800 UPS">
+   
+  <!--Google Tracking SNippet -Goes in every page -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  
+    ga('create', 'UA-51513611-1', 'blocbox.co');
+    ga('send', 'pageview');
+  </script>
+  
+</head>
+
+<body>
+	
+
+	<!--<body class="body index clearfix"> -->
+	<div class="container-fluid orangebackground"> <!-- start orange container -->
+	               
+  	<h1> <p>Test Base.HTML File - Top Header - within paragraph tags </p> </h1>
+  	<h1> Test H1 without paragraph tags </h1>
+  
+    {% block content %}{% endblock %}
+
+  
+  	<p>Body - Test Paragraph Text - should be within an orange container</p>
+    
+    <!--testing other containers-->
+		<div class="container-fluid bluebackground">
+			<p>{% block bluecontent %} {% endblock %}</p>
+		</div>
+		<div class="container-fluid darkbluebackground">
+			<p>{% block darkbluecontent %} {% endblock %}</p>
+		</div>
+		<div class="container-fluid greenbackground">
+			<p>{% block greencontent %} {% endblock %}</p>
+		</div>
+		
+  <!--Footer Below --> 
+  
+  {% block footer %}  
+  <footer>
+	<hr> <!--hr stands for horizonal reference - breaks up a page -->
+    <div class="container orangebackground">GoodHood LLC</div>
+    <div class="container orangebackground">Privacy Policy</div>
+  </footer>  
+  {% endblock %}
+  
+</body>
+</html>
