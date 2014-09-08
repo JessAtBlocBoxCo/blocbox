@@ -76,8 +76,8 @@
   							width: 248px;
   							height: 3.125em;
   							margin: auto 0;
-  							<!--background-image: url('../images/Logo-and-name---orange-drop(2).png'); -->
-  							background-image: url("{% static 'blocbox/images/Logo-and-name---orange-drop(2).png' %}"); 
+  							/*background-image: url('../images/Logo-and-name---orange-drop(2).png'); */
+  							background-image: url('{% static 'blocbox/images/Logo-and-name---orange-drop(2).png' %}'); 
   							
   							
   							background-repeat: no-repeat;
@@ -125,7 +125,8 @@
   									margin: -2.687em 8.5% 0 0;
   									padding: 0.5em 0.938em;
   									border-radius: 0.188em;
-  									background: url('../images/info-button.png') rgba(222, 222, 222, 0);
+  									/*background: url('../images/info-button.png') rgba(222, 222, 222, 0); */
+  									background: url(' {% static 'blocbox/images/info-button.png' %}') rgba(222, 222, 222, 0); 
   									background-repeat: no-repeat;
   									background-size: contain;
   									background-position: center center;
