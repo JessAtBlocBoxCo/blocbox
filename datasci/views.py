@@ -8,10 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
-#Create the view for the hostprofilevisitor
-def index(request):
-    context = RequestContext(request)
-    host = get_object_or_404(UserInfo, pk=userinfo_id)
-    return render_to_response('datasci/datascience_home.html')
 
+def index(request):
+    return render(request, 'datasci/datascience_home.html') #loads blocbox/templates/blocbox/index.html 
+    
 # Create your views here.
