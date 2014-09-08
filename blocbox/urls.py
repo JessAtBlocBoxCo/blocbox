@@ -8,7 +8,8 @@ urlpatterns = patterns('',
 
 		url(r'^$', views.index, name='index'),    
     url(r'beta/', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
-    url(r'^search/', views.search, name='search'),    
+    url(r'^search/', views.search, name='search'),   
+    url(r'^searchtest/', views.searchtest, name='searchtest'),  
     url(r'^(?P<userinfo_id>\d+)/hostprofilevisitor/$',views.hostprofilevisitor, name='hostprofilevisitor'),  
     #url(r'^hostprofile/', include('hostprofile.urls', namespace="hostprofile")),
     #url(r'^messages/', include('messages.urls', namespace="messages")),

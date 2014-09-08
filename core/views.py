@@ -20,8 +20,10 @@ def beta(request):
 
 	
 def search(request):
-    return render(request, 'blocbox/search.shtml') #load the blocbox/templates/blocbox/beta.html 
+    return render(request, 'blocbox/search.shtml') 
 
+def searchtest(request):
+    return render(request, 'blocbox/searchtest.html')
     
 #Create the view for the hostprofilevisitor
 def hostprofilevisitor(request, userinfo_id):
