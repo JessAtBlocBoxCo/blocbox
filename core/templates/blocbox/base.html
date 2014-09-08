@@ -49,7 +49,91 @@
   
 </head>
 
-<body>
+
+
+
+<body>	
+	
+{% block header %} 
+
+  <header class="clearfix" 
+ 			style="		position: fixed; 
+ 			  				top: 0;
+  							width: 100%;
+ 				 				left: 0;
+ 				 				z-index: 57; 
+ 				 				height: 3.75em; 
+ 				 				background-color: rgb(255, 255, 255); 
+ 				 				box-shadow: 0 1px 5px rgba(0, 0, 0, 0.12);">
+
+    	
+    	<!--this was: element-21 -->
+    	<div style="	position: absolute;
+  							top: 0;
+  							bottom: 0;
+  							left: 8%;
+  							z-index: 56;
+  							width: 248px;
+  							height: 3.125em;
+  							margin: auto 0;
+  							background-image: url('../images/Logo-and-name---orange-drop(2).png');
+  							background-repeat: no-repeat;
+  							background-size: contain;
+  							background-position: center center;">
+    	</div>
+    	
+    	<!--This was ._button-21 -->
+    	<button onClick="window.location='request-an-invite.html';"
+ 				style="	display: inline-block;
+  							float: right;
+  							height: 2.533em;
+  							margin: 0.8em 23.5% 0 0;
+  							border-radius: 0.667em;
+  							background-color: rgba(211, 84, 0, 0);
+  							font-size: 0.938em;
+  							text-align: center;
+  							letter-spacing: 1px;
+  							color: rgb(103, 114, 119);
+  							resize: none;"  		
+    		>How It Works</button>
+    	
+    	<!--This Was: ._button-22 -->
+    	<button onClick="window.location='sign-in.html';" 
+  			style="	display: inline-block;
+  							float: right;
+  							clear: both;
+  							height: 2.533em;
+  							margin: -2.533em 16% 0 0;
+  							border-radius: 0.667em;
+  							background-color: rgba(211, 84, 0, 0);
+  							font-size: 0.938em;
+  							text-align: center;
+  							letter-spacing: 1px;
+  							color: rgb(103, 114, 119);
+  							resize: none;"	
+    			>Log In</button>
+    	
+    	<!--This Was: ._button-24 -->
+    	<button style="		display: block;
+  									float: right;
+  									clear: both;
+  									width: 42px;
+  									height: 2.938em;
+  									margin: -2.687em 8.5% 0 0;
+  									padding: 0.5em 0.938em;
+  									border-radius: 0.188em;
+  									background: url('../images/info-button.png') rgba(222, 222, 222, 0);
+  									background-repeat: no-repeat;
+  									background-size: contain;
+  									background-position: center center;
+  									font-family: 'Brandon Grotesque';
+  									font-weight: 400;
+  									text-align: center;
+  									color: rgb(0, 0, 0);"  		
+    		>&nbsp;</button>
+  </header>
+
+{% endblock %}	
 	
 
 	<!--<body class="body index clearfix"> -->
