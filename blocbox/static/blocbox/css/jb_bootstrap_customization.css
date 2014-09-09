@@ -55,4 +55,4 @@ body {
 
 
 /*make the navbar text white */
-.navbar-default .navbar-nav > li > a {color: #FFFFFF;}
+.whitetext .navbar-default .navbar-nav > li > a {color: #FFFFFF;}
