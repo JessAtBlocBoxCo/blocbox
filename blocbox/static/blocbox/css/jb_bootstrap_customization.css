@@ -53,3 +53,4 @@ body {
 /*add text colors */
 .whitetext {color: rgb(255, 255, 255); }
 
+navbar .nav > li > a { color: #ddd; }
