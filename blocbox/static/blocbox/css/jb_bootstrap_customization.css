@@ -30,21 +30,18 @@ body {
 }
 
 /*brand classification for the navbar on the waitlist page, potentially for other pages*/
-.brandnavbarwaitlist { 
-	background-image: url('../images/Logo-and-name---white.png');
+.brandnavbarimage { 
+	  max-height: 40px;
+    overflow: visible;
+    padding-top: 0;
+    padding-bottom: 0;
+/*	background-image: url('../images/Logo-and-name---white.png');
 	background-repeat: no-repeat;
 	background-size: contain;
-  /*height: 40px;
+  height: 40px;
   width: 100px; */
 }
 
-.brandnavbarbase {
-	background-image: url('../images/Logo-and-name---orange-drop(2).png');
-	background-repeat: no-repeat;
-	background-size: contain;
-	/*height: 40px;
-	width: 100px; */
-}
 
 .waitlistbody {padding-top: 0px;} /*no navbar for hte waitlist*/
 
