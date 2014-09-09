@@ -54,7 +54,7 @@ body {
 .whitetext {color: rgb(255, 255, 255); }
 
 .navbar-default .navbar-nav > a, 
-.navbar-default .navbar-nav > li > a, {
+.navbar-default .navbar-nav > li > a {
       color: #FFFFFF;
  }
  
