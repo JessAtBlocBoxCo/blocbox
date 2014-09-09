@@ -31,13 +31,14 @@ body {
 
 /*brand classification for the navbar on the waitlist page, potentially for other pages*/
 .brandnavbarwaitlist { 
-	background-image: url('../images/Logo-and-name---white.png') no-repeat left center;
-  height: 40px;
-  width: 100px;
+	background-image: url('../images/Logo-and-name---white.png') no-repeat contain;
+	background-size: contain;
+  /*height: 40px;
+  width: 100px; */
 }
 
 .brandnavbarbase {
-	background-image: url('../images/Logo-and-name---orange-drop(2).png') no-repeat left center;
+	background-image: url('../images/Logo-and-name---orange-drop(2).png') no-repeat contain;
 	height: 40px;
 	width: 100px;
 }
