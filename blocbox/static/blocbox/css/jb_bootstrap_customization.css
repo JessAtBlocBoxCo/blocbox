@@ -29,22 +29,7 @@ body {
   padding-top: 50px; /*JMY adding padding to body so that the navbar doesn't overlap - by default the navbar is 50px */
 }
 
-/*brand classification for the navbar on the waitlist page, potentially for other pages*/
-.brandnavbarimage { 
-	  max-height: 40px;
-    overflow: visible;
-    padding-top: 0;
-    padding-bottom: 0;
-/*	background-image: url('../images/Logo-and-name---white.png');
-	background-repeat: no-repeat;
-	background-size: contain;
-  height: 40px;
-  width: 100px; */
-}
 
-.brandnavbarwaitlist {
-	background:
-}
 
 
 .waitlistbody {padding-top: 0px;} /*no navbar for hte waitlist*/
@@ -63,7 +48,8 @@ body {
 
 .offwhitebackground { background-color: rgb(250, 250, 250);	} /*Hex equiv: #FAFAFA */
 
-.whitebackgroud { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*
+.whitebackgroud { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*/
 
-}
+/*add text colors */
+.whitetext {color: rgb(255, 255, 255); }
 
