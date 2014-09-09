@@ -32,13 +32,13 @@ body {
 "{% static "blocbox/images/Block-Outlinev(2).png" %}"
 /*brand classification for the navbar on the waitlist page, potentially for other pages*/
 .brandnavbarwaitlist { 
-	background: url( {% static blocbox/images/logo-and-name---white.png %} ) no-repeat left center;
+	background-image: url("{% static "blocbox/images/logo-and-name---white.png" %}") no-repeat left center;
   height: 40px;
   width: 100px;
 }
 
 .brandnavbarbase {
-	background: url( {% static blocbox/images/Logo-and-name---orange-drop(2).png %} ) no-repeat left center;
+	background-image: url("{% static "blocbox/images/Logo-and-name---orange-drop(2).png" %}") no-repeat left center;
 	height: 40px;
 	width: 100px;
 }
