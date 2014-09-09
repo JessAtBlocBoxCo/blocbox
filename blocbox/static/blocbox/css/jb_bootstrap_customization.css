@@ -60,6 +60,9 @@ body {
 		font-size: 1.38em;		
 		}
 
+/*remove the padding on the image for the brand for teh waitlist/orange header page */
+.whitetext .navbar-default .navbar-inner > a {padding-top: 0px;}
+
 
 /*Hello button outline */
 .hellobtnborder {
