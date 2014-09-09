@@ -60,8 +60,8 @@ body {
 		font-size: 1.38em;		
 		}
 
-/*remove the padding on the image for the brand for teh waitlist/orange header page */
-.whitetext .navbar-default .navbar-inner > a {padding-top: 0px;}
+/*change the padding on the image for the brand for teh waitlist/orange header page */
+.whitetext .navbar-default .navbar-inner > a {padding-top: 10px;}
 
 
 /*Hello button outline */
@@ -70,7 +70,7 @@ body {
   border-radius: 3px;
 }
 
-/*old customizations for size of button
+/*for context: old customizations for size of button
   top: 54px;
   left: 87.0833333333%;
   width: 10.5%;
