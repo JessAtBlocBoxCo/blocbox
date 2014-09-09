@@ -48,35 +48,65 @@
   
 </head>
 
-<!--some JMY test code -->
-<div class="container-fluid orangebackground">
-<p>test - container-fluid div - should have orange background </p>	
-</div>
-<div class="container-fluid bluebackground">
-	<p>test - a second container-fluid div - should have blue background</p>
-</div>
-<div class="container-fluid darkbluebackground">
-	<p>test - a second container-fluid div - should have dark blue background</p>
-</div>
-<div class="container-fluid greenbackground">
-	<p>test - a second container-fluid div - should have green background</p>
-</div>
 
+
+<!--jmy addint waitlistbody class becuase the default body tag in jb_bootstrap_customization has a padding to make room for the navbar -->
 <body class="waitlistbody">
+
+<!--Adding a Customized Wiatlist NavBar -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">	
+	<div class="container-fluid orangebackground"> 
+		<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        	<span class="sr-only">Toggle navigation</span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+        	<span class="icon-bar"></span>
+      	</button>
+  		
+  			<!--the "brand" - need to replace this with the image
+  				<a class="logoname logoname-1" href="#top"></a>	..this is the blocbox logo, the image is: /images/Name-whited(2).png
+ 					<a class="logo logo-1" href="#top"></a>.. this is the logo, the image is: /images/Block-Outlinev(2).png
+ 				-->
+ 		
+ 			<!--add the logo image -->
+ 			<a class="navbar-brand" href="#"> <img src="{% static "images/Block-Outlinev(2).png" %}" > </a>
+ 			<!--add the logoname image -->
+ 			<a class="navbar-brand" href="#"> <img src="{% static "images/Name-whited(2).png.png" %}" > </a>
+			<!--add the bran name in text -->
+  		<a class="navbar-brand" href="#">BlocBox</a>
+		
+		</div> <!--navbar-header-->
+   
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      	<ul class="nav navbar-nav">
+      	
+					<li><a href="#works">How it Works</a></li>
+        	<li><a href='/signuphost'>Become a Host</a></li> <!-- <a href="#hosting">Become a Host</a> -->
+        	<!--<li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li> -->
+        	<li><a> 
+  					<form method="post" action="mailto:admin@blocbox.co"><button class="hello">Say Hello!</button> </form>
+  				</a></li>
+  				      	
+        	<!--<li><a href='/contactus'>Contact Us</a></li> -->
+                    
+      	</ul> <!--end collection of links for toggling -->
+    	</div> <!--collapse navbar-collapse -->
+  	</div> <!--end div navbar-->
+	</div> <!--end orange container -->
+</nav> <!--end nav-->
+
+
+	
+
+
+
 <!--<body class="body index clearfix"> -->
 <div class="container-fluid orangebackground"> <!-- start orange container -->
-	
-  <a class="bahnav bahnav-1" href="#hosting">Become a Host</a>
-  <a class="hiwnav hiwnav-1" href="#works">How It Works</a>
-  <a class="logoname logoname-1" href="#top"></a>
-  
-  	<!--start form for 'say hello' -->
-  	<form method="post" action="mailto:admin@blocbox.co">
-  	<button class="hello">Say Hello!</button>  
-  	</form>
-  	
-  	<a class="logo logo-1" href="#top"></a>
-  	<h1 class="_text-1">
+
+ 	
+  	<h1>
   	  <p>Neighbors Helping Neighbors</p>
   	  <p>Never Miss a Package</p>
 		</h1>
@@ -125,6 +155,20 @@
   	</div> <!--end social-1 container-->
 
 </div> <!--end the orangecontainer divider -->  
+
+<!--some JMY test code - playing around with container colors -->
+<div class="container-fluid orangebackground">
+<p>test - container-fluid div - should have orange background </p>	
+</div>
+<div class="container-fluid bluebackground">
+	<p>test - a second container-fluid div - should have blue background</p>
+</div>
+<div class="container-fluid darkbluebackground">
+	<p>test - a second container-fluid div - should have dark blue background</p>
+</div>
+<div class="container-fluid greenbackground">
+	<p>test - a second container-fluid div - should have green background</p>
+</div>
  
 <!-- Begin blue background; hiw was blue background, JMY updating this to bluecontainer -->
 <div class="container-fluid bluebackground">
