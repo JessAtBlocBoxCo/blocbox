@@ -224,35 +224,19 @@
   									color: rgb(0, 0, 0);"  		
     		>&nbsp;</button>
     	</div> -->
-    	
-  
-  	
-
 
 {% endblock %}	
-	
 
-		<!--orangecontent -->
-		<div class="container-fluid orangebackground"> <!-- start orange container -->
-    	{% block orangecontent %}{% endblock %}  	
-  	</div> <!--endingn top orange container -->
-  
-    <!--testing other containers-->
-		<div class="container-fluid bluebackground">
-			<p>{% block bluecontent %} {% endblock %}</p>
-		</div>
-		<div class="container-fluid darkbluebackground">
-			<p>{% block darkbluecontent %} {% endblock %}</p>
-		</div>
-		<div class="container-fluid greenbackground">
-			<p>{% block greencontent %} {% endblock %}</p>
-		</div>
-		
+
+
+<!--page content here -->
+{% block content %} {% endblock %}
+
+
+
+
   <!--Footer Below --> 
-  
-  <!--consider hrs?.. <hr> <!--hr stands for horizonal reference - breaks up a page  -->
-  
-  {% block footer %}  
+{% block footer %}  
   <div class="container-fluid offwhitebackground">
   	<div class="row">
   		

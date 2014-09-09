@@ -6,22 +6,25 @@
 <!--the title of the current page that will appear as active/greyed i the navbar -->
 {% block navbartitle %} JessTest {% endblock %}
 
-{% block orangecontent %}
-	  <p>test test - Test Paragraph Text - should be within an orange container</p>        
-  	<h1> <p>Test Base.HTML File - Top Header - within paragraph tags </p> </h1>
-  	<h1> Test H1 without paragraph tags </h1>
-{% endblock %}
 
+{% block content %}
+		<!--orangecontent -->
+		<div class="container-fluid orangebackground"> <!-- start orange container -->    		         
+  				<h1> <p>Test orange content in jesstest.html - p within h1 </p> </h1>
+  				<h1> Test H1 without paragraph tags </h1> 
+  				<p>test test - Test Paragraph Text - should be within an orange container</p> 	
+  	</div> <!--endingn top orange container -->
+  
+    <!--testing other containers-->
+		<div class="container-fluid bluebackground">
+			<p>Testing the block bluecontent</p>
+		</div>
+		<div class="container-fluid darkbluebackground">
+			<p>Testing the block darkbluecontent</p>
+		</div>
+		<div class="container-fluid greenbackground">
+			<p>Testing the block greencontent</p>
+		</div>
+		
+{% endblock %}		
 
-{% block bluecontent %}
-<!--what happens if empty? <p>Testing the block bluecontent</p> -->
-{% endblock %}
-
-
-{% block darkbluecontent %}
-<p>Testing the block darkbluecontent</p>
-{% endblock %}
-
-{% block greencontent %}
-<p>Testing the block greencontent</p>
-{% endblock %}
