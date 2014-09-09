@@ -232,17 +232,10 @@
 {% endblock %}	
 	
 
-	<!--<body class="body index clearfix"> -->
-	<div class="container-fluid orangebackground"> <!-- start orange container -->
-	               
-  	<h1> <p>Test Base.HTML File - Top Header - within paragraph tags </p> </h1>
-  	<h1> Test H1 without paragraph tags </h1>
-  
-    {% block content %}{% endblock %}
-
-  
-  	<p>Body - Test Paragraph Text - should be within an orange container</p>
-  </div> <!--endingn top orange container -->
+		<!--orangecontent -->
+		<div class="container-fluid orangebackground"> <!-- start orange container -->
+    	{% block orangecontent %}{% endblock %}  	
+  	</div> <!--endingn top orange container -->
   
     <!--testing other containers-->
 		<div class="container-fluid bluebackground">
