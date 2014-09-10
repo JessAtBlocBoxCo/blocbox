@@ -3,7 +3,7 @@
 /*@media (min-width: 10000px) {.navbar-header }*/
 
 
-@media (max-width: 50px) {
+@media (max-width: 1000px) {
     .navbar-header {
         float: none;
     }
