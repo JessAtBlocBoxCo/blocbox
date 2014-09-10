@@ -14,24 +14,13 @@
 {% block content %}
 
   <div class="container">
-      <p>Currently Helping</p>
-    <div> 
-    	<p>{{ host.currentlyhelping }} Neighbors<br></p> 
-    </div>
+      <p> {{ host.first_name}} is Currently Helping {{ host.currentlyhelping }} Neighbors<br></p> 
   </div>
   
   <div class="container">
-      <p>Other Offers</p>
-        <p>- Storage</p>
-        <p>- House Sitting &nbsp;&nbsp;</p>
-        <p>- Pet Care</p>    
-  </div>
-  <button>Request Favor</button>
-  
-  <div class="container">
-      <p>Package Reciept</p>
+      <p>Package Receipt</p>
     	<p>{{ host.first_name}} guarantees to be at home to receive your package. {{host.first_name}} will be available during posted times to allow you to retrieve your package at your conveinience.</p>
-    	<p>PACKAGE RECIEPT OPTIONS</p>
+    	<p>PACKAGE RECEIPT OPTIONS</p>
     	<p>PER PACKAGE</p>
     	<p>$1.99 Per Package</p>
     	<p>MONTHLY</p>
@@ -39,8 +28,17 @@
     	<p>UNLIMITED</p>
    	 	<p>$14.99 for 10 packages/ month</p>
     	<p>Try your first package for free</p>
-    <button>Start a Shipment</button>
+    <button onClick="window.location='/{{ host.id }}/signupconnect/';">Start a Shipment</button>
   </div>
+  
+   <div class="container">
+      	<p>Other Offers from {{ host.first_name}}  :</p>
+        <p>- Storage</p>
+        <p>- House Sitting &nbsp;&nbsp;</p>
+        <p>- Pet Care</p>    
+  	<button onClick="window.location='/{{ host.id }}/signupconnect/';">Request Other Favor </button> -->
+  </div>
+  
   
   <div class="container">
       <p>When I'm Home</p>
