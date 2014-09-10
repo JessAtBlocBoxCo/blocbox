@@ -48,7 +48,7 @@ body {
 
 .offwhitebackground { background-color: rgb(250, 250, 250);	} /*Hex equiv: #FAFAFA */
 
-.whitebackgroud { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*/
+.whitebackground { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*/
 
 /*add text colors */
 .whitetext {color: rgb(255, 255, 255); }
