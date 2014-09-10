@@ -126,22 +126,21 @@
 <!--add content -->	
 {% block content %}
 
-<div class="container-fluid offwhitebackground"> 
- 	<!--Add the search box to the page -->
- 	<input  id="search-box" class="controls" name="Address" placeholder="enter your address to find a blocbox near you" type="search">
+	<div class="container-fluid offwhitebackground"> 
+	
+ 		<!--Add the search box to the page -->
+ 		<input  id="search-box" class="controls" name="Address" placeholder="enter your address to find a blocbox near you" type="search">
  	
- 	 	<!--The Nudge a Neighbor Box - Note - removing clearfix after nudgeneighborelement
- 	 * NOTE ON CLEARFIX: clearfix forces an elemetn to "self-clear its children"/ ensures that a div will fully expand to proper height to enclose its floating children
-	 * When an element is floated, its parent no longer contains it
- 	 ----------------------------------------------------------------------------------->
-   <div class="nudgeneighborelement"> 
-      <p class="nudgeneighbortext">DON'T SEE A BLOCBOX HOST IN YOUR HOOD? NUDGE A NEIGHBOR TO LET THEM KNOW ABOUT THE OPPORTUNITY TO HOST OR HOST A BOX YOURSELF</p>  
-   </div> 
-   
- 	<!--Add the Map - Create a Dividor ad link to the map-canvas id -->
- 	<div id="map-canvas" ></div> 
+ 		<!--Add the Map - Create a Dividor ad link to the map-canvas id -->
+ 		<div id="map-canvas" ></div> 
+ 	
+	</div> <!--container-fluid offwhitebackground -->
+	
+	<div class="container-fluid nudgeneighborelement"> 
+     <p class="nudgeneighbortext">DON'T SEE A BLOCBOX HOST IN YOUR HOOD? NUDGE A NEIGHBOR TO LET THEM KNOW ABOUT THE OPPORTUNITY TO HOST OR HOST A BOX YOURSELF</p>  
+  </div> 
  	 
   <script src="js/jquery-min.js"></script>
   <script src="js/rimages.js"></script> 
-</div> <!--container-fluid offwhitebackground -->
+
 {% endblock %}
