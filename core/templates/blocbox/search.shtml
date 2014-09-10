@@ -10,7 +10,7 @@
 
 	<!--Reference Style Sheet -->
   <link rel="stylesheet" href="{% static 'blocbox/css/standardize.css' %}">
-  <link rel="stylesheet" href="{% static 'blocbox/cssjess/search.css' %}">
+  <link rel="stylesheet" href="{% static 'blocbox/css/jmy/search.css' %}">
   <!--link rel="stylesheet" href="css/styles.css"-->
   	
 	<!--Type Kit -->
