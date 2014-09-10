@@ -14,6 +14,13 @@
 {% block content %}
 
   <div class="container">
+    <p>{{ host.first_name }}</p>
+    <p>{{ host.st_address1 }}</p>
+    <button onClick="window.location='/{{ host.id }}/signupconnect/';">+ &nbsp;Connect</button>
+  </div>
+  
+  
+  <div class="container">
     <p>Hi&nbsp;Neighbor!</p>
     <div class="container">
     	<p> {{ host.host_aboutme }}</p>
@@ -72,13 +79,7 @@
     	<p>Email&nbsp;Address</p>
   </div>
   
-  
-  <div class="container">
-    <p>{{ host.first_name }}</p>
-    <p>{{ host.st_address1 }}</p>
-    <button onClick="window.location='/{{ host.id }}/signupconnect/';">+ &nbsp;Connect</button>
-  </div>
-  
+ 
 
 
 
