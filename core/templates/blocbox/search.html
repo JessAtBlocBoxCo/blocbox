@@ -126,6 +126,7 @@
 <!--add content -->	
 {% block content %}
 
+<div class="container-fluid offwhitebackground"> 
  	<!--Add the search box to the page -->
  	<input  id="search-box" class="controls" name="Address" placeholder="enter your address to find a blocbox near you" type="search">
  	
@@ -139,9 +140,8 @@
    
  	<!--Add the Map - Create a Dividor ad link to the map-canvas id -->
  	<div id="map-canvas" ></div> 
- 	
- 
+ 	 
   <script src="js/jquery-min.js"></script>
   <script src="js/rimages.js"></script> 
-
+</div> <!--container-fluid offwhitebackground -->
 {% endblock %}
