@@ -6,107 +6,78 @@
 
 {% block headafter %}	
   <!--<link rel="stylesheet" href="/static/blocbox/css/standardize.css">
-  <link rel="stylesheet" href="/static/blocbox/css/host-profile-visitor.css">
-  -->
+  <link rel="stylesheet" href="/static/blocbox/css/host-profile-visitor.css"> -->
 {% endblock %}
 
 {% block navbartitle %} {{ host.first_name}} {% endblock %}
 
 {% block content %}
 
-<!--  <div class="element element-3"></div>-->
-  <div class="container container-1 clearfix">
-    <div class="element element-4">
-      <p class="text text-1">Currently Helping</p>
-    </div>
-    <div class="element element-5"></div>
-    <div class="element element-6 clearfix">
-      <p class="text text-2">{{ host.currentlyhelping }} Neighbors<br></p>
+  <div class="container">
+      <p>Currently Helping</p>
+    <div> 
+    	<p>{{ host.currentlyhelping }} Neighbors<br></p> 
     </div>
   </div>
-  <div class="container container-2 clearfix">
-    <div class="element element-7">
-      <p class="text text-3">Other Offers</p>
-    </div>
-    <div class="element element-8"></div>
-    <div class="element element-9">
-      <div class="text text-4">
+  
+  <div class="container">
+      <p>Other Offers</p>
         <p>- Storage</p>
         <p>- House Sitting &nbsp;&nbsp;</p>
-        <p>- Pet Care</p>
-		</div>
-    
-    </div>
-    <button class="_button">Request Favor</button>
+        <p>- Pet Care</p>    
   </div>
-  <div class="container container-3 clearfix">
-    <div class="element element-10"></div>
-    <div class="element element-11">
-      <p class="text text-5">Package Reciept</p>
-    </div>
-    <p class="text text-6">{{ host.first_name}} guarantees to be at home to receive your package. {{host.first_name}} will be available during posted times to allow you to retrieve your package at your conveinience.</p>
-    <p class="text text-7">PACKAGE RECIEPT OPTIONS</p>
-    <p class="text text-8">PER PACKAGE</p>
-    <p class="text text-9">$1.99 Per Package</p>
-    <div class="element element-12"></div>
-    <p class="text text-10">MONTHLY</p>
-    <p class="text text-11">$7.99 for 10 packages/ month</p>
-    <div class="element element-13"></div>
-    <p class="text text-12">UNLIMITED</p>
-    <p class="text text-13">$14.99 for 10 packages/ month</p>
-    <p class="text text-14">Try your first package for free</p>
-    <button class="_button">Start a Shipment</button>
+  <button>Request Favor</button>
+  
+  <div class="container">
+      <p>Package Reciept</p>
+    	<p>{{ host.first_name}} guarantees to be at home to receive your package. {{host.first_name}} will be available during posted times to allow you to retrieve your package at your conveinience.</p>
+    	<p>PACKAGE RECIEPT OPTIONS</p>
+    	<p>PER PACKAGE</p>
+    	<p>$1.99 Per Package</p>
+    	<p>MONTHLY</p>
+    	<p>$7.99 for 10 packages/ month</p>
+    	<p>UNLIMITED</p>
+   	 	<p>$14.99 for 10 packages/ month</p>
+    	<p>Try your first package for free</p>
+    <button>Start a Shipment</button>
   </div>
-  <div class="container container-4 clearfix">
-    <div class="element element-14">
-      <p class="text text-15">When I'm Home</p>
-    </div>
-    <div class="element element-15"></div>
-    <div class="text text-16">
+  
+  <div class="container">
+      <p>When I'm Home</p>
       <p>Tuesday - Friday</p>
       <p>3 PM to 9PM</p>
-</div>
+	</div>
+	
+  <div class="container">
+      <p>Verified Info</p>
+    	<img src="images/iconmonstr-paper-plane-2-icon.svg">
+    	<p>Facebook</p>
+    	<img src="images/1397247794_46-facebook.svg">
+    	<img src="images/1397247711_home.svg">
+    	<!--JMY NOTE: add python to link to neighborhood field here-->
+    	<p>Clinton Hill</p>
+    	<p>NextDoor</p>
+    	<p>Phone&nbsp;Number</p>
+    	<p>Email&nbsp;Address</p>
   </div>
-  <div class="container container-5 clearfix">
-    <div class="element element-16">
-      <p class="text text-17">Verified Info</p>
-    </div>
-    <div class="element element-17"></div>
-    <div class="container"></div>
-    <img class="image image-1" src="images/iconmonstr-paper-plane-2-icon.svg">
-    <p class="text text-18">Facebook</p>
-    <img class="image image-2" src="images/1397247794_46-facebook.svg">
-    <img class="image image-3" src="images/1397247711_home.svg">
-    <p class="text text-19">Clinton Hill</p>
-    <p class="text text-20">NextDoor</p>
-    <p class="text text-21">Phone&nbsp;Number</p>
-    <p class="text text-22">Email&nbsp;Address</p>
+  
+  
+  <div class="container">
+    <p>{{ host.first_name }}</p>
+    <p>{{ host.st_address1 }}</p>
+    <button onClick="window.location='/{{ host.id }}/signupconnect/';">+ &nbsp;Connect</button>
   </div>
-  <button onClick="window.location='/{{ host.id }}/signupconnect/';" class="_button _button-3">+ &nbsp;Connect</button>
-  <div class="element element-18 clearfix">
-    <button class="_button">{{ host.first_name }}</button>
-    <p class="text text-23">{{ host.st_address1 }}</p>
-    <div class="element"></div>
-  </div>
-  <div class="container container-7 clearfix">
-    <p class="text text-24">Hi&nbsp;Neighbor!</p>
-    <div class="element element-20"></div>
+  
+  <div class="container">
+    <p>Hi&nbsp;Neighbor!</p>
     <div class="container">
-    <!--<div class="element element-21"> -->
-    	<p> {{ host.host_aboutme }}</p>er
+    	<p> {{ host.host_aboutme }}</p>
     </div>
   </div>
-  <div class="container container-8 clearfix">
-    <div class="element element-22">
+  <div class="container">
       <p class="text text-26">Success Rate</p>
-    </div>
-    <div class="element element-23"></div>
-    <div class="element element-24">
-      <div class="text text-27">
-        <p>{{ host.hostrating }}% Success Rate</p>
-        <p>&nbsp;{{ host.favorsrequested }} Favors Requested</p>
-			</div>
-    </div>
+      <p>{{ host.hostrating }}% Success Rate</p>
+      <p>&nbsp;{{ host.favorsrequested }} Favors Requested</p>
   </div>
 
 
