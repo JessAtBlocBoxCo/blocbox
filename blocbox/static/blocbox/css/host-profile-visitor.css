@@ -1,8 +1,10 @@
+/*
 body {
   background-color: rgb(250, 250, 250);
   font: 300 1em/1.38 brandon-grotesque;
   color: rgb(103, 114, 119);
 }
+*/
 
 .container button {
   position: absolute;
@@ -53,6 +55,7 @@ div button {
   display: inline-block;
 }
 
+/*
 footer {
   float: left;
   width: 100%;
@@ -70,6 +73,7 @@ header {
   height: 3.75em;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+*/
 
 /*
 img {
