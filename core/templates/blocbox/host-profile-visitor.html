@@ -1,16 +1,16 @@
-{% load staticfiles %}
-<!doctype html>
+{% extends "blocbox/base.html" %}
 <!--this is blocbox/core/templates/blocbox/host-profile-visitor.html -->
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>Blocbox - Connect to Get Started</title>
-  <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+{% block title %}Connect to Get Started{% endblock %}
+{% block navbartitle %} {{ host.first_name}} {% endblock %}
+
+{% block headadds %}	
   <link rel="stylesheet" href="{% static 'blocbox/css/standardize.css' %}">
   <link rel="stylesheet" href="{% static 'blocbox/css/host-profile-visitor.css' %}">
-</head>
+{% endblock %}
+
+
+{% block content %}
 <body class="body host-profile-visitor clearfix">
   <header class="clearfix">
     <div class="element element-1"></div>
@@ -108,15 +108,10 @@
       <div class="text text-27">
         <p>{{ host.hostrating }}% Success Rate</p>
         <p>&nbsp;{{ host.favorsrequested }} Favors Requested</p>
-</div>
+			</div>
     </div>
   </div>
-  <!--
-  <div class="element element-25"></div>
-  -->
-  <footer></footer>
 
-  <script src="js/jquery-min.js"></script>
-  <script src="js/rimages.js"></script>
-</body>
-</html>
+
+
+{% endblock %}
