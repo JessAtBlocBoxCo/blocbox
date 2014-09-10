@@ -23,7 +23,7 @@ def search(request):
     return render(request, 'blocbox/search.html')
 
 def searchold(request):
-    return render(request, 'blocbox/search.shtml') 
+    return render(request, 'blocbox/old/search.shtml') 
     
 #Create the view for the hostprofilevisitor
 def hostprofilevisitor(request, userinfo_id):
