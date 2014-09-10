@@ -14,7 +14,20 @@
 {% block content %}
 
   <div class="container">
+    <p>Hi&nbsp;Neighbor!</p>
+    <div class="container">
+    	<p> {{ host.host_aboutme }}</p>
+    </div>
+  </div>
+  
+  <div class="container">
       <p> {{ host.first_name}} is Currently Helping {{ host.currentlyhelping }} Neighbors<br></p> 
+  </div>
+  
+  <div class="container">
+      <p class="text text-26">Success Rate</p>
+      <p>{{ host.hostrating }}% Success Rate</p>
+      <p>&nbsp;{{ host.favorsrequested }} Favors Requested</p>
   </div>
   
   <div class="container">
@@ -66,17 +79,7 @@
     <button onClick="window.location='/{{ host.id }}/signupconnect/';">+ &nbsp;Connect</button>
   </div>
   
-  <div class="container">
-    <p>Hi&nbsp;Neighbor!</p>
-    <div class="container">
-    	<p> {{ host.host_aboutme }}</p>
-    </div>
-  </div>
-  <div class="container">
-      <p class="text text-26">Success Rate</p>
-      <p>{{ host.hostrating }}% Success Rate</p>
-      <p>&nbsp;{{ host.favorsrequested }} Favors Requested</p>
-  </div>
+
 
 
 
