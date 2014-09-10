@@ -9,11 +9,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  
   <!--title block - should i fill this in?"-->
   <title>{% block title %}{% endblock %}</title>
   <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
+	
+	{% block headprecedes %}	{% endblock %}
   
   <!--Adding Bootstrap CSS page and optional theme page-->
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
