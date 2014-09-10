@@ -1,3 +1,5 @@
 
 /*change width of navbar-header - so when it collapses - was 768 */
-@media (min-width: 10000px) {.navbar-header }
+/*@media (min-width: 10000px) {.navbar-header }*/
+
+@media (max-width: 400px) {.navbar-header }
