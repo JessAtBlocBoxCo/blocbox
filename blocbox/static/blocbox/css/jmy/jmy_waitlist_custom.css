@@ -1,6 +1,13 @@
 
+/*change toggle button to white */
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #FFFFFF;
+}
+
 /*change width of navbar-header - so when it collapses - was 768 */
 /*@media (min-width: 10000px) {.navbar-header }*/
+
 
 
 @media (max-width:500px){
