@@ -18,12 +18,12 @@ def index(request):
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
-	
-def search(request):
-    return render(request, 'blocbox/search.shtml') 
 
-def searchtest(request):
+def search(request):
     return render(request, 'blocbox/search.html')
+
+def searchold(request):
+    return render(request, 'blocbox/search.shtml') 
     
 #Create the view for the hostprofilevisitor
 def hostprofilevisitor(request, userinfo_id):
