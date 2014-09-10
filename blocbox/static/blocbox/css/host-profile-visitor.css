@@ -39,10 +39,7 @@ body {
   color: rgb(71, 82, 93);
 }
 
-a {
-  display: block;
-  position: absolute;
-}
+
 
 button {
   line-height: 1.38;
@@ -51,11 +48,16 @@ button {
   resize: none;
 }
 
+/*
+a {
+  display: block;
+  position: absolute;
+}
+
 div button {
   display: inline-block;
 }
 
-/*
 footer {
   float: left;
   width: 100%;
@@ -74,6 +76,7 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 */
+
 
 /*
 img {
