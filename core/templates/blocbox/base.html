@@ -4,6 +4,9 @@
 <!--DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"--> 
 
 
+<!--block to add things to head before efgerything else loads-->
+{% block headbefore %} {% endblock %} 
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -45,7 +48,8 @@
     ga('send', 'pageview');
   </script>
   
-  {% block headadds %} {% endblock %} 
+<!--block to add things to head after all this abaove has loaded-->
+{% block headafter %} {% endblock %} 
   
 </head>
 
@@ -121,111 +125,14 @@
         -->
         <li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li>
         <li><a href='/contactus'>Contact Us</a></li>
+           
         
-        <!--Commenmting out this first drop-down i dont think we need it - its redundant and cluttered
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-          	  {% if user.is_authenticated %}
-           			 <li><a href='/logout'>Sign out</a></li>
-						 	{% else %}
-           		 <li><a href='/login'>Sign in</a></li>
-            	{% endif %}
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li> -->
-        
-        
-      </ul> <!--end collection of links for toggling -->
-      
-      <!--commenting out the search funciton - dont need it
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-      -->
-      
-      <!--commenting out the right navbar - i dont think we need it
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-          	  {% if user.is_authenticated %}
-           			 <li><a href='/logout'>Sign out</a></li>
-						 	{% else %}
-           		 <li><a href='/login'>Sign in</a></li>
-            	{% endif %}
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
-      </ul> -->  <!--end right navbar -->
+      </ul> <!--end collection of links for toggling -->   
       
     	</div> <!--collapse navbar-collapse -->
   	</div> <!--end div navbar-->
 	</div> <!--end white container -->
 </nav> <!--end nav-->
-
-
-    	<!--the blocbox logo 
-    		style="				
-  							height: 3.4em;
-  							background-image: url('{% static 'blocbox/images/Logo-and-name---orange-drop(2).png' %}'); 
-  							background-repeat: no-repeat;
-  							background-size: contain;">				-->
-    	
-    	
-    	<!--The How It Works Button 
-    	<button onClick="window.location='/beta';"
- 				style="	height: 3.4em;
-  							border-radius: 0.667em;
-  							background-color: rgba(211, 84, 0, 0);
-  							font-size: 0.938em;
-  							text-align: center;
-  							letter-spacing: 1px;
-  							color: rgb(103, 114, 119);
-  							"  		
-    		>How It Works</button>					-->
-    	
-    	<!--TThe Login Button - spanning 2
-    	<button onClick="window.location='/login';" 
-  			style="	height: 3.4em;
-  							border-radius: 0.667em;
-  							background-color: rgba(211, 84, 0, 0);
-  							font-size: 0.938em;
-  							text-align: center;
-  							letter-spacing: 1px;
-  							color: rgb(103, 114, 119);
-  							"	
-    			>Log In</button>		-->
-    	
-    	<!--The Info button -- spanning 1 -- to where should this link?
-    	<button style="	
-  									width: 42px;
-  									height: 3.4em;
-  									
-  									
-  									border-radius: 0.188em;
-  									background: url(' {% static 'blocbox/images/info-button.png' %}') rgba(222, 222, 222, 0); 
-  									background-repeat: no-repeat;
-  									background-size: contain;
-  									
-  									font-family: 'Brandon Grotesque';
-  									font-weight: 400;
-  									text-align: center;
-  									color: rgb(0, 0, 0);"  		
-    		>&nbsp;</button>
-    	</div> -->
 
 {% endblock %}	
 
