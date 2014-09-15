@@ -107,7 +107,7 @@ body {
 .fullheight {height: 100%;}
 
 /*Big font for waitlist etc, Generally, 1em = 12pt = 16px = 100%.  */
-.biggestfont {font-size: 5.3em; font-weight: 700;  } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
+.biggestfont {font-size: 6em; font-weight: 700;  } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
 .bigfont {font-size: 3.2em; font-weight: 700;  } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
 /*Font for text below bigfont */
 .parafont {
