@@ -112,11 +112,11 @@ body {
 .bigfont {font-size: 3.2em; font-weight: 700;  } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
 /*Font for text below bigfont */
 .parafont {
-    font-size: 28px;
+    font-size: 1.6em;
     font-weight: 300;
     padding-top: 50;
     padding-bottom: 100;
-    max-width: 672:
+   /* max-width: 672: */
 }
 
 
