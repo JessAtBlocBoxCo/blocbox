@@ -103,3 +103,6 @@ body {
 /*height - full height */
 .fullheight {height: 100%;}
 
+/*Big font for waitlist etc */
+.bigfont {font-size: 4.722em; }
+
