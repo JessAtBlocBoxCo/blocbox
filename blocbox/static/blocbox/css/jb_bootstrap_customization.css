@@ -107,8 +107,8 @@ body {
 .fullheight {height: 100%;}
 
 /*Big font for waitlist etc */
-.biggestfont {font-size: 85px; font-weight: 700; padding-top: 7%; padding-bottom: 75; }
-.bigfont {font-size: 52px; font-weight: 700; padding-top: 2%; padding-bottom: 25; }
+.biggestfont {font-size: 85px; font-weight: 700;  } /*padding-top: 7%; padding-bottom: 75;*/
+.bigfont {font-size: 52px; font-weight: 700;  } /*padding-top: 2%; padding-bottom: 25;*/
 /*Font for text below bigfont */
 .parafont {
     font-size: 28px;
