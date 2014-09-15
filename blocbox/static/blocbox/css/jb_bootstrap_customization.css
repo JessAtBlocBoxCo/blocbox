@@ -48,13 +48,15 @@ body {
 
 .offwhitebackground { background-color: rgb(250, 250, 250);	} /*Hex equiv: #FAFAFA */
 
-.lightgreybackground (background-color: rgb(236, 240, 241);
+.lightgreybackground (background-color: rgb(236, 240, 241);}
+
 .darkgreybackground {background-color: rgb(103,114,119); } /*Heq Equiv: #677277 */
 
 .whitebackground { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*/
 
 /*add text colors */
 .whitetext {color: rgb(255, 255, 255); }
+
 .darkgreytext {color: rgb(103,114,119); } /*Heq Equiv: #677277 */
 
 
