@@ -109,5 +109,5 @@ body {
 .fullheight {height: 100%;}
 
 /*Big font for waitlist etc */
-.biggestfont {font-size: 85px; font-weight: 700; padding-top: 40%; padding-bottom: 75; }
+.biggestfont {font-size: 85px; font-weight: 700; padding-top: 15%; padding-bottom: 75; }
 .bigfont {font-size: 52px; font-weight: 700; padding-top: 100; padding-bottom: 25; }
