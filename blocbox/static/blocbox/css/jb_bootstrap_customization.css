@@ -112,4 +112,4 @@ body {
 .waitlistbody h2 {font-size: 3.2em; font-weight: 700 } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
 
 /*Add padding to the very first line on the page */
-.waitlistbody > .orangebackground > .row > h1 > { padding-top: 7%; }
+.waitlistbody > .orangebackground > .row > h1 { padding-top: 7%; }
