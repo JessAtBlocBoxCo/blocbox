@@ -118,3 +118,7 @@ body {
     padding-bottom: 100;
     max-width: 672:
 }
+
+
+/*Make the footer text dark grey if its a 'whitetext' body page (e.g., waitlist etc) #333 */
+.whitetext > footer > div > .row > div > div > a {color: #333;	}

@@ -5,9 +5,6 @@
   background-color: #FFFFFF;
 }
 
-/*Make the footer text dark grey - #333 */
-.whitetext > footer > div > .row > div > div > a {color: #333;	}
-
 
 /*change width of navbar-header - so when it collapses - was 768 */
 @media (max-width:500px){
