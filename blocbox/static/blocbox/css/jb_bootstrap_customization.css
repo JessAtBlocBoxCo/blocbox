@@ -78,30 +78,20 @@ body {
   cursor: pointer
 }
 
-/* Large desktop */
-@media (min-width: 1200px) { ... }
- 
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { ... }
- 
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) { ... }
- 
-/* Landscape phones and down */
-@media (max-width: 480px) { ... }
+
 
 /*height - full height */
 .fullheight {height: 100%;}
 
 
-/*Font for text below bigfont */
+/*Font for text below bigfont 
 .parafont {
     font-size: 1.6em;
     font-weight: 300;
     padding-top: 50;
     padding-bottom: 100;
-   /* max-width: 672: */
 }
+*/
 
 
 /*Make the footer text dark grey if its a 'whitetext' body page (e.g., waitlist etc) #333 */
@@ -118,3 +108,30 @@ body {
 .waitlistbody > .orangebackground > .row > h1 { padding-top: 5%; }
 /*Add padding to the text below this first stuff */
 .waitlistbody > .orangebackground > .row > div > h5 { padding-top: 50; padding-bottom: 100; }
+
+
+/*Modifying for different screen dimensions */
+
+@media (max-width: @screen-xs) {
+		h1{font-size: 3.5em;}
+		h2{font-size: 2.5em;}
+    /*body{font-size: 10px;} */
+}
+
+@media (max-width: @screen-sm) {
+    /*body{font-size: 10px;} */
+  h1{font-size: 3.5em;}
+  h2{font-size: 2.5em;}
+}
+
+/* Large desktop */
+@media (min-width: 1200px) { ... }
+ 
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { ... }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { ... }
