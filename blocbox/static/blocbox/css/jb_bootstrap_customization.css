@@ -112,6 +112,18 @@ body {
 
 /*Modifying for different screen dimensions  - the ones for XS and SM do not seem to be working*/
 
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.waitlistbody h1,
+	h1{
+		font-size: 3.5em; 
+	}
+	.waitlistbody h2,
+	h2{
+		font-size: 2.5em; 
+	}
+}
+
 @media (max-width: @screen-xs) {
 		h1{font-size: 3.5em;}
 		h2{font-size: 2.5em;}
@@ -124,11 +136,7 @@ body {
   h2{font-size: 2.5em;}
 }
 
-/* Landscape phones and down */
-@media (max-width: 480px) {
-	h1{font-size: 3.5em; }
-	h2{font-size: 2.5em; }
-}
+
 
 /* Large desktop */
 @media (min-width: 1200px) { ... }
