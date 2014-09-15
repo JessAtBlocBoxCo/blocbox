@@ -110,7 +110,7 @@ body {
 .waitlistbody > .orangebackground > .row > div > h5 { padding-top: 50; padding-bottom: 100; }
 
 
-/*Modifying for different screen dimensions */
+/*Modifying for different screen dimensions  - the ones for XS and SM do not seem to be working*/
 
 @media (max-width: @screen-xs) {
 		h1{font-size: 3.5em;}
@@ -124,6 +124,12 @@ body {
   h2{font-size: 2.5em;}
 }
 
+/* Landscape phones and down */
+@media (max-width: 480px) { ... 
+	h1{font-size: 3.5em; }
+	h2{font-size: 2.5em; }
+}
+
 /* Large desktop */
 @media (min-width: 1200px) { ... }
  
@@ -133,5 +139,3 @@ body {
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { ... }
  
-/* Landscape phones and down */
-@media (max-width: 480px) { ... }
