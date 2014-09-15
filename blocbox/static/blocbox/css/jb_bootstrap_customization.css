@@ -108,3 +108,7 @@ body {
 
 /*Make the footer text dark grey if its a 'whitetext' body page (e.g., waitlist etc) #333 */
 .waitlistbody > footer > div > .row > div > div > a {color: #333;	}
+
+/*Change the header size  for the waitlist body*/
+.waitlistbody h1 {font-size: 5em; }
+.waitlistbody h2 {font-size: 3em; }
