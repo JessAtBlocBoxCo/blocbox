@@ -101,5 +101,5 @@ body {
 @media (max-width: 480px) { ... }
 
 /*height - full height */
-.fullheight {height: 100%; bottom: 0;}
+.fullheight {height: 100%;}
 
