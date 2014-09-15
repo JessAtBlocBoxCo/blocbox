@@ -38,7 +38,7 @@ body {
 		to save space i'm doing these on one line, but you can expand to multi-line if want to add other attriobutes
 */
 
-.orangebackground {background-color: rgb(255, 203, 19); padding-top: 50} /*Hex Equiv:  #FFCB13 */
+.orangebackground {background-color: rgb(255, 203, 19); height: 100%} /*Hex Equiv:  #FFCB13 */
 
 .bluebackground {	background-color: rgb(52, 152, 219);	} /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
 
