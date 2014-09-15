@@ -93,9 +93,7 @@ body {
 /*height - full height */
 .fullheight {height: 100%;}
 
-/*Big font for waitlist etc, Generally, 1em = 12pt = 16px = 100%.  */
-.biggestfont {font-size: 6em; font-weight: 700;  } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
-.bigfont {font-size: 3.2em; font-weight: 700;  } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
+
 /*Font for text below bigfont */
 .parafont {
     font-size: 1.6em;
@@ -110,5 +108,8 @@ body {
 .waitlistbody > footer > div > .row > div > div > a {color: #333;	}
 
 /*Change the header size  for the waitlist body*/
-.waitlistbody h1 {font-size: 5em; }
-.waitlistbody h2 {font-size: 3em; }
+.waitlistbody h1 {font-size: 5.5em; font-weight: 700 } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
+.waitlistbody h2 {font-size: 3.2em; font-weight: 700 } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
+
+/*Add padding to the very first line on the page */
+.waitlistbody > .orangebackground > .row > h1 > { padding-top: 7%; }
