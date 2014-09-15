@@ -13,6 +13,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <!--title block - should i fill this in?"-->
   <title>{% block title %}{% endblock %}</title>
+  
+  <!--add the favicon to appear in tab-->
+  <!-- Hide this line for IE (needed for Firefox and others) -->
+		<![if !IE]>
+			<link rel="icon" href="{% static 'blocbox/images/Block-Outline-Orange.png' %}" type="image/x-icon" />
+		<![endif]>>
+		<!-- This is needed for IE -->
+		<link rel="shortcut icon" href="{% static 'blocbox/images/Block-Outline-Orange.ico' %}" type="image/ico" />
+  
   <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
