@@ -38,7 +38,7 @@ body {
 		to save space i'm doing these on one line, but you can expand to multi-line if want to add other attriobutes
 */
 
-.orangebackground {background-color: rgb(255, 203, 19);} /*Hex Equiv:  #FFCB13 */
+.orangebackground {background-color: rgb(255, 203, 19); padding-top: 50} /*Hex Equiv:  #FFCB13 */
 
 .bluebackground {	background-color: rgb(52, 152, 219);	} /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
 
@@ -109,5 +109,5 @@ body {
 .fullheight {height: 100%;}
 
 /*Big font for waitlist etc */
-.biggestfont {font-size: 85px; font-weight: 700; padding-top: 200; padding-bottom: 50;}
+.biggestfont {font-size: 85px; font-weight: 700; padding-top: 100; padding-bottom: 75; }
 .bigfont {font-size: 52px; font-weight: 700; padding-top: 50; padding-bottom: 25; }
