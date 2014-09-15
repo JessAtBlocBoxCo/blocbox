@@ -76,20 +76,6 @@ body {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 3px;
   cursor: pointer
-      
-
-}
-
-/*for context: old customizations for size of button
-  top: 54px;
-  left: 87.0833333333%;
-  width: 10.5%;
-  max-width: 126px;
-  height: 35px;
-  font-size: 0.833em;
-  font-weight: 400;
-  line-height: 1.38;
-*/
 }
 
 /* Large desktop */
@@ -121,4 +107,4 @@ body {
 
 
 /*Make the footer text dark grey if its a 'whitetext' body page (e.g., waitlist etc) #333 */
-.whitetext > footer > div > .row > div > div > a {color: #333;	}
+.waitlistbody > footer > div > .row > div > div > a {color: #333;	}
