@@ -74,6 +74,9 @@ body {
 .hellobtnborder {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 3px;
+  padding: 10px 15px;
+  margin: 20px auto;
+  cursor: pointer
 }
 
 /*for context: old customizations for size of button
