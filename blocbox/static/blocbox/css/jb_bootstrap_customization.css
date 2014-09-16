@@ -33,8 +33,9 @@ body {
 /*add anchor class to add padding - should be about the same size as the margin */
 .anchor {padding-top: 38px; }
 
-
-.waitlistbody {padding-top: 0px;} /*no navbar for hte waitlist*/
+/*
+.waitlistbody {padding-top: 0px;} 
+*/
 
 /*	JMY adding background colors - can add this on to any div/container 
 		to save space i'm doing these on one line, but you can expand to multi-line if want to add other attriobutes
