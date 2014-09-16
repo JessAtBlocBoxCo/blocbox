@@ -27,7 +27,7 @@ body {
   /*font: 300 1.125em/1.38  brandon-grotesque; */
   font-family: brandon-grotesque;
   color: rgb(71, 82, 93);
-  /*margin-top: 50px; */ /*JMY adding padding to body so that the navbar doesn't overlap - by default the navbar is 50px */
+  padding-top: 40px; /*JMY adding padding to body so that the navbar doesn't overlap - by default the navbar is 50px */
 }
 
 /*add anchor class to add padding - should be about the same size as the margin */
