@@ -6,9 +6,14 @@
 <!doctype html>
 <html lang="en" class="fullheight">
 <head>
+	<title>{% block title %}{% endblock %}</title>
+	
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>{% block title %}{% endblock %}</title> <!--Introducing BlocBox -->
+  <!-- Meta Tags - Describe the Site -->
+  <meta name="Description" 
+   CONTENT="Package Delivery Holding and Receiving, Storage, Pet Care, Dog Walking, Child Care,
+   					Mailbox Rental, Missed Packages, 800 USPS, 800 UPS">
   
   <!--add the favicon to appear in tab, Hide this line for IE (needed for Firefox and others) -->
 		<![if !IE]>
@@ -22,18 +27,12 @@
   <!--add typekit font -->
   <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
   <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <!--commenting out old CSS links
-  <link rel="stylesheet" href="{% static 'blocbox/css/standardize.css' %}">
-  <link rel="stylesheet" href="{% static 'blocbox/css/styles.css' %}">
-  -->
-  
+ 
   <!--Adding Bootstrap CSS page-->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+ 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
- 	<!--
- 	<link rel="stylesheet" href="https://raw.githubusercontent.com/noizwaves/bootstrap-social-buttons/v1.0.0/social-buttons-3.css">
- 	-->
+ 
  	<!--add font-awesome-->
  	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
  	
@@ -46,10 +45,7 @@
   <!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	
-  <!-- Meta Tags - Describe the Site -->
-   <meta name="Description" 
-   CONTENT="Package Delivery Holding and Receiving, Storage, Pet Care, Dog Walking, Child Care,
-   Mailbox Rental, Missed Packages, 800 USPS, 800 UPS">
+
    
   <!--Google Tracking SNippet -Goes in every page -->
   <script>
@@ -65,11 +61,6 @@
   {% block headadds %} {% endblock %} 
   
 </head>
-
-<!--  the image file for the big logo that was floating: <img src="{% static "blocbox/images/Block-Outlinev(2).png" %}" -->
-
-<!--jmy previous aded waitlistbody tag to this because there was not padding necessary because no navbar, but now there's a navbar..-->
-<!--<body class="waitlistbody"> -->
 
 <body class="whitetext fullheight waitlistbody"> 
 
