@@ -126,12 +126,9 @@ body {
 }
 
 
-/*portrait tablet and up can have the background fullheight */
-@media (min-width: 768px) {
-	.container-fluid .orangebackground,
-	.container-fluid .greenbackground,
-	.container-fluid .bluebackground,
-	.container-fluid .darkbluebackground {
+/*fill container if desktop */
+@media (min-width: 979px) {
+	.container-fluid.fill-large {
 		height: 100%;
 	}
 }
