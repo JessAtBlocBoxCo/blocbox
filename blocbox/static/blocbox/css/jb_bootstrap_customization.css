@@ -31,7 +31,7 @@ body {
 }
 
 /*add anchor class to add padding - should be about the same size as the margin */
-.anchor {padding-top: 50px; }
+.anchor {padding-top: 40px; }
 
 
 .waitlistbody {padding-top: 0px;} /*no navbar for hte waitlist*/
