@@ -43,7 +43,7 @@ body {
 
 .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
 
-.bluebackground {	background-color: rgb(52, 152, 219); } /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
+.bluebackground {	background-color: rgb(52, 152, 219);} /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
 
 .darkbluebackground {	background-color: rgb(41, 128, 185);} /*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
 
@@ -160,11 +160,13 @@ body {
 .section-HIW  {
     padding-left: 10;
     padding-right: 10;
-    text-align: center
+    text-align: center;
 }
 
 .find  {
     width: 25%;
+    text-decoration-color: ##124364;
+    font-weight: 300;
 }
 
 .ship  {
