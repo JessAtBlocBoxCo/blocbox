@@ -158,8 +158,18 @@ body {
 
 
 .section-HIW  {
-    width: 80%;
-    align-items: center;
-    margin-left: 10;
-    margin-right: 10;
+    padding-left: 10;
+    padding-right: 10;
+}
+
+.find  {
+    width: 33%;
+}
+
+.ship  {
+    width: 33%;
+}
+
+.pickup  {
+    width: 33%;
 }
