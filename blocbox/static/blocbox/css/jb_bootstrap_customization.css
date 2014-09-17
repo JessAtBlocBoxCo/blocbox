@@ -157,8 +157,10 @@ body {
 }
 
 .HIW-lead  {
-    position: fixed; bottom: 0;
-    align-content: center
+    position: absolute; bottom: 0;
+    text-align: center;
+    width: 100%;
+    left: 0;
 }
 
 .section-HIW  {
