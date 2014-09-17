@@ -158,9 +158,9 @@ body {
 
 
 .section-HIW  {
-    align-content: center
     padding-left: 10;
     padding-right: 10;
+    text-align: center
 }
 
 .find  {
