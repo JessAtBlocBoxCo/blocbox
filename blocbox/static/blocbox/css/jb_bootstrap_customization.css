@@ -157,7 +157,7 @@ body {
 }
 
 .HIW-lead  {
-    position: relative; bottom: 0px;
+    position: fixed; bottom: 0;
 }
 
 .section-HIW  {
