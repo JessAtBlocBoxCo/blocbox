@@ -156,38 +156,16 @@ body {
   h2{font-size: 2.5em;}
 }
 
-.HIW-nav  {
-    position: absolute; bottom: 0;
-    padding-bottom: 30px;
-    text-align: center;
-    width: 100%;
-    left: 0;
-}
+/*JMY edits - 17Sep14 - see email - please review */
 
-.section-HIW  {
-    padding-left: 10;
-    padding-right: 10;
-    text-align: center;
-}
+/*Define font attributes*/
+.lightweight {font-weight: 300;}
+.heavyweight {font-weight; 700;}
+.centertext {text-align: center;}
+.textdecorationblue {text-decoration-color: #124364;}
 
-.find  {
-    width: 25%;
-    text-decoration-color: ##124364;
-    font-weight: 300;
-}
-
-.ship  {
-    width: 25%;
-}
-
-.pickup  {
-    width: 25%;
-}
-
-.hosting-nav  {
-    position: absolute; bottom: 0;
-    padding-bottom: 30px;
-    text-align: center;
-    width: 100%;
-    left: 0;
-}
+/*Define padding and positional attributions */
+.absolutebottom {position: absolute; bottom: 0;}
+.padding10eachside { padding-left: 10; padding-right: 10;}
+.padding30bottom {padding-bottom: 30px;}
+.marginleftnone {left: 0;}
