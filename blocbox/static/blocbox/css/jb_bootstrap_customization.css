@@ -100,7 +100,7 @@ body {
 
 
 /*Change the header size  for the waitlist body*/
-.waitlistbody h1 {font-size: 6.5em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
+.waitlistbody h1 {font-size: 1.571em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
 .waitlistbody h2 {font-size: 3.2em; font-weight: 700; } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
 .waitlistbody h3 {font-size: 2.00em; font-weight: 300; line-height: 1.28em}
 .waitlistbody h4 {font-size: 1.071em; font-weight: 500; line-height: 1.38em}
@@ -136,7 +136,14 @@ body {
 
 
 /* Large desktop */
-@media (min-width: 1200px) { ... }
+@media (min-width: 1200px) {
+        h1 {font-size: 6.5em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
+        h2 {font-size: 3.2em; font-weight: 700; } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
+        h3 {font-size: 2.00em; font-weight: 300; line-height: 1.28em}
+        h4 {font-size: 1.071em; font-weight: 500; line-height: 1.38em}
+        h5 {font-size: 1.286em; font-weight: 300; }
+        h6 {font-size: 1.286em; font-weight: 400; }
+}
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) { ... }
