@@ -126,7 +126,7 @@ body {
 	h2{
 		font-size: 2em; 
 	}
-	.navbarimage {height: 40; width: 200; }
+	/*.navbarlogo {height: 40; width: 200; }*/
 }
 
 /*JMY experimenting with min-height container*/
@@ -174,5 +174,3 @@ body {
 .width90pct {width: 90%;}
 .nopadding {padding: 0px;}
 
-/*NavBar Logo Image Dimension*/
-.navbarlogo {padding: 0px}
