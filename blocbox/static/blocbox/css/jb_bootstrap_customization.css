@@ -137,7 +137,8 @@ body {
 /*JMY experimenting with min-height container*/
 .container-fluid.fillpage { min-height: 100%; }
 
-
+/*JMY Solution to zooming */
+@media (max-width: 797px) { body { padding-left: 0px; padding-right: 0px; } 
 
 /* Large desktop */
 @media (min-width: 1200px) {
