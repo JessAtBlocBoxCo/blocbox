@@ -79,13 +79,11 @@ body {
   border-radius: 3px;
   cursor: pointer;
   padding: 5px;
- /* height: 35px; */
 }
 
 
 
-/*height - full height */
-.fullheight {height: 100%;}
+
 
 
 /*Font for text below bigfont 
@@ -169,3 +167,5 @@ body {
 .padding30bottom {padding-bottom: 30px;}
 .marginleftnone {left: 0;}
 .padding5px {padding: 5px; }
+.fullheight {height: 100%;}
+.width90pct {width: 90%;}
