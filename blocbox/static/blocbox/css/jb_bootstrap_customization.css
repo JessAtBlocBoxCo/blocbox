@@ -125,7 +125,7 @@ body {
 	h2{
 		font-size: 2em; 
 	}
-	.navbar-header > a > img {height: 50; width: 200; }
+	.navbarimage {height: 40; width: 200; }
 }
 
 /*JMY experimenting with min-height container*/
