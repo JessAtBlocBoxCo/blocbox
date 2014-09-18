@@ -64,6 +64,10 @@ body {
 		font-size: 1.38em;		
 		}
 
+/*Make the footer text dark grey if its a 'whitetext' body page (e.g., waitlist etc) #333 
+.waitlistbody > footer > div > .row > div > div > a {color: #333;	}
+*/
+
 /*change the padding on the image for the brand in the navbar */
 .navbar-default .navbar-header > a {padding-top: 7px;}
 
@@ -91,8 +95,7 @@ body {
 */
 
 
-/*Make the footer text dark grey if its a 'whitetext' body page (e.g., waitlist etc) #333 */
-.waitlistbody > footer > div > .row > div > div > a {color: #333;	}
+
 
 /*Change the header size  for the waitlist body*/
 .waitlistbody h1 {font-size: 6.5em; font-weight: 700 } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
