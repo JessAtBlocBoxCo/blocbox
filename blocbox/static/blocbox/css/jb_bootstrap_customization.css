@@ -100,7 +100,7 @@ body {
 
 
 /*Change the header size  for the waitlist body*/
-.waitlistbody h1 {font-size: 6.5em; font-weight: 700; line-height: 1.18em} /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
+.waitlistbody h1 {font-size: 6.5em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
 .waitlistbody h2 {font-size: 3.2em; font-weight: 700; } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
 .waitlistbody h3 {font-size: 2.00em; font-weight: 300; line-height: 1.28em}
 .waitlistbody h4 {font-size: 1.071em; font-weight: 500; line-height: 1.38em}
@@ -110,7 +110,7 @@ body {
 /*Add padding to the very first line on the page */
 .waitlistbody > .orangebackground > .row > h1 { padding-top: 5%; }
 /*Add padding to the text below this first stuff */
-.waitlistbody > .orangebackground > .row > div > h5 { padding-top: 50; padding-bottom: 100; }
+.waitlistbody > .orangebackground > .row > div > h5 { padding-top: 50; }
 
 
 
