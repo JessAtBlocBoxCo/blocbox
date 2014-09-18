@@ -73,6 +73,7 @@ body {
 .navbar-default .navbar-header > a {padding-top: 7px;}
 
 
+
 /*Hello button outline */
 .hellobtnborder {
   border: 2px solid rgb(255, 255, 255);
@@ -124,6 +125,7 @@ body {
 	h2{
 		font-size: 2em; 
 	}
+	.navbar-header a > img {height: 50; width: 200; }
 }
 
 /*JMY experimenting with min-height container*/
