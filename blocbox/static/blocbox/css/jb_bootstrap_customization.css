@@ -165,4 +165,4 @@ body {
 .padding10eachside { padding-left: 10; padding-right: 10;}
 .padding30bottom {padding-bottom: 30px;}
 .marginleftnone {left: 0;}
-.alignbottom {vertical-align: bottom;}
+.alignbottom {position:absolute; bottom: 0px; width: 100%;}
