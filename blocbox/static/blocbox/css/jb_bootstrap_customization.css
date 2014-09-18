@@ -131,7 +131,8 @@ body {
 		font-size: 1.143em; line-height: 1.38em }
 	.navbarlogo {height: 40px; width: 200px; }
 	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
-}
+    }
+    .orangebackground {background-color: rgb(255, 255, 255); } /*Hex Equiv:  #FFCB13 */
 
 /*JMY experimenting with min-height container*/
 .container-fluid.fillpage { min-height: 100%; }
