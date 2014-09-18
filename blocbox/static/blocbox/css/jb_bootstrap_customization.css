@@ -162,6 +162,7 @@ body {
 .lightweight {font-weight: 300;}
 .heavyweight {font-weight; 700;}
 .textdecorationblue {text-decoration-color: #124364;}
+.textdecorationgreen {text-decoration-color: #155a32;}
 
 /*Define padding and positional attributions */
 .absolutebottom {position: absolute; bottom: 0;}
