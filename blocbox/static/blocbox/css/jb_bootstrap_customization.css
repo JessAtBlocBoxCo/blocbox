@@ -75,8 +75,9 @@ body {
 /*Hello button outline */
 .hellobtnborder {
   border: 2px solid rgb(255, 255, 255);
-  border-radius: 15px;
-  cursor: pointer
+  border-radius: 3px;
+  cursor: pointer;
+  height: 35px;
 }
 
 
