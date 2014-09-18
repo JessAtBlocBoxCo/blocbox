@@ -128,15 +128,9 @@ body {
 }
 
 /*JMY experimenting with min-height container*/
-.container-fluid.fill-large { min-height: 100%; }
+.container-fluid.fillpage { min-height: 100%; }
 
-/*fill container if desktop 
-@media (min-width: 979px) {
-	.container-fluid.fill-large {
-		height: 100%;
-	}
-}
-*/
+
 
 /* Large desktop */
 @media (min-width: 1200px) { ... }
