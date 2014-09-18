@@ -120,7 +120,7 @@ body {
 @media (max-width: 480px) {
 	.waitlistbody h1,
 	h1{
-		font-size: 1.571em; 
+		font-size: 1.714em; 
 	}
 	.waitlistbody h2,
 	h2{
@@ -128,7 +128,7 @@ body {
 	}
     .waitlistbody h3,
 	h2{
-		font-size: 1.143em; }
+		font-size: 1.143em; line-height: 1.38em }
 	.navbarlogo {height: 40px; width: 200px; }
 	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
 }
