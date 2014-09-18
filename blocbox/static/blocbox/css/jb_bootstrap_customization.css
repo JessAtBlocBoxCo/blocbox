@@ -77,7 +77,8 @@ body {
   border: 2px solid rgb(255, 255, 255);
   border-radius: 3px;
   cursor: pointer;
-  height: 35px;
+  padding: 10px;
+ /* height: 35px; */
 }
 
 
