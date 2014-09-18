@@ -162,8 +162,9 @@ body {
 
 /*Define padding and positional attributions */
 .absolutebottom {position: absolute; bottom: 0;}
+.relativediv {position: relative; }
 .padding10eachside { padding-left: 10; padding-right: 10;}
 .padding30bottom {padding-bottom: 30px;}
 .marginleftnone {left: 0;}
-.alignbottom {margin-top: 90%; /* vertical-align: bottom; bottom: 0; margin-bottom: 1%; width: 100%;*/}
+.alignbottom {position: absolute; vertical-align: bottom; bottom: 0; margin-bottom: 1%; width: 100%;}
 .abovethisdiv {margin-top: -20px ; }
