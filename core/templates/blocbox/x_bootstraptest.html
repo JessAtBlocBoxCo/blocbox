@@ -7,7 +7,7 @@
 {% block content %}
 <!--JB: START ADDING SITE CONTENT HERE -->
 
-<div class="container-fluid fillpage orangebackground text-center"> <!-- start orange container -->
+<div class="container-fluid fillpage orangebackground text-center relativediv"> <!-- start orange container -->
 		
 		<div class="row text-center">
 			<br>
@@ -48,7 +48,7 @@
   		<a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a>
   	</div> <!--end waitlist form divider-->
   	
-<div class="text-center padding30bottom"> <!--deleting absolutebottom and marginleftnone -->
+<div class="text-center alignbottomdiv"> <!--deleting absolutebottom and marginleftnone -->
     <h6>How It Works</h6>
     <a href="#works"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
 </div>
@@ -60,7 +60,7 @@
  
 <!-- Begin blue background; hiw was blue background, JMY updating this to bluecontainer -->
 <a name="works" class="anchor"></a> <!--link to 'works' anchor -->
-<div class="container-fluid fillpage bluebackground text-center">
+<div class="container-fluid fillpage bluebackground text-center relativediv">
     <div>
           <h2>Stop Missing Packages.<br>Meet Your Neighbors.</h2>
     </div>    
@@ -96,7 +96,9 @@
   		
  	</div> <!--row --> 		
  	
-  <p>More Details Coming Soon</p>
+ 	<div class="row alignbottomdiv>
+  	<p>More Details Coming Soon</p>
+	</div>
 
 </div> <!--end blue container -->
   
@@ -142,20 +144,15 @@
         <div class="col-md-1"></div>
     </div> <!--end -->
     
-    	<div class="row text-center alignbottom"> <!--removing absolutebottom and marginleftnone to fix this padding30bottom -->
-    		<p>TESTING BOTTOM Learn About Becoming a Host</p>
+    	<div class="row text-center alignbottomdiv"> <!--removing absolutebottom and marginleftnone to fix this padding30bottom -->
+    		<p>Learn About Becoming a Host</p>
     		<a href="#hosting"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
     </div>
     
   </div> <!--end dark-blue container-->
   
   <a name="hosting" class="anchor"></a> <!--link to 'hosting' anchor -->
-  <div class="container-fluid fillpage greenbackground text-center">
-  	
-  	<div class="row text-center abovethisdiv"> <!--removing absolutebottom and marginleftnone to fix this padding30bottom -->
-    	<p>Learn About Becoming a Host</p>
-    	<a href="#hosting"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
-    </div>
+  <div class="container-fluid fillpage greenbackground text-center relativediv">
     
       <div>
            <h2>Become a Blocbox Host</h2>
@@ -191,7 +188,9 @@
         
     </div> <!--row --> 
     
-    <p>More Details Coming Soon</p>
+    <div class="row alignbottomdiv>
+    	<p>More Details Coming Soon</p>
+    </div>
 
    </div> <!--end greenbackground container -->
 
