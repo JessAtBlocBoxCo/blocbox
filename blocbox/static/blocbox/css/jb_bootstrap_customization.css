@@ -131,8 +131,8 @@ body {
 		font-size: 1.143em; line-height: 1.38em }
 	.navbarlogo {height: 40px; width: 200px; }
 	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
-	.navbar-header {margin-right: 0px;} /*remove the -15px margin on the navbar-header in the mobile version */
-    }
+	.container-fluid > .navbar-collapse {margin-right: 0px;} /*remove the -15px margin on the navbar-header in the mobile version */
+ }
 
 
 /*JMY experimenting with min-height container*/
