@@ -113,6 +113,7 @@ body {
 .waitlistbody > .orangebackground > .row > div > h5 { padding-top: 50; padding-bottom: 100; }
 
 
+
 /*Modifying for different screen dimensions  - the ones for XS and SM do not seem to be working*/
 
 /* Landscape phones and down */
@@ -171,3 +172,7 @@ body {
 .padding5px {padding: 5px; }
 .fullheight {height: 100%;}
 .width90pct {width: 90%;}
+.nopadding {padding: 0px;}
+
+/*NavBar Logo Image Dimension*/
+.navbarlogo {padding: 0px}
