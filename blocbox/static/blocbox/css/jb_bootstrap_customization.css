@@ -37,30 +37,25 @@ body {
 .waitlistbody {padding-top: 0px;} 
 */
 
-/*	JMY adding background colors - can add this on to any div/container 
-		to save space i'm doing these on one line, but you can expand to multi-line if want to add other attriobutes
-*/
 
+/*Background Colors*/
 .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
-
 .bluebackground {	background-color: rgb(52, 152, 219);} /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
-
 .darkbluebackground {	background-color: rgb(41, 128, 185);} /*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
-
 .greenbackground { background-color: #2ecc71; } /*become a blocbox host, etc */
-
+.darkgreenbackground { background-color: rgb(39, 174, 96); } /*for the footer on the waitlist etc */
 .offwhitebackground { background-color: rgb(250, 250, 250);	} /*Hex equiv: #FAFAFA */
-
 .lightgreybackground { background-color: rgb(236, 240, 241);}
-
 .darkgreybackground {background-color: rgb(103,114,119); } /*Heq Equiv: #677277 */
-
 .whitebackground { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*/
 
 /*add text colors */
 .whitetext {color: rgb(255, 255, 255); }
-
+.offwhitetext {color: rgb(250, 250, 250); }
 .darkgreytext {color: rgb(103,114,119); } /*Heq Equiv: #677277 */
+.textinbluebackground {color: rgb(18, 67, 100); } /*text fom the waitlist page */
+.textindarkbluebackground {color: rgb(14, 41, 59); }
+.textingreenbackground {color: rgb(21, 90, 50); }
 
 
 /*make the navbar text for the waitlist/orange header page white and larger*/
