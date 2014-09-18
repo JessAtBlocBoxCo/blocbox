@@ -57,6 +57,7 @@ body {
 .textinbluebackground {color: rgb(18, 67, 100); } /*text fom the waitlist page */
 .textindarkbluebackground {color: rgb(14, 41, 59); }
 .textingreenbackground {color: rgb(21, 90, 50); }
+.orangetext {color: rgb(255, 203, 19);}
 
 
 /*make the navbar text for the waitlist/orange header page white and larger*/
