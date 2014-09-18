@@ -127,6 +127,7 @@ body {
 		font-size: 2em; 
 	}
 	.navbarlogo {height: 40px; width: 200px; }
+	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
 }
 
 /*JMY experimenting with min-height container*/
