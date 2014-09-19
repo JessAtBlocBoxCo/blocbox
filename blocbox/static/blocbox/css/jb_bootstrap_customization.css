@@ -67,7 +67,7 @@ body {
 		}
 
 /*Make the footer text offwhite for the dargreen footer on the waitlist page */
-.waitlistbody > footer > div > .row > div > div > a { color: rgb(250, 250, 250);}
+.waitlistbody > footer > div > div > div > a { color: rgb(250, 250, 250);}
 
 /*change the padding on the image for the brand in the navbar */
 .navbar-default .navbar-header > a {padding-top: 7px;}
