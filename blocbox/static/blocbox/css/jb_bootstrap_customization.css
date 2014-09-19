@@ -115,22 +115,7 @@ body {
 /*Eliminate border around navbar*/
 .navbar {border: 0px;} /*default is border: 1px solid transparent;*/
 
-/*Modifying for different screen dimensions  - the ones for XS and SM do not seem to be working*/
 
-/* Landscape phones and down */
-@media (max-width: 480px) {
-	.waitlistbody h1,
-	h1{font-size: 1.714em; }
-	
-	.waitlistbody h2,
-	h2{font-size: 2em; }
-	
-    .waitlistbody h3,
-	h2{font-size: 1.143em; line-height: 1.38em }
-	.navbarlogo {height: 40px; width: 200px; }
-	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
- }
- 
  /*SEARCH PAGE STYLES */
 #map-canvas { 
 	 		z-index: 5;
@@ -174,6 +159,30 @@ body {
 		font-family: 'Brandon Grotesque';
 		font: brandon-grotesque;
 }
+
+
+
+
+/*----------------------------------------------------------------------------
+*Modifying for different screen dimensions 
+------------------------------------------------------------------------------*/
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.waitlistbody h1,
+	h1{font-size: 1.714em; }
+	
+	.waitlistbody h2,
+	h2{font-size: 2em; }
+	
+    .waitlistbody h3,
+	h2{font-size: 1.143em; line-height: 1.38em }
+	.navbarlogo {height: 40px; width: 200px; }
+	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
+	.nopaddingmobile {padding:0px}
+ }
+ 
+
 
 /*JMY Solution to zooming */
 @media (max-width: 797px) { 
