@@ -21,7 +21,7 @@ body {
 .anchor {padding-top: 35px; }
 
 
-/*Background Colors*/
+/*Define Generic Background Colors*/
 .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
 .bluebackground {	background-color: rgb(52, 152, 219);} /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
 .darkbluebackground {	background-color: rgb(41, 128, 185);} /*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
@@ -32,7 +32,7 @@ body {
 .darkgreybackground {background-color: rgb(103,114,119); } /*Heq Equiv: #677277 */
 .whitebackground { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*/
 
-/*add text colors */
+/*Define Generic text colors */
 .whitetext {color: rgb(255, 255, 255); }
 .offwhitetext {color: rgb(250, 250, 250); }
 .darkgreytext {color: rgb(103,114,119); } /*Heq Equiv: #677277 */
@@ -41,6 +41,28 @@ body {
 .textindarkbluebackground {color: rgb(14, 41, 59); }
 .textingreenbackground {color: rgb(21, 90, 50); }
 .orangetext {color: rgb(255, 203, 19);}
+
+/*Define generic font attributes*/
+.lightweight {font-weight: 300;}
+.heavyweight {font-weight; 700;}
+.textdecorationblue {text-decoration-color: #124364;}
+.textdecorationgreen {text-decoration-color: #155a32;}
+
+/*Define generic padding and positional attributions */
+.absolutebottom {position: absolute; bottom: 0;}
+.relativediv {position: relative; }
+.alignbottomdiv {position: absolute; bottom: 0; width: 100%; }
+.padding10eachside { padding-left: 10; padding-right: 10;}
+.padding30bottom {padding-bottom: 30px;}
+.marginleftnone {left: 0;}
+.padding5px {padding: 5px; }
+.fullheight {height: 100%;}
+.width90pct {width: 90%;}
+.nopadding {padding: 0px;}
+.maxwidth100pct {max-width: 100%; }
+.paddingsides15px {padding-right: 15px; padding-left: 15px; }
+.borderblack3px {border: 3px solid rgb(0, 0, 0);}
+.container-fluid.fillpage { min-height: 100%; }
 
 
 
@@ -151,6 +173,8 @@ body {
 
 
 
+
+
 /*----------------------------------------------------------------------------
 *Modifying for different screen dimensions 
 ------------------------------------------------------------------------------*/
@@ -172,54 +196,16 @@ body {
  }
  
 
-
 /*JMY Solution to zooming */
-@media (max-width: 797px) { 
-    body { padding-left: 0px; padding-right: 0px; } 
-}
+@media (max-width: 797px) {  body { padding-left: 0px; padding-right: 0px; } }
 
 /* Large desktop */
-@media (min-width: 1200px) {
-}
+@media (min-width: 1200px) { ....}
  
 /* Portrait tablet to landscape and desktop */
 @media (min-width: 768px) and (max-width: 979px) { ... }
  
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) { ... }
- 
- 
-/*These two aren't really working.. */
-@media (max-width: @screen-xs) {
-		h1{font-size: 3.5em;}
-		h2{font-size: 2.5em;}
-}
 
-@media (max-width: @screen-sm) {
-  h1{font-size: 3.5em;}
-  h2{font-size: 2.5em;}
-}
 
-/*JMY edits - 17Sep14 - see email - please review */
-
-/*Define font attributes*/
-.lightweight {font-weight: 300;}
-.heavyweight {font-weight; 700;}
-.textdecorationblue {text-decoration-color: #124364;}
-.textdecorationgreen {text-decoration-color: #155a32;}
-
-/*Define padding and positional attributions */
-.absolutebottom {position: absolute; bottom: 0;}
-.relativediv {position: relative; }
-.alignbottomdiv {position: absolute; bottom: 0; width: 100%; }
-.padding10eachside { padding-left: 10; padding-right: 10;}
-.padding30bottom {padding-bottom: 30px;}
-.marginleftnone {left: 0;}
-.padding5px {padding: 5px; }
-.fullheight {height: 100%;}
-.width90pct {width: 90%;}
-.nopadding {padding: 0px;}
-.maxwidth100pct {max-width: 100%; }
-.paddingsides15px {padding-right: 15px; padding-left: 15px; }
-.borderblack3px {border: 3px solid rgb(0, 0, 0);}
-.container-fluid.fillpage { min-height: 100%; }
