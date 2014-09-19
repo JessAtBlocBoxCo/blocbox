@@ -47,11 +47,7 @@ body {
 .orangetext {color: rgb(255, 203, 19);}
 
 
-/*make the navbar text for the waitlist/orange header page white and larger*/
-.whitetext .navbar-default .navbar-nav > li > a {
-		color: #FFFFFF;
-		font-size: 1.38em;		
-		}
+
 
 /*Make the footer text offwhite for the dargreen footer on the waitlist page */
 .waitlistbody > footer > div > div > div > a { color: rgb(250, 250, 250);}
@@ -59,7 +55,8 @@ body {
 /*change the padding on the image for the brand in the navbar */
 .navbar-default .navbar-header > a {padding-top: 7px;}
 
-
+/*Eliminate border around navbar*/
+.navbar {border: 0px;} /*default is border: 1px solid transparent;*/
 
 /*Hello button outline */
 .hellobtnborder {
@@ -91,7 +88,8 @@ body {
     .waitlistbody .collapse.in{ display:block !important; } 
 }
 
-
+/*make the navbar text for the waitlist/orange header page white and larger*/
+.waitlistbody .navbar-default .navbar-nav > li > a {color: #FFFFFF;font-size: 1.38em;		}
 
 
 /*Change the header size  for the waitlist body*/
@@ -107,11 +105,10 @@ body {
 /*Add padding to the text below this first stuff */
 .waitlistbody > .orangebackground > .row > div > h5 { } /*removed padding*/
 
-/*Eliminate border around navbar*/
-.navbar {border: 0px;} /*default is border: 1px solid transparent;*/
 
 
- /*SEARCH PAGE STYLES */
+
+/*SEARCH PAGE STYLES */
 #map-canvas { 
 	 		z-index: 5;
 			width: 100%;
