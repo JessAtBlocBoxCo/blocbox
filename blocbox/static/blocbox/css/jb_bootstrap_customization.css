@@ -112,27 +112,27 @@ body {
 /*Add padding to the text below this first stuff */
 .waitlistbody > .orangebackground > .row > div > h5 { } /*removed padding*/
 
-
+/*Eliminate border around navbar*/
+.navbar {border: 0px;} /*default is border: 1px solid transparent;*/
 
 /*Modifying for different screen dimensions  - the ones for XS and SM do not seem to be working*/
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	.waitlistbody h1,
-	h1{
-		font-size: 1.714em; 
-	}
+	h1{font-size: 1.714em; }
+	
 	.waitlistbody h2,
-	h2{
-		font-size: 2em; 
-	}
+	h2{font-size: 2em; }
+	
     .waitlistbody h3,
-	h2{
-		font-size: 1.143em; line-height: 1.38em }
+	h2{font-size: 1.143em; line-height: 1.38em }
 	.navbarlogo {height: 40px; width: 200px; }
 	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
-	.container-fluid > .navbar-collapse {margin-right: 0px;} /*remove the -15px margin on the navbar-header in the mobile version */
  }
+ 
+ /*troubleshooting the unwanted margin in mobile site 
+ */
 
 
 /*JMY experimenting with min-height container*/
@@ -184,4 +184,4 @@ body {
 .fullheight {height: 100%;}
 .width90pct {width: 90%;}
 .nopadding {padding: 0px;}
-
+.maxwidth100pct {max-width: 100%; }
