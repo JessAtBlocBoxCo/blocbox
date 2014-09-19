@@ -20,10 +20,6 @@ body {
 /*add anchor class to add padding - should be about the same size as the margin */
 .anchor {padding-top: 35px; }
 
-/*
-.waitlistbody {padding-top: 0px;} 
-*/
-
 
 /*Background Colors*/
 .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
