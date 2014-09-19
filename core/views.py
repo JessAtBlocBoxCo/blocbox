@@ -254,9 +254,13 @@ def waitlist_confirmation(request):
 def bootstraptest(request):
     return render(request, 'blocbox/x_bootstraptest.html') 
 
+#style tests
+def styletest(request):
+    return render(request, 'blocbox/jesstest.html') 
+    
 #bootsrap test - copy of the waitlist sign-up page
 def jesstest(request):
-    return render(request, 'blocbox/jesstest.html') 
+    return render(request, 'blocbox/x_styletest.html') 
     
 """
 def denyrequestconnect(request, host_id, user_id):
