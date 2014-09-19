@@ -186,3 +186,4 @@ body {
 .nopadding {padding: 0px;}
 .maxwidth100pct {max-width: 100%; }
 .paddingsides15px {padding-right: 15px; padding-left: 15px; }
+.borderblack3px {border: 3px solid rgb(0, 0, 0);}
