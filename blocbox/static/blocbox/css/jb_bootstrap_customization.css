@@ -96,7 +96,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 * GEneric Navbar Specific Styles (non-waitlist, for base-html)
 *-----------------------------------------------------------------------*/
 /*Change width of navbar-header - so when it collapses - was 768 */
-@media (max-width:950px){
+@media (max-width:1000px){
     .navbar-header { float: none;}
     .navbar-left,
     .navbar-right {float: none !important;}
