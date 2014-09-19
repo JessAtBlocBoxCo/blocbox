@@ -180,7 +180,7 @@ body {
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
-	body {font-size: 10px; } /*make default font-size 10px for mobile */
+	body {font-size: 12px; } /*make default font-size 10px for mobile */
 	.waitlistbody h1,
 	h1{font-size: 1.714em; }
 	
