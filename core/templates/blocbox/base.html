@@ -130,7 +130,12 @@
         <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li>
         -->
         <li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li>
-        <li><a href='/contactus'>Contact Us</a></li>
+        <!--only show contact us if user not authenticated to save space -->
+       {% if user.is_authenticated %}       
+       {% else %}
+        	<li><a href='/contactus'>Contact Us</a></li>
+        {% endif %}
+        
            
         
       </ul> <!--end collection of links for toggling -->   
