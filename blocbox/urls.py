@@ -28,8 +28,8 @@ urlpatterns = patterns('',
  		#the carret sasy beginning must match, the $ says end of string must match
  		#email stuff
  		url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.confirmconnect_mail, name='sendrequestconnect'),
- 		url(r'^(?P<host_id>\d+)/requestconnectconfirm/(?P<user_id>\d+)/$', views.confirmrequestconnect, name='confirmrequestconnect'), 		
- 		url(r'^styletest/$', views.styletest, name='styletest'),
+    url(r'^(?P<host_id>\d+)/requestconnectconfirm/(?P<user_id>\d+)/$', views.confirmrequestconnect, name='confirmrequestconnect'), 		
+    url(r'^styletest/$', views.styletest, name='styletest'),
  		url(r'^jesstest/$', views.jesstest, name='jesstest'),
  		url(r'^datascience/', include('datasci.urls')),
 )
