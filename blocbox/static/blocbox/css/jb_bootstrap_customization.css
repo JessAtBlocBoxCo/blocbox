@@ -182,11 +182,13 @@ h6 {font-size: 1.286em; font-weight: 400; }
 	h1{font-size: 2.5em; }
 	h2{font-size: 2em; }	
   h3 {font-size: 1.143em; line-height: 1.38em }
+  .font10pxmobile {font-size: 10px; }
 	.navbarlogo {height: 40px; width: 200px; }
 	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
 	.nopaddingmobile {padding:0px}
 	.paddingsides3pxmobile {padding-left:3px; padding-right:3px;} 
 	.paddingsides10pxmobile {padding-left:10px; padding-right:10px;}
+	
  }
  
 
