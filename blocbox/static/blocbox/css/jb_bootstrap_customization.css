@@ -181,14 +181,9 @@ body {
 /* Landscape phones and down */
 @media (max-width: 480px) {
 	body {font-size: 12px; } /*make default font-size 10px for mobile */
-	.waitlistbody h1,
-	h1{font-size: 1.714em; }
-	
-	.waitlistbody h2,
-	h2{font-size: 2em; }
-	
-    .waitlistbody h3,
-	h2{font-size: 1.143em; line-height: 1.38em }
+	h1{font-size: 2.5em; }
+	h2{font-size: 2em; }	
+  h3 {font-size: 1.143em; line-height: 1.38em }
 	.navbarlogo {height: 40px; width: 200px; }
 	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
 	.nopaddingmobile {padding:0px}
