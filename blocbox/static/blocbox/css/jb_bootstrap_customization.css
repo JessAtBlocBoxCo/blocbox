@@ -56,14 +56,14 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .absolutebottom {position: absolute; bottom: 0;}
 .relativediv {position: relative; }
 .alignbottomdiv {position: absolute; bottom: 0; width: 100%; }
-.padding10eachside { padding-left: 10; padding-right: 10;}
-.padding30bottom {padding-bottom: 30px;}
-.padding5px {padding: 5px; }
 .fullheight {height: 100%;}
 .width90pct {width: 90%;}
 .nopadding {padding: 0px;}
 .maxwidth100pct {max-width: 100%; }
 .paddingsides15px {padding-right: 15px; padding-left: 15px; }
+.paddingsides10px { padding-left: 10; padding-right: 10;}
+.paddingbottom30px {padding-bottom: 30px;}
+.padding5px {padding: 5px; }
 .borderblack3px {border: 3px solid rgb(0, 0, 0);}
 .container-fluid.fillpage { min-height: 100%; }
 .nomargin {margin: 0px; }
