@@ -41,7 +41,11 @@
   			<!--start form -->
   			<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
 					method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
-					class="validate" target="_blank" novalidate>
+					target="_blank" novalidate>
+					
+				<!--this next row is the offending element - cuasing an unwanted margin to the right
+				i think its happening b ecause we're putting a row within a form -->
+  			<!--
   			<div class="row">
   					<div class="col-xs-0 col-md-3"></div>
   					<div class="col-xs-12 col-md-2">
@@ -55,12 +59,13 @@
   					</div>
   					<div class="col-xs-0 col-md-3"></div>
   			</div>
+  			-->
   			<div id="mce-responses" class="clear">
   				<div class="response" id="mce-error-response" style="display:none"></div>
   				<div class="response" id="mce-success-response" style="display:none"></div>
   			</div> 
   			<div class="row"> 
-  			<label value="1" name="group[1689][1]" class="maxwidth100pct">
+  			<label value="1" name="group[1689][1]">
   			  <input class="checkbox" type="checkbox">
   		<span>I'm often at home and I want to learn more about making extra cash as a Blocbox Host</span>
   			</label>
