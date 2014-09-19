@@ -82,19 +82,27 @@ body {
   padding: 5px;
 }
 
+/*-----------------------------------------------------------------------
+* Waitlist Navbar Specific Styles
+*-----------------------------------------------------------------------*/
+/*Change toggle button to white when hoever/focus*/
+.waitlistbody .navbar-default .navbar-toggle:hover,
+.waitlistbody .navbar-default .navbar-toggle:focus {background-color: #FFFFFF;}
 
-
-
-
-
-/*Font for text below bigfont 
-.parafont {
-    font-size: 1.6em;
-    font-weight: 300;
-    padding-top: 50;
-    padding-bottom: 100;
+/*Change width of navbar-header - so when it collapses - was 768 */
+@media (max-width:500px){
+    .waitlistbody .navbar-header { float: none;}
+    .waitlistbody .navbar-left,
+    .waitlistbody .navbar-right {float: none !important;}
+    .waitlistbody .navbar-toggle { display: block; }
+    .waitlistbody .navbar-collapse {border-top: 1px solid transparent; box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);}
+    .waitlistbody .navbar-fixed-top { top: 0; border-width: 0 0 1px;}
+    .waitlistbody .navbar-collapse.collapse {display: none!important;}
+    .waitlistbody .navbar-nav {float: none!important; margin-top: 7.5px;}
+    .waitlistbody .navbar-nav > li { float: none; }
+    .waitlistbody .navbar-nav>li>a {padding-top: 10px; padding-bottom: 10px;}
+    .waitlistbody .collapse.in{ display:block !important; } 
 }
-*/
 
 
 
