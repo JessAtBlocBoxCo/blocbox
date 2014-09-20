@@ -58,6 +58,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 /*Define generic padding and positional attributions */
 .absolutebottom {position: absolute; bottom: 0;}
 .relativediv {position: relative; }
+.absolute {position: absolute; }
 .alignbottomdiv {position: absolute; bottom: 0; width: 100%; }
 .container-fluid.fillpage { min-height: 100%; }
 .fullheight {height: 100%;}
@@ -146,7 +147,8 @@ h6 {font-size: 1.286em; font-weight: 400; }
     background-size: contain;
     background-position: center center;
 }
-
+.navbar-unfixed {
+}
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
 *-----------------------------------------------------------------------*/
