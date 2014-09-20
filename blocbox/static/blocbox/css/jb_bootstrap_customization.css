@@ -261,7 +261,18 @@ h6 {font-size: 1.286em; font-weight: 400; }
 
 /*----------------------------------------------------------------------------
 *Modifying for different screen dimensions 
+*Mobile portrait width: 320 
+*Mobile landscape width: 480
+*Small tablet portrait width:600
+*Small tablet landscape width: 800
+*Tablet portrait width: 768
+*Tablet landscape width: 1024
+*Large desktop width: 1200
+
+*Default fonts specified above:
+h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.071em; h5 {font-size: 1.286em; h6 {font-size: 1.286em; 
 ------------------------------------------------------------------------------*/
+
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
@@ -280,21 +291,11 @@ h6 {font-size: 1.286em; font-weight: 400; }
  }
  
 
-/*Table-portrait - 768, so max-widdth is 769*/
-@media {min-width: 481px} AND (max-width: 769px) {  
+/*Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)*/
+@media {min-width: 481px} AND (max-width: 800px) {  
 	body { padding-left: 0px; padding-right: 0px; } 
 	h1{font-size: 5em; }
 	h2{font-size: 3em; }
 	h3{font-size: 1.5em; }
 }
-
-/* Large desktop */
-@media (min-width: 1200px) { ....}
- 
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { ... }
- 
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) { ... }
-
 
