@@ -147,11 +147,11 @@ h6 {font-size: 1.286em; font-weight: 400; }
 /*style a version to appear in mobile version of navbar */
 @media (max-width: 480px) {
 	.waitlistbody .nav-blocbox-name { 
-	display: block;
-	background-image: url ('/static/blocbox/images/Logo-and-name---white.png');
-	background-repeat: no-repeat; 
-	background-size: contain; 
-	height: 50px; width: 250px; 
+		display: block;
+		background-image: url('/static/blocbox/images/Logo-and-name---white.png');
+		background-repeat: no-repeat; 
+		background-size: contain; 
+		height: 50px; width: 250px; 
 }}
 
 /*-----------------------------------------------------------------------
