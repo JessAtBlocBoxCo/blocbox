@@ -140,9 +140,8 @@ h6 {font-size: 1.286em; font-weight: 400; }
 	display: block;
 	z-index: 1000000;
 	
-	height: 72px; width: 279px; margin-top: 35px; 
-	/*background-color: #b0c4de;*/
-	background: #b0c4de ;
+	height: 72px; width: 279px; margin-top: 35px;
+	/*background-color: #b0c4de ; */
 	background-image: url('/static/blocbox/images/Name-whited2.png');
 	background-repeat: no-repeat;
 	background-size: contain;
