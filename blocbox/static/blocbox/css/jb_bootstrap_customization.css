@@ -160,6 +160,12 @@ h6 {font-size: 1.286em; font-weight: 400; }
     height: 34px; /*same as form-control, the bootstrap style applied to text input */      
 }
 
+.waitlistjoinbtn:hover {
+    border-width: 2px;
+    border-style: solid;
+    background-color: rgb(255, 203, 19);
+    color: rgb(255, 255, 255);
+
 /*SEARCH PAGE STYLES */
 #map-canvas { 
 	 		z-index: 5;
