@@ -52,6 +52,8 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .textdecorationblue {text-decoration-color: #124364;}
 .textdecorationgreen {text-decoration-color: #155a32;}
 .font2em {font-size:2em; }
+.font16px {font-size: 16px; }
+.font1pt5em {font-size: 1.5em; }
 
 /*Define generic padding and positional attributions */
 .absolutebottom {position: absolute; bottom: 0;}
