@@ -129,11 +129,22 @@ h6 {font-size: 1.286em; font-weight: 400; }
     z-index: 100000;
     width: 10.0833%;
     height: 94px;
-    /*background-image: url("../images/Block-Outlinev(2).png"); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
 }
+.navbar-brand-fixedlogo {
+    display: block;
+    position: absolute;
+    top: 38px;
+    left: 9.5%;
+    z-index: 76;
+    width: 28.25%;
+    max-width: 339px;
+    height: 66px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
 
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
