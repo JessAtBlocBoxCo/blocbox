@@ -141,8 +141,8 @@ h6 {font-size: 1.286em; font-weight: 400; }
 	z-index: 1000000;
 	
 	height: 72px; width: 279px; margin-top: 35px; 
-	background-color: #b0c4de;
-	background: url('/static/blocbox/images/Name-whited2.png') no-repeat;
+	/*background-color: #b0c4de;*/
+	background: #b0c4de url('/static/blocbox/images/Name-whited2.png') no-repeat;
 } /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
 
 /*-----------------------------------------------------------------------
