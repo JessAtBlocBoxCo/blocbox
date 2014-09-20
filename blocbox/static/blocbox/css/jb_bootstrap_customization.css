@@ -118,6 +118,23 @@ h6 {font-size: 1.286em; font-weight: 400; }
     .collapse.in{ display:block !important; } 
 }
 
+/*---------------------------------------------------------------------*
+* Make a Fixed Logo
+*----------------------------------------------------------------------*/
+.fixedlogo {
+    display: block;
+    position: fixed;
+    top: 22px;
+    left: 1.83333%;
+    z-index: 74;
+    width: 10.0833%;
+    height: 94px;
+    background-image: url("../images/Block-Outlinev(2).png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
 *-----------------------------------------------------------------------*/
