@@ -134,34 +134,34 @@ h6 {font-size: 1.286em; font-weight: 400; }
     top: 5%; left: 2%;
 }
 
-/*
-.fixedlogo > img {  height:94px; width:131px; }
-*/
-.fixed-logo-image {
-	display: block;
-	background-image: url('/static/blocbox/images/Block-Outlinev(2).png');
-	background-repeat: no-repeat;
-	background-size: contain;
-	 height:94px; width:131px;
-}
- 					
-.waitlistbody .nav-blocbox-name {
-	display: block;
-	background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
-	background-repeat: no-repeat;
-	background-size: contain;
-	height: 72px; width: 279px; margin-top: 35px;
-} 
-
-/*style a version to appear in mobile version of navbar */
-@media (max-width: 480px) {
-	.waitlistbody .nav-blocbox-name { 
+/*style the mobile version of navbar */
+.waitlistbody .nav-blocbox-name { 
 		display: block;
 		background-image: url('/static/blocbox/images/Logo-and-name---white.png');
 		background-repeat: no-repeat; 
 		background-size: contain; 
 		height: 50px; width: 250px; 
-}}
+}
+
+/*Have a floating logo and so forth for min-width 768 */
+@media (min-width: 768px) {
+	.waitlistbody .nav-blocbox-name {
+		display: block;
+		background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
+		background-repeat: no-repeat;
+		background-size: contain;
+		height: 72px; width: 279px; margin-top: 35px;
+		} 
+	.fixed-logo-image {
+		display: block;
+		background-image: url('/static/blocbox/images/Block-Outlinev(2).png');
+		background-repeat: no-repeat;
+		background-size: contain;
+	 	height:94px; width:131px;
+		}
+}
+
+
 
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
