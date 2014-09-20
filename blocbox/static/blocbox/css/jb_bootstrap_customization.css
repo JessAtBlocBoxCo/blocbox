@@ -135,17 +135,19 @@ h6 {font-size: 1.286em; font-weight: 400; }
     background-position: center center;
 }
 .navbar-brand-forfixedlogo {
-    display: block;
-  /*  position: absolute; */
+	float: left;
+    /*display: block;
+  	position: absolute; 
+  	background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
     top: 38px;
     left: 9.5%;
     z-index: 76;
     width: 28.25%;
-    max-width: 339px;
+    max-width: 339px; */
     height: 66px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
+
 }
 .navbar-unfixed {
 		margin-bottom: 0px;
