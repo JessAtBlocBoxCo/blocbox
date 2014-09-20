@@ -134,13 +134,15 @@ h6 {font-size: 1.286em; font-weight: 400; }
     top: 5%; left: 2%;
 }
 
-.fixedlogo > img { height:94px; width:131px;  }
-
+/*
+.fixedlogo > img {  height:94px; width:131px; }
+*/
 .fixed-logo-image {
 	display: block
 	background-image: url('/static/blocbox/images/Block-Outlinev(2).png');
 	background-repeat: no-repeat;
 	background-size: contain;
+	 height:94px; width:131px;
 }
  					
 .waitlistbody .nav-blocbox-name {
