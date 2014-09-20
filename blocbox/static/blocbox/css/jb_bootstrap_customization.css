@@ -130,7 +130,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 
 .fixedlogo {
     display: block; position: fixed;
-    z-index: 100000;
+    /*z-index: 100000; */
     top: 5%; left: 2%;
 }
 
