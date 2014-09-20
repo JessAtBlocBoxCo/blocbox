@@ -23,8 +23,9 @@ h5 {font-size: 1.286em; font-weight: 300; }
 h6 {font-size: 1.286em; font-weight: 400; }
 
 /*add anchor class to add padding - should be about the same size as the margin */
-.anchor {padding-top: 35px; font-size: 0px }
-.anchornonav {font-size: 0px; }
+.anchor {font-size: 0px; }
+.anchorwithnav {padding-top: 35px; font-size: 0px }
+
 
 /*Define Generic Background Colors*/
 .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
