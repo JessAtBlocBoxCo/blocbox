@@ -1,4 +1,3 @@
-{% load staticfiles %} 
 /*	this is blocbox/static/blocbox/css/jb_boostrap_customization.css
 		we need to load the customized CSS sheet after we load boostrap.min.css to enable the overrides (e.g., in the head of the html file) */
 
@@ -138,9 +137,8 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .fixedlogo > img { height:94px; width:131px;  }
 .name-unfixed > img {height: 72px ; width: 279px; margin-top: 35px;}
 .name-unfixed-image {
-	background: url({% static "blocbox/images/Name-whited(2).png" %} ) 
+	background: url('../images/Name-whited(2).png') no-repeat;
 }
-
 
 
 /*-----------------------------------------------------------------------
