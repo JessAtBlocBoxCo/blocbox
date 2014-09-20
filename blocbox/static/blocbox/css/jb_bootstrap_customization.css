@@ -124,19 +124,21 @@ h6 {font-size: 1.286em; font-weight: 400; }
 /*---------------------------------------------------------------------*
 * Make a Fixed Logo
 *----------------------------------------------------------------------*/
+.navbar-fixed-logo { margin-bottom: 0px; margin-top: -50px;}
+.navbar-fixed-logo > .container-fluid > .navbar-header {margin-left: 160px; }
+.navbar-fixed-logo > .container-fluid > .navbar-header > .name-unfixed {margin-left: 0px; padding: 0px;	} 
+.navbar-fixed-logo > .container-fluid > .navbar-collapse > .navbar-right {margin-top: 37px; }
+
 .fixedlogo {
     display: block; position: fixed;
     z-index: 100000;
     top: 5%; left: 2%;
 }
-.fixedlogo > img { height:94px; width:131px;  }
 
-.navbar-fixed-logo { margin-bottom: 0px; margin-top: -50px;}
-.navbar-fixed-logo > .container-fluid > .navbar-header {margin-left: 160px; }
-.navbar-fixed-logo > .container-fluid > .navbar-header > .name-unfixed {
-	margin-left: 0px; padding: 0px;	} /*modifying the styles from navbar-brand */
-.navbar-fixed-logo > .container-fluid > .navbar-header > .name-unfixed > img {margin-top: 35px; }
-.navbar-fixed-logo > .container-fluid > .navbar-collapse > .navbar-right {margin-top: 37px; }
+.fixedlogo > img { height:94px; width:131px;  }
+.name-unfixed > img {height: 72px ; width: 279px; margin-top: 35px;}
+
+
 
 
 /*-----------------------------------------------------------------------
