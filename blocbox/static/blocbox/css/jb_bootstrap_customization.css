@@ -124,7 +124,9 @@ h6 {font-size: 1.286em; font-weight: 400; }
 * Make a Fixed Logo
 *----------------------------------------------------------------------*/
 .navbar-fixed-logo { margin-bottom: 0px; margin-top: -50px;}
+/*
 .navbar-fixed-logo > .container-fluid > .navbar-header {margin-left: 160px; }
+*/
 .navbar-fixed-logo > .container-fluid > .navbar-header > .name-unfixed {margin-left: 0px; padding: 0px;	} 
 .navbar-fixed-logo > .container-fluid > .navbar-collapse > .navbar-right {margin-top: 37px; }
 
