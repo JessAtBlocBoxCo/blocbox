@@ -258,6 +258,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 	.paddingsides3pxmobile {padding-left:3px; padding-right:3px;} 
 	.paddingsides10pxmobile {padding-left:10px; padding-right:10px;}
 	.lightweight {font-weight: 400 ; } /*per john - set lightweight equal to 400 if mobile */
+	.fixedlogo {position: absolute; } /*so the logo isn't fixed in mobile version */
  }
  
 
