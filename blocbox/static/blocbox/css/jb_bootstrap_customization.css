@@ -135,18 +135,24 @@ h6 {font-size: 1.286em; font-weight: 400; }
 }
 
 .fixedlogo > img { height:94px; width:131px;  }
-.name-unfixed-image {
+
+.waitlistbody .nav-blocbox-name {
 	display: block;
-/*	z-index: 1000000;	 */
-	height: 72px; width: 279px; margin-top: 35px;
 	background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
 	background-repeat: no-repeat;
 	background-size: contain;
+	height: 72px; width: 279px; margin-top: 35px;
 } 
-/*now style a version of this for the mobile waitlist navbar - when the logo isn't fixed */
-.waitlistbody .nav-name-and-logo { 
+
+/*style a version to appear in mobile version of navbar */
+@media (max-width: 480px) {
+	.waitlistbody .nav-blocbox-name { 
 	display: block;
-}
+	background-image: url ('/static/blocbox/images/Logo-and-name---white.png');
+	background-repeat: no-repeat; 
+	background-size: contain; 
+	height: 50px; width: 250px; 
+}}
 
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
