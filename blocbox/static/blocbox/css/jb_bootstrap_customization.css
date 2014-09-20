@@ -140,12 +140,12 @@ h6 {font-size: 1.286em; font-weight: 400; }
   	position: absolute; 
   	background-repeat: no-repeat;
     background-size: contain;
-    background-position: center center;
-    top: 38px;
-    left: 9.5%;
+    background-position: center center;    
     z-index: 76;
     width: 28.25%;
     max-width: 339px; */
+    top: 38px;
+    left: 9.5%;
     height: 66px;
 
 }
