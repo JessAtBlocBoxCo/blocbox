@@ -281,7 +281,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
  
 
 /*Table-portrait - 768, so max-widdth is 769*/
-@media (max-width: 769px) {  
+@media {min-width: 481px} AND (max-width: 769px) {  
 	body { padding-left: 0px; padding-right: 0px; } 
 	h1{font-size: 5em; }
 	h2{font-size: 3em; }
