@@ -136,7 +136,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 }
 .navbar-brand-forfixedlogo {
     display: block;
-    position: absolute;
+  /*  position: absolute; */
     top: 38px;
     left: 9.5%;
     z-index: 76;
