@@ -134,6 +134,9 @@ h6 {font-size: 1.286em; font-weight: 400; }
     background-size: contain;
     background-position: center center;
 }
+
+.nav-header-forfixedlogo {margin-left: 160px }
+
 .navbar-brand-forfixedlogo {
 		display: block;
     /*
