@@ -137,12 +137,16 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .fixedlogo > img { height:94px; width:131px;  }
 .name-unfixed-image {
 	display: block;
-	z-index: 1000000;	
+/*	z-index: 1000000;	 */
 	height: 72px; width: 279px; margin-top: 35px;
 	background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
 	background-repeat: no-repeat;
 	background-size: contain;
 } 
+/*now style a version of this for the mobile waitlist navbar - when the logo isn't fixed */
+.waitlistbody .nav-name-and-logo { 
+	display: block;
+}
 
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
