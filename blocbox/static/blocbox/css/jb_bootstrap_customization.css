@@ -283,7 +283,13 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	h3{font-size: 1.5em; }
 }
 
-/* Landscape phones and down */
+@media (max-width: 550px) {
+	body {font-size: 12px; } /*make default font-size 10px for mobile */
+	h1{font-size: 3.5em; }
+	h2{font-size: 2.em; }	
+  h3 {font-size: 1.2em; line-height: 1.5em }
+  
+/* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 @media (max-width: 480px) {
 	body {font-size: 12px; } /*make default font-size 10px for mobile */
 	h1{font-size: 2.5em; }
@@ -296,5 +302,4 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	.paddingsides3pxmobile {padding-left:3px; padding-right:3px;} 
 	.paddingsides10pxmobile {padding-left:10px; padding-right:10px;}
 	.lightweight {font-weight: 400 ; } /*per john - set lightweight equal to 400 if mobile */
-	.fixedlogo {position: absolute; } /*so the logo isn't fixed in mobile version */
  }
