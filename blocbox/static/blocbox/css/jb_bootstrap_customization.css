@@ -138,12 +138,11 @@ h6 {font-size: 1.286em; font-weight: 400; }
 /*.name-unfixed > img {height: 72px ; width: 279px; margin-top: 35px;} */
 .name-unfixed-image {
 	display: block;
-	z-index: 10000;
+	z-index: 1000000;
 	background-image: url('/static/blocbox/images/Name-whited2.png'); 
 	background-repeat: no-repeat;
 	height: 72px; width: 279px; margin-top: 35px; 
 } /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
-
 
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
