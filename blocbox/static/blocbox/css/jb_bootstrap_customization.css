@@ -148,6 +148,8 @@ h6 {font-size: 1.286em; font-weight: 400; }
     background-position: center center;
 }
 .navbar-unfixed {
+		margin-bottom: 0px;
+		margin-top: -40px;
 }
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
