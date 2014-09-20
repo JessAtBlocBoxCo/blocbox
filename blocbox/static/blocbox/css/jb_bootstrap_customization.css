@@ -137,8 +137,8 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .fixedlogo > img { height:94px; width:131px;  }
 .name-unfixed > img {height: 72px ; width: 279px; margin-top: 35px;}
 .name-unfixed-image {
-	background: url('../images/Name-whited(2).png') no-repeat;
-}
+	background: url('/static/blocbox/images/Name-whited(2).png') no-repeat; 
+} /*http://www.blocbox.co/static/blocbox/images/Name-whited(2).png*/
 
 
 /*-----------------------------------------------------------------------
