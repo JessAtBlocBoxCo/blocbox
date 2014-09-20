@@ -1,0 +1,24 @@
+
+{% extends "blocbox/base.html" %}
+<!--this is blocbox/core/templates/bocbox/x_bootstraptest.html - will turn into the waitlist page-->
+{% load staticfiles %} 
+{% block title %} Blocbox Style Tests {% endblock %}
+{% block navbartitle %} StyleTest {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row borderblack3px">
+		<p>This is x_styletest.html</p>
+		<p>This is paragraph text within a row within container-fluid</p>
+		<div class="row borderblack3px col-md-6 col-md-offset-3">
+			<p>This is col-md-6 col-md-offset-3 within a row within container-fluid</p>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}
