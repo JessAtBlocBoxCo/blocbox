@@ -135,25 +135,6 @@ h6 {font-size: 1.286em; font-weight: 400; }
     background-position: center center;
 }
 
-
-
-.navbar-brand-forfixedlogo {
-		display: block;
-    /*
-    float: left;
-    
-  	position: absolute; 
-  	background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;    
-    z-index: 76;
-    width: 28.25%;
-    max-width: 339px; */
-    top: 38px;
-    left: 20%;
-    height: 66px;
-
-}
 .navbar-fixed-logo { margin-bottom: 0px; margin-top: -50px;}
 .navbar-fixed-logo > .container-fluid > .navbar-header {margin-left: 160px; }
 .navbar-fixed-logo > .container-fluid > .navbar-header > .name-unfixed > img {margin-top: 35px; }
