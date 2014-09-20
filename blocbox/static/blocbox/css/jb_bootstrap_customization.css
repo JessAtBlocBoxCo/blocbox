@@ -60,6 +60,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .fullheight {height: 100%;}
 .width90pct {width: 90%;}
 .maxwidth100pct {max-width: 100%; }
+.maxwidth90pct {max-width: 90%; }
 
 /*Define Generic Padding Attributes*/
 .paddingsides15px {padding-right: 15px; padding-left: 15px; }
