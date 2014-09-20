@@ -51,6 +51,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .heavyweight {font-weight; 700;}
 .textdecorationblue {text-decoration-color: #124364;}
 .textdecorationgreen {text-decoration-color: #155a32;}
+.font2em {font-size:2em; }
 
 /*Define generic padding and positional attributions */
 .absolutebottom {position: absolute; bottom: 0;}
@@ -149,7 +150,26 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .waitlistbody > .orangebackground > .row > div > h5 { } /*removed padding*/
 
 
-
+/*Style the waitlistbutton - already within white background*/
+.waitlistjoinbtn {
+    /*display: block;
+    position: absolute;
+    top: 0px;
+    left: 64.5833%; 
+     color: rgb(243, 194, 1);
+    z-index: 64; 
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 1.111em;
+    line-height: 1.38;*/
+    width: 35.4167%;
+    max-width: 238px;
+    height: 50px;
+    min-height: 50px;
+    border-radius: 10px 10px 10px 10px;    
+      
+}
 
 /*SEARCH PAGE STYLES */
 #map-canvas { 
