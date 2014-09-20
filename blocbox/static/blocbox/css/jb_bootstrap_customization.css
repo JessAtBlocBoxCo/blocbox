@@ -273,6 +273,15 @@ h6 {font-size: 1.286em; font-weight: 400; }
 h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.071em; h5 {font-size: 1.286em; h6 {font-size: 1.286em; 
 ------------------------------------------------------------------------------*/
 
+ 
+
+/*Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)*/
+@media (max-width: 800px) {  
+	body { padding-left: 0px; padding-right: 0px; } 
+	h1{font-size: 5em; }
+	h2{font-size: 3em; }
+	h3{font-size: 1.5em; }
+}
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
@@ -289,13 +298,3 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	.lightweight {font-weight: 400 ; } /*per john - set lightweight equal to 400 if mobile */
 	.fixedlogo {position: absolute; } /*so the logo isn't fixed in mobile version */
  }
- 
-
-/*Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)*/
-@media (min-width: 481px) AND (max-width: 800px) {  
-	body { padding-left: 0px; padding-right: 0px; } 
-	h1{font-size: 5em; }
-	h2{font-size: 3em; }
-	h3{font-size: 1.5em; }
-}
-
