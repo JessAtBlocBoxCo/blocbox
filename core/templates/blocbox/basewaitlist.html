@@ -79,17 +79,13 @@
         	<span class="icon-bar"></span>
       	</button>
  		
- 			<!--Add the Fixed Logo Image - height and width are styled on css wigh .fixedlogo > img {... } -->
- 			<a href="#top" class="fixed-logo-image">
- 					<!--<img class="fixed-logo-image" /> -->
- 					<!--
- 					<img src="{% static 'blocbox/images/Block-Outlinev(2).png' %}" /> 
- 					-->
- 			</a>
+ 			<!--Add the Fixed Logo Image - the img is now attached to the fix-logo-image in CSS - different depending on screen size  -->
+ 			<a href="#top" class="fixed-logo-image"></a>
 
  			<!--Add Logo Name - for the floating Logo version of the navbar, img styled in css page under .name-unfixed > img {.... } -->
- 			<a class="navbar-brand name-unfixed" href="#"> 
- 				<img class="nav-blocbox-name navbarlogo" />
+ 			<a class="navbar-brand name-unfixed nav-blocbox-name navbarlogo" href="#"> 
+ 				
+ 				<!--<img class="nav-blocbox-name navbarlogo" /> -->
  				<!--<img src="{% static "blocbox/images/Name-whited2.png" %}" /> --> 
  				
  			<!--I have added the followingn image to CSS under nav-blocbox-name at mobile media sizes...
