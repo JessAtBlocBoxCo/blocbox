@@ -135,8 +135,10 @@ h6 {font-size: 1.286em; font-weight: 400; }
     background-position: center center;
 }
 .navbar-brand-forfixedlogo {
-	float: left;
-    /*display: block;
+	
+    /*
+    float: left;
+    display: block;
   	position: absolute; 
   	background-repeat: no-repeat;
     background-size: contain;
