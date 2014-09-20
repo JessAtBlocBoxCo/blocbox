@@ -25,7 +25,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 /*add anchor class to add padding - should be about the same size as the margin */
 .anchor {font-size: 0px; }
 .anchorwithnav {padding-top: 35px; font-size: 0px }
-
+.waitlistbody > .anchorwithnav {padding-top: 45px; font-size: 0px }
 
 /*Define Generic Background Colors*/
 .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
