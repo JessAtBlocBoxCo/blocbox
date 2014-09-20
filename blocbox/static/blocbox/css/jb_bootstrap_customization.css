@@ -136,6 +136,13 @@ h6 {font-size: 1.286em; font-weight: 400; }
 
 .fixedlogo > img { height:94px; width:131px;  }
 
+.fixed-logo-image {
+	display: block
+	background-image: url('/static/blocbox/images/Block-Outlinev(2).png');
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+ 					
 .waitlistbody .nav-blocbox-name {
 	display: block;
 	background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
