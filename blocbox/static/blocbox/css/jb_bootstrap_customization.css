@@ -126,11 +126,10 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .navbar-fixed-logo { margin-bottom: 0px; margin-top: -50px;}
 .navbar-fixed-logo > .container-fluid > .navbar-header > .name-unfixed {margin-left: 0px; padding: 0px;	} 
 .navbar-fixed-logo > .container-fluid > .navbar-collapse > .navbar-right {margin-top: 37px; }
-
+/*
 .fixedlogo {
-    display: block; position: fixed;
-    z-index: 100000; 
-}
+    display: block;     
+} */
 
 /*style the mobile version of navbar */
 .waitlistbody .nav-blocbox-name { 
@@ -152,12 +151,13 @@ h6 {font-size: 1.286em; font-weight: 400; }
 		margin-left: 155px;
 		} 
 	.fixed-logo-image {
-		display: block;
+		display: block; position: fixed;
 		background-image: url('/static/blocbox/images/Block-Outlinev(2).png');
 		background-repeat: no-repeat;
 		background-size: contain;
 	 	height:94px; width:131px;
 	 	top: 5%; left: 2%;
+	 	z-index: 100000; 
 		}
 }
 
