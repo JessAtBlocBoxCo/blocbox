@@ -64,8 +64,11 @@
 <body class="whitetext fullheight waitlistbody"> 
 
 {% block navbar %} 
-
+<!-- Fixed-Top version of Navbar
 <nav class="navbar navbar-default navbar-fixed-top whitetext" role="navigation">	
+-->
+<!-- Non-Fixed version of Navbar -->
+<nav class="navbar navbar-default whitetext" role="navigation">	
 	<div class="container-fluid orangebackground"> 
 		<div class="navbar-header whitetext">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -80,10 +83,8 @@
  					<img src="{% static 'blocbox/images/Block-Outlinev(2).png' %}" height="94" width="131"  /> 
  			</a>
 
- 			<!--add the logo image - note that i added the brandwaitlist class to jb_bootstrap_customizations.css -->
+ 			<!--Add Logo Name - for the floating Logo version of the navbar -->
  			<a class="navbar-brand-forfixedlogo" href="#"> 
- 					 				
- 				<!--Just NAme - for the floating Logo version of the navbar -->
  				<img src="{% static "blocbox/images/Name-whited(2).png" %}" height="80px" width="300px" class="navbarlogo"/>
  				
  				<!--Logo and NAme - for original Navbar without floating logo 
