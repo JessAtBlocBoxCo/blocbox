@@ -154,10 +154,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
     height: 66px;
 
 }
-.navbar-fixed-logo {
-		margin-bottom: 0px;
-		margin-top: -50px;
-}
+.navbar-fixed-logo { margin-bottom: 0px; margin-top: -50px;}
 .navbar-fixed-logo > .container-fluid > .navbar-header {margin-left: 160px; }
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
