@@ -48,7 +48,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 
 /*Define generic font attributes*/
 .lightweight {font-weight: 300;}
-.heavyweight {font-weight; 700;}
+.heavyweight {font-weight: 700;}
 .textdecorationblue {text-decoration-color: #124364;}
 .textdecorationgreen {text-decoration-color: #155a32;}
 .font2em {font-size:2em; }
@@ -69,7 +69,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 /*Define Generic Padding Attributes*/
 .paddingsides20px {padding-right: 20px; padding-left: 20px; }
 .paddingsides15px {padding-right: 15px; padding-left: 15px; }
-.paddingsides10px { padding-left: 10; padding-right: 10;}
+.paddingsides10px { padding-left: 10px; padding-right: 10px;}
 .paddingsides5px {padding-left: 5px; padding-right: 5px; }
 .paddingbottom30px {padding-bottom: 30px;}
 .padding5px {padding: 5px; }
@@ -105,7 +105,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 * GEneric Navbar Specific Styles (non-waitlist, for base-html)
 *-----------------------------------------------------------------------*/
 /*Change width of navbar-header - so when it collapses - was 768 */
-@media (max-width:1000px){
+@media (max-width: 1000px) {
     .navbar-header { float: none;}
     .navbar-left,
     .navbar-right {float: none !important;}
@@ -148,7 +148,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .waitlistbody .navbar-default .navbar-toggle:focus {background-color: #FFFFFF;}
 
 /*Change width of navbar-header - so when it collapses - was 768 */
-@media (max-width:500px){
+@media (max-width: 500px) {
     .waitlistbody .navbar-header { float: none;}
     .waitlistbody .navbar-left,
     .waitlistbody .navbar-right {float: none !important;}
@@ -187,8 +187,11 @@ h6 {font-size: 1.286em; font-weight: 400; }
     border-style: solid;
     background-color: rgb(255, 203, 19);
     color: rgb(255, 255, 255);
+}
 
-/*SEARCH PAGE STYLES */
+/*-------------------------------------------------------------*
+* SEARCH PAGE STYLES
+*--------------------------------------------------------------*/
 #map-canvas { 
 	 		z-index: 5;
 			width: 100%;
