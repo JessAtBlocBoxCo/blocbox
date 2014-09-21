@@ -20,7 +20,7 @@
 			<h5><a href="/beta/">Return to the homepage (Beta)</a></h5>
 
 			<!--START FORM HERE -->
-			<form method="post" action="/login/" enctype="multipart/form-data">
+			<form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
             {% csrf_token %}
         		{{ login_form.non_field_errors }}          
             
