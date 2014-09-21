@@ -17,11 +17,12 @@ body {
 /*Setting Default  Header sizes*/
 h1 {font-size: 5.8em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
 h2 {font-size: 3.9em; font-weight: 700; } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
-h3 {font-size: 1.9em; font-weight: 300; line-height: 1.28em}
+h3 {font-size: 1.8em; font-weight: 300; line-height: 1.28em}
 h4 {font-size: 1em; font-weight: 500; line-height: 1.38em}
 h5 {font-size: 1.27em; line-height: 1.38; font-weight: 300; }
 h6 {font-size: 1.27m; font-weight: 400; }
-
+footer {font-size: 0.91em; )
+	
 /*add anchor class to add padding - should be about the same size as the margin */
 .anchor {font-size: 0px; }
 .anchorwithnav {padding-top: 35px; font-size: 0px }
