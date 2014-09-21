@@ -5,26 +5,10 @@
 
 {% block signupheaderadd %} to Connect with {{host.first_name}} {% endblock %}
 
-{% block signupsubtitle %} 
- <h5>In order to connect, we need to ask for some basic information</h5>
-{% endblock %}
+{% block signupsubtitle %}  {% endblock %}
 
 
-{% block introduceyourself %} 
- 				<br>
-  		  <br>
-  		  <p><b> Introduce Yourself </b></p>
-  		  <!-- <p class="text text-182"> Introduct Yourself (Optional)</p> -->
-  		  <!--removing formating, following text was text text-196" -->
-  		  <p>Before you connect, {{host.first_name}} will need to confirm your request.  The information you provide below will help Sylvia confirm you as a neighbor</p>
-  		 <!--begin next form -->
-  		 	<div class="form-group">  {{ user_form.intro_message.errors }}
-  		 			<label for="id_intro_message">Include a personalized message to {{host.first_name}} </label>
-    				<input type="text" class="form-control" name="intro_message" id="id_intro_message"  
-    				placeholder="Introduce yourself to {{host.first_name}} (350 Character Limit)">				
- 				</div>
-
-{% endblock %}			
+{% block introduceyourself %} {% endblock %}			
  				
 
 
