@@ -18,7 +18,7 @@ h1 {font-size: 6em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padd
 h2 {font-size: 4em; font-weight: 700; } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
 h3 {font-size: 2em; font-weight: 300; line-height: 1.28em}
 h4 {font-size: 1.071em; font-weight: 500; line-height: 1.38em}
-h5 {font-size: 1.286em; font-weight: 300; }
+h5 {font-size: 1.286em; line-height: 1.38; font-weight: 300; }
 h6 {font-size: 1.286em; font-weight: 400; }
 
 /*add anchor class to add padding - should be about the same size as the margin */
