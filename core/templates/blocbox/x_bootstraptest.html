@@ -3,22 +3,13 @@
 {% load staticfiles %} 
 {% block title %} Introducing BlocBox {% endblock %}
 
-	
-	<!--TO DO 
-		1. style the "join waitlist" input button
-		4. try to make logo float -- floating box - big on the top left corner - jess can make that fit
-	-->
-
 <!--LONGER TERM IDEAS FOR IMROVING MOBILE SITE:
 	1.cool john idea about mobile site: just the logo and an arrow on the mobile sign up page
 -->
 
 {% block content %}
-<!--JB: START ADDING SITE CONTENT HERE -->
 
-<div class="container-fluid fillpage orangebackground text-center relativediv"> <!-- start orange container -->
-	<!--add the anchor to the "top" -->
-	
+<div class="container-fluid fillpage orangebackground text-center relativediv"> 
 	
 		<div class="row text-center">
   		<h1>Neighbors Helping Neighbors<br>Never Miss a Package</h1>
@@ -33,14 +24,15 @@
   			</div>
   	</div> <!--end row div -->
   
-  	<!--begin waitlist clearfix divider - need to update this because not recognized with bootstrap -->
-  	<div class="row" > <br class="fontsizehalf">
-  			<!--start form -->
-  			<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
+  	<!--begin waitlist clearfix divider -->
+  	<div class="row" > 
+  			<br class="fontsizehalf">
+  		<!--start form -->
+  		<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
 					method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
 					class="paddingsides15px" target="_blank" novalidate>
 					
-  			<div class="row font1pt5em">
+  				<div class="row font1pt5em">
   					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-3">
   						<input name="EMAIL" placeholder="EMAIL" class="darkgreytext form-control margintop5px" type="email">
   					</div>
@@ -50,7 +42,7 @@
   					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-0">
   						<button type="submit" value="Join Waitlist" name="subscribe" class="whitebackground orangetext waitlistjoinbtn margintop5px">Join Waitlist</button>
   					</div>
-  			</div>
+  				</div> <!--row -->
 				
   				<div id="mce-responses" class="clear">
   					<div class="response" id="mce-error-response" style="display:none"></div>
@@ -69,10 +61,8 @@
  				
   		</form>
   		
-  		<!--
-  		<a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a>
-  		-->
-  	</div> <!--end waitlist form divider-->
+  		<!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
+  	</div> <!--row containing waitlist form-->
  
  	<div class="row">	<br>	<br> <br>  </div> <!--add some empty rows with breaks before the bottom divider -->
 	<div class="row text-center alignbottomdiv"> 
@@ -80,13 +70,12 @@
     	<a href="#works"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
 	</div>
 
-  	<!--removing social links - button them into basewaitlist.html instead -->
-
 </div> <!--end the orangecontainer divider -->  
 
- 
-<!-- Begin blue background; hiw was blue background, JMY updating this to bluecontainer -->
 
+
+
+<!--How it Works Section #works -->
 <div class="container-fluid fillpage bluebackground textinbluebackground text-center relativediv">
 <a name="works" class="anchor"></a> <!--link to 'works' anchor -->
     <div> <br>
@@ -128,23 +117,20 @@
   		
  	</div> <!--row --> 		
  	
-<div class="row"> <br><br> <br><br> </div> <!--adding an empty row -->
- 		<div class="row alignbottomdiv">
- 			<!--JMY commenting out 'more details coming soon' - dont really like it
-  		<p class="whitetext">More Details Coming Soon</p>
-  		-->
-</div>
+		<div class="row"> <br><br> <br><br> </div> <!--adding an empty row -->
+ 		<div class="row alignbottomdiv"> </div>
 	
-
 </div> <!--end blue container -->
   
 
 
-  
-<a name="beyondpackages" class="anchor"></a> <!--link to 'beyondpackages' anchor -->
+
+<!--Beyond Packages SEction -->
 <div class="container-fluid darkbluebackground text-center relativediv">
-    <div> <br>
-    <h2>Beyond Packages</h2>
+		<a name="beyondpackages" class="anchor"></a> 
+    <div> 
+    	<br>
+    	<h2>Beyond Packages</h2>
     </div>
     <div class="row">
   		<div class="col-xs-0 col-md-3"></div>
