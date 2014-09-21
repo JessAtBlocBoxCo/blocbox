@@ -162,7 +162,7 @@ footer {font-size: 0.92em; }
 		} 
 	.fixed-logo-image {
 		display: block; position: fixed;
-		background-image: url('/static/blocbox/images/Block-Outlinev(2).png');
+		background-image: url('/static/blocbox/images/Block-Outlinev2.png');
 		background-repeat: no-repeat;
 		background-size: contain;
 	 	height:94px; width:131px;
