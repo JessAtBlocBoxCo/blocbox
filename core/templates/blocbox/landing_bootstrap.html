@@ -1,0 +1,40 @@
+{% extends "blocbox/basewaitlist.html" %}
+<!--this is blocbox/core/templates/bocbox/x_bootstraptest.html - will turn into the waitlist page-->
+{% load staticfiles %} 
+{% block title %} Introducing BlocBox {% endblock %}
+
+
+-->
+
+{% block topcontent %}
+	
+		<div class="row text-center">
+  		<h1>Neighbors Helping Neighbors<br>Never Miss a Package</h1>
+  	</div>
+  	
+  	<div class="row">
+  			<div class="col-xs-12 col-md-8 col-md-offset-2">
+  					<div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingsides20px">
+  						<h3 class="nomargin margintop20px">Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</h3>	
+  					</div> <!--nested col-xs-12 col-sm-10 col-sm-offset-1 -->
+  			</div>
+  	</div> <!--end row div -->
+  
+  	<!--begin waitlist clearfix divider -->
+  	<div class="row" > 
+  			<br class="fontsizehalf">
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-0">
+  						<button onclick="window.location='/search';" class="whitebackground orangetext waitlistjoinbtn margintop5px">Get Started</button>
+  					</div>
+  	
+  		
+  		<!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
+  	</div> <!--row containing waitlist form-->
+ 
+ 	<div class="row">	<br>	<br> <br>  </div> <!--add some empty rows with breaks before the bottom divider -->
+	<div class="row text-center alignbottomdiv"> 
+    	<h6 class="nomargin">How It Works</h6>
+    	<a href="#works"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
+	</div>
+	
+{% endblock %} <!--end topcontent block -->
