@@ -167,7 +167,7 @@ h6 {font-size: 1.27m; font-weight: 400; }
 	 	z-index: 100000; 
 		}
 	.waitlistbody .h1, h2 {padding-left: 10%; padding-right: 10%} /*add padding around waitlist headers so it doesn't overlap with the logo */
-	footer > .container-fluid { padding-top: 10px; padding-bottom: 10px; } /*make footer taller */
+	footer > .container-fluid { padding-top: 5px; padding-bottom: 5px; } /*make footer taller */
 }
 
 
