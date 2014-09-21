@@ -1,0 +1,236 @@
+{% extends "blocbox/basewaitlist.html" %}
+<!--this is blocbox/core/templates/bocbox/x_bootstraptest.html - will turn into the waitlist page-->
+{% load staticfiles %} 
+{% block title %} Introducing BlocBox {% endblock %}
+
+<!--LONGER TERM IDEAS FOR IMROVING MOBILE SITE:
+	1.cool john idea about mobile site: just the logo and an arrow on the mobile sign up page
+-->
+
+{% block content %}
+
+<div class="container-fluid fillpage orangebackground text-center relativediv"> 
+	
+		<div class="row text-center">
+  		<h1>Neighbors Helping Neighbors<br>Never Miss a Package</h1>
+  	</div>
+  	
+  	<div class="row">
+  			<div class="col-xs-12 col-md-8 col-md-offset-2">
+  					<div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingsides20px">
+  						<h3 class="nomargin margintop20px">Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</h3>	
+  						<h3 class="margintop5px">Launching soon in NYC, DC and LA. Spots are limited.  Reserve yours by signing up for our waitlist below.</h3>
+  					</div> <!--nested col-xs-12 col-sm-10 col-sm-offset-1 -->
+  			</div>
+  	</div> <!--end row div -->
+  
+  	<!--begin waitlist clearfix divider -->
+  	<div class="row" > 
+  			<br class="fontsizehalf">
+  		<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
+					method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
+					class="paddingsides15px" target="_blank" novalidate>
+					
+  				<div class="row font1pt5em">
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-3">
+  						<input name="EMAIL" placeholder="EMAIL" class="darkgreytext form-control margintop5px" type="email">
+  					</div>
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-0">
+  						<input name="ZIPCODE" placeholder="ZIP" class="darkgreytext form-control margintop5px" type="text">  	
+  					</div>
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-0">
+  						<button type="submit" value="Join Waitlist" name="subscribe" class="whitebackground orangetext waitlistjoinbtn margintop5px">Join Waitlist</button>
+  					</div>
+  				</div> <!--row -->
+				
+  				<div id="mce-responses" class="clear">
+  					<div class="response" id="mce-error-response" style="display:none"></div>
+  					<div class="response" id="mce-success-response" style="display:none"></div>
+  				</div> 
+  			
+  			<div class="row">
+  				<div class="row col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+  			  	<div class="checkbox text-center">
+    					<label value="1" name="group[1689][1]">
+      					<input type="checkbox"> I'm often at home and I want to learn more about making extra cash as a Blocbox Host
+    					</label>
+  					</div> <!--checkbox -->
+ 					</div> <!--row col-md-6 col-md-offset-3 -->
+ 				</div> <!--row-->		
+  		</form>
+  	
+  		
+  		<!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
+  	</div> <!--row containing waitlist form-->
+ 
+ 	<div class="row">	<br>	<br> <br>  </div> <!--add some empty rows with breaks before the bottom divider -->
+	<div class="row text-center alignbottomdiv"> 
+    	<h6 class="nomargin">How It Works</h6>
+    	<a href="#works"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
+	</div>
+
+</div> <!--end the orangecontainer divider -->  
+
+
+
+
+<!--How it Works Section #works -->
+<div class="container-fluid fillpage bluebackground textinbluebackground text-center relativediv">
+<a name="works" class="anchor"></a> 
+    <div> <br>
+          <h2 class="whitetext">Stop Missing Packages.<br>Meet Your Neighbors.</h2>
+    </div>    
+        
+    <div class="row">
+  			<div class="col-xs-12 col-md-6 col-md-offset-3">
+  				<h5>Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, 
+  					arrange for your packages to be delivered to them, 
+  					and be notified so you can conveniently pick up your package when you get home, or whenever you like.
+  				</h5>
+  			</div>
+  	</div> <!--end row div -->
+
+	<!--OFFENDING ROWS - SOMETHING IN ROW 91-118 IS CAUSING UNWANTED MARGIN -->
+  <div class="row text-center paddingsides10px"> <br>
+  	
+      <div class="col-xs-12 col-md-4 lightweight textdecorationblue nopadding">
+          <img src="{% static 'blocbox/images/homesearch-whited2.png' %}" height="250" width="250">
+          <h4 class="whitetext">FIND A BLOCBOX HOST</h4>
+    			<div class="col-xs-12 col-md-10 col-md-offset-1">   
+          	<p>Search to determine a conveniently located and verified Blocbox Host and connect</p>
+          </div> 
+      </div> 
+      
+      <div class="col-xs-12 col-md-4 lightweight nopadding"> <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
+           <img src="{% static 'blocbox/images/Shipping-Entry-whited.png' %}" height="245" width="290"  /> 
+           <h4 class="whitetext">SHIP TO YOUR BOX</h4>
+           <div class="col-xs-12 col-md-10 col-md-offset-1">
+              <p>As you complete your order, enter the address of your connected Blocbox host</p>
+           </div>
+      </div> 
+
+      <div class="col-xs-12 col-md-4 lightweight nopadding">
+          <img src="{% static 'blocbox/images/pickup-whited.png' %}" height="250" width="250"  />
+          <h4 class="whitetext">PICK IT UP NEARBY, WHENEVER</h4>
+          <div class="col-xs-12 col-md-10 col-md-offset-1">
+              <p>Blocbox will notify you of your package's successful receipt. You can then suggest a time you will pick it up, or you can wait till it's convenient for you.</p>
+  				</div>
+  		</div> 
+  		
+ 	</div> <!--row containing the three how it works images--> 		
+ 	
+		<div class="row"> <br><br> <br><br> </div> <!--adding an empty row -->
+ 		<div class="row alignbottomdiv"> </div>
+	
+</div> <!--end How it Works/blue container -->
+  
+
+
+
+<!--Beyond Packages SEction -->
+<div class="container-fluid darkbluebackground text-center relativediv">
+		<a name="beyondpackages" class="anchor"></a> 
+    <div> 
+    	<br>
+    	<h2>Beyond Packages</h2>
+    </div>
+    <div class="row">
+  			<div class="col-xs-12 col-md-6 col-md-offset-3">
+  				<h5 class="textindarkbluebackground">Solving the hassle of package receipt is just the first way Blocbox can help. 
+  					Blocbox provides a secure platform for neighbors to exchange whatever goods and services are needed and supplied by the neighborhood.
+  					Here are a few possibilities.
+  				</h5>
+  			</div>
+  	</div> <!--end row div -->
+    
+   
+    <div class="row"> <br>
+        <div class="col-xs-12 col-md-2 col-md-offset-1">
+                <img src="{% static 'blocbox/images/handy.png' %}" height="90" width="90"  />
+                <p>Handy Work</p>
+        </div>
+        <div class="col-xs-12 col-md-2">
+                <img src="{% static 'blocbox/images/sitting.png' %}" height="90" width="90"  />
+                <p>House Sitting</p>
+        </div>
+        <div class="col-xs-12 col-md-2">
+                <img src="{% static 'blocbox/images/storage.png' %}" height="90" width="90"  />
+                <p>House Sitting</p>
+        </div>
+        <div class="col-xs-12 col-md-2">
+                <img src="{% static 'blocbox/images/dog.png' %}" height="90" width="90"  />
+                <p>Pet Care</p>
+        </div>
+        <div class="col-xs-12 col-md-2">
+                <img src="{% static 'blocbox/images/disco.png' %}" height="90" width="90"  />
+                <p>Disco Ball Rental</p>
+        </div>
+        
+    </div> <!--end -->
+    
+    	<div class="row"> <br> <br> <br> <br> </div> <!--add some empty rows with breaks before the bottom divider -->
+    	<div class="row text-center alignbottomdiv">
+    		<h6>Learn About Becoming a Host</h6>
+    		<a href="#hosting"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
+    	</div>
+
+</div> <!--end Beyond Packages/dark-blue container-->
+  
+  
+  
+<!--Hosting Section / Green-->
+<div class="container-fluid fillpage greenbackground text-center relativediv">
+    <a name="hosting" class="anchor"></a> 
+      <div> 
+      			<br>
+           	<h2>Become a Blocbox Host</h2>
+      </div>
+    
+      <div class="row">
+  			<div class="col-xs-12 col-md-6 col-md-offset-3">
+  					<h5 class="textingreenbackground">Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can 
+				conveniently pick up your package when you get home, or whenever you like.
+					</div>
+  				</h5>
+      </div> <!--end row div -->      
+      
+    <div class="row textingreenbackground"> <br>
+      <div class="col-xs-12 col-md-4 lightweight">
+          <img src="{% static 'blocbox/images/packagehold-greened.png' %}" height="250" width="250">
+          <h4 class="whitetext">PERFORM TASKS WHILE AT HOME</h4>
+          <div class="col-xs-12 col-md-10 col-md-offset-1">
+           	<p>Receive packages and offer other services to neighbors. Hosts must be able to be verified and be at home to receive all scheduled deliveries.</p>
+      		</div>
+      </div>
+        
+      <div class="col-xs-12 col-md-4 lightweight">
+          <img src="{% static 'blocbox/images/handoff-greened.png' %}" height="250" width="250"  />
+          <h4 class="whitetext">MEET YOUR NEIGHBORS</h4>
+          <div class="col-xs-12 col-md-10 col-md-offset-1">
+         	 	<p>Set and arrange times at which your neighbors can pick up their packages at your door. Hosts must be home a minimum amount of hours in the evening to allow neighbors to pick up their packages.</p>
+      		</div>
+      </div>
+            
+      <div class="col-xs-12 col-md-4 lightweight">
+          <img src="{% static 'blocbox/images/money-greened.png' %}" height="250" width="250"  />
+          <h4 class="whitetext">EARN MONEY</h4>
+          <div class="col-xs-12 col-md-10 col-md-offset-1">
+              <p>Your neighbors get their packages, you get a little extra in your pocket. The neighborhood wins.</p>
+      		</div>
+      </div>
+        
+    </div> <!--row --> 
+    
+    <div class="row"> <br> <br> </div> <!--add some empty rows with breaks before the bottom divider -->
+    <div class="row alignbottomdiv">
+    	<p>Interested in hosting? Contact us at info@blocbox.co</p>
+    </div>
+	
+		<br>
+</div> <!--end Hosting Section/Green -->
+
+
+{% endblock %}
+<!--end content block -->
+
+<!--footer populated by the basewaitlist.html page -->
