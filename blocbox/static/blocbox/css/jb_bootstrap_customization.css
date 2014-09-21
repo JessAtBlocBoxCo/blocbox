@@ -124,8 +124,10 @@ h6 {font-size: 1.286em; font-weight: 400; }
 /*---------------------------------------------------------------------*
 * Make a Fixed Logo
 *----------------------------------------------------------------------*/
+/*
 .navbar-fixed-logo { margin-bottom: 0px; margin-top: -50px;}
 .navbar-fixed-logo > .container-fluid > .navbar-collapse > .navbar-right {margin-top: 37px; }
+*/
 
 /*style the mobile version of navbar - this is the image with the logo and name */
 .waitlistbody .nav-blocbox-name { 
