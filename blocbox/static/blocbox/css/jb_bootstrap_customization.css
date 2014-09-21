@@ -145,9 +145,8 @@ h6 {font-size: 1.286em; font-weight: 400; }
 		
 /*Have a floating logo and so forth for min-width 768 - make the navbar not float */
 @media (min-width: 768px) {
-	.waitlistbody .navbar-default {
-		margin-bottom: 0px; margin-top: -50px;
-		}
+	.waitlistbody .navbar-default {margin-bottom: 0px; margin-top: -50px;}
+	.waitlistobdy .navbar-right {margin-top: 30px; }
 	.waitlistbody .nav-blocbox-name {
 		display: block;
 		background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
