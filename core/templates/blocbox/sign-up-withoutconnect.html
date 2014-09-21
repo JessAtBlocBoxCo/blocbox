@@ -16,10 +16,12 @@
  
    	{% else %}
         
-      <h3>Sign Up For BlocBox</h3>    			
+          			
 
   		<!--Start Registration Form -->
   		<div class="row">
+  			
+  			<h3>Sign Up For BlocBox</h3>
        	<form id="user_form" method="post" action="." enctype="multipart/form-data" class="_container clearfix">
        	{% csrf_token %}          
         {{ user_form.non_field_errors }}
