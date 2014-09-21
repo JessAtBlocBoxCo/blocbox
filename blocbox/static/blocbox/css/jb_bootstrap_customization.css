@@ -15,7 +15,7 @@ body {
 }
 
 /*Setting Default  Header sizes*/
-h1 {font-size: 5.8em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
+h1 {font-size: 5.6em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
 h2 {font-size: 3.9em; font-weight: 700; } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
 h3 {font-size: 1.8em; font-weight: 300; line-height: 1.28em}
 h4 {font-size: 1em; font-weight: 500; line-height: 1.38em}
@@ -206,7 +206,7 @@ footer {font-size: 0.92em; }
 
 
 /*Add padding to the very first line on the page */
-.waitlistbody > .orangebackground > .row > h1 { padding-top: 4%; }
+.waitlistbody > .orangebackground > .row > h1 { padding-top: 3.5%; }
 /*Add padding to the text below this first stuff */
 .waitlistbody > .orangebackground > .row > div > h5 { } /*removed padding*/
 
