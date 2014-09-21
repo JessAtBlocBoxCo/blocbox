@@ -32,7 +32,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0;  width: 100% }
 /*add anchor class to add padding - should be about the same size as the margin */
 .anchor {font-size: 0px; }
 .anchorwithnav {padding-top: 35px; font-size: 0px }
-.waitlistbody > .anchorwithnav {padding-top: 45px; font-size: 0px }
+.waitlistbody .anchorwithnav {padding-top: 45px; font-size: 0px }
 
 /*Define Generic Background Colors*/
 .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
@@ -99,7 +99,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0;  width: 100% }
 
 
 /*Make the footer text offwhite for the dargreen footer on the waitlist page */
-.waitlistbody > footer > div > div > div > a { color: rgb(250, 250, 250);}
+.waitlistbody .footer > div > div > div > a { color: rgb(250, 250, 250);}
 
 /*change the padding on the image for the brand in the navbar */
 .navbar-default .navbar-header > a {padding-top: 7px;}
