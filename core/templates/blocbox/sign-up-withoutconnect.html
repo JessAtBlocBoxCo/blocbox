@@ -35,56 +35,79 @@
     				<label for="exampleInputEmail1">Email address</label> --->    				
     				{{ user_form.email.errors }}
     				<label for="id_email" class="col-sm-2 control-label">Email Address (Required)</label>
-    				<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter email">				
+    				<div class="col-sm-10">
+    					<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter email">	
+    				</div>			
  				</div>
  				
  				<div class="form-group">  				
     				{{ user_form.password.errors }}
     				<label for="password" class="col-sm-2 control-label">Password (Required)</label>
-    				<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password">				
+    				<div class="col-sm-10">
+    					<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password">	
+    				</div>			
  				</div>
+ 				
  				<div class="form-group">  				
     				{{ user_form.password2.errors }}
     				<label for="password2" class="col-sm-2 control-label">Confirm Password (Required)</label>
-    				<input type="password" class="form-control" name="password2" id="id_password2"  placeholder="Confirm Password">				
+    				<div class="col-sm-10">
+    					<input type="password" class="form-control" name="password2" id="id_password2"  placeholder="Confirm Password">				
+    				</div>
  				</div>
  				
  				<div class="form-group">  
  						{{ user_form.zipcode.errors }}
  						<label for="id_zipcode" class="col-sm-2 control-label">Zipcode (Required)</label>
-    				<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode">				
+ 						<div class="col-sm-10">
+    					<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode">
+    				</div>				
  				</div>
  	
  				<div class="form-group">  	
- 						<label for="id_first_name" class="col-sm-2 control-label">First Name</label>		
-    				<input type="text" class="form-control" name="first_name" id="id_first_name"  placeholder="First Name">				
+ 						<label for="id_first_name" class="col-sm-2 control-label">First Name</label>	
+ 						<div class="col-sm-10">	
+    					<input type="text" class="form-control" name="first_name" id="id_first_name"  placeholder="First Name">	
+    				</div>			
  				</div>
  				<div class="form-group"> 
- 						<label for="id_last_name" class="col-sm-2 control-label">Last Name</label>	 				
-    				<input type="text" class="form-control" name="last_name" id="id_last_name"  placeholder="Last Name">				
+ 						<label for="id_last_name" class="col-sm-2 control-label">Last Name</label>	
+ 						<div class="col-sm-10"> 				
+    					<input type="text" class="form-control" name="last_name" id="id_last_name"  placeholder="Last Name">		
+    				</div>		
  				</div>
  				<div class="form-group">  				
     				<label for="id_st_address1" class="col-sm-2 control-label">Street Address 1</label>	
-    				<input type="text" class="form-control" name="st_address1" id="id_st_address1"  placeholder="Street Address 1">				
+    				<div class="col-sm-10">
+    					<input type="text" class="form-control" name="st_address1" id="id_st_address1"  placeholder="Street Address 1">	
+    				</div>			
  				</div>
  
   			<div class="form-group">  				
     				<label for="id_st_address2" class="col-sm-2 control-label">Street Address 2</label>	
-    				<input type="text" class="form-control" name="st_address2" id="id_st_address2"  placeholder="Street Address 2">				
+    				<div class="col-sm-10">
+    					<input type="text" class="form-control" name="st_address2" id="id_st_address2"  placeholder="Street Address 2">	
+    				</div>			
  				</div>
  				<div class="form-group">  
  						<label for="id_city" class="col-sm-2 control-label">City</label>	
-    				<input type="text" class="form-control" name="city" id="id_city"  placeholder="City">				
+ 						<div class="col-sm-10">
+    					<input type="text" class="form-control" name="city" id="id_city"  placeholder="City">		
+    				</div>		
  				</div>
  				<div class="form-group"> 
  						<label for="id_state" class="col-sm-2 control-label">State</label>	
-    				<input type="text" class="form-control" name="state" id="id_state"  placeholder="State">				
+ 						<div class="col-sm-10">
+    					<input type="text" class="form-control" name="state" id="id_state"  placeholder="State">		
+    				</div>		
  				</div>
 
  				<div class="form-group">  {{ user_form.pickup_time.errors }}
  						<label for="id_pickup_time" class="col-sm-2 control-label">Time of day you would typically pick up packages</label>
-    				<input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
-    				placeholder="Describe in 100 characters">				
+ 						<div class="col-sm-10">
+    					<input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
+    					placeholder="Describe in 100 characters">	
+    				</div>			
  				</div>
  			   			
       
