@@ -127,13 +127,14 @@ h6 {font-size: 1.286em; font-weight: 400; }
 .navbar-fixed-logo { margin-bottom: 0px; margin-top: -50px;}
 .navbar-fixed-logo > .container-fluid > .navbar-collapse > .navbar-right {margin-top: 37px; }
 
-/*style the mobile version of navbar */
+/*style the mobile version of navbar - this is the image with the logo and name */
 .waitlistbody .nav-blocbox-name { 
 		display: block;
 		background-image: url('/static/blocbox/images/Logo-and-name---white.png');
 		background-repeat: no-repeat; 
 		background-size: contain; 
 		height: 50px; width: 250px; 
+		padding-top: 7px;
 }
 
 /*Have a floating logo and so forth for min-width 768 */
