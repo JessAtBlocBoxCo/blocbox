@@ -1,6 +1,7 @@
-{% extends "blocbox/baseorange.html" %}
+{% extends "blocbox/basewaitlist.html" %}
 <!--this is blocbox/core/templates/bocbox/x_bootstraptest.html - will turn into the waitlist page-->
 {% load staticfiles %} 
+{% block title %} Introducing BlocBox {% endblock %}
 
 <!--LONGER TERM IDEAS FOR IMROVING MOBILE SITE:
 	1.cool john idea about mobile site: just the logo and an arrow on the mobile sign up page
@@ -9,11 +10,68 @@
 {% block content %}
 
 <div class="container-fluid fillpage orangebackground text-center relativediv"> 
-		
-		{%block topcontent %}
-		{% endblock %}
+	
+		<div class="row text-center">
+  		<h1>Neighbors Helping Neighbors<br>Never Miss a Package</h1>
+  	</div>
+  	
+  	<div class="row">
+  			<div class="col-xs-12 col-md-8 col-md-offset-2">
+  					<div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingsides20px">
+  						<h3 class="nomargin margintop20px">Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</h3>	
+  						<h3 class="margintop5px">Launching soon in NYC, DC and LA. Spots are limited.  Reserve yours by signing up for our waitlist below.</h3>
+  					</div> <!--nested col-xs-12 col-sm-10 col-sm-offset-1 -->
+  			</div>
+  	</div> <!--end row div -->
+  
+  	<!--begin waitlist clearfix divider -->
+  	<div class="row" > 
+  			<br class="fontsizehalf">
+  		<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
+					method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
+					class="paddingsides15px" target="_blank" novalidate>
+					
+  				<div class="row font1pt5em">
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-3">
+  						<input name="EMAIL" placeholder="EMAIL" class="darkgreytext form-control margintop5px" type="email">
+  					</div>
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-0">
+  						<input name="ZIPCODE" placeholder="ZIP" class="darkgreytext form-control margintop5px" type="text">  	
+  					</div>
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-0">
+  						<button type="submit" value="Join Waitlist" name="subscribe" class="whitebackground orangetext waitlistjoinbtn margintop5px">Join Waitlist</button>
+  					</div>
+  				</div> <!--row -->
 				
+  				<div id="mce-responses" class="clear">
+  					<div class="response" id="mce-error-response" style="display:none"></div>
+  					<div class="response" id="mce-success-response" style="display:none"></div>
+  				</div> 
+  			
+  			<div class="row">
+  				<div class="row col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+  			  	<div class="checkbox text-center">
+    					<label value="1" name="group[1689][1]">
+      					<input type="checkbox"> I'm often at home and I want to learn more about making extra cash as a Blocbox Host
+    					</label>
+  					</div> <!--checkbox -->
+ 					</div> <!--row col-md-6 col-md-offset-3 -->
+ 				</div> <!--row-->		
+  		</form>
+  	
+  		
+  		<!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
+  	</div> <!--row containing waitlist form-->
+ 
+ 	<div class="row">	<br>	<br> <br>  </div> <!--add some empty rows with breaks before the bottom divider -->
+	<div class="row text-center alignbottomdiv"> 
+    	<h6 class="nomargin">How It Works</h6>
+    	<a href="#works"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
+	</div>
+
 </div> <!--end the orangecontainer divider -->  
+
+
 
 
 <!--How it Works Section #works -->
