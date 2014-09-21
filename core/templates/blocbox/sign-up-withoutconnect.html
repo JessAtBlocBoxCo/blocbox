@@ -18,11 +18,11 @@
         
           			
 
-  		<!--Start Registration Form -->
-  		<div class="row">
-  			
-  			<h3>Sign Up For BlocBox</h3>
-       	<form id="user_form" method="post" action="." enctype="multipart/form-data" class="_container clearfix">
+  <!--Start Registration Form -->
+	<div class="row">
+  	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+  		<h3>Sign Up For BlocBox</h3>
+     	<form id="user_form" method="post" action="." enctype="multipart/form-data" class="_container clearfix">
        	{% csrf_token %}          
         {{ user_form.non_field_errors }}
                   
@@ -124,10 +124,11 @@
     
     	
     			
-    	</form>  <!--end form -->
-    </div> <!--end row containing form -->
+   		</form>  <!--end form -->
+		</div>   <!--end containing column -->
+	</div> <!--end row containing row-->
 
-    {% endif %} <!--JMY - this was the end of the register.html code -->
+  {% endif %} <!--JMY - this was the end of the register.html code -->
     
     
      
