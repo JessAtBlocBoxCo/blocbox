@@ -34,77 +34,77 @@
    				<!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
     				<label for="exampleInputEmail1">Email address</label> --->    				
     				{{ user_form.email.errors }}
-    				<label for="id_email" class="col-sm-2 control-label">Email Address (Required)</label>
-    				<div class="col-sm-10">
-    					<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter email">	
+    				<label for="id_email" class="col-sm-3 control-label">Email Address(*)</label>
+    				<div class="col-sm-9">
+    					<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter email (Required)">	
     				</div>			
  				</div>
  				
  				<div class="form-group">  				
     				{{ user_form.password.errors }}
-    				<label for="password" class="col-sm-2 control-label">Password (Required)</label>
-    				<div class="col-sm-10">
-    					<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password">	
+    				<label for="password" class="col-sm-3 control-label">Password(*)</label>
+    				<div class="col-sm-9">
+    					<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password (Required)">	
     				</div>			
  				</div>
  				
  				<div class="form-group">  				
     				{{ user_form.password2.errors }}
-    				<label for="password2" class="col-sm-2 control-label">Confirm Password (Required)</label>
-    				<div class="col-sm-10">
-    					<input type="password" class="form-control" name="password2" id="id_password2"  placeholder="Confirm Password">				
+    				<label for="password2" class="col-sm-3 control-label">Confirm Password(*)</label>
+    				<div class="col-sm-9">
+    					<input type="password" class="form-control" name="password2" id="id_password2"  placeholder="Confirm Password (Required)">				
     				</div>
  				</div>
  				
  				<div class="form-group">  
  						{{ user_form.zipcode.errors }}
- 						<label for="id_zipcode" class="col-sm-2 control-label">Zipcode (Required)</label>
- 						<div class="col-sm-10">
-    					<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode">
+ 						<label for="id_zipcode" class="col-sm-3 control-label">Zipcode(*)</label>
+ 						<div class="col-sm-9">
+    					<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode (Required)">
     				</div>				
  				</div>
  	
  				<div class="form-group">  	
- 						<label for="id_first_name" class="col-sm-2 control-label">First Name</label>	
- 						<div class="col-sm-10">	
+ 						<label for="id_first_name" class="col-sm-3 control-label">First Name</label>	
+ 						<div class="col-sm-9">	
     					<input type="text" class="form-control" name="first_name" id="id_first_name"  placeholder="First Name">	
     				</div>			
  				</div>
  				<div class="form-group"> 
- 						<label for="id_last_name" class="col-sm-2 control-label">Last Name</label>	
- 						<div class="col-sm-10"> 				
+ 						<label for="id_last_name" class="col-sm-3 control-label">Last Name</label>	
+ 						<div class="col-sm-9"> 				
     					<input type="text" class="form-control" name="last_name" id="id_last_name"  placeholder="Last Name">		
     				</div>		
  				</div>
  				<div class="form-group">  				
-    				<label for="id_st_address1" class="col-sm-2 control-label">Street Address 1</label>	
-    				<div class="col-sm-10">
+    				<label for="id_st_address1" class="col-sm-3 control-label">Street Address 1</label>	
+    				<div class="col-sm-9">
     					<input type="text" class="form-control" name="st_address1" id="id_st_address1"  placeholder="Street Address 1">	
     				</div>			
  				</div>
  
   			<div class="form-group">  				
-    				<label for="id_st_address2" class="col-sm-2 control-label">Street Address 2</label>	
-    				<div class="col-sm-10">
+    				<label for="id_st_address2" class="col-sm-3 control-label">Street Address 2</label>	
+    				<div class="col-sm-9">
     					<input type="text" class="form-control" name="st_address2" id="id_st_address2"  placeholder="Street Address 2">	
     				</div>			
  				</div>
  				<div class="form-group">  
- 						<label for="id_city" class="col-sm-2 control-label">City</label>	
- 						<div class="col-sm-10">
+ 						<label for="id_city" class="col-sm-3 control-label">City</label>	
+ 						<div class="col-sm-9">
     					<input type="text" class="form-control" name="city" id="id_city"  placeholder="City">		
     				</div>		
  				</div>
  				<div class="form-group"> 
- 						<label for="id_state" class="col-sm-2 control-label">State</label>	
- 						<div class="col-sm-10">
+ 						<label for="id_state" class="col-sm-3 control-label">State</label>	
+ 						<div class="col-sm-9">
     					<input type="text" class="form-control" name="state" id="id_state"  placeholder="State">		
     				</div>		
  				</div>
 
  				<div class="form-group">  {{ user_form.pickup_time.errors }}
- 						<label for="id_pickup_time" class="col-sm-2 control-label">Time of day you would typically pick up packages</label>
- 						<div class="col-sm-10">
+ 						<label for="id_pickup_time" class="col-sm-3 control-label">Time of day you would typically pick up packages</label>
+ 						<div class="col-sm-9">
     					<input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
     					placeholder="Describe in 100 characters">	
     				</div>			
@@ -142,8 +142,9 @@
  						</label>
  					</div> <!--checkbox class - host interests -->
     	<button type="submit" name="submit" class="btn btn-default">Sign Up and Request to Connect</button>
-    	<p class="text">By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
-    	
+    	<p>By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
+    	<br> 
+    	<p>*Required</p>
     	
     	  	<!--Submit bbutton to click "submit" is this visible on the page...
   					<button onClick="window.location='welcome-to-blocbox.html';" class="_button-77">Sign Up and Request to Connect  </button>
