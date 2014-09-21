@@ -5,28 +5,23 @@
 
 {% block content %}
 
- <div class="container-fluid"> <!--this is the container that surrounds the form, too short -->
-		<br>
-    
-    {% if registered %}
-  					<br> <br>
-        		<h3>Thank you for Registering!</h3>
-        		<h4><a href="/login/">Login to return to the homepage.</a></p>
- 
- 
-   	{% else %}
-        
-          			
-
-  
+<div class="container-fluid"> <!--this is the container that surrounds the form, too short -->
+	<br> 
 	<div class="row">
   	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+  		{% if registered %}
+  				<br> <br>
+        	<h3>Thank you for Registering!</h3>
+        	<h4><a href="/login/">Login to return to the homepage.</a></p>
+ 
+   		{% else %}	
+  		
   		
   		<h3>Sign Up For BlocBox</h3>
   		<h4>Already Registered? <a href="/login/">Login here.</a> </h4>
   		<br>
   		<!--Start Registration Form -->
-     	<form id="user_form" method="post" action="." enctype="multipart/form-data" class="_container clearfix">
+     	<form id="user_form" method="post" action="." enctype="multipart/form-data">
        	{% csrf_token %}          
         {{ user_form.non_field_errors }}
                             
@@ -125,18 +120,13 @@
     	<!--<p class="text text-322">By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
   		 		<footer class="_element-142"></footer> -->
     
-    	
+    	<br><br><br><br>
     			
    		</form>  <!--end form -->
+   	{% endif %} <!--end if registered -->
+		
 		</div>   <!--end containing column -->
 	</div> <!--end row containing row-->
-
-  {% endif %} <!--JMY - this was the end of the register.html code -->
-    
-    
-     
 </div> <!--end of top divider  -->
     
-       
-
 {% endblock %}
