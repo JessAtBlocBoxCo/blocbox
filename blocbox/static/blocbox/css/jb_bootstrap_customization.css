@@ -141,7 +141,6 @@ h6 {font-size: 1.286em; font-weight: 400; }
 /*Have a floating logo and so forth for min-width 768 - make the navbar not float */
 @media (min-width: 768px) {
 	.waitlistbody .navbar-default {
-		position: absolute; /*make navbar not float if larger dimensions*/
 		margin-bottom: 0px; margin-top: -50px;
 		}
 	.waitlistbody .nav-blocbox-name {
