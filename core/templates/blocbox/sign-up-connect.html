@@ -1,85 +1,17 @@
-{% extends "blocbox/base.html" %}
-<!--this is blocbox/core/templates/blocbox/sign-up-connect.html, ULR is http://www.blocbox.co/3/signupconnect/, where 3=user ID (johnin this case) -->
+{% extends "blocbox/sign-up-withoutconnect.html" %}
+<!--this is blocbox/core/templates/blocbox/sign-up-connect.html, ULR is http://www.blocbox.co/3/signupconnect/, where 3=user ID (johnin this case) 
+		note: this is based on the generic sign-up form, in sign-up-withoutconnect.html - so if you want to make overall changes to form do it there-->
 {% load staticfiles %} 
-{% block title %}Sign Up to Connect{% endblock %}
 
-{% block content %}
+{% block signupheaderadd %} to Connect with {{host.first_name}} {% endblock %}
 
- <div class="container-fluid"> <!--this is the container that surrounds the form, too short -->
-	<br> 
-	<div class="row">
-  	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-  		{% if registered %}
-  				<br> <br>
-        	<h3>Thank you for Registering!</h3>
-        	<h4><a href="/login/">Login to return to the homepage.</a></p>
- 					<br> <br> <br> <br> <br>
-   		{% else %}	
-       
-      <h3>Sign Up to Connect with {{host.first_name}}</h3>
-      <h5>In order to connect, we need to ask for some basic information</h5>
-  		<h5>Already Registered? <a href="/login/">Login here.</a> </h5>
-  		<br>	
-    	
-    	<!--Start Registration Form -->
-     	<form method="post" action="." enctype="multipart/form-data">     		
-        {% csrf_token %}           
-        {{ user_form.non_field_errors }}          
-            
-      	<div class="form-group"> 
-    				<!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
-    				<label for="exampleInputEmail1">Email address</label> --->    				
-    				{{ user_form.email.errors }}
-    				<label for="id_email">Email Address (Required)</label>
-    				<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter email">				
- 				</div>
- 				<div class="form-group">  				
-    				{{ user_form.password.errors }}
-    				<label for="password">Password (Required)</label>
-    				<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password">				
- 				</div>
- 				<div class="form-group">  				
-    				{{ user_form.password2.errors }}
-    				<label for="password2">Confirm Password (Required)</label>
-    				<input type="password" class="form-control" name="password2" id="id_password2"  placeholder="Confirm Password">				
- 				</div>
- 				
- 				<div class="form-group">  
- 						{{ user_form.zipcode.errors }}
- 						<label for="id_zipcode">Zipcode (Required)</label>
-    				<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode">				
- 				</div>
- 	
- 				<div class="form-group">  	
- 						<label for="id_first_name">First Name</label>		
-    				<input type="text" class="form-control" name="first_name" id="id_first_name"  placeholder="First Name">				
- 				</div>
- 				<div class="form-group"> 
- 						<label for="id_last_name">Last Name</label>	 				
-    				<input type="text" class="form-control" name="last_name" id="id_last_name"  placeholder="Last Name">				
- 				</div>
- 				<div class="form-group">  				
-    				<label for="id_st_address1">Street Address 1</label>	
-    				<input type="text" class="form-control" name="st_address1" id="id_st_address1"  placeholder="Street Address 1">				
- 				</div>
- 				<div class="form-group">  				
-    				<label for="id_st_address2">Street Address 2</label>	
-    				<input type="text" class="form-control" name="st_address2" id="id_st_address2"  placeholder="Street Address 2">				
- 				</div>
- 				<div class="form-group">  
- 						<label for="id_city">City</label>	
-    				<input type="text" class="form-control" name="city" id="id_city"  placeholder="City">				
- 				</div>
- 				<div class="form-group"> 
- 						<label for="id_state">State</label>	
-    				<input type="text" class="form-control" name="state" id="id_state"  placeholder="State">				
- 				</div>
+{% block signupsubtitle %} 
+ <h5>In order to connect, we need to ask for some basic information</h5>
+{% endblock %}
 
- 				
 
-      	<!-- <div class="container container-44 clearfix"> -->
-  		  <!--<p class="text text-173">Introduce Yourself (Optional)</p> -->
-  		  <br>
+{% block introduceyourself %} 
+ 				<br>
   		  <br>
   		  <p><b> Introduce Yourself </b></p>
   		  <!-- <p class="text text-182"> Introduct Yourself (Optional)</p> -->
@@ -91,85 +23,9 @@
     				<input type="text" class="form-control" name="intro_message" id="id_intro_message"  
     				placeholder="Introduce yourself to {{host.first_name}} (350 Character Limit)">				
  				</div>
- 				<div class="form-group">  {{ user_form.pickup_time.errors }}
- 						<label for="id_pickup_time">Time of day you would typically pick up packages</label>
-    				<input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
-    				placeholder=" [CHANGE THIS TO TWO "FROM" AND "TO" TIME FIELDS]">				
- 				</div>
- 			   			
-  		<!--<div class="element element-119"></div>-->
-      
-      <!--ADD OTHER REQUESTS - removing all formatting, was text text-183 -->
-     <br>
-     <br>
-    <p><b>What other services are you interested in receiving?</b></p>
-		<label class="checkbox-inline no_indent">
-  		<input type="checkbox" id="id_need_storage" name="need_storage"> Storage
-		</label>
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_petcare" name="need_petcare"> Pet Care
-		</label>
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_housesitting" name="need_housesitting"> House Sitting
-		</label>
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_rentals" name="need_rentals"> Equipment or Party Rentals
-		</label>
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_laundry" name="need_laundry"> Laundry
-		</label>
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_letin" name="need_letin"> Let Repairperson In
-		</label>	
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_childcare" name="need_childcare"> Child Care
-		</label>
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_plantcare" name="need_plantcare"> Plant Care
-		</label>	
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_lawn" name="need_letin"> Lawn Care
-		</label>	
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_carsharing" name="need_carsharing"> Car Sharing
-		</label>
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_housemaint" name="need_housemaint"> House Maintenance
-		</label>	
-		<label class="checkbox-inline">
-  		<input type="checkbox" id="id_need_autocare" name="need_autocare"> Auto Care
-		</label>
-		<div class="form-group">
- 		<label for="id_need_other">Other Request (Write In)</label>	
-    				<input type="text" class="form-control" name="need_other" id="id_need_other"  placeholder="Other Request (Write In)">				
- 		</div>
 
-  <div class="element element-119"></div>
+{% endblock %}			
+ 				
 
 
-    	 <div class="checkbox">  				
-    	 	  <label>
-    				<input type="checkbox" name="host" id="id_host" >Check this box if you're registering as a BlocBox host (receiving packages, etc).		
- 					</label>
- 			</div>
- 			<div class="checkbox">  
-    			<label>
-    				<input type="checkbox" name="hostinterest" id="id_hostinterest" >Check this box if you're interested in learning about serving as a Blocbox host		
- 					</label>
- 				</div>
-    	<button type="submit" name="submit" class="btn btn-default">Sign Up and Request to Connect</button>
-    	<p class="text">By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
 
-    <br><br><br><br>
-    	
-    			
-    </form>  <!--end form line -->
-    
-
-   	{% endif %} <!--end if registered -->
-		
-		</div>   <!--end containing column -->
-	</div> <!--end row containing row-->
-</div> <!--end of top divider  -->
-    
-{% endblock %}
