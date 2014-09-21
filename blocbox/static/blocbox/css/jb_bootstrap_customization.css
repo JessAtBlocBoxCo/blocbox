@@ -155,6 +155,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 	 	top: 4%; left: 1.7%;
 	 	z-index: 100000; 
 		}
+	.waitlistbody .h1, h2 {padding-left: 10%; padding-right: 10%} /*add padding around waitlist headers so it doesn't overlap with the logo */
 }
 
 
