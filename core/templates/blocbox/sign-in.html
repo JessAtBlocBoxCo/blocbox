@@ -1,96 +1,44 @@
-{% load staticfiles %}
-<!doctype html>
-<!--this is blocbox/core/templates/blocbox/sign-in.html -->
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>Sign In </title>
-  <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <!--JMY EDITING THE CSS LINKS
-  <link rel="stylesheet" href="css/standardizemain.css">
-  <link rel="stylesheet" href="css/stylesmain.css"> -->
-  <link rel="stylesheet" href="{% static 'blocbox/css/standardizemain.css' %}">
-  <link rel="stylesheet" href="{% static 'blocbox/css/stylesmain.css' %}">
-  <!--NOTE TO JB - WE'RE USING BOOSTRAP.CSS ADN NORMALIZE.CSS FROM BOOSTRAP - SUPPOSEED TO HELP WITH RENDERING SHIT ACROSS BROWSERS-->
-  <link rel="stylesheet" href="{% static 'blocbox/css/bootstrap.css' %}">
-  <link rel="stylesheet" href="{% static 'blocbox/css/normalize.css' %}">  
-</head>
-<body class="body sign-up clearfix">
-  <header class="_container _container-40 clearfix">
-    <div class="element element-49"></div>
-    <div class="element element-55"></div>
-    <button class="_button-28">&nbsp;</button>
-  </header>
+{% extends "blocbox/base.html" %}
+<!--this is blocbox/core/templates/blocbox/sign-in.html, urls i http://www.blocbox.co/login/ -->
+{% load staticfiles %} 
+{% block title %}Login to Blocbox{% endblock %}
 
- <div class="container _container container-23 clearfix" style="height:100%"> <!--this is the container that surrounds the form, too short -->
+{% block headafter %} 
+{% endblock %} 
 
-		     <!-- <p class="text text-112">Sign in to your BlocBox Account</p>    			
-    			<div class="element element-63"></div>-->
-    			<p>Sign in to your BlocBox Account</p>
-			<p><a href="/signup/">Create a new account</a></p>
-			<p><a href="/beta/">Return to the homepage (Beta)</a></p>
+{% block content %}
 
-  		<!--START FORM HERE -->
-       <form id="login_form" method="post" action="/login/" enctype="multipart/form-data" class="_container clearfix">
 
+<div class="container-fluid"> 
+	<br> 
+
+  <h3>Sign in to your BlocBox Account</h3>
+	<h5><a href="/signup/">Create a new account</a></h5>
+	<h5><a href="/beta/">Return to the homepage (Beta)</a></h5>
+
+	<!--START FORM HERE -->
+	<form method="post" action="/login/" enctype="multipart/form-data">
             {% csrf_token %}
+        		{{ login_form.non_field_errors }}          
             
-
-        {{ login_form.non_field_errors }}
-        
-                    <!-- if you just want to paste the full form include following line --> 
-            
-            
-      	<div class="form-group"> <!--NOTE USING CLASSES DEFINED IN BOOTSRAP.CSS -->
-    				<!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
-    				<label for="exampleInputEmail1">Email address</label> --->    				
+      	<div class="form-group">  				
     				{{ user_form.email.errors }}
     				<label for="id_email">Email Address</label>
     				<input type="email" class="form-control" name="email" id="id_email"  placeholder="Email">				
  				</div>
+ 				
  				<div class="form-group">  				
     				{{ user_form.password.errors }}
     				<label for="id_password1">Password</label>
     				<input type="password" class="form-control" name="password" id="id_password1"  placeholder="Password">				
  				</div>
  				
-    	<button type="submit" name="submit" class="btn btn-default">Sign In</button>
+    		<button type="submit" name="submit" class="btn btn-default">Sign In</button>
     			
-    </form>  <!--end form line -->
-    
-    
-     
-    </div> <!--end of top divider  -->
+	</form>  <!--end form line -->
+  
+  <br> <br>
+</div> <!--end of top divider - container-fluid  -->
     
         
-
-
-  		
-  		<!--
-  		<p class="text text-220">What other "Favors" are you potentially interested in receiving from Sylvia?</p>
-  	  <label class="checkout-label _container checkout-label-3 clearfix">
-  	    <span class="point-text">PET CARE</span>
-  	    <input class="checkbox" type="checkbox">
-  	  </label>
-  	  <label class="checkout-label _container checkout-label-4 clearfix">
-  	    <span class="point-text">HOUSE SITTING</span>
-  	    <input class="checkbox" type="checkbox">
-  	  </label>
-  	  <label class="checkout-label _container checkout-label-6 clearfix">
-  	    <span class="point-text">LAWN &amp; GARDEN</span>
-  	    <input class="checkbox" type="checkbox">
-  	  </label>
-  	  <label class="checkout-label _container checkout-label-8 clearfix">
-  	    <span class="point-text">OTHER</span>
-  	    <input class="checkbox" type="checkbox">
-  	  </label>
-  	  <textarea class="_textarea-5" placeholder="If you chose "other", please describe what kind of tasks you'd like help with"></textarea>
-  	  <p class="text text-304">&nbsp;</p>
-  		-->
-  	<!-- </div> -->
-
-<!-- <script src="js/jquery-min.js"></script> -->
-</body>
-</html>
+{% endblock %}
