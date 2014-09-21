@@ -18,25 +18,28 @@
         
           			
 
-  <!--Start Registration Form -->
+  
 	<div class="row">
-  	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+  	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+  		
   		<h3>Sign Up For BlocBox</h3>
+  		<h4>Already Registered? <a href="/login/">Login here.</a> </h4>
+  		<br>
+  		<!--Start Registration Form -->
      	<form id="user_form" method="post" action="." enctype="multipart/form-data" class="_container clearfix">
        	{% csrf_token %}          
         {{ user_form.non_field_errors }}
-                  
-            
-      	<div class="form-group"> <!--NOTE USING CLASSES DEFINED IN BOOTSRAP.CSS -->
+                            
+      	<div class="form-group"> 
    				<!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
     				<label for="exampleInputEmail1">Email address</label> --->    				
     				{{ user_form.email.errors }}
     				<label for="id_email">Email Address (Required)</label>
     				<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter email">				
  				</div>
+ 				
  				<div class="form-group">  				
     				{{ user_form.password.errors }}
-    				<label for="password">Password (Required)</label>
     				<label for="password">Password (Required)</label>
     				<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password">				
  				</div>
