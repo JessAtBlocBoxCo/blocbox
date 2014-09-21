@@ -314,5 +314,8 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	.paddingsides3pxmobile {padding-left:3px; padding-right:3px;} 
 	.paddingsides10pxmobile {padding-left:10px; padding-right:10px;}
 	.lightweight {font-weight: 400 ; } /*per john - set lightweight equal to 400 if mobile */
-	footer, footer > div, footer > div > div {padding:0px; text-align: center; } /*remove padding from footer on mobile and center-align*/
+	footer > div, footer > div > div {
+		padding-left:0px; padding-right:15px; 
+		text-align: center; 
+	} 
  }
