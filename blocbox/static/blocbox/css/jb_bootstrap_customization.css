@@ -139,7 +139,7 @@ h6 {font-size: 1.286em; font-weight: 400; }
 }
 /*Make the navbar fixed if its mobile */
 @media (max-width: 767px) {
-	.waitlistbody .navbar-default {position: fixed; top:0 }
+	.waitlistbody .navbar-default {position: fixed; top:0; z-index: 10000 }
 }
 		
 /*Have a floating logo and so forth for min-width 768 - make the navbar not float */
