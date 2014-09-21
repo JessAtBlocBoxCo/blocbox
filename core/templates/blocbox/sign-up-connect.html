@@ -21,9 +21,11 @@
   		<br>
         
 			<h5>In order to connect, we need to ask for some basic information</h5>
-    			
-        {% csrf_token %}
-            
+    	<br>	
+    	
+    	<!--Start Registration Form -->
+     	<form method="post" action="." enctype="multipart/form-data">     		
+        {% csrf_token %}           
         {{ user_form.non_field_errors }}          
             
       	<div class="form-group"> 
@@ -159,9 +161,8 @@
  				</div>
     	<button type="submit" name="submit" class="btn btn-default">Sign Up and Request to Connect</button>
     	<p class="text">By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
-    	<!--<p class="text text-322">By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
-  		 		<footer class="_element-142"></footer> -->
-    
+
+    <br><br><br><br>
     	
     			
     </form>  <!--end form line -->
