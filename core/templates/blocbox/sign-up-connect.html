@@ -11,25 +11,27 @@
 
 
 {% block introduceyourself %} 
-
-  		  <br>
-  		  <br>
-  		  <h3>Introduce Yourself </h3>
-  		  <br>
-  		  
-  		  <h5>Before you connect, {{host.first_name}} will need to confirm your request.  The information you provide below will help Sylvia confirm you as a neighbor</p>
-  		 <!--begin next form -->
-  		 	<div class="form-group">  {{ user_form.intro_message.errors }}
-  		 			<label for="id_intro_message">Include a personalized message to {{host.first_name}} </label>
+		
+  	<h3>Introduce Yourself </h3> 		  
+ 		<h5>Before you connect, {{host.first_name}} will need to confirm your request.  The information you provide below will help Sylvia confirm you as a neighbor</p>
+  
+  	<!--Intro MEssage -->
+  	<div class="form-group">  {{ user_form.intro_message.errors }}
+  		 <label for="id_intro_message" class="col-sm-3 control-label">Include a personalized message to {{host.first_name}} </label>
+    			<div class="col-sm-9">
     				<input type="text" class="form-control" name="intro_message" id="id_intro_message"  
-    				placeholder="Introduce yourself to {{host.first_name}} (350 Character Limit)">				
- 				</div>
- 				<div class="form-group">  {{ user_form.pickup_time.errors }}
- 						<label for="id_pickup_time">Time of day you would typically pick up packages</label>
-    				<input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
-    				placeholder=" [CHANGE THIS TO TWO "FROM" AND "TO" TIME FIELDS]">				
- 				</div>
-
+    				placeholder="Introduce yourself to {{host.first_name}} (350 Character Limit)">
+    </div>	<!--form-group-->
+    
+    <!--time of day typically pick up packages -->
+    <div class="form-group">  {{ user_form.pickup_time.errors }}
+ 			<label for="id_pickup_time" class="col-sm-3 control-label">Time of day you would typically pick up packages</label>
+ 				<div class="col-sm-9">
+    					<input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
+    					placeholder="Describe in 100 characters">	
+    		</div>	<!--col -->		
+ 		</div>	<!--form-group -->
+ 									
 
 {% endblock %}			
  				

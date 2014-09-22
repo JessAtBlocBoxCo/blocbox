@@ -111,14 +111,6 @@
     					<input type="text" class="form-control" name="state" id="id_state"  placeholder="State">		
     				</div>		
  				</div>
-
- 				<div class="form-group">  {{ user_form.pickup_time.errors }}
- 						<label for="id_pickup_time" class="col-sm-3 control-label">Time of day you would typically pick up packages</label>
- 						<div class="col-sm-9">
-    					<input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
-    					placeholder="Describe in 100 characters">	
-    				</div>			
- 				</div>
  				
  				
  				{% block introduceyourself %} {% endblock %}
@@ -128,6 +120,7 @@
     			<br> <br>
     			
     			<h3>What other services are you interested in receiving?</h3>
+<<<<<<< HEAD
     			
 					<div class="form-group">
 						<div class="col-sm-9 col-sm-offset-3">
@@ -209,6 +202,89 @@
     			
     	<br>				
     	<p>By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
+=======
+    			
+					<div class="form-group">
+						<div class="col-sm-9 col-sm-offset-3">
+								<label class="checkbox-inline ">
+									<input type="checkbox" id="id_need_storage" name="need_storage"> Storage
+								</label>
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_petcare" name="need_petcare"> Pet Care
+								</label>
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_housesitting" name="need_housesitting"> House Sitting
+								</label>
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_rentals" name="need_rentals"> Equipment or Party Rentals
+								</label>
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_laundry" name="need_laundry"> Laundry
+								</label>
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_letin" name="need_letin"> Let Repairperson In
+								</label>	
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_childcare" name="need_childcare"> Child Care
+								</label>
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_plantcare" name="need_plantcare"> Plant Care
+								</label>	
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_lawn" name="need_letin"> Lawn Care
+								</label>	
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_carsharing" name="need_carsharing"> Car Sharing
+								</label>
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_housemaint" name="need_housemaint"> House Maintenance
+								</label>	
+								<label class="checkbox-inline">
+  								<input type="checkbox" id="id_need_autocare" name="need_autocare"> Auto Care
+								</label>
+							</div> <!--col-->
+						</div> <!--form-group-->
+						
+						<div class="form-group">
+ 									<label for="id_need_other" class="col-sm-3 control-label">Other Request (Write In)</label>	
+    									<div class="col-sm-3">
+    										<input type="text" class="form-control" name="need_other" id="id_need_other"  placeholder="Other Request (Write In)">		
+    									</div> <!--col -->		
+ 						</div> <!--form-group-->
+ 			  
+ 			 
+      		<!--checkbox if registering as a host -->
+    			<div class="form-group">
+    				<div class="col-sm-9 col-sm-offset-3">    					
+    	    		<div class="checkbox">  				
+    						<label>
+    							<input type="checkbox" name="host" id="id_host" >Check this box if you're registering as a host
+ 								</label>
+ 							</div> <!--checkbox -->
+ 						</div> <!--col -->
+ 					</div> <!--form-group -->
+ 					
+ 					<!--checkbox for host interest -->
+ 					<div class="form-group">
+    				<div class="col-sm-9 col-sm-offset-3">    					
+    	    		<div class="checkbox">    	 		 				
+    						<label>
+    							<input type="checkbox" name="hostinterest" id="id_hostinterest" >Check your box if you're interested in learning about making extra cash by serving as a Blocbox host		
+ 								</label>
+ 							</div> <!--checkbox -->
+ 						</div> <!--col -->
+ 					</div> <!--form-group-->
+ 					
+ 					<!--submit button -->
+ 					<div class="form-group">
+    				<div class="col-sm-offset-3 col-sm-9">
+    					<button type="submit" name="submit" class="btn btn-default">Sign Up and Request to Connect</button>
+    					<p>By continuing, I agree to Blocbox's Terms of Service and Privacy Policy</p>
+    				</div> <!--col -->
+    			</div> <!--form-group -->
+				
+    	
+>>>>>>> 77f752db08903fc98eea19a7e111868dd17902d8
     	<br> 
     	<p>*Required</p>
     	
