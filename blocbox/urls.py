@@ -33,8 +33,7 @@ urlpatterns = patterns('',
  		url(r'^jesstest/$', views.jesstest, name='jesstest'),
  		url(r'^datascience/', include('datasci.urls')),
  		
- 		#add password_reset urls
- 		url(r'^passwordreset/', include('password_reset.urls', namespace="passwordreset")),
+ 		include('password_reset.urls'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
