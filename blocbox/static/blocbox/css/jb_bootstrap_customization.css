@@ -14,8 +14,8 @@ body {
   font-size: 15px;
 }
 
-/*Style the bbpage id - which contains everythign within the body tags */
-#bbpage {  Min-height: 100%; position:relative;}
+/*Style the bbpage id - which contains everythign within the body tags, make it 97% to account fo navbar so footer doesn't run off page */
+#bbpage {  Min-height: 97%; position:relative;}
 /*Setting Default  Header sizes*/
 h1 {font-size: 5.6em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
 h2 {font-size: 3.9em; font-weight: 700; } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
