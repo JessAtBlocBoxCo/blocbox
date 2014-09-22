@@ -15,20 +15,20 @@
 <div class="container-fluid fillpage offwhitebackground text-center relativediv">
     </div>
 
-<div class="row paddingsides10px">
-    <div class="col-xs-3 profilebox">
-        <img src="{% static 'blocbox/images/JB.png' %}" height="150" width="150"  />
+<div class="row paddingsides10px profilebox">
+    <div class="col-xs-3">
+        <img src="{% static 'blocbox/images/JB.png' %}" height="200" width="200"  />
     </div>
     
-    <div class="col-xs-3 profilebox">
+    <div class="col-xs-3">
     <h2>{{ host.first_name }}</h2>
         </div>
     
-    <div class="col-xs-3 profilebox">
+    <div class="col-xs-3">
         <h5>{{ host.st_address1 }}</h5>
     </div>
     
-    <div class="col-xs-3 profilebox">
+    <div class="col-xs-3">
         <button onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
     </div>
 </div>
