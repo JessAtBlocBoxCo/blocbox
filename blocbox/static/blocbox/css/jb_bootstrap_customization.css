@@ -298,6 +298,9 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
     max-height: 50px;
+    line-height: 50px;
+    text-align: left;
+    vertical-align: middle;
 }
 
 .profilepicrow {
@@ -320,8 +323,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 
 .hostname {
     font-size: 2.143em;
-    text-align: left;
-    vertical-align: middle;
 }
 
 .profileboxline {
