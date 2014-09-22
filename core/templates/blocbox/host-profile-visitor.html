@@ -12,9 +12,11 @@
 
 {% block content %}
 
+<!--My attempt to color the background> -->
 <div class="container-fluid fillpage offwhitebackground text-center relativediv">
     </div>
 
+<!--First Row of info> -->
 <div class="row paddingsides10px profilebox">
     <div class="col-xs-3">
         <img src="{% static 'blocbox/images/JB.png' %}" height="200" width="200"  />
@@ -33,16 +35,16 @@
     </div>
 </div>
 
-
-<div class="row paddingsides10px"> <br>
+<!--Second Row of info> -->
+<div class="row paddingsides10px marginleftright40px"> <br>
     
-    <div class="col-xs-12 col-md-3 profilebox">
+    <div class="col-xs-12 col-md-3 profilebox marginleftright10px">
         <h4 class="redtext textcenter">Success Rate</h4>
         <div class="profileboxline"></div>
         <p>{{ host.favorsrequested }}<br>Favors Requested</p>
     </div>
 
-    <div class="col-xs-12 col-md-6 profilebox"> <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
+    <div class="col-xs-12 col-md-6 profilebox marginleftright10px"> <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
           <h4 class="orangetext">Hi Neighbor!</h4>
           <div class="profileboxline"></div>
           <div class="col-xs-12 col-md-10 col-md-offset-1">
@@ -50,7 +52,33 @@
             </div>
       </div>
 
-      <div class="col-xs-12 col-md-3 profilebox">
+      <div class="col-xs-12 col-md-3 profilebox marginleftright10px">
+          <h4 class="bluegreytext textcenter">When I'm Home</h4>
+          <div class="profileboxline"></div>
+              <p>Tuesday - Friday</p>
+              <p>3 PM to 9PM</p>
+  		</div> 
+
+</div>
+
+<!--Third Row of info> -->
+<div class="row paddingsides10px marginleftright40px"> <br>
+    
+    <div class="col-xs-12 col-md-3 profilebox marginleftright10px">
+        <h4 class="redtext textcenter">Success Rate</h4>
+        <div class="profileboxline"></div>
+        <p>{{ host.favorsrequested }}<br>Favors Requested</p>
+    </div>
+
+    <div class="col-xs-12 col-md-6 profilebox marginleftright10px"> <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
+          <h4 class="orangetext">Hi Neighbor!</h4>
+          <div class="profileboxline"></div>
+          <div class="col-xs-12 col-md-10 col-md-offset-1">
+              <p>{{ host.host_aboutme }}</p>
+            </div>
+      </div>
+
+      <div class="col-xs-12 col-md-3 profilebox marginleftright10px">
           <h4 class="bluegreytext textcenter">When I'm Home</h4>
           <div class="profileboxline"></div>
               <p>Tuesday - Friday</p>
