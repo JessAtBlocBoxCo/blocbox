@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'core',
     'south',
     'datasci',
+    'password_reset',
 )
 
 MIDDLEWARE_CLASSES = (
