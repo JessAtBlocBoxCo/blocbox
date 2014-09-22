@@ -8,7 +8,13 @@
 {% block topcontent %}
 	
 		<div class="row text-center"> <br>
-  		<h1>Neighbors Helping Neighbors<br>Never Miss a Package</h1>
+			
+			{% if user.is_authenticated %}
+					<h1>Welcome, <br> {{user.email}}</h1>
+				
+			{% else %}
+  				<h1>Neighbors Helping Neighbors<br>Never Miss a Package</h1>
+  		{% endif %}
   	</div>
   	
   	<div class="row">
