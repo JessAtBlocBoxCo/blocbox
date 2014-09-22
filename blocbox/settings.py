@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'south',
     'datasci',
     'password_reset',
+    'django_messages',
 )
 
 MIDDLEWARE_CLASSES = (

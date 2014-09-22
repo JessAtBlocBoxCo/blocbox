@@ -12,7 +12,6 @@ urlpatterns = patterns('',
     url(r'^searchold/', views.searchold, name='searchtest'),  
     url(r'^(?P<userinfo_id>\d+)/hostprofilevisitor/$',views.hostprofilevisitor, name='hostprofilevisitor'),  
     #url(r'^hostprofile/', include('hostprofile.urls', namespace="hostprofile")),
-    #url(r'^messages/', include('messages.urls', namespace="messages")),
     #url(r'^payment/', include('payment.urls', namespace="payment")),
     #url(r'^polls/', include('polls.urls', namespace="polls")), #INCLUDE the URLconf at blocbox/polls
     url(r'^admin/', include(admin.site.urls)), #INCLUDE the URLconf at 
@@ -33,6 +32,7 @@ urlpatterns = patterns('',
  		url(r'^jesstest/$', views.jesstest, name='jesstest'),
  		url(r'^datascience/', include('datasci.urls')),
  		url(r'^passwordreset/',include('password_reset.urls')),
+ 		url(r'^messages/', include('django_messages.urls')),
  		
 )
 
