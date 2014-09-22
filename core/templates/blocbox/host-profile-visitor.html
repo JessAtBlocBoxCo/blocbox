@@ -18,21 +18,26 @@
 
 <!--First Row of info> -->
 <div class="row paddingsides10px profilebox">
-    <div class="col-xs-3">
+    
+    <div class="col-md-1"></div>
+    
+    <div class="col-xs-12 col-md-2">
         <img src="{% static 'blocbox/images/JB.png' %}" height="200" width="200"  />
     </div>
     
-    <div class="col-xs-3">
+    <div class="col-xs-12 col-md-3">
     <h2>{{ host.first_name }}</h2>
         </div>
     
-    <div class="col-xs-3">
+    <div class="col-xs-12 col-md-3">
         <h5>{{ host.st_address1 }}</h5>
     </div>
     
-    <div class="col-xs-3">
+    <div class="col-xs-12 col-md-2">
         <button onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
     </div>
+    
+    <div class="col-md-1"></div>
 </div>
 
 <!--Second Row of info> -->
@@ -70,22 +75,22 @@
     
     <div class="col-md-1"></div>
     
-    <div class="col-xs-12 col-md-3 profilebox marginleftright10px">
-        <h4 class="redtext textcenter">Success Rate</h4>
+    <div class="col-xs-12 col-md-2 profilebox marginleftright10px">
+        <h4 class="redtext textcenter">Currently Helping</h4>
         <div class="profileboxline"></div>
         <p>{{ host.favorsrequested }}<br>Favors Requested</p>
     </div>
 
     <div class="col-xs-12 col-md-6 profilebox marginleftright10px"> <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
-          <h4 class="orangetext">Hi Neighbor!</h4>
+          <h4 class="orangetext">Package Receipt</h4>
           <div class="profileboxline"></div>
           <div class="col-xs-12 col-md-10 col-md-offset-1">
               <p>{{ host.host_aboutme }}</p>
             </div>
       </div>
 
-      <div class="col-xs-12 col-md-3 profilebox marginleftright10px">
-          <h4 class="bluegreytext textcenter">When I'm Home</h4>
+      <div class="col-xs-12 col-md-2 profilebox marginleftright10px">
+          <h4 class="bluegreytext textcenter">Other Offers</h4>
           <div class="profileboxline"></div>
               <p>Tuesday - Friday</p>
               <p>3 PM to 9PM</p>
