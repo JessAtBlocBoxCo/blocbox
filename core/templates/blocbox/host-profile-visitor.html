@@ -14,9 +14,17 @@
 <div class="offwhitebackground">
     </div>
 
-<div class="container">
-    <h2>{{ host.first_name }}</h2><h5>{{ host.st_address1 }}</h5>
-    <button onClick="window.location='/{{ host.id }}/signupconnect/';">+ &nbsp;Connect</button>
+<div class="row">
+    <div class="col-xs-4 profilebox">
+    <h2>{{ host.first_name }}</h2>
+        </div>
+    <div class="col-xs-4 profilebox">
+        <h5>{{ host.st_address1 }}</h5>
+    </div>
+    
+    <div class="col-xs-4 profilebox">
+        <button onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
+    </div>
 </div>
 
 
