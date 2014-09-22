@@ -18,27 +18,27 @@
 <!-- </div> JMY commenting this out - this was closing the container, but you dont want this until the end-->
 
 	<!--First Row of info> -->
-	<div class="row paddingsides10px profilebox">
+	<div class="row paddingsides10px hostinfobox">
     
-    <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
     
-    <div class="col-xs-12 col-md-2">
-        <img src="{% static 'blocbox/images/JB.png' %}" height="200" width="200"  />
-    </div>
+        <div class="col-xs-12 col-md-2">
+            <img src="{% static 'blocbox/images/JB.png' %}" height="200" width="200"  />
+        </div>
     
-    <div class="col-xs-12 col-md-3">
-    	<h2>{{ host.first_name }}</h2>
-    </div>
+        <div class="col-xs-12 col-md-3">
+    	   <h2>{{ host.first_name }}</h2>
+        </div>
     
-    <div class="col-xs-12 col-md-3">
-        <h5>{{ host.st_address1 }}</h5>
-    </div>
+        <div class="col-xs-12 col-md-3">
+            <h5>{{ host.st_address1 }}</h5>
+        </div>
     
-    <div class="col-xs-12 col-md-2">
-        <button onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
-    </div>
+        <div class="col-xs-12 col-md-2">
+            <button onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
+        </div>
     
-    <div class="col-md-1"></div>
+        <div class="col-md-1"></div>
 	
 	</div> <!--closing row profilebox -->
 
