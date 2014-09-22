@@ -44,7 +44,7 @@
    				<!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
     				<label for="exampleInputEmail1">Email address</label> --->    				
     				{{ user_form.email.errors }}
-    				<label for="id_email" class="col-sm-3 control-label">Email Address(*)</label>
+    				<label for="id_email" class="col-sm-3">Email Address(*)</label>
     				<div class="col-sm-9">
     					<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter email (Required)">	
     				</div>			
@@ -52,7 +52,7 @@
  				
  				<div class="form-group">  				
     				{{ user_form.password.errors }}
-    				<label for="password" class="col-sm-3 control-label">Password(*)</label>
+    				<label for="password" class="col-sm-3">Password(*)</label>
     				<div class="col-sm-9">
     					<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password (Required)">	
     				</div>			
@@ -60,7 +60,7 @@
  				
  				<div class="form-group">  				
     				{{ user_form.password2.errors }}
-    				<label for="password2" class="col-sm-3 control-label">Confirm Password(*)</label>
+    				<label for="password2" class="col-sm-3">Confirm Password(*)</label>
     				<div class="col-sm-9">
     					<input type="password" class="form-control" name="password2" id="id_password2"  placeholder="Confirm Password (Required)">				
     				</div>
@@ -68,45 +68,45 @@
  				
  				<div class="form-group">  
  						{{ user_form.zipcode.errors }}
- 						<label for="id_zipcode" class="col-sm-3 control-label">Zipcode(*)</label>
+ 						<label for="id_zipcode" class="col-sm-3">Zipcode(*)</label>
  						<div class="col-sm-9">
     					<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode (Required)">
     				</div>				
  				</div>
  	
  				<div class="form-group">  	
- 						<label for="id_first_name" class="col-sm-3 control-label">First Name</label>	
+ 						<label for="id_first_name" class="col-sm-3">First Name</label>	
  						<div class="col-sm-9">	
     					<input type="text" class="form-control" name="first_name" id="id_first_name"  placeholder="First Name">	
     				</div>			
  				</div>
  				<div class="form-group"> 
- 						<label for="id_last_name" class="col-sm-3 control-label">Last Name</label>	
+ 						<label for="id_last_name" class="col-sm-3">Last Name</label>	
  						<div class="col-sm-9"> 				
     					<input type="text" class="form-control" name="last_name" id="id_last_name"  placeholder="Last Name">		
     				</div>		
  				</div>
  				<div class="form-group">  				
-    				<label for="id_st_address1" class="col-sm-3 control-label">Street Address 1</label>	
+    				<label for="id_st_address1" class="col-sm-3">Street Address 1</label>	
     				<div class="col-sm-9">
     					<input type="text" class="form-control" name="st_address1" id="id_st_address1"  placeholder="Street Address 1">	
     				</div>			
  				</div>
  
   			<div class="form-group">  				
-    				<label for="id_st_address2" class="col-sm-3 control-label">Street Address 2</label>	
+    				<label for="id_st_address2" class="col-sm-3">Street Address 2</label>	
     				<div class="col-sm-9">
     					<input type="text" class="form-control" name="st_address2" id="id_st_address2"  placeholder="Street Address 2">	
     				</div>			
  				</div>
  				<div class="form-group">  
- 						<label for="id_city" class="col-sm-3 control-label">City</label>	
+ 						<label for="id_city" class="col-sm-3">City</label>	
  						<div class="col-sm-9">
     					<input type="text" class="form-control" name="city" id="id_city"  placeholder="City">		
     				</div>		
  				</div>
  				<div class="form-group"> 
- 						<label for="id_state" class="col-sm-3 control-label">State</label>	
+ 						<label for="id_state" class="col-sm-3">State</label>	
  						<div class="col-sm-9">
     					<input type="text" class="form-control" name="state" id="id_state"  placeholder="State">		
     				</div>		
@@ -162,8 +162,8 @@
 						</div> <!--form-group-->
 						
 						<div class="form-group">
- 									<label for="id_need_other" class="col-sm-3 control-label">Other Request (Write In)</label>	
-    									<div class="col-sm-3">
+ 									<label for="id_need_other" class="col-sm-3">Other Request (Write In)</label>	
+    									<div class="col-sm-9">
     										<input type="text" class="form-control" name="need_other" id="id_need_other"  placeholder="Other Request (Write In)">		
     									</div> <!--col -->		
  						</div> <!--form-group-->
