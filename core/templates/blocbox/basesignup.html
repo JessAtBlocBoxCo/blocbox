@@ -21,16 +21,22 @@
    		{% else %}	
   		
   		
-  		<h3>Sign Up For BlocBox {% block signupheaderadd %} {% endblock %}</h3>
-  		
-  		{% block signupsubtitle %}  {% endblock %} <!--this is where 'in order to connect with john we need to collect.. will go -->
-  		
-  		<h5>Already Registered? <a href="/login/">Login here.</a> </h5>
-  		<br>
+
   		
   		<!--Start Registration Form -->
   		
      	<form class="form-horizontal" role="form" method="post" action="." enctype="multipart/form-data">
+     		
+     			<div class="col-sm-9 col-sm-offset-3">
+     				<h3>Sign Up For BlocBox {% block signupheaderadd %} {% endblock %}</h3>
+  			
+  					{% block signupsubtitle %}  {% endblock %} <!--this is where 'in order to connect with john we need to collect.. will go -->
+  		
+  					<h5>Already Registered? <a href="/login/">Login here.</a> </h5> 			
+  					<br>
+  				</div>
+  		
+     		
        	{% csrf_token %}          
         {{ user_form.non_field_errors }}
                             
