@@ -13,7 +13,8 @@
 {% block introduceyourself %} 
 		
   	<h3>Introduce Yourself </h3> 		  
- 		<h5>Before you connect, {{host.first_name}} will need to confirm your request.  The information you provide below will help Sylvia confirm you as a neighbor</p>
+ 		<h5>Before you connect, {{host.first_name}} will need to confirm your request.  
+ 			The information you provide below will help {{host.first_name}} confirm you as a neighbor</p>
   
   	<!--Intro MEssage -->
   	<div class="form-group">  {{ user_form.intro_message.errors }}
