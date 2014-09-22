@@ -32,7 +32,7 @@ urlpatterns = patterns('',
     url(r'^styletest/$', views.styletest, name='styletest'),
  		url(r'^jesstest/$', views.jesstest, name='jesstest'),
  		url(r'^datascience/', include('datasci.urls')),
- 		url(r'',include('password_reset.urls', namespace="passwordreset")),
+ 		url(r'^passwordreset/',include('password_reset.urls')),
  		
 )
 
