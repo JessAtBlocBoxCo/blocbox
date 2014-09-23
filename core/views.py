@@ -54,7 +54,7 @@ def userlogin(request):
                 # If the account is valid and active, we can log the user in.
                 # We'll send the user back to the homepage.
                 login(request, user)
-                return HttpResponseRedirect('/dashboard/{{user.id}}') #update in future to go to beta, with user credentials
+                return HttpResponseRedirect('/dashboard/') #update in future to go to beta, with user credentials
             else:
                 # An inactive account was used - no logging in!
                 return HttpResponse("Your BlocBox account is disabled.")
