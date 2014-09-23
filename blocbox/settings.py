@@ -41,6 +41,11 @@ INSTALLED_APPS = (
     'datasci',
     'password_reset',
     'django_messages',
+
+)
+
+#REMOVING THE DASH APPS FOR NOW BECAUSE THEY RELY ON THE USERNAME PROPERTY
+"""		
 		'dash',
 		'dash.contrib.layouts.android',
 		'dash.contrib.layouts.bootstrap2',
@@ -53,8 +58,7 @@ INSTALLED_APPS = (
 		'dash.contrib.plugins.url',
 		'dash.contrib.plugins.video',
 		'dash.contrib.plugins.weather',
-
-)
+"""
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
