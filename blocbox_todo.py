@@ -7,10 +7,19 @@
 		#You can check if django-messages was successfully installed by opening a python shell and running:
 >>> import django_messages #no error messages
 		#install django_messages to installed apps
-		#add to URL patters:
-		(r'^messages/', include('django_messages.urls')),
-
->>>
+		#add to URL patters: url(r'^messages/', include('django_messages.urls')),\
+		#see where its located by entering into pythong shell and
+		>>>import django_messages
+		>>> django_messages.__file__ #/usr/local/lib/python2.7/dist-packages/django_messages
+		#templates can be found:
+	To use the Templatetag simply add this to your template:
+	{% load inbox %}
+	Now you can either print the number of unread messages in the users inbox by using:
+	{% inbox_count %}
+	Or you can assign the count to a variable to further process it in the template:
+	{% inbox_count as my_var %}
+	{{ my_var }}
+>>
 
 
 1. EDIT host profile page so it looks different if youre  connnecte d- like {%if registered} 
