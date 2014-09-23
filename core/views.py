@@ -19,12 +19,19 @@ def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
 
+
 def search(request):
     return render(request, 'blocbox/search.html')
 
 def searchold(request):
     return render(request, 'blocbox/old/search.shtml') 
-    
+
+#dashboard
+def dashboard(request, userinfo_id):
+    context = RequestContext(request)
+    user = get_object_or_404(UserInfo, pk=userinfo_id)
+    return render_to_response('blocbox/dashboard.html', {'user':user}, context)
+	
 #Create the view for the hostprofilevisitor
 def hostprofilevisitor(request, userinfo_id):
     context = RequestContext(request)
