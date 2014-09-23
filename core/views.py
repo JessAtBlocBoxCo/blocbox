@@ -26,12 +26,18 @@ def search(request):
 def searchold(request):
     return render(request, 'blocbox/old/search.shtml') 
 
-#dashboard
+#dashboard - 
+def dashboard(request):
+    return render_to_response('blocbox/dashboard.html')
+
+#dashboard - old version passing args - dont think i need
+"""
 def dashboard(request, userinfo_id):
     context = RequestContext(request)
     user = get_object_or_404(UserInfo, pk=userinfo_id)
     return render_to_response('blocbox/dashboard.html', {'user':user}, context)
-	
+"""
+
 #Create the view for the hostprofilevisitor
 def hostprofilevisitor(request, userinfo_id):
     context = RequestContext(request)
