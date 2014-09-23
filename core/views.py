@@ -26,7 +26,6 @@ def search(request):
 def searchold(request):
     return render(request, 'blocbox/old/search.shtml') 
 
-#dashboard
 def dashboard(request):
     return render(request, 'blocbox/dashboard.html')
     
