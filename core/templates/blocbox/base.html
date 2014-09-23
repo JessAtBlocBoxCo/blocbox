@@ -90,7 +90,7 @@
       	</button>
   		
   		<!--the "brand" - ultimately we should replace this with styled text rather than an image -->
-  		<a class="navbar-brand brandnavbarimage" href="#"> <img src="{% static "blocbox/images/Logo-and-name---orange-drop2.png" %}"  height="40" width="200" /></a>
+  		<a class="navbar-brand brandnavbarimage" href='/beta'"> <img src="{% static "blocbox/images/Logo-and-name---orange-drop2.png" %}"  height="40" width="200" /></a>
   		<!--<a class="navbar-brand" href="#">BlocBox</a> -->
 		</div> <!--navbar-header-->
    
@@ -109,8 +109,10 @@
         
         <!--second link - sign out or in -->
         {% if user.is_authenticated %}
+        	<li><a href='/account'> {{user.first_name}}</a></li>
        		 <li><a href='/logout'>Sign out</a></li>
        	{% else %}
+       			<li><a href='/beta'>Home</a></li>
            <li><a href='/login'>Sign in</a></li>
 				{% endif %}
 				
