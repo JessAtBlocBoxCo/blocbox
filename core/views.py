@@ -26,10 +26,10 @@ def search(request):
 def searchold(request):
     return render(request, 'blocbox/old/search.shtml') 
 
-#dashboard - 
+#dashboard
 def dashboard(request):
     return render(request, 'blocbox/dashboard.html')
-
+    
 #dashboard - old version passing args - dont think i need
 """
 def dashboard(request, userinfo_id):
