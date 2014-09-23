@@ -365,6 +365,8 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 .verifiedicons {
     height: 75px;
     width: 75px;
+    background-position: center center;
+    
     
 }
 
