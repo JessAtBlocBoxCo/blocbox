@@ -17,7 +17,7 @@
 <!-- </div> JMY commenting this out - this was closing the container, but you dont want this until the end-->
     
 <!--Attempt at a cover image> -->
-<div class="row">
+<!--<div class="row">
         <div class="col-xs-12">
              <img class="profilecover" src="{% static 'blocbox/images/treelined-streetbw3.png' %}"  />
         </div>
@@ -28,7 +28,7 @@
             <img class="profilepic" src="{% static 'blocbox/images/male-silh.png' %}"  />
         </div>
     
-    </div>
+    </div>-->
     
 	<!--First Row of info> -->
 <div class="row paddingsides10px hostinfobox">
@@ -56,7 +56,7 @@
     <div class="col-xs-12 col-md-2 col-md-offset-1 profilebox marginleftright10px">
         <h4 class="redtext textcenter sideboxheader">Success Rate</h4>
         <div class="profileboxline"></div>
-        <p>{{ host.favorsrequested }}<br>Favors Requested</p>
+        <p class="paddingtop5px">{{ host.favorsrequested }}<br>Favors Requested</p>
     </div>
 
     <div class="col-xs-12 col-md-6 profilebox marginleftright10px"> <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
@@ -70,7 +70,7 @@
     <div class="col-xs-12 col-md-2 profilebox marginleftright10px">
           <h4 class="bluegreytext textcenter sideboxheader">When I'm Home</h4>
           <div class="profileboxline"></div>
-              <p>Tuesday - Friday</p>
+              <p class="paddingtop5px">Tuesday - Friday</p>
               <p>3 PM to 9PM</p>
   	</div>
     
