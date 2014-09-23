@@ -1,0 +1,141 @@
+<!-- this is blocbox/core/templates/blocbox/dashboard.html 
+	i think we shoudl only have one dashboard and then just have additional stuff for hosts, using if--then logic.. 
+	this is easier to impelemnt if teh layout is relatively straight forward - so additional content is added vertically,
+-->
+{% extends "blocbox/base.html" %}
+{% load staticfiles %} 
+{% block title %}Dashboard{% endblock %}
+
+{% block headafter %} 
+{% endblock %} 
+  
+ 
+  
+  <div>
+   
+    <div>
+      <p>Michelle&nbsp;</p>
+      <p>EDIT PROFILE</p>
+    </div>
+    
+    <div>
+      <p>Invite Your Neighbors</p>
+      <p>Become a Host</p>
+      <p>Love Blocbox?</p>
+    </div>
+    <div>
+      <p>PHONE</p>
+      <p>202-555-XXXX</p>
+    </div>
+    <p>HOME</p>
+    <p>212 Grand Ave. Apt. 2</p>
+  </div>
+  
+  
+  <div>
+    			<div> <p>Favors</p></div>
+    			<div>
+    			  <p>OPTIONS</p>
+    			  <p>EXPIRATION DATE</p>
+    			  <p>ADDRESS</p>
+    			  <p>NEIGHBOR</p>
+    			  <p>DESCRIPTION</p>
+    			  <p>STATUS</p>
+    			</div>
+    			<div>
+    			  <p>Modify</p>
+    			  <p>May 5</p>
+    			  <p>360 Grand Ave. Apt. 2</p>
+    			  <p>Sylvia</p>
+    			  <p>House Sitting</p>
+    			  <p>In progress</p>
+    			</div>
+  </div>
+  
+  
+  <div>
+    			<p>RECENT</p>
+    			
+    			<div>  <p>Shipments</p> </div>
+    			
+    			<div>
+    			  <p>OPTIONS</p>
+    			  <p>DELIVERY DATE</p>
+    			  <p>ADDRESS</p>
+    			  <p>NEIGHBOR</p>
+    			  <p>TRACKING NUMBER</p>
+    			  <p>STATUS</p>
+    			</div>
+    			
+    			<div>
+    			  <p>View Receipt</p>
+    			  <p>May 5</p>
+    			  <p>360 Grand Ave. Apt. 2</p>
+    			  <p>Sylvia</p>
+    			  <p>Z139W198WQPUTV</p>
+    			  <p>Received</p>
+    			</div>
+  </div>
+  
+  <div>
+    	<p>CURRENT</p>
+    
+    	<div> <p>Shipments</p>	</div>
+    
+    		<div>
+    		  <p>OPTIONS</p>
+    		  <p>DELIVERY DATE</p>
+    		  <p>ADDRESS</p>
+    		  <p>NEIGHBOR</p>
+    		  <p>TRACKING NUMBER</p>
+    		  <p>STATUS</p>
+    		</div>
+    		
+    		<div>
+    		  <p>April 19</p>
+    		  <p>360 Grand Ave. Apt. 2</p>
+    		  <p>Sylvia</p>
+    		  <p>Z139W198WQPUTV</p>
+    		  <p>Ready for Pickup</p>
+    		  <p>Modify</p>
+    		  <p>Message Host</p>
+    		</div>
+    
+    
+    
+    		<div>
+    		  <p>Modify</p>
+    		  <p>April 21</p>
+    		  <p>360 Grand Ave. Apt. 2</p>
+    		  <p>Sylvia</p>
+    		  <p>Z139W198WQPUTV</p>
+    		  <p>Out for Delivery</p>
+    		</div>
+    		
+    		
+    		<div>
+    		  <p>Modify</p>
+    		  <p>May 5</p>
+    		  <p>360 Grand Ave. Apt. 2</p>
+    		  <p>Sylvia</p>
+    		  <p>Z139W198WQPUTV</p>
+    		  <p>In transit</p>
+    		</div>
+    
+  </div>
+  
+ 	<div>
+    <div>
+      <p>ACCOUNT</p>
+      <p>TRANSACTIONS</p>
+     
+      <div onClick="window.location='/inbox/'">
+        <p>MESSAGES</p>
+        <p><br></p>
+			</div>
+      
+      <p>PROFILE</p>
+      <p>DASHBOARD</p>
+    </div>
+
+  </div>
