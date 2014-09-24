@@ -295,22 +295,20 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 * HOST PROFILE VISITOR PAGE STYLES
 *--------------------------------------------------------------*/
 
-.hostinfobox {
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    max-height: 50px;
-    line-height: 50px;
-    text-align: left;
-    vertical-align: middle;
-}
-
-.profilepicrow {
-    max-height: 150px;
-    overflow: visible;
-    z-index: 1;
-    position: relative
+.profilecover {
+    left: 0;
+    right: 0;
+    height: 215px;
+    width: 100%;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    overflow: hidden;
+    z-index: -1;
     
 }
+
+
 .profilepic {
     height: 200px;
     width: 200px;
@@ -320,6 +318,15 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     position: 76.5% 147;
     left: 25px;
     
+}
+
+.hostinfobox {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    max-height: 50px;
+    line-height: 50px;
+    text-align: left;
+    vertical-align: middle;
 }
 
 .profilebox {
@@ -346,18 +353,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-color: rgb(236, 240, 241);
 }
 
-.profilecover {
-    left: 0;
-    right: 0;
-    height: 215px;
-    width: 100%;
-    margin: 0 auto;
-    background-repeat: no-repeat;
-    background-position: center center;
-    overflow: hidden;
-    z-index: -1;
-    
-}
 
 .textleft {
     text-align: left;
