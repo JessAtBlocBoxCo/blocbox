@@ -69,6 +69,11 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 .font1pt5em {font-size: 1.5em; }
 .fontsizehalf {font-size: 0.5em; }
 
+/*Define text alignment attributes*/
+.textcenter {text-align: center; }
+.textleft {text-align: left; }
+.textright {text-align: right; }
+
 /*Define generic padding and positional attributions */
 .absolutebottom {position: absolute; bottom: 0;}
 .relativediv {position: relative; }
