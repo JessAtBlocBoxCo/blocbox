@@ -1,0 +1,42 @@
+{% extends "password_reset/base.html" %}
+{% load i18n %}
+{% load url from future %}
+
+{% block title %}{% trans "Password recovery" %}{% endblock %}
+
+{% block passwordresetcontent %}
+
+<div class="col-xs-12 text-center">
+	
+  		<h3>Recover Your Password</h3>
+  		<br>
+  		
+			
+			
+		<form class="form-inline" role="form" method="post" action="{{ url }}">
+		{% csrf_token %}
+		
+			<div class="form-group">
+				<input id="id_username_or_email"  type="email" class="form-control" name="username_or_email" placeholder="Enter Email">	
+			</div>
+		
+			<div class="form-group">			
+				<input type="submit" class="btn btn-default"  value="{% trans "Recover my password" %}">	
+			</div> <!--form-group -->
+	
+		</form> 
+	
+		<br>
+		<p><a href="/signup/">Create a new account</a></p>
+		<p><a href="/beta/">Return to the homepage (Beta)</a></p>
+	
+</div>	<!--close containing div-->
+{% endblock %}
+
+		<!--old versionm just had: 
+		
+		{{ form.as_p }} 
+		
+		after csrf_toke line
+		-->
+		
