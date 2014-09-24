@@ -1,0 +1,48 @@
+{% extends "django_messages/base.html" %} 
+{% load i18n %} 
+{% load url from future %}
+
+{% block messagingcontent %}
+<h1>{% trans "Inbox" %}</h1>
+{% if message_list %} 
+<!--top row showing Sender, Subjec,t Received, Action, trans=translate, this was original in table format - changing ti grid  -->
+<div class="col-xs-12, col-md-10">  <!--this is wrapped in another col on the base.html page -->
+<!--<table class="messages">
+    	<thead> -->
+    <div class="row">
+    		<div class="col-xs-3">{% trans "Sender" %} </div>
+        <div class="col-xs-5">% trans "Subject" %}</div>
+      	<div class="col-xs-2">{% trans "Received" %}</div>
+       	<div class="col-xs-2">{% trans "Action" %}</div>
+    </div> <!--row-->
+    <!--</thead>
+    <tbody> -->
+{% for message in message_list %} 
+   <div class="row"><!-- <tr -->
+   		<!--Sender -->
+      <!--<td>--> <div class="col-xs-3">{{ message.sender }}<!--</td>--> </div>
+      
+      <!--Subject -->
+       <div class="col-xs-5">
+            {% if message.new %}<strong>{% endif %}
+            {% if message.replied %}<em>{% endif %}
+            <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
+            {% if message.replied %}</em>{% endif %}
+            {% if message.new %}</strong>{% endif %}
+       </div>
+      
+      <!--Received (date) -->
+        <div class="col-xs-2">{{ message.sent_at|date:_("DATETIME_FORMAT") }} </div>
+      
+      <!--Action -->
+        <div class="col-xs-2"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a> </div>
+    </div><!--</tr> -->
+{% endfor %}
+   <!-- </tbody>
+				</table>-->
+</div>
+
+{% else %}
+<p>{% trans "No messages." %}</p>
+{% endif %}  
+{% endblock %}
