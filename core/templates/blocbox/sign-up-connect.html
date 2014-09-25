@@ -18,11 +18,18 @@
   
   	<!--Intro MEssage -->
   	<div class="form-group">  {{ user_form.intro_message.errors }}
-  		 <label for="id_intro_message" class="col-sm-3">Include a personalized message to {{host.first_name}} </label>
-    			<div class="col-sm-9">
-    				<input type="text" class="form-control" name="intro_message" id="id_intro_message"  
+        <div class="row">
+            <div class="col-sm-9 col-md-5 col-md-offset-1">
+                <label for="id_intro_message" class="col-sm-3">Include a personalized message to {{host.first_name}} </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9 col-md-10 col-md-offset-1">
+                <input type="text" class="form-control" name="intro_message" id="id_intro_message"  
     				placeholder="Introduce yourself to {{host.first_name}} (350 Character Limit)">
-    			</div>
+            </div>
+        </div>
+    			
     </div>	<!--form-group-->
     
     
