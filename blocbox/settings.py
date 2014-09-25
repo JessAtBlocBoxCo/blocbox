@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'password_reset',
     'django_messages',
 		'billing',
+		'paypal_express_checkout',
 )
 
 #REMOVING THE DASH APPS FOR NOW BECAUSE THEY RELY ON THE USERNAME PROPERTY
