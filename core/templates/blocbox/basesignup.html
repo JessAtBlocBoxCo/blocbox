@@ -100,31 +100,28 @@
  			</div>
 
             
- 				<div class="form-group">  				
-    				<label for="id_st_address1" class="col-sm-3">Street Address 1</label>	
-    				<div class="col-sm-9">
+ 				<div class="form-group">
+                    <div class="row">
+                        <label for="id_st_address1" class="col-sm-3 col-md-5 col-md-offset-1">Street Address</label>	
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9 col-md-5 col-md-offset-1">
     					<input type="text" class="form-control" name="st_address1" id="id_st_address1"  placeholder="Street Address 1">	
-    				</div>			
+    				    </div>	
+                        <div class="col-sm-9 col-md-5">
+    					<input type="text" class="form-control" name="city" id="id_city"  placeholder="City">		
+    				    </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-9 col-md-5 col-md-offset-1">
+                            <input type="text" class="form-control" name="st_address2" id="id_st_address2"  placeholder="Street Address 2">	
+    				    </div>
+                        <div class="col-sm-9 col-md-5">
+    					<input type="text" class="form-control" name="state" id="id_state"  placeholder="State">		
+    				    </div>
+                    </div>
  				</div>
  
-  			<div class="form-group">  				
-    				<label for="id_st_address2" class="col-sm-3">Street Address 2</label>	
-    				<div class="col-sm-9">
-    					<input type="text" class="form-control" name="st_address2" id="id_st_address2"  placeholder="Street Address 2">	
-    				</div>			
- 				</div>
- 				<div class="form-group">  
- 						<label for="id_city" class="col-sm-3">City</label>	
- 						<div class="col-sm-9">
-    					<input type="text" class="form-control" name="city" id="id_city"  placeholder="City">		
-    				</div>		
- 				</div>
- 				<div class="form-group"> 
- 						<label for="id_state" class="col-sm-3">State</label>	
- 						<div class="col-sm-9">
-    					<input type="text" class="form-control" name="state" id="id_state"  placeholder="State">		
-    				</div>		
- 				</div>
  				
  				
  				{% block introduceyourself %} {% endblock %}
