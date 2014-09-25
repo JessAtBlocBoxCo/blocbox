@@ -403,14 +403,16 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-color: #3498db;
     font-size: 1.143em;
     font-weight: 500;
-    color: (255, 255, 255);
+    color: white;
     border-color: (255, 255, 255);
     height: 32px;
-    width: 178px;
+    width: 100%;
     padding: 0;
     border: 0;
     cursor: pointer;
     vertical-align: top;
+    text-align: center;
+    border-radius: 5px;
     
     
 }
