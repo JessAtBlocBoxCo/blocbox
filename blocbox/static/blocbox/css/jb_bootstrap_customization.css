@@ -413,6 +413,8 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     vertical-align: top;
     text-align: center;
     border-radius: 5px;
+    padding-left: 10%;
+    padding-right: 10%;
     
     
 }
