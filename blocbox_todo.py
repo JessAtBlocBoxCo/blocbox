@@ -1,3 +1,35 @@
+1. finish paypal/payment thing
+https://github.com/spookylukey/django-paypal
+# views.py
+...
+from paypal.standard.forms import PayPalPaymentsForm
+
+def view_that_asks_for_money(request):
+
+    # What you want the button to do.
+    paypal_dict = {
+        "business": settings.PAYPAL_RECEIVER_EMAIL,
+        "amount": "10000000.00",
+        "item_name": "name of the item",
+        "invoice": "unique-invoice-id",
+        "notify_url": "https://www.example.com" + reverse('paypal-ipn'),
+        "return_url": "https://www.example.com/your-return-location/",
+        "cancel_return": "https://www.example.com/your-cancel-location/",
+
+    }
+
+    # Create the instance.
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    context = {"form": form}
+    return render_to_response("payment.html", context)
+
+<!-- payment.html -->
+...
+<h1>Show me the money!</h1>
+<!-- writes out the form tag automatically -->
+{{ form.render }}
+
+
 
 1. create superuser accounts for john, also maybe me so we dont need to log in as root
 2. clean up messaging system - create structure/dashboard/

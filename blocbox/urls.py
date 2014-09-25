@@ -35,8 +35,6 @@ urlpatterns = patterns('',
  		url(r'^passwordreset/',include('password_reset.urls')),
  		url(r'^messages/', include('django_messages.urls')),
  		url(r'^payment/paypal/', include('paypal.standard.ipn.urls')),
- 		
- 		
  		url(r'^datascience/', include('datasci.urls')),
  		
 )
