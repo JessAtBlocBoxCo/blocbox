@@ -40,31 +40,40 @@
        	{% csrf_token %}          
         {{ user_form.non_field_errors }}
                             
-      	<div class="form-group"> 
+      	<div class="form-group row"> 
    				<!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
     				<label for="exampleInputEmail1">Email address</label> --->    				
     				{{ user_form.email.errors }}
-    				<label for="id_email" class="col-sm-3">Email Address*</label>
-    				<div class="col-sm-9">
-    					<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter email (Required)">	
-    				</div>			
+    				<label for="id_email" class="col-sm-3 col-md-1">Enter Your Email*</label>
+    				<div class="col-sm-9 col-md-2">
+    					<input type="email" class="form-control" name="email" id="id_email"  placeholder="you@example.com">	
+    				</div>
+            
+                    <div class="form-group">  
+ 						{{ user_form.zipcode.errors }}
+ 						<label for="id_zipcode" class="col-sm-3">Enter Your Zipcode*</label>
+ 						<div class="col-sm-9">
+    					<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode (Required)">
+    				</div>				
  				</div>
+        </div>
  				
  				<div class="form-group">  				
     				{{ user_form.password.errors }}
-    				<label for="password" class="col-sm-3 col-md-2">Password*</label>
+    				<label for="password" class="col-sm-3 col-md-2">Create a Password*</label>
     				<div class="col-sm-9 col-md-3 col-md-offset-1">
     					<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password">	
     				</div>		
                     <div class="form-group">  				
     				{{ user_form.password2.errors }}
-    				<label for="password2" class="col-sm-3 col-md-2">Confirm Password*</label>
+    				<label for="password2" class="col-sm-3 col-md-2">Confirm Your Password*</label>
     				<div class="col-sm-9 col-md-3">
     					<input type="password" class="form-control" name="password2" id="id_password2"  placeholder="Confirm Password (Required)">				
     				</div>
  				    </div>
                      
  				</div>
+            
  				
             <div class="form-group">  	
  			    <label for="id_first_name" class="col-sm-3 col-md-2">First Name</label>	
@@ -81,13 +90,7 @@
  				</div>
  			
  				
- 				<div class="form-group">  
- 						{{ user_form.zipcode.errors }}
- 						<label for="id_zipcode" class="col-sm-3">Zipcode*</label>
- 						<div class="col-sm-9">
-    					<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode (Required)">
-    				</div>				
- 				</div>
+
  	
 
 
