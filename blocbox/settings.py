@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'datasci',
     'password_reset',
     'django_messages',
-
+		'billing',
 )
 
 #REMOVING THE DASH APPS FOR NOW BECAUSE THEY RELY ON THE USERNAME PROPERTY
