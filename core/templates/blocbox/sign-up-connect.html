@@ -35,12 +35,14 @@
     
     <!--time of day typically pick up packages -->
     <div class="form-group">  {{ user_form.pickup_time.errors }}
-        <div class="row">
-            <label for="id_pickup_time" class="col-sm-3 col-md-5 col-md-offset-1">Time of day you would typically pick up packages</label>
+        <div class="row col-sm-9">
+            <div>
+                <label for="id_pickup_time" class="col-sm-3 col-md-5 col-md-offset-1">Time of day you would typically pick up packages</label>
+            </div>
         </div>
         <div class="row">
-            <div>
-                <input type="text" class="form-control col-md-8 col-md-offset-1" name="pickup_time" id="id_pickup_time"  
+            <div class="col-sm-9 col-md-10 col-md-offset-1">
+                <input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
     					placeholder="Describe in 100 characters">
             </div>
           	
