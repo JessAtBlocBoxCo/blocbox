@@ -50,21 +50,23 @@
     				</div>			
  				</div>
  				
- 				<div class="form-group row">  				
-    				{{ user_form.password.errors }}
-    				<label for="password" class="col-sm-3 col-md-6">Password*</label>
-    				<div class="col-sm-9">
-    					<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password (Required)">	
-    				</div>			
- 				</div>
- 				
  				<div class="form-group">  				
+    				{{ user_form.password.errors }}
+    				<label for="password" class="col-sm-3 row">Password*</label>
+    				<div class="col-sm-9 col-md-6">
+    					<input type="password" class="form-control" name="password" id="id_password"  placeholder="Password">	
+    				</div>		
+                    <div class="form-group">  				
     				{{ user_form.password2.errors }}
     				<label for="password2" class="col-sm-3">Confirm Password*</label>
-    				<div class="col-sm-9">
+    				<div class="col-sm-9 col-md-6">
     					<input type="password" class="form-control" name="password2" id="id_password2"  placeholder="Confirm Password (Required)">				
     				</div>
+ 				    </div>
+                     
  				</div>
+ 				
+ 			
  				
  				<div class="form-group">  
  						{{ user_form.zipcode.errors }}
