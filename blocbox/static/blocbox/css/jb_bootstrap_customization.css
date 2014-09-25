@@ -416,8 +416,26 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     padding-left: 10%;
     padding-right: 10%;
     margin-top: 10px;
-    
-    
+}
+
+.connectbutton:hover  {
+    background-color: white;
+    font-size: 1.143em;
+    font-weight: 500;
+    color: #3498db;
+    border-color: #3498db;
+    border: 2px;
+    height: 32px;
+    width: 178px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 5px;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 10px;
 }
 
 /*----------------------------------------------------------------------------
