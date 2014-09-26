@@ -124,16 +124,24 @@
     			<h5 class="margintop30px">What other services are you interested in receiving? (Optional)</h5>
     			
 					<div class="form-group">
-						<div class="col-sm-12 col-sm-offset-0">
+                        <!--<div class="col-sm-12 col-sm-offset-0">-->
+                        <div class="row">
+                            <div class="col-xs-12 col-md-2 col-md-offset-1">
+                            <label class="checkbox-inline" style="margin-left:10px">
+									<input class="offersbox" type="checkbox" id="id_need_storage" name="need_storage">Storage</label>
+                            </div>
+                            <div class="col-xs-12 col-md-2">
 								<label class="checkbox-inline" style="margin-left:10px">
-									<input class="offersbox" type="checkbox" id="id_need_storage" name="need_storage"> Storage
-								</label>
-								<label class="checkbox-inline">
   								<input type="checkbox" id="id_need_petcare" name="need_petcare"> Pet Care
 								</label>
+                            </div>
+                            <div class="col-xs-12 col-md-2">
 								<label class="checkbox-inline">
   								<input type="checkbox" id="id_need_housesitting" name="need_housesitting"> House Sitting
 								</label>
+                            </div>
+                        </div>
+                            
 								<label class="checkbox-inline">
   								<input type="checkbox" id="id_need_rentals" name="need_rentals"> Equipment or Party Rentals
 								</label>
@@ -166,11 +174,11 @@
 						
 						<div class="form-group">
                             <div class="row">
-                                <label for="id_need_other" class="col-sm-3 col-md-10 col-md-offset-1">Other Request (Write In)</label>
+                                <label for="id_need_other" class="col-sm-3 col-md-10 col-md-offset-1">What else could {{host.first_name}} help you with?</label>
                                 </div>
                             <div class="row">
     				            <div class="col-sm-9 col-md-10 col-md-offset-1">
-    										<input type="text" class="form-control" name="need_other" id="id_need_other"  placeholder="Other Request (Write In)">	
+    										<input type="text" class="form-control" name="need_other" id="id_need_other"  placeholder="Write in to request another service">	
                                 </div>	
     				        </div> <!--col -->		
  						</div> <!--form-group-->
