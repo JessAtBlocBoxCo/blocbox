@@ -502,6 +502,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 }
 
 .inactivebutton:hover:before {
+    display: none;
     content: "+ Connect";
 }
 
