@@ -99,10 +99,33 @@
 	<div class="row marginbottom20px">
     
     <div class="col-xs-12 col-md-offset-1 col-md-2">
-        <div class="profilebox">
-            <p class="bluegreytext sideboxtext">Currently Helping</p>
-            <div class="profileboxline"></div>
-            <p class="paddingtopbottom10px">{{ host.helpingneighbors }}<br>Neighbors</p>
+        <div class="row">
+            <div class=" col-xs-12 col-md-2 profilebox">
+                <p class="bluegreytext sideboxtext">Currently Helping</p>
+                <div class="profileboxline"></div>
+                <p class="paddingtopbottom10px">{{ host.helpingneighbors }}<br>Neighbors</p>
+            </div>
+            <div class="col-xs-12 col-md-2 profilebox">
+                <p class="greentext sideboxtext">Verified Info</p>
+                <div class="profileboxline"></div> <br>
+                    <div class="row marginauto paddingtop10px">
+                        <img class="col-xs-12 col-md-6 verifiedicons" src="{% static 'blocbox/images/house-icon.svg' %}"  />
+                        <p class="col-xs-12 col-md-6 textcenter">Address</p>
+                    </div>
+                    <div class="row marginauto">
+                        <img class="col-xs-12 col-md-6 verifiedicons" src="{% static 'blocbox/images/email-plane.svg' %}"  />
+                        <p class="col-xs-12 col-md-6 textcenter">Email</p>
+                    </div>
+                    <div class="row marginauto">
+                        <img class="col-xs-12 col-md-6 verifiedicons" src="{% static 'blocbox/images/mobile-icon.svg' %}"  />
+                        <p class="col-xs-12 col-md-6 textcenter">Phone</p>
+                    </div>
+                    <div class="row marginauto">
+                        <img class="col-xs-12 col-md-6 verifiedicons" src="{% static 'blocbox/images/facebook-icon.svg' %}"  />
+                        <p class="col-xs-12 col-md-6 textcenter">Facebook</p>
+                    </div>
+            <br>
+            </div>
         </div>
     </div>
 
@@ -150,27 +173,7 @@
     
 <div class="row marginbottom20px">
     
-        <div class="col-xs-12 col-md-offset-1 col-md-2 profilebox">
-            <p class="greentext sideboxtext">Verified Info</p>
-            <div class="profileboxline"></div> <br>
-                <div class="row marginauto paddingtop10px">
-                    <img class="col-xs-12 col-md-6 verifiedicons" src="{% static 'blocbox/images/house-icon.svg' %}"  />
-                    <p class="col-xs-12 col-md-6 textcenter">Address</p>
-                </div>
-                <div class="row marginauto">
-                    <img class="col-xs-12 col-md-6 verifiedicons" src="{% static 'blocbox/images/email-plane.svg' %}"  />
-                    <p class="col-xs-12 col-md-6 textcenter">Email</p>
-                </div>
-                <div class="row marginauto">
-                    <img class="col-xs-12 col-md-6 verifiedicons" src="{% static 'blocbox/images/mobile-icon.svg' %}"  />
-                    <p class="col-xs-12 col-md-6 textcenter">Phone</p>
-                </div>
-                <div class="row marginauto">
-                    <img class="col-xs-12 col-md-6 verifiedicons" src="{% static 'blocbox/images/facebook-icon.svg' %}"  />
-                    <p class="col-xs-12 col-md-6 textcenter">Facebook</p>
-                </div>
-            <br>
-        </div>
+        
     </div>
     <br>
     <br>
