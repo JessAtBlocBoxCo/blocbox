@@ -331,8 +331,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 }
 
 .profilepic {
-    height: 200px;
-    width: 200px;
+    width: 100%;
     bottom: -60px;
     position: absolute;
     overflow: visible;
