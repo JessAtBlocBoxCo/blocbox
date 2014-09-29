@@ -355,6 +355,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     min-height: 150px;
     overflow: visible;
+    height: 100%;
 }
 
 .hostname {
@@ -422,6 +423,8 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     border: 0;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
     cursor: pointer;
     vertical-align: top;
     text-align: center;
