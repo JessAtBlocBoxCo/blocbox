@@ -34,15 +34,19 @@
     
 	<!--First Row of info> -->
 
-<div class="row marginbottom20px hostinfobox relativediv">
-    <div class="col-xs-12 col-sm-offset-1 col-sm-2 relativediv">
-           <img class="profilepic" src="{% static 'blocbox/images/genderless-silh-whited.png' %}"  /> 
+    <div class="row marginbottom20px hostinfobox relativediv">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-2 relativediv">
+            <img class="profilepic" src="{% static 'blocbox/images/genderless-silh-whited.png' %}"  /> 
         </div>
     
-        <div class="col-xs-12 col-sm-5">
-    	   <p class="hostname negmarginright15px">{{ host.first_name }}<><h5 class="paddingtop7px">{{ host.st_address1 }}</h5></p> <!--class="hostname"-->
+        <div class="col-xs-12 col-sm-1">
+    	   <p class="hostname negmarginright15px">{{ host.first_name }}</p> <!--class="hostname"-->
         </div>
-
+    
+        <div class="col-xs-12 col-sm-4">
+            <h5 class="paddingtop7px">{{ host.st_address1 }}</h5>
+        </div>
+    
         <div class="col-xs-12 col-sm-offset-1 col-sm-2">
             <button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
         </div>
