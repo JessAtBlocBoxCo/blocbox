@@ -1,177 +1,70 @@
-<!-- this is blocbox/core/templates/blocbox/index.html, the waitlist page -->
+{% extends "blocbox/basewaitlist.html" %}
+<!--this is blocbox/core/templates/bocbox/x_bootstraptest.html - will turn into the waitlist page-->
 {% load staticfiles %} 
+{% block title %} Introducing BlocBox {% endblock %}
 
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0">
-  <title>Introducing Blocbox</title>
-  <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-  <link rel="stylesheet" href="{% static 'blocbox/css/standardize.css' %}">
-  <link rel="stylesheet" href="{% static 'blocbox/css/index-grid.css' %}">
-  <link rel="stylesheet" href="{% static 'blocbox/css/styles.css' %}">
-    
-<!-- Meta Tags - Describe the Site -->
-   <meta name="Description" 
-   CONTENT="Package Delivery Holding and Receiving, Storage, Pet Care, Dog Walking, Child Care,
-   Mailbox Rental, Missed Packages, 800 USPS, 800 UPS">
-   
-  <!--Google Tracking SNippet --Goes in every page -->
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  
-    ga('create', 'UA-51513611-1', 'blocbox.co');
-    ga('send', 'pageview');
-  </script>
-    
-</head>
-<!--Header/Logo/Nav  -->
-<body class="body index clearfix">
-  <a class="bahnav" href="#hosting">Become a Host</a>
-  <a class="hiwnav" href="#works">How It Works</a>
-  <a class="logoname" href="https://www.blocbox.co"></a>
-     <form method="post" action="mailto:admin@blocbox.co">
-  <button class="hello">Say Hello!</button>
-  </form>
-  <a class="logo" href="#top"></a>
-    
-<!--Headline Text  -->
-  <h1 class="_text-1">
-    <p>Neighbors Helping Neighbors</p>
-    <p>Never Miss a Package</p>
-</h1>
-  <p class="subtitle subtitle-1">Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</p>
-  <p class="subtitle2">Launching soon in NYC, DC and LA. Spots are limited. Reserve yours by signing up for our waitlist below.</p>
-    
-<!--Sign Up Fields and MailChimp Integration  -->
-  <div class="waitlist clearfix">
-     <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
-method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
-class="validate" target="_blank" novalidate>
+<!--LONGER TERM IDEAS FOR IMROVING MOBILE SITE:
+	1.cool john idea about mobile site: just the logo and an arrow on the mobile sign up page
+-->
 
-  <input class="-email" name="EMAIL" placeholder="EMAIL" type="email">
-  <input class="zip" name="ZIPCODE" placeholder="ZIP" type="text">
-  
-  <button type="submit" value="Join Waitlist" name="subscribe" class="-waitlist">Join Waitlist</button>
-  <div id="mce-responses" class="clear">
-  	<div class="response" id="mce-error-response" style="display:none"></div>
-  	<div class="response" id="mce-success-response" style="display:none"></div>
-  </div> 
-  
-  <label value="1" name="group[1689][1]" class="checkout-label _container clearfix">
-    <input class="checkbox" type="checkbox">
-    <span class="point-text">I'm often at home and I want to learn more about making extra cash as a Blocbox Host</span>
-  </label>
-  </form>
-    <a href="privacy-policy.html" class="privacy-warning">By Signing Up, I Agree to Blocbox's Privacy Policy</a>
-      
-<!--Navigation to "How it Works"  -->
-  </div>
-  <div class="nav1 nav1-3 clearfix">
-    <a class="hiwsubnav" href="#works">How It Works</a>
-    <a class="arrowblued" href="#works"></a>
-    <a class="arrow1" href="#works"></a>
-  </div>
-    
-<!--Social Media Links Bar  -->
-  <div class="social">
-    <a class="angellist" href="https://angel.co/blocbox" target="_blank"></a>
-    <a class="facebook" href="https://www.facebook.com/blocboxco" target="_blank"></a>
-    <a class="twitter" href="https://twitter.com/BlocboxCo" target="_blank"></a>  
-  </div>
-    
-<!--How It Works "Blue" Section  -->
-  <div class="landing-background landing-background-3"></div> 
-  <a class="logonameblued logonameblued-3" href="#top"></a>  
-  
-
-  	  	     		
-  	<h2 class="_text-7">
-  		<a name="works"></a>  <!--JMY fixing the anchor to how it works location -->
-    	<p>Stop Missing Packages.</p>
-   	 	<p>Meet Your Neighbors.</p>
-		</h2> 
+{% block topcontent %}
 	
-  <p class="h2subtitle h2subtitle-3">&nbsp;Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can 
-						conveniently &nbsp;pick up your package when you get home, or whenever you like.</p>
-  
-  	<div class="hiw hiw-3 clearfix">
-    	<div class="find"></div>
-    	<div class="hiw-line"></div>
-    	<div class="ship"></div>
-    	<div class="hiw-line2"></div>
-    	<div class="pickup"></div>
+		<div class="row text-center">
+  		<h1>Neighbors Helping Neighbors<br>Never Miss a Package</h1>
   	</div>
-  <div class="hiwtext hiwtext-3">
-    <div class="pickup-text pickup-text-3">PICK IT UP NEARBY, WHENEVER</div>
-    <p class="pickup-subtext pickup-subtext-3">Blocbox will notify you of your package's successful receipt. You can then suggest a time you will pick it up, or you can wait till it's 
-convenient &nbsp;for you.</p>
-    <p class="ship-subtext ship-subtext-3">As you complete your order, enter the address of your connected Blocbox host.</p>
-    <p class="find-subtext find-subtext-3">&nbsp;Search to determine a 
-conveniently&nbsp;&nbsp;located and verified Blocbox host and connect.</p>
-    <div class="ship-text">&nbsp;SHIP TO YOUR BOX</div>
-    <div class="find-title find-title-3">FIND A BLOCBOX HOST</div>
-  </div>
-  <p class="details-1 details-1-3">More Details Coming Soon</p>
-    
-<!--Learn About Hosting Section - looks to me to be where the 'how it works' section starts -->   
-  <div class="hiw-background hiw-background-3"></div>
-  <div class="learn-host learn-host-3 clearfix">
-    <div class="learn-host-text">Learn About Becoming a Host</div>
-    <div class="arrow-2"></div>
-  </div>
-    
-<!--Beyond Packages Section  -->  
-  <div class="beyond-packages beyond-packages-3 clearfix">
-    <p class="beyond-title">Beyond Packages</p>
-    <p class="beyond-text">Solving the hassle of package receipt is just the first way Blocbox can help. We encourage Blocbox hosts to get creative in the ways in which they can help their neighbors. Here's a few possibilities just off the top of our heads.</p>
-    <div class="handy handy-3"></div>
-    <div class="sitting sitting-3"></div>
-    <div class="storage storage-3"></div>
-    <div class="pet-care pet-care-3"></div>
-    <div class="disco disco-3"></div>
-    <p class="handy handy-6">Handy Work</p>
-    <p class="sitting sitting-6">House Sitting</p>
-    <p class="storage storage-6">Storage</p>
-    <p class="pet-care pet-care-6">Pet Care</p>
-    <p class="disco disco-6">Disco Ball Rental</p>
-  </div>
-    
-<!--Hosting Section  -->     
-  <div class="hosttitle hosttitle-3">
-      <a name="hosting"></a>
-    <h3 class="_text-10">Become a Blocbox Host</h3>
-    <p class="text text-3">&nbsp;Blocbox quickly and easily allows you to find nearby neighbors acting as Blocbox hosts, arrange for your packages to be delivered to them, and be notified so you can 
-conveniently&nbsp;&nbsp;pick up your package when you get home, or whenever you like.</p>
-  </div>
-  <div class="babh babh-3 clearfix">
-    <div class="perform perform-3"></div>
-    <div class="babh-line2"></div>
-    <div class="meet-neighbors"></div>
-    <div class="babh-line1"></div>
-    <div class="money"></div>
-  </div>
-  <div class="babh-text babh-text-3">
-    <div class="money-title">EARN MONEY</div>
-    <p class="money-text">Your neighbors get their packages, you get a little extra in your pocket.&nbsp;The neighborhood wins.</p>
-    <div class="meet-title">MEET YOUR NEIGHBORS</div>
-    <p class="meet-text">Set and arrange times at which your neighbors can pick up their packages at your door. Hosts must be home a minimum amount of hours in the evening to allow neighbors to pick up their packages.</p>
-    <p class="perform-title perform-title-3">PERFORM TASKS WHILE AT HOME</p>
-    <p class="perform-text perform-text-3">Receive packages and offer other services to neighbors. Hosts must be able to be verified and be at home to receive all scheduled deliveries.</p>
-  </div>
-  <div class="details-2 details-2-3">More Details Coming Soon</div>
-  <div class="babh-background babh-background-3"></div>
-
-<!--Footer  -->  
-  <footer class="_container _container-8 clearfix">
-    <div class="copyright copyright-3"></div>
-    <div class="goodhood goodhood-3">GoodHood LLC</div>
-    <div class="privacy privacy-3">Privacy Policy</div>
-  </footer>
-</body>
-</html>
+  	
+  	<div class="row">
+  			<div class="col-xs-12 col-md-8 col-md-offset-2">
+  					<div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingsides20px">
+  						<h3 class="nomargin margintop20px">Blocbox lets you reliably receive packages, and get other tasks done, by enlisting your neighbors to help.</h3>	
+  						<h3 class="margintop5px">Launching soon in NYC, DC and LA. Spots are limited.  Reserve yours by signing up for our waitlist below.</h3>
+  					</div> <!--nested col-xs-12 col-sm-10 col-sm-offset-1 -->
+  			</div>
+  	</div> <!--end row div -->
+  
+  	<!--begin waitlist clearfix divider -->
+  	<div class="row" > 
+  			<br class="fontsizehalf">
+  		<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
+					method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" 
+					class="paddingsides15px" target="_blank" novalidate>
+					
+  				<div class="row font1pt5em">
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-3">
+  						<input name="EMAIL" placeholder="EMAIL" class="form-control margintop5px darkgreytext" type="email">
+  					</div>
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-0">
+  						<input name="ZIPCODE" placeholder="ZIP" class="form-control margintop5px darkgreytext" type="text">  	
+  					</div>
+  					<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-2 col-md-offset-0">
+  						<button type="submit" value="Join Waitlist" name="subscribe" class="whitebackground orangetext waitlistjoinbtn margintop5px">Join Waitlist</button>
+  					</div>
+  				</div> <!--row -->
+				
+  				<div id="mce-responses" class="clear">
+  					<div class="response" id="mce-error-response" style="display:none"></div>
+  					<div class="response" id="mce-success-response" style="display:none"></div>
+  				</div> 
+  			
+  			<div class="row">
+  				<div class="row col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+  			  	<div class="checkbox text-center">
+    					<label value="1" name="group[1689][1]">
+      					<input type="checkbox"> I'm often at home and I want to learn more about making extra cash as a Blocbox Host
+    					</label>
+  					</div> <!--checkbox -->
+ 					</div> <!--row col-md-6 col-md-offset-3 -->
+ 				</div> <!--row-->		
+  		</form>
+  	
+  		
+  		<!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
+  	</div> <!--row containing waitlist form-->
+ 
+ 	<div class="row">	<br>	<br> <br>  </div> <!--add some empty rows with breaks before the bottom divider -->
+	<div class="row text-center alignbottomdiv"> 
+    	<h6 class="nomargin">How It Works</h6>
+    	<a href="#works"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="30"  /> </a>
+	</div>
+	
+{% endblock %} <!--end topcontent block -->
