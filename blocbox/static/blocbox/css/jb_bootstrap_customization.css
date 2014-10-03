@@ -208,7 +208,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 }
 /*Make the navbar fixed if its mobile */
 @media (max-width: 767px) {
-	.waitlistbody .navbar-default {position: fixed; top:0; right: 0; left: 0;z-index: -10000 }
+	.waitlistbody .navbar-default {position: fixed; top:0; right: 0; left: 0;z-index: 10000 }
 	.waitlistbody .anchor{padding-top: 35px; } /*and add padding to the anchor because there's a navbar now */
 }
 		
@@ -617,6 +617,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	.navbarlogo {height: 40px; width: 200px; }
 	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
 	.nopaddingmobile {padding:0px}
+    .nomargintopmobile {margin-top: 0px; }
 	.paddingsides3pxmobile {padding-left:3px; padding-right:3px;} 
 	.paddingsides10pxmobile {padding-left:10px; padding-right:10px;}
 	.lightweight {font-weight: 400 ; } /*per john - set lightweight equal to 400 if mobile */
