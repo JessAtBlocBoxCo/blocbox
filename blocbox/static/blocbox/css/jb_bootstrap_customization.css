@@ -144,7 +144,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 .navbar-default .navbar-header > a {padding-top: 7px;}
 
 /*Eliminate border around navbar*/
-.navbar {border: 0px; box-shadow: 0;} /*default is border: 1px solid transparent;*/
+.navbar {
+    border: 0px;
+    box-shadow: 0; 
+    background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%)} /*default is border: 1px solid transparent;*/
 
 /*Eliminate navbar shadow*/
 .navbar {box-shadow: 0;}
