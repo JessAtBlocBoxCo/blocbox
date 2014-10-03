@@ -311,6 +311,11 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     color: rgb(255, 255, 255);
 }
 
+.waitlisth2 {
+    font-size: 2.00em;
+    font-weight: 700;
+}
+
 
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
