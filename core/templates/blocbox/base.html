@@ -58,6 +58,25 @@
     ga('create', 'UA-51513611-1', 'blocbox.co');
     ga('send', 'pageview');
   </script>
+    
+
+    <!-- Smooth Scrolling -->
+      <script>
+          $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+            || location.hostname == this.hostname) {
+
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+               if (target.length) {
+                 $('html,body').animate({
+                     scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        }
+    });
+        </script>
   
 <!--block to add things to head after all this abaove has loaded-->
 {% block headafter %} {% endblock %} 
