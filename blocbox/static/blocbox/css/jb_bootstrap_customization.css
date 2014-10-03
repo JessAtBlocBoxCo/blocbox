@@ -208,7 +208,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 }
 /*Make the navbar fixed if its mobile */
 @media (max-width: 767px) {
-	.waitlistbody .navbar-default {position: fixed; top:0; right: 0; left: 0;z-index: 10000 }
+	.waitlistbody .navbar-default {position: fixed; top:0; right: 0; left: 0;z-index: -10000 }
 	.waitlistbody .anchor{padding-top: 35px; } /*and add padding to the anchor because there's a navbar now */
 }
 		
