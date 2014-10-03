@@ -584,6 +584,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 
 @media (min-width: 1200px) {
     .marginsides80pxlg {margin-left: 80px; margin-right: 80px; }
+    .mobileonly {display: none; }
     
 }
  
@@ -594,6 +595,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	h1{font-size: 5em; }
 	h2{font-size: 3em; }
 	h3{font-size: 1.5em; }
+    .mobileonly {display: none; }
 }
 
 /*add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why */
@@ -602,6 +604,8 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	h1{font-size: 3em; }
 	h2{font-size: 1.75em; }	
   h3 {font-size: 1.25em; line-height: 1.5em }
+    .mobileonly {display: none; }
+}
   
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 @media (max-width: 480px) {
