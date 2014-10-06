@@ -609,8 +609,8 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	h2{font-size: 1.75em; }	
   h3 {font-size: 1.25em; line-height: 1.5em }
     .mobileonly {display: none; }
-    .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
-    .fullorange {background-color: rgb(255, 203, 19); }
+    .orangebackground {background-color: rgb(255,195,0); } /*Hex Equiv:  #FFCB13 */
+    .fullorange {background-color: rgb(255,195,0); }
 }
   
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
