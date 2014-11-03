@@ -43,13 +43,13 @@
    				<!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
     				<label for="exampleInputEmail1">Email address</label> --->
                     <div class="row">
-                        <div class="col-sm-9 col-md-5 col-md-offset-1">
+                        <div class="col-xs-9 col-md-5 col-md-offset-1">
                             {{ user_form.email.errors }}
     				        <label for="id_email" class="col-sm-3 col-md-12">Enter Your Email</label>
                             <input type="email" class="form-control" name="email" id="id_email"  placeholder="you@example.com">
                         </div>
 
-                         <div class="col-sm-9 col-md-5">
+                         <div class="col-xs-9 col-md-5">
                              {{ user_form.zipcode.errors }}
                              <label for="id_zipcode" class="col-sm-3 col-md-12">Enter Your Zipcode</label>
                              <input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode">
