@@ -607,7 +607,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	body {font-size: 12px; }
 	h1{font-size: 3em; }
 	h2{font-size: 1.75em; }	
-  h3 {font-size: 1.25em; line-height: 1.5em }
+    h3 {font-size: 1.25em; line-height: 1.5em }
     .mobileonly {display: none; }
     .orangebackground {background-color: rgb(255,195,0); } /*Hex Equiv:  #FFCB13 */
     .fullorange {background-color: rgb(255,195,0); }
@@ -618,14 +618,15 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 	body {font-size: 12px; } /*make default font-size 10px for mobile */
 	h1{font-size: 2.5em; }
 	h2{font-size: 2em; }	
-  h3 {font-size: 1.143em; line-height: 1.38em }
-  .font10pxmobile {font-size: 10px; }
+    h3 {font-size: 1.143em; line-height: 1.38em }
+    .font10pxmobile {font-size: 10px; }
 	.navbarlogo {height: 40px; width: 200px; }
 	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
 	.nopaddingmobile {padding:0px}
     .nomargintopmobile {margin-top: 0px; }
 	.paddingsides3pxmobile {padding-left:3px; padding-right:3px;} 
 	.paddingsides10pxmobile {padding-left:10px; padding-right:10px;}
+    .margintop20pxmobile {margin-top: 20px; }
 	.lightweight {font-weight: 400 ; } /*per john - set lightweight equal to 400 if mobile */
 	footer > .container-fluid, footer > .container-fluid > div {padding-left:0px; padding-right:0px; text-align: center; }
     .mobilehide {display: none; }
