@@ -39,7 +39,7 @@
        	{% csrf_token %}
         {{ user_form.non_field_errors }}
 
-      	<div class="form-group row">
+      	<div class="form-group">
    				<!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
     				<label for="exampleInputEmail1">Email address</label> --->
                     <div class="row">
@@ -57,7 +57,7 @@
                     </div>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group">
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-md-offset-1">
                     {{ user_form.password.errors }}
