@@ -45,18 +45,15 @@
                     <div class="row">
                         {{ user_form.email.errors }}
     				    <label for="id_email" class="col-sm-3 col-md-5 col-md-offset-1">Enter Your Email</label>
-                        <label for="id_zipcode" class="col-sm-3 col-md-5">Enter Your Zipcode</label>
+                        <input type="email" class="form-control" name="email" id="id_email"  placeholder="you@example.com">
                     </div>
 
     				<div class="row">
                          <div class="col-sm-9 col-md-5 col-md-offset-1">
-    					 <input type="email" class="form-control" name="email" id="id_email"  placeholder="you@example.com">
+                             {{ user_form.zipcode.errors }}
+                             <label for="id_zipcode" class="col-sm-3 col-md-5">Enter Your Zipcode</label>
+                             <input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode">
                         </div>
-
-                        {{ user_form.zipcode.errors }}
-                        <div class="col-sm-9 col-md-5">
-    					<input type="number" class="form-control" name="zipcode" id="id_zipcode"  placeholder="Zipcode">
-    				    </div>
                     </div>
         </div>
 
