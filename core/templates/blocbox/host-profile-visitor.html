@@ -60,6 +60,23 @@
     <!--you dont need this - use offset property instead - see that i added col-sm-offset1 at line 50 
     <div class="col-sm-1"></div>     -->
 
+    <div class="col-xs-12 col-sm-6"> <!--profilebox  marginleftright10px adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
+        <div class="profilebox">
+            <p class="orangetext centerboxheader">Hi Neighbor!</p>
+            <div class="profileboxline"></div>
+            <p class="centerboxtext">{{ host.host_aboutme }}</p>
+        </div>
+    </div>
+    
+    <div class="col-xs-12 col-sm-2"> <!-- marginleftright10px -->
+        <div class="profilebox">
+            <p class="bluegreytext textcenter sideboxtext">When I'm Home</p>
+            <div class="profileboxline"></div>
+            <p class="paddingtop20px">Tuesday - Friday</p>
+            <p>3 PM to 9PM</p>
+        </div>
+    </div>
+   
     <div class="col-xs-12 col-sm-offset-1 col-sm-2"> <!--  profilebox marginleftright10px-->
         <div class="profilebox">
             <p class="redtext sideboxtext">Success Rate</p>
@@ -69,24 +86,7 @@
         </div> 
     </div> 
 
-    <div class="col-xs-12 col-sm-6"> <!--profilebox  marginleftright10px adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
-        <div class="profilebox">
-            <p class="orangetext centerboxheader">Hi Neighbor!</p>
-            <div class="profileboxline"></div>
-            <p class="centerboxtext">{{ host.host_aboutme }}</p>
-        </div>
-          
-    </div>
 
-    <div class="col-xs-12 col-sm-2"> <!-- marginleftright10px -->
-        <div class="profilebox">
-            <p class="bluegreytext textcenter sideboxtext">When I'm Home</p>
-            <div class="profileboxline"></div>
-              <p class="paddingtop20px">Tuesday - Friday</p>
-              <p>3 PM to 9PM</p>
-        </div>
-
-  	</div>
     
     <!--dont need this
     <div class="col-sm-1"></div> -->
