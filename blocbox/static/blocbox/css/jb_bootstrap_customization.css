@@ -612,6 +612,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .orangebackground {background-color: rgb(255,195,0); } /*Hex Equiv:  #FFCB13 */
     .fullorange {background-color: rgb(255,195,0); }
     .profilepic {position: absolute; max-width: 150px; max-height: 150px; bottom: 10px; }
+    .sideboxtext {text-align: left; }
 }
   
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
