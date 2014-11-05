@@ -114,8 +114,13 @@
 		</div> <!--navbar-header-->
    
      <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
+    <div class="collapse navbar-collapse dropdown" id="bs-example-navbar-collapse-1">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+            <span class="caret"></span>
+        </button>
+      <ul class="dropdown-menu nav navbar-nav navbar-right" role="menu">
+
       	
       	<!--first link - active shading - curent page  - 
       	JMY is removing this - makes the navbar too long, and shows this page twice - can modify with PHP so 
