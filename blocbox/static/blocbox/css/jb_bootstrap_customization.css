@@ -633,4 +633,4 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .waitlistbody .nav-blocbox-name {display: none; }
     .mobileheader {font-size: 2.00em; font-weight: 300; line-height: 1.38em; }
     .mobileonly {display: block; }
- }
+    .profilepic {position: absolute; max-width: 75px; max-height: 75px; bottom: -40px; }
