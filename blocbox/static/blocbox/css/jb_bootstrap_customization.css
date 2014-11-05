@@ -611,7 +611,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .mobileonly {display: none; }
     .orangebackground {background-color: rgb(255,195,0); } /*Hex Equiv:  #FFCB13 */
     .fullorange {background-color: rgb(255,195,0); }
-    .profilepic {position: absolute; max-width: 100px; max-height: 100px; bottom: -40px; }
+    .profilepic {position: absolute; max-width: 125px; max-height: 125px; bottom: -40px; }
 }
   
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
@@ -634,5 +634,5 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .waitlistbody .nav-blocbox-name {display: none; }
     .mobileheader {font-size: 2.00em; font-weight: 300; line-height: 1.38em; }
     .mobileonly {display: block; }
-    .profilepic {position: absolute; max-width: 100px; max-height: 100px; bottom: -40px; }
+    .profilepic {position: absolute; max-width: 125px; max-height: 125px; bottom: -40px; }
 }
