@@ -42,14 +42,7 @@ The URLs for this site, and the corresponding files are as follows:
 	
 	- What happens when a user submits/clicks "Sign up and REquest to Connect"
 			- They are registered as a user on user_info table
-			- the user is kept at same URL but page says "Thank you for registering" then "Login to return to homepage" 
-						
-						-!!!NEED TO UPDATE/REPLACE THIS WITH WELCOME/DASHBOARD - A HOLDING PAD FOR THEM BEFORE THE USER REQUESTS!!!!
-						
-						- this is defined with {% block welcome %} if the user is registered..
-						
-						-!!! NEED TO MAKE SURE THIS DOESN'T SHOW UP IF THE USER HAS ACCEPTED/AUTOACCPETED - MODIFY FOR THAT!!!!
-						
+			- the user is kept at same URL but page says "Thank you for registering.. you will be noified.. etc.. this is defined in welcome block			
 			- An email is sent to the host asking if they want to accept,
 						- Email template is at: \core\templates\emails\requestconnect.txt
 						- Function for sending email is defined at \core\views.py\confirmconnect_mail  (this last part of that path is the def defined in views.py)
@@ -70,11 +63,11 @@ The URLs for this site, and the corresponding files are as follows:
 	- the template is at blocbox/core/templates/blocbox/sign-up-withoutconnect.html, also  extends baseesignup.html
 	
 	
-7. blocbox.co/login/
-	- this is the login page
-	- the template is at blocbox/core/templates/blocbox/sign-in.html
+7. blocbox.co/login/ (template: blocbox/core/templates/blocbox/sign-in.html)
+	- requests email and password
+	- goes to dashboard after user logs in
 
-8. blocbox.co/startshipment !!! JESS NEEDS TO CREATE TEMPLTE !!!
+8. blocbox.co/startashipment (template: core/templates/startashipment.html)
 	- Data presented
 		-Host name
 		-Host address
@@ -85,8 +78,7 @@ The URLs for this site, and the corresponding files are as follows:
 		-Host Choice
 		-Shipping Options
 
-9. blcobox.co/payment !!! JESS NEEDS TO CREATE TEMPLATE !!!
-
+9. blcobox.co/payment (templte: core/templates/payment.html)
 	- Data presented
 		-Package pricing
 		-Paypal Account (If linked)
@@ -94,14 +86,21 @@ The URLs for this site, and the corresponding files are as follows:
 	- Data requested
 		-Payment plan selection
 
-10. blcobox.co/shiporder !!! JESS NEEDS TO CREATE TEMPLATE !!!
+10. blcobox.co/shippackage (template: core/templates/shippackage.html)
 
 	- Data presented
 		-Host Name
 		-Host Address
 
-11. blcobox.co/dashboard !!! JESS NEEDS TO CREATE TEMPLATE !!!
-	- Data presented
+11. blcobox.co/dashboard (template: core/templates/dashboard.html)
+	- Data requested (if they haven't filled it in)	
+			- personal introduction
+			- User notification preferences
+			-Profile picture upload (can this  be done through facebook?)
+			-Paypal/payment activation
+			
+			
+	- Data presented (if has been provided)
 		-User picture
 		-User name
 		-User address
@@ -110,17 +109,6 @@ The URLs for this site, and the corresponding files are as follows:
 		-Current Favors (description, host, host address, expiration date)
 		-Recent Shipments (tracking number, host, host address, delivery date)
 
-12. blocbox.co/welcome !!! JESS NEEDS TO CREATE TEMPLATE !!!
-
-	- Data presented
-		-User name (Nav Bar/"Welcome to Blocbox John!")
-		-Host name ("an invitation has been sent to John”)
-
-	- Data requested
-		-User personal introduction
-		-User notification preferences
-		-Profile picture upload
-		-Paypal/payment activation
 	-Actions
 		-Share via social
 		-Share via email
@@ -128,6 +116,9 @@ The URLs for this site, and the corresponding files are as follows:
 		-Share via flyers
 		-Share via link
 		
+
+
+
 
 END-USER NARRATIVE
 
