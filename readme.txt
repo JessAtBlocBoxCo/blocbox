@@ -37,19 +37,25 @@ The URLs for this site, and the corresponding files are as follows:
 
 5. blocbox.co/3/signupconnect/
 	- this is the page to sign-up and connect to John - "3" corresponds to USERid=3, but you can replace with "1", eg.,. to connect to jess. same as above
-	- teh template is at blocbox/core/templates/blocbox/sign-up-connect.html
-
-	- Data requested
-		-User email
-		-User Zip
-		-User Password
-		-User address
-		-User intro
-		-User pick up times
-		-Other services
-		-Service requests
-		-Register as host
-		-Interested in learning about hosting
+	- teh template is at blocbox/core/templates/blocbox/sign-up-connect.html,but it extends a template at basesignup.html (via sign-up-withtoutconnect.html)
+	- if you want to change the basic form structure, you need to edit basesignup.html
+	
+	- What happens when a user submits/clicks "Sign up and REquest to Connect"
+			- They are registered as a user on user_info table
+			- An email is sent to the host asking if they want to accept,
+						- Email template is at: \core\templates\emails\requestconnect.txt
+						- Function for sending email is defined at \core\views.py\confirmconnect_mail  (this last part of that path is the def defined in views.py)
+			- An email is sent to the user telling them a 
+						- Email template is at: \core\templates\emails\requesthasbeensent.txt
+						- Function for sending email is defined at \core\views.py\requesthasbeensent
+			- When the host accepts the request, an email is sent to the user to confirm
+						- Email template is at: \core\templates\emails\notifyconnectionconfirmed.txt
+						- Function for sending email is defined at \core\views.py\notifyconnectionconfirmed 
+			- NOTE ABOUT EMAILS: emails are sent from admin@blocbox.co - in blocbox/blocbox/settings.py - settings at bottom MUST UPDATE IF PWD CHANGES
+			
+	- Data requested 
+		-User info: User email, User Zip, User Password, User address, User intro, User pick up times, Other services, Service requests
+		- Register as host, Interested in learning about hosting, etc...
 
 6. blocbox.co/signup/
 	- this is the page to sign-up WITHOUT CONNECTING to a particular host - so it passes no arguments in the url

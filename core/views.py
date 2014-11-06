@@ -220,7 +220,6 @@ def confirmconnect_mail(request, hostid, userid, messagetohost, useremail, first
     message = render_to_string('emails/requestconnect.txt', { 'host': host, 'enduser': enduser, 'emailgreeting': messagetohost, 
     	'useremail': useremail, 'firstname':firstname, 'lastname':lastname,})
     subject = "You have a new request to connect from a neighbor"
-    #'Trinh Nguyen <trinh@example.com>'
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to request to connect.")
 

@@ -1,6 +1,27 @@
 #1.Build Welcome Page
 """
+	- extend base.html
+	
+5. Welcome to Blocbox
 
+A. Push
+	User name (Nav Bar/"Welcome to Blocbox John!")
+	Host name ("an invitation has been sent to John”)
+
+
+	B. Pull
+		User personal introduction
+		User notification preferences
+
+	C. Actions
+		Share via social
+		Share via email
+		Share via postcard
+		Share via flyers
+		Share via link
+		Profile picture upload
+		Paypal/payment activation
+	
 """
 #2.Build start-a-shipment page
 """
@@ -20,167 +41,25 @@ extend base.html
 """
 #5. Build User-Dashboard page
 """
-extend base.hmtl
+	- extend base.hmtl
+	- (low priority) research carrier API	
 
 """
-#3. Build pages (Welcome, Start a Shipment, Payment, Ship package, User Dashboard) - all extended from base.html
-"""
 
-"""
 #4. Write Pitch Draft - outline with timing and suggestions for what slide should accompany
 
+#5. HALP email
 
+#6. Navbar/ drop downs
 
+#7. Review stock questions (on gdrive) to ensure we have answers to all. NOT suggesting we write answers. We’ll review them this weekend.
 
-3. Push/Pull for completed pages
 
 
 
 
 
-4. HALP email
 
-
-
-
-5. Navbar/ drop downs
-
-
-
-
-6. Research carrier API for dashboard
-
-
-
-
-
-7. Review stock questions (on gdrive) to ensure we have answers to all. NOT suggesting we write answers. We’ll review them this weekend.
-
-
-
-
-JB Priorities:
-
-
-
-
-1. Build pages (first, start a shipment page)
-
-2. Once JY completes first draft of pitch outline, sketch outline/new deck slides
-
-
-
-
-
-
-
-SITE/DEMO MAP
-
-
-
-
-1. Landing (complete minus minor problems described in HALP email)
-
-
-
-
-2. Search (complete)
-
-
-
-
-3. Host Visitor Profile
-
-
-
-
-A. Push
-
-Host first name (done)
-
-Host address (done)
-
-Host favors requested (done)
-
-Host about me (needs to be edited to strike last sentence)
-
-Host currently helping
-
-Host availability
-
-Host other offers
-
-
-
-
-4. Sign Up (complete)
-
-
-
-
-A. Pull
-
-User email
-
-User Zip
-
-User Password
-
-User address
-
-User intro
-
-User pick up times
-
-Other services
-
-Service requests
-
-Register as host
-
-Interested in learning about hosting
-
-
-
-
-5. Welcome to Blocbox
-
-
-
-
-A. Push
-
-User name (Nav Bar/"Welcome to Blocbox John!")
-
-Host name ("an invitation has been sent to John”)
-
-
-
-
-B. Pull
-
-User personal introduction
-
-User notification preferences
-
-
-
-
-C. Functions (don’t need to be functional for demo)
-
-Share via social
-
-Share via email
-
-Share via postcard
-
-Share via flyers
-
-Share via link
-
-Profile picture upload
-
-Paypal/payment activation
 
 
 
@@ -257,30 +136,20 @@ Host Address
 
 
 10. User Dashboard
+"""
+	A. Push
+		User picture
+		User name
+		User address
+		User phone
+		Current Shipments (tracking number, host, host address, delivery date)
+		Current Favors (description, host, host address, expiration date)
+		Recent Shipments (tracking number, host, host address, delivery date)
+"""
 
+#add a field to the user_info that shows the first host the user connected to - NULl is OK for this b/c sometimes wont have connected to anyone... 
 
-
-
-A. Push
-
-User picture
-
-User name
-
-User address
-
-User phone
-
-Current Shipments (tracking number, host, host address, delivery date)
-
-Current Favors (description, host, host address, expiration date)
-
-Recent Shipments (tracking number, host, host address, delivery date)
-
-
-
-
-1. finish paypal/payment thing
+#. finish paypal/payment thing
 https://github.com/spookylukey/django-paypal
 # views.py
 ...
