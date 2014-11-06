@@ -562,6 +562,24 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     margin-left: 75px;
 }
 
+.menubutton {
+    font-size: 2.00em;
+    font-weight: 300;
+    color: black;
+    height: 32px;
+    width: 100%;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 0px;
+    margin-top: 10px;
+}
+
 /*-------------------------------------------------------------*
 * HOST PROFILE VISITOR PAGE STYLES
 *--------------------------------------------------------------*/
