@@ -12,12 +12,11 @@ urlpatterns = patterns('',
     url(r'^searchold/', views.searchold, name='searchtest'),  
     url(r'^(?P<userinfo_id>\d+)/hostprofilevisitor/$',views.hostprofilevisitor, name='hostprofilevisitor'),  
     url(r'^dashboard/',views.dashboard, name='dashboard'),  
-    url(r'^startashipment/', views.startashipment, name='startashipment')
-    
+    url(r'^startashipment/', views.startashipment, name='startashipment'),   
     #url(r'^hostprofile/', include('hostprofile.urls', namespace="hostprofile")),
     #url(r'^payment/', include('payment.urls', namespace="payment")),
     #url(r'^polls/', include('polls.urls', namespace="polls")), #INCLUDE the URLconf at blocbox/polls
-    url(r'^admin/', include(admin.site.urls)), #INCLUDE the URLconf at 
+    url(r'^admin/', include(admin.site.urls)), 
     url(r'^(?P<userinfo_id>\d+)/signupconnect/$', views.signupconnect, name='signupconnect'),
     url(r'signup/', views.signupnoconnect, name='signupnoconnect'), 
     url(r'signuphost/', views.signuphost, name='signuphost'),
