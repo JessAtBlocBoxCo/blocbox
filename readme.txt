@@ -42,6 +42,14 @@ The URLs for this site, and the corresponding files are as follows:
 	
 	- What happens when a user submits/clicks "Sign up and REquest to Connect"
 			- They are registered as a user on user_info table
+			- the user is kept at same URL but page says "Thank you for registering" then "Login to return to homepage" 
+						
+						-!!!NEED TO UPDATE/REPLACE THIS WITH WELCOME/DASHBOARD - A HOLDING PAD FOR THEM BEFORE THE USER REQUESTS!!!!
+						
+						- this is defined with {% block welcome %} if the user is registered..
+						
+						-!!! NEED TO MAKE SURE THIS DOESN'T SHOW UP IF THE USER HAS ACCEPTED/AUTOACCPETED - MODIFY FOR THAT!!!!
+						
 			- An email is sent to the host asking if they want to accept,
 						- Email template is at: \core\templates\emails\requestconnect.txt
 						- Function for sending email is defined at \core\views.py\confirmconnect_mail  (this last part of that path is the def defined in views.py)
@@ -59,7 +67,8 @@ The URLs for this site, and the corresponding files are as follows:
 
 6. blocbox.co/signup/
 	- this is the page to sign-up WITHOUT CONNECTING to a particular host - so it passes no arguments in the url
-	- the template is at blocbox/core/templates/blocbox/sign-up-withoutconnect.html
+	- the template is at blocbox/core/templates/blocbox/sign-up-withoutconnect.html, also  extends baseesignup.html
+	
 	
 7. blocbox.co/login/
 	- this is the login page

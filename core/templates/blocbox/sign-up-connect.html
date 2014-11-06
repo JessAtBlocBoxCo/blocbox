@@ -10,6 +10,20 @@
 	<h5 class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px">In order to connect, we need to ask for some basic information. Already Registered? <a href="/login/">Login here.</a></h5>
 {% endblock %}
 
+<!--this is teh welcome text to display if/when the user is registered - need to adapt it if the hosts has accepted or auto-accpets -->
+
+{% block welcome %}   
+	  	<br> <br>
+      <h3>
+      		Thank you for Registering! 
+      		An email has been sent to {{ host.first_name }} 
+      		You'll receive a notification when {{ host.first_name }} confirms your request to connect.
+      		In the meantime, <a href="/login/">login to your account</a> to visit your dashboard and update your account preferences and user information.
+      </h3>
+ 			<br> <br> <br> <br> <br>
+
+{% endblock %}
+
 
 {% block introduceyourself %} 
 
