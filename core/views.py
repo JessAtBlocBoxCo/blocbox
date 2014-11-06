@@ -261,6 +261,17 @@ def waitlist_almostfinished(request):
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
 
+
+def startashipment(request):
+		return render(request, 'blocbox/startashipment.html')
+
+
+
+
+
+#------------------------------------------------------------------------------------
+#Tests
+#------------------------------------------------------------------------------------
 #bootsrap test - copy of the waitlist sign-up page
 def bootstraptest(request):
     return render(request, 'blocbox/x_bootstraptest.html') 
