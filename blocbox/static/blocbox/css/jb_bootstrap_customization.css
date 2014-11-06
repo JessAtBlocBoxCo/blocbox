@@ -559,6 +559,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 .dashpic {
     max-width: 175px;
     max-height: 175px;
+    margin: auto;
 }
 
 /*-------------------------------------------------------------*
