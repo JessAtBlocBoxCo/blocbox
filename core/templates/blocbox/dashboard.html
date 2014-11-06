@@ -12,16 +12,16 @@
 {% block content %}
 
 <div class="container-fluid fillpage whitebackground relativediv">
-    <div class=" col-xs-3">
-        <img class="dashpic" src="{% static 'blocbox/images/genderless-silh-whited.png' %}"  /> 
-        <h3>{{ user.first_name }}</h3>
-        <p>EDIT PROFILE</p>
-    </div>
     <div>
         <h3>Welcome to Blocbox, {{ user.first_name }}!</h3>
     </div>
 
     <div class="row">
+        <div class=" col-xs-3">
+            <img class="dashpic" src="{% static 'blocbox/images/genderless-silh-whited.png' %}"  /> 
+            <h3 class="textcenter">{{ user.first_name }}</h3>
+            <p class="textcenter">EDIT PROFILE</p>
+        </div>
         <p class="col-xs-2 col-xs-offset-3">CURRENT</p>
     </div>
     <div class="col-xs-8 col-xs-offset-3 offwhitebackground">
