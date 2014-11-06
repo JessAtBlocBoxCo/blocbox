@@ -7,37 +7,42 @@ If you ever need to figure out teh path to a file, you cal right-clik on the apg
 
 The URLs for this site, and the corresponding files are as follows:
 
-1. http://107.170.128.21/
+1. blocbox.co
 	- this is the waitlist page
 	- the template is at blocbox/core/templates/blocbox/index.html
 
-2. http://107.170.128.21/beta/
+2. blocbox.co/beta/
 	- this is the beta page
 	- the template is at blocbox/core/templates/blocbox/beta.html
 
-3. http://107.170.128.21/search/
+3. blocbox.co/search/
 	- this is the search page (after clikign on "Get started")
 	- the tempalte is at blocbox/core/templates/blocbox/search.shtml
 	- teh styles/css need to be fixed
 	
-4. http://107.170.128.21/3/hostprofilevisitor/ 
+4. blocbox.co/3/hostprofilevisitor/ 
 	- this is John's host profile profile. 
 	- the "3" corresponds to John because he is ID #3, you can repliace this with any number (there are like 15 users in the database)
 				corresponding to a user ID, and it will render the page with their information
 	- the template is at blocbox/core/templates/blocbox/host-profile-visitor.html
 
-5. http://107.170.128.21/3/signupconnect/
+5. blocbox.co/3/signupconnect/
 	- this is the page to sign-up and connect to John - "3" corresponds to USERid=3, but you can replace with "1", eg.,. to connect to jess. same as above
 	- teh template is at blocbox/core/templates/blocbox/sign-up-connect.html
 
-6. http://107.170.128.21/signup/
+6. blocbox.co/signup/
 	- this is the page to sign-up WITHOUT CONNECTING to a particular host - so it passes no arguments in the url
 	- the template is at blocbox/core/templates/blocbox/sign-up-withoutconnect.html
 	
-7. http://107.170.128.21/login/
+7. blocbox.co/login/
 	- this is the login page
 	- the template is at blocbox/core/templates/blocbox/sign-in.html
-	
+
+***JOHN: FILL THIS IN BELOW***
+8. blocbox.co/startshipmen !!! JESS NEEDS TO CREATE TEMPLTE !!!
+ - 
+
+9. blcobox.co/dashboard !!! JESS NEEDS TO CREATE TEMPLATE !!!
 The "Static" files (CSS, images, media, etc) are at:  C:\Users\jyeats\git\blocbox\blocbox\static\
  	- the CSS pages are at C:\Users\jyeats\git\blocbox\blocbox\static\blocbox\css
  	
