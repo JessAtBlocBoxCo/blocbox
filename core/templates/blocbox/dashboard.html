@@ -11,11 +11,12 @@
   
 {% block content %}
 
-<div>
+<div class="whitebackground">
+
     <div class="col-xs-2 col-xs-offset-3">
         <p>CURRENT</p>
     </div>
-    <div class="row offwhitebackground">
+    <div class="offwhitebackground">
         <h3 class="col-xs-3 col-xs-offset-1">Shipments</h3>
             <div class="row">
                <div class="col-xs-10 col-xs-offset-3">
@@ -28,142 +29,143 @@
                 </div>
             </div>
     </div>
+
+
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <div>
+
+        <div>
+          <h3>{{user.first_name}}'s Blocbox Dashboard</h3>
+
+          <h4><a href="/messages/inbox/">Inbox</a></h4>
+          <h4><a href="/messages/outbox">Outbox</a></h4>
+
+          <p>EDIT PROFILE</p>
+        </div>
+
+        <div>
+          <p>Invite Your Neighbors</p>
+          <p>Become a Host</p>
+          <p>Love Blocbox?</p>
+        </div>
+        <div>
+          <p>PHONE</p>
+          <p>202-555-XXXX</p>
+        </div>
+        <p>HOME</p>
+        <p>212 Grand Ave. Apt. 2</p>
+      </div>
+
+
+      <div>
+                    <div> <p>Favors</p></div>
+                    <div>
+                      <p>OPTIONS</p>
+                      <p>EXPIRATION DATE</p>
+                      <p>ADDRESS</p>
+                      <p>NEIGHBOR</p>
+                      <p>DESCRIPTION</p>
+                      <p>STATUS</p>
+                    </div>
+                    <div>
+                      <p>Modify</p>
+                      <p>May 5</p>
+                      <p>360 Grand Ave. Apt. 2</p>
+                      <p>Sylvia</p>
+                      <p>House Sitting</p>
+                      <p>In progress</p>
+                    </div>
+      </div>
+
+
+      <div>
+                    <p>RECENT</p>
+
+                    <div>  <p>Shipments</p> </div>
+
+                    <div>
+                      <p>OPTIONS</p>
+                      <p>DELIVERY DATE</p>
+                      <p>ADDRESS</p>
+                      <p>NEIGHBOR</p>
+                      <p>TRACKING NUMBER</p>
+                      <p>STATUS</p>
+                    </div>
+
+                    <div>
+                      <p>View Receipt</p>
+                      <p>May 5</p>
+                      <p>360 Grand Ave. Apt. 2</p>
+                      <p>Sylvia</p>
+                      <p>Z139W198WQPUTV</p>
+                      <p>Received</p>
+                    </div>
+      </div>
+
+      <div>
+            <p>CURRENT</p>
+
+            <div> <p>Shipments</p>	</div>
+
+                <div>
+                  <p>OPTIONS</p>
+                  <p>DELIVERY DATE</p>
+                  <p>ADDRESS</p>
+                  <p>NEIGHBOR</p>
+                  <p>TRACKING NUMBER</p>
+                  <p>STATUS</p>
+                </div>
+
+                <div>
+                  <p>April 19</p>
+                  <p>360 Grand Ave. Apt. 2</p>
+                  <p>Sylvia</p>
+                  <p>Z139W198WQPUTV</p>
+                  <p>Ready for Pickup</p>
+                  <p>Modify</p>
+                  <p>Message Host</p>
+                </div>
+
+
+
+                <div>
+                  <p>Modify</p>
+                  <p>April 21</p>
+                  <p>360 Grand Ave. Apt. 2</p>
+                  <p>Sylvia</p>
+                  <p>Z139W198WQPUTV</p>
+                  <p>Out for Delivery</p>
+                </div>
+
+
+                <div>
+                  <p>Modify</p>
+                  <p>May 5</p>
+                  <p>360 Grand Ave. Apt. 2</p>
+                  <p>Sylvia</p>
+                  <p>Z139W198WQPUTV</p>
+                  <p>In transit</p>
+                </div>
+
+      </div>
+
+        <div>
+        <div>
+          <p>ACCOUNT</p>
+          <p>TRANSACTIONS</p>
+
+          <div onClick="window.location='/inbox/'">
+            <p>MESSAGES</p>
+            <p><br></p>
+                </div>
+
+          <p>PROFILE</p>
+          <p>DASHBOARD</p>
+        </div>
+
+      </div>
+
+    </div> 
 </div>
-
-<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-  <div>
-   
-    <div>
-      <h3>{{user.first_name}}'s Blocbox Dashboard</h3>
-      
-      <h4><a href="/messages/inbox/">Inbox</a></h4>
-      <h4><a href="/messages/outbox">Outbox</a></h4>
-       
-      <p>EDIT PROFILE</p>
-    </div>
-    
-    <div>
-      <p>Invite Your Neighbors</p>
-      <p>Become a Host</p>
-      <p>Love Blocbox?</p>
-    </div>
-    <div>
-      <p>PHONE</p>
-      <p>202-555-XXXX</p>
-    </div>
-    <p>HOME</p>
-    <p>212 Grand Ave. Apt. 2</p>
-  </div>
-  
-  
-  <div>
-    			<div> <p>Favors</p></div>
-    			<div>
-    			  <p>OPTIONS</p>
-    			  <p>EXPIRATION DATE</p>
-    			  <p>ADDRESS</p>
-    			  <p>NEIGHBOR</p>
-    			  <p>DESCRIPTION</p>
-    			  <p>STATUS</p>
-    			</div>
-    			<div>
-    			  <p>Modify</p>
-    			  <p>May 5</p>
-    			  <p>360 Grand Ave. Apt. 2</p>
-    			  <p>Sylvia</p>
-    			  <p>House Sitting</p>
-    			  <p>In progress</p>
-    			</div>
-  </div>
-  
-  
-  <div>
-    			<p>RECENT</p>
-    			
-    			<div>  <p>Shipments</p> </div>
-    			
-    			<div>
-    			  <p>OPTIONS</p>
-    			  <p>DELIVERY DATE</p>
-    			  <p>ADDRESS</p>
-    			  <p>NEIGHBOR</p>
-    			  <p>TRACKING NUMBER</p>
-    			  <p>STATUS</p>
-    			</div>
-    			
-    			<div>
-    			  <p>View Receipt</p>
-    			  <p>May 5</p>
-    			  <p>360 Grand Ave. Apt. 2</p>
-    			  <p>Sylvia</p>
-    			  <p>Z139W198WQPUTV</p>
-    			  <p>Received</p>
-    			</div>
-  </div>
-  
-  <div>
-    	<p>CURRENT</p>
-    
-    	<div> <p>Shipments</p>	</div>
-    
-    		<div>
-    		  <p>OPTIONS</p>
-    		  <p>DELIVERY DATE</p>
-    		  <p>ADDRESS</p>
-    		  <p>NEIGHBOR</p>
-    		  <p>TRACKING NUMBER</p>
-    		  <p>STATUS</p>
-    		</div>
-    		
-    		<div>
-    		  <p>April 19</p>
-    		  <p>360 Grand Ave. Apt. 2</p>
-    		  <p>Sylvia</p>
-    		  <p>Z139W198WQPUTV</p>
-    		  <p>Ready for Pickup</p>
-    		  <p>Modify</p>
-    		  <p>Message Host</p>
-    		</div>
-    
-    
-    
-    		<div>
-    		  <p>Modify</p>
-    		  <p>April 21</p>
-    		  <p>360 Grand Ave. Apt. 2</p>
-    		  <p>Sylvia</p>
-    		  <p>Z139W198WQPUTV</p>
-    		  <p>Out for Delivery</p>
-    		</div>
-    		
-    		
-    		<div>
-    		  <p>Modify</p>
-    		  <p>May 5</p>
-    		  <p>360 Grand Ave. Apt. 2</p>
-    		  <p>Sylvia</p>
-    		  <p>Z139W198WQPUTV</p>
-    		  <p>In transit</p>
-    		</div>
-    
-  </div>
-  
- 	<div>
-    <div>
-      <p>ACCOUNT</p>
-      <p>TRANSACTIONS</p>
-     
-      <div onClick="window.location='/inbox/'">
-        <p>MESSAGES</p>
-        <p><br></p>
-			</div>
-      
-      <p>PROFILE</p>
-      <p>DASHBOARD</p>
-    </div>
-
-  </div>
-
-</div> 
 
 {% endblock %}
