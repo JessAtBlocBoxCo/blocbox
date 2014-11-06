@@ -21,13 +21,13 @@
             <img class="dashpic" src="{% static 'blocbox/images/genderless-silh-whited.png' %}"  /> 
             <h3 class="textcenter">{{ user.first_name }}</h3>
             <p class="textcenter">EDIT PROFILE</p>
-            <p>HOME</p>
-            <p>{{ user.address }}</p>
-            <p>PHONE</p>
-            <p>{{ user.phone }}</p>
-            <p>Invite Your Neighbors</p>
-            <p>Become a Host</p>
-            <p>Love Blocbox?</p>
+            <p  class="textcenter">HOME</p>
+            <p  class="textcenter">{{ user.address }}</p>
+            <p  class="textcenter">PHONE</p>
+            <p  class="textcenter">{{ user.phone }}</p>
+            <p  class="textcenter">Invite Your Neighbors</p>
+            <p  class="textcenter">Become a Host</p>
+            <p  class="textcenter">Love Blocbox?</p>
         </div>
         <p class="col-xs-2">CURRENT</p>
   
@@ -66,7 +66,7 @@
             </div>
             </div>
     </div>
-</div> 
+
     <div class="col-xs-8 col-xs-offset-3 offwhitebackground margintop30px marginbottom30px">
         <div class="row">
             <h3 class="col-xs-3">Favors</h3>
@@ -121,13 +121,12 @@
             </div>
         </div>
     </div>
-
+</div> 
 
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
       <div>
 
         <div>
-          <h3>{{user.first_name}}'s Blocbox Dashboard</h3>
 
           <h4><a href="/messages/inbox/">Inbox</a></h4>
           <h4><a href="/messages/outbox">Outbox</a></h4>
