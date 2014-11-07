@@ -617,6 +617,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     min-height: 100%;
 }
 
+.infobtn {
+   margin-left: 300px;
+}
+
 /*-------------------------------------------------------------*
 * HOST PROFILE VISITOR PAGE STYLES
 *--------------------------------------------------------------*/
