@@ -46,7 +46,7 @@
     </div>
 
 
-    <div class="col-xs-8 col-xs-offset-2 profilebox">
+    <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
         <div class="row">
             <p class="col-xs-4 ltbluetext margintop10px marginsides3pct">Confirm Your Host's Availability</p>
             <div class="profileboxline marginsides3pct marginbottom20px"></div>
@@ -77,6 +77,9 @@
                 <img src="{% static "blocbox/images/calander.png" %}"  height="200" width="200" />
             </div>
            </div>
+    </div>
+    <div class="col-sm-3 col-sm-offset-6 marginbottom30px">
+        <button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">Submit</button>
     </div>
 </div>
 {% endblock %} 
