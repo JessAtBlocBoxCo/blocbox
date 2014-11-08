@@ -240,7 +240,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 /*Restrictions specific to larger screens - Have a floating logo and so forth for min-width 768 - make the navbar not float */
 @media (min-width: 768px) {
 	.waitlistbody .navbar-default {margin-bottom: 0px; margin-top: -50px;}
-	.waitlistbody .navbar-right {margin-top: 40px; }
+	.waitlistbody .navbar-right {margin-top: 50px; }
 	.waitlistbody .nav-blocbox-name {
 		display: block;
 		background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
