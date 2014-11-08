@@ -246,7 +246,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 		background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
 		background-repeat: no-repeat;
 		background-size: contain;
-		height: 70px; width: 275px; margin-top: 30px;
+		height: 70px; width: 275px; margin-top: 40px;
 		margin-left: 135px;
 		} 
 	.fixed-logo-image {
