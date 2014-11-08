@@ -101,12 +101,14 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 .paddingleft10px {padding-left: 10px; }
 .paddingleft7pt5pct {padding-left: 7.5%; }
 .paddingleft25px {padding-left: 25px; }
+.paddingleft69px {padding-left: 69px; }
 .paddingbottom10px {padding-bottom: 10px; }
 .paddingbottom30px {padding-bottom: 30px; }
 .padding5px {padding: 5px; }
 .paddingtopbottom5px {padding-top: 5px; padding-bottom: 5px; }
 .paddingtopbottom10px {padding-top: 10px; padding-bottom: 10px; }
 .nopadding {padding: 0px;}
+.nopaddingright {padding-right: 0; }
 .paddingtop5px {padding-top: 5px; }
 .paddingtop7px {padding-top: 7px; }
 .paddingtop10px {padding-top: 10px; }
