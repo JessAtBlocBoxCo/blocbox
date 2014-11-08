@@ -107,15 +107,15 @@
     		<!--jmy changing this to be a navbar-right - to left align, remove the navbar-right tag -->
       	<ul class="nav navbar-nav navbar-right"> 
   
-            <li class="paddingtopbottom5px"><a class="whitetext" href="#works">How it Works</a></li>
+            <li class=""><a class="whitetext" href="#works">How it Works</a></li>
 					
-            <li class="paddingtopbottom5px"><a class="whitetext" href="#hosting">Become a Host</a></li> <!-- <a href="#hosting">Become a Host</a> -->
+            <li class=""><a class="whitetext" href="#hosting">Become a Host</a></li> <!-- <a href="#hosting">Become a Host</a> -->
         	
             <!--add sign-in/sign-out to orange navbar -->
             {% if user.is_authenticated %}
-            <li class="paddingtopbottom5px"><a class="whitetext" href="/logout/">Sign Out</a></li>
+            <li class=""><a class="whitetext" href="/logout/">Sign Out</a></li>
             {% else %}
-            <li class=""><a class="signinbtn whitetext" href="/login/">Sign In</a></li>
+            <li class="paddingsides15px"><a class="signinbtn whitetext" href="/login/">Sign In</a></li>
             {% endif %}
             
         	<!--<li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li> -->
