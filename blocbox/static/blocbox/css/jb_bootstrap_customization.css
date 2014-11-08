@@ -452,6 +452,12 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-color: rgb(236, 240, 241);
 }
 
+.divlinewhite {
+    z-index: 6;
+    height: 0.063em;
+    background-color: rgb(255, 255, 255);
+}
+
 
 .centerboxheader {
     text-align: left;
