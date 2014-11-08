@@ -1,50 +1,10 @@
-#1.Build Welcome Page
-"""
-	- extend base.html
-	
-5. Welcome to Blocbox
+# build out the process for a non-package transaction
 
-A. Push
-	User name (Nav Bar/"Welcome to Blocbox John!")
-	Host name ("an invitation has been sent to John”)
+# User Dashboard: rsearch carrier API embedd tracking capability ito the website
 
+# Complete start-a-shipment
 
-	B. Pull
-		User personal introduction
-		User notification preferences
-
-	C. Actions
-		Share via social
-		Share via email
-		Share via postcard
-		Share via flyers
-		Share via link
-		Profile picture upload
-		Paypal/payment activation
-	
-"""
-#2.Build start-a-shipment page
-"""
-extend base.html
-
-
-"""
-#3. Build payment page
-"""
-extend base.html
-
-"""
-#4. Build Ship-package page
-"""
-extend base.html
-
-"""
-#5. Build User-Dashboard page
-"""
-	- extend base.hmtl
-	- (low priority) research carrier API	
-
-"""
+# Complete payment page
 
 #4. Write Pitch Draft - outline with timing and suggestions for what slide should accompany
 
