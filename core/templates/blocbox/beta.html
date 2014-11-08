@@ -7,6 +7,7 @@
 
 {% block topcontent %}
 	
+<div class="fillpage orangebackground text-center relativediv">
 	<div class="row text-center"> <br>
 			
 			{% if user.is_authenticated %}
@@ -41,5 +42,6 @@
 	<div class="row text-center alignbottomdiv"> 
     	<a href="#works"> <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50"  /> </a>
 	</div>
-	
+	</div>
+</div>	
 {% endblock %} <!--end topcontent block -->
