@@ -46,8 +46,8 @@ def hostprofile(request, userinfo_id):
     host = get_object_or_404(UserInfo, pk=userinfo_id)
     connections_all = Connection.objects.filter(host_user=host) 
     connections_count = Connection.objects.filter(host_user=host).count() #count them,removing status=0 after host_user=host
-    #from friends model, example online  all_friends = Connection.objects.friends(request.user)
     return render_to_response('blocbox/host-profile.html', {'host':host, 'connections_all':connections_all, 'connections_count':connections_count }, context)
+
 #Create a login viewi
 def userlogin(request):
     context = RequestContext(request)
