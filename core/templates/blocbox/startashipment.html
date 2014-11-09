@@ -47,22 +47,30 @@
         </div>
         <div class="row">
            <div class="col-sm-4 col-sm-offset-2">
-            <p class="textcenter">1. SHIPPING INFORMATION</p>
-            <div class="row">
-                <div class="dropdown marginbottom20px" id="bs-example-navbar-collapse-1">
-                    <button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-                        Fedex 2 Day
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu nav navbar-nav navbar-right" role="menu">
+                <p class="textcenter">1. SHIPPING INFORMATION</p>
+                <div class="row">
+                    <div class="dropdown marginbottom20px" id="bs-example-navbar-collapse-1">
+                        <button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            Fedex 2 Day
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu nav navbar-nav navbar-right" role="menu">
+                    </div>
                 </div>
-            </div>
             </div>
             <p class="col-sm-4 textcenter">2. HOST AVAILABILITY</p>
             <div class="col-sm-4 marginbottom30px">
                 <img class="marginleft40px" src="{% static "blocbox/images/calander.png" %}"  height="200" width="200" />
             </div>
-           </div>
+       </div>
+       <div class="row">
+           <p class="col-xs-10">Here's our avaiability policy: hosts are required to regularly update their availability.  
+               Hosts are accountable for all packages delivered on days that they commmited to being available.  
+               If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery.
+               However, if you send a packaget to a host that might arrive on a day when they have stated they are unavailable,
+               you will be charged even if the host misses the delivery.  You're likely to still get the package, but it may not be available for pickup 
+               until a later date</p>
+       </div>
     </div>
     <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
         <button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">Submit</button>
