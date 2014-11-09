@@ -128,7 +128,7 @@
         </button>
       
       	<!--list of links within the dropdown menu-->
-      	<ul class="dropdown-menu dropdown-menu-right " role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
+      	<ul class="dropdown-menu dropdown-menu-right " role="menu" aria-labelledby="dLabel"> <!--nav navbar-nav navbar-right-->      	      	
         	{% if user.is_authenticated %} <!--drop down menu if logged in-->
         		<li role="presentation"><a role="menuitem" tabindex="-1" href='/account'> {{user.first_name}}</a></li>
         		<li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment'>Start a Shipment</a></li>  
