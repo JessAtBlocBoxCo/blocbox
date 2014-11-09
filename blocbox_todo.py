@@ -1,7 +1,13 @@
 
-"""WEBSITE WORK"""
-1. fix that shit with the margin padding on right-hand side
+"""WEB WORK: jOHN"""
+1. add his profile picture to HPV.
 2. fix mobile
+
+"""WEBSITE WORK: JESS"""
+1. fix that shit with the margin padding on right-hand side
+2. Navbar 
+		- is totally fucked - the list shows up to left
+		- navbar height should be bigger on desktop
 3. "done see a blocbox host in your hood"? -- MAKE IT LARGER
 4. HPV -- remove "this is test host_aboutme message" - change the text a bit
 5. HPV pricing - says "unlimited" BUT REALLY "10 PACKAGES/MONTH"
@@ -13,12 +19,16 @@
 -- what differs when you are connected? 
 				1. Approximate Address right now we have address in... it should be a APPROXIMATE ADDRESS, 
 				2. verified info: if not connected, say "Verified Info" -- 
+				3. when connected to the user, dont say "sign up to connect" -so edit that languager
 7. jess: RE-LEARN SOUTH DATABASE MIGRATION.
 6. dashboar d- add list of users connected
 
-"""WEBSITE TASKS LOWER  PRIORITI"""
+"""WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: add green check box next to verified info
 2. JESS: verified info on HPV - only show symbol if verified, then in connect version show the DATA.
+3. JESS: update "when i'm home" information for host profile... visitor
+4. JESS: update table to have fields for what other services they are offering
+5. JESS: updating HPV so that it truly reflects what services you offer
 # check oyt the pages john made
 
 # fix the "beyond packages" text on baseorange
