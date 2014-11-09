@@ -166,7 +166,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 /*JMY ON 9NOV 2014 - update image in navbar for base page !X!*/
 .bbbasenavbar {
 	margin-top: 20px;	
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .bbbasenavbarbrand {
@@ -177,6 +177,22 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 	}
 
 .bbbasenavbarbtn {
+    background-color: rgb(255, 255, 255);
+    font-size: 2.00em;
+    font-weight: 300;
+    color: black;
+    height: 40px;
+    width: 175px;
+    border: 0;
+    margin-left: 65%;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 0px;
+    margin-top: 17px;
 }
 
 /*Make the footer text dark green for the dargreen footer on the waitlist page */
@@ -640,24 +656,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     fill: #3498db;
 }
 
-.menubutton {
-    background-color: rgb(255, 255, 255);
-    font-size: 2.00em;
-    font-weight: 300;
-    color: black;
-    height: 40px;
-    width: 175px;
-    border: 0;
-    margin-left: 65%;
-    margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    cursor: pointer;
-    vertical-align: top;
-    text-align: center;
-    border-radius: 0px;
-    margin-top: 17px;
-}
+
 
 .selector {
     background-color: rgb(255, 255, 255);
