@@ -652,7 +652,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     color: #3498db;
     border-color: rgb(223, 226, 226);
     height: 32px;
-    width: 175px;
+    min-width: 175px;
     border: solid;
     border-width: 2px;
     margin-left: 15%;
