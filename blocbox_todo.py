@@ -2,7 +2,7 @@
 """TASK MGMT FOR LIST BELOW"""
 
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
-1. JESS: baseorange fix that shit with the margin padding on right-hand side
+1. JESS: beta.html: fix that shit with the margin padding on right-hand side
 2. JESS: base.html -  Navbar 
 		- is totally fucked - the list shows up to left
 		- navbar height should be bigger on desktop
@@ -21,6 +21,7 @@
 --- connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
 	
 15. JOHN dashbaord: add a "start a shipment" action button or link or wahtever to dashboard
+15. JOHN waitlist (index.html): fix fucked up color stuff
 16. JOHN: startashipment - 
 		
 		-- select ta host - merge thea ddress into drop-down .. wider button - and get rid of the address and get directions
