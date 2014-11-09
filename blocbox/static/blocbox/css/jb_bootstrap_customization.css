@@ -181,18 +181,18 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     font-size: 2.00em;
     font-weight: 300;
     color: black;
-    height: 40px;
-    width: 175px;
-    border: 0;
-    margin-left: 65%;
-    margin-right: auto;
+    height: 40px; width: 175px;   
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
     vertical-align: top;
     text-align: center;
-    border-radius: 0px;
+    border: 0;  border-radius: 0px;
+    /*
     margin-top: 17px;
+    margin-left: 65%;
+    margin-right: auto;
+    */
 }
 
 /*Make the footer text dark green for the dargreen footer on the waitlist page */
