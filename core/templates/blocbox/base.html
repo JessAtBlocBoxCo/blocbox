@@ -119,7 +119,7 @@
         				
 				<!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
         <div class="row">
-        	<div class="col-xs-3 col-md-offset-9">
+        	<div class="col-xs-3 col-xs-offset-9">
         		<button class="btn btn-default  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
     					{% if user.is_authenticated %} {{user.first_name}}
        				{% else %} <a href='/login'>Sign in</a> 
