@@ -44,7 +44,16 @@
         </div>
     
         <div class="col-xs-5  col-sm-4">
-            <h5 class="paddingtop7px">{{ host.st_address1 }}</h5>
+        		
+            <h5 class="paddingtop7px">
+            		<!-- !!! need to update - currently if authenticated..  should say 'if connected' -->
+            		{% if user.is_authenticated %} }
+            				{{ host.st_address1 }},
+            		{% else %} 
+            				{{ host.address_approx }}, {{ host.neighborhood }},
+            		{% endif %} 
+            		{{ host.city }} {{ host.state }}
+            </h5>
         </div>
     
         <div class="col-xs-12 col-sm-offset-1 col-sm-2">

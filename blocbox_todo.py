@@ -3,15 +3,16 @@
 
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
 
-1. JESS HPV 			
-		
-			-- Add "wghen i'm home" field...to table (JESS RELEARN SOUTH MIGRATION)
- 		-	-table: add an APPROXIMATE ADDRESS FIELD
+1. JESS HPV 				
+-	-table: add an APPROXIMATE ADDRESS FIELD
+			-- Add "wghen i'm home" field..... connect to availability
+ 		
 				make different for connected vs not:
-				1. Approximate Address right now we have address in... it should be a APPROXIMATE ADDRESS, 
+				1. Approximate Address right now we have address in... it should be a APPROXIMATE ADDRESS, : address_approx, neighborhood, city, state 
 					say "cross-strees... connect with john to see address"
 				2. verified info: if not connected, say "Verified Info" -- 
 				3. when connected to the user, dont say "sign up to connect" -so edit that languager
+2. JESS HPV - rather tha 'If authenticated' show approx address etc.. say if connected.. remember how to do that				
 11. JESS: dashboard
 			-- create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
 --- connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
