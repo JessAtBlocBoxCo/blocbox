@@ -4,16 +4,16 @@
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
 
 2. JESS: base.html -  Navbar 
-		- is totally fucked - the list shows up to left
+		
 		- navbar height should be bigger on desktop
-		- add "start a shipment" to navbar
-4. JESS HPV 
-			-- remove "this is test host_aboutme message" - change the text a bit
+
+4. JESS HPV 			
 			-- table: populate helpingneighbors filed for JOHN - - MAKE A FUNCTION TO COUNT NEIGHBORS YOU ARE HELPING
 			-- Add "wghen i'm home" field...to table (JESS RELEARN SOUTH MIGRATION)
  		-	-table: add an APPROXIMATE ADDRESS FIELD
 				make different for connected vs not:
 				1. Approximate Address right now we have address in... it should be a APPROXIMATE ADDRESS, 
+					say "cross-strees... connect with john to see address"
 				2. verified info: if not connected, say "Verified Info" -- 
 				3. when connected to the user, dont say "sign up to connect" -so edit that languager
 11. JESS: dashboard
@@ -22,6 +22,7 @@
 	
 15. JOHN dashbaord: add a "start a shipment" action button or link or wahtever to dashboard
 15. JOHN waitlist (index.html): fix fucked up color stuff
+16. JESS: beta - toggle button
 16. JOHN: startashipment - 
 		
 		-- select ta host - merge thea ddress into drop-down .. wider button - and get rid of the address and get directions
@@ -281,3 +282,6 @@ So when you push to origin, it will push to both repositories
 1. transfer the host for blocbox.co to the digitalocean server: 
 2. add a forgot password/chnage password
 1. JESS: beta.html: fix that shit with the margin padding on right-hand side
+			- add "start a shipment" to navbar
+			- nabbar needs to be drop0down is totally fucked - the list shows up to left
+			HPV-- remove "this is test host_aboutme message" - change the text a bit
