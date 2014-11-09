@@ -126,7 +126,7 @@
          		<span class="caret"></span>
         
         </button>
-      <ul class="dropdown-menu-right nav navbar-nav navbar-right" role="menu">
+      <ul class="dropdown-menu-right" role="menu"> <!--nav navbar-nav navbar-right-->
       	      	
         {% if user.is_authenticated %} <!--drop down menu if logged in-->
         		<li><a href='/account'> {{user.first_name}}</a></li>
