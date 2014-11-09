@@ -100,27 +100,20 @@
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">	
 	<div class="container-fluid whitebackground" style="padding-top: 15px;"> 
-		<!--<div class="navbar-header"> -->
 				<div class="row">
-				<!-- <button type="button" class="row navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        	<span class="sr-only">Toggle navigation</span>
-        	<span class="icon-bar"></span>
-        	<span class="icon-bar"></span>
-        	<span class="icon-bar"></span>
-      	</button> 	-->
   		 			
-  			<!--the "brand" - ultimately we should replace this with styled text rather than an image -->  
-  			<div class="col-xs-2">
+  				<!--the "brand" - ultimately we should replace this with styled text rather than an image -->  
+  				<div class="col-xs-6 col-sm-2">
   					<a class="navbar-brand brandnavbarimage margintop10px" href="/beta"> <img src="{% static "blocbox/images/Logo-and-name---orange-drop2.png" %}"  height="40" width="200" /></a>
   					<!--<a class="navbar-brand" href="#">BlocBox</a> -->
-			 	</div> <!--col-->		
+			 		</div> <!--col-->		
    
-        <div class="col-xs-3 col-xs-offset-7">
+        	<div class="col-xs-6 col-sm-3 col-sm-offset-7">
     	
     				<div class="dropdown" > <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
         				
 							<!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
-        			<button class="btn btn-default  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
+        			<button class="btn btn-default  dropdown-toggle margintop10px" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
     						{% if user.is_authenticated %} {{user.first_name}}
        					{% else %} <a href='/login'>Sign in</a> 
        					{% endif %}      
@@ -128,7 +121,7 @@
         			</button>
       	
       				<!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-      				<ul class="dropdown-menu  " role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
+      				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
         			{% if user.is_authenticated %} <!--drop down menu if logged in-->
         					<li role="presentation"><a role="menuitem" tabindex="-1" href='/account'> {{user.first_name}}</a></li>
         					<li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment'>Start a Shipment</a></li>  
@@ -155,9 +148,7 @@
     	
     	<!-- <div class="margintop5px">
         <a class="infobtn"> <img src="{% static "blocbox/images/info-button-outline.png" %}"  height="40" width="40" style="margin-top: 12px;" /> </a>
-    	</div>  -->
-    
-		<!--</div>  navbar-header -->  	
+    	</div>  --> 	
 	</div> <!--white container -->
 </nav> <!--nav-->
 
