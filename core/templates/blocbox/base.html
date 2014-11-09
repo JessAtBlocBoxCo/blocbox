@@ -115,20 +115,21 @@
 		</div> <!--navbar-header-->
    
      <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse dropdown" id="bs-example-navbar-collapse-1">
-        <button class="col-sm-3 menubutton dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    <div class="<!--collapse navbar-collapse--> dropdown" > <!--id="bs-example-navbar-collapse-1"-->
+        				
+				<!--button for navbar - displays user's name or Sign In -->
+        <button class=" <!--col-sm-3 menubutton--> btn btn-default  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
     					{% if user.is_authenticated %}
         						{{user.first_name}}
        				{% else %}
           					<a href='/login'>Sign in</a>
-        			{% endif %}
-        
-         		<span class="caret"></span>
-        
+							{% endif %}      
+         		<span class="caret"></span>        
         </button>
-      <ul class="dropdown-menu-right" role="menu"> <!--nav navbar-nav navbar-right-->
-      	      	
-        {% if user.is_authenticated %} <!--drop down menu if logged in-->
+      
+      	<!--list of links within the dropdown menu-->
+      	<ul class="dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
+        	{% if user.is_authenticated %} <!--drop down menu if logged in-->
         		<li><a href='/account'> {{user.first_name}}</a></li>
         		<li><a href='/startashipment'>Start a Shipment</a></li>  
        		 	<li><a href='/logout'>Sign out</a></li>
