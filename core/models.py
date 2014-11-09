@@ -166,10 +166,6 @@ class Transaction(models.Model):
     
     
 #Define the connection relation
-#class Connection(models.Model):
-#    host_neighbor = models.ForeignKey(UserInfo, related_name='host_neighbor_id')
-#    user_neighbor = models.ForeignKey(UserInfo, related_name='user_neighbor_id')
-
 class ConnectionManager(models.Manager):
     
     def connection_for_user(self, user):

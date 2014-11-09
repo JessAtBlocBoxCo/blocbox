@@ -3,11 +3,7 @@
 
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
 
-2. JESS: base.html -  Navbar 
-		
-		- navbar height should be bigger on desktop
-
-4. JESS HPV 			
+1. JESS HPV 			
 			-- table: populate helpingneighbors filed for JOHN - - MAKE A FUNCTION TO COUNT NEIGHBORS YOU ARE HELPING
 			-- Add "wghen i'm home" field...to table (JESS RELEARN SOUTH MIGRATION)
  		-	-table: add an APPROXIMATE ADDRESS FIELD
@@ -285,3 +281,6 @@ So when you push to origin, it will push to both repositories
 			- add "start a shipment" to navbar
 			- nabbar needs to be drop0down is totally fucked - the list shows up to left
 			HPV-- remove "this is test host_aboutme message" - change the text a bit
+			
+2. JESS: base.html -  Navbar  navbar height should be bigger on desktop
+	
