@@ -145,9 +145,11 @@
         <div class="profileboxlong"> <!--this is a style hack to get around the min-height problem-->
             <p class="ltbluetext centerboxheader">Package Receipt and Pricing</p> 
             <div class="profileboxline"></div>
-            		<p class=centerboxtext paddingtopbottom5px"> John's availability: {{ host.availability }} </p>
-                <p class="centerboxtext paddingtopbottom5px">{{ host.first_name }} guarantees to be at home to recieve your package during his posted availability.</p>
-                <div class="row">
+                <p class="centerboxtext paddingtopbottom5px">
+                			{{ host.first_name }} guarantees to be at home to recieve your package during his posted availability.
+                			A summary of his availability is shown below the pricing information. Connect with John to see a detailed view.
+                </p>
+                <div class="row"> <!--row containg pricing info -->
                     <div class="col-xs-offset-1 col-xs-10">
                         <div class="row">
                               <p class="col-xs-4 textleft">PER PACKAGE</p>
@@ -174,8 +176,8 @@
                         <br>
                         
                     </div> <!--col-xs-offset-2 col-xs-8-->
-                </div> <!--row-->
-                
+                </div> <!--row containg pricing info-->
+                <p class=centerboxtext paddingtopbottom5px"> John's availability: {{ host.availability }} </p>
               <div class="row"> 
            	 		<div class="col-xs-offset-2 col-xs-6 margintop10px">
                 		<p class="ltbluetext paddingtop5px">Connect and try your first package for free</p>
