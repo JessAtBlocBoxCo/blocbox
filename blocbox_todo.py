@@ -4,7 +4,7 @@
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
 
 1. JESS HPV 			
-			-- table: populate helpingneighbors filed for JOHN - - MAKE A FUNCTION TO COUNT NEIGHBORS YOU ARE HELPING
+		
 			-- Add "wghen i'm home" field...to table (JESS RELEARN SOUTH MIGRATION)
  		-	-table: add an APPROXIMATE ADDRESS FIELD
 				make different for connected vs not:
@@ -284,4 +284,5 @@ So when you push to origin, it will push to both repositories
 			HPV-- remove "this is test host_aboutme message" - change the text a bit
 			
 2. JESS: base.html -  Navbar  navbar height should be bigger on desktop
+		--JESS HPV - count number of connections... - - MAKE A FUNCTION TO COUNT NEIGHBORS YOU ARE HELPING
 	
