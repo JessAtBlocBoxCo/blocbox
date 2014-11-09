@@ -118,7 +118,7 @@
     <div class="<!--collapse navbar-collapse--> dropdown" > <!--id="bs-example-navbar-collapse-1"-->
         				
 				<!--button for navbar - displays user's name or Sign In -->
-        <button class=" <!--col-sm-3 menubutton--> btn btn-default  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+        <button class="btn btn-default  dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
     					{% if user.is_authenticated %}
         						{{user.first_name}}
        				{% else %}
