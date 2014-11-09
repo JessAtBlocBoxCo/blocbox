@@ -28,7 +28,10 @@ def searchold(request):
 
 def dashboard(request):
     return render(request, 'blocbox/dashboard.html')
-    
+
+def myblock(request):
+    return render(request, 'blocbox/myblock.html')
+        
 #dashboard - old version passing args - dont think i need
 """
 def dashboard(request, userinfo_id):
