@@ -37,11 +37,11 @@ def dashboard(request, userinfo_id):
     return render_to_response('blocbox/dashboard.html', {'user':user}, context)
 """
 
-#Create the view for the hostprofilevisitor
-def hostprofilevisitor(request, userinfo_id):
+#Create the view for the hostprofile
+def hostprofile(request, userinfo_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=userinfo_id)
-    return render_to_response('blocbox/host-profile-visitor.html', {'host':host}, context)
+    return render_to_response('blocbox/host-profile.html', {'host':host}, context)
 
 #Create a login viewi
 def userlogin(request):

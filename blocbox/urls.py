@@ -10,12 +10,11 @@ urlpatterns = patterns('',
     url(r'beta/', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
     url(r'^search/', views.search, name='search'),   
     url(r'^searchold/', views.searchold, name='searchtest'),  
-    url(r'^(?P<userinfo_id>\d+)/hostprofilevisitor/$',views.hostprofilevisitor, name='hostprofilevisitor'),  
+    url(r'^(?P<userinfo_id>\d+)/hostprofile/$',views.hostprofile, name='hostprofile'),  
     url(r'^dashboard/',views.dashboard, name='dashboard'),  
     url(r'^startashipment/', views.startashipment, name='startashipment'),
     url(r'^payment/', views.payment, name='payment'),
     url(r'^shippackage/', views.shippackage, name='shippackage'),     
-    #url(r'^hostprofile/', include('hostprofile.urls', namespace="hostprofile")),
     #url(r'^payment/', include('payment.urls', namespace="payment")),
     #url(r'^polls/', include('polls.urls', namespace="polls")), #INCLUDE the URLconf at blocbox/polls
     url(r'^admin/', include(admin.site.urls)), 

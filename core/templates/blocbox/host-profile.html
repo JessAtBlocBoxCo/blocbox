@@ -1,0 +1,218 @@
+<!--this is blocbox/core/templates/blocbox/host-profile.html, URL is http://www.blocbox.co/3/hostprofile/ (e.g., for john - user id #3) -->
+{% extends "blocbox/base.html" %}
+{% load staticfiles %} 
+{% block title %}Connect to Get Started{% endblock %}
+
+{% block headafter %}	
+  <!--<link rel="stylesheet" href="/static/blocbox/css/standardize.css">
+  <link rel="stylesheet" href="/static/blocbox/css/host-profile-visitor.css"> -->
+{% endblock %}
+
+
+
+{% block content %}
+
+<!--My attempt to color the background-->
+<div class="container-fluid offwhitebackground text-center relativediv"> 
+<!-- </div> JMY commenting this out - this was closing the container, but you dont want this until the end-->
+    
+<!--Attempt at a cover image> -->
+<!--<div class="row">
+        <div class="col-xs-12">
+             <img class="profilecover" src="{% static 'blocbox/images/treelined-streetbw3.png' %}"  />
+        </div>
+    </div>-->
+  
+  
+    <div class="row">
+        <div class="col-xs-12 nopaddingleftright">
+            <div class="orangebackground profilecover"></div>
+        </div>
+        
+    </div>
+ 
+    
+	<!--First Row of info> -->
+
+    <div class="row marginbottom20px hostinfobox relativediv">
+        <div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
+            <img class="profilepic" src="{% static 'blocbox/images/genderless-silh-whited.png' %}"  /> 
+        </div>
+    
+        <div class="col-xs-3 col-xs-offset-2 col-sm-1 col-sm-offset-0">
+    	   <p class="hostname negmarginright15px">{{ host.first_name }}</p> <!--class="hostname"-->
+        </div>
+    
+        <div class="col-xs-5  col-sm-4">
+            <h5 class="paddingtop7px">{{ host.st_address1 }}</h5>
+        </div>
+    
+        <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+            <button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
+        </div>
+	
+	</div>  <!--closing row profilebox -->
+
+	<!--Second Row of info> -->
+<div class="row marginbottom20px"> <!--paddingsides10px marginleftright20px --> 
+
+    
+    <!--you dont need this - use offset property instead - see that i added col-sm-offset1 at line 50 
+    <div class="col-sm-1"></div>     -->
+
+    <div class="col-xs-12 col-sm-6 col-sm-push-3"> <!--profilebox  marginleftright10px adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
+        <div class="profilebox">
+            <p class="orangetext centerboxheader">Hi Neighbor!</p>
+            <div class="profileboxline"></div>
+            <p class="centerboxtext">{{ host.host_aboutme }}</p>
+        </div>
+    </div>
+    
+    <div class="col-xs-12 col-sm-2 col-sm-push-3"> <!-- marginleftright10px -->
+        <div class="profilebox">
+            <p class="bluegreytext sideboxtext">When I'm Home</p>
+            <div class="profileboxline"></div>
+            <div class="row">
+                <p class="col-xs-4 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop20px">Tuesday - Friday</p>
+                <p class="col-xs-6 col-sm-12 col-sm-offset-0 paddingtop20pxmobile">3 PM to 9PM</p>
+            </div>
+        </div>
+    </div>
+   
+    <div class="col-xs-12 col-sm-offset-1 col-sm-2 col-sm-pull-8"> <!--  profilebox marginleftright10px-->
+        <div class="profilebox">
+            <p class="redtext sideboxtext">Success Rate</p>
+            <div class="profileboxline"></div>
+            <div class="row"> 
+                <p class="col-xs-4 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop20px">{{ host.favorsrequested }}</p>
+                <p class="col-xs-6 col-sm-12 col-sm-offset-0 paddingtop20pxmobile">Favors Completed</p>
+            </div>
+        </div> 
+    </div> 
+
+
+    
+    <!--dont need this
+    <div class="col-sm-1"></div> -->
+			
+</div> <!--closing seecond row -->
+
+	<!--Third Row of info> -->
+	<div class="row marginbottom20px">
+        <div class="col-xs-12 col-sm-offset-1 col-sm-2">
+            <div class="row">
+                <div class=" col-xs-12 col-sm-12 marginbottom20px">
+                    <div class="profilebox">
+                        <p class="bluegreytext sideboxtext">Currently Helping</p>
+                        <div class="profileboxline"></div>
+                        <div class="row"> 
+                            <p class="col-xs-4 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop20px">XX{{ host.helpingneighbors }}</p>
+                            <p class="col-xs-6 col-sm-12 col-sm-offset-0 paddingtop20pxmobile">Neighbors</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12">
+                    <div class="profilebox">
+                        <p class="greentext sideboxtext">Verified Info</p>
+                        <div class="profileboxline"></div>
+                        <div class="row marginsides7pt5pct margintop20px">
+                            <div class="col-xs-12 col-sm-offset-1 col-sm-5">
+                                <img class="verifiedicons addresssvg" src="{% static 'blocbox/images/house-icon.svg' %}"  />
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <p class="textcenter paddingtop10px">Address</p>
+                            </div>
+                        </div>
+                        <div class="row marginsides7pt5pct margintop20px">
+                            <div class="col-xs-12 col-sm-offset-1 col-sm-5">
+                                <img class="verifiedicons" src="{% static 'blocbox/images/email-plane.svg' %}"  />
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <p class="textcenter paddingtop10px">Email</p>
+                            </div>
+                        </div>
+                        <div class="row marginsides7pt5pct margintop20px">
+                            <div class="col-xs-12 col-sm-offset-1 col-sm-5">
+                                <img class="verifiedicons" src="{% static 'blocbox/images/mobile-icon.svg' %}"  />
+                            </div>
+                            <div class="col-xs-12 col-sm-5">
+                                <p class="textcenter paddingtop10px">Phone</p>
+                            </div>
+                        </div>
+                        <div class="row marginsides7pt5pct margintop20px">
+                            <div class="col-xs-12 col-sm-offset-1 col-sm-5">
+                                <img class="verifiedicons" src="{% static 'blocbox/images/facebook-icon.svg' %}"  />
+                            </div>
+                            <div class="col-xs-12 col-sm-5 marginbottom20px">
+                                <p class="textcenter paddingtop10px">Facebook</p>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+ 
+    <div class="col-xs-12 col-sm-6 nopaddingsides"> <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
+        <div class="profileboxlong"> <!--this is a style hack to get around the min-height problem-->
+            <p class="ltbluetext centerboxheader">Package Receipt</p>
+            <div class="profileboxline"></div>
+                <p class="centerboxtext paddingtopbottom5px">{{ host.first_name }} garuntees to be at home to recieve your package. {{ host.first_name }} will be available during posted times to allow you to retrieve your package at your conveinience.</p>
+                <div class="row">
+                    <div class="col-xs-offset-3 col-xs-6">
+                        <div class="row">
+                              <p class="col-xs-5 textleft">PER PACKAGE</p>
+                              <p class="col-xs-7 textleft">$1.99 Per Package</p>
+                        </div>
+                        <div class="profileboxline100"></div>
+                        <div class="row paddingtop10px">
+                              <p class="col-xs-5 textleft">MONTHLY</p>
+                              <p class="col-xs-7 textleft">$6.99 for 10 Packages/Month</p>
+                        </div>
+                        <div class="profileboxline100"></div>
+                        <div class="row paddingtop10px">
+                              <p class="col-xs-5 textleft">UNLIMITED</p>
+                              <p class="col-xs-7 textleft">$9.99 for 10 Packages/Month</p>
+                        </div>
+                    </div>
+                </div>
+            <div class="col-sm-offset-3 col-sm-5 margintop10px">
+                <p class="ltbluetext paddingtop5px">Connect and try your first package for free</p>
+            </div>
+            <div class="col-sm-4 margintop10px paddingright7pt5pct">
+                <button class="inactivebutton" onClick="window.location='/{{ host.id }}/signupconnect/';"><span>Start a Shipment</span></button>
+            </div>
+        </div>
+    </div>  
+        
+      <div class="col-xs-12 col-sm-2">
+        <div class="profilebox paddingbottom10px">
+            <p class="purpletext sideboxtext">Other Offers</p>
+          <div class="profileboxline"></div>
+            <div class="marginsides7pt5pct">
+                <button class="margintop20px marginbottom20px inactivebutton" onClick="window.location='/{{ host.id }}/signupconnect/';"><span>Storage</span></button>
+                <button class="marginbottom20px inactivebutton" onClick="window.location='/{{ host.id }}/signupconnect/';"><span>House Sitting</span></button>
+                <button class="marginbottom20px inactivebutton" onClick="window.location='/{{ host.id }}/signupconnect/';"><span>Pet Care</span></button>
+                <p class="marginbottom10px purpletext textcenter marginauto">Connect to request</p>
+            </div>
+          </div>
+        </div> 
+
+	</div> <!--closing third row -->
+    
+    <!--Fourth Row of info> -->
+    
+<div class="row marginbottom20px">
+    
+        
+    </div>
+    <br>
+    <br>
+    <br>
+ 
+</div> <!--closing container-fluid that contains whole page -->
+
+
+
+{% endblock %}

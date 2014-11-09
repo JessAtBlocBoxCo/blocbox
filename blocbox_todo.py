@@ -1,3 +1,27 @@
+
+"""WEBSITE WORK"""
+1. fix that shit with the margin padding on right-hand side
+2. fix mobile
+3. "done see a blocbox host in your hood"? -- MAKE IT LARGER
+4. 
+
+
+# check oyt the pages john made
+
+# fix the "beyond packages" text on baseorange
+
+
+#3. footer is cropping up
+
+#4. landing page may be broken.
+
+"""PITCH WORK"""
+#1. make an outline
+#2. make the pitch
+#3. 
+
+
+
 # build out the process for a non-package transaction
 
 # User Dashboard: rsearch carrier API embedd tracking capability ito the website
