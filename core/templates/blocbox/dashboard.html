@@ -16,7 +16,7 @@
     <div class="row margintop50px marginbottom30px mobilehide">
         <a href="dashboard.html" class="col-xs-2 col-xs-offset-1 redtext textshadow textcenter">DASHBOARD</a>
         <a href="/messages/inbox/" class="col-xs-2 ltgreytext textcenter">MESSAGES</a>
-        <p class="col-xs-2 ltgreytext textcenter">HISTORY</p>
+        <a href="/myblock/" class="col-xs-2 ltgreytext textcenter">MY BLOCK</a>
         <p class="col-xs-2 ltgreytext textcenter">PROFILE</p>
         <p class="col-xs-2 ltgreytext textcenter">ACCOUNT</p>
         <div class="col-xs-10 col-xs-offset-1">
@@ -30,10 +30,10 @@
             <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
             <p class="darkgreytext margintop5px textcenter">EDIT PROFILE</p>
             <p  class="darkgreytext textcenter margintop20px">HOME</p>
-            <p  class="nomarginbottom textcenter">XXX XXXXX XXX XXX X</p>
-            <p  class="textcenter">XXXXXXX XX XXXXX</p>
+            <p  class="nomarginbottom textcenter"> &nbsp {{ user.st_address1 }} &nbsp </p>
+            <p  class="textcenter"> &nbsp {{ user.st_address2 }} &nbsp </p>
             <p  class="darkgreytext textcenter">PHONE</p>
-            <p  class="textcenter">XXX-XXX-XXXX</p>
+            <p  class="textcenter"> &nbsp {{ user.phone_number }} &nbsp </p>
             <div class="profileboxline margintop20px marginbottom20px"></div>
             <p  class="ltbluetext textcenter">Invite Your Neighbors</p>
             <p  class="ltbluetext textcenter margintop20px">Become a Host</p>
