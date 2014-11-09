@@ -10,7 +10,7 @@
 4. JESS HPV 
 			-- remove "this is test host_aboutme message" - change the text a bit
 			-- table: populate helpingneighbors filed for JOHN - - MAKE A FUNCTION TO COUNT NEIGHBORS YOU ARE HELPING
-			-- Add "when i'm home" field...to table (JESS RELEARN SOUTH MIGRATION)
+			-- Add "wghen i'm home" field...to table (JESS RELEARN SOUTH MIGRATION)
  		-	-table: add an APPROXIMATE ADDRESS FIELD
 				make different for connected vs not:
 				1. Approximate Address right now we have address in... it should be a APPROXIMATE ADDRESS, 

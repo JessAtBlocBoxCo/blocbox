@@ -123,42 +123,32 @@
           					<a href='/login'>Sign in</a>
         			{% endif %}
         
-         <span class="caret"></span>
+         		<span class="caret"></span>
+        
         </button>
-      <ul class="dropdown-menu nav navbar-nav navbar-right" role="menu">
-      	
-      	<!--first link - active shading - curent page  - 
-      	JMY is removing this - makes the navbar too long, and shows this page twice - can modify with PHP so 
-      	current page is active.. but really complicated when using template - not worth it right now
-        <li class="active"><a href="#">{% block navbartitle %} {% endblock %}</a></li>
-     		-->
-        
-        
-        <!--second link - sign out or in -->
-        {% if user.is_authenticated %}
-        	<li><a href='/account'> {{user.first_name}}</a></li>
-        	<li><a href='/startashipment'>Start a Shipment</a></li>  
-       		 <li><a href='/logout'>Sign out</a></li>
-       		 <li><a href='/dashboard/'>Dashboard</a></li>
-        	<li><a href='/messages/inbox'>Inbox</a></li> 
-        	
-       	{% else %}
+      <ul class="dropdown-menu-right nav navbar-nav navbar-right" role="menu">
+      	      	
+        {% if user.is_authenticated %} <!--drop down menu if logged in-->
+        		<li><a href='/account'> {{user.first_name}}</a></li>
+        		<li><a href='/startashipment'>Start a Shipment</a></li>  
+       		 	<li><a href='/logout'>Sign out</a></li>
+       		 	<li><a href='/dashboard/'>Dashboard</a></li>
+        		<li><a href='/messages/inbox'>Inbox</a></li> 
+                
+       	{% else %} <!--drop down menu if not logged in -->
        		<li><a href='/beta'>Home</a></li>
           <li><a href='/login'>Sign in</a></li>
         	<li><a href='/'>Join Waitlist</a></li>
-        {% endif %}
-        <li><a href='/search'>Find a BlocBox</a></li>
-        <li><a href='/signuphost'>Become a Host</a></li>
-        <!--that button looks really bad in the navbar and cant find a quick solution to make it plain text (dont waste time on this now
-        so we should just use a contact us link 
-        <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li>
-        -->
-        <li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li>
-        <!--only show contact us if user not authenticated to save space -->
-       {% if user.is_authenticated %}       
-       {% else %}
-        	<li><a href='/contactus'>Contact Us</a></li>
-        {% endif %}
+        
+                
+        {% endif %} <!--drop down menu items that appears to either user -->
+        	<li><a href='/search'>Find a BlocBox</a></li>
+        	<li><a href='/signuphost'>Become a Host</a></li>
+        	 <li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li>
+          <!-- 
+          	SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
+          	<li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
+          	<li><a href='/contactus'>Contact Us</a></li>  -->
         
            
         
