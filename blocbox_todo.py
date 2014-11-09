@@ -2,7 +2,7 @@
 """TASK MGMT FOR LIST BELOW"""
 
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
-1. JESS: beta.html: fix that shit with the margin padding on right-hand side
+
 2. JESS: base.html -  Navbar 
 		- is totally fucked - the list shows up to left
 		- navbar height should be bigger on desktop
@@ -280,3 +280,4 @@ So when you push to origin, it will push to both repositories
 #done
 1. transfer the host for blocbox.co to the digitalocean server: 
 2. add a forgot password/chnage password
+1. JESS: beta.html: fix that shit with the margin padding on right-hand side

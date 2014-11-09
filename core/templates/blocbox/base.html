@@ -137,10 +137,10 @@
         <!--second link - sign out or in -->
         {% if user.is_authenticated %}
         	<li><a href='/account'> {{user.first_name}}</a></li>
+        	<li><a href='/startashipment'>Start a Shipment</a></li>  
        		 <li><a href='/logout'>Sign out</a></li>
        		 <li><a href='/dashboard/'>Dashboard</a></li>
-        	<li><a href='/messages/inbox'>Inbox</a></li>
-        	<li><a href='/profile'>Profile</a></li>  
+        	<li><a href='/messages/inbox'>Inbox</a></li> 
         	
        	{% else %}
        		<li><a href='/beta'>Home</a></li>
