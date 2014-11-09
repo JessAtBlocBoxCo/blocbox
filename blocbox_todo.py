@@ -1,9 +1,5 @@
 
-"""WEB WORK: jOHN"""
-1. add his profile picture to HPV.
-2. fix mobile
-
-"""WEBSITE WORK: JESS"""
+"""WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
 1. fix that shit with the margin padding on right-hand side
 2. Navbar 
 		- is totally fucked - the list shows up to left
@@ -30,6 +26,14 @@
 13. JOHN: create HOSTdashboard - or version of this for thishost
 14. JOHN: create MYBLOCK..
 15. john: add a "start a shipment" action button or link or wahtever to dashboard
+16. JOHN: startashipment - consider resizing text
+17. JOHN: staratashipment: select ta host - merge thea ddress into drop-down .. wider button - and get rid of the address and get directions
+18. JOHN: startashipment: have button say "select" and have an option..for john, with address, have an option "select host"
+19. JOHN: startashipment: confirm availability - fill out drop down menu (fedex, ups, etc)..
+20. JOHN: startashipment: confirem availability
+1. JOHN: add his profile picture to HPV.
+2. JOHN: fix mobile
+	
 	
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: add green check box next to verified info
