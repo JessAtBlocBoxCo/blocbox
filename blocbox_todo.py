@@ -8,6 +8,7 @@
 2. Navbar 
 		- is totally fucked - the list shows up to left
 		- navbar height should be bigger on desktop
+3. to form - add need_meals
 3. search page: make text look better for john
 3. "done see a blocbox host in your hood"? -- MAKE IT LARGER
 4. HPV -- remove "this is test host_aboutme message" - change the text a bit
@@ -23,7 +24,11 @@
 				3. when connected to the user, dont say "sign up to connect" -so edit that languager
 7. jess: RE-LEARN SOUTH DATABASE MIGRATION.
 6. dashboar d- add list of users connected
-
+11. JESS: create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
+12. JESS: dashboard - connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
+13. JOHN: create HOSTdashboard - or version of this for thishost
+14. JOHN: create MYBLOCK..
+	
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: add green check box next to verified info
 2. JESS: verified info on HPV - only show symbol if verified, then in connect version show the DATA.
@@ -32,6 +37,12 @@
 5. JESS: updating HPV so that it truly reflects what services you offer
 6. JOHN: sign-up - "by continugin i agree" - put below button
 7. JESS: add to email sent to host - the text they fill in for when they usually get packages
+8. SIGN-UP: two bowls of shit, one bowl, then sneaky second bowl of shit
+9. JESS: add community dinners/food as a use-case.. add this totable adn then also update the checkboxes: add NEED_MEALS
+10. Allow user to upload pictures
+11. john: style the profile pic - so the user uplaodssimplepic, and then converted to glossy bubble
+12. Jess: populatethe dashboard - so that the tracking is linked
+	
 # check oyt the pages john made
 
 # fix the "beyond packages" text on baseorange
