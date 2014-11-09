@@ -130,22 +130,22 @@
       	<!--list of links within the dropdown menu-->
       	<ul class="dropdown-menu-right" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
         	{% if user.is_authenticated %} <!--drop down menu if logged in-->
-        		<li role="presentation"><a href='/account'> {{user.first_name}}</a></li>
-        		<li role="presentation"><a href='/startashipment'>Start a Shipment</a></li>  
-       		 	<li role="presentation"><a href='/logout'>Sign out</a></li>
-       		 	<li role="presentation"><a href='/dashboard/'>Dashboard</a></li>
-        		<li role="presentation"><a href='/messages/inbox'>Inbox</a></li> 
+        		<li role="presentation"><a role="menuitem" href='/account'> {{user.first_name}}</a></li>
+        		<li role="presentation"><a role="menuitem" href='/startashipment'>Start a Shipment</a></li>  
+       		 	<li role="presentation"><a role="menuitem" href='/logout'>Sign out</a></li>
+       		 	<li role="presentation"><a role="menuitem" href='/dashboard/'>Dashboard</a></li>
+        		<li role="presentation"><a role="menuitem" href='/messages/inbox'>Inbox</a></li> 
                 
        	{% else %} <!--drop down menu if not logged in -->
-       		<li role="presentation"><a href='/beta'>Home</a></li>
-          <li role="presentation"><a href='/login'>Sign in</a></li>
-        	<li role="presentation"><a href='/'>Join Waitlist</a></li>
+       		<li role="presentation"><a role="menuitem" href='/beta'>Home</a></li>
+          <li role="presentation"><a role="menuitem" href='/login'>Sign in</a></li>
+        	<li role="presentation"><a role="menuitem" href='/'>Join Waitlist</a></li>
         
                 
         {% endif %} <!--drop down menu items that appears to either user -->
-        	<li role="presentation"><a href='/search'>Find a BlocBox</a></li>
-        	<li role="presentation"><a href='/signuphost'>Become a Host</a></li>
-        	<li role="presentation"><a href='/nudgeneighbor'>Nudge a Neighbor</a></li>
+        	<li role="presentation"><a role="menuitem" href='/search'>Find a BlocBox</a></li>
+        	<li role="presentation"><a role="menuitem" href='/signuphost'>Become a Host</a></li>
+        	<li role="presentation"><a role="menuitem" href='/nudgeneighbor'>Nudge a Neighbor</a></li>
           <!-- 
           	SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
           	<li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
