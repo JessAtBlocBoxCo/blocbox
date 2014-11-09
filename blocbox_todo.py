@@ -4,7 +4,6 @@
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
 
 1. JESS HPV 				
--	-table: add an APPROXIMATE ADDRESS FIELD
 			-- Add "wghen i'm home" field..... connect to availability
  		
 				make different for connected vs not:
