@@ -15,7 +15,7 @@
 11. JESS: dashboard
 			-- create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
 --- connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
-	
+
 15. JOHN dashbaord: add a "start a shipment" action button or link or wahtever to dashboard
 15. JOHN waitlist (index.html): fix fucked up color stuff
 16. JESS: beta - toggle button
