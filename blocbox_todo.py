@@ -1,41 +1,62 @@
 
+"""TASK MGMT FOR LIST BELOW"""
+
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
-1. fix that shit with the margin padding on right-hand side
-2. Navbar 
+1. JESS: baseorange fix that shit with the margin padding on right-hand side
+2. JESS: base.html -  Navbar 
 		- is totally fucked - the list shows up to left
 		- navbar height should be bigger on desktop
 		- add "start a shipment" to navbar
-3. to form - add need_meals
-3. search page: make text look better for john
-3. "done see a blocbox host in your hood"? -- MAKE IT LARGER
-4. HPV -- remove "this is test host_aboutme message" - change the text a bit
-5. HPV pricing - says "unlimited" BUT REALLY "10 PACKAGES/MONTH"
-6. HPV - currently helping XX neighbors - fix XX
-7. populate helpingneighbors filed for JOHN - - MAKE A FUNCTION TO COUNT NEIGHBORS YOU ARE HELPING
-8. Add "when i'm home" field...
-6. add an APPROXIMATE ADDRESS FIELD
-5. HPV vs HP - we dont really need "visitor" site.. its just if-then.. just turn to hosprofile 
--- what differs when you are connected? 
+4. JESS HPV 
+			-- remove "this is test host_aboutme message" - change the text a bit
+			-- table: populate helpingneighbors filed for JOHN - - MAKE A FUNCTION TO COUNT NEIGHBORS YOU ARE HELPING
+			-- Add "when i'm home" field...to table (JESS RELEARN SOUTH MIGRATION)
+ 		-	-table: add an APPROXIMATE ADDRESS FIELD
+				make different for connected vs not:
 				1. Approximate Address right now we have address in... it should be a APPROXIMATE ADDRESS, 
 				2. verified info: if not connected, say "Verified Info" -- 
 				3. when connected to the user, dont say "sign up to connect" -so edit that languager
-7. jess: RE-LEARN SOUTH DATABASE MIGRATION.
-6. dashboar d- add list of users connected
-11. JESS: create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
-12. JESS: dashboard - connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
-13. JOHN: create HOSTdashboard - or version of this for thishost
-14. JOHN: create MYBLOCK..
-15. john: add a "start a shipment" action button or link or wahtever to dashboard
-16. JOHN: startashipment - consider resizing text
-17. JOHN: staratashipment: select ta host - merge thea ddress into drop-down .. wider button - and get rid of the address and get directions
-18. JOHN: startashipment: have button say "select" and have an option..for john, with address, have an option "select host"
-19. JOHN: startashipment: confirm availability - fill out drop down menu (fedex, ups, etc)..
-20. JOHN: startashipment: confirem availability
+11. JESS: dashboard
+			-- create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
+--- connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
+	
+15. JOHN dashbaord: add a "start a shipment" action button or link or wahtever to dashboard
+16. JOHN: startashipment - 
+		
+		-- select ta host - merge thea ddress into drop-down .. wider button - and get rid of the address and get directions
+			-- have button say "select" and have an option..for john, with address, have an option "select host"
+			-- consider resizing text
+			-- confirm availability - fill out drop down menu (fedex, ups, etc)..
+				--confirem availability - ONE dropdown - e.g., "fedex, 2 day", "USPS priority (2 day", usps 7-10 days.. 
+				-- john add note around aviability: "Here's our avaiability policy: hosts are required to regularly update their availability.  
+																							Hosts are accountable for all packages delivered on days that they commmited to being available.  
+																							If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery.
+																							However, if you send a packaget to a host that might arrive on a day when they have stated they are unavailable,
+																							you will be charged even if the host misses the delivery.  You're likely to still get the package, but it may not be available for pickup 
+																							until a later date." 
+																							
+
+				- add a hyperlink to the payment page when the user "submits"
+19. JOHN: payment pagee
+			-- update payment options in first block
+			-- add link to shipapackage from the payment page
+20. JESS: payment page -- do the django app for payment				
+21. JESS startashipment: add a django calendar app
+22. JOHN: you send jess a message saying "package received"
+23. JOHN shippackage: add weights
+24. JESS: shippackage: connect the host address fields to data table so populate,
+25. JESS: send a user an email when they ship package
+26. JESS: messagig system figure out how to integratem with email/so messages are sent as emails
 1. JOHN: add his profile picture to HPV.
 2. JOHN: fix mobile
-	
-	
+	3. JESS to form and table - add need_meals
+20. JOHN MYBLOCK: code a basic version of this
+12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
+3. JOHN search page: 
+		-- make text look better for john
+			-"dont see a blocbox host in your hood"? -- MAKE IT LARGER
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
+1. JOHN/JESS: package incoming process/when it arrives
 1. JOHN: add green check box next to verified info
 2. JESS: verified info on HPV - only show symbol if verified, then in connect version show the DATA.
 3. JESS: update "when i'm home" information for host profile... visitor
@@ -50,7 +71,9 @@
 12. Jess: populatethe dashboard - so that the tracking is linked
 13. jess: google map - link the search page to the fields in table so it automatically popualtes with hosts nearby (e.g., not hard coded)
 14.: john: update "my block" p age with th enice map that you first crated
-15. jess: update back-end of "my block" page after john adds themap and after you've fixed the search page to populate from the table
+15. jess: update back-end of "my block" page after john adds themap and after youve fixed the search page to populate from the table
+13. JOHN: create HOSTdashboard - or version of this for thishost.
+
 # check oyt the pages john made
 
 # fix the "beyond packages" text on baseorange
