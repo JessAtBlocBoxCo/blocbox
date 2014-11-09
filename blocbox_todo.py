@@ -3,9 +3,21 @@
 1. fix that shit with the margin padding on right-hand side
 2. fix mobile
 3. "done see a blocbox host in your hood"? -- MAKE IT LARGER
-4. 
+4. HPV -- remove "this is test host_aboutme message" - change the text a bit
+5. HPV pricing - says "unlimited" BUT REALLY "10 PACKAGES/MONTH"
+6. HPV - currently helping XX neighbors - fix XX
+7. populate helpingneighbors filed for JOHN - zero
+6. add an APPROXIMATE ADDRESS FIELD
+5. HPV vs HP - we dont really need "visitor" site.. its just if-then.. just turn to hosprofile 
+-- what differs when you are connected? 
+				1. Approximate Address right now we have address in... it should be a APPROXIMATE ADDRESS, 
+				2. verified info: if not connected, say "Verified Info" -- 
+7. jess: RE-LEARN SOUTH DATABASE MIGRATION.
+6. dashboar d- add list of users connected
 
-
+"""WEBSITE TASKS LOWER  PRIORITI"""
+1. JOHN: add green check box next to verified info
+2. JESS: verified info on HPV - only show symbol if verified, then in connect version show the DATA.
 # check oyt the pages john made
 
 # fix the "beyond packages" text on baseorange
