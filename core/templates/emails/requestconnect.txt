@@ -2,7 +2,9 @@ Hello {{ host.first_name }},
 
 You have a new request to connect from {{firstname}} {{ lastname}} [{{ useremail }}].
 
-Your neighbor's request to connect included the following message: {{ emailgreeting }}
+Your neighbor's request to connect included the following message: {{ emailgreeting }} 
+
+Time of day they would like to pick up packages: {{ pickup_time }} 
 
 Click on the following link if you'd like to accept this new neighbor:
 

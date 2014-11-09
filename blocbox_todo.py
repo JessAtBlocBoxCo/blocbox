@@ -8,6 +8,7 @@
 2. Navbar 
 		- is totally fucked - the list shows up to left
 		- navbar height should be bigger on desktop
+3. search page: make text look better for john
 3. "done see a blocbox host in your hood"? -- MAKE IT LARGER
 4. HPV -- remove "this is test host_aboutme message" - change the text a bit
 5. HPV pricing - says "unlimited" BUT REALLY "10 PACKAGES/MONTH"
@@ -29,6 +30,8 @@
 3. JESS: update "when i'm home" information for host profile... visitor
 4. JESS: update table to have fields for what other services they are offering
 5. JESS: updating HPV so that it truly reflects what services you offer
+6. JOHN: sign-up - "by continugin i agree" - put below button
+7. JESS: add to email sent to host - the text they fill in for when they usually get packages
 # check oyt the pages john made
 
 # fix the "beyond packages" text on baseorange
