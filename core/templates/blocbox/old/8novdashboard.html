@@ -1,0 +1,138 @@
+<!-- this is blocbox/core/templates/blocbox/dashboard.html , URL is www.blocbox.co/dashboard
+	i think we shoudl only have one dashboard and then just have additional stuff for hosts, using if--then logic.. 
+	this is easier to impelemnt if teh layout is relatively straight forward - so additional content is added vertically,
+-->
+{% extends "blocbox/base.html" %}
+{% load staticfiles %} 
+{% block title %}Dashboard{% endblock %}
+
+{% block headafter %} 
+{% endblock %} 
+  
+{% block content %}
+
+<div class="container-fluid whitebackground relativediv">
+    
+    <div class="row margintop50px marginbottom30px mobilehide">
+        <a href="dashboard.html" class="col-xs-2 col-xs-offset-1 redtext textshadow textcenter">DASHBOARD</a>
+        <a href="/messages/inbox/" class="col-xs-2 ltgreytext textcenter">MESSAGES</a>
+        <a href="/myblock/" class="col-xs-2 ltgreytext textcenter">MY BLOCK</a>
+        <p class="col-xs-2 ltgreytext textcenter">PROFILE</p>
+        <p class="col-xs-2 ltgreytext textcenter">ACCOUNT</p>
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="profileboxline100"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-xs-3 mobilehide">
+            <img class="dashpic" src="{% static 'blocbox/images/JB-2.png' %}"  /> 
+            <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
+            <p class="darkgreytext margintop5px textcenter">EDIT PROFILE</p>
+            <p  class="darkgreytext textcenter margintop20px">HOME</p>
+            <p  class="nomarginbottom textcenter"> &nbsp {{ user.st_address1 }} &nbsp </p>
+            <p  class="textcenter"> &nbsp {{ user.st_address2 }} &nbsp </p>
+            <p  class="darkgreytext textcenter">PHONE</p>
+            <p  class="textcenter"> &nbsp {{ user.phone_number }} &nbsp </p>
+            <div class="profileboxline margintop20px marginbottom20px"></div>
+            <p  class="ltbluetext textcenter">Invite Your Neighbors</p>
+            <p  class="ltbluetext textcenter margintop20px">Become a Host</p>
+            <p  class="ltbluetext textcenter margintop20px">Love Blocbox?</p>
+        </div>
+
+        <p class="col-xs-2 ltbluetext">CURRENT</p>
+        <div class="col-xs-12 col-sm-8 dashbox">
+       <div class="row">
+            <h3 class="col-xs-3 ltbluetext">Shipments</h3>
+        </div>
+        <div>
+               <div class="row">
+                   <p class="col-xs-2 darkgreytext textcenter">STATUS</p>
+                   <p class="col-xs-2 darkgreytext textcenter">TRACKING</p>
+                   <p class="col-xs-2 darkgreytext textcenter">DELIVERY DATE</p>
+                   <p class="col-xs-2 darkgreytext textcenter">NEIGHBOR</p>
+                   <p class="col-xs-2 darkgreytext textcenter">ADDRESS</p>
+                   <p class="col-xs-2 darkgreytext textcenter">OPTIONS</p>
+                </div>
+                <div class="whitebackground">
+                    <div class="row  paddingtop20px">
+                        <p class="col-xs-2 textcenter">Ready for pickup</p>
+                        <p class="col-xs-2 textcenter">Z139W198WQPUTV</p>
+                        <p class="col-xs-2 textcenter">Nov. 19</p>
+                        <p class="col-xs-2 textcenter">John</p>
+                        <p class="col-xs-2 textcenter">420 Grand Ave.</p>
+                        <p class="col-xs-2 textcenter">Modify</p>
+                    </div>
+                </div>
+            <div class="whitebackground margintop20px marginbottom30px">
+                <div class="row  paddingtop20px">
+                    <p class="col-xs-2 textcenter">In Transit</p>
+                    <a href="" class="col-xs-2 textcenter">Enter Tracking #</a>
+                    <p class="col-xs-2 textcenter">Nov. 21</p>
+                    <p class="col-xs-2 textcenter">John</p>
+                    <p class="col-xs-2 textcenter">420 Grand Ave.</p>
+                    <p class="col-xs-2 textcenter">Modify</p>
+                </div>
+            </div>
+            </div>
+    </div>
+
+        <div class="col-xs-12 col-sm-8 dashbox margintop30px marginbottom30px">
+        <div class="row">
+            <h3 class="col-xs-3 ltbluetext">Favors</h3>
+        </div>
+        <div>
+            <div class="row">
+                <p class="col-xs-2 darkgreytext textcenter">STATUS</p>
+                <p class="col-xs-2 darkgreytext textcenter">DESCRIPTION</p>
+                <p class="col-xs-2 darkgreytext textcenter">COMPLETION DATE</p>
+                <p class="col-xs-2 darkgreytext textcenter">NEIGHBOR</p>
+                <p class="col-xs-2 darkgreytext textcenter">ADDRESS</p>
+                <p class="col-xs-2 darkgreytext textcenter">OPTIONS</p>
+            </div>
+            <div class="whitebackground marginbottom30px">
+                <div class="row paddingtop20px">
+                    <p class="col-xs-2 textcenter">In progress</p>
+                    <p class="col-xs-2 textcenter">House Sitting</p>
+                    <p class="col-xs-2 textcenter">Nov. 19</p>
+                    <p class="col-xs-2 textcenter">John</p>
+                    <p class="col-xs-2 textcenter">420 Grand Ave.</p>
+                    <p class="col-xs-2 textcenter">Modify</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <p class="col-xs-2 col-xs-offset-3">RECENT</p>
+    </div>
+        <div class="col-xs-8 col-sm-8 col-sm-offset-3 dashbox marginbottom60px">
+        <div class="row">
+            <h3 class="col-xs-3">Shipments</h3>
+        </div>
+        <div>
+            <div class="row">
+                <p class="col-xs-2 darkgreytext textcenter">STATUS</p>
+                <p class="col-xs-2 darkgreytext textcenter">TRACKING</p>
+                <p class="col-xs-2 darkgreytext textcenter">DELIVERY DATE</p>
+                <p class="col-xs-2 darkgreytext textcenter">NEIGHBOR</p>
+                <p class="col-xs-2 darkgreytext textcenter">ADDRESS</p>
+                <p class="col-xs-2 darkgreytext textcenter">OPTIONS</p>
+            </div>
+            <div class="whitebackground margintop20px marginbottom30px">
+                <div class="row paddingtop20px">
+                    <p class="col-xs-2 textcenter">Received</p>
+                    <p class="col-xs-2 textcenter">Z139W198WQPUTV</p>
+                    <p class="col-xs-2 textcenter">Nov. 11</p>
+                    <p class="col-xs-2 textcenter">John</p>
+                    <p class="col-xs-2 textcenter">420 Grand Ave.</p>
+                    <p class="col-xs-2 textcenter">View Receipt</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+</div>
+
+
+{% endblock %}
