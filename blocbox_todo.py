@@ -8,6 +8,7 @@
 2. Navbar 
 		- is totally fucked - the list shows up to left
 		- navbar height should be bigger on desktop
+		- add "start a shipment" to navbar
 3. to form - add need_meals
 3. search page: make text look better for john
 3. "done see a blocbox host in your hood"? -- MAKE IT LARGER
@@ -28,6 +29,7 @@
 12. JESS: dashboard - connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
 13. JOHN: create HOSTdashboard - or version of this for thishost
 14. JOHN: create MYBLOCK..
+15. john: add a "start a shipment" action button or link or wahtever to dashboard
 	
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: add green check box next to verified info
@@ -42,7 +44,9 @@
 10. Allow user to upload pictures
 11. john: style the profile pic - so the user uplaodssimplepic, and then converted to glossy bubble
 12. Jess: populatethe dashboard - so that the tracking is linked
-	
+13. jess: google map - link the search page to the fields in table so it automatically popualtes with hosts nearby (e.g., not hard coded)
+14.: john: update "my block" p age with th enice map that you first crated
+15. jess: update back-end of "my block" page after john adds themap and after you've fixed the search page to populate from the table
 # check oyt the pages john made
 
 # fix the "beyond packages" text on baseorange
