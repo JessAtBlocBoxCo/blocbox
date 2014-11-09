@@ -32,6 +32,9 @@
 5. JESS: updating HPV so that it truly reflects what services you offer
 6. JOHN: sign-up - "by continugin i agree" - put below button
 7. JESS: add to email sent to host - the text they fill in for when they usually get packages
+8. SIGN-UP: two bowls of shit, one bowl, then sneaky second bowl of shit
+9. JESS: add community dinners/food as a use-case.. add this totable adn then also update the checkboxes
+	
 # check oyt the pages john made
 
 # fix the "beyond packages" text on baseorange
