@@ -6,7 +6,8 @@
 4. HPV -- remove "this is test host_aboutme message" - change the text a bit
 5. HPV pricing - says "unlimited" BUT REALLY "10 PACKAGES/MONTH"
 6. HPV - currently helping XX neighbors - fix XX
-7. populate helpingneighbors filed for JOHN - zero
+7. populate helpingneighbors filed for JOHN - - MAKE A FUNCTION TO COUNT NEIGHBORS YOU ARE HELPING
+8. Add "when i'm home" field...
 6. add an APPROXIMATE ADDRESS FIELD
 5. HPV vs HP - we dont really need "visitor" site.. its just if-then.. just turn to hosprofile 
 -- what differs when you are connected? 
