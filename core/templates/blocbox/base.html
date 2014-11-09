@@ -104,7 +104,7 @@
   		 			
   				<!--the "brand" - ultimately we should replace this with styled text rather than an image -->  
   				<div class="col-xs-6 col-sm-3">
-  					<a class="navbar-brand brandnavbarimage basenavbarbrand" href="/beta"> 
+  					<a class="navbar-brand brandnavbarimage bbbasenavbar bbbasenavbarbrand" href="/beta"> 
   						<!--moving image link to css
   						<img src="{% static "blocbox/images/Logo-and-name---orange-drop2.png" %}"  height="40" width="200" />
   						-->
@@ -116,7 +116,7 @@
     				<div class="dropdown" > <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
         				
 							<!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
-        			<button class="btn btn-default  dropdown-toggle margintop10px" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
+        			<button class="btn btn-default  dropdown-toggle bbbasenavbar" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
     						{% if user.is_authenticated %} {{user.first_name}}
        					{% else %} <a href='/login'>Sign in</a> 
        					{% endif %}      
