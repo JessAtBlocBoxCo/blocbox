@@ -112,7 +112,7 @@
     				<div class="dropdown" > <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
         				
 							<!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
-        			<button class="btn btn-default  dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
+        			<button class="btn  dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
     						{% if user.is_authenticated %} {{user.first_name}}
        					{% else %} <a href='/login'>Sign in</a> 
        					{% endif %}      
@@ -144,9 +144,9 @@
     				</div> <!--dropdown -->
     		</div> <!--col containing ddropdown button-->
     		
-    		<div class="col-xs-2 col-sm-1">
+    		<div class="col-xs-2 col-sm-1"> <!--info button-->
         	<a class="navbar-brand bbbasenavbar bbbasenavbarinfo"> </a>
-    		</div>
+    		</div> <!--end info button-->
     	
     	</div> <!--row containing full navbar-->	
     	
