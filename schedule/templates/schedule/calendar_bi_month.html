@@ -7,7 +7,7 @@
 {% block body %}
 <div class="tablewrapper bimonth"> <!--divider containing the calendar-->
   
-  <div class="calendarname">{{ calendar.name }}</div>
+  <div class="calendarname bimonth">{{ calendar.name }}</div>
   
   {% prevnext "tri_month_calendar" calendar.slug periods.month "F Y"%}
   	
@@ -17,14 +17,35 @@
     	</a>
   	</div> <!--now div..-->
 		
-		<table align="center"> <!--contains the two calendars-->
-			<tr>
-				
+		<table align="center" class="bimonth"> <!--contains the two calendars-->
+			<tr>				
 				<td valign="top">
 						<!--first calendar: month_table is defined in templatetags/scheduletags.py, periods.month have weekday names
 								the "small" designation means weekday names are used
 						-->
 						{% month_table calendar periods.month "small" %}
+						<!--that python code inserts a bunch of code .[FOUND HERE:...]that looks like this: 
+						<table class="calendar" align="center">
+    							<tbody>
+    							    <tr class="daysofweek"> … </tr>
+    							    <tr> … </tr>
+    							    <tr>
+    							        <td>
+    							            <a href="/scheduling/calendar/week/testcalendar1/?year=2014&month=11&day=2"> … </a>
+    							        </td>
+    							        <td class="small daynumber free"> … </td>
+    							        <td class="small daynumber free"> … </td>
+    							        <td class="small daynumber free"> … </td>
+    							        <td class="small daynumber free"> … </td>
+    							        <td class="small daynumber free"> … </td>
+    							        <td class="small daynumber free"> … </td>
+    							        <td class="small daynumber free"> … </td>
+    							    </tr>
+    							</tbody>
+						</table>
+						-->
+						
+						
 				</td> 
 				<td width="12">&nbsp;</td>
 				<td valign="top">{% month_table calendar periods.month "small" +1 %}</td>

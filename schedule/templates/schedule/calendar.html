@@ -18,6 +18,7 @@
     <ul>
         <li><a href="{% url "compact_calendar" calendar.slug %}">{% trans "Small Month" %}</a></li>
         <li><a href="{% url "month_calendar" calendar.slug %}">{% trans "1 Month" %}</a></li>
+        <li><a href="{% url "bi_month_calendar" calendar.slug %}">{% trans "2 Months" %}</a></li>
         <li><a href="{% url "tri_month_calendar" calendar.slug %}">{% trans "3 Months" %}</a></li>
         <li><a href="{% url "year_calendar" calendar.slug %}">{% trans "This Year" %}</a></li>
         <li><a href="{% url "week_calendar" calendar.slug %}">{% trans "Weekly" %}</a></li>
