@@ -2,16 +2,21 @@
 		it is extended by /schedule/templates/schedule/base.html-->
 {% extends "blocbox/base.html" %}
 {% load i18n %}
+{% block title %}Scheduling Site Base{% endblock %}
+
+<!--commenting this stuff out from the origin site_base.html 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>{% if site_name %}{{ site_name }} : {% endif %}{% block head_title %}{% endblock %}</title>
-        <!--[if IE]><style>
-            div {
-                zoom: 1; /* trigger hasLayout */
-            }
-        </style><![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% if site_name %}{{ site_name }} : {% endif %}{% block head_title %}{% endblock %}</title>
+ -->           
+
+        
+               
+{% block headafter %}	
+
+
         {% if LANGUAGE_BIDI %}
         <style type="text/css" media="screen">
             div.right_panel {
@@ -20,10 +25,17 @@
         </style>
         {% endif %}
         {% block extra_head %}
-        {% endblock %}
-    </head>
+        {% endblock %} 
+                <!--[if IE]><style>
+            div {
+                zoom: 1; /* trigger hasLayout */
+            }
+        </style><![endif]-->
+        
+{% endblock %}
+    
+{% block content %}
 
-    <body>
     <h3 id="demo"> This is a demo of a django-schedule calendar [Jess Testing - Modifying this text]</h3>
     <p style="clear:both">
 
@@ -43,5 +55,5 @@
 
         <div id="footer">{% block footer %}{% endblock %}</div>
 
-    </body>
-</html>
+
+{% endblock %}
