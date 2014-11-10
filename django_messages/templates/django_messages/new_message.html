@@ -1,6 +1,6 @@
 {% load i18n %}
 {% load url from future %}
-
+{% block title %}New Message{% endblock %}
 {% blocktrans with recipient=message.recipient sender=message.sender %}Hello {{ recipient }},
 
 you received a private message from {{ sender }} with

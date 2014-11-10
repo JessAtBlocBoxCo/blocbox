@@ -2,6 +2,8 @@
 {% load i18n %} 
 {% load url from future %}
 
+{% block title %}Outbox{% endblock %}
+
 {% block messagingcontent %} 
 <h1>{% trans "Sent Messages" %}</h1>
 {% if message_list %} 
