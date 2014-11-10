@@ -1,38 +1,24 @@
 
-"""TASK MGMT FOR LIST BELOW"""
+"""WEBSITE WORK: BEFORE TUMML INTERIVEW"""
 
-"""WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
-
-1. JESS HPV
-				2. verified info: if not connected, say "Verified Info" --
-				3. when connected to the user, dont say "sign up to connect" -so edit that languager
-2. JESS HPV - rather tha 'If authenticated' show approx address etc.. say if connected.. remember how to do that
-11. JESS: dashboard
-			-- create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
---- connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
-
-12. JOHN HPV responsibe: whole site needs addressed, address field and name underpicture are not responsive
-13. JOHN waitlist: fix the colors
-
-15. JOHN waitlist (index.html): fix fucked up color stuff
-16. JESS: beta - toggle button
-??
-	- add a hyperlink to the payment page when the user "submits"
-19. JOHN: payment pagee
+1. JESS dashboard: connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
+2. JESS: payment page -- do the django app for payment
+3. JESS startashipment: add a django calendar app
+4. JESS: shippackage: connect the host address fields to data table so populate,
+5. JESS: send a user an email when they ship package
+6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails
+12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
+	
+1. JOHN - MAKE SITE REponsive
+		-- HPV, 
+2. JOHN waitlist: fix the colors
+3. JOHN: start a shipment: add a hyperlink to the payment page when the user "submits"
+4. JOHN: payment pagee
 			-- update payment options in first block
 			-- add link to shipapackage from the payment page
-20. JESS: payment page -- do the django app for payment
-21. JESS startashipment: add a django calendar app
-22. JOHN: you send jess a message saying "package received"
-
-24. JESS: shippackage: connect the host address fields to data table so populate,
-25. JESS: send a user an email when they ship package
-26. JESS: messagig system figure out how to integratem with email/so messages are sent as emails
-
-2. JOHN: fix mobile
-	3. JESS to form and table - add need_meals
-20. JOHN MYBLOCK: code a basic version of this
-12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
+5. JOHN: you send jess a message saying "package received"
+6. JOHN: fix mobile
+7. JOHN MYBLOCK: code a basic version of this
 3. JOHN search page:
 		-- make text look better for john
 			-"dont see a blocbox host in your hood"? -- MAKE IT LARGER
@@ -55,6 +41,10 @@
 15. jess: update back-end of "my block" page after john adds themap and after youve fixed the search page to populate from the table
 13. JOHN: create HOSTdashboard - or version of this for thishost.
 14. JESS: add a calendar for availablity - figure out a django app for this
+15. jess: fig invalid login credentials plac e- redirect to a forgot password
+	1. JESS HPV verified info: if not connected, say "Verified Info" --
+11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
+	7. JESS to form and table - add need_meals
 # check oyt the pages john made
 
 # fix the "beyond packages" text on baseorange
@@ -288,3 +278,6 @@ So when you push to origin, it will push to both repositories
 			-- Add "wghen i'm home" field..... connect to availability
  		-- to userinfo: whenimhome_days
  										whenimhome_hours
+ 										
+3. when connected to the user, dont say "sign up to connect" -so edit that languager
+2. JESS HPV - rather tha 'If authenticated' show approx address etc.. say if connected.. remember how to do that
