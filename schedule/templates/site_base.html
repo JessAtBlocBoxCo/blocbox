@@ -11,17 +11,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>{% if site_name %}{{ site_name }} : {% endif %}{% block head_title %}{% endblock %}</title>
  -->           
-
-        
+       
                
-{% block headafter %}	
-
-
+{% block headafter %}	 <!--this stuff was in the origin site_base.html file that came with the django_scheduler package, may not be needed -->
         {% if LANGUAGE_BIDI %}
         <style type="text/css" media="screen">
-            div.right_panel {
-                float: left; /* hotfix for sidebar */
-            }
+            div.right_panel {  float: left; /* hotfix for sidebar */ }
         </style>
         {% endif %}
         {% block extra_head %}
@@ -30,13 +25,13 @@
             div {
                 zoom: 1; /* trigger hasLayout */
             }
-        </style><![endif]-->
-        
+        </style><![endif]-->       
 {% endblock %}
     
 {% block content %}
-
-    <h3 id="demo"> This is a demo of a django-schedule calendar [Jess Testing - Modifying this text]</h3>
+		
+		<br><br>
+    <h3> This is a demo of a django-schedule calendar [Jess Testing - Modifying this text]</h3>
     <p style="clear:both">
 
         <div id="body">
@@ -53,7 +48,6 @@
 
         </div>
 
-        <div id="footer">{% block footer %}{% endblock %}</div>
 
 
 {% endblock %}
