@@ -33,7 +33,7 @@ h6 {font-size: 1.27em; font-weight: 400; line-height: 1.38em;  }
 
 .tinytext {font-size: 0.800em; font-weight: 400; }
 .subnavtext {font-size: 1.067em; font-weight: 500; color: rgb(223, 226, 226); }
-.subnavtext:hover {font-size: 1.067em; font-weight: 500; color: rgb(41, 128, 185); text-shadow: 0px 2px 5px rgb(236, 240, 241); text-decoration-line: none; }
+.subnavtext:hover {font-size: 1.067em; font-weight: 500; color: rgb(41, 128, 185); text-shadow: 0px 2px 5px rgb(236, 240, 241); text-decoration: none; }
 .subnavtextcurrent {font-size: 1.067em; font-weight: 500; color: rgb(211, 84, 0); text-shadow: 0px 2px 5px rgb(236, 240, 241) }
 
 /*Style the footer class - fix to bottom of page, make font slightly smaller */
