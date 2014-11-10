@@ -68,10 +68,9 @@
 	
 	
 			<!--DELME - A BUNCH OF TETS DO NOT DELETE - KEEP COMMENTED OUT -->
-			 <p> {% if user.is_authenticated %} THE ID OF THE ENDUSER IS: {{ enduser.id }} AND THE NAME OF THE {{ enduser.first_name }} {% endif %} </p>
+			 <p> {% if connected %} THESE USEERS ARE CONNECTED: {{ enduser.id }} AND THE NAME OF THE {{ enduser.first_name }} {% endif %} </p>
 	   
-	   <p>	TEST - ARE THEY CONNECTED?  {{ connected }}</p>
-    	 <p>	TEST - show tranction OBJECTIONS   {{ transactions_all }}  </p>
+	   <p>	TEST - ARE THEY CONNECTED? [TRUE OF FALSE]  {{ connected }}</p>
 
     	
 
