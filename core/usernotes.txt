@@ -1,2 +1,27 @@
 **john**
 Host About_Me: Hi!I'm John. I've lived in the neigborhood for almost two years.  I work at home, am happy to make package delivery easier on my neighbors, and am excited to help build a sense of community here in Clinton Hill.
+
+Availability: I'm available all day Monday-Friday, except when indicated.  If I have to step out when a package is on its way, I'll make sure one of my roommates or my next door neighbor is available to get the package.
+
+
+
+						<!--that python code inserts a bunch of code 
+									The week numbers (hate them), are
+									The daysofweek is in _month_table.htmls
+									The week days numbers, are defined in the <td class="small daynumber free">...</td>, the code is found in: _day_cell.html (
+									
+						that looks like this: 
+						<table class="calendar" align="center">
+    							<tbody>
+    							    <tr class="daysofweek"> … </tr>
+    							    <tr> … </tr>
+    							    <tr>
+    							        <td>
+    							            <a href="/scheduling/calendar/week/testcalendar1/?year=2014&month=11&day=2"> … </a>
+    							        </td>
+    							        NOTE 
+    							        <td class="small daynumber free"> … </td>
+    							    </tr>
+    							</tbody>
+						</table>
+						-->
