@@ -1,15 +1,18 @@
-<!--this is /schedule/templates/schedule/base.html, it extends schedule/templates/site_base.html -->
+<!--this is /schedule/templates/schedule/base.html, it extends schedule/templates/site_base.html, which extends /blocbox/base.html -->
 {% extends "site_base.html" %}
 {% load staticfiles i18n %}
+
 {% block extra_head %}
 {{ block.super }}
 <link rel="stylesheet" href="{% static "schedule/css/schedule.css" %}" type="text/css" media="screen" />
 <link rel="stylesheet" href="{% static "schedule/css/jquery-ui.css" %}" type="text/css" media="screen" />
 <script type="text/javascript" src="{% static "schedule/js/jquery.js" %}"></script>
 <script type="text/javascript" src="{% static "schedule/js/jquery-ui.js" %}"></script>
-{% endblock %}
+{% endblock %} <!--end extra_head block -->
 
 {% block rtab_id %}id="schedule_tab"{% endblock %}
+
+
 
 {% block subnav %}
 <ul>
@@ -20,4 +23,4 @@
 
         <li><a href="">{% trans "All Calendars" %}</a></li>
     </ul>
-{% endblock %}
+{% endblock %} <!--subnav block-->

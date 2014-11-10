@@ -34,16 +34,21 @@
     <h3> This is a demo of a django-schedule calendar [Jess Testing - Modifying this text]</h3>
     <p style="clear:both">
 
-        <div id="body">
+        <div>
             {% if messages %}
                 <ul id="messages">
                     {% for message in messages %}
-                    <li id="message_{{ forloop.counter }}"><a href="#" onclick="$('#message_{{ forloop.counter }}').fadeOut(); return false;"><small>{% trans "clear" %}</small></a> {{ message }}</li>
-                    {% endfor %}
+                    		<li id="message_{{ forloop.counter }}">
+                    				<a href="#" onclick="$('#message_{{ forloop.counter }}').fadeOut(); return false;">
+                    				<small>{% trans "clear" %}</small>
+                    				</a> {{ message }}
+                    		</li>
+                    {% endfor %} <!--for message in messages-->
                 </ul>
-            {% endif %}
+            {% endif %} <!--if messages-->
 
             {% block body %}
+            	<!--this is filled in by the templates in schedule/templates/shedule directory -->
             {% endblock %}
 
         </div>
