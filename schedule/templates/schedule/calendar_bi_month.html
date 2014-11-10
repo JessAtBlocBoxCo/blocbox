@@ -1,30 +1,45 @@
 <!--	this is /schedule/templates/schedule/calendar_bi_month.html, extends schedule/base.html, which extends templates/site_base.html
-			URL is blocbox.co/scheduling/calendar/bi_month/[calendarname]/ -->
+			URL is blocbox.co/scheduling/calendar/bi_month/[calendarname]/ 
+			it loads schedule/templatetags/scheduletags.py
+			-->
 {% extends "schedule/base.html" %}
-{% load scheduletags i18n %}
+{% load scheduletags i18n %} <!--schedule/templatetags/scheduletags.py -->
 {% block body %}
-<div class="tablewrapper">
+<div class="tablewrapper bimonth"> <!--divider containing the calendar-->
+  
   <div class="calendarname">{{ calendar.name }}</div>
+  
   {% prevnext "tri_month_calendar" calendar.slug periods.month "F Y"%}
-  <div class="now">
-    <a href="{% url "tri_month_calendar" calendar.slug %}">
-      {% trans "This month" %}
-    </a>
-  </div>
-<table align="center">
-	<tr>
-		<td valign="top">{% month_table calendar periods.month "small" %}</td>
-		<td width="12">&nbsp;</td>
-		<td valign="top">{% month_table calendar periods.month "small" +1 %}</td>
-	</tr>
-</table>
-</div>
-<div class="navigation">
-  <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 2 True %}">
-    {% trans "Monthly Calendar" %}
-  </a>
-  <a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
-    {% trans "Full Year Calendar" %}
-  </a>
-</div>
+  	
+  	<div id="now">
+    	<a href="{% url "bi_month_calendar" calendar.slug %}">
+      		{% trans "This month" %}
+    	</a>
+  	</div> <!--now div..-->
+		
+		<table align="center"> <!--contains the two calendars-->
+			<tr>
+				
+				<td valign="top">
+						<!--first calendar: month_table is defined in templatetags/scheduletags.py, periods.month have weekday names
+								the "small" designation means weekday names are used
+						-->
+						{% month_table calendar periods.month "small" %}
+				</td> 
+				<td width="12">&nbsp;</td>
+				<td valign="top">{% month_table calendar periods.month "small" +1 %}</td>
+			</tr>
+		</table> <!--table containing two calendars-->
+		
+		
+	</div> <!--tablewrapper div-->
+
+	<div class="navigation">
+  	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 2 True %}">
+    	{% trans "Monthly Calendar" %}
+  	</a>
+  	<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+    	{% trans "Full Year Calendar" %}
+  	</a>
+	</div>
 {% endblock %}

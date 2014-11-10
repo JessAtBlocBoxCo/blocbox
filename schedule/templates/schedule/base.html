@@ -4,10 +4,11 @@
 
 {% block extra_head %}
 {{ block.super }}
-<link rel="stylesheet" href="{% static "schedule/css/schedule.css" %}" type="text/css" media="screen" />
-<link rel="stylesheet" href="{% static "schedule/css/jquery-ui.css" %}" type="text/css" media="screen" />
-<script type="text/javascript" src="{% static "schedule/js/jquery.js" %}"></script>
-<script type="text/javascript" src="{% static "schedule/js/jquery-ui.js" %}"></script>
+	<!--need to find these schedule/css/schedule.css stylesheets 0-->
+	<link rel="stylesheet" href="{% static "schedule/css/schedule.css" %}" type="text/css" media="screen" />
+	<link rel="stylesheet" href="{% static "schedule/css/jquery-ui.css" %}" type="text/css" media="screen" />
+	<script type="text/javascript" src="{% static "schedule/js/jquery.js" %}"></script>
+	<script type="text/javascript" src="{% static "schedule/js/jquery-ui.js" %}"></script>
 {% endblock %} <!--end extra_head block -->
 
 {% block rtab_id %}id="schedule_tab"{% endblock %}
