@@ -44,7 +44,7 @@ def dashboard(request, userinfo_id):
 def hostprofile(request, userinfo_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=userinfo_id)
-    enduser = get_object_of_404(UserInfo, pk=user.id)
+    enduser = get_object_or_404(UserInfo, pk=user.id)
     #connected = Connection.objects.are_neighbors(user1=host, user2=) #true of false, but not sure how to call thee user...
     connections_all = Connection.objects.filter(host_user=host) 
     connections_count = Connection.objects.filter(host_user=host).count() #count them,removing status=0 after host_user=host
