@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'datasci',
     'password_reset',
     'django_messages',
-    'django_scheduler',
+    #'django_scheduler',
 		'billing',
 		'paypal.standard.ipn',
 )
