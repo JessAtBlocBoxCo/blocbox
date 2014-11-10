@@ -20,11 +20,15 @@
 		<table align="center" class="bimonth"> <!--contains the two calendars-->
 			<tr>				
 				<td valign="top">
-						<!--first calendar: month_table is defined in templatetags/scheduletags.py, periods.month have weekday names
-								the "small" designation means weekday names are used
-						-->
-						{% month_table calendar periods.month "small" %}
 
+					{% month_table calendar periods.month "small" %}
+					<!--this statement calls functions defined in templatetags/scheduletags.py
+							The calendar table is defined in _month_table.html
+							The daysofweek is in _month_table.htmls
+							The week numbers - HATE THME - are in..
+							The week days numbers, are defined in the <td class="small daynumber free">...</td>, the code is found in: _day_cell.html
+							the "small" designtation meamnsn weekday ames are abbreviated
+					-->
 						
 						
 				</td> 
