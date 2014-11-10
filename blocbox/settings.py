@@ -42,7 +42,7 @@ INSTALLED_APPS = (
     'password_reset',
     'django_messages',
     'dateutil',
-    'schedule',
+    #'schedule',
     #'django_scheduler',
 		'billing',
 		'paypal.standard.ipn',
