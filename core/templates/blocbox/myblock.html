@@ -7,8 +7,61 @@
 
 {% block content %}
 
-<br>
-<h3>DELME - TESTING - THIS IS THE MY BLOCK PAGE</h3>
+<div class="container-fluid whitebackground relativediv">
+
+    <div class="row margintop60px marginbottom30px mobilehide">
+        <a href="dashboard.html" class="col-xs-2 col-xs-offset-1 subnavtext textcenter">DASHBOARD</a>
+        <a href="/messages/inbox/" class="col-xs-2 subnavtext textcenter">MESSAGES</a>
+        <a href="/myblock/" class="col-xs-2 subnavtextcurrent textcenter">MY BLOCK</a>
+        <p class="col-xs-2 subnavtext textcenter">PROFILE</p>
+        <p class="col-xs-2 subnavtext textcenter">ACCOUNT</p>
+        <div class="col-xs-10 col-xs-offset-1">
+            <div class="profileboxline100"></div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-xs-3 mobilehide">
+            <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}"  /> 
+            <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
+            <p class="darkgreytext margintop5px tinytext textcenter">EDIT PROFILE</p>
+            <p class="darkgreytext margintop5px tinytext textcenter">HOME</p>
+            <p class="darkgreytext margintop5px tinytext textcenter">{{ user.address }}</p>
+            <p class="darkgreytext margintop5px tinytext textcenter">CONNECTIONS</p>
+            <p class="darkgreytext margintop5px tinytext textcenter">XX</p>
+            <div class="profileboxline margintop20px marginbottom20px"></div>
+            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter">Invite Your Neighbors</p>
+            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Become a Host</p>
+            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Love Blocbox?</p>
+        </div>
+
+
+
+        <div class="col-xs-8">
+            <p class="col-xs-2 ltbluetext nopadding nomargin">MY BLOCK</p>
+            <div class="col-xs-12 col-sm-12 dashbox">
+                <div class="row">
+                    <img class="myblockmap" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}"  />
+                </div>
+            </div>
+
+            
+
+
+            <p class="col-xs-2 ltbluetext nomargin nopadding">MY CONNECTIONS</p>
+            <div class="col-xs-12 dashbox marginbottom60px">
+                <div class="row">
+                    <img class="blockpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}"  /> 
+                </div>
+                <div>
+                    <div class="row">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</div>
 
 
 
