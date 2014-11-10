@@ -34,7 +34,7 @@
    
 	<!--First Row of info> -->
 	
-	<p>TEST - SHOW CONNECTED USERS</p>
+	
 
     <div class="row marginbottom20px hostinfobox relativediv">
         <div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
@@ -57,6 +57,10 @@
             		{{ host.city }} {{ host.state }}
             </h5>
         </div>
+    
+    	<p>TEST - SHOW CONNECTED USERS
+    		 {{ connections_all }}
+    	</p>
     
         <div class="col-xs-12  col-sm-2">
             <button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
