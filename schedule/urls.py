@@ -27,6 +27,12 @@ urlpatterns = patterns(
         name="tri_month_calendar",
         kwargs={'periods': [Month], 'template_name': 'schedule/calendar_tri_month.html'}),
 
+		url(r'^calendar/bi_month/(?P<calendar_slug>[-\w]+)/$',                               
+        'schedule.views.calendar_by_periods',                                             
+        name="bi_month_calendar",                                                        
+        kwargs={'periods': [Month], 'template_name': 'schedule/calendar_bi_month.html'}),
+
+
     url(r'^calendar/compact_month/(?P<calendar_slug>[-\w]+)/$',
         'schedule.views.calendar_by_periods',
         name="compact_calendar",

@@ -116,7 +116,13 @@ The URLs for this site, and the corresponding files are as follows:
 		-Share via flyers
 		-Share via link
 		
+12. blocbox.co/messages: access the django_messages app
+		this automatically goes to blocbox.co/message/inbox - template is at django_messages/tempaltes/django_messages/inbox.html, extends base.html in smae dir
 
+
+13. blocbox.co/scheduling: access the schedule app. templates are at /schedule/templates/schedule
+		Main URL (blocbox.co/schedule) pulls the template calendar_list.hmtl, which extends /schedule/templates/site_base.html (one level up)
+		http://www.blocbox.co/scheduling/calendar/tri_month/testcalendar1/: is the tri_month calendar view for testcalendar1, template at:  ca
 
 
 
