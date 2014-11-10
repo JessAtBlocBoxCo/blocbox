@@ -44,8 +44,8 @@ def dashboard(request, userinfo_id):
 def hostprofile(request, userinfo_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=userinfo_id)
-    if user.is_authenticated:
-        enduser = request.user
+    enduser = request.user
+    if enduser.is_authenticated:
         connected = Connection.objects.are_neighbors(user1=enduser, user2=host) #true of false, but not sure how to call thee user...
     else:
         connected = False
