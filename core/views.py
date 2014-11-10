@@ -44,8 +44,11 @@ def dashboard(request, userinfo_id):
 def hostprofile(request, userinfo_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=userinfo_id)
-    enduser = request.user
-    connected = Connection.objects.are_neighbors(user1=enduser, user2=host) #true of false, but not sure how to call thee user...
+    if user.is_authenticated:
+        enduser = request.user
+        connected = Connection.objects.are_neighbors(user1=enduser, user2=host) #true of false, but not sure how to call thee user...
+    else:
+        connected = False
     connections_all = Connection.objects.filter(host_user=host) 
     connections_count = Connection.objects.filter(host_user=host).count() #count them,removing status=0 after host_user=host   
     transactions_all = Transaction.objects.filter(payee=host)
