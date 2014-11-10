@@ -1,7 +1,8 @@
 <!--this is schedule/templates/schedule/_month_table.html -->
 {% load scheduletags %}
 <table align="center" class="calendar monthtable">
-	<p>MONTH NAME - ADD ME</p>
+	
+	<p>MONTH NAME {{ month_name }} </p>
 
 		{% if day_names %}
 				<tr class="daysofweek">
