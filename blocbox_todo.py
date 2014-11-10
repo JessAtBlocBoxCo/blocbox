@@ -4,12 +4,6 @@
 """WEBSITE WORK: JESS TESTING ANOTHER CHANGE"""
 
 1. JESS HPV
-			-- Add "wghen i'm home" field..... connect to availability
- 		-- to userinfo: whenimhome_days
- 										whenimhome_hours
-
-				make different for connected vs not:
-
 				2. verified info: if not connected, say "Verified Info" --
 				3. when connected to the user, dont say "sign up to connect" -so edit that languager
 2. JESS HPV - rather tha 'If authenticated' show approx address etc.. say if connected.. remember how to do that
@@ -22,10 +16,8 @@
 
 15. JOHN waitlist (index.html): fix fucked up color stuff
 16. JESS: beta - toggle button
-
-
-
-				- add a hyperlink to the payment page when the user "submits"
+??
+	- add a hyperlink to the payment page when the user "submits"
 19. JOHN: payment pagee
 			-- update payment options in first block
 			-- add link to shipapackage from the payment page
@@ -293,3 +285,6 @@ So when you push to origin, it will push to both repositories
 																							you will be charged even if the host misses the delivery.  You're likely to still get the package, but it may not be available for pickup
 																							until a later date."
 15. JOHN dashbaord: add a "start a shipment" action button or link or wahtever to dashboard
+			-- Add "wghen i'm home" field..... connect to availability
+ 		-- to userinfo: whenimhome_days
+ 										whenimhome_hours
