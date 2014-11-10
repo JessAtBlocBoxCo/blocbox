@@ -1,0 +1,15 @@
+                                                                                                 availability                                                                                                  |             email             
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------
+                                                                                                                                                                                                               | testsignupnoconnect@gmail.com
+                                                                                                                                                                                                               | testagain@gmail.com
+                                                                                                                                                                                                               | testconnecttojess@gmail.com
+                                                                                                                                                                                                               | delme1@gmail.com
+                                                                                                                                                                                                               | delme2@gmail.com
+                                                                                                                                                                                                               | testing@gmail.com
+                                                                                                                                                                                                               | admin@blocbox.co
+                                                                                                                                                                                                               | connectwithjess@gmail.com
+                                                                                                                                                                                                               | jess@blocbox.co
+ I'm available all day Monday-Friday, except when indicated.  If I have to step out when a package is on its way, I'll make sure one of my roommates or my next door neighbor is available to get the package. | jburgeson@gmail.com
+                                                                                                                                                                                                               | jessica.yeats@gmail.com
+(11 rows)
+
