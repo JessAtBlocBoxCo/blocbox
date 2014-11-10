@@ -65,7 +65,7 @@
 	</div>  <!--closing row profilebox -->
 	
 			<!--DELME - A BUNCH OF TETS -->
-			 <p> TEST SHOW USER ID {% if user.is_authenticated %} USER ID IS {{ user.id }} {% endif %} </p>
+			 <p> TEST SHOW USER ID {% if user.is_authenticated %} USER ID IS {{ user.id }} AND SHOW NAME OF END USER {{ enduser.first_name }} {% endif %} </p>
 	   <p> TEST count connections {{ connectionstotal }} </p>
 	   
 	   <p>	TEST - SHOW CONNECTED USERS  {{ connected_users }}

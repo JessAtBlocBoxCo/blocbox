@@ -44,14 +44,14 @@ def dashboard(request, userinfo_id):
 def hostprofile(request, userinfo_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=userinfo_id)
-    #enduser = get_object_of_404(UserInfo, pk=
+    enduser = get_object_of_404(UserInfo, pk=user.id)
     #connected = Connection.objects.are_neighbors(user1=host, user2=) #true of false, but not sure how to call thee user...
     connections_all = Connection.objects.filter(host_user=host) 
     connections_count = Connection.objects.filter(host_user=host).count() #count them,removing status=0 after host_user=host
     
     transactions_all = Transaction.objects.filter(payee=host)
     transactions_count = Transaction.objects.filter(payee=host).count() #count all of the transactions
-    return render_to_response('blocbox/host-profile.html', {'host':host, 
+    return render_to_response('blocbox/host-profile.html', {'host':host, 'enduser':enduser,
     		'connections_all':connections_all, 'connections_count':connections_count, 'connectionstotal':connections_count,
     		'transactions_count':transactions_count, 'transactions_all':transactions_all }, context)
 
