@@ -1,15 +1,14 @@
 
 """WEBSITE WORK: BEFORE TUMML INTERIVEW"""
 
-1. JESS dashboard: connect to model/frields: phone_number, neighborhood, st_address1, st_address2, zipcode, city, state
+1. JESS startashipment: add a django calendar app
 2. JESS: payment page -- do the django app for payment
-3. JESS startashipment: add a django calendar app
 4. JESS: shippackage: connect the host address fields to data table so populate,
 5. JESS: send a user an email when they ship package
 6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails
 12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
 	
-1. JOHN - MAKE SITE REponsive
+1. JOHN - /Fix Mobile/make site responsive
 		-- HPV, 
 2. JOHN waitlist: fix the colors
 3. JOHN: start a shipment: add a hyperlink to the payment page when the user "submits"
@@ -17,11 +16,12 @@
 			-- update payment options in first block
 			-- add link to shipapackage from the payment page
 5. JOHN: you send jess a message saying "package received"
-6. JOHN: fix mobile
 7. JOHN MYBLOCK: code a basic version of this
 3. JOHN search page:
 		-- make text look better for john
 			-"dont see a blocbox host in your hood"? -- MAKE IT LARGER
+			
+			
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN/JESS: package incoming process/when it arrives
 1. JOHN: add green check box next to verified info
@@ -42,12 +42,13 @@
 13. JOHN: create HOSTdashboard - or version of this for thishost.
 14. JESS: add a calendar for availablity - figure out a django app for this
 15. jess: fig invalid login credentials plac e- redirect to a forgot password
-	1. JESS HPV verified info: if not connected, say "Verified Info" --
+1. JESS HPV verified info: if not connected, say "Verified Info" --
 11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
 	7. JESS to form and table - add need_meals
-# check oyt the pages john made
+	1. JESS dashboard: connect to transactions table to populate actually transactions
 
-# fix the "beyond packages" text on baseorange
+"""JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
+#they install at: 
 
 
 #3. footer is cropping up
