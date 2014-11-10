@@ -64,11 +64,13 @@
 	
 	</div>  <!--closing row profilebox -->
 	
-			<!--DELME - A BUNCH OF TETS -->
-			 <p> TEST SHOW USER ID {% if user.is_authenticated %} USER ID IS {{ user.id }} AND SHOW NAME OF END USER {{ enduser.first_name }} {% endif %} </p>
-	   <p> TEST count connections {{ connectionstotal }} </p>
+	
+	
+	
+			<!--DELME - A BUNCH OF TETS DO NOT DELETE - KEEP COMMENTED OUT -->
+			 <p> TEST SHOW USER ID {% if user.is_authenticated %} THE ID OF THE ENDERUSER {{ enduser.id }} AND THE NAME OF THE {{ enduser.first_name }} {% endif %} </p>
 	   
-	   <p>	TEST - SHOW CONNECTED USERS  {{ connected_users }}
+	   <p>	TEST - ARE THEY CONNECTED?  {{ connected }}
     		TEST - show tranctions all   {{ transactions_all }}  </p>
 
     	
