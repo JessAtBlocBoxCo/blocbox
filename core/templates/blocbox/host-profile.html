@@ -33,6 +33,8 @@
  
    
 	<!--First Row of info> -->
+	
+	
 
     <div class="row marginbottom20px hostinfobox relativediv">
         <div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
@@ -46,8 +48,7 @@
         <div class="col-xs-5 col-xs-offset-1 col-sm-offset-0">
         		
             <h5 class="paddingtop7px">
-            		<!-- !!! need to update - currently if authenticated..  should say 'if connected' -->
-            		{% if user.is_authenticated %} 
+            		{% if connected %} 
             				{{ host.st_address1 }},
             		{% else %} 
             				{{ host.address_approx }}, {{ host.neighborhood }},
@@ -57,10 +58,18 @@
         </div>
     
         <div class="col-xs-12  col-sm-2">
-            <button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
+        		{% if connected %} 	<button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
+        		{% else %} 					<button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
+            {% endif %} 
         </div>
 	
 	</div>  <!--closing row profilebox -->
+	
+
+	<!--DELME - A BUNCH OF TETS DO NOT DELETE - KEEP COMMENTED OUT 
+			 <p> {% if connected %} THESE USERS ARE CONNECTED: end user id is {{ enduser.id }} and their name is {{ enduser.first_name }} {% endif %} </p>
+	-->
+    	
 
 	<!--Second Row of info> -->
 <div class="row marginbottom20px"> <!--paddingsides10px marginleftright20px --> 
@@ -192,7 +201,11 @@
                 		<p class="ltbluetext paddingtop5px">Connect and try your first package for free</p>
             		</div>
             		<div class="col-xs-4 margintop10px paddingright7pt5pct">
-                	<button class="inactivebutton" onClick="window.location='/{{ host.id }}/signupconnect/';"><span>Start a Shipment</span></button>
+            			
+            			    {% if connected %} 	<button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
+        							{% else %} 					<button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
+            					{% endif %}
+            		
             		</div>
             	</div> <!--row-->
             	<br>
