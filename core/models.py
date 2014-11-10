@@ -79,8 +79,9 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
 		#!!! Note - maybe move this to host table that is linked to user table - may make it easeri to connect
     services_offered = models.CharField('UPDATE TO CHOICES - SERVICES\q OFFERED', max_length=250, blank=True)
     host_aboutme = models.CharField("About Me (Host)",max_length=350,blank=True)
-    availability = models.CharField("UPDATE DATA TYPE - AVAILABILITY",max_length=250,blank=True)
-    currentlyhelping = models.IntegerField("Number of Neighbors Currently Helping", blank=True, null=True)    
+    availability = models.CharField("Availability (Write-In)",max_length=250,blank=True)
+    whenimhome_days = models.CharField("When I'm Home: Days of the Week (Write-In)",max_length=250,blank=True)
+	  whenimhome_hours = models.CharField("When I'm Home: Hours (Write-In)",max_length=250,blank=True)
     address_approx = models.CharField("Approximate Address for Visitors to See", max_length=100, blank=True, null=True)
     
     #Create manytomany connections - neighbors are those connected to
