@@ -10,6 +10,7 @@
 		<li><b>{{ cal }}</b> :
   			<a href="{% url "compact_calendar" cal.slug %}">{% trans "Small Month" %}</a> --
   			<a href="{% url "month_calendar" cal.slug %}">{% trans "1 Month" %}</a> --
+  			<a href="{% url "bi_month_calendar" cal.slug %}">{% trans "2 Months" %}</a> --
   			<a href="{% url "tri_month_calendar" cal.slug %}">{% trans "3 Months" %}</a> --
   			<a href="{% url "year_calendar" cal.slug %}">{% trans "This Year" %}</a> --
   			<a href="{% url "week_calendar" cal.slug %}">{% trans "Weekly" %}</a> --
