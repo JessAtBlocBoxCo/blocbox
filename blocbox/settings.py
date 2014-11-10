@@ -138,5 +138,6 @@ ADMINS = ('BlocBox Admin', 'admin@blocbox.co')
 
 #template processors for the schedule app
 TEMPLATE_CONTEXT_PROCESSORS = {
-    'django.core.context_processors.request'
+    'django.core.context_processors.request',
+    'django.contrib.auth.context_processors.auth'
 }
