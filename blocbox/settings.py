@@ -37,10 +37,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
-    'south',
+    'south',   
     'datasci',
     'password_reset',
     'django_messages',
+    'django_scheduler',
 		'billing',
 		'paypal.standard.ipn',
 )
