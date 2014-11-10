@@ -49,7 +49,7 @@ def hostprofile(request, userinfo_id):
     transactions_all = Transaction.objects.filter(payee=host)
     transactions_count = Transaction.objects.filter(payee=host).count() #count all of the transactions
     return render_to_response('blocbox/host-profile.html', {'host':host, 
-    		'connections_all':connections_all, 'connections_count':connections_count, 'connections_countTEST':connections_count,
+    		'connections_all':connections_all, 'connections_count':connections_count, 'connections_countTEST':connections_count, 'connected_users': connections_all.end_user,
     		'transactions_count':transactions_count, 'transactions_all':transactions_all }, context)
 
 #Create a login viewi
