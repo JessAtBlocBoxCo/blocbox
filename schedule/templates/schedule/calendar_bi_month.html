@@ -4,6 +4,9 @@
 			-->
 {% extends "schedule/base.html" %}
 {% load scheduletags i18n %} <!--schedule/templatetags/scheduletags.py -->
+
+{% block title %} Calendar - Bi-Montly View {% endblock %}
+
 {% block body %}
 <div class="tablewrapper bimonth"> <!--divider containing the calendar-->
   
@@ -23,7 +26,9 @@
 
 					{% month_table calendar periods.month "small" %}
 					<!--this statement calls functions defined in templatetags/scheduletags.py
-							The calendar table is defined in _month_table.html
+							The calendar table is defined in _month_table.html, it starts with a table with the class="calendar monthtable"
+								WEEK NUMBERS
+								This defines daysofweek
 							The daysofweek is in _month_table.htmls
 							The week numbers - HATE THME - are in..
 							The week days numbers, are defined in the <td class="small daynumber free">...</td>, the code is found in: _day_cell.html
