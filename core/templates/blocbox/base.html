@@ -122,11 +122,13 @@
       				<!--list of links within the dropdown menu .. removing dropdown-menu-right-->
       				<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
         			{% if user.is_authenticated %} <!--drop down menu if logged in-->
-        					<li role="presentation"><a role="menuitem" tabindex="-1" href='/account'> {{user.first_name}}</a></li>
-        					<li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment'>Start a Shipment</a></li>  
-       		 				<li role="presentation"><a role="menuitem" tabindex="-1" href='/logout'>Sign out</a></li>
-       		 				<li role="presentation"><a role="menuitem" tabindex="-1" href='/dashboard/'>Dashboard</a></li>
-        					<li role="presentation"><a role="menuitem" tabindex="-1" href='/messages/inbox'>Inbox</a></li> 
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href='/dashboard/'>My Dashboard</a></li>
+        					<li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'>Start a Shipment</a></li> 
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href='/messages/inbox/'>Messages</a></li> 
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'>My Block</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href='/profile/'>My Profile</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href='/account/'>My Account</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href='/logout/'>Sign out</a></li>
                 
        				{% else %} <!--drop down menu if not logged in -->
        						<li role="presentation"><a role="menuitem"  tabindex="-1" href='/beta'>Home</a></li>
