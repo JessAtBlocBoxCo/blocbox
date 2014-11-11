@@ -28,15 +28,13 @@
 	<div class="col-xs-12 col-sm-12">
 		
 		<div class="row"> <!--top navigation row for the subpages-->
-											<!--add an in-then so that the current page has styling subnavtextcurrent -->
-    	
 	
-   	
+	   	
     	<a href="/messages/inbox" class="col-xs-2 col-xs-offset-1  {% if active_page == inbox %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "INBOX" %}</a>
-    	<a href="/messages/compose/" class="col-xs-2 {% if 'compose' == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "COMPOSE" %} </a>
-    	<a href="/messages/outbox/" class="col-xs-2 {% if 'outbox' == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "SENT" %}</a>
-    	<a href="/messages/trash/" class="col-xs-2 {% if 'archive' == active_page %} subnavtextcurrent {% endif%}  subnavtext textcenter">{% trans "ARCHIVE" %}</a>
-    	<a href="/messages/messagesettings/" class="col-xs-2 {% if 'messagesettings' == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">SETTINGS</a>
+    	<a href="/messages/compose/" class="col-xs-2 {% if active_page == compose %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "COMPOSE" %} </a>
+    	<a href="/messages/outbox/" class="col-xs-2 {% if active_page == outbox %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "SENT" %}</a>
+    	<a href="/messages/trash/" class="col-xs-2 {% if active_page == archive %} subnavtextcurrent {% endif%}  subnavtext textcenter">{% trans "ARCHIVE" %}</a>
+    	<a href="/messages/messagesettings/" class="col-xs-2 {% if active_page == messagesettings %} subnavtextcurrent {% endif%} subnavtext textcenter">SETTINGS</a>
 		
 		</div> <!--row-->
 
