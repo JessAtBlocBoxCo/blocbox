@@ -11,8 +11,14 @@ from django.contrib.auth.decorators import login_required
 ##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
-from schedule.models import Calendar 
 from django.views.generic.list import ListView
+#import scheduling stuff
+from schedule.conf.settings import GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT
+from schedule.forms import EventForm, OccurrenceForm
+from schedule.models import Calendar, Occurrence, Event
+from schedule.periods import weekday_names
+from schedule.utils import check_event_permissions, coerce_date_dict
+
 
 def index(request):
     return render(request, 'blocbox/index.html') #loads blocbox/templates/blocbox/index.html 
