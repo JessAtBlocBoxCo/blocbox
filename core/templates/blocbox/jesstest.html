@@ -35,6 +35,8 @@
 					<h3> Show Each Full Calendar</h3> 
 							{% for cal in cal_list %}
 									<div class="row">
+											<h5> {{ cal }} </h5>
+											<a href="{% url "month_calendar" calendar.slug %}>test hyperlink</a>
 										<!--
 										{  % month_table calendar periods.month "small" %  }
 										-->
