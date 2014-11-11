@@ -4,11 +4,11 @@
 	
 	<!--adding month name to top of ccalendar - this  is creating errors when i try to load it on other pages outside of schedule app 
 			the first part is throwing the error: 
-			the url month_calendar statement should render as scheduling/calendar/month..
+			the url month_calendar statement (part throwing erros) renders as /scheduling/calendar/month/testcalendar1/ 
+			the second part (querystring_for... ) renders as: "?year=2014&month=11 "
+			
+			it is throwing errors on other pages because it doesnt' know  which one to load... , e.g., testcalendar1?, so we haven't passed 
 	-->
-	
-	<p>TESTT THE QUERYSTRING_FOR_DATE STATEMENT: {% querystring_for_date month.start 2 True %} </p>
-	<p>TEST THE URL MONTH_CALENDAR CALENDAR.SLUG STATEMENT: {% url "month_calendar" calendar.slug %} </p>
 	
 	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 			{{month.name}} 
