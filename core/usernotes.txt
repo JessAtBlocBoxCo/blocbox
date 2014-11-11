@@ -3,12 +3,11 @@ Host About_Me: Hi!I'm John. I've lived in the neigborhood for almost two years. 
 
 Availability: I'm available all day Monday-Friday, except when indicated.  If I have to step out when a package is on its way, I'll make sure one of my roommates or my next door neighbor is available to get the package.
 
+			{% set active_page = active_page|default('inbox') -%}	
 
-
-						<!--that python code inserts a bunch of code 
-									The week numbers (hate them), are
-									The daysofweek is in _month_table.htmls
-									The week days numbers, are defined in the <td class="small daynumber free">...</td>, the code is found in: _day_cell.html (
+The week numbers (hate them), are
+									
+ (
 									
 						that looks like this: 
 						<table class="calendar" align="center">

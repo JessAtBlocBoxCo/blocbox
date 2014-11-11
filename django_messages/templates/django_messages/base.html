@@ -32,7 +32,7 @@
     	{% set navigation_bar = [ ('/', '/inbox/', 'inbox', 'Inbox'),('/output/', 'outbox', 'Outbox'),('/compose/', 'compose', 'Compose'),
     														('/trash/', 'trash', 'Trash'),('/archive/', 'archive', 'Archive'),('/messagesettings/', 'messagesettings', 'MessageSettings')] -%}
 
-			{% set active_page = active_page|default('inbox') -%}		
+	
    	
     	<a href="/inbox" class="col-xs-2 col-xs-offset-1  {% if 'inbox' == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "INBOX" %}</a>
     	<a href="/compose/" class="col-xs-2 {% if 'compose' == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "COMPOSE" %} </a>
