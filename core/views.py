@@ -313,8 +313,21 @@ def styletest(request):
 def jesstest(request):
     #context = RequestContext(request)
     cal_list = Calendar.objects.all()
+    #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here
     #date = datetime.datetime.now()
     date = datetime.datetime(**date)
+        try:
+        date = coerce_date_dict(request.GET)
+    except ValueError:
+        raise Http404
+
+    if date:
+        try:
+            date = datetime.datetime(**date)
+        except ValueError:
+            raise Http404
+    else:
+        date = timezone.now()
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     return render(request, 'blocbox/jesstest.html', {'cal_list':cal_list, 'enduser':enduser, 'connections_all':connections_all, 'date':date }) 
