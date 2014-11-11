@@ -305,7 +305,8 @@ def styletest(request):
 #bootsrap test - copy of the waitlist sign-up page
 def jesstest(request):
     #queryset=Calendar.objects.all()
-    ListView.as_view(queryset=Calendar.objects.all(),template_name='schedule/calendar_list.html'),
+    object_list = Calendar.objects.all()
+    #ListView.as_view(queryset=Calendar.objects.all(),template_name='schedule/calendar_list.html'),
     return render(request, 'blocbox/jesstest.html') 
     
 """
