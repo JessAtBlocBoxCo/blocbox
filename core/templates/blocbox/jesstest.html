@@ -21,14 +21,17 @@
 					
 					<P>TRY THE CALENDAR LIST.. </P>
 							{% for cal in object_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
-										<li><b>{{ cal }}</b> :
+								<p>TEST THIS - PUT TEXT FOR EACH CAL IN OBJECT_LIST</p>
+								<li> <b>{{ cal }}</b> :
   									<a href="{% url "compact_calendar" cal.slug %}">{% trans "Small Month" %}</a> --
   									<a href="{% url "month_calendar" cal.slug %}">{% trans "1 Month" %}</a> --
   									<a href="{% url "bi_month_calendar" cal.slug %}">{% trans "2 Months" %}</a> --
   									<a href="{% url "year_calendar" cal.slug %}">{% trans "This Year" %}</a> --
   									<a href="{% url "week_calendar" cal.slug %}">{% trans "Weekly" %}</a> --
   									<a href="{% url "day_calendar" cal.slug %}">{% trans "Daily" %}</a> --
-  									<a href="{% url "upcoming_events_feed" cal.id %}">{% trans "Feed" %}</a></li><br/>
+  									<a href="{% url "upcoming_events_feed" cal.id %}">{% trans "Feed" %}</a>
+  							</li>
+  							<br/>
 						{% endfor %}
 					
 				<br><br>
