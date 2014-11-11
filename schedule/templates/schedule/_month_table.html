@@ -10,6 +10,9 @@
 			it is throwing errors on other pages because it doesnt' know  which one to load... , e.g., testcalendar1?, so we haven't passed 
 	-->
 	
+	<p>TEST QUERYSTRING_FOR_DATE: {{ querystring_for_date }} </p>
+	<p>TEST MONTH.START 2 TRUE: {{ month.start 2 True }} </p>
+	
 	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 			{{month.name}} 
 	</a>
