@@ -5,7 +5,13 @@
 {% block title %}View Message{% endblock %}
 
 {% block messagingcontent %}
-<h1>{% trans "View Message" %}</h1>
+<div class="row">
+    <a href="{% url 'messages_inbox' %}" class="col-xs-2 col-xs-offset-1 subnavtextcurrent textcenter">{% trans "INBOX" %}</a>
+    <a href="/messages/inbox/" class="col-xs-2 subnavtext  textcenter">{% trans "COMPOSE" %}</a>
+    <a href="{% url 'messages_outbox' %}" class="col-xs-2 subnavtext textcenter">{% trans "SENT" %}</a>
+    <p href="{% url 'messages_trash' %}" class="col-xs-2 subnavtext textcenter">{% trans "ARCHIVE" %}</p>
+    <p href="/messagesettings/" class="col-xs-2 subnavtext textcenter">SETTINGS</p>
+</div>
 <dl class="message-headers">
     <dt>{% trans "Subject" %}</dt>
     <dd><strong>{{ message.subject }}</strong></dd>
