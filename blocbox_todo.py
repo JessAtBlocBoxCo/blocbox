@@ -1,16 +1,15 @@
 
 """WEBSITE WORK: BEFORE TUMML INTERIVEW"""
 
-
-
-
-
-
 1. JOHN - /Fix Mobile/make site responsive
 5. JOHN: you send jess a message saying "package received"
 3. JOHN search page:
 		-- make text look better for john
 			-"dont see a blocbox host in your hood"? -- MAKE IT LARGER
+4. John: search page: sytle bottom message
+4. JESS: Add email counter
+6. JESS: Remove sign in after welcome page
+7. JESS: Restore User nav on beta page
 
 QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN STATIC.. BEFORE TUES..
 3. JESS: staratahipment -select a host - then the process - LOAD - to connect to a host...
@@ -24,6 +23,7 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
 		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
+1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
 1. JOHN/JESS: package incoming process/when it arrives
 1. JOHN: add green check box next to verified info
 2. JESS: verified info on HPV - only show symbol if verified, then in connect version show the DATA.
