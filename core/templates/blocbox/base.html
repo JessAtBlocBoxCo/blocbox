@@ -115,7 +115,7 @@
         			<button class="btn  dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
     						{% if user.is_authenticated %} 
 												<!--print user name and number of new messages in parentheses -->
-								    		{{user.first_name}} 	( {% load inbox %}	{% inbox_count %} New Messages)
+								    		{{user.first_name}} 	( {% load inbox %} )	{% inbox_count %} )
        					{% else %} <a href='/login'>Sign in</a> 
        					{% endif %}      
          				<span class="caret"></span>        
@@ -126,7 +126,8 @@
         			{% if user.is_authenticated %} <!--drop down menu if logged in-->
                             <li role="presentation"><a role="menuitem" tabindex="-1" href='/dashboard/'>My Dashboard</a></li>
         					<li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'>Start a Shipment</a></li> 
-                            <li role="presentation"><a role="menuitem" tabindex="-1" href='/messages/inbox/'>Messages</a></li> 
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href='/messages/inbox/'>
+                            					Messages ({% load inbox %} )	{% inbox_count %} New)</a></li> 
                             <li role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'>My Block</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href='/profile/'>My Profile</a></li>
                             <li role="presentation"><a role="menuitem" tabindex="-1" href='/account/'>My Account</a></li>
