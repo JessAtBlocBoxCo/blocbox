@@ -2,7 +2,14 @@
 {% load scheduletags %}
 <table align="center" class="calendar monthtable">
 	
-	<!--adding month name to top of ccalendar - this  is creating errors when i try to load it on other pages outside of schedule app -->
+	<!--adding month name to top of ccalendar - this  is creating errors when i try to load it on other pages outside of schedule app 
+			the first part is throwing the error: 
+			the url month_calendar statement should render as scheduling/calendar/month..
+	-->
+	
+	<p>TESTT THE QUERYSTRING_FOR_DATE STATEMENT: {% querystring_for_date month.start 2 True %} </p>
+	<p>TEST THE URL MONTH_CALENDAR CALENDAR.SLUG STATEMENT: {% url "month_calendar" calendar.slug %} </p>
+	
 	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 			{{month.name}} 
 	</a>
