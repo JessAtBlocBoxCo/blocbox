@@ -36,9 +36,10 @@
 							{% for calendar in cal_list %}
 									<div class="row">
 											<h5> {{ calendar }} </h5>
-											<!-- the year is screning up 
+											<!-- the year is screning up - its not passing the "year" argument to the view
 												{  % month_table calendar periods.month "small" %  }
 											-->
+												{% month_table calendar periods.month "small" %}
 									</div>
 							{% endfor %}
 					
