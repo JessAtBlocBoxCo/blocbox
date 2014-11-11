@@ -8,21 +8,13 @@
 5. JESS: send a user an email when they ship package
 6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails
 12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
-	
 1. JOHN - /Fix Mobile/make site responsive
-		-- HPV, 
-2. JOHN waitlist: fix the colors
-3. JOHN: start a shipment: add a hyperlink to the payment page when the user "submits"
-4. JOHN: payment pagee
-			-- update payment options in first block
-			-- add link to shipapackage from the payment page
 5. JOHN: you send jess a message saying "package received"
-7. JOHN MYBLOCK: code a basic version of this
 3. JOHN search page:
 		-- make text look better for john
 			-"dont see a blocbox host in your hood"? -- MAKE IT LARGER
-			
-			
+
+
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN/JESS: package incoming process/when it arrives
 1. JOHN: add green check box next to verified info
@@ -49,7 +41,7 @@
 	1. JESS dashboard: connect to transactions table to populate actually transactions
 
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
-#they install at: 
+#they install at:
 
 
 #3. footer is cropping up
@@ -280,10 +272,17 @@ So when you push to origin, it will push to both repositories
 			-- Add "wghen i'm home" field..... connect to availability
  		-- to userinfo: whenimhome_days
  										whenimhome_hours
- 										
+
 3. when connected to the user, dont say "sign up to connect" -so edit that languager
 2. JESS HPV - rather tha 'If authenticated' show approx address etc.. say if connected.. remember how to do that
 
 - remove week numbers
 	- create a two-month version (this month and next)
 	- do a two-month version OR  one-month showing next week of folowing month
+7. JOHN MYBLOCK: code a basic version of this
+4. JOHN: payment pagee
+			-- update payment options in first block
+			-- add link to shipapackage from the payment page
+-- HPV,
+2. JOHN waitlist: fix the colors
+3. JOHN: start a shipment: add a hyperlink to the payment page when the user "submits"
