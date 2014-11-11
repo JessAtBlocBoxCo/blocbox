@@ -1,0 +1,51 @@
+<!--This is templates/schedule/calendar_year.html-->
+{% extends "schedule/base.html" %}
+{% block title %} Calendar - Yearly View {% endblock %}
+{% load scheduletags i18n %}
+{% block body %}
+<div class="tablewrapper">
+    <div class="calendarname">{{ calendar.name }}</div>
+    {% prevnext "year_calendar" calendar.slug periods.year "Y" %}
+    
+    <table align="center" class="yearlycalendar">
+    		<tr>
+    			{% for month in periods.year.get_months %}
+        		<td valign="top">
+        				<!--remove month name from this, add it to the _month_table.html so it shows up in the bimonth and trimonth views
+        				<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} </a>
+        				-->
+        				
+        				<!--load the month_table-->
+        				{% month_table calendar month "small" %}
+        		</td>        	
+        	
+        		<td width="12">&nbsp;</td>
+        
+        	{% ifequal forloop.counter 3  %}
+     		</tr>
+     
+     		<tr>
+        	{% endifequal %}
+        	{% ifequal forloop.counter 6  %}
+     		</tr>
+     		
+     		<tr>
+        	{% endifequal %}
+        	{% ifequal forloop.counter  9 %}
+        </tr>
+     		
+     		<tr>
+        	{% endifequal %}
+    			{% endfor %}
+    		</tr>
+	</table> <!--yearlycalendar table-->
+</div> <!--tablewrapper-->
+<div class="navigation">
+  <a href="{% url "month_calendar" calendar.slug %}">
+    {% trans "Current Month Calendar" %}
+  </a>
+  <a href="{% url "year_calendar" calendar.slug %}">
+    {% trans "Current Year Calendar" %}
+  </a>
+</div>
+{% endblock %}
