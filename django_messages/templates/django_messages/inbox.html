@@ -6,7 +6,7 @@
 {% load i18n %} 
 {% load url from future %}
 {% block title %}Inbox{% endblock %}
-{% set active_page = "inbox" %} 
+{% with "inbox" as active_page %}   
 
 {% block messagingcontent %}
 
