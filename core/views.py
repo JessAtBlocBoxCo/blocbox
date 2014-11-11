@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 ##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from schedule.models import Calendar 
 
 def index(request):
     return render(request, 'blocbox/index.html') #loads blocbox/templates/blocbox/index.html 
