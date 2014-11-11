@@ -302,7 +302,7 @@ def styletest(request):
     
 #bootsrap test - copy of the waitlist sign-up page
 def jesstest(request):
-		queryset=Calendar.objects.all()
+    queryset=Calendar.objects.all()
     return render(request, 'blocbox/jesstest.html') 
     
 """
