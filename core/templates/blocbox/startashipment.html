@@ -54,12 +54,24 @@
                 <ul class="dropdown-menu nav navbar-nav navbar-right" role="menu">
             </div>
         </div> 
+        
+        <!---AVAILABILITY--->
         <div class="row">  
                 <h6 class="col-xs-5 col-xs-offset-1 marginsides3pct marginbottom20px">Next, confirm the host is available inside your package's expected delivery window. Click "submit" once availability is confirmed.</h6>
+                
                 <div class="col-sm-4 margintop10px marginbottom30px">
+                    
+                    <!--
                     <img class="marginleft40px" src="{% static "blocbox/images/calander.png" %}"  height="200" width="200" />
+                    -->
+                    
+                    <!--LOADING CALENDAR SHIT HERE-->
+                    {% load scheduletags i18n %}
+                    {% month_table calendar periods.month "small" %}
+                    
                 </div>
-        </div> 
+        </div> <!--row, Availability -->
+         
        <div class="row">
            <p class="col-xs-12 darkgreytext marginbottom20px">Avaiability policy: Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery.  You're likely to still get the package, but it may not be available for pickup until a later date.</p>
        </div>
