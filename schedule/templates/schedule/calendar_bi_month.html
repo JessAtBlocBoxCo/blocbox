@@ -9,9 +9,7 @@
 
 {% block yearormonthorweek %} 
 	{% prevnext "bi_month_calendar" calendar.slug periods.month "F Y"%}
-	 <div id="now"><!--this month link - thinks to monthly view -->
-    				<a href="{% url "month_calendar" calendar.slug %}"> {% trans "This month" %} </a>
-  </div> <!--now div..-->
+
 {% endblock %}
 
 {% block calendarcontent %}
@@ -38,4 +36,14 @@
 				</tr>
 			</table> <!--table containing two calendars-->
 			
+{% endblock %}
+
+
+{% block bottomnavcalendar %}
+  		<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 2 True %}">
+    		{% trans "Monthly Calendar" %}
+  		</a>
+  		<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+    		{% trans "Full Year Calendar" %}
+  		</a>
 {% endblock %}

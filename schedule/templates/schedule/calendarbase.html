@@ -19,23 +19,23 @@
   				<!--displays the month/year -->
   				{% block yearormonthorweek %} {% endblock %}
   			
+  				 <div id="now"><!--this month link - thinks to monthly view -->
+    					<a href="{% url "month_calendar" calendar.slug %}"> {% trans "This month" %} </a>
+  				</div> <!--now div..-->
 		
 		</div> <!--col, left columns for navigation stuff-->
+		
 		
 		<div class="col-xs-12 col-sm-6">
 			
 				{% block calendarcontent %} {% endblock %}
 			
-		</div> <!--col, containing middle calendar-->
-</div>	<!--row-->	
-</div> <!--tablewrapper div-->
+			</div> <!--col, containing middle calendar-->
+		</div>	<!--row-->	
+	</div> <!--tablewrapper div-->
 
-	<div class="navigation">
-  	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 2 True %}">
-    	{% trans "Monthly Calendar" %}
-  	</a>
-  	<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
-    	{% trans "Full Year Calendar" %}
-  	</a>
+	<div class="navigation">		
+		{% block bottomnavcalendar %} {% endblock %}  	
 	</div>
-{% endblock %}
+	
+{% endblock %} <!--body -->

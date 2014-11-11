@@ -1,7 +1,8 @@
 <!--This is templates/schedule/calendar_year.html-->
 {% extends "schedule/calendarbase.html" %}
-{% block title %} Calendar - Yearly View {% endblock %}
 {% load scheduletags i18n %}
+
+{% block title %} Calendar - Yearly View {% endblock %}
 
 {% block yearormonthorweek %} 
 	{% prevnext "year_calendar" calendar.slug periods.year "Y" %}
@@ -42,4 +43,16 @@
     		</tr>
 	</table> <!--yearlycalendar table-->
 	
-{% endblock %}
+{% endblock %} <!--calendarcontent-->
+
+
+
+
+{% block bottomnavcalendar %} 
+  	<a href="{% url "month_calendar" calendar.slug %}">
+    	{% trans "Current Month Calendar" %}
+  	</a>
+  	<a href="{% url "year_calendar" calendar.slug %}">
+    	{% trans "Current Year Calendar" %}
+  	</a>
+{% endblock %}  <!--bottomnavcalendar-->
