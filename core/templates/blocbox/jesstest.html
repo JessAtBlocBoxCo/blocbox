@@ -7,21 +7,22 @@
 {% block navbartitle %} JessTest {% endblock %}
 
 {% block content %}
-		<!-- CALENDAR TEST -->
-		
-		<div class="container-fluid">
-				<br><br>
-				<p>TEST INBOX MESSAGE COUNTER</p>
-				{% load inbox %}	<!--load the inbox functions-->
-				{% inbox_count %} <!--prints the number of unread messages -->
-				<br><br>
-			
-		</div>
-		
+
+		<!-- CALENDAR TEST -->		
 		<div class="container-fluid">     
 				<br><br>
 				<p>TEST CALENDAR APP IN THIS SPACE</p>
+				% load i18n %}
+				{% load scheduletags i18n %}
+				
 				<br><br>
+		</div>
+		
+		<!--INBOX COUNTER TEST -->
+		<div class="container-fluid">
+				<br><br>
+				<p>TEST INBOX MESSAGE COUNTER: YOU HAVE  {% load inbox %}	{% inbox_count %}  new messages </p>				
+				<br><br>			
 		</div>
 		
 		
