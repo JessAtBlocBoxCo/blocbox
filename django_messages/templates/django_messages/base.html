@@ -29,9 +29,7 @@
 		
 		<div class="row"> <!--top navigation row for the subpages-->
 											<!--add an in-then so that the current page has styling subnavtextcurrent -->
-    	{% set navigation_bar = [ ('/', '/inbox/', 'inbox', 'Inbox'),('/output/', 'outbox', 'Outbox'),('/compose/', 'compose', 'Compose'),
-    														('/trash/', 'trash', 'Trash'),('/archive/', 'archive', 'Archive'),('/messagesettings/', 'messagesettings', 'MessageSettings')] -%}
-
+    	
 	
    	
     	<a href="/inbox" class="col-xs-2 col-xs-offset-1  {% if 'inbox' == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "INBOX" %}</a>
