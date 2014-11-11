@@ -36,8 +36,9 @@
 							{% for calendar in cal_list %}
 									<div class="row">
 											<h5> {{ calendar }} </h5>
-											
-										{% month_table calendar periods.month "small" %}
+											<!-- the year is screning up 
+												{% month_table calendar periods.month "small" %}
+											-->
 									</div>
 							{% endfor %}
 					
