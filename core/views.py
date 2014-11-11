@@ -304,8 +304,11 @@ def styletest(request):
     
 #bootsrap test - copy of the waitlist sign-up page
 def jesstest(request):
-    object_list = Calendar.objects.all()
-    return render(request, 'blocbox/jesstest.html') 
+    cal_list = Calendar.objects.all()
+    enduser = request.user
+    connections_all = Connection.objects.filter(host_user=host) 
+    return render(request, 'blocbox/jesstest.html', {'cal_list':cal_list, 'enduser':enduser, 'connections_all':connections_all }, context) 
+
     
 """
 def denyrequestconnect(request, host_id, user_id):
