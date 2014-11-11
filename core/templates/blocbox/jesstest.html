@@ -11,16 +11,15 @@
 		<!-- CALENDAR TEST -->		
 		<div class="container-fluid">     
 				<br><br>
-				<p>TEST CALENDAR APP IN THIS SPACE</p>
+				
+					<!--	TEST THE CALENDAR APPS: the calendar_bi_month.html calls the calendar for first month with: "{ %" month_table calendar periods.month "small"  "%  }" -->
+						<!--	{ % month_table calendar periods.month "small" % } -->
+						
 					{% load i18n %}
 					{% load scheduletags i18n %}
 					{% load scheduletags %}
 					
-					<!--the calendar_bi_month.html calls the calendar for first month with: "{ %" month_table calendar periods.month "small"  "%  }" -->
-						<!--	{ % month_table calendar periods.month "small" % } -->
-					
-					<P>TRY THE CALENDAR LIST.. </P>
-							<p> {{ object_list }} </p>
+					<h3>Available Calendars (List with Links) </h3>
 							{% for cal in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
 								<li> <b>{{ cal }}</b> :
   									<a href="{% url "compact_calendar" cal.slug %}">{% trans "Small Month" %}</a> --
@@ -33,6 +32,12 @@
   							</li>
   							<br/>
 						{% endfor %}
+					<h3> Show Each Full Calendar</h3> 
+							{% for cal in cal_list %}
+									<div class="row">
+										{% month_table calendar periods.month "small" %}
+									</div>
+							{% endfor %}
 					
 				<br><br>
 		</div>
