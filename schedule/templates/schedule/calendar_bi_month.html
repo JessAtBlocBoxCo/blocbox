@@ -18,16 +18,13 @@
 				<tr>				
 					<!--first cell - put first month-->
 					
-						<td valign="top"> 									
-									<!--add the month name with a hyperlink to monthly calendar above each calendar-->
-									<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} </a>								
+						<td valign="top"> 																
 									{% month_table calendar periods.month "small" %} <!--load the calendar-->
 						</td> 
 						
 						<td width="30">&nbsp;</td> <!--blank table cell to add space between months-->
 						
 						<td valign="top">
-							<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} </a>
 							{% month_table calendar periods.month "small" +1 %}
 						</td>
 						
