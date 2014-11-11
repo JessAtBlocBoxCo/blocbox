@@ -39,6 +39,33 @@
                {% endfor %}
            </tbody>
        </table>
+       <div class="col-xs-12 messbox margintopbottom10px">
+               <div class="row margintop10px marginbottom10px">
+                   <div class="col-xs-2 nopadding">
+                       <img class="blockpic nopadding" src="{% static 'blocbox/images/JB-2.png' %}"  />
+                   </div>
+                   <div class="col-xs-2 nopadding">
+                       <p>{{ message.sender }}</p>
+                   </div>
+                   <div class="col-xs-5 nopadding marginleftneg25">
+                       <div class="row">
+                           <h3 class="margintop5px nomarginbottom">{{ message.subject }}</h3>
+                            <p>Message preview</p>
+                       </div>
+                   </div>
+                   <div class="col-xs-2">
+                       <p>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
+                   </div>
+                   <div class="col-xs-1">
+                       <a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a>
+                   </div>
+               </div>
+               <div>
+                   <div class="row">
+
+                   </div>
+               </div>
+       </div>
        {% else %}
        <p>{% trans "No messages." %}</p>
        {% endif %}  
