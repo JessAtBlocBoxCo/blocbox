@@ -304,6 +304,7 @@ def styletest(request):
     
 #bootsrap test - copy of the waitlist sign-up page
 def jesstest(request):
+    context = RequestContext(request)
     cal_list = Calendar.objects.all()
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
