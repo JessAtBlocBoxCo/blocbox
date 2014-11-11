@@ -8,21 +8,30 @@
 {% block title %} Calendar - Bi-Montly View {% endblock %}
 
 {% block body %}
+
 <div class="tablewrapper bimonth"> <!--divider containing the calendar-->
-  
-  <div class="calendarname bimonth">{{ calendar.name }}</div>
-  
-  {% prevnext "bi_month_calendar" calendar.slug periods.month "F Y"%}
+<div class="row">
   	
-  	<div id="now">
-    	<a href="{% url "month_calendar" calendar.slug %}">
-      		{% trans "This month" %}
-    	</a>
-  	</div> <!--now div..-->
+  	<br><br>
+  	
+  	<div class="col-xs-12 col-sm-3">
+  				<!--displays the calendar name-->
+  				<div class="calendarname bimonth">{{ calendar.name }}</div>
+  				
+  				<!--displays the month/year -->
+  				{% prevnext "bi_month_calendar" calendar.slug periods.month "F Y"%}
+  				
+  				<div id="now"><!--this month link - thinks to monthly view -->
+    				<a href="{% url "month_calendar" calendar.slug %}"> {% trans "This month" %} </a>
+  				</div> <!--now div..-->
 		
-		<table align="center" class="bimonth"> <!--contains the two calendars-->
-			<tr>				
-				<td valign="top">
+		</div> <!--col, left columns for navigation stuff-->
+		
+		<div class="col-xs-12 col-sm-9">
+			
+			<table align="center" class="bimonth"> <!--contains the two calendars-->
+				<tr>				
+					<td valign="top">
 
 					{% month_table calendar periods.month "small" %}
 					<!--this statement calls functions defined in templatetags/scheduletags.py
@@ -36,14 +45,15 @@
 					-->
 						
 						
-				</td> 
-				<td width="12">&nbsp;</td>
-				<td valign="top">{% month_table calendar periods.month "small" +1 %}</td>
-			</tr>
-		</table> <!--table containing two calendars-->
-		
-		
-	</div> <!--tablewrapper div-->
+					</td> 
+					<td width="12">&nbsp;</td>
+					<td valign="top">{% month_table calendar periods.month "small" +1 %}</td>
+				</tr>
+			</table> <!--table containing two calendars-->
+			
+		</div> <!--col, containing middle calendar-->
+</div>	<!--row-->	
+</div> <!--tablewrapper div-->
 
 	<div class="navigation">
   	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 2 True %}">
