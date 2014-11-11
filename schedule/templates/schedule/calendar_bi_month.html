@@ -1,35 +1,15 @@
-<!--	this is /schedule/templates/schedule/calendar_bi_month.html, extends schedule/base.html, which extends templates/site_base.html
+<!--	this is /schedule/templates/schedule/calendar_bi_month.html, extends schedule/calendarbase.html, which extends schedule/base.html,  extends site_base.html
 			URL is blocbox.co/scheduling/calendar/bi_month/[calendarname]/ 
 			it loads schedule/templatetags/scheduletags.py
 			-->
-{% extends "schedule/base.html" %}
+{% extends "schedule/calendarbase.html" %}
 {% load scheduletags i18n %} <!--schedule/templatetags/scheduletags.py -->
 
 {% block title %} Calendar - Bi-Montly View {% endblock %}
 
-{% block body %}
+{% block calendarcontent %}
 
-<div class="tablewrapper bimonth"> <!--divider containing the calendar-->
-<div class="row">
-  	
-  	<br><br>
-  	
-  	<div class="col-xs-12 col-sm-3">
-  				<!--displays the calendar name-->
-  				<div class="calendarname bimonth">{{ calendar.name }}</div>
-  				
-  				<!--displays the month/year -->
-  				{% prevnext "bi_month_calendar" calendar.slug periods.month "F Y"%}
-  				
-  				<div id="now"><!--this month link - thinks to monthly view -->
-    				<a href="{% url "month_calendar" calendar.slug %}"> {% trans "This month" %} </a>
-  				</div> <!--now div..-->
-		
-		</div> <!--col, left columns for navigation stuff-->
-		
-		<div class="col-xs-12 col-sm-6">
-			
-			<table align="center" class="bimonth"> <!--contains the two calendars-->
+<table align="center" class="bimonth"> <!--contains the two calendars-->
 				<tr>				
 					<td valign="top">
 
@@ -51,16 +31,4 @@
 				</tr>
 			</table> <!--table containing two calendars-->
 			
-		</div> <!--col, containing middle calendar-->
-</div>	<!--row-->	
-</div> <!--tablewrapper div-->
-
-	<div class="navigation">
-  	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 2 True %}">
-    	{% trans "Monthly Calendar" %}
-  	</a>
-  	<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
-    	{% trans "Full Year Calendar" %}
-  	</a>
-	</div>
 {% endblock %}
