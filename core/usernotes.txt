@@ -3,24 +3,14 @@ Host About_Me: Hi!I'm John. I've lived in the neigborhood for almost two years. 
 
 Availability: I'm available all day Monday-Friday, except when indicated.  If I have to step out when a package is on its way, I'll make sure one of my roommates or my next door neighbor is available to get the package.
 
-			{% set active_page = active_page|default('inbox') -%}	
+{% set navigation_bar = [ ('/', '/inbox/', 'inbox', 'Inbox'),('/output/', 'outbox', 'Outbox'),('/compose/', 'compose', 'Compose'),
+    														('/trash/', 'trash', 'Trash'),('/archive/', 'archive', 'Archive'),('/messagesettings/', 'messagesettings', 'MessageSettings')] -%}
 
-The week numbers (hate them), are
-									
- (
-									
-						that looks like this: 
-						<table class="calendar" align="center">
-    							<tbody>
-    							    <tr class="daysofweek"> … </tr>
-    							    <tr> … </tr>
-    							    <tr>
-    							        <td>
-    							            <a href="/scheduling/calendar/week/testcalendar1/?year=2014&month=11&day=2"> … </a>
-    							        </td>
-    							        NOTE 
-    							        <td class="small daynumber free"> … </td>
-    							    </tr>
-    							</tbody>
-						</table>
-						-->
+
+REMOVING THIS FROM _MONTH_CALENDAR - NEED TO ADD BACK ALENDAR MONTH NAME SOMEWHERE ELSE..
+
+
+<!--add the month name with a hyperlink to monthly calendar above each calendar-->
+<THIS WAS LINE 5-6 IN _MONTH_TABLE.HTML -->
+<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} 
+</a>
