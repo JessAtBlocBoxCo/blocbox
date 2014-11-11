@@ -14,27 +14,35 @@
 
 {% block calendarcontent %}
 
-<table align="center" class="bimonth"> <!--contains the two calendars-->
+	<table align="center" class="bimonth"> <!--contains the two calendars-->
 				<tr>				
-					<td valign="top">
-
-					{% month_table calendar periods.month "small" %}
-					<!--this statement calls functions defined in templatetags/scheduletags.py
-							The calendar table is defined in _month_table.html, it starts with a table with the class="calendar monthtable"
-								WEEK NUMBERS
-								This defines daysofweek
-							The daysofweek is in _month_table.htmls
-							The week numbers - HATE THME - are in..
-							The week days numbers, are defined in the <td class="small daynumber free">...</td>, the code is found in: _day_cell.html
-							the "small" designtation meamnsn weekday ames are abbreviated
-					-->
+					<!--first cell - put first month-->
+					
+						<td valign="top"> 									
+									<!--add the month name with a hyperlink to monthly calendar above each calendar-->
+									<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} </a>								
+									{% month_table calendar periods.month "small" %} <!--load the calendar-->
+						</td> 
 						
+						<td width="30">&nbsp;</td> <!--blank table cell to add space between months-->
 						
-					</td> 
-					<td width="30">&nbsp;</td>
-					<td valign="top">{% month_table calendar periods.month "small" +1 %}</td>
+						<td valign="top">
+							<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} </a>
+							{% month_table calendar periods.month "small" +1 %}
+						</td>
+						
+							<!--that python code calls functions defined in templatetags/scheduletags.py
+									The calendar table is defined in _month_table.html, it starts with a table with the class="calendar monthtable"
+										WEEK NUMBERS
+										This defines daysofweek
+									The daysofweek is in _month_table.htmls
+									The week numbers - HATE THME - are in..
+									The week days numbers, are defined in the <td class="small daynumber free">...</td>, the code is found in: _day_cell.html
+									the "small" designtation meamnsn weekday ames are abbreviated
+							-->
+									
 				</tr>
-			</table> <!--table containing two calendars-->
+	</table> <!--table containing two calendars-->
 			
 {% endblock %}
 
