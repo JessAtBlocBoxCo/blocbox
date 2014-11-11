@@ -316,7 +316,7 @@ def jesstest(request):
     date = datetime.datetime.now()
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
-    return render(request, 'blocbox/jesstest.html', {'cal_list':cal_list, 'enduser':enduser, 'connections_all':connections_all }) 
+    return render(request, 'blocbox/jesstest.html', {'cal_list':cal_list, 'enduser':enduser, 'connections_all':connections_all, 'date':date }) 
 
     
 """
