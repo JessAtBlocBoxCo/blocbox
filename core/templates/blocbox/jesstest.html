@@ -22,7 +22,6 @@
 					<P>TRY THE CALENDAR LIST.. </P>
 							<p> {{ object_list }} </p>
 							{% for cal in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
-								<p>TEST THIS - PUT TEXT FOR EACH CAL IN OBJECT_LIST</p>
 								<li> <b>{{ cal }}</b> :
   									<a href="{% url "compact_calendar" cal.slug %}">{% trans "Small Month" %}</a> --
   									<a href="{% url "month_calendar" cal.slug %}">{% trans "1 Month" %}</a> --
