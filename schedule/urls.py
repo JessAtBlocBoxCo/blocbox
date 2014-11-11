@@ -11,7 +11,7 @@ from schedule.views import DeleteEventView
 
 urlpatterns = patterns(
     '',
-    # urls for Calendars
+    # urls for Calendars, the first one (list of avail calendars) loads at www.blocbox.co/scheduling/calendar and www.blocbox.co/scheduling 
     url(r'^calendar/$',
         ListView.as_view(queryset=Calendar.objects.all(),
                          template_name='schedule/calendar_list.html'),

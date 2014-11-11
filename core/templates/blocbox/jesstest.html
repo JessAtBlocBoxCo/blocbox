@@ -20,7 +20,7 @@
 						<!--	{ % month_table calendar periods.month "small" % } -->
 					
 					<P>TRY THE CALENDAR LIST.. </P>
-							{% for cal in object_list %}
+							{% for cal in object_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
 										<li><b>{{ cal }}</b> :
   									<a href="{% url "compact_calendar" cal.slug %}">{% trans "Small Month" %}</a> --
   									<a href="{% url "month_calendar" cal.slug %}">{% trans "1 Month" %}</a> --
