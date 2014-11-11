@@ -2,8 +2,10 @@
 {% load scheduletags %}
 <table align="center" class="calendar monthtable">
 	
-	<p>MONTH NAME {{ month.name }} </p>
-
+	<!--add the month name with a hyperlink to monthly calendar above each calendar-->
+	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} </a>
+	<!-- <p> {{ month.name }} </p> -->
+		
 		{% if day_names %}
 				<tr class="daysofweek">
 					<!--commenting out the blank row -- only needed if we have week numbers <td>&nbsp;</td> -->
