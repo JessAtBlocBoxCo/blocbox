@@ -1,4 +1,4 @@
-<!--this is /usr/local/lib/python2.7/dist-packages/django_messages/templates/django_messages/base.html -->
+<!--this is /blocbox/django_messages/templates/django_messages/base.html, extends blocbox/base.html, extended by other messagign pages -->
 {% extends "blocbox/base.html" %}
 
 {% load i18n %}
@@ -28,6 +28,21 @@
 
 	<div class="col-xs-12 col-sm-12">
 		
+		<div class="row"> <!--top navigation row for the subpages-->
+											<!--add an in-then so that the current page has styling subnavtextcurrent -->
+    	{% set navigation_bar = [ ('/', '/inbox/', 'inbox', 'Inbox'),('/output/', 'outbox', 'Outbox'),('/compose/', 'compose', 'Compose'),
+    														('/trash/', 'trash', 'Trash'),('/archive/', 'archive', 'Archive'),('/messagesettings/', 'messagesettings', 'MessageSettings')] -%}
+
+			{% set active_page = active_page|default('inbox') -%}		
+   	
+    	<a href="/inbox" class="col-xs-2 col-xs-offset-1  {% if id == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "INBOX" %}</a>
+    	<a href="/compose/" class="col-xs-2 {% if id == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "COMPOSE" %} </a>
+    	<a href="/outbox/" class="col-xs-2 {% if id == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">{% trans "SENT" %}</a>
+    	<a href="/trash/" class="col-xs-2 {% if id == active_page %} subnavtextcurrent {% endif%}  subnavtext textcenter">{% trans "ARCHIVE" %}</a>
+    	<a href="/messagesettings/" class="col-xs-2 {% if id == active_page %} subnavtextcurrent {% endif%} subnavtext textcenter">SETTINGS</a>
+		
+		</div> <!--row-->
+
 		{% block messagingcontent %}
 		{% endblock %}
 
