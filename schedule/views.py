@@ -41,6 +41,8 @@ def calendar(request, calendar_slug, template='schedule/calendar.html'):
 
 def calendar_by_periods(request, calendar_slug, periods=None, template_name="schedule/calendar_by_period.html"):
     """
+    JMY - this is called by all  of the clanedar views.. so i need to call it if i want to put a calendar on start a shipment...
+    
     This view is for getting a calendar, but also getting periods with that
     calendar.  Which periods you get, is designated with the list periods. You
     can designate which date you the periods to be initialized to by passing
