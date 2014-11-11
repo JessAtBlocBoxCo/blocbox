@@ -20,23 +20,23 @@
 					{% load scheduletags %}
 					
 					<h3>Available Calendars (List with Links) </h3>
-							{% for cal in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
-								<li> <b>{{ cal }}</b> :
-  									<a href="{% url "compact_calendar" cal.slug %}">{% trans "Small Month" %}</a> --
-  									<a href="{% url "month_calendar" cal.slug %}">{% trans "1 Month" %}</a> --
-  									<a href="{% url "bi_month_calendar" cal.slug %}">{% trans "2 Months" %}</a> --
-  									<a href="{% url "year_calendar" cal.slug %}">{% trans "This Year" %}</a> --
-  									<a href="{% url "week_calendar" cal.slug %}">{% trans "Weekly" %}</a> --
-  									<a href="{% url "day_calendar" cal.slug %}">{% trans "Daily" %}</a> --
-  									<a href="{% url "upcoming_events_feed" cal.id %}">{% trans "Feed" %}</a>
+							{% for calendar in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
+								<li> <b>{{ calendar }}</b> :
+  									<a href="{% url "compact_calendar" calendar.slug %}">{% trans "Small Month" %}</a> --
+  									<a href="{% url "month_calendar" calendar.slug %}">{% trans "1 Month" %}</a> --
+  									<a href="{% url "bi_month_calendar" calendar.slug %}">{% trans "2 Months" %}</a> --
+  									<a href="{% url "year_calendar" calendar.slug %}">{% trans "This Year" %}</a> --
+  									<a href="{% url "week_calendar" calendar.slug %}">{% trans "Weekly" %}</a> --
+  									<a href="{% url "day_calendar" calendar.slug %}">{% trans "Daily" %}</a> --
+  									<a href="{% url "upcoming_events_feed" calendar.id %}">{% trans "Feed" %}</a>
   							</li>
   							<br/>
 						{% endfor %}
 					<h3> Show Each Full Calendar</h3> 
-							{% for cal in cal_list %}
+							{% for calendar in cal_list %}
 									<div class="row">
-											<h5> {{ cal }} </h5>
-											<a href="{% url "month_calendar" cal.slug %}>test hyperlink</a>
+											<h5> {{ calendar }} </h5>
+											<a href="{% url "month_calendar" calendar.slug %}>test hyperlink</a>
 										<!--
 										{  % month_table calendar periods.month "small" %  }
 										-->
