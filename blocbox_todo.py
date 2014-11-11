@@ -1,20 +1,28 @@
 
 """WEBSITE WORK: BEFORE TUMML INTERIVEW"""
-1. JESS CALENDAr:embed into dashbaord
-2. JESS CALENDR: show black-out dates on the bimonthly view
-1. JESS startashipment: add a django calendar app
-2. JESS: payment page -- do the django app for payment
-4. JESS: shippackage: connect the host address fields to data table so populate,
-5. JESS: send a user an email when they ship package
-6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails
-12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
+
+
+
+
+
+
 1. JOHN - /Fix Mobile/make site responsive
 5. JOHN: you send jess a message saying "package received"
 3. JOHN search page:
 		-- make text look better for john
 			-"dont see a blocbox host in your hood"? -- MAKE IT LARGER
 
+QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN STATIC.. BEFORE TUES..
+3. JESS: staratahipment -select a host - then the process - LOAD - to connect to a host...
+4. JESS: shippackage: connect the host address fields to data table so populate,
+2. JESS: payment page -- do the django app for payment
+1. JESS START-A-SHIPMENT/CALENDAr:embed into availability
+2. JESS CALENDR: show black-out dates on the bimonthly view
+5. JESS: send a user an email when they ship package
+6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails	
 
+12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
+		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN/JESS: package incoming process/when it arrives
 1. JOHN: add green check box next to verified info
