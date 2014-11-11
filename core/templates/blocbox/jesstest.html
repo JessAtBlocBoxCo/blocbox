@@ -21,7 +21,8 @@
 		<!--INBOX COUNTER TEST -->
 		<div class="container-fluid">
 				<br><br>
-				<p>TEST INBOX MESSAGE COUNTER: YOU HAVE  {% load inbox %}	{% inbox_count %}  new messages </p>				
+				{% load inbox %}	
+				<p>TEST INBOX MESSAGE COUNTER: YOU HAVE {% inbox_count %}  NEW MESSAGES </p>				
 				<br><br>			
 		</div>
 		
