@@ -7,6 +7,10 @@
 
 {% block title %} Calendar - Bi-Montly View {% endblock %}
 
+{% block yearormonthorweek %} 
+	{% prevnext "bi_month_calendar" calendar.slug periods.month "F Y"%}
+{% endblock %}
+
 {% block calendarcontent %}
 
 <table align="center" class="bimonth"> <!--contains the two calendars-->
