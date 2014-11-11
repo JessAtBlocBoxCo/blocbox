@@ -11,7 +11,9 @@
     		<tr>
     			{% for month in periods.year.get_months %}
         		<td valign="top">
+        				<!--remove month name from this, add it to the _month_table.html so it shows up in the bimonth and trimonth views
         				<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} </a>
+        				-->
         				
         				<!--load the month_table-->
         				{% month_table calendar month "small" %}
