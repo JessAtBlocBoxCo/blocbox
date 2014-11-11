@@ -19,6 +19,11 @@
   <a href="{% url "tri_month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 2 True %}">
     {% trans "Three Month Calendar" %}
   </a>
+  <a>&nbsp;</a>
+  <a href="{% url "bi_month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+    {% trans "Bi-Monthly Calendar" %}
+  </a>
+  <a>&nbsp;</a>
   <a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
     {% trans "Full Year Calendar" %}
   </a>
