@@ -306,7 +306,7 @@ def styletest(request):
 def jesstest(request):
     cal_list = Calendar.objects.all()
     enduser = request.user
-    connections_all = Connection.objects.filter(host_user=host) 
+    connections_all = Connection.objects.filter(end_user=enduser) 
     return render(request, 'blocbox/jesstest.html', {'cal_list':cal_list, 'enduser':enduser, 'connections_all':connections_all }, context) 
 
     
