@@ -115,7 +115,7 @@
         			<button class="btn  dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
     						{% if user.is_authenticated %} 
 												<!--print user name and number of new messages in parentheses -->
-								    		{{user.first_name}} 	( {% load inbox %} )	{% inbox_count %} )
+								    		{{user.first_name}} 	( {% load inbox %}	{% inbox_count %} )
        					{% else %} <a href='/login'>Sign in</a> 
        					{% endif %}      
          				<span class="caret"></span>        
