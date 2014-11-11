@@ -12,9 +12,27 @@
 		<div class="container-fluid">     
 				<br><br>
 				<p>TEST CALENDAR APP IN THIS SPACE</p>
-				{% load i18n %}
-				{% load scheduletags i18n %}
-				
+					{% load i18n %}
+					{% load scheduletags i18n %}
+					{% load scheduletags %}
+					
+					<!--the following code is from _month_table.html, it is called in calendar_bi_month with: "{ %" month_table calendar periods.month "small"  "%  }" -->
+					{% if day_names %}
+							<tr class="daysofweek">
+									{% for day_name in day_names %}
+											<td> {{ day_name }}</td>
+									{% endfor %}
+							</tr>
+					{% endif %} <!--if day_names -->
+
+					{% for week in month.get_weeks %}
+      	 			<tr>    {% for day in week.get_days %}  
+      	 											{% day_cell calendar day month size %}  <!--calls _day_cell.html templates -->
+      	 							{% endfor %}
+      				</tr>
+    			{% endfor %} <!--for week in month..get weeks -->
+					
+					
 				<br><br>
 		</div>
 		
