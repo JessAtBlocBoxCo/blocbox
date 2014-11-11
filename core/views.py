@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from schedule.models import Calendar 
+from django.views.generic.list import ListView
 
 def index(request):
     return render(request, 'blocbox/index.html') #loads blocbox/templates/blocbox/index.html 
@@ -303,7 +304,8 @@ def styletest(request):
     
 #bootsrap test - copy of the waitlist sign-up page
 def jesstest(request):
-    queryset=Calendar.objects.all()
+    #queryset=Calendar.objects.all()
+    ListView.as_view(queryset=Calendar.objects.all(),
     return render(request, 'blocbox/jesstest.html') 
     
 """
