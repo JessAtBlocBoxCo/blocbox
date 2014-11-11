@@ -1,11 +1,7 @@
 
 """WEBSITE WORK: BEFORE TUMML INTERIVEW"""
-1. JESS CALENDAR FIXES
-	- remove week numbers
-	- create a two-month version (this month and next)
-	- do a two-month version OR  one-month showing next week of folowing month
-	- embed into dashbaord
-	
+1. JESS CALENDAr:embed into dashbaord
+2. JESS CALENDR: show black-out dates on the bimonthly view
 1. JESS startashipment: add a django calendar app
 2. JESS: payment page -- do the django app for payment
 4. JESS: shippackage: connect the host address fields to data table so populate,
@@ -287,3 +283,7 @@ So when you push to origin, it will push to both repositories
  										
 3. when connected to the user, dont say "sign up to connect" -so edit that languager
 2. JESS HPV - rather tha 'If authenticated' show approx address etc.. say if connected.. remember how to do that
+
+- remove week numbers
+	- create a two-month version (this month and next)
+	- do a two-month version OR  one-month showing next week of folowing month
