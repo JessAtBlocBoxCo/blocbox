@@ -3,8 +3,6 @@
 {% load url from future %}
 {% block title %}Trash{% endblock %}
 
-{% with active_page=trash %}  
-
 {% block messagingcontent %} 
 
 
@@ -32,5 +30,3 @@
 <br />
 <p>{% trans "Deleted Messages are removed from the trash at unregular intervals, don't rely on this feature for long-time storage." %}</p>
 {% endblock %}
-
-{% endwith %}
