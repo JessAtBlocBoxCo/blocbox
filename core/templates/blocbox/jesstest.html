@@ -36,10 +36,8 @@
 							{% for calendar in cal_list %}
 									<div class="row">
 											<h5> {{ calendar }} </h5>
-											<a href="{% url "month_calendar" calendar.slug %}>test hyperlink</a>
-										<!--
-										{  % month_table calendar periods.month "small" %  }
-										-->
+											
+										{% month_table calendar periods.month "small" %}
 									</div>
 							{% endfor %}
 					
