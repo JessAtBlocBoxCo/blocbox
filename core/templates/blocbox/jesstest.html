@@ -51,6 +51,14 @@
 													...so, nnormally.. the date argument is passed..  but no date is passed here.. 
 												
 													HOW DO WE PASS A DATE TO THIS PAGE??
+													
+													NEED TO PASS MONTH OBJECTS SO MONTH.START RENDERS
+													
+															url(r'^calendar/bi_month/(?P<calendar_slug>[-\w]+)/$',                               
+        													'schedule.views.calendar_by_periods',                                             
+        													name="bi_month_calendar",                                                        
+        													kwargs={'periods': [Month], 'template_name': 'schedule/calendar_bi_month.html'}),
+        
 											-->
 												{% month_table calendar periods.month "small" %}
 									</div>
