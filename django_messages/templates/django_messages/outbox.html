@@ -4,14 +4,10 @@
 
 {% block title %}Outbox{% endblock %}
 
+{% with active_page=outbox %}  
+
 {% block messagingcontent %} 
-<div class="row">
-    <a href="{% url 'messages_inbox' %}" class="col-xs-2 col-xs-offset-1 subnavtext textcenter">{% trans "INBOX" %}</a>
-    <a href="/messages/inbox/" class="col-xs-2 subnavtext textcenter">{% trans "COMPOSE" %}</a>
-    <a href="{% url 'messages_outbox' %}" class="col-xs-2 subnavtextcurrent textcenter">{% trans "SENT" %}</a>
-    <p href="{% url 'messages_trash' %}" class="col-xs-2 subnavtext textcenter">{% trans "ARCHIVE" %}</p>
-    <p href="/messagesettings/" class="col-xs-2 subnavtext textcenter">SETTINGS</p>
-</div>
+
 {% if message_list %} 
 <table class="table messages"> 
     <thead>
@@ -34,3 +30,5 @@
 <p>{% trans "No messages." %}</p>
 {% endif %}   
 {% endblock %}
+
+{% endwith %}
