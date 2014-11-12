@@ -337,7 +337,9 @@ def jesstest(request):
     calendar = get_object_or_404(Calendar, slug=calendar_slug)
     event_list = GET_EVENTS_FUNC(request, calendar)    
     local_timezone = pytz.timezone(local_timezone)
-    periods = "Month"  #kwargs={'periods': [Month],
+    #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
+    #periods = "Month"  #i need to figure out how to refeernce the CLASS month from the periods
+    periods = periods.Month()
     period_objects = {} 
     #for period in periods: #JUST DO THIS FOR MONTH
     #    period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
