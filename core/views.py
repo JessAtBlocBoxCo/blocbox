@@ -314,7 +314,7 @@ def styletest(request):
     return render(request, 'blocbox/x_styletest.html') 
     
 #bootsrap test - copy of the waitlist sign-up page
-def jesstest(request, periods=["Month",]):
+def jesstest(request, periods=[Month,]):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
