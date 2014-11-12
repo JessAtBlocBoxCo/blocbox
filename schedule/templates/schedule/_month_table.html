@@ -12,10 +12,10 @@
 		 the periods variable shows up as "'month': <schedule.periods.Month object at 0x7fe7cc5c68d0>} "
 	-->
    
-   <!--put the month name in a table row -->
-   	<tr class="monthname"> <td> <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
+   <!--put the month name in a table row, th=title header -->
+   	<tr class="monthname"> <th colspan="7"> <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 				{{month.name}} 
-		</a> </td> 	</tr>
+		</a> </th> 	</tr>
 		
 		{% if day_names %}
 				<tr class="daysofweek">
