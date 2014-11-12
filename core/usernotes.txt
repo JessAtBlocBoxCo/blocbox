@@ -12,5 +12,9 @@ REMOVING THIS FROM _MONTH_CALENDAR - NEED TO ADD BACK ALENDAR MONTH NAME SOMEWHE
 
 <!--add the month name with a hyperlink to monthly calendar above each calendar-->
 <THIS WAS LINE 5-6 IN _MONTH_TABLE.HTML -->
-<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> {{month.name}} 
-</a>
+
+
+<a href="{% url "month_calendar" calendar.slug %}>test hyperlink</a>
+
+
+{% month_table calendar periods.month "small" %}
