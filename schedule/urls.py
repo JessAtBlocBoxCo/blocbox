@@ -30,9 +30,9 @@ urlpatterns = patterns(
 		url(r'^calendar/bi_month/(?P<calendar_slug>[-\w]+)/$',                               
         'schedule.views.calendar_by_periods',                                             
         name="bi_month_calendar",               
-        #kwargs={'periods': [Month], 'template_name': 'schedule/calendar_bi_month.html'}),                                         
-        kwargs={'template_name': 'schedule/calendar_bi_month.html'}),
-        #interpreting this use of kwargs: 
+        kwargs={'periods': [Month], 'template_name': 'schedule/calendar_bi_month.html'}),                                         
+        #kwargs={'template_name': 'schedule/calendar_bi_month.html'}),
+        #interpreting this use of kwargs: .. need to understand.. it is clearly reuired
 
     url(r'^calendar/compact_month/(?P<calendar_slug>[-\w]+)/$',
         'schedule.views.calendar_by_periods',
