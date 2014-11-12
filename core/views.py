@@ -312,10 +312,11 @@ def styletest(request):
     
 #bootsrap test - copy of the waitlist sign-up page
 def jesstest(request):
-    #context = RequestContext(request)
+    enduser = request.user
+    connections_all = Connection.objects.filter(end_user=enduser) 
     cal_list = Calendar.objects.all()
-    #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here
-    #date = datetime.datetime.now()
+    #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
+    #schedule.views.calendar_by_periods    
     try:
         date = coerce_date_dict(request.GET)
     except ValueError:
@@ -328,9 +329,22 @@ def jesstest(request):
             raise Http404
     else:
         date = timezone.now()
-    enduser = request.user
-    connections_all = Connection.objects.filter(end_user=enduser) 
-    return render(request, 'blocbox/jesstest.html', {'cal_list':cal_list, 'enduser':enduser, 'connections_all':connections_all, 'date':date }) 
+        local_timezone = request.session.setdefault('django_timezone', 'UTC')
+    #date = datetime.datetime.now()
+    local_timezone = pytz.timezone(local_timezone)
+    period_objects = {} 
+    for period in periods:
+        if period.__name__.lower() == 'year':
+            period_objects[period.__name__.lower()] = period(event_list, date, None, local_timezone) 
+        else:
+            period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+    return render(request, 'blocbox/jesstest.html', {
+        'cal_list':cal_list, 
+        'enduser':enduser, 
+        'connections_all':connections_all, 
+    	  'date':date, 
+    	  'periods': period_objects 
+    }) 
 
     
 """

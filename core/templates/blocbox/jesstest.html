@@ -40,6 +40,7 @@
 											<h6> SHOW MONTH.NAME: {{ month.name }}  </h6>
 											<h6> SHOW QUERYSTRING_FOR-DATE: {{ querystring_for_date }}  </h6>
 											<h6> SHOW MONTH.START: {{ month.start }}  </h6>
+											<h6> SHOW PERIOD_OBJECTS: {{ period_objects }}  </h6>
 											<!-- the year is screning up - its not passing the "year" argument to the view
 												{  % month_table calendar periods.month "small" % 
 												
@@ -57,9 +58,7 @@
 															url(r'^calendar/bi_month/(?P<calendar_slug>[-\w]+)/$',                               
         													'schedule.views.calendar_by_periods',                                             
         													name="bi_month_calendar",                                                        
-        													kwargs={'periods': [Month], 'template_name': 'schedule/calendar_bi_month.html'}),
-        
-											-->
+        													kwargs={'periods': [Month], 'template_name': 'schedule/calendar_bi_month.html'}),  s-->
 												
 									</div>
 							{% endfor %}
