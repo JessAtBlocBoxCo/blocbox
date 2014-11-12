@@ -346,7 +346,7 @@ def jesstest(request, periodone = Month, periods=[Month,], calendar_slug = "test
     period_objects = {} 
     for period in periods: #JUST DO THIS FOR MONTH
         period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
-    periodsingle = periodone(event_list, date, None, None, local_timezone)
+    periodsingle = periodone(event_list, date, None, None, local_timezone) #this returns the same thing that periods.month does...
     #period.__name__.lower() = period(event_list, date, None, None, local_timezone)
     #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
     #periods function defined in periods.py it is called e.g., in bi_month iew with.. ...% month_table calendar periods.month "small" %..  in brackets
