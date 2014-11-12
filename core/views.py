@@ -16,6 +16,7 @@ from django.views.generic.list import ListView
 import datetime
 import pytz
 from schedule import periods
+from schedule.periods import Month
 from schedule.conf.settings import GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT
 from schedule.forms import EventForm, OccurrenceForm
 from schedule.models import Calendar, Occurrence, Event
@@ -313,7 +314,7 @@ def styletest(request):
     return render(request, 'blocbox/x_styletest.html') 
     
 #bootsrap test - copy of the waitlist sign-up page
-def jesstest(request, periods=["month",]):
+def jesstest(request, periods=["Month",]):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
@@ -345,7 +346,7 @@ def jesstest(request, periods=["month",]):
     period_objects = {} 
     for period in periods: #JUST DO THIS FOR MONTH
     	  #JMY NOTE: i added schedule.periods before periods(event_list)..to show patuh.. if this creates errors can remove in future
-        period_objects[period.__name__.lower()] = schedule.periods.period(event_list, date, None, None, local_timezone)
+        period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     #period_objectfix = periods(event_list, date, None, None, local_timezone)
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
