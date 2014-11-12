@@ -333,7 +333,7 @@ def jesstest(request):
         local_timezone = request.session.setdefault('django_timezone', 'UTC')
     #date = datetime.datetime.now()
     local_timezone = pytz.timezone(local_timezone)
-    kwargs={'periods': [Month],
+    #kwargs={'periods': [Month],
     period_objects = {} 
     for period in periods: #JUST DO THIS FOR MONTH
         period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
