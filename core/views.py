@@ -15,6 +15,7 @@ from django.views.generic.list import ListView
 #import scheduling stuff
 import datetime
 import pytz
+from schedule import periods
 from schedule.conf.settings import GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT
 from schedule.forms import EventForm, OccurrenceForm
 from schedule.models import Calendar, Occurrence, Event
