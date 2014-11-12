@@ -341,7 +341,7 @@ def jesstest(request):
     period_objects = {} 
     #for period in periods: #JUST DO THIS FOR MONTH
     #    period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
-    period_objectfix = period(event_list, date, None, None, local_timezone)
+    period_objectfix = periods(event_list, date, None, None, local_timezone)
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
