@@ -357,7 +357,7 @@ def jesstest(request,  periods=[Month,], calendar_slug = "testcalendar1",):
         'connections_all':connections_all,
     	  'date':date, 
     	  'monthname':monthname,
-    	  'periods': period_objects,
+    	  #'periods': period_objects,
     	  #'periodsingle': periodsingle,
     	  'weekday_names': weekday_names,
     	  'calendar': calendar,
