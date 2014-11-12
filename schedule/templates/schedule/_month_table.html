@@ -11,12 +11,7 @@
 			
 		 the periods variable shows up as "'month': <schedule.periods.Month object at 0x7fe7cc5c68d0>} "
 	-->
-	
-	<p>TEST CALENDAR SLUG: {{ calendar_slug }} </p>
-	<p>TEST QUERYSTRING_FOR_DATE: {{ querystring_for_date }} </p>
-	<p>TEST MONTH.START: {{ month.start }} </p>
-	<p>TEST QUERYSTRING_FOR_DATE MONTH.START 2 TRUE, inside bracket-%: {% querystring_for_date month.start 2 True %} </p>
-	<P>TEST - SHOW PERIODS: {{ periods }} </P>
+
 	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 			{{month.name}} 
 	</a>

@@ -34,11 +34,7 @@
 						{% endfor %}
 					<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 
 									<div class="row">
-											<h6> SHOW DATE: {{ date }}  </h6>
-											<h6> SHOW MONTH.NAME: {{ month.name }}  </h6>
-											<h6> SHOW QUERYSTRING_FOR-DATE: {{ querystring_for_date }}  </h6>
-											<h6> SHOW MONTH.START: {{ month.start }}  </h6>
-											<h6> SHOW PERIOD_OBJECTS: {{ period_objects }}  </h6>
+											
 											<!-- the year is screning up - its not passing the "year" argument to the view
 												{  % month_table calendar periods.month "small" % 
 												
@@ -61,6 +57,15 @@
 												{% month_table calendar periods.month "small" %} 
 												
 									</div>
+									
+						<div class="row">
+								<h3>Show Other Calendar Variables </h3>
+											<h6> SHOW DATE: {{ date }}  </h6>
+											<h6> SHOW MONTH.NAME: {{ month.name }}  </h6>
+											<h6> SHOW QUERYSTRING_FOR-DATE: {{ querystring_for_date }}  </h6>
+											<h6> SHOW MONTH.START: {{ month.start }}  </h6>
+											<h6> SHOW PERIODS [PERIODS_OBJECTS PASSED AS PERIODS]: {{ periods }}  </h6>								
+						</div>
 					
 				<br><br>
 		</div>
