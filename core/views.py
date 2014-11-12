@@ -315,8 +315,8 @@ def styletest(request):
     return render(request, 'blocbox/x_styletest.html') 
     
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
-#def jesstest(request, periods=[Month,], calendar_slug = "testcalendar1",):
-def jesstest(request, periodone = Month, calendar_slug = "testcalendar1",):
+#def jesstest(request, periods=[Month,],periodone = Month, calendar_slug = "testcalendar1",):
+def jesstest(request,  periods=[Month,], calendar_slug = "testcalendar1",):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
@@ -343,9 +343,9 @@ def jesstest(request, periodone = Month, calendar_slug = "testcalendar1",):
     event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
     #Instead of doing periods as a tuple, just assign it to month, since thats all i'm worried about here
     #for Month: period_objectios[month.__name__. = Month(event_list, date, None, None, local_timezone)
-    #period_objects = {} 
-    #for period in periods: #JUST DO THIS FOR MONTH
-    #    period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+    period_objects = {} 
+    for period in periods: #JUST DO THIS FOR MONTH
+        period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     monthname = Month(event_list, date, None, None, local_timezone) #this returns the same thing that periods.month does...
     #period.__name__.lower() = period(event_list, date, None, None, local_timezone)
     #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
@@ -357,7 +357,7 @@ def jesstest(request, periodone = Month, calendar_slug = "testcalendar1",):
         'connections_all':connections_all,
     	  'date':date, 
     	  'monthname':monthname,
-    	  #'periods': period_objects,
+    	  'periods': period_objects,
     	  #'periodsingle': periodsingle,
     	  'weekday_names': weekday_names,
     	  'calendar': calendar,
