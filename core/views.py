@@ -333,18 +333,17 @@ def jesstest(request):
         local_timezone = request.session.setdefault('django_timezone', 'UTC')
     #date = datetime.datetime.now()
     local_timezone = pytz.timezone(local_timezone)
+    kwargs={'periods': [Month],
     period_objects = {} 
-    for period in periods:
-        if period.__name__.lower() == 'year':
-            period_objects[period.__name__.lower()] = period(event_list, date, None, local_timezone) 
-        else:
-            period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+    for period in periods: #JUST DO THIS FOR MONTH
+        period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
         'connections_all':connections_all, 
     	  'date':date, 
-    	  'periods': period_objects 
+    	  'periods': period_objects,
+    	  'weekday_names': weekday_names,
     }) 
 
     

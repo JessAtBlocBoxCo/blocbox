@@ -13,7 +13,7 @@
 	<p>TEST QUERYSTRING_FOR_DATE: {{ querystring_for_date }} </p>
 	<p>TEST MONTH.START: {{ month.start }} </p>
 	<p>TEST QUERYSTRING_FOR_DATE MONTH.START 2 TRUE, inside bracket-%: {% querystring_for_date month.start 2 True %} </p>
-	
+	<P>TEST - SHOW PERIOD_OBJECTS: {{ period.objects }} </P>
 	<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 			{{month.name}} 
 	</a>
