@@ -354,7 +354,6 @@ def jesstest(request, periods=[Month,]):
         'connections_all':connections_all,
     	  'date':date, 
     	  'periods': period_objects,
-    	  'periodsfix': period_objectfix,
     	  'weekday_names': weekday_names,
     	  'calendar': calendar,
     	  'here': quote(request.get_full_path())
