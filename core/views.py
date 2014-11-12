@@ -340,10 +340,11 @@ def jesstest(request):
     #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
     #periods = "Month"  #i need to figure out how to refeernce the CLASS month from the periods
     #periods is defeined, e.g., in calendar_bi_month when it calls...% month_table calendar periods.month "small" %..  in brackets
+    periods = [Month]
     period_objects = {} 
-    #for period in periods: #JUST DO THIS FOR MONTH
-    #    period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
-    period_objectfix = periods(event_list, date, None, None, local_timezone)
+    for period in periods: #JUST DO THIS FOR MONTH
+        period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+    #period_objectfix = periods(event_list, date, None, None, local_timezone)
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
