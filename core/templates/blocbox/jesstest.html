@@ -34,12 +34,16 @@
 						{% endfor %}
 						
 					<div class="row">
-								<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 
-								<h4> Update to pass calendar name in the HTML template or URL or sow that i can see all calendars at once.</h4> 									
+							<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 
+							<h4> Update to pass calendar name in the HTML template or URL or sow that i can see all calendars at once.</h4> 									
 
-							<td valign="top">	{% month_table calendar periods.month "small" %}  </td>
-							<td valign="top"> {% month_table calendar periods.month "small" +1 %}	</td>
-						
+								<table align="center" class="bimonth">
+									<tr>
+										<td valign="top">	{% month_table calendar periods.month "small" %}  </td>
+										<td width="30">&nbsp;</td>
+										<td valign="top"> {% month_table calendar periods.month "small" +1 %}	</td>
+									</tr>
+								</table>
 					</div> <!--row with the bi_month_calendar -->
 									
 					<div class="row">
