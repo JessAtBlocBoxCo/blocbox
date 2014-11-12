@@ -314,8 +314,8 @@ def bootstraptest(request):
 def styletest(request):
     return render(request, 'blocbox/x_styletest.html') 
     
-#bootsrap test - copy of the waitlist sign-up page
-def jesstest(request, periods=[Month,]):
+#jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
+def jesstest(request, periods=[Month,], calendar_slug = "testcalendar1",):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
@@ -336,7 +336,7 @@ def jesstest(request, periods=[Month,]):
         local_timezone = request.session.setdefault('django_timezone', 'UTC')
     #need to define event list and calendar, trouble is that typically defined for a particular claendar, we need for all
     cal_list = Calendar.objects.all()
-    calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
+    #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
     calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
     event_list = GET_EVENTS_FUNC(request, calendar)  #this is working  
     local_timezone = pytz.timezone(local_timezone) #this is working
