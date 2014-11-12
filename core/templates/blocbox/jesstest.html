@@ -33,27 +33,40 @@
   							<br/>
 						{% endfor %}
 						
-					<div class="row">
-							<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 
-							<h4> Update to pass calendar name in the HTML template or URL or sow that i can see all calendars at once.</h4> 									
-
-								<table align="left" class="bimonth">
-									<tr>
-										<td valign="top">	{% month_table calendar periods.month "small" %}  </td>
-										<td width="30">&nbsp;</td>
-										<td valign="top"> {% month_table calendar periods.month "small" +1 %}	</td>
-									</tr>
-								</table>
-					</div> <!--row with the bi_month_calendar -->
+			<div class="row">
+					<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 
+					<h4> Update to pass calendar name in the HTML template or URL or sow that i can see all calendars at once.</h4> 									
+						<!--<table align="left" class="bimonth"> <tr>-->
+							<div class="col-xs-12 col-sm-4"> <h4>
+									This is TestCalendar1, showing availablility for Two Months. 
+											It is called in the jesstest aviea. I Need to make the following changes: 
+											1) Link the calendar name toa  particular host
+											2) Update page view so that it calls the calendar name associated with the host
+											3) make this calendar view show balckout dates - so maybe color the days if unvailability
+											4) potentially update so it can show all calendars on one page
+							</h4> </div>
+							<div class="col-xs-12 col-sm-4">
+										<!--<td valign="top">	-->
+											{% month_table calendar periods.month "small" %}  
+										<!--</td>-->
+							<div> <!--col-->
+									<!--	<td width="30">&nbsp;</td>-->
+							<div class="col-xs-12 col-sm-4">
+										<!-- <td valign="top"> -->
+												{% month_table calendar periods.month "small" +1 %}	
+											<!--</td>-->
+							</div> <!--col-->
+						<!--</tr> </table>-->
+			</div> <!--row with the bi_month_calendar -->
 									
-					<div class="row">
+			<div class="row">
 								<h3>Show Other Calendar Variables </h3>
 											<h6> SHOW DATE: {{ date }}  </h6>
 											<h6> SHOW MONTH.NAME: {{ month.name }}  </h6>
 											<h6> SHOW QUERYSTRING_FOR-DATE MONTH.START 2 TRUE: {% querystring_for_date month.start 2 True %}  </h6>
 											<h6> SHOW MONTH.START: {{ month.start }}  </h6>
 											<h6> SHOW PERIODS [PERIODS_OBJECTS PASSED AS PERIODS]: {{ periods }}  </h6>								
-					</div>
+			</div>
 					
 				<br><br>
 		</div>
