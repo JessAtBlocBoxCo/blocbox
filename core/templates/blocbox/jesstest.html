@@ -32,27 +32,11 @@
   							</li>
   							<br/>
 						{% endfor %}
-					<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 
-									<div class="row">
-											
-											<!-- the year is screning up - its not passing the "year" argument to the view
-												{  % month_table calendar periods.month "small" % 
-												
-												error: 'str' object has no attribute 'year'
-												need to pass the current month/year somehow...  }
-												querystring_for_date month.start 2 True... this is th epart throwing errors
-												def querystring_for_date(date, num=6, autoescape=None):
-														qs_vars = (date.year, date.month, date.day, date.hour, date.minute, date.second)
-													...so, nnormally.. the date argument is passed..  but no date is passed here.. 
-												
-													HOW DO WE PASS A DATE TO THIS PAGE??
-													
-													NEED TO PASS MONTH OBJECTS SO MONTH.START RENDERS
-													
-															url(r'^calendar/bi_month/(?P<calendar_slug>[-\w]+)/$',                               
-        													'schedule.views.calendar_by_periods',                                             
-        													name="bi_month_calendar",                                                        
-        													kwargs={'periods': [Month], 'template_name': 'schedule/calendar_bi_month.html'}),  s-->
+						
+					<div class="row">
+								<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 
+								<h3> Update this so that i pass the calendar name in the HTML template or URL OR SO I CAN SHOW MANY CALENDARS.</h3> 									
+
 												
 												{% month_table calendar periods.month "small" %} 
 												
