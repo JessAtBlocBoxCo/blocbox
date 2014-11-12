@@ -334,7 +334,8 @@ def jesstest(request):
     #need to define event list and calendar, trouble is that typically defined for a particular claendar, we need for all
     cal_list = Calendar.objects.all()
     calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
-    calendar = get_object_or_404(Calendar, slug=calendar_slug)    
+    calendar = get_object_or_404(Calendar, slug=calendar_slug)
+    event_list = GET_EVENTS_FUNC(request, calendar)    
     local_timezone = pytz.timezone(local_timezone)
     periods = "Month"  #kwargs={'periods': [Month],
     period_objects = {} 
