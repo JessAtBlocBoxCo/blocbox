@@ -342,11 +342,14 @@ def jesstest(request, periods=[Month,], calendar_slug = "testcalendar1",):
     #for cal in cal_list:
     calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
     event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
+    #Instead of doing periods as a tuple, just assign it to month, since thats all i'm worried about here
+    #for Month: period_objectios[month.__name__. = Month(event_list, date, None, None, local_timezone)
     period_objects = {} 
     for period in periods: #JUST DO THIS FOR MONTH
         period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
     #periods function defined in periods.py it is called e.g., in bi_month iew with.. ...% month_table calendar periods.month "small" %..  in brackets
+    #periods_objects is defined as {'month': <schedule.periods.Month object at 0x7fb47ca69e90>}
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
