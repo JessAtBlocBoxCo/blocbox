@@ -1,6 +1,6 @@
 <!--this is schedule/templates/schedule/_month_table.html -->
 {% load scheduletags %}
-<table align="center" class="WHAT calendar monthtable">
+<table align="center" class="calendar monthtable">
 	
 	<!--adding month name to top of ccalendar - this  is creating errors when i try to load it on other pages outside of schedule app 
 			the first part is throwing the error: 
@@ -13,9 +13,9 @@
 	-->
    
    <!--put the month name in a table row -->
-   	<tr class="monthname">  <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
+   	<tr class="monthname"> <td> <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 				{{month.name}} 
-		</a> 	</tr>
+		</a> </td> 	</tr>
 		
 		{% if day_names %}
 				<tr class="daysofweek">
