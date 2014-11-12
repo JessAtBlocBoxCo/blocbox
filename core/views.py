@@ -343,6 +343,7 @@ def jesstest(request, periods=["month",]):
     #periods = [Month]
     period_objects = {} 
     for period in periods: #JUST DO THIS FOR MONTH
+    	  #JMY NOTE: i added schedule.periods before periods(event_list)..to show patuh.. if this creates errors can remove in future
         period_objects[period.__name__.lower()] = schedule.periods.period(event_list, date, None, None, local_timezone)
     #period_objectfix = periods(event_list, date, None, None, local_timezone)
     return render(request, 'blocbox/jesstest.html', {
