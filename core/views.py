@@ -334,21 +334,19 @@ def jesstest(request, periods=[Month,], calendar_slug = "testcalendar1",):
     else:
         date = timezone.now()
         local_timezone = request.session.setdefault('django_timezone', 'UTC')
-    #need to define event list and calendar, trouble is that typically defined for a particular claendar, we need for all
-    cal_list = Calendar.objects.all()
-    #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
-    calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
-    event_list = GET_EVENTS_FUNC(request, calendar)  #this is working  
+     
     local_timezone = pytz.timezone(local_timezone) #this is working
-    #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
-    #periods = "Month"  #i need to figure out how to refeernce the CLASS month from the periods
-    #periods is defeined, e.g., in calendar_bi_month when it calls...% month_table calendar periods.month "small" %..  in brackets
-    #periods = [Month]
+    #need to define event list and calendar, trouble is that typically defined for a particular claendar, we need for all
+    #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
+    cal_list = Calendar.objects.all()
+    #for cal in cal_list:
+    calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
+    event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
     period_objects = {} 
     for period in periods: #JUST DO THIS FOR MONTH
-    	  #JMY NOTE: i added schedule.periods before periods(event_list)..to show patuh.. if this creates errors can remove in future
         period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
-    #period_objectfix = periods(event_list, date, None, None, local_timezone)
+    #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
+    #periods function defined in periods.py it is called e.g., in bi_month iew with.. ...% month_table calendar periods.month "small" %..  in brackets
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
