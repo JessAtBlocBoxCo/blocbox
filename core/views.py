@@ -334,12 +334,12 @@ def jesstest(request):
     #need to define event list and calendar, trouble is that typically defined for a particular claendar, we need for all
     cal_list = Calendar.objects.all()
     calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
-    calendar = get_object_or_404(Calendar, slug=calendar_slug)
-    event_list = GET_EVENTS_FUNC(request, calendar)    
-    local_timezone = pytz.timezone(local_timezone)
+    calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
+    event_list = GET_EVENTS_FUNC(request, calendar)  #this is working  
+    local_timezone = pytz.timezone(local_timezone) #this is working
     #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
     #periods = "Month"  #i need to figure out how to refeernce the CLASS month from the periods
-    periods = periods.Month()
+    #periods is defeined, e.g., in calendar_bi_month when it calls...% month_table calendar periods.month "small" %..  in brackets
     period_objects = {} 
     #for period in periods: #JUST DO THIS FOR MONTH
     #    period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)

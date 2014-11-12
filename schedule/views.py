@@ -54,6 +54,9 @@ def calendar_by_periods(request, calendar_slug, periods=None, template_name="sch
         	    name="month_calendar",
         	    kwargs={'periods': [Month], 'template_name': 'schedule/calendar_month.html'}),
         
+    INTERPRETING THE KWARGS CALL, E.G., KWARGS={'periods': [Month],zy
+    BUT periods is also defined in the, e.g., calendar_bi_month.html with the ... % month_table calendar periods.month "small" % ...
+       
     NOTES FROM DJANGO APP:
     This view is for getting a calendar, but also getting periods with that
     calendar.  Which periods you get, is designated with the list periods. You
