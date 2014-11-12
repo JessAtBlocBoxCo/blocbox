@@ -315,8 +315,7 @@ def jesstest(request):
     cal_list = Calendar.objects.all()
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here
     #date = datetime.datetime.now()
-    date = datetime.datetime(**date)
-        try:
+    try:
         date = coerce_date_dict(request.GET)
     except ValueError:
         raise Http404
