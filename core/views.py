@@ -326,7 +326,6 @@ def jesstest(request, period = Month, calendar_slug = "testcalendar1",):
         date = coerce_date_dict(request.GET)
     except ValueError:
         raise Http404
-
     if date:
         try:
             date = datetime.datetime(**date)
@@ -334,8 +333,7 @@ def jesstest(request, period = Month, calendar_slug = "testcalendar1",):
             raise Http404
     else:
         date = timezone.now()
-        local_timezone = request.session.setdefault('django_timezone', 'UTC')
-     
+        local_timezone = request.session.setdefault('django_timezone', 'UTC')     
     local_timezone = pytz.timezone(local_timezone) #this is working
     #need to define event list and calendar, trouble is that typically defined for a particular claendar, we need for all
     #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
