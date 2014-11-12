@@ -342,7 +342,7 @@ def jesstest(request):
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
-        'connections_all':connections_all, s
+        'connections_all':connections_all,
     	  'date':date, 
     	  'periods': period_objects,
     	  'weekday_names': weekday_names,
