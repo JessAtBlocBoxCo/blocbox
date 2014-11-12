@@ -15,6 +15,7 @@ from django.views.generic.list import ListView
 #import scheduling stuff
 import datetime
 import pytz
+from urllib import quote
 from schedule import periods
 from schedule.periods import Month
 from schedule.conf.settings import GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT
