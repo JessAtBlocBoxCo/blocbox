@@ -348,7 +348,8 @@ def jesstest(request, period = Month, calendar_slug = "testcalendar1",):
     #period_objects = {} 
     #for period in periods: #JUST DO THIS FOR MONTH
     #    period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
-    period.__name__.lower() = period(event_list, date, None, None, local_timezone)
+    periodfix = period(event_list, date, None, None, local_timezone)
+    #period.__name__.lower() = period(event_list, date, None, None, local_timezone)
     #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
     #periods function defined in periods.py it is called e.g., in bi_month iew with.. ...% month_table calendar periods.month "small" %..  in brackets
     #periods_objects is defined as {'month': <schedule.periods.Month object at 0x7fb47ca69e90>}
@@ -358,7 +359,7 @@ def jesstest(request, period = Month, calendar_slug = "testcalendar1",):
         'connections_all':connections_all,
     	  'date':date, 
     	  #'periods': period_objects,
-    	  'periods': period,
+    	  'periods': periodfix,
     	  'weekday_names': weekday_names,
     	  'calendar': calendar,
     	  'here': quote(request.get_full_path())
