@@ -315,9 +315,9 @@ def styletest(request):
 def jesstest(request):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
-    cal_list = Calendar.objects.all()
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
-    #schedule.views.calendar_by_periods    
+    #calndar stuff initially defined in schedule.views.calendar_by_periods    
+    #get the date -- coudl also do this with date = datetime.datetime.now()
     try:
         date = coerce_date_dict(request.GET)
     except ValueError:
@@ -331,7 +331,9 @@ def jesstest(request):
     else:
         date = timezone.now()
         local_timezone = request.session.setdefault('django_timezone', 'UTC')
-    #date = datetime.datetime.now()
+    #need to define event list and calendar, trouble is that typically defined for a particular claendar, we need for all
+    cal_list = Calendar.objects.all()
+    calendar = get_object_or_404(Calendar, slug=calendar_slug)    
     local_timezone = pytz.timezone(local_timezone)
     periods = "Month"  #kwargs={'periods': [Month],
     period_objects = {} 
@@ -340,10 +342,12 @@ def jesstest(request):
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
-        'connections_all':connections_all, 
+        'connections_all':connections_all, s
     	  'date':date, 
     	  'periods': period_objects,
     	  'weekday_names': weekday_names,
+    	  'calendar': calendar,
+    	  'here': quote(request.get_full_path())
     }) 
 
     

@@ -8,8 +8,11 @@
 			the second part (querystring_for... ) renders as: "?year=2014&month=11 "
 			
 			it is throwing errors on other pages because it doesnt' know  which one to load... , e.g., testcalendar1?, so we haven't passed 
+			
+		 the periods variable shows up as "'month': <schedule.periods.Month object at 0x7fe7cc5c68d0>} "
 	-->
 	
+	<p>TEST CALENDAR SLUG: {{ calendar_slug }} </p>
 	<p>TEST QUERYSTRING_FOR_DATE: {{ querystring_for_date }} </p>
 	<p>TEST MONTH.START: {{ month.start }} </p>
 	<p>TEST QUERYSTRING_FOR_DATE MONTH.START 2 TRUE, inside bracket-%: {% querystring_for_date month.start 2 True %} </p>

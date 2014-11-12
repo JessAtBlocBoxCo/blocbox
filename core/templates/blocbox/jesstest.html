@@ -32,10 +32,8 @@
   							</li>
   							<br/>
 						{% endfor %}
-					<h3> Show Each Full Calendar</h3> 
-							{% for calendar in cal_list %}
+					<h3> Show the Bi-Monthly Calendar..I Can't Show Each..specifying this in the jesstest view.</h3> 
 									<div class="row">
-											<h5> {{ calendar }} </h5>
 											<h6> SHOW DATE: {{ date }}  </h6>
 											<h6> SHOW MONTH.NAME: {{ month.name }}  </h6>
 											<h6> SHOW QUERYSTRING_FOR-DATE: {{ querystring_for_date }}  </h6>
@@ -61,7 +59,6 @@
         													kwargs={'periods': [Month], 'template_name': 'schedule/calendar_bi_month.html'}),  s-->
 												
 									</div>
-							{% endfor %}
 					
 				<br><br>
 		</div>
