@@ -339,14 +339,16 @@ def jesstest(request):
     local_timezone = pytz.timezone(local_timezone)
     periods = "Month"  #kwargs={'periods': [Month],
     period_objects = {} 
-    for period in periods: #JUST DO THIS FOR MONTH
-        period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+    #for period in periods: #JUST DO THIS FOR MONTH
+    #    period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+    period_objectfix = period(event_list, date, None, None, local_timezone)
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
         'connections_all':connections_all,
     	  'date':date, 
     	  'periods': period_objects,
+    	  'periodsfix': period_objectfix,
     	  'weekday_names': weekday_names,
     	  'calendar': calendar,
     	  'here': quote(request.get_full_path())
