@@ -13,7 +13,7 @@
 	-->
    
    <!--put the month name in a table row, th=title header -->
-   	<tr class="monthname"> <th colspan="7"> <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
+   	<tr class="monthname"> <th colspan="7" align="center"> <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 				{{month.name}} 
 		</a> </th> 	</tr>
 		
