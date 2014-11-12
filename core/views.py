@@ -343,9 +343,9 @@ def jesstest(request,  periods=[Month,], calendar_slug = "testcalendar1",):
     event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
     #Instead of doing periods as a tuple, just assign it to month, since thats all i'm worried about here
     #for Month: period_objectios[month.__name__. = Month(event_list, date, None, None, local_timezone)
-    period_objects = {} 
-    for period in periods: #JUST DO THIS FOR MONTH
-        period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+    #period_objects = {} 
+    #for period in periods: #JUST DO THIS FOR MONTH
+    #    period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     monthname = Month(event_list, date, None, None, local_timezone) #this returns the same thing that periods.month does...
     #period.__name__.lower() = period(event_list, date, None, None, local_timezone)
     #the periods definition references periods.py, it si called in the URLpattenr wit:kwargs={'periods': [Month]
