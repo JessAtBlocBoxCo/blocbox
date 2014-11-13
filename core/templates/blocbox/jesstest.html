@@ -15,11 +15,12 @@
 					<!--	TEST THE CALENDAR APPS: the calendar_bi_month.html calls the calendar for first month with: "{ %" month_table calendar periods.month "small"  "%  }" -->
 						<!--	{ % month_table calendar periods.month "small" % } -->
 						
-					{% load i18n %}
-					{% load scheduletags i18n %}
-					{% load scheduletags %}
-					
-					<h3>Available Calendars (List with Links) </h3>
+			{% load i18n %}
+			{% load scheduletags i18n %}
+			{% load scheduletags %}
+			
+			<!--SHOW LIST OF AVAILABLE CALENDARS	 -->
+			<div class="row">	<h3>Available Calendars (List with Links) </h3>
 							{% for calendar in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
 								<li> <b>{{ calendar }}</b> :
   									<a href="{% url "compact_calendar" calendar.slug %}">{% trans "Small Month" %}</a> --
@@ -32,42 +33,49 @@
   							</li>
   							<br/>
 						{% endfor %}
+			</div>				
 						
-			<div class="row">
-					<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 									
-						<!--<table align="left" class="bimonth"> <tr>-->
-							<div class="col-xs-12 col-sm-6"> 
-									<h4>This is TestCalendar1, showing availablility for Two Months. It is called in the jesstest aviea. I Need to make the following changes:</h4> 
+			<!--SHOW EVERY CALENDAR-->
+			<div class="row">   <h3>Show Every Calendar </h3> </div>			
+				{% for calendar in cal_list %}
+								<div class="row">
+										<div class="col-xs-12 col-sm-6"> <h4>Text to the left for {{ calendar.slug }} </h4></div>
+										<div class="col-xs-12 col-sm-6"> 
+												<h3 style="text-align: center">  {{ calendar.slug }} </h3>
+												<!--
+														<div class="col-xs-12 col-sm-6">	{   % month_table calendar thismonthobject "small" %  }  	</div> 
+														<div class="col-xs-12 col-sm-6"> {   % month_table calendar thismonthobject "small" +1 %  }	</div> 
+												-->
+										</div>			
+								</div> <!--row with cal-->
+				{% endfor %}
+			
+			
+			<!--SHOW TESTCALENDAR1 -->
+			<div class="row"> 	<h3> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h3> 									
+					<div class="col-xs-12 col-sm-6"> 
+							<h4>This is TestCalendar1, showing availablility for Two Months. It is called in the jesstest aviea. I Need to make the following changes:</h4> 
 											<p>1) Link the calendar name toa  particular host </p>
 											<p>2) Update page view so that it calls the calendar name associated with the host    </p>
 											<p>3) make this calendar view show balckout dates - so maybe color the days if unvailability  </p>
-											<p>4) potentially update so it can show all calendars on one page </p>
-							</div>
-							<div class="col-xs-12 col-sm-6">
-									<h3 style="text-align: center">  {{ calendar.slug }} </h3>
-										<div class="col-xs-12 col-sm-6">
-												<!--<td valign="top">	-->
-													{% month_table calendar thismonthobject "small" %}  
-												<!--</td>-->
-										</div> <!--col-->
-											<!--	<td width="30">&nbsp;</td>-->
-										<div class="col-xs-12 col-sm-6">
-												<!-- <td valign="top"> -->
-														{% month_table calendar thismonthobject "small" +1 %}	
-													<!--</td>-->
-										</div> <!--col-->
-							</div> <!--col, cal name -->
-						<!--</tr> </table>-->
-			</div> <!--row with the bi_month_calendar -->
-									
-			<div class="row">
-					<h3>Show Other Calendar Variables </h3>
+					</div>
+							
+					<div class="col-xs-12 col-sm-6">
+								<h3 style="text-align: center">  {{ calendar.slug }} </h3>
+								<div class="col-xs-12 col-sm-6">	{% month_table calendar thismonthobject_single "small" %}  	</div> 
+								<div class="col-xs-12 col-sm-6"> {% month_table calendar thismonthobject_single "small" +1 %}	</div> 
+					</div> <!--col, cal name -->
+			</div> <!--row with the bi_month_calendar - TestCaledar1 -->
+						
+								
+			<div class="row">   	<h3>Show Other Calendar Variables </h3>
 							<h6> SHOW DATE: {{ date }} </h6> <!--Nov. 12, 2014, 3 p.m. (that was the current time) -->
 							<h6> SHOW MONTH {{ month }}, SHOW MONTH.NAME: {{ month.name }} ,SHOW MONTH.START: {{ month.start }}   </h6> <!--December  where is month_name defgined???-->
 							<!-- where are month fujnctions defined ?? -->
 							<h6> SHOW QUERYSTRING_FOR-DATE MONTH.START 2 TRUE: {% querystring_for_date month.start 2 True %}  </h6> <!--?year=2014&month=12  -->
 							<h6> SHOW THISMONTHname : {{ thismonthname }}  </h6>
 							<h6> SHOW CALENDAR_OBJECTS : {{ calendar_objects }}  </h6>
+							<h6> SHOW CALENDAR_OBJECTS.TestCalendar1 : {{ calendar_objects.TestCalendar1 }}  </h6>
 			</div>
 					
 				<br><br>
