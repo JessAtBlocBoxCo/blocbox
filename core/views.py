@@ -341,9 +341,10 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
     event_list_objects = {}
     thismonth_objects = {}
     for cal in cal_list:
+        calendar = get_object_or_404(Calendar, slug=cal.slug)
+        event_list = GET_EVENTS_FUNC(request, calendar)
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
-        event_list_objects = GET_EVENTS_FUNC(request, calendar_objects.cal.slug)
-        thismonth_objects[cal.slug] = Month(event_list_objects.cal.slug, date, None, None, local_timezone)
+        thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
         #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     #for a single calendar called 
     calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
