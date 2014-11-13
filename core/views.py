@@ -315,8 +315,7 @@ def styletest(request):
     return render(request, 'blocbox/x_styletest.html') 
     
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
-#def jesstest(request, periods=[Month,],periodone = Month, calendar_slug = "testcalendar1",):
-def jesstest(request,  periods=[Month,], calendar_slug = "testcalendar1",):
+def jesstest(request, calendar_slug = "testcalendar1",):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
@@ -335,13 +334,15 @@ def jesstest(request,  periods=[Month,], calendar_slug = "testcalendar1",):
         date = timezone.now()
         local_timezone = request.session.setdefault('django_timezone', 'UTC')     
     local_timezone = pytz.timezone(local_timezone) #this is working
-    #need to define event list and calendar, trouble is that typically defined for a particular claendar, we need for all
     #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
     cal_list = Calendar.objects.all()
+    calendar_objects = {} 
     #for cal in cal_list:
     calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
     event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
-    thismonth = Month(event_list, date, None, None, local_timezone) #this returns the same thing that periods.month does...
+    #why does eent_list need to be apseed for thismonth?
+    thismonth = Month(event_list, date, None, None, local_timezone) 
+    #thismonth = Month(event_list, date, None, None, local_timezone) #testingn without eent_list
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
