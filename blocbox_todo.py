@@ -1,5 +1,5 @@
 
-"""WEBSITE WORK: BEFORE TUMML INTERIVEW"""
+"""TO DO  BEFORE ERA APPLICATION"""
 
 1. JOHN - /Fix Mobile/make site responsive
 5. JOHN: you send jess a message saying "package received"
@@ -33,7 +33,7 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 6. JOHN: sign-up - "by continugin i agree" - put below button
 7. JESS: add to email sent to host - the text they fill in for when they usually get packages
 8. SIGN-UP: two bowls of shit, one bowl, then sneaky second bowl of shit
-9. JESS: add community dinners/food as a use-case.. add this totable adn then also update the checkboxes: add NEED_MEALS
+9. JESS table: add two use cases (1) wifi sharing; (2) community dinners/food as a use-case.. add this totable adn then also update the checkboxes: add NEED_MEALS
 10. Allow user to upload pictures
 11. john: style the profile pic - so the user uplaodssimplepic, and then converted to glossy bubble
 12. Jess: populatethe dashboard - so that the tracking is linked
@@ -47,6 +47,7 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
 	7. JESS to form and table - add need_meals
 	1. JESS dashboard: connect to transactions table to populate actually transactions
+
 
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
 #they install at:
