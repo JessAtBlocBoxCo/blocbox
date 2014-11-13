@@ -339,7 +339,7 @@ def jesstest(request, calendar_slug = "testcalendar1",):
     cal_list = Calendar.objects.all()
     calendar_objects = {} 
     for cal in cal_list:
-        calendar_objects[cal.__name__.lower()] = get_object_or_404(Calendar, slug=cal.slug)
+        calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
     #calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
     #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
