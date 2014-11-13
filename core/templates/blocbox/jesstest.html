@@ -36,26 +36,16 @@
 			</div>				
 						
 			<!--SHOW EVERY CALENDAR-->
-			<div class="row">   <h3>Show Every Calendar </h3> </div>			
-			<p>DELME - SHOW CAL_LIST {{ cal_list }} </p>
-			<p>DELME - SHOW CAL_LIST.SLUG {{ cal_list.slug }} </p>
+			<div class="row">   <h3>Every Calendar (Bi-Monthly View) </h3> </div>			
 				{% for caleach in cal_list %}
 								<div class="row">
 										<div class="col-xs-12 col-sm-6"> <h4>Text to the left for {{ calendar.slug }} </h4></div>
 										<div class="col-xs-12 col-sm-6"> 
-												<h3 style="text-align: center">  {{ caleach.slug }} </h3>
-													<p>TEST thismonth_objects for {{ caleach.slug }} : {{ thismonth_objects }}</p>
-													<p>TEST cal_slugs : {{ cal_slugs }}   </p>
-													<p>TEST thismonth_objects.testcalendar1 : {{ thismonth_objects.testcalendar1 }}</p>
-													
-													<p>DELME - CALENDAR1</p>
-									
+												<h3 style="text-align: center">  {{ caleach.slug }} </h3>													
+														<!--the two bi-monthly calendars.. only weird issue is that i have to call the statis thismonth_object_single
+																ii couldn't get the array to work -->
 														<div class="col-xs-12 col-sm-6">	{% month_table caleach thismonth_object_single "small" %}  	</div> 														
-													<!--		<div class="col-xs-12 col-sm-6">  {  % month_table calendar thismonth_objects.testcalendar1 "small" +1 %  }	</div> -->
-											<!--		<p>DELME - CALENDAR2</p>
-															<div class="col-xs-12 col-sm-6">	{  % month_table calendar thismonth_objects.caleach.slug "small" %  }  	</div> 													
-															<div class="col-xs-12 col-sm-6">  {  % month_table calendar thismonth_objects.caleach.slug "small" +1 %  }	</div> 
-												-->
+														<div class="col-xs-12 col-sm-6">  {% month_table calendar thismonth_objects.testcalendar1 "small" +1 %  }	</div> 
 										</div>			
 								</div> <!--row with cal-->
 				{% endfor %}
