@@ -337,12 +337,14 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
     thismonthname = Month(date, None, None, local_timezone) 
     #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
     cal_list = Calendar.objects.all()
+    cal_slug_list = 
     calendar_objects = {} 
     event_list_objects = {}
     thismonth_objects = {}
     for cal in cal_list:
-        calendar = get_object_or_404(Calendar, slug=cal.slug)
-        event_list = GET_EVENTS_FUNC(request, calendar)
+    	  cal_slugs[cal] = Calendar.slug
+        #calendar = get_object_or_404(Calendar, slug=cal.slug)
+        event_list = GET_EVENTS_FUNC(request, cal)
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
         thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
         #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
@@ -361,6 +363,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
         'cal_list':cal_list,
         'calendar_objects':calendar_objects,
     	  'calendar': calendar_single,
+    	  'cal_slugs': cal_slugs,
     	  'here': quote(request.get_full_path())
     }) 
 
