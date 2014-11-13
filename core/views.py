@@ -333,18 +333,21 @@ def jesstest(request, calendar_slug = "testcalendar1",):
     else:
         date = timezone.now()
         local_timezone = request.session.setdefault('django_timezone', 'UTC')     
-    local_timezone = pytz.timezone(local_timezone) #this is working
+    local_timezone = pytz.timezone(local_timezone) #this is working]
+    thismonthname = Month(date, None, None, local_timezone) 
     #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
     cal_list = Calendar.objects.all()
     calendar_objects = {} 
-    #for cal in cal_list:
-    calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
+    for cal in cal_list:
+        calendar_objects[cal.__name__.lower()] = get_object_or_404(Calendar, slug=cal.slug)
+    #calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
+    #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
-    #why does eent_list need to be apseed for thismonth?
-    thismonthobject = Month(event_list, date, None, None, local_timezone) 
-    thismonthname = Month(date, None, None, local_timezone) #testingn without eent_list
+    thismonthobject = Month(event_list, date, None, None, local_timezone) #specific to the calendar
+   
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
+        'calendar_objects':calendar_objects,
         'enduser':enduser, 
         'connections_all':connections_all,
     	  'date':date, 
