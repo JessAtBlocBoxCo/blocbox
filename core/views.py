@@ -341,8 +341,8 @@ def jesstest(request, calendar_slug = "testcalendar1",):
     calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
     event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
     #why does eent_list need to be apseed for thismonth?
-    thismonth = Month(event_list, date, None, None, local_timezone) 
-    #thismonth = Month(event_list, date, None, None, local_timezone) #testingn without eent_list
+    #thismonth = Month(event_list, date, None, None, local_timezone) 
+    thismonth = Month(date, None, None, local_timezone) #testingn without eent_list
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
         'enduser':enduser, 
