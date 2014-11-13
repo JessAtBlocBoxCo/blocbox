@@ -39,18 +39,17 @@
 			<div class="row">   <h3>Show Every Calendar </h3> </div>			
 			<p>DELME - SHOW CAL_LIST {{ cal_list }} </p>
 				{% for caleach in cal_list %}
-					{% set caleachname = caleach.slug %}
 								<div class="row">
 										<div class="col-xs-12 col-sm-6"> <h4>Text to the left for {{ calendar.slug }} </h4></div>
 										<div class="col-xs-12 col-sm-6"> 
 												<h3 style="text-align: center">  {{ caleach.slug }} </h3>
 													<p>TEST thismonth_objects for {{ caleach.slug }} : {{ thismonth_objects }}</p>
-													<p>TEST {{ caleachname }}  for this {{ caleach.slug }} </p>
+													<p>TEST just slug {{ slug }}  for this {{ caleach.slug }} </p>
 													<p>TEST thismonth_objects.caleach.slug for {{ caleach.slug }} : {{ thismonth_objects.caleach.slug }}</p>
 													
 													<p>DELME - CALENDAR1</p>
 											
-															<div class="col-xs-12 col-sm-6">	{% month_table calendar thismonth_objects.testcalendar1 "small" %}  	</div> 														
+															<div class="col-xs-12 col-sm-6">	{% month_table calendar thismonth_objects caleach.slug "small" %}  	</div> 														
 															<div class="col-xs-12 col-sm-6">  {% month_table calendar thismonth_objects.testcalendar1 "small" +1 %}	</div> 
 											<!--		<p>DELME - CALENDAR2</p>
 															<div class="col-xs-12 col-sm-6">	{  % month_table calendar thismonth_objects.caleach.slug "small" %  }  	</div> 													
