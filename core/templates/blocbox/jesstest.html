@@ -47,13 +47,13 @@
 									<h3 style="text-align: center">  {{ calendar.slug }} </h3>
 										<div class="col-xs-12 col-sm-6">
 												<!--<td valign="top">	-->
-													{% month_table calendar thismonth "small" %}  
+													{% month_table calendar thismonthobject "small" %}  
 												<!--</td>-->
 										</div> <!--col-->
 											<!--	<td width="30">&nbsp;</td>-->
 										<div class="col-xs-12 col-sm-6">
 												<!-- <td valign="top"> -->
-														{% month_table calendar thismonth "small" +1 %}	
+														{% month_table calendar thismonthobject "small" +1 %}	
 													<!--</td>-->
 										</div> <!--col-->
 							</div> <!--col, cal name -->
@@ -66,7 +66,7 @@
 							<h6> SHOW MONTH {{ month }}, SHOW MONTH.NAME: {{ month.name }} ,SHOW MONTH.START: {{ month.start }}   </h6> <!--December  where is month_name defgined???-->
 							<!-- where are month fujnctions defined ?? -->
 							<h6> SHOW QUERYSTRING_FOR-DATE MONTH.START 2 TRUE: {% querystring_for_date month.start 2 True %}  </h6> <!--?year=2014&month=12  -->
-							<h6> SHOW THISMONTH : {{ thismonth }}  
+							<h6> SHOW THISMONTHname : {{ thismonthname }}  
 			</div>
 					
 				<br><br>
