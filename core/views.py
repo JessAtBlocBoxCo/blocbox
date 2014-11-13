@@ -352,13 +352,13 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
     #for a single calendar called 
     calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
     event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
-    thismonthobject_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
+    thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
     return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
         'connections_all':connections_all,
     	  'date':date, 
     	  'thismonth_objects':thismonth_objects,
-    	  'thismonth_object_single':thismonthobject_single,
+    	  'thismonth_object_single':thismonth_object_single,
     	  'thismonthname':thismonthname,
     	  'weekday_names': weekday_names,
         'cal_list':cal_list,
