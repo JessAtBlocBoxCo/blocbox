@@ -338,22 +338,27 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
     #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
     cal_list = Calendar.objects.all()
     calendar_objects = {} 
+    event_list_objects = {}
+    thismonth_objects = {}
     for cal in cal_list:
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
+        event_list_objects = GET_EVENTS_FUNC(request, calendar_objects.cal.slug)
+        thismonth_objects[cal.slug] = Month(event_list_objects.cal.slug, date, None, None, local_timezone)
         #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     #for a single calendar called 
     calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
     event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
     thismonthobject_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
-    return render(request, 'blocbox/jesstest.html', {
-        'cal_list':cal_list, 
-        'calendar_objects':calendar_objects,
+    return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
         'connections_all':connections_all,
     	  'date':date, 
-    	  'thismonthobject_single':thismonthobject_single,
+    	  'thismonth_objects':thismonth_objects,
+    	  'thismonth_object_single':thismonthobject_single,
     	  'thismonthname':thismonthname,
     	  'weekday_names': weekday_names,
+        'cal_list':cal_list,
+        'calendar_objects':calendar_objects,
     	  'calendar': calendar_single,
     	  'here': quote(request.get_full_path())
     }) 
