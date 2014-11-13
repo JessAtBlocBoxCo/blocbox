@@ -346,6 +346,8 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
         #calendar = get_object_or_404(Calendar, slug=cal.slug)
         event_list = GET_EVENTS_FUNC(request, cal)
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
+        #the thismonth_objectis[cal.slug] works when i call it with thismonth_objects.testcalendar1 but not when i call it with thismonth_objects.caleach.slug ...
+     
         thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
         #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     #for a single calendar called 
@@ -362,7 +364,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
     	  'weekday_names': weekday_names,
         'cal_list':cal_list,
         'calendar_objects':calendar_objects,
-    	  'calendar': calendar_single,
+    	  'calendar_single': calendar_single,
     	  'cal_slugs': cal_slugs,
     	  'here': quote(request.get_full_path())
     }) 
