@@ -342,7 +342,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
     event_list_objects = {}
     thismonth_objects = {}
     for cal in cal_list:
-    	  cal_slugs[cal] = Calendar.slug
+        cal_slugs[cal] = Calendar.slug
         #calendar = get_object_or_404(Calendar, slug=cal.slug)
         event_list = GET_EVENTS_FUNC(request, cal)
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
