@@ -315,7 +315,7 @@ def styletest(request):
     return render(request, 'blocbox/x_styletest.html') 
     
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
-def jesstest(request, calendar_slug = "testcalendar1",):
+def jesstest(request, calendar_slug_single = "testcalendar1",):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
@@ -340,10 +340,11 @@ def jesstest(request, calendar_slug = "testcalendar1",):
     calendar_objects = {} 
     for cal in cal_list:
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
-    #calendar = get_object_or_404(Calendar, slug=calendar_slug) #this is working
-    #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
-    event_list = GET_EVENTS_FUNC(request, calendar)  #this is working 
-    thismonthobject = Month(event_list, date, None, None, local_timezone) #specific to the calendar
+        #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+    #for a single calendar called 
+    calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
+    event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
+    thismonthobject = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar
    
     return render(request, 'blocbox/jesstest.html', {
         'cal_list':cal_list, 
@@ -354,7 +355,7 @@ def jesstest(request, calendar_slug = "testcalendar1",):
     	  'thismonthobject':thismonthobject,
     	  'thismonthname':thismonthname,
     	  'weekday_names': weekday_names,
-    	  'calendar': calendar,
+    	  'calendar': calendar_single,
     	  'here': quote(request.get_full_path())
     }) 
 
