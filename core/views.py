@@ -348,6 +348,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     calendar_id_objects = {} 
     event_list_objects = {}
     thismonth_objects = {}
+    test_calslugs = []
     for cal in cal_list:
         event_list = GET_EVENTS_FUNC(request, cal)
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
@@ -381,7 +382,23 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     	  'here': quote(request.get_full_path())
     }) 
 
-    
+"""
+JMY NOTE ON DICTIONARIES VERSUS  LISTS:
+    Lists: 	a list of values. Each one of them is numbered, starting from zero - the first one is numbered zero, the second 1, the third 2, etc. 
+    				You can remove values from the list, and add new values to the end. Example: Your many cats' names.
+    				
+    				cats = ['Tom', 'Snappy', 'Kitty', 'Jessie', 'Chester']
+    				
+    Tuples: like lists but you can't change their values. 
+    				The values that you give it first up, are the values that you are stuck with for the rest of the program. 
+    				Again, each value is numbered starting from zero, for easy reference. Example: the names of the months of the year.
+    				
+    				months = ('January','February','March','April','May','June', 'July','August','September','October','November','  December')
+
+    Dictionaries: You have an 'index' of words, and for each of them a definition. In python, the word is called a 'key', and the definition a 'value'. The values in a dictionary aren't numbered - tare similar to what their name suggests - a dictionary. In a dictionary, you have an 'index' of words, and for each of them a definition. In python, the word is called a 'key', and the definition a 'value'. The values in a dictionary aren't numbered - they aren't in any specific order, either - the key does the same thing. You can add, remove, and modify the values in dictionaries. Example: telephone book.
+
+"""
+
 """
 def denyrequestconnect(request, host_id, user_id):
 #url(r'^email/(?P<userinfo_id>\d+)/requestconnectdeny/(?P<userinfo_id>\d+)/$', views.denyrequestconnect, name='denyrequestconnect'),
