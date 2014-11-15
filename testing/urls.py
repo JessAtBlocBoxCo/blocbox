@@ -16,7 +16,7 @@ urlpatterns = patterns('',
  					name='jesstestwithhost',	
  					kwargs={'host_id': 2}),
  			
- 		url(r'^jesstest/(?P<userinfo_id>\d+)$', 'testing.views.jesstest', name='signupconnect'),
+ 		url(r'^jesstest/(?P<userinfo_id>\d+)/$', 'testing.views.jesstest', name='signupconnect'),
  		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
 )
 
