@@ -1,0 +1,3 @@
+include setup.py README.md CONTRIBUTORS MANIFEST.in CHANGES.rst
+recursive-include paypal *.html
+global-exclude *~
