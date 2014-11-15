@@ -325,6 +325,7 @@ def styletest(request):
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
 def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     enduser = request.user
+    host = get_object_or_404(UserInfo, pk=host_id)
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
     #calndar stuff initially defined in schedule.views.calendar_by_periods    
@@ -359,10 +360,9 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
     thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
     #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
-    calendar_relations = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
-    host = get_object_or_404(UserInfo, pk=host_id)
-    host_calendars = CalendarRelation.objects.filter(object_id=host.id)
-    host_calendars_count = CalendarRelation.objects.filter(object_id=host.id).count()
+    cal_relations_all = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
+    cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)
+    cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
     return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
         'host':host, 
@@ -376,9 +376,9 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
         'calendar_objects':calendar_objects,
         'calendar_id_objects':calendar_id_objects,
     	  'calendar_single': calendar_single,
-    	  'calendar_relations': calendar_relations,
-    	  'host_calendars': host_calendars,
-    	  'host_calendars_count': host_calendars_count,
+    	  'cal_relations_all': cal_relations_all,
+    	  'cal_relations_host': cal_relations_host,
+    	  'cal_relations_host_count': cal_relations_host_count,
     	  'test_calslugs': test_calslugs,
     	  'here': quote(request.get_full_path())
     }) 

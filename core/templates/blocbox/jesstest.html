@@ -40,22 +40,22 @@
 					<!--First, Show all of the Calendars associated with HostId=2 -->
 			<div class="row">  
 				
-				<p>{{ host.first_name }} {{ host.last_name }} is linked to {{ host_calendars_count}} Calendars: </p>
+				<p>{{ host.first_name }} {{ host.last_name }} is linked to {{ cal_relations_host_count }} Calendars: </p>
 				<p>TEST - show host_calendars {{ host_calendars}} </p> <!--  [<CalendarRelation: TestCalendar3 - jburgeson@gmail.com>, <CalendarRelation: TestCalendar1 - jburgeson@gmail.com>] -->
 				<p>TEST - calendar_id_objects {{ calendar_id_objects }} </p>
 				<p>TEST - calendar_id_objects.1 {{ calendar_id_objects.1 }} </p>
 				<p>TEST LIST test_calslugs {{ test_calslugs }} </p>
 				
-					{% for hostcaleach in host_calendars %}
+					{% for calrelhost_each in cal_relations_host %}
 						<div class="row">
 
 							
-						<div class="col-xs-12 col-sm-6"> <h4>Text to the left for {{ caleach.slug }} </h4><					
-								<p>SHOW HOSTCALEACH: {{ hostcaleach }} </p>
-								<p>SHOW HOSTCALEACH.CALENDAR_ID: {{ hostcaleach.calendar_id }} </p>
-								<p>SHOW HOSTCALEACH.DISTINCTION: {{ hostcaleach.distinction }} </p>
+						<div class="col-xs-12 col-sm-6"> <h4>Text to the left for {{ calrelhost_each }} </h4><					
+								<p>SHOW HOSTCALEACH: {{ calrelhost_each }} </p>
+								<p>SHOW HOSTCALEACH.CALENDAR_ID: {{ calrelhost_each.calendar_id }} </p>
+								<p>SHOW HOSTCALEACH.DISTINCTION: {{ calrelhost_each.distinction }} </p>
 								<!--USE A WITH FUNCTIO - PASS THE ID TO THAT.. .. OR RELATE THE CALENDAR IS TO THE HOLSTCALEACH -->
-								<p>SHOW CALENDAR_ID_OBJECTS|get_item:hostcaleach.id: {{ calendar_id_objects|get_item:hostcaleach.calendar_id }} </p>
+								<p>SHOW CALENDAR_ID_OBJECTS|get_item:hostcaleach.id: {{ calendar_id_objects|get_item:calrelhost_each.calendar_id }} </p>
 							</div>
 						<div class="col-xs-12 col-sm-6"> 
 							<!--
@@ -107,7 +107,8 @@
 			<div class="row">   	<h2>Show Other Calendar Variables </h2>
 							<h4> SHOW CAL_LIST: {{ cal_list }} </h4> <!--[<Calendar: TestCalendar1>, <Calendar: TestCalendar2>, <Calendar: TestCalendar3>]  -->
 							<h4> SHOW CAL_LIST.0: {{ cal_list.0 }} ; SHOW CAL_LIST.1 {{ cal_list.1 }} ; SHOW CAL_LIST.2 {{ cal_list.2 }} </h4> <!--cal_list0 = TestCalendar1 -->
-							<h4> SHOW CALENDAR_RELATIONS.0 {{ calendar_relations.0 }}, SHOW CALENDAR_RELATIONS.1 {{ calendar_relations.1 }} </h4>
+							<h4> SHOW CALENDAR_RELATIONS_all.0 {{ calendar_relations_all.0 }}  </h4> <!-- TestCalendar3 - jburgeson@gmail.com -->
+							<h4>SHOW CALENDAR_RELATIONS_all.1 {{ calendar_relations_all.1 }} </h4>
 							<h4> SHOW DATE: {{ date }} </h4> <!--Nov. 12, 2014, 3 p.m. (that was the current time) -->
 							<h4> SHOW MONTH {{ month }}, SHOW MONTH.NAME: {{ month.name }} ,SHOW MONTH.START: {{ month.start }}   </h4> <!--December  where is month_name defgined???-->
 							<h4> SHOW QUERYSTRING_FOR-DATE MONTH.START 2 TRUE: {% querystring_for_date month.start 2 True %}  </h4> <!--?year=2014&month=12  -->
