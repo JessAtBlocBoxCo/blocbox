@@ -42,8 +42,7 @@
 				
 				<p>{{ host.first_name }} {{ host.last_name }} is linked to {{ cal_relations_host_count }} Calendars: </p>
 				<p>TEST - show host_calendars {{ host_calendars}} </p> <!--  [<CalendarRelation: TestCalendar3 - jburgeson@gmail.com>, <CalendarRelation: TestCalendar1 - jburgeson@gmail.com>] -->
-				<p>TEST - calendar_id_objects {{ calendar_id_objects }} </p>
-				<p>TEST - calendar_id_objects.1 {{ calendar_id_objects.1 }} </p>
+
 				<p>TEST LIST test_calslugs {{ test_calslugs }} </p>
 				
 					{% for calrelhost_each in cal_relations_host %}
@@ -115,6 +114,9 @@
 							<h4> SHOW THISMONTHname : {{ thismonthname }}  </h4>
 							<h4> SHOW CALENDAR_OBJECTS : {{ calendar_objects }}  </h4>
 							<h4> SHOW CALENDAR_OBJECTS.testcalendar1 : {{ calendar_objects.testcalendar1 }}  </h4>
+							<h4>TEST - calendar_id_objects {{ calendar_id_objects }} </h4>
+							<h4>TEST - calendar_id_objects.0 {{ calendar_id_objects.0 }} </h4>
+							<h4>TEST - calendar_id_objects.1 {{ calendar_id_objects.1 }} </h4>
 			</div>
 					
 				<br><br>
