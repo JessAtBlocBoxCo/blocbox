@@ -39,6 +39,8 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+        host = None
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
     #calndar stuff initially defined in schedule.views.calendar_by_periods    
@@ -72,12 +74,11 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):
     thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
     #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
     cal_relations_all = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
-    if host_id:
-        cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)
-        cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
-        cal_list_host = []
-        for cal in cal_relations_host:
-            cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
+    cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)
+    cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
+    cal_list_host = []
+    for cal in cal_relations_host:
+        cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
     return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
         'host':host, 
