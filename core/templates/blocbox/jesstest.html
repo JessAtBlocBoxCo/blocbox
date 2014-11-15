@@ -38,16 +38,21 @@
 			<!--SHOW EVERY CALENDAR-->
 			<div class="row">   <h3>Every Calendar (Bi-Monthly View) </h3> </div>			
 				{% for caleach in cal_list %}
+							{% with calslug=caleach.slug %}
+							
+
 								<div class="row">
+									<p>DELME CALSLUG {{ calslug }} </p>
 										<div class="col-xs-12 col-sm-6"> <h4>Text to the left for {{ calendar.slug }} </h4></div>
 										<div class="col-xs-12 col-sm-6"> 
 												<h3 style="text-align: center">  {{ caleach.slug }} </h3>													
-														<!--the two bi-monthly calendars.. only weird issue is that i have to call the statis thismonth_object_single
-																ii couldn't get the array to work -->
-														<div class="col-xs-12 col-sm-6">	{% month_table caleach thismonth_object_single "small"  %}  	</div> 	<!--"small"-->													
-														<div class="col-xs-12 col-sm-6">  {% month_table caleach thismonth_object_single "small" +1 %}	</div> 
+
+												<!--		<div class="col-xs-12 col-sm-6">	{  % month_table caleach thismonth_object_single "small"  %  }  	</div> 														
+														<div class="col-xs-12 col-sm-6">  {  % month_table caleach thismonth_object_single "small" +1 %  }	</div> 
+														-->
 										</div>			
 								</div> <!--row with cal-->
+							{% endwith %}
 				{% endfor %}
 			
 			
