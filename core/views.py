@@ -345,6 +345,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     thismonthname = Month(date, None, None, local_timezone) 
     cal_list = Calendar.objects.all()
     calendar_objects = {} 
+    calendar_id_objects = {} 
     event_list_objects = {}
     thismonth_objects = {}
     for cal in cal_list:
