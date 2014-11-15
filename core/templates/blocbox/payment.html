@@ -73,9 +73,16 @@
                 </div>
                 <p class="marginsides3pct marginbottom20px">Please note that you will not be changed until your host confirms your receipt of your package</p>
                 </div>
-            <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
+        
+        <!--Jess Adding the Paypal Button - TESTIG THIS NOW..  i know its ugly 
+        		This view is defined in /blocbox/billing/views/py.. it calls a form.. thats defined in blocbox/paypal/standard..
+        -->
+        {{ form.render }}
+        
+        <!--submit button-->
+        <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
                 <button class="bluebutton" onClick="window.location='/shippackage';">Submit</button>
-                </div>
+        </div>
 </div>
 
 {% endblock %} 

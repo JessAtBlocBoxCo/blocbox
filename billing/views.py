@@ -46,11 +46,41 @@ def base(request, host_id=None):
     	  host = None
     date = timezone.now()
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
+    paypal_dict = {
+        "business": settings.PAYPAL_RECEIVER_EMAIL,
+        "amount": "10000000.00",
+        "item_name": "name of the item",
+        "invoice": "unique-invoice-id",
+        #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
+        "return_url": "https://www.blocbox.co/startashipment/",
+        "cancel_return": "https://www.blocbox.co/your-cancel-location/",    
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    context = {"form": form}
     return render(request, 'blocbox/payment.html', { 
 		    'enduser':enduser, 'host':host,
     	  'date':date, 'local_timezone':local_timezone, 
     	  'here': quote(request.get_full_path())
     })
+
+#django-paypal tests = TJOS OS P;D
+def paypal_askformoney(request):
+    # What you want the button to do.
+    paypal_dict = {
+        "business": settings.PAYPAL_RECEIVER_EMAIL,
+        "amount": "10000000.00",
+        "item_name": "name of the item",
+        "invoice": "unique-invoice-id",
+        #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
+        "return_url": "https://www.blocbox.co/startashipment/",
+        "cancel_return": "https://www.blocbox.co/your-cancel-location/",
+    }
+    # Create the instance.
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    context = {"form": form}
+    return render_to_response("billing/paypal.html", context) #dont have to do longer path than this becaue template loader finds them...
+  
+      
+    
 #Add the checkout view: www.blocbox.co/billing/checkout, host_id can be passed in URL
 def checkout(request, host_id=None): 
     enduser = request.user
@@ -68,23 +98,7 @@ def checkout(request, host_id=None):
 
 
 
-#django-paypal tests
-def paypal_askformoney(request):
-    # What you want the button to do.
-    paypal_dict = {
-        "business": settings.PAYPAL_RECEIVER_EMAIL,
-        "amount": "10000000.00",
-        "item_name": "name of the item",
-        "invoice": "unique-invoice-id",
-        #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
-        "return_url": "https://www.blocbox.co/startashipment/",
-        "cancel_return": "https://www.blocbox.co/your-cancel-location/",
-    }
-    # Create the instance.
-    form = PayPalPaymentsForm(initial=paypal_dict)
-    context = {"form": form}
-    return render_to_response("billing/paypal.html", context) #dont have to do longer path than this becaue template loader finds them...
-        
+      
         
          
 """
