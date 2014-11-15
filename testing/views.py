@@ -1,21 +1,22 @@
-from django.shortcuts import render, get_object_or_404, render_to_response
-from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.core.urlresolvers import reverse 
-from django.template import RequestContext, loader #allows it to load templates from blocbox/templates
-from core.models import UserInfo, Transaction, Connection
-#from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
-from core.forms import UserForm, HostForm
-#Important the authentication and login functions -- not sure that i can use with custom model
-from django.contrib.auth import authenticate, login, get_user_model, logout
-from django.contrib.auth.decorators import login_required
-##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
-from django.core.mail import send_mail
-from django.template.loader import render_to_string
-from django.views.generic.list import ListView
 #import scheduling stuff
 import datetime
 import pytz
 from urllib import quote
+#from django
+from django.shortcuts import render, get_object_or_404, render_to_response
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from django.core.urlresolvers import reverse 
+from django.core.mail import send_mail
+from django.template import RequestContext, loader #allows it to load templates from blocbox/template
+from django.views.generic.list import ListView
+from django.utils import timezone
+#from django.template.loader import render_to_string
+from django.contrib.auth import authenticate, login, get_user_model, logout
+from django.contrib.auth.decorators import login_required
+#from core
+from core.models import UserInfo, Transaction, Connection
+from core.forms import UserForm, HostForm
+
 #from schedule import periods
 from schedule.periods import Month
 from schedule.periods import weekday_names
@@ -24,7 +25,6 @@ from schedule.forms import EventForm, OccurrenceForm
 from schedule.models import Calendar, Occurrence, Event
 from schedule.models.calendars import CalendarRelation
 from schedule.utils import check_event_permissions, coerce_date_dict
-from django.utils import timezone
 
 
 #Write a custom template filter:

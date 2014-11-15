@@ -16,8 +16,6 @@ urlpatterns = patterns('',
     url(r'^startashipment/', views.startashipment, name='startashipment'),
     url(r'^payment/', views.payment, name='payment'),
     url(r'^shippackage/', views.shippackage, name='shippackage'),     
-    #url(r'^payment/', include('payment.urls', namespace="payment")),
-    #url(r'^polls/', include('polls.urls', namespace="polls")), #INCLUDE the URLconf at blocbox/polls
     url(r'^admin/', include(admin.site.urls)), 
     url(r'^(?P<userinfo_id>\d+)/signupconnect/$', views.signupconnect, name='signupconnect'),
     url(r'signup/', views.signupnoconnect, name='signupnoconnect'), 
@@ -32,13 +30,12 @@ urlpatterns = patterns('',
  		#email stuff
  		url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.confirmconnect_mail, name='sendrequestconnect'),
     url(r'^(?P<host_id>\d+)/requestconnectconfirm/(?P<user_id>\d+)/$', views.confirmrequestconnect, name='confirmrequestconnect'), 		
-    #url(r'^styletest/$', views.styletest, name='styletest'),
- 		#url(r'^jesstest/$', views.jesstest, name='jesstest'),
  		url(r'^testing/', include('testing.urls')),
  		url(r'^scheduling/', include('schedule.urls')),
  		url(r'^passwordreset/',include('password_reset.urls')),
  		url(r'^messages/', include('django_messages.urls')),
  		url(r'^scheduling/', include('schedule.urls')),
+ 		url(r'^payment/', include('billing.urls', namespace="payment")),
  		url(r'^datascience/', include('datasci.urls')),
  		
 )
