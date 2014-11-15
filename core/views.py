@@ -20,7 +20,7 @@ from schedule import periods
 from schedule.periods import Month
 from schedule.conf.settings import GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT
 from schedule.forms import EventForm, OccurrenceForm
-from schedule.models import Calendar, Occurrence, Event
+from schedule.models import Calendar, Occurrence, Event, CalendarRelation
 from schedule.periods import weekday_names
 from schedule.utils import check_event_permissions, coerce_date_dict
 from django.utils import timezone
