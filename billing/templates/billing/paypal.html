@@ -3,3 +3,102 @@
 {% else %}
     {{ integration.generate_form.render }}
 {% endif %}
+
+
+<!--this is blocbox/templates/payment_test.html -- URL is www.blocbox.co/payment -->
+{% extends "blocbox/base.html" %}
+{% load staticfiles %} 
+{% block title %}Payment{% endblock %}
+
+{% block headafter %} {% endblock %} 
+
+{% block content %}
+
+<div class="container-fluid fillpage offwhitebackground relativediv">
+
+    <p class="darkgreytext textcenter margintop50px marginbottom20px">Complete the following steps to verify shipping destination, notfiy your Blocbox host, and complete payment</p>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 nopadding">
+            <p class="col-xs-3 ltgreytext textleft">1   HOST AVAILABILITY</p>
+            <div class="col-xs-2 divline margintop10px"></div>
+            <p class="col-xs-2 ltbluetext  textshadow textcenter">2   PAYMENT</p>
+            <div class="col-xs-2 divline margintop10px"></div>
+            <p class="col-xs-3 ltgreytext textright">3   SHIP YOUR ORDER</p>
+        </div>
+    </div>        
+    
+    <!--PPAYPAL-TEST SECTION -- FROM DJANGO-PAYPAL APP -->
+    <div class="col-xs-12">
+    	
+        <h2>Show me the money!</h1>
+   				 <!-- writes out the form tag automatically -->
+    			{{ form.render }}
+    
+  				<!--    For a full list of variables that can be used in paypal_dict, see PayPal HTML variables documentation.
+
+    				When someone uses this button to buy something PayPal makes a HTTP POST to your "notify_url". PayPal calls this Instant Payment Notification (IPN). The view paypal.standard.ipn.views.ipn handles IPN processing. To set the correct notify_url add the following to your urls.py:
+  				-->
+    </div>
+    
+    
+    <!--PRICING OPTION SECTION -->
+    <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
+        <div class="row">
+            <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Select a Payment Option
+            		{% if host %} for sending packages to {{ host.first_name }} {% endif %}
+            </h6>
+            <div class="paddingsides5pct profileboxline100 marginbottom10px"></div>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1 margintop10px marginbottom30px">
+            <div class="checkbox marginbottom20px">
+                <label class="col-xs-3">
+                    <input type="checkbox" name="perpackage" id="id_perpackage" >PER PACKAGE
+                </label>
+                <p class="col-xs-6">Pay for a single package</p>
+                <h6 class="col-xs-2 nomargin textcenter">$2</h6>
+                <div class="profileboxline100"></div>
+            </div>
+            <div class="checkbox marginbottom20px">
+                <label class="col-xs-3">
+                    <input type="checkbox" name="perpackage" id="id_perpackage" >BUNDLED
+                </label>
+                <p class="col-xs-6">For 10 packages (expires 1 year from date of purchase)</p>
+                <h6 class="col-xs-2 nomargin textcenter">$15</h6>
+                <div class="profileboxline100"></div>
+            </div>
+            <div class="checkbox marginbottom20px">
+                <label class="col-xs-3">
+                    <input type="checkbox" name="perpackage" id="id_perpackage" >MONTHLY
+                </label>
+                <p class="col-xs-6">20 packages for the next 30 days</p>
+                <h6 class="col-xs-2 nomargin textcenter">$15</h6>
+                <div class="profileboxline100"></div>
+            </div>
+            <div class="checkbox marginbottom20px">
+                <label class="col-xs-3">
+                    <input type="checkbox" name="perpackage" id="id_perpackage" >ANNUAL 
+                </label>
+                <p class="col-xs-6">Up to 20 packages per month for an entire year</p>
+                <h6 class="col-xs-2 nomargin textcenter">$150</h6>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
+            <div class="row">
+                <h6 class="col-xs-4 ltbluetext margintop10px marginsides3pct nopadding">Payment Information</h6>
+                <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
+                <p class="marginsides3pct marginbottom20px">Sign in to your PayPal account to process payment</p>
+            </div>
+                <div class="col-sm-4 marginbottom30px">
+                    <img class="col-sm-offset-2 paypal marginleft40px" src="{% static "blocbox/images/paypal.png" %}"  height="40" width="122" />
+                </div>
+                <p class="marginsides3pct marginbottom20px">Please note that you will not be changed until your host confirms your receipt of your package</p>
+                </div>
+            <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
+                <button class="bluebutton" onClick="window.location='/shippackage';">Submit</button>
+                </div>
+</div>
+
+{% endblock %} 

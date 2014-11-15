@@ -20,6 +20,8 @@ from core.forms import UserForm, HostForm
 #billing specific stuff
 from billing import gateway
 from billing import CreditCard
+#add paypal
+from paypal.standard.forms import PayPalPaymentsForm
 
 # Added the Following to /blocbox/billig'views.py or wherever you want to use it
 #Django-Merchan stuff - from http://django-merchant.readthedocs.org/en/latest/overview.html#overview
@@ -63,7 +65,28 @@ def checkout(request, host_id=None):
     	  'date':date, 'local_timezone':local_timezone, 
     	  'here': quote(request.get_full_path())
     })
-    
+
+
+
+#django-paypal tests
+def paypal_askformoney(request):
+    # What you want the button to do.
+    paypal_dict = {
+        "business": settings.PAYPAL_RECEIVER_EMAIL,
+        "amount": "10000000.00",
+        "item_name": "name of the item",
+        "invoice": "unique-invoice-id",
+        "notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
+        "return_url": "https://www.blocbox.co/startashipment/",
+        "cancel_return": "https://www.blocbox.co/your-cancel-location/",
+    }
+    # Create the instance.
+    form = PayPalPaymentsForm(initial=paypal_dict)
+    context = {"form": form}
+    return render_to_response("blocbox/billing/templates/billing/paypal.html", context)
+        
+        
+         
 """
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
 def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):
