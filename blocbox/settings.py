@@ -47,8 +47,6 @@ INSTALLED_APPS = (
 		'testing',
 )
 
-#NEED TO UPDATE PAYPALE RECEIVER EMAIL - SO CORP ACCOUNT
-PAYPAL_RECEIVER_EMAIL = "jessica.yeats@gmail.com"
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -124,3 +122,17 @@ TEMPLATE_CONTEXT_PROCESSORS = {
     'django.core.context_processors.request',
     'django.contrib.auth.context_processors.auth'
 }
+
+#Billing: Edit Settings.py,  from http://django-merchant.readthedocs.org/en/latest/overview.html#overview
+# Authorize.Net settings
+AUTHORIZE_LOGIN_ID = "..."
+AUTHORIZE_TRANSACTION_KEY = "..."
+
+# PayPal settings
+PAYPAL_TEST = True
+PAYPAL_WPP_USER = "..."
+PAYPAL_WPP_PASSWORD = "..."
+PAYPAL_WPP_SIGNATURE = "..."
+
+#NEED TO UPDATE PAYPALE RECEIVER EMAIL - SO CORP ACCOUNT
+PAYPAL_RECEIVER_EMAIL = "jessica.yeats@gmail.com"
