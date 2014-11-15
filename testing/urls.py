@@ -8,16 +8,10 @@ admin.autodiscover()
 urlpatterns = patterns('',
 		url(r'^$', 'testing.views.jesstest', name='testingbase'),    
  		
- 		url(r'^jesstest/$', 'testing.views.jesstest', 
- 					name='jesstestnohost'),
- 					#kwargs={'host': [Year]}),
+ 		url(r'^jesstest/$', 'testing.views.jesstest', name='jesstestnohost'),
  						
- 		url(r'^jesstest/(?P<host_id>\d+)/$', 'testing.views.jesstest', 
- 					name='jesstestwithhost'),	
- 					#kwargs={'host_id': 2}),
- 					#NOTE - the kwargs can either be passed explicitly with kwarg statement or in the URL
- 			
- 		
+ 		#pass the same test but with a host_id in the URL - dont need a KWARG explicit statmenet bc it is passed in the URL name
+ 		url(r'^jesstest/(?P<host_id>\d+)/$', 'testing.views.jesstest', name='jesstestwithhost'),	 		
  		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
 )
 
