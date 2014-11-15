@@ -36,7 +36,7 @@ response2 = g2.purchase(100, cc, options = {...})
 """
 
 #Add the base view: www.blocbox.co/billing
-def base(request):
+def base(request, host_id=None):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
