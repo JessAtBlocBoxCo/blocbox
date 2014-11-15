@@ -56,11 +56,11 @@ def base(request, host_id=None):
         "cancel_return": "https://www.blocbox.co/your-cancel-location/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict)
-    context = {"form": form}
+    #context = {"form": form}
     return render(request, 'blocbox/payment.html', { 
 		    'enduser':enduser, 'host':host,
     	  'date':date, 'local_timezone':local_timezone, 
-    	  'here': quote(request.get_full_path())
+    	  'here': quote(request.get_full_path()), 'form': form,
     })
 
 #django-paypal tests = TJOS OS P;D
