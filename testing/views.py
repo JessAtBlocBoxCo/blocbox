@@ -74,11 +74,15 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):
     thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
     #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
     cal_relations_all = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
-    cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)
-    cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
     cal_list_host = []
-    for cal in cal_relations_host:
-        cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
+    if host:
+        cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)
+        cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
+        for cal in cal_relations_host:
+            cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
+    else:
+        cal_relations_host = None
+        cal_relations_host_count = None
     return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
         'host':host, 
