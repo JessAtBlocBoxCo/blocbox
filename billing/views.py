@@ -76,7 +76,7 @@ def paypal_askformoney(request):
         "amount": "10000000.00",
         "item_name": "name of the item",
         "invoice": "unique-invoice-id",
-        "notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
+        #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
         "return_url": "https://www.blocbox.co/startashipment/",
         "cancel_return": "https://www.blocbox.co/your-cancel-location/",
     }
