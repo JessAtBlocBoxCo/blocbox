@@ -45,7 +45,7 @@ INSTALLED_APPS = (
     'schedule',
 		'billing',
 		'paypal.standard.ipn',
-		'testing',
+		#'testing',
 )
 
 #NEED TO UPDATE PAYPALE RECEIVER EMAIL - SO CORP ACCOUNT
