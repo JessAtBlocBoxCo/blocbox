@@ -83,7 +83,7 @@ def paypal_askformoney(request):
     # Create the instance.
     form = PayPalPaymentsForm(initial=paypal_dict)
     context = {"form": form}
-    return render_to_response("billing/paypal.html", context)
+    return render_to_response("billing/paypal.html", context) #dont have to do longer path than this becaue template loader finds them...
         
         
          

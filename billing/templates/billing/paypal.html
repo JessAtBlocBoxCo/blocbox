@@ -1,13 +1,15 @@
 <!--this is blocbox/billing/templates/billing/paypal.html -- URL is www.blocbox.co/payment -->
+{% extends "blocbox/base.html" %}
+{% load staticfiles %} 
+{% block title %}Payment{% endblock %}
+
 {% if integration.test_mode %}
     {{ integration.generate_form.sandbox }}
 {% else %}
     {{ integration.generate_form.render }}
 {% endif %}
 
-{% extends "blocbox/base.html" %}
-{% load staticfiles %} 
-{% block title %}Payment{% endblock %}
+
 
 {% block headafter %} {% endblock %} 
 
