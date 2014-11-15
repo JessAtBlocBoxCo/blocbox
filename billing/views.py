@@ -49,9 +49,21 @@ def base(request, host_id=None):
     	  'date':date, 'local_timezone':local_timezone, 
     	  'here': quote(request.get_full_path())
     })
-#Add the checkout view: www.blocbox.co/billing/checkout
-
-
+#Add the checkout view: www.blocbox.co/billing/checkout, host_id can be passed in URL
+def checkout(request, host_id=None): 
+    enduser = request.user
+    if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+    	  host = None
+    date = timezone.now()
+    local_timezone = request.session.setdefault('django_timezone', 'UTC') 
+    return render(request, 'blocbox/payment.html', { 
+		    'enduser':enduser, 'host':host,
+    	  'date':date, 'local_timezone':local_timezone, 
+    	  'here': quote(request.get_full_path())
+    })
+    
 """
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
 def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):

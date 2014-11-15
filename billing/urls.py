@@ -9,7 +9,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 		url(r'^$', 'billing.views.base', name='billingbase'),    
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
- 		url(r'^checkout/(?P<userinfo_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),	 		
+ 		url(r'^checkout/(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),	 		
 )
 
 """EXAMPLE OF HOW TO CALL SAME VIEW WITH DIFFERENT ARGS -- USE KWARGS
