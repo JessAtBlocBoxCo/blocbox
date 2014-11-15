@@ -354,6 +354,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
         calendar_id_objects[cal.id] = get_object_or_404(Calendar, id=cal.id)
         thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
+        test_calslugs = Calendar.slug
     #for a single calendar called i
     calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
     event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
@@ -379,6 +380,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     	  'calendar_relations': calendar_relations,
     	  'host_calendars': host_calendars,
     	  'host_calendars_count': host_calendars_count,
+    	  'test_calslugs': test_calslugs,
     	  'here': quote(request.get_full_path())
     }) 
 

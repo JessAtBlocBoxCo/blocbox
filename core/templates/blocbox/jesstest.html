@@ -41,9 +41,10 @@
 			<div class="row">  
 				
 				<p>{{ host.first_name }} {{ host.last_name }} is linked to {{ host_calendars_count}} Calendars: </p>
-				<p>TEST - show host_calendars {{ host_calendars}} </p>
+				<p>TEST - show host_calendars {{ host_calendars}} </p> <!--  [<CalendarRelation: TestCalendar3 - jburgeson@gmail.com>, <CalendarRelation: TestCalendar1 - jburgeson@gmail.com>] -->
 				<p>TEST - calendar_id_objects {{ calendar_id_objects }} </p>
 				<p>TEST - calendar_id_objects.1 {{ calendar_id_objects.1 }} </p>
+				<p>TEST LIST test_calslugs {{ test_calslugs }} </p>
 				
 					{% for hostcaleach in host_calendars %}
 						<div class="row">
