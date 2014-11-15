@@ -42,9 +42,6 @@
 				
 				<p>{{ host.first_name }} {{ host.last_name }} is linked to {{ host_calendars_count}} Calendars: </p>
 				<p>TEST - show host_calendars {{ host_calendars}} </p>
-				<p>TEST - show hostcal_objects {{ hostcal_objects }} </p>
-				<p>TEST - show hostcal_objects.1 {{ hostcal_objects.1 }} </p> <!--this is empty -->
-				<p>TEST - show hostcal_objects.2 {{ hostcal_objects.2 }} </p>
 				<p>TEST - calendar_id_objects {{ calendar_id_objects }} </p>
 				<p>TEST - calendar_id_objects.1 {{ calendar_id_objects.1 }} </p>
 				
@@ -55,7 +52,7 @@
 								<p>SHOW HOSTCALEACH: {{ hostcaleach }} </p>
 								<p>SHOW HOSTCALEACH.CALENDAR_ID: {{ hostcaleach.calendar_id }} </p>
 								<p>SHOW HOSTCALEACH.DISTINCTION: {{ hostcaleach.distinction }} </p>
-								<p>SHOW HOSTCAL_OBJECTS.HOSTCALEACH: {{ hostcal_objects.hostcaleach }} </p>
+								<p>SHOW HOSTCAL_OBJECTS.HOSTCALEACH: {{ calendar_id_objects.hostcaleach }} </p>
 							</div>
 						</div>
 					{% endfor %}

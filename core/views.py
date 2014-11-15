@@ -362,9 +362,6 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     host = get_object_or_404(UserInfo, pk=host_id)
     host_calendars = CalendarRelation.objects.filter(object_id=host.id)
     host_calendars_count = CalendarRelation.objects.filter(object_id=host.id).count()
-    hostcal_objects = {}
-    for hostcal in host_calendars:
-        hostcal_objects[host.id] = Calendar.objects.filter(id=hostcal.id)
     return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
         'host':host, 
@@ -381,7 +378,6 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     	  'calendar_relations': calendar_relations,
     	  'host_calendars': host_calendars,
     	  'host_calendars_count': host_calendars_count,
-    	  'hostcal_objects': hostcal_objects,
     	  'here': quote(request.get_full_path())
     }) 
 
