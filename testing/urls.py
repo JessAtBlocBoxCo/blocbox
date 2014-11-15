@@ -12,11 +12,12 @@ urlpatterns = patterns('',
  					name='jesstestnohost'),
  					#kwargs={'host': [Year]}),
  						
- 		url(r'^jesstest/$', 'testing.views.jesstest', 
- 					name='jesstestwithhost',	
- 					kwargs={'host_id': 2}),
+ 		url(r'^jesstest/(?P<host_id>\d+)/$', 'testing.views.jesstest', 
+ 					name='jesstestwithhost'),	
+ 					#kwargs={'host_id': 2}),
+ 					#NOTE - the kwargs can either be passed explicitly with kwarg statement or in the URL
  			
- 		url(r'^jesstest/(?P<userinfo_id>\d+)/$', 'testing.views.jesstest', name='signupconnect'),
+ 		
  		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
 )
 
