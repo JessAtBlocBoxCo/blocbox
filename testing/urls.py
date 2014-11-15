@@ -6,9 +6,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-		url(r'^$', testing.views.jesstest, name='testingbase'),    
- 		url(r'^jesstest/$', testing.views.jesstest, name='jesstest'),		
- 		url(r'^styletest/$', testing.views.styletest, name='styletest'),
+		url(r'^$', 'testing.views.jesstest', name='testingbase'),    
+ 		url(r'^jesstest/$', 'testing.views.jesstest', name='jesstest'),		
+ 		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
 )
 
 urlpatterns += staticfiles_urlpatterns()
