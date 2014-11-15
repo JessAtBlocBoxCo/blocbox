@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
+from django.conf import settings
 from testing import views 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
@@ -11,8 +13,6 @@ urlpatterns = patterns('',
 
 urlpatterns += staticfiles_urlpatterns()
 
-
-from django.conf import settings
 
 if settings.DEBUG:
     urlpatterns += patterns('django.contrib.staticfiles.views',
