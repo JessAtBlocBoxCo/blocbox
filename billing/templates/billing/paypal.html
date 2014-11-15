@@ -1,11 +1,10 @@
+<!--this is blocbox/billing/templates/billing/paypal.html -- URL is www.blocbox.co/payment -->
 {% if integration.test_mode %}
     {{ integration.generate_form.sandbox }}
 {% else %}
     {{ integration.generate_form.render }}
 {% endif %}
 
-
-<!--this is blocbox/templates/payment_test.html -- URL is www.blocbox.co/payment -->
 {% extends "blocbox/base.html" %}
 {% load staticfiles %} 
 {% block title %}Payment{% endblock %}
