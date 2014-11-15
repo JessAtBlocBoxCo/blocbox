@@ -39,8 +39,14 @@
 			<div class="row">   <h3>Show Calendars Associated with Host: {{ host.email }} </h3> </div>		
 					<!--First, Show all of the Calendars associated with HostId=2 -->
 			<div class="row">  
-					<p> CALENDAR_RELATIONS: {{ calendar_relations }} </p>
-					<p> HOST_CALENDARS: {{ host_calendars }} </p>
+					<p> SHOW ALL CALENDAR_RELATIONS: {{ calendar_relations }} </p>
+					<p> SHOW ALL HOST_CALENDARS: {{ host_calendars }} </p>
+					{% for hostcaleach in host_calendars %}
+						<div class="row">
+							<p>WITHIN THE FORM LOOP SHOW HOSTCALEACH: {{ hostcaleach }} </p>
+						</div>
+					{% endfor %}
+					
 			</div>
 			
 			<!--SHOW EVERY CALENDAR-->
