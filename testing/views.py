@@ -37,7 +37,8 @@ def get_item(dictionary, key):
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
 def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):
     enduser = request.user
-    host = get_object_or_404(UserInfo, pk=host_id)
+    if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
     #calndar stuff initially defined in schedule.views.calendar_by_periods    
