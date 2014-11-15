@@ -35,7 +35,7 @@ def get_item(dictionary, key):
 
     
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
-def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
+def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):
     enduser = request.user
     host = get_object_or_404(UserInfo, pk=host_id)
     connections_all = Connection.objects.filter(end_user=enduser) 
