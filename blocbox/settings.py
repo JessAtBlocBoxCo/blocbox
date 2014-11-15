@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'dateutil',
     'schedule',
     'billing',
+    'paypal.standard.ipn',
 		'testing',
 )
 
