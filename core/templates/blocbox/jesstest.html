@@ -37,10 +37,12 @@
 		
 		<!--TEST CALENDAR RELATIONS, table: schedule_calendarrelation, object_id= userid, calender_id-->
 		<h3>Calendars Associated with Host: {{ host.email }} </h3> 	
-		<div class="row">  
+		<div class="row"> <!--row containing all calendars-->
+				<div class="row">
 				<h4>{{ host.first_name }} {{ host.last_name }} is linked to {{ cal_relations_host_count }} Calendars: </h4>	
 						 {% for hostcaleach in cal_list_host %} <li> {{ hostcaleach.slug }}   </li> {% endfor %}
-							
+				</div>
+					
 				{% for hostcaleach in cal_list_host %}
 						<div class="row">							
 								<div class="col-xs-12 col-sm-6">
