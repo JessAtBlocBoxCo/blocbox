@@ -354,13 +354,12 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
         calendar_id_objects[cal.id] = get_object_or_404(Calendar, id=cal.id)
         thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
-        test_calslugs = Calendar.slug
     #for a single calendar called i
     calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
     event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
     thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
     #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
-    calendar_relations = CalendarRelation.objects.all()
+    calendar_relations = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
     host = get_object_or_404(UserInfo, pk=host_id)
     host_calendars = CalendarRelation.objects.filter(object_id=host.id)
     host_calendars_count = CalendarRelation.objects.filter(object_id=host.id).count()
