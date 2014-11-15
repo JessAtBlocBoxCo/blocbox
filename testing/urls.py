@@ -7,13 +7,12 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 		url(r'^$', 'testing.views.jesstest', name='testingbase'),    
- 		url(r'^jesstest/$', 
- 					'testing.views.jesstest', 
- 					name='jesstestnohost')	
+ 		
+ 		url(r'^jesstest/$', 'testing.views.jesstest', 
+ 					name='jesstestnohost'),
  					#kwargs={'host': [Year]}),
  						
- 		url(r'^jesstest/$', 
- 					'testing.views.jesstest', 
+ 		url(r'^jesstest/$', 'testing.views.jesstest', 
  					name='jesstestwithhost',	
  					kwargs={'host_id': 2}),
  			
