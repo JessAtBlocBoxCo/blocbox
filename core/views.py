@@ -357,7 +357,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
     #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
     host = get_object_or_404(UserInfo, pk=host_id)
-    host_calendars = Calendar.objects.filter(object_id=host) 
+    host_calendars = CalendarRelation.objects.filter(object_id=host) 
     return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
         'host':host, 
