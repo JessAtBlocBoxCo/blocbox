@@ -350,9 +350,9 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     for cal in cal_list:
         event_list = GET_EVENTS_FUNC(request, cal)
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
-        #the thismonth_objectis[cal.slug] works when i call it with thismonth_objects.testcalendar1 but not when i call it with thismonth_objects.caleach.slug ...    
+        calendar_id_objects[cal.id] = get_objects_or_404(Calendar, id=cal.id)
         thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
-    #for a single calendar called 
+    #for a single calendar called i
     calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
     event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
     thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
@@ -375,6 +375,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     	  'weekday_names': weekday_names,
         'cal_list':cal_list,
         'calendar_objects':calendar_objects,
+        'calendar_id_objects':calendar_id_objects,
     	  'calendar_single': calendar_single,
     	  'calendar_relations': calendar_relations,
     	  'host_calendars': host_calendars,
