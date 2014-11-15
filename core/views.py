@@ -360,6 +360,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     calendar_relations = CalendarRelation.objects.all()
     host = get_object_or_404(UserInfo, pk=host_id)
     host_calendars = CalendarRelation.objects.filter(object_id=host.id)
+    hostcal_objects = {}
     for hostcal in host_calendars:
         hostcal_objects[host.id] = Calendar.objects.filter(id=hostcal.id)
     return render(request, 'blocbox/jesstest.html', { 
