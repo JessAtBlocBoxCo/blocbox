@@ -51,22 +51,6 @@ INSTALLED_APPS = (
 #NEED TO UPDATE PAYPALE RECEIVER EMAIL - SO CORP ACCOUNT
 PAYPAL_RECEIVER_EMAIL = "jessica.yeats@gmail.com"
 
-#REMOVING THE DASH APPS FOR NOW BECAUSE THEY RELY ON THE USERNAME PROPERTY
-"""		
-		'dash',
-		'dash.contrib.layouts.android',
-		'dash.contrib.layouts.bootstrap2',
-		'dash.contrib.layouts.windows8',
-		'dash.contrib.plugins.dummy',
-		'dash.contrib.plugins.image',
-		'dash.contrib.plugins.memo',
-		'dash.contrib.plugins.news',
-		'dash.contrib.plugins.rss_feed',
-		'dash.contrib.plugins.url',
-		'dash.contrib.plugins.video',
-		'dash.contrib.plugins.weather',
-"""
-
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
