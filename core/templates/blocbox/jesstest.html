@@ -20,7 +20,7 @@
 			{% load scheduletags %}
 			
 			<!--SHOW LIST OF AVAILABLE CALENDARS	 -->
-			<div class="row">	<h3>Available Calendars (List with Links) </h3>
+			<div class="row">	<h3>All Available Calendars (List with Links) </h3>
 					{% for calendar in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
 							<div class="row"> <div class="col-xs-12 col-sm-6">
 								<li> <b>{{ calendar }}</b> :
@@ -42,7 +42,7 @@
 			
 				<div class="row"> <div class="col-xs-12 col-sm-6">
 				<h4>{{ host.first_name }} {{ host.last_name }} is linked to {{ cal_relations_host_count }} Calendars: </h4>	
-						 {% for hostcaleach in cal_list_host %} <li> {{ hostcaleach.slug }}   </li> {% endfor %}
+						 {% for hostcaleach in cal_list_host %} <li> <b> {{ hostcaleach.slug }} </b>  </li> {% endfor %}
 				</div></div> <!--col, row -->
 					
 				{% for hostcaleach in cal_list_host %}
@@ -73,13 +73,7 @@
 			
 			
 			<!--SHOW TESTCALENDAR1 -->
-			<div class="row"> 	<h2> Show the TestCalendar1..I Can't Show Each..specifying this in the jesstest view.</h2> 									
-					<div class="col-xs-12 col-sm-6"> 
-							<h4>This is TestCalendar1, showing availablility for Two Months. It is called in the jesstest aviea. I Need to make the following changes:</h4> 
-											<p>1) Link the calendar name toa  particular host </p>
-											<p>2) Update page view so that it calls the calendar name associated with the host    </p>
-											<p>3) make this calendar view show balckout dates - so maybe color the days if unvailability  </p>
-					</div>
+			<div class="row"> 	<h2> Show the TestCalendar1 </h2> 									
 							
 					<div class="col-xs-12 col-sm-6">
 								<h3 style="text-align: center">  {{ calendar_single.slug }} </h3>
