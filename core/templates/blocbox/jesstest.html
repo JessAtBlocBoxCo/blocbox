@@ -36,13 +36,13 @@
 			</div>				
 		
 		<!--TEST CALENDAR RELATIONS, table: schedule_calendarrelation, object_id= userid, calender_id-->
-		<h2>Show Calendars Associated with Host: {{ host.email }} </h3> 	
+		<h3>Calendars Associated with Host: {{ host.email }} </h3> 	
 		<div class="row">  
-				<p>{{ host.first_name }} {{ host.last_name }} is linked to {{ cal_relations_host_count }} Calendars: </p>				
+				<h4>{{ host.first_name }} {{ host.last_name }} is linked to {{ cal_relations_host_count }} Calendars: </h4>				
 				{% for hostcaleach in cal_list_host %}
 						<div class="row">							
 								<div class="col-xs-12 col-sm-6"> 
-										<h4> Host {{ host.first_name }} {{ host.last_name }}'s  Calendar: {{ hostcaleach.slug }} </h4><					
+										<h4> Host {{ host.first_name }} {{ host.last_name }}'s  Calendar: {{ hostcaleach.slug }} </h4>				
 								</div>
 								<div class="col-xs-12 col-sm-6">
 										<h3 style="text-align: center">  {{ hostcaleach.slug  }} </h3>																							
@@ -54,7 +54,7 @@
 		</div> <!--row, containing all -->
 			
 		<!--SHOW EVERY CALENDAR-->
-		<h2> Show Every Calendar (Bi-Monthly View) </h2> 
+		<h3> Show Every Calendar (Bi-Monthly View) </h3> 
 				
 				{% for caleach in cal_list %}
 								<div class="row">									
