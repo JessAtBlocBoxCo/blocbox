@@ -382,7 +382,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     	  'cal_relations_all': cal_relations_all,
     	  'cal_relations_host': cal_relations_host,
     	  'cal_relations_host_count': cal_relations_host_count,
-    	  'cal_list_host': cal_list_hostss,
+    	  'cal_list_host': cal_list_hosts,
     	  'here': quote(request.get_full_path())
     }) 
 
