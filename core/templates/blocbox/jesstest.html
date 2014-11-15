@@ -21,7 +21,8 @@
 			
 			<!--SHOW LIST OF AVAILABLE CALENDARS	 -->
 			<div class="row">	<h3>Available Calendars (List with Links) </h3>
-							{% for calendar in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
+					{% for calendar in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
+							<div class="row"> <div class="col-xs-12 col-sm-6">
 								<li> <b>{{ calendar }}</b> :
   									<a href="{% url "compact_calendar" calendar.slug %}">{% trans "Small Month" %}</a> --
   									<a href="{% url "month_calendar" calendar.slug %}">{% trans "1 Month" %}</a> --
@@ -31,7 +32,7 @@
   									<a href="{% url "day_calendar" calendar.slug %}">{% trans "Daily" %}</a> --
   									<a href="{% url "upcoming_events_feed" calendar.id %}">{% trans "Feed" %}</a>
   							</li>
-  							<br/>
+  						</div> </div>
 						{% endfor %}
 			</div>				
 		
