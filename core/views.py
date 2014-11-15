@@ -363,9 +363,9 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
     cal_list_host = []
     for cal in cal_relations_host:
-        calhost = get_object_or_404(Calendar, id=cal.calendar_id)
+        #calhost = get_object_or_404(Calendar, id=cal.calendar_id)
         #calhost = Calendar.objects.filter(id=cal.calendar_id) #the problem is that this creates its own list...
-        cal_list_host.append(calhost)
+        cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
     return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
         'host':host, 
