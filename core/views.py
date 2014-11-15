@@ -26,6 +26,13 @@ from schedule.utils import check_event_permissions, coerce_date_dict
 from django.utils import timezone
 
 
+#Write a custom template filter:
+from django.template.defaulttags import register
+@register.filter
+def get_item(dictionary, key):
+    return dictionary.get(key)
+
+
 def index(request):
     return render(request, 'blocbox/index.html') #loads blocbox/templates/blocbox/index.html 
 

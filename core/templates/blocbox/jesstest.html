@@ -47,10 +47,12 @@
 									<p>DELME CALSLUG: {{ calslug }} </P>
 									<p>DELME THISMONTH_OBJECTS.CALSLUG: {{ thismonth_objects.calslug }} </p>
 									<p>DELME THISMONTH_OBJECTS.testcalendar1: {{ thismonth_objects.testcalendar1 }} </p>
+									<p>DELEM TEST CUSTOM TEMPLATE FILTER {{ thismonth_objects|get_item:caleach.slug }} </p>
 									
 										<div class="col-xs-12 col-sm-6"> <h4>Text to the left for {{ caleach.slug }} </h4></div>
 										<div class="col-xs-12 col-sm-6"> 
-												<h3 style="text-align: center">  {{ caleach.slug }} </h3>													
+												<h3 style="text-align: center">  {{ caleach.slug }} </h3>		
+														<!--thismonth_objects is a dictionary -->											
 														<div class="col-xs-12 col-sm-6">	{% month_table caleach thismonth_objects.testcalendar1 "small"  %}  	</div> 	
 														<!--													
 														<div class="col-xs-12 col-sm-6">  {  % month_table caleach thismonth_objects.calslug "small" +1 %  }	</div> 
