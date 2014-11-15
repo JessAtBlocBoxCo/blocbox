@@ -10,8 +10,12 @@ urlpatterns = patterns('',
 		url(r'^$', 'billing.views.base', name='billingbase'),    
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
  		url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
- 		url(r'^paypal/', include('paypal.standard.ipn.urls')),	 		
+ 		url(r'^paypal', 'billing.views.paypal_askformoney', name='paypalbase'), 	
+ 		'paypal.standard.ipn.views', #from blocbox/paypal/standard/ipn/urls.py - this was one of two lines - think i can delete it, its in the second one
+ 		url(r'^paypal/ipn', 'paypal.standard.ipn.views.ipn', name="paypal-ipn"), #from blocbox/paypal/standard/ipn/urls.py - this was second of two line, so coonsidate it here	
 )
+
+
 
 """EXAMPLE OF HOW TO CALL SAME VIEW WITH DIFFERENT ARGS -- USE KWARGS
 
