@@ -45,7 +45,7 @@
 												<h3 style="text-align: center">  {{ caleach.slug }} </h3>		
 														<!--thismonth_objects is a dictionary, so i had to define a custom template filter to pass a loop variable -->											
 														<div class="col-xs-12 col-sm-6">	{% month_table caleach thismonth_objects|get_item:caleach.slug "small"  %}  	</div> 													
-														<div class="col-xs-12 col-sm-6">  {% month_table caleach thismonth_objects|get_item:caleach.slug "small" +1 %  }	</div> 
+														<div class="col-xs-12 col-sm-6">  {% month_table caleach thismonth_objects|get_item:caleach.slug "small" +1 %}	</div> 
 										</div>			
 								</div> <!--row with cal-->
 				{% endfor %}
