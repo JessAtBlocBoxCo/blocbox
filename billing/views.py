@@ -44,10 +44,11 @@ def base(request):
     	  host = None
     date = timezone.now()
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
-		return render(request, 'blocbox/payment.html', { 
+    return render(request, 'blocbox/payment.html', { 
 		    'enduser':enduser, 'host':host,
     	  'date':date, 'local_timezone':local_timezone, 
     	  'here': quote(request.get_full_path())
+    })
 #Add the checkout view: www.blocbox.co/billing/checkout
 
 
