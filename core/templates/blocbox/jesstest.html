@@ -35,10 +35,12 @@
 						{% endfor %}
 			</div>				
 		
-			<!--TEST CALENDAR RELATIONS, table: schedule_calendarrelation, object_id= -->
-			<!--Calendar relations
-			-->
-			
+			<!--TEST CALENDAR RELATIONS, table: schedule_calendarrelation, object_id= userid, calender_id-->
+			<div class="row">   <h3>Show Calendars Associated with Host: {{ host.email }} </h3> </div>		
+					<!--First, Show all of the Calendars associated with HostId=2 -->
+			<div class="row">  
+					<p> HOST_CALENDARS: {{ host_calendars }} </p>
+			</div>
 			
 			<!--SHOW EVERY CALENDAR-->
 			<div class="row">   <h3>Every Calendar (Bi-Monthly View) </h3> </div>		

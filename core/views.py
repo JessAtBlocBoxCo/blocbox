@@ -322,7 +322,7 @@ def styletest(request):
     return render(request, 'blocbox/x_styletest.html') 
     
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
-def jesstest(request, calendar_slug_single = "testcalendar1",):
+def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     #I am copying the following date passing arguments from the calendar_by_periods function in schedule/views.py.. but i want to know how to just call that here   
@@ -342,26 +342,25 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
         local_timezone = request.session.setdefault('django_timezone', 'UTC')     
     local_timezone = pytz.timezone(local_timezone) #this is working]
     thismonthname = Month(date, None, None, local_timezone) 
-    #calendar_slug = "testcalendar1" #slug is the name...THIS PART SHOULD UPDATE SO PASSED RATHER THAN DEFINED HERE
     cal_list = Calendar.objects.all()
-    cal_slugs = {}
     calendar_objects = {} 
     event_list_objects = {}
     thismonth_objects = {}
     for cal in cal_list:
-        #cal_slugs[cal] = Calendar.slug
-        #calendar = get_object_or_404(Calendar, slug=cal.slug)
         event_list = GET_EVENTS_FUNC(request, cal)
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
         #the thismonth_objectis[cal.slug] works when i call it with thismonth_objects.testcalendar1 but not when i call it with thismonth_objects.caleach.slug ...    
         thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
-        #period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
     #for a single calendar called 
     calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
     event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
     thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
+    #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
+    host = get_object_or_404(UserInfo, pk=host_id)
+    host_calendars = Calendar.objects.filter(object_id=host) 
     return render(request, 'blocbox/jesstest.html', { 
         'enduser':enduser, 
+        'host':host, 
         'connections_all':connections_all,
     	  'date':date, 
     	  'thismonth_objects':thismonth_objects,
@@ -371,7 +370,7 @@ def jesstest(request, calendar_slug_single = "testcalendar1",):
         'cal_list':cal_list,
         'calendar_objects':calendar_objects,
     	  'calendar_single': calendar_single,
-    	  'cal_slugs': cal_slugs,
+    	  'host_calendars': host_calendars,
     	  'here': quote(request.get_full_path())
     }) 
 
