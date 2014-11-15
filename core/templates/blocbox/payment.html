@@ -79,6 +79,15 @@
         -->
         <div class="col-xs-8">
         	<h3>Testing a PayPal From.. JMY adding 15 Nov</h3>
+        	
+        	<!--not sure that i need this top bit.. -->
+        	{% if integration.test_mode %}
+   					 {{ integration.generate_form.sandbox }}
+					{% else %}
+    					{{ integration.generate_form.render }}
+					{% endif %}
+
+
         {{ form.render }}
         </div>
         
