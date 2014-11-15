@@ -36,7 +36,9 @@
 			</div>				
 						
 			<!--SHOW EVERY CALENDAR-->
-			<div class="row">   <h3>Every Calendar (Bi-Monthly View) </h3> </div>			
+			<div class="row">   <h3>Every Calendar (Bi-Monthly View) </h3> </div>		
+			
+				<p>TEST - SHOW CAL_LIST.SLUG {{ cal_list.slug }}</p>	
 				{% for caleach in cal_list %}
 							{% with caleach.slug as calslug %}
 							
