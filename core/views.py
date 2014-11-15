@@ -301,9 +301,6 @@ def waitlist_confirmation(request):
 def startashipment(request):
 		return render(request, 'blocbox/startashipment.html')
 		
-def payment(request):
-		return render(request, 'blocbox/payment.html')
-
 def shippackage(request):
 		return render(request, 'blocbox/shippackage.html')
 		
