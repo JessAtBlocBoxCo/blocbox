@@ -53,8 +53,6 @@
 								<p>SHOW HOSTCALEACH: {{ calrelhost_each }} </p>
 								<p>SHOW HOSTCALEACH.CALENDAR_ID: {{ calrelhost_each.calendar_id }} </p>
 								<p>SHOW HOSTCALEACH.DISTINCTION: {{ calrelhost_each.distinction }} </p>
-								<!--USE A WITH FUNCTIO - PASS THE ID TO THAT.. .. OR RELATE THE CALENDAR IS TO THE HOLSTCALEACH -->
-								<p>SHOW CALENDAR_ID_OBJECTS|get_item:hostcaleach.id: {{ calendar_id_objects|get_item:calrelhost_each.calendar_id }} </p>
 							</div>
 						<div class="col-xs-12 col-sm-6"> 
 							<!--
@@ -114,9 +112,6 @@
 							<h4> SHOW THISMONTHname : {{ thismonthname }}  </h4>
 							<h4> SHOW CALENDAR_OBJECTS : {{ calendar_objects }}  </h4>
 							<h4> SHOW CALENDAR_OBJECTS.testcalendar1 : {{ calendar_objects.testcalendar1 }}  </h4>
-							<h4>TEST - calendar_id_objects {{ calendar_id_objects }} </h4> <!-- {1: <Calendar: TestCalendar1>, 2: <Calendar: TestCalendar2>, 3: <Calendar: TestCalendar3>}  -->
-							<h4>TEST - calendar_id_objects.0 {{ calendar_id_objects.0 }} </h4> <!-- this is empty, its a dictionary -->
-							<h4>TEST - calendar_id_objects.1 {{ calendar_id_objects.1 }} </h4> <!--TestCalendar1 -->
 							<h4>TEST - cal_list_host {{ cal_list_host }} </h4> <!-- [<Calendar: TestCalendar1>] -->
 							<h4>TEST - cal_list_host.0 {{ cal_list_host.0 }} </h4> 
 								<h4>TEST - cal_list_host.1 {{ cal_list_host.1 }} </h4>

@@ -346,14 +346,12 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     thismonthname = Month(date, None, None, local_timezone) 
     cal_list = Calendar.objects.all()
     calendar_objects = {} 
-    calendar_id_objects = {} 
     event_list_objects = {}
     thismonth_objects = {}
     test_calslugs = []
     for cal in cal_list:
         event_list = GET_EVENTS_FUNC(request, cal)
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
-        calendar_id_objects[cal.id] = get_object_or_404(Calendar, id=cal.id)
         thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
     #for a single calendar called i
     calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
@@ -377,7 +375,6 @@ def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     	  'weekday_names': weekday_names,
         'cal_list':cal_list,
         'calendar_objects':calendar_objects,
-        'calendar_id_objects':calendar_id_objects,
     	  'calendar_single': calendar_single,
     	  'cal_relations_all': cal_relations_all,
     	  'cal_relations_host': cal_relations_host,
