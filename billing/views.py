@@ -53,7 +53,8 @@ def base(request, host_id=None):
         "invoice": "unique-invoice-id",
         #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
         "return_url": "https://www.blocbox.co/startashipment/",
-        "cancel_return": "https://www.blocbox.co/your-cancel-location/",    
+        "cancel_return": "https://www.blocbox.co/your-cancel-location/",
+    }    
     form = PayPalPaymentsForm(initial=paypal_dict)
     context = {"form": form}
     return render(request, 'blocbox/payment.html', { 
