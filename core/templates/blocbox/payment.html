@@ -79,9 +79,10 @@
 										the button et is defined in blocbox/paypal/standard/forms.py , the image is defined as SANDBOX_IMAGE
 										and the URL/SRC is definmed in paypal/standard/conf.py
 										but i want to change it to point to John's paypal image at: "blocbox/images/paypal.png -->
-        		<p>{{ form.render }}  </p>
-        		<p class="marginsides3pct marginbottom20px">Please note that you will not be changed until your host confirms your receipt of your package</p>
-        
+        		<div class="col-xs-12 col-sm-4 marginbottom30px marginleft40px> 
+        			{{ form.render }}        		
+        			<p class="marginsides3pct marginbottom20px">Please note that you will not be changed until your host confirms your receipt of your package</p>
+        		</div>
         		<h3> JMY Notes on the Payment Form:  </h3>
         		<p> The button image was intially a really disgusting 'buy it now' picture with credit cards
         				I updated it to link to your paypal image but i modified the CSS paypal style bcit was too wide relative to height
