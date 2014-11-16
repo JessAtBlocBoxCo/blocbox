@@ -1,4 +1,4 @@
-<!--this is blocbox/templates/payment.html -- URL is www.blocbox.co/payment -->
+<!--this is blocbox/templates/payment.html -- URL is www.blocbox.co/payment, the view is defined in  /blocbox/billing/views/py -->
 {% extends "blocbox/base.html" %}
 {% load staticfiles %} 
 {% block title %}Payment{% endblock %}
@@ -62,41 +62,41 @@
         </div>
 
 
+        
         <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
             <div class="row">
                 <h6 class="col-xs-4 ltbluetext margintop10px marginsides3pct nopadding">Payment Information</h6>
                 <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
                 <p class="marginsides3pct marginbottom20px">Sign in to your PayPal account to process payment</p>
             </div>
-                <div class="col-sm-4 marginbottom30px">
+            <div class="col-sm-4 marginbottom30px">
                     <img class="col-sm-offset-2 paypal marginleft40px" src="{% static "blocbox/images/paypal.png" %}"  height="40" width="122" />
-                </div>
-                <p class="marginsides3pct marginbottom20px">Please note that you will not be changed until your host confirms your receipt of your package</p>
-                </div>
+            </div>
+            <p class="marginsides3pct marginbottom20px">Please note that you will not be changed until your host confirms your receipt of your package</p>
         
-        <!--Jess Adding the Paypal Button - TESTIG THIS NOW..  i know its ugly 
-        		This view is defined in /blocbox/billing/views/py.. it calls a form.. thats defined in blocbox/paypal/standard..
-        -->
-        <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
-        		<h3>Testing a PayPal Form (JMY Add on 15 Nov) </h3>
-        		<p> The button image was intially a really disgusting 'buy it now' picture with credit cards
-        				I updated it to link to your paypal image but i modified the CSS paypal style bcit was too wide relative to height
-        				and the margins weren't working within a form.</p>
-        		<p>This is currently linking to a 'Sandbox' paypal account, which is a cool development feature that allows you to link to fake paypal accounts</p>
-        	
-        			<!--not sure that i need this top bit.. -->
-        			{% if integration.test_mode %} {{ integration.generate_form.sandbox }}
-							{% else %} {{ integration.generate_form.render }}
-							{% endif %}
+            <!--not sure that i need this top bit.. -->
+        		{% if integration.test_mode %} {{ integration.generate_form.sandbox }}
+						{% else %} {{ integration.generate_form.render }}
+						{% endif %}
 							
-							<!-- the following statement loads the paypal checkout form with buy-it-ow button,
+						<!-- the following statement loads the paypal checkout form with buy-it-ow button,
 										the button et is defined in blocbox/paypal/standard/forms.py , the image is defined as SANDBOX_IMAGE
 										and the URL/SRC is definmed in paypal/standard/conf.py
 										but i want to change it to point to John's paypal image at: "blocbox/images/paypal.png -->
-        			{{ form.render }}
-        </div>
+        		{{ form.render }} 
         
-        <!--submit button-->
+        		<h3> JMY Notes on the Payment Form:  </h3>
+        		<p> The button image was intially a really disgusting 'buy it now' picture with credit cards
+        				I updated it to link to your paypal image but i modified the CSS paypal style bcit was too wide relative to height
+        				and the margins weren't working within a form.</p>
+        		<p>This currently links to a 'Sandbox' paypal account,  a cool development feature that allows you to link to fake paypal accounts</p>
+        		<p>QUESTION: how does the login to paypal button jive with the submit butotn? I think we have to do either or.. 
+        				but this is a UI/UX or whatever question you need to answer. How do we manage this process? esp w/fact tha tno charged till later
+        				Would it be better to just reimburse users if the package doesn't show up? we may need to do that for beta and then add
+        				the pay layter feature as a post-beta task </p>
+        </div> <!--payment information -->
+        
+        <!--submit button -- Do we still need this?-->
         <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
                 <button class="bluebutton" onClick="window.location='/shippackage';">Submit</button>
         </div>
