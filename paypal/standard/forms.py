@@ -123,7 +123,7 @@ class PayPalPaymentsForm(forms.Form):
     def render(self):
         return mark_safe(u"""<form action="%s" method="post">
     %s
-    <input type="image" class="paypal" width="150" height="70" src="%s" border="0" name="submit" alt="Buy it Now" />
+    <input type="image" class="paypal" src="%s" border="0" name="submit" alt="Buy it Now" />
 </form>""" % (self.get_endpoint(), self.as_p(), self.get_image()))
 		
 		#JMY - may need to add height and width dimensions.. or alter the image.., JB had width="122" height="40"
