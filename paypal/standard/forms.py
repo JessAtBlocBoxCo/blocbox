@@ -6,7 +6,9 @@ from paypal.standard.widgets import ValueHiddenInput, ReservedValueHiddenInput
 from paypal.standard.conf import (POSTBACK_ENDPOINT, SANDBOX_POSTBACK_ENDPOINT,
                                   RECEIVER_EMAIL,
                                   IMAGE, SUBSCRIPTION_IMAGE, DONATION_IMAGE,
-                                  SANDBOX_IMAGE, SUBSCRIPTION_SANDBOX_IMAGE, DONATION_SANDBOX_IMAGE)
+                                  SANDBOX_IMAGE, SUBSCRIPTION_SANDBOX_IMAGE, DONATION_SANDBOX_IMAGE, 
+                                  JB_PAYPAL_IMAGE, #added by JMY to incorporate john's button
+                                  )
 from django.conf import settings
 
 
