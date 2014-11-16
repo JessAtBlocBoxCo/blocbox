@@ -22,7 +22,7 @@ DONATION_IMAGE = getattr(settings, "PAYPAL_DONATION_IMAGE", "https://www.paypal.
 SANDBOX_IMAGE = getattr(settings, "PAYPAL_SANDBOX_IMAGE", "https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif")
 
 #Add JB paypal image
-JB_PAYPAL_IMAGE = getattr(settings, "JB_PAYPAL_IMAGE", "static/blocbox/images/paypal.png")
+JB_PAYPAL_IMAGE = getattr(settings, "JB_PAYPAL_IMAGE", "/static/blocbox/images/paypal.png")
 
 SUBSCRIPTION_SANDBOX_IMAGE = getattr(settings, "PAYPAL_SUBSCRIPTION_SANDBOX_IMAGE",
                                      "https://www.sandbox.paypal.com/en_US/i/btn/btn_subscribeCC_LG.gif")
