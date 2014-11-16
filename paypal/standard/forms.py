@@ -123,8 +123,10 @@ class PayPalPaymentsForm(forms.Form):
     %s
     <input type="image" src="%s" border="0" name="submit" alt="Buy it Now" />
 </form>""" % (self.get_endpoint(), self.as_p(), self.get_image()))
-
-
+		
+		#JMY: the SRC above renders as... https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif
+		#I want to redirect to John's image, which is at: src="/static/blocbox/images/paypal.png"
+		
     def sandbox(self):
         "Deprecated.  Use self.render() instead."
         import warnings

@@ -20,7 +20,6 @@ from core.forms import UserForm, HostForm
 #billing specific stuff
 from billing import gateway
 from billing import CreditCard
-#add paypal
 from paypal.standard.forms import PayPalPaymentsForm
 
 # Added the Following to /blocbox/billig'views.py or wherever you want to use it
@@ -55,7 +54,7 @@ def base(request, host_id=None):
         "return_url": "https://www.blocbox.co/startashipment/",
         "cancel_return": "https://www.blocbox.co/your-cancel-location/",
     }    
-    form = PayPalPaymentsForm(initial=paypal_dict)
+    form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', { 
 		    'enduser':enduser, 'host':host,
