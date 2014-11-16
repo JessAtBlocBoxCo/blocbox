@@ -138,7 +138,7 @@ class PayPalPaymentsForm(forms.Form):
     def get_image(self):
         return {
             (True, self.SUBSCRIBE): SUBSCRIPTION_SANDBOX_IMAGE,
-            (True, self.BUY): SANDBOX_IMAGE, #defined in conf.py as "https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif")
+            (True, self.BUY): JB_PAYPAL_IMAGE, #SANDBOX_IMAGE, #defined in conf.py as "https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif")
             (True, self.DONATE): DONATION_SANDBOX_IMAGE,
             (False, self.SUBSCRIBE): SUBSCRIPTION_IMAGE,
             (False, self.BUY): IMAGE,
