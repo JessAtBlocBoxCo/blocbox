@@ -123,10 +123,10 @@ class PayPalPaymentsForm(forms.Form):
     def render(self):
         return mark_safe(u"""<form action="%s" method="post">
     %s
-    <input type="image" width="130" height="60" src="%s" border="0" name="submit" alt="Buy it Now" />
+    <input type="image" width="140" height="60" src="%s" border="0" name="submit" alt="Buy it Now" />
 </form>""" % (self.get_endpoint(), self.as_p(), self.get_image()))
 		
-		#JMY - had to add width="130" height="50", JB had width="122" height="40"
+		#JMY - may need to add height and width dimensions.. or alter the image.., JB had width="122" height="40"
 		#JMY: the SRC above renders as... https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif
 		# the URL is defined in paypal/standard/conf.py under SANDBOX_IMAGE
 		#I want to redirect to John's image, which is at: src="/static/blocbox/images/paypal.png"
