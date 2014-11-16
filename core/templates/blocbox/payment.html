@@ -80,13 +80,16 @@
         <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
         		<h3>Testing a PayPal Form (JMY Add on 15 Nov) </h3>
         	
-        	<!--not sure that i need this top bit.. -->
+        			<!--not sure that i need this top bit.. -->
         			{% if integration.test_mode %} {{ integration.generate_form.sandbox }}
 							{% else %} {{ integration.generate_form.render }}
 							{% endif %}
-
-
-        {{ form.render }}
+							
+							<!-- the following statement loads the paypal checkout form with buy-it-ow button,
+										the button et is defined in blocbox/paypal/standard/forms.py , the image is defined as SANDBOX_IMAGE
+										and the URL/SRC is definmed in paypal/standard/conf.py
+										but i want to change it to point to John's paypal image at: "blocbox/images/paypal.png -->
+        			{{ form.render }}
         </div>
         
         <!--submit button-->

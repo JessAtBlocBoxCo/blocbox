@@ -125,6 +125,7 @@ class PayPalPaymentsForm(forms.Form):
 </form>""" % (self.get_endpoint(), self.as_p(), self.get_image()))
 		
 		#JMY: the SRC above renders as... https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif
+		# the URL is defined in paypal/standard/conf.py under SANDBOX_IMAGE
 		#I want to redirect to John's image, which is at: src="/static/blocbox/images/paypal.png"
 		
     def sandbox(self):
@@ -137,7 +138,7 @@ class PayPalPaymentsForm(forms.Form):
     def get_image(self):
         return {
             (True, self.SUBSCRIBE): SUBSCRIPTION_SANDBOX_IMAGE,
-            (True, self.BUY): SANDBOX_IMAGE,
+            (True, self.BUY): SANDBOX_IMAGE, #defined in conf.py as "https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif")
             (True, self.DONATE): DONATION_SANDBOX_IMAGE,
             (False, self.SUBSCRIBE): SUBSCRIPTION_IMAGE,
             (False, self.BUY): IMAGE,
