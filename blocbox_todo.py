@@ -2,25 +2,13 @@
 """TO DO  BEFORE ERA APPLICATION"""
 
 1. JOHN - /Fix Mobile/make site responsive
-5. JOHN: you send jess a message saying "package received"
 3. JOHN search page:
 		-- make text look better for john
-			-"dont see a blocbox host in your hood"? -- MAKE IT LARGER
-4. John: search page: sytle bottom message
 4. JESS: Add email counter
 6. JESS: Remove sign in after welcome page
 7. JESS: Restore User nav on beta page
 
-QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN STATIC.. BEFORE TUES..
-3. JESS: staratahipment -select a host - then the process - LOAD - to connect to a host...
-4. JESS: shippackage: connect the host address fields to data table so populate,
-2. JESS: payment page -- do the django app for payment
-1. JESS START-A-SHIPMENT/CALENDAr:embed into availability
-2. JESS CALENDR: show black-out dates on the bimonthly view
-5. JESS: send a user an email when they ship package
-6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails	
 
-12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
 		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
@@ -47,6 +35,16 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
 	7. JESS to form and table - add need_meals
 	1. JESS dashboard: connect to transactions table to populate actually transactions
+
+QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN STATIC.. BEFORE TUES..
+3. JESS: staratahipment -select a host - then the process - LOAD - to connect to a host...
+4. JESS: shippackage: connect the host address fields to data table so populate,
+2. JESS: payment page -- do the django app for payment
+1. JESS START-A-SHIPMENT/CALENDAr:embed into availability
+2. JESS CALENDR: show black-out dates on the bimonthly view
+5. JESS: send a user an email when they ship package
+6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails	
+12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
 
 
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
