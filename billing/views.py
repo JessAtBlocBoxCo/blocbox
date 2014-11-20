@@ -66,7 +66,7 @@ def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount 
     else:
     	  host = None
     date = timezone.now()
-    if paymentoption=="bundleten":
+    if paymentoption="bundleten":
         amount="15.00"
     else:
         amount="2.00"
