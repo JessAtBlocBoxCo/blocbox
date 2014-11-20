@@ -60,9 +60,9 @@ class PayPalPaymentsForm(forms.Form):
     business = forms.CharField(widget=ValueHiddenInput(), initial=RECEIVER_EMAIL)
 
     # Item information.
-    #amount = forms.IntegerField(widget=ValueHiddenInput())
+    amount = forms.IntegerField(widget=ValueHiddenInput())
     #JMY UPDATING THE AMOUNT FIELD TO MAKE IT APPEAR, READ HERE: https://docs.djangoproject.com/en/dev/ref/forms/fields/
-    amount= forms.IntegerField(label="Amount")
+    #amount= forms.IntegerField(label="Amount")
     item_name = forms.CharField(widget=ValueHiddenInput())
     item_number = forms.CharField(widget=ValueHiddenInput())
     quantity = forms.CharField(widget=ValueHiddenInput())

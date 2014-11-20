@@ -70,7 +70,7 @@ def paypal_ipn(request, host_id=None):
     paypal_dict = {
         "business": settings.PAYPAL_RECEIVER_EMAIL, #this is currently defined as jessica.yeats@gmail.com
         "amount": "2.00", #Amount of the purchase - try to pass this as an argument
-        "item_name": "Single Package",
+        "item_name": "Package",
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         "notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn'), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
         "return_url": "https://www.blocbox.co/startashipment/",
