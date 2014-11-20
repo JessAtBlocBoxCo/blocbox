@@ -10,7 +10,7 @@ from paypal.standard.ipn import views
 admin.autodiscover()
 
 
-#url patterns preceded by blocbox.co/payment
+#url patterns preceded by blocbox.co/payment - the namespace is payment, so need to reverse call with, eg payment:paypal_ipn
 urlpatterns = patterns('',
 		url(r'^$', 'billing.views.base', name='billingbase'),
 		url(r'^ipn$', 'billing.views.paypal_ipn', name='billingipn'), 

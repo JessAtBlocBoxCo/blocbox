@@ -12,7 +12,8 @@
 """Jess - payment tasks"""
 1. set up IPN (instant payment notifiation) - this kind of sucks b/c drops customers off at paypla.. but easiers
 2. set up "pro" -- enabling users to pay on the website
-
+3. oce i've set up the blocbox.co/payment/ipn and blocbox.co/payment/pro - merge the base view (blocbox.co/payment) with pro.. rmoeve the other two'
+4d
 		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
@@ -247,7 +248,18 @@ So when you push to origin, it will push to both repositories
 
 
 
-
+"""SOME NOTES"""
+1. revoles the reverse() function -- it matches urls in blocbox/urls.py but doenst match names in other url docs
+			ISSUE IS NAMESPACING
+			"URL namespaces allow you to uniquely reverse named URL patterns even if different applications use the same URL names. 
+			It’s a good practice for third-party apps to always use namespaced URLs (as we did in the tutorial). 
+			Similarly, it also allows you to reverse URLs if multiple instances of an application are deployed. In other words, since multiple instances of a 
+			single application will share named URLs, namespaces provide a way to tell these named URLs apart.
+			Django applications that make proper use of URL namespacing can be deployed more than once for a particular site. 
+			For example django.contrib.admin has an AdminSite class which allows you to easily deploy more than once instance of the admin. 
+			In a later example, we’ll discuss the idea of deploying the polls application from the tutorial 
+			in two different locations so we can serve the same functionality to two different audiences (authors and publishers)."
+			
 
 
 

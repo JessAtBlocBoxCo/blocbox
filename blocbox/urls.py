@@ -35,7 +35,7 @@ urlpatterns = patterns('',
  		url(r'^messages/', include('django_messages.urls')),
  		url(r'^scheduling/', include('schedule.urls')),
  		#url(r'^payment/', views.payment, name='payment'),
- 		url(r'^payment/', include('billing.urls', namespace="payment")),
+ 		url(r'^payment/', include('billing.urls', namespace='payment')), #because of the namepsac,e need to reeverse with reverse(payment:)
  		url(r'^datascience/', include('datasci.urls')),
  		
 )
