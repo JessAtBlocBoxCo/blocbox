@@ -19,7 +19,7 @@ from core.models import UserInfo, Transaction, Connection
 from core.forms import UserForm, HostForm
 #billing specific stuff
 from billing import gateway, CreditCard
-from billing.urls import urlpatterns
+#from billing.urls import urlpatterns
 from paypal.standard.forms import PayPalPaymentsForm
 
 
@@ -73,6 +73,7 @@ def paypal_ipn(request, host_id=None):
         "item_name": "name of the item",
         "invoice": "unique-invoice-id",
         "notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'), #after completin process, paypal makes a HTTP POST to this url
+        "notify_url": "https://www.blocbox.co" + reverse('paypal.standard.ipn.views.ipn'),
         "return_url": "https://www.blocbox.co/startashipment/",
         "cancel_return": "https://www.blocbox.co/beta/",
     }    
