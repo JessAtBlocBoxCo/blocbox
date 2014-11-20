@@ -1,6 +1,6 @@
 #This is blocbox/billing/urls.py
 from django.conf.urls import patterns, include, url
-from django.conf.urls.defaults import *
+#from django.conf.urls.defaults import * #that was in the paypal ipn
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
