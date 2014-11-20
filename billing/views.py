@@ -72,8 +72,8 @@ def paypal_ipn(request, host_id=None):
         "amount": "2.00", #Amount of the purchase - try to pass this as an argument
         "item_name": "name of the item",
         "invoice": "unique-invoice-id",
-        "notify_url": "https//www.blocbox.co" + reverse('paypalipn'), #test
-        #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'), #after completin process, paypal makes a HTTP POST to this url
+        "notify_url": "https//www.blocbox.co" + reverse('billingbase'), #not finding a reverse match...
+        #"notify_url": "https://www.blocbox.co" + reverse('paypal_ipn'), #after completin process, paypal makes a HTTP POST to this url
         #"notify_url": "https://www.blocbox.co" + reverse('paypal.standard.ipn.views.ipn'),
         "return_url": "https://www.blocbox.co/startashipment/",
         "cancel_return": "https://www.blocbox.co/beta/",
