@@ -59,7 +59,7 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 (IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
-def paypal_ipn(request, host_id=None, paymentoption=package): #default amount is 2.00
+def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount is 2.00
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
