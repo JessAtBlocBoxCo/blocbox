@@ -6,6 +6,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 admin.autodiscover()
 
+
 urlpatterns = patterns('',
 		url(r'^$', 'billing.views.base', name='billingbase'),
 		url(r'^ipn$', 'billing.views.paypal_ipn', name='billingipn'), 
@@ -13,8 +14,7 @@ urlpatterns = patterns('',
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
  		url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
  		url(r'^paypal', 'billing.views.paypal_askformoney', name='paypalbase'), 	
- 		'paypal.standard.ipn.views', #from blocbox/paypal/standard/ipn/urls.py - this was one of two lines - think i can delete it, its in the second one
- 		url(r'^paypal/ipn', 'paypal.standard.ipn.views.ipn', name="paypal-ipn"), #from blocbox/paypal/standard/ipn/urls.py - this was second of two line, so coonsidate it here	
+ 		url(r'^ipn/notify$', 'paypal.standard.ipn.views.ipn', name="paypal-ipn"), #this is the notify_url	
 )
 
 

@@ -90,6 +90,7 @@ Using PayPal Payments Standard IPN:
     For a full list of variables that can be used in `paypal_dict`, see
     [PayPal HTML variables documentation][paypalhtml].
 
+DONE
 1. When someone uses this button to buy something PayPal makes a HTTP POST to
    your "notify_url". PayPal calls this Instant Payment Notification (IPN).
    The view `paypal.standard.ipn.views.ipn` handles IPN processing. To set the
@@ -99,8 +100,12 @@ Using PayPal Payments Standard IPN:
         ...
         urlpatterns = patterns('',
             (r'^something/paypal/', include('paypal.standard.ipn.urls')),
-        )
-
+   
+    # JMY NOTE - NOT DOING THIS -INSTEAD JUST INCORPORATIN GINOT BILLING.URLS - THERE WAS JUST ONE LINE IN THAT FILE,  SO DELETE/CONSOLIDAT     )
+    # ]ASDD THIS TO BILLING/URLS.PY
+   
+    
+    
 1. Whenever an IPN is processed a signal will be sent with the result of the
    transaction. Connect the signals to actions to perform the needed operations
    when a successful payment is received.

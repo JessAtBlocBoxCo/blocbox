@@ -22,6 +22,7 @@ from billing import gateway
 from billing import CreditCard
 from paypal.standard.forms import PayPalPaymentsForm
 
+
 # Added the Following to /blocbox/billig'views.py or wherever you want to use it
 #Django-Merchan stuff - from http://django-merchant.readthedocs.org/en/latest/overview.html#overview
 """
@@ -51,7 +52,13 @@ def base(request, host_id=None):
     	  'here': quote(request.get_full_path())
     })
 
-#Add the paypal_ipn view: www.blocbox.co/billing
+#The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
+"""About the IPN: After completing the purchase PayPal makes an HTTP
+POST to your `notify_url`. PayPal calls this process [Instant Payment
+Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_OrderMgmt_IntegrationGuide.pdf)
+(IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
+kinda sucks because it drops your customers off at PayPal's website but it's
+easy to implement and doesn't require SSL."""
 def paypal_ipn(request, host_id=None):
     enduser = request.user
     if host_id:
@@ -65,7 +72,7 @@ def paypal_ipn(request, host_id=None):
         "amount": "2.00", #Amount of the purchase - try to pass this as an argument
         "item_name": "name of the item",
         "invoice": "unique-invoice-id",
-        #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
+        "notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'), #after completin process, paypal makes a HTTP POST to this url
         "return_url": "https://www.blocbox.co/startashipment/",
         "cancel_return": "https://www.blocbox.co/beta/",
     }    

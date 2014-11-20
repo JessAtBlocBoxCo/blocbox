@@ -78,11 +78,11 @@ The URLs for this site, and the corresponding files are as follows:
 		-Host Choice
 		-Shipping Options
 
-9. 	blocbox.co/payment
+9. 	blocbox.co/payment (no form - just base template) + blocbox.co/payment/ipn (instant payment notifcaiont - shittier) and blocbox.co/payment/pro (better)
 			Template: core/templates/payment.html; URL patterns defined in blocbox/billing/urls.py
 			View: /blocbox/billing/views.py, which passes a form called PaypalPaymentsForm defined in paypal/standard/forms.py
-			The template loads the form with the statement	{{ form.render }} 
-			
+			For IPN or PRO The template loads the form with the statement	{{ form.render }} 
+			blocbox.co/payment/ipn/notify is the notify_url
 			Paypal app documentation: /blocbox/paypal/documentation/README.md
 						
 			Data presented
