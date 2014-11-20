@@ -18,8 +18,7 @@ from django.contrib.auth.decorators import login_required
 from core.models import UserInfo, Transaction, Connection
 from core.forms import UserForm, HostForm
 #billing specific stuff
-from billing import gateway
-from billing import CreditCard
+from billing import gateway, CreditCard, urls
 from paypal.standard.forms import PayPalPaymentsForm
 
 
@@ -72,7 +71,7 @@ def paypal_ipn(request, host_id=None):
         "amount": "2.00", #Amount of the purchase - try to pass this as an argument
         "item_name": "name of the item",
         "invoice": "unique-invoice-id",
-        "notify_url": "https://www.blocbox.co" + reverse("paypal-ipn"), #after completin process, paypal makes a HTTP POST to this url
+        "notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'), #after completin process, paypal makes a HTTP POST to this url
         "return_url": "https://www.blocbox.co/startashipment/",
         "cancel_return": "https://www.blocbox.co/beta/",
     }    
