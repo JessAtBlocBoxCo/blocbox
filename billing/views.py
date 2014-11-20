@@ -81,6 +81,7 @@ def paypal_ipn(request, host_id=None, amount="2.00"): #default amount is 2.00
     return render(request, 'blocbox/payment.html', { 
 		    'enduser':enduser, 'host':host,
     	  'date':date, 'local_timezone':local_timezone, 
+    	  'amount':amount,
     	  'here': quote(request.get_full_path()), 'form': form,
     })
 
