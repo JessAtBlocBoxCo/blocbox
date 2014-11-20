@@ -1,9 +1,10 @@
 #This is blocbox/billing/urls.py
 from django.conf.urls import patterns, include, url
 from django.conf import settings
-from billing import views 
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
+from billing import views 
+from paypal.standard.ipn import views
 admin.autodiscover()
 
 
@@ -14,7 +15,7 @@ urlpatterns = patterns('',
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
  		url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
  		url(r'^paypal', 'billing.views.paypal_askformoney', name='paypalbase'), 	
- 		url(r'^ipn/notify$', 'paypal.standard.ipn.views.ipn', name="paypal-ipn"), #this is the notify_url	
+ 		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name="paypal-ipn"), #this is the notify_url	
 )
 
 
