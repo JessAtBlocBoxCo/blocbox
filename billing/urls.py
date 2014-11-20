@@ -1,5 +1,6 @@
 #This is blocbox/billing/urls.py
 from django.conf.urls import patterns, include, url
+from core import views #it imports views from blocbox modeule so knows where to look for index files
 #from django.conf.urls.defaults import * #that was in the paypal ipn
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
