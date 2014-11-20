@@ -7,7 +7,9 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-		url(r'^$', 'billing.views.base', name='billingbase'),    
+		url(r'^$', 'billing.views.base', name='billingbase'),
+		url(r'^$', 'billing.views.paypal_ipn', name='billingipn'), 
+    url(r'^$', 'billing.views.paypal_pro', name='billingpro'),      
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
  		url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
  		url(r'^paypal', 'billing.views.paypal_askformoney', name='paypalbase'), 	

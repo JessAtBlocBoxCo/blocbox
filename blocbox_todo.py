@@ -9,6 +9,10 @@
 7. JESS: Restore User nav on beta page
 
 
+"""Jess - payment tasks"""
+1. set up IPN (instant payment notifiation) - this kind of sucks b/c drops customers off at paypla.. but easiers
+2. set up "pro" -- enabling users to pay on the website
+
 		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES

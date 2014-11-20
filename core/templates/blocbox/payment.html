@@ -1,4 +1,4 @@
-<!--this is blocbox/templates/payment.html -- URL is www.blocbox.co/payment, the view is defined in  /blocbox/billing/views/py -->
+<!--this is blocbox/templates/payment.html -- URL is www.blocbox.co/payment, the view is defined in billing/views.py ; url patters in /billing/urls.py-->
 {% extends "blocbox/base.html" %}
 {% load staticfiles %} 
 {% block title %}Payment{% endblock %}
@@ -79,7 +79,15 @@
 										the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
         		 		
         		 		<div class="col-xs-12 col-sm-6 marginbottom30px marginleft40px"> 
-        					{{ form.render }}       		
+        					{{ form.render }}       	
+        						<!--this form looks like this in the source code:
+        								<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+    										<input id="id_business" name="business" type="hidden" value="jessica.yeats@gmail.com" />
+    										<input id="id_amount" name="amount" type="hidden" value="10000000.00" />
+    										<input id="id_item_name" name="item_name" type="hidden" value="name of the item" />
+    										<input id="id_cancel_return" name="cancel_return" type="hidden" value="https://www.blocbox.co/your-cancel-location/" /><input id="id_return_url" name="return" type="hidden" value="https://www.blocbox.co/startashipment/" /><input id="id_invoice" name="invoice" type="hidden" value="unique-invoice-id" /><input id="id_cmd" name="cmd" type="hidden" value="_xclick" /><input id="id_charset" name="charset" type="hidden" value="utf-8" /><input id="id_currency_code" name="currency_code" type="hidden" value="USD" /><input id="id_no_shipping" name="no_shipping" type="hidden" value="1" />
+    										<input type="image" class="paypal" src="/static/blocbox/images/paypal.png" border="0" name="submit" alt="Buy it Now" /> </form>       					
+        	
         					<p class="marginbottom20px"> Please note that you will not be changed until your host confirms your receipt of your package</p>
         				</div>  <!--col-->
         		</div> <!--row-->

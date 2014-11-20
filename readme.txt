@@ -78,13 +78,19 @@ The URLs for this site, and the corresponding files are as follows:
 		-Host Choice
 		-Shipping Options
 
-9. blcobox.co/payment (templte: core/templates/payment.html)
-	- Data presented
-		-Package pricing
-		-Paypal Account (If linked)
+9. 	blocbox.co/payment
+			Template: core/templates/payment.html; URL patterns defined in blocbox/billing/urls.py
+			View: /blocbox/billing/views.py, which passes a form called PaypalPaymentsForm defined in paypal/standard/forms.py
+			The template loads the form with the statement	{{ form.render }} 
+			
+			Paypal app documentation: /blocbox/paypal/documentation/README.md
+						
+			Data presented
+				Package pricing
+				Paypal Account (If linked)
 
-	- Data requested
-		-Payment plan selection
+			Data requested
+				Payment plan selection
 
 10. blcobox.co/shippackage (template: core/templates/shippackage.html)
 

@@ -1,4 +1,4 @@
-Django PayPal
+Django PayPal -- this is /blocbox/paypal/documentation/README.md - annotated by JMY
 =============
 
 

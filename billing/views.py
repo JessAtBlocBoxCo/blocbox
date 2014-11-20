@@ -36,7 +36,7 @@ response2 = g2.purchase(100, cc, options = {...})
 #{"status": "SUCCESS", "response": <PayPalNVP object>}
 """
 
-#Add the base view: www.blocbox.co/billing
+#Add the base view -- this doesn't have a form/doesn't allow actual payment
 def base(request, host_id=None):
     enduser = request.user
     if host_id:
@@ -45,14 +45,29 @@ def base(request, host_id=None):
     	  host = None
     date = timezone.now()
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
+    return render(request, 'blocbox/payment.html', { 
+		    'enduser':enduser, 'host':host,
+    	  'date':date, 'local_timezone':local_timezone, 
+    	  'here': quote(request.get_full_path())
+    })
+
+#Add the paypal_ipn view: www.blocbox.co/billing
+def paypal_ipn(request, host_id=None):
+    enduser = request.user
+    if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+    	  host = None
+    date = timezone.now()
+    local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     paypal_dict = {
-        "business": settings.PAYPAL_RECEIVER_EMAIL,
-        "amount": "10000000.00",
+        "business": settings.PAYPAL_RECEIVER_EMAIL, #this is currently defined as jessica.yeats@gmail.com
+        "amount": "2.00", #Amount of the purchase - try to pass this as an argument
         "item_name": "name of the item",
         "invoice": "unique-invoice-id",
         #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
         "return_url": "https://www.blocbox.co/startashipment/",
-        "cancel_return": "https://www.blocbox.co/your-cancel-location/",
+        "cancel_return": "https://www.blocbox.co/beta/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #context = {"form": form}
