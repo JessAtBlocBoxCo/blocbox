@@ -13,6 +13,7 @@ admin.autodiscover()
 #url patterns preceded by blocbox.co/payment - the namespace is payment, so need to reverse call with, eg payment:paypal_ipn
 urlpatterns = patterns('',
 		url(r'^$', 'billing.views.base', name='billingbase'),
+		url(r'^ipn/$', 'billing.views.paypal_ipn', name='billingipn'), #this is OK for testing but shouldn't be used b/c o one to pay
 		url(r'^ipn/host(?P<host_id>\d+)/$', 'billing.views.paypal_ipn', name='billingipn'), 
     #url(r'^pro$', 'billing.views.paypal_pro', name='billingpro'),      
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
