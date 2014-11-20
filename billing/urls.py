@@ -8,6 +8,7 @@ from paypal.standard.ipn import views
 admin.autodiscover()
 
 
+#url patterns preceded by blocbox.co/payment
 urlpatterns = patterns('',
 		url(r'^$', 'billing.views.base', name='billingbase'),
 		url(r'^ipn$', 'billing.views.paypal_ipn', name='billingipn'), 
@@ -15,7 +16,7 @@ urlpatterns = patterns('',
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
  		url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
  		url(r'^paypal', 'billing.views.paypal_askformoney', name='paypalbase'), 	
- 		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name="paypal-ipn"), #this is the notify_url	
+ 		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name='paypal-ipn'), #this is the notify_url	
 )
 
 
