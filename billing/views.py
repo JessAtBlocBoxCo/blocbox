@@ -18,7 +18,8 @@ from django.contrib.auth.decorators import login_required
 from core.models import UserInfo, Transaction, Connection
 from core.forms import UserForm, HostForm
 #billing specific stuff
-from billing import gateway, CreditCard, urls
+from billing import gateway, CreditCard
+from billing.urls import urlpatterns
 from paypal.standard.forms import PayPalPaymentsForm
 
 
