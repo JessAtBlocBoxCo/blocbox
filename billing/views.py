@@ -37,7 +37,7 @@ response2 = g2.purchase(100, cc, options = {...})
 #{"status": "SUCCESS", "response": <PayPalNVP object>}
 """
 
-#Add the base view -- this doesn't have a form/doesn't allow actual payment
+#Add the base view -- this is before they have selected the produce/before pricing information is submitted
 def base(request, host_id=None):
     enduser = request.user
     if host_id:
@@ -59,7 +59,7 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 (IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
-def paypal_ipn(request, host_id=None):
+def paypal_ipn(request, host_id=None, amount="2.00"): #default amount is 2.00
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -69,7 +69,7 @@ def paypal_ipn(request, host_id=None):
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     paypal_dict = {
         "business": settings.PAYPAL_RECEIVER_EMAIL, #this is currently defined as jessica.yeats@gmail.com
-        "amount": "2.00", #Amount of the purchase - try to pass this as an argument
+        "amount": amount, #Amount of the purchase - try to pass this as an argument
         "item_name": "Package",
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         "notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn'), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify

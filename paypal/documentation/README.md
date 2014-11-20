@@ -35,11 +35,12 @@ supported by django-paypal.
 Using PayPal Payments Standard IPN:
 -----------------------------------
 
+DONE
 1. Download the code from GitHub:
 
         git clone git://github.com/spookylukey/django-paypal.git paypal
-
-1. Edit `settings.py` and add  `paypal.standard.ipn` to your `INSTALLED_APPS`
+DONE
+2. Edit `settings.py` and add  `paypal.standard.ipn` to your `INSTALLED_APPS`
    and `PAYPAL_RECEIVER_EMAIL`:
 
         # settings.py
@@ -52,8 +53,8 @@ Using PayPal Payments Standard IPN:
         # set PAYPAL_TEST to True.  Ensure PAYPAL_RECEIVER_EMAIL is set to
         # your sandbox account email too.
         # PAYPAL_TEST = True
-
-1. Create an instance of the `PayPalPaymentsForm` in the view where you would
+DONE
+3. Create an instance of the `PayPalPaymentsForm` in the view where you would
    like to collect money. Call `render` on the instance in your template to
    write out the HTML.
 
@@ -103,6 +104,9 @@ DONE
    
     # JMY NOTE - NOT DOING THIS -INSTEAD JUST INCORPORATIN GINOT BILLING.URLS - THERE WAS JUST ONE LINE IN THAT FILE,  SO DELETE/CONSOLIDAT     )
     # ]ASDD THIS TO BILLING/URLS.PY
+    #THAT FILE CONTAINED THE FOLLOWING CODE: from django.conf.urls.defaults import * 
+				 	urlpatterns = patterns('paypal.standard.ipn.views', url(r'^$', 'ipn', name="paypal-ipn"), ) 
+
    
     
     

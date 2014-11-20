@@ -1,6 +1,7 @@
 
 """TO DO  BEFORE ERA APPLICATION"""
-
+JOHN: update the payment page so that it is a drop down menu at first, and then it will update 
+	so that the payment amount corresponds to whatever they cose
 1. JOHN - /Fix Mobile/make site responsive
 3. JOHN search page:
 		-- make text look better for john
@@ -10,6 +11,8 @@
 
 
 """Jess - payment tasks"""
+1. for IPN - have john update page so that it is dropdown and then when you select an option, re-route the page to 
+	a page with that payment
 1. set up IPN (instant payment notifiation) - this kind of sucks b/c drops customers off at paypla.. but easiers
 2. set up "pro" -- enabling users to pay on the website
 3. oce i've set up the blocbox.co/payment/ipn and blocbox.co/payment/pro - merge the base view (blocbox.co/payment) with pro.. rmoeve the other two'
