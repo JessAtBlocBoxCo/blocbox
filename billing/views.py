@@ -68,6 +68,10 @@ def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount 
     date = timezone.now()
     if paymentoption=="bundle10":
         amount="15.00"
+    elif paymentoption=="month20":
+        amount="15.00"
+    elif paymentoption=="annual";
+        amount="150.00"
     else:
         amount="2.00"
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
