@@ -76,14 +76,14 @@
         <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
         	
             <div class="row">
-                <h6 class="col-xs-4 ltbluetext margintop10px marginsides3pct nopadding">Payment Information</h6>
+                <h6 class="col-xs-4 ltbluetext margintop10px marginsides3pct nopadding">Sign in to your PayPal account to process payment</h6>
                 <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
-                <p class="marginsides3pct marginbottom20px">Sign in to your PayPal account to process payment</p>        
+                <!--<p class="marginsides3pct marginbottom20px">Sign in to your PayPal account to process payment</p> -->       
         
 								<!-- the following statement loads the paypal checkout form - integrates with a paypal account
 										the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
         		 		
-        		 		<div class="col-xs-12 col-sm-6 marginbottom30px marginleft40px"> 
+        		 			<div class="col-xs-12 col-sm-6 marginbottom30px "> <!--marginleft40px-->
         					{{ form.render }}       	
       
         					<p class="marginbottom20px"> Please note that you will not be changed until your host confirms your receipt of your package</p>
