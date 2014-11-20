@@ -18,7 +18,7 @@ urlpatterns = patterns('',
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
  		url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
  		url(r'^paypal', 'billing.views.paypal_askformoney', name='paypalbase'), 	
- 		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name="paypal_ipn"), #this is the notify_url	
+ 		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name='paypal_ipn'), #this is the notify_url	
 )
 
 
