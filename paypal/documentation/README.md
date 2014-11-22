@@ -3,7 +3,14 @@ https://github.com/chrisglass/django-shop-paypal/blob/master/shop_paypal/offsite
 #E.G. - THE RETURNO NE
 
 #NOTE ON HOW I UPDATED THE RECEIVER_EMAIL VERSUS BUSINESS NAME
-
+		
+		#where is receiver_email set?
+		#the view calls the form with inital="business": settings.PAYPAL_RECEIVER_EMAIL
+		#paypal.standard.conf.py - defines RECEIVER_EMAIL as settings.PAYPAL_RECEIVER_EMAI
+		RECEIVER_EMAIL = settings.PAYPAL_RECEIVER_EMAIL	
+		#Line from paypal.standard.forms.py
+ 		#business = forms.CharField(widget=ValueHiddenInput(), initial=RECEIVER_EMAIL)
+ 		
 @csrf_exempt
 def paypal_successful_return_view(self, request):
 if getattr(settings, "PAYPAL_SUCCESS_REDIRECT_TO_THANKYOU", False):

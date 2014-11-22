@@ -117,10 +117,10 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         amount="2.00"
         youselected="Per Package"
     #Define the business/receiver email (frsturated b/c the business name is the receiver email name, can't decouple)
-    if host.email:
-        business = host.email
-    else:
-        business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
+    #if host.email:
+    #    business = host.email
+    #else:
+    business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     returnurl = "http://www.blocbox.co/shippackage/host" + str(host.id) +"/"
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
