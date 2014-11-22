@@ -97,23 +97,6 @@ def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount 
     	  'here': quote(request.get_full_path()), 'form': form,
     })
 
-#django-paypal tests = TJOS OS P;D
-def paypal_askformoney(request):
-    # What you want the button to do.
-    paypal_dict = {
-        "business": settings.PAYPAL_RECEIVER_EMAIL,
-        "amount": "10000000.00",
-        "item_name": "name of the item",
-        "invoice": "unique-invoice-id",
-        #"notify_url": "https://www.blocbox.co" + reverse('paypal-ipn'),
-        "return_url": "https://www.blocbox.co/startashipment/",
-        "cancel_return": "https://www.blocbox.co/your-cancel-location/",
-    }
-    # Create the instance.
-    form = PayPalPaymentsForm(initial=paypal_dict)
-    context = {"form": form}
-    return render_to_response("billing/paypal.html", context) #dont have to do longer path than this becaue template loader finds them...
-  
       
     
 #Add the checkout view: www.blocbox.co/billing/checkout, host_id can be passed in URL

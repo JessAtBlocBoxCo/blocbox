@@ -15,14 +15,14 @@ urlpatterns = patterns('',
 		url(r'^$', 'billing.views.base', name='billingbase'),
 		url(r'^host(?P<host_id>\d+)/$', 'billing.views.base', name='billingbase'),
 		url(r'^ipn/$', 'billing.views.paypal_ipn', name='billingipn'), #this is OK for testing but shouldn't be used b/c o one to pay
-		url(r'^ipn/host(?P<host_id>\d+)/$', 'billing.views.paypal_ipn', name='billingipn'), 
+		url(r'^ipn/host(?P<host_id>\d+)/$', 'billing.views.paypal_ipn', name='paypal_ipn'), 
 		url(r'^host(?P<host_id>\d+)/ipn/(?P<paymentoption>\w+)/$', 'billing.views.paypal_ipn', name='billingipn'), 
     #url(r'^pro$', 'billing.views.paypal_pro', name='billingpro'), #no real purpose to this bc not linked to a host
     #url(r'^host(?P<host_id>\d+)/pro/(?<paymentoption>\w+)/$', 'billing.views.paypal_pro', name='billingpro'),        
  		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
  		url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
  		url(r'^paypal', 'billing.views.paypal_askformoney', name='paypalbase'), 	
- 		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name='paypal_ipn'), #this is the notify_url	
+ 		#url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name='paypal_ipn'), #this is the notify_url	
 )
 
 
