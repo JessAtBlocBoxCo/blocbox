@@ -68,5 +68,5 @@ class PayPalIPN(PayPalStandardBase):
         ipn_obj = sender
         #Undertake some action depending upon `ipn_obj`.
         if ipn_obj.custom == "Upgrade all users!":
-            Users.objects.update(paid=True)
+            UsersInfo.objects.update(paid=True)
         payment_was_successful.connect(show_me_the_money)
