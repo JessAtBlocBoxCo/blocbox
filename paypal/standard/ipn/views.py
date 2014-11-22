@@ -12,6 +12,8 @@ from paypal.standard.ipn.models import PayPalIPN
 import datetime
 import pytz
 from urllib import quote
+#Import CORE models
+from core.models import UserInfo, Transaction, Connection
 
 
 @require_POST
