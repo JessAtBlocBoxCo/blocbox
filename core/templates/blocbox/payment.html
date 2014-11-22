@@ -51,7 +51,7 @@
             <div class="checkbox marginbottom20px">
                 <label class="col-xs-3"> <input type="checkbox" name="perpackage" id="id_perpackage" 
                 		{% if host %} onClick="window.location='/payment/host{{ host.id }}/ipn/bundle10';" {% endif %}>BUNDLED  </label>
-                <p class="col-xs-6">For 10 packages (expires 1 year from date of purchase)</p>
+                <p class="col-xs-6">10 packages (expires in 1 year)</p>
                 <h6 class="col-xs-2 nomargin textcenter">$15</h6>
                 <div class="profileboxline100"></div>
             </div> <!--bundle10 checkbox-->
@@ -79,8 +79,8 @@
             
             <!--TOTAL DUE - JOHN YOU WILL WANT TO MAKE THIS PRETTY AND SHIT-->
             {% if amount %}
-            	<h6 class="col-xs-12 col-sm-7 ltbluetext margin10toppx marginsides3pct nopadding">You Selected: {{ youselected }} </h6>
-            	<h6 class="col-xs-12 col-sm-4 ltbluetext margintop10px nopadding">Total Due: {{ amount }} </h6>
+            	<h6 class="col-xs-12 col-sm-7 ltbluetext marginsides3pct nopadding">You Selected: {{ youselected }} </h6>
+            	<h6 class="col-xs-12 col-sm-4 ltbluetext nopadding">Total Due: {{ amount }} </h6>
             {% endif %}
             
         </div>
