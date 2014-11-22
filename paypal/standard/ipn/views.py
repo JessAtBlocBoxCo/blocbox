@@ -124,12 +124,13 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
         "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
         "amount": amount, #Amount of the purchase - try to pass this as an argument
         "item_name": youselected,
-        "cbt": "BlocBox", #Sets value for return to merchant button
+        "cbt": "Return to Your BlocBox Dashboard", #Sets value for return to merchant button
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         #need keywords for that reverse
         "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         #"notify_url": "www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), 
         #"notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
+        #"return_url": "http://www.blocbox.co/dashboard/",
         "return_url": "http://www.blocbox.co/dashboard/",
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
@@ -153,14 +154,17 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
    happen rarely), or that there was some kind of error with the IPN.
  
 
-EXAMPLE FROM WEBSITE:
+EXAMPLE FROM WEBSITE: https://github.com/chrisglass/django-shop-paypal/blob/master/shop_paypal/offsite_paypal.py
 @csrf_exempt
 def paypal_successful_return_view(self, request):
-if getattr(settings, "PAYPAL_SUCCESS_REDIRECT_TO_THANKYOU", False):
-return HttpResponseRedirect(self.shop.get_finished_url())
-rc = RequestContext(request, {})
-return render_to_response("shop_paypal/success.html", rc)
-
+    if getattr(settings, "PAYPAL_SUCCESS_REDIRECT_TO_THANKYOU", False):
+        return HttpResponseRedirect(self.shop.get_finished_url())
+    rc = RequestContext(request, {})
+    return render_to_response("shop_paypal/success.html", rc)
 
 """
+
+@csrf_exempt
+def ipn_return_successful(self, request):
+    return HttpResponseRedirect(reverse('dashboard'))
 
