@@ -35,42 +35,47 @@
             <div class="paddingsides5pct profileboxline100 marginbottom10px"></div>
         </div>
         <div class="col-sm-10 col-sm-offset-1 margintop10px marginbottom30px">
-            <div class="checkbox marginbottom20px">
-               
-               <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -->
-               
-               <!--trying as a button instead: blocbox.co/payment/host2/ipn/package/-->
-        			<div class="col-xs-3">	<button class="bluebutton" {% if host %} onClick="window.location='ipn/package';" {% endif %} >PER PACKAGE</button>  </div>        
-              <label class="col-xs-3">  <input type="checkbox" name="perpackage" id="id_perpackage" 
-              		{% if host %} onClick="window.location='ipn/package';" {% endif %}>PER PACKAGE  </label> 
-               
-               
+        	
+        		 <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -->
+            
+            <!--per package-->
+            <div class="checkbox marginbottom20px">              
+                <label class="col-xs-3">  <input type="checkbox" name="perpackage" id="id_perpackage" 
+              			{% if host %} onClick="window.location='ipn/package';" {% endif %}>PER PACKAGE  </label>                             
                 <p class="col-xs-6">Pay for a single package</p>
                 <h6 class="col-xs-2 nomargin textcenter">$2</h6>
                 <div class="profileboxline100"></div>
-            </div>
+            </div> <!--per package checkbox-->
+            
+            <!--buden of 10-->
             <div class="checkbox marginbottom20px">
-                <label class="col-xs-3"> <input type="checkbox" name="perpackage" id="id_perpackage" >BUNDLED  </label>
+                <label class="col-xs-3"> <input type="checkbox" name="perpackage" id="id_perpackage" 
+                		{% if host %} onClick="window.location='ipn/bundle10';" {% endif %}>BUNDLED  </label>
                 <p class="col-xs-6">For 10 packages (expires 1 year from date of purchase)</p>
                 <h6 class="col-xs-2 nomargin textcenter">$15</h6>
                 <div class="profileboxline100"></div>
-            </div>
+            </div> <!--bundle10 checkbox-->
+            
+            <!--Monthly-->
             <div class="checkbox marginbottom20px">
                 <label class="col-xs-3">
                     <input type="checkbox" name="perpackage" id="id_perpackage" >MONTHLY
-                </label>
+                		{% if host %} onClick="window.location='ipn/month20';" {% endif %}>BUNDLED  </label>
                 <p class="col-xs-6">20 packages for the next 30 days</p>
                 <h6 class="col-xs-2 nomargin textcenter">$15</h6>
                 <div class="profileboxline100"></div>
-            </div>
+            </div> <!--monthly checkbox-->
+            
+            <!--annual-->
             <div class="checkbox marginbottom20px">
                 <label class="col-xs-3">
                     <input type="checkbox" name="perpackage" id="id_perpackage" >ANNUAL 
-                </label>
+                		{% if host %} onClick="window.location='ipn/annual';" {% endif %}>BUNDLED  </label>
                 <p class="col-xs-6">Up to 20 packages per month for an entire year</p>
                 <h6 class="col-xs-2 nomargin textcenter">$150</h6>
-            </div>
-            </div>
+            </div> <!--annual checkbox-->
+           
+         </div>
             
             <!--TOTAL DUE - JOHN YOU WILL WANT TO MAKE THIS PRETTY AND SHIT-->
             {% if amount %}
