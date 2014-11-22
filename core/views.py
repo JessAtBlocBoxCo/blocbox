@@ -54,13 +54,6 @@ def dashboard(request):
 def myblock(request):
     return render(request, 'blocbox/myblock.html')
         
-#dashboard - old version passing args - dont think i need
-"""
-def dashboard(request, userinfo_id):
-    context = RequestContext(request)
-    user = get_object_or_404(UserInfo, pk=userinfo_id)
-    return render_to_response('blocbox/dashboard.html', {'user':user}, context)
-"""
 
 #Create the view for the hostprofile
 def hostprofile(request, userinfo_id):
