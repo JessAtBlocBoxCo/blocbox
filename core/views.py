@@ -302,9 +302,7 @@ def startashipment(request):
 def shippackage(request,  host_id=None): #passes the host_id argument in URL
     enduser = request.user
     host = get_object_or_404(UserInfo, pk=host_id)
-    return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, }
-
-
+    return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, })
 
 
 #------------------------------------------------------------------------------------
