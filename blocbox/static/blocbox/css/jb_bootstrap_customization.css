@@ -16,10 +16,9 @@ body {
 }
 
 /*JMY editing rows to o verride the margin-rightand margin-left -15px property */
-.row {
-    margin-right: 0px;
-    margin-left: 0px;
-}
+.row {  margin-right: 0px; margin-left: 0px;}
+
+.negmargins {  margin-right: -15px; margin-left: -15px;	}
 
 /*Style the bbpage id - which contains everythign within the body tags, make it 97% to account fo navbar so footer doesn't run off page */
 #bbpage {  Min-height: 100%; position:relative;}
