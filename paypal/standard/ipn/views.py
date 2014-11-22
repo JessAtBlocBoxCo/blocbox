@@ -119,8 +119,8 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     #Define the business, i want it to show the business name (BlocBox) instead of Admin@Blocbox.co (Receiver_email)
     business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
-    hostid=str(host.id)
-    returnurl = "http://www.blocbox.co/shippackage/host" + hostid +"/"
+    #hostid=str(host.id)
+    returnurl = "http://www.blocbox.co/shippackage/host" + str(host.id) +"/"
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
