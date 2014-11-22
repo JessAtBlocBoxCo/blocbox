@@ -10,13 +10,7 @@ JOHN: update the payment page so that it is a drop down menu at first, and then 
 7. JESS: Restore User nav on beta page
 
 
-"""Jess - payment tasks"""
-1. for IPN - have john update page so that it is dropdown and then when you select an option, re-route the page to 
-	a page with that payment
-1. set up IPN (instant payment notifiation) - this kind of sucks b/c drops customers off at paypla.. but easiers
-2. set up "pro" -- enabling users to pay on the website
-3. oce i've set up the blocbox.co/payment/ipn and blocbox.co/payment/pro - merge the base view (blocbox.co/payment) with pro.. rmoeve the other two'
-4d
+
 		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
@@ -53,6 +47,16 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 5. JESS: send a user an email when they ship package
 6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails	
 12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
+
+
+"""Jess - payment tasks"""
+1. add image_url to a blockbox image
+2. figur eout how to separate "business" field from receiver_id field
+2. Add a field to denote who teh host was PayPalPaymentsForm
+3. sort out receiver_email - is this admin@blocbox.co or is this the host?
+1. set up IPN (instant payment notifiation) - this kind of sucks b/c drops customers off at paypla.. but easiers
+2. set up "pro" -- enabling users to pay on the website
+3. oce i've set up the blocbox.co/payment/ipn and blocbox.co/payment/pro - merge the base view (blocbox.co/payment) with pro.. rmoeve the other two'
 
 
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
