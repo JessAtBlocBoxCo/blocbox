@@ -37,8 +37,10 @@
         <div class="col-sm-10 col-sm-offset-1 margintop10px marginbottom30px">
             <div class="checkbox marginbottom20px">
                
-               <!--trying as a button instead: blocbox.co/payment/ipn/host2/package/-->
-        			<div class="col-xs-3">	<button class="bluebutton" {% if host %} onClick="window.location='package'; {% endif %}">PER PACKAGE</button>  </div>        
+               <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -->
+               
+               <!--trying as a button instead: blocbox.co/payment/host2/ipn/package/-->
+        			<div class="col-xs-3">	<button class="bluebutton" {% if host %} onClick="window.location='ipn/package'; {% endif %}">PER PACKAGE</button>  </div>        
                <!-- <label class="col-xs-3">  <input type="checkbox" name="perpackage" id="id_perpackage" >PER PACKAGE  </label> -->
                
                
