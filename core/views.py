@@ -57,10 +57,10 @@ def myblock(request):
     return render(request, 'blocbox/myblock.html')
         
 
-#Create the view for the hostprofile
-def hostprofile(request, userinfo_id):
+#Create the view for the hostprofile: www.blocbox.co/hostprofile/host2
+def hostprofile(request, host_id):
     context = RequestContext(request)
-    host = get_object_or_404(UserInfo, pk=userinfo_id)
+    host = get_object_or_404(UserInfo, pk=host_id)
     enduser = request.user
     if enduser.is_authenticated():
         connected = Connection.objects.are_neighbors(user1=enduser, user2=host) #true of false, but not sure how to call thee user...

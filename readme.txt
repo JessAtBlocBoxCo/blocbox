@@ -20,7 +20,7 @@ The URLs for this site, and the corresponding files are as follows:
 	- the tempalte is at blocbox/core/templates/blocbox/search.shtml
 	- teh styles/css need to be fixed
 	
-4. blocbox.co/3/hostprofilevisitor/ 
+4. blocbox.co/hostprofile/host2
 	- this is John's host profile profile. 
 	- the "3" corresponds to John because he is ID #3, you can repliace this with any number (there are like 15 users in the database)
 				corresponding to a user ID, and it will render the page with their information
@@ -35,7 +35,7 @@ The URLs for this site, and the corresponding files are as follows:
 		-Host availability
 		-Host other offers
 
-5. blocbox.co/3/signupconnect/
+5. blocbox.co/signupconnect/host2/
 	- this is the page to sign-up and connect to John - "3" corresponds to USERid=3, but you can replace with "1", eg.,. to connect to jess. same as above
 	- teh template is at blocbox/core/templates/blocbox/sign-up-connect.html,but it extends a template at basesignup.html (via sign-up-withtoutconnect.html)
 	- if you want to change the basic form structure, you need to edit basesignup.html
