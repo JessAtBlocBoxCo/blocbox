@@ -36,17 +36,18 @@
         </div>
         <div class="col-sm-10 col-sm-offset-1 margintop10px marginbottom30px">
             <div class="checkbox marginbottom20px">
-                <label class="col-xs-3">
-                    <input type="checkbox" name="perpackage" id="id_perpackage" >PER PACKAGE
-                </label>
+               
+               <!--trying as a button instead: blocbox.co/payment/ipn/host2/package/-->
+        			<div class="col-xs-3">	<button class="bluebutton" {% if host %} onClick="window.location='/package'; {% endif %}">PER PACKAGE</button>  </div>        
+               <!-- <label class="col-xs-3">  <input type="checkbox" name="perpackage" id="id_perpackage" >PER PACKAGE  </label>
+               
+               
                 <p class="col-xs-6">Pay for a single package</p>
                 <h6 class="col-xs-2 nomargin textcenter">$2</h6>
                 <div class="profileboxline100"></div>
             </div>
             <div class="checkbox marginbottom20px">
-                <label class="col-xs-3">
-                    <input type="checkbox" name="perpackage" id="id_perpackage" >BUNDLED
-                </label>
+                <label class="col-xs-3"> <input type="checkbox" name="perpackage" id="id_perpackage" >BUNDLED  </label>
                 <p class="col-xs-6">For 10 packages (expires 1 year from date of purchase)</p>
                 <h6 class="col-xs-2 nomargin textcenter">$15</h6>
                 <div class="profileboxline100"></div>
