@@ -41,7 +41,7 @@
             <!--per package-->
             <div class="checkbox marginbottom20px">              
                 <label class="col-xs-3">  <input type="checkbox" name="perpackage" id="id_perpackage" 
-              			{% if host %} onClick="window.location='ipn/package';" {% endif %}>PER PACKAGE  </label>                             
+              			{% if host %} onClick="window.location='/payment/host{{ host.id }}/ipn/package';" {% endif %}>PER PACKAGE  </label>                             
                 <p class="col-xs-6">Pay for a single package</p>
                 <h6 class="col-xs-2 nomargin textcenter">$2</h6>
                 <div class="profileboxline100"></div>
@@ -50,7 +50,7 @@
             <!--buden of 10-->
             <div class="checkbox marginbottom20px">
                 <label class="col-xs-3"> <input type="checkbox" name="perpackage" id="id_perpackage" 
-                		{% if host %} onClick="window.location='ipn/bundle10';" {% endif %}>BUNDLED  </label>
+                		{% if host %} onClick="window.location='/payment/host{{ host.id }}/ipn/bundle10';" {% endif %}>BUNDLED  </label>
                 <p class="col-xs-6">For 10 packages (expires 1 year from date of purchase)</p>
                 <h6 class="col-xs-2 nomargin textcenter">$15</h6>
                 <div class="profileboxline100"></div>
@@ -70,7 +70,7 @@
             <div class="checkbox marginbottom20px">
                 <label class="col-xs-3">
                     <input type="checkbox" name="perpackage" id="id_perpackage"  
-                		{% if host %} onClick="window.location='ipn/annual';" {% endif %}>ANNUAL  </label>
+                		{% if host %} onClick="window.location='/payment/host{{ host.id }}/ipn/annual';" {% endif %}>ANNUAL  </label>
                 <p class="col-xs-6">Up to 20 packages per month for an entire year</p>
                 <h6 class="col-xs-2 nomargin textcenter">$150</h6>
             </div> <!--annual checkbox-->
