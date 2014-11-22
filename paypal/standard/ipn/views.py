@@ -119,7 +119,7 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
     #Define the business, i want it to show the business name (BlocBox) instead of Admin@Blocbox.co (Receiver_email)
     try:
 		    business = settings.PAYPAL_BUSINESS
-		except AttributeError:
+    except AttributeError:
 		    business = settings.PAYPAL_RECEIVER_EMAIL
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     paypal_dict = {
