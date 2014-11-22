@@ -97,7 +97,7 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 (IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
-def ask_for_money(request, host_id=None, paymentoption="package"): #default amount is 2.00
+def ask_for_money(request, host_id=2, paymentoption="package"): #default amount is 2.00, default host is John
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -131,11 +131,7 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
         #"image_url":,
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         #need keywords for that reverse
-        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
-        #"notify_url": "www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), 
-        #"notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
-        #"return_url": "http://www.blocbox.co/dashboard/",
-        #"return_url": "http://www.blocbox.co/payment/ipn/return/",
+        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),,
         "return_url": returnurl,
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
