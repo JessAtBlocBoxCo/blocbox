@@ -127,6 +127,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
         "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
+        "receiver_email": business, #needs to be teh same as busines - some check is performed..
         "amount": amount, #Amount of the purchase - try to pass this as an argument
         "item_name": youselected,
         "cbt": returnmessage, #Sets value for return to merchant button
