@@ -301,7 +301,7 @@ def startashipment(request):
 @csrf_exempt		
 def shippackage(request,  host_id=None): #passes the host_id argument in URL
     enduser = request.user
-    if host:
+    if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
     	  host = None
