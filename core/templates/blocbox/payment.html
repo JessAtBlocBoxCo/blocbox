@@ -78,14 +78,13 @@
                  <!--TOTAL DUE - JOHN YOU WILL WANT TO MAKE THIS PRETTY AND SHIT-->
             {% if amount %}
             
-             		<div class="col-xs-12 col-sm-7 nopadding">
-            				<h6 class="col-xs-5 ltbluetext nopadding">You Selected: </h6>
-            				<h6 class="col-xs-7 ltbluetext"> {{ youselected }} </h6>
-            		</div>
-            		<div class="col-xs-12 col-sm-5 nopadding">
-            				<h6 class="col-xs-10 ltbluetext nopadding textright">Total Due:</h6>
-            				<h6 class="col-xs-2  ltbluetext normargin textcenter">${{ amount }} </h6>
-            		</div>
+            <div class="row">
+            		<h6 class="col-xs-6 col-sm-3 ltbluetext nopadding">You Selected: </h6>
+            		<h6 class="col-xs-6 col-sm-5 ltbluetext"> {{ youselected }} </h6>
+ 
+            		<h6 class="col-xs-6 col-sm-2 ltbluetext nopadding textright">Total Due:</h6>
+            		<h6 class="col-xs-6 col-sm-1 ltbluetext normargin textcenter">${{ amount }} </h6>
+            </div>
 			           
             {% endif %}
             
