@@ -131,7 +131,7 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
         #"notify_url": "www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), 
         #"notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
         #"return_url": "http://www.blocbox.co/dashboard/",
-        "return_url": "http://www.blocbox.co/dashboard/",
+        "return_url": "http://www.blocbox.co/ipn/return/",
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
