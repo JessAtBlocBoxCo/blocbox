@@ -12,43 +12,23 @@ admin.autodiscover()
 
 #url patterns preceded by blocbox.co/payment - the namespace is payment, so need to reverse call with, eg payment:paypal_ipn
 urlpatterns = patterns('',
-		url(r'^$', 'billing.views.base', name='billingbase'),
-		url(r'^host(?P<host_id>\d+)/$', 'billing.views.base', name='billingbase'),
-		url(r'^ipn/$', 'billing.views.paypal_ipn', name='billingipn'), #this is OK for testing but shouldn't be used b/c o one to pay
-		url(r'^ipn/host(?P<host_id>\d+)/$', 'billing.views.paypal_ipn', name='paypal_ipn_noamount'), 
-		url(r'^host(?P<host_id>\d+)/ipn/(?P<paymentoption>\w+)/$', 'billing.views.paypal_ipn', name='paypal_ipn'), 
+		#Base views - defined in billing/views.py
+		url(r'^$', 'billing.views.base', name='billingbase'), #blocbox.co/payment
+		url(r'^host(?P<host_id>\d+)/$', 'billing.views.base', name='billingbase'), #blocbox.co/payment/host2
+		#STANDARD-IPN URLs - view in paypal/standard/ipn/views.py
+		url(r'^host(?P<host_id>\d+)/ipn/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask'), #blocbox.co/payment/host2/<TYPE?
+		url(r'^ipn/host(?P<host_id>\d+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_noamount'), #blocbox.co/payment/host2 - not really relevant - Default - Package Amount
+		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), #this is the notify_url	
+		url(r'^ipn/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_nohost'), #blocbox.co/payment/ipn - NOT FUNCTION B/C DOESN'T LINK TO HOST
+    #STANDARD-PDT URLS
+    #PRO URLS
     #url(r'^pro$', 'billing.views.paypal_pro', name='billingpro'), #no real purpose to this bc not linked to a host
     #url(r'^host(?P<host_id>\d+)/pro/(?<paymentoption>\w+)/$', 'billing.views.paypal_pro', name='billingpro'),        
- 		url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
- 		url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
+ 		#url(r'^checkout/$', 'billing.views.checkout', name='checkoutgeneric'),
+ 		#url(r'^checkout/host(?P<host_id>\d+)/$', 'billing.views.checkout', name='checkoutuser'),
  		#url(r'^paypal', 'billing.views.paypal_askformoney', name='paypalbase'), 	
- 		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), #this is the notify_url	
 )
 
-
-
-"""EXAMPLE OF HOW TO CALL SAME VIEW WITH DIFFERENT ARGS -- USE KWARGS
-
-		url(r'^$', 'testing.views.jesstest', name='testingbase'),    
- 		
- 		url(r'^jesstest/$', 'testing.views.jesstest', name='jesstestnohost'),
- 						
- 		#pass the same test but with a host_id in the URL - dont need a KWARG explicit statmenet bc it is passed in the URL name
- 		url(r'^jesstest/(?P<host_id>\d+)/$', 'testing.views.jesstest', name='jesstestwithhost'),	 		
- 		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
- 		
-    url(r'^calendar/year/(?P<calendar_slug>[-\w]+)/$',
-        'schedule.views.calendar_by_periods',
-        name="year_calendar",
-        kwargs={'periods': [Year], 'template_name': 'schedule/calendar_year.html'}),
-
-    url(r'^calendar/tri_month/(?P<calendar_slug>[-\w]+)/$',
-        'schedule.views.calendar_by_periods',
-        name="tri_month_calendar",
-        kwargs={'periods': [Month], 'template_name': 'schedule/calendar_tri_month.html'}),
-
-
-"""
 urlpatterns += staticfiles_urlpatterns()
 
 

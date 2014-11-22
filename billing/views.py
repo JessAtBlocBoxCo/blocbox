@@ -1,3 +1,4 @@
+#This is blocbox/billing/views.py
 #import scheduling stuff
 import datetime
 import pytz
@@ -52,141 +53,9 @@ def base(request, host_id=None):
     	  'here': quote(request.get_full_path())
     })
 
-#The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
-"""About the IPN: After completing the purchase PayPal makes an HTTP
-POST to your `notify_url`. PayPal calls this process [Instant Payment
-Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_OrderMgmt_IntegrationGuide.pdf)
-(IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
-kinda sucks because it drops your customers off at PayPal's website but it's
-easy to implement and doesn't require SSL."""
-def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount is 2.00
-    enduser = request.user
-    if host_id:
-        host = get_object_or_404(UserInfo, pk=host_id)
-    else:
-    	  host = None
-    date = timezone.now()
-    if paymentoption=="bundle10":
-        amount="15.00"
-        youselected="Bundle of 10 Packages"
-    elif paymentoption=="month20":
-        amount="15.00"
-        youselected="Monthly"
-    elif paymentoption=="annual":
-        amount="150.00"
-        youselected="Annual"
-    else:
-        amount="2.00"
-        youselected="Per Package"
-    local_timezone = request.session.setdefault('django_timezone', 'UTC') 
-    paypal_dict = {
-        "business": settings.PAYPAL_RECEIVER_EMAIL, #this is currently defined as jessica.yeats@gmail.com
-        "amount": amount, #Amount of the purchase - try to pass this as an argument
-        "item_name": "Package",
-        "invoice": "UPDATE-PASS-UNIQUE-ID",
-        #need keywords for that reverse
-        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
-        #"notify_url": "www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), 
-        #"notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
-        "return_url": "http://www.blocbox.co/dashboard/",
-        "cancel_return": "http://www.blocbox.co/dashboard/",
-    }    
-    form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
-    #context = {"form": form}
-    return render(request, 'blocbox/payment.html', { 
-		    'enduser':enduser, 'host':host,
-    	  'date':date, 'local_timezone':local_timezone, 
-    	  'amount':amount, "youselected": youselected,
-    	  'here': quote(request.get_full_path()), 'form': form,
-    })
-
-      
-    
-#Add the checkout view: www.blocbox.co/billing/checkout, host_id can be passed in URL
-def checkout(request, host_id=None): 
-    enduser = request.user
-    if host_id:
-        host = get_object_or_404(UserInfo, pk=host_id)
-    else:
-    	  host = None
-    date = timezone.now()
-    local_timezone = request.session.setdefault('django_timezone', 'UTC') 
-    return render(request, 'blocbox/payment.html', { 
-		    'enduser':enduser, 'host':host,
-    	  'date':date, 'local_timezone':local_timezone, 
-    	  'here': quote(request.get_full_path())
-    })
-
+#paypal_ipn views at blocbox/paypal/standard/ipn/views.py
 
 
       
-        
-         
-"""
-#jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
-def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):
-    enduser = request.user
-    if host_id:
-        host = get_object_or_404(UserInfo, pk=host_id)
-    else:
-        host = None
-    connections_all = Connection.objects.filter(end_user=enduser) 
-    try:
-        date = coerce_date_dict(request.GET)
-    except ValueError:
-        raise Http404
-    if date:
-        try:
-            date = datetime.datetime(**date)
-        except ValueError:
-            raise Http404
-    else:
-        date = timezone.now()
-        local_timezone = request.session.setdefault('django_timezone', 'UTC')     
-    local_timezone = pytz.timezone(local_timezone) #this is working]
-    thismonthname = Month(date, None, None, local_timezone) 
-    cal_list = Calendar.objects.all()
-    calendar_objects = {} 
-    event_list_objects = {}
-    thismonth_objects = {}
-    test_calslugs = []
-    for cal in cal_list:
-        event_list = GET_EVENTS_FUNC(request, cal)
-        calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
-        thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
-    #for a single calendar called i
-    calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
-    event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
-    thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
-    #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
-    cal_relations_all = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
-    cal_list_host = []
-    if host:
-        cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)
-        cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
-        for cal in cal_relations_host:
-            cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
-    else:
-        cal_relations_host = None
-        cal_relations_host_count = None
-    return render(request, 'blocbox/jesstest.html', { 
-        'enduser':enduser, 
-        'host':host, 
-        'connections_all':connections_all,
-    	  'date':date, 
-    	  'thismonth_objects':thismonth_objects,
-    	  'thismonth_object_single':thismonth_object_single,
-    	  'thismonthname':thismonthname,
-    	  'weekday_names': weekday_names,
-        'cal_list':cal_list,
-        'calendar_objects':calendar_objects,
-    	  'calendar_single': calendar_single,
-    	  'cal_relations_all': cal_relations_all,
-    	  'cal_relations_host': cal_relations_host,
-    	  'cal_relations_host_count': cal_relations_host_count,
-    	  'cal_list_host': cal_list_host,
-    	  'here': quote(request.get_full_path())
-    }) 
-"""
 
 

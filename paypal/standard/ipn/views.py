@@ -76,3 +76,62 @@ def ipn(request, item_check_callable=None):
     ipn_obj.save()
     ipn_obj.send_signals()
     return HttpResponse("OKAY")
+
+#The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
+"""About the IPN: After completing the purchase PayPal makes an HTTP
+POST to your `notify_url`. PayPal calls this process [Instant Payment
+Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_OrderMgmt_IntegrationGuide.pdf)
+(IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
+kinda sucks because it drops your customers off at PayPal's website but it's
+easy to implement and doesn't require SSL."""
+def ask_for_money(request, host_id=None, paymentoption="package"): #default amount is 2.00
+    enduser = request.user
+    if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+    	  host = None
+    date = timezone.now()
+    if paymentoption=="bundle10":
+        amount="15.00"
+        youselected="Bundle of 10 Packages"
+    elif paymentoption=="month20":
+        amount="15.00"
+        youselected="Monthly"
+    elif paymentoption=="annual":
+        amount="150.00"
+        youselected="Annual"
+    else:
+        amount="2.00"
+        youselected="Per Package"
+    local_timezone = request.session.setdefault('django_timezone', 'UTC') 
+    paypal_dict = {
+        "business": settings.PAYPAL_RECEIVER_EMAIL, #this is currently defined as jessica.yeats@gmail.com
+        "amount": amount, #Amount of the purchase - try to pass this as an argument
+        "item_name": "Package",
+        "invoice": "UPDATE-PASS-UNIQUE-ID",
+        #need keywords for that reverse
+        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
+        #"notify_url": "www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), 
+        #"notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
+        "return_url": "http://www.blocbox.co/dashboard/",
+        "cancel_return": "http://www.blocbox.co/dashboard/",
+    }    
+    form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
+    #context = {"form": form}
+    return render(request, 'blocbox/payment.html', { 
+		    'enduser':enduser, 'host':host,
+    	  'date':date, 'local_timezone':local_timezone, 
+    	  'amount':amount, "youselected": youselected,
+    	  'here': quote(request.get_full_path()), 'form': form,
+    })
+    
+"""Need to implement a return view and a cancel view, from documentation:
+ 	You will also need to implement the 'return_url' and 'cancel_return' views
+   to handle someone returning from PayPal. Note that these views need
+   @csrf_exempt applied to them, because PayPal will POST to them, so they
+   should be custom views that don't need to handle POSTs otherwise.
+
+   For 'return_url' you need to cope with the possibility that the IPN has not
+   yet been received and handled by the IPN listener you implemented (which can
+   happen rarely), or that there was some kind of error with the IPN."""
+
