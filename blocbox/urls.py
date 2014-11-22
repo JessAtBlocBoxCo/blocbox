@@ -15,7 +15,7 @@ urlpatterns = patterns('',
     url(r'^myblock/',views.myblock, name='myblock'),  
     url(r'^startashipment/', views.startashipment, name='startashipment'),
     url(r'^shippackage/', views.shippackage, name='shippackage_nohost'),  #this shouldn't really be used b/c not linked to a host
-    url(r'^shippackage/host(?P<host_id_test>\d+)/$', views.shippackage, name='shippackage'),   
+    url(r'^shippackage/host(?P<hostid>\d+)/$', views.shippackage, name='shippackage'),   
     url(r'^admin/', include(admin.site.urls)), 
     url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect'),
     url(r'signup/', views.signupnoconnect, name='signupnoconnect'), 

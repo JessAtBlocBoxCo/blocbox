@@ -299,10 +299,10 @@ def startashipment(request):
 
 #This is the REturn URL for paypal IPN so  eeds to be CSRF exempt
 @csrf_exempt		
-def shippackage(request, host_id_test): #passes the host_id argument in URL
+def shippackage(request, hostid): #passes the host_id argument in URL
     enduser = request.user
     if host_id:
-        host = get_object_or_404(UserInfo, pk=host_id_test)
+        host = get_object_or_404(UserInfo, pk=hostid)
     else:
     	  host = None
     return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, })
