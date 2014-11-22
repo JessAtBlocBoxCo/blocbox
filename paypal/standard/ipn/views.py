@@ -117,7 +117,7 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
         amount="2.00"
         youselected="Per Package"
     #Define the business, i want it to show the business name (BlocBox) instead of Admin@Blocbox.co (Receiver_email)
-		business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
+    business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
