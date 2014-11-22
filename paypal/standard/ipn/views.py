@@ -166,7 +166,7 @@ def paypal_successful_return_view(self, request):
 """
 
 @csrf_exempt
-def ipn_return_successful(self, request):
+def ipn_return_successful(request): #May need a "self" argumetn here?
 		return render(request, 'blocbox/dashboard.html')
     #return HttpResponseRedirect(reverse('dashboard'))
 
