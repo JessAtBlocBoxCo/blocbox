@@ -20,6 +20,7 @@ urlpatterns = patterns('',
 		url(r'^ipn/host(?P<host_id>\d+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_noamount'), #blocbox.co/payment/host2 - not really relevant - Default - Package Amount
 		url(r'^ipn/notify', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), #this is the notify_url	
 		url(r'^ipn/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_nohost'), #blocbox.co/payment/ipn - NOT FUNCTION B/C DOESN'T LINK TO HOST
+    #url(r'^ipn/return/$', 'paypal.standard.ipn.views.ipn_return', name='ipn_return'), #Eventually may need a return URL
     #STANDARD-PDT URLS
     #PRO URLS
     #url(r'^pro$', 'billing.views.paypal_pro', name='billingpro'), #no real purpose to this bc not linked to a host
