@@ -131,7 +131,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         #"image_url":,
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         #need keywords for that reverse
-        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),,
+        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         "return_url": returnurl,
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
