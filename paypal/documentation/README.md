@@ -1,3 +1,17 @@
+#JMY: GOOD SITES WITH USEFUL EXAMPLES
+https://github.com/chrisglass/django-shop-paypal/blob/master/shop_paypal/offsite_paypal.py
+#E.G. - THE RETURNO NE
+
+#NOTE ON HOW I UPDATED THE RECEIVER_EMAIL VERSUS BUSINESS NAME
+
+@csrf_exempt
+def paypal_successful_return_view(self, request):
+if getattr(settings, "PAYPAL_SUCCESS_REDIRECT_TO_THANKYOU", False):
+return HttpResponseRedirect(self.shop.get_finished_url())
+rc = RequestContext(request, {})
+return render_to_response("shop_paypal/success.html", rc)
+
+
 Django PayPal -- this is /blocbox/paypal/documentation/README.md - annotated by JMY
 =============
 
@@ -44,14 +58,14 @@ DONE
    and `PAYPAL_RECEIVER_EMAIL`:
 
         # settings.py
+        
         ...
         INSTALLED_APPS = (... 'paypal.standard.ipn', ...)
         ...
         PAYPAL_RECEIVER_EMAIL = "yourpaypalemail@example.com"
 
         # For installations on which you want to use the sandbox,
-        # set PAYPAL_TEST to True.  Ensure PAYPAL_RECEIVER_EMAIL is set to
-        # your sandbox account email too.
+        # set PAYPAL_TEST to True.  Ensure PAYPAL_RECEIVER_EMAIL is set to your sandbox account email too.
         # PAYPAL_TEST = True
 DONE
 3. Create an instance of the `PayPalPaymentsForm` in the view where you would
@@ -110,10 +124,11 @@ DONE
    
     
     
-1. Whenever an IPN is processed a signal will be sent with the result of the
+5. Whenever an IPN is processed a signal will be sent with the result of the
    transaction. Connect the signals to actions to perform the needed operations
    when a successful payment is received.
 
+#JMY NOTE: THESE SIGNALS ARE DEFINED IN /PAYPAL/STANDARD/IPN/SIGNALS.py
    There are four signals for basic transactions:
    - `payment_was_successful`
    - `payment_was_flagged`
@@ -144,7 +159,7 @@ DONE
             ipn_obj = sender
             # You need to check 'payment_status' of the IPN
 
-            if ipn_obj.payment_status == "Completed":
+            if ipn_obj.payment_status == "Completed": #PAYMENT_STATUS IS A FIELD ON PAYPAL.STANDARD.MODELS.PayPalStandardBase
                 # Undertake some action depending upon `ipn_obj`.
                 if ipn_obj.custom == "Upgrade all users!":
                     Users.objects.update(paid=True)
@@ -152,6 +167,8 @@ DONE
                 ...
 
         payment_was_successful.connect(show_me_the_money)
+        
+        ###payment_was_successful = Signal()
 
    The data variables that are return on the IPN object are documented here:
 
@@ -171,6 +188,8 @@ DONE
 
 Using PayPal Payments Standard PDT:
 -----------------------------------
+
+#JUST START HERE
 
 Paypal Payment Data Transfer (PDT) allows you to display transaction details to
 a customer immediately on return to your site unlike PayPal IPN which may take
