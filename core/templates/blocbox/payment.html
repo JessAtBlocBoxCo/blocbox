@@ -68,7 +68,7 @@
             
             <!--annual-->
             <div class="checkbox marginbottom20px">
-                <label class="col-xs-3">
+                <label class="col-xs-2">
                     <input type="checkbox" name="perpackage" id="id_perpackage"  
                 		{% if host %} onClick="window.location='/payment/host{{ host.id }}/ipn/annual';" {% endif %}>ANNUAL  </label>
                 <p class="col-xs-7">Up to 20 packages per month for an entire year</p>
@@ -78,7 +78,7 @@
                  <!--TOTAL DUE - JOHN YOU WILL WANT TO MAKE THIS PRETTY AND SHIT-->
             {% if amount %}
              	<div class="checkbox marginbottom20px">
-            		<h6 class="col-xs-12 col-sm-7 ltbluetext nopadding">You Selected: {{ youselected }} </h6>
+            		<h6 class="col-xs-12 col-sm-6 ltbluetext nopadding">You Selected: {{ youselected }} </h6>
             		<h6 class="col-xs-12 col-sm-3 ltbluetext nopadding">Total Due:</h6>
             		<h6 class="col-xs-12 col-sm-1 ltbluetext textcenter">${{ amount }} </h6>
 							</div>            
