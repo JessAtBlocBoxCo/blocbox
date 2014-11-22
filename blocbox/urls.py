@@ -17,7 +17,7 @@ urlpatterns = patterns('',
     url(r'^shippackage/', views.shippackage, name='shippackage_nohost'),  #this shouldn't really be used b/c not linked to a host
     url(r'^shippackage/host(?P<host_id>\d+)/$', views.shippackage, name='shippackage'),   
     url(r'^admin/', include(admin.site.urls)), 
-    url(r'^(?P<userinfo_id>\d+)/signupconnect/$', views.signupconnect, name='signupconnect'),
+    url(r'^signupconnect/host(?P<host_id>\d+)$', views.signupconnect, name='signupconnect'),
     url(r'signup/', views.signupnoconnect, name='signupnoconnect'), 
     url(r'signuphost/', views.signuphost, name='signuphost'),
     url(r'login/', views.userlogin, name='login'), # add this for the registration form

@@ -115,8 +115,8 @@ def user_logout(request):
     return HttpResponseRedirect('/beta/')
 
 #Registration Form -- User
-def signupconnect(request, userinfo_id):
-    host = get_object_or_404(UserInfo, pk=userinfo_id)
+def signupconnect(request, host_id):
+    host = get_object_or_404(UserInfo, pk=host_id)
     context = RequestContext(request)
     #a bollean value for telling the template whether the registraiton was successful
     #set to false initially; code changes value to True when registraiont succeeds
