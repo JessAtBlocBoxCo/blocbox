@@ -79,11 +79,11 @@
             {% if amount %}
             
             <div class="row">
-            		<h6 class="col-xs-6 col-sm-3 ltbluetext nopadding">You Selected: </h6>
-            		<h6 class="col-xs-6 col-sm-4 ltbluetext"> {{ youselected }} </h6>
+            		<div class="col-xs-6 col-sm-3 ltbluetext nopadding"> <h6 class="ltbluetext">You Selected: </h6> </div>
+            		<div class="col-xs-6 col-sm-4 ltbluetext"> <h6 class="ltbluetext"> {{ youselected }}  </h6> </div>
  
             		<h6 class="col-xs-6 col-sm-2 ltbluetext textright">Total Due:</h6>
-            		<h6 class="col-xs-6 col-sm-2 ltbluetext textcenter">${{ amount }} </h6>
+            		<h6 class="col-xs-6 col-sm-1 ltbluetext textcenter">${{ amount }} </h6>
             </div>
 			           
             {% endif %}
