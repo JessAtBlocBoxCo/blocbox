@@ -68,17 +68,20 @@ def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount 
     date = timezone.now()
     if paymentoption=="bundle10":
         amount="15.00"
+        youselected="Bundle of 10 Packages"
     elif paymentoption=="month20":
         amount="15.00"
+        youselected="Monthly"
     elif paymentoption=="annual":
         amount="150.00"
+        youselected="Annual"
     else:
         amount="2.00"
+        youselected="Per Package"
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     paypal_dict = {
         "business": settings.PAYPAL_RECEIVER_EMAIL, #this is currently defined as jessica.yeats@gmail.com
         "amount": amount, #Amount of the purchase - try to pass this as an argument
-        "paymentoption": paymentoption,
         "item_name": "Package",
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         "notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn'), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
@@ -90,7 +93,7 @@ def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount 
     return render(request, 'blocbox/payment.html', { 
 		    'enduser':enduser, 'host':host,
     	  'date':date, 'local_timezone':local_timezone, 
-    	  'amount':amount, "paymentoption": paymentoption,
+    	  'amount':amount, "youselected": youselected,
     	  'here': quote(request.get_full_path()), 'form': form,
     })
 
