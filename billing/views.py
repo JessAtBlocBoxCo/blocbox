@@ -85,7 +85,7 @@ def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount 
         "item_name": "Package",
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         #need keywords for that reverse
-        "notify_url": "https://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
+        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         #"notify_url": "www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), 
         #"notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
         "return_url": "http://www.blocbox.co/dashboard/",
