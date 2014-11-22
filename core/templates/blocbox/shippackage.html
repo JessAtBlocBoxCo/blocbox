@@ -9,7 +9,8 @@
 
 <div class="container-fluid offwhitebackground relativediv">
 
-    <p class="darkgreytext textcenter margintop50px marginbottom20px">Complete the following steps to verify shipping destination, notfiy your Blocbox host, and complete payment</p>
+    <p class="darkgreytext textcenter margintop50px marginbottom20px">Complete the following steps to verify shipping destination, notify 
+    			{% if host %} {{host.first_name }}  {% else %} your Blocbox host {% endif %}, and complete payment</p>
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2 nopadding">
             <p class="col-xs-3 ltgreytext textleft">1   HOST AVAILABILITY</p>

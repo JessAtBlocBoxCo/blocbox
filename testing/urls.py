@@ -11,7 +11,7 @@ urlpatterns = patterns('',
  		url(r'^jesstest/$', 'testing.views.jesstest', name='jesstestnohost'),
  						
  		#pass the same test but with a host_id in the URL - dont need a KWARG explicit statmenet bc it is passed in the URL name
- 		url(r'^jesstest/(?P<host_id>\d+)/$', 'testing.views.jesstest', name='jesstestwithhost'),	 		
+ 		url(r'^jesstest/host(?P<host_id>\d+)/$', 'testing.views.jesstest', name='jesstestwithhost'),	 		
  		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
 )
 

@@ -299,13 +299,16 @@ def startashipment(request):
 
 #This is the REturn URL for paypal IPN so  eeds to be CSRF exempt
 @csrf_exempt		
-def shippackage(request,  host_id=None): #passes the host_id argument in URL
+def shippackage(request, host_id=None): #passes the host_id argument in URL
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
     	  host = None
     return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, })
+
+
+
 
 
 #------------------------------------------------------------------------------------
@@ -318,7 +321,8 @@ def bootstraptest(request):
 #style tests
 def styletest(request):
     return render(request, 'blocbox/x_styletest.html') 
-    
+  
+  #WHY IS THIS HERE - CAN I DELET  
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
 def jesstest(request, calendar_slug_single = "testcalendar1", host_id=2):
     enduser = request.user
