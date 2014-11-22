@@ -119,6 +119,7 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
     #Define the business, i want it to show the business name (BlocBox) instead of Admin@Blocbox.co (Receiver_email)
     business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
+    returnurl = "http://www.blocbox.co/shippackage/host" + host.id +"/"
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
@@ -133,7 +134,8 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
         #"notify_url": "www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), 
         #"notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
         #"return_url": "http://www.blocbox.co/dashboard/",
-        "return_url": "http://www.blocbox.co/payment/ipn/return/",
+        #"return_url": "http://www.blocbox.co/payment/ipn/return/",
+        "return_url": returnurl,
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
