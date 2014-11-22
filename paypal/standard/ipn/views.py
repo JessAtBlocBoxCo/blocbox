@@ -128,7 +128,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         "amount": amount, #Amount of the purchase - try to pass this as an argument
         "item_name": youselected,
         "cbt": returnmessage, #Sets value for return to merchant button
-        "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2.png",
+        "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_165by33.png",
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         #need keywords for that reverse
         "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
