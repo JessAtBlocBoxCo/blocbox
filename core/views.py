@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
 from django.template import RequestContext, loader #allows it to load templates from blocbox/templates
+from django.views.decorators.csrf import csrf_exempt
+#Add CORE models
 from core.models import UserInfo, Transaction, Connection
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
 from core.forms import UserForm, HostForm
@@ -291,12 +293,16 @@ def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
 
 
+#We may want to move all of this stuff into billing (which could be called ' Transactios')
 def startashipment(request):
 		return render(request, 'blocbox/startashipment.html')
-		
-def shippackage(request):
-		return render(request, 'blocbox/shippackage.html')
-		
+
+#This is the REturn URL for paypal IPN so  eeds to be CSRF exempt
+@csrf_exempt		
+def shippackage(request,  host_id=None): #passes the host_id argument in URL
+	  enduser = request.user
+		host = get_object_or_404(UserInfo, pk=host_id)
+		return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, }
 
 
 
