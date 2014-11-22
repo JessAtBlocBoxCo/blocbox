@@ -86,8 +86,8 @@ def paypal_ipn(request, host_id=None, paymentoption="package"): #default amount 
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         #need keywords for that reverse
         "notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
-        "return_url": "https://www.blocbox.co/startashipment/",
-        "cancel_return": "https://www.blocbox.co/beta/",
+        "return_url": "www.blocbox.co/dashboard/",
+        "cancel_return": "www.blocbox.co/dashboard/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #context = {"form": form}
