@@ -22,13 +22,16 @@
     
     <div class="col-xs-8 col-xs-offset-2 bluebox marginbottom20px">
         <div class="row">
-            <h6 class="whitetext marginsides3pct textcenter">Woo! You've successfully notified your Blocbox host that your package is headed their way!</h6>
+            <h6 class="whitetext marginsides3pct textcenter">Woo! You've successfully notified 
+            	{% if host %} {{ host.first_name }}  {% else %}  your Blocbox host {% endif %}
+            	that your package is headed their way!</h6>
         </div>
     </div>
     
     <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
         <div class="row">
-            <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Copy Your Host's Address as the Shipping Address Prior to Completing Your Order</h6>
+            <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Copy 
+            	{% if host %} {{ host.first_name }} {% else %} Your Host {% endif %}'s Address as the Shipping Address Prior to Completing Your Order</h6>
             <div class="paddingsides5pct profileboxline100 marginbottom20px"></div>
         </div>
         <div class="row">
