@@ -42,7 +42,7 @@
                <!--trying as a button instead: blocbox.co/payment/host2/ipn/package/-->
         			<div class="col-xs-3">	<button class="bluebutton" {% if host %} onClick="window.location='ipn/package';" {% endif %} >PER PACKAGE</button>  </div>        
               <label class="col-xs-3">  <input type="checkbox" name="perpackage" id="id_perpackage" 
-              		onClick="window.location='ipn/package';" {% endif %}>PER PACKAGE  </label> 
+              		{% if host %} onClick="window.location='ipn/package';" {% endif %}>PER PACKAGE  </label> 
                
                
                 <p class="col-xs-6">Pay for a single package</p>
