@@ -117,15 +117,14 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
         amount="2.00"
         youselected="Per Package"
     #Define the business, i want it to show the business name (BlocBox) instead of Admin@Blocbox.co (Receiver_email)
-    try:
-		    business = settings.PAYPAL_BUSINESS
-    except AttributeError:
-		    business = settings.PAYPAL_RECEIVER_EMAIL
+		business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
+    #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
         "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
         "amount": amount, #Amount of the purchase - try to pass this as an argument
         "item_name": youselected,
+        "cbt": "BlocBox", #Sets value for return to merchant button
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         #need keywords for that reverse
         "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
@@ -151,5 +150,17 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
 
    For 'return_url' you need to cope with the possibility that the IPN has not
    yet been received and handled by the IPN listener you implemented (which can
-   happen rarely), or that there was some kind of error with the IPN."""
+   happen rarely), or that there was some kind of error with the IPN.
+ 
+
+EXAMPLE FROM WEBSITE:
+@csrf_exempt
+def paypal_successful_return_view(self, request):
+if getattr(settings, "PAYPAL_SUCCESS_REDIRECT_TO_THANKYOU", False):
+return HttpResponseRedirect(self.shop.get_finished_url())
+rc = RequestContext(request, {})
+return render_to_response("shop_paypal/success.html", rc)
+
+
+"""
 
