@@ -125,13 +125,14 @@ def ask_for_money(request, host_id=None, paymentoption="package"): #default amou
         "amount": amount, #Amount of the purchase - try to pass this as an argument
         "item_name": youselected,
         "cbt": "Return to Your BlocBox Dashboard", #Sets value for return to merchant button
+        #"image_url":,
         "invoice": "UPDATE-PASS-UNIQUE-ID",
         #need keywords for that reverse
         "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         #"notify_url": "www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), 
         #"notify_url": "https//www.blocbox.co" + reverse('payment:paypal_ipn', kwargs={'host_id':host_id, 'paymentoption':paymentoption}), #this corresponds to the paypal_ipn - blocbox.co/payment/ipn/notify
         #"return_url": "http://www.blocbox.co/dashboard/",
-        "return_url": "http://www.blocbox.co/ipn/return/",
+        "return_url": "http://www.blocbox.co/payment/ipn/return/",
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
