@@ -97,7 +97,7 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 (IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
-def ask_for_money(request, host_id=None, paymentoption="package", business="BlocBox"): #default amount is 2.00
+def ask_for_money(request, host_id=None, paymentoption="package"): #default amount is 2.00
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -118,7 +118,7 @@ def ask_for_money(request, host_id=None, paymentoption="package", business="Bloc
         youselected="Per Package"
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     paypal_dict = {
-        "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
+        "business": "BlocBox", #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
         "amount": amount, #Amount of the purchase - try to pass this as an argument
         "item_name": "Package",
         "invoice": "UPDATE-PASS-UNIQUE-ID",
