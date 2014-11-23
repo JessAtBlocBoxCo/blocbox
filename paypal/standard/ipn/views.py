@@ -123,7 +123,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     returnurl = "http://www.blocbox.co/shippackage/host" + str(host.id) +"/"
-    transcount = 0 #counts transactions between this uers and the enduser
+    transcount = PayPalIPN.objects.filter(custom=host.email).count() #counts transactions between this uers and the enduser
     invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) #h2u14n13 = the 13th transation between host2, user14
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
