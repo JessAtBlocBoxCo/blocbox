@@ -42,9 +42,6 @@
 
 	<!--CONTAINER WITH EVERYTHING-->
 	<div class="col-xs-8">
-    		
-    		    <!--ISSUE: HOW DO WE WANT THESE TABLES TO LOOK ON MOBILE?-->            
-            <!--THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
             
           <p class="col-xs-2 ltbluetext nopadding nomargin">CURRENT</p> 
           
@@ -62,7 +59,7 @@
      						</div> <!--row, table headers-->
      									
      						<!--TESETING - FIRST ROW--> 
-     						<div class="row whitebackground margintop20px marginbottom30px tinytext">    	<!--<div class="row  paddingtop10px"> -->								
+     						<div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">    	<!--<div class="row  paddingtop10px"> -->								
      									<div class="col-xs-2">	<p>Ready for pickup</p> 	</div>
      									<div class="col-xs-2">	<p>Z139W198WQPUTV</p>   	</div> 
      									<!--HERE - add "Enter Tracking #" if No Tracking -->
@@ -73,12 +70,12 @@
                  
                 <!--ROW POPULATED FROM DATABASE-->
                 {% for trans in transactions_all %}         
-                <div class="row whitebackground margintop20px marginbottom30px tinytext">    	<!--<div class="row  paddingtop10px"> -->								
+                <div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">    	<!--<div class="row  paddingtop10px"> -->								
      									<div class="col-xs-2">	<p> {{ trans.invoice }}</p> 	</div>
      									<div class="col-xs-2">	<p>Tracking[ADDME]</p>   	</div> 
      									<!--HERE - add "Enter Tracking #" if No Tracking -->
      									<div class="col-xs-2">	<p>[ADDME]</p>          	</div>     	
-            		      <div class="col-xs-3">	<p> {{ trans.host_st_address1 }}, {{ trans.host_st_address2 }}  ( {{ trans.host_fname }} )</p> </div>
+            		      <div class="col-xs-3">	<p> {{ trans.host_st_address1 }}, {{ trans.host_st_address2 }}  ({{ trans.host_fname }})</p> </div>
             		      <div class="col-xs-2">  <p>[ADDME]</p> 					</div>
             		</div>  <!--row, testing row-->                		
                 {% endfor %}

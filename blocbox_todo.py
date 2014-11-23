@@ -10,7 +10,10 @@ JOHN: update the payment page so that it is a drop down menu at first, and then 
 7. JESS: Restore User nav on beta page
 
 
-
+"""JESS NOTES/QUESTIONS FOR JOHN"""
+1. do we need to split up dashboard containers by type of transaction or can we just have a field/colum for that (e.g, shipments and dog walkign one)
+2. dashboard: HOW DO WE WANT THESE TABLES TO LOOK ON MOBILE?-->            
+3. dashboard: -THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
 		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
