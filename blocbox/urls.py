@@ -22,7 +22,6 @@ urlpatterns = patterns('',
     url(r'signuphost/', views.signuphost, name='signuphost'),
     url(r'login/', views.userlogin, name='login'), # add this for the registration form
     url(r'^logout/$', views.user_logout, name='logout'), 		
-    url(r'^bootstraptest/$', views.bootstraptest, name='bootstraptest'),
     url(r'^almostfinished/$', views.waitlist_almostfinished, name='waitlist_almostfinished'),
     url(r'^waitlistconfirmation/$', views.waitlist_confirmation, name='waitlist_confirmation'),
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well

@@ -12,6 +12,7 @@ urlpatterns = patterns('',
  		#pass the same test but with a host_id in the URL - dont need a KWARG explicit statmenet bc it is passed in the URL name
  		url(r'^jesstest/host(?P<host_id>\d+)/$', 'testing.views.jesscaltest', name='jesstestwithhost'),	 		
  		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
+ 		url(r'^bootstraptest/$', 'testing.views.bootstraptest', name='bootstraptest'),
 )
 
 """EXAMPLE OF HOW TO CALL SAME VIEW WITH DIFFERENT ARGS -- USE KWARGS
