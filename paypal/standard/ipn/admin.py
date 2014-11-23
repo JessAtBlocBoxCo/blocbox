@@ -9,8 +9,8 @@ class PayPalIPNAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": [
-                "flag", "txn_id", "txn_type", "payment_status", "payment_date",
-                "receiver_email", "host_email", "payer_email", "custom",
+                "invoice", "flag", "txn_id", "txn_type", "payment_status", "payment_date",
+                "receiver_email", "host_email", "payer_email", "custom", 
                 "transaction_entity", "reason_code", "pending_reason",
                 "mc_currency", "mc_gross", "mc_fee", "mc_handling", "mc_shipping",
                 "auth_status", "auth_amount", "auth_exp", "auth_id"
@@ -38,7 +38,7 @@ class PayPalIPNAdmin(admin.ModelAdmin):
             'classes': ('collapse',),
             "fields": [
                 "business", "item_name", "item_number", "quantity",
-                 "receiver_id",  "invoice", "memo"
+                 "receiver_id",   "memo"
             ]
         }),
         ("Recurring", {
