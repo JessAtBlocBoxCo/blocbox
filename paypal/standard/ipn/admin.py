@@ -9,8 +9,10 @@ class PayPalIPNAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": [
-                "invoice", "flag", "txn_id", "txn_type", "payment_status", "payment_date",
+                "invoice", "payment_status", "payment_date",
                 "receiver_email", "host_email", "payer_email", "custom", 
+                "item_name", "quantity",
+                "flag", "txn_id", "txn_type",
                 "transaction_entity", "reason_code", "pending_reason",
                 "mc_currency", "mc_gross", "mc_fee", "mc_handling", "mc_shipping",
                 "auth_status", "auth_amount", "auth_exp", "auth_id"
