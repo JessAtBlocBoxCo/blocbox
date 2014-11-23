@@ -33,9 +33,19 @@ from django.template.defaulttags import register
 def get_item(dictionary, key):
     return dictionary.get(key)
 
+#define the dashboard test
+def dashboard_test(request, host_id=None):
+	  enduser = request.user
+	  if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+        host = None
+    return render(request, 'blocbox/jesstest.html', {
+        'enduser': enduser, 'host': host,
+    })
     
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
-def jesstest(request, calendar_slug_single = "testcalendar1", host_id=None):
+def jesscaltest(request, calendar_slug_single = "testcalendar1", host_id=None):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
