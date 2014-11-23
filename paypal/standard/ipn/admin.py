@@ -39,8 +39,8 @@ class PayPalIPNAdmin(admin.ModelAdmin):
             "description": "Additional information about the Host.",
             'classes': ('collapse',),
             "fields": [
-                "business", "host_fname", "host_lname", "host_st_address1", "host_st_address2", "item_name", 
-                "item_number", "quantity", "receiver_id", "memo"
+                "business", "host_fname", "host_lname", "host_st_address1", "host_st_address2",  
+                "item_number", "receiver_id", "memo"
             ]
         }),
         ("Recurring", {
