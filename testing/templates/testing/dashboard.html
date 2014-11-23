@@ -68,13 +68,13 @@
             		</div>  <!--row, testing row-->
                  
                 <!--ROW POPULATED FROM DATABASE-->
-                {% for trans in transactions_all %}         
+                {% for shipment in shipments_all %}         
                 <div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">    	<!--<div class="row  paddingtop10px"> -->								
-     									<div class="col-xs-2">	<p> {{ trans.invoice }}</p> 	</div>
+     									<div class="col-xs-2">	<p> {{ shipment.invoice }}</p> 	</div>
      									<div class="col-xs-2">	<p>Tracking[ADDME]</p>   	</div> 
      									<!--HERE - add "Enter Tracking #" if No Tracking -->
      									<div class="col-xs-2">	<p>[ADDME]</p>          	</div>     	
-            		      <div class="col-xs-3">	<p> {{ trans.host_st_address1 }}, {{ trans.host_st_address2 }}  ({{ trans.host_fname }})</p> </div>
+            		      <div class="col-xs-3">	<p> {{ shipment.host_st_address1 }}, {{ shipment.host_st_address2 }}  ({{ shipment.host_fname }})</p> </div>
             		      <div class="col-xs-2">  <p>[ADDME]</p> 					</div>
             		</div>  <!--row, testing row-->                		
                 {% endfor %}
@@ -85,7 +85,7 @@
 
 					<!--Favors Box-->
        		<div class="col-xs-12 dashbox margintop30px marginbottom30px">
-          		<h3 class="col-xs-3 ltbluetext nopadding">Other Transactions</h3> 
+          		<h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3> 
                     <div class="row">
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">STATUS</p>
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">DESCRIPTION</p>
