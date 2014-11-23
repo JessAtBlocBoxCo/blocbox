@@ -128,7 +128,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     transcount = PayPalIPN.objects.filter(receiver_email=host.email).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
-    datenumber = timezone.now()
+    datenumber = datetime.datetime.now()
     invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) +"d" #h2u14n13 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
@@ -151,7 +151,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host,
-    	  'date':date, 'local_timezone':local_timezone, 
+    	  'date':date, 'local_timezone':local_timezone, 'datenumber':datenumber,
     	  'amount':amount, "youselected": youselected,
     	  'here': quote(request.get_full_path()), 'form': form,
     })
