@@ -70,7 +70,7 @@ class PayPalStandardBase(Model):
 		#INSTEAD.. i am making the receiver_id form the Host Email, and the Custom Form the Enduser_Email
     receiver_id = models.CharField("Host Email", max_length=127, blank=True)  # 258DLEHY2BDK6
     custom = models.CharField("User Email", max_length=255, blank=True)
-    #host_email = models.CharField("Host Email", max_length=255, blank=True)
+    host_email = models.CharField("Host Email", max_length=255, blank=True)
     #enduser_email = models.CharField("User Email", max_length=255, blank=True)
    
 		
@@ -204,7 +204,7 @@ class PayPalStandardBase(Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     # Where did it come from?
-    from_view = models.CharField(max_length=6, null=True, blank=True)
+    from_view = models.CharField(max_length=6, null=True, blank=True) #this is currently blank
 
     class Meta:
         abstract = True

@@ -33,6 +33,7 @@ def ipn(request, item_check_callable=None):
     """
     #TODO: Clean up code so that we don't need to set None here and have a lot
     #      of if checks just to determine if flag is set.
+    host_email = "TEST WHETHER ADDS"
     flag = None
     ipn_obj = None
 
@@ -134,7 +135,9 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         "cbt": returnmessage, #Sets value for return to merchant button
         "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
         "invoice": invoice,
-        "receiver_id": host.email, #This is serving as the host_email field, i need this sep from receiver_email b/c sometimes will go to blocbox
+        #Need to add a filed fo rhost_emai, figuore out how to flag "payment sent"
+        #Receiver email:  	Primary email address of the payment recipient (that is, the merchant). 
+        #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
         "custom": enduser.email, #this is serving as the User Email field
         "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         "return_url": returnurl,
