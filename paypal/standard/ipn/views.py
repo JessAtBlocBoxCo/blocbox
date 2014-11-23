@@ -128,10 +128,11 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     transcount = PayPalIPN.objects.filter(receiver_email=host.email).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
     date = datetime.datetime.now()
+    time = datetime.time(now)
     year = date.year
     month = date.month
     day = date.day
-    hour = date.time.hour
+    hour = time.hour
     datvars = str(year) + str(month) + str(day) + str(hour)
     invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) +"d" #h2u14n13 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
