@@ -90,12 +90,13 @@ class PayPalPaymentsForm(forms.Form):
     notify_url = forms.CharField(widget=ValueHiddenInput())
     cancel_return = forms.CharField(widget=ValueHiddenInput())
     return_url = forms.CharField(widget=ReservedValueHiddenInput(attrs={"name": "return"}))
-    custom = forms.CharField(widget=ValueHiddenInput())
     invoice = forms.CharField(widget=ValueHiddenInput())
 		
 		#adding host and enduser email form-- can't do  this.. not registered
     #host_email = forms.CharField(widget=ValueHiddenInput())
     #enduser_email = forms.CharField(widget=ValueHiddenInput())
+    custom = forms.CharField(widget=ValueHiddenInput())
+		receiver_id = forms.CharField(widget=ValueHiddenInput())
 		
     # Default fields.
     cmd = forms.ChoiceField(widget=forms.HiddenInput(), initial=CMD_CHOICES[0][0])
