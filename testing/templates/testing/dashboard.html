@@ -85,25 +85,36 @@
 					<!--Favors Box-->
        		<div class="col-xs-12 dashbox margintop30px marginbottom30px">
           		<h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3> 
-          		
-          		  <p>DELETE ME - TEST OTHERFAVORS_ALL {{ otherfavors_all }} </p>
-          		  
+          	
+          		  		<!--labels-->
                     <div class="row darkgreytext tinytext textcenter"> <!--label-->
                         <p class="col-xs-2 marginbottom5px">STATUS</p>
                         <p class="col-xs-2 marginbottom5px">DESCRIPTION</p>
                         <p class="col-xs-2 marginbottom5px">COMPLETION DATE</p>
-                        <p class="col-xs-2 marginbottom5px">NEIGHBOR</p>
-                        <p class="col-xs-2 marginbottom5px">ADDRESS</p>
+                        <p class="col-xs-3 marginbottom5px">NEIGHBOR'S ADDRESS</p>
                         <p class="col-xs-2 marginbottom5px">OPTIONS</p>
                     </div> <!--row, label -->
+                    
+                    <!--test data-->
                     <div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter"> <!--test row-->
                             <p class="col-xs-2">In progress</p>
                             <p class="col-xs-2">House Sitting</p>
                             <p class="col-xs-2">Nov. 19</p>
-                            <p class="col-xs-2">John</p>
-                            <p class="col-xs-2">420 Grand Ave.</p>
+                            <p class="col-xs-3">[TestRow]</p>
                             <p class="col-xs-2">Modify</p>
                     </div> <!--row, text data-->
+                    
+                    <!--Actual Data-->
+                    {% for favor in otherfavors_all %)                  	
+                  	<div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter"> <!--test row-->
+                            <p class="col-xs-2"> {{ favor.invoice }} </p>
+                            <p class="col-xs-2"> {{ favor.item_name }} </p>
+                            <p class="col-xs-2">[ADDME]</p>
+                            <p class="col-xs-3"> {{ favor.host_st_address1 }}, {{ favor.host_st_address2 }}  ({{ favor.host_fname }}) </p>
+                            <p class="col-xs-2">[ADDME]</p>
+                    </div> <!--row, text data-->                    
+                  	{% endfor %}
+
         	</div> <!--col, Favors box--->
 
 
