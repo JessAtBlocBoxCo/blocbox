@@ -49,8 +49,10 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
 
 
-"""Jess - payment tasks"""
+"""Jess - transaction tasks"""
 1. update the startashipmetn process so reload based on selected host
+2. add a bunch of fields to the IPN table to correspond with waht john wants in dashboard
+2. dashboard - need to split up those tables and variable calls according to whether the paymet is done or not (current vs recent)
 1. LOG THE USER information on admit from the transacion table -- right now, the payers is whoeverl ogs into paypal - 
 - we need to log that AND TEH user that was logged in that went to paypal..
 2. create testdashboard with transaction talbe - link IPN table to dashboard
