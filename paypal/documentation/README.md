@@ -1,6 +1,21 @@
+#HOW THE NOTIFICATION WORKS  how to modify
+1. notify_url calls this view: paypal.standard.ipn.views.ipn, thiis posts the data
+2. this view adds some shit
+		ipn_obj.set_flag(flag) -- that set_flag is defined in paypal.standard.models.py.
+
+
 #JMY: GOOD SITES WITH USEFUL EXAMPLES
 https://github.com/chrisglass/django-shop-paypal/blob/master/shop_paypal/offsite_paypal.py
 #E.G. - THE RETURNO NE
+
+#FOR PAYPAL
+$ python manage.py schemamigration paypal.standard.ipn --auto
+$ python manage.py migrate ipn
+
+
+#NOTE - HOW TO ENABLE IPN TO SEND HAVE DIFFERET RECEIVER EMAILS THAN the one sepcified in PAYPAL_RECEIVER_EAMIL -
+	paypal/standard/models.py 
+	standard/models.py 
 
 #NOTE ON HOW I UPDATED THE RECEIVER_EMAIL VERSUS BUSINESS NAME
 		

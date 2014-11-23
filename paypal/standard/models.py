@@ -276,6 +276,10 @@ class PayPalStandardBase(Model):
         self.flag_info += info
         if code is not None:
             self.flag_code = code
+    
+    #JMY TRYING TO ADD A FUMCTION ADD HOST EMAIL
+    #def add_host_email(self, ):
+    #    self.host_email = 
 
     def verify(self, item_check_callable=None):
         """

@@ -50,7 +50,10 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 
 
 """Jess - payment tasks"""
-1. add image_url to a blockbox image
+1. update the startashipmetn process so reload based on selected host
+1. LOG THE USER information on admit from the transacion table -- right now, the payers is whoeverl ogs into paypal - 
+- we need to log that AND TEH user that was logged in that went to paypal..
+2. create testdashboard with transaction talbe - link IPN table to dashboard
 2. figur eout how to separate "business" field from receiver_id field
 2. Add a field to denote who teh host was PayPalPaymentsForm
 3. sort out receiver_email - is this admin@blocbox.co or is this the host?
