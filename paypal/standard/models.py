@@ -58,7 +58,6 @@ class PayPalStandardBase(Model):
     notify_version = models.DecimalField(max_digits=64, decimal_places=2, default=0, blank=True, null=True)
     parent_txn_id = models.CharField("Parent Transaction ID", max_length=19, blank=True)
     receiver_email = models.EmailField(max_length=127, blank=True)
-    receiver_id = models.CharField(max_length=127, blank=True)  # 258DLEHY2BDK6
     residence_country = models.CharField(max_length=2, blank=True)
     test_ipn = models.BooleanField(default=False, blank=True)
     txn_id = models.CharField("Transaction ID", max_length=19, blank=True, help_text="PayPal transaction ID.",
@@ -67,12 +66,13 @@ class PayPalStandardBase(Model):
     verify_sign = models.CharField(max_length=255, blank=True)
 		
 		#blocbox specific - adding host and enduser info
-    host_email = models.CharField("Host Email", max_length=255, blank=True)
-    enduser_email = models.CharField("User Email", max_length=255, blank=True)
-    
-    
-    #Custon field - populate alter if needed
-    custom = models.CharField("Custom", max_length=255, blank=True)
+		#CANNOT do these - because paypal wont spit them back.. have to use the fields they've profided
+		#INSTEAD.. i am making the receiver_id form the Host Email, and the Custom Form the Enduser_Email
+		receiver_id = models.CharField("Host Email", max_length=127, blank=True)  # 258DLEHY2BDK6
+		custom = models.CharField("User Email", max_length=255, blank=True)
+    #host_email = models.CharField("Host Email", max_length=255, blank=True)
+    #enduser_email = models.CharField("User Email", max_length=255, blank=True)
+   
 		
     # Buyer Information Variables
     address_country = models.CharField(max_length=64, blank=True)
