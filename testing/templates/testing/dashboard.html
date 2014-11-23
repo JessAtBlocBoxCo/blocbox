@@ -24,7 +24,8 @@
         </div>
     </div>
 
-    <div class="row">
+  <div class="row"> <!--contains most of page-->
+    		<!--sidebar-->
         <div class=" col-xs-3 mobilehide">
             <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}"  /> 
             <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
@@ -36,52 +37,48 @@
             <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter">Invite Your Neighbors</p>
             <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Become a Host</p>
             <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Love Blocbox?</p>
-        </div>
+        </div> <!--sidebar-->
     
 
+	<!--CONTAINER WITH EVERYTHING-->
+	<div class="col-xs-8">
+    		
+          <p class="col-xs-2 ltbluetext nopadding nomargin">CURRENT</p> 
+          
+          <!--SHIPMENTS CONTAINER-->
+          <div class="col-xs-12 col-sm-12 dashbox">
+            <div class="row"> <h3 class="col-xs-3 ltbluetext margintop10px nopadding">Shipments</h3> </div>
+               
+            <!--ISSUE: HOW DO WE WANT THESE TABLES TO LOOK ON MOBILE?-->
+             
+            		<!--TOP ROW - HEADERS -->
+            		<div class="row textcenter darkgreytext tinytext "> <!--row containing top table-->     							     							
+     									<div class="col-xs-2"> <p class="marginbottom5px">STATUS</p> </div>
+     									<div class="col-xs-2"> <p class="marginbottom5px">TRACKING</p> </div>
+     									<div class="col-xs-2"> <p class="marginbottom5px">DELIVERY DATE</p>  </div>
+     									<div class="col-xs-2"> <p class="marginbottom5px">NEIGHBOR</p> </div>
+     									<div class="col-xs-2"> <p class="marginbottom5px">ADDRESS</p></div>
+     									<div class="col-xs-2"> <p class="marginbottom5px">OPTIONS</p> </div>
+     						</div> <!--row, table headers-->
+     									
+     						<!--TESETING - FIRST ROW--> 
+     						<div class="row whitebackground margintop20px marginbottom30px">    	<!--<div class="row  paddingtop10px"> -->								
+     									<div class="col-xs-2">	<p>Ready for pickup[ADDME]</p> 	</div>
+     									<div class="col-xs-2">	<p>Z139W198WQPUTV[ADDME]</p>   	</div> 
+     									<!--HERE - add "Enter Tracking #" if No Tracking -->
+     									<div class="col-xs-2">	<p>Nov. 19[ADDME]</p>          	</div>     	
+            		      <div class="col-xs-2">  <p>John [ADDME]</p>            	</div>
+            		      <div class="col-xs-2">	<p>420 Grand Ave. [ADDME]</p>  	</div>
+            		      <div class="col-xs-2">  <p>Modify [ADDME]</p> 					</div>
+            		</div>  <!--row, testing row-->
+                  
+        	</div> <!--col, shipments container-->
 
-       <div class="col-xs-8">
-            <p class="col-xs-2 ltbluetext nopadding nomargin">CURRENT</p>
-            <div class="col-xs-12 col-sm-12 dashbox">
-                <div class="row">
-                    <h3 class="col-xs-3 ltbluetext margintop10px nopadding">Shipments</h3>
-                </div>
-                <div>
-                   <div class="row">
-                       <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">STATUS</p>
-                       <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">TRACKING</p>
-                       <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">DELIVERY DATE</p>
-                       <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">NEIGHBOR</p>
-                       <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">ADDRESS</p>
-                       <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">OPTIONS</p>
-                    </div>
-                    <div class="whitebackground">
-                        <div class="row  paddingtop10px">
-                            <p class="col-xs-2 textcenter">Ready for pickup</p>
-                            <p class="col-xs-2 textcenter">Z139W198WQPUTV</p>
-                            <p class="col-xs-2 textcenter">Nov. 19</p>
-                            <p class="col-xs-2 textcenter">John</p>
-                            <p class="col-xs-2 textcenter">420 Grand Ave.</p>
-                            <p class="col-xs-2 textcenter">Modify</p>
-                        </div>
-                    </div>
-                    <div class="whitebackground margintop20px marginbottom30px">
-                        <div class="row  paddingtop10px">
-                            <p class="col-xs-2 textcenter">In Transit</p>
-                            <a href="" class="col-xs-2 textcenter">Enter Tracking #</a>
-                            <p class="col-xs-2 textcenter">Nov. 21</p>
-                            <p class="col-xs-2 textcenter">John</p>
-                            <p class="col-xs-2 textcenter">420 Grand Ave.</p>
-                            <p class="col-xs-2 textcenter">Modify</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    	
 
-            <div class="col-xs-12 dashbox margintop30px marginbottom30px">
-                <div class="row">
-                    <h3 class="col-xs-3 ltbluetext nopadding">Favors</h3>
-                </div>
+					<!--Favors Box-->
+          <div class="col-xs-12 dashbox margintop30px marginbottom30px">
+                <div class="row"> <h3 class="col-xs-3 ltbluetext nopadding">Favors</h3>  </div>
                 <div>
                     <div class="row">
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">STATUS</p>
@@ -105,21 +102,22 @@
             </div>
 
 
+
+
+						
             <p class="col-xs-2 nomargin nopadding">RECENT</p>
             <div class="col-xs-12 dashbox marginbottom60px">
-                    <div class="row">
-                        <h3 class="col-xs-3 margintop10px nopadding">Shipments</h3>
-                    </div>
-                    <div>
-                        <div class="row">
+            		<!--SHIPMENTS Container-->	
+              	<div class="row">  <h3 class="col-xs-3 margintop10px nopadding">Shipments</h3>  </div>
+                        <div class="row"> <!--labels-->
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">STATUS</p>
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">TRACKING</p>
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">DELIVERY DATE</p>
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">NEIGHBOR</p>
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">ADDRESS</p>
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">OPTIONS</p>
-                        </div>
-                        <div class="whitebackground marginbottom30px">
+                        </div> <!--row, labels-->
+                        <div class="row whitebackground marginbottom30px">
                             <div class="row paddingtop10px">
                                 <p class="col-xs-2 textcenter">Received</p>
                                 <p class="col-xs-2 textcenter">Z139W198WQPUTV</p>
@@ -128,12 +126,10 @@
                                 <p class="col-xs-2 textcenter">420 Grand Ave.</p>
                                 <p class="col-xs-2 textcenter">View Receipt</p>
                             </div>
-                        </div>
-                    </div>
-            </div>
-        </div>    
-    </div>
-</div>
+                        </div> <!--row, text data-->
+
+	</div> <!--col, Container with everything-->
+			
 
 
 {% endblock %}
