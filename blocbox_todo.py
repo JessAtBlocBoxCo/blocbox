@@ -16,6 +16,8 @@ JOHN: update the payment page so that it is a drop down menu at first, and then 
 3. dashboard: -THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
 		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
+1. JOHN: mobile:
+	2. john: add process/for other favors
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
 1. JOHN/JESS: package incoming process/when it arrives
 1. JOHN: add green check box next to verified info
@@ -65,7 +67,7 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 1. set up IPN (instant payment notifiation) - this kind of sucks b/c drops customers off at paypla.. but easiers
 2. set up "pro" -- enabling users to pay on the website
 3. oce i've set up the blocbox.co/payment/ipn and blocbox.co/payment/pro - merge the base view (blocbox.co/payment) with pro.. rmoeve the other two'
-
+5. dashboard - way down road: have recent transactions limited to last 60 days, with archie option - or multiple pages
 
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
 #they install at:
