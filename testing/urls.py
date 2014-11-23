@@ -8,7 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 		url(r'^$', 'testing.views.jesstest', name='testingbase'),    
  		
- 		url(r^'dashboard/$', 'testing.views.dashboard_test', name='dashboard_test'),
+ 		url(r'^dashboard/$', 'testing.views.dashboard_test', name='dashboard_test'),
  		url(r'^jesstest/$', 'testing.views.jesscaltest', name='jesstestnohost'),
  						
  		#pass the same test but with a host_id in the URL - dont need a KWARG explicit statmenet bc it is passed in the URL name
