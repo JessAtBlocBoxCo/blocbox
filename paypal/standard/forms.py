@@ -96,7 +96,7 @@ class PayPalPaymentsForm(forms.Form):
     #host_email = forms.CharField(widget=ValueHiddenInput())
     #enduser_email = forms.CharField(widget=ValueHiddenInput())
     custom = forms.CharField(widget=ValueHiddenInput())
-		receiver_id = forms.CharField(widget=ValueHiddenInput())
+    receiver_id = forms.CharField(widget=ValueHiddenInput())
 		
     # Default fields.
     cmd = forms.ChoiceField(widget=forms.HiddenInput(), initial=CMD_CHOICES[0][0])
