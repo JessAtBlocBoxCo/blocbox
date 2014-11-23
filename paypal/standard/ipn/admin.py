@@ -10,6 +10,7 @@ class PayPalIPNAdmin(admin.ModelAdmin):
         (None, {
             "fields": [
                 "flag", "txn_id", "txn_type", "payment_status", "payment_date",
+                "receiver_email", "host_email", "payer_email", "custom",
                 "transaction_entity", "reason_code", "pending_reason",
                 "mc_currency", "mc_gross", "mc_fee", "mc_handling", "mc_shipping",
                 "auth_status", "auth_amount", "auth_exp", "auth_id"
@@ -25,18 +26,18 @@ class PayPalIPNAdmin(admin.ModelAdmin):
             ]
         }),
         ("Buyer", {
-            "description": "The information about the Buyer.",
+            "description": "Additional information about the Buyer.",
             'classes': ('collapse',),
             "fields": [
-                "custom", "first_name", "last_name", "payer_business_name", "payer_email",
+                "first_name", "last_name", "payer_business_name",
                 "payer_id", "payer_status", "contact_phone", "residence_country"
             ]
         }),
         ("Seller", {
-            "description": "The information about the Seller.",
+            "description": "Additional information about the Seller.",
             'classes': ('collapse',),
             "fields": [
-                "business", "receiver_email", "host_email", "item_name", "item_number", "quantity",
+                "business", "item_name", "item_number", "quantity",
                  "receiver_id",  "invoice", "memo"
             ]
         }),
