@@ -94,8 +94,8 @@ class PayPalPaymentsForm(forms.Form):
     invoice = forms.CharField(widget=ValueHiddenInput())
 		
 		#adding host and enduser email form
-		host_email = forms.CharField(widget=ValueHiddenInput())
-		enduser_email = forms.CharField(widget=ValueHiddenInput())
+    host_email = forms.CharField(widget=ValueHiddenInput())
+    enduser_email = forms.CharField(widget=ValueHiddenInput())
 		
     # Default fields.
     cmd = forms.ChoiceField(widget=forms.HiddenInput(), initial=CMD_CHOICES[0][0])
