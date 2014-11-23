@@ -92,7 +92,11 @@ class PayPalPaymentsForm(forms.Form):
     return_url = forms.CharField(widget=ReservedValueHiddenInput(attrs={"name": "return"}))
     custom = forms.CharField(widget=ValueHiddenInput())
     invoice = forms.CharField(widget=ValueHiddenInput())
-
+		
+		#adding host and enduser email form
+		host_email = forms.CharField(widget=ValueHiddenInput())
+		enduser_email = forms.CharField(widget=ValueHiddenInput())
+		
     # Default fields.
     cmd = forms.ChoiceField(widget=forms.HiddenInput(), initial=CMD_CHOICES[0][0])
     charset = forms.CharField(widget=forms.HiddenInput(), initial="utf-8")

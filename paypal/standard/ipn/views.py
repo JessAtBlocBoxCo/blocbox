@@ -134,6 +134,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         "cbt": returnmessage, #Sets value for return to merchant button
         "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
         "invoice": invoice,
+        "host_email": host.email, "enduser_email": enduser.email,
         "custom": host.email,
         #need keywords for that reverse
         "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
