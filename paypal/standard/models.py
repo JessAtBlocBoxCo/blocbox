@@ -64,13 +64,17 @@ class PayPalStandardBase(Model):
                               db_index=True)
     txn_type = models.CharField("Transaction Type", max_length=128, blank=True, help_text="PayPal transaction type.")
     verify_sign = models.CharField(max_length=255, blank=True)
-		
-		#blocbox specific - adding host and enduser info
-		#CANNOT do these - because paypal wont spit them back.. have to use the fields they've profided
-		#INSTEAD.. i am making the receiver_id form the Host Email, and the Custom Form the Enduser_Email
     receiver_id = models.CharField(max_length=127, blank=True)  # 258DLEHY2BDK6
+
+    #Custom field is currently User Email
     custom = models.CharField("User Email", max_length=255, blank=True)
+    
+    #Adding host fields
     host_email = models.CharField("Host Email", max_length=255, blank=True)
+    host_fname = models.CharField("Host First Name", max_length=255, blank=True)
+    host_lname = models.CharField("Host Last Name", max_length=255, blank=True)
+    host_st_address1 = models.CharField("Host Address Line 1", max_length=255, blank=True)
+    host_st_address2 = models.CharField("Host Address Line 2", max_length=255, blank=True)
     #enduser_email = models.CharField("User Email", max_length=255, blank=True)
    
 		

@@ -50,8 +50,7 @@
           
           <!--SHIPMENTS CONTAINER-->
           <div class="col-xs-12 col-sm-12 dashbox">
-            <div class="row"> <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Shipments [Note - "status" field in invoice ID]</h3> </div>
-               	<p>Delete Me: Show all User's Transactions with transactions_all {{ transactions_all }} </p>
+            <div class="row"> <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Shipments [Note - "status" field is invoice ID]</h3> </div>
              
             		<!--TOP ROW - HEADERS -->
             		<div class="row textcenter darkgreytext tinytext "> <!--row containing top table-->     							     							
@@ -65,8 +64,8 @@
      									
      						<!--TESETING - FIRST ROW--> 
      						<div class="row whitebackground margintop20px marginbottom30px tinytext">    	<!--<div class="row  paddingtop10px"> -->								
-     									<div class="col-xs-2">	<p>Ready for pickup[ADDME]</p> 	</div>
-     									<div class="col-xs-2">	<p>Z139W198WQPUTV[ADDME]</p>   	</div> 
+     									<div class="col-xs-2">	<p>Ready for pickup</p> 	</div>
+     									<div class="col-xs-2">	<p>Z139W198WQPUTV</p>   	</div> 
      									<!--HERE - add "Enter Tracking #" if No Tracking -->
      									<div class="col-xs-2">	<p>Nov. 19[ADDME]</p>          	</div>     	
             		      <div class="col-xs-2">  <p>John [ADDME]</p>            	</div>
@@ -78,12 +77,12 @@
                 {% for trans in transactions_all %}         
                 <div class="row whitebackground margintop20px marginbottom30px tinytext">    	<!--<div class="row  paddingtop10px"> -->								
      									<div class="col-xs-2">	<p> {{ trans.invoice }}</p> 	</div>
-     									<div class="col-xs-2">	<p>Z139W198WQPUTV[ADDME]</p>   	</div> 
+     									<div class="col-xs-2">	<p>Tracking[ADDME]</p>   	</div> 
      									<!--HERE - add "Enter Tracking #" if No Tracking -->
-     									<div class="col-xs-2">	<p>Nov. 19[ADDME]</p>          	</div>     	
+     									<div class="col-xs-2">	<p>[ADDME]</p>          	</div>     	
             		      <div class="col-xs-2">  <p>John [ADDME]</p>            	</div>
             		      <div class="col-xs-2">	<p>420 Grand Ave. [ADDME]</p>  	</div>
-            		      <div class="col-xs-2">  <p>Modify [ADDME]</p> 					</div>
+            		      <div class="col-xs-2">  <p>Modify[ADDME]</p> 					</div>
             		</div>  <!--row, testing row-->                		
                 {% endfor %}
         	

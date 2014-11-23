@@ -25,20 +25,20 @@ class PayPalIPNAdmin(admin.ModelAdmin):
                 "address_street", "address_zip"
             ]
         }),
-        ("Buyer", {
-            "description": "Additional information about the Buyer.",
+        ("End User/Buyer", {
+            "description": "Additional information about the End User/Payer.",
             'classes': ('collapse',),
             "fields": [
                 "first_name", "last_name", "payer_business_name",
                 "payer_id", "payer_status", "contact_phone", "residence_country"
             ]
         }),
-        ("Seller", {
-            "description": "Additional information about the Seller.",
+        ("Host/Seller", {
+            "description": "Additional information about the Host.",
             'classes': ('collapse',),
             "fields": [
-                "business", "item_name", "item_number", "quantity",
-                 "receiver_id",   "memo"
+                "business", "host_fname", "host_lname", "host_st_address1", "host_st_address2", "item_name", 
+                "item_number", "quantity", "receiver_id", "memo"
             ]
         }),
         ("Recurring", {
