@@ -144,7 +144,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
         "custom": enduser.email, #this is serving as the User Email field
         #JMY editing the notify_url to pass the host information
-        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify', kwargs={'host_id': host.id,}),
+        "notify_url": "http://www.blocbox.co/ipn/notify" + str(host.id) +"/"
         #"notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         "return_url": returnurl,
         "cancel_return": "http://www.blocbox.co/dashboard/",
