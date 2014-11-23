@@ -44,8 +44,8 @@ def dashboard_test(request, host_id=None):
     connections_all = Connection.objects.filter(end_user=enduser) 
     #lists of transactions
     transactions_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
-    shipments_all = transactions_all.filter(item_name="Per Package")
-    otherfavors_all = transactions_all.exclude(item_name="Per Package")
+    shipments_all = transactions_all.filter(item_name="package")
+    otherfavors_all = transactions_all.exclude(item_name="package")
     #shipments_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
     return render(request, 'testing/dashboard.html', {
         'enduser': enduser, 'host': host,
