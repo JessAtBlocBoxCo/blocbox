@@ -61,8 +61,8 @@
      									<div class="col-xs-2">	<p>Ready for pickup</p> 	</div>
      									<div class="col-xs-2">	<p>Z139W198WQPUTV</p>   	</div> 
      									<!--HERE - add "Enter Tracking #" if No Tracking -->
-     									<div class="col-xs-2">	<p>Nov. 19[ADDME]</p>          	</div>     	
-            		      <div class="col-xs-3">  <p> test field</p>            	</div>
+     									<div class="col-xs-2">	<p>Nov. 19</p>          	</div>     	
+            		      <div class="col-xs-3">  <p>[Test Row]</p>            	</div>
             		      <div class="col-xs-2">  <p>Modify</p> 					</div>
             		</div>  <!--row, testing row-->
                  
@@ -70,7 +70,7 @@
                 {% for shipment in shipments_all %}         
                 <div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">    	<!--<div class="row  paddingtop10px"> -->								
      									<div class="col-xs-2">	<p> {{ shipment.invoice }}</p> 	</div>
-     									<div class="col-xs-2">	<p>Tracking[ADDME]</p>   	</div> 
+     									<div class="col-xs-2">	<p>[ADDME]</p>   	</div> 
      									<!--HERE - add "Enter Tracking #" if No Tracking -->
      									<div class="col-xs-2">	<p>[ADDME]</p>          	</div>     	
             		      <div class="col-xs-3">	<p> {{ shipment.host_st_address1 }}, {{ shipment.host_st_address2 }}  ({{ shipment.host_fname }})</p> </div>
@@ -86,7 +86,7 @@
        		<div class="col-xs-12 dashbox margintop30px marginbottom30px">
           		<h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3> 
           		
-          		  <p>DELETE ME - TEST SHIPMENTS_ALL {{ shipments_all }} </p>
+          		  <p>DELETE ME - TEST OTHERFAVORS_ALL {{ otherfavors_all }} </p>
           		  
                     <div class="row darkgreytext tinytext textcenter"> <!--label-->
                         <p class="col-xs-2 marginbottom5px">STATUS</p>
