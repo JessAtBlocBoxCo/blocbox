@@ -6,7 +6,7 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-		url(r'^$', 'testing.views.jesstest', name='testingbase'),    
+		url(r'^$', 'testing.views.jesscaltest', name='testingbase'),   #default view is calendar test 
  		
  		url(r'^dashboard/$', 'testing.views.dashboard_test', name='dashboard_test'),
  		url(r'^jesstest/$', 'testing.views.jesscaltest', name='jesstestnohost'),
