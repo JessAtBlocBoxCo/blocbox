@@ -22,7 +22,7 @@ from core.models import UserInfo, Transaction, Connection
 
 @require_POST
 @csrf_exempt
-def ipn(request, item_check_callable=None, host_email=None):
+def ipn(request, item_check_callable=None, host_id=None):
     """
     PayPal IPN endpoint (notify_url).
     Used by both PayPal Payments Pro and Payments Standard to confirm transactions.
@@ -76,8 +76,9 @@ def ipn(request, item_check_callable=None, host_email=None):
     #Set query params and sender's IP address
     ipn_obj.initialize(request)
     
-    if host_email:
-        ipn_obj.host_email = host_email
+    if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+        ipn_obj.host_email = host.email
     
     #the following set_flag is defined in paypal.standard.modle.spy
     if flag is not None:
@@ -143,7 +144,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
         "custom": enduser.email, #this is serving as the User Email field
         #JMY editing the notify_url to pass the host information
-        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify', kwargs={'host_email': host.email})
+        "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify', kwargs={'host_id': host.id,})
         #"notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         "return_url": returnurl,
         "cancel_return": "http://www.blocbox.co/dashboard/",
