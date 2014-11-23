@@ -150,7 +150,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
-		    'enduser':enduser, 'host':host,
+		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':date, 'local_timezone':local_timezone, 
     	  'amount':amount, "youselected": youselected,
     	  'here': quote(request.get_full_path()), 'form': form,
