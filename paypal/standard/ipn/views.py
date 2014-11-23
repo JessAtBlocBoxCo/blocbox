@@ -123,16 +123,18 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     returnurl = "http://www.blocbox.co/shippackage/host" + str(host.id) +"/"
+    transcount = 0 #counts transactions between this uers and the enduser
+    invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) #h2u14n13 = the 13th transation between host2, user14
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
         "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
-        "receiver_email": business, #needs to be teh same as busines - some check is performed..
         "amount": amount, #Amount of the purchase - try to pass this as an argument
         "item_name": youselected,
         "cbt": returnmessage, #Sets value for return to merchant button
         "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
         "invoice": host.email,
+        "custom": host.email,
         #need keywords for that reverse
         "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         "return_url": returnurl,
