@@ -107,7 +107,7 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 (IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
-def ask_for_money(request, host_id=2, paymentoption="package"): #default amount is 2.00, default host is John
+def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpackage"): #default amount is 2.00, default host is John
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -116,15 +116,20 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     if paymentoption=="bundle10":
         amount="15.00"
         youselected="Bundle of 10 Packages"
+        quantity = 1
+        quantity = 10
     elif paymentoption=="month20":
         amount="15.00"
         youselected="Monthly"
+        quantity = 20
     elif paymentoption=="annual":
         amount="150.00"
         youselected="Annual"
+        quantity = 240
     else:
         amount="2.00"
         youselected="Per Package"
+        quantity = 1
     #Define the business/receiver email (frsturated b/c the business name is the receiver email name, can't decouple)
     if host.email:
         business = host.email

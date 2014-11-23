@@ -16,7 +16,7 @@ urlpatterns = patterns('',
 		url(r'^$', 'paypal.standard.ipn.views.ask_for_money', name='payment_default'), #blocbox.co/payment, defaults o host_id=2 which is John
 		url(r'^host(?P<host_id>\d+)/$', 'billing.views.base', name='billingbase'), #blocbox.co/payment/host2
 		#STANDARD-IPN URLs - view in paypal/standard/ipn/views.py
-		url(r'^host(?P<host_id>\d+)/ipn/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask'), #blocbox.co/payment/host2/<TYPE?
+		url(r'^host(?P<host_id>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask'), #blocbox.co/payment/host2/<TYPE?
 		url(r'^ipn/host(?P<host_id>\d+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_noamount'), #blocbox.co/payment/host2 - not really relevant - Default - Package Amount
 		url(r'^ipn/notify(?P<host_id>\d+)/$', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), #this is the notify_url	
 		url(r'^ipn/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_nohost'), #blocbox.co/payment/ipn - NOT FUNCTION B/C DOESN'T LINK TO HOST
