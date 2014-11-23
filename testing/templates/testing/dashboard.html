@@ -73,7 +73,20 @@
             		      <div class="col-xs-2">	<p>420 Grand Ave. [ADDME]</p>  	</div>
             		      <div class="col-xs-2">  <p>Modify [ADDME]</p> 					</div>
             		</div>  <!--row, testing row-->
-                  
+                 
+                <!--ROW POPULATED FROM DATABASE-->
+                {% for trans in transactions_all }}                
+                <div class="row whitebackground margintop20px marginbottom30px tinytext">    	<!--<div class="row  paddingtop10px"> -->								
+     									<div class="col-xs-2">	<p> {{ trans.invoice }}</p> 	</div>
+     									<div class="col-xs-2">	<p>Z139W198WQPUTV[ADDME]</p>   	</div> 
+     									<!--HERE - add "Enter Tracking #" if No Tracking -->
+     									<div class="col-xs-2">	<p>Nov. 19[ADDME]</p>          	</div>     	
+            		      <div class="col-xs-2">  <p>John [ADDME]</p>            	</div>
+            		      <div class="col-xs-2">	<p>420 Grand Ave. [ADDME]</p>  	</div>
+            		      <div class="col-xs-2">  <p>Modify [ADDME]</p> 					</div>
+            		</div>  <!--row, testing row-->                		
+                {% endfor %}
+        	
         	</div> <!--col, shipments container-->
 
     	
