@@ -69,8 +69,8 @@ class PayPalStandardBase(Model):
     verify_sign = models.CharField(max_length=255, blank=True)
 		
 		#blocbox specific - adding host and enduser info
-    host_email = models.CharField("Host Email)", max_length=255, blank=True)
-    enduser_email = models.CharField("Enduser Email)", max_length=255, blank=True)
+    host_email = models.CharField("Host Email", max_length=255, blank=True)
+    enduser_email = models.CharField("Enduser Email", max_length=255, blank=True)
 		
     # Buyer Information Variables
     address_country = models.CharField(max_length=64, blank=True)
