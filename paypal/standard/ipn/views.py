@@ -80,7 +80,7 @@ def ipn(request, item_check_callable=None, host_id=None):
         host = get_object_or_404(UserInfo, pk=host_id)
         ipn_obj.host_email = host.email
     
-    #the following set_flag is defined in paypal.standard.modle.spy
+    #the following set_flag is defined in paypal.standard.modle.spy, flat var is passed as the "info" parameter
     if flag is not None:
         #We save errors in the flag field
         ipn_obj.set_flag(flag)
@@ -127,8 +127,8 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     else:
         business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
-    returnurl = "http://www.blocbox.co/shippackage/host" + str(host.id) +"/"
-    notifyurl = "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/"
+    #returnurl = "http://www.blocbox.co/shippackage/host" + str(host.id) +"/"
+    #notifyurl = "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/"
     transcount = PayPalIPN.objects.filter(receiver_email=host.email).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
     invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) #h2u14n13 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
@@ -144,10 +144,8 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         #Receiver email:  	Primary email address of the payment recipient (that is, the merchant). 
         #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
         "custom": enduser.email, #this is serving as the User Email field
-        #JMY editing the notify_url to pass the host information
-        "notify_url": notifyurl,
-        #"notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
-        "return_url": returnurl,
+        "notify_url": "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/",
+        "return_url": "http://www.blocbox.co/shippackage/host" + str(host.id) +"/",
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
