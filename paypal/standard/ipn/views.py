@@ -129,12 +129,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     transcount = PayPalIPN.objects.filter(receiver_email=host.email).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
     date = datetime.datetime.now()
     time = datetime.datetime.time(date)
-    year = date.year
-    month = date.month
-    day = date.day
-    hour = time.hour
-    datevars = str(year) + str(month) + str(day) + str(hour)
-    invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) +"d" #h2u14n13 = transaciton between host2, user14, host's 13th transaction
+    invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) +"d" str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
@@ -156,7 +151,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host,
-    	  'date':date, 'local_timezone':local_timezone, 'datevars':datevars,
+    	  'date':date, 'local_timezone':local_timezone, 
     	  'amount':amount, "youselected": youselected,
     	  'here': quote(request.get_full_path()), 'form': form,
     })
