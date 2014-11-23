@@ -50,6 +50,8 @@
             <div class="row"> <h3 class="col-xs-3 ltbluetext margintop10px nopadding">Shipments</h3> </div>
                
             <!--ISSUE: HOW DO WE WANT THESE TABLES TO LOOK ON MOBILE?-->
+            
+            <!--THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
              
             		<!--TOP ROW - HEADERS -->
             		<div class="row textcenter darkgreytext tinytext "> <!--row containing top table-->     							     							
@@ -62,7 +64,7 @@
      						</div> <!--row, table headers-->
      									
      						<!--TESETING - FIRST ROW--> 
-     						<div class="row whitebackground margintop20px marginbottom30px">    	<!--<div class="row  paddingtop10px"> -->								
+     						<div class="row whitebackground margintop20px marginbottom30px tinytext">    	<!--<div class="row  paddingtop10px"> -->								
      									<div class="col-xs-2">	<p>Ready for pickup[ADDME]</p> 	</div>
      									<div class="col-xs-2">	<p>Z139W198WQPUTV[ADDME]</p>   	</div> 
      									<!--HERE - add "Enter Tracking #" if No Tracking -->
@@ -77,9 +79,8 @@
     	
 
 					<!--Favors Box-->
-          <div class="col-xs-12 dashbox margintop30px marginbottom30px">
-                <div class="row"> <h3 class="col-xs-3 ltbluetext nopadding">Favors</h3>  </div>
-                <div>
+       		<div class="col-xs-12 dashbox margintop30px marginbottom30px">
+          		<div class="row"> <h3 class="col-xs-3 ltbluetext nopadding">Favors</h3>  </div>
                     <div class="row">
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">STATUS</p>
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">DESCRIPTION</p>
@@ -87,19 +88,16 @@
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">NEIGHBOR</p>
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">ADDRESS</p>
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">OPTIONS</p>
-                    </div>
-                    <div class="whitebackground marginbottom30px">
-                        <div class="row paddingtop10px">
+                    </div> <!--row, label -->
+                    <div class="row whitebackground marginbottom30px paddingtop10px">
                             <p class="col-xs-2 textcenter">In progress</p>
                             <p class="col-xs-2 textcenter">House Sitting</p>
                             <p class="col-xs-2 textcenter">Nov. 19</p>
                             <p class="col-xs-2 textcenter">John</p>
                             <p class="col-xs-2 textcenter">420 Grand Ave.</p>
                             <p class="col-xs-2 textcenter">Modify</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                    </div> <!--row, text data-->
+        	</div> <!--col, Favors box--->
 
 
 
@@ -107,7 +105,7 @@
 						
             <p class="col-xs-2 nomargin nopadding">RECENT</p>
             <div class="col-xs-12 dashbox marginbottom60px">
-            		<!--SHIPMENTS Container-->	
+            		<!--RECENT SHIPMENTS Container-->	
               	<div class="row">  <h3 class="col-xs-3 margintop10px nopadding">Shipments</h3>  </div>
                         <div class="row"> <!--labels-->
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">STATUS</p>
@@ -127,7 +125,7 @@
                                 <p class="col-xs-2 textcenter">View Receipt</p>
                             </div>
                         </div> <!--row, text data-->
-
+						</div> <!--col, RECENT SHIPMETNS-->
 	</div> <!--col, Container with everything-->
 			
 
