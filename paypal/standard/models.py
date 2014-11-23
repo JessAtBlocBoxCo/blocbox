@@ -68,7 +68,7 @@ class PayPalStandardBase(Model):
 		#blocbox specific - adding host and enduser info
 		#CANNOT do these - because paypal wont spit them back.. have to use the fields they've profided
 		#INSTEAD.. i am making the receiver_id form the Host Email, and the Custom Form the Enduser_Email
-    receiver_id = models.CharField("Host Email", max_length=127, blank=True)  # 258DLEHY2BDK6
+    receiver_id = models.CharField(max_length=127, blank=True)  # 258DLEHY2BDK6
     custom = models.CharField("User Email", max_length=255, blank=True)
     host_email = models.CharField("Host Email", max_length=255, blank=True)
     #enduser_email = models.CharField("User Email", max_length=255, blank=True)

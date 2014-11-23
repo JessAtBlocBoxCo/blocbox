@@ -28,7 +28,7 @@ class PayPalIPNAdmin(admin.ModelAdmin):
             "description": "The information about the Buyer.",
             'classes': ('collapse',),
             "fields": [
-                "first_name", "last_name", "payer_business_name", "payer_email",
+                "custom", "first_name", "last_name", "payer_business_name", "payer_email",
                 "payer_id", "payer_status", "contact_phone", "residence_country"
             ]
         }),
@@ -36,8 +36,8 @@ class PayPalIPNAdmin(admin.ModelAdmin):
             "description": "The information about the Seller.",
             'classes': ('collapse',),
             "fields": [
-                "business", "item_name", "item_number", "quantity",
-                "receiver_email", "receiver_id", "custom", "invoice", "memo"
+                "business", "receiver_email", "host_email", "item_name", "item_number", "quantity",
+                 "receiver_id",  "invoice", "memo"
             ]
         }),
         ("Recurring", {
