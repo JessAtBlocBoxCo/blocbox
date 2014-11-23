@@ -123,7 +123,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     returnurl = "http://www.blocbox.co/shippackage/host" + str(host.id) +"/"
-    transcount = PayPalIPN.objects.filter(host_email=host.email).count() + 1 #counts transactions that the host has had
+    transcount = PayPalIPN.objects.filter(receiver_id=host.email).count() + 1 #counts transactions that the host has had
     invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) #h2u14n13 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
@@ -134,8 +134,8 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         "cbt": returnmessage, #Sets value for return to merchant button
         "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
         "invoice": invoice,
-        "host_email": host.email, "enduser_email": enduser.email,
-        #"custom":,
+        "receiver_id": host.email, #This is serving as the host_email field, i need this sep from receiver_email b/c sometimes will go to blocbox
+        "custom": enduser.email, #this is serving as the User Email field
         "notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         "return_url": returnurl,
         "cancel_return": "http://www.blocbox.co/dashboard/",
