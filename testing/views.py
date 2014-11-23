@@ -40,7 +40,7 @@ def dashboard_test(request, host_id=None):
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
         host = None
-    return render(request, 'blocbox/jesstest.html', {
+    return render(request, 'testing/dashboard.html', {
         'enduser': enduser, 'host': host,
     })
     
@@ -93,7 +93,7 @@ def jesscaltest(request, calendar_slug_single = "testcalendar1", host_id=None):
     else:
         cal_relations_host = None
         cal_relations_host_count = None
-    return render(request, 'blocbox/jesstest.html', { 
+    return render(request, 'testing/jesstest.html', { 
         'enduser':enduser, 
         'host':host, 
         'connections_all':connections_all,
