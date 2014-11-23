@@ -35,7 +35,7 @@ def get_item(dictionary, key):
 
 #define the dashboard test
 def dashboard_test(request, host_id=None):
-	  enduser = request.user
+    enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
