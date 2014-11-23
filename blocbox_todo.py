@@ -14,6 +14,7 @@ JOHN: update the payment page so that it is a drop down menu at first, and then 
 1. do we need to split up dashboard containers by type of transaction or can we just have a field/colum for that (e.g, shipments and dog walkign one)
 2. dashboard: HOW DO WE WANT THESE TABLES TO LOOK ON MOBILE?-->            
 3. dashboard: -THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
+4. dashboard: maybe delivery date ad status can be collapsed into a single field? 
 		
 """WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: mobile:
@@ -55,6 +56,9 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 
 
 """Jess - transaction tasks"""
+1. an idea to add more fields to paypal tabl e- just [pass hella stuff in URL
+1. allow the user to modify the paypalIPN table - add fields later - like tracking, 
+2. add tracking
 1. update the startashipmetn process so reload based on selected host
 2. add a bunch of fields to the IPN table to correspond with waht john wants in dashboard
 2. dashboard - need to split up those tables and variable calls according to whether the paymet is done or not (current vs recent)
