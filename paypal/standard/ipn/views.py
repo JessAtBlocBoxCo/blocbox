@@ -128,6 +128,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     returnurl = "http://www.blocbox.co/shippackage/host" + str(host.id) +"/"
+    notifyurl = "http://www.blocbox.co/ipn/notify" + str(host.id) +"/"
     transcount = PayPalIPN.objects.filter(receiver_email=host.email).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
     invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) #h2u14n13 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
@@ -144,14 +145,15 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
         #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
         "custom": enduser.email, #this is serving as the User Email field
         #JMY editing the notify_url to pass the host information
-        "notify_url": "http://www.blocbox.co/ipn/notify" + str(host.id) +"/",
+        "notify_url": notifyurl,
         #"notify_url": "http://www.blocbox.co" + reverse('payment:paypal_ipn_notify'),
         "return_url": returnurl,
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #context = {"form": form}
-    return render(request, 'blocbox/payment.html', { 
+    return render(request, 'blocbox/payment.html', {
+        'notifyurl':notifyurl, 
 		    'enduser':enduser, 'host':host,
     	  'date':date, 'local_timezone':local_timezone, 
     	  'amount':amount, "youselected": youselected,
