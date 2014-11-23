@@ -289,8 +289,9 @@ class PayPalStandardBase(Model):
                     self.set_flag("Invalid payment_status. (%s)" % self.payment_status)
                 if duplicate_txn_id(self):
                     self.set_flag("Duplicate txn_id. (%s)" % self.txn_id)
+                #JMY - updating this so it doesnt say invalid but rather notes that it was sent to an address other than defeault one
                 if self.receiver_email != RECEIVER_EMAIL:
-                    self.set_flag("Invalid receiver_email. (%s)" % self.receiver_email)
+                    self.set_flag("Payment sent directly to host (%s)" % self.receiver_email)
                 if callable(item_check_callable):
                     flag, reason = item_check_callable(self)
                     if flag:
