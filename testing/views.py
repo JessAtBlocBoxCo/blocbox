@@ -16,7 +16,6 @@ from django.contrib.auth.decorators import login_required
 #from core
 from core.models import UserInfo, Transaction, Connection
 from core.forms import UserForm, HostForm
-
 #from schedule import periods
 from schedule.periods import Month
 from schedule.periods import weekday_names
@@ -25,7 +24,8 @@ from schedule.forms import EventForm, OccurrenceForm
 from schedule.models import Calendar, Occurrence, Event
 from schedule.models.calendars import CalendarRelation
 from schedule.utils import check_event_permissions, coerce_date_dict
-
+#Import Payment Stuff
+from paypal.standard.ipn.models import PayPalIPN
 
 #Write a custom template filter:
 from django.template.defaulttags import register
@@ -40,8 +40,11 @@ def dashboard_test(request, host_id=None):
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
         host = None
+    connections_all = Connection.objects.filter(end_user=enduser) 
+    transactions_all = PayPalIPN.objects.filter(end_user=enduser)
     return render(request, 'testing/dashboard.html', {
         'enduser': enduser, 'host': host,
+        'connections_all': connections_all, 'transactions_all': transactions_all
     })
     
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
