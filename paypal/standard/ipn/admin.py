@@ -65,7 +65,7 @@ class PayPalIPNAdmin(admin.ModelAdmin):
     list_display = [
         #"__unicode__", - this is defined with a functionin paypal.standard.models.py - it outputs the TX Id
         #"receiver_id",
-        "invoice", "receiver_email",  "host_email", "custom", "payer_email", "mc_gross", "payment_status", "created_at", 
+        "invoice", "receiver_email",  "host_email", "custom", "payer_email", "item_name", "quantity", "mc_gross", "payment_status", "created_at", 
     ]
     #"flag","flag_info", -- removing flag itself from the list above
     search_fields = ["txn_id", "recurring_payment_id"]
