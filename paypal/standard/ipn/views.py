@@ -145,7 +145,8 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     paypal_dict = {
         "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
         "amount": amount, #Amount of the purchase - try to pass this as an argument
-        "item_name": youselected,
+        "item_name": favortype,
+        "quantity": quantity,
         "cbt": returnmessage, #Sets value for return to merchant button
         "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
         "invoice": invoice,
