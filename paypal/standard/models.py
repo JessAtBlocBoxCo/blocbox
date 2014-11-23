@@ -55,7 +55,7 @@ class PayPalStandardBase(Model):
     # Transaction and Notification-Related Variables
     business = models.CharField(max_length=127, blank=True, help_text="Email where the money was sent.")
     charset = models.CharField(max_length=32, blank=True)
-    custom = models.CharField(max_length=255, blank=True)
+    custom = models.CharField("Custom (host.email)", max_length=255, blank=True)
     notify_version = models.DecimalField(max_digits=64, decimal_places=2, default=0, blank=True, null=True)
     parent_txn_id = models.CharField("Parent Transaction ID", max_length=19, blank=True)
     receiver_email = models.EmailField(max_length=127, blank=True)
