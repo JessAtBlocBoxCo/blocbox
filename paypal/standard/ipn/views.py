@@ -128,7 +128,7 @@ def ask_for_money(request, host_id=2, paymentoption="package"): #default amount 
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     transcount = PayPalIPN.objects.filter(receiver_email=host.email).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
     date = datetime.datetime.now()
-    time = datetime.time(now)
+    time = datetime.time.now()
     year = date.year
     month = date.month
     day = date.day
