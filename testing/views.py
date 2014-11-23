@@ -33,6 +33,7 @@ from django.template.defaulttags import register
 def get_item(dictionary, key):
     return dictionary.get(key)
 
+
 #define the dashboard test
 def dashboard_test(request, host_id=None):
     enduser = request.user
@@ -41,11 +42,18 @@ def dashboard_test(request, host_id=None):
     else:
         host = None
     connections_all = Connection.objects.filter(end_user=enduser) 
+    #lists of transactions
     transactions_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
+    shipments_all = transactions_all.filter(item_name="Per Package")
+    #shipments_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
     return render(request, 'testing/dashboard.html', {
         'enduser': enduser, 'host': host,
-        'connections_all': connections_all, 'transactions_all': transactions_all
+        'connections_all': connections_all, 
+        'transactions_all': transactions_all, 'shipments_all': shipments_all,
     })
+
+
+
     
 #jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
 def jesscaltest(request, calendar_slug_single = "testcalendar1", host_id=None):

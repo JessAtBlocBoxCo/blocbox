@@ -42,13 +42,12 @@
 
 	<!--CONTAINER WITH EVERYTHING-->
 	<div class="col-xs-8">
-            
-          <p class="col-xs-2 ltbluetext nopadding nomargin">CURRENT</p> 
           
           <!--SHIPMENTS CONTAINER-->
           <div class="col-xs-12 col-sm-12 dashbox">
-            <div class="row"> <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Shipments [Note - "status" field is invoice ID]</h3> </div>
+            <div class="row"> <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Current Shipments [Note - "status" field is invoice ID]</h3> </div>
              
+             <p>DELETE ME - TEST SHIPMENTS_ALL {{ shipments_all }} </p>
             		<!--TOP ROW - HEADERS -->
             		<div class="row textcenter darkgreytext tinytext "> <!--row containing top table-->     							     							
      									<div class="col-xs-2"> <p class="marginbottom5px">STATUS</p> </div>
@@ -86,7 +85,7 @@
 
 					<!--Favors Box-->
        		<div class="col-xs-12 dashbox margintop30px marginbottom30px">
-          		<div class="row"> <h3 class="col-xs-3 ltbluetext nopadding">Favors</h3>  </div>
+          		<h3 class="col-xs-3 ltbluetext nopadding">Other Transactions</h3> 
                     <div class="row">
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">STATUS</p>
                         <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">DESCRIPTION</p>
@@ -107,12 +106,10 @@
 
 
 
-
-						
-            <p class="col-xs-2 nomargin nopadding">RECENT</p>
-            <div class="col-xs-12 dashbox marginbottom60px">
+            <div class="col-xs-12 dashbox marginbottom60px marginbottom30px">
             		<!--RECENT SHIPMENTS Container-->	
-              	<div class="row">  <h3 class="col-xs-3 margintop10px nopadding">Shipments</h3>  </div>
+              	<h3 class="col-xs-12 margintop10px nopadding">Completed Shipments and other Transactions</h3>  
+              			<!--eventually make this "within past 60 ays" or something or have multiple pages-->
                         <div class="row"> <!--labels-->
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">STATUS</p>
                             <p class="col-xs-2 darkgreytext tinytext textcenter marginbottom5px">TRACKING</p>
