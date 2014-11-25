@@ -147,13 +147,11 @@
                     <div class="col-xs-2 col-sm-1">
                         {% if user.is_authenticated %}    
                         <div class="dropdown textcenter">
-                            <button class="btn dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu2" data-toggle="dropdown"><!--info button-->                                           {% if user.is_authenticated %} 
-                                <!--print user name and number of new messages in parentheses -->
+                            <button class="btn dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu2" data-toggle="dropdown">
+                                <!--number of new messages -->
                                 {% load inbox %}	{% inbox_count %}
-                                {% else %} <a href='/login'>Sign in</a> 
-                                {% endif %}       
                                 <a class="navbar-brand"></a> 
-                            </button> <!--end info button-->
+                            </button> <!--end message button-->
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2"> <!--nav navbar-nav navbar-right-->      	      	
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href='/messages/inbox/'>Inbox</a></li>
