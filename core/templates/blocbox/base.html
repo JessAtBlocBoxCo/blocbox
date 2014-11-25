@@ -153,7 +153,7 @@
                         <div class="dropdown textcenter">
                             <button class="btn dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu2" data-toggle="dropdown"><!--info button-->                                           {% if user.is_authenticated %} 
                                 <!--print user name and number of new messages in parentheses -->
-                               ( {% load inbox %}	{% inbox_count %} )
+                                {% load inbox %}	{% inbox_count %}
                                 {% else %} <a href='/login'>Sign in</a> 
                                 {% endif %}       
                                 <a class="navbar-brand"></a> 
