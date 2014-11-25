@@ -145,7 +145,9 @@
                     
                      <!--drop down menu if logged in-->
                     <div class="col-xs-2 col-sm-1">
-                        {% if user.is_authenticated %}    
+                        {% if user.is_authenticated %}
+                        {% else %} <div class="hide">Sign in</div> 
+                        {% endif %}      
                         <div class="dropdown textcenter">
                             <button class="btn dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu2" data-toggle="dropdown">
                                 <!--number of new messages -->
@@ -206,6 +208,9 @@
 
             </div> <!--white container -->
         </nav> <!--nav-->
+
+	
+{% endblock %}	
 
 
 
