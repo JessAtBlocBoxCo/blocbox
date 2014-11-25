@@ -1,22 +1,12 @@
 
-"""TO DO  BEFORE ERA APPLICATION"""
+"""TO DO"""
 JOHN: update the payment page so that it is a drop down menu at first, and then it will update 
 	so that the payment amount corresponds to whatever they cose
 1. JOHN - /Fix Mobile/make site responsive
-3. JOHN search page:
-		-- make text look better for john
+3. JOHN search page -- make text look better for john
 4. JESS: Add email counter
 6. JESS: Remove sign in after welcome page
 7. JESS: Restore User nav on beta page
-
-
-"""JESS NOTES/QUESTIONS FOR JOHN"""
-1. do we need to split up dashboard containers by type of transaction or can we just have a field/colum for that (e.g, shipments and dog walkign one)
-2. dashboard: HOW DO WE WANT THESE TABLES TO LOOK ON MOBILE?-->            
-3. dashboard: -THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
-4. dashboard: maybe delivery date ad status can be collapsed into a single field? 
-		
-"""WEBSITE TASKS TO DO AFTER TUMML APP"""
 1. JOHN: mobile:
 	2. john: add process/for other favors
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
@@ -43,6 +33,12 @@ JOHN: update the payment page so that it is a drop down menu at first, and then 
 11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
 	7. JESS to form and table - add need_meals
 	1. JESS dashboard: connect to transactions table to populate actually transactions
+        
+"""JESS NOTES/QUESTIONS FOR JOHN"""
+1. do we need to split up dashboard containers by type of transaction or can we just have a field/colum for that (e.g, shipments and dog walkign one)
+2. dashboard: HOW DO WE WANT THESE TABLES TO LOOK ON MOBILE?-->            
+3. dashboard: -THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
+4. dashboard: maybe delivery date ad status can be collapsed into a single field? 
 
 QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN STATIC.. BEFORE TUES..
 3. JESS: staratahipment -select a host - then the process - LOAD - to connect to a host...
