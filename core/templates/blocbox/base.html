@@ -112,7 +112,7 @@
                             <div class="dropdown" > <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
 
                                     <!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
-                            <button class="btn dropdown-toggle bbbasenavbar bbbasenavbarbtn textright" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
+                                <button class="textright btn dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
                                     {% if user.is_authenticated %} 
                                                         <!--print user name and number of new messages in parentheses -->
                                                     {{user.first_name}} 	( {% load inbox %}	{% inbox_count %} )
