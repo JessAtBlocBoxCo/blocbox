@@ -215,7 +215,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 	background-image: url('/static/blocbox/images/info-button.png');
 	background-repeat: no-repeat; 
 	background-size: contain; 
-	width: 40px;
+	width: 37px;
     cursor: pointer;
   /*
   vertical-align: middle;
@@ -227,7 +227,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-image: url('/static/blocbox/images/message-button.png');
     background-repeat: no-repeat; 
     background-size: contain; 
-    width: 40px;
+    width: 37px;
     cursor: pointer;
     vertical-align: middle;
     /*
