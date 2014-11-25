@@ -124,12 +124,12 @@
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
                             {% if user.is_authenticated %} <!--drop down menu if logged in-->
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href='/dashboard/'>Dashboard</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'>Start a Shipment</a></li> 
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'>My Block</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href='/profile/'>Profile</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href='/account/'>Account</a></li>
-                                    <li role="presentation"><a role="menuitem" tabindex="-1" href='/logout/'>Sign out</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-inbox"></i>&nbsp Dashboard</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-inbox"></i>&nbsp Start a Shipment</a></li> 
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-inbox"></i>&nbsp My Block</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/profile/'><i class="fa fa-inbox"></i>&nbsp Profile</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-inbox"></i>&nbsp Account</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/logout/'><i class="fa fa-inbox"></i>&nbsp Sign out</a></li>
 
                             {% else %} <!--drop down menu if not logged in -->
                                     <li role="presentation"><a role="menuitem"  tabindex="-1" href='/beta'>Home</a></li>
@@ -154,10 +154,10 @@
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2"> <!--nav navbar-nav navbar-right-->      	      	
                                 <li role="presentation"><a role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox"></i>&nbsp Inbox</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'>New Message</a></li> 
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'>Sent</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/profile/'>Archive</a></li>
-                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/account/'>Settings</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-inbox"></i>&nbsp New Message</a></li> 
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-inbox"></i>&nbsp Sent</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/profile/'><i class="fa fa-inbox"></i>&nbsp Archive</a></li>
+                                <li role="presentation"><a role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-inbox"></i>&nbsp Settings</a></li>
                                 <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->        
@@ -177,12 +177,12 @@
                                 <li role="presentation"><a role="menuitem"  tabindex="-1" href='/'>Join Waitlist</a></li>
 
                                 {% endif %} <!--drop down menu items that appears to either user -->
-                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/search'>Find a BlocBox</a></li>
-                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/signuphost'>Become a Host</a></li>
-                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'>Nudge a Neighbor</a></li>
-                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'>FAQ</a></li>
-                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'>Love Bloxbox?</a></li>
-                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'>Contact Us</a></li>
+                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/search'><i class="fa fa-inbox"></i>&nbsp Find a BlocBox</a></li>
+                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/signuphost'><i class="fa fa-inbox"></i>&nbsp Become a Host</a></li>
+                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'><i class="fa fa-inbox"></i>&nbsp Nudge a Neighbor</a></li>
+                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'><i class="fa fa-inbox"></i>&nbsp FAQ</a></li>
+                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'><i class="fa fa-inbox"></i>&nbsp Love Bloxbox?</a></li>
+                                <li role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'><i class="fa fa-inbox"></i>&nbsp Contact Us</a></li>
                                 <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->        
