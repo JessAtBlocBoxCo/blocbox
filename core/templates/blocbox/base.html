@@ -116,10 +116,10 @@
                                     {% if user.is_authenticated %} 
                                                         <!--print user name and number of new messages in parentheses -->
                                                     {{user.first_name}} 	( {% load inbox %}	{% inbox_count %} )
-                                {% else %} <a href='/login'>Sign in</a> 
+                                {% else %} <a class="textright" href='/login'>Sign in</a> 
                             {% endif %}      
                                 <span class="caret"></span>        
-                            </button>
+                                </button>
 
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
