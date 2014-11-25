@@ -1,26 +1,24 @@
 
 """TO DO"""
-JOHN: update the payment page so that it is a drop down menu at first, and then it will update 
-	so that the payment amount corresponds to whatever they cose
 1. JOHN - /Fix Mobile/make site responsive
-3. JOHN search page -- make text look better for john
-4. JESS: Add email counter
-6. JESS: Remove sign in after welcome page
+2. JESS: Add Profile, Account. Host Registration, FAQ, Nudge a neigbor pages
+3. JOHN search page -- fix map top margin and restyle nudge a neighbor message
+4. JESS: Remove sign in after welcome page
 7. JESS: Restore User nav on beta page
-1. JOHN: mobile:
-	2. john: add process/for other favors
+2. JOHN: add process/for other favors
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
 1. JOHN/JESS: package incoming process/when it arrives
 1. JOHN: add green check box next to verified info
+12. JESS: ADD Tracking # API
 2. JESS: verified info on HPV - only show symbol if verified, then in connect version show the DATA.
-3. JESS: update "when i'm home" information for host profile... visitor
+3. JESS: update "when i'm home" informatiorfn for host profile... visitor
 4. JESS: update table to have fields for what other services they are offering
 5. JESS: updating HPV so that it truly reflects what services you offer
 6. JOHN: sign-up - "by continugin i agree" - put below button
 7. JESS: add to email sent to host - the text they fill in for when they usually get packages
 8. SIGN-UP: two bowls of shit, one bowl, then sneaky second bowl of shit
 9. JESS table: add two use cases (1) wifi sharing; (2) community dinners/food as a use-case.. add this totable adn then also update the checkboxes: add NEED_MEALS
-10. Allow user to upload pictures
+10. JESS: Allow user to upload pictures
 11. john: style the profile pic - so the user uplaodssimplepic, and then converted to glossy bubble
 12. Jess: populatethe dashboard - so that the tracking is linked
 13. jess: google map - link the search page to the fields in table so it automatically popualtes with hosts nearby (e.g., not hard coded)
@@ -31,8 +29,9 @@ JOHN: update the payment page so that it is a drop down menu at first, and then 
 15. jess: fig invalid login credentials plac e- redirect to a forgot password
 1. JESS HPV verified info: if not connected, say "Verified Info" --
 11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
-	7. JESS to form and table - add need_meals
-	1. JESS dashboard: connect to transactions table to populate actually transactions
+7. JESS to form and table - add need_meals
+1. JESS dashboard: connect to transactions table to populate actually transactions
+    
         
 """JESS NOTES/QUESTIONS FOR JOHN"""
 1. do we need to split up dashboard containers by type of transaction or can we just have a field/colum for that (e.g, shipments and dog walkign one)
@@ -77,10 +76,6 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 
 #4. landing page may be broken.
 
-"""PITCH WORK"""
-#1. make an outline
-#2. make the pitch
-#3.
 
 
 
