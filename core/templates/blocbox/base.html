@@ -120,7 +120,7 @@
                                 </button>
 
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                            <ul class="dropdown-menu marginleft20px" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
+                            <ul class="dropdown-menu" style="margin-left: 68px;" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
                             {% if user.is_authenticated %} <!--drop down menu if logged in-->
                                 <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-list fa-fw fa-lg darkgreytext"></i>&nbsp Dashboard</a></li>
                                 <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-th-large fa-fw fa-lg darkgreytext"></i>&nbsp My Block</a></li>
