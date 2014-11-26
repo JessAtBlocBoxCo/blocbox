@@ -108,9 +108,7 @@
                         </div> <!--col-->		
                     <div class="col-sm-5 col-sm-offset-2"> 
                     <div class="col-sm-6">
-
                         <div class="dropdown textright paddingleft120px" > <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
-
                                     <!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
                                 <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown"> <!--class="col-sm-3 menubutton"-->
                                     {% if user.is_authenticated %} 
@@ -118,7 +116,7 @@
                                                     {{user.first_name}}
                                 {% else %} <a href='/login'>Sign in</a> 
                             {% endif %}      
-                                <span class="caret"></span>        
+                                    <span><i class="fa-angle-down"></i></span>        
                                 </button>
 
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
