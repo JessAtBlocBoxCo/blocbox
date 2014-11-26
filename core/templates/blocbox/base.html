@@ -122,11 +122,11 @@
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1"> <!--nav navbar-nav navbar-right-->      	      	
                             {% if user.is_authenticated %} <!--drop down menu if logged in-->
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-list fa-fw darkgreytext"></i>&nbsp Dashboard</a></li>
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-th-large fa-fw darkgreytext"></i>&nbsp My Block</a></li>
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/profile/'><i class="fa fa-user fa-fw darkgreytext"></i>&nbsp Profile</a></li>
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-dollar fa-fw darkgreytext"></i>&nbsp Account</a></li>
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/logout/'><i class="fa fa-sign-out fa-fw darkgreytext"></i>&nbsp Sign out</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-list fa-fw fa-lg darkgreytext"></i>&nbsp Dashboard</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-th-large fa-fw fa-lg darkgreytext"></i>&nbsp My Block</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/profile/'><i class="fa fa-user fa-fw fa-lg darkgreytext"></i>&nbsp Profile</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-dollar fa-fw fa-lg darkgreytext"></i>&nbsp Account</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg darkgreytext"></i>&nbsp Sign out</a></li>
 
                             {% else %} <!--drop down menu if not logged in -->
                                 <li class="dropdownfont" role="presentation"><a role="menuitem"  tabindex="-1" href='/beta'>Home</a></li>
@@ -154,10 +154,10 @@
                                 <li class="dropdownfont" role="presentation"><a role="menuitem"  tabindex="-1" href='/'>Join Waitlist</a></li>
 
                                 {% endif %} <!--drop down menu items that appears to either user -->
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-plus fa-fw greentext"></i>&nbsp Start a Shipment</a></li>
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-plus fa-fw greentext"></i>&nbsp Start a Favor</a></li> 
-                                <li class="dropdownfont" role="presentation"><a role="menuitem"  tabindex="-1" href='/signuphost'><i class="fa fa-users fa-fw greentext"></i>&nbsp Become a Host</a></li>
-                                <li class="dropdownfont" role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'><i class="fa fa-hand-o-right fa-fw greentext"></i>&nbsp Nudge a Neighbor</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Shipment</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Favor</a></li> 
+                                <li class="dropdownfont" role="presentation"><a role="menuitem"  tabindex="-1" href='/signuphost'><i class="fa fa-users fa-fw fa-lg greentext"></i>&nbsp Become a Host</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem"  tabindex="-1" href='/nudgeneighbor'><i class="fa fa-hand-o-right fa-fw fa-lg greentext"></i>&nbsp Nudge a Neighbor</a></li>
                                 <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->        
@@ -173,9 +173,9 @@
                             </button> <!--end message button-->
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2"> <!--nav navbar-nav navbar-right-->      	      	
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw ltbluetext"></i>&nbsp Inbox</a></li>
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-pencil-square-o fa-fw ltbluetext"></i>&nbsp New Message</a></li> 
-                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-cog fa-fw ltbluetext"></i>&nbsp Notification Settings</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg ltbluetext"></i>&nbsp Inbox</a></li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-pencil-square-o fa-fw fa-lg ltbluetext"></i>&nbsp New Message</a></li> 
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-cog fa-fw fa-lg ltbluetext"></i>&nbsp Notification Settings</a></li>
                                 <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->        
