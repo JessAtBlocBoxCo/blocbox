@@ -17,14 +17,14 @@
            <div class="col-xs-10 col-xs-offset-1 inboxmessbox">
                {% for message in message_list %} 
                <div class="row paddingtopbottom20px">
-                   <p class="col-xs-2">{{ message.sender }}</p>
+                   <p class="col-xs-2 col-xs-offset-1">{{ message.sender }}</p>
                    <div class="col-xs-3">
                        {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
                        {% if message.replied %}</em>{% endif %}
                        {% if message.new %}</strong>{% endif %}</div>
-                   <p class="col-xs-2">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
+                   <p class="col-xs-3">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
                    <p class="col-xs-2"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></p>
                </div>
                {% endfor %}
