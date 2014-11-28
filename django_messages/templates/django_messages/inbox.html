@@ -18,7 +18,7 @@
                {% for message in message_list %} 
                <div class="row paddingtopbottom20px">
                    <p class="col-xs-2 col-xs-offset-1">{{ message.sender }}</p>
-                   <div class="col-xs-3 text center">
+                   <div class="col-xs-3 textcenter">
                        {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
