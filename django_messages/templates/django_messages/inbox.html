@@ -14,26 +14,23 @@
    <div class="col-xs-8 col-xs-offset-2 dashbox margintop20px">
        {% if message_list %} 
        <!--top row showing Sender, Subjec,t Received, Action, trans=translate, this was  -->
-       <table class="table messages"> <!--shoudl style this messages class -->
-           <thead>
-               <tr><th>{% trans "Sender" %}</th><th>{% trans "Subject" %}</th><th>{% trans "Received" %}</th><th>{% trans "Action" %}</th></tr>
-           </thead>
-           <tbody class="inboxmessbox">
+       <div class="table messages"> <!--shoudl style this messages class -->
+           <div class="inboxmessbox">
                {% for message in message_list %} 
-               <tr class="paddingtopbottom20px">
-                   <td>{{ message.sender }}</td>
-                   <td>
+               <div class="paddingtopbottom20px">
+                   <p>{{ message.sender }}</p>
+                   <div>
                        {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
                        {% if message.replied %}</em>{% endif %}
-                       {% if message.new %}</strong>{% endif %}</td>
-                   <td>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</td>
-                   <td><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></td>
-               </tr>
+                       {% if message.new %}</strong>{% endif %}</div>
+                   <p>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
+                   <p><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></p>
+               </div>
                {% endfor %}
-           </tbody>
-       </table>
+           </div>
+       </div>
        {% else %}
        <p>{% trans "No messages." %}</p>
        {% endif %}  
