@@ -20,7 +20,7 @@
            </thead>
            <tbody class="inboxmessbox">
                {% for message in message_list %} 
-               <tr>
+               <tr class="paddingtopbottom20px">
                    <td>{{ message.sender }}</td>
                    <td>
                        {% if message.new %}<strong>{% endif %}
