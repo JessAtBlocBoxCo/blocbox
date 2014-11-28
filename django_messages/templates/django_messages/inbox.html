@@ -17,11 +17,11 @@
            <div class="col-xs-10 col-xs-offset-1 inboxmessbox">
                {% for message in message_list %} 
                <div class="row paddingtopbottom20px">
-                  <div class="col-xs-2 col-xs-offset-1">
+                  <div class="col-xs-2">
                     <img class="dashpic" src=""  /> 
                   </div>
-                   <p class="col-xs-2">{{ message.sender }}</p>
-                   <div class="col-xs-4 textcenter">
+                   <p class="col-xs-2 textcenter">{{ message.sender }}</p>
+                   <div class="col-xs-4">
                        {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
