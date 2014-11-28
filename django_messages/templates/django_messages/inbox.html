@@ -18,14 +18,14 @@
                {% for message in message_list %} 
                <div class="row paddingtopbottom20px">
                    <p class="col-xs-2 col-xs-offset-1">{{ message.sender }}</p>
-                   <div class="col-xs-3 textcenter">
+                   <div class="col-xs-4 textcenter">
                        {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
                        {% if message.replied %}</em>{% endif %}
                        {% if message.new %}</strong>{% endif %}</div>
                    <p class="col-xs-3 textcenter">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
-                   <p class="col-xs-2"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></p>
+                   <p class="col-xs-2 textcenter"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></p>
                </div>
                {% endfor %}
            </div>
