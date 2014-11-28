@@ -16,19 +16,19 @@
        <!--top row showing Sender, Subjec,t Received, Action, trans=translate, this was  -->
            <div class="col-xs-10 col-xs-offset-1 inboxmessbox">
                {% for message in message_list %} 
-               <div class="row paddingtopbottom20px">
-                  <div class="col-xs-2">
+               <div class="row">
+                   <div class="col-xs-2 paddingtopbottom20px">
                     <img class="dashpic" src=""  /> 
                   </div>
-                   <p class="col-xs-2 textcenter">{{ message.sender }}</p>
-                   <div class="col-xs-4">
+                   <p class="col-xs-2 textcenter paddingtopbottom20px">{{ message.sender }}</p>
+                   <div class="col-xs-4 paddingtopbottom20px">
                        {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
                        {% if message.replied %}</em>{% endif %}
                        {% if message.new %}</strong>{% endif %}</div>
-                   <p class="col-xs-2 textcenter">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
-                   <p class="col-xs-1 textcenter"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></p>
+                   <p class="col-xs-2 textcenter paddingtopbottom20px">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
+                   <p class="col-xs-1 textcenter paddingtopbottom20px"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></p>
                </div>
                {% endfor %}
            </div>
