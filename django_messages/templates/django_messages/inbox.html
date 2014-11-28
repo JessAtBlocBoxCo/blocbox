@@ -18,7 +18,7 @@
            <thead>
                <tr><th>{% trans "Sender" %}</th><th>{% trans "Subject" %}</th><th>{% trans "Received" %}</th><th>{% trans "Action" %}</th></tr>
            </thead>
-           <tbody>
+           <tbody class="inboxmessbox">
                {% for message in message_list %} 
                <tr>
                    <td>{{ message.sender }}</td>
