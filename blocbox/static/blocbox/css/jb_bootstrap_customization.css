@@ -362,7 +362,9 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 
 .footerlogo {
     max-width: 200px;
-    min-height: 150px;
+    min-height: 175px;
+    margin-top: -15px;
+    margin-left: -20px;
 }
 
 .footerline {
