@@ -11,26 +11,24 @@
 {% block messagingcontent %}
 
 <div class="row">
-   <div class="col-xs-8 col-xs-offset-2 dashbox margintop20px">
+   <div class="col-xs-10 col-xs-offset-1 dashbox margintop20px">
        {% if message_list %} 
        <!--top row showing Sender, Subjec,t Received, Action, trans=translate, this was  -->
-       <div class="table messages"> <!--shoudl style this messages class -->
-           <div class="inboxmessbox">
+           <div class="col-xs-6 col-xs-offset-3 inboxmessbox">
                {% for message in message_list %} 
-               <div class="paddingtopbottom20px">
-                   <p>{{ message.sender }}</p>
-                   <div>
+               <div class="row paddingtopbottom20px">
+                   <p class="col-xs-2 col-xs-offset-1">{{ message.sender }}</p>
+                   <div class="col-xs-3">
                        {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
                        {% if message.replied %}</em>{% endif %}
                        {% if message.new %}</strong>{% endif %}</div>
-                   <p>{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
-                   <p><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></p>
+                   <p class="col-xs-2">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
+                   <p class="col-xs-2"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a></p>
                </div>
                {% endfor %}
            </div>
-       </div>
        {% else %}
        <p>{% trans "No messages." %}</p>
        {% endif %}  
