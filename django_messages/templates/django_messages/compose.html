@@ -5,13 +5,17 @@
 {% block messagingcontent %} 
 
 
-<form action="" method="post">
-{% csrf_token %} 
-<table>
-{{ form.as_table }}
-</table>
-<input type="submit" value="{% trans "Send" %} &raquo;"/>
-</form>
+<div class="row">
+   <div class="col-xs-8 col-cs-offset-2">
+        <form action="" method="post">
+        {% csrf_token %} 
+        <table>
+        {{ form.as_table }}
+        </table>
+        <input type="submit" value="{% trans "Send" %} &raquo;"/>
+        </form>
+    </div>
+</div>
 
 {% endblock %}
 
