@@ -60,7 +60,7 @@ The URLs for this site, and the corresponding files are as follows:
 	- extends baseesignup.html
 
 2C. blocbox.co/hostsignup/  (Host sign up)
-	- template is at core/templates/blocbox/sign-host.html; view is core/views/signuphost
+	- template is at core/templates/blocbox/sign-host.html; view is core.views.signuphost
 	- you'kll want to populate the "additionalfields" block - this is empty right now, but whatever you put there will be added on to the generic
 		sign up form - so this should be host-specific stuff; analgous to the "introduce yourself" fields when connecting to someone
 	- note that i had to remove "interst in hosting" from generic basesignup because we dont want that on host sign up, so i added that to specific pages
@@ -72,9 +72,11 @@ The URLs for this site, and the corresponding files are as follows:
 	- also - there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" 
 			(less verbose though) and then a separate button saying "sign up to be a host"
 	
-2CD blocbox.co/login/ (template: blocbox/core/templates/blocbox/sign-in.html)
+2D blocbox.co/login/ (template: blocbox/core/templates/blocbox/sign-in.html)
 	- requests email and password
 	- goes to dashboard after user logs in
+
+2E blocbox.co/nudgeaneighbor; template: core/templates/blocbox/nudge-a-neighbor.html; view at core.views.nudgeaneighbor
 
 *-----------------------------------------------------------------------*
 3. PROFILE PAGES AND ACCOUNT PAGES

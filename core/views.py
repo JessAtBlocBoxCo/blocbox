@@ -81,7 +81,13 @@ def hostprofile(request, host_id):
     		'connections_all':connections_all, 'connections_count':connections_count, 'connectionstotal':connections_count,
     		'transactions_count':transactions_count, 'transactions_all':transactions_all }, context)
 
-#Create a login viewi
+def nudgeaneighbor(request):
+    enduser = request.user
+    return render(request, 'blocbox/nudge-a-neighbor.html', {'enduser':enduser,})
+    	
+#-------------------------------------------------------------------------
+#Registration and login pages
+#-------------------------------------------------------------------------
 def userlogin(request):
     context = RequestContext(request)
     if request.method == 'POST':
