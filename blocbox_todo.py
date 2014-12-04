@@ -1,7 +1,6 @@
 
 """TO DO"""
 1. JOHN - /Fix Mobile/make site responsive
-2. JESS: Add Profile, Account. Host Registration, FAQ, Nudge a neigbor pages
 3. JOHN search page -- fix map top margin and restyle nudge a neighbor message
 4. JESS: Remove sign in after welcome page
 7. JESS: Restore User nav on beta page
