@@ -17,24 +17,26 @@
  		
 {% if user.is_authenticated %}     
     
-    <div class="row"> <div class="col-xs-12 col-sm-10 col-sm-offset-1 nopaddingleftright">
+    <div class="row"> 
+    	<div class="col-xs-12 col-sm-10 col-sm-offset-1 nopaddingleftright">
             <div class="orangebackground profilecover"></div>
-    </div> </div>
+    	</div> 
+    </div> <!--row-->
+    
  
 		<!--name apicutre etc-->
-    <div class="row marginbottom20px hostinfobox relativediv">
+    <div class="row"> 
+    		<div class="col-xs-12 col-sm-10 col-sm-offset-1 nopaddingleftright marginbottom20px hostinfobox relativediv">
         		<div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
         		    <img class="profilepic" src="{% static 'blocbox/images/JB-2.png' %}"  /> 
         		</div>
         		
         		<div class="col-xs-10 col-xs-offset-2 col-sm-9 col-sm-offset-3">
-    	  		 <p class="hostname negmarginright15px">{{ enduser.first_name }} {{ enduser.last_name }} </p> <!--class="hostname"-->
+    	  		 		<p class="hostname negmarginright15px">{{ enduser.first_name }} {{ enduser.last_name }} </p> <!--class="hostname"-->
         		</div>
+     		</div> <!--col-xs-12-->
+     </div> <!--row-->
         		
-
-		</div> <!--closing top row with picture and name -->
-	
-
     	
 
 	<!--Second Row of info> -->
