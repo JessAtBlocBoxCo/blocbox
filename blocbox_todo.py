@@ -6,6 +6,7 @@
 4. JESS: Remove sign in after welcome page
 	5. Jess: add error message to the profile page if someone is not registered.. or redirect them
 7. JESS: Restore User nav on beta page
+    8. JESS: Inbox: call a snippet from the message, like {{ message.snippet }}, change delete and trash to “archive”?, Change {{ message.sender }} to the user name (e.g. “John”)?    
 2. JOHN: add process/for other favors
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
 3. JOHNS: general issues with sign-up page: aligning and spacing is kinda weird
