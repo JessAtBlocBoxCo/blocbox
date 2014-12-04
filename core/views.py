@@ -301,7 +301,7 @@ def startashipment(request):
 
 def startafavor(request):
 		enduser = request.user
-		return render(request, 'blocbox/startashipment.html', {'enduser':enduser,})
+		return render(request, 'blocbox/startafavor.html', {'enduser':enduser,})
 			
 #This is the REturn URL for paypal IPN so  eeds to be CSRF exempt
 @csrf_exempt		
