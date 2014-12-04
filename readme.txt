@@ -125,7 +125,7 @@ The URLs for this site, and the corresponding files are as follows:
 4. TRANSACTION PAGES
 *-----------------------------------------------------------------------*
 
-4A. blocbox.co/startashipment (template: core/templates/startashipment.html)
+4A. blocbox.co/startashipment (template: core/templates/blocbox/startashipment.html, view is core/views/startafavor
 	- Data presented
 		-Host name
 		-Host address
@@ -136,7 +136,14 @@ The URLs for this site, and the corresponding files are as follows:
 		-Host Choice
 		-Shipping Options
 
-4B. 	blocbox.co/payment (no form - just base template) + blocbox.co/payment/ipn (instant payment notifcaiont - shittier) and blocbox.co/payment/pro (better)
+4B. 	blocbox.co/startafavor (template: core/templates/blocbox/startafavor.html, view is core/views/startafavor
+			- issue: if they are connected to multiple hosts do they really need to "select" one or is it more of a bid? e.g., who will take? this may b ea next-level step 
+				since at beta people will only have one host. but this is an issue unique to other favors, since "start a shipment" host sleection is deterined by 
+				user preference (where they want the shipment to go) but that doesn't really apply to other favors as much, which may be more like a bid - 
+				thats also true because everyone presumably will do shipping, but not everyone wil do the other favors
+			- need a better phrase
+
+4C. 	blocbox.co/payment (no form - just base template) + blocbox.co/payment/ipn (instant payment notifcaiont - shittier) and blocbox.co/payment/pro (better)
 			Template: core/templates/payment.html; URL patterns defined in blocbox/billing/urls.py
 			View: /blocbox/billing/views.py, which passes a form called PaypalPaymentsForm defined in paypal/standard/forms.py
 			For IPN or PRO The template loads the form with the statement	{{ form.render }} 
@@ -150,7 +157,7 @@ The URLs for this site, and the corresponding files are as follows:
 			Data requested
 				Payment plan selection
 
-4C. blocbox.co/shippackage (template: core/templates/shippackage.html)
+4D. blocbox.co/shippackage (template: core/templates/shippackage.html)
 
 	- Data presented
 		-Host Name
