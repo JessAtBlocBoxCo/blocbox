@@ -38,10 +38,10 @@
     	
 
 	<!--Second Row of info> -->
-<div class="row marginbottom20px"> <!--paddingsides10px marginleftright20px --> 
+	<div class="row marginbottom20px"> <!--paddingsides10px marginleftright20px --> 
 
 		<!--about me-->
-    <div class="col-xs-12 col-sm-6 col-sm-push-3"> 
+    <div class="col-xs-12 col-sm-12"> 
         <div class="profilebox">
         		<p class="orangetext centerboxheader">Email</p>
             	<div class="profileboxline"></div>   <p class="centerboxtext">{{ enduser.email }}</p>
@@ -49,33 +49,12 @@
             	<div class="profileboxline"></div>   <p class="centerboxtext"> {{ enduser.st_address1 }}, {{ enduser.city }} {{ enduser.state }} </p>	
             <p class="orangetext centerboxheader">About Me</p>
             	<div class="profileboxline"></div>   <p class="centerboxtext">{{ enduser.about_me }}</p>
+            <p class="orangetext centerboxheader">When I'd like to pick up packages</p>
+            	<div class="profileboxline"></div>   <p class="centerboxtext">{{ enduser.pickup_time }}</p>
         </div>
     </div>
-    
-    <!--pick up time-->
-    <div class="col-xs-12 col-sm-2 col-sm-push-3"> <!-- marginleftright10px -->
-        <div class="profilebox">
-            <p class="bluegreytext sideboxtext">When I'd Like to pick up packages</p>
-            <div class="profileboxline"></div>
-            <div class="row">
-                <p class="col-xs-4 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop20px"> &nbsp {{ enduser.pickup_time }} &nbsp </p>
-            </div>
-        </div>
-    </div>
-   
-   	<!--success rate box-->
-    <div class="col-xs-12 col-sm-offset-1 col-sm-2 col-sm-pull-8"> 
-        <div class="profilebox">
-            <p class="redtext sideboxtext">Success Rate</p>
-            <div class="profileboxline"></div>
-            <div class="row"> 
-                <p class="col-xs-4 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop20px">{{ transactions_count }}</p>
-                <p class="col-xs-6 col-sm-12 col-sm-offset-0 paddingtop20pxmobile">Favors Completed</p>
-            </div>
-        </div>  <!--profilebox-->
-    </div> <!--col containing profile box-->
-			
-</div> <!--closing seecond row -->
+    			
+	</div> <!--closing seecond row -->
 
 	<!--Third Row of info> -->
 	<div class="row marginbottom20px">
