@@ -11,6 +11,7 @@
 4. JOHN: there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" 
 			(less verbose though) and then a separate button saying "sign up to be a host"
 1. JOHN/JESS: package incoming process/when it arrives
+BOTH: need to re-think "start a favor" - need a better term
 1. JOHN: add green check box next to verified info
 12. JESS: ADD Tracking # API
 2. JESS: verified info on HPV - only show symbol if verified, then in connect version show the DATA.

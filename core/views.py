@@ -296,8 +296,13 @@ def waitlist_confirmation(request):
 
 #We may want to move all of this stuff into billing (which could be called ' Transactios')
 def startashipment(request):
-		return render(request, 'blocbox/startashipment.html')
+		enduser = request.user
+		return render(request, 'blocbox/startashipment.html', {'enduser':enduser,})
 
+def startafavor(request):
+		enduser = request.user
+		return render(request, 'blocbox/startashipment.html', {'enduser':enduser,})
+			
 #This is the REturn URL for paypal IPN so  eeds to be CSRF exempt
 @csrf_exempt		
 def shippackage(request, host_id): #passes the host_id argument in URL

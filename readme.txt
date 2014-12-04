@@ -20,9 +20,11 @@ The URLs for this site, and the corresponding files are as follows:
 
 1C. blocbox.co/search/
 	- this is the search page (after clikign on "Get started")
-	- the tempalte is at blocbox/core/templates/blocbox/search.shtml
+	- the tempalte is at core/templates/blocbox/search.shtml
 	- teh styles/css need to be fixed
-	
+
+1D. blocbox.co/abouthosting/, template is at core/blocbox/templates/blocbox/abouthosting.html, view is core/views/abouthosting
+
 *-----------------------------------------------------------------------*
 2. REGISTRATION AND AUTHENTICATION PAGES
 *-----------------------------------------------------------------------*
