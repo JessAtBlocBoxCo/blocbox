@@ -229,7 +229,7 @@ def signuphost(request):
 #About hosting
 def abouthosting(request):
     enduser = request.user
-    return render(request, 'blocbox/abouthosting.html', {'enduser':enduser, 'host':host,})
+    return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
     
 
 #-------------------------------------------------------------
