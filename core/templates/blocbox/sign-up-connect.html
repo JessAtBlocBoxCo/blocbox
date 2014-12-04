@@ -4,7 +4,7 @@
 {% extends "blocbox/sign-up-withoutconnect.html" %}
 {% load staticfiles %} 
 
-{% block signupheaderadd %} to Connect with {{host.first_name}} {% endblock %}
+{% block signupheader %} Sign Up For BlocBox to Connect with {{host.first_name}} {% endblock %}
 
 {% block signupsubtitle %} 
 	<h5 class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px">In order to connect, we need to ask for some basic information. Already Registered? <a href="/login/">Login here.</a></h5>
@@ -24,7 +24,7 @@
 {% endblock %}
 
 
-{% block introduceyourself %} 
+{% block additionalfields %} 
 
 <h3 class="col-sm-10 col-sm-offset-1 margintop10px">Introduce Yourself </h3> 		  
 <h5 class="col-sm-10 col-sm-offset-1 marginbottom20px">Before you connect, {{host.first_name}} will need to confirm your request.  

@@ -7,6 +7,9 @@
 7. JESS: Restore User nav on beta page
 2. JOHN: add process/for other favors
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
+3. JOHNS: general issues with sign-up page: aligning and spacing is kinda weird
+4. JOHN: there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" 
+			(less verbose though) and then a separate button saying "sign up to be a host"
 1. JOHN/JESS: package incoming process/when it arrives
 1. JOHN: add green check box next to verified info
 12. JESS: ADD Tracking # API
@@ -67,6 +70,10 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 2. set up "pro" -- enabling users to pay on the website
 3. oce i've set up the blocbox.co/payment/ipn and blocbox.co/payment/pro - merge the base view (blocbox.co/payment) with pro.. rmoeve the other two'
 5. dashboard - way down road: have recent transactions limited to last 60 days, with archie option - or multiple pages
+
+"""longer term to-do- add to trello"""
+1. host sign-up for users that are already registered - should this process be different?
+
 
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
 #they install at:

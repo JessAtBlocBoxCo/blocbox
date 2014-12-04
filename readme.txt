@@ -56,7 +56,15 @@ The URLs for this site, and the corresponding files are as follows:
 
 2C. blocbox.co/hostsignup/  (Host sign up)
 	- template is at core/templates/blocbox/sign-host.html; view is core/views/signuphost
-
+	- you'kll want to populate the "additionalfields" block - this is empty right now, but whatever you put there will be added on to the generic
+		sign up form - so this should be host-specific stuff; analgous to the "introduce yourself" fields when connecting to someone
+	- issue: right now we dont really discriminate between users that are already registered as end-useres.. e.g., the process isn't different for them. 
+				should it be? if so, how? this is somewhat complicdated and i think it may be a thing to add to the
+	- should it say "apply" rather than "sign up"? whats the right verb?
+	- i also included a link to this page on the regular sign up pages
+	- general issues with sign-up page: aligning and spacing is kinda weird
+	- also - there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" 
+			(less verbose though) and then a separate button saying "sign up to be a host"
 	
 2CD blocbox.co/login/ (template: blocbox/core/templates/blocbox/sign-in.html)
 	- requests email and password
