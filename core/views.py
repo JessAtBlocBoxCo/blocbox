@@ -226,10 +226,11 @@ def signuphost(request):
     	      {'host_form': host_form, 'registered': registered},
     	      context)
  
-#Origial index, redefine as oldindex
-def oldindex(request):
-	    return HttpResponse("OldIndex - This was the first view for the blocbox module" + 
-											"code is at django_project/django_project/bloc/views.py")
+#About hosting
+def abouthosting(request):
+    enduser = request.user
+    return render(request, 'blocbox/abouthosting.html', {'enduser':enduser, 'host':host,})
+    
 
 #-------------------------------------------------------------
 #Emails
@@ -307,6 +308,21 @@ def shippackage(request, host_id): #passes the host_id argument in URL
     else:
     	  host = None
     return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host,} )
+
+
+
+
+
+
+
+
+#--------------------------------------------------------------
+#OLD
+#----------------------------------------------------------------
+#Origial index, redefine as oldindex
+def oldindex(request):
+	    return HttpResponse("OldIndex - This was the first view for the blocbox module" + 
+											"code is at django_project/django_project/bloc/views.py")
 
 
 
