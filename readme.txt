@@ -25,7 +25,9 @@ The URLs for this site, and the corresponding files are as follows:
 
 1D. blocbox.co/abouthosting/, template is at core/blocbox/templates/blocbox/abouthosting.html, view is core/views/abouthosting
 
-1E. blocbox.co/aboutblocbox, template is core/blocbox/templates/blocbox/aboutblocbox.html, view is core/views/aboutblocbox
+1E. blocbox.co/aboutblocbox (also accessible at www.blocbox.co/about) 
+		- template is core/blocbox/templates/blocbox/aboutblocbox.html, view is core/views/aboutblocbox
+
 *-----------------------------------------------------------------------*
 2. REGISTRATION AND AUTHENTICATION PAGES
 *-----------------------------------------------------------------------*
