@@ -77,12 +77,13 @@ The URLs for this site, and the corresponding files are as follows:
 3. PROFILE PAGES AND ACCOUNT PAGES
 *-----------------------------------------------------------------------*
 
-3A. blocbox.co/hostprofile/host2
-	- this is John's host profile profile. 
+
+
+3A. blocbox.co/hostprofile/host2 - template is core/templates/blocbox/host-profile.html, view is core/views/hostprofile
+	- NOTE - this is an outside view - so what other users see about the host, rather than  what the host sees about themselves, which will be on profil
 	- the "3" corresponds to John because he is ID #3, you can repliace this with any number (there are like 15 users in the database)
 				corresponding to a user ID, and it will render the page with their information
 	- the template is at blocbox/core/templates/blocbox/host-profile-visitor.html
-
 	- Data presented
 		-Host first name (done)
 		-Host address (done)
@@ -92,7 +93,10 @@ The URLs for this site, and the corresponding files are as follows:
 		-Host availability
 		-Host other offers
 
-3B. blcobox.co/dashboard (template: core/templates/dashboard.html)
+3B. blocbox.co/profile - template is core/templates/blocbox/profile.html
+		- would like to have this apply to all users regardless of whether hosts or not
+		
+3C. blcobox.co/dashboard (template: core/templates/dashboard.html)
 	- Data requested (if they haven't filled it in)	
 			- personal introduction
 			- User notification preferences

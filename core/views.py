@@ -35,21 +35,26 @@ from django.template.defaulttags import register
 def get_item(dictionary, key):
     return dictionary.get(key)
 
-
+#-------------------------------------------------------------------------
+#Waitlist, beta, getting started, about and dashboard/profile pages
+#-------------------------------------------------------------------------
 def index(request):
     return render(request, 'blocbox/index.html') #loads blocbox/templates/blocbox/index.html 
 
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
-
-
 def search(request):
     return render(request, 'blocbox/search.html')
 
-def searchold(request):
-    return render(request, 'blocbox/old/search.shtml') 
-
+def aboutblocbox(request):
+    enduser = request.user
+    return render(request, 'blocbox/aboutblocbox.html', {'enduser': enduser,})
+    	
+def abouthosting(request):
+    enduser = request.user
+    return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
+    	
 def dashboard(request):
     return render(request, 'blocbox/dashboard.html')
 
@@ -225,11 +230,6 @@ def signuphost(request):
             'blocbox/sign-up-host.html',
     	      {'host_form': host_form, 'registered': registered},
     	      context)
- 
-#About hosting
-def abouthosting(request):
-    enduser = request.user
-    return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
     
 
 #-------------------------------------------------------------
@@ -329,7 +329,8 @@ def oldindex(request):
 	    return HttpResponse("OldIndex - This was the first view for the blocbox module" + 
 											"code is at django_project/django_project/bloc/views.py")
 
-
+def searchold(request):
+    return render(request, 'blocbox/old/search.shtml') 
 
 """
 JMY NOTE ON DICTIONARIES VERSUS  LISTS:
