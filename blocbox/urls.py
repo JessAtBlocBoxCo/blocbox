@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)), 
     url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect'),
     url(r'signup/', views.signupnoconnect, name='signupnoconnect'), 
-    url(r'signuphost/', views.signuphost, name='signuphost'),
+    url(r'hostsignup/', views.signuphost, name='signuphost'),
     url(r'login/', views.userlogin, name='login'), # add this for the registration form
     url(r'^logout/$', views.user_logout, name='logout'), 		
     url(r'^almostfinished/$', views.waitlist_almostfinished, name='waitlist_almostfinished'),

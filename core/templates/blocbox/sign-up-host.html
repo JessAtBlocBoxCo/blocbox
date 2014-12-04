@@ -1,36 +1,13 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Sign Up for BlocBox</title>
-    </head>
+<!--this is blocbox/core/templates/blocbox/sign-up-host.html, ULR is http://www.blocbox.co/hostsignup/, extends basesignup.html -->
+{% extends "blocbox/basesignup.html" %}
 
-    <body>
-    	  <h1>Edit this template at /home/django/blocbox/core/templates/blocbox/register.html</h1>
-        <h1>Sign Up For BlocBox</h1>
+{% load staticfiles %} 
 
-        {% if registered %}
-        <strong>thank you for registering!</strong>
-        <a href="/beta/">Return to the homepage.</a><br />
-        {% else %}
-        <strong>Sign Up Here!</strong><br />
 
-        <form id="user_form" method="post" action="/register/" 
-                enctype="multipart/form-data">
-
-            {% csrf_token %}
-
-            <!-- Display each form. The as_p method wraps each element in a paragraph
-                 (<p>) element. This ensures each element appears on a new line,
-                 making everything look neater. -->
-            {{ user_form.as_p }}
-         	  <!-- comment this out -- only need to include the user_form one
-            {{ userprofile_form.as_p }}
-            {{ hostprofile_form.as_p }}
-            -->
-
-            <!-- Provide a button to click to submit the form. -->
-            <input type="submit" name="submit" value="Register" />
-        </form>
-        {% endif %}
-    </body>
-</html>
+<!--text to display if registered if signed up WITHOUT reuesting to connect -->
+{% block welcome %}  
+  				<br> <br>
+        	<h3>Thank you for Registering!</h3>
+        	<h4><a href="/login/">Login to return to the homepage.</a></p>
+ 					<br> <br> <br> <br> <br>
+{% endblock %}
