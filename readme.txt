@@ -58,6 +58,7 @@ The URLs for this site, and the corresponding files are as follows:
 	- template is at core/templates/blocbox/sign-host.html; view is core/views/signuphost
 	- you'kll want to populate the "additionalfields" block - this is empty right now, but whatever you put there will be added on to the generic
 		sign up form - so this should be host-specific stuff; analgous to the "introduce yourself" fields when connecting to someone
+	- note that i had to remove "interst in hosting" from generic basesignup because we dont want that on host sign up, so i added that to specific pages
 	- issue: right now we dont really discriminate between users that are already registered as end-useres.. e.g., the process isn't different for them. 
 				should it be? if so, how? this is somewhat complicdated and i think it may be a thing to add to the
 	- should it say "apply" rather than "sign up"? whats the right verb?
