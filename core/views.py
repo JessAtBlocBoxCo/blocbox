@@ -63,7 +63,7 @@ def myblock(request):
         
 def profile(request):
     enduser = request.user
-    return render(request, 'blocbox/profile.html', {'enduser':enduser)
+    return render(request, 'blocbox/profile.html', {'enduser':enduser,})
     
 def hostprofile(request, host_id):
     context = RequestContext(request)
