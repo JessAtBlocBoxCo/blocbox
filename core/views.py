@@ -61,8 +61,10 @@ def dashboard(request):
 def myblock(request):
     return render(request, 'blocbox/myblock.html')
         
-
-#Create the view for the hostprofile: www.blocbox.co/hostprofile/host2
+def profile(request):
+    enduser = request.user
+    return render(request, 'blocbox/profile.html', {'enduser':enduser)
+    
 def hostprofile(request, host_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=host_id)

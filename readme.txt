@@ -25,6 +25,7 @@ The URLs for this site, and the corresponding files are as follows:
 
 1D. blocbox.co/abouthosting/, template is at core/blocbox/templates/blocbox/abouthosting.html, view is core/views/abouthosting
 
+1E. blocbox.co/aboutblocbox, template is core/blocbox/templates/blocbox/aboutblocbox.html, view is core/views/aboutblocbox
 *-----------------------------------------------------------------------*
 2. REGISTRATION AND AUTHENTICATION PAGES
 *-----------------------------------------------------------------------*
@@ -93,7 +94,7 @@ The URLs for this site, and the corresponding files are as follows:
 		-Host availability
 		-Host other offers
 
-3B. blocbox.co/profile - template is core/templates/blocbox/profile.html
+3B. blocbox.co/profile - template is core/templates/blocbox/profile.html, view is core/views/profile
 		- would like to have this apply to all users regardless of whether hosts or not
 		
 3C. blcobox.co/dashboard (template: core/templates/dashboard.html)
