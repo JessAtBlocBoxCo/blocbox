@@ -4,6 +4,7 @@
 2. JESS: Add Profile, Account. Host Registration, FAQ, Nudge a neigbor pages
 3. JOHN search page -- fix map top margin and restyle nudge a neighbor message
 4. JESS: Remove sign in after welcome page
+	5. Jess: add error message to the profile page if someone is not registered.. or redirect them
 7. JESS: Restore User nav on beta page
 2. JOHN: add process/for other favors
 1. JOHN: FIX PLACEMENT OF ERROR MESSAGES

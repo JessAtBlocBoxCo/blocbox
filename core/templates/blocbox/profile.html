@@ -9,6 +9,7 @@
 {% endblock %}
 
 
+{% if user.is_authenticated %}              		
 
 {% block content %}
 
@@ -38,12 +39,10 @@
     	   <p class="hostname negmarginright15px">{{ host.first_name }}</p> <!--class="hostname"-->
         </div>
     
-    		<!--user address-->
+    		<!--user name-->
       	<div class="col-xs-5 col-xs-offset-1 col-sm-offset-0">       		
          	<h5 class="paddingtop7px">
-            		{% if user.is_authenticated %} 
-            				{{ enduser.st_address1 }}, {{ enduser.city }} {{ enduser.state }}
-            		{% endif %}
+            			{{ enduser.first_name }} {{ endusers.last_name }}
          	</h5>
        	</div>
     
@@ -52,33 +51,30 @@
 	</div>  <!--closing row profilebox -->
 	
 
-	<!--DELME - A BUNCH OF TETS DO NOT DELETE - KEEP COMMENTED OUT 
-			 <p> {% if connected %} THESE USERS ARE CONNECTED: end user id is {{ enduser.id }} and their name is {{ enduser.first_name }} {% endif %} </p>
-	-->
     	
 
 	<!--Second Row of info> -->
 <div class="row marginbottom20px"> <!--paddingsides10px marginleftright20px --> 
 
-    
-    <!--you dont need this - use offset property instead - see that i added col-sm-offset1 at line 50 
-    <div class="col-sm-1"></div>     -->
-
-    <div class="col-xs-12 col-sm-6 col-sm-push-3"> <!--profilebox  marginleftright10px adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
+		<!--about me-->
+    <div class="col-xs-12 col-sm-6 col-sm-push-3"> 
         <div class="profilebox">
-            <p class="orangetext centerboxheader">Hi Neighbor!</p>
-            <div class="profileboxline"></div>
-            <p class="centerboxtext">{{ host.host_aboutme }}</p>
+        		<p class="orangetext centerboxheader">Email</p>
+            	<div class="profileboxline"></div>   <p class="centerboxtext">{{ enduser.email }}</p>
+            <p class="orangetext centerboxheader">Address</p>
+            	<div class="profileboxline"></div>   <p class="centerboxtext"> {{ enduser.st_address1 }}, {{ enduser.city }} {{ enduser.state }} </p>	
+            <p class="orangetext centerboxheader">About Me</p>
+            	<div class="profileboxline"></div>   <p class="centerboxtext">{{ enduser.about_me }}</p>
         </div>
     </div>
     
+    <!--pick up time-->
     <div class="col-xs-12 col-sm-2 col-sm-push-3"> <!-- marginleftright10px -->
         <div class="profilebox">
-            <p class="bluegreytext sideboxtext">When I'm Home</p>
+            <p class="bluegreytext sideboxtext">When I'd Like to pick up packages</p>
             <div class="profileboxline"></div>
             <div class="row">
-                <p class="col-xs-4 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop20px"> &nbsp {{ host.whenimhome_days }} &nbsp </p>
-                <p class="col-xs-6 col-sm-12 col-sm-offset-0 paddingtop20pxmobile"> &nbsp {{ host.whenimhome_hours }} &nbsp </p>
+                <p class="col-xs-4 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop20px"> &nbsp {{ enduser.pickup_time }} &nbsp </p>
             </div>
         </div>
     </div>
@@ -228,3 +224,5 @@
 
 
 {% endblock %}
+
+{% endif %} <!--end if user is not authenticated-->
