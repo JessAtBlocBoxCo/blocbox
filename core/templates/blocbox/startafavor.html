@@ -1,0 +1,19 @@
+<!--this is blocbox/templates/startashipment.html -- URL is www.blocbox.co/startashipment -->
+{% extends "blocbox/base.html" %}
+{% load staticfiles %} 
+{% block title %}Start a Favor{% endblock %}
+
+{% block headafter %} {% endblock %} 
+
+{% block content %}
+
+<div class="content container-fluid offwhitebackground relativediv">
+	<br><br>
+	
+	<h3>Start a Favor</h3>
+    	
+   <!--NOTE: RIGHT NOW THIS LINKS TO JOHN'S HOST PAYMENT - NEED TO UPDATE TO PASS THE ARGUMENT/REFRESH PAGE ONCE TEY SELECT HOST-->
+   <button class="bluebutton" onClick="window.location='/payment/host2';">Submit</button>
+
+</div>
+{% endblock %} 
