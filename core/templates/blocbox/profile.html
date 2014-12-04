@@ -9,46 +9,35 @@
 {% endblock %}
 
 
-{% if user.is_authenticated %}              		
-
 {% block content %}
 
 <!--My attempt to color the background-->
 <div class="content container-fluid offwhitebackground text-center relativediv"> 
-
-  
-  
-    <div class="row">
-        <div class="col-xs-12 nopaddingleftright">
+ 		
+ 		
+{% if user.is_authenticated %}     
+    
+    <div class="row"> <div class="col-xs-12 nopaddingleftright">
             <div class="orangebackground profilecover"></div>
-        </div>
-        
-    </div>
+    </div> </div>
  
-   
-	<!--First Row of info> -->
-	
-	
-
+		<!--name apicutre etc-->
     <div class="row marginbottom20px hostinfobox relativediv">
-        <div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
-            <img class="profilepic" src="{% static 'blocbox/images/JB-2.png' %}"  /> 
-        </div>
-    
-        <div class="col-xs-3 col-xs-offset-2 col-sm-1 col-sm-offset-0">
-    	   <p class="hostname negmarginright15px">{{ host.first_name }}</p> <!--class="hostname"-->
-        </div>
-    
-    		<!--user name-->
-      	<div class="col-xs-5 col-xs-offset-1 col-sm-offset-0">       		
-         	<h5 class="paddingtop7px">
-            			{{ enduser.first_name }} {{ endusers.last_name }}
-         	</h5>
-       	</div>
-    
-
-	
-	</div>  <!--closing row profilebox -->
+        		<div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
+        		    <img class="profilepic" src="{% static 'blocbox/images/JB-2.png' %}"  /> 
+        		</div>
+        		
+        		<div class="col-xs-3 col-xs-offset-2 col-sm-1 col-sm-offset-0">
+    	  		 <p class="hostname negmarginright15px">{{ enduser.first_name }}</p> <!--class="hostname"-->
+        		</div>
+        		
+    				<!--user name-->
+      			<div class="col-xs-5 col-xs-offset-1 col-sm-offset-0">       		
+        		 	<h5 class="paddingtop7px">
+        		    			{{ enduser.first_name }} {{ enduser.last_name }}
+        		 	</h5>
+       			</div>	
+		</div> <!--closing top row with picture and name -->
 	
 
     	
@@ -194,35 +183,40 @@
         </div> <!--profileboxlong-->
     </div>  
         
-      <div class="col-xs-12 col-sm-2">
-        <div class="profilebox paddingbottom10px">
-            <p class="purpletext sideboxtext">Other Offers</p>
-          <div class="profileboxline"></div>
-            <div class="marginsides7pt5pct">
+      	<div class="col-xs-12 col-sm-2">
+        		<div class="profilebox paddingbottom10px">
+            	<p class="purpletext sideboxtext">Other Offers</p>
+          		<div class="profileboxline"></div>
+            	<div class="marginsides7pt5pct">
                 <button class="margintop20px marginbottom20px inactivebutton" onClick="window.location='/{{ host.id }}/signupconnect/';"><span>Storage</span></button>
                 <button class="marginbottom20px inactivebutton" onClick="window.location='/{{ host.id }}/signupconnect/';"><span>House Sitting</span></button>
                 <button class="marginbottom20px inactivebutton" onClick="window.location='/{{ host.id }}/signupconnect/';"><span>Pet Care</span></button>
                 <p class="marginbottom10px purpletext textcenter marginauto">Connect to request</p>
-            </div>
-          </div>
-        </div> 
+            	</div>
+          </div> <!--profilebox-->
+        </div>  <!--col-xs-12-->
 
 	</div> <!--closing third row -->
     
-    <!--Fourth Row of info> -->
     
-<div class="row marginbottom20px">
-    
-        
-    </div>
-    <br>
-    <br>
-    <br>
+	<div class="row marginbottom20px"> </div>
+  <br> <br> <br>
+
+
+<!--if user is not authenticated, redirect to sign-up page-->
+{% else %} 
+		<br>
+		<h3>To reach your profile page, please  <a href="/login/">login to your account.</a></h3>
+		<h3>If you dont have an account, <a href="/search/">search for a host to connect to </a> 
+				or <a href="/signup/">sign up without connecting to a host. </a>		
+		</h3>
+		<h3>You can also <a href="/hostsignup/">apply to be a host.</a></h3>
+
+{% endif %} <!--end if user is not authenticated-->
+
+
  
 </div> <!--closing container-fluid that contains whole page -->
 
+{% endblock %} <!--end block context-->
 
-
-{% endblock %}
-
-{% endif %} <!--end if user is not authenticated-->
