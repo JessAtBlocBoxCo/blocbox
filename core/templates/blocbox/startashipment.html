@@ -9,16 +9,16 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('.text_container').addClass("hidden");
+        $('.text_container').addClass("hideit");
 
         $('.text_container').click(function() {
             var $this = $(this);
 
-            if ($this.hasClass("hidden")) {
-                $(this).removeClass("hidden").addClass("visible");
+            if ($this.hasClass("hideit")) {
+                $(this).removeClass("hideit").addClass("visible");
 
             } else {
-                $(this).removeClass("visible").addClass("hidden");
+                $(this).removeClass("visible").addClass("hideit");
             }
         });
     });
