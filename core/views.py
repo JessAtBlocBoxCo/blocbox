@@ -27,6 +27,8 @@ from schedule.models import Calendar, Occurrence, Event
 from schedule.models.calendars import CalendarRelation
 from schedule.utils import check_event_permissions, coerce_date_dict
 from django.utils import timezone
+#Import Payment Stuff
+from paypal.standard.ipn.models import PayPalIPN
 
 
 #Write a custom template filter:
