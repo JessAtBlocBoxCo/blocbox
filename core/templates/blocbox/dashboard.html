@@ -75,10 +75,18 @@
                             <div id="openModal" class="modalDialog">
                                 <div>	<a href="#close" title="Close" class="close">X</a>
 
-                                    <h2>Modal Box</h2>
+                                    <h2>Add a Delivery</h2>
+                                    <p>Enter a tracking number, shipping company or other information</p>
+                                    <form class="form-inline" role="form" method="post" action="/tracking/" enctype="multipart/form-data">   
 
-                                    <p>This is a sample modal box that can be created using the powers of CSS3.</p>
-                                    <p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
+                                        <div class="form-group">  				
+                                            <input type="tracking" class="form-control" name="tracking" id="id_tracking"  placeholder="">				
+                                        </div>
+                                        <div class="row">
+                                            <button type="submit" name="submit" class="col-xs-6 btn btn-default">Enter</button>
+                                            <button type="submit" name="submit" class="col-xs-6 btn btn-default">Cancel</button>
+                                        </div>
+                                    </form>  <!--end form line -->
                                 </div>
                             </div>
                         
