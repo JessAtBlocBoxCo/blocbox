@@ -134,12 +134,18 @@
                             <!--<label for="id_password1">Password</label> -->
                             <input type="password" class="form-control" name="password" id="id_password1"  placeholder="Enter Password">				
                         </div>
+                        <div class="row">
+                            <p class="col-xs-6">Remember Me</p>
+                            <p class="col-xs-6"><a href="/passwordreset/recover/">Forgot Password?</a></p>
+                        </div>
 
-                        <button type="submit" name="submit" class="btn btn-default">Sign In</button>
 
+                        <button type="submit" name="submit" class="bluebutton">Sign In</button>
+                        <div class="row">
+                            <div class="profileboxline margintop20px marginbottom20px"></div>
+                            <p class="col-xs-12"><a href="/passwordreset/recover/">Don't have an account? Sign Up</a></p>
+                        </div>
                     </form>  <!--end form line -->
-                    <br>
-                    <p><a href="/passwordreset/recover/">Recover Your Password</a></p>
                 </div>
             </div>
             {% endif %}
