@@ -115,7 +115,33 @@
             {% if user.is_authenticated %}
             <li class="marginleftright10px"><a class="whitetext" href="/logout/">Sign Out</a></li>
             {% else %}
-            <li class="marginleftright10px"><a class="signinbtn whitetext" style="padding-right: 40px; padding-left: 40px;" href="/login/">Sign In</a></li>
+            <li class="marginleftright10px #openModal"><a class="signinbtn whitetext" style="padding-right: 40px; padding-left: 40px;">Sign In</a></li>
+            <div id="openModal" class="modalDialog">
+                <div>	<a href="#close" title="Close" class="close">X</a>
+                    <h6 class="ltbluetext">Sign In</h6>
+                    <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ login_form.non_field_errors }}          
+
+                        <div class="form-group">  				
+                            {{ user_form.email.errors }}
+                            <!--<label for="id_email">Email Address</label> -->
+                            <input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter Email">				
+                        </div>
+
+                        <div class="form-group">  				
+                            {{ user_form.password.errors }}
+                            <!--<label for="id_password1">Password</label> -->
+                            <input type="password" class="form-control" name="password" id="id_password1"  placeholder="Enter Password">				
+                        </div>
+
+                        <button type="submit" name="submit" class="btn btn-default">Sign In</button>
+
+                    </form>  <!--end form line -->
+                    <br>
+                    <p><a href="/passwordreset/recover/">Recover Your Password</p>
+                </div>
+            </div>
             {% endif %}
             
         	<!--<li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li> -->
