@@ -1070,7 +1070,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 }
 
 .form-inline .form-control {
-    width: 100%;
+    width: inherit;
 }
 
 .trackingfield {
