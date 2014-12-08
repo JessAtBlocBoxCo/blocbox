@@ -118,7 +118,7 @@
             <li class="marginleftright10px"><a class="signinbtn whitetext" style="padding-right: 40px; padding-left: 40px;" href=" #openModal">Sign In</a></li>
             <div id="openModal" class="modalDialog">
                 <div>	<a href="#close" title="Close" class="close">X</a>
-                    <h6 class="ltbluetext">Sign In</h6>
+                    <h6 class="ltbluetext paddingsides15px">Sign In</h6>
                     <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
                         {% csrf_token %}
                         {{ login_form.non_field_errors }}          
@@ -137,11 +137,11 @@
                         </div>
                         <div class="row paddingtopbottom10px">
                             <p class="col-xs-6 ltbluetext">Remember Me</p>
-                            <p class="col-xs-6"><a href="/passwordreset/recover/">Forgot Password?</a></p>
+                            <p class="col-xs-6 textright"><a href="/passwordreset/recover/">Forgot Password?</a></p>
                         </div>
 
 
-                        <button type="submit" name="submit" class="bluebutton">Sign In</button>
+                        <button type="submit" name="submit" class="bluebutton paddingsides15px">Sign In</button>
                         <div class="row">
                             <div class="profileboxline margintop20px marginbottom20px"></div>
                             <p class="col-xs-12"><a href="/passwordreset/recover/">Don't have an account? Sign Up</a></p>
