@@ -1069,6 +1069,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background: #00d9ff;
 }
 
+.trackingfield {
+    width: 145px;
+}
+
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
 *--------------------------------------------------------------*/
