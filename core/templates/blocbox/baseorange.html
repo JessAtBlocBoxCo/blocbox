@@ -123,7 +123,7 @@
                         {% csrf_token %}
                         {{ login_form.non_field_errors }}          
                         <div class="row">
-                            <div class="col-xs-12 form-group">  				
+                            <div class="col-xs-12 form-group paddingbottom20px">  				
                                 {{ user_form.email.errors }}
                                 <!--<label for="id_email">Email Address</label> -->
                                 <input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter Email">				
@@ -135,7 +135,7 @@
                                 <input type="password" class="form-control" name="password" id="id_password1"  placeholder="Enter Password">				
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row paddingtopbottom10px">
                             <p class="col-xs-6 ltbluetext">Remember Me</p>
                             <p class="col-xs-6"><a href="/passwordreset/recover/">Forgot Password?</a></p>
                         </div>
