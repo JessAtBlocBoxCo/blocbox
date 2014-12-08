@@ -54,9 +54,25 @@ def aboutblocbox(request):
 def abouthosting(request):
     enduser = request.user
     return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
-    	
-def dashboard(request):
-    return render(request, 'blocbox/dashboard.html')
+
+def dashboard(request, host_id=None):
+    enduser = request.user
+    if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+        host = None
+    connections_all = Connection.objects.filter(end_user=enduser) 
+    #lists of transactions
+    transactions_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
+    shipments_all = transactions_all.filter(item_name="package")
+    otherfavors_all = transactions_all.exclude(item_name="package")
+    #shipments_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
+    return render(request, 'blocbox/dashboard.html', {
+        'enduser': enduser, 'host': host,
+        'connections_all': connections_all, 
+        'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
+    })
+    
 
 def myblock(request):
     return render(request, 'blocbox/myblock.html')
