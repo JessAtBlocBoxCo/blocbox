@@ -170,29 +170,12 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         trans.favortype = favortype
         trans.invoice = invoice
     trans.save()
-    trans_dict = {
-        "host": "Test Host on Transaction Table",
-        "enduser": "Test End User",
-        "payer": host.email,
-        "payee": enduser.email,
-        "price": amount,
-        "invoice": invoice,
-        "favortype": favortype,
-    }
-    trans_form = TransactionForm(trans_dict)
-    if trans_form.is_valid(): 
-        trans_form.save()
-    else: 
-        print trans_form.errors
-    	      
-    	      
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':date, 'local_timezone':local_timezone, 
     	  'amount':amount, "youselected": youselected,
     	  'here': quote(request.get_full_path()), 'form': form,
-    	  'trans_form': trans_form,
     })
     
 """Need to implement a return view and a cancel view, from documentation:
