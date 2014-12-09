@@ -160,10 +160,10 @@ class Transaction(models.Model):
         (OTHER, 'Other'))
     transtype = models.CharField('Transaction Type', max_length=30, choices=TYPE_CHOICES, default=PACKAGE) #transaction type
     
-    amount = models.DecimalField('Amount/Price of Transaction', max_digits=6, decimal_places=2)
+    price = models.DecimalField('Amount/Price of Transaction', max_digits=6, decimal_places=2)
     
     date_requested = models.DateTimeField('Date of Transaction Request')
-    date_payed = models.DateTimeField('Date of Payment')         
+    #date_payed = models.DateTimeField('Date of Payment')         
     
     
     
