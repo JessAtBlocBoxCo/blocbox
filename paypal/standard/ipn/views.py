@@ -162,7 +162,7 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     trans_dict = {
         "host": "Test Host on Transaction Table",
-        "enduser"; "Test End User",
+        "enduser": "Test End User",
     }
     trans_form = TransactionForm(trans_dict)
     #context = {"form": form}
