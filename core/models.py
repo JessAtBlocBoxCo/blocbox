@@ -139,7 +139,7 @@ class Transaction(models.Model):
     host = models.CharField("Host/Provider", max_length=100, blank=True, null=True)
     enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
     price = models.DecimalField('Amount/Price of Transaction', max_digits=6, decimal_places=2, blank=True, null=True)   
-    date_requested = models.DateTimeField('Date of Transaction Request', blank=True, null=True)
+    date_requested = models.DateField(default=datetime.date.today)
     favortype = models.CharField("Transact/Favor Type", max_length=100, blank=True, null=True)
    
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 

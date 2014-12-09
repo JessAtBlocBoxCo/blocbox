@@ -166,7 +166,6 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         "payer": host.email,
         "payee": enduser.email,
         "price": amount,
-        "date_requested": date,
         "invoice": invoice,
         "favortype": favortype,
     }
