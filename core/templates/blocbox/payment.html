@@ -115,6 +115,7 @@
         		 			<div class="col-xs-12 col-sm-6 marginbottom30px marginsides3pct"> <!--marginleft40px-->
         					{{ form.render }}       	
       						<!--JESS TESTING A NEW FORM HERE - TRANSACTION FORM - SHOUDL NOT APPEAR-->
+      						<form class="form-horizontal margintop30px" role="form" method="post" action="." enctype="multipart/form-data">
       						{{ trans_form.render }}
       						
       						    <p> {{ trans_form.payer.errors }} </p>

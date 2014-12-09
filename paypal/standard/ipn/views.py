@@ -165,6 +165,7 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         "enduser": "Test End User",
         "payer": host.email,
         "payee": enduser.email,
+        "amount": amount
     }
     trans_form = TransactionForm(trans_dict)
     if trans_form.is_valid(): 
