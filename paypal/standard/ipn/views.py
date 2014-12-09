@@ -160,6 +160,17 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
+    #Update transaction table
+    trans = Transaction() 
+    if host_id:
+        trans.host = host.email
+        trans.payee = host.email
+        trans.enduser = enduser.email
+        trans.payer = enduser.email
+        trans.price = amount
+        trans.favortype = favortype
+        trans.invoice = invoice
+    trans.save()
     trans_dict = {
         "host": "Test Host on Transaction Table",
         "enduser": "Test End User",
