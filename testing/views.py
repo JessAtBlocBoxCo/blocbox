@@ -13,9 +13,10 @@ from django.utils import timezone
 #from django.template.loader import render_to_string
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
-#from core
-from core.models import UserInfo, Transaction, Connection
+#from CORE and TRANSACTION
+from core.models import UserInfo, Connection
 from core.forms import UserForm, HostForm
+from transactions.models import Transaction
 #from schedule import periods
 from schedule.periods import Month
 from schedule.periods import weekday_names
