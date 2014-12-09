@@ -163,7 +163,7 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     #Update transaction table
     trans = Transaction() 
     if host_id:
-    	  trans.payee = host
+        trans.payee = host
         trans.host = host.email
         trans.payer = enduser
         trans.enduser = enduser.email        
