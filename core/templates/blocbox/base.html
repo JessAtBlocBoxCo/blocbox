@@ -212,107 +212,105 @@
                         <!--dropdown -->
                     </div>
 
-                    <div class="col-sm-2">
-                        <!--col containing ddropdown button-->
-                        <div class="col-xs-2 col-sm-4">
-                            <div class="dropdown textcenter">
-                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarstart" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
-                                    <!--info button-->
-                                    <a class=""></a>
-                                </button>
-                                <!--end info button-->
-                                <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
-                                    <!--nav navbar-nav navbar-right-->
-                                    {% if user.is_authenticated %}
-                                    <!--drop down menu if logged in-->
-                                    {% else %}
-                                    <!--drop down menu if not logged in -->
-                                    <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
-                                    </li>
+                    <!--col containing ddropdown button-->
+                    <div class="col-xs-1 col-sm-1">
+                        <div class="dropdown textcenter">
+                            <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarstart" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                <!--info button-->
+                                <a class=""></a>
+                            </button>
+                            <!--end info button-->
+                            <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                                <!--nav navbar-nav navbar-right-->
+                                {% if user.is_authenticated %}
+                                <!--drop down menu if logged in-->
+                                {% else %}
+                                <!--drop down menu if not logged in -->
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
+                                </li>
 
-                                    {% endif %}
-                                    <!--drop down menu items that appears to either user -->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Shipment</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Favor</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/signuphost/'><i class="fa fa-users fa-fw fa-lg greentext"></i>&nbsp Become a Host</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg greentext"></i>&nbsp Nudge a Neighbor</a>
-                                    </li>
-                                    <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
+                                {% endif %}
+                                <!--drop down menu items that appears to either user -->
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Shipment</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Favor</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/signuphost/'><i class="fa fa-users fa-fw fa-lg greentext"></i>&nbsp Become a Host</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg greentext"></i>&nbsp Nudge a Neighbor</a>
+                                </li>
+                                <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
-                                </ul>
-                                <!--end collection of links for toggling -->
-                            </div>
+                            </ul>
+                            <!--end collection of links for toggling -->
                         </div>
+                    </div>
 
-                        <!--drop down menu if logged in-->
-                        <div class="col-xs-2 col-sm-4">
-                            <div class="dropdown textcenter">
-                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarring bbbasenavbarinbox nopaddingsides" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu2" data-toggle="dropdown">
-                                    <div class="" style="padding-bottom: 12px; margin-bottom: 0px; margin-top: 0px;">{% load inbox %} {% inbox_count %}</div>
-                                    <!--number of new messages -->
-                                </button>
-                                <!--end message button-->
-                                <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
-                                    <!--nav navbar-nav navbar-right-->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg ltbluetext"></i>&nbsp Inbox</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/compose/'><i class="fa fa-pencil-square-o fa-fw fa-lg ltbluetext"></i>&nbsp New Message</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-cog fa-fw fa-lg ltbluetext"></i>&nbsp Notification Settings</a>
-                                    </li>
-                                    <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
+                    <!--drop down menu if logged in-->
+                    <div class="col-xs-1 col-sm-1">
+                        <div class="dropdown textcenter">
+                            <button class="dropdown-toggle bbbasenavbar bbbasenavbarring bbbasenavbarinbox nopaddingsides" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu2" data-toggle="dropdown">
+                                <div class="" style="padding-bottom: 12px; margin-bottom: 0px; margin-top: 0px;">{% load inbox %} {% inbox_count %}</div>
+                                <!--number of new messages -->
+                            </button>
+                            <!--end message button-->
+                            <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+                                <!--nav navbar-nav navbar-right-->
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg ltbluetext"></i>&nbsp Inbox</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/compose/'><i class="fa fa-pencil-square-o fa-fw fa-lg ltbluetext"></i>&nbsp New Message</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-cog fa-fw fa-lg ltbluetext"></i>&nbsp Notification Settings</a>
+                                </li>
+                                <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
-                                </ul>
-                                <!--end collection of links for toggling -->
-                            </div>
+                            </ul>
+                            <!--end collection of links for toggling -->
                         </div>
+                    </div>
 
-                        <div class="col-xs-2 col-sm-4">
-                            <div class="dropdown textcenter">
-                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarinfo" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
-                                    <!--info button-->
-                                    <a class=""></a>
-                                </button>
-                                <!--end info button-->
-                                <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
-                                    <!--nav navbar-nav navbar-right-->
-                                    {% if user.is_authenticated %}
-                                    <!--drop down menu if logged in-->
-                                    {% else %}
-                                    <!--drop down menu if not logged in -->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
-                                    </li>
+                    <div class="col-xs-1 col-sm-1">
+                        <div class="dropdown textcenter">
+                            <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarinfo" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                <!--info button-->
+                                <a class=""></a>
+                            </button>
+                            <!--end info button-->
+                            <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                                <!--nav navbar-nav navbar-right-->
+                                {% if user.is_authenticated %}
+                                <!--drop down menu if logged in-->
+                                {% else %}
+                                <!--drop down menu if not logged in -->
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
+                                </li>
 
-                                    {% endif %}
-                                    <!--drop down menu items that appears to either user -->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp Find a BlocBox</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp Support</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp Love Bloxbox?</a>
-                                    </li>
-                                    <li class="dropdownfont" ole="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp About Blocbox</a>
-                                    </li>
-                                    <li class="dropdownfont" ole="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp Contact Us</a>
-                                    </li>
-                                    <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
+                                {% endif %}
+                                <!--drop down menu items that appears to either user -->
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp Find a BlocBox</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp Support</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp Love Bloxbox?</a>
+                                </li>
+                                <li class="dropdownfont" ole="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp About Blocbox</a>
+                                </li>
+                                <li class="dropdownfont" ole="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp Contact Us</a>
+                                </li>
+                                <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
-                                </ul>
-                                <!--end collection of links for toggling -->
-                            </div>
+                            </ul>
+                            <!--end collection of links for toggling -->
                         </div>
                     </div>
                 </div>
