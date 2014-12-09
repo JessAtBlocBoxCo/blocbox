@@ -1409,8 +1409,8 @@ footer {
 }
 .dashpic {
     max-width: 100%;
-    max-height: 175px;
-    margin-left: 75px;
+    max-height: 150px;
+    margin-left: 30px;
 }
 .modalDialog {
     position: fixed;
