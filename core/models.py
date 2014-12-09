@@ -134,10 +134,10 @@ class Transaction(models.Model):
 	  #MAY NEED TO UPDATE THIS TO settings.AUTH_USER_MODEL
     #payer = models.ForeignKey(UserInfo, related_name='payer') #each transaction related to payer from the delmeusers
     #payee = models.ForeignKey(UserInfo, related_name='payee') #each ransaction related to payee that is a user on delmeusers
-    payer = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payer', blank=True, null=True) #this shows up as payer_id
-    payee = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payee', blank=True, null=True) #thius shiws up as payee_id
-    host = models.CharField("Host/Provider", max_length=100, blank=True, null=True)
-    enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
+    host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payer', blank=True, null=True) #this shows up as payer_id
+    enduser = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payee', blank=True, null=True) #thius shiws up as payee_id
+    #host = models.CharField("Host/Provider", max_length=100, blank=True, null=True)
+    #enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
     price = models.DecimalField('Amount/Price of Transaction', max_digits=6, decimal_places=2, blank=True, null=True)   
     date_requested = models.DateField(default=datetime.date.today)
     favortype = models.CharField("Transact/Favor Type", max_length=100, blank=True, null=True)
