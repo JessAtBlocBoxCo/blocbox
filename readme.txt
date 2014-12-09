@@ -157,14 +157,8 @@ The URLs for this site, and the corresponding files are as follows:
 			View: /blocbox/billing/views.py, which passes a form called PaypalPaymentsForm defined in paypal/standard/forms.py
 			For IPN or PRO The template loads the form with the statement	{{ form.render }} 
 			blocbox.co/payment/ipn/notify is the notify_url
-			Paypal app documentation: /blocbox/paypal/documentation/README.md
+			Paypal app documentation: /blocbox/paypal/documentation/README.md -- i am annotating that documentation
 						
-			Data presented
-				Package pricing
-				Paypal Account (If linked)
-
-			Data requested
-				Payment plan selection
 
 4D. blocbox.co/shippackage (template: core/templates/shippackage.html)
 

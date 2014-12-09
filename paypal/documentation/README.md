@@ -1,12 +1,21 @@
 #HOW THE NOTIFICATION WORKS  how to modify
-1. notify_url calls this view: paypal.standard.ipn.views.ipn, thiis posts the data
+1. notify_url calls this view: paypal.standard.ipn.views.ipn, thiis posts the data to the paypal_ipn table
+			the Model is defined at paypal.standard.ipn.models.PayPalIPN(PayPalStandardBase): based on paypal.standard.models.PayPalStandardBase(Model)
+			it passes data via FORM at  #from paypal.standard.ipn.forms import PayPalIPNForm(PayPalPaymentsForm) based on paypal.standard.forms.PayPalPaymentForm
 2. this view adds some shit
 		ipn_obj.set_flag(flag) -- that set_flag is defined in paypal.standard.models.py.
 
 
+#OHW TO CONNECT THE PAYPAL IPN MODEL TO THE TRANSACTIONS MODEL
+1. create a Transaction form like the paypal.sstandard.ipn.forms one: in blocbox.core.forms.py  - w
+
 #JMY: GOOD SITES WITH USEFUL EXAMPLES
 https://github.com/chrisglass/django-shop-paypal/blob/master/shop_paypal/offsite_paypal.py
-#E.G. - THE RETURNO NE
+
+#PAYPAL SITE WITH THE FORMS FOR OTHER PAYPAL FIELDS
+https://developer.paypal.com/docs/classic/ipn/integration-guide/IPNandPDTVariables/
+ For a full overview of all the fields you can set (there is a lot!) see:
+    http://tinyurl.com/pps-integration
 
 #FOR PAYPAL
 $ python manage.py schemamigration paypal.standard.ipn --auto

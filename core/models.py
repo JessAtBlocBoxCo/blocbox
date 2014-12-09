@@ -136,6 +136,8 @@ class Transaction(models.Model):
     #payee = models.ForeignKey(UserInfo, related_name='payee') #each ransaction related to payee that is a user on delmeusers
     payer = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payer')
     payee = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payee')
+    host = models.CharField("Host/Provider", max_length=100, blank=True, null=True)
+    enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
     #define transaciton type choices
     PACKAGE='Package'
     STORAGE='Storage'

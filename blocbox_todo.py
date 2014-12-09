@@ -35,6 +35,7 @@ BOTH: need to re-think "start a favor" - need a better term
 11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
 7. JESS to form and table - add need_meals
 1. JESS dashboard: connect to transactions table to populate actually transactions
+- JOHN: fix image on footer (at least for I.E.) - the blocbox logo is narrow/too tall
     
         
 """JESS NOTES/QUESTIONS FOR JOHN"""
@@ -43,7 +44,7 @@ BOTH: need to re-think "start a favor" - need a better term
 3. dashboard: -THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
 4. dashboard: maybe delivery date ad status can be collapsed into a single field? 
 
-QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN STATIC.. BEFORE TUES..
+
 3. JESS: staratahipment -select a host - then the process - LOAD - to connect to a host...
 4. JESS: shippackage: connect the host address fields to data table so populate,
 2. JESS: payment page -- do the django app for payment
@@ -55,6 +56,7 @@ QUESTION: DO WE WANT THE SHIPMENT PROCES TO BE DYNAMIC/TIED TO HOST RATHER THAN 
 
 
 """Jess - transaction tasks"""
+DOING: fix the transaciton table - tie it to paypal
 1. an idea to add more fields to paypal tabl e- just [pass hella stuff in URL
 1. allow the user to modify the paypalIPN table - add fields later - like tracking, 
 2. add tracking

@@ -18,6 +18,7 @@ import pytz
 from django.utils import timezone
 #Import CORE models
 from core.models import UserInfo, Transaction, Connection
+from core.forms import TransactionForm
 
 
 @require_POST
@@ -35,7 +36,7 @@ def ipn(request, item_check_callable=None, host_id=None):
     #      of if checks just to determine if flag is set.
     flag = None
     ipn_obj = None
-
+    
     # Clean up the data as PayPal sends some weird values such as "N/A"
     # Also, need to cope with custom encoding, which is stored in the body (!).
     # Assuming the tolerant parsing of QueryDict and an ASCII-like encoding,
@@ -60,7 +61,7 @@ def ipn(request, item_check_callable=None, host_id=None):
             if data.get(date_field) == 'N/A':
                 del data[date_field]
 
-        form = PayPalIPNForm(data)
+        form = PayPalIPNForm(data) #from paypal.standard.ipn.forms import PayPalIPNForm
         if form.is_valid():
             try:
                 #When commit = False, object is returned without saving to DB.
@@ -69,10 +70,10 @@ def ipn(request, item_check_callable=None, host_id=None):
                 flag = "Exception while processing. (%s)" % e
         else:
             flag = "Invalid form. (%s)" % form.errors
-
+		    
     if ipn_obj is None:
-        ipn_obj = PayPalIPN()
-
+        ipn_obj = PayPalIPN() #from paypal.standard.ipn.models import PayPalIPN
+        
     #Set query params and sender's IP address
     ipn_obj.initialize(request)
     
@@ -159,12 +160,18 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
+    trans_dict = {
+        "host": "Test Host on Transaction Table",
+        "enduser"; "Test End User",
+    }
+    trans_form = TransactionForm(trans_dict)
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':date, 'local_timezone':local_timezone, 
     	  'amount':amount, "youselected": youselected,
     	  'here': quote(request.get_full_path()), 'form': form,
+    	  'trans_form': trans_form,
     })
     
 """Need to implement a return view and a cancel view, from documentation:
