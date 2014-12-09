@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from core.models import UserInfo, Transaction, Connection
+from core.models import UserInfo, Connection
 from django.contrib.auth.forms import (UserCreationForm, UserChangeForm,
     AdminPasswordChangeForm)
 
@@ -17,12 +17,7 @@ from django.utils.encoding import force_text
 #Create a simpler admin interface
 class UserInfoAdmin(admin.ModelAdmin):
     pass
-
-
-class TransactionAdmin(admin.ModelAdmin): 
-    list_display = ('id', 'enduser', 'host', 'favortype', 'date_requested', 'invoice')
-    list_filter = ['host', 'enduser', 'favortype']
-    search_fields = ['host', 'enduser']    
+  
 
 class ConnectionAdmin(admin.ModelAdmin):
     list_display = ('host_user', 'end_user', 'added')
@@ -31,7 +26,6 @@ class ConnectionAdmin(admin.ModelAdmin):
     
     
 admin.site.register(UserInfo, UserInfoAdmin)
-admin.site.register(Transaction, TransactionAdmin)
 admin.site.register(Connection, ConnectionAdmin)
 admin.site.unregister(Group)
 

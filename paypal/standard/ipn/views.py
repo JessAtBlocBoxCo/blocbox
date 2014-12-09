@@ -17,8 +17,9 @@ import datetime
 import pytz
 from django.utils import timezone
 #Import CORE models
-from core.models import UserInfo, Transaction, Connection
-from core.forms import TransactionForm
+from core.models import UserInfo, Connection
+#import transaction models
+from transactions.models import Transaction
 
 
 @require_POST

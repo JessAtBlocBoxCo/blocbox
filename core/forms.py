@@ -30,11 +30,6 @@ class HostForm(forms.ModelForm):
 #class ConfirmConnectForm(forms.ModelForm):
         
 
-#CREATE A TRANSACTION FORM
-class TransactionForm(forms.ModelForm):
-    class Meta:
-        model = Transaction
-        fields = ('host', 'enduser', 'payer', 'payee', 'invoice','date_requested','price')
 """
 class PayPalPaymentsForm(forms.Form):
     CMD_CHOICES = (
