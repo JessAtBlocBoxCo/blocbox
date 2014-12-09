@@ -113,14 +113,13 @@
 										the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
         		 		
         		 			<div class="col-xs-12 col-sm-6 marginbottom30px marginsides3pct"> <!--marginleft40px-->
-        					{{ form.render }}       	
+        					{{ form.render }}   <!-- render is a function specific to the paypal form -defined in paypal.standard.forms.py to post the form-->  
+        					   	
       						<!--JESS TESTING A NEW FORM HERE - TRANSACTION FORM - SHOUDL NOT APPEAR-->
       						<form class="form-horizontal margintop30px" role="form" method="post" action="." enctype="multipart/form-data">
-      						{{ trans_form.render }}
       						
-      						    <p> {{ trans_form.payer.errors }} </p>
-    				        <label for="id_email"> Trans Form payer</label>
-                            <input type="text" class="form-control" name="payer" id="id_payer">
+      							{{ trans_form.as_table }} 
+                   </form>
                         
         					<p class="marginbottom20px"> Please note that you will not be changed until your host confirms your receipt of your package</p>
         				</div>  <!--col-->

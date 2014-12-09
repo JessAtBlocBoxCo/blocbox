@@ -134,10 +134,15 @@ class Transaction(models.Model):
 	  #MAY NEED TO UPDATE THIS TO settings.AUTH_USER_MODEL
     #payer = models.ForeignKey(UserInfo, related_name='payer') #each transaction related to payer from the delmeusers
     #payee = models.ForeignKey(UserInfo, related_name='payee') #each ransaction related to payee that is a user on delmeusers
-    payer = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payer')
-    payee = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payee')
+    payer = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payer', blank=True, null=True)
+    payee = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='payee', blank=True, null=True)
     host = models.CharField("Host/Provider", max_length=100, blank=True, null=True)
     enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
+    price = models.DecimalField('Amount/Price of Transaction', max_digits=6, decimal_places=2, blank=True, null=True)   
+    date_requested = models.DateTimeField('Date of Transaction Request', blank=True, null=True)
+    favortype = models.CharField("Transact/Favor Type", max_length=100, blank=True, null=True)
+   
+"""Remove the transaction type choices field - could add these back later, now will  link to other defs 
     #define transaciton type choices
     PACKAGE='Package'
     STORAGE='Storage'
@@ -158,13 +163,9 @@ class Transaction(models.Model):
         (LETIN, 'Let Someone In House'), (CHILDCARE, 'Child Care'), (PLANTCARE, 'Plant Care'), (LAWN, 'Lawn Care'),
         (CARSHARING, 'Car Sharing'), (HOUSEMAINT, 'House Maintenance'), (AUTOCARE, 'Auto Maintenance'),
         (OTHER, 'Other'))
-    transtype = models.CharField('Transaction Type', max_length=30, choices=TYPE_CHOICES, default=PACKAGE) #transaction type
-    
-    price = models.DecimalField('Amount/Price of Transaction', max_digits=6, decimal_places=2)
-    
-    date_requested = models.DateTimeField('Date of Transaction Request')
-    #date_payed = models.DateTimeField('Date of Payment')         
-    
+    transtype = models.CharField('Transaction Type', max_length=30, choices=TYPE_CHOICES, default=PACKAGE) #transaction type           
+"""  
+  
     
     
 #Define the connection relation
