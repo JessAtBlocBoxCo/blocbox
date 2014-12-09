@@ -163,8 +163,16 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     trans_dict = {
         "host": "Test Host on Transaction Table",
         "enduser": "Test End User",
+        "payer": host.email,
+        "payee": enduser.email,
     }
     trans_form = TransactionForm(trans_dict)
+    if trans_form.is_valid(): 
+        trans_form.save()
+   	else: 
+        print trans_form.errors
+    	      
+    	      
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,

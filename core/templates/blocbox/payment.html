@@ -129,10 +129,12 @@
         	</div> </div> <!--col, row : payment information -->
         {% endif %}
         
+        <!--submit button -- Do we still need this?-->
+        <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
+                <button class="bluebutton" onClick="window.location='/shippackage';">Submit</button>
+        </div>
         
-        
-         <div class="row">
-         			<h3>TEST - sho date: {{ date }} and invoice {{ invoice }}</h3>
+        <div class="row">
         			<h3> JMY Notes on the Payment Form:  </h3>
         			<p>There is currently no form at blocbox/payment - there a form at blocbox.co/payment/ipn and a PRO form at blocbox.co/payment/pro</p>
         			<p> The button image was intially a really disgusting 'buy it now' picture with credit cards
@@ -144,11 +146,6 @@
         				Would it be better to just reimburse users if the package doesn't show up? we may need to do that for beta and then add
         				the pay layter feature as a post-beta task </p>
         	</div> <!--row, jmy notes-->
-        
-        <!--submit button -- Do we still need this?-->
-        <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
-                <button class="bluebutton" onClick="window.location='/shippackage';">Submit</button>
-        </div>
         
 </div>
 
