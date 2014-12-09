@@ -15,9 +15,10 @@ from django.conf import settings
 #from django.template.loader import render_to_string
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
-#from core
-from core.models import UserInfo, Transaction, Connection
+#from core and TRANSACTION models
+from core.models import UserInfo, Connection
 from core.forms import UserForm, HostForm
+from transactions.models import Transaction
 #billing specific stuff
 from billing import gateway, CreditCard
 #from billing.urls import urlpatterns
