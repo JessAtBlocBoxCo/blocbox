@@ -127,14 +127,58 @@
                             <div class="dropdown textright paddingleft120px">
                                 <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
                                 <!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
+                                {% if user.is_authenticated %}
                                 <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown">
                                     <!--class="col-sm-3 menubutton"-->
-                                    {% if user.is_authenticated %}
                                     <!--print user name and number of new messages in parentheses -->
                                     {{user.first_name}}
-                                    <span class="caret"></span> {% else %} <a href='/login'>Sign in</a> {% endif %}
-
+                                    <span class="caret"></span> 
                                 </button>
+
+                                {% else %}
+                                <button class="bbbasenavbar bbbasenavbarbtn"><a href="#openModal">Sign in</a>
+                                </button>
+                                <div id="openModal" class="modalDialog">
+                                    <div class="">	<a href="#close" title="Close" class="close">X</a>
+                                        <!--<h6 class="ltbluetext paddingsides15px">Sign In</h6> -->
+                                        <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
+                                            {% csrf_token %} {{ login_form.non_field_errors }}
+                                            <div class="row">
+                                                <div class="col-xs-12 form-group paddingbottom20px">
+                                                    {{ user_form.email.errors }}
+                                                    <!--<label for="id_email">Email Address</label> -->
+                                                    <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
+                                                </div>
+
+                                                <div class="col-xs-12 form-group">
+                                                    {{ user_form.password.errors }}
+                                                    <!--<label for="id_password1">Password</label> -->
+                                                    <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
+                                                </div>
+                                            </div>
+                                            <div class="row paddingtopbottom10px">
+                                                <div class="col-xs-6 checkbox greytext">
+                                                    <label>
+                                                        <input type="checkbox">&nbsp; Remember Me
+                                                    </label>
+                                                </div>
+                                                <p class="col-xs-6 textright"><a href="/passwordreset/recover/">Forgot Password?</a>
+                                                </p>
+                                            </div>
+                                            <div class="paddingsides15px">
+                                                <button type="submit" name="submit" class="bluebutton marginsides15px">Sign In</button>
+                                            </div>
+                                            <div class="row">
+                                                <div class="profileboxline100 paddingsides15px margintop20px marginbottom20px"></div>
+                                                <p class="col-xs-6 greytext nopaddingright" style="margin-right: -20px;">Don't have an account?</p>
+                                                <p class="col-xs-3 nopaddingleftright"><a href="/search/">Get Started</a>
+                                                </p>
+                                            </div>
+                                        </form>
+                                        <!--end form line -->
+                                    </div>
+                                </div>
+                                {% endif %}
 
                                 <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                                 <ul class="dropdown-menu" style="margin-left: 68px;" role="menu" aria-labelledby="dropdownMenu1">
