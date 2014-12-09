@@ -233,7 +233,6 @@
                                     <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
                                     </li> -->
                                     {% endif %}
-
                                     <!--drop down menu items that appears to either user -->
                                     <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Shipment</a>
                                     </li>
@@ -251,7 +250,6 @@
                             </div>
                         </div>
 
-                        {% if user.is_authenticated %}
                         <!--drop down menu if logged in-->
                         <div class="col-xs-2 col-sm-1 nopaddingleftright marginleftright10px">
                             <div class="dropdown textcenter">
@@ -276,7 +274,6 @@
                                 <!--end collection of links for toggling -->
                             </div>
                         </div>
-                        {% else %} {% endif %}
 
                         <div class="col-xs-2 col-sm-1 nopaddingleftright marginleftright10px">
                             <div class="dropdown textcenter">
