@@ -34,8 +34,7 @@ class HostForm(forms.ModelForm):
 class TransactionForm(forms.ModelForm):
     class Meta:
         model = Transaction
-				fields = ('hostnametest', 'transtype')
-
+        fields = ('hostnametest', 'transtype')
 """
 class PayPalPaymentsForm(forms.Form):
     CMD_CHOICES = (
