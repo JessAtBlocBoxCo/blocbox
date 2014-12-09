@@ -2,20 +2,13 @@
 	i think we shoudl only have one dashboard and then just have additional stuff for hosts, using if--then logic.. 
 	this is easier to impelemnt if teh layout is relatively straight forward - so additional content is added vertically,
 -->
-{% extends "blocbox/base.html" %}
-{% load staticfiles %} 
-{% block title %}Dashboard{% endblock %}
-
-{% block headafter %} 
-{% endblock %} 
-  
-{% block content %}
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Dashboard{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 
 <div class="content container-fluid whitebackground relativediv">
-    
+
     <div class="row margintop60px marginbottom30px mobilehide">
         <a href="dashboard.html" class="col-xs-2 col-xs-offset-1 subnavtextcurrent textcenter">DASHBOARD</a>
-        <a href="/messages/inbox/" class="col-xs-2 subnavtext textcenter">MESSAGES ({% load inbox %}	{% inbox_count %} NEW) </a>
+        <a href="/messages/inbox/" class="col-xs-2 subnavtext textcenter">MESSAGES</a>
         <a href="/myblock/" class="col-xs-2 subnavtext textcenter">MY BLOCK</a>
         <p class="col-xs-2 subnavtext textcenter">PROFILE</p>
         <p class="col-xs-2 subnavtext textcenter">ACCOUNT</p>
@@ -24,13 +17,14 @@
         </div>
     </div>
 
-  <div class="row"> <!--contains most of page-->
-    		<!--sidebar-->
+    <div class="row">
+        <!--contains most of page-->
+        <!--sidebar-->
         <div class=" col-xs-3 mobilehide">
-            <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}"  /> 
+            <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}" />
             <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
             <p class="darkgreytext margintop5px tinytext textcenter">EDIT PROFILE</p>
-            
+
             <!--start a shipment/start a favor buttons-->
             <div class="profileboxline margintop20px marginbottom20px"></div>
             <div class="col-xs-8 col-xs-offset-2">
@@ -38,119 +32,172 @@
             </div>
             <div class="col-xs-8 col-xs-offset-2">
                 <button type="startashipment" name="startafavor" class="bluebutton marginbottom30px" onclick="window.location='/startafavor';">Start a Favor</button>
-            </div> <!--end, start a shipment/start a favor buttons-->
-            
-            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter">Invite Your Neighbors</p>
-            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Become a Host</p>
-            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Love Blocbox?</p>
-        </div> <!--sidebar-->
-    
+            </div>
+            <!--end, start a shipment/start a favor buttons-->
 
-	<!--CONTAINER WITH EVERYTHING-->
-	<div class="col-xs-8">
-          
-          <!--SHIPMENTS CONTAINER-->
-          <div class="col-xs-12 col-sm-12 dashbox">
-            <div class="row"> <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Current Shipments [Note - "status" field is invoice ID]</h3> </div>
-             
-            		<!--TOP ROW - HEADERS -->
-            		<div class="row textcenter darkgreytext tinytext "> <!--row containing top table-->     							     							
-     									<div class="col-xs-2"> <p class="marginbottom5px">STATUS</p> </div>
-     									<div class="col-xs-2"> <p class="marginbottom5px">TRACKING</p> </div>
-     									<div class="col-xs-2"> <p class="marginbottom5px">DELIVERY DATE</p>  </div>
-     									<div class="col-xs-3"> <p class="marginbottom5px">NEIGHBOR'S ADDRESS</p> </div>
-     									<div class="col-xs-2"> <p class="marginbottom5px">OPTIONS</p> </div>
-     						</div> <!--row, table headers-->
-     									
-     						<!--TESETING - FIRST ROW--> 
-     						<div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">    	<!--<div class="row  paddingtop10px"> -->								
-     									<div class="col-xs-2">	<p>Ready for pickup</p> 	</div>
-     									<div class="col-xs-2">	<p>Z139W198WQPUTV</p>   	</div> 
-     									<!--HERE - add "Enter Tracking #" if No Tracking -->
-     									<div class="col-xs-2">	<p>Nov. 19</p>          	</div>     	
-            		      <div class="col-xs-3">  <p>[Test Row]</p>            	</div>
-            		      <div class="col-xs-2">  <p>Modify</p> 					</div>
-            		</div>  <!--row, testing row-->
-                 
+            <p class="col-xs-8 col-xs-offset-2 ltbluetext textcenter">Invite Your Neighbors</p>
+            <p class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Become a Host</p>
+            <p class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Love Blocbox?</p>
+        </div>
+        <!--sidebar-->
+
+
+        <!--CONTAINER WITH EVERYTHING-->
+        <div class="col-xs-8">
+
+            <!--SHIPMENTS CONTAINER-->
+            <div class="col-xs-12 col-sm-12 dashbox">
+                <div class="row">
+                    <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Current Shipments [Note - "status" field is invoice ID]</h3> 
+                </div>
+
+                <!--TOP ROW - HEADERS -->
+                <div class="row textcenter darkgreytext tinytext ">
+                    <!--row containing top table-->
+                    <div class="col-xs-2">
+                        <p class="marginbottom5px">STATUS</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="marginbottom5px">TRACKING</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="marginbottom5px">DELIVERY DATE</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p class="marginbottom5px">NEIGHBOR'S ADDRESS</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p class="marginbottom5px">OPTIONS</p>
+                    </div>
+                </div>
+                <!--row, table headers-->
+
+                <!--TESETING - FIRST ROW-->
+                <div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">
+                    <!--<div class="row  paddingtop10px"> -->
+                    <div class="col-xs-2">
+                        <p>Ready for pickup</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p>Z139W198WQPUTV</p>
+                    </div>
+                    <!--HERE - add "Enter Tracking #" if No Tracking -->
+                    <div class="col-xs-2">
+                        <p>Nov. 19</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>[Test Row]</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p>Modify</p>
+                    </div>
+                </div>
+                <!--row, testing row-->
+
                 <!--ROW POPULATED FROM DATABASE-->
-                {% for shipment in shipments_all %}         
-                <div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">    	<!--<div class="row  paddingtop10px"> -->								
-     									<div class="col-xs-2">	<p> {{ shipment.invoice }}</p> 	</div>
-     									<div class="col-xs-2">	<p>[ADDME]</p>   	</div> 
-     									<!--HERE - add "Enter Tracking #" if No Tracking -->
-     									<div class="col-xs-2">	<p>[ADDME]</p>          	</div>     	
-            		      <div class="col-xs-3">	<p> {{ shipment.host_st_address1 }}, {{ shipment.host_st_address2 }}  ({{ shipment.host_fname }})</p> </div>
-            		      <div class="col-xs-2">  <p>[ADDME]</p> 					</div>
-            		</div>  <!--row, testing row-->                		
+                {% for shipment in shipments_all %}
+                <div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">
+                    <!--<div class="row  paddingtop10px"> -->
+                    <div class="col-xs-2">
+                        <p>{{ shipment.invoice }}</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p>[ADDME]</p>
+                    </div>
+                    <!--HERE - add "Enter Tracking #" if No Tracking -->
+                    <div class="col-xs-2">
+                        <p>[ADDME]</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>{{ shipment.host_st_address1 }}, {{ shipment.host_st_address2 }} ({{ shipment.host_fname }})</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p>[ADDME]</p>
+                    </div>
+                </div>
+                <!--row, testing row-->
                 {% endfor %}
-        	
-        	</div> <!--col, shipments container-->
 
-    	
-
-					<!--Favors Box-->
-       		<div class="col-xs-12 dashbox margintop30px marginbottom30px">
-          		<h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3> 
-          	
-          		  		<!--labels-->
-                    <div class="row darkgreytext tinytext textcenter"> <!--label-->
-                        <p class="col-xs-2 marginbottom5px">STATUS</p>
-                        <p class="col-xs-2 marginbottom5px">DESCRIPTION</p>
-                        <p class="col-xs-2 marginbottom5px">COMPLETION DATE</p>
-                        <p class="col-xs-3 marginbottom5px">NEIGHBOR'S ADDRESS</p>
-                        <p class="col-xs-2 marginbottom5px">OPTIONS</p>
-                    </div> <!--row, label -->
-                    
-                    <!--test data-->
-                    <div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter"> <!--test row-->
-                            <p class="col-xs-2">In progress</p>
-                            <p class="col-xs-2">House Sitting</p>
-                            <p class="col-xs-2">Nov. 19</p>
-                            <p class="col-xs-3">[TestRow]</p>
-                            <p class="col-xs-2">Modify</p>
-                    </div> <!--row, text data-->
-                    
-                    <!--Actual Data-->
-                    {% for favor in otherfavors_all %}                 	
-                  	<div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter"> <!--test row-->
-                            <p class="col-xs-2"> {{ favor.invoice }} </p>
-                            <p class="col-xs-2"> {{ favor.item_name }} </p>
-                            <p class="col-xs-2">[ADDME]</p>
-                            <p class="col-xs-3"> {{ favor.host_st_address1 }}, {{ favor.host_st_address2 }}  ({{ favor.host_fname }}) </p>
-                            <p class="col-xs-2">[ADDME]</p>
-                    </div> <!--row, text data-->                    
-                  	{% endfor %}
-
-        	</div> <!--col, Favors box--->
+            </div>
+            <!--col, shipments container-->
 
 
-					<!--COMPLETED SHIPMENTS Container-->	
-           <div class="col-xs-12 dashbox marginbottom60px marginbottom30px">
-            		
-              	<h3 class="col-xs-12 ltbluetext nopadding">Completed Shipments and other Transactions</h3>  
-              			<!--eventually make this "within past 60 ays" or something or have multiple pages-->
-                        <div class="row darkgreytext tinytext textcenter"> <!--labels-->
-                            <p class="col-xs-2 marginbottom5px">STATUS</p>
-                            <p class="col-xs-2 marginbottom5px">TRACKING</p>
-                            <p class="col-xs-2 marginbottom5px">DELIVERY DATE</p>
-                            <p class="col-xs-2 marginbottom5px">NEIGHBOR</p>
-                            <p class="col-xs-2 marginbottom5px">ADDRESS</p>
-                            <p class="col-xs-2 marginbottom5px">OPTIONS</p>
-                        </div> <!--row, labels-->
-                        <div class="row whitebackground marginbottom30px">
-                            <div class="row textcenter tinytext paddingtop10px">
-                                <p class="col-xs-2">Received</p>
-                                <p class="col-xs-2">Z139W198WQPUTV</p>
-                                <p class="col-xs-2">Nov. 11</p>
-                                <p class="col-xs-2">John</p>
-                                <p class="col-xs-2">420 Grand Ave.</p>
-                                <p class="col-xs-2">View Receipt</p>
-                            </div>
-                        </div> <!--row, text data-->
-						</div> <!--col, RECENT SHIPMETNS-->
-	</div> <!--col, Container with everything-->
+
+            <!--Favors Box-->
+            <div class="col-xs-12 dashbox margintop30px marginbottom30px">
+                <h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3> 
+
+                <!--labels-->
+                <div class="row darkgreytext tinytext textcenter">
+                    <!--label-->
+                    <p class="col-xs-2 marginbottom5px">STATUS</p>
+                    <p class="col-xs-2 marginbottom5px">DESCRIPTION</p>
+                    <p class="col-xs-2 marginbottom5px">COMPLETION DATE</p>
+                    <p class="col-xs-3 marginbottom5px">NEIGHBOR'S ADDRESS</p>
+                    <p class="col-xs-2 marginbottom5px">OPTIONS</p>
+                </div>
+                <!--row, label -->
+
+                <!--test data-->
+                <div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter">
+                    <!--test row-->
+                    <p class="col-xs-2">In progress</p>
+                    <p class="col-xs-2">House Sitting</p>
+                    <p class="col-xs-2">Nov. 19</p>
+                    <p class="col-xs-3">[TestRow]</p>
+                    <p class="col-xs-2">Modify</p>
+                </div>
+                <!--row, text data-->
+
+                <!--Actual Data-->
+                {% for favor in otherfavors_all %}
+                <div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter">
+                    <!--test row-->
+                    <p class="col-xs-2">{{ favor.invoice }}</p>
+                    <p class="col-xs-2">{{ favor.item_name }}</p>
+                    <p class="col-xs-2">[ADDME]</p>
+                    <p class="col-xs-3">{{ favor.host_st_address1 }}, {{ favor.host_st_address2 }} ({{ favor.host_fname }})</p>
+                    <p class="col-xs-2">[ADDME]</p>
+                </div>
+                <!--row, text data-->
+                {% endfor %}
+
+            </div>
+            <!--col, Favors box--->
+
+
+            <!--COMPLETED SHIPMENTS Container-->
+            <div class="col-xs-12 dashbox marginbottom60px marginbottom30px">
+
+                <h3 class="col-xs-12 ltbluetext nopadding">Completed Shipments and other Transactions</h3> 
+                <!--eventually make this "within past 60 ays" or something or have multiple pages-->
+                <div class="row darkgreytext tinytext textcenter">
+                    <!--labels-->
+                    <p class="col-xs-2 marginbottom5px">STATUS</p>
+                    <p class="col-xs-2 marginbottom5px">TRACKING</p>
+                    <p class="col-xs-2 marginbottom5px">DELIVERY DATE</p>
+                    <p class="col-xs-2 marginbottom5px">NEIGHBOR</p>
+                    <p class="col-xs-2 marginbottom5px">ADDRESS</p>
+                    <p class="col-xs-2 marginbottom5px">OPTIONS</p>
+                </div>
+                <!--row, labels-->
+                <div class="row whitebackground marginbottom30px">
+                    <div class="row textcenter tinytext paddingtop10px">
+                        <p class="col-xs-2">Received</p>
+                        <p class="col-xs-2">Z139W198WQPUTV</p>
+                        <p class="col-xs-2">Nov. 11</p>
+                        <p class="col-xs-2">John</p>
+                        <p class="col-xs-2">420 Grand Ave.</p>
+                        <p class="col-xs-2">View Receipt</p>
+                    </div>
+                </div>
+                <!--row, text data-->
+            </div>
+            <!--col, RECENT SHIPMETNS-->
+        </div>
+        <!--col, Container with everything-->
+    </div>
 </div>
-</div>			
 
 
 {% endblock %}
