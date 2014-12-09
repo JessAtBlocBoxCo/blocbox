@@ -2,219 +2,585 @@
 		we need to load the customized CSS sheet after we load boostrap.min.css to enable the overrides (e.g., in the head of the html file) */
 
 html {
-  font-family: brandon-grotesque;
+    font-family: brandon-grotesque;
 }
-
 body {
-background-color: rgb(250, 250, 250);
-/*font: 300 1.125em/1.38  brandon-grotesque; */
-font-family: brandon-grotesque;
-color: rgb(71, 82, 93);
-/*padding-top: 30px; /*JMY adding padding to body so that the navbar doesn't overlap - by default the navbar is 50px */
-font-size: 15px;
-height: 100%;
+    background-color: rgb(250, 250, 250);
+    /*font: 300 1.125em/1.38  brandon-grotesque; */
+    font-family: brandon-grotesque;
+    color: rgb(71, 82, 93);
+    /*padding-top: 30px; /*JMY adding padding to body so that the navbar doesn't overlap - by default the navbar is 50px */
+    font-size: 15px;
+    height: 100%;
 }
-
 /*JMY editing rows to o verride the margin-rightand margin-left -15px property */
-.row {  margin-right: 0px; margin-left: 0px;}
 
-.negmargins {  margin-right: -15px; margin-left: -15px;	}
-
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.negmargins {
+    margin-right: -15px;
+    margin-left: -15px;
+}
 /*Style the bbpage id - which contains everythign within the body tags, make it 97% to account fo navbar so footer doesn't run off page */
-#bbpage {  Min-height: 100%; position:relative;}
+
+#bbpage {
+    Min-height: 100%;
+    position: relative;
+}
 /*Setting Default  Header sizes*/
-h1 {font-size: 5.6em; font-weight: 700; } /*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
-h2 {font-size: 3.9em; font-weight: 700; } /*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
-h3 {font-size: 1.8em; font-weight: 300; line-height: 1.28em; }
-h4 {font-size: 1em; font-weight: 500; line-height: 1.38em; }
-h5 {font-size: 1.27em; line-height: 1.38; font-weight: 300; }
-h6 {font-size: 1.27em; font-weight: 400; line-height: 1.38em;  }
 
-.tinytext {font-size: 0.800em; font-weight: 400; }
-.subnavtext {font-size: 1.067em; font-weight: 500; color: rgb(223, 226, 226); }
-.subnavtext:hover {font-size: 1.067em; font-weight: 500; color: rgb(41, 128, 185); text-shadow: 0px 2px 5px rgb(236, 240, 241); text-decoration: none; }
-.subnavtextcurrent {font-size: 1.067em; font-weight: 500; color: rgb(211, 84, 0); text-shadow: 0px 2px 5px rgb(236, 240, 241) }
-.subnavtextcurrent:hover {font-size: 1.067em; font-weight: 500; color: rgb(211, 84, 0); text-shadow: 0px 2px 5px rgb(236, 240, 241); text-decoration: none; }
+h1 {
+    font-size: 5.6em;
+    font-weight: 700;
+}
+/*font-size: 85px; padding-top: 7%; padding-bottom: 75;*/
 
+h2 {
+    font-size: 3.9em;
+    font-weight: 700;
+}
+/*font-size: 52px; padding-top: 2%; padding-bottom: 25;*/
+
+h3 {
+    font-size: 1.8em;
+    font-weight: 300;
+    line-height: 1.28em;
+}
+h4 {
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.38em;
+}
+h5 {
+    font-size: 1.27em;
+    line-height: 1.38;
+    font-weight: 300;
+}
+h6 {
+    font-size: 1.27em;
+    font-weight: 400;
+    line-height: 1.38em;
+}
+.tinytext {
+    font-size: 0.800em;
+    font-weight: 400;
+}
+.subnavtext {
+    font-size: 1.067em;
+    font-weight: 500;
+    color: rgb(223, 226, 226);
+}
+.subnavtext:hover {
+    font-size: 1.067em;
+    font-weight: 500;
+    color: rgb(41, 128, 185);
+    text-shadow: 0px 2px 5px rgb(236, 240, 241);
+    text-decoration: none;
+}
+.subnavtextcurrent {
+    font-size: 1.067em;
+    font-weight: 500;
+    color: rgb(211, 84, 0);
+    text-shadow: 0px 2px 5px rgb(236, 240, 241)
+}
+.subnavtextcurrent:hover {
+    font-size: 1.067em;
+    font-weight: 500;
+    color: rgb(211, 84, 0);
+    text-shadow: 0px 2px 5px rgb(236, 240, 241);
+    text-decoration: none;
+}
 /*Style body of page to ensure footer falls below the page content*/
-.content {padding-bottom: 440px; }
 
+.content {
+    padding-bottom: 440px;
+}
 /*Style the footer class - fix to bottom of page, make font slightly smaller */
-footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 
-
+footer {
+    font-size: 0.92em;
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
 /*add anchor class to add padding - should be about the same size as the margin */
-.anchor {font-size: 0px; display: none; }
-.anchorwithnav {padding-top: 35px; font-size: 0px; display: none; }
-.waitlistbody .anchorwithnav {padding-top: 45px; font-size: 0px; display: none; }
 
+.anchor {
+    font-size: 0px;
+    display: none;
+}
+.anchorwithnav {
+    padding-top: 35px;
+    font-size: 0px;
+    display: none;
+}
+.waitlistbody .anchorwithnav {
+    padding-top: 45px;
+    font-size: 0px;
+    display: none;
+}
 /*Define Generic Background Colors*/
-.orangebackground {background-color: rgb(255,195,0); } /*Hex Equiv:  #FFCB13 */
-.bluebackground {	background-color: rgb(52, 152, 219);} /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
-.darkbluebackground {	background-color: rgb(41, 128, 185);} /*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
-.greenbackground { background-color: #2ecc71; } /*become a blocbox host, etc */
-.darkgreenbackground { background-color: rgb(39, 174, 96); } /*for the footer on the waitlist etc */
-.offwhitebackground { background-color: rgb(250, 250, 250);	} /*Hex equiv: #FAFAFA */
-.lightgreybackground { background-color: rgb(236, 240, 241);}
-.darkgreybackground {background-color: rgb(103,114,119); } /*Heq Equiv: #677277 */
-.whitebackground { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*/
+
+.orangebackground {
+    background-color: rgb(255, 195, 0);
+}
+/*Hex Equiv:  #FFCB13 */
+
+.bluebackground {
+    background-color: rgb(52, 152, 219);
+}
+/*HEX Equiv: #3498DB, starts before 'stop missing packages" */
+
+.darkbluebackground {
+    background-color: rgb(41, 128, 185);
+}
+/*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
+
+.greenbackground {
+    background-color: #2ecc71;
+}
+/*become a blocbox host, etc */
+
+.darkgreenbackground {
+    background-color: rgb(39, 174, 96);
+}
+/*for the footer on the waitlist etc */
+
+.offwhitebackground {
+    background-color: rgb(250, 250, 250);
+}
+/*Hex equiv: #FAFAFA */
+
+.lightgreybackground {
+    background-color: rgb(236, 240, 241);
+}
+.darkgreybackground {
+    background-color: rgb(103, 114, 119);
+}
+/*Heq Equiv: #677277 */
+
+.whitebackground {
+    background-color: rgb(255, 255, 255);
+}
+/*HEX equiv: #FFFFFF*/
 
 /*Define Generic text colors */
-.whitetext {color: rgb(255, 255, 255); }
-.offwhitetext {color: rgb(250, 250, 250); }
-.darkgreytext {color: rgb(103,114,119); } /*Heq Equiv: #677277 */
-.darkergreytext {color: #333;	}
-.greytext {color: rgb(127, 140, 141); }
-.ltgreytext {color: rgb(223, 226, 226)}
-.textinbluebackground {color: rgb(18, 67, 100); } /*text fom the waitlist page */
-.textindarkbluebackground {color: rgb(14, 41, 59); }
-.textingreenbackground {color: rgb(21, 90, 50); }
-.orangetext {color: rgb(255, 203, 19); }
-.redtext {color: rgb(211, 84, 0); }
-.bluegreytext {color: rgb(71, 82, 93); }
-.darkbluetext {color: rgb(49, 104, 147); }
-.ltbluetext {color: rgb(41, 128, 185); }
-.purpletext {color: rgb(145, 61, 136); }
-.greentext {color: rgb(26, 188, 156); }
-.yellowtext {color: rgb(255,195,0); }
 
+.whitetext {
+    color: rgb(255, 255, 255);
+}
+.offwhitetext {
+    color: rgb(250, 250, 250);
+}
+.darkgreytext {
+    color: rgb(103, 114, 119);
+}
+/*Heq Equiv: #677277 */
+
+.darkergreytext {
+    color: #333;
+}
+.greytext {
+    color: rgb(127, 140, 141);
+}
+.ltgreytext {
+    color: rgb(223, 226, 226)
+}
+.textinbluebackground {
+    color: rgb(18, 67, 100);
+}
+/*text fom the waitlist page */
+
+.textindarkbluebackground {
+    color: rgb(14, 41, 59);
+}
+.textingreenbackground {
+    color: rgb(21, 90, 50);
+}
+.orangetext {
+    color: rgb(255, 203, 19);
+}
+.redtext {
+    color: rgb(211, 84, 0);
+}
+.bluegreytext {
+    color: rgb(71, 82, 93);
+}
+.darkbluetext {
+    color: rgb(49, 104, 147);
+}
+.ltbluetext {
+    color: rgb(41, 128, 185);
+}
+.purpletext {
+    color: rgb(145, 61, 136);
+}
+.greentext {
+    color: rgb(26, 188, 156);
+}
+.yellowtext {
+    color: rgb(255, 195, 0);
+}
 /*Define generic font attributes*/
-.lightweight {font-weight: 300;}
-.heavyweight {font-weight: 700;}
-.textdecorationblue {text-decoration-color: #124364;}
-.textdecorationgreen {text-decoration-color: #155a32;}
-.textunderline {text-decoration: underline; }
-.font2em {font-size:2em; }
-.font16px {font-size: 16px; }
-.font1pt5em {font-size: 1.5em; }
-.fontsizehalf {font-size: 0.5em; }
-.textshadow {text-shadow: 0px 2px 5px rgb(236, 240, 241) }
-.dropdownfont {font-size: 1.200em; padding-top: 2px; padding-bottom: 2px; font-weight: 300; }
 
-
+.lightweight {
+    font-weight: 300;
+}
+.heavyweight {
+    font-weight: 700;
+}
+.textdecorationblue {
+    text-decoration-color: #124364;
+}
+.textdecorationgreen {
+    text-decoration-color: #155a32;
+}
+.textunderline {
+    text-decoration: underline;
+}
+.font2em {
+    font-size: 2em;
+}
+.font16px {
+    font-size: 16px;
+}
+.font1pt5em {
+    font-size: 1.5em;
+}
+.fontsizehalf {
+    font-size: 0.5em;
+}
+.textshadow {
+    text-shadow: 0px 2px 5px rgb(236, 240, 241)
+}
+.dropdownfont {
+    font-size: 1.200em;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-weight: 300;
+}
 /*Define text alignment attributes*/
-.textcenter {text-align: center; }
-.textleft {text-align: left; }
-.textright {text-align: right; }
 
+.textcenter {
+    text-align: center;
+}
+.textleft {
+    text-align: left;
+}
+.textright {
+    text-align: right;
+}
 /*Define generic padding and positional attributions */
-.absolutebottom {position: absolute; bottom: 0;}
-.relativediv {position: relative; }
-.absolute {position: absolute; }
-.alignbottomdiv {position: absolute; padding-bottom: 20px; bottom: 0; width: 100%; }
-.container-fluid.fillpage { min-height: 100%; }
-.fillpage {height: 100%; }
-.fillviewheight {height: 88vh; }
-.fullheight {height: 100%; min-height: 100%; }
-.width90pct {width: 90%;}
-.maxwidth100pct {max-width: 100%; }
-.maxwidth90pct {max-width: 90%; }
 
+.absolutebottom {
+    position: absolute;
+    bottom: 0;
+}
+.relativediv {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.alignbottomdiv {
+    position: absolute;
+    padding-bottom: 20px;
+    bottom: 0;
+    width: 100%;
+}
+.container-fluid.fillpage {
+    min-height: 100%;
+}
+.fillpage {
+    height: 100%;
+}
+.fillviewheight {
+    height: 88vh;
+}
+.fullheight {
+    height: 100%;
+    min-height: 100%;
+}
+.width90pct {
+    width: 90%;
+}
+.maxwidth100pct {
+    max-width: 100%;
+}
+.maxwidth90pct {
+    max-width: 90%;
+}
 /*Define Generic Padding Attributes*/
-.paddingsides20px {padding-right: 20px; padding-left: 20px; }
-.paddingsides15px {padding-right: 15px; padding-left: 15px; }
-.paddingsides10px { padding-left: 10px; padding-right: 10px;}
-.paddingsides10pct {padding-left: 10%; padding-right: 10%; }
-.paddingsides5pct {padding-left: 5%; padding-right: 5%; }
-.paddingsides5px {padding-left: 5px; padding-right: 5px; }
-.paddingright5px {padding-right: 5px; }
-.paddingright7pt5pct {padding-right: 7.5%; }
-.paddingright-15px {padding-right: -15px; }
-.paddingleft10px {padding-left: 10px; }
-.paddingleft20px {padding-left: 20px; }
-.paddingleft7pt5pct {padding-left: 7.5%; }
-.paddingleft25px {padding-left: 25px; }
-.paddingleft50px {padding-left: 50px; }
-.paddingleft55px {padding-left: 55px; }
-.paddingleft69px {padding-left: 69px; }
-.paddingleft120px {padding-left: 120px; }
-.paddingtop20px {padding-top: 20px; }
-.paddingtop50px {padding-top: 50px; }
-.paddingbottom10px {padding-bottom: 10px; }
-.paddingbottom20px {padding-bottom: 20px; }
-.paddingbottom30px {padding-bottom: 30px; }
-.paddingbottom50px {padding-bottom: 50px; }
-.padding5px {padding: 5px; }
-.paddingtopbottom2px {padding-top: 2px; padding-bottom: 2px; }
-.paddingtopbottom5px {padding-top: 5px; padding-bottom: 5px; }
-.paddingtopbottom10px {padding-top: 10px; padding-bottom: 10px; }
-.paddingtopbottom30px {padding-top: 30px; padding-bottom: 30px; }
-.paddingtopbottom50px {padding-top: 50px; padding-bottom: 50px; }
-.nopadding {padding: 0px;}
-.nopaddingright {padding-right: 0; }
-.nopaddingleft {padding-left: 0; }
-.nopaddingleftright {padding-left: 0; padding-right: 0; }
-.nopaddingtopbottom {padding-bottom: 0; padding-top: 0; }
-.paddingtop5px {padding-top: 5px; }
-.paddingtop7px {padding-top: 7px; }
-.paddingtop10px {padding-top: 10px; }
-.paddingtop20px {padding-top: 20px; }
 
+.paddingsides20px {
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.paddingsides15px {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+.paddingsides10px {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.paddingsides10pct {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.paddingsides5pct {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.paddingsides5px {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.paddingright5px {
+    padding-right: 5px;
+}
+.paddingright7pt5pct {
+    padding-right: 7.5%;
+}
+.paddingright-15px {
+    padding-right: -15px;
+}
+.paddingleft10px {
+    padding-left: 10px;
+}
+.paddingleft20px {
+    padding-left: 20px;
+}
+.paddingleft7pt5pct {
+    padding-left: 7.5%;
+}
+.paddingleft25px {
+    padding-left: 25px;
+}
+.paddingleft50px {
+    padding-left: 50px;
+}
+.paddingleft55px {
+    padding-left: 55px;
+}
+.paddingleft69px {
+    padding-left: 69px;
+}
+.paddingleft120px {
+    padding-left: 120px;
+}
+.paddingtop20px {
+    padding-top: 20px;
+}
+.paddingtop50px {
+    padding-top: 50px;
+}
+.paddingbottom10px {
+    padding-bottom: 10px;
+}
+.paddingbottom20px {
+    padding-bottom: 20px;
+}
+.paddingbottom30px {
+    padding-bottom: 30px;
+}
+.paddingbottom50px {
+    padding-bottom: 50px;
+}
+.padding5px {
+    padding: 5px;
+}
+.paddingtopbottom2px {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.paddingtopbottom5px {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+.paddingtopbottom10px {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.paddingtopbottom30px {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.paddingtopbottom50px {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.nopadding {
+    padding: 0px;
+}
+.nopaddingright {
+    padding-right: 0;
+}
+.nopaddingleft {
+    padding-left: 0;
+}
+.nopaddingleftright {
+    padding-left: 0;
+    padding-right: 0;
+}
+.nopaddingtopbottom {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.paddingtop5px {
+    padding-top: 5px;
+}
+.paddingtop7px {
+    padding-top: 7px;
+}
+.paddingtop10px {
+    padding-top: 10px;
+}
+.paddingtop20px {
+    padding-top: 20px;
+}
 /*Define Generic Border Attributes*/
-.borderblack3px {border: 3px solid rgb(0, 0, 0); }
 
+.borderblack3px {
+    border: 3px solid rgb(0, 0, 0);
+}
 /*Define Generic Margin attributions */
-.negmarginright15px {margin-right: -15px; }
-.nomargin {margin: 0px; }
-.nomargintop {margin-top: 0; }
-.nomarginbottom {margin-bottom: 0px; }
-.nomarginleft {margin-left: 0px; }
-.marginauto {margin: auto; }
-.margintop5px {margin-top: 5px;}
-.margintop10px {margin-top: 10px; }
-.margintop15px {margin-top: 15px; }
-.margintop20px {margin-top: 20px; }
-.margintop30px {margin-top: 30px; }
-.margintop40px {margin-top: 40px; }
-.margintop50px {margin-top: 50px; }
-.margintop60px {margin-top: 60px; }
-.margintop100px {margin-top: 100px; }
-.margintop145px {margin-top: 145px; }
-.margintopbottom30px {margin-top: 30px; margin-bottom: 30px; }
-.marginbottom5px {margin-bottom: 5px; }
-.marginbottom10px {margin-bottom: 10px; }
-.marginbottom20px {margin-bottom: 20px; }
-.marginbottom30px {margin-bottom: 30px; }
-.marginbottom60px {margin-bottom: 60px; }
-.marginleft10px {margin-left: 10px; }
-.marginleft20px {margin-left: 20px; }
-.marginright10px {margin-right: 10px; }
-.marginleftright10px {margin-left: 10px; margin-right: 10px; }
-.marginleftneg25 {margin-left: -25px; }
-.marginleft20px {margin-left: 20px;}
-.marginleft40px {margin-left: 40px; }
-.marginright40px {margin-right: 40px; }
-.marginsides3pct {margin-right: 3%; margin-left: 3%; }
-.marginsides7pt5pct {margin-right: 7.5%; margin-left: 7.5%; }
-.marginleftright20px {margin-left: 40px; margin-right: 20px; }
-.marginsides30px {margin-left: 30px; margin-right: 30px; }
-.marginsides80px {margin-left: 80px; margin-right: 80px; }
 
-
+.negmarginright15px {
+    margin-right: -15px;
+}
+.nomargin {
+    margin: 0px;
+}
+.nomargintop {
+    margin-top: 0;
+}
+.nomarginbottom {
+    margin-bottom: 0px;
+}
+.nomarginleft {
+    margin-left: 0px;
+}
+.marginauto {
+    margin: auto;
+}
+.margintop5px {
+    margin-top: 5px;
+}
+.margintop10px {
+    margin-top: 10px;
+}
+.margintop15px {
+    margin-top: 15px;
+}
+.margintop20px {
+    margin-top: 20px;
+}
+.margintop30px {
+    margin-top: 30px;
+}
+.margintop40px {
+    margin-top: 40px;
+}
+.margintop50px {
+    margin-top: 50px;
+}
+.margintop60px {
+    margin-top: 60px;
+}
+.margintop100px {
+    margin-top: 100px;
+}
+.margintop145px {
+    margin-top: 145px;
+}
+.margintopbottom30px {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.marginbottom5px {
+    margin-bottom: 5px;
+}
+.marginbottom10px {
+    margin-bottom: 10px;
+}
+.marginbottom20px {
+    margin-bottom: 20px;
+}
+.marginbottom30px {
+    margin-bottom: 30px;
+}
+.marginbottom60px {
+    margin-bottom: 60px;
+}
+.marginleft10px {
+    margin-left: 10px;
+}
+.marginleft20px {
+    margin-left: 20px;
+}
+.marginright10px {
+    margin-right: 10px;
+}
+.marginleftright10px {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.marginleftneg25 {
+    margin-left: -25px;
+}
+.marginleft20px {
+    margin-left: 20px;
+}
+.marginleft40px {
+    margin-left: 40px;
+}
+.marginright40px {
+    margin-right: 40px;
+}
+.marginsides3pct {
+    margin-right: 3%;
+    margin-left: 3%;
+}
+.marginsides7pt5pct {
+    margin-right: 7.5%;
+    margin-left: 7.5%;
+}
+.marginleftright20px {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.marginsides30px {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.marginsides80px {
+    margin-left: 80px;
+    margin-right: 80px;
+}
 /*CSS for JS drawers*/
+
 .hideit > div {
-    display:none;
+    display: none;
 }
-
 .visible > div {
-    display:block;
+    display: block;
 }
-
-
 /*JMY ON 9NOV 2014 - update image in navbar for base page !X!*/
+
 .bbbasenavbar {
-	margin-top: 20px;	
-	margin-bottom: 5px;
-	height: 50px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    height: 50px;
 }
-
 .bbbasenavbarbrand {
-	background-image: url('/static/blocbox/images/Logo-and-name---orange-drop2.png');
-	background-repeat: no-repeat; 
-	background-size: contain; 
-	width: 250px; 
-	}
-
+    background-image: url('/static/blocbox/images/Logo-and-name---orange-drop2.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 250px;
+}
 .bbbasenavbarbtn {
     background-color: rgb(255, 255, 255);
     font-size: 1.900em;
@@ -222,13 +588,14 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     color: black;
     padding-left: 10px;
     padding-right: 10px;
-    cursor: pointer;   
-    border: 0;  border-radius: 0px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0px;
     white-space: nowrap;
 }
-
-.bbbasenavbarbtn > a {color: black; }
-
+.bbbasenavbarbtn > a {
+    color: black;
+}
 .bbbasenavbarinbox {
     background-color: rgb(255, 255, 255);
     font-size: 1.600em;
@@ -236,10 +603,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     color: rgb(41, 128, 185);
     padding-left: 10px;
     padding-right: 10px;
-    cursor: pointer;   
-    border: 0;  border-radius: 0px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0px;
 }
-
 .bbbasenavbarinbox:hover {
     background-color: transparent;
     font-size: 1.600em;
@@ -247,10 +614,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     color: rgb(255, 255, 255);
     padding-left: 10px;
     padding-right: 10px;
-    cursor: pointer;   
-    border: 0;  border-radius: 0px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0px;
 }
-
 .bbbasenavbarinbox:focus {
     background-color: transparent;
     font-size: 1.600em;
@@ -258,27 +625,25 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     color: rgb(255, 255, 255);
     padding-left: 10px;
     padding-right: 10px;
-    cursor: pointer;   
-    border: 0;  border-radius: 0px;
-}
-
-
-.bbbasenavbarinfo {
-	background-image: url('/static/blocbox/images/info-button.png');
-	background-repeat: no-repeat; 
-	background-size: contain; 
-	width: 37px;
     cursor: pointer;
-  /*
+    border: 0;
+    border-radius: 0px;
+}
+.bbbasenavbarinfo {
+    background-image: url('/static/blocbox/images/info-button.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 37px;
+    cursor: pointer;
+    /*
   vertical-align: middle;
   text-align: center;
   */
 }
-
 .bbbasenavbarinfo:hover {
     background-image: url('/static/blocbox/images/info-button-active.png');
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 37px;
     cursor: pointer;
     /*
@@ -286,11 +651,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     */
 }
-
 .bbbasenavbarinfo:focus {
     background-image: url('/static/blocbox/images/info-button-active.png');
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 37px;
     cursor: pointer;
     /*
@@ -298,11 +662,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     */
 }
-
 .bbbasenavbarstart {
     background-image: url('/static/blocbox/images/start-button.png');
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 37px;
     cursor: pointer;
     /*
@@ -310,11 +673,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     */
 }
-
 .bbbasenavbarstart:hover {
     background-image: url('/static/blocbox/images/start-button-active.png');
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 37px;
     cursor: pointer;
     /*
@@ -322,11 +684,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     */
 }
-
 .bbbasenavbarstart:focus {
     background-image: url('/static/blocbox/images/start-button-active.png');
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 37px;
     cursor: pointer;
     /*
@@ -334,11 +695,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     */
 }
-
 .bbbasenavbarring {
     background-image: url('/static/blocbox/images/message-button.png');
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 37px;
     cursor: pointer;
     vertical-align: middle;
@@ -347,11 +707,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     */
 }
-
 .bbbasenavbarring:hover {
     background-image: url('/static/blocbox/images/message-button-active.png');
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 37px;
     cursor: pointer;
     vertical-align: middle;
@@ -360,11 +719,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     */
 }
-
 .bbbasenavbarring:focus {
     background-image: url('/static/blocbox/images/message-button-active.png');
-    background-repeat: no-repeat; 
-    background-size: contain; 
+    background-repeat: no-repeat;
+    background-size: contain;
     width: 37px;
     cursor: pointer;
     vertical-align: middle;
@@ -373,14 +731,12 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     */
 }
-
 .footerlogo {
     max-width: 200px;
     min-height: 175px;
     margin-top: -15px;
     margin-left: -20px;
 }
-
 .footerline {
     position: relative;
     clear: both;
@@ -391,53 +747,54 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     margin-right: auto;
     background-color: rgb(255, 255, 255);
 }
-
 /*Make the footer text dark green for the dargreen footer on the waitlist page */
-.waitlistbody > div > footer > div > div > div > a { color: rgb(21, 90, 50);}
 
+.waitlistbody > div > footer > div > div > div > a {
+    color: rgb(21, 90, 50);
+}
 /*change the padding on the image for the brand in the navbar */
-.navbar-default .navbar-header > a {padding-top: 7px;}
 
+.navbar-default .navbar-header > a {
+    padding-top: 7px;
+}
 /*Eliminate border around navbar*/
+
 .navbar {
     border: 0px;
-    box-shadow: 0; 
+    box-shadow: 0;
     background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%);
     z-index: 1000;
     margin-bottom: 0;
     margin-top: -30px;
-
-} /*default is border: 1px solid transparent;*/
+}
+/*default is border: 1px solid transparent;*/
 
 /*Orange Fill Page */
+
 .fullorange {
-  background-color: rgb(255,195,0);
+    background-color: rgb(255, 195, 0);
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-
 }
-
 .orangefix {
     margin-top: -80;
     top: 0;
 }
-
 /*Hello button outline */
+
 .signinbtn {
-  border: 2px solid rgb(255, 255, 255);
-  background-color: rgb(255,195,0);
-  border-radius: 3px;
-  cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: rgb(255, 195, 0);
+    border-radius: 3px;
+    cursor: pointer;
     padding-bottom: 0;
     padding-top: 0;
     padding-left: 50px;
     padding-right: 50px;
-  height: 40px;
-    
+    height: 40px;
 }
-
 /*-----------------------------------------------------------------------
 *min.css overrides
 *-----------------------------------------------------------------------*/
@@ -446,51 +803,80 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     padding-bottom: 0px;
     padding-top: 10px;
 }
-
-.nav > li > a:hover, .nav > li > a:focus {
+.nav > li > a:hover,
+.nav > li > a:focus {
     background-color: transparent;
     color: white;
 }
-
 .navbar-nav.navbar-right:last-child {
     margin-right: 0px;
 }
-
 /*-----------------------------------------------------------------------
 * GEneric Navbar Specific Styles (non-waitlist, for base-html)
 *-----------------------------------------------------------------------*/
-/*Change width of navbar-header - so when it collapses - was 768 */
-@media (max-width: 1000px) {
-    .navbar-header { float: none;}
-    .navbar-left,
-    .navbar-right {float: none !important;}
-    .navbar-toggle { display: block; border: 0; color: white; }
-    .navbar-collapse {border-top: 1px solid transparent; box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);}
-    .navbar-fixed-top { top: 0; border-width: 0 0 1px;}
-    .navbar-collapse.collapse {display: none!important;}
-    .navbar-nav {float: none!important; margin-top: 7.5px;}
-    .navbar-nav > li { float: none; }
-    .navbar-nav>li>a {padding-bottom: 10px; padding-top: 10px; }
-    .collapse.in{ display:block !important; } 
-}
 
+/*Change width of navbar-header - so when it collapses - was 768 */
+
+@media (max-width: 1000px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,
+    .navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+        border: 0;
+        color: white;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .navbar-nav > li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+    .collapse.in {
+        display: block !important;
+    }
+}
 .hide {
     display: none;
-    
 }
-
 /*---------------------------------------------------------------------*
 * Jess Adding scheduling stylingn - for free and busy days
 *----------------------------------------------------------------------*/
 
 /*PER JOHN'S STARTASHIPMEN PAGE - MAKE THE BACKGROUND DARK BLUE AND THE TEXT WHITE IF BUSY */
 
-.free > div  {background-color: rgb(233, 226, 226);}
-.free > div > a {color: rgb(14, 41, 59);}
-
-.busy > div {background-color:rgb(14, 51, 59);}
-.busy > div > a {color:rgb(255, 255, 255);}
-
+.free > div {
+    background-color: rgb(233, 226, 226);
+}
+.free > div > a {
+    color: rgb(14, 41, 59);
+}
+.busy > div {
+    background-color: rgb(14, 51, 59);
+}
+.busy > div > a {
+    color: rgb(255, 255, 255);
+}
 /*
 .whitetext {color: rgb(255, 255, 255); }
 .offwhitetext {color: rgb(250, 250, 250); }
@@ -516,84 +902,148 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
 */
 
 /*style the mobile version of navbar - this is the image with the logo and name */
-.waitlistbody .nav-blocbox-name { 
-		display: block;
-		background-image: url('/static/blocbox/images/Logo-and-name-white.png');
-		background-repeat: no-repeat; 
-		background-size: contain; 
-		height: 50px; width: 250px; 
+
+.waitlistbody .nav-blocbox-name {
+    display: block;
+    background-image: url('/static/blocbox/images/Logo-and-name-white.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 250px;
 }
 /*Make the navbar fixed if its mobile */
+
 @media (max-width: 767px) {
-	.waitlistbody .navbar-default {position: fixed; top:0; right: 0; left: 0;z-index: 10000 }
-	.waitlistbody .anchor{padding-top: 35px; } /*and add padding to the anchor because there's a navbar now */
+    .waitlistbody .navbar-default {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10000
+    }
+    .waitlistbody .anchor {
+        padding-top: 35px;
+    }
+    /*and add padding to the anchor because there's a navbar now */
 }
-		
 /*Restrictions specific to larger screens - Have a floating logo and so forth for min-width 768 - make the navbar not float */
+
 @media (min-width: 768px) {
-	.waitlistbody .navbar-default {margin-bottom: 0px; margin-top: -50px;}
-	.waitlistbody .navbar-right {margin-top: 50px; }
-	.waitlistbody .nav-blocbox-name {
-		display: block;
-		background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
-		background-repeat: no-repeat;
-		background-size: contain;
-		height: 70px; width: 275px; margin-top: 40px;
-		margin-left: 135px;
-		} 
-	.fixed-logo-image {
-		display: block; position: fixed;
-		background-image: url('/static/blocbox/images/BB-Logo.svg');
-		background-repeat: no-repeat;
-		background-size: contain;
-	 	height:110px; width:160px;
-	 	top: 10px; left: 1.7%;
-	 	z-index: 100000; 
-		}
-	.waitlistbody .h1, h2 {padding-left: 10%; padding-right: 10%} /*add padding around waitlist headers so it doesn't overlap with the logo */
-	
-	/*make modification to footer in desktop versions - left align */
-	footer > .container-fluid { padding-top: 5px; padding-bottom: 5px; padding-left: 0px; padding-right: 0px } /*make footer taller */
-	footer > .container-fluid > div { padding-left: 0px; padding-right: 0px } 
+    .waitlistbody .navbar-default {
+        margin-bottom: 0px;
+        margin-top: -50px;
+    }
+    .waitlistbody .navbar-right {
+        margin-top: 50px;
+    }
+    .waitlistbody .nav-blocbox-name {
+        display: block;
+        background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 70px;
+        width: 275px;
+        margin-top: 40px;
+        margin-left: 135px;
+    }
+    .fixed-logo-image {
+        display: block;
+        position: fixed;
+        background-image: url('/static/blocbox/images/BB-Logo.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 110px;
+        width: 160px;
+        top: 10px;
+        left: 1.7%;
+        z-index: 100000;
+    }
+    .waitlistbody .h1,
+    h2 {
+        padding-left: 10%;
+        padding-right: 10%
+    }
+    /*add padding around waitlist headers so it doesn't overlap with the logo */
+    /*make modification to footer in desktop versions - left align */
+    footer > .container-fluid {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 0px;
+        padding-right: 0px
+    }
+    /*make footer taller */
+    footer > .container-fluid > div {
+        padding-left: 0px;
+        padding-right: 0px
+    }
 }
-
-
-
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
 *-----------------------------------------------------------------------*/
+
 /*Change toggle button to white when hoever/focus*/
+
 .waitlistbody .navbar-default .navbar-toggle:hover,
-.waitlistbody .navbar-default .navbar-toggle:focus {background-color: #FFFFFF;}
-
-/*Change width of navbar-header - so when it collapses - was 768 */
-@media (max-width: 500px) {
-    .waitlistbody .navbar-header { float: none;}
-    .waitlistbody .navbar-left,
-    .waitlistbody .navbar-right {float: none !important;}
-    .waitlistbody .navbar-toggle { display: block; }
-    .waitlistbody .navbar-collapse {border-top: 1px solid transparent; box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);}
-    .waitlistbody .navbar-fixed-top { top: 0; border-width: 0 0 1px;}
-    .waitlistbody .navbar-collapse.collapse {display: none!important;}
-    .waitlistbody .navbar-nav {float: none!important; margin-top: 7.5px;}
-    .waitlistbody .navbar-nav > li { float: none; }
-    .waitlistbody .navbar-nav>li>a {padding-top: 10px; padding-bottom: 10px;}
-    .waitlistbody .collapse.in{ display:block !important; } 
+.waitlistbody .navbar-default .navbar-toggle:focus {
+    background-color: #FFFFFF;
 }
+/*Change width of navbar-header - so when it collapses - was 768 */
 
+@media (max-width: 500px) {
+    .waitlistbody .navbar-header {
+        float: none;
+    }
+    .waitlistbody .navbar-left,
+    .waitlistbody .navbar-right {
+        float: none !important;
+    }
+    .waitlistbody .navbar-toggle {
+        display: block;
+    }
+    .waitlistbody .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+    .waitlistbody .navbar-fixed-top {
+        top: 0;
+        border-width: 0 0 1px;
+    }
+    .waitlistbody .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .waitlistbody .navbar-nav {
+        float: none!important;
+        margin-top: 7.5px;
+    }
+    .waitlistbody .navbar-nav > li {
+        float: none;
+    }
+    .waitlistbody .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .waitlistbody .collapse.in {
+        display: block !important;
+    }
+}
 /*make the navbar text for the waitlist/orange header page white and larger*/
-.waitlistbody .navbar-default .navbar-nav > li > a {color: #FFFFFF;font-size: 1.214em;		}
 
-
-
-
+.waitlistbody .navbar-default .navbar-nav > li > a {
+    color: #FFFFFF;
+    font-size: 1.214em;
+}
 /*Add padding to the very first line on the page */
-.waitlistbody > .orangebackground > .row > h1 { padding-top: 3.3%; }
-/*Add padding to the text below this first stuff */
-.waitlistbody > .orangebackground > .row > div > h5 { } /*removed padding*/
 
+.waitlistbody > .orangebackground > .row > h1 {
+    padding-top: 3.3%;
+}
+/*Add padding to the text below this first stuff */
+
+.waitlistbody > .orangebackground > .row > div > h5 {}
+/*removed padding*/
 
 /*Style the waitlistbutton - already within white background*/
+
 .waitlistjoinbtn {
     border-radius: 3px;
     color: rgb(255, 203, 19);
@@ -602,16 +1052,15 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     border: 2px;
     width: 178px;
     padding: 0;
-    height: 34px; /*same as form-control, the bootstrap style applied to text input */      
+    height: 34px;
+    /*same as form-control, the bootstrap style applied to text input */
 }
-
 .waitlistjoinbtn:hover {
     border-width: 2px;
     border-style: solid;
     background-color: rgb(255, 203, 19);
     color: rgb(255, 255, 255);
 }
-
 .getstartedbtn {
     border-radius: 3px;
     color: rgb(255, 203, 19);
@@ -620,16 +1069,15 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     border: 2px;
     width: 178px;
     padding: 0;
-    height: 54px; /*same as form-control, the bootstrap style applied to text input */      
+    height: 54px;
+    /*same as form-control, the bootstrap style applied to text input */
 }
-
 .getstartedbtn:hover {
     border-width: 2px;
     border-style: solid;
     background-color: rgb(255, 203, 19);
     color: rgb(255, 255, 255);
 }
-
 .findhostbtn {
     border-radius: 3px;
     font-size: 1.27em;
@@ -640,9 +1088,9 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-color: transparent;
     width: 178px;
     padding: 0;
-    height: 54px; /*same as form-control, the bootstrap style applied to text input */      
+    height: 54px;
+    /*same as form-control, the bootstrap style applied to text input */
 }
-
 .findhostbtn:hover {
     border-radius: 3px;
     font-size: 1.27em;
@@ -653,9 +1101,9 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-color: #2ecc71;
     width: 178px;
     padding: 0;
-    height: 54px; /*same as form-control, the bootstrap style applied to text input */      
+    height: 54px;
+    /*same as form-control, the bootstrap style applied to text input */
 }
-
 .waitlistjoinbtngreen {
     border-radius: 3px;
     color: rgb(39, 174, 96);
@@ -663,71 +1111,61 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-color: white;
     border: 2px;
     width: 178px;
-    height: 34px; /*same as form-control, the bootstrap style applied to text input */      
+    height: 34px;
+    /*same as form-control, the bootstrap style applied to text input */
 }
-
 .waitlistjoinbtngreen:hover {
     border-width: 2px;
     border-style: solid;
     background-color: rgb(39, 174, 96);
     color: rgb(255, 255, 255);
 }
-
 .waitlisth2 {
     font-size: 2.00em;
     font-weight: 700;
 }
-
-
-
-
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
 *--------------------------------------------------------------*/
-#map-canvas { 
-	 		z-index: 5;
-			width: 100%;
-			height: 45em; 
-			background-size: cover;
-			background-position: center center; 				
-			}
-				
-.controls {                                
-	 		margin-top: 50px;                        
-	 		border: 1px solid transparent;           
-	 		border-radius: 2px 0 0 2px;              
-	 		box-sizing: border-box;                  
-	 		-moz-box-sizing: border-box;             
-	 		height: 32px;                            
-	 		outline: none;                           
-	 		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-	 		}                                          
-	       
-#search-box {                               
-	 		background-color: #fff;                  
-	 		padding: 0 11px 0 13px;                  
-	 		width: 400px;                            
-	 		font-family: brandon-grotesque;                    
-	 		font-size: 17px;                         
-	 		font-weight: 300;                        
-	 		text-overflow: ellipsis; 
-	 		color: rgb(0, 0, 0);      
-	 		}  				
-.InfoWindowName {
-			color:rgb(0, 0, 0);
-			font-size: 2.5em;
-			font-family: brandon-grotesque;
-			font: brandon-grotesque;
-		}
 
-		
-.InfoWindowBody {
-		font-size: 0.9em;
-		style="color:rgb(0, 0, 0)"
-		 font-family: brandon-grotesque;
-		font: brandon-grotesque;
+#map-canvas {
+    z-index: 5;
+    width: 100%;
+    height: 45em;
+    background-size: cover;
+    background-position: center center;
 }
-
+.controls {
+    margin-top: 50px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+#search-box {
+    background-color: #fff;
+    padding: 0 11px 0 13px;
+    width: 400px;
+    font-family: brandon-grotesque;
+    font-size: 17px;
+    font-weight: 300;
+    text-overflow: ellipsis;
+    color: rgb(0, 0, 0);
+}
+.InfoWindowName {
+    color: rgb(0, 0, 0);
+    font-size: 2.5em;
+    font-family: brandon-grotesque;
+    font: brandon-grotesque;
+}
+.InfoWindowBody {
+    font-size: 0.9em;
+    style="color:rgb(0, 0, 0)" font-family: brandon-grotesque;
+    font: brandon-grotesque;
+}
 /*-------------------------------------------------------------*
 * HOST PROFILE VISITOR PAGE STYLES
 *--------------------------------------------------------------*/
@@ -744,16 +1182,13 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     background-position: center center;
     overflow: hidden;
     z-index: -1;
-    
 }
-
 .profilepic {
     position: absolute;
     max-width: 200px;
     max-height: 200px;
     bottom: -60px;
 }
-
 .hostinfobox {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -761,7 +1196,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: left;
     vertical-align: middle;
 }
-
 .profilebox {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -769,21 +1203,18 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     min-height: 100%;
     min-height: 150px;
 }
-
 .profileboxlong {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     overflow: visible;
     min-height: 100%;
-   /* min-height: 300px; */
+    /* min-height: 300px; */
 }
-
 .hostname {
     font-size: 2.143em;
     padding-top: 5px;
     font-weight: 700;
 }
-
 .profileboxline {
     position: relative;
     clear: both;
@@ -794,7 +1225,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     margin-right: auto;
     background-color: rgb(236, 240, 241);
 }
-
 .profileboxline100 {
     position: relative;
     clear: both;
@@ -805,50 +1235,38 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     margin-right: auto;
     background-color: rgb(236, 240, 241);
 }
-
 .divline {
     z-index: 6;
     height: 0.063em;
     background-color: rgb(236, 240, 241);
 }
-
 .divlinewhite {
     z-index: 6;
     height: 0.063em;
     background-color: rgb(255, 255, 255);
 }
-
-
 .centerboxheader {
     text-align: left;
     font-size: 1.143em;
     font-weight: 500;
     padding-top: 10px;
     padding-left: 7.5%;
-    
 }
-
 .sideboxtext {
     font-size: 1.143em;
     font-weight: 500;
     text-align: center;
     padding-top: 10px;
-    
 }
-
 .rowheight {
     max-height: 200px;
     overflow-y: visible;
-    
 }
-
 .verifiedicons {
     height: 40px;
     width: 40px;
     margin: auto;
 }
-
-
 .centerboxtext {
     text-align: left;
     font-size: 1.143em;
@@ -858,7 +1276,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     padding-top: 10px;
     padding-bottom: 10px;
 }
-
 .bluebutton {
     background-color: #3498db;
     font-size: 1.143em;
@@ -878,21 +1295,16 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     border-radius: 5px;
     margin-top: 5px;
 }
-
-.bluebutton:hover  {
+.bluebutton:hover {
     background-color: white;
     color: #3498db;
     border-color: #3498db;
     border: solid;
     border-width: 2px;
-
 }
-
-.bluebutton:active  {
+.bluebutton:active {
     top: 1px;
-
 }
-
 .inactivebutton {
     background-color: rgb(255, 255, 255);
     font-size: 1.143em;
@@ -910,7 +1322,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     border-radius: 5px;
 }
-
 .inactivebutton:hover {
     content: normal;
     background-color: white;
@@ -919,21 +1330,15 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     border: solid;
     border-width: 2px;
 }
-
 .inactivebutton:hover span {
     display: none;
 }
-
 .inactivebutton:hover:before {
     content: "+ Connect";
 }
-
 .addresssvg {
     fill: #3498db;
 }
-
-
-
 .selector {
     background-color: rgb(255, 255, 255);
     font-size: 1.143em;
@@ -953,9 +1358,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     border-radius: 5px;
 }
-
-
-
 /*-------------------------------------------------------------*
 * HOST PROFILE VISITOR PAGE STYLES
 *--------------------------------------------------------------*/
@@ -966,10 +1368,7 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     border-color: rgb(236, 240, 241);
     padding-left: 5px;
     padding-right: 5px;
-    
 }
-
-
 /*-------------------------------------------------------------*
 * PAYMENT PAGE STYLES
 *--------------------------------------------------------------*/
@@ -992,14 +1391,12 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     text-align: center;
     border-radius: 5px;
 }
-
 .bluebox {
     background-color: rgb(52, 152, 219);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     overflow: visible;
     min-height: 100%;
 }
-
 /*-------------------------------------------------------------*
 * DASHBOARD PAGE STYLES
 *--------------------------------------------------------------*/
@@ -1010,13 +1407,11 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     overflow: visible;
     min-height: 100%;
 }
-
 .dashpic {
     max-width: 100%;
     max-height: 175px;
     margin-left: 75px;
 }
-
 .modalDialog {
     position: fixed;
     top: 0;
@@ -1025,18 +1420,16 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     left: 0;
     background: rgba(0, 0, 0, 0.3);
     z-index: 99999;
-    opacity:0;
+    opacity: 0;
     -webkit-transition: opacity 400ms ease-in;
     -moz-transition: opacity 400ms ease-in;
     transition: opacity 400ms ease-in;
     pointer-events: none;
 }
-
 .modalDialog:target {
-    opacity:1;
+    opacity: 1;
     pointer-events: auto;
 }
-
 .modalDialog > div {
     width: 400px;
     position: relative;
@@ -1045,7 +1438,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     border-radius: 2px;
     background: #fff;
 }
-
 .close {
     background: #FFFFFF;
     font-size: .80em;
@@ -1062,18 +1454,14 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     -moz-border-radius: 12px;
     border-radius: 12px;
 }
-
 .close:hover {
     background: #f25f52;
     color: white;
     border: 2px solid white;
 }
-
 .form-inline .form-control {
     width: 100%;
 }
-
-
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
 *--------------------------------------------------------------*/
@@ -1082,12 +1470,10 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     width: 100%;
     height: 340px;
 }
-
 .blockpic {
     width: 100px;
     height: 100px;
 }
-
 /*-------------------------------------------------------------*
 * INBOX PAGE STYLES
 *--------------------------------------------------------------*/
@@ -1100,7 +1486,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     margin-bottom: 50px;
     margin-top: 30px;
 }
-
 .inboxmessbox {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -1110,10 +1495,6 @@ footer  { font-size: 0.92em; position: absolute; bottom: 0; width: 100% }
     margin-bottom: 30px;
     border-bottom: 1px solid rgb(250, 250, 250);
 }
-
-
-
-
 /*----------------------------------------------------------------------------
 *Modifying for different screen dimensions 
 *Mobile portrait width: 320 
@@ -1129,64 +1510,176 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 ------------------------------------------------------------------------------*/
 
 @media (min-width: 1200px) {
-    .marginsides80pxlg {margin-left: 80px; margin-right: 80px; }
-    .mobileonly {display: none; }
-    .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
-    .fullorange {background-color: rgb(255, 203, 19); }
-    
+    .marginsides80pxlg {
+        margin-left: 80px;
+        margin-right: 80px;
+    }
+    .mobileonly {
+        display: none;
+    }
+    .orangebackground {
+        background-color: rgb(255, 203, 19);
+    }
+    /*Hex Equiv:  #FFCB13 */
+    .fullorange {
+        background-color: rgb(255, 203, 19);
+    }
 }
- 
-
 /*Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)*/
-@media (max-width: 800px) {  
-	body { padding-left: 0px; padding-right: 0px; } 
-	h1{font-size: 5em; }
-	h2{font-size: 3em; }
-	h3{font-size: 1.5em; }
-    .mobileonly {display: none; }
-    .orangebackground {background-color: rgb(255, 203, 19); } /*Hex Equiv:  #FFCB13 */
-    .fullorange {background-color: rgb(255, 203, 19); }
-}
 
+@media (max-width: 800px) {
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    h1 {
+        font-size: 5em;
+    }
+    h2 {
+        font-size: 3em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    .mobileonly {
+        display: none;
+    }
+    .orangebackground {
+        background-color: rgb(255, 203, 19);
+    }
+    /*Hex Equiv:  #FFCB13 */
+    .fullorange {
+        background-color: rgb(255, 203, 19);
+    }
+}
 /*add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why */
-@media (max-width: 550px) {
-	body {font-size: 12px; }
-	h1{font-size: 3em; }
-	h2{font-size: 1.75em; }	
-    h3 {font-size: 1.25em; line-height: 1.5em }
-    .mobileonly {display: none; }
-    .orangebackground {background-color: rgb(255,195,0); } /*Hex Equiv:  #FFCB13 */
-    .fullorange {background-color: rgb(255,195,0); }
-    .profilepic {position: absolute; max-width: 150px; max-height: 150px; bottom: 10px; }
-    .sideboxtext {text-align: left; }
-    .paddingtop20pxmobile {padding-top: 20px; }
-    .profilebox {min-height: 50px; }
-}
-  
-/* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
-@media (max-width: 480px) {
-	body {font-size: 12px; } /*make default font-size 10px for mobile */
-	h1{font-size: 2.5em; }
-	h2{font-size: 2em; }	
-    h3 {font-size: 1.143em; line-height: 1.38em }
-    .font10pxmobile {font-size: 10px; }
-	.navbarlogo {height: 40px; width: 200px; }
-	.waitlistbody {padding-top:25px} /*change waitlistbody dimensions to remove the white space */
-	.nopaddingmobile {padding:0px}
-    .nomargintopmobile {margin-top: 0px; }
-	.paddingsides3pxmobile {padding-left:3px; padding-right:3px;} 
-	.paddingsides10pxmobile {padding-left:10px; padding-right:10px;}
-    .margintop10pxmobile {margin-top: 10px; }
-	.lightweight {font-weight: 400 ; } /*per john - set lightweight equal to 400 if mobile */
-	footer > .container-fluid, footer > .container-fluid > div {padding-left:0px; padding-right:0px; text-align: center; }
-    .mobilehide {display: none; }
-    .waitlistbody .nav-blocbox-name {display: none; }
-    .mobileheader {font-size: 2.00em; font-weight: 300; line-height: 1.38em; }
-    .mobileonly {display: block; }
-    .profilepic {position: absolute; max-width: 125px; max-height: 125px; bottom: 10px; }
-    .profilecover { height: 150px;}
-    .sideboxtext {text-align: left; padding-left: 7.5%; }
-    .paddingtop20pxmobile {padding-top: 20px; }
-    .profilebox {min-height: 50px; }
 
+@media (max-width: 550px) {
+    body {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    h2 {
+        font-size: 1.75em;
+    }
+    h3 {
+        font-size: 1.25em;
+        line-height: 1.5em
+    }
+    .mobileonly {
+        display: none;
+    }
+    .orangebackground {
+        background-color: rgb(255, 195, 0);
+    }
+    /*Hex Equiv:  #FFCB13 */
+    .fullorange {
+        background-color: rgb(255, 195, 0);
+    }
+    .profilepic {
+        position: absolute;
+        max-width: 150px;
+        max-height: 150px;
+        bottom: 10px;
+    }
+    .sideboxtext {
+        text-align: left;
+    }
+    .paddingtop20pxmobile {
+        padding-top: 20px;
+    }
+    .profilebox {
+        min-height: 50px;
+    }
+}
+/* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+    /*make default font-size 10px for mobile */
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    h3 {
+        font-size: 1.143em;
+        line-height: 1.38em
+    }
+    .font10pxmobile {
+        font-size: 10px;
+    }
+    .navbarlogo {
+        height: 40px;
+        width: 200px;
+    }
+    .waitlistbody {
+        padding-top: 25px
+    }
+    /*change waitlistbody dimensions to remove the white space */
+    .nopaddingmobile {
+        padding: 0px
+    }
+    .nomargintopmobile {
+        margin-top: 0px;
+    }
+    .paddingsides3pxmobile {
+        padding-left: 3px;
+        padding-right: 3px;
+    }
+    .paddingsides10pxmobile {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .margintop10pxmobile {
+        margin-top: 10px;
+    }
+    .lightweight {
+        font-weight: 400;
+    }
+    /*per john - set lightweight equal to 400 if mobile */
+    footer > .container-fluid,
+    footer > .container-fluid > div {
+        padding-left: 0px;
+        padding-right: 0px;
+        text-align: center;
+    }
+    .mobilehide {
+        display: none;
+    }
+    .waitlistbody .nav-blocbox-name {
+        display: none;
+    }
+    .mobileheader {
+        font-size: 2.00em;
+        font-weight: 300;
+        line-height: 1.38em;
+    }
+    .mobileonly {
+        display: block;
+    }
+    .profilepic {
+        position: absolute;
+        max-width: 125px;
+        max-height: 125px;
+        bottom: 10px;
+    }
+    .profilecover {
+        height: 150px;
+    }
+    .sideboxtext {
+        text-align: left;
+        padding-left: 7.5%;
+    }
+    .paddingtop20pxmobile {
+        padding-top: 20px;
+    }
+    .profilebox {
+        min-height: 50px;
+    }
 }
