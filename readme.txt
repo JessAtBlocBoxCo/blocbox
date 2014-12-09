@@ -176,7 +176,11 @@ The URLs for this site, and the corresponding files are as follows:
 
 
 
-
+*-----------------------------------------------------------------------*
+END: DJANGO ADMIN SITES
+*-----------------------------------------------------------------------*
+- most defined in blocbox.core.admin.py - but this creates issues when you update models
+- probalby better to just have them register automatically with admin site
 
 END-USER NARRATIVE
 

@@ -63,6 +63,7 @@ class PayPalIPNAdmin(admin.ModelAdmin):
         }),
     )
     list_display = [
+        #JMY edited this. 
         #"__unicode__", - this is defined with a functionin paypal.standard.models.py - it outputs the TX Id
         #"receiver_id",
         "invoice", "receiver_email",  "host_email", "custom", "payer_email", "item_name", "quantity", "mc_gross", "payment_status", "created_at", 

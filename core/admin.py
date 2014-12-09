@@ -18,11 +18,11 @@ from django.utils.encoding import force_text
 class UserInfoAdmin(admin.ModelAdmin):
     pass
 
+
 class TransactionAdmin(admin.ModelAdmin): 
-    list_display = ('id', 'payer', 'payee', 'transtype', 'date_requested', 'date_payed')
-    list_filter = ['transtype']
-    search_fields = ['payer', 'payee']
-    
+    list_display = ('id', 'payer', 'enduser', 'host', 'payee', 'favortype', 'date_requested', 'invoice')
+    list_filter = ['favortype', 'host']
+    search_fields = ['payer', 'payee']    
 
 class ConnectionAdmin(admin.ModelAdmin):
     list_display = ('host_user', 'end_user', 'added')
