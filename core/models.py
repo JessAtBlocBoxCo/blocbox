@@ -142,6 +142,11 @@ class Transaction(models.Model):
     date_requested = models.DateField(default=datetime.date.today)
     favortype = models.CharField("Transact/Favor Type", max_length=100, blank=True, null=True)
     invoice = models.CharField("Invoice ID", max_length=100, blank=True, null=True)
+    tracking = models.CharField("Tracking Number", max_length=50, blank=True, null=True)
+    shipmentstatus = models.CharField("Shipment Status", max_length=50, blank=True, null=True)
+    deliverydate = models.DateField("Delivery Date", blank=True, null=True)
+    favorstatus = models.Charfield("Favor (Non-Shipment) Status", max_length=50, blank=True, null=True)
+    
    
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
     #define transaciton type choices
