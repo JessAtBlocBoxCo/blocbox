@@ -1,59 +1,56 @@
 <!--this is blocbox/core/templates/blocbox/sign-in.html, urls i http://www.blocbox.co/login/ -->
-{% extends "blocbox/base.html" %}
-{% load staticfiles %} 
-{% block title %}Login to Blocbox{% endblock %}
-
-{% block headafter %} 
-{% endblock %} 
-
-{% block content %}
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Login to Blocbox{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 
 
-<div class="content container-fluid"> 
-	<br> 
-	
-	<div class="row margintop20px">
-  	<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-  		
-  		<h3>Sign in to your BlocBox Account</h3>
-			<h5><a href="/signup/">Create a new account</a></h5>
-			
-			
-			<br>
-			
-			<!--START FORM HERE -->
-			<form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
-            {% csrf_token %}
-        		{{ login_form.non_field_errors }}          
-            
-      		<div class="form-group">  				
-    				{{ user_form.email.errors }}
-    				<!--<label for="id_email">Email Address</label> -->
-    				<input type="email" class="form-control" name="email" id="id_email"  placeholder="Enter Email">				
- 					</div>
- 				
- 					<div class="form-group">  				
-    				{{ user_form.password.errors }}
-    				<!--<label for="id_password1">Password</label> -->
-    				<input type="password" class="form-control" name="password" id="id_password1"  placeholder="Enter Password">				
- 					</div>
- 				
-    			<button type="submit" name="submit" class="btn btn-default">Sign In</button>
-    			
-			</form>  <!--end form line -->
-			<br>
-			<p><a href="/passwordreset/recover/">Recover Your Password</p>
-			<p><a href="/beta/">Return to the homepage (Beta)</a></p>
-			
-  	</div> <!--end col-xs-12 col-sm-10 col-md-8-->
-  </div> <!--end containing row -->
-  	
-</div> <!--end of top divider - container-fluid  -->
-    
-        
-        
-        
-        
-        
-        
+<div class="content container-fluid">
+    <br>
+
+    <div class="row margintop20px">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+
+            <h3>Sign in to your BlocBox Account</h3>
+            <h5><a href="/signup/">Create a new account</a></h5>
+
+
+            <br>
+
+            <!--START FORM HERE -->
+            <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
+                {% csrf_token %} {{ login_form.non_field_errors }}
+
+                <div class="form-group">
+                    {{ user_form.email.errors }}
+                    <!--<label for="id_email">Email Address</label> -->
+                    <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
+                </div>
+
+                <div class="form-group">
+                    {{ user_form.password.errors }}
+                    <!--<label for="id_password1">Password</label> -->
+                    <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
+                </div>
+
+                <button type="submit" name="submit" class="btn btn-default">Sign In</button>
+
+            </form>
+            <!--end form line -->
+            <br>
+            <p><a href="/passwordreset/recover/">Recover Your Password</p>
+			<p><a href="/beta/">Return to the homepage (Beta)</a>
+            </p>
+
+        </div>
+        <!--end col-xs-12 col-sm-10 col-md-8-->
+    </div>
+    <!--end containing row -->
+
+</div>
+<!--end of top divider - container-fluid  -->
+
+
+
+
+
+
+
 {% endblock %}
