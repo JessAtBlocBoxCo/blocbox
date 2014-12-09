@@ -26,6 +26,7 @@ class Transaction(models.Model):
     shipmentstatus = models.CharField("Shipment Status", max_length=50, blank=True, null=True)
     deliverydate = models.DateField("Delivery Date", blank=True, null=True)
     favorstatus = models.CharField("Favor Status (Non-Shipments)", max_length=50, blank=True, null=True)
+    testfield = models.CharField("test field added to transaction", max_length=50, blank=True, null=True)
     
    
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
