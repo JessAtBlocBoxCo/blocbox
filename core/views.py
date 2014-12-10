@@ -70,11 +70,17 @@ def dashboard(request, host_id=None):
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
     shipments_all = transactions_all.filter(favortype="package")
     otherfavors_all = transactions_all.exclude(favortype="package")
-    #get host address:  shipment.host_st_address1,  shipment.host_st_address2, shipment.host_fname
+    #defing the startashipmentpage as a function of whether they have multiple connections
+    if connections_count = 1:
+    	  host = connections_all.host_user
+        startashipmentpage = "startashipment/host" + host.id
+    else:
+        startashipmentpage = "startashipment"
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
+        'startashipmentpage': startashipmentpage,
     })
     
 
