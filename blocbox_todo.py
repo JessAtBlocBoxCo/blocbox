@@ -1,8 +1,13 @@
+"""jess to do"""
+- paypal PDT - implement
+- paypal pro - can we do?
+- scheduling/availability - intregrate into start a shipment
+- Allow user to upload pictures
 
 """TO DO"""
 1. JOHN - /Fix Mobile/make site responsive
 3. JOHN search page -- fix map top margin and restyle nudge a neighbor message
-4. JESS: Remove sign in after welcome page
+4. JESS: Remove sign in after welcome pagE
 7. JESS: Restore User nav on beta page
     8. JESS: Inbox: call a snippet from the message, like {{ message.snippet }}, change delete and trash to “archive”?, Change {{ message.sender }} to the user name (e.g. “John”)?    
 2. JOHN: add process/for other favors
@@ -24,9 +29,8 @@ JESS: connect tracking number o tracking EPI
 JESS: populate the "delivery date" field by connecting to trac
 8. SIGN-UP: two bowls of shit, one bowl, then sneaky second bowl of shit
 9. JESS table: add two use cases (1) wifi sharing; (2) community dinners/food as a use-case.. add this totable adn then also update the checkboxes: add NEED_MEALS
-10. JESS: Allow user to upload pictures
+
 11. john: style the profile pic - so the user uplaodssimplepic, and then converted to glossy bubble
-12. Jess: populatethe dashboard - so that the tracking is linked
 13. jess: google map - link the search page to the fields in table so it automatically popualtes with hosts nearby (e.g., not hard coded)
 14.: john: update "my block" p age with th enice map that you first crated
 15. jess: update back-end of "my block" page after john adds themap and after youve fixed the search page to populate from the table
@@ -61,8 +65,6 @@ JESS: populate the "delivery date" field by connecting to trac
 
 
 """Jess - transaction tasks"""
-DOING: fix the transaciton table - tie it to paypal
-1. an idea to add more fields to paypal tabl e- just [pass hella stuff in URL
 1. allow the user to modify the paypalIPN table - add fields later - like tracking, 
 2. add tracking
 1. update the startashipmetn process so reload based on selected host
@@ -71,8 +73,6 @@ DOING: fix the transaciton table - tie it to paypal
 1. LOG THE USER information on admit from the transacion table -- right now, the payers is whoeverl ogs into paypal - 
 - we need to log that AND TEH user that was logged in that went to paypal..
 2. create testdashboard with transaction talbe - link IPN table to dashboard
-2. figur eout how to separate "business" field from receiver_id field
-2. Add a field to denote who teh host was PayPalPaymentsForm
 3. sort out receiver_email - is this admin@blocbox.co or is this the host?
 1. set up IPN (instant payment notifiation) - this kind of sucks b/c drops customers off at paypla.. but easiers
 2. set up "pro" -- enabling users to pay on the website
