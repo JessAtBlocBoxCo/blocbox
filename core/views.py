@@ -72,17 +72,13 @@ def dashboard(request, host_id=None):
     otherfavors_all = transactions_all.exclude(favortype="package")
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
-        #host = connections_all.host_user
-        #startashipmentpage = "startashipment/host" + host.id
-        startashipmentpage = "startashipmentifone"
         hostonly=connections_all[0].host_user
     else:
-        startashipmentpage = "startashipment"
+        hostonly=None
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
-        'startashipmentpage': startashipmentpage,
         'hostonly': hostonly
     })
     
