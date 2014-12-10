@@ -18,6 +18,7 @@ urlpatterns = patterns('',
     url(r'^startashipment/$', views.startashipment, name='startashipment'),
     url(r'^startashipment/host(?P<host_id>\d+)/$', views.startashipment, name='startashipment'),
     url(r'^startafavor/$', views.startafavor, name='startafavor'),
+    url(r'^startafavor/host(?P<host_id>\d+)/$', views.startafavor, name='startafavor'),
     url(r'^shippackage/$', views.shippackage, name='shippackage_nohost'),  #this shouldn't really be used b/c not linked to a host  
     url(r'^shippackage/host(?P<host_id>\d+)/$', views.shippackage, name='shippackage'),
     url(r'^admin/', include(admin.site.urls)), 

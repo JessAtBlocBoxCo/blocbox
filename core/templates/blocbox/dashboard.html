@@ -28,7 +28,6 @@
             <!--start a shipment/start a favor buttons-->
             <div class="profileboxline margintop20px marginbottom20px"></div>
             
-            <p>TEST - TEST SHOW HOSTONLY {{ hostonly }} AND ID {{ hostonly.id }}</p>
             <div class="col-xs-12 ">
                 <button type="startashipment" name="startashipment" class="bluebutton marginbottom30px" 
                 			{% if hostonly %}
@@ -39,7 +38,12 @@
                 			Start a Shipment</button>
             </div>
             <div class="col-xs-12 ">
-                <button type="startashipment" name="startafavor" class="bluebutton marginbottom30px" onclick="window.location='/startafavor';">Start a Favor</button>
+                <button type="startashipment" name="startafavor" class="bluebutton marginbottom30px" 
+                			{% if hostonly %}
+                			onclick="window.location='/startafavor/host{{hostonly.id}}';">Start a Favor</button>
+                			{% else %}
+                			onclick="window.location='/startafavor';">Start a Favor</button>
+                			{% endif %}
             </div>
             
             

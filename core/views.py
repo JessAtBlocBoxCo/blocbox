@@ -341,7 +341,7 @@ def startashipment(request, host_id=None):
 		})
     
 
-def startafavor(request):
+def startafavor(request, host_id=None):
 		enduser = request.user
 		return render(request, 'blocbox/startafavor.html', {'enduser':enduser,})
 			
