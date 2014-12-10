@@ -23,8 +23,6 @@ class Transaction(models.Model):
     invoice = models.CharField("Invoice ID", max_length=100, blank=True, null=True)
     tracking = models.CharField("Tracking Number", max_length=50, blank=True, null=True)
     status = models.CharField("Status", max_length=50, blank=True, null=True)
-    shipmentstatus = models.CharField("Shipment Status", max_length=50, blank=True, null=True)
-    deliverydate = models.DateField("Delivery Date", blank=True, null=True)
     favorstatus = models.CharField("Favor Status (Non-Shipments)", max_length=50, blank=True, null=True)
     
    
