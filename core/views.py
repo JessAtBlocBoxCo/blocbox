@@ -71,7 +71,7 @@ def dashboard(request, host_id=None):
     shipments_all = transactions_all.filter(favortype="package")
     otherfavors_all = transactions_all.exclude(favortype="package")
     #defing the startashipmentpage as a function of whether they have multiple connections
-    if connections_count = 1:
+    if connections_count==1:
     	  host = connections_all.host_user
         startashipmentpage = "startashipment/host" + host.id
     else:
