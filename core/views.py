@@ -65,6 +65,7 @@ def dashboard(request, host_id=None):
     else:
         host = None
     connections_all = Connection.objects.filter(end_user=enduser) 
+    connections_count = connections_all.count() #count them,removing status=0 after host_user=host
     #load Transacton table instead of paypal tabl
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
     shipments_all = transactions_all.filter(favortype="package")
@@ -72,7 +73,7 @@ def dashboard(request, host_id=None):
     #get host address:  shipment.host_st_address1,  shipment.host_st_address2, shipment.host_fname
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
-        'connections_all': connections_all, 
+        'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
     })
     
