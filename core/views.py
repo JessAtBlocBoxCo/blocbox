@@ -329,7 +329,7 @@ def startashipment(request, host_id=None):
     else:
         host = None
     connections_all = Connection.objects.filter(end_user=enduser) 
-		return render(request, 'blocbox/startashipment.html', {
+    return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 
 		    'connections_all': connections_all, 
 		})
