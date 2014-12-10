@@ -51,17 +51,14 @@
       	  	<h6 class="col-xs-5 marginsides3pct margintop30px marginbottom20px nopaddingleft">Select a connected host to recieve your package and confirm their address</h6>
       	  	<div class="col-xs-6 dropdown margintop30px margintop20px marginbottom30px">
       	  	    <div class="dropdown marginbottom20px" id="bs-example-navbar-collapse-1">
-      	  	        	<button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-      	  	        	    John - 420 Grand Ave. Apt 2  
-      	  	        	    <span class="caret"></span>
-      	  	        	</button> 
-      	  	        	
-      	  	        	<p>JESS TEST - SHOW EACH CONNECTION </p>
-      	  	        	{% for connection in connections_all %}
-      	  	        				<p> {{ connection.host_user.first_name }} {{ connection.host_user.last_name }}: 
-      	  	        						{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}
-      	  	        					 	({{ connection.host_user.email }})</p>
-      	  	        	{% endfor %}
+      	  	       {% for connection in connections_all %}
+      	  	        		<button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+       	  	        				{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}: 
+      	  	        				{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}
+      	  	        				({{ connection.host_user.email }})
+      	  	        	    ``<span class="caret"></span>
+      	  	        		</button>       	  	        					 	
+      	  	       {% endfor %}
       	  	        	
       	  	        	<ul class="dropdown-menu nav navbar-nav navbar-right" role="menu"> </ul>
       	  	    </div> <!--dropdown-->
