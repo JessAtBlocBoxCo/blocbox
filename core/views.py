@@ -69,7 +69,7 @@ def dashboard(request, host_id=None):
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
     shipments_all = transactions_all.filter(favortype="package")
     otherfavors_all = transactions_all.exclude(favortype="package")
-    #shipments_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
+    #get host address:  shipment.host_st_address1,  shipment.host_st_address2, shipment.host_fname
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 
