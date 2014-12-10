@@ -65,10 +65,10 @@ def dashboard(request, host_id=None):
     else:
         host = None
     connections_all = Connection.objects.filter(end_user=enduser) 
-    #lists of transactions
-    transactions_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
-    shipments_all = transactions_all.filter(item_name="package")
-    otherfavors_all = transactions_all.exclude(item_name="package")
+    #load Transacton table instead of paypal tabl
+    transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
+    shipments_all = transactions_all.filter(favortype="package")
+    otherfavors_all = transactions_all.exclude(favortype="package")
     #shipments_all = PayPalIPN.objects.filter(custom=enduser.email) #custom is the field for user email
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,

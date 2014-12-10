@@ -1,5 +1,17 @@
 #HOW THE NOTIFICATION WORKS  how to modify
 1. notify_url calls this view: paypal.standard.ipn.views.ipn, thiis posts the data to the paypal_ipn table
+			1. www.blocbox.co/payment/ipn/host2 -- default payment - loads view at paypal.standard.ipn.views.ask_for_money - template is core/templates/blocbox/payment.html
+			2. the {{ form.render }}  statementon this page loads the form defined in the ask_for_money view, and passes kwargs via "initial" variable to: 
+							paypal.standard.ipn.forms.PayPalIPNForm(based on paypal.standard.PaypalPaymentsForm)
+							this form linked to model standard.ipn.models.PayPalIPN (based on Paypal.standard.PayPalStandrdBase)
+			3. the form sends the data to paypal, and then paypal does its magic and posts to the notify_url, which is linked (via URL) to paypal.standard.ipn.views.ipn
+			4. paypla.standard.ipn.views.ipn is the view that stores the data to the table
+			***THIS IS THE VIEW I AM MODIFYING TO POST TO A TRANSACTION TABLE, TT***
+			**ISSUE: I NEED TO POST TO THE TRANSACTION TABLE BEFORE ALL THAT NOTIFY SHIT GOES DOWN
+				AND  THEN.. IF THE PAYPAL THING GOES THROUGH EFFECTIVELY POST BACK TO THAT TRANSACTION TABLE TO SAY IT WORKED***
+							
+			3. i want to add the transaction form here, too - i think i need to add a new form render statement
+			
 			the Model is defined at paypal.standard.ipn.models.PayPalIPN(PayPalStandardBase): based on paypal.standard.models.PayPalStandardBase(Model)
 			it passes data via FORM at  #from paypal.standard.ipn.forms import PayPalIPNForm(PayPalPaymentsForm) based on paypal.standard.forms.PayPalPaymentForm
 2. this view adds some shit

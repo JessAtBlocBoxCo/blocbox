@@ -103,22 +103,12 @@
                 {% for shipment in shipments_all %}
                 <div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">
                     <!--<div class="row  paddingtop10px"> -->
-                    <div class="col-xs-2">
-                        <p>{{ shipment.invoice }}</p>
-                    </div>
-                    <div class="col-xs-3">
-                        <p>[ADDME]</p>
-                    </div>
-                    <!--HERE - add "Enter Tracking #" if No Tracking -->
-                    <div class="col-xs-2">
-                        <p>[ADDME]</p>
-                    </div>
-                    <div class="col-xs-3">
-                        <p>{{ shipment.host_st_address1 }}, {{ shipment.host_st_address2 }} ({{ shipment.host_fname }})</p>
-                    </div>
-                    <div class="col-xs-2">
-                        <p>[ADDME]</p>
-                    </div>
+                    <div class="col-xs-2"> <p>{{ shipment.invoice }}</p> </div>
+                    <div class="col-xs-3"> <p>{{ shipment.status }}	</p>  </div>
+                    <div class="col-xs-2"> <p>{{ shipment.tracking }}</p> 	</div>
+                    <div class="col-xs-3"> <p>{{ shipment.host_st_address1 }}, {{ shipment.host_st_address2 }} ({{ shipment.host_fname }})</p> </div>
+                    <!--add a "modify" link to update the information -->
+                    <div class="col-xs-2"> <p>[ADDME]</p> </div>
                 </div>
                 <!--row, testing row-->
                 {% endfor %}

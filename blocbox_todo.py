@@ -36,6 +36,9 @@ BOTH: need to re-think "start a favor" - need a better term
 7. JESS to form and table - add need_meals
 1. JESS dashboard: connect to transactions table to populate actually transactions
 - JOHN: fix image on footer (at least for I.E.) - the blocbox logo is narrow/too tall
+	JESS: issue with payment option (bundled vers speciifc) and per-package items like "status" - thse are difference sorts.. so paypal shoudl just be for the money, 
+		transactions table for the favor/shipment/transaction
+		JESS: tracking information - automate that/connect to carrier - also figure out which tracking number code matched to what carrier
     
         
 """JESS NOTES/QUESTIONS FOR JOHN"""
