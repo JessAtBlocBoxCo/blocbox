@@ -73,7 +73,8 @@ def dashboard(request, host_id=None):
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
         #host = connections_all.host_user
-        startashipmentpage = "startashipment/host" + host.id
+        #startashipmentpage = "startashipment/host" + host.id
+        startashipmentpage = "startashipmentifone"
     else:
         startashipmentpage = "startashipment"
     return render(request, 'blocbox/dashboard.html', {
