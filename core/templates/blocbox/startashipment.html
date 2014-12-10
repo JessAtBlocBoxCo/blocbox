@@ -46,12 +46,11 @@
     <div class="col-xs-8 col-xs-offset-2 bluebackground margintop20px">
         <h6 class="col-xs-6 whitetext margintop15px marginsides3pct nopadding">Confirm Your Host and Delivery Address</h6>
     </div>
+    
+    {% if host %}
+    {% else %} <!--if there is not a host specified..select one-->
 		<div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
-  			<div class="row">
-  					{% if host %}
-  						<p>TEST - TEXT TO DISPLAY IF HOST IS PASSED AS ARGUMENT IN URL: {{ host.id }} </p>
-  					
-  					{% else %} <!--if there is not a host specified..select one-->
+  			<div class="row"> 					
       	  	<h6 class="col-xs-5 marginsides3pct margintop30px marginbottom20px nopaddingleft">Select a connected host to recieve your package and confirm their address</h6>
       	  	<div class="col-xs-6 dropdown margintop30px margintop20px marginbottom30px">
       	  	    <div class="dropdown marginbottom20px" id="bs-example-navbar-collapse-1">
@@ -68,10 +67,11 @@
       	  	        	<ul class="dropdown-menu nav navbar-nav navbar-right" role="menu"> </ul>
       	  	    </div> <!--dropdown-->
       	  	</div> <!--dropdown col-xs-6-->
-      	  	{% endif %}
+      	  	
    			</div><!--row-->
 		</div> <!--profilebox-->
-
+		{% endif %} <!--
+		
     <div class="text_container col-xs-8 col-xs-offset-2">
         <h3>This is a third title...</h3>
         <div><!--div that we want to hide-->
@@ -79,11 +79,12 @@
         </div>
     </div><!--end div_text_container-->
    
-   
-    <div class="col-xs-8 col-xs-offset-2 bluebackground">
-        <h6 class="col-xs-4 whitetext margintop15px marginsides3pct nopadding">Confirm Your Host's Availability</h6>
-    </div>
-    <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
+<!--confirming availabiility-->
+{% if host %}
+  <div class="col-xs-8 col-xs-offset-2 bluebackground">
+        <h6 class="col-xs-4 whitetext margintop15px marginsides3pct nopadding">Confirm Your {{host.first_name}}'s Availability</h6>
+  </div>
+  <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
         <div class="row">  
             <h6 class="col-xs-5 col-xs-offset-1 marginsides3pct margintop30px marginbottom30px">First, enter your shipping information</h6>
             <div class="col-xs-6 dropdown margintop30px  marginbottom30px" id="bs-example-navbar-collapse-1">
@@ -97,7 +98,7 @@
         
         <!---AVAILABILITY--->
         <div class="row">  
-                <h6 class="col-xs-5 col-xs-offset-1 marginsides3pct marginbottom20px">Next, confirm the host is available inside your package's expected delivery window. Click "submit" once availability is confirmed.</h6>
+                <h6 class="col-xs-5 col-xs-offset-1 marginsides3pct marginbottom20px">Next, confirm {{ host.first_name }} is available inside your package's expected delivery window. Click "submit" once availability is confirmed.</h6>
                 
                 <div class="col-sm-4 margintop10px marginbottom30px">
 
@@ -109,14 +110,17 @@
                 </div>
         </div> <!--row, Availability -->
          
-       <div class="row">
+       	<div class="row">
            <p class="col-xs-12 darkgreytext marginbottom20px">Avaiability policy: Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery.  You're likely to still get the package, but it may not be available for pickup until a later date.</p>
-       </div>
-    </div>
-    <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
-    	
-    		<!--NOTE: RIGHT NOW THIS LINKS TO JOHN'S HOST PAYMENT - NEED TO UPDATE TO PASS THE ARGUMENT/REFRESH PAGE ONCE TEY SELECT HOST-->
-        <button class="bluebutton" onClick="window.location='/payment/host2';">Submit</button>
-    </div>
-</div>
+       	</div>
+    	</div>
+    	<div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
+    			<!--NOTE: RIGHT NOW THIS LINKS TO JOHN'S HOST PAYMENT - NEED TO UPDATE TO PASS THE ARGUMENT/REFRESH PAGE ONCE TEY SELECT HOST-->
+        	<button class="bluebutton" onClick="window.location='/payment/host2';">Submit</button>    
+     			<p> If {{ host.first_name }} isn'tavailable, select another connected host or <a href="/search/">search for another neighbor near you </a>  to connect with. </p>
+    	</div>  
+	</div>
+{% endif %}
+
+
 {% endblock %} 
