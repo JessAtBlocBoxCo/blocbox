@@ -75,7 +75,7 @@ def dashboard(request, host_id=None):
         #host = connections_all.host_user
         #startashipmentpage = "startashipment/host" + host.id
         startashipmentpage = "startashipmentifone"
-        connectone=connections_all[0]
+        hostonly=connections_all[0].host_user
     else:
         startashipmentpage = "startashipment"
     return render(request, 'blocbox/dashboard.html', {
@@ -83,7 +83,7 @@ def dashboard(request, host_id=None):
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
         'startashipmentpage': startashipmentpage,
-        'connectone': connectone
+        'hostonly': hostonly
     })
     
 
