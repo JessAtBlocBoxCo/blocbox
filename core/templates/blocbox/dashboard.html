@@ -45,9 +45,9 @@
             <!--put the address of each connection here-->
             {% for connection in connections_all %}
 						<div class="col-xs-12 paddingtopbottom20px">            
-                    <p>{{ connection.host.first_name }} {{ connection.host.last_name }}</p>
-                    <p> {{ connection.host.st_address1 }} {{ connection.host.st_address2 }}</p>
-                    <p> {{ connection.host.city }}, {{ connection.host.state }} {{ connection.host.zipcode }} </p>
+                    <p>{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}</p>
+                    <p> {{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}</p>
+                    <p> {{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }} </p>
             </div>
             {% endfor %}
             
