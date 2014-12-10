@@ -36,22 +36,21 @@
             </div>
             
             
-            <div class="col-xs-12 paddingtopbottom20px">
-                <p class="textcenter">Default Shipping Address</p>
-                <div class="col-xs-10 col-xs-offset-1">
-                    <p>John Burgeson</p>
-                    <p>420 Grand Ave. APT 2</p>
-                    <p>Brooklyn, NY 11238</p>
-                </div>
-            </div>
             <div class="profileboxline margintop20px marginbottom20px"></div>
             <div class="col-xs-12">
                 <p class="textcenter">Neigborhood Connections</p>
                 <p> You are connected to {{ connections_count }} {% if connections_count = 1 %} neighbor {% else %} neighbors {% endif %}</p>
             </div>
             <div class="profileboxline margintop20px marginbottom20px"></div>
-
-            <!--end, start a shipment/start a favor buttons-->
+            <!--put the address of each connection here-->
+            {% for connection in connections_all %}
+						<div class="col-xs-12 paddingtopbottom20px">            
+                    <p>{{ connection.host.first_name }} {{ connection.host.last_name }}</p>
+                    <p> {{ connection.host.st_address1 }} {{ connection.host.st_address2 }}</p>
+                    <p> {{ connection.host.city }}, {{ connection.host.state }} {{ connection.host.zipcode }} </p>
+            </div>
+            
+           
         </div>
         <!--sidebar-->
 
