@@ -31,7 +31,12 @@
             <p>TEST - TEST SHOW HOSTONLY {{ hostonly }} AND ID {{ hostonly.id }}</p>
             <div class="col-xs-12 ">
                 <button type="startashipment" name="startashipment" class="bluebutton marginbottom30px" 
-                			onclick="window.location='/startashipment';">Start a Shipment</button>
+                			{% if hostonly }}
+                			onclick="window.location='/startashipment/host{{hostonly.id}}';">
+                			{% else %}
+                			onclick="window.location='/startashipment';">
+                			{% endif %}
+                			Start a Shipment</button>
             </div>
             <div class="col-xs-12 ">
                 <button type="startashipment" name="startafavor" class="bluebutton marginbottom30px" onclick="window.location='/startafavor';">Start a Favor</button>
