@@ -56,10 +56,11 @@
       	  	        	    <span class="caret"></span>
       	  	        	</button> 
       	  	        	
-      	  	        	<p>JESS TEST - SHOW EACH CONNECTSION</p>
+      	  	        	<p>JESS TEST - SHOW EACH CONNECTION </p>
       	  	        	{% for connection in connections_all %}
-      	  	        				<p> {{ connection.first_name }} {{ connection.last_name }}: {{ connection.st_address1 }} {{ connection.st_address2 }}
-      	  	        					 	({{ connection.email }})</p>
+      	  	        				<p> {{ connection.host_user.first_name }} {{ connection.host_user.last_name }}: 
+      	  	        						{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}
+      	  	        					 	({{ connection.host_user.email }})</p>
       	  	        	{% endfor %}
       	  	        	
       	  	        	<ul class="dropdown-menu nav navbar-nav navbar-right" role="menu"> </ul>
