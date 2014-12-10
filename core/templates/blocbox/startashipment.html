@@ -48,9 +48,15 @@
     </div>
 		<div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
   			<div class="row">
+  					{% if host %
+  						<p>TEST - TEXT TO DISPLAY IF HOST IS PASSED AS ARGUMENT IN URL: {{ host.id }} </p>
+  					
+  					{% else %} <!--if there is not a host specified..select one-->
       	  	<h6 class="col-xs-5 marginsides3pct margintop30px marginbottom20px nopaddingleft">Select a connected host to recieve your package and confirm their address</h6>
       	  	<div class="col-xs-6 dropdown margintop30px margintop20px marginbottom30px">
       	  	    <div class="dropdown marginbottom20px" id="bs-example-navbar-collapse-1">
+      	  	       
+      	  	       
       	  	       {% for connection in connections_all %}
       	  	        		<button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
        	  	        				{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}: 
@@ -62,6 +68,7 @@
       	  	        	<ul class="dropdown-menu nav navbar-nav navbar-right" role="menu"> </ul>
       	  	    </div> <!--dropdown-->
       	  	</div> <!--dropdown col-xs-6-->
+      	  	{% endif %}
    			</div><!--row-->
 		</div> <!--profilebox-->
 
