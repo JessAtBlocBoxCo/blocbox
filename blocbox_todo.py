@@ -20,6 +20,8 @@ BOTH: need to re-think "start a favor" - need a better term
 5. JESS: updating HPV so that it truly reflects what services you offer
 6. JOHN: sign-up - "by continugin i agree" - put below button
 7. JESS: add to email sent to host - the text they fill in for when they usually get packages
+JESS: connect tracking number o tracking EPI
+JESS: populate the "delivery date" field by connecting to trac
 8. SIGN-UP: two bowls of shit, one bowl, then sneaky second bowl of shit
 9. JESS table: add two use cases (1) wifi sharing; (2) community dinners/food as a use-case.. add this totable adn then also update the checkboxes: add NEED_MEALS
 10. JESS: Allow user to upload pictures
