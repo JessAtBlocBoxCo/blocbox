@@ -322,9 +322,18 @@ def waitlist_confirmation(request):
 
 
 #We may want to move all of this stuff into billing (which could be called ' Transactios')
-def startashipment(request):
+def startashipment(request, host_id=None):
 		enduser = request.user
-		return render(request, 'blocbox/startashipment.html', {'enduser':enduser,})
+		if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+        host = None
+    connections_all = Connection.objects.filter(end_user=enduser) 
+		return render(request, 'blocbox/startashipment.html', {
+		    'enduser':enduser, 'host': host, 
+		    'connections_all': connections_all, 
+		})
+    
 
 def startafavor(request):
 		enduser = request.user

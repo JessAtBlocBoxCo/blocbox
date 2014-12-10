@@ -55,6 +55,13 @@
       	  	        	    John - 420 Grand Ave. Apt 2  
       	  	        	    <span class="caret"></span>
       	  	        	</button> 
+      	  	        	
+      	  	        	<p>JESS TEST - SHOW EACH CONNECTSION</p>
+      	  	        	{% for connection in connections_all %}
+      	  	        				<p> {{ connection.first_name }} {{ connection.last_name }}: {{ connection.st_address1 }} {{ connection.st_address2 }}
+      	  	        					 	({{ connection.email }})</p>
+      	  	        	{% endfor %}
+      	  	        	
       	  	        	<ul class="dropdown-menu nav navbar-nav navbar-right" role="menu"> </ul>
       	  	    </div> <!--dropdown-->
       	  	</div> <!--dropdown col-xs-6-->
