@@ -1,53 +1,53 @@
 <!--this is blocbox/templates/startashipment.html -- URL is www.blocbox.co/startashipment -->
-{% extends "blocbox/base.html" %}
-{% load staticfiles %} 
-{% block title %}Start a Favor{% endblock %}
-
-{% block headafter %} {% endblock %} 
-
-{% block content %}
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Start a Favor{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 
 <div class="content container-fluid offwhitebackground relativediv">
-		
-		<!--top matter-->
-    <p class="darkgreytext textcenter margintop60px marginbottom20px">Complete the following steps to request a favor from a Blocbox neighbor</p>
-		<div class="row">
-		    <div class="col-xs-8 col-xs-offset-2 nopadding">
-		        <p class="col-xs-3 ltbluetext textshadow textleft">1   SELECT THE FAVOR</p>
-		        <div class="col-xs-2 divline margintop10px"></div>
-		        <p class="col-xs-2 ltgreytext textcenter">2   PAYMENT</p>
-		        <div class="col-xs-2 divline margintop10px"></div>
-		        <p class="col-xs-3 ltgreytext textright">3   DONE!</p>
-		    </div>
-		</div> <!--row for top matter-->
-		
-		
-		<!--select a host-->
-		<div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
-    		<div class="row">
-        		<h6 class="col-xs-6 ltbluetext margintop15px marginsides3pct nopadding">Select your Blocbox host </h6>
-        		<div class="paddingsides5pct profileboxline100 marginbottom10px"></div>
-    		</div>
-  			<div class="row">
-      	  	<h6 class="col-xs-5 marginsides3pct marginbottom20px nopaddingleft">Select a connected host to request a favor from...</h6>
-      	  	<div class="col-xs-6 dropdown margintop20px marginbottom30px">
-      	  	    <div class="dropdown marginbottom20px" id="bs-example-navbar-collapse-1">
-      	  	        	<button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-      	  	        	    John - 420 Grand Ave. Apt 2  
-      	  	        	    <span class="caret"></span>
-      	  	        	</button> 
-      	  	        	<ul class="dropdown-menu nav navbar-nav navbar-right" role="menu"> </ul>
-      	  	    </div> <!--dropdown-->
-      	  	</div> <!--dropdown col-xs-6-->
-   			</div><!--row-->
-		</div> <!--profilebox-->
-    	
-    
-    <!--submit button-->
-   	<div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
-   			<!--NOTE: RIGHT NOW THIS LINKS TO JOHN'S HOST PAYMENT - NEED TO UPDATE TO PASS THE ARGUMENT/REFRESH PAGE ONCE TEY SELECT HOST-->
-   			<button class="bluebutton" onClick="window.location='/payment/host2';">Submit</button>
-		</div>
-</div> <!--outer container-->
 
-{% endblock %} 
+    <!--top matter-->
+    <p class="darkgreytext textcenter margintop60px marginbottom20px">Complete the following steps to request a favor from a Blocbox neighbor</p>
+    <div class="row">
+        <div class="col-xs-8 col-xs-offset-2 nopadding">
+            <p class="col-xs-3 ltbluetext textshadow textleft">1 SELECT THE FAVOR</p>
+            <div class="col-xs-2 divline margintop10px"></div>
+            <p class="col-xs-2 ltgreytext textcenter">2 PAYMENT</p>
+            <div class="col-xs-2 divline margintop10px"></div>
+            <p class="col-xs-3 ltgreytext textright">3 DONE!</p>
+        </div>
+    </div>
+    <!--row for top matter-->
+
+
+    <!--select a host-->
+    <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
+        <div class="row">
+            <h6 class="col-xs-6 ltbluetext margintop15px marginsides3pct nopadding">Select your Blocbox host </h6>
+            <div class="paddingsides5pct profileboxline100 marginbottom10px"></div>
+        </div>
+        <div class="row">
+            <h6 class="col-xs-5 marginsides3pct marginbottom20px nopaddingleft">Select a connected host to request a favor from...</h6>
+            <div class="col-xs-6 dropdown margintop20px marginbottom30px">
+                <div class="dropdown marginbottom20px" id="bs-example-navbar-collapse-1">
+                    <button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        John - 420 Grand Ave. Apt 2
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu nav navbar-nav navbar-right" role="menu"></ul>
+                </div>
+                <!--dropdown-->
+            </div>
+            <!--dropdown col-xs-6-->
+        </div>
+        <!--row-->
+    </div>
+    <!--profilebox-->
+
+
+    <!--submit button-->
+    <div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
+        <!--NOTE: RIGHT NOW THIS LINKS TO JOHN'S HOST PAYMENT - NEED TO UPDATE TO PASS THE ARGUMENT/REFRESH PAGE ONCE TEY SELECT HOST-->
+        <button class="bluebutton" onClick="window.location='/payment/host2';">Submit</button>
+    </div>
+</div>
+<!--outer container-->
+
+{% endblock %}
