@@ -82,7 +82,7 @@
 <!--confirming availabiility-->
 {% if host %}
   <div class="col-xs-8 col-xs-offset-2 bluebackground">
-        <h6 class="col-xs-4 whitetext margintop15px marginsides3pct nopadding">Confirm Your {{host.first_name}}'s Availability</h6>
+        <h6 class="col-xs-4 whitetext margintop15px marginsides3pct nopadding">Confirm {{host.first_name}}'s Availability</h6>
   </div>
   <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
         <div class="row">  
@@ -117,8 +117,10 @@
     	<div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
     			<!--NOTE: RIGHT NOW THIS LINKS TO JOHN'S HOST PAYMENT - NEED TO UPDATE TO PASS THE ARGUMENT/REFRESH PAGE ONCE TEY SELECT HOST-->
         	<button class="bluebutton" onClick="window.location='/payment/host2';">Submit</button>    
-     			<p> If {{ host.first_name }} isn'tavailable, select another connected host or <a href="/search/">search for another neighbor near you </a>  to connect with. </p>
-    	</div>  
+    	</div> 
+    	
+    	<p> If {{ host.first_name }} isn'tavailable, select another connected host or <a href="/search/">search for another neighbor near you </a>  
+     			to connect with. </p> 
 	</div>
 {% endif %}
 
