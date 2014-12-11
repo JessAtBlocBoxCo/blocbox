@@ -1,31 +1,24 @@
 <!--this is blocbox/templates/blocbox/shippackage.html -- URL blocbox.co/shippackage/host2 (etc for host name)
 		View is blocbox.core.views.shippackage - may want to move to billing.views -->
-{% extends "blocbox/base.html" %}
-{% load staticfiles %} 
-{% block title %}Ship your package{% endblock %}
-
-{% block headafter %} {% endblock %} 
-
-{% block content %}
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Ship your package{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 
 <div class="content container-fluid offwhitebackground relativediv">
 
-	
-    <p class="darkgreytext textcenter margintop50px marginbottom20px">Complete the following steps to verify shipping destination, notify 
-    			{% if host %} {{host.first_name }}  {% else %} your Blocbox host {% endif %}, and complete payment</p>
+
+    <p class="darkgreytext textcenter margintop50px marginbottom20px">Complete the following steps to verify shipping destination, notify {% if host %} {{host.first_name }} {% else %} your Blocbox host {% endif %}, and complete payment</p>
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2 nopadding">
-            <p class="col-xs-3 ltgreytext textleft">1   HOST AVAILABILITY</p>
+            <p class="col-xs-3 ltgreytext textleft">1 HOST AVAILABILITY</p>
             <div class="col-xs-2 divline margintop10px"></div>
-            <p class="col-xs-2 ltgreytext textcenter">2   PAYMENT</p>
+            <p class="col-xs-2 ltgreytext textcenter">2 PAYMENT</p>
             <div class="col-xs-2 divline margintop10px"></div>
-            <p class="col-xs-3 ltbluetext textshadow textright">3   SHIP YOUR ORDER</p>
+            <p class="col-xs-3 ltbluetext textshadow textright">3 SHIP YOUR ORDER</p>
         </div>
     </div>
-    
-    
-    
-    
+
+
+
+
     <div class="col-xs-8 col-xs-offset-2 bluebox marginbottom20px">
         <div class="row">
             <h6 class="whitetext marginsides3pct textcenter">Woo! You've successfully notified 
@@ -33,7 +26,7 @@
             	that your package is headed their way!</h6>
         </div>
     </div>
-    
+
     <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
         <div class="row">
             <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Copy 
@@ -56,19 +49,19 @@
                         <p class="tinytext greytext nomarginbottom">State</p>
                         <h6 class="offwhitebackground nomargintop paddingtopbottom2px">NY</h6>
                     </div>
-                    <div class="col-sm-4 nopadding">  
+                    <div class="col-sm-4 nopadding">
                         <p class="tinytext greytext nomarginbottom">Zip Code</p>
                         <h6 class="offwhitebackground nomargintop paddingtopbottom2px">11238</h6>
-                    </div>  
+                    </div>
                 </div>
-                    </div>
-            <div class="col-sm-1 marginbottom20px">
-                <img class="margintop100px" src="{% static "blocbox/images/arrow-lightblue-right.png" %}"  height="70" width="70" />
             </div>
-                    <p class="col-sm-4 paddingleft20px textcenter">ORDER SHIPPING ADDRESS</p>
-                    <div class="col-sm-4 marginbottom20px">
-                        <img class="" src="{% static "blocbox/images/Shipping-Entry.png" %}"  height="250" width="300" />
-                    </div>
+            <div class="col-sm-1 marginbottom20px">
+                <img class="margintop100px" src="{% static " blocbox/images/arrow-lightblue-right.png " %}" height="70" width="70" />
+            </div>
+            <p class="col-sm-4 paddingleft20px textcenter">ORDER SHIPPING ADDRESS</p>
+            <div class="col-sm-4 marginbottom20px">
+                <img class="" src="{% static " blocbox/images/Shipping-Entry.png " %}" height="250" width="300" />
+            </div>
         </div>
         <div class="row marginbottom20px">
             <h6 class="col-xs-4 col-xs-offset-1 textleft nomarginbottom">Here's what happens next:</h6>
@@ -80,4 +73,4 @@
     </div>
 </div>
 
-{% endblock %} 
+{% endblock %}
