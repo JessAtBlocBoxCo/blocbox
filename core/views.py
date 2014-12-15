@@ -280,7 +280,7 @@ def connectnewhost(request, host_id):
             connect_form.host_user = host
             connect_form.end_user = enduser
             connect = connect_form.save()
-            connect.save()   	      
+            #connect.save()   	      
             confirmconnect_mail(request, host.id, enduser.id, enduser.intro_message, enduser.email, enduser.first_name, enduser.last_name) #send a request to connect to the host
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, enduser.id)
