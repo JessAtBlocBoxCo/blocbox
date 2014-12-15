@@ -2,7 +2,8 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.conf import settings
-from core.models import UserInfo, Connection
+from core.models import UserInfo
+from connections.models import Connection
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
