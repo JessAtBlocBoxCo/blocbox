@@ -273,9 +273,7 @@ def connectnewhost(request, host_id):
     host = get_object_or_404(UserInfo, pk=host_id)
     context = RequestContext(request)
     requested = False 
-    if request.method == 'POST': 
-        #if its HTTP post, we're interested in processing form data
-    	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
+    if request.method == 'POST':        
         connect_form = ConnectForm(data=request.POST)  
         if connect_form.is_valid(): 
     	      requested = True
@@ -292,8 +290,8 @@ def connectnewhost(request, host_id):
     #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
     else:
         connect_form = ConnectForm()
-    return render_to_response(
-            'blocbox/connect-already-registered.html', {'host':host, 'connect_form': connect_form, 'requested': requested, },context) 
+    return render_to_response('blocbox/connect-already-registered.html', 
+        {'host':host, 'connect_form': connect_form, 'requested': requested, },context) 
 
 #-------------------------------------------------------------
 #Emails
