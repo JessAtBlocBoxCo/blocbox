@@ -266,8 +266,10 @@ def signuphost(request):
     	      {'host_form': host_form, 'registered': registered},
     	      context)
 
+
+
+
 #Connet to a new host if already an authenticated user
-#ISSUE - need to update the user form but not save a new user.. 
 def connectnewhost(request, host_id):
     enduser = request.user
     host = get_object_or_404(UserInfo, pk=host_id)
@@ -280,7 +282,7 @@ def connectnewhost(request, host_id):
             connect_form.host_user = host
             connect_form.end_user = enduser
             connect = connect_form.save()
-            #connect.save()   	      
+            connect.save()   	      
             confirmconnect_mail(request, host.id, enduser.id, enduser.intro_message, enduser.email, enduser.first_name, enduser.last_name) #send a request to connect to the host
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, enduser.id)
