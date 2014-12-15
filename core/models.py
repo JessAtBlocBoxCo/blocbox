@@ -79,7 +79,11 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     availability = models.CharField("Availability (Write-In)",max_length=250,blank=True)
     whenimhome_days = models.CharField("When I'm Home: Days of the Week (Write-In)",max_length=250,blank=True)
     whenimhome_hours = models.CharField("When I'm Home: Hours (Write-In)",max_length=250,blank=True)
-    address_approx = models.CharField("Approximate Address for Visitors to See", max_length=100, blank=True, null=True)    
+    address_approx = models.CharField("Approximate Address for Visitors to See", max_length=100, blank=True, null=True) 
+    
+    #addingj custom or text fields
+    customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
+       
     #Create manytomany connections - neighbors are those connected to
     #neighbors = models.ManyToManyField("self", through='Connections') 
     #neighbors = models.ManyToManyField("self")
