@@ -381,7 +381,6 @@ def nav_startashipment(request):
         host=connections_all[0].host_user
         hostonly="yes"
         templatename =  "blocbox/startashipment.html"
-        #return HttpResponseRedirect('/startashipment/host')
     if connections_count==0:
         templatename = "blocbox/search.html"
     else:
