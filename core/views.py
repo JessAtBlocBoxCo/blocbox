@@ -265,6 +265,7 @@ def signuphost(request):
     	      context)
 
 #Connet to a new host if already an authenticated user
+#ISSUE - need to update the user form but not save a new user.. 
 def connectnewhost(request, host_id):
     enduser = request.user
     host = get_object_or_404(UserInfo, pk=host_id)

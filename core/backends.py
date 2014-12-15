@@ -1,6 +1,6 @@
 from django.contrib.auth.backends import ModelBackend
 #from django.contrib.admin.models import User
-from core.models import UserInfo
+from core.models import UserInfo, Connection
 
 class EmailAuthBackEnd(ModelBackend):
     def authenticate(self, email=None, password=None, **kwargs):
