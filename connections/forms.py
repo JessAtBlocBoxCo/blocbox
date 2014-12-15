@@ -3,7 +3,7 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.conf import settings
 from core.models import UserInfo
-from core.models import Connection
+from connections.models import Connection
    
 #connect form for useres that are already registered, still works off of userinfo 
 class ConnectForm(forms.ModelForm):
