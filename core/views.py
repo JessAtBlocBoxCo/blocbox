@@ -266,6 +266,7 @@ def signuphost(request):
 
 #Connet to a new host if already an authenticated user
 def connectnewhost(request, host_id):
+    enduser = request.user
     host = get_object_or_404(UserInfo, pk=host_id)
     context = RequestContext(request)
     requested = False 
@@ -278,7 +279,7 @@ def connectnewhost(request, host_id):
             connect = connect_form.save()
             connect.save()   	     
             requested = True 
-            confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
+            confirmconnect_mail(request, host.id, enduser.id, enduser.intro_message, enduser.email, enduser.first_name, enduser.last_name) #send a request to connect to the host
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, user.id)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
