@@ -25,17 +25,13 @@
 			
   		<!--Start Registration Form -->
      	<form class="form-horizontal margintop30px" role="form" method="post" action="." enctype="multipart/form-data">
-
-     			<!--<div class="col-sm-9 col-sm-offset-3">-->
-     			<h3 class="col-xs-12 col-sm-offset-1 margintop20px"> Connect with {{host.first_name}}</h3>
-  				<h5 class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px">In order to connect, we need to ask for some basic information. </h5>
-  				<br>
-
        		{{% csrf_token %}
         	{{ connect_form.non_field_errors }}
-					
-					<h3 class="col-sm-10 col-sm-offset-1 margintop10px">Introduce Yourself </h3> 		  
-					<h5 class="col-sm-10 col-sm-offset-1 marginbottom20px">Before you connect, {{host.first_name}} will need to confirm your request.  
+        	
+     			<!--<div class="col-sm-9 col-sm-offset-3">-->
+     			<h3 class="col-xs-12 col-sm-offset-1 margintop20px"> Connect with {{host.first_name}}</h3>
+     				  
+					<h5 class="col-sm-10 col-sm-offset-1 marginbottom20px">Introduct Youself: Before you connect, {{host.first_name}} will need to confirm your request.  
         			The information you provide below will help {{host.first_name}} confirm you as a neighbor.</h5>
   
   				<!--Intro MEssage -->
