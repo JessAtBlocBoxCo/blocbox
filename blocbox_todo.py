@@ -4,6 +4,9 @@
 - scheduling/availability - intregrate into start a shipment
 - Allow user to upload pictures
 - make the search page load from our data on hosts rather than the hard-coded address for john
+- fix the connect/host2 thing - connecting if already a user - make sure the emails are sending to thoe host, add a field for confirmed
+right now its logging as connected een before host confirms
+- update radme to describe navstaratshipment, et
 
 """TO DO"""
 1. JOHN - /Fix Mobile/make site responsive

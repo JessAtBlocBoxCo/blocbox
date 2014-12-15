@@ -371,14 +371,14 @@ def startashipment(request, host_id=None):
 		})
     
 
-#!!!!!!!!!!!
+#starat a shipmetn view if requested from navbar
 def nav_startashipment(request):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     connections_count = connections_all.count() #count them,removing status=0 after host_user=host
     if connections_count==1:
         hostonly=connections_all[0].host_user
-        templatename =  "blocbox/startashipment/host" + str(hostonly.id)+".html"
+        templatename =  "blocbox/startashipment.html"
     if connections_count==0:
         hostonly=None
         templatename = "blocbox/search.html"
