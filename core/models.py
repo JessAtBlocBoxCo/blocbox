@@ -6,8 +6,6 @@ from django.conf import settings
 #from django.contrib.auth.models import User #need to include this b/c we reference that table (auth_user in django db)
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
-#NOTE - create tables with python manage.py syncdb BUT this cannot modify existing tables have eto DROP them
-#to drop databases: DROP TABLE core_transaction; DROP TABLE core_userinfo;
 
 #NEED TO CREATE A MANAGER FOR THE USER MODEL
 class MyUserManager(BaseUserManager):
