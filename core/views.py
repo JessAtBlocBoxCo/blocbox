@@ -356,8 +356,7 @@ def nav_startashipment(request):
         hostonly=None
         templatename =  "blocbox/startashipment" + str(host.id)
     return render(request, templatename, {
-        'enduser': enduser, 'hostonly': hostonly
-        'connections_all': connections_all, 'connections_count': connections_count,       
+        'enduser': enduser, 'hostonly': hostonly, 'connections_all': connections_all, 'connections_count': connections_count,       
     })
     
 def startafavor(request, host_id=None):
