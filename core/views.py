@@ -278,7 +278,7 @@ def connectnewhost(request, host_id):
     if request.method == 'POST':        
         connect_form = ConnectForm(data=request.POST)  
         if connect_form.is_valid(): 
-        	  connect = connect_form.save()
+            connect = connect_form.save()
             connect.host_user = host
             connect.end_user = enduser           
             connect.save()   	 
