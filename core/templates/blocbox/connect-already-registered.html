@@ -49,8 +49,8 @@
     			</div>	<!--form-group-->
     
     
-    <!--time of day typically pick up packages -->
-    <div class="form-group">  {{ connect_form.pickup_time.errors }}
+    	<!--time of day typically pick up packages -->
+    	<div class="form-group">  {{ connect_form.pickup_time.errors }}
         <div class="row">
             <div class="col-xs-12 col-sm-5">
                 <label for="id_pickup_time">Time of day you would typically pick up packages</label>
@@ -60,40 +60,29 @@
     					placeholder="Describe in 100 characters">
             </div>  <!--row-->       	
         </div>
- 			
- 					<!--col -->		
-    </div>	<!--form-group -->
+ 				
+    	</div>	<!--form-group -->
 
 
-          <div class="col-xs-10 col-xs-offset-1 margintop30px profileboxline100"></div>
+         	<div class="col-xs-10 col-xs-offset-1 margintop30px profileboxline100"></div>
 
  					<div class="form-group"> <!--submit button--> 						
-    				<div class="row col-xs-10 col-xs-offset-1 margintop20px"> <!--submit button -->
-                                        
-                     <div class="row">
+    				<div class="row col-xs-10 col-xs-offset-1 margintop20px"> <!--submit button -->                                        
                      		<div class="col-xs-offset-7 col-xs-5">
                         	 	<button type="submit" name="submit" class="bluebutton">Request to Connect</button>
-                     		</div> <!--col-->
-                     </div> <!--row-->
-                     
-                     <div class="row"> <!--terms statement-->
-                        <div class="col-xs-12 col-sm-offset-7 col-sm-5">
-                     		</div><!--col, terms statement -->
-                        </div> <!--row--><!--col, terms statement -->
-                     
-                               
+                     		</div> <!--col-->                                                   
              </div> <!--row for submit button-->   				
     			</div> <!--form-group, submit button -->
 
     			<br><br><br><br><br>
 
-   		</form>  <!--end form -->
+  </form>  <!--end form -->
    		
    	
-   	{% endif %} <!--else if not requested already -->
+{% endif %} <!--else if not requested already -->
 
-		</div>   <!--end containing column -->
-	</div> <!--end row containing row-->
+	</div>   <!--end containing column -->
+</div> <!--end row containing row-->
 </div> <!--end of top divider  -->
 
 {% endblock %}
