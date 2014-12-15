@@ -83,7 +83,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     
     #addingj custom or text fields
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
-       
+    customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)
+    
     #Create manytomany connections - neighbors are those connected to
     #neighbors = models.ManyToManyField("self", through='Connections') 
     #neighbors = models.ManyToManyField("self")
