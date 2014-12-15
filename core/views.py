@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from core.models import UserInfo, Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
-from core.forms import UserForm, HostForm
+from core.forms import UserForm, HostForm, ConnectForm
 #Important the authentication and login functions -- not sure that i can use with custom model
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
@@ -281,12 +281,12 @@ def connectnewhost(request, host_id):
             requesthasbeensent(request, host.id, user.id)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
-    	      print user_form.errors    	  
+    	      print connect_form.errors    	  
     #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
     else:
         connect_form = ConnectForm()
     return render_to_response(
-            'blocbox/connect.html', {'host':host },context) 
+            'blocbox/connect.html', {'host':host, 'connect_form': connect_form, },context) 
 
 #-------------------------------------------------------------
 #Emails
