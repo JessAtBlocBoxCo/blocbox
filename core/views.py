@@ -348,13 +348,13 @@ def nav_startashipment(request):
     connections_count = connections_all.count() #count them,removing status=0 after host_user=host
     if connections_count==1:
         hostonly=connections_all[0].host_user
-        templatename =  "blocbox/startashipment/host" + str(hostonly.id)
+        templatename =  "blocbox/startashipment/host" + str(hostonly.id)+".html"
     if connections_count==0:
         hostonly=None
-        templatename = "blocbox/search"
+        templatename = "blocbox/search.html"
     else:
         hostonly=None
-        templatename =  "blocbox/startashipment"
+        templatename =  "blocbox/startashipment.html"
     return render(request, templatename, {
         'enduser': enduser, 'hostonly': hostonly, 'connections_all': connections_all, 'connections_count': connections_count,       
     })
