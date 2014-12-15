@@ -276,8 +276,8 @@ def connectnewhost(request, host_id):
     if request.method == 'POST': 
         #if its HTTP post, we're interested in processing form data
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
-    	  connect_form = ConnectForm(data=request.POST)  
-    	  if connect_form.is_valid(): 
+        connect_form = ConnectForm(data=request.POST)  
+        if connect_form.is_valid(): 
     	      requested = True
             connect_form.host_user = host
             connect_form.end_user = enduser
