@@ -278,7 +278,7 @@ def connectnewhost(request, host_id):
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
     	  connect_form = ConnectForm(data=request.POST)  
     	  if connect_form.is_valid(): 
-    	  	  requested = True
+    	      requested = True
             connect_form.host_user = host
             connect_form.end_user = enduser
             connect = connect_form.save()
