@@ -163,8 +163,8 @@ class Connection(models.Model):
     # @@@ relationship types
     added = models.DateField(default=datetime.date.today)
     intro_message = models.CharField("Intro Message to Host from User", max_length=300, null=True,blank=True)
-    pickup_time = models.CharField(max_length=150, blank=True, null=True)
-    
+    pickup_time = models.CharField("Preferred Pickup Time", max_length=150, blank=True, null=True)
+    testfield=models.CharField(max_length=200,blank=True, null=True)
     objects = ConnectionManager()
     
     class Meta:
