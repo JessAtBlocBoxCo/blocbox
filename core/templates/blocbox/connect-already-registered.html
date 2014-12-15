@@ -1,9 +1,7 @@
 <!--this is blocbox/core/templates/blocbox/connect-already-registered, ULR is http://www.blocbox.co/connect/host2 - where 2 = userid of host
 		this does NOT extend sign-up-withoutconnect because ther eis not a sign up form.. extends baseesignup-->
-
-{% load staticfiles %} 
-<!--this is blocbox/core/templates/blocbox/basesignup.html -->
 {% extends "blocbox/base.html" %}
+{% load staticfiles %} 
 {% load staticfiles %}
 {% block title %}Connect with {{host.first_name}}{% endblock %}
 
