@@ -9,5 +9,5 @@ from connections.models import Connection
 class ConnectForm(forms.ModelForm):
     class Meta:
         model = Connection
-        fields = ('intro_message', 'pickup_time', 'host_user', 'end_user')
+        fields = ('intro_message', 'pickup_time',)
 
