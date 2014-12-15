@@ -354,7 +354,7 @@ def nav_startashipment(request):
         templatename = "blocbox/search"
     else:
         hostonly=None
-        templatename =  "blocbox/startashipment" + str(host.id)
+        templatename =  "blocbox/startashipment"
     return render(request, templatename, {
         'enduser': enduser, 'hostonly': hostonly, 'connections_all': connections_all, 'connections_count': connections_count,       
     })
