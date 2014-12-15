@@ -10,7 +10,7 @@
 {% block content %}
 
 
-		{% if requested %}
+{% if requested %}
 	  <br> <br>
     <h3>
       		Thank you for Registering! <br>
@@ -18,7 +18,7 @@
       		In the meantime, <a href="/login/">login to your account</a> to visit your dashboard and update your account preferences and user information.
     </h3>
  		<br> <br> <br> <br> <br>
- 		{% endif %}
+{% else %}
  			
 <div class="content container-fluid"> <!--this is the container that surrounds the form, too short -->
 	<br>
@@ -147,9 +147,8 @@
 
    		</form>  <!--end form -->
    		
-   	{% endif %} <!--end if else user is authenticated-->
    	
-   	{% endif %} <!--end if registered already -->
+   	{% endif %} <!--else if not requested already -->
 
 		</div>   <!--end containing column -->
 	</div> <!--end row containing row-->
