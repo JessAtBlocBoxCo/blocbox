@@ -27,45 +27,36 @@
 
             <!--start a shipment/start a favor buttons-->
             <div class="profileboxline margintop20px marginbottom20px"></div>
-            
+
             <div class="col-xs-12 ">
-                <button type="startashipment" name="startashipment" class="bluebutton marginbottom30px" 
-                			{% if hostonly %}
-                			onclick="window.location='/startashipment/host{{hostonly.id}}';">
-                			{% else %}
-                			onclick="window.location='/startashipment';">
-                			{% endif %}
-                			Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %} </button>
+                <button type="startashipment" name="startashipment" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/startashipment/host{{hostonly.id}}';">
+                    {% else %} onclick="window.location='/startashipment';"> {% endif %} Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</button>
             </div>
             <div class="col-xs-12 ">
-                <button type="startashipment" name="startafavor" class="bluebutton marginbottom30px" 
-                			{% if hostonly %}	onclick="window.location='/startafavor/host{{hostonly.id}}';">
-                			{% else %}  			onclick="window.location='/startafavor';">
-                			{% endif %}
-                			Start a Favor</button>
+                <button type="startashipment" name="startafavor" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/startafavor/host{{hostonly.id}}';">
+                    {% else %} onclick="window.location='/startafavor';"> {% endif %} Start a Favor</button>
             </div>
-            
+
             <div class="col-xs-12 ">
-                <button type="startashipment" name="newsearch" class="bluebutton marginbottom30px" 
-                			onclick="window.location='/search';">Find a new host</button>
+                <button type="startashipment" name="newsearch" class="bluebutton marginbottom30px" onclick="window.location='/search';">Find a new host</button>
             </div>
-            
+
             <div class="profileboxline margintop20px marginbottom20px"></div>
             <div class="col-xs-12">
                 <p class="textcenter">Neigborhood Connections</p>
-                <p> You are connected to {{ connections_count }} {% if connections_count = 1 %} neighbor {% else %} neighbors {% endif %}</p>
+                <p>You are connected to {{ connections_count }} {% if connections_count = 1 %} neighbor {% else %} neighbors {% endif %}</p>
             </div>
             <div class="profileboxline margintop20px marginbottom20px"></div>
             <!--put the address of each connection here-->
             {% for connection in connections_all %}
-						<div class="col-xs-12 paddingtopbottom20px">            
-                    <p>{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}</p>
-                    <p> {{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}</p>
-                    <p> {{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }} </p>
+            <div class="col-xs-12 paddingtopbottom20px">
+                <p>{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}</p>
+                <p>{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}</p>
+                <p>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}</p>
             </div>
             {% endfor %}
-            
-           
+
+
         </div>
         <!--sidebar-->
 
@@ -101,16 +92,26 @@
 
 
                 <!--Current or Recent Shipments-->
-                
+
                 {% for shipment in shipments_all %}
                 <div class="row whitebackground margintop20px marginbottom30px tinytext textcenter">
                     <!--<div class="row  paddingtop10px"> -->
-                    <div class="col-xs-2"> <p>{{ shipment.status }}</p> </div>
-                    <div class="col-xs-3"> <p>{{ shipment.tracking }}	</p>  </div>
-                    <div class="col-xs-2"> <p>{{ shipment.deliverydate }}</p> 	</div>
-                    <div class="col-xs-3"> <p>{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }} ({{ shipment.host.first_name }})</p> </div>
+                    <div class="col-xs-2">
+                        <p>{{ shipment.status }}</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>{{ shipment.tracking }}</p>
+                    </div>
+                    <div class="col-xs-2">
+                        <p>{{ shipment.deliverydate }}</p>
+                    </div>
+                    <div class="col-xs-3">
+                        <p>{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }} ({{ shipment.host.first_name }})</p>
+                    </div>
                     <!--add a "modify" link to update the information -->
-                    <div class="col-xs-2"> <p>[ADDME]</p> </div>
+                    <div class="col-xs-2">
+                        <p>[ADDME]</p>
+                    </div>
                 </div>
                 <!--row, testing row-->
                 {% endfor %}
