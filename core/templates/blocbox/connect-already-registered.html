@@ -31,18 +31,18 @@
      			<!--<div class="col-sm-9 col-sm-offset-3">-->
      			<h3 class="col-xs-12 col-sm-offset-1 margintop20px"> Connect with {{host.first_name}}</h3>
      				  
-					<h5 class="col-sm-10 col-sm-offset-1 marginbottom20px">Introduct Youself: Before you connect, {{host.first_name}} will need to confirm your request.  
+					<h5 class="col-sm-10 col-sm-offset-1 marginbottom20px">Before you connect, {{host.first_name}} will need to confirm your request.  
         			The information you provide below will help {{host.first_name}} confirm you as a neighbor.</h5>
   
   				<!--Intro MEssage -->
   				<div class="form-group">  {{ connect_form.intro_message.errors }}
         			<div class="row">
-            		<div class="col-sm-10 col-sm-offset-1">
+            		<div class="col-sm-12">
                 	<label for="id_intro_message" class="col-xs-10 col-xs-offset-1">Introduce Yourself to {{host.first_name}} </label>
             		</div>
         			</div>
         			<div class="row">
-            			<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+            			<div class="col-xs-12 col-sm-8 col-sm-offset-2">
                 		<input type="text" class="form-control" name="intro_message" id="id_intro_message"  
     									placeholder="Hello!... (350 Character Limit)">
             			</div>
