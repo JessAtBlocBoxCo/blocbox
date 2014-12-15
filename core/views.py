@@ -293,7 +293,7 @@ def connectnewhost(request, host_id):
     else:
         connect_form = ConnectForm()
     return render_to_response(
-            'blocbox/connect-already-registered.html', {'host':host, 'connect_form': connect_form, },context) 
+            'blocbox/connect-already-registered.html', {'host':host, 'connect_form': connect_form, 'requested': requested, },context) 
 
 #-------------------------------------------------------------
 #Emails
