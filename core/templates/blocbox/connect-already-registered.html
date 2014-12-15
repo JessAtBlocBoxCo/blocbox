@@ -64,9 +64,9 @@
         						
 						<!--add hidden fields for host_user and user_id -- dont like this method but will have tow rok -->
 						{{ connect_form.host_user.errors }}
-						<input type="hidden" name="host_user" value= {{ host }} id="id_host_user">
+						<input type="hidden" name="host_user" value= {{ host.id }} id="id_host_user">
 						{{ connect_form.end_user.errors }}
-						<input type="hidden" name="end_user" value= {{ enduser }} id="id_end_user">
+						<input type="hidden" name="end_user" value= {{ enduser.id }} id="id_end_user">
 							
     	</div>	<!--form-group -->
 
