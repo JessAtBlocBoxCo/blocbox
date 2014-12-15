@@ -8,28 +8,31 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding field 'Connection.testfield'
-        db.add_column(u'core_connection', 'testfield',
-                      self.gf('django.db.models.fields.CharField')(max_length=200, null=True, blank=True),
-                      keep_default=False)
+        # Adding model 'Transaction'
+        db.create_table(u'transactions_transaction', (
+            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
+            ('host', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='payer', null=True, to=orm['core.UserInfo'])),
+            ('enduser', self.gf('django.db.models.fields.related.ForeignKey')(blank=True, related_name='payee', null=True, to=orm['core.UserInfo'])),
+            ('price', self.gf('django.db.models.fields.DecimalField')(null=True, max_digits=6, decimal_places=2, blank=True)),
+            ('date_requested', self.gf('django.db.models.fields.DateTimeField')(default=datetime.date.today)),
+            ('favortype', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
+            ('invoice', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
+            ('tracking', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
+            ('status', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
+            ('shipmentstatus', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
+            ('deliverydate', self.gf('django.db.models.fields.DateField')(null=True, blank=True)),
+            ('favorstatus', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
+            ('testfield', self.gf('django.db.models.fields.CharField')(max_length=50, null=True, blank=True)),
+        ))
+        db.send_create_signal(u'transactions', ['Transaction'])
 
 
     def backwards(self, orm):
-        # Deleting field 'Connection.testfield'
-        db.delete_column(u'core_connection', 'testfield')
+        # Deleting model 'Transaction'
+        db.delete_table(u'transactions_transaction')
 
 
     models = {
-        u'core.connection': {
-            'Meta': {'unique_together': "(('host_user', 'end_user'),)", 'object_name': 'Connection'},
-            'added': ('django.db.models.fields.DateField', [], {'default': 'datetime.date.today'}),
-            'end_user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'enduser_id'", 'to': u"orm['core.UserInfo']"}),
-            'host_user': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'host_id'", 'to': u"orm['core.UserInfo']"}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'intro_message': ('django.db.models.fields.CharField', [], {'max_length': '300', 'null': 'True', 'blank': 'True'}),
-            'pickup_time': ('django.db.models.fields.CharField', [], {'max_length': '150', 'null': 'True', 'blank': 'True'}),
-            'testfield': ('django.db.models.fields.CharField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'})
-        },
         u'core.userinfo': {
             'FBlink': ('django.db.models.fields.URLField', [], {'max_length': '200', 'blank': 'True'}),
             'Meta': {'object_name': 'UserInfo'},
@@ -37,7 +40,6 @@ class Migration(SchemaMigration):
             'address_approx': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             'availability': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
             'city': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
-            'customchar': ('django.db.models.fields.CharField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),
             'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now', 'null': 'True', 'blank': 'True'}),
             'email': ('django.db.models.fields.EmailField', [], {'unique': 'True', 'max_length': '254'}),
             'favorscompleted': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
@@ -79,7 +81,23 @@ class Migration(SchemaMigration):
             'whenimhome_days': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
             'whenimhome_hours': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
             'zipcode': ('django.db.models.fields.CharField', [], {'max_length': '5'})
+        },
+        u'transactions.transaction': {
+            'Meta': {'object_name': 'Transaction'},
+            'date_requested': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.date.today'}),
+            'deliverydate': ('django.db.models.fields.DateField', [], {'null': 'True', 'blank': 'True'}),
+            'enduser': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'payee'", 'null': 'True', 'to': u"orm['core.UserInfo']"}),
+            'favorstatus': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
+            'favortype': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+            'host': ('django.db.models.fields.related.ForeignKey', [], {'blank': 'True', 'related_name': "'payer'", 'null': 'True', 'to': u"orm['core.UserInfo']"}),
+            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
+            'invoice': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+            'price': ('django.db.models.fields.DecimalField', [], {'null': 'True', 'max_digits': '6', 'decimal_places': '2', 'blank': 'True'}),
+            'shipmentstatus': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
+            'status': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
+            'testfield': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'}),
+            'tracking': ('django.db.models.fields.CharField', [], {'max_length': '50', 'null': 'True', 'blank': 'True'})
         }
     }
 
-    complete_apps = ['core']
+    complete_apps = ['transactions']
