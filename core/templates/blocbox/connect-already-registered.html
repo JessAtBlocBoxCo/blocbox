@@ -22,24 +22,55 @@
 	<br>
 	<div class="row">
   	<div class="col-sm-10 col-sm-offset-1">
-  		
 			
   		<!--Start Registration Form -->
-
      	<form class="form-horizontal margintop30px" role="form" method="post" action="." enctype="multipart/form-data">
 
      			<!--<div class="col-sm-9 col-sm-offset-3">-->
-     				<h3 class="col-xs-12 col-sm-offset-1 margintop20px"> Connect with {{host.first_name}}</h3>
-  					<h5 class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px">In order to connect, we need to ask for some basic information. </h5>
-  					<br>
+     			<h3 class="col-xs-12 col-sm-offset-1 margintop20px"> Connect with {{host.first_name}}</h3>
+  				<h5 class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px">In order to connect, we need to ask for some basic information. </h5>
+  				<br>
 
-       	{% csrf_token %}
-        {{ connect_form.non_field_errors }}
-
-
-
-
- 				{% block additionalfields %} {% endblock %}
+       		{{% csrf_token %}
+        	{{ connect_form.non_field_errors }}
+					
+					<h3 class="col-sm-10 col-sm-offset-1 margintop10px">Introduce Yourself </h3> 		  
+					<h5 class="col-sm-10 col-sm-offset-1 marginbottom20px">Before you connect, {{host.first_name}} will need to confirm your request.  
+        			The information you provide below will help {{host.first_name}} confirm you as a neighbor.</h5>
+  
+  				<!--Intro MEssage -->
+  				<div class="form-group">  {{ connect_form.intro_message.errors }}
+        			<div class="row">
+            		<div class="col-sm-10 col-sm-offset-1">
+                	<label for="id_intro_message" class="col-xs-10 col-xs-offset-1">Introduce Yourself to {{host.first_name}} </label>
+            		</div>
+        			</div>
+        			<div class="row">
+            			<div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                		<input type="text" class="form-control" name="intro_message" id="id_intro_message"  
+    									placeholder="Hello!... (350 Character Limit)">
+            			</div>
+        			</div>   			
+    			</div>	<!--form-group-->
+    
+    
+    <!--time of day typically pick up packages -->
+    <div class="form-group">  {{ connect_form.pickup_time.errors }}
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1">
+                <label for="id_pickup_time" class="col-xs-10 col-xs-offset-1">Time of day you would typically pick up packages</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+                <input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
+    					placeholder="Describe in 100 characters">
+            </div>
+          	
+        </div>
+ 			
+ 					<!--col -->		
+    </div>	<!--form-group -->
 
 
  					<!--other use cases check boxes - not including in this form, because it will probably over-write what is already on the table
