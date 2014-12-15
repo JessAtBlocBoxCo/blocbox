@@ -79,7 +79,8 @@ The URLs for this site, and the corresponding files are as follows:
 2E blocbox.co/nudgeaneighbor; template: core/templates/blocbox/nudge-a-neighbor.html; view at core.views.nudgeaneighbor
 
 2F. blocbox/connect/host2  - request to connect if already regsitered (e.g., sign up connect without sign up)
-		template: core/blocbox/connect-already-registered.html
+		template: core/blocbox/connect-already-registered.html; view is core.views.connectnewhost
+		
 *-----------------------------------------------------------------------*
 3. PROFILE PAGES AND ACCOUNT PAGES
 *-----------------------------------------------------------------------*
