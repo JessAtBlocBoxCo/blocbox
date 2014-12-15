@@ -18,9 +18,14 @@
 					<!--the text to display once they register depends on whether they signed up WITH or WITHOUT a request to sgin up,
 					so this block is defined separately on sign-up-connect.html and sign-up-withoutconnect.html -->
 					{% block welcome %}   {% endblock %}					
-   		{% else %}
+   		{% else %} 
+
    		
-   		{% block alreadyregistered %} {% endblock %}
+   		{% if user.is_authenticated %}
+					<br><br><br>
+					<h3>Looks like you're already signed in! <a href="/logout/"> Sign out </a> if you'd like to register as a new user </h3>
+					<h3>Or, you can visit your <a href="/login/">dashboard</a> or <a href="/search/">search for a new host</a> to connect with.</h3>
+			{% else %}
 			
   		<!--Start Registration Form -->
 
@@ -219,7 +224,10 @@
     			<br><br><br><br><br>
 
    		</form>  <!--end form -->
-   	{% endif %} <!--end if registered -->
+   		
+   	{% endif %} <!--end if else user is authenticated-->
+   	
+   	{% endif %} <!--end if registered already -->
 
 		</div>   <!--end containing column -->
 	</div> <!--end row containing row-->
