@@ -8,7 +8,14 @@
 {% block content %}
 
 
-{% if requested %}
+
+ 			
+<div class="content container-fluid"> <!--this is the container that surrounds the form, too short -->
+	<br>
+	<div class="row">
+  	<div class="col-xs-12 col-sm-8 col-sm-offset-2">
+		
+		{% if requested %}
 	  <br> <br>
     <h3>
       		Thank you for Registering! <br>
@@ -16,13 +23,8 @@
       		In the meantime, <a href="/login/">login to your account</a> to visit your dashboard and update your account preferences and user information.
     </h3>
  		<br> <br> <br> <br> <br>
-{% else %}
- 			
-<div class="content container-fluid"> <!--this is the container that surrounds the form, too short -->
-	<br>
-	<div class="row">
-  	<div class="col-xs-12 col-sm-8 col-sm-offset-2">
-			
+		{% else %}
+
   		<!--Start Registration Form -->
      	<form class="form-horizontal margintop30px" role="form" method="post" action="." enctype="multipart/form-data">
        		{% csrf_token %}
