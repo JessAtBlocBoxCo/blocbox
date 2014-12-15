@@ -4,10 +4,12 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader #allows it to load templates from blocbox/templates
 from django.views.decorators.csrf import csrf_exempt
 #Add CORE and TRANSACTIONS models
-from core.models import UserInfo, Connection
+from core.models import UserInfo
+from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
-from core.forms import UserForm, HostForm, ConnectForm
+from core.forms import UserForm, HostForm
+from connections.forms import ConnectForm
 #Important the authentication and login functions -- not sure that i can use with custom model
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required

@@ -3,9 +3,10 @@ from django.contrib import admin
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from core.models import UserInfo, Connection
+from core.models import UserInfo
 from django.contrib.auth.forms import (UserCreationForm, UserChangeForm,
     AdminPasswordChangeForm)
+   
 
 """# get a way to log the errors:
 import logging
@@ -19,14 +20,9 @@ class UserInfoAdmin(admin.ModelAdmin):
     pass
   
 
-class ConnectionAdmin(admin.ModelAdmin):
-    list_display = ('host_user', 'end_user', 'added')
-    list_filter = ['host_user']
-    search_fields = ['host_user', 'end_user']
     
     
 admin.site.register(UserInfo, UserInfoAdmin)
-admin.site.register(Connection, ConnectionAdmin)
 admin.site.unregister(Group)
 
 

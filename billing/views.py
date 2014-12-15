@@ -16,7 +16,8 @@ from django.conf import settings
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
 #from core and TRANSACTION models
-from core.models import UserInfo, Connection
+from core.models import UserInfo
+from connections.models import Connection
 from core.forms import UserForm, HostForm
 from transactions.models import Transaction
 #billing specific stuff

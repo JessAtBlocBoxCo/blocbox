@@ -17,7 +17,8 @@ import datetime
 import pytz
 from django.utils import timezone
 #Import CORE models
-from core.models import UserInfo, Connection
+from core.models import UserInfo
+from connections.models import Connection
 #import transaction models
 from transactions.models import Transaction
 

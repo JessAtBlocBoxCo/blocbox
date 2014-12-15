@@ -44,6 +44,7 @@ INSTALLED_APPS = (
     'django_messages',
     'dateutil',
     'schedule',
+    'connections',
     'billing',
     'paypal.standard.ipn',
 		'testing',
