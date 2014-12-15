@@ -349,7 +349,7 @@ def nav_startashipment(request):
     if connections_count==1:
         hostonly=connections_all[0].host_user
         templatename =  "blocbox/startashipment/host" + str(hostonly.id)
-    if connections_count==0;
+    if connections_count==0:
         hostonly=None
         templatename = "blocbox/search"
     else:
