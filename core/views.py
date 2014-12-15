@@ -341,6 +341,25 @@ def startashipment(request, host_id=None):
 		})
     
 
+#!!!!!!!!!!!
+def nav_startashipment(request):
+    enduser = request.user
+    connections_all = Connection.objects.filter(end_user=enduser) 
+    connections_count = connections_all.count() #count them,removing status=0 after host_user=host
+    if connections_count==1:
+        hostonly=connections_all[0].host_user
+        templatename =  "blocbox/startashipment/host" + str(hostonly.id)
+    if connections_count==0;
+        hostonly=None
+        templatename = "blocbox/search"
+    else:
+        hostonly=None
+        templatename =  "blocbox/startashipment" + str(host.id)
+    return render(request, templatename, {
+        'enduser': enduser, 'hostonly': hostonly
+        'connections_all': connections_all, 'connections_count': connections_count,       
+    })
+    
 def startafavor(request, host_id=None):
 		enduser = request.user
 		return render(request, 'blocbox/startafavor.html', {'enduser':enduser,})
