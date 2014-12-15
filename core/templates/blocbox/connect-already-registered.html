@@ -59,10 +59,12 @@
                 <input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
     					placeholder="Describe in 100 characters">
             </div>  <!--row-->       	
-        </div>
- 				
+        </div>			
     	</div>	<!--form-group -->
-
+						
+						<!--add hidden fields for host_user and user_id -- dont like this method but will have tow rok -->
+						<input type="hidden" name="host_user" value= {{ host }} id="id_host_user">
+						<input type="hidden" name="end_user" value= {{ enduser }} id="id_end_user">
 
          	<div class="col-xs-10 col-xs-offset-1 margintop30px profileboxline100"></div>
 

@@ -279,8 +279,8 @@ def connectnewhost(request, host_id):
         connect_form = ConnectForm(data=request.POST)  
         if connect_form.is_valid(): 
             connect = connect_form.save()
-            connect.host_user = host
-            connect.end_user = enduser           
+            #connect.host_user = host
+            #connect.end_user = enduser           
             connect.save()   	 
             requested = True     
             confirmconnect_mail(request, host.id, enduser.id, enduser.intro_message, enduser.email, enduser.first_name, enduser.last_name) #send a request to connect to the host
@@ -293,7 +293,7 @@ def connectnewhost(request, host_id):
     else:
         connect_form = ConnectForm()
     return render_to_response('blocbox/connect-already-registered.html', 
-        {'host':host, 'connect_form': connect_form, 'requested': requested, },context) 
+        {'host':host, 'enduser': enduser, 'connect_form': connect_form, 'requested': requested, },context) 
 
 #-------------------------------------------------------------
 #Emails
