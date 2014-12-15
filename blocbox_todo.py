@@ -3,6 +3,7 @@
 - paypal pro - can we do?
 - scheduling/availability - intregrate into start a shipment
 - Allow user to upload pictures
+- make the search page load from our data on hosts rather than the hard-coded address for john
 
 """TO DO"""
 1. JOHN - /Fix Mobile/make site responsive

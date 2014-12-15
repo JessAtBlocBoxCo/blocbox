@@ -232,7 +232,7 @@ def signupnoconnect(request):
     	      {'user_form': user_form, 'registered': registered},
     	      context)
 
-              
+
 #Registration Form - Host
 #FIGURE OUT - DOES THE HOST NEED TO BE REGISTERED AS UER FIRST? CAN WE IMPORT AL THAT
 def signuphost(request):
@@ -263,7 +263,30 @@ def signuphost(request):
             'blocbox/sign-up-host.html',
     	      {'host_form': host_form, 'registered': registered},
     	      context)
-    
+
+#Connet to a new host if already an authenticated user
+def connectnewhost(request, host_id):
+    host = get_object_or_404(UserInfo, pk=host_id)
+    context = RequestContext(request)
+    if request.method == 'POST': 
+        #if its HTTP post, we're interested in processing form data
+    	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
+    	  connect_form = ConnectForm(data=request.POST)  
+    	  if connect_form.is_valid(): 
+            # Save the user's form data to the database
+            connect = connect_form.save()
+            connect.save()   	      
+            confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
+            #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
+            requesthasbeensent(request, host.id, user.id)
+    	  #Invalid form or forms - print problems to the terminal so they're show to user
+    	  else: 
+    	      print user_form.errors    	  
+    #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
+    else:
+        connect_form = ConnectForm()
+    return render_to_response(
+            'blocbox/connect.html', {'host':host },context) 
 
 #-------------------------------------------------------------
 #Emails
