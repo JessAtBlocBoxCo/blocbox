@@ -378,6 +378,7 @@ def nav_startashipment(request):
     connections_count = connections_all.count() #count them,removing status=0 after host_user=host
     if connections_count==1:
         host=connections_all[0].host_user
+        hostonly="yes"
         templatename =  "blocbox/startashipment.html"
     if connections_count==0:
         host=None
@@ -386,7 +387,7 @@ def nav_startashipment(request):
         host=None
         templatename =  "blocbox/startashipment.html"
     return render(request, templatename, {
-        'enduser': enduser, 'host': host, 'connections_all': connections_all, 'connections_count': connections_count,       
+        'enduser': enduser, 'host': host, 'hostonly': hostonly, 'connections_all': connections_all, 'connections_count': connections_count,       
     })
     
 def startafavor(request, host_id=None):
