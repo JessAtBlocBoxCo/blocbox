@@ -287,7 +287,7 @@ def connectnewhost(request, host_id):
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, enduser.id)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
-    	  else: 
+        else: 
     	      print connect_form.errors    	  
     #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
     else:
