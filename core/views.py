@@ -393,7 +393,22 @@ def nav_startashipment(request):
 def startafavor(request, host_id=None):
 		enduser = request.user
 		return render(request, 'blocbox/startafavor.html', {'enduser':enduser,})
-			
+
+#starat a shipmetn view if requested from navbar
+def nav_startafavor(request):
+    enduser = request.user
+    connections_all = Connection.objects.filter(end_user=enduser) 
+    connections_count = connections_all.count() #count them,removing status=0 after host_user=host
+    if connections_count==1:
+        host=connections_all[0].host_user
+        templatename =  "blocbox/startafavor.html"
+    if connections_count==0:
+        templatename = "blocbox/search.html"
+    else:
+        templatename =  "blocbox/startafavor.html"
+    return render(request, templatename, {
+        'enduser': enduser, 'host': host, 'connections_all': connections_all, 'connections_count': connections_count,})
+    			
 #This is the REturn URL for paypal IPN so  eeds to be CSRF exempt
 @csrf_exempt		
 def shippackage(request, host_id): #passes the host_id argument in URL

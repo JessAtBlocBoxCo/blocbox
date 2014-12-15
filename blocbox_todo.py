@@ -7,6 +7,7 @@
 - fix the connect/host2 thing - connecting if already a user - make sure the emails are sending to thoe host, add a field for confirmed
 right now its logging as connected een before host confirms
 - update radme to describe navstaratshipment, et
+- update the navbar in beta so if they're not logged on doesn't call nav_starta s hipment - do if/or on user authenticated
 
 """TO DO"""
 1. JOHN - /Fix Mobile/make site responsive
