@@ -19,9 +19,19 @@
 					so this block is defined separately on sign-up-connect.html and sign-up-withoutconnect.html -->
 					{% block welcome %}   {% endblock %}					
    		{% else %}
+   		
+   		{% if registered %}
+					<!--the text to display once they register depends on whether they signed up WITH or WITHOUT a request to sgin up,
+					so this block is defined separately on sign-up-connect.html and sign-up-withoutconnect.html -->
+					{% block welcome %}   {% endblock %}					
+   		{% else %}
 
-
-
+			{% if user.is_authenticated %}
+					<p>Looks like you're already signed in!</p>
+					<p>Visit your <a href="/login/">dashboard</a> or <a href="/search/">search for a new host</a> to connect with.</p>
+					<p><a href="/login/">dashboard</a> Sign out<a href="/logout/"> if you'd like to register as a new user.</p>
+			{% if user.is_authenticated %}
+			
   		<!--Start Registration Form -->
 
      	<form class="form-horizontal margintop30px" role="form" method="post" action="." enctype="multipart/form-data">
