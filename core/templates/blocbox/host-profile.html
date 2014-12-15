@@ -62,9 +62,10 @@
         		{% else %} 		
         				<button class="bluebutton"
         					<!--JMY editing on 14 dec - different linmk if authenticated and adding new connection -->			
-        					{% if user.is_authenticated %}  onClick="window.location='/connect/host{{ host.id }}/';"
-        					{% else %}  onClick="window.location='/signupconnect/host{{ host.id }}/';"
-        					{% endif %} >+  Connect
+        					{% if user.is_authenticated %}  onClick="window.location='/connect/host{{ host.id }}/';">
+        					{% else %}  onClick="window.location='/signupconnect/host{{ host.id }}/';">
+        					{% endif %} 
+        							+  Connect
         				</button>
             {% endif %} 
         </div>
