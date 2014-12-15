@@ -381,11 +381,10 @@ def nav_startashipment(request):
         host=connections_all[0].host_user
         hostonly="yes"
         templatename =  "blocbox/startashipment.html"
+        return HttpResponseRedirect('/startashipment/host')
     if connections_count==0:
-        host=None
         templatename = "blocbox/search.html"
     else:
-        host=None
         templatename =  "blocbox/startashipment.html"
     return render(request, templatename, {
         'enduser': enduser, 'host': host, 'hostonly': hostonly, 'connections_all': connections_all, 'connections_count': connections_count,
