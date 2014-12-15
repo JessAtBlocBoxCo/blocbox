@@ -25,7 +25,7 @@
 			
   		<!--Start Registration Form -->
      	<form class="form-horizontal margintop30px" role="form" method="post" action="." enctype="multipart/form-data">
-       		{{% csrf_token %}}
+       		{% csrf_token %}
         	{{ connect_form.non_field_errors }}
         	
      			<!--<div class="col-sm-9 col-sm-offset-3">-->
