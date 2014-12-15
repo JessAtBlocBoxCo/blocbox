@@ -268,6 +268,7 @@ def signuphost(request):
 def connectnewhost(request, host_id):
     host = get_object_or_404(UserInfo, pk=host_id)
     context = RequestContext(request)
+    requested = False 
     if request.method == 'POST': 
         #if its HTTP post, we're interested in processing form data
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
@@ -275,7 +276,8 @@ def connectnewhost(request, host_id):
     	  if connect_form.is_valid(): 
             # Save the user's form data to the database
             connect = connect_form.save()
-            connect.save()   	      
+            connect.save()   	     
+            requested = True 
             confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, user.id)
