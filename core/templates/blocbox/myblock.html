@@ -1,11 +1,5 @@
 <!--this is blocbox/templates/myblock.html -- URL is www.blocbox.co/myblock, linked from dashboard -->
-{% extends "blocbox/base.html" %}
-{% load staticfiles %} 
-{% block title %}My Block{% endblock %}
-
-{% block headafter %} {% endblock %} 
-
-{% block content %}
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}My Block{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 
 <div class="content container-fluid whitebackground relativediv">
 
@@ -22,7 +16,7 @@
 
     <div class="row">
         <div class=" col-xs-3 mobilehide">
-            <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}"  /> 
+            <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}" />
             <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
             <p class="darkgreytext margintop5px tinytext textcenter">EDIT PROFILE</p>
             <p class="darkgreytext margintop5px tinytext textcenter">HOME</p>
@@ -30,9 +24,9 @@
             <p class="darkgreytext margintop5px tinytext textcenter">CONNECTIONS</p>
             <p class="darkgreytext margintop5px tinytext textcenter">XX</p>
             <div class="profileboxline margintop20px marginbottom20px"></div>
-            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter">Invite Your Neighbors</p>
-            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Become a Host</p>
-            <p  class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Love Blocbox?</p>
+            <p class="col-xs-8 col-xs-offset-2 ltbluetext textcenter">Invite Your Neighbors</p>
+            <p class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Become a Host</p>
+            <p class="col-xs-8 col-xs-offset-2 ltbluetext textcenter margintop20px">Love Blocbox?</p>
         </div>
 
 
@@ -41,18 +35,18 @@
             <p class="col-xs-2 ltbluetext nopadding nomargin">MY BLOCK</p>
             <div class="col-xs-12 col-sm-12 dashbox margintop10px marginbottom30px">
                 <div class="row margintop20px marginbottom20px">
-                    <img class="myblockmap" src="{% static 'blocbox/images/Block-map.png' %}"  />
+                    <img class="myblockmap" src="{% static 'blocbox/images/Block-map.png' %}" />
                 </div>
             </div>
 
-            
+
 
 
             <p class="col-xs-2 ltbluetext nomargintop marginbottom10px nopadding">MY CONNECTIONS</p>
             <div class="col-xs-12 dashbox marginbottom60px">
                 <div class="row margintop10px marginbottom10px">
-                   <div class="col-xs-2 nopadding">
-                        <img class="blockpic nopadding" src="{% static 'blocbox/images/JB-2.png' %}"  />
+                    <div class="col-xs-2 nopadding">
+                        <img class="blockpic nopadding" src="{% static 'blocbox/images/JB-2.png' %}" />
                     </div>
                     <div class="col-xs-8 nopadding marginleftneg25">
                         <div class="row">
@@ -67,14 +61,14 @@
                 </div>
                 <div>
                     <div class="row">
-                        
+
                     </div>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
 </div>
 
 
 
-{% endblock %} 
+{% endblock %}
