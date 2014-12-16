@@ -1417,7 +1417,7 @@ footer {
 }
 .dashpiccontainer {
     border-radius: 50%;
-    border: 5px solid #dfe2e2;
+    border: 10px solid rgb(250, 250, 250);
     height: 155px;
     width: 155px;
     overflow: hidden;
