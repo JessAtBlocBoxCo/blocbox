@@ -121,11 +121,14 @@
                         <p class="dashfont nomargin">{{ shipment.deliverydate }}</p>
                     </div>
                     <div class="col-xs-3">
-                        <p class="dashfont nomargin">{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }} ({{ shipment.host.first_name }})</p>
+                        <a class="dashfont nomargin">{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }} ({{ shipment.host.first_name }})</a>
                     </div>
                     <!--add a "modify" link to update the information -->
                     <div class="col-xs-2">
-                        <p class="dashfont nomargin">[ADDME]</p>
+                        <div class="row">
+                            <a class="dashfont nomargin">Modify</a>
+                            <a class="dashfont nomargin">Message Host</a>
+                        </div>
                     </div>
                 </div>
                 <!--row, testing row-->
