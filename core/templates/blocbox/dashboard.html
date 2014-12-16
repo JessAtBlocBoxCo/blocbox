@@ -96,20 +96,20 @@
                 {% for shipment in shipments_all %}
                 <div class="row whitebackground marginbottom30px paddingtopbottom20px tinytext textcenter">
                     <!--<div class="row  paddingtop10px"> -->
-                    <div class="col-xs-2">
+                    <div class="col-xs-2 nomargin">
                         <p>{{ shipment.status }}</p>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-3 nomargin">
                         <p>{{ shipment.tracking }}</p>
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-xs-2 nomargin">
                         <p>{{ shipment.deliverydate }}</p>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-3 nomargin">
                         <p>{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }} ({{ shipment.host.first_name }})</p>
                     </div>
                     <!--add a "modify" link to update the information -->
-                    <div class="col-xs-2">
+                    <div class="col-xs-2 nomargin">
                         <p>[ADDME]</p>
                     </div>
                 </div>
