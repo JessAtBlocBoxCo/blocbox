@@ -83,7 +83,7 @@
                         <p class="marginbottom5px">DELIVERY DATE</p>
                     </div>
                     <div class="col-xs-3">
-                        <p class="marginbottom5px">NEIGHBOR'S ADDRESS</p>
+                        <p class="marginbottom5px">NEIGHBOR</p>
                     </div>
                     <div class="col-xs-2">
                         <p class="marginbottom5px">OPTIONS</p>
@@ -94,12 +94,12 @@
                 <!--Current or Recent Shipments-->
 
                 {% for shipment in shipments_all %}
-                <div class="row whitebackground marginbottom30px paddingtopbottom20px tinytext textcenter">
+                <div class="row whitebackground marginbottom30px tinytext textcenter">
                     <!--<div class="row  paddingtop10px"> -->
-                    <div class="col-xs-2">
+                    <div class="col-xs-2 paddingtopbottom20px">
                         <p class="dashfont nomargin">{{ shipment.status }}</p>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-3 paddingtopbottom20px ">
                         <a href="#openModal" class="nomargin dashfont textcenter">Enter Tracking #</a>
                         <div id="openModal" class="modalDialog">
                             <div>	<a href="#close" title="Close" class="close">X</a>
@@ -117,10 +117,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-xs-2 paddingtopbottom20px">
                         <p class="dashfont nomargin">{{ shipment.deliverydate }}</p>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-3 paddingtopbottom20px">
                         <div class="row">
                             <a class="dashfont nomargin">{{ shipment.host.first_name }}</a>
                         </div>
@@ -129,8 +129,8 @@
                         </div>
                     </div>
                     <!--add a "modify" link to update the information -->
-                    <div class="col-xs-2">
-                        <div class="row">
+                    <div class="col-xs-2 paddingtopbottom10px">
+                        <div class="row paddingtopbottom2px">
                             <a class="dashfont nomargin">Modify</a>
                         </div>
                         <div class="row">
