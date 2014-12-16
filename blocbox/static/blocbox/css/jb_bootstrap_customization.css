@@ -1416,6 +1416,8 @@ footer {
     min-height: 100%;
 }
 .dashpic {
+    border-radius: 50%;
+    border: 5px solid #dfe2e2;
     max-width: 100%;
     max-height: 150px;
     margin-left: 30px;
