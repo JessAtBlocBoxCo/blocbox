@@ -1,11 +1,16 @@
 <!--this is blocbox/templates/startashipment.html -- URL is www.blocbox.co/startashipment -->
 {% extends "blocbox/base.html" %}
 {% load staticfiles %} 
+<!--load the scheduling tags-->
+{% load i18n %}
+{% load scheduletags i18n %}
+{% load scheduletags %}
+
 {% block title %}Start a Shipment{% endblock %}
 
 {% block headafter %} 
 
-
+ 
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -115,26 +120,20 @@
         
         <!---AVAILABILITY--->
         <div class="row">  
-          <h6 class="col-xs-5 col-xs-offset-1 marginsides3pct marginbottom20px">Next, confirm {{ host.first_name }} is available 
+          <h6 class=" col-xs-12 col-sm-5 col-sm-offset-1 marginsides3pct marginbottom20px">Next, confirm {{ host.first_name }} is available 
                inside your package's expected delivery window. Click "submit" once availability is confirmed.</h6>
               
           <!--add the calendar associated with this host (its still under the if-host condition)-->  
-         	{% load i18n %}
-					{% load scheduletags i18n %}
-					{% load scheduletags %} 
+
 						
-					<div class="col-xs-6"> <!--row containing all calendars-->		
-						<div class="row"> <div class="col-xs-12 col-sm-6"> </div></div> <!--col, row -->					
-						{% for hostcaleach in cal_list_host %}
-								<div class="row">							
-										<div class="col-xs-12 col-sm-6">
+					<div class="col-xs-6"> <!--row containing all calendars-->						
+						{% for hostcaleach in cal_list_host %}							
+										<div class="row">
 												<h4> Host {{ host.first_name }} {{ host.last_name }}'s  Calendar: {{ hostcaleach.slug }} </h4>																							
 												<div class="col-xs-12 col-sm-6">	{% month_table hostcaleach thismonth_objects|get_item:hostcaleach.slug "small" %}  	</div> 													
 												<div class="col-xs-12 col-sm-6">  {% month_table hostcaleach thismonth_objects|get_item:hostcaleach.slug "small" +1 %}	</div> 
-										</div> <!--col, containing calendars -->	
-								</div>									
+										</div> <!--row, containing calendars -->									
 						{% endfor %}					
-		</div> <!--row, containing all -->
         </div> <!--row, Availability -->
          
        		<div class="row">
