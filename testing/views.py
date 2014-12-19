@@ -122,7 +122,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'cal_relations_all': cal_relations_all, 'cal_relations_host': cal_relations_host,
     	  'cal_relations_host_count': cal_relations_host_count,
     	  'cal_list_host': cal_list_host, 
-    	  'AvailabilityCal': AvailabilityCal,
+    	  'AvailabilityCal': AvailabilityCal, 'AvailabilityCal_MonthObject': AvailabilityCal_MonthObject,
     	  'here': quote(request.get_full_path())
     }) 
 
