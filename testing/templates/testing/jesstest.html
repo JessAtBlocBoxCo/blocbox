@@ -62,17 +62,22 @@
 		<!--SHOW EVERY CALENDAR-->
 		<h3> Show Every Calendar (Bi-Monthly View) </h3> 
 				
-		<H4>jess removed this too - will put it back</H4>
+				
+				{% for caleach in cal_list %}
+								<div class="row">									
+										<div class="col-xs-12 col-sm-6"> <h4>Text to the left for {{ caleach.slug }} </h4></div>
+										<div class="col-xs-12 col-sm-6"> 
+												<h3 style="text-align: center">  {{ caleach.slug }} </h3>		
+														<!--thismonth_objects is a dictionary, so i had to define a custom template filter to pass a loop variable -->											
+														<div class="col-xs-12 col-sm-6">	{% month_table caleach thismonth_objects|get_item:caleach.slug "small"  %}  	</div> 													
+														<div class="col-xs-12 col-sm-6">  {% month_table caleach thismonth_objects|get_item:caleach.slug "small" +1 %}	</div> 
+										</div>			
+								</div> <!--row with cal-->
+				{% endfor %}
+				
+		<H4>Show Test Calendar 1</H4>
 			
-			<!--SHOW TESTCALENDAR1 -->
-			<div class="row"> 	<h2> Show the TestCalendar1 </h2> 									
-							
-					<div class="col-xs-12 col-sm-6">
-								<h3 style="text-align: center">  {{ calendar_single.slug }} </h3>
-								<div class="col-xs-12 col-sm-6">	{% month_table calendar_single thismonth_object_single "small" %}  	</div> 
-								<div class="col-xs-12 col-sm-6"> {% month_table calendar_single thismonth_object_single "small" +1 %}	</div> 
-					</div> <!--col, cal name -->
-			</div> <!--row with the bi_month_calendar - TestCaledar1 -->
+
 						
 								
 			<div class="row">   	<h2>Show Other Calendar Variables </h2>
