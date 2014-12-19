@@ -138,15 +138,10 @@ The URLs for this site, and the corresponding files are as follows:
 *-----------------------------------------------------------------------*
 
 4A. blocbox.co/startashipment (template: core/templates/blocbox/startashipment.html, view is core/views/startafavor
-	- Data presented
-		-Host name
-		-Host address
-		-Shipping Options
-		-Host availability
-
-	- Data requested
-		-Host Choice
-		-Shipping Options
+	- links to a host site if you only have one: blocbox.co/starashipment/host10 (if only connected to 10)
+	- if connected to multiple, givesyou the option to pick
+	- once the host is connected, you select the shipment speed - this links to
+			blocbox.co/startashipment/host10/days3to4 where 3 = dayrangestart and 4 = dayrangeend
 
 4B. 	blocbox.co/startafavor (template: core/templates/blocbox/startafavor.html, view is core/views/startafavor
 			- issue: if they are connected to multiple hosts do they really need to "select" one or is it more of a bid? e.g., who will take? this may b ea next-level step 

@@ -19,6 +19,7 @@ urlpatterns = patterns('',
     url(r'^nav_startashipment/$', views.nav_startashipment, name='nav_startashipment'),
     url(r'^nav_startafavor/$', views.nav_startafavor, name='nav_startafavor'),
     url(r'^startashipment/host(?P<host_id>\d+)/$', views.startashipment, name='startashipment'),
+    url(r'^startashipment/host(?P<host_id>\d+)/days(?<dayrangestart>\d+)to(?<dayrangeend>\d+)/$', views.startashipment, name='startashipmentdays'),
     url(r'^startafavor/$', views.startafavor, name='startafavor'),
     url(r'^startafavor/host(?P<host_id>\d+)/$', views.startafavor, name='startafavor'),
     url(r'^shippackage/$', views.shippackage, name='shippackage_nohost'),  #this shouldn't really be used b/c not linked to a host  

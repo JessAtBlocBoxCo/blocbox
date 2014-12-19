@@ -93,24 +93,24 @@
                 		when it will arrive. we should think about the language...-->
                 		
                 <!--JMY note 2: maybe should be write in?-->
-                <!--drop down menu button-->
-                <button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+              <!--drop down menu button-->
+              <button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
                     When will your package arrive?
                     <span class="caret"></span>
-                </button>
-               	<!--actual dropdown menu-->
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2 Days</a></li>
-    									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Tomorrow</a></li>
-    									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">3 Days</a></li>
-    									<li role="presentation"><a role="menuitem" tabindex="-1" href="#">2-3 Days</a></li>   									
-   										<li role="presentation"><a role="menuitem" tabindex="-1" href="#">3-4 Days</a></li>
-   										<li role="presentation"><a role="menuitem" tabindex="-1" href="#">4-5 Days</a></li>
-   										<li role="presentation"><a role="menuitem" tabindex="-1" href="#">5-7 Days</a></li>
-   										<li role="presentation"><a role="menuitem" tabindex="-1" href="#">7-10 Days</a></li>
-   										<li role="presentation"><a role="menuitem" tabindex="-1" href="#">10-14 Days</a></li>
-  </ul>
-  
+              </button>
+              <!--actual dropdown menu-->
+              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    						<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days2to2';">2 Days</a></li>
+    						<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days1to1';">Tomorrow</a></li>
+    						<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days3to3';">3 Days</a></li>
+    						<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days2to3';">2-3 Days</a></li>   									
+   							<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days3to4';">3-4 Days</a></li>
+   							<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days4to5';">4-5 Days</a></li>
+   							<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days5to7';">5-7 Days</a></li>
+   							<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days7to10';">7-10 Days</a></li>
+   							<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days10to14';">10-14 Days</a></li>
+  						</ul>
+  							<h3>TEST - DELETE ME DAYRANGESTART here: {{dayrangestart}} AND DAYRANGE END HERE: {{dayrangeend}} </h3>
             </div> 
         </div> <!--row-->
         
