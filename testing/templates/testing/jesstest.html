@@ -37,22 +37,16 @@
 			</div>				
 		
 		<!--TEST CALENDAR RELATIONS, table: schedule_calendarrelation, object_id= userid, calender_id-->
-		<h3>Calendars Associated with Host: {{ host.email }} </h3> 	
+		<h3>Calendars Associated with Host {{ host.first_name }} {{ host.last_name }} ( {{ host.email }} ) </h3> 	
 		<div class="row"> <!--row containing all calendars-->
 			
-				<div class="row"> <div class="col-xs-12 col-sm-6">
-				<h4>{{ host.first_name }} {{ host.last_name }} is linked to {{ cal_relations_host_count }} Calendars: </h4>	
-						 {% for hostcaleach in cal_list_host %} <li> <b> {{ hostcaleach.slug }} </b>  </li> {% endfor %}
-				</div></div> <!--col, row -->
+				<div class="row"> 
+						<div class="col-xs-12 col-sm-6">
+							<h4>{{ host.first_name }} {{ host.last_name }} is linked to {{ cal_relations_host_count }} Calendars: </h4>	
+						 			{% for hostcaleach in cal_list_host %} <li> <b> {{ hostcaleach.slug }} </b>  </li> {% endfor %}
+						</div>
+				</div> <!--col, row -->
 					
-				<!--jmy debugging note: you will often get this error from the month_table statement
-						Reverse for 'month_calendar' with arguments '('',)' and keyword arguments '{}' not found. 2 pattern(s) tried: 
-						['scheduling/calendar/month/(?P<calendar_slug>[-\\w]+)/$', 'scheduling/calendar/month/(?P<calendar_slug>[-\\w]+)/$']
-						
-						Solution...
-				-->
-				
-			<H3>jess moved offending text to a blank text doc  - will move it back </H3>
 
 				{% for hostcaleach in cal_list_host %}
 						<div class="row">							
@@ -82,14 +76,8 @@
 										</div>			
 								</div> <!--row with cal-->
 				{% endfor %}
-				
-]
+							
 
-		<H4>SHOW OTHER CALENDAR VARIABLES - CURRENTLY REMOVED</H4>		
-								
-
-					
-				<br><br>
 		</div>
 		
 		<!--INBOX COUNTER TEST -->
