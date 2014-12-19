@@ -366,7 +366,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         host = None  
     connections_all = Connection.objects.filter(end_user=enduser) 
     #Add the calendar variables
-        try:
+    try:
         date = coerce_date_dict(request.GET)
     except ValueError:
         raise Http404
