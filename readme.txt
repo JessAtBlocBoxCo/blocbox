@@ -173,7 +173,18 @@ The URLs for this site, and the corresponding files are as follows:
 		this automatically goes to blocbox.co/message/inbox - template is at django_messages/tempaltes/django_messages/inbox.html, extends base.html in smae dir
 
 
-
+*-----------------------------------------------------------------------*
+6. SCHEDULE/CALENDAR APP - HOW IT WORKS
+*-----------------------------------------------------------------------*
+	Schedule Tables:
+		Calendar: lists each of the calendars,
+				fields: "name" and "slug' - dont know the difference
+				i think we need separate one for each user, so name should be tied to user
+		Calendar relations: lists relationship between a calendar and a user
+			
+		Events
+		Rules
+	
 *-----------------------------------------------------------------------*
 END: DJANGO ADMIN SITES
 *-----------------------------------------------------------------------*
