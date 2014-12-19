@@ -121,10 +121,9 @@
           <!--add the calendar associated with this host (its still under the if-host condition)-->  
          	{% load i18n %}
 					{% load scheduletags i18n %}
-					{% load scheduletags %}
-					<h3>Calendars Associated with Host: {{ host.email }} </h3> 	
-					<div class="row"> <!--row containing all calendars-->
-			
+					{% load scheduletags %} 
+						
+					<div class="col-xs-6"> <!--row containing all calendars-->		
 						<div class="row"> <div class="col-xs-12 col-sm-6"> </div></div> <!--col, row -->					
 						{% for hostcaleach in cal_list_host %}
 								<div class="row">							
