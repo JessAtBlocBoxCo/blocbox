@@ -358,17 +358,64 @@ def waitlist_confirmation(request):
 
 
 #We may want to move all of this stuff into billing (which could be called ' Transactios')
-def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None):
+def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, calendar_slug_single = "testcalendar1"):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
         host = None  
     connections_all = Connection.objects.filter(end_user=enduser) 
+    #Add the calendar variables
+        try:
+        date = coerce_date_dict(request.GET)
+    except ValueError:
+        raise Http404
+    if date:
+        try:
+            date = datetime.datetime(**date)
+        except ValueError:
+            raise Http404
+    else:
+        date = timezone.now()
+        local_timezone = request.session.setdefault('django_timezone', 'UTC')     
+    local_timezone = pytz.timezone(local_timezone) #this is working]
+    thismonthname = Month(date, None, None, local_timezone) 
+    cal_list = Calendar.objects.all()
+    calendar_objects = {} 
+    event_list_objects = {}
+    thismonth_objects = {}
+    test_calslugs = []
+    for cal in cal_list:
+        event_list = GET_EVENTS_FUNC(request, cal)
+        calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
+        thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
+    #for a single calendar called i
+    calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
+    event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
+    thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
+    #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
+    cal_relations_all = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
+    cal_list_host = []
+    if host:
+        cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)
+        cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
+        for cal in cal_relations_host:
+            cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
+    else:
+        cal_relations_host = None
+        cal_relations_host_count = None
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 
 		    'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend
+		    'date':date, 
+    	  'thismonth_objects':thismonth_objects, 'thismonth_object_single':thismonth_object_single,
+    	  'thismonthname':thismonthname, 'weekday_names': weekday_names,
+        'cal_list':cal_list, 'calendar_objects':calendar_objects,  'calendar_single': calendar_single,
+    	  'cal_relations_all': cal_relations_all, 'cal_relations_host': cal_relations_host,
+    	  'cal_relations_host_count': cal_relations_host_count,
+    	  'cal_list_host': cal_list_host,
+    	  'here': quote(request.get_full_path())
 		})
     
 

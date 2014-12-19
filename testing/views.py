@@ -58,7 +58,8 @@ def dashboard_test(request, host_id=None):
 
 
     
-#jessstest - rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
+#www.blocbox.co/testing/jessstes; .blocbox.co/testing/jesstest/host2/ is to link it to a host's cal
+# rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
 def jesscaltest(request, calendar_slug_single = "testcalendar1", host_id=None):
     enduser = request.user
     if host_id:
@@ -112,15 +113,10 @@ def jesscaltest(request, calendar_slug_single = "testcalendar1", host_id=None):
         'host':host, 
         'connections_all':connections_all,
     	  'date':date, 
-    	  'thismonth_objects':thismonth_objects,
-    	  'thismonth_object_single':thismonth_object_single,
-    	  'thismonthname':thismonthname,
-    	  'weekday_names': weekday_names,
-        'cal_list':cal_list,
-        'calendar_objects':calendar_objects,
-    	  'calendar_single': calendar_single,
-    	  'cal_relations_all': cal_relations_all,
-    	  'cal_relations_host': cal_relations_host,
+    	  'thismonth_objects':thismonth_objects, 'thismonth_object_single':thismonth_object_single,
+    	  'thismonthname':thismonthname, 'weekday_names': weekday_names,
+        'cal_list':cal_list, 'calendar_objects':calendar_objects,  'calendar_single': calendar_single,
+    	  'cal_relations_all': cal_relations_all, 'cal_relations_host': cal_relations_host,
     	  'cal_relations_host_count': cal_relations_host_count,
     	  'cal_list_host': cal_list_host,
     	  'here': quote(request.get_full_path())
