@@ -54,7 +54,15 @@
 				
 			<H3>jess moved offending text to a blank text doc  - will move it back </H3>
 
-
+				{% for hostcaleach in cal_list_host %}
+						<div class="row">							
+								<div class="col-xs-12 col-sm-6">
+										<h4> Host {{ host.first_name }} {{ host.last_name }}'s  Calendar: {{ hostcaleach.slug }} </h4>																							
+										<div class="col-xs-12 col-sm-6">	{% month_table hostcaleach thismonth_objects|get_item:hostcaleach.slug "small" %}  	</div> 													
+										<div class="col-xs-12 col-sm-6">  {% month_table hostcaleach thismonth_objects|get_item:hostcaleach.slug "small" +1 %}	</div> 
+								</div> <!--col, containing calendars -->	
+						</div>									
+				{% endfor %}
 
 					
 		</div> <!--row, containing all -->
@@ -75,10 +83,9 @@
 								</div> <!--row with cal-->
 				{% endfor %}
 				
-		<H4>Show Test Calendar 1</H4>
-			
+]
 
-		<H4>SHOW OTHER CALENDAR VARIABLES</H4>		
+		<H4>SHOW OTHER CALENDAR VARIABLES - CURRENTLY REMOVED</H4>		
 								
 
 					
