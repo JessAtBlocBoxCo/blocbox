@@ -37,13 +37,8 @@
 			</div>				
 		
 			<h3>Show the AvailabilityUser{{host.id}} Calendar (Bi-Montly View): {{ AvailabilityCal }}</h3>
-					<div class="row">							
-						<div class="col-xs-12">														
-								<!--syntax: month_table calls the template, next is the calendar OBJECT rather than slug, next is thismonth_object_single -->							
-								<div class="col-xs-12 col-sm-6">	{% month_table AvailabilityCal  AvailabilityCal_MonthObject "small" %}  	</div> 																							
-								<div class="col-xs-12 col-sm-6">  {% month_table AvailabilityCal  AvailabilityCal_MonthObject "small" +1 %}	</div> 
-						</div> <!--col, containing calendars -->	
-					</div>	
+					
+					<p>SHOW DATE {{date}} SHOW AVAILABILITYCAL {{ AvailiabilityCal }} </p>
 			
 			<h3>Calendars Associated with Host {{ host.first_name }} {{ host.last_name }} ( {{ host.email }} ) </h3> 	
 			<div class="row"> <!--row containing all calendars-->
