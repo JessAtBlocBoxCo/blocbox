@@ -176,6 +176,8 @@ The URLs for this site, and the corresponding files are as follows:
 *-----------------------------------------------------------------------*
 6. SCHEDULE/CALENDAR APP - HOW IT WORKS
 *-----------------------------------------------------------------------*
+	Schedule templates
+		chedule/templates/schedule/calendarbase.html extends templates/shedule/base.html extends  schedule/templates/site_base.html,
 	Schedule Tables:
 		Calendar: lists each of the calendars,
 				fields: "name" and "slug' - dont know the difference
