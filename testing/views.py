@@ -60,7 +60,7 @@ def dashboard_test(request, host_id=None):
     
 #www.blocbox.co/testing/jessstes; .blocbox.co/testing/jesstest/host2/ is to link it to a host's cal
 # rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
-def jesscaltest(request, calendar_slug_single = "testcalendar1", host_id=None):
+def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1", 
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -94,9 +94,9 @@ def jesscaltest(request, calendar_slug_single = "testcalendar1", host_id=None):
         calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
         thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
     #for a single calendar called i
-    calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
-    event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
-    thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
+    #calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
+    #event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
+    #thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
     #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
     cal_relations_all = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
     cal_list_host = []
@@ -113,7 +113,7 @@ def jesscaltest(request, calendar_slug_single = "testcalendar1", host_id=None):
         'host':host, 
         'connections_all':connections_all,
     	  'date':date, 
-    	  'thismonth_objects':thismonth_objects, 'thismonth_object_single':thismonth_object_single,
+    	  #'thismonth_objects':thismonth_objects, 'thismonth_object_single':thismonth_object_single,
     	  'thismonthname':thismonthname, 'weekday_names': weekday_names,
         'cal_list':cal_list, 'calendar_objects':calendar_objects,  'calendar_single': calendar_single,
     	  'cal_relations_all': cal_relations_all, 'cal_relations_host': cal_relations_host,
