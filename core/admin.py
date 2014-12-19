@@ -15,12 +15,13 @@ log = logging.getLogger(__name__)
 from django.utils.encoding import force_text
 """
 
-#Create a simpler admin interface
+#Create a simpler admin interface - just pass everything
 class UserInfoAdmin(admin.ModelAdmin):
-    pass
-  
-
-    
+    #just list 'pass' if you want it to id just the email address and then they clik on it to see other fields
+    #pass
+    list_display = ('id', 'email', 'zipcode', 'first_name', 'last_name', 'host')
+    list_filter = ['host', 'zipcode', 'city']
+    search_fields = ['email', 'first_name', 'last_name]]  
     
 admin.site.register(UserInfo, UserInfoAdmin)
 admin.site.unregister(Group)
