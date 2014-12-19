@@ -378,43 +378,25 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     else:
         date = timezone.now()
         local_timezone = request.session.setdefault('django_timezone', 'UTC')     
-    local_timezone = pytz.timezone(local_timezone) #this is working]
-    thismonthname = Month(date, None, None, local_timezone) 
-    cal_list = Calendar.objects.all()
-    calendar_objects = {} 
-    event_list_objects = {}
-    thismonth_objects = {}
-    test_calslugs = []
-    for cal in cal_list:
-        event_list = GET_EVENTS_FUNC(request, cal)
-        calendar_objects[cal.slug] = get_object_or_404(Calendar, slug=cal.slug)
-        thismonth_objects[cal.slug] = Month(event_list, date, None, None, local_timezone)
-    #for a single calendar called i
-    calendar_single = get_object_or_404(Calendar, slug=calendar_slug_single) #this is working
-    event_list_single = GET_EVENTS_FUNC(request, calendar_single)  #this is working 
-    thismonth_object_single = Month(event_list_single, date, None, None, local_timezone) #specific to the calendar  
-    #Show all calendars associated with a particular host, host_id is currently defined above when called - want to pass it in URL
-    cal_relations_all = CalendarRelation.objects.all() #this is a list of CalendarRelation objects
-    cal_list_host = []
-    if host:
-        cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)
-        cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
-        for cal in cal_relations_host:
-            cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
+    local_timezone = pytz.timezone(local_timezone) #this is working]    #for a single calendar called i
+    #cal_list_host = []
+    if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
+        #cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)        
+        #cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
+        #for cal in cal_relations_host:
+        #    cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
+        #        AvailabilityCal_Slug = "AvailabilityUser" + str(host.id)
+        AvailabilityCal = get_object_or_404(Calendar, slug=AvailabilityCal_Slug)
+        AvailabilityCal_EventList = GET_EVENTS_FUNC(request, AvailabilityCal)
+        AvailabilityCal_MonthObject = Month(AvailabilityCal_EventList, date, None, None, local_timezone)
     else:
-        cal_relations_host = None
-        cal_relations_host_count = None
+        #cal_relations_host = None
+        #cal_relations_host_count = None
     return render(request, 'blocbox/startashipment.html', {
-		    'enduser':enduser, 'host': host, 
-		    'connections_all': connections_all, 
-		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
-		    'date':date, 
-    	  'thismonth_objects':thismonth_objects, 'thismonth_object_single':thismonth_object_single,
-    	  'thismonthname':thismonthname, 'weekday_names': weekday_names,
-        'cal_list':cal_list, 'calendar_objects':calendar_objects,  'calendar_single': calendar_single,
-    	  'cal_relations_all': cal_relations_all, 'cal_relations_host': cal_relations_host,
-    	  'cal_relations_host_count': cal_relations_host_count,
-    	  'cal_list_host': cal_list_host,
+		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
+		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend, 'date':date, 
+		    'AvailabilityCal': AvailabilityCal, 'AvailabilityCal_MonthObject': AvailabilityCal_MonthObject
+    	  #'cal_relations_host_count': cal_relations_host_count, 'cal_relations_host': cal_relations_host, 'cal_list_host': cal_list_host,
     	  'here': quote(request.get_full_path())
 		})
     
