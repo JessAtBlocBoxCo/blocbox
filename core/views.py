@@ -407,7 +407,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 
 		    'connections_all': connections_all, 
-		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend
+		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
 		    'date':date, 
     	  'thismonth_objects':thismonth_objects, 'thismonth_object_single':thismonth_object_single,
     	  'thismonthname':thismonthname, 'weekday_names': weekday_names,
