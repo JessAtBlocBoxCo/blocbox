@@ -109,13 +109,12 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         cal_relations_host = None
         cal_relations_host_count = None
     return render(request, 'testing/jesstest.html', { 
-        'enduser':enduser, 
-        'host':host, 
+        'enduser':enduser, 'host':host, 
         'connections_all':connections_all,
-    	  'date':date, 
-    	  #'thismonth_objects':thismonth_objects, 'thismonth_object_single':thismonth_object_single,
-    	  'thismonthname':thismonthname, 'weekday_names': weekday_names,
-        'cal_list':cal_list, 'calendar_objects':calendar_objects,  'calendar_single': calendar_single,
+    	  'date':date,     	   
+    	  #'thismonth_object_single':thismonth_object_single, 'calendar_single': calendar_single,
+    	  'thismonth_objects':thismonth_objects, 'thismonthname':thismonthname, 'weekday_names': weekday_names,
+        'cal_list':cal_list, 'calendar_objects':calendar_objects,  
     	  'cal_relations_all': cal_relations_all, 'cal_relations_host': cal_relations_host,
     	  'cal_relations_host_count': cal_relations_host_count,
     	  'cal_list_host': cal_list_host,
