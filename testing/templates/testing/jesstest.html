@@ -36,10 +36,10 @@
 						{% endfor %}
 			</div>				
 		
-			<h3>Show the AvailabilityUser{{host.id}} Calendar (Bi-Montly View): {{ AvailabilityCal }}
-				  show AvailabilityCal.Slug {{ AvailabilityCal.slug }}</h3>
-					
-					<p>SHOW DATE {{date}} SHOW AVAILABILITYCAL {{ AvailabilityCal }} </p>
+			<h3>Show the AvailabilityUser{{host.id}} Calendar (Bi-Montly View): {{ AvailabilityCal.Slug }} </h3>
+			
+			<p> Show AvailabilityCal {{ AvailabilityCal }} SHOW DATE {{date}}
+				 Show Month Object {{ AvailabilityCal_MonthObject }} </p>
 			
 			<h3>Calendars Associated with Host {{ host.first_name }} {{ host.last_name }} ( {{ host.email }} ) </h3> 	
 			<div class="row"> <!--row containing all calendars-->
