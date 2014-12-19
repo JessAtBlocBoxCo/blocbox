@@ -119,6 +119,9 @@
                inside your package's expected delivery window. Click "submit" once availability is confirmed.</h6>
               
           <!--add the calendar associated with this host (its still under the if-host condition)-->  
+         	{% load i18n %}
+					{% load scheduletags i18n %}
+					{% load scheduletags %}
 					<h3>Calendars Associated with Host: {{ host.email }} </h3> 	
 					<div class="row"> <!--row containing all calendars-->
 			
