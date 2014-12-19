@@ -389,9 +389,6 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         AvailabilityCal = get_object_or_404(Calendar, slug=AvailabilityCal_Slug)
         AvailabilityCal_EventList = GET_EVENTS_FUNC(request, AvailabilityCal)
         AvailabilityCal_MonthObject = Month(AvailabilityCal_EventList, date, None, None, local_timezone)
-    else:
-        #cal_relations_host = None
-        #cal_relations_host_count = None
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend, 'date':date, 
