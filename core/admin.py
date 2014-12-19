@@ -21,7 +21,7 @@ class UserInfoAdmin(admin.ModelAdmin):
     #pass
     list_display = ('id', 'email', 'zipcode', 'first_name', 'last_name', 'host')
     list_filter = ['host', 'zipcode', 'city']
-    search_fields = ['email', 'first_name', 'last_name]]  
+    search_fields = ['email', 'first_name', 'last_name']  
     
 admin.site.register(UserInfo, UserInfoAdmin)
 admin.site.unregister(Group)
