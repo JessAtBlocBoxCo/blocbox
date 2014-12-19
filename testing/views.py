@@ -105,6 +105,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
         for cal in cal_relations_host:
             cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
+        AvailabilityCal = "AvailabilityUser" + str(host.id)
     else:
         cal_relations_host = None
         cal_relations_host_count = None
@@ -117,7 +118,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         'cal_list':cal_list, 'calendar_objects':calendar_objects,  
     	  'cal_relations_all': cal_relations_all, 'cal_relations_host': cal_relations_host,
     	  'cal_relations_host_count': cal_relations_host_count,
-    	  'cal_list_host': cal_list_host,
+    	  'cal_list_host': cal_list_host, 
+    	  'AvailabilityCal': AvailabilityCal,
     	  'here': quote(request.get_full_path())
     }) 
 
