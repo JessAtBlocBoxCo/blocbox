@@ -112,15 +112,9 @@ def calendar_by_periods(request, calendar_slug, periods=None, template_name="sch
             period_objects[period.__name__.lower()] = period(event_list, date, None, local_timezone) 
         else:
             period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
-    period_names = {}
-    fmt = settings.DATE_FORMAT
-    for period_object in period_objects:
-        period_names[period_object.__name__.lower()] = format(period_object, fmt)
     return render_to_response(template_name, {
         'date': date,
         'periods': period_objects,
-        #JMY adding formatted
-        'period_names': period_names,
         'calendar': calendar,
         'weekday_names': weekday_names,
         'here': quote(request.get_full_path()),
