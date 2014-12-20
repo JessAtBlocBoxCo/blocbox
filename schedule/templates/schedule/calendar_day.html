@@ -14,12 +14,12 @@
 {% block calendarcontent %}
 
 
-	<div class="row" align="center">
+<div class="row" align="center">
 			   <h5>Daily Events for {{ calendar.name }}: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </h5>
 			   <h5><a href="{% url "day_calendar" calendar.slug %}"> {% trans "Go to Today's Calendar" %} </a> </h5>
-				
-				
-
+											
+		<div class="row"> <!--MORINING EVENTS-->
+			
 				<!--Early morning availability: 7 to 9: 2 by 60 = 120 minute incrememnt-->
 				<div class="col-xs-12 col-sm-4 align" align="left"> <!--morning events-->
 			      {% daily_table periods.day  "Early Morning (7AM to 9AM)"  300 60 300 7 9 120 %} <!--it takes UTC and prints Pacific - also things right now is UTC
@@ -27,36 +27,45 @@
 			      <!--syntax: daily_table(context, day, width, width_slot, height, start=8, end=20, increment=30): 
 			      		width=420px, width_slot=120px -->
 			  </div>
-				
+			  
 				<!--morning availability: 9AM to Noon(8-12): 3 by 60 = 180 minute incrememnt-->
-				<div class="col-xs-12 col-sm-4 align" align="left"> <!--morning events-->
+				<div class="col-xs-12 col-sm-6 align" align="left"> <!--morning events-->
 			      {% daily_table periods.day "Morning (9AM to Noon)" 300 60 300 9 12 180  %} <!--it takes UTC and prints Pacific - also things right now is UTC
 			      																										so 16 will print as 8am ... -->
-			      <!--syntax: daily_table(context, day, width, width_slot, height, start=8, end=20, increment=30): 
-			      		width=420px, width_slot=120px -->
-			  </div>
-				
-				
-				<!--Afternoon availability: Noon-5PM (12-17): 5 by 60 = 300 minute increment)-->
-				<div class="col-xs-12 col-sm-4" align="left">
+			      <!--syntax: daily_table(context, day, width, width_slot, height, start=8, end=20, increment=30): width=420px, width_slot=120px -->
+			  </div>		
+		</div>	<!--row with morning events-->
+		
+		<!--AFTERNOON EVENTS-->
+		<div class="row>
+				<!--Early Afternoon availability: Noon-4PM (12-16): 5 by 60 = 240 minute increment)-->
+				<div class="col-xs-12 col-sm-6" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day "Afternoon (Noon - 5PM)" 300 60 300 12 17 300  %}
+			      {% daily_table periods.day "Early Afternoon (Noon - 4PM)" 300 60 300 12 16 240  %}
 			  </div>
-			  
-			  <!--Evening Availability: 5PM-9PM(17-21): 4 by 60 = 240 mimute increment-->
+		 		 
+				<!--Late Afternoon/Earlyin Evening Availability: 4PM-7PM(16-19): 3 by 60 = 180 mimute increment-->
 			  <div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day "Evening (5PM - 9PM)" 300 60 300 17 21 240  %}
+			      {% daily_table periods.day "Late Afternoon/Early Evening (4PM - 7PM)" 300 60 300 16 19 180  %}
 			  </div>
-			  
-			  <!--Late Night Availability: 9PM to 11PM (21-23): 2 by 60 = 120 minute increment
-			  		NOTE: Maybe default off??-->
+		</div> <!--row with afternoon events-->
+		
+		<div class="row"> <!--LATE EVENING EVENTS -->
+				<!--Late Night Availability: 7PM to 10PM (19-22): 3 by 60 = 180 minute increment NOTE: Maybe default off??-->
 			  <div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day "Late Night (9PM-11PM)" 300 60 300 21 23 120  %}
+			      {% daily_table periods.day "Evening (7PM-10PM)" 300 60 300 19 22 180  %}
 			  </div>
-
-	</div> <!--row-->
+			  
+			  <!--Late Night Availability: 10PM to 12PM (22-24): 2 by 60 = 120 minute increment NOTE: Maybe default off??-->
+			  <div class="col-xs-12 col-sm-4" align="left">
+			  		<!--afternoon-->
+			      {% daily_table periods.day "Late Night (10PM-12PM)" 300 60 300 22 24 120  %}
+			  </div>
+		</div> <!--row with late evening events -->
+		
+</div> <!--row with everything-->
 
 <!--
 <p>	TEST - SHOW VARIABLES <br> SHOW DATE {{ date }} <br>
