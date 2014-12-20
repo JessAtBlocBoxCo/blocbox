@@ -42,7 +42,7 @@ def day_cell(context, calendar, day, month, size="regular"):
 
 
 @register.inclusion_tag("schedule/_daily_table.html", takes_context=True)
-def daily_table(context, day, width, width_slot, height, start, end, increment=30):
+def daily_table(context, day, width, width_slot, height, start, end, increment=30, timewindow_name):
     """
       Display a nice table with occurrences and action buttons.
       Arguments:
@@ -52,6 +52,7 @@ def daily_table(context, day, width, width_slot, height, start, end, increment=3
       start - hour at which the day starts
       end - hour at which the day ends
       increment - size of a time slot (in minutes)
+      timewindow_name - added by JMY to define the time window because the time zone thing was crazy
     """
     user = context['request'].user
     addable = CHECK_EVENT_PERM_FUNC(None, user)
@@ -71,6 +72,8 @@ def daily_table(context, day, width, width_slot, height, start, end, increment=3
     context['width_slot'] = width_slot
     context['width_occ'] = width_occ
     context['height'] = height
+    #JMY adding timewindow_name
+    context['timewindow_name'] = timewindow_name
     return context
 
 

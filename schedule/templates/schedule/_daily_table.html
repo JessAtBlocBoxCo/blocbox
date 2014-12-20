@@ -1,10 +1,12 @@
-<!--this is _daily_table.html, JMY surgery on 19 Dec 2014-->
+<!--this is _daily_table.html, JMY surgery on 19 Dec 2014, its rendered by calendar_day.html to populate each cell
+		the view is defined in scheduletags.dailytable-->
 {% load scheduletags %}
   <div class="col-xs-12">
     {% for slot in slots %}
     		<div class="row">
+    			<span> TEST TIMEWINDOW_NAME {{ timewindow_name }} </span>
     			<!--the time is wrong here - if put in "16/4PM it registers as 8AM"-->
-      		<span class="time">{{ slot.start }}</span> <!--{ { slot.start|time:"G:i" } } -->
+      		<span class="time">{{ slot.start }} </span> <!--{ { slot.start|time:"G:i" } } -->
       	{% if addable %}
       	<!--the time zone is right in the URL -->
       	{% create_event_url calendar slot.start %}
