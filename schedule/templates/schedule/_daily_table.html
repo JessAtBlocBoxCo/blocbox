@@ -4,21 +4,19 @@
   <div class="col-xs-12 slots">
     {% for slot in slots %} <!--the way i am defining it there is only one slot each time its called -->
     		<div class="row">
-    			<!--the time is wrong here - if put in "16/4PM it registers as 8AM"
+    				<!--the time is wrong here - if put in "16/4PM it registers as 8AM"
     					JMY edited this by adding the timedinwo_name argumetn to avoid the UTC issue - the time windows are defined in calendar_day.hjtml-->
-      		<span> {{ timewindow_name }} </span> <!-- {{ slot.start|time:"G:i" }} -->
-      	{% if addable %}
-      	<!--the time zone is right in the URL -->
-      	{% create_event_url calendar slot.start %}
-      	{% endif %}
-    		</div>
+						<span> {{ timewindow_name }} </span> <!-- {{ slot.start|time:"G:i" }} -->
+      			{% if addable %} 	{% create_event_url calendar slot.start %}	{% endif %}
+    		</div> <!--row-->
     {% endfor %}
   </div> <!--col containing all slots-->
   
   <div class="col-xs-12 occs">
   {% for occ in occurrences %}
-      <div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" 
-      style="top:{{occ.top}}px;left:{{occ.left}}px;width:{{occ.width}}px;height:{{occ.height}}px;" onclick="openDetail(this);">
+      <div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" onclick="openDetail(this);">
+      	<!--style="top:{{occ.top}}px;left:{{occ.left}}px;width:{{occ.width}}px;height:{{occ.height}}px;"--> 
+      	
         {% options occ %}
         {% title occ %}
 
