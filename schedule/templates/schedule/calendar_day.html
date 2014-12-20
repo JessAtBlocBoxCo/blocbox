@@ -18,48 +18,23 @@
 			   <h5>Daily Events for {{ calendar.name }}: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </h5>
 			   <h5><a href="{% url "day_calendar" calendar.slug %}"> {% trans "Go to Today's Calendar" %} </a> </h5>
 		
-		<!--syntax for daily_table template call: <!--syntax: daily_table(context, day, timewindow_name, width, width_slot, height, start=8, end=20, increment=30): width=420px, width_slot=120px -->									
-		<div class="row"> <!--MORINING EVENTS-->
-			
-				<!--Early morning availability: 7 to 9: 2 by 60 = 120 minute incrememnt-->
-				<div class="col-xs-12 col-sm-6 align" align="left"> <!--morning events-->
-			      {% daily_table periods.day  "Early Morning (7AM to 9AM)"  300 60 300 7 9 120 %}
-			  </div>
-			  
-				<!--morning availability: 9AM to Noon(8-12): 3 by 60 = 180 minute incrememnt-->
-				<div class="col-xs-12 col-sm-6 align" align="left"> <!--morning events-->
-			      {% daily_table periods.day "Morning (9AM to Noon)" 300 60 300 9 12 180  %} 
-			  </div>		
-		</div>	<!--row with morning events-->
-		
-		<div class="row"> <br>  </div>
+		<!--JMY: right now i'm just letting user provide avialability for full day - 
+				because taht is what the user sees in 'star ta shipment' -- if we want to figure out a way to go back to 
+				time slots, see the calendar_dayWITHTIMESLOTS.html template -- that one has by time slot -->
 				
-		<div class="row"> <!--AFTERNOON EVENTS-->
-				<!--Early Afternoon availability: Noon-4PM (12-16): 5 by 60 = 240 minute increment)-->
-				<div class="col-xs-12 col-sm-6" align="left">
-			      {% daily_table periods.day "Early Afternoon (Noon - 4PM)" 300 60 300 12 16 240  %}
-			  </div>
-		 		 
-				<!--Late Afternoon/Earlyin Evening Availability: 4PM-7PM(16-19): 3 by 60 = 180 mimute increment-->
-			  <div class="col-xs-12 col-sm-6" align="left">
-			      {% daily_table periods.day "Late Afternoon/Early Evening (4PM - 7PM)" 300 60 300 16 19 180  %}
-			  </div>
-		</div> <!--row with afternoon events-->
-		
-		<div class="row"> <br>  </div>
-		
-		<div class="row"> <!--LATE EVENING EVENTS -->
-				<!--Late Night Availability: 7PM to 10PM (19-22): 3 by 60 = 180 minute increment NOTE: Maybe default off??-->
-			  <div class="col-xs-12 col-sm-6" align="left">
-			      {% daily_table periods.day "Evening (7PM-10PM)" 300 60 300 19 22 180  %}
+		<!--syntax for daily_table template call: <!--syntax: daily_table(context, day, timewindow_name, width, width_slot, height, start=8, end=20, increment=30): width=420px, width_slot=120px -->									
+
+		<!--JMY NOTE: really.. this should just link to the enter event details if there's just one time slot per day"
+			<!--empty row -->
+			<div class="row"> <br>  </div>
+
+			  <div class="col-xs-12 col-sm-12">
+			  		{% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %}
+			      {% daily_table periods.day "Edit Your Availability" 300 60 300 0 24 180  %}
 			  </div>
 			  
-			  <!--Late Night Availability: 10PM to 12PM (22-24): 2 by 60 = 120 minute increment NOTE: Maybe default off??-->
-			  <div class="col-xs-12 col-sm-6" align="left">
-			  		<!--afternoon-->
-			      {% daily_table periods.day "Late Night (10PM-12PM)" 300 60 300 22 24 120  %}
-			  </div>
-		</div> <!--row with late evening events -->
+
+
 		
 </div> <!--row with everything-->
 
