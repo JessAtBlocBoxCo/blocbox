@@ -108,7 +108,7 @@ def calendar_by_periods(request, calendar_slug, periods=None, template_name="sch
     local_timezone = request.session.setdefault('django_timezone', 'PST')
     #HALP FIX THE TIMEZON AHHHH
     #local_timezone = request.session.setdefault('django_timezone', 'PST')
-    #local_timezone = pytz.timezone(local_timezone)
+    local_timezone = pytz.timezone(local_timezone)
     period_objects = {} 
     for period in periods:
         if period.__name__.lower() == 'year':
