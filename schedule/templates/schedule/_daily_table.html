@@ -2,11 +2,11 @@
 		the view is defined in scheduletags.dailytable-->
 {% load scheduletags %}
   <div class="col-xs-12">
-    {% for slot in slots %}
+    {% for slot in slots %} <!--the way i am defining it there is only one slot each time its called -->
     		<div class="row">
     			<!--the time is wrong here - if put in "16/4PM it registers as 8AM"
     					JMY edited this by adding the timedinwo_name argumetn to avoid the UTC issue - the time windows are defined in calendar_day.hjtml-->
-      		<span class="time"> {{ timewindow_name }} </span> <!-- {{ slot.start|time:"G:i" }} -->
+      		<span> {{ timewindow_name }} </span> <!-- {{ slot.start|time:"G:i" }} -->
       	{% if addable %}
       	<!--the time zone is right in the URL -->
       	{% create_event_url calendar slot.start %}
