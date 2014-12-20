@@ -19,30 +19,31 @@
 			   <h5><a href="{% url "day_calendar" calendar.slug %}"> {% trans "Go to Today's Calendar" %} </a> </h5>
 				
 				
-				<!--morning availability: 8AM to Noon (4 by 60 = 240 minute incrememnt)-->
+				<!--morning availability: 8AM to Noon(8-12): 4 by 60 = 240 minute incrememnt-->
 				<div class="col-xs-12 col-sm-4 align" align="left"> <!--morning events-->
-			      {% daily_table periods.day 300 60 300 16 20 240 %} <!--it takes UTC and prints Pacific - also things right now is UTC
+			      {% daily_table periods.day 300 60 300 8 12 240 %} <!--it takes UTC and prints Pacific - also things right now is UTC
 			      																										so 16 will print as 8am ... -->
 			      <!--syntax: daily_table(context, day, width, width_slot, height, start=8, end=20, increment=30): 
 			      		width=420px, width_slot=120px -->
 			  </div>
 				
-				<!--Afternoon availability: Noon-5PM (5 by 60 = 300 minute increment)-->
+				<!--Afternoon availability: Noon-5PM (12-17): 5 by 60 = 300 minute increment)-->
 				<div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day 300 60 300 20 24 300 %}
+			      {% daily_table periods.day 300 60 300 12 17 300 %}
 			  </div>
 			  
-			  <!--Evening Availability: 5PM-9PM (4 by 60 = 240 mimute increment)-->
+			  <!--Evening Availability: 5PM-9PM(17-21): 4 by 60 = 240 mimute increment-->
 			  <div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day 300 60 300 0 4 240 %}
+			      {% daily_table periods.day 300 60 300 17 21 240 %}
 			  </div>
 			  
-			  <!--Late Night Availability: 9PM to 11PM (Maybe Defeault Off), 2 by 60 = 120 minute increment-->
+			  <!--Late Night Availability: 9PM to 11PM (21-23): 2 by 60 = 120 minute increment
+			  		NOTE: Maybe default off??-->
 			  <div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day 300 60 300 0 4 120 %}
+			      {% daily_table periods.day 300 60 300 21 23 120 %}
 			  </div>
 
 	</div> <!--row-->
