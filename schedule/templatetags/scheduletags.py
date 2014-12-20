@@ -226,11 +226,7 @@ def prevnext(target, slug, period, fmt=None):
 def cal_month_and_year(period, fmt=None):
     if fmt is None:
         fmt = settings.DATE_FORMAT
-    context = {
-        'period': period,
-        'period_name': format(period.start, fmt),
-    }
-    return context
+    return format(period.start, fmt)
 
 
 @register.inclusion_tag("schedule/_detail.html")
