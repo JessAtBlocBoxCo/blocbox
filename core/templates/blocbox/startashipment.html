@@ -123,26 +123,21 @@
   						</ul>  							
             </div> <!--col-xs-6 dropdown-->
         </div> <!--row-->
-    <!-- {  % endif %  } -- if host -->
+
        
-    <h6 class="col-xs-6 margintop30px marginbottom30px">
-            		First, select the shipping method to provide an approximate date of arrival
-    </h6>
-           	 
-    {% if dayrangestart %}
-        			<h4>Your package will arrive in {{dayrangestart}} to  {{dayrangeend}} days</h3>
-    {% endif %}
+           	
     
-    <!--
-    {   % if host %  }
-    -->    
-        <!---AVAILABILITY--->
-        <div class="row">  
-          <h6 class=" col-xs-12 col-sm-3 col-sm-offset-1 marginsides3pct marginbottom20px">Next, confirm {{ host.first_name }} is available 
-               inside your package's expected delivery window. Click "submit" once availability is confirmed.</h6>
+		<!--HOST CALENDAR -->
+    <div class="row">  
+          <h6 class=" col-xs-12 margintop30px marginbottom30px">
+          			Next, confirm {{ host.first_name }} is available 
+               inside your package's expected delivery window. Click "submit" once availability is confirmed.
+          </h6>
               
           <!--add the calendar associated with this host (its still under the if-host condition)-->  
-
+					{% if dayrangestart %}
+        			<h6 class="col-xs-4">Your package will arrive in {{dayrangestart}} to  {{dayrangeend}} days</h3>
+    			{% endif %}
 						
 					<div class="col-xs-8"> <!--row containing all calendars-->												
 										<div class="row">
