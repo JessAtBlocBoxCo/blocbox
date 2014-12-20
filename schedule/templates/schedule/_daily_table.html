@@ -3,7 +3,7 @@
   <div class="col-xs-12">
     {% for slot in slots %}
     		<div class="row">
-      		<span class="time">{{ slot.start|time:"G:i" }}</span>
+      		<span class="time">{{ slot.start }}</span> <!--{ { slot.start|time:"G:i" } } -->
       	{% if addable %}
       	{% create_event_url calendar slot.start %}
       	{% endif %}
