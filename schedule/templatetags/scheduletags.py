@@ -294,7 +294,7 @@ def _cook_slots(period, increment, width, height):
         increment - slot size in minutes
         width - width of the slot column (px)
         height - height of the table (px)
-    """
+    """    
     tdiff = datetime.timedelta(minutes=increment)
     num = (period.end - period.start).seconds / tdiff.seconds
     s = period.start
