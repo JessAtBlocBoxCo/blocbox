@@ -136,12 +136,10 @@
 				{% if dayrangestart %}
 					<!--HOST CALENDAR -->
     			<div class="row">  
-          		<h6 class=" col-xs-12 marginbottom30px">
-          				Next, confirm {{ host.first_name }} is available 
-               		inside your package's expected delivery window. You indicated that your package will arrive in {{ dayrangestart}} to
-               		{{ dayrangeend }} days. Press your browser's 'back' button to select a different timeframe. <br>               		
-               		Click "submit" once availability is confirmed.
-          		</h6>	
+          	<h6 class=" col-xs-12 marginbottom30px">
+          			Next, confirm {{ host.first_name }} is available 	inside your package's expected delivery window ({{ dayrangestart}} to {{ dayrangeend }} days). 
+          			Press your browser's 'back' button to select a different timeframe. Click "submit" once availability is confirmed.
+          	</h6>	
 					</div> <!--row -->
 					<div class="row">
         			<h6 class="col-xs-4">	{{ host.first_name }}'s availability for the next two months is shown here.  
