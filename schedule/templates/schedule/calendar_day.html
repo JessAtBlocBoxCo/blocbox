@@ -12,8 +12,8 @@
 {% block calendarcontent %}
 						
 			<div class="tablewrapper">
-			    <div class="calendarname">Calendar Name: {{ calendar.name }}</div>
-			    {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %}
+			    <div>Calendar Name: {{ calendar.name }}</div>
+			    <div>Day: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </div>
 			    <div class="now">
 			      <a href="{% url "day_calendar" calendar.slug %}">
 			        {% trans "Today" %}
