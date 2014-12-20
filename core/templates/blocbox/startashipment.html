@@ -92,6 +92,8 @@
    
 		<!--confirming availabiility-->
 		{% if host %}
+					{% if dayrangestart %}
+					{% else %}
   	<div class="col-xs-8 col-xs-offset-2 bluebackground">
         <h6 class="col-xs-4 whitetext margintop15px marginsides3pct nopadding">Confirm {{host.first_name}}'s Availability</h6>
   	</div>
@@ -123,7 +125,7 @@
   						</ul>  							
             </div> <!--col-xs-6 dropdown-->
         </div> <!--row-->
-
+				{% endif %}
        
            	
     
