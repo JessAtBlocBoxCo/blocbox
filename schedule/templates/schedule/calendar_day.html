@@ -12,12 +12,10 @@
 {% block calendarcontent %}
 						
 			<div class="tablewrapper">
-			    <div>Calendar Name: {{ calendar.name }}</div>
-			    <div>Day: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </div>
-			    <div class="now">
-			      <a href="{% url "day_calendar" calendar.slug %}">
-			        {% trans "Today" %}
-			      </a>
+					<div class="row" align="center">
+			    		<div>Calendar Name: {{ calendar.name }}</div>
+			    		<div>Day: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </div>
+			     	 	<div><a href="{% url "day_calendar" calendar.slug %}"> {% trans "Go to Today" %} </a> </div>
 			    </div>
 			</div>
 			<div style="position:absolute;">
