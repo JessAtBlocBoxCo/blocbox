@@ -111,7 +111,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         AvailabilityCal_MonthObject = Month(AvailabilityCal_EventList, date, None, None, local_timezone)
     else:
     	  AvailabilityCal = None
-    	  AvailabilityCal_MonthObject = None
+        AvailabilityCal_MonthObject = None
         cal_relations_host = None
         cal_relations_host_count = None
     return render(request, 'testing/jesstest.html', { 
