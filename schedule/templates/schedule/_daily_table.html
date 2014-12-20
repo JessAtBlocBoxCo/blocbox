@@ -7,7 +7,6 @@
     				<!--the time is wrong here - if put in "16/4PM it registers as 8AM"
     					JMY edited this by adding the timedinwo_name argumetn to avoid the UTC issue - the time windows are defined in calendar_day.hjtml-->
 						{% if timewindow_name %} <span>  {{ timewindow_name }}  </span> {% endif %} <!-- {{ slot.start|time:"G:i" }} -->
-						<br>
 						<!--this link calls the _creat_event_options.html template that i've edited to say "Enter an Availability Conflict"-->
       			{% if addable %} 	{% create_event_url calendar slot.start %}	{% endif %}
     		</div> <!--row-->
