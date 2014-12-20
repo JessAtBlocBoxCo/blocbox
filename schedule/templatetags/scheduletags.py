@@ -1,3 +1,4 @@
+#this is schedule.template.scheduletags.py - has lots of the naming convetions for referencing scheduling tags
 import datetime
 from django.conf import settings
 from django import template

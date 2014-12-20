@@ -176,9 +176,9 @@ The URLs for this site, and the corresponding files are as follows:
 *-----------------------------------------------------------------------*
 6. SCHEDULE/CALENDAR APP - HOW IT WORKS
 *-----------------------------------------------------------------------*
-	Schedule templates: blocbox/schedule/templates/schedule
+6a. Schedule templates: blocbox/schedule/templates/schedule
 			calendarbase.html extends base.html extends schedule/templates/site_base.html extends blocbox/core/tempaltes/blocbox/base.html
-	Schedule Tables:
+6B. Schedule Tables:
 		Calendar: lists each of the calendars,
 				fields: "name" and "slug' - dont know the difference
 				i think we need separate one for each user, so name should be tied to user
@@ -186,6 +186,8 @@ The URLs for this site, and the corresponding files are as follows:
 			
 		Events
 		Rules
+		
+6C. Schedul tAgs: schedule.template.scheduletags.py - has lots of the naming convetions for referencing scheduling tags
 	
 *-----------------------------------------------------------------------*
 END: DJANGO ADMIN SITES
