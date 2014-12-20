@@ -1,0 +1,4 @@
+ id | host_user_id | end_user_id | added | intro_message | pickup_time | testfield 
+----+--------------+-------------+-------+---------------+-------------+-----------
+(0 rows)
+
