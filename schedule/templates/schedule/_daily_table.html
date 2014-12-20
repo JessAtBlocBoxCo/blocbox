@@ -13,7 +13,7 @@
     {% endfor %}
   </div> <!--col containing all slots-->
   
-  <div class="col-xs-12 occs">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2 occs">
   		<div><br></div>
   		{% for occ in occurrences %}
       <div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" onclick="openDetail(this);">
