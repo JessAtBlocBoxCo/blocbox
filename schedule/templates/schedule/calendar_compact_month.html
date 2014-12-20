@@ -10,7 +10,7 @@
 
 
 {% block calendarcontent %}
-			<p align="center"><b>{{ calendar.name }}</b></p>
+			<h4 align="center"> Calendar Name: {{ calendar.name }}</h4>
 			{% month_table calendar periods.month "small" %}
 {% endblock %}
 
