@@ -110,7 +110,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         AvailabilityCal_EventList = GET_EVENTS_FUNC(request, AvailabilityCal)
         AvailabilityCal_MonthObject = Month(AvailabilityCal_EventList, date, None, None, local_timezone)
     else:
-    	  AvailabilityCal = None
+        AvailabilityCal = None
         AvailabilityCal_MonthObject = None
         cal_relations_host = None
         cal_relations_host_count = None
