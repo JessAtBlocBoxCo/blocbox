@@ -7,16 +7,17 @@
   {% if occurrence.event.rule %}
     {% if occurrence.id %}
         <a href="#" onclick="openURL('{{ edit_occurrence }}?next={{ here }}', event);">
-            <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict" %}">
+            <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict (w/rule and id)" %}">
         </a>
     {% else %}
         <a href="#" onclick="openEditDialog(this, '{{ edit_occurrence }}?next={{ here }}', '{{ edit_event }}?next={{ here }}', event);">
-            <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict" %}">
+            <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict (w/rule no id)" %}">
         </a>
     {% endif %}
   {% else %}
+  	<!--this is the relevant one to edit, at least for now because i dont understand the rule thing-->
     <a href="#" onclick="openURL('{{ edit_event }}?next={{ here }}', event);">
-        <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict (No Rule - Test)" %}">
+        <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict" %}">
     </a>
   {% endif %}
   </span>
@@ -27,16 +28,18 @@
   {% if occurrence.event.rule %}
     {% if occurrence.id %}
         <a href="#" onclick="openURL('{{cancel_occurrence}}?next={{here}}', event);">
-            <img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict" %}">
+            <img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict (w/rule and id)" %}">
         </a>
     {% else %}
         <a href="#" onclick="openCancelDialog(this, '{{ cancel_occurrence }}?next={{here}}', '{{delete_event}}?next={{here}}', event);">
-            <img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict" %}">
+            <img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict (w/rule no id)" %}">
         </a>
     {% endif %}
   {% else %}
-    <a href="#" onclick="openURL('{{delete_event}}?next={{here}}', event);">
-    <img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict (No Rule - Test)" %}">
+  	<!--this is the relevant one to edit, at least for now b/c i don tunderstand the rule thing-->
+  	<a href="openURL('{{delete_event}}?next={{here}}', event);">
+  	<!-- <a href="#" onclick="openURL('{{delete_event}}?next={{here}}', event);"> -->
+    		<img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict)" %}">
     </a>
   {% endif %}
 </span>
