@@ -295,20 +295,16 @@ def _cook_slots(period, increment, width, height):
         width - width of the slot column (px)
         height - height of the table (px)
     """    
-    #tdiff = datetime.timedelta(minutes=increment)
-    #num = (period.end - period.start).seconds / tdiff.seconds
-    num = (period.end - period.start).seconds
+    tdiff = datetime.timedelta(minutes=increment)
+    num = (period.end - period.start).seconds / tdiff.seconds
     s = period.start
     slots = []
     for i in range(num):
-        #JMY removing tdiff reference
-        sl = period.get_time_slot(s, s)
-        #sl = period.get_time_slot(s, s + tdiff)
+        sl = period.get_time_slot(s, s + tdiff)
         sl.top = int(height / float(num)) * i
         sl.height = int(height / float(num))
         slots.append(sl)
-        #s = s + tdiff
-        s = s     
+        s = s + tdiff
     return slots
 
 
