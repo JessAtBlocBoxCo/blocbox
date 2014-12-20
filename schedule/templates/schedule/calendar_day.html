@@ -17,19 +17,29 @@
 	<div class="row" align="center">
 			   <h5>Daily Events for {{ calendar.name }}: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </h5>
 			   <h5><a href="{% url "day_calendar" calendar.slug %}"> {% trans "Go to Today's Calendar" %} </a> </h5>
-		
+				
+				
+				<!--morning availability: 8AM to Noon (4 by 60 = 240 minute incrememnt)-->
 				<div class="col-xs-12 col-sm-4 align" align="left"> <!--morning events-->
-			      {% daily_table periods.day 300 60 300 16 20 120 %} <!--it takes UTC and prints Pacific - also things right now is UTC
+			      {% daily_table periods.day 300 60 300 16 20 240 %} <!--it takes UTC and prints Pacific - also things right now is UTC
 			      																										so 16 will print as 8am ... -->
 			      <!--syntax: daily_table(context, day, width, width_slot, height, start=8, end=20, increment=30): 
 			      		width=420px, width_slot=120px -->
 			  </div>
 				
+				<!--Afternoon availability: Noon-5PM (5 by 60 = 300 minute increment)-->
 				<div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day 300 60 300 20 24 120 %}
+			      {% daily_table periods.day 300 60 300 20 24 300 %}
 			  </div>
 			  
+			  <!--Evening Availability: 5PM-9PM (4 by 60 = 240 mimute increment)-->
+			  <div class="col-xs-12 col-sm-4" align="left">
+			  		<!--afternoon-->
+			      {% daily_table periods.day 300 60 300 0 4 240 %}
+			  </div>
+			  
+			  <!--Late Night Availability: 9PM to 11PM (Maybe Defeault Off), 2 by 60 = 120 minute increment-->
 			  <div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
 			      {% daily_table periods.day 300 60 300 0 4 120 %}
