@@ -32,8 +32,9 @@
 			  </div>		
 		</div>	<!--row with morning events-->
 		
-		<!--AFTERNOON EVENTS-->
-		<div class="row">
+		<br><br>
+				
+		<div class="row"> <!--AFTERNOON EVENTS-->
 				<!--Early Afternoon availability: Noon-4PM (12-16): 5 by 60 = 240 minute increment)-->
 				<div class="col-xs-12 col-sm-6" align="left">
 			      {% daily_table periods.day "Early Afternoon (Noon - 4PM)" 300 60 300 12 16 240  %}
@@ -44,6 +45,8 @@
 			      {% daily_table periods.day "Late Afternoon/Early Evening (4PM - 7PM)" 300 60 300 16 19 180  %}
 			  </div>
 		</div> <!--row with afternoon events-->
+		
+		<br><br>
 		
 		<div class="row"> <!--LATE EVENING EVENTS -->
 				<!--Late Night Availability: 7PM to 10PM (19-22): 3 by 60 = 180 minute increment NOTE: Maybe default off??-->
