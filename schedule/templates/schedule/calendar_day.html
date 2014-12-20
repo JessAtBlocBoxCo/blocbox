@@ -1,4 +1,6 @@
-<!--this is schedule/calendar_day.html, it extends schedule/calendarbase.html-->
+<!--this is schedule/calendar_day.html, it extends schedule/calendarbase.html
+		called by the view: calendar_by_periods (i think)
+-->
 
 {% extends "schedule/calendarbase.html" %}
 {% load scheduletags i18n %}
@@ -11,9 +13,12 @@
 
 {% block calendarcontent %}
 
-<p>TEST - SHOW DATE {{ date }} <br>
-	 SHOW PERIODS.DAY {{ periods.day}} <br>
-	 SHOW PERIODS {{ periods}}</p>
+<p>	TEST - SHOW DATE {{ date }} <br>
+	 	SHOW PERIODS.DAY {{ periods.day}} <br>
+	 	SHOW PERIODS {{ periods}}
+	 	show local_timezone {{ local_timezone }} <br>
+		SHOW PERIODS.
+</p>
 						
 	<div class="row" align="center">
 			   <h5>Daily Events for {{ calendar.name }}: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </h5>

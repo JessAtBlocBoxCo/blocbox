@@ -23,8 +23,6 @@ from schedule.periods import weekday_names
 from schedule.utils import check_event_permissions, coerce_date_dict
 
 
-activate(settings.TIME_ZONE)
-
 def calendar(request, calendar_slug, template='schedule/calendar.html'):
     """
     This view returns a calendar.  This view should be used if you are
@@ -123,6 +121,7 @@ def calendar_by_periods(request, calendar_slug, periods=None, template_name="sch
         'calendar': calendar,
         'weekday_names': weekday_names,
         'here': quote(request.get_full_path()),
+        'local_timezone': local_timezone,
     }, context_instance=RequestContext(request), )
 
 #'period_name': format(period.start, fmt),
