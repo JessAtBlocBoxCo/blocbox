@@ -127,28 +127,30 @@
        
            	
     
-		<!--HOST CALENDAR -->
-    <div class="row">  
-          <h6 class=" col-xs-12 marginbottom30px">
-          			Next, confirm {{ host.first_name }} is available 
-               inside your package's expected delivery window. Click "submit" once availability is confirmed.
-          </h6>
+
               
-          <!--add the calendar associated with this host (its still under the if-host condition)-->  
-					{% if dayrangestart %}
-        			<h6 class="col-xs-4">Your package will arrive in {{dayrangestart}} to  {{dayrangeend}} days. <br>
-        			{{ host.first_name }}'s availability for the next two months is shown here.  
-        						{{ host.first_name }} is available unless the date is blacked out.</h3>
-    			{% endif %}
-						
-					<div class="col-xs-8"> <!--row containing all calendars-->												
-										<div class="row">																						
+    		<!--add the calendar associated with this host (its still under the if-host condition)-->  
+				{% if dayrangestart %}
+					<!--HOST CALENDAR -->
+    			<div class="row">  
+          		<h6 class=" col-xs-12 marginbottom30px">
+          				Next, confirm {{ host.first_name }} is available 
+               		inside your package's expected delivery window. You indicated that your package will arrive in {{ dayrangestart}} to
+               		{{ dayrangeend }} days. Press your browser's 'back' button to select a different timeframe. <br>               		
+               		Click "submit" once availability is confirmed.
+          		</h6>	
+					</div> <!--row -->
+					<div class="row">
+        			<h6 class="col-xs-4">	{{ host.first_name }}'s availability for the next two months is shown here.  
+        					{{ host.first_name }} is available unless the date is blacked out.</h3>
+    			
+							<div class="col-xs-8"> <!--row containing all calendars-->												
+									<div class="row">																						
 												<div class="col-xs-12 col-sm-6">	{% month_table AvailabilityCal AvailabilityCal_MonthObject "small" %}  	</div> 													
 												<div class="col-xs-12 col-sm-6">  {% month_table AvailabilityCal AvailabilityCal_MonthObject "small" +1 %}	</div> 
-										</div> <!--row, containing calendars -->														
-        	</div> <!--row, containing calendars -->
-    </div> <!--row--> 
-         
+									</div> <!--row, containing calendars -->														
+        			</div> <!--row, containing calendars -->
+    			</div> <!--row-->          
         	<br> <br>
        		<div class="row">
 
@@ -171,6 +173,7 @@
         	<button class="bluebutton" onClick="window.location='/payment/host2';">Submit</button>    
     	</div> 
     	
+    	{% endif %} <!--if dayrange - showing calendar-->
 
 	{% endif %}
 </div>
