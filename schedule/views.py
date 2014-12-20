@@ -115,7 +115,7 @@ def calendar_by_periods(request, calendar_slug, periods=None, template_name="sch
     period_names = {}
     fmt = settings.DATE_FORMAT
     for period_object in period_objects:
-        period_names[period_object.__name__.lower()] = format(period_object.start, fmt)
+        period_names[period_object.__name__.lower()] = format(period_object, fmt)
     return render_to_response(template_name, {
         'date': date,
         'periods': period_objects,
