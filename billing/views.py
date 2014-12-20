@@ -41,17 +41,16 @@ response2 = g2.purchase(100, cc, options = {...})
 """
 
 #Add the base view -- this is before they have selected the produce/before pricing information is submitted
-def base(request, host_id=None):
+def base(request, host_id=None, dayrangestart=None, dayrangeend=None):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
-    else:
-    	  host = None
     date = timezone.now()
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     return render(request, 'blocbox/payment.html', { 
 		    'enduser':enduser, 'host':host,
     	  'date':date, 'local_timezone':local_timezone, 
+    	  'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
     	  'here': quote(request.get_full_path())
     })
 

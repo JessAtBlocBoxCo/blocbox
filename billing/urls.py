@@ -15,6 +15,7 @@ urlpatterns = patterns('',
 		#Base views - defined in billing/views.py
 		url(r'^$', 'paypal.standard.ipn.views.ask_for_money', name='payment_default'), #blocbox.co/payment, defaults o host_id=2 which is John
 		url(r'^host(?P<host_id>\d+)/$', 'billing.views.base', name='billingbase'), #blocbox.co/payment/host2
+		url(r'^host(?P<host_id>\d+)/days(?P<dayrangestart>\d+)to(?P<dayrangeend>\d+)/$', 'billing.views.base', name='billingbase'), 
 		#STANDARD-IPN URLs - view in paypal/standard/ipn/views.py
 		url(r'^host(?P<host_id>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask'), #blocbox.co/payment/host2/<TYPE?
 		url(r'^ipn/host(?P<host_id>\d+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_noamount'), #blocbox.co/payment/host2 - not really relevant - Default - Package Amount
