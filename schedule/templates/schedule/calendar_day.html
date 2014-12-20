@@ -1,5 +1,6 @@
 <!--this is schedule/calendar_day.html, it extends schedule/base.html-->
-{% extends "schedule/base.html" %}
+
+{% extends "schedule/calendarbase.html" %}
 {% load scheduletags i18n %}
 
 {% block title %} Calendar - Daily View/Add Events {% endblock %}
@@ -14,16 +15,18 @@
 
 
 			<div class="navigation">
-			  <a href="{% url "week_calendar" calendar.slug %}{% querystring_for_date periods.day.start 3 True %}">
-			    {% trans "Week" %}
-			  </a>
-			  <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date periods.day.start 2 True %}">
-			    {% trans "Month" %}
-			  </a>
-			  <a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.day.start 1 True %}">
-			    {% trans "Year" %}
-			  </a>
+			  		<a href="{% url "week_calendar" calendar.slug %}{% querystring_for_date periods.day.start 3 True %}">
+			  		  {% trans "Week" %}
+			  		</a>
+			  		<a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date periods.day.start 2 True %}">
+			  		  {% trans "Month" %}
+			  		</a>
+			  		<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.day.start 1 True %}">
+			  		  {% trans "Year" %}
+			  		</a>
 			</div>
+			
+			
 			<div class="tablewrapper">
 			    <div class="calendarname">{{ calendar.name }}</div>
 			    {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %}
