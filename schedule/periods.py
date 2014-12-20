@@ -364,8 +364,9 @@ class Day(Period):
             #start = local_start.astimezone(pytz.utc)
             #end = local_end.astimezone(pytz.utc)
             #JESS fixing this on 19 Dec 2014
-            start = local_start.astimezone(pytz.pst)
-            end = local_end.astimezone(pytz.pst)
+            pacifictz = pytz.timezone('US/Pacific')
+            start = local_start.astimezone(pacifictz)
+            end = local_end.astimezone(pacifictz)
         else:
             start = naive_start
             end = naive_end
