@@ -15,11 +15,11 @@
 			   <h5>Daily Events for {{ calendar.name }}: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </h5>
 			   <h5><a href="{% url "day_calendar" calendar.slug %}"> {% trans "Go to Today's Calendar" %} </a> </h5>
 		
-				<div>
+				<div class="col-xs-12 col-sm-6"> <!--morning events-->
 			      {% daily_table periods.day 420 120 600 0 12 %}
 			  </div>
 			
-			  <div>
+			  <div class="col-xs-12 col-sm-6"> <!--afternoon-->
 			      {% daily_table periods.day 420 120 600 12 24 %}
 			  </div>
 		
