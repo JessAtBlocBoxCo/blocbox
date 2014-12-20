@@ -2,7 +2,7 @@
 {% load scheduletags %}
   <div class="col-xs-12 col-sm-6">
     {% for slot in slots %}
-    		<div class="row align=center">
+    		<div class="row">
       		<span class="time">{{ slot.start|time:"G:i" }}</span>
       	{% if addable %}
       	{% create_event_url calendar slot.start %}
