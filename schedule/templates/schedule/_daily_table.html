@@ -14,19 +14,19 @@
   </div> <!--col containing all slots-->
   
   <div class="col-xs-12 occs">
-  		<br>
-  		{% for occ in occurrences %}
+  	<br>
+  	{% for occ in occurrences %}
       	<div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" onclick="openDetail(this);">
-      		<!-- style="top:{{occ.top}}px;left:{{occ.left}}px;width:{{occ.width}}px;height:{{occ.height}}px;">-->
+      				<!-- style="top:{{occ.top}}px;left:{{occ.left}}px;width:{{occ.width}}px;height:{{occ.height}}px;">-->
       	
-       	<!--	this the title of the current event and the 'options' tag which loads 'edit event' 'delete evet' etc
-       			the options stuff is defined in -->
-       	<p> Current Conflict:  {% title occ %} {% options occ %}  </p>
-				
-      </div> <!--href-->
-      <div id="{% hash_occurrence occ %}" > <!--style="display:none;"-->
-         {% include 'schedule/_detail.html' with occurrence=occ %}
-         <p>TEST TEXT IN DIF ID HASH_OCCURENCE</p>
-      </div>
-  {% endfor %}
+       				<!--	this the title of the current event and the 'options' tag which loads 'edit event' 'delete evet' etc
+       					the options stuff is defined in -->
+       				<p> Current Conflict:  {% title occ %} {% options occ %}  </p>
+      	</div> <!--href-->
+      
+      	<!--this div lists full event details - the display: none style tag hides it -->
+      	<div id="{% hash_occurrence occ %}" style="display:none;" >   {% include 'schedule/_detail.html' with occurrence=occ %} </div>
+      
+  	{% endfor %} <!--end for each occurence-->
+  	
   </div> <!--col-->
