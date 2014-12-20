@@ -25,14 +25,15 @@
 		<!--syntax for daily_table template call: <!--syntax: daily_table(context, day, timewindow_name, width, width_slot, height, start=8, end=20, increment=30): width=420px, width_slot=120px -->									
 
 		<!--JMY NOTE: really.. this should just link to the enter event details if there's just one time slot per day"
-			<!--empty row -->
-			<div class="row"> <br>  </div>
+			
+		<div class="row"> <br>  </div> <!--empty row -->
 
-			  <div class="col-xs-12 col-sm-12">
-			  		{% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %}
+		<div class="col-xs-12 col-sm-12" align="left">
+			  	<h3>
 			      {% daily_table periods.day 300 60 300 7 23 960  %} 
 			      <!--increment is all day: 24 times 60 -this is ausing zero division problems-->
-			  </div>
+			    </h3>
+		</div>
 			  
 
 
