@@ -13,7 +13,8 @@
 
 
 {% block calendarcontent %}
-			<div class="tablewrapper">			  		
+			<div class="tablewrapper">
+						<h3 align="center">{{ calendar.name }}</h4>			  		
 			  		{% month_table calendar periods.month "regular" %}
 			</div> <!--tablewrapper-->
 {% endblock %}
