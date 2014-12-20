@@ -223,6 +223,7 @@ def prevnext(target, slug, period, fmt=None):
     return context
 
 
+
 @register.inclusion_tag("schedule/_detail.html")
 def detail(occurrence):
     context = {

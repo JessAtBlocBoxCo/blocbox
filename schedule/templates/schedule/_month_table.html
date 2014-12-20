@@ -16,7 +16,7 @@
    	<tr class="monthname"> <th colspan="7" style="text-align: center" > <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 				Month.Name: {{month.name}} <br> 
 				Periods.Month: {{ periods.month }} <br>
-				Period.Month: {{ period.month }} <br>
+				Formatted: {% format(period.start, settings.DATE_FORMAT) %} <br>
 				Period.Name {{ period.name}} <br>
 				Periods.Name {{ periods.name }} <br>
 				Date.Year: {{ date.year }} <br>
