@@ -361,8 +361,11 @@ class Day(Period):
         if self.tzinfo is not None:
             local_start = self.tzinfo.localize(naive_start)
             local_end = self.tzinfo.localize(naive_end)
-            start = local_start.astimezone(pytz.utc)
-            end = local_end.astimezone(pytz.utc)
+            #start = local_start.astimezone(pytz.utc)
+            #end = local_end.astimezone(pytz.utc)
+            #JESS fixing this on 19 Dec 2014
+            start = local_start.astimezone(pytz.ptc)
+            end = local_end.astimezone(pytz.ptc)
         else:
             start = naive_start
             end = naive_end
