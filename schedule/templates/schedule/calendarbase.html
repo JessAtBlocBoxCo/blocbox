@@ -16,7 +16,7 @@
   	<div class="col-xs-12 col-sm-3">
   				<!--side bar matter: display the calendar name and a link to this month-->
   				<h4> 	Calendar Name: {{ calendar.name }} <br> 	
-  							Calendar Start Perio: {{ month.name }} {{ month.year }}
+  							Calendar Start Period: {{ month.name }} {{ month.year }} <br>
     						<a href="{% url "month_calendar" calendar.slug %}"> {% trans "This month" %} </a>
   				</h4> 
 		
