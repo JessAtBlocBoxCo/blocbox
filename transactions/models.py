@@ -26,7 +26,7 @@ class Transaction(models.Model):
     status = models.CharField("Status", max_length=50, blank=True, null=True)
     favorstatus = models.CharField("Favor Status (Non-Shipments)", max_length=50, blank=True, null=True)
     dayrangestart = models.IntegerField("Package Arrival Range Start",blank=True, null=True)
-    dayrangeend = models.IntegerField("Package Arrival Range End" ,blank=True, null=True)
+    dayrangeend = models.IntegerField("Package Arrival Range End", blank=True, null=True)
 
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
     #define transaciton type choices
