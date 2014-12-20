@@ -8,6 +8,7 @@
     					JMY edited this by adding the timedinwo_name argumetn to avoid the UTC issue - the time windows are defined in calendar_day.hjtml-->
 						<span> {{ timewindow_name }} </span> <!-- {{ slot.start|time:"G:i" }} -->
 						<br>
+						<!--this link calls the _creat_event_options.html template that i've edited to say "Enter an Availability Conflict"-->
       			{% if addable %} 	{% create_event_url calendar slot.start %}	{% endif %}
     		</div> <!--row-->
     {% endfor %}
@@ -18,9 +19,9 @@
       <div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" onclick="openDetail(this);">
       	<!--style="top:{{occ.top}}px;left:{{occ.left}}px;width:{{occ.width}}px;height:{{occ.height}}px;"--> 
       	
-        {% options occ %}
-        {% title occ %}
-
+        {% options occ %} <p>test text after options occ</p>
+        {% title occ %} <p>test text after title occ</p>
+				
       </div>
       <div id="{% hash_occurrence occ %}" style="display:none;">
          {% include 'schedule/_detail.html' with occurrence=occ %}
