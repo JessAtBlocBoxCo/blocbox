@@ -17,5 +17,12 @@
 
 {% block bottomnavcalendar %} 
 
-
+  		<a href="{% url "bi_month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+  		   Bi-Monthly Calendar
+  		</a>
+  		<a>&nbsp;</a>
+  		<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+  		   Full Year Calendar 
+  		</a>
+  		
 {% endblock %} <!--bottomnavcalendar-->
