@@ -19,8 +19,9 @@
       <div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" onclick="openDetail(this);">
       	<!--style="top:{{occ.top}}px;left:{{occ.left}}px;width:{{occ.width}}px;height:{{occ.height}}px;"--> 
       	
-       <p> Conflict Options:{% options occ %}  </p> 
-       <p> Conflict Title:  {% title occ %} </p> 
+       <!--	this the title of the current event and the 'options' tag which loads 'edit event' 'delete evet' etc
+       			the options stuff is defined in -->
+       <p> Conflict Title:  {% title occ %} {% options occ %}  </p>
 				
       </div>
       <div id="{% hash_occurrence occ %}" style="display:none;">
