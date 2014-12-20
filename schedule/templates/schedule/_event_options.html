@@ -16,7 +16,8 @@
     {% endif %}
   {% else %}
   	<!--this is the relevant one to edit, at least for now because i dont understand the rule thing-->
-    <a href="#" onclick="openURL('{{ edit_event }}?next={{ here }}', event);">
+  			<a href="openURL('{{ edit_event }}?next={{ here }}', event);">
+  	    <!--<a href="#" onclick="openURL('{{ edit_event }}?next={{ here }}', event);"> -->
         <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict" %}">
     </a>
   {% endif %}
@@ -39,7 +40,7 @@
   	<!--this is the relevant one to edit, at least for now b/c i don tunderstand the rule thing-->
   	<a href="openURL('{{delete_event}}?next={{here}}', event);">
   	<!-- <a href="#" onclick="openURL('{{delete_event}}?next={{here}}', event);"> -->
-    		<img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict)" %}">
+    		<img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict" %}">
     </a>
   {% endif %}
 </span>
