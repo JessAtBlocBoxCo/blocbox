@@ -7,6 +7,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render_to_response, get_object_or_404
 from django.utils import timezone
+from django.utils.timezone import activate
 from django.http import HttpResponseRedirect, Http404
 from django.template import RequestContext
 from django.core.urlresolvers import reverse
@@ -21,6 +22,8 @@ from schedule.models import Calendar, Occurrence, Event
 from schedule.periods import weekday_names
 from schedule.utils import check_event_permissions, coerce_date_dict
 
+
+activate(settings.TIME_ZONE)
 
 def calendar(request, calendar_slug, template='schedule/calendar.html'):
     """
@@ -104,8 +107,9 @@ def calendar_by_periods(request, calendar_slug, periods=None, template_name="sch
     else:
         date = timezone.now()
     event_list = GET_EVENTS_FUNC(request, calendar)
-    # local_timezone = request.session.setdefault('django_timezone', 'UTC')
-    local_timezone = request.session.setdefault('django_timezone', 'PST')
+    local_timezone = request.session.setdefault('django_timezone', 'UTC')
+    #HALP FIX THE TIMEZON AHHHH
+    #local_timezone = request.session.setdefault('django_timezone', 'PST')
     local_timezone = pytz.timezone(local_timezone)
     period_objects = {} 
     for period in periods:
