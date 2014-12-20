@@ -13,7 +13,7 @@
 						
 			<div class="tablewrapper">
 					<div class="row" align="center">
-			    	<h5>Daily Events for {{ calendar.name } on {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </h5>
+			    	<h5>Daily Events for {{ calendar.name }} on {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %} </h5>
 			     	<h5><a href="{% url "day_calendar" calendar.slug %}"> {% trans "Go to Today's Calendar" %} </a> </h5>
 			    </div>
 			</div>
