@@ -13,6 +13,7 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from django.utils.decorators import method_decorator
 from django.views.generic.edit import DeleteView
+from django.utils.dateformat import format
 
 from schedule.conf.settings import GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT
 from schedule.forms import EventForm, OccurrenceForm
@@ -114,6 +115,8 @@ def calendar_by_periods(request, calendar_slug, periods=None, template_name="sch
     return render_to_response(template_name, {
         'date': date,
         'periods': period_objects,
+        #JMY adding formatted
+        'period_name': format(periods.start,  settings.DATE_FORMAT),
         'calendar': calendar,
         'weekday_names': weekday_names,
         'here': quote(request.get_full_path()),

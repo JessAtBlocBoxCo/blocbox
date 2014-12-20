@@ -186,8 +186,8 @@ The URLs for this site, and the corresponding files are as follows:
 			
 		Events
 		Rules
-		
-6C. Schedul tAgs: schedule.template.scheduletags.py - has lots of the naming convetions for referencing scheduling tags
+6C. Views: most called by schedule.views.calendar_by_periods	
+6D. Schedul tAgs: schedule.template.scheduletags.py - has lots of the naming convetions for referencing scheduling tags
 	
 *-----------------------------------------------------------------------*
 END: DJANGO ADMIN SITES
