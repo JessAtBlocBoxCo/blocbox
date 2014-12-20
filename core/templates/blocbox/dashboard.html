@@ -74,7 +74,7 @@
                 <div class="row textcenter darkgreytext tinytext ">
                     <!--row containing top table-->
                     <div class="col-xs-2">
-                        <p class="marginbottom5px">STATUS.TEST </p>
+                        <p class="marginbottom5px">STATUS </p>
                     </div>
                     <div class="col-xs-3">
                         <p class="marginbottom5px">TRACKING</p>
@@ -119,7 +119,15 @@
                     </div>
                     <!--delivvery window -->
                     <div class="col-xs-2 paddingtopbottom20px">
-                        <p class="dashfont nomargin">{{ shipment.dayrangestart }} to {{ shipment.dayrangeend}} days</p>
+                        <p class="dashfont nomargin"> {% if dayrangestart }}
+                        																	{% if dayrangestart == dayrangeend %}
+                        																			{% dayrangestart %}} days
+                        																	{% else %}
+                        																			{{ shipment.dayrangestart }} to {{ shipment.dayrangeend}} days
+                        																	{% endif %}
+                        															{% endif %}
+                        															
+                        </p>
                     </div>
                     <div class="col-xs-3 paddingtopbottom10px">
                         <div class="row paddingtopbottom2px">
