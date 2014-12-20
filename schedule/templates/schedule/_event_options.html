@@ -16,7 +16,7 @@
     {% endif %}
   {% else %}
     <a href="#" onclick="openURL('{{ edit_event }}?next={{ here }}', event);">
-        <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict" %}">
+        <img border="0" src="{% static "schedule/img/pencil.png" %}" alt="{% trans "Edit Conflict (No Rule - Test)" %}">
     </a>
   {% endif %}
   </span>
@@ -36,7 +36,7 @@
     {% endif %}
   {% else %}
     <a href="#" onclick="openURL('{{delete_event}}?next={{here}}', event);">
-    <img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict" %}">
+    <img border="0" src="{% static "schedule/img/delete.png" %}" alt="{% trans "Delete Conflict (No Rule - Test)" %}">
     </a>
   {% endif %}
 </span>
