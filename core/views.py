@@ -403,7 +403,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     
 
 #starat a shipmetn view if requested from navbar
-def nav_startashipment(request):
+def nav_startashipment(request, host-None):
     enduser = request.user
     connections_all = Connection.objects.filter(end_user=enduser) 
     connections_count = connections_all.count() #count them,removing status=0 after host_user=host
