@@ -1,7 +1,7 @@
 <!--this is _daily_table.html, JMY surgery on 19 Dec 2014, its rendered by calendar_day.html to populate each cell
 		the view is defined in scheduletags.dailytable-->
 {% load scheduletags %}
-  <div class="col-xs-12">
+  <div class="col-xs-12 slots">
     {% for slot in slots %} <!--the way i am defining it there is only one slot each time its called -->
     		<div class="row">
     			<!--the time is wrong here - if put in "16/4PM it registers as 8AM"
@@ -15,7 +15,7 @@
     {% endfor %}
   </div> <!--col containing all slots-->
   
-  <div class="col-xs-12">
+  <div class="col-xs-12 occs">
   {% for occ in occurrences %}
       <div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" 
       style="top:{{occ.top}}px;left:{{occ.left}}px;width:{{occ.width}}px;height:{{occ.height}}px;" onclick="openDetail(this);">
