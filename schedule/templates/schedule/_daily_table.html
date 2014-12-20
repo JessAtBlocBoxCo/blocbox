@@ -3,8 +3,10 @@
   <div class="col-xs-12">
     {% for slot in slots %}
     		<div class="row">
+    			<!--the time is wrong here - if put in "16/4PM it registers as 8AM"-->
       		<span class="time">{{ slot.start }}</span> <!--{ { slot.start|time:"G:i" } } -->
       	{% if addable %}
+      	<!--the time zone is right in the URL -->
       	{% create_event_url calendar slot.start %}
       	{% endif %}
     		</div>
