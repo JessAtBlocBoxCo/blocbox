@@ -2,7 +2,7 @@
 {% extends "schedule/calendarbase.html" %}
 {% load scheduletags %}
 {% include "schedule/_dialogs.html" %}
-{% block title %} Calendar - Monthly View Compact {% endblock %}
+{% block title %} Calendar - Monthly View {% endblock %}
 
 {% block yearormonthorweek %} 
 	{% prevnext "month_calendar" calendar.slug periods.month "F Y"%}
