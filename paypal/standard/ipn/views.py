@@ -170,6 +170,8 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         trans.price = amount
         trans.favortype = favortype
         trans.invoice = invoice
+        trans.dayrangestart = dayrangestart
+        trans.dayrangeend = dayrangeend
     trans.save()
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
