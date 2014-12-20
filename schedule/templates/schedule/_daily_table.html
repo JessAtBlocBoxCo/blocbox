@@ -15,6 +15,8 @@
   
   <div class="col-xs-12 occs">
   	<br>
+  	
+  <p>TEST SHOW OCCURENCEs {{ occurrences }} </p>
   {% if occurrences %}
   	{% for occ in occurrences %}
       	<div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" onclick="openDetail(this);">
