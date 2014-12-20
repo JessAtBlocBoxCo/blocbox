@@ -1,6 +1,27 @@
-{% extends "schedule/base.html" %}
+<!--this is schedule/calendar_compact_month.html, extends schedule/calendarbase.html-->
+{% extends "schedule/calendarbase.html" %}
 {% load scheduletags %}
-{% block body %}
-<p align="center"><b>{{ calendar.name }}</b></p>
-{% month_table calendar periods.month "small" %}
+{% include "schedule/_dialogs.html" %}
+{% block title %} Calendar - Monthly View Compact {% endblock %}
+
+{% block yearormonthorweek %} 
+	{% prevnext "month_calendar" calendar.slug periods.month "F Y"%}
 {% endblock %}
+
+
+{% block calendarcontent %}
+			<p align="center"><b>{{ calendar.name }}</b></p>
+			{% month_table calendar periods.month "small" %}
+{% endblock %}
+
+
+{% block bottomnavcalendar %} 
+
+  		<a href="{% url "bi_month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+  		  {% trans "Bi-Monthly Calendar" %}
+  		</a>
+  		<a>&nbsp;</a>
+  		<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+  		  {% trans "Full Year Calendar" %}
+  		</a>
+{% endblock %} <!--bottomnavcalendar-->
