@@ -119,9 +119,9 @@
                     </div>
                     <!--delivvery window -->
                     <div class="col-xs-2 paddingtopbottom20px">
-                        <p class="dashfont nomargin"> {% if dayrangestart %}
-                        																	{% if dayrangestart == dayrangeend %}
-                        																			{{ dayrangestart }} days
+                        <p class="dashfont nomargin"> {% if shipment.dayrangestart %}
+                        																	{% if shipment.dayrangestart == shipment.dayrangeend %}
+                        																			{{ shipment.dayrangestart }} days
                         																	{% else %}
                         																			{{ shipment.dayrangestart }} to {{ shipment.dayrangeend}} days
                         																	{% endif %}
