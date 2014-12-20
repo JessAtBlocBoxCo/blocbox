@@ -35,6 +35,10 @@
   			<!--prevnext defined in scheduletags.py, calls _prevnext.html template, syntax:
   					syntax: def prevnext(target, slug, period, fmt=None), so month_calendar - target, calendar.slug is the slug, periods.month is the period -->
   			{% prevnext "month_calendar" calendar.slug periods.month "F Y" %}  
+  			Periods.Month: {{ periods.month }} <br> <!--defined in views.calendar_by_periods-->
+				Date.Year: {{ date.year }} <br>
+				Month.Start: {{ month.start }} <br> <!--defined in scheduletags.month_table-->
+				Month.Year:  <br> <!--defined in scheduletags.month_table THIS WORKDS - shows 2014-->
   		</h4>
   		
 {% endblock %} <!--bottomnavcalendar-->
