@@ -31,6 +31,6 @@
       	<div id="{% hash_occurrence occ %}" style="display:none;" >   {% include 'schedule/_detail.html' with occurrence=occ %} </div>
       
   	{% endfor %} <!--end for each occurence-->
-  {% else %} <div><p> You have not entered any conflicts and are currently shown as available for today, {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %}  </p></div> 
+  {% else %} <div><p> You have not entered any conflicts and are currently shown as available for {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %}  </p></div> 
   {% endif %}	
   </div> <!--col-->
