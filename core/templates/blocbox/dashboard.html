@@ -121,7 +121,7 @@
                     <div class="col-xs-2 paddingtopbottom20px">
                         <p class="dashfont nomargin"> {% if dayrangestart }}
                         																	{% if dayrangestart == dayrangeend %}
-                        																			{% dayrangestart %}} days
+                        																			{{ dayrangestart }} days
                         																	{% else %}
                         																			{{ shipment.dayrangestart }} to {{ shipment.dayrangeend}} days
                         																	{% endif %}
