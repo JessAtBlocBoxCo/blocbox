@@ -22,7 +22,7 @@
 		<div class="row"> <!--MORINING EVENTS-->
 			
 				<!--Early morning availability: 7 to 9: 2 by 60 = 120 minute incrememnt-->
-				<div class="col-xs-12 col-sm-4 align" align="left"> <!--morning events-->
+				<div class="col-xs-12 col-sm-6 align" align="left"> <!--morning events-->
 			      {% daily_table periods.day  "Early Morning (7AM to 9AM)"  300 60 300 7 9 120 %}
 			  </div>
 			  
@@ -40,19 +40,19 @@
 			  </div>
 		 		 
 				<!--Late Afternoon/Earlyin Evening Availability: 4PM-7PM(16-19): 3 by 60 = 180 mimute increment-->
-			  <div class="col-xs-12 col-sm-4" align="left">
+			  <div class="col-xs-12 col-sm-6" align="left">
 			      {% daily_table periods.day "Late Afternoon/Early Evening (4PM - 7PM)" 300 60 300 16 19 180  %}
 			  </div>
 		</div> <!--row with afternoon events-->
 		
 		<div class="row"> <!--LATE EVENING EVENTS -->
 				<!--Late Night Availability: 7PM to 10PM (19-22): 3 by 60 = 180 minute increment NOTE: Maybe default off??-->
-			  <div class="col-xs-12 col-sm-4" align="left">
+			  <div class="col-xs-12 col-sm-6" align="left">
 			      {% daily_table periods.day "Evening (7PM-10PM)" 300 60 300 19 22 180  %}
 			  </div>
 			  
 			  <!--Late Night Availability: 10PM to 12PM (22-24): 2 by 60 = 120 minute increment NOTE: Maybe default off??-->
-			  <div class="col-xs-12 col-sm-4" align="left">
+			  <div class="col-xs-12 col-sm-6" align="left">
 			  		<!--afternoon-->
 			      {% daily_table periods.day "Late Night (10PM-12PM)" 300 60 300 22 24 120  %}
 			  </div>
