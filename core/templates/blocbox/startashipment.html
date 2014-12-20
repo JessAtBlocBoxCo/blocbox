@@ -136,8 +136,8 @@
               
           <!--add the calendar associated with this host (its still under the if-host condition)-->  
 					{% if dayrangestart %}
-        			<h6 class="col-xs-4">Your package will arrive in {{dayrangestart}} to  {{dayrangeend}} days.</h3>
-        			<h6 class="col-xs-4">{{ host.first_name }}'s availability for the next two months is shown here.  
+        			<h6 class="col-xs-4">Your package will arrive in {{dayrangestart}} to  {{dayrangeend}} days. <br>
+        			{{ host.first_name }}'s availability for the next two months is shown here.  
         						{{ host.first_name }} is available unless the date is blacked out.</h3>
     			{% endif %}
 						
