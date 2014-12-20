@@ -107,21 +107,26 @@ def calendar_by_periods(request, calendar_slug, periods=None, template_name="sch
     local_timezone = request.session.setdefault('django_timezone', 'UTC')
     local_timezone = pytz.timezone(local_timezone)
     period_objects = {} 
+    period_names = {}
+    fmt = settings.DATE_FORMAT
     for period in periods:
         if period.__name__.lower() == 'year':
             period_objects[period.__name__.lower()] = period(event_list, date, None, local_timezone) 
         else:
             period_objects[period.__name__.lower()] = period(event_list, date, None, None, local_timezone)
+            period_names[period.__name__.lower()] = format(period.start, fmt)
     return render_to_response(template_name, {
         'date': date,
         'periods': period_objects,
         #JMY adding formatted
-        'period_name': format(periods.start,  settings.DATE_FORMAT),
+        'period_names': period_names,
         'calendar': calendar,
         'weekday_names': weekday_names,
         'here': quote(request.get_full_path()),
     }, context_instance=RequestContext(request), )
 
+#'period_name': format(period.start, fmt),
+# whre period = periods.month 
 
 def event(request, event_id, template_name="schedule/event.html"):
     """
