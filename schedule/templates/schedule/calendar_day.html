@@ -22,7 +22,7 @@
 
 				<!--Early morning availability: 7 to 9: 2 by 60 = 120 minute incrememnt-->
 				<div class="col-xs-12 col-sm-4 align" align="left"> <!--morning events-->
-			      {% daily_table periods.day 300 60 300 7 9 120 "Early Morning (7AM to 9AM)" %} <!--it takes UTC and prints Pacific - also things right now is UTC
+			      {% daily_table periods.day  "Early Morning (7AM to 9AM)"  300 60 300 7 9 120 %} <!--it takes UTC and prints Pacific - also things right now is UTC
 			      																										so 16 will print as 8am ... -->
 			      <!--syntax: daily_table(context, day, width, width_slot, height, start=8, end=20, increment=30): 
 			      		width=420px, width_slot=120px -->
@@ -30,7 +30,7 @@
 				
 				<!--morning availability: 9AM to Noon(8-12): 3 by 60 = 180 minute incrememnt-->
 				<div class="col-xs-12 col-sm-4 align" align="left"> <!--morning events-->
-			      {% daily_table periods.day 300 60 300 9 12 180 "Morning (9AM to Noon)" %} <!--it takes UTC and prints Pacific - also things right now is UTC
+			      {% daily_table periods.day "Morning (9AM to Noon)" 300 60 300 9 12 180  %} <!--it takes UTC and prints Pacific - also things right now is UTC
 			      																										so 16 will print as 8am ... -->
 			      <!--syntax: daily_table(context, day, width, width_slot, height, start=8, end=20, increment=30): 
 			      		width=420px, width_slot=120px -->
@@ -40,20 +40,20 @@
 				<!--Afternoon availability: Noon-5PM (12-17): 5 by 60 = 300 minute increment)-->
 				<div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day 300 60 300 12 17 300 "Afternoon (Noon - 5PM) %}
+			      {% daily_table periods.day "Afternoon (Noon - 5PM)" 300 60 300 12 17 300  %}
 			  </div>
 			  
 			  <!--Evening Availability: 5PM-9PM(17-21): 4 by 60 = 240 mimute increment-->
 			  <div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day 300 60 300 17 21 240 "Evening (5PM - 9PM)%}
+			      {% daily_table periods.day "Evening (5PM - 9PM)" 300 60 300 17 21 240  %}
 			  </div>
 			  
 			  <!--Late Night Availability: 9PM to 11PM (21-23): 2 by 60 = 120 minute increment
 			  		NOTE: Maybe default off??-->
 			  <div class="col-xs-12 col-sm-4" align="left">
 			  		<!--afternoon-->
-			      {% daily_table periods.day 300 60 300 21 23 120 "Late Night (9PM-11PM)%}
+			      {% daily_table periods.day "Late Night (9PM-11PM)" 300 60 300 21 23 120  %}
 			  </div>
 
 	</div> <!--row-->
