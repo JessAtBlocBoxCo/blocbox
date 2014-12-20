@@ -24,7 +24,7 @@
        	<p> Current Conflict:  {% title occ %} {% options occ %}  </p>
 				
       </div> <!--href-->
-      <div id="{% hash_occurrence occ %}" style="display:none;">
+      <div id="{% hash_occurrence occ %}" > <!--style="display:none;"-->
          {% include 'schedule/_detail.html' with occurrence=occ %}
          <p>TEST TEXT IN DIF ID HASH_OCCURENCE</p>
       </div>
