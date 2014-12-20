@@ -6,10 +6,9 @@
 
 {% block title %} Calendar - Monthly View {% endblock %}
 
+	
 
-{% block yearormonthorweek %} 
-	Calendar Period: {% prevnext "month_calendar" calendar.slug periods.month "F Y" %} 
-{% endblock %}
+	
 
 
 {% block calendarcontent %}
@@ -29,4 +28,7 @@
   		<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
   		  {% trans "Full Year Calendar" %}
   		</a>
+  		
+  		<p>[Here for Testing]: Calendar Period: {% prevnext "month_calendar" calendar.slug periods.month "F Y" %}  </p>
+  		
 {% endblock %} <!--bottomnavcalendar-->
