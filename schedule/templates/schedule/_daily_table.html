@@ -4,9 +4,10 @@
   <div class="col-xs-12">
     {% for slot in slots %}
     		<div class="row">
-    			<span> TEST TIMEWINDOW_NAME {{ timewindow_name }} </span>
-    			<!--the time is wrong here - if put in "16/4PM it registers as 8AM"-->
-      		<span class="time">{{ slot.start }} </span> <!--{ { slot.start|time:"G:i" } } -->
+    			<span> TEST TIMEWINDOW_NAME  </span>
+    			<!--the time is wrong here - if put in "16/4PM it registers as 8AM"
+    					JMY edited this by adding the timedinwo_name argumetn to avoid the UTC issue - the time windows are defined in calendar_day.hjtml-->
+      		<span class="time"> {{ timewindow_name }} </span> <!-- {{ slot.start|time:"G:i" }} -->
       	{% if addable %}
       	<!--the time zone is right in the URL -->
       	{% create_event_url calendar slot.start %}
