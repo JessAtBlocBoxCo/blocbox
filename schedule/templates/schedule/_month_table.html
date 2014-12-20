@@ -15,16 +15,9 @@
    <!--put the month name in a table row, th=title header -->
    	<tr class="monthname"> <th colspan="7" style="text-align: center" > <a href="{% url "month_calendar" calendar.slug %}{% querystring_for_date month.start 2 True %}"> 
 				Month.Name: {{month.name}} <br> 
-			  Period_Name {{period.name }} <br>
 				Periods.Month: {{ periods.month }} <br>
-				Periods.Year: {{ periods.year }} <br>
-				Period_Names: {{ period_names }} <br>
-				Period.Names {{ period_names}} <br>
-				Periods.Name {{ periods.name }} <br>
 				Date.Year: {{ date.year }} <br>
 				Month.Start: {{ month.start }} <br>
-				Periods Start: {{ periods.start }} <br>
-				QueryString_for_date {{ querystring_for_date }}
 		</a> </th> 	</tr>
 		
 		{% if day_names %}
