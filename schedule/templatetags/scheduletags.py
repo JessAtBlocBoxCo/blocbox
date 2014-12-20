@@ -302,7 +302,7 @@ def _cook_slots(period, increment, width, height):
     slots = []
     for i in range(num):
     	  #JMY removing tdiff reference
-    	  sl = period.get_time_slot(s, s)
+        sl = period.get_time_slot(s, s)
         #sl = period.get_time_slot(s, s + tdiff)
         sl.top = int(height / float(num)) * i
         sl.height = int(height / float(num))
