@@ -1,15 +1,16 @@
-<!--this is _daily_table.html-->
+<!--this is _daily_table.html, JMY surgery on 19 Dec 2014-->
 {% load scheduletags %}
-  <div class="slot_column" style="width:{{width_slot}}px;height:{{height}}px;">
+  <div class="col-xs-12 col-sm-6">
     {% for slot in slots %}
-    <div class="slot" style="top:{{slot.top}}px;height:{{slot.height}}px;width:{{width}}px;">
-      <span class="time">{{ slot.start|time:"G:i" }}</span>
-      {% if addable %}
-      {% create_event_url calendar slot.start %}
-      {% endif %}
-    </div>
+    		<div class="row">
+      		<span class="time">{{ slot.start|time:"G:i" }}</span>
+      	{% if addable %}
+      	{% create_event_url calendar slot.start %}
+      	{% endif %}
+    		</div>
     {% endfor %}
-  </div>
+  </div> <!--col containing all slots-->
+  
   <div class="occ_column" style="left:{{width_slot}}px;width:{{width_occ}}px;height:{{height}}px;">
   {% for occ in occurrences %}
       <div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" 
