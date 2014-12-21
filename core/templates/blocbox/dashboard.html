@@ -118,13 +118,14 @@
                             </div>
                         </div>
                     </div>
-                    <!--delivvery window -->
+                    <!--delivvery date -->
                     <div class="col-xs-2 paddingtopbottom20px">
                         <p class="nomargin"> {% if shipment.dayrangestart %}
                         																	{% if shipment.dayrangestart == shipment.dayrangeend %}
-                        																			{{ shipment.dayrangestart }} days
+                        																			{{ shipment.deliverydatenotracking_rangestart }}
                         																	{% else %}
-                        																			{{ shipment.dayrangestart }} to {{ shipment.dayrangeend}} days
+                        																			{{ shipment.deliverydatenotracking_rangestart }} 
+                        																			to {{ shipment.deliverydatenotracking_rangeend}} 
                         																	{% endif %}
                         															{% endif %}
                         															
