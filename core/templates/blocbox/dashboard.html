@@ -117,7 +117,7 @@
         														<h6 class="ltbluetext">Enter a Tracking Number</h6>
         														<p>Enter a tracking number, shipping company or other information</p>
                                   	
-                                  	<form class="form-inline" role="form" method="post" action="/dashboard/" enctype="multipart/form-data">
+                                  	<form class="form-inline" role="form" method="post" action="dashboard/" enctype="multipart/form-data">
 					   														{% csrf_token %}
 					   														{{ tracking_form.non_field_errors }}
 					   														{{ tracking_form.tracking.errors }}
