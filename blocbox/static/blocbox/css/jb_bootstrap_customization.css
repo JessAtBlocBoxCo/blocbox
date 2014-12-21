@@ -262,15 +262,13 @@ footer {
     font-weight: 300;
 }
 
+/*JMY edited dashfont to make it smaller ssince it was currently multiplying tinyfont - 12.21.14*/
 .dashfont {
-    font-size: 1.000em;
+    font-size: 1.000em; /*font-size: 1.300em */
     font-weight: 400;
 }
-/*JMY making this a bit smaller*/
-.dashfontsmaller {
-	  font-size: 1.200em;
-	  font-weight: 400;
-}
+
+
 
 /*Define text alignment attributes*/
 
