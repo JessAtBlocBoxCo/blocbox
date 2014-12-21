@@ -129,6 +129,7 @@
                             </div>             
                         	{% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
+                    		<!--EDIT TRACKING -->                    		
                     		{% if shipment.tracking %} 
                     			</div> <!--end enter tracking row-->
                     				<div class="row"> <!--edit tracking info-->
@@ -140,14 +141,17 @@
         															<h6 class="ltbluetext">Update Your Tracking Number</h6>
         															<p>Enter a tracking number, shipping company or other information</p>
                                     	
-                                    	    
-                                  		{% edit_tracking_modal request shipment.id %}  <!--load the template-->
+                                    	 <form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
+					   																	{% csrf_token %}
+					   																	{{ tracking_form.non_field_errors }}
+					   																	{{ tracking_form.tracking.errors }}
+                                  			{% edit_tracking_modal request shipment.id %}  <!--load the template-->
                                   		
-                                  		<!--siubmit button-->
-                                  		<div class="row paddingbottom10px"> 
-                                  			<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    												</div>                
-                            			
+                                  			<!--siubmit button-->
+                                  			<div class="row paddingbottom10px"> 
+                                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					    													</div>                
+                            					</form>
                             			</div> 
                             	</div>   <!--div id openmodal..-->                          
                     			</div> <!--row-->
