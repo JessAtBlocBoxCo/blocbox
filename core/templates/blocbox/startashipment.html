@@ -59,18 +59,21 @@
       	  		<h6 class="col-xs-5 marginsides3pct margintop30px marginbottom20px nopaddingleft">Select a connected host to recieve your package and confirm their address</h6>
       	  		<div class="col-xs-6 dropdown margintop30px margintop20px marginbottom30px">
       	  	   
-      	  	 
-      	  	    <div class="dropdown marginbottom20px" id="bs-example-navbar-collapse-1">      	  	       
+      	  	 		
+      	  	    <div class="col-xs-6 dropdown margintop30px marginbottom20px" id="bs-example-navbar-collapse-1">      	  	       
       	  	        <button class="selector dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
        	  	        		Select a Host
       	  	        	  <span class="caret"></span>
       	  	       	</button> 
       	  	    		<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+      	  	    				
       	  	    			{% for connection in connections_all %}
-      	  	    					<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ connection.host_user.id }}';">
+      	  	    					<li role="presentation">
+      	  	    						<a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ connection.host_user.id }}';">
       	  	    								{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}: 
       	  	        						{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }} 	  
-      	  	    					</a></li>      	  	        					        					 	
+      	  	    						</a>
+      	  	    					</li>      	  	        					        					 	
       	  	       		{% endfor %}  									
    												<li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/search';">Search for a New Host</a></li>
   									</ul>      
