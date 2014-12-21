@@ -119,7 +119,7 @@
         														<p>Enter a tracking number, shipping company or other information</p>
                                   	
                                   	<!--NEED AN IF-CLICKED STATEMENT-->
-                                  	<form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
+                                  	<form class="form-inline" role="form" method="post" action="/dashboard/transid{{shipment.id}}/" enctype="multipart/form-data">
 					   														{% csrf_token %}
 					   														{{ tracking_form.non_field_errors }}
 					   														{{ tracking_form.tracking.errors }}
