@@ -9,18 +9,14 @@
 
              
              
-					<form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
-					   {% csrf_token %}
-					   {{ tracking_form.non_field_errors }}
-					   {{ tracking_form.tracking.errors }}
-					   
-					    <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-					         <input type="tracking" class="form-control" name="tracking" 
-					         
-					          
-					         placeholder="Enter Tracking Number for Order {{ invoice }} ">    	  <!--removed id="id_tracking" -->      	   
-					    </div>
 
-					</form>
+					   
+	   <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	        <input type="tracking" class="form-control" name="tracking" 
+	        
+	         
+	        placeholder="Enter Tracking Number for Order {{ invoice }} ">    	  <!--removed id="id_tracking" -->      	   
+	   </div>
+
 
 	 
