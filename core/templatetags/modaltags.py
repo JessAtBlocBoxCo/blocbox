@@ -69,13 +69,12 @@ def tracking_modal(request, trans_id):
 
 @register.inclusion_tag("modals/modifytransactionmodal.html")
 def modifytrans_modal(request, trans_id):
-    #Add tracking info - a good example of modifying an existing model instead of creating a new one
     trans = Transaction.objects.get(pk=trans_id)
     invoice = trans.invoice
     if request.method == 'POST':        
         modify_form  = ModifyTransaction(request.POST, instance=trans)
         if modify_form.is_valid(): 
-            modify = tracking_form.save()          
+            modify = modify_form.save()          
             modify.save()   	     
         else: 
     	      print modify_form.errors 
