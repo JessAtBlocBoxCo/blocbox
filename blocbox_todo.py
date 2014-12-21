@@ -8,7 +8,8 @@
 right now its logging as connected een before host confirms
 - update radme to describe navstaratshipment, et
 - update the navbar in beta so if they're not logged on doesn't call nav_starta s hipment - do if/or on user authenticated
-
+- expected date of delivery before tracking: make it adjust for business days/ skip sunday
+	
 """TO DO"""
 1. JOHN - /Fix Mobile/make site responsive
 3. JOHN search page -- fix map top margin and restyle nudge a neighbor message

@@ -261,10 +261,17 @@ footer {
     padding-bottom: 2px;
     font-weight: 300;
 }
+
 .dashfont {
     font-size: 1.300em;
     font-weight: 400;
 }
+/*JMY making this a bit smaller*/
+.dashfontsmaller {
+	  font-size: 1.200em;
+	  font-weight: 400;
+}
+
 /*Define text alignment attributes*/
 
 .textcenter {
