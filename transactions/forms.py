@@ -8,7 +8,7 @@ from transactions.models import Transaction
 class TrackingForm(forms.ModelForm):
     class Meta:
         model = Transaction
-        fields = ('tracking')
+        fields = ('tracking',)
 
 class ModifyTransaction(forms.ModelForm):
     class Meta:
