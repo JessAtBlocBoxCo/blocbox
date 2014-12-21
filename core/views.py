@@ -80,15 +80,25 @@ def dashboard(request, host_id=None, trans_id=None):
     #reload with transactions for the modal thing to work
     if trans_id:
         trans = Transaction.objects.get(pk=trans_id)    
+        if request.method == 'POST':        
+            tracking_form  = TrackingForm(request.POST, instance=trans)
+            if tracking_form.is_valid(): 
+                trackadd = tracking_form.save()          
+                trackadd.save()   	     
+            else: 
+    	      print tracking_form.errors 
+        else:
+            tracking_form = TrackingForm(instance=trans) 
     else:
-        trans = None      
+        trans = None    
+        tracking_form = None  
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
         'hostonly': hostonly,
         'request': request,
-        'trans_id': trans_id, 'trans': trans,
+        'trans_id': trans_id, 'trans': trans, 'tracking_form': tracking_form,
     })
     
 
