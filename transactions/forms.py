@@ -4,7 +4,7 @@ from django.utils import timezone
 from django.conf import settings
 from core.models import UserInfo
 from connections.models import Connection
-from connections.models import Transaction
+from transactions.models import Transaction
 
 class TrackingForm(forms.ModelForm):
     class Meta:
