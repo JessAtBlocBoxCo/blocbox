@@ -106,7 +106,7 @@
                     		{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
                     		{% else %}                   	
                     				<a href="#openModal_tracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
-														<div id="openModal_tracking_transid{{shipment.id}}" class="modalDialog">
+														 <div id="openModal_tracking_transid{{shipment.id}}" class="modalDialog">
                                   <!--start tracking modal templatetag-->
                                   {% tracking_modal request shipment.id %}                  
                             </div>             
