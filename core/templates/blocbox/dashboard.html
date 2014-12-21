@@ -113,13 +113,13 @@
                                 <h6 class="ltbluetext">Enter a Tracking Number</h6>
                                 <p>Enter a tracking number, shipping company or other information</p>
                                      
-                                   <!--start tracking modal -->
+                                   <!--start tracking modal templatetag-->
                                     {% tracking_modal request shipment.id %}
                                 
                             </div>
                         </div> <!--end modal div--> 
                         {% endif %} <!--end if no shipping tracking, enter it with modal -->
-                    </div>
+                    </div> <!--end tracking number -->
                     
                     <!--delivvery date -->
                     <div class="col-xs-2 paddingtopbottom20px">
@@ -143,15 +143,36 @@
                             <a class="nomargin">{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }}</a>
                         </div>
                     </div>
-                    <!--add a "modify" link to update the information -->
+                    
+                    
+                    
+                    <!--add a "modify" link to update the information: right now UPDATE STATUS vs MODIFY b/c thats all there is-->
+                    <!--JMY MAKING THIS A MODAL -->
                     <div class="col-xs-2 paddingtopbottom10px">
                         <div class="row paddingtopbottom2px">
-                            <a class="nomargin">Modify</a>
-                        </div>
+                            
+                            <!--START MODIFY MODAL -->
+                            <a href="#openModal" class="nomargin textcenter">Update Status</a>                        
+                            		<div id="openModal" class="modalDialog">
+                            				<div>	<a href="#close" title="Close" class="close">X</a>
+                                			<h6 class="ltbluetext">Update Status Information for Order ID {{shipment.id }} </h6>
+                                			<p> If the package is ready for pickup, enter "Ready for Pickup."
+                                				  If {{shipment.enduser.first_name}} has received the package, enter "Received." </p>
+                                     
+                                    		{% modifytrans_modal request shipment.id %}                                
+                            				</div>
+                        				</div> 
+                        </div> <!--row for status update -->
+                        
                         <div class="row">
                             <a class="nomargin">Message</a>
                         </div>
-                    </div>
+                    </div> <!--end modify/ update status -->
+                    
+     
+                    
+                    
+                    
                 </div>
                 <!--row, testing row-->
                 {% endfor %}
