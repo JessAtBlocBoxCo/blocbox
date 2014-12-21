@@ -100,24 +100,48 @@
                     <div class="col-xs-2 paddingtopbottom20px">
                         <p class="dashfont nomargin">{{ shipment.status }}</p>
                     </div>
+                    
+                    <!--tracking number-->
                     <div class="col-xs-3 paddingtopbottom20px ">
+                    		{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
+                    		{% else %}
+                    		<!--start tracking modal -->
                         <a href="#openModal" class="nomargin textcenter">Enter Tracking #</a>
                         <div id="openModal" class="modalDialog">
                             <div>	<a href="#close" title="Close" class="close">X</a>
                                 <h6 class="ltbluetext">Enter a Tracking Number</h6>
                                 <p>Enter a tracking number, shipping company or other information</p>
+                                      {% csrf_token %}
+                                      {{ tracking_form.non_field_errors }}
+                                      {{ tracking_form.tracking.errors }}
+                                      
                                 <form class="form-inline" role="form" method="post" action="/tracking/" enctype="multipart/form-data">
                                     <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
                                         <input type="tracking" class="form-control" name="tracking" id="id_tracking" placeholder="Enter Tracking Number">
+                                        	
+        		<!--
+        	    	<div class="form-group">  {{ connect_form.pickup_time.errors }}
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-7">
+                <input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  
+    					placeholder="Describe in 100 characters">
+            </div>  <!--row-->       	
+        </div>		
+        	-->
+        	
+        	
                                     </div>
                                     <div class="row paddingbottom10px">
                                         <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
                                     </div>
-                                </form>
+                                </form> <!--end tracking form -->
                                 <!--end form line -->
                             </div>
-                        </div>
+                        </div> <!--end tracking modal -->
+                        {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     </div>
+                    
                     <!--delivvery date -->
                     <div class="col-xs-2 paddingtopbottom20px">
                         <p class="nomargin"> {% if shipment.dayrangestart %}

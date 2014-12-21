@@ -10,6 +10,7 @@ from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
 from core.forms import UserForm, HostForm
 from connections.forms import ConnectForm
+from transactions.forms import TrackingForm, ModifyTransaction
 #Important the authentication and login functions -- not sure that i can use with custom model
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
@@ -77,11 +78,22 @@ def dashboard(request, host_id=None):
         hostonly=connections_all[0].host_user
     else:
         hostonly=None
+    #TrackingForm data
+    if request.method == 'POST':        
+        tracking_form = TrackingForm(data=request.POST)  
+        if tracking_form.is_valid(): 
+            trackadd = tracking_form.save()          
+            trackadd.save()   	     
+        else: 
+    	      print tracking_form.errors    	  
+    else:
+        tracking_form = TrackingForm()    
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
-        'hostonly': hostonly
+        'hostonly': hostonly,
+        'tracking_form': tracking_form,
     })
     
 

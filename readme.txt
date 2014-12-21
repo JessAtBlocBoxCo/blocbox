@@ -105,22 +105,9 @@ The URLs for this site, and the corresponding files are as follows:
 		- would like to have this apply to all users regardless of whether hosts or not
 		
 3C. blcobox.co/dashboard (template: core/templates/dashboard.html)
-	- Data requested (if they haven't filled it in)	
-			- personal introduction
-			- User notification preferences
-			-Profile picture upload (can this  be done through facebook?)
-			-Paypal/payment activation
-			
-			
-	- Data presented (if has been provided)
-		-User picture
-		-User name
-		-User address
-		-User phone
-		-Current Shipments (tracking number, host, host address, delivery date)
-		-Current Favors (description, host, host address, expiration date)
-		-Recent Shipments (tracking number, host, host address, delivery date)
-
+	- view is core.views.dashboard
+	- form for tracking (modal) is in transactions.forms.trackingform
+	
 	-Actions
 		-Share via social
 		-Share via email
