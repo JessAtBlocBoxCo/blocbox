@@ -82,6 +82,7 @@ def dashboard(request, host_id=None):
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
         'hostonly': hostonly,
+        'request': request,
     })
     
 
