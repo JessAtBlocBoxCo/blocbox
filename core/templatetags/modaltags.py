@@ -51,6 +51,7 @@ def get_item(dictionary, key):
 def tracking_modal(request, trans_id):
     #Add tracking info - a good example of modifying an existing model instead of creating a new one
     trans = Transaction.objects.get(pk=trans_id)
+    invoice = trans.invoice
     if request.method == 'POST':        
         #tracking_form = TrackingForm(data=request.POST)  
         tracking_form  = TrackingForm(instance=trans)
