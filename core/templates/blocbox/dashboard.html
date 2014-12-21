@@ -141,17 +141,9 @@
                         <div class="row paddingtopbottom2px">
                             
                             <!--START MODIFY MODAL -->
-                            <a href="#openModal" class="nomargin textcenter">Update Status</a>                        
-                            		<div id="openModal" class="modalDialog">
-                            				<div>	<a href="#close" title="Close" class="close">X</a>
-                                			<h6 class="ltbluetext">Update Status Information </h6>
-                                			<h6 class="ltbluetext"> Order ID {{shipment.invoice }} </h6>
-                                			<p> If the package is ready for pickup, enter "Ready for Pickup."
-                                				  If {{shipment.enduser.first_name}} has received the package, enter "Received." </p>
-                                     
+                                
                                     		{% modifytrans_modal request shipment.id %}                                
-                            				</div>
-                        				</div> 
+
                         </div> <!--row for status update -->
                         
                         <div class="row">
