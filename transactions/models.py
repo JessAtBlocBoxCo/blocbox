@@ -32,7 +32,7 @@ class Transaction(models.Model):
     deliverydatenotracking_rangestart = models.DateField("Expected Delivery Date Range Start, Before Tracking Information Entered", blank=True, null=True)
     deliverydatenotracking_rangeend = models.DateField("Expected Delivery Date Range End, Before Tracking Information Entered", blank=True, null=True)
     deliverydate_tracking = models.DateField("Expected Delivery Date Pulled from Tracking Information", blank=True, null=True)
-		
+		testfieldagain = models.CharField("test field", blank=True, null=True)
 
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
     #define transaciton type choices
