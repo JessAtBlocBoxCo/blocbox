@@ -113,17 +113,19 @@
                     				<a href="#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
 														 <div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
                                   
-                                  <div>	<a href="#close" title="Close" class="close">X</a>
-        													<h6 class="ltbluetext">Enter a Tracking Number</h6>
-        													<p>Enter a tracking number, shipping company or other information</p>
-        
-        
-                                  {% tracking_modal request shipment.id %} 
-                                  
-                                  
-                                  <div class="row paddingbottom10px">
-					        									<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    										</div>                 
+                                <div>	<a href="#close" title="Close" class="close">X</a>
+        														<h6 class="ltbluetext">Enter a Tracking Number</h6>
+        														<p>Enter a tracking number, shipping company or other information</p>
+                                  	
+                                  	
+                                  	{% tracking_modal request shipment.id %} 
+                                  	
+                                  	
+                                  	<div class="row paddingbottom10px">
+					        										<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					    											</div> 
+					    									</div> <!--end modal div-->  
+					    									               
                             </div>             
                         	{% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
