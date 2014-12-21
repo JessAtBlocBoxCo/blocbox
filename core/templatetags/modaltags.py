@@ -67,6 +67,7 @@ def tracking_modal(request, trans_id):
     }
     return context	
 
+
 @register.inclusion_tag("modals/modifytransactionmodal.html")
 def modifytrans_modal(request, trans_id):
     trans = Transaction.objects.get(pk=trans_id)

@@ -104,12 +104,9 @@
                     <!--tracking number-->
                     <div class="col-xs-3 paddingtopbottom20px ">
                     		{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
-                    		{% else %}
-                    	
-                    	
+                    		{% else %}                   	
                                    <!--start tracking modal templatetag-->
-                                    {% tracking_modal request shipment.id %}
-                                
+                                    {% tracking_modal request shipment.id %}                               
                         {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     </div> <!--end tracking number -->
                     
