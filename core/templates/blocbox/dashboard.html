@@ -113,17 +113,9 @@
                                 <h6 class="ltbluetext">Enter a Tracking Number</h6>
                                 <p>Enter a tracking number, shipping company or other information</p>
                                      
-                                <form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
- 
-                                    	
-                                    <!--start tracking modal -->
+                                   <!--start tracking modal -->
                                     {% tracking_modal request shipment.id %}
-                                    <!--
-                                    <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-                                        <input type="tracking" class="form-control" name="tracking" id="id_tracking" placeholder="Enter Tracking Number">    	        	
-                                    </div>
-                                    -->
-                                </form> 
+                                
                             </div>
                         </div> <!--end modal div--> 
                         {% endif %} <!--end if no shipping tracking, enter it with modal -->

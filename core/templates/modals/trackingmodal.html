@@ -5,6 +5,7 @@
 		
 {% load modaltags %}
 
+<form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
    {% csrf_token %}
    {{ tracking_form.non_field_errors }}
    {{ tracking_form.tracking.errors }}
@@ -16,4 +17,4 @@
     <div class="row paddingbottom10px">
         <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
     </div>
-    <p>TEST WHO REQUEST_METHOD request_method {{ request_method}}</p>
+</form> 
