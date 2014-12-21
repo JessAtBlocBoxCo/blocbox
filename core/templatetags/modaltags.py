@@ -53,14 +53,14 @@ def tracking_modal(request, trans_id):
     trans = Transaction.objects.get(pk=trans_id)
     invoice = trans.invoice
     if request.method == 'POST':        
-        tracking_form  = TrackingForm(instance=trans)
+        tracking_form  = TrackingForm(request.POST, instance=trans)
         if tracking_form.is_valid(): 
             trackadd = tracking_form.save()          
             trackadd.save()   	     
         else: 
     	      print tracking_form.errors 
     else:
-        tracking_form = TrackingForm()   
+        tracking_form = TrackingForm(instance=trans)   
     request_method = request.method    
     context = {
         'trans_id': trans_id, 
