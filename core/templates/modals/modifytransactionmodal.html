@@ -1,0 +1,20 @@
+<!--this is core/templates/modals/modifytransactionmodal.html, it is called within modaltags.py - the tracking_modal def
+		which is called on dashboard.html 
+		it is called with modifytrans_modal request shipment.id
+		-->
+		
+{% load modaltags %}
+
+<form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
+   {% csrf_token %}
+   {{ modify_form.non_field_errors }}
+   {{ modify_form.tracking.errors }}
+    <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+         <input type="status" class="form-control" name="status" 
+         id="id_status" 
+         placeholder="Enter Status Information for Order ID {{ invoice }} ">    	        	   
+    </div>
+    <div class="row paddingbottom10px">
+        <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+    </div>
+</form> 
