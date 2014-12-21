@@ -101,17 +101,35 @@
                         <p class="dashfont nomargin">{{ shipment.status }}</p>
                     </div>
                     
-                    <!--tracking number-->
+                    
+                    
+                    <!--TRACKING NUMBER-->
                     <div class="col-xs-3 paddingtopbottom20px ">
-                    		{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
-                    		{% else %}                   	
-                    				<a href="#openModal_tracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
-														 <div id="openModal_tracking_transid{{shipment.id}}" class="modalDialog">
+                    	
+                    		<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
+                    			{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
+                    			{% else %}                   	
+                    				<a href="#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
+														 <div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
                                   <!--start tracking modal templatetag-->
                                   {% tracking_modal request shipment.id %}                  
                             </div>             
-                        {% endif %} <!--end if no shipping tracking, enter it with modal -->
+                        	{% endif %} <!--end if no shipping tracking, enter it with modal -->
+                    		</div> <!--enter tracking row-->
+                    		
+                    		<div class="row"> <!--edit tracking info-->
+                    				 <a href="#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
+														 <div id="openModal_edittracking_transid{{shipment.id}}" class="modalDialog">
+                                  <!--start tracking modal templatetag-->
+                                  {% edit_tracking_modal request shipment.id %}                  
+                            </div>   
+                            
+                    		</div>
                     </div> <!--end tracking number -->
+                    
+                    
+                    
+                    
                     
                     <!--delivvery date -->
                     <div class="col-xs-2 paddingtopbottom20px">
