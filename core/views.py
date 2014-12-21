@@ -60,7 +60,7 @@ def abouthosting(request):
     enduser = request.user
     return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
 
-def dashboard(request, host_id=None):
+def dashboard(request, host_id=None, trans_id=None):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -76,13 +76,17 @@ def dashboard(request, host_id=None):
     if connections_count==1:
         hostonly=connections_all[0].host_user
     else:
-        hostonly=None   	   
+        hostonly=None   	
+    #reload with transactions for the modal thing to work
+    if trans_id:
+        trans = Transaction.objects.get(pk=trans_id)          
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
         'hostonly': hostonly,
         'request': request,
+        'trans_id': trans_id, 'trans': trans,
     })
     
 
