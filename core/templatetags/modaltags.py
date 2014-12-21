@@ -81,7 +81,7 @@ def modifytrans_modal(request, trans_id):
     else:
         modify_form = ModifyTransaction(instance=trans)     
     context = {
-        'trans_id': trans_id, 'modify_form': tracking_form, 'trans': trans, 'invoice': invoice,
+        'trans_id': trans_id, 'modify_form': modify_form, 'trans': trans, 'invoice': invoice,
     }
     return context	
 
