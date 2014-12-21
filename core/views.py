@@ -79,7 +79,9 @@ def dashboard(request, host_id=None, trans_id=None):
         hostonly=None   	
     #reload with transactions for the modal thing to work
     if trans_id:
-        trans = Transaction.objects.get(pk=trans_id)          
+        trans = Transaction.objects.get(pk=trans_id)    
+    else:
+        trans = None      
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
