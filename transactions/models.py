@@ -30,7 +30,7 @@ class Transaction(models.Model):
     #to get a date use DateField, to get date with time use DateTimeField
     deliverydatenotracking_rangestart = models.DateField("Expected Delivery Date Range Start, Before Tracking Information Entered", blank=True, null=True)
     deliverydatenotracking_rangeend = models.IntegerField("Expected Delivery Date Range End, Before Tracking Information Entered", blank=True, null=True)
-		deliverydate_tracking = models.IntegerField("Expected Delivery Date Pulled from Tracking Information", blank=True, null=True)
+    deliverydate_tracking = models.IntegerField("Expected Delivery Date Pulled from Tracking Information", blank=True, null=True)
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
     #define transaciton type choices
     PACKAGE='Package'
