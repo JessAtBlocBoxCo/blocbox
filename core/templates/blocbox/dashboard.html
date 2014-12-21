@@ -146,20 +146,25 @@
                     		{% if shipment.tracking %} 
                     			</div> <!--end enter tracking row-->
                     				<div class="row"> <!--edit tracking info-->
-                    				 	<a href="#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
-														 	<div id="openModal_edittracking_transid{{shipment.id}}" class="modalDialog">
-                                  
+                    				 	<a href="/dashboard/transid{{shipment.id}}/#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
+														 	<div id="openModal_edittracking_transid{{shipment.id}}" class="modalDialog">                                 
                                   <div>	
                                   		<a href="#close" title="Close" class="close">X</a>
         															<h6 class="ltbluetext">Update Your Tracking Number</h6>
         															<p>Enter a tracking number, shipping company or other information</p>
                                     	
-                                    	 <form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
-					   																	{% csrf_token %}
+                                    	 <form class="form-inline" role="form" method="post" action=action="/dashboard/transid{{shipment.id}}/ enctype="multipart/form-data">
+					   															{% csrf_token %}
 					   																	{{ tracking_form.non_field_errors }}
 					   																	{{ tracking_form.tracking.errors }}
-                                  			{% edit_tracking_modal request shipment.id %}  <!--load the template-->
-                                  		
+					   															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	      																			<input type="tracking" class="form-control" name="tracking"      					          
+	      																					placeholder="Enter Tracking Number for Order {{ invoice }} ">    	  <!--removed id="id_tracking" -->      	   
+	 																						</div>
+	 
+					   														<!--
+                                  			{# edit_tracking_modal request shipment.id #} 
+                                  			-->
                                   			<!--siubmit button-->
                                   			<div class="row paddingbottom10px"> 
                                   				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
