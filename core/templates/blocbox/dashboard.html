@@ -130,17 +130,27 @@
                         	{% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
                     		{% if shipment.tracking %} 
-                    			</div> <!--enter tracking row-->
+                    			</div> <!--end enter tracking row-->
                     				<div class="row"> <!--edit tracking info-->
                     				 	<a href="#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
 														 	<div id="openModal_edittracking_transid{{shipment.id}}" class="modalDialog">
-                                  <!--start tracking modal templatetag-->
-                                  {% edit_tracking_modal request shipment.id %}  
-                                  				<div class="row paddingbottom10px">
-					        														<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    														</div>                
-                            	</div>                               
-                    			</div>
+                                  
+                                  <div>	
+                                  		<a href="#close" title="Close" class="close">X</a>
+        															<h6 class="ltbluetext">Update Your Tracking Number</h6>
+        															<p>Enter a tracking number, shipping company or other information</p>
+                                    	
+                                    	    
+                                  		{% edit_tracking_modal request shipment.id %}  <!--load the template-->
+                                  		
+                                  		<!--siubmit button-->
+                                  		<div class="row paddingbottom10px"> 
+                                  			<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					    												</div>                
+                            			
+                            			</div> 
+                            	</div>   <!--div id openmodal..-->                          
+                    			</div> <!--row-->
                     		{% endif %}
                     </div> <!--end tracking number -->
                     
