@@ -1,0 +1,29 @@
+<!--this is core/templates/modals/edittracking.html, it is called within modaltags.py - the tracking_modal def
+		which is called on dashboard.html 
+		it is called with tracking_modal shipment.id
+		-->
+		
+{% load modaltags %}
+
+
+    <div>	<a href="#close" title="Close" class="close">X</a>
+        <h6 class="ltbluetext">Update Your Tracking Number</h6>
+        <p>Enter a tracking number, shipping company or other information</p>
+             
+             
+					<form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
+					   {% csrf_token %}
+					   {{ tracking_form.non_field_errors }}
+					   {{ tracking_form.tracking.errors }}
+					    <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+					         <input type="tracking" class="form-control" name="tracking" 
+					         
+					          
+					         placeholder="Enter Tracking Number for Order {{ invoice }} ">    	  <!--removed id="id_tracking" -->      	   
+					    </div>
+					    <div class="row paddingbottom10px">
+					        <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					    </div>
+					</form>
+
+	</div> <!--end modal div-->  
