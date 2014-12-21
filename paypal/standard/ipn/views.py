@@ -166,6 +166,10 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     #Update transaction table
     datenow = datetime.datetime.now()
     trans = Transaction() 
+    if dayrangestart:
+        dayrangestart = int(dayrangestart)
+    if dayrangeend:
+        dayrangeend = int(dayrangeend)
     if host_id:
         trans.host = host
         trans.enduser = enduser        
@@ -174,8 +178,8 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         trans.invoice = invoice
         trans.dayrangestart = dayrangestart
         trans.dayrangeend = dayrangeend
-        trans.deliverydatenotracking_rangestart = datenow + timedelta(days=3)
-        trans.deliverydatenotracking_rangeend = datenow + timedelta(days=4)
+        trans.deliverydatenotracking_rangestart = datenow + timedelta(days=dayrangestart)
+        trans.deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
     trans.save()
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
