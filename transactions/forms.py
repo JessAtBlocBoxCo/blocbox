@@ -3,7 +3,6 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.conf import settings
 from core.models import UserInfo
-from connections.models import Connection
 from transactions.models import Transaction
 
 class TrackingForm(forms.ModelForm):
