@@ -106,8 +106,9 @@
                     <!--TRACKING NUMBER-->
                     <div class="col-xs-3 paddingtopbottom20px ">
                     	
-                    		<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
+                    		
                     			{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
+                    			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
                     			{% else %}                   	
                     				<a href="#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
 														 <div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
@@ -115,16 +116,17 @@
                                   {% tracking_modal request shipment.id %}                  
                             </div>             
                         	{% endif %} <!--end if no shipping tracking, enter it with modal -->
+                    		                    		
+                    		{% if shipment.tracking %} 
                     		</div> <!--enter tracking row-->
-                    		
                     		<div class="row"> <!--edit tracking info-->
-                    				 <a href="#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
+                    				 <a href="#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
 														 <div id="openModal_edittracking_transid{{shipment.id}}" class="modalDialog">
                                   <!--start tracking modal templatetag-->
                                   {% edit_tracking_modal request shipment.id %}                  
-                            </div>   
-                            
+                            </div>                               
                     		</div>
+                    		{% endif %}
                     </div> <!--end tracking number -->
                     
                     
