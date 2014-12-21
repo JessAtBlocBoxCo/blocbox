@@ -164,7 +164,7 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #Update transaction table
-    datenow = datetime.datetime.today()
+    datenow = datetime.date.today()
     trans = Transaction() 
     if host_id:
         trans.host = host
