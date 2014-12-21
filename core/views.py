@@ -76,9 +76,7 @@ def dashboard(request, host_id=None):
     if connections_count==1:
         hostonly=connections_all[0].host_user
     else:
-        hostonly=None   	  
-    else:
-        tracking_form = TrackingForm()    
+        hostonly=None   	   
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
