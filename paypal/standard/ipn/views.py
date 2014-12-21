@@ -14,6 +14,7 @@ from paypal.standard.ipn.forms import PayPalIPNForm
 from paypal.standard.ipn.models import PayPalIPN
 #Scheduling Stuff
 import datetime
+from datetime import timedelta
 import pytz
 from django.utils import timezone
 #Import CORE models
@@ -173,8 +174,8 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         trans.invoice = invoice
         trans.dayrangestart = dayrangestart
         trans.dayrangeend = dayrangeend
-        trans.deliverydatenotracking_rangestart = datenow + datetime.timedelta(days=dayrangestart)
-        trans.deliverydatenotracking_rangeend = datenow + datetime.timedelta(days=daterangeend)
+        trans.deliverydatenotracking_rangestart = datenow + timedelta(days=3)
+        trans.deliverydatenotracking_rangeend = datenow + timedelta(days=4)
     trans.save()
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
