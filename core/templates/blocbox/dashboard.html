@@ -106,18 +106,10 @@
                     		{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
                     		{% else %}
                     	
-                    		
-                        <a href="#openModal" class="nomargin textcenter">Enter Tracking #</a>
-                        <div id="openModal" class="modalDialog">
-                            <div>	<a href="#close" title="Close" class="close">X</a>
-                                <h6 class="ltbluetext">Enter a Tracking Number</h6>
-                                <p>Enter a tracking number, shipping company or other information</p>
-                                     
+                    	
                                    <!--start tracking modal templatetag-->
                                     {% tracking_modal request shipment.id %}
                                 
-                            </div>
-                        </div> <!--end modal div--> 
                         {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     </div> <!--end tracking number -->
                     
