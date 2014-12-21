@@ -163,6 +163,7 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     }    
     form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #Update transaction table
+    datenow = datetime.date.today
     trans = Transaction() 
     if host_id:
         trans.host = host
@@ -172,6 +173,8 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         trans.invoice = invoice
         trans.dayrangestart = dayrangestart
         trans.dayrangeend = dayrangeend
+        trans.deliverydatenotracking_rangestart = datenow + datetime.timedelta(days=dayrangestart)
+		    trans.deliverydatenotracking_rangeend = datenow + datetime.timedelta(days=daterangeend)
     trans.save()
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
