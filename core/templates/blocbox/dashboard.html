@@ -3,7 +3,7 @@
 	this is easier to impelemnt if teh layout is relatively straight forward - so additional content is added vertically,
 -->
 {% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Dashboard{% endblock %} {% block headafter %} {% endblock %} {% block content %}
-
+{% load modaltags %}
 <div class="content container-fluid whitebackground relativediv">
 
     <div class="row margintop60px marginbottom30px mobilehide">
@@ -105,7 +105,8 @@
                     <div class="col-xs-3 paddingtopbottom20px ">
                     		{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
                     		{% else %}
-                    		<!--start tracking modal -->
+                    	
+                    		
                         <a href="#openModal" class="nomargin textcenter">Enter Tracking #</a>
                         <div id="openModal" class="modalDialog">
                             <div>	<a href="#close" title="Close" class="close">X</a>
@@ -113,28 +114,22 @@
                                 <p>Enter a tracking number, shipping company or other information</p>
                                      
                                 <form class="form-inline" role="form" method="post" action="." enctype="multipart/form-data">
-                                	    {% csrf_token %}
-                                      {{ tracking_form.non_field_errors }}
-                                      {{ tracking_form.tracking.errors }} 
+ 
+                                    	
+                                    <!--start tracking modal -->
+                                    {% tracking_modal shipment.id %}
+                                    <!--
                                     <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-                                        <input type="tracking" class="form-control" name="tracking" id="id_tracking" placeholder="Enter Tracking Number">
-                                        	
-        				<!--	<div class="form-group">  {{ connect_form.pickup_time.errors }}
-        					<div class="row">
-            			<div class="col-xs-12 col-sm-7">
-                		<input type="text" class="form-control" name="pickup_time" id="id_pickup_time"  placeholder="Describe in 100 characters">
-            			</div>      	
-        				</div>		-->
-        	
-        	
+                                        <input type="tracking" class="form-control" name="tracking" id="id_tracking" placeholder="Enter Tracking Number">    	        	
                                     </div>
+                                    -->
                                     <div class="row paddingbottom10px">
                                         <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
                                     </div>
-                                </form> <!--end tracking form -->
-                                <!--end form line -->
+                                </form> 
                             </div>
-                        </div> <!--end tracking modal -->
+                        </div> 
+                        -->
                         {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     </div>
                     

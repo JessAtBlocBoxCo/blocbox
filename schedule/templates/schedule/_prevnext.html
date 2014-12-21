@@ -1,3 +1,8 @@
+<!--this is _prevnext.html - it lists a formatetd ate
+		 it is rendered from schedultags.prevnext(target, slug, period, fmt=None), and called with
+		e.g., on calendarday: {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %}  
+		prev_url is defined elsewhere
+-->
 {% load scheduletags staticfiles %}
 
     <a href="{% prev_url target slug period %}">

@@ -34,7 +34,6 @@ from django.utils import timezone
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
 
-
 #Write a custom template filter:
 from django.template.defaulttags import register
 @register.filter
@@ -77,15 +76,7 @@ def dashboard(request, host_id=None):
     if connections_count==1:
         hostonly=connections_all[0].host_user
     else:
-        hostonly=None
-    #TrackingForm data
-    if request.method == 'POST':        
-        tracking_form = TrackingForm(data=request.POST)  
-        if tracking_form.is_valid(): 
-            trackadd = tracking_form.save()          
-            trackadd.save()   	     
-        else: 
-    	      print tracking_form.errors    	  
+        hostonly=None   	  
     else:
         tracking_form = TrackingForm()    
     return render(request, 'blocbox/dashboard.html', {
@@ -93,7 +84,6 @@ def dashboard(request, host_id=None):
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
         'hostonly': hostonly,
-        'tracking_form': tracking_form,
     })
     
 
