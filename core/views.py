@@ -88,7 +88,7 @@ def dashboard(request, host_id=None, trans_id=None):
             else: 
     	          print tracking_form.errors 
             modify_form  = ModifyTransaction(request.POST, instance=trans)
-    	      if modify_form.is_valid():
+            if modify_form.is_valid():
     	          modify = tracking_form.save()
     	          modify.save()
     	      else:
