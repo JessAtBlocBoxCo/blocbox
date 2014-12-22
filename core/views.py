@@ -93,7 +93,7 @@ def dashboard(request, host_id=None, trans_id=None, modify_id=None):
         trans = None    
         tracking_form = None  
     if modify_id:
-        trans = Transaction.objects.get(pk=trans_id)    
+        trans = Transaction.objects.get(pk=modify_id)    
         if request.method == 'POST':    
             modify_form  = ModifyTransaction(request.POST, instance=trans)
             if modify_form.is_valid():
