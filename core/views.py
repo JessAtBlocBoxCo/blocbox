@@ -86,19 +86,27 @@ def dashboard(request, host_id=None, trans_id=None):
                 trackadd = tracking_form.save()          
                 trackadd.save()   	     
             else: 
-    	      print tracking_form.errors 
+    	          print tracking_form.errors 
+    	      modify_form  = ModifyTransaction(request.POST, instance=trans)
+    	      if modify_form.is_valid():
+    	          modify = tracking_form.save()
+    	          modify.save()
+    	      else:
+    	          print modify_form.errors
         else:
             tracking_form = TrackingForm(instance=trans) 
+            modify_form = ModifyForm(instance=trans)
     else:
         trans = None    
         tracking_form = None  
+        modify_form = None
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
         'hostonly': hostonly,
         'request': request,
-        'trans_id': trans_id, 'trans': trans, 'tracking_form': tracking_form,
+        'trans_id': trans_id, 'trans': trans, 'tracking_form': tracking_form, 'modify_form': modify_form
     })
     
 
