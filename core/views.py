@@ -104,7 +104,7 @@ def dashboard(request, host_id=None, trans_id=None, modify_id=None):
         else:
             modify_form = ModifyTransaction(instance=trans)
     else:
-        modify_id = None
+        modify_form = None
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
