@@ -95,7 +95,7 @@ def dashboard(request, host_id=None, trans_id=None):
     	          print modify_form.errors
         else:
             tracking_form = TrackingForm(instance=trans) 
-            modify_form = ModifyForm(instance=trans)
+            modify_form = ModifyTransaction(instance=trans)
     else:
         trans = None    
         tracking_form = None  
