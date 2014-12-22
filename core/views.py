@@ -60,7 +60,7 @@ def abouthosting(request):
     enduser = request.user
     return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
 
-def dashboard(request, host_id=None, trans_id=None):
+def dashboard(request, host_id=None, trans_id=None, modify_id=None):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -87,19 +87,22 @@ def dashboard(request, host_id=None, trans_id=None):
                 trackadd.save()   	     
             else: 
     	          print tracking_form.errors 
+        else:
+            tracking_form = TrackingForm(instance=trans) 
+    else:
+        trans = None    
+        tracking_form = None  
+    if modify_id:
+        trans = Transaction.objects.get(pk=trans_id)    
+        if request.method == 'POST':    
             modify_form  = ModifyTransaction(request.POST, instance=trans)
             if modify_form.is_valid():
     	          modify = tracking_form.save()
     	          modify.save()
             else:
-    	          print modify_form.errors
+    	          print modify_form.errors      	     
         else:
-            tracking_form = TrackingForm(instance=trans) 
             modify_form = ModifyTransaction(instance=trans)
-    else:
-        trans = None    
-        tracking_form = None  
-        modify_form = None
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
