@@ -70,7 +70,7 @@ def dashboard(request, host_id=None, trans_id=None, modify_id=None):
     connections_count = connections_all.count() #count them,removing status=0 after host_user=host
     #load Transacton table instead of paypal tabl
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
-    shipments_all = transactions_all.filter(favortype="package").order_by('id')
+    shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
     otherfavors_all = transactions_all.exclude(favortype="package")
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
