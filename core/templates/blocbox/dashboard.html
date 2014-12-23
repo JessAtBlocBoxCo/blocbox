@@ -93,7 +93,7 @@
 
                 <!--Current or Recent Shipments-->
                 
-								{% regroup shipments_all|dictsort:"id" by id as shipments_sorted %}
+								{% regroup shipments_all by id as shipments_sorted %}
 
                 {% for shipment in shipments_sorted %}
                 <!--divider defining the whole current shipments part -->
