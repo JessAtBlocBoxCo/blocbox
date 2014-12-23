@@ -154,7 +154,7 @@
         															<h6 class="ltbluetext">Update Your Tracking Number</h6>
         															<p>Enter a tracking number, shipping company or other information</p>
                                     	
-                                    	 <form class="form-inline" role="form" method="post" action=action="/dashboard/transid{{shipment.id}}/ enctype="multipart/form-data">
+                                    	 <form class="form-inline" role="form" method="post" action=action="/dashboard/transid{{shipment.id}}/" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ tracking_form.non_field_errors }}
 					   																	{{ tracking_form.tracking.errors }}
@@ -195,7 +195,7 @@
                         </p>
                     </div>
                     <!--host name and information-->
-                    <div class="col-xs-3 paddingtopbottom10px">
+                    <div class="col-xs-3 paddingtopbottom20px">
                         <div class="row paddingtopbottom2px">
                             <a class="nomargin">{{ shipment.host.first_name }}</a>
                         </div>
@@ -208,7 +208,7 @@
                     
                     <!--add a "modify" link to update the information: right now UPDATE STATUS vs MODIFY b/c thats all there is-->
                     <!--JMY MAKING THIS A MODAL -->
-                    <div class="col-xs-2 paddingtopbottom10px">
+                    <div class="col-xs-2 paddingtopbottom20px">
                         <div class="row paddingtopbottom2px">
                             
                     
