@@ -951,7 +951,7 @@ footer {
     }
     .waitlistbody .nav-blocbox-name {
         display: block;
-        background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*
+        background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
         background-repeat: no-repeat;
         background-size: contain;
         height: 70px;
