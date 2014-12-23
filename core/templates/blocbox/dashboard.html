@@ -93,9 +93,8 @@
 
                 <!--Current or Recent Shipments-->
                 
-								{% regroup shipments_all by id as shipments_sorted %}
 
-                {% for shipment in shipments_sorted %}
+                {% for shipment in shipments_all %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row whitebackground marginbottom30px textcenter dashfont">
                     <!--<div class="row  paddingtop10px"> -->
