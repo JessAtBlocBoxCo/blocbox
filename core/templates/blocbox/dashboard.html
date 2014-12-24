@@ -91,12 +91,8 @@
                 </div>
 
 
-                <!--Current or Recent Shipments-->
-                
-            <p>TEST ORDER OF SHIPMENTS_ALL {{shipments_all}}</p>
-								{% for shipment in shipments_all %}
-										<p> {{ shipment.status}} ; {{shipment.tracking }} ; {{ shipment.id }} </p>
-							 	{% endfor %}
+            <!--Current or Recent Shipments: currently ordered by ID - so the oldest order is first...-->
+
             {% for shipment in shipments_all %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row whitebackground marginbottom30px textcenter dashfont">
