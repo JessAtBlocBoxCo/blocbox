@@ -15,6 +15,16 @@ body {
 }
 
 
+/* JMY TRYING TO OVER-RIDE THE AFTERSHIP PACKAGE TRACKING SETTINGS
+	<div id="tracking-copyright-outside" class="tracking-copyright outside"> 
+*/
+.tracking-copyright {
+    display: none;
+    font-size: 0.200em;
+    color: black;
+}
+
+
 /*JMY editing rows to o verride the margin-rightand margin-left -15px property */
 .row {
     margin-right: 0px;
@@ -1715,11 +1725,3 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 }
 
 
-/*
-	JMY TRYING TO OVER-RIDE THE AFTERSHIP PACKAGE TRACKING SETTINGS
-	<div id="tracking-copyright-outside" class="tracking-copyright outside"> 
- */
-.tracking-copyright .outside {
-    display: none;
-    font-size: 0.200em;
-}
