@@ -47,7 +47,7 @@
       			'</div>';
 		
 				//define info window
-				var infowindow = new google.maps.InfoWindow({
+				var infowindow{{host.id}} = new google.maps.InfoWindow({
      				 content: hostcontentString
   				});	
 				
@@ -63,7 +63,7 @@
 				}); 
 			
 		  		google.maps.event.addListener(HostMarker, 'click', function() {
-    			infowindow.open(map,HostMarker);
+    			infowindow{{host.id}}.open(map,HostMarker);
   					});
   					
   		{% endfor %}	
