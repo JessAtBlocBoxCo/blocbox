@@ -51,7 +51,6 @@ def beta(request):
 
 def search(request):
 	  enduser = request.user
-	  ysers_all = (UserInfo, pk=host_id)
 	  users_all = UserInfo.objects.all
 	  hosts_all = UserInfo.objects.filter(host=1)
     return render(request, 'blocbox/search.html', {
