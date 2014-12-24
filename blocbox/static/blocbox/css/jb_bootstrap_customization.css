@@ -266,7 +266,7 @@ footer {
 
 /*JMY edited dashfont to make it smaller ssince it was currently multiplying tinyfont - 12.21.14*/
 .dashfont {
-    font-size: 0.870em; /*font-size: 1.300em */
+    font-size: 0.880em; /*font-size: 1.300em */
     font-weight: 400;
 }
 
