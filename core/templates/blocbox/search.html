@@ -51,7 +51,7 @@
      				 content: hostcontentString
   				});	
 				
-				//define lat long of JB marker  host.address_latitude, host.address_longitude 
+				//define lat long for each host host.address_latitude, host.address_longitude 
 				var HostLatLong = new google.maps.LatLng( {{host.address_latitude }}, {{ host.address_longitude }});
          	
 				
@@ -81,15 +81,16 @@
   					var markers = [];
   					for (var i = 0, marker; marker = markers[i]; i++) {marker.setMap(null); }
   				
-  				  // For each place, get the icon, place name, and location.
+  				  // For each place, get the icon, place name, and location: i think thiis has to do with when you search...
   				  markers = [];
   				  var bounds = new google.maps.LatLngBounds();
   				  for (var i = 0, place; place = places[i]; i++) {
   				    var image = {
   				      url: place.icon,
+  				      //i've changed these parameters but nothing really happens...
   				      size: new google.maps.Size(71, 71), //(71, 71) - not sure what this changes
-  				      origin: new google.maps.Point(200, 200), // was (0,0)
-  				      anchor: new google.maps.Point(200, 200), //(17, 34)
+  				      origin: new google.maps.Point(0, 0), // was (0,0)
+  				      anchor: new google.maps.Point(17, 34), //(17, 34)
   				      scaledSize: new google.maps.Size(25, 25)
   				    };
   				
