@@ -95,21 +95,8 @@
 
             {% for shipment in shipments_all %}
             
-            		<!--TEST TRACKING WIDGET -->
-            		<div id="as-root"> </div>
-								<script> 
-									(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
-								</script>
 
-					
-								<div class="as-track-button" data-counter="false" data-support="false" data-width="300" data-size="normal" data-tracking-number={{shipment.tracking}}></div>
-								<!--from: https://www.aftership.com/apps/track-button, parameters here: https://www.aftership.com/docs/track-button
-									data-counter: displays the number of shipmetns ina ccount
-									data-support: shows 'powered by..' need premium account to disable
-									data-widt: the width in px of the track button iframe size
-									data-size: The size of the track button, can be: small, normal or large
-									data-tracking-number String empty The tracking number for the track button, must use together with "data-slug" 
-								-->
+
             		
                 <!--divider defining the whole current shipments part -->
                 <div class="row whitebackground marginbottom30px textcenter dashfont">
@@ -120,8 +107,21 @@
                     <div class="col-xs-3 paddingtopbottom20px ">
                     	                    		
                     		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
-                    			<p class="dashfont nomargin">{{ shipment.tracking }}</p> 
-                    			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
+                    			<!--<p class="dashfont nomargin">{{ shipment.tracking }}</p> -->
+                    			<div id="as-root"> </div> <script> 
+														(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
+													</script>
+                					<div class="as-track-button" data-counter="false" data-support="false" data-width="300" data-size="normal" data-tracking-number={{shipment.tracking}}></div>
+														<!--from: https://www.aftership.com/apps/track-button, parameters here: https://www.aftership.com/docs/track-button
+															data-counter: displays the number of shipmetns ina ccount
+															data-support: shows 'powered by..' need premium account to disable
+															data-widt: the width in px of the track button iframe size
+															data-size: The size of the track button, can be: small, normal or large
+															data-tracking-number String empty The tracking number for the track button, must use together with "data-slug" 
+														-->
+                   			
+                    				<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
+                    		                    		
                     		{% else %}  <!--if no tracking, enter it -->
                     			<a href="/dashboard/transid{{shipment.id}}/#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
 														 <div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
