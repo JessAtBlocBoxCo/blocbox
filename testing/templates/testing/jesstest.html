@@ -19,6 +19,26 @@
 			{% load scheduletags i18n %}
 			{% load scheduletags %}
 			
+			<!--TEST TRACKING WIDGET-->
+			<div class="row">
+				<h3>TRACKING WIDGET</h3>	
+					<!--javascript, from: https://www.aftership.com/apps/track-button
+							guidance: Include the follow javascript on your page once, ideally right after the opening <body> tag.
+					-->
+					
+					<div id="as-root"> </div>
+					<script>
+							(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
+					</script>
+
+					
+					<div class="as-track-button" data-counter="true" data-support="true" data-width="400" data-size="large"></div>
+					<!--from: https://www.aftership.com/apps/track-button
+							Copy and paste the code below into your page between the <body> and </body> tags.
+							The buttons will appear whatever you place them. Learn about parameters of Track Button here: https://www.aftership.com/docs/track-button
+					-->
+					
+			</div>
 			<!--SHOW LIST OF AVAILABLE CALENDARS	 -->
 			<div class="row">	<h3>All Available Calendars (List with Links) </h3>
 					{% for calendar in cal_list %} <!--HOW DOES IT KNOW WHAT THE OBJECT LIST IS?-->
