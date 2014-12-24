@@ -103,7 +103,7 @@
                     
                     
                     <!--STATUS-->
-                    <div class="col-xs-2 paddingtopbottom20px">  <p class=" nomargin">{{ shipment.status }}</p>  </div>
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">  <p class=" nomargin">{{ shipment.status }}</p>  </div>
                      
                           
                     
@@ -113,7 +113,7 @@
                     
                     
                     <!--DELIVERY DATE -->
-                    <div class="col-xs-2 paddingtopbottom20px">
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
                         <p class="nomargin"> {% if shipment.dayrangestart %}
                         																	{% if shipment.dayrangestart == shipment.dayrangeend %}
                         																			{{ shipment.deliverydatenotracking_rangestart }}
@@ -128,7 +128,7 @@
                     
                     
                     <!--NEIGHBOR: host name and information-->
-                    <div class="col-xs-2 paddingtopbottom20px">
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
                         <div class="row paddingtopbottom2px">
                             <a class="nomargin">{{ shipment.host.first_name }}</a>
                         </div>
@@ -139,9 +139,9 @@
                     
                     
                     
-                    <!--add a "modify" link to update the information: right now UPDATE STATUS vs MODIFY b/c thats all there is-->
-                    <!--JMY MAKING THIS A MODAL -->
-                    <div class="col-xs-2 paddingtopbottom20px">
+                    <!--MODIFY-->
+                    <!--right now UPDATE STATUS vs MODIFY b/c thats all there is-->
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px">
                         <div class="row paddingtopbottom2px">
                             
                     
@@ -181,7 +181,7 @@
                     
      								
      								<!--TRACKING NUMBER-->
-                    <div class="col-xs-4 paddingtopbottom20px ">
+                    <div class="col-xs-4 paddingtopbottom20px paddingsides5px ">
                     	                    		
                     		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
 
