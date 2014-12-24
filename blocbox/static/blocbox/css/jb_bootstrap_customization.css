@@ -15,17 +15,6 @@ body {
 }
 
 
-/* JMY TRYING TO OVER-RIDE THE AFTERSHIP PACKAGE TRACKING SETTINGS
-	<div id="tracking-copyright-outside" class="tracking-copyright outside"> 
-*/
-
-
-#tracking-copyright-outside {
-    display: none;
-    font-size: 0.200em;
-    color: black;
-}
-
 
 /*JMY editing rows to o verride the margin-rightand margin-left -15px property */
 .row {
@@ -277,7 +266,7 @@ footer {
 
 /*JMY edited dashfont to make it smaller ssince it was currently multiplying tinyfont - 12.21.14*/
 .dashfont {
-    font-size: 0.950em; /*font-size: 1.300em */
+    font-size: 0.900em; /*font-size: 1.300em */
     font-weight: 400;
 }
 
