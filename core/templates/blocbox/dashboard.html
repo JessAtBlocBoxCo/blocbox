@@ -112,7 +112,7 @@
                     
                     
                     
-                    <!--delivvery date -->
+                    <!--DELIVERY DATE -->
                     <div class="col-xs-2 paddingtopbottom20px">
                         <p class="nomargin"> {% if shipment.dayrangestart %}
                         																	{% if shipment.dayrangestart == shipment.dayrangeend %}
@@ -125,8 +125,10 @@
                         															
                         </p>
                     </div>
-                    <!--host name and information-->
-                    <div class="col-xs-3 paddingtopbottom20px">
+                    
+                    
+                    <!--NEIGHBOR: host name and information-->
+                    <div class="col-xs-2 paddingtopbottom20px">
                         <div class="row paddingtopbottom2px">
                             <a class="nomargin">{{ shipment.host.first_name }}</a>
                         </div>
@@ -179,7 +181,7 @@
                     
      								
      								<!--TRACKING NUMBER-->
-                    <div class="col-xs-3 paddingtopbottom20px ">
+                    <div class="col-xs-4 paddingtopbottom20px ">
                     	                    		
                     		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
 
