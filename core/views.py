@@ -50,7 +50,13 @@ def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
 def search(request):
-    return render(request, 'blocbox/search.html')
+	  enduser = request.user
+	  ysers_all = (UserInfo, pk=host_id)
+	  users_all = UserInfo.objects.all
+	  hosts_all = UserInfo.objects.filter(host=1)
+    return render(request, 'blocbox/search.html', {
+        'enduser': enduser, 'hosts_all': hosts_all, 'users_all': users_all,    
+    })
 
 def aboutblocbox(request):
     enduser = request.user
