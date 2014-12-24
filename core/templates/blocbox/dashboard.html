@@ -93,9 +93,11 @@
 
                 <!--Current or Recent Shipments-->
                 
-                <p>TEST ORDER OF SHIPMENTS_ALL {{shipments_all}}</p>
-
-                {% for shipment in shipments_all %}
+            <p>TEST ORDER OF SHIPMENTS_ALL {{shipments_all}}</p>
+								{% for shipment in shipments_all %}
+										<p> {{ shipment.id }}</p>
+							 	{% endfor %}
+            {% for shipment in shipments_all %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row whitebackground marginbottom30px textcenter dashfont">
                     <!--<div class="row  paddingtop10px"> -->
@@ -251,9 +253,8 @@
                     
                     
                     
-                </div>
-                <!--row, testing row-->
-                {% endfor %}
+                </div> <!--row whitebackground-->
+            {% endfor %} <!--for shipmetns in all -->
 
             </div>
             <!--col, shipments container-->
