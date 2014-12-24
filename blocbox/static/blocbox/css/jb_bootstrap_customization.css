@@ -1715,8 +1715,11 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 }
 
 
-/*JMY TRYING TO OVER-RIDE THE AFTERSHIP PACKAGE TRACKING SETTINGSclass="tracking-widget control-group" */
-.tracking-widget {
+/*
+	JMY TRYING TO OVER-RIDE THE AFTERSHIP PACKAGE TRACKING SETTINGS
+	<div id="tracking-copyright-outside" class="tracking-copyright outside"> 
+ */
+.tracking-copyright {
     display: none;
     font-size: 0.200em;
 }
