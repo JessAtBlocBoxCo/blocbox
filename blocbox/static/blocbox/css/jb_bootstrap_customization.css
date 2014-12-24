@@ -13,8 +13,9 @@ body {
     font-size: 15px;
     height: 100%;
 }
-/*JMY editing rows to o verride the margin-rightand margin-left -15px property */
 
+
+/*JMY editing rows to o verride the margin-rightand margin-left -15px property */
 .row {
     margin-right: 0px;
     margin-left: 0px;
@@ -1711,4 +1712,11 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .profilebox {
         min-height: 50px;
     }
+}
+
+
+/*JMY TRYING TO OVER-RIDE THE AFTERSHIP PACKAGE TRACKING SETTINGSclass="tracking-widget control-group" */
+.tracking-widget {
+    display: none;
+    font-size: 0.200em;
 }
