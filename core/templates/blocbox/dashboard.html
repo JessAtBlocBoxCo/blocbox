@@ -95,28 +95,22 @@
                 
             <p>TEST ORDER OF SHIPMENTS_ALL {{shipments_all}}</p>
 								{% for shipment in shipments_all %}
-										<p> {{ shipment.id }}</p>
+										<p> {{ shipment.status}} ; {{shipment.tracking }} ; {{ shipment.id }} </p>
 							 	{% endfor %}
             {% for shipment in shipments_all %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row whitebackground marginbottom30px textcenter dashfont">
-                    <!--<div class="row  paddingtop10px"> -->
-                    <div class="col-xs-2 paddingtopbottom20px">
-                  	
-                        <p class="dashfont nomargin">{{ shipment.status }}</p>
-                      </div>
-      
-                    
-                    
+                    <!--STATUS-->
+                    <div class="col-xs-2 paddingtopbottom20px">  <p class="dashfont nomargin">{{ shipment.status }}</p>  </div>
+                          
                     <!--TRACKING NUMBER-->
                     <div class="col-xs-3 paddingtopbottom20px ">
-                    	
-                    		
-                    			{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
+                    	                    		
+                    		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
+                    			<p class="dashfont nomargin">{{ shipment.tracking }}</p> 
                     			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
-                    			{% else %}    
-                    				<a href="/dashboard/transid{{shipment.id}}/#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
-                    				<!--<a href="#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>-->
+                    		{% else %}  <!--if no tracking, enter it -->
+                    			<a href="/dashboard/transid{{shipment.id}}/#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
 														 <div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
                                   
                                 <div>	<a href="#close" title="Close" class="close">X</a>
