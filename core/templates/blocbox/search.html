@@ -52,18 +52,19 @@
   				});	
 				
 				//define lat long for each host host.address_latitude, host.address_longitude 
-				var HostLatLong = new google.maps.LatLng( {{host.address_latitude }}, {{ host.address_longitude }});
+				var HostLatLong{{host.id}} = new google.maps.LatLng( {{host.address_latitude }}, {{ host.address_longitude }});
          	
 				
 				//add a new marker with infowindow
-				var HostMarker = new google.maps.Marker({
-					position: HostLatLong,
+				var HostMarker{{host.id}} = new google.maps.Marker({
+					position: HostLatLong{{host.id}},
 					map: map,
 					title: "{{ host.first_name }}"
 				}); 
 			
-		  		google.maps.event.addListener(HostMarker, 'click', function() {
-    			infowindow{{host.id}}.open(map,HostMarker);
+					//it keeps opening the info window of last host.. 
+		  		google.maps.event.addListener(HostMarker{{host.id}}, 'click', function() {
+    			infowindow{{host.id}}.open(map,HostMarker{{host.id}});
   					});
   					
   		{% endfor %}	
