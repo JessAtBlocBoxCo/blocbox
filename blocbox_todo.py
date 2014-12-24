@@ -11,6 +11,7 @@
 - expected date of delivery before tracking: make it adjust for business days/ skip sunday
 - paypal PDT
 - paypal PRO	
+- later: figure out how to make it automatically register lat/long - right now we need to manually enter it
 
 """TO DO"""
 1. JOHN - /Fix Mobile/make site responsive
