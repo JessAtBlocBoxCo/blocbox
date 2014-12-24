@@ -34,6 +34,9 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     zipcode = models.CharField(max_length =5)
     st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True)
     st_address2 = models.CharField('Street Address 2', max_length = 70, blank=True)
+    #latitude and longiutude for google maps, e.g., 420 Grand Ave is 40.686529, -73.949413, not sure if engative sing counts as digit
+    address_latitude = models.DemicalField('Latitude Coordinate', max_digits=9, decimal_places=6, blank=True, null=True) #latitude is max-min 90, -90
+    address_longitude = models.DecimalField('Longitude Coordinate', max_digits=10, decimal_places=6, blank=True, null=True) #longitude is max-min 180, -180
     city = models.CharField(max_length=30, blank=True)
     state = models.CharField(max_length=2, blank=True) #upate this so drop-down 
     #The picture field isn't working i need to isntal the imagefield thing... will do later.. for now use linktoimage
