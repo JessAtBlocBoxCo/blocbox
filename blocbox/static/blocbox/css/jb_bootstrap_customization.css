@@ -18,7 +18,9 @@ body {
 /* JMY TRYING TO OVER-RIDE THE AFTERSHIP PACKAGE TRACKING SETTINGS
 	<div id="tracking-copyright-outside" class="tracking-copyright outside"> 
 */
-.tracking-copyright.outside {
+
+
+#tracking-copyright-outside {
     display: none;
     font-size: 0.200em;
     color: black;
