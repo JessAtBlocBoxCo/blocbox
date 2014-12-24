@@ -141,9 +141,10 @@
         Don't see a BlocBox host in your hood? <a class="whitetext textunderline" href="/nudgeaneighbor/">Nudge a neighbor</a> to let them know about the opportunity to host or <a class="whitetext textunderline" href="">host a box yourself</a>.
      	
      	  <h3>TEST THE VARIABLES FOR EACH HOST</h3>
-  		<p> users_all {{ users_all }}</p>
-			<p> hosts_all {{ hosts_all }} </p>
-			<p> enduser.email {{ enduser.email }}</p>
+  		{% for host in hosts_all %}
+					<p> {{ host.first_name }} </p>
+					<p> {{ host.address_approx }} </p>
+						<p> {{ host.address_lattitude }}, {{ host.address_longitude }} </p>
      	
      	<br>
      	</h6>  
