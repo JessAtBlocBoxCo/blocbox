@@ -844,6 +844,8 @@ footer {
         display: block;
         border: 0;
         color: white;
+        background-color: white;
+        
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
