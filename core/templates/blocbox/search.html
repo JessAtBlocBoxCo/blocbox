@@ -31,39 +31,43 @@
 
   				var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 				
+  		{% for host in hosts_all %}
+			     	
 				//Content STring for the InfoWindow - 
 				//removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
-			  	var JBcontentString = '<div class="col-xs-9" id="content">'+
+			  	var hostcontentString = '<div class="col-xs-9" id="content">'+
                 '<img class="blockpic margintop20px nopadding col-xs-3" src="{% static 'blocbox/images/JB-2.png' %}"  />'+
                 '<div class="row">'+    
-      			'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b>John</b></h1>'+
+      			'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
       			'<div class="InfoWindowBody col-xs-8">'+
-      				'<h5 class="nomargintop">Grand and Gates, Brooklyn, NY </h5>'+
-      				'<h6><a href="/hostprofile/host2/">Connect with John to stop missing packages or get help with other stuff.</a> </h6>'+
+      				'<h5 class="nomargintop"> {{ host.address_approx }}, {{ host.city }}, {{ host.state }} </h5>'+
+      				'<h6><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
       			'</div>'+
                 '</div> '+   
       			'</div>';
 		
 				//define info window
-				var infowindow = new google.maps.InfoWindow({
-     				 content: JBcontentString
+				var infowindow{{host.id}} = new google.maps.InfoWindow({
+     				 content: hostcontentString
   				});	
 				
-				//define lat long of JB marker
-				var JBLatLong = new google.maps.LatLng(40.685720, -73.962675);
+				//define lat long for each host host.address_latitude, host.address_longitude 
+				var HostLatLong{{host.id}} = new google.maps.LatLng( {{host.address_latitude }}, {{ host.address_longitude }});
          	
 				
 				//add a new marker with infowindow
-				var JBmarker = new google.maps.Marker({
-					position: JBLatLong,
+				var HostMarker{{host.id}} = new google.maps.Marker({
+					position: HostLatLong{{host.id}},
 					map: map,
-					title: "John"
+					title: "{{ host.first_name }}"
 				}); 
 			
-		  		google.maps.event.addListener(JBmarker, 'click', function() {
-    			infowindow.open(map,JBmarker);
+					//it keeps opening the info window of last host.. 
+		  		google.maps.event.addListener(HostMarker{{host.id}}, 'click', function() {
+    			infowindow{{host.id}}.open(map,HostMarker{{host.id}});
   					});
-  				
+  					
+  		{% endfor %}	
   				
   				// Create the search box 
   				var input = /** @type {HTMLInputElement} */( document.getElementById('search-box'));			
@@ -78,15 +82,16 @@
   					var markers = [];
   					for (var i = 0, marker; marker = markers[i]; i++) {marker.setMap(null); }
   				
-  				  // For each place, get the icon, place name, and location.
+  				  // For each place, get the icon, place name, and location: i think thiis has to do with when you search...
   				  markers = [];
   				  var bounds = new google.maps.LatLngBounds();
   				  for (var i = 0, place; place = places[i]; i++) {
   				    var image = {
   				      url: place.icon,
-  				      size: new google.maps.Size(71, 71),
-  				      origin: new google.maps.Point(0, 0),
-  				      anchor: new google.maps.Point(17, 34),
+  				      //i've changed these parameters but nothing really happens...
+  				      size: new google.maps.Size(71, 71), //(71, 71) - not sure what this changes
+  				      origin: new google.maps.Point(0, 0), // was (0,0)
+  				      anchor: new google.maps.Point(17, 34), //(17, 34)
   				      scaledSize: new google.maps.Size(25, 25)
   				    };
   				
@@ -136,11 +141,14 @@
 	
 	</div> <!--container-fluid offwhitebackground -->
 	
-<div class="content container-fluid darkbluebackground text-center"> 
+	<div class="content container-fluid darkbluebackground text-center"> 
     <h6 class="whitetext nomargin paddingtopbottom10px">
         Don't see a BlocBox host in your hood? <a class="whitetext textunderline" href="/nudgeaneighbor/">Nudge a neighbor</a> to let them know about the opportunity to host or <a class="whitetext textunderline" href="">host a box yourself</a>.
+     	
+
      	<br>
      	</h6>  
   </div> 
+  
 
 {% endblock %}

@@ -50,7 +50,12 @@ def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
 def search(request):
-    return render(request, 'blocbox/search.html')
+    enduser = request.user
+    users_all = UserInfo.objects.all
+    hosts_all = UserInfo.objects.filter(host=1)
+    return render(request, 'blocbox/search.html', {
+        'enduser': enduser, 'hosts_all': hosts_all, 'users_all': users_all,    
+    })
 
 def aboutblocbox(request):
     enduser = request.user
@@ -70,7 +75,7 @@ def dashboard(request, host_id=None, trans_id=None, modify_id=None):
     connections_count = connections_all.count() #count them,removing status=0 after host_user=host
     #load Transacton table instead of paypal tabl
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
-    shipments_all = transactions_all.filter(favortype="package")
+    shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
     otherfavors_all = transactions_all.exclude(favortype="package")
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:

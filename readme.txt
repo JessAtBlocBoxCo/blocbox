@@ -22,7 +22,11 @@ The URLs for this site, and the corresponding files are as follows:
 	- this is the search page (after clikign on "Get started")
 	- the tempalte is at core/templates/blocbox/search.shtml
 	- teh styles/css need to be fixed
-
+	- aboiut latitude, longtidue: latitude first, longitude second  e.g., john is 40.686529, -73.949413
+			to find latitude or longitude on google maps, right-click ont he icon and press "what is here"
+			- the first number in lattitude coordinate is between -90 and 90 and 
+			- the first number in your longitude coordinate is between -180 and 180.
+	
 1D. blocbox.co/abouthosting/, template is at core/blocbox/templates/blocbox/abouthosting.html, view is core/views/abouthosting
 
 1E. blocbox.co/aboutblocbox (also accessible at www.blocbox.co/about) 

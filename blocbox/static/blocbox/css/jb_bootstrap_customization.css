@@ -13,8 +13,10 @@ body {
     font-size: 15px;
     height: 100%;
 }
-/*JMY editing rows to o verride the margin-rightand margin-left -15px property */
 
+
+
+/*JMY editing rows to o verride the margin-rightand margin-left -15px property */
 .row {
     margin-right: 0px;
     margin-left: 0px;
@@ -264,7 +266,7 @@ footer {
 
 /*JMY edited dashfont to make it smaller ssince it was currently multiplying tinyfont - 12.21.14*/
 .dashfont {
-    font-size: 1.000em; /*font-size: 1.300em */
+    font-size: 0.890em; /*font-size: 1.300em */
     font-weight: 400;
 }
 
@@ -1718,3 +1720,5 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         min-height: 50px;
     }
 }
+
+

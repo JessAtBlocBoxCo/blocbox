@@ -1,15 +1,19 @@
 """jess to do"""
-- paypal PDT - implement
-- paypal pro - can we do?
+- profile pics: make individualized/link to specific hosts
+	- update search page for host pics
+- allow to upload profile pics
+- integrate availability calendar into when package will arrive - overlay "today"s date and the expected delivery
+- on dashboard maybe just do "date ordered" and "delivery speed" (e.g., 2-3 days) that way we dont hav eto say exactly when it will arrive, wh
+		which is prob redundant with the tracking info
 - scheduling/availability - intregrate into start a shipment
-- Allow user to upload pictures
-- make the search page load from our data on hosts rather than the hard-coded address for john
-- fix the connect/host2 thing - connecting if already a user - make sure the emails are sending to thoe host, add a field for confirmed
-right now its logging as connected een before host confirms
-- update radme to describe navstaratshipment, et
+- fix the connect/host2 thing - connecting if already a user - make sure the emails are sending to thoe host, add a field for confirmed, right now its logging as connected een before host confirms
+- update readme to describe navstaratshipment, et
 - update the navbar in beta so if they're not logged on doesn't call nav_starta s hipment - do if/or on user authenticated
 - expected date of delivery before tracking: make it adjust for business days/ skip sunday
-	
+- paypal PDT
+- paypal PRO	
+- later: figure out how to make it automatically register lat/long - right now we need to manually enter it for hosts
+
 """TO DO"""
 1. JOHN - /Fix Mobile/make site responsive
 3. JOHN search page -- fix map top margin and restyle nudge a neighbor message

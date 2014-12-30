@@ -20,7 +20,7 @@
     <div class="row nopaddingleftright">
         <!--contains most of page-->
         <!--sidebar-->
-        <div class=" col-xs-2 col-xs-offset-1 mobilehide">
+        <div class=" col-xs-2 col-lg-offset-1 mobilehide">
             <div class="dashpiccontainer">
                 <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}" />
             </div>
@@ -59,12 +59,12 @@
             {% endfor %}
         </div>
         <!--sidebar-->
+			
 
-
-        <!--CONTAINER WITH EVERYTHING-->
-        <div class="col-xs-12 col-sm-8">
-
-            <!--SHIPMENTS CONTAINER-->
+        <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
+        <div class="col-xs-12 col-sm-10 col-lg-8">
+						
+            <!--CURRENT SHIPMENTS CONTAINER-->
             <div class="col-xs-12 col-sm-12 dashbox">
                 <div class="row">
                     <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Current Shipments</h3> 
@@ -76,126 +76,59 @@
                     <div class="col-xs-2">
                         <p class="marginbottom5px">STATUS </p>
                     </div>
-                    <div class="col-xs-3">
-                        <p class="marginbottom5px">TRACKING</p>
-                    </div>
                     <div class="col-xs-2">
                         <p class="marginbottom5px">DELIVERY DATE</p>
                     </div>
-                    <div class="col-xs-3">
+                    <div class="col-xs-2">
                         <p class="marginbottom5px">NEIGHBOR</p>
                     </div>
                     <div class="col-xs-2">
                         <p class="marginbottom5px">OPTIONS</p>
                     </div>
+                    <div class="col-xs-4">
+                        <p class="marginbottom5px">TRACKING</p>
+                    </div>
                 </div>
 
 
-                <!--Current or Recent Shipments-->
+            <!--Current or Recent Shipments: currently ordered by ID - so the oldest order is first...-->
 
-                {% for shipment in shipments_all %}
+            {% for shipment in shipments_all %}
+            
+
+
+            		
                 <!--divider defining the whole current shipments part -->
                 <div class="row whitebackground marginbottom30px textcenter dashfont">
-                    <!--<div class="row  paddingtop10px"> -->
-                    <div class="col-xs-2 paddingtopbottom20px">
-                  	
-                        <p class="dashfont nomargin">{{ shipment.status }}</p>
-                      </div>
-      
                     
                     
-                    <!--TRACKING NUMBER-->
-                    <div class="col-xs-3 paddingtopbottom20px ">
-                    	
-                    		
-                    			{% if shipment.tracking %} <p class="dashfont nomargin">{{ shipment.tracking }}</p> 
-                    			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
-                    			{% else %}    
-                    				<a href="/dashboard/transid{{shipment.id}}/#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
-                    				<!--<a href="#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>-->
-														 <div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
-                                  
-                                <div>	<a href="#close" title="Close" class="close">X</a>
-        														<h6 class="ltbluetext">Enter a Tracking Number</h6>
-        														<p>Enter a tracking number, shipping company or other information</p>
-                                  	
-                                  	<!--NEED AN IF-CLICKED STATEMENT-->
-                                  	<form class="form-inline" role="form" method="post" action="/dashboard/transid{{shipment.id}}/" enctype="multipart/form-data">
-					   														{% csrf_token %}
-					   														{{ tracking_form.non_field_errors }}
-					   														{{ tracking_form.tracking.errors }}
-                                  	
-                                  		  <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	        																	<input type="tracking" class="form-control" name="tracking" 
-	        																 		placeholder="Enter Tracking Number for Order {{ trans.invoice }} ">    	  <!--removed id="id_tracking" -->      	   
-	   																		</div>
-
-                                  			<!-- {# tracking_modal request shipment.id #}   -->  
-                                  			                                                             	
-                                  		<div class="row paddingbottom10px">
-					        											<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    												</div> 
-					    											</form>
-					    											
-					    											
-					    									</div> <!--end modal div-->  
-					    									               
-                            </div>             
-                        	{% endif %} <!--end if no shipping tracking, enter it with modal -->
-                    		                    		
-                    		<!--EDIT TRACKING -->                    		
-                    		{% if shipment.tracking %} 
-                    			</div> <!--end enter tracking row-->
-                    				<div class="row"> <!--edit tracking info-->
-                    				 	<a href="/dashboard/transid{{shipment.id}}/#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
-														 	<div id="openModal_edittracking_transid{{shipment.id}}" class="modalDialog">                                 
-                                  <div>	
-                                  		<a href="#close" title="Close" class="close">X</a>
-        															<h6 class="ltbluetext">Update Your Tracking Number</h6>
-        															<p>Enter a tracking number, shipping company or other information</p>
-                                    	
-                                    	 <form class="form-inline" role="form" method="post" action=action="/dashboard/transid{{shipment.id}}/" enctype="multipart/form-data">
-					   															{% csrf_token %}
-					   																	{{ tracking_form.non_field_errors }}
-					   																	{{ tracking_form.tracking.errors }}
-					   															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      																			<input type="tracking" class="form-control" name="tracking"      					          
-	      																					placeholder="Enter Tracking Number for Order {{ invoice }} ">    	  <!--removed id="id_tracking" -->      	   
-	 																						</div>
-	 
-					   														<!--
-                                  			{# edit_tracking_modal request shipment.id #} 
-                                  			-->
-                                  			<!--siubmit button-->
-                                  			<div class="row paddingbottom10px"> 
-                                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    													</div>                
-                            					</form>
-                            			</div> 
-                            	</div>   <!--div id openmodal..-->                          
-                    			</div> <!--row-->
-                    		{% endif %}
-                    </div> <!--end tracking number -->
+                    <!--STATUS-->
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">  <p class=" nomargin">{{ shipment.status }}</p>  </div>
+                     
+                          
                     
                     
                     
                     
                     
-                    <!--delivvery date -->
-                    <div class="col-xs-2 paddingtopbottom20px">
+                    
+                    <!--DELIVERY DATE -->
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
                         <p class="nomargin"> {% if shipment.dayrangestart %}
                         																	{% if shipment.dayrangestart == shipment.dayrangeend %}
                         																			{{ shipment.deliverydatenotracking_rangestart }}
                         																	{% else %}
-                        																			{{ shipment.deliverydatenotracking_rangestart }} 
-                        																			to {{ shipment.deliverydatenotracking_rangeend}} 
+                        																			{{ shipment.deliverydatenotracking_rangestart }} -<br>
+                        																			{{ shipment.deliverydatenotracking_rangeend}} &nbsp;
                         																	{% endif %}
                         															{% endif %}
                         															
                         </p>
                     </div>
-                    <!--host name and information-->
-                    <div class="col-xs-3 paddingtopbottom20px">
+                    
+                    
+                    <!--NEIGHBOR: host name and information-->
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
                         <div class="row paddingtopbottom2px">
                             <a class="nomargin">{{ shipment.host.first_name }}</a>
                         </div>
@@ -206,9 +139,9 @@
                     
                     
                     
-                    <!--add a "modify" link to update the information: right now UPDATE STATUS vs MODIFY b/c thats all there is-->
-                    <!--JMY MAKING THIS A MODAL -->
-                    <div class="col-xs-2 paddingtopbottom20px">
+                    <!--MODIFY-->
+                    <!--right now UPDATE STATUS vs MODIFY b/c thats all there is-->
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px">
                         <div class="row paddingtopbottom2px">
                             
                     
@@ -246,13 +179,95 @@
                         </div>
                     </div> <!--end modify/ update status -->
                     
-     
+     								
+     								<!--TRACKING NUMBER-->
+                    <div class="col-xs-4 paddingtopbottom20px paddingsides5px ">
+                    	                    		
+                    		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
+
+                    			<div id="as-root"> </div> <script> 
+														(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
+													</script>
+                					<div class="as-track-button" data-counter="false" data-support="false" data-width="200" data-size="small" data-tracking-number={{shipment.tracking}}></div>
+														<!--from: https://www.aftership.com/apps/track-button, parameters here: https://www.aftership.com/docs/track-button
+															data-counter: displays the number of shipmetns ina ccount
+															data-support: shows 'powered by..' need premium account to disable
+															data-widt: the width in px of the track button iframe size
+															data-size: The size of the track button, can be: small, normal or large
+															data-tracking-number String empty The tracking number for the track button, must use together with "data-slug" 
+														-->
+                   			
+                    				<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
+                    		                    		
+                    		{% else %}  <!--if no tracking, enter it -->
+                    			<a href="/dashboard/transid{{shipment.id}}/#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
+														 <div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
+                                  
+                                <div>	<a href="#close" title="Close" class="close">X</a>
+        														<h6 class="ltbluetext">Enter a Tracking Number</h6>
+        														<p>Enter a tracking number, shipping company or other information</p>
+                                  	
+                                  	<form class="form-inline" role="form" method="post" action="/dashboard/transid{{shipment.id}}/" enctype="multipart/form-data">
+					   														{% csrf_token %}
+					   														{{ tracking_form.non_field_errors }}
+					   														{{ tracking_form.tracking.errors }}
+                                  	
+                                  		  <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	        																	<input type="tracking" class="form-control" name="tracking" 
+	        																 		placeholder="Enter Tracking Number for Order {{ shipment.id }} ">    	  <!--removed id="id_tracking" -->      	   
+	   																		</div>
+
+                                  			<!-- {# tracking_modal request shipment.id #}   -->  
+                                  			                                                             	
+                                  		<div class="row paddingbottom10px">
+					        											<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					    												</div> 
+					    											</form>
+					    											
+					    											
+					    									</div> <!--end modal div-->  
+					    									               
+                            </div>             
+                        	{% endif %} <!--end if no shipping tracking, enter it with modal -->
+                    		                    		
+                    		<!--EDIT TRACKING -->                    		
+                    		{% if shipment.tracking %} 
+                    			</div> <!--end enter tracking row-->
+                    				<div class="row"> <!--edit tracking info-->
+                    				 	<a href="/dashboard/transid{{shipment.id}}/#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
+														 	<div id="openModal_edittracking_transid{{shipment.id}}" class="modalDialog">                                 
+                                  <div>	
+                                  		<a href="#close" title="Close" class="close">X</a>
+        															<h6 class="ltbluetext">Update Your Tracking Number</h6>
+        															<p>Enter a tracking number, shipping company or other information</p>
+                                    	
+                                    	 <form class="form-inline" role="form" method="post" action=action="/dashboard/transid{{shipment.id}}/" enctype="multipart/form-data">
+					   															{% csrf_token %}
+					   																	{{ tracking_form.non_field_errors }}
+					   																	{{ tracking_form.tracking.errors }}
+					   															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	      																			<input type="tracking" class="form-control" name="tracking"      					          
+	      																					placeholder="Enter Tracking Number for Order {{ shipment.id }} ">    	  <!--removed id="id_tracking" -->      	   
+	 																						</div>
+	 
+					   														<!--
+                                  			{# edit_tracking_modal request shipment.id #} 
+                                  			-->
+                                  			<!--siubmit button-->
+                                  			<div class="row paddingbottom10px"> 
+                                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					    													</div>                
+                            					</form>
+                            			</div> 
+                            	</div>   <!--div id openmodal..-->                          
+                    			</div> <!--row-->
+                    		{% endif %}
+                    </div> <!--end tracking number -->
                     
                     
                     
-                </div>
-                <!--row, testing row-->
-                {% endfor %}
+                </div> <!--row whitebackground-->
+            {% endfor %} <!--for shipmetns in all -->
 
             </div>
             <!--col, shipments container-->
