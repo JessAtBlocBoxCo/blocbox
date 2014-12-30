@@ -844,7 +844,6 @@ footer {
         display: block;
         border: 0;
         color: white;
-        background-color: white;
         
     }
     .navbar-collapse {
@@ -1614,7 +1613,6 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .navbar {
         margin-top: -45px;
     }
-    
     .fixed-logo-image {
         display: block;
         position: absolute;
