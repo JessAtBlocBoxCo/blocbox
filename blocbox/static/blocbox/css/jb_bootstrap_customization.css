@@ -1610,7 +1610,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         background-color: rgb(255, 195, 0);
     }
     .navbar {
-        margin-top: -30px;
+        margin-top: -40px;
     }
     
     .fixed-logo-image {
@@ -1662,7 +1662,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         width: 200px;
     }
     .navbar {
-        margin-top: -30px;
+        margin-top: -40px;
     }
     .waitlistbody {
         padding-top: 25px
