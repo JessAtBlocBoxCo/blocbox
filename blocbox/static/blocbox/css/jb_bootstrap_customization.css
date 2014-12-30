@@ -768,7 +768,7 @@ footer {
 /*change the padding on the image for the brand in the navbar */
 
 .navbar-default .navbar-header > a {
-    padding-top: 7px;
+    padding-top: 0px;
 }
 /*Eliminate border around navbar*/
 
@@ -1607,6 +1607,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .fullorange {
         background-color: rgb(255, 195, 0);
     }
+    .navbar {
+        margin-top: 0px;
+    }
     .profilepic {
         position: absolute;
         max-width: 150px;
@@ -1646,6 +1649,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .navbarlogo {
         height: 40px;
         width: 200px;
+    }
+    .navbar {
+        margin-top: 0px;
     }
     .waitlistbody {
         padding-top: 25px
