@@ -2,6 +2,9 @@
 {% extends "blocbox/basewaitlist.html" %} {% load staticfiles %} {% block title %} Introducing BlocBox {% endblock %} {% block topcontent %}
 
 <div class="fillviewheight orangefix orangebackground text-center relativediv">
+   <div class="mobileonly col-xs-12">
+       <div class="mobilelogo"></div>
+   </div>
     <div class="row text-center">
         {% if user.is_authenticated %}
         <h1>Welcome, <br> {{user.email}}</h1>
