@@ -1614,12 +1614,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         margin-top: -45px;
     }
     .fixed-logo-image {
-        display: block;
-        position: absolute;
-        height: 30px;
-        width: 30px;
-        top: 0px;
-        left: 1.7%;
+        display: none;
     }
     .profilepic {
         position: absolute;
@@ -1659,7 +1654,6 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     }
     .navbarlogo {
         display: none;
-
     }
     .navbar {
         margin-top: -45px;
