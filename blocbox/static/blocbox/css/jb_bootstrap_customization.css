@@ -493,6 +493,7 @@ footer {
 .margintop20px {
     margin-top: 20px;
 }
+
 .margintop30px {
     margin-top: 30px;
 }
@@ -500,9 +501,6 @@ footer {
     margin-top: 40px;
 }
 .margintop50px {
-    margin-top: 50px;
-}
-.margintop50pxnomobile {
     margin-top: 50px;
 }
 
@@ -1560,6 +1558,12 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .fullorange {
         background-color: rgb(255, 203, 19);
     }
+    .margintop50pxnomobile {
+        margin-top: 50px;
+    }
+    .margintop20pxnomobile {
+        margin-top: 20px;
+    }
 }
 /*Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)*/
 
@@ -1586,6 +1590,12 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     /*Hex Equiv:  #FFCB13 */
     .fullorange {
         background-color: rgb(255, 203, 19);
+    }
+    .margintop50pxnomobile {
+        margin-top: 50px;
+    }
+    .margintop20pxnomobile {
+        margin-top: 20px;
     }
 }
 /*add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why */
