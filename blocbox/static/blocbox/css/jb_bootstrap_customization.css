@@ -502,6 +502,10 @@ footer {
 .margintop50px {
     margin-top: 50px;
 }
+.margintop50pxnomobile {
+    margin-top: 50px;
+}
+
 .margintop60px {
     margin-top: 60px;
 }
