@@ -812,6 +812,8 @@ footer {
     padding-right: 50px;
     height: 40px;
 }
+
+
 /*-----------------------------------------------------------------------
 *min.css overrides
 *-----------------------------------------------------------------------*/
@@ -1141,6 +1143,12 @@ footer {
 .waitlisth2 {
     font-size: 2.00em;
     font-weight: 700;
+}
+
+.whitearrow {
+    background-image: url('/static/blocbox/images/arrow-white.png');
+    height: 70px;
+    width: 70px;
 }
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
