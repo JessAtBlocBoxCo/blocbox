@@ -848,8 +848,6 @@ footer {
         display: block;
         border: 0;
         color: white;
-        height: 50px;
-        
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
@@ -861,7 +859,6 @@ footer {
     }
     .navbar-collapse.collapse {
         display: none!important;
-        height: 50px;
     }
     .navbar-nav {
         float: none!important;
