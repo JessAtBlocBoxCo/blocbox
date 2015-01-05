@@ -1153,6 +1153,8 @@ footer {
     background-repeat: no-repeat;
     background-size: contain;
     z-index: 99999999999;
+    margin-left: auto;
+    margin-right: auto;
 }
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
