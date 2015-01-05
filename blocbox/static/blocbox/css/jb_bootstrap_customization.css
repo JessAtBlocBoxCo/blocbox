@@ -1725,7 +1725,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .mobilelogo {
         display: block;
         position: relative;
-        background-image: url('/static/blocbox/images/BB-Logo.svg');
+        background-image: url('/static/blocbox/images/Logo-white.png');
         background-repeat: no-repeat;
         background-size: contain;
         height: 90px;
@@ -1735,7 +1735,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .mobilename {
         display: block;
         position: relative;
-        background-image: url('/static/blocbox/images/Name-whited2.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
+        background-image: url('/static/blocbox/images/name-white.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
         background-repeat: no-repeat;
         background-size: contain;
         height: 70px;
