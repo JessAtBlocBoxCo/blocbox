@@ -1735,7 +1735,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         background-repeat: no-repeat;
         background-size: contain;
         height: 90px;
-        width: 120px;
+        width: 140px;
         z-index: 100000;
     }
     .mobilename {
@@ -1744,7 +1744,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         background-image: url('/static/blocbox/images/name-white.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
         background-repeat: no-repeat;
         background-size: contain;
-        width: 275px;
+        width: 200px;
         height: 30px;
     }
     
