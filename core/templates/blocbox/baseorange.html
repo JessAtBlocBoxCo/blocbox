@@ -135,7 +135,7 @@
                         <li class="marginleftright10px"><a class="signinbtn whitetext" style="padding-right: 40px; padding-left: 40px;" href=" #openModal">Sign In</a>
                         </li>
                         <div id="openModal" class="modalDialog">
-                            <div class="">	<a href="#close" title="Close" class="close">X</a>
+                            <div class="col-xs-12">	<a href="#close" title="Close" class="close">X</a>
                                 <!--<h6 class="ltbluetext paddingsides15px">Sign In</h6> -->
                                 <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
                                     {% csrf_token %} {{ login_form.non_field_errors }}
