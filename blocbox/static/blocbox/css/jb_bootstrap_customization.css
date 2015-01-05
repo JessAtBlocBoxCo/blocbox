@@ -1149,6 +1149,10 @@ footer {
     background-image: url('/static/blocbox/images/arrow-white.png');
     height: 70px;
     width: 70px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
     z-index: 99999999999;
 }
 /*-------------------------------------------------------------*
