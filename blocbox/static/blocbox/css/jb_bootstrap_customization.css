@@ -848,6 +848,7 @@ footer {
         display: block;
         border: 0;
         color: white;
+        max-height: 50px;
         
     }
     .navbar-collapse {
