@@ -1750,7 +1750,6 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .mobileonly {
         display: block;
     }
-    
     .mobilelogo {
         display: block;
         position: relative;
@@ -1759,7 +1758,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         background-size: contain;
         height: 100px;
         width: 130px;
-        z-index: 1000;
+        z-index: inherit;
         margin-left: auto;
         margin-right: auto;
     }
