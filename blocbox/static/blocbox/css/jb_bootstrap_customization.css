@@ -1667,6 +1667,10 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         position: absolute;
         padding-bottom: 2px;
     }
+    .whitearrow {
+        height: 40px;
+        width: 40px;
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -1785,6 +1789,10 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .alignbottomdiv {
         position: absolute;
         padding-bottom: 2px;
+    }
+    .whitearrow {
+        height: 40px;
+        width: 40px;
     }
 }
 
