@@ -1674,6 +1674,10 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         float: none;
         max-height: 50px;
     }
+    .navbar-collapse.collapse {
+        display: none!important;
+        height: 50px;
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -1700,6 +1704,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     }
     .navbar {
         margin-top: -45px;
+        
     }
     .waitlistbody {
         padding-top: 25px
@@ -1804,6 +1809,10 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .navbar-header {
         float: none;
         max-height: 50px;
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+        height: 50px;
     }
 }
 
