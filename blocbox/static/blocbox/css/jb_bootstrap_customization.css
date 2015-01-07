@@ -12,6 +12,7 @@ body {
     /*padding-top: 30px; /*JMY adding padding to body so that the navbar doesn't overlap - by default the navbar is 50px */
     font-size: 15px;
     height: 100%;
+    overflow: hidden;
 }
 
 /*JMY editing rows to o verride the margin-rightand margin-left -15px property */
