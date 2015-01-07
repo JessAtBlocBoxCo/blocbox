@@ -101,8 +101,23 @@
 
 
 <body class="fullheight mainsite">
-    <div id="bbpage">
-
+ <!--   <div id="bbpage"> -->
+    <div class="mobileonly">
+        <input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
+        <label for="drawer-toggle" id="drawer-toggle-label"></label>
+        <header>Header</header>
+        <nav id="drawer">
+            <ul>
+                <li><a href="#">Menu Item</a></li>
+                <li><a href="#">Menu Item</a></li>
+                <li><a href="#">Menu Item</a></li>
+                <li><a href="#">Menu Item</a></li>
+            </ul>
+        </nav>
+        <div id="page-content">
+            <p>Page Content</p>
+        </div>
+    </div>
 
         {% block navbar %}
         <!--NOTE TO JOHN - THE BASE NAVBAR CONTENT APPEARS BETWEEN THIS BLOCK STATEMENT ABOVE
@@ -113,24 +128,27 @@
 		read about this herea; http://getbootstrap.com/components/#navbar 
 	-->
 
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+       
+       
+      <!--  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid whitebackground" style="padding-top: 15px;">
                 <div class="row">
 
                     <!--the "brand" - ultimately we should replace this with styled text rather than an image -->
-                    <div class="col-xs-6 col-sm-3 col-sm-offset-1 nopaddingleft">
+                  <!--  <div class="col-xs-6 col-sm-3 col-sm-offset-1 nopaddingleft">
                         <a class="navbar-brand brandnavbarimage bbbasenavbar bbbasenavbarbrand nomarginleft" href="/beta"></a>
                     </div>
                     <!--col-->
-                    <div class="col-sm-3  col-sm-offset-2">
+                <!--    <div class="col-sm-3  col-sm-offset-2">
                         <div class="dropdown textright paddingleft120px">
                             <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
                             <!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
-                            {% if user.is_authenticated %}
+                      <!--      {% if user.is_authenticated %}
                             <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown">
                                 <!--class="col-sm-3 menubutton"-->
                                 <!--print user name and number of new messages in parentheses -->
-                                {{user.first_name}}
+                           <!--     {{user.first_name}}
                                 <span class="caret"></span> 
                             </button>
 
@@ -140,19 +158,19 @@
                             <div id="openModal" class="modalDialog">
                                 <div class="">	<a href="#close" title="Close" class="close">X</a>
                                     <!--<h6 class="ltbluetext paddingsides15px">Sign In</h6> -->
-                                    <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
+                               <!--     <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
                                         {% csrf_token %} {{ login_form.non_field_errors }}
                                         <div class="row">
                                             <div class="col-xs-12 form-group paddingbottom20px">
                                                 {{ user_form.email.errors }}
                                                 <!--<label for="id_email">Email Address</label> -->
-                                                <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
+                                       <!--         <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
                                             </div>
 
                                             <div class="col-xs-12 form-group">
                                                 {{ user_form.password.errors }}
                                                 <!--<label for="id_password1">Password</label> -->
-                                                <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
+                                        <!--        <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
                                             </div>
                                         </div>
                                         <div class="row paddingtopbottom10px">
@@ -175,16 +193,16 @@
                                         </div>
                                     </form>
                                     <!--end form line -->
-                                </div>
+                        <!--        </div>
                             </div>
                             {% endif %}
 
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                            <ul class="dropdown-menu" style="margin-left: 150px;" role="menu" aria-labelledby="dropdownMenu1">
+                      <!--      <ul class="dropdown-menu" style="margin-left: 150px;" role="menu" aria-labelledby="dropdownMenu1">
                                 <!--nav navbar-nav navbar-right-->
-                                {% if user.is_authenticated %}
+        <!--      {% if user.is_authenticated %}
                                 <!--drop down menu if logged in-->
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-list fa-fw fa-lg darkgreytext"></i>&nbsp Dashboard</a>
+        <!--         <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-list fa-fw fa-lg darkgreytext"></i>&nbsp Dashboard</a>
                                 </li>
                                 <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-th-large fa-fw fa-lg darkgreytext"></i>&nbsp My Block</a>
                                 </li>
@@ -206,29 +224,29 @@
                                 <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
-                            </ul>
+        <!--        </ul>
                             <!--end collection of links for toggling -->
-                        </div>
+        <!--    </div>
                         <!--dropdown -->
-                    </div>
+        <!--      </div>
 
                     <div class="col-sm-2">
                         <!--col containing ddropdown button-->
-                        <div class="col-xs-2 col-sm-4">
+        <!--          <div class="col-xs-2 col-sm-4">
                             <div class="dropdown textcenter">
                                 <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarstart" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
                                     <!--info button-->
-                                    <a class=""></a>
+        <!--              <a class=""></a>
                                 </button>
                                 <!--end info button-->
                                 <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+        <!--            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
                                     <!--nav navbar-nav navbar-right-->
-                                    {% if user.is_authenticated %}
+        <!--                {% if user.is_authenticated %}
                                     <!--drop down menu if logged in-->
-                                    {% else %}
+        <!--              {% else %}
                                     <!--drop down menu if not logged in -->
-                                    <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
+        <!--             <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
                                     </li>
                                     <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
                                     </li>
@@ -237,9 +255,9 @@
                                     <!--drop down menu items that appears to either user -->
                                     
                                     <!--starat ahipsment - need to reroute this to go to host page-->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Shipment</a></li>
+        <!--           <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Shipment</a></li>
                    									<!--starta  favor: need to redirect this to a page that routes to whether 1/o-->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Favor</a> </li>
+        <!--          <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Favor</a> </li>
                                     
                                     <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/signuphost/'><i class="fa fa-users fa-fw fa-lg greentext"></i>&nbsp Become a Host</a>
                                     </li>
@@ -248,23 +266,23 @@
                                     <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
-                                </ul>
+        <!--               </ul>
                                 <!--end collection of links for toggling -->
-                            </div>
+        <!--              </div>
                         </div>
 
                         <!--drop down menu if logged in-->
-                        <div class="col-xs-2 col-sm-4">
+        <!--             <div class="col-xs-2 col-sm-4">
                             <div class="dropdown textcenter">
                                 <button class="dropdown-toggle bbbasenavbar bbbasenavbarring bbbasenavbarinbox nopaddingsides" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu2" data-toggle="dropdown">
                                     <div class="" style="padding-bottom: 12px; margin-bottom: 0px; margin-top: 0px;">{% load inbox %} {% inbox_count %}</div>
                                     <!--number of new messages -->
-                                </button>
+        <!--                  </button>
                                 <!--end message button-->
                                 <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+        <!--                   <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
                                     <!--nav navbar-nav navbar-right-->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg ltbluetext"></i>&nbsp Inbox</a>
+        <!--                     <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg ltbluetext"></i>&nbsp Inbox</a>
                                     </li>
                                     <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/compose/'><i class="fa fa-pencil-square-o fa-fw fa-lg ltbluetext"></i>&nbsp New Message</a>
                                     </li>
@@ -273,33 +291,33 @@
                                     <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
-                                </ul>
+        <!--                       </ul>
                                 <!--end collection of links for toggling -->
-                            </div>
+        <!--                </div>
                         </div>
 
                         <div class="col-xs-2 col-sm-4">
                             <div class="dropdown textcenter">
                                 <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarinfo" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
                                     <!--info button-->
-                                    <a class=""></a>
+        <!--                        <a class=""></a>
                                 </button>
                                 <!--end info button-->
                                 <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+        <!--                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
                                     <!--nav navbar-nav navbar-right-->
-                                    {% if user.is_authenticated %}
+        <!--                        {% if user.is_authenticated %}
                                     <!--drop down menu if logged in-->
-                                    {% else %}
+        <!--                         {% else %}
                                     <!--drop down menu if not logged in -->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
+        <!--                          <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
                                     </li>
                                     <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
                                     </li>
 
                                     {% endif %}
                                     <!--drop down menu items that appears to either user -->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp Find a BlocBox</a>
+        <!--                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp Find a BlocBox</a>
                                     </li>
                                     <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp Support</a>
                                     </li>
@@ -312,16 +330,16 @@
                                     <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
-                                </ul>
+        <!--               </ul>
                                 <!--end collection of links for toggling -->
-                            </div>
+        <!--             </div>
                         </div>
                     </div>
                 </div>
                 <!--row containing full navbar-->
-            </div>
+        <!--      </div>
             <!--white container -->
-        </nav>
+        <!--      </nav> -->
         <!--nav-->
 
         {% endblock %}
@@ -464,7 +482,7 @@
         {% endblock %}
 
 
-    </div>
+  <!--  </div> -->
 </body>
 
 </html>
