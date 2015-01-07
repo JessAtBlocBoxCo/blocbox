@@ -1,9 +1,9 @@
-(function($) {
-	$.fn.actions = function(opts) {
+(function ($) {
+	$.fn.actions = function (opts) {
 		var options = $.extend({}, $.fn.actions.defaults, opts);
 		var actionCheckboxes = $(this);
 		var list_editable_changed = false;
-		var checker = function(checked) {
+		var checker = function (checked) {
 			if (checked) {
 				showQuestion();
 			} else {
