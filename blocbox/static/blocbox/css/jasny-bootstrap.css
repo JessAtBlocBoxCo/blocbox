@@ -281,7 +281,7 @@
 .navbar-default .navbar-offcanvas .navmenu-nav.dropdown-menu > .active > a:hover,
 .navmenu-default .navmenu-nav.dropdown-menu > .active > a:focus,
 .navbar-default .navbar-offcanvas .navmenu-nav.dropdown-menu > .active > a:focus {
-  background-color: #d7d7d7;
+  background-color: #ffffff;
 }
 .navmenu-default .navmenu-nav > li > a,
 .navbar-default .navbar-offcanvas .navmenu-nav > li > a {
@@ -300,8 +300,8 @@
 .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:hover,
 .navmenu-default .navmenu-nav > .active > a:focus,
 .navbar-default .navbar-offcanvas .navmenu-nav > .active > a:focus {
-  color: #555;
-  background-color: #e7e7e7;
+  color: rgb(18, 67, 100);
+  background-color: #ffffff;
 }
 .navmenu-default .navmenu-nav > .disabled > a,
 .navbar-default .navbar-offcanvas .navmenu-nav > .disabled > a,
