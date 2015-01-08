@@ -855,6 +855,11 @@ html, body {
     position: relative;
     z-index: 2;
 }
+
+.slidelogo {
+    max-height: 50px;
+}
+
 @media (min-width: 0px) {
     .navbar-toggle {
         display: block;
