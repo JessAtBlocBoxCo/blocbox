@@ -259,17 +259,17 @@
 .navbar-default .navbar-offcanvas .navmenu-nav > .open > a:hover .caret,
 .navmenu-default .navmenu-nav > .open > a:focus .caret,
 .navbar-default .navbar-offcanvas .navmenu-nav > .open > a:focus .caret {
-  border-top-color: #555;
-  border-bottom-color: #555;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 .navmenu-default .navmenu-nav > .dropdown > a .caret,
 .navbar-default .navbar-offcanvas .navmenu-nav > .dropdown > a .caret {
-  border-top-color: #777;
-  border-bottom-color: #777;
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 .navmenu-default .navmenu-nav.dropdown-menu,
 .navbar-default .navbar-offcanvas .navmenu-nav.dropdown-menu {
-  background-color: #e7e7e7;
+    background-color: rgb(52, 152, 219);
 }
 .navmenu-default .navmenu-nav.dropdown-menu > .divider,
 .navbar-default .navbar-offcanvas .navmenu-nav.dropdown-menu > .divider {
