@@ -104,23 +104,56 @@
 
 <body class="fullheight mainsite">
     <div id="bbpage">
-       <div class="drawer">
-        <div class="menu-wrap">
-            <nav class="menu">
-                <div class="icon-list">
-                    <a href="#"><i class="fa fa-fw fa-star-o"></i><span>Favorites</span></a>
-                    <a href="#"><i class="fa fa-fw fa-bell-o"></i><span>Alerts</span></a>
-                    <a href="#"><i class="fa fa-fw fa-envelope-o"></i><span>Messages</span></a>
-                    <a href="#"><i class="fa fa-fw fa-comment-o"></i><span>Comments</span></a>
-                    <a href="#"><i class="fa fa-fw fa-bar-chart-o"></i><span>Analytics</span></a>
-                    <a href="#"><i class="fa fa-fw fa-newspaper-o"></i><span>Reading List</span></a>
+
+        <div class="navmenu navmenu-default navmenu-fixed-left">
+            <a class="navmenu-brand" href="#">Project name</a>
+            <ul class="nav navmenu-nav">
+                <li>
+                    <a href="../navmenu/">Slide in</a>
+                </li>
+                <li>
+                    <a href="../navmenu-push/">Push</a>
+                </li>
+                <li class="active">
+                    <a href="./">Reveal</a>
+                </li>
+                <li>
+                    <a href="../navbar-offcanvas/">Off canvas navbar</a>
+                </li>
+            </ul>
+            <ul class="nav navmenu-nav">
+                <li>
+                    <a href="#">Link</a>
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+                <li>
+                    <a href="#">Link</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <ul class="dropdown-menu navmenu-nav">
+                            </li>
+                        </ul>
                 </div>
-            </nav>
-            <button class="close-button" id="close-button">Close Menu</button>
-        </div>
-        <button class="menu-button" id="open-button">Open Menu</button>
-        <div class="content-wrap">
-        
+            <div class="canvas">
+                <div class="navbar navbar-default navbar-fixed-top">
+                    <button class="navbar-toggle" data-canvas=".canvas" data-target=".navmenu" data-recalc="false" data-toggle="offcanvas" type="button">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="container">
+                    <div class="page-header">
+                        <p class="lead">This example demonstrates the use of the offcanvas plugin with a reveal effect.</p>
+                        <p>On the contrary of the push effect, the menu doesn't move with the canvas.</p>
+                        <p>
+                        <p>
+                        <p>
+                    </div>
+                </div>
     
 
         {% block navbar %}
