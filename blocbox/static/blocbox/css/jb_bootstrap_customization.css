@@ -841,8 +841,8 @@ html, body {
     height: 100%;
 }
 .navbar-toggle {
-    float: left;
-    margin-left: 15px;
+    float: right;
+    margin-right: 15px;
 }
 .navmenu {
     z-index: 1;
