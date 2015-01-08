@@ -836,6 +836,45 @@ footer {
 * Slide Bar Styles
 *-----------------------------------------------------------------------*/
 
+
+html, body {
+    height: 100%;
+}
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
+}
+.navmenu {
+    z-index: 1;
+}
+.canvas {
+    background: none repeat scroll 0 0 #fff;
+    left: 0;
+    min-height: 100%;
+    padding: 50px 0 0;
+    position: relative;
+    z-index: 2;
+}
+@media (min-width: 0px) {
+    .navbar-toggle {
+        display: block;
+    }
+}
+@media (min-width: 992px) {
+    body {
+        padding: 0;
+    }
+    .navbar {
+        background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+        border: medium none;
+        right: auto;
+    }
+    .canvas {
+        padding: 0;
+    }
+}
+
+
 /*-----------------------------------------------------------------------
 * GEneric Navbar Specific Styles (non-waitlist, for base-html)
 *-----------------------------------------------------------------------*/
@@ -850,6 +889,7 @@ footer {
     .navbar-right {
         float: none !important;
     }
+    
     .navbar-toggle {
         display: block;
         border: 0;
