@@ -996,7 +996,6 @@ html, body {
 @media (min-width: 768px) {
     .waitlistbody .navbar-default {
         margin-bottom: 0px;
-        margin-top: -50px;
     }
     .waitlistbody .navbar-right {
         margin-top: 50px;
