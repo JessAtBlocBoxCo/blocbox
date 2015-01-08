@@ -47,13 +47,14 @@
 
     <!--link to john's css overwrides - a new CSS file - needs to be called after we call the CSS bootstrap -->
     <link rel="stylesheet" href="{% static 'blocbox/css/jb_bootstrap_customization.css' %}">
+    
+    <!--link to jasny-bootstrap extension - will fold into jb_bootstrap_custimization at some point -->
+    <link rel="stylesheet" href="{% static 'blocbox/css/jasny-bootstrap.css' %}">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <!-- Jasny-bootstrap extention - Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
     <!-- Jasny-bootstrap extention - Latest compiled and minified JavaScript -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 
@@ -78,8 +79,6 @@
         ga('create', 'UA-51513611-1', 'blocbox.co');
         ga('send', 'pageview');
     </script>
-
-   <!-- <script src="{% static 'admin/js/jasny-bootstrap.js' %}"></script> -->
 
     <!-- Smooth Scrolling -->
     <script>
