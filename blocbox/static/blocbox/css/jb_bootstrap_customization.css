@@ -777,7 +777,7 @@ footer {
 .navbar {
     border: 0px;
     box-shadow: 0;
-    background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%);
+   <!-- background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%); -->
     z-index: 1000;
     margin-bottom: 0;
 }
