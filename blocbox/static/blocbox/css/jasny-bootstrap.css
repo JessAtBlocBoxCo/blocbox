@@ -219,12 +219,12 @@
 }
 .navmenu-default,
 .navbar-default .navbar-offcanvas {
-  background-color: #f8f8f8;
+  background-color: rgb(41, 128, 185);
   border-color: #e7e7e7;
 }
 .navmenu-default .navmenu-brand,
 .navbar-default .navbar-offcanvas .navmenu-brand {
-  color: #777;
+  color: #ffffff;
 }
 .navmenu-default .navmenu-brand:hover,
 .navbar-default .navbar-offcanvas .navmenu-brand:hover,
