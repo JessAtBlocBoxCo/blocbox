@@ -230,7 +230,7 @@
 .navbar-default .navbar-offcanvas .navmenu-brand:hover,
 .navmenu-default .navmenu-brand:focus,
 .navbar-default .navbar-offcanvas .navmenu-brand:focus {
-  color: rgb(18, 67, 100);
+  color: #e7e7e7;
   background-color: transparent;
 }
 .navmenu-default .navmenu-text,
