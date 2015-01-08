@@ -857,7 +857,7 @@ html, body {
 }
 
 .slidelogo {
-    max-height: 50px;
+    max-height: 30px;
 }
 
 @media (min-width: 0px) {
