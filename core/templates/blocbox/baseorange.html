@@ -38,12 +38,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <!--link to jasny-bootstrap extension - will fold into jb_bootstrap_custimization at some point -->
+    <link rel="stylesheet" href="{% static 'blocbox/css/jasny-bootstrap.css' %}">
 
     <!--add font-awesome-->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
     <!--link to john's css overwrides - a new CSS file - needs to be called after we call the CSS bootstrap -->
     <link rel="stylesheet" href="{% static 'blocbox/css/jb_bootstrap_customization.css' %}">
+    <!-- Jasny-bootstrap extention - Latest compiled and minified JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -78,12 +82,110 @@
 
     <div id="bbpage">
         <a name="top" class="anchorwithnav"></a>
+        
+        <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+            <a class="navmenu-brand" href="#">BLOCBOX</a>
+            <ul class="nav navmenu-nav">
+                {% if user.is_authenticated %}
+                <li class="active">
+                    <a href='/dashboard/'><i class="fa fa-list fa-fw fa-lg"></i>&nbsp Dashboard</a>
+                </li>
+                <li>
+                    <a href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg"></i>&nbsp Start a Shipment</a>
+                </li>
+                <li>
+                    <a href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg"></i>&nbsp Messages</a>
+                </li>
+                <li>
+                    <a href='/myblock/'><i class="fa fa-th-large fa-fw fa-lg"></i>&nbsp My Block</a>
+                </li>
+                <li>
+                    <a href='/profile/'><i class="fa fa-user fa-fw fa-lg"></i>&nbsp Profile</a>
+                </li>
+                <li>
+                    <a href='/account/'><i class="fa fa-dollar fa-fw fa-lg"></i>&nbsp Account</a>
+                </li>
+                <!-- <li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+Dropdown
+<b class="caret"></b>
+</a>
+<ul class="dropdown-menu navmenu-nav">
+<li>
+<a href="#">Action</a>
+</li>
+<li>
+<a href="#">Another action</a>
+</li>
+<li>
+<a href="#">Something else here</a>
+</li>
+<li class="divider"></li>
+<li class="dropdown-header">Nav header</li>
+<li>
+<a href="#">Separated link</a>
+</li>
+<li>
+<a href="#">One more separated link</a>
+</li>
+</ul>
+</li> -->
+                <li>
+                    <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign out</a>
+                </li>
+            </ul>
+            <!--   <ul class="nav navmenu-nav">
+<li>
+<a href="#">Link</a>
+</li>
+<li>
+<a href="#">Link</a>
+</li>
+<li>
+<a href="#">Link</a>
+</li>
+<li class="dropdown">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+Dropdown
+<b class="caret"></b>
+</a>
+<ul class="dropdown-menu navmenu-nav">
+<li>
+<a href="#">Action</a>
+</li>
+<li>
+<a href="#">Another action</a>
+</li>
+<li>
+<a href="#">Something else here</a>
+</li>
+<li class="divider"></li>
+<li class="dropdown-header">Nav header</li>
+<li>
+<a href="#">Separated link</a>
+</li>
+<li>
+<a href="#">One more separated link</a>
+</li>
+</ul>
+</li>
+</ul> -->
+            {% else %}
+            {% endif %}
+        </nav>
+        <div class="navbar navbar-default navbar-fixed-top">
+            <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
         {% block navbar %}
         <!-- Fixed-Top version of Navbar
 <nav class="navbar navbar-default navbar-fixed-top whitetext" role="navigation">	
 -->
         <!-- Non-Fixed version of Navbar, removing navbar-fixed-logo -->
-        <nav class="navbar whitetext" role="navigation">
+        <!--  <nav class="navbar whitetext" role="navigation">
 
             <div class="container-fluid orangebackground">
                 <div class="navbar-header whitetext">
@@ -95,10 +197,10 @@
                     </button>
 
                     <!--Add the Fixed Logo Image - the img is now attached to the fix-logo-image in CSS - different depending on screen size  -->
-                    <a href="#top" class="fixed-logo-image"></a>
+        <!--     <a href="#top" class="fixed-logo-image"></a>
 
                     <!--Add Logo Name - for the floating Logo version of the navbar, img styled in css page under .name-unfixed > img {.... } -->
-                    <a class="nav-blocbox-name navbarlogo" href="#">
+        <!--     <a class="nav-blocbox-name navbarlogo" href="#">
                         <!--removing navbar-brand see what happens -->
 
                         <!--<img class="nav-blocbox-name navbarlogo" /> -->
@@ -109,16 +211,16 @@
  					<img src="{% static "blocbox/images/Logo-and-name---white.png" %}" height="50px" width="250px" class="navbarlogo"/>
  			  -->
 
-                    </a>
+        <!--     </a>
                     <!--add the bran name in text <a class="navbar-brand" href="#">BlocBox</a> -->
 
-                </div>
+        <!--    </div>
                 <!--navbar-header-->
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <!--      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!--jmy changing this to be a navbar-right - to left align, remove the navbar-right tag -->
-                    <ul class="nopaddingtopbottom nav navbar-nav navbar-right">
+        <!--          <ul class="nopaddingtopbottom nav navbar-nav navbar-right">
 
                         <li class="marginleftright10px"><a class="whitetext" href="#works">How it Works</a>
                         </li>
@@ -128,7 +230,7 @@
                         <!-- <a href="#hosting">Become a Host</a> -->
 
                         <!--add sign-in/sign-out to orange navbar -->
-                        {% if user.is_authenticated %}
+        <!--              {% if user.is_authenticated %}
                         <li class="marginleftright10px"><a class="whitetext" href="/logout/">Sign Out</a>
                         </li>
                         {% else %}
@@ -137,19 +239,19 @@
                         <div id="openModal" class="modalDialog">
                             <div class="">	<a href="#close" title="Close" class="close">X</a>
                                 <!--<h6 class="ltbluetext paddingsides15px">Sign In</h6> -->
-                                <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
+        <!--                 <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
                                     {% csrf_token %} {{ login_form.non_field_errors }}
                                     <div class="row">
                                         <div class="col-xs-12 form-group paddingbottom20px">
                                             {{ user_form.email.errors }}
                                             <!--<label for="id_email">Email Address</label> -->
-                                            <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
+        <!--                       <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
                                         </div>
 
                                         <div class="col-xs-12 form-group">
                                             {{ user_form.password.errors }}
                                             <!--<label for="id_password1">Password</label> -->
-                                            <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
+        <!--                <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
                                         </div>
                                     </div>
                                     <div class="row paddingtopbottom10px">
@@ -172,7 +274,7 @@
                                     </div>
                                 </form>
                                 <!--end form line -->
-                            </div>
+        <!--        </div>
                         </div>
                         {% endif %}
 
@@ -180,11 +282,11 @@
 
                         <!--<li><a href='/contactus'>Contact Us</a></li> -->
 
-                    </ul>
+        <!--         </ul>
                     <!--end collection of links for toggling -->
-                </div>
+        <!--       </div>
                 <!--collapse navbar-collapse -->
-            </div>
+        <!--       </div>
         </nav>
         <!--end nav-->
         {% endblock %}
