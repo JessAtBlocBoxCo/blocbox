@@ -780,6 +780,7 @@ footer {
    <!-- background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%); -->
     z-index: 1000;
     margin-bottom: 0;
+    height: 60px;
 }
 /*default is border: 1px solid transparent;*/
 
