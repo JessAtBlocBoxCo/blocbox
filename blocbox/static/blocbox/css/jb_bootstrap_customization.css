@@ -866,9 +866,6 @@ footer {
     z-index: 1030;
 }
 
-.navmenu-default .navmenu-brand, .navbar-default .navbar-offcanvas .navmenu-brand {
-    color: #777;
-}
 .navmenu-brand {
     display: block;
     font-size: 18px;
