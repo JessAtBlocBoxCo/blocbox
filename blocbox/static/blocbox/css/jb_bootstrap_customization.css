@@ -867,7 +867,7 @@ html, body {
     .navbar {
         background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
         border: medium none;
-        right: auto;
+        width: 100%
     }
     .canvas {
         padding: 0;
