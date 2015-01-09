@@ -782,6 +782,11 @@ footer {
     margin-bottom: 0;
     height: 60px;
 }
+
+.navbar-default {
+    box-shadow: 0;
+}
+
 /*default is border: 1px solid transparent;*/
 
 /*Orange Fill Page */
@@ -877,6 +882,11 @@ html, body {
         width: 100%;
         box-shadow: 0;
     }
+    
+    .navbar-default {
+        box-shadow: 0;
+    }
+    
     .canvas {
         padding: 0;
     }
