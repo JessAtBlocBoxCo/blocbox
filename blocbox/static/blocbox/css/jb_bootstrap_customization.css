@@ -871,7 +871,7 @@ html, body {
     max-height: 40px;
 }
 
-.navbar-default. nav-toggle:hover, .navbar-default .navbar-toggle:focus {
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: rgb(255, 195, 0);
     color: #ffffff;
 }
@@ -963,7 +963,7 @@ html, body {
     display: none;
 }
 
-.navbar-default. nav-toggle:hover, .navbar-default .navbar-toggle:focus {
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: rgb(255, 195, 0);
     color: #ffffff;
 }
@@ -1900,7 +1900,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         background: #fff;
     }
     
-    .navbar-default. nav-toggle:hover, .navbar-default .navbar-toggle:focus {
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
         background-color: rgb(255, 195, 0);
         color: #ffffff;
     }
