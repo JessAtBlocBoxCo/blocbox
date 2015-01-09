@@ -776,7 +776,7 @@ footer {
 
 .navbar {
     border: 0px;
-    box-shadow: 0;
+    box-shadow: none;
    <!-- background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%); -->
     z-index: 1000;
     margin-bottom: 0;
@@ -784,7 +784,7 @@ footer {
 }
 
 .navbar-default {
-    box-shadow: 0;
+    box-shadow: none;
 }
 
 /*default is border: 1px solid transparent;*/
@@ -884,7 +884,7 @@ html, body {
     }
     
     .navbar-default {
-        box-shadow: 0;
+        box-shadow: none;
     }
     
     .canvas {
