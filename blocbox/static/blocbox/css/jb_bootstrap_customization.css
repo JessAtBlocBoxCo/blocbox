@@ -1734,6 +1734,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         height: 40px;
         min-height: 40px;
     }
+    .mobilenavlogo {
+        height: 40px;
+    }
     .fixed-logo-image {
         display: none;
     }
@@ -1792,6 +1795,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         margin-top: 0px;
         height: 40px;
         min-height: 40px;
+    }
+    .mobilenavlogo {
+        height: 40px;
     }
 
     /*change waitlistbody dimensions to remove the white space */
