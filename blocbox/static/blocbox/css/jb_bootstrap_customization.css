@@ -900,9 +900,15 @@ html, body {
     }
 }
 
+.mobilenavlogo {
+    height: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 
 /*-----------------------------------------------------------------------
-* GEneric Navbar Specific Styles (non-waitlist, for base-html)
+* Generic Navbar Specific Styles (non-waitlist, for base-html)
 *-----------------------------------------------------------------------*/
 
 /*Change width of navbar-header - so when it collapses - was 768 */
