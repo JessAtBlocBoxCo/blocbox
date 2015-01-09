@@ -785,6 +785,8 @@ footer {
 
 .navbar-default {
     box-shadow: none;
+    background-image: none;
+    background-color: #ffffff;
 }
 
 /*default is border: 1px solid transparent;*/
@@ -889,6 +891,8 @@ html, body {
     
     .navbar-default {
         box-shadow: none;
+        background-image: none;
+        background-color: #ffffff;
     }
     
     .canvas {
