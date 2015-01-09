@@ -1767,6 +1767,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         float: none;
         max-height: 50px;
     }
+    .navbar-toggle {
+        padding: 3px 5px;
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -1912,6 +1915,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
         background-color: rgb(255, 195, 0);
         color: #ffffff;
+    }
+    .navbar-toggle {
+        padding: 3px 5px;
     }
     
 }
