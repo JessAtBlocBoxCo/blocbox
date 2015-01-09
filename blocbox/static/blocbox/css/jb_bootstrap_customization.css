@@ -871,7 +871,7 @@ html, body {
     max-height: 40px;
 }
 
-.navbar-default .nav-toggle:hover, .navbar-default .navbar-toggle:focus {
+.navbar-default.nav-toggle:hover,.navbar-default.navbar-toggle:focus {
     background-color: rgb(255, 195, 0);
     color: #ffffff;
 }
