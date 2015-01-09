@@ -871,7 +871,7 @@ html, body {
     max-height: 40px;
 }
 
-.navbar-default.nav-toggle:hover,.navbar-default.navbar-toggle:focus {
+.navbar-default. nav-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: rgb(255, 195, 0);
     color: #ffffff;
 }
@@ -961,6 +961,11 @@ html, body {
 }
 .hide {
     display: none;
+}
+
+.navbar-default. nav-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgb(255, 195, 0);
+    color: #ffffff;
 }
 /*---------------------------------------------------------------------*
 * Jess Adding scheduling stylingn - for free and busy days
@@ -1893,6 +1898,11 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         padding: 5px 20px 13px 20px;
         border-radius: 2px;
         background: #fff;
+    }
+    
+    .navbar-default. nav-toggle:hover, .navbar-default .navbar-toggle:focus {
+        background-color: rgb(255, 195, 0);
+        color: #ffffff;
     }
 }
 
