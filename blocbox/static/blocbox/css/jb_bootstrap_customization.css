@@ -926,7 +926,7 @@ html, body {
     .navbar-toggle {
         display: block;
         border: 0;
-        color: white;
+        color: rgb(255, 195, 0);
     }
     .navbar-collapse {
         border-top: 1px solid transparent;
