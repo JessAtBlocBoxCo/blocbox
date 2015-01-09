@@ -871,6 +871,11 @@ html, body {
     max-height: 40px;
 }
 
+.navbar-default .nav-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: rgb(255, 195, 0);
+    color: #ffffff;
+}
+
 @media (min-width: 0px) {
     .navbar-toggle {
         display: block;
