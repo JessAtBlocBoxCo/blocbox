@@ -86,8 +86,8 @@
        <!-- <a name="top" class="anchorwithnav"></a> -->
         <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
             <a class="navmenu-brand" href="/beta/"><img class="slidelogo" src={% static 'blocbox/images/Logo-and-name-white.png' %} /></a>
+            {% if user.is_authenticated %}
             <ul class="nav navmenu-nav">
-               {% if user.is_authenticated %}
                 <li class="active">
                        <a href='/dashboard/'><i class="fa fa-list fa-fw fa-lg"></i>&nbsp Dashboard</a>
                 </li>
@@ -166,7 +166,9 @@
                 <li>
                     <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign out</a>
                 </li>
+            </ul>
                 {% else %}
+            <ul class="nav navmenu-nav">
                 <li>
                     <a href="#openModal"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign in</a>
                     <div id="openModal" class="modalDialog">
@@ -248,8 +250,8 @@
                         </li>
                     </ul>
                 </li>
-                {% endif %}
             </ul>
+                {% endif %}
         </nav>
         <div class="navbar navbar-default navbar-fixed-top">
             <div class="row">
