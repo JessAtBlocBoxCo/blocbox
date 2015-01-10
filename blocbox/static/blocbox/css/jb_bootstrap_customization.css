@@ -789,6 +789,12 @@ footer {
     background-color: transparent;
 }
 
+.navbar-orange {
+    box-shadow: none;
+    background-image: none;
+    background-color: rgb(255, 195, 0);
+}
+
 /*default is border: 1px solid transparent;*/
 
 /*Orange Fill Page */
@@ -898,6 +904,12 @@ html, body {
         box-shadow: none;
         background-image: none;
         background-color: #ffffff;
+    }
+    
+    .navbar-orange {
+        box-shadow: none;
+        background-image: none;
+        background-color: rgb(255, 195, 0);
     }
     
     .canvas {
@@ -1776,6 +1788,16 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .navbar-default .navbar-toggle .fa:hover, .navbar-default .navbar-toggle .fa:focus {
         background-color: rgb(255, 195, 0);
         color: #ffffff;
+    }
+    .navbar-orange {
+        box-shadow: none;
+        background-image: none;
+        background-color: rgb(255, 195, 0);
+    }
+    .navbar-white {
+        box-shadow: none;
+        background-image: none;
+        background-color: #ffffff;
     }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
