@@ -1725,6 +1725,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .orangebackground {
         background-color: rgb(255, 195, 0);
     }
+    .orangetext {
+        color: rgb(255, 195, 0);
+    }
     /*Hex Equiv:  #FFCB13 */
     .fullorange {
         background-color: rgb(255, 195, 0);
@@ -1919,7 +1922,12 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .navbar-toggle {
         padding: 3px 5px;
     }
-    
+    .orangetext {
+        color: rgb(255, 195, 0);
+    }
+    .orangebackground {
+        background-color: rgb(255, 195, 0);
+    }
 }
 
 /*-------------------------------------------------------------*
