@@ -786,7 +786,7 @@ footer {
 .navbar-default {
     box-shadow: none;
     background-image: none;
-    background-color: none;
+    background-color: transparent;
 }
 
 /*default is border: 1px solid transparent;*/
