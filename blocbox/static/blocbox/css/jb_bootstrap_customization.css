@@ -1773,7 +1773,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .navbar-toggle {
         padding: 3px 5px;
     }
-    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle .fa-bars:focus {
+    .navbar-default .navbar-toggle .fa:hover, .navbar-default .navbar-toggle .fa:focus {
         background-color: rgb(255, 195, 0);
         color: #ffffff;
     }
