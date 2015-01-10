@@ -57,6 +57,8 @@ class Migration(SchemaMigration):
             ('whenimhome_hours', self.gf('django.db.models.fields.CharField')(max_length=250, blank=True)),
             ('address_approx', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
             ('customchar', self.gf('django.db.models.fields.CharField')(max_length=200, null=True, blank=True)),
+            ('customchartwo', self.gf('django.db.models.fields.CharField')(max_length=200, null=True, blank=True)),
+            ('customcharthree', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
         ))
         db.send_create_signal(u'core', ['UserInfo'])
 
@@ -75,6 +77,8 @@ class Migration(SchemaMigration):
             'availability': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
             'city': ('django.db.models.fields.CharField', [], {'max_length': '30', 'blank': 'True'}),
             'customchar': ('django.db.models.fields.CharField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),
+            'customcharthree': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
+            'customchartwo': ('django.db.models.fields.CharField', [], {'max_length': '200', 'null': 'True', 'blank': 'True'}),
             'date_joined': ('django.db.models.fields.DateTimeField', [], {'default': 'datetime.datetime.now', 'null': 'True', 'blank': 'True'}),
             'email': ('django.db.models.fields.EmailField', [], {'unique': 'True', 'max_length': '254'}),
             'favorscompleted': ('django.db.models.fields.IntegerField', [], {'null': 'True', 'blank': 'True'}),
