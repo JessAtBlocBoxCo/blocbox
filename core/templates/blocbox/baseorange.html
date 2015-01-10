@@ -83,13 +83,15 @@
 <body class="whitetext fullheight waitlistbody">
 
     <div id="bbpage">
-       <!-- <a name="top" class="anchorwithnav"></a> -->
+        <!-- <a name="top" class="anchorwithnav"></a> -->
         <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
-            <a class="navmenu-brand" href="/beta/"><img class="slidelogo" src={% static 'blocbox/images/Logo-and-name-white.png' %} /></a>
+            <a class="navmenu-brand" href="/beta/">
+                <img class="slidelogo" src={% static 'blocbox/images/Logo-and-name-white.png' %} />
+            </a>
             {% if user.is_authenticated %}
             <ul class="nav navmenu-nav">
                 <li class="active">
-                       <a href='/dashboard/'><i class="fa fa-list fa-fw fa-lg"></i>&nbsp Dashboard</a>
+                    <a href='/dashboard/'><i class="fa fa-list fa-fw fa-lg"></i>&nbsp Dashboard</a>
                 </li>
                 <li>
                     <a href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg"></i>&nbsp Start a Shipment</a>
@@ -167,7 +169,7 @@
                     <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign out</a>
                 </li>
             </ul>
-                {% else %}
+            {% else %}
             <ul class="nav navmenu-nav">
                 <li>
                     <a href="#openModal"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign in</a>
@@ -251,19 +253,15 @@
                     </ul>
                 </li>
             </ul>
-                {% endif %}
+            {% endif %}
         </nav>
         <div class="navbar navbar-default navbar-fixed-top">
-            <div class="row">
-                <a class="" href="/beta/">
-                    <img class="mobilenavlogo" src={% static 'blocbox/images/BB Logo Orange.svg' %} />
-                </a>
                 <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
                     <i class="fa fa-bars fa-fw fa-2x"></i>
                 </button>
             </div>
         </div>
-       
+
         {% block navbar %}
         <!-- Fixed-Top version of Navbar
 <nav class="navbar navbar-default navbar-fixed-top whitetext" role="navigation">	
@@ -287,10 +285,10 @@
         <!--     <a class="nav-blocbox-name navbarlogo" href="#">
                         <!--removing navbar-brand see what happens -->
 
-                        <!--<img class="nav-blocbox-name navbarlogo" /> -->
-                        <!--<img src="{% static "blocbox/images/Name-whited2.png" %}" /> -->
+        <!--<img class="nav-blocbox-name navbarlogo" /> -->
+        <!--<img src="{% static "blocbox/images/Name-whited2.png" %}" /> -->
 
-                        <!--I have added the followingn image to CSS under nav-blocbox-name at mobile media sizes...
+        <!--I have added the followingn image to CSS under nav-blocbox-name at mobile media sizes...
  				<a class="navbar-brand" href="#">
  					<img src="{% static "blocbox/images/Logo-and-name---white.png" %}" height="50px" width="250px" class="navbarlogo"/>
  			  -->
@@ -301,7 +299,7 @@
         <!--    </div>
                 <!--navbar-header-->
 
-                <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Collect the nav links, forms, and other content for toggling -->
         <!--      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!--jmy changing this to be a navbar-right - to left align, remove the navbar-right tag -->
         <!--          <ul class="nopaddingtopbottom nav navbar-nav navbar-right">
@@ -313,7 +311,7 @@
                         </li>
                         <!-- <a href="#hosting">Become a Host</a> -->
 
-                        <!--add sign-in/sign-out to orange navbar -->
+        <!--add sign-in/sign-out to orange navbar -->
         <!--              {% if user.is_authenticated %}
                         <li class="marginleftright10px"><a class="whitetext" href="/logout/">Sign Out</a>
                         </li>
@@ -364,7 +362,7 @@
 
                         <!--<li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li> -->
 
-                        <!--<li><a href='/contactus'>Contact Us</a></li> -->
+        <!--<li><a href='/contactus'>Contact Us</a></li> -->
 
         <!--         </ul>
                     <!--end collection of links for toggling -->
