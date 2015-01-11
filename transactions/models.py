@@ -20,6 +20,7 @@ class Transaction(models.Model):
     #enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
     price = models.DecimalField('Amount Paid', max_digits=6, decimal_places=2, blank=True, null=True)   
     date_requested = models.DateTimeField(default=datetime.datetime.today)
+    date_requested_notime = models.DateField(default = datetime.date.today)
     favortype = models.CharField("Favor Type", max_length=100, blank=True, null=True)
     invoice = models.CharField("Invoice ID", max_length=100, blank=True, null=True)
     tracking = models.CharField("Tracking Number", max_length=50, blank=True, null=True)
