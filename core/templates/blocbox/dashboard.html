@@ -164,11 +164,12 @@
                     					<a href="/dashboard/track_id{{shipment.id}}/#openModal_entertracking_id{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
 														 	<div id="openModal_entertracking_id{{shipment.id}}" class="modalDialog">
                                   
-                                <div>	<a href="#close" title="Close" class="close">X</a>
+                                <div>	
+                                	<a href="/dashboard" title="Close" class="close">X</a>
         														<h6 class="ltbluetext">Enter a Tracking Number</h6>
         														<p>Enter a tracking number, shipping company or other information</p>
                                   	
-                                  	<form class="form-inline" role="form" method="post" action="/dashboard/track_id{{shipment.id}}/" enctype="multipart/form-data">
+                                  	<form class="form-inline" role="form" method="post" action="/dashboard/track_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
 					   														{% csrf_token %}
 					   														{{ tracking_form.non_field_errors }}
 					   														{{ tracking_form.tracking.errors }}
@@ -184,9 +185,17 @@
 					        											<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
 					    												</div> 
 					    											</form>
-					    											
-					    									</div> <!--end modal div-->  					    									               
-                            </div>    
+					    									</div> <!--div inside modal --> 					    									               
+                            </div>    <!--modal div for enter tracking -->
+                            <!--thanks modal-->
+                          	<div id="openModal_track_id{{shipment.id}}/Thanks" class="modalDialog"> 
+                         				<div>
+                         	        <a href="/dashboard" title="Close" class="close">X</a>
+        													<h3 class="ltbluetext">Thanks! </h3>    
+        													<h6> Your tracking information has been updated </h6>
+        													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
+        												</div>
+                       				</div> 
                           </div> <!--end enter tracking row-->         
                       {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
@@ -197,11 +206,11 @@
                     				 	<a href="/dashboard/track_id{{shipment.id}}/#openModal_edittracking_id{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
 														 	<div id="openModal_edittracking_id{{shipment.id}}" class="modalDialog">                                 
                                   <div>	
-                                  		<a href="#close" title="Close" class="close">X</a>
+                                  		<a href="/dashboard" title="Close" class="close">X</a>
         															<h6 class="ltbluetext">Update Your Tracking Number</h6>
         															<p>Enter a tracking number, shipping company or other information</p>
                                     	
-                                    	 <form class="form-inline" role="form" method="post" action=action="/dashboard/track_id{{shipment.id}}/" enctype="multipart/form-data">
+                                    	 <form class="form-inline" role="form" method="post" action=action="/dashboard/track_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ tracking_form.non_field_errors }}
 					   																	{{ tracking_form.tracking.errors }}
@@ -219,8 +228,17 @@
 					    													</div>                
                             					</form>
                             			</div> 
-                            	</div>   <!--div id openmodal..-->                          
-                    			</div> <!--row-->
+                            	</div>   <!--div id openmodal..-->  
+                          		<!--thanks modal-->
+                          		<div id="openModal_track_id{{shipment.id}}/Thanks" class="modalDialog"> 
+                         				<div>
+                         	        <a href="/dashboard" title="Close" class="close">X</a>
+        													<h3 class="ltbluetext">Thanks! </h3>    
+        													<h6> Your tracking information has been updated </h6>
+        													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
+        												</div>
+                       				</div>                        
+                    			</div> <!--row for edit tracking-->
                     		{% endif %}
                     </div> <!--end tracking number -->
                     
@@ -298,7 +316,7 @@
                          </div>   <!--div id openmodal..--> 
                          <div id="openModal_enduser_issue_id{{shipment.id}}/Thanks" class="modalDialog"> 
                          			<div>
-                         	        <a href="#close" title="Close" class="close">X</a>
+                         	        <a href="/dashboard" title="Close" class="close">X</a>
         													<h3 class="ltbluetext">Thanks! </h3>    
         													<h6>We have received your report regarding order {{shipment.id}} and will be in touch within 24 hours to resolve this issue. </h6>
         													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
