@@ -65,7 +65,7 @@ def abouthosting(request):
     enduser = request.user
     return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
 
-def dashboard(request, host_id=None, track_id=None, confirm_id=None, issue_id=None ): #modify_id=None
+def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None ): #modify_id=None
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
