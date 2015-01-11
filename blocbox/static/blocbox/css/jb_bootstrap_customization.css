@@ -268,8 +268,6 @@ footer {
     font-weight: 400;
 }
 
-
-
 /*Define text alignment attributes*/
 
 .textcenter {
@@ -1844,6 +1842,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     }
     .margintop50pxnomobile {
         margin-top: 0px;
+    }
+    .paddingtop30px {
+        padding-top: 30px;
     }
     .paddingsides3pxmobile {
         padding-left: 3px;
