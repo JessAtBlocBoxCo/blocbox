@@ -23,7 +23,7 @@ class PackageReceived(forms.ModelForm):
 class EndUserIssue(forms.ModelForm):
 		class Meta:
 				model = Transaction
-				fields = ('enduser_issue')
+				fields = ('enduser_issue',)
 				
 """
   
