@@ -130,9 +130,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         else:
             enduser_issue_form = EndUserIssue(instance=trans)
     else:
-    		enduser_issue_form = None
+        enduser_issue_form = None
    	#send a message
-   	if message_trans_id:
+    if message_trans_id:
         trans = Transaction.objects.get(pk=message_trans_id)
         if request.method == 'POST':
         		compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
