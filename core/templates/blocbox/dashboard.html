@@ -134,10 +134,7 @@
                             <a href="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}} class="nomargin" "> Message {{ shipment.host.first_name }}</a>                            
 														 	<div id="openModal_message_id{{shipment.id}}" class="modalDialog">
 														 			
-                            			{% extends "django_messages/base.html" %} 
 																	{% load i18n %} 
-																	{% with active_page=compose %}  
-																	{% block messagingcontent %} 
 																																		
 																				<div class="row margintopbottom30px">
 																				   <div class="col-xs-6 col-xs-offset-3">
@@ -150,9 +147,7 @@
 																				        </form>
 																				    </div>
 																				</div>
-																	
-																	{% endblock %}																	
-																	{% endwith %}
+																																	
 																	
                         		</div> <!-- id=openModal -->
                     </div <!--row with message -->
