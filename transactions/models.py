@@ -35,7 +35,7 @@ class Transaction(models.Model):
     deliverydate_tracking = models.DateField("Expected Delivery Date Pulled from Tracking Information", blank=True, null=True)
     testfieldagain = models.CharField("test field", max_length=50, blank=True, null=True)
     #End user Complete Transaction and rating
-    trans_complete = models.BooleanField("Transaction Complete", null=True, default=False) 
+    trans_complete = models.BooleanField("Transaction Complete", default=False) #Boolean fields cannot be null
     RATING_CHOICES = ( (1, 0.2), (2, 0.4), (3, 0.6), (4, 0.8), (5, 1.0) )
     enduser_rating = models.DecimalField(max_length=2, decimal_places=1, choices=RATING_CHOICES, blank=True, null=True)
     enduser_comments = models.CharField("EndUser Transaction Comments", max_length=200, blank=True, null=True)
