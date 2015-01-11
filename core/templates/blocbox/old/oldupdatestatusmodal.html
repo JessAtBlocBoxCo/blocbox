@@ -1,0 +1,41 @@
+<!--this is the update status modal i had on dashboard.html - no longer needed -->
+
+                    <!--MODIFY-->
+                    <!--right now UPDATE STATUS vs MODIFY b/c thats all there is-->
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px">
+                        <div class="row paddingtopbottom2px">
+                            
+                    
+												<a href="/dashboard/modid{{shipment.id}}/#openModal_modifytrans" class="nomargin textcenter">Update Status</a>                        
+												<div id="openModal_modifytrans" class="modalDialog">
+												    		<div>	<a href="#close" title="Close" class="close">X</a>
+												    			<h6 class="ltbluetext">Update Status Information </h6>
+												    			<h6 class="ltbluetext"> Order ID {{shipment.invoice }} </h6>
+												    			<p> If the package is ready for pickup, enter "Ready for Pickup."
+												    				  If {{shipment.enduser.first_name}} has received the package, enter "Received." </p>
+												                                                                	                        				
+																	<form class="form-inline" role="form" method="post" action="/dashboard/modid{{shipment.id}}/" enctype="multipart/form-data">
+																	   {% csrf_token %}
+																	   {{ modify_form.non_field_errors }}
+																	   {{ modify_form.status.errors }}
+																	    <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+																	         <input type="status" class="form-control" name="status" 
+																	         id="id_status" 
+																	         placeholder="Enter Status Information">    	        	   
+																	    </div>
+																	    <div class="row paddingbottom10px">
+																	        <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+																	    </div>
+																	</form> 
+																	
+														</div>
+												</div> 
+                         <!--       
+                         {# modifytrans_modal request shipment.id #}                                
+													-->
+                        </div> <!--row for status update -->
+                        
+                        <div class="row">
+                            <a class="nomargin">Message</a>
+                        </div>
+                    </div> <!--end modify/ update status -->
