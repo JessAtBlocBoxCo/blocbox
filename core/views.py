@@ -142,7 +142,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             compose_form.fields['recipient'].initial = recipient
             if compose_form.is_valid():
                 compose_form.save(sender=request.user)
-                messages.info(request, _(u"Message successfully sent."))
             else:
                 print compose_form.errors
         else:
