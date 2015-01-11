@@ -1712,6 +1712,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .margintop20pxnomobile {
         margin-top: 20px;
     }
+    .desktoponly {
+        display: none;
+    }
 }
 /*add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why */
 
@@ -1805,6 +1808,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     }
     .orangebars:focus {
         color: rgb(255, 195, 0);
+    }
+    .desktoponly {
+        display: none;
     }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
@@ -1969,6 +1975,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     }
     .orangebackground {
         background-color: rgb(255, 195, 0);
+    }
+    .desktoponly {
+        display: none;
     }
 }
 
