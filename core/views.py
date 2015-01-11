@@ -33,12 +33,18 @@ from schedule.utils import check_event_permissions, coerce_date_dict
 from django.utils import timezone
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
+#Import Messaging Stuff
+from django.contrib import messages
+from django_messages.models import Message
+from django_messages.forms import ComposeForm
+from django_messages.utils import format_quote, get_user_model, get_username_field
 
 #Write a custom template filter:
 from django.template.defaulttags import register
 @register.filter
 def get_item(dictionary, key):
     return dictionary.get(key)
+    
 
 #-------------------------------------------------------------------------
 #Waitlist, beta, getting started, about and dashboard/profile pages
@@ -119,16 +125,30 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     				if enduser_issue_form.is_valid():
     						issue = enduser_issue_form.save()
     						issue.save()
-    				else:
-    						print enduser_issue_form.errors
+            else:
+                print enduser_issue_form.errors
         else:
             enduser_issue_form = EndUserIssue(instance=trans)
     else:
     		enduser_issue_form = None
    	#send a message
    	if message_trans_id:
-   			trans = Transaction.objects.get(pk=message_trans_id)
-   			
+        trans = Transaction.objects.get(pk=message_trans_id)
+        if request.method == 'POST':
+        		compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
+        		sender = request.user
+        		#Add recipient here?
+        		recipient = trans.host.email
+        		compose_form.fields['recipient'].initial = recipient
+        		if compose_form.is_valid():
+            		compose_form.save(sender=request.user)
+            		messages.info(request, _(u"Message successfully sent."))
+            else:
+            		print compose_form.errors
+    		else:
+    				compose_form = ComposeForm(recipient_filter=None)
+    else:
+        compose_form = None
     """
     if modify_id:
         trans = Transaction.objects.get(pk=modify_id)    
@@ -151,6 +171,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form,
+        'compose_form': compose_form, 'success_url': success_url, 
         #'modify_form': modify_form, 
     })
     

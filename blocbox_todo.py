@@ -3,8 +3,6 @@
 - make the completed transacitons move to the completed section
  - dashbarod - fix the "message" link on current shipments
  - make the 'report an issue' send an email to us
- - on dashboard - for ratingbuton add a "thank you"..
- - on dashboard - for report an issue button add a "tahnk you"
  - buy aftership
  - dashboard: finish for other transactions
  - dashboard: make the completed transacitons go to the bottom
