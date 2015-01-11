@@ -123,9 +123,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         if request.method == 'POST':
     				enduser_issue_form = EndUserIssue(request.POST, instance=trans)
     				if enduser_issue_form.is_valid():
-    						issue = enduser_issue_form.save()
-    						issue.save()
-            else:
+                issue = enduser_issue_form.save()
+                issue.save()
+            else: 
                 print enduser_issue_form.errors
         else:
             enduser_issue_form = EndUserIssue(instance=trans)
