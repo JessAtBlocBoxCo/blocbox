@@ -15,12 +15,12 @@ class ModifyTransaction(forms.ModelForm):
         model = Transaction
         fields = ('status',)    
 
-class PackageReceived(forms.ModelForms):
+class PackageReceived(forms.ModelForm):
 	  class Meta:
 	  		model = Transaction
 	  		fields = ('trans_complete', 'enduser_rating', 'enduser_comments',)
 
-class EndUserIssue(forms.ModelForms):
+class EndUserIssue(forms.ModelForm):
 		class Meta:
 				model = Transaction
 				fields = ('enduser_issue')
