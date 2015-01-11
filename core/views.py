@@ -99,7 +99,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         tracking_form = None  
     #Package REceived Modal/Button
     if confirm_id:
-    		trans = Transaction.object.get(pk=confirm_id)
+    		trans = Transaction.objects.get(pk=confirm_id)
     		if request.method == 'POST':
     				package_received_form = PackageReceived(request.POST, instance=trans)
     				if package_received_form.is_valid():
@@ -113,7 +113,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     		package_received_form = None
     #EndUser Issues Modal/Button
     if issue_id:
-    		trans = Transaction.object.get(pk=confirm.id)
+    		trans = Transaction.objects.get(pk=confirm.id)
     		if request.method == 'POST':
     				enduser_issue_form = EndUserIssue(request.POST, instance=trans)
     				if enduser_issue_form.is_valid():
