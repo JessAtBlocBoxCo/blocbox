@@ -125,10 +125,14 @@
                     <!--NEIGHBOR: host name and information-->
                     <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
                         <div class="row paddingtopbottom2px">
-                            <a class="nomargin">{{ shipment.host.first_name }}</a>
+                            <a href="https://www.google.com/maps/place/{{shipment.host.st_address1}}+{{shipment.host.city}}+{{shipment.host.state}}+{{shipment.host.zipcode}}" class="nomargin">
+                            	{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }}
+                            </a>
+                            <!--  https://www.google.com/maps/place/760+West+Genesee+Street+Syracuse+NY+13204 -->
                         </div>
                         <div class="row">
-                            <a class="nomargin">{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }}</a>
+                            
+                            <a class="nomargin">Message {{ shipment.host.first_name }}</a>
                         </div>
                     </div>
                     
