@@ -383,6 +383,9 @@ footer {
 .paddingtop20px {
     padding-top: 20px;
 }
+.paddingtop30px {
+    padding-top: 30px;
+}
 .paddingtop50px {
     padding-top: 50px;
 }
@@ -1675,8 +1678,8 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .margintop50pxnomobile {
         margin-top: 50px;
     }
-    .margintop20pxnomobile {
-        margin-top: 20px;
+    .margintop30pxnomobile {
+        margin-top: 30px;
     }
 }
 /*Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)*/
