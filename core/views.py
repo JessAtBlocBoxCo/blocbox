@@ -121,8 +121,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     if issue_id:
         trans = Transaction.objects.get(pk=issue_id)
         if request.method == 'POST':
-    				enduser_issue_form = EndUserIssue(request.POST, instance=trans)
-    				if enduser_issue_form.is_valid():
+            enduser_issue_form = EndUserIssue(request.POST, instance=trans)
+            if enduser_issue_form.is_valid():
                 issue = enduser_issue_form.save()
                 issue.save()
             else: 
