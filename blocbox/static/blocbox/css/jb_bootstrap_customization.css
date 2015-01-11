@@ -1803,10 +1803,12 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .orangebars {
         color: #ffffff;
     }
-    .orangebars:hover; .orangebars:focus {
+    .orangebars:hover {
         color: rgb(255, 195, 0);
     }
-}
+    .orangebars:focus {
+        color: rgb(255, 195, 0);
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
