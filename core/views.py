@@ -125,8 +125,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     						issuereported = True
     				else:
     						print enduser_issue_form.errors
-    		else:
-    				enduser_issue_form = EndUserIssue(instance=trans)
+        else:
+            enduser_issue_form = EndUserIssue(instance=trans)
     else:
     		enduser_issue_form = None
     """
