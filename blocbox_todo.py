@@ -1,5 +1,8 @@
 """jess to do"""
  - dashbarod - fix the "message" link on current shipments
+ - dashboard: finish for other transactions
+ - dashboard: make the completed transacitons go to the bottom
+ 	- ad field for whether completed/how do they update that
 - profile pics: make individualized/link to specific hosts
 	- update search page for host pics
 - allow to upload profile pics
@@ -56,7 +59,7 @@ JESS: populate the "delivery date" field by connecting to trac
 	JESS: issue with payment option (bundled vers speciifc) and per-package items like "status" - thse are difference sorts.. so paypal shoudl just be for the money, 
 		transactions table for the favor/shipment/transaction
 		JESS: tracking information - automate that/connect to carrier - also figure out which tracking number code matched to what carrier
-    
+ - remove reference to paying after they receive the package -- theyre going to be charged up front
         
 """JESS NOTES/QUESTIONS FOR JOHN"""
 1. do we need to split up dashboard containers by type of transaction or can we just have a field/colum for that (e.g, shipments and dog walkign one)
@@ -95,6 +98,7 @@ JESS: populate the "delivery date" field by connecting to trac
 2. tracing - instead of using that widget, use UPS, USPS etc APIs - 
 3. create notification to users automatically when its delivered  - will need ot integrate those APIs first
 4. current shipments  better word?
+5. implement pay later policy/ pay once package is received
 
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
 #they install at:
