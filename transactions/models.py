@@ -26,8 +26,8 @@ class Transaction(models.Model):
     tracking = models.CharField("Tracking Number", max_length=50, blank=True, null=True)
     status = models.CharField("Status", max_length=50, blank=True, null=True)
     favorstatus = models.CharField("Favor Status (Non-Shipments)", max_length=50, blank=True, null=True)
-    dayrangestart = models.IntegerField("Package Arrival Range Start", blank=True, null=True)
-    dayrangeend = models.IntegerField("Package Arrival Range End", blank=True, null=True)
+    dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)
+    dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)
     #to get a date use DateField (datetime.date.today), to get date with time use DateTimeField
     #datenow = models.DateField("Date When Requested (Duplicative but needed)", blank=True, null=True)
     deliverydatenotracking_rangestart = models.DateField("Expected Delivery Date Range Start, Before Tracking Information Entered", blank=True, null=True)
