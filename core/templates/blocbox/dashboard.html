@@ -101,8 +101,11 @@
                     
                      <!--SHIPMENT DETAILS: ORDER DATE AND SHIPPMENT SPEED  -->
                     <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">  
-                    		<p class=" nomargin"> Ordered {{ shipment.date_requested_notime }}</p>                 
-                        <p class="nomargin"> 
+                    		<div class="row paddingtopbottom2px">
+                    				<p class=" nomargin"> Ordered {{ shipment.date_requested_notime }}</p>      
+                    		</div>
+                    		<div class="row paddingtopbottom2px">         
+                        		<p class="nomargin"> 
                         				{% if shipment.dayrangestart %}
                         								{% if shipment.dayrangestart == shipment.dayrangeend %}
                         									{{ shipment.dayrangestart }} day shipping
@@ -114,9 +117,9 @@
                         										{{ shipment.deliverydatenotracking_rangeend}} -->
                         								&nbsp;
                         								{% endif %}
-                        			{% endif %}                        		
-                        															
-                        </p>
+                        			{% endif %}                        		                        															
+                        		</p>
+                        </div>  
                     </div>
                     
                     
