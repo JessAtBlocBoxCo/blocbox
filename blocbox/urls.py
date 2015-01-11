@@ -17,7 +17,9 @@ urlpatterns = patterns('',
     #need different URLs for the different modals on the dashboard - otherwise forms dont know what to submit
     url(r'^dashboard/track_id(?P<track_id>\d+)/',views.dashboard, name='dashboard'), 
     url(r'^dashboard/confirm_id(?P<confirm_id>\d+)/',views.dashboard, name='dashboard'),
+    url(r'^dashboard/confirm_id(?P<confirm_id>\d+)/(?P<modalsubmitted>\w+)/', views.dashboard, name='dashboard')
     url(r'^dashboard/issue_id(?P<issue_id>\d+)/',views.dashboard, name='dashboard'),
+    url(r'^dashboard/issue_id(?P<issue_id>\d+)/(?P<modalsubmitted>\w+)/', views.dashboard, name='dashboard')
     url(r'^myblock/',views.myblock, name='myblock'),  
     url(r'^startashipment/$', views.startashipment, name='startashipment'),
     url(r'^nav_startashipment/$', views.nav_startashipment, name='nav_startashipment'),

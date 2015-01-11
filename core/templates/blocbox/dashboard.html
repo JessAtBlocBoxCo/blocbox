@@ -235,10 +235,11 @@
                               <div>	
                                   <a href="#close" title="Close" class="close">X</a>
         													<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
-        													  	{% if finished %}
+        													  	{% if modalsubmitted %}
         													  			<h6>Thanks for your feedback! This transaction has been marked as complete. </h6>
    																		{% else %} 	
-                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}" enctype="multipart/form-data">
+   																			<!--form needs to pass True so modalsubmited is registered -->
+                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}/True" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ package_received_form.non_field_errors }}
 					   																	{{ package_received_form.tracking.errors }}
@@ -276,10 +277,10 @@
                               <div>	
                                   <a href="#close" title="Close" class="close">X</a>
         													<h6 class="ltbluetext">Report an Issue, Delay or Problem with Order {{shipment.id}} </h6>    
-        													    {% if issuereported %}
+        													    {% if modalsubmitted %}
         													  			<h6>We have received your message and will be in touch within 24 hours to resolve this issue. </h6>
    																		{% else %} 	                               	
-                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}" enctype="multipart/form-data">
+                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}/True" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ enduser_issue_form.non_field_errors }}
 					   																	{{ enduser_issue_form.tracking.errors }}
