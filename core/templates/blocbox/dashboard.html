@@ -238,7 +238,7 @@
         													  	{% if finished %}
         													  			<h6>Thanks for your feedback! This transaction has been marked as complete. </h6>
    																		{% else %} 	
-                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/" enctype="multipart/form-data">
+                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ package_received_form.non_field_errors }}
 					   																	{{ package_received_form.tracking.errors }}
@@ -279,7 +279,7 @@
         													    {% if issuereported %}
         													  			<h6>We have received your message and will be in touch within 24 hours to resolve this issue. </h6>
    																		{% else %} 	                               	
-                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/" enctype="multipart/form-data">
+                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ enduser_issue_form.non_field_errors }}
 					   																	{{ enduser_issue_form.tracking.errors }}
