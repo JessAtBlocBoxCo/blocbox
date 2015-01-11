@@ -1658,6 +1658,10 @@ html, body {
 h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.071em; h5 {font-size: 1.286em; h6 {font-size: 1.286em; 
 ------------------------------------------------------------------------------*/
 
+/*-------------------------------------------------------------*
+*DESKTOP (NON-MOBILE)
+*--------------------------------------------------------------*/
+
 @media (min-width: 1200px) {
     .marginsides80pxlg {
         margin-left: 80px;
@@ -1680,7 +1684,10 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         margin-top: 20px;
     }
 }
-/*Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)*/
+
+/*-------------------------------------------------------------*
+MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)
+*--------------------------------------------------------------*/
 
 @media (max-width: 800px) {
     body {
@@ -1715,8 +1722,15 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .mobileonly {
         display: block;
     }
+    .mobilehide {
+        display: none;
+    }
 }
-/*add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why */
+
+/*-------------------------------------------------------------*
+MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why 
+*--------------------------------------------------------------*/
+
 
 @media (max-width: 550px) {
     body {
@@ -1815,6 +1829,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .mobileonly {
         display: block;
     }
+    .mobilehide {
+        display: none;
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -1847,7 +1864,6 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .mobilenavlogo {
         height: 40px;
     }
-
     /*change waitlistbody dimensions to remove the white space */
     .nopaddingmobile {
         padding: 0px
