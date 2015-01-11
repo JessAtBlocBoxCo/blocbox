@@ -146,7 +146,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,       	
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
-        'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form,
+        'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'modalsubmitted':modalsubmitted,
         #'modify_form': modify_form, 
     })
     
