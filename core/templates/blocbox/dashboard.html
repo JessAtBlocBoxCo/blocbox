@@ -276,14 +276,14 @@
 											 	<div id="openModal_enduser_issue_id{{shipment.id}}" class="modalDialog">                                 
                               <div>	
                                   <a href="#close" title="Close" class="close">X</a>
-        													<h3 class="ltbluetext">Report an Issue, Delay or Problem with Order {{shipment.id}} </h3>                                   	
+        													<h4 class="ltbluetext">Report an issue, delay or other concern with rder {{shipment.id}} </h4>                                   	
                                     	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ enduser_issue_form.non_field_errors }}
 					   																	{{ enduser_issue_form.tracking.errors }}
 					   															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
 	      																			<input type="text" class="form-control" name="enduser_issue"      					          
-	      																					placeholder="Enter a Description of the Issue with Order {{ shipment.id }} ">    	    	   
+	      																					placeholder="Enter a Description of the Issue ">    	    	   
 	 																						</div>
                                   			<!--siubmit button-->
                                   			<div class="row paddingbottom10px"> 
@@ -293,9 +293,11 @@
                             			</div> 
                          </div>   <!--div id openmodal..--> 
                          <div id="openModal_enduser_issue_id{{shipment.id}}/Thanks" class="modalDialog"> 
-                         	         <a href="#close" title="Close" class="close">X</a>
+                         			<div>
+                         	        <a href="#close" title="Close" class="close">X</a>
         													<h3 class="ltbluetext">Thanks! </h3>    
         													<h6>We have received your report regarding order {{shipment.id}} and will be in touch within 24 hours to resolve this issue. </h6>
+        											</div>
                        	</div>
                             	
                     </div>
