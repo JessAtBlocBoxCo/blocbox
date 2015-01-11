@@ -67,18 +67,17 @@
             <!--CURRENT SHIPMENTS CONTAINER-->
             <div class="col-xs-12 col-sm-12 dashbox">
                 <div class="row">
-                    <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Current Shipments  (In Progress or Waiting to Be Picked Up) </h3> 
+                    <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Packages En Route or Waiting to be Picked Up </h3> 
+                    <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Check the </h3>
                 </div>
 
                 <!--TOP ROW - HEADERS -->
                 <div class="row textcenter darkgreytext tinytext ">
                     <!--row containing top table-->
                     <div class="col-xs-2">
-                        <p class="marginbottom5px">ORDER DATE </p>
+                        <p class="marginbottom5px">SHIPMENT DETAILS </p>
                     </div>
-                    <div class="col-xs-2">
-                        <p class="marginbottom5px">SHIPPING SPEED</p>
-                    </div>
+                   <!-- <div class="col-xs-2"> <p class="marginbottom5px">SHIPPING SPEED</p>  </div> -->
                     <div class="col-xs-2">
                         <p class="marginbottom5px">NEIGHBOR</p>
                     </div>
@@ -102,32 +101,22 @@
                 <div class="row whitebackground marginbottom30px textcenter dashfont">
                     
                     
-                    <!--STATUS-->
-                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">  <p class=" nomargin">{{ shipment.date_requested_notime }}</p>  </div>
-                     
-                          
-                    
-                    
-                    
-                    
-                    
-                    
-                    <!--DELIVERY DATE -->
-                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
+                     <!--SHIPMENT DETAILS: ORDER DATE AND SHIPPMENT SPEED  -->
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">  
+                    		<p class=" nomargin"> Ordered {{ shipment.date_requested_notime }}</p>  </div>                  
                         <p class="nomargin"> 
                         				{% if shipment.dayrangestart %}
                         								{% if shipment.dayrangestart == shipment.dayrangeend %}
-                        									{{ shipment.dayrangestart }} days
+                        									{{ shipment.dayrangestart }} day shipping
                         									<!--	{{ shipment.deliverydatenotracking_rangestart }} -->
                         								{% else %}
-                        									{{ shipment.dayrangestart }} - {{ shipment.dayrangeend }} days
+                        									{{ shipment.dayrangestart }} - {{ shipment.dayrangeend }} day shipping
                         								
                         									<!--	{{ shipment.deliverydatenotracking_rangestart }} -<br>
                         										{{ shipment.deliverydatenotracking_rangeend}} -->
                         								&nbsp;
                         								{% endif %}
-                        			{% endif %}
-                        		
+                        			{% endif %}                        		
                         															
                         </p>
                     </div>
