@@ -125,10 +125,11 @@
                     <!--NEIGHBOR: host name and information-->
                     <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
                         <div class="row paddingtopbottom2px">
-                            <a href="https://www.google.com/maps/place/{{shipment.host.st_address1}}+{{shipment.host.city}}+{{shipment.host.state}}+{{shipment.host.zipcode}}" class="nomargin">
+                     	                             
+                            <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                            <a href="https://www.google.com/maps/place/{{shipment.host.st_address1}}+{{shipment.host.city}}+{{shipment.host.state}}+{{shipment.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }}
                             </a>
-                            <!--  https://www.google.com/maps/place/760+West+Genesee+Street+Syracuse+NY+13204 -->
                         </div>
                         <div class="row">
                             
