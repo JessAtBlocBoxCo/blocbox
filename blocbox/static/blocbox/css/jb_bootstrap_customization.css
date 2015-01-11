@@ -1800,10 +1800,17 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         background-image: none;
         background-color: rgb(255, 195, 0);
     }
+    .orangebars {
+        color: #ffffff;
+    }
+    .orangebars:hover; .orangebars:focus {
+        color: rgb(255, 195, 0);
+    }
+}
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
-@media (max-width: 320px) {
+@media (max-width: 479px) {
     body {
         font-size: 12px;
     }
