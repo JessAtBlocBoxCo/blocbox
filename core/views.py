@@ -135,11 +135,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     if message_trans_id:
         trans = Transaction.objects.get(pk=message_trans_id)
         if request.method == 'POST':
-        		compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
-        		sender = request.user
+            compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
+            sender = request.user
         		#Add recipient here?
-        		recipient = trans.host.email
-        		compose_form.fields['recipient'].initial = recipient
+            recipient = trans.host.email
+            compose_form.fields['recipient'].initial = recipient
             if compose_form.is_valid():
                 compose_form.save(sender=request.user)
                 messages.info(request, _(u"Message successfully sent."))
