@@ -1,5 +1,6 @@
 """jess to do"""
  - dashbarod - fix the "message" link on current shipments
+ - make the 'report an issue' send an email to us
  - dashboard: finish for other transactions
  - dashboard: make the completed transacitons go to the bottom
  	- ad field for whether completed/how do they update that

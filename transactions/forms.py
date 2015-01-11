@@ -14,6 +14,17 @@ class ModifyTransaction(forms.ModelForm):
     class Meta:
         model = Transaction
         fields = ('status',)    
+
+class PackageReceived(forms.ModelForms):
+	  class Meta:
+	  		model = Transaction
+	  		fields = ('trans_complete', 'enduser_rating', 'enduser_comments',)
+
+class EndUserIssue(forms.ModelForms):
+		class Meta:
+				model = Transaction
+				fields = ('enduser_issue')
+				
 """
   
 #connect form for useres that are already registered, still works off of userinfo 

@@ -34,6 +34,14 @@ class Transaction(models.Model):
     deliverydatenotracking_rangeend = models.DateField("Delivered By (No Tracking)", blank=True, null=True)
     deliverydate_tracking = models.DateField("Expected Delivery Date Pulled from Tracking Information", blank=True, null=True)
     testfieldagain = models.CharField("test field", max_length=50, blank=True, null=True)
+    #End user Complete Transaction and rating
+    trans_complete = models.BooleanField("Transaction Complete", null=True, default=False, required=False) 
+    RATING_CHOICES = ( (1, 0.2), (2, 0.4), (3, 0.6), (4, 0.8), (5, 1.0) )
+    enduser_rating = models.DecimalField(max_length=2, decimal_places=1, choices=RATING_CHOICES, blank-True, null=True)
+    enduser_comments = models.CharField("EndUser Transaction Comments", max_length=200, blank=True, null=True)
+    #Report an issue
+    enduser_issue = models.CharField("EndUser Issue", max_length=300, blank=True, null=True)
+
 
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
     #define transaciton type choices
