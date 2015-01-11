@@ -235,11 +235,8 @@
                               <div>	
                                   <a href="#close" title="Close" class="close">X</a>
         													<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
-        													  	{% if modalsubmitted %}
-        													  			<h6>Thanks for your feedback! This transaction has been marked as complete. </h6>
-   																		{% else %} 	
    																			<!--form needs to pass True so modalsubmited is registered -->
-                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}/True" enctype="multipart/form-data">
+                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ package_received_form.non_field_errors }}
 					   																	{{ package_received_form.tracking.errors }}
@@ -258,9 +255,15 @@
                                   				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
 					    													</div>                
                             					</form
-                            					{% endif %}>
                             			</div> 
                             	</div>   <!--div id openmodal..--> 
+                            	<div id="openModal_package_received_id{{shipment.id}}/Thanks" class="modalDialog"> 
+                         			<div>
+                         	        <a href="#close" title="Close" class="close">X</a>
+        													<h3 class="ltbluetext">Thanks! </h3>    
+        													<h6>Thanks for your feedback! Shipment {{ shipment.id}} has been marked as complete. </h6>
+        											</div>
+                       	</div>
                     </div>
                   </div> <!--END CONFIRM BUTTON -->
                   
@@ -276,7 +279,7 @@
 											 	<div id="openModal_enduser_issue_id{{shipment.id}}" class="modalDialog">                                 
                               <div>	
                                   <a href="#close" title="Close" class="close">X</a>
-        													<h4 class="ltbluetext">Report an issue, delay or other concern with rder {{shipment.id}} </h4>                                   	
+        													<h4 class="ltbluetext">Report an issue, delay or other concern with shipment {{shipment.id}} </h4>                                   	
                                     	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ enduser_issue_form.non_field_errors }}

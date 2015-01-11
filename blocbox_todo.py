@@ -1,8 +1,11 @@
 """jess to do"""
+- style the completed transactions section
+- make the completed transacitons move to the completed section
  - dashbarod - fix the "message" link on current shipments
  - make the 'report an issue' send an email to us
  - on dashboard - for ratingbuton add a "thank you"..
  - on dashboard - for report an issue button add a "tahnk you"
+ - buy aftership
  - dashboard: finish for other transactions
  - dashboard: make the completed transacitons go to the bottom
  	- ad field for whether completed/how do they update that
@@ -23,6 +26,7 @@
 - later: figure out how to make it automatically register lat/long - right now we need to manually enter it for hosts
 
 """TO DO"""
+QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
 1. JOHN - /Fix Mobile/make site responsive
 3. JOHN search page -- fix map top margin and restyle nudge a neighbor message
 4. JESS: Remove sign in after welcome pagE
