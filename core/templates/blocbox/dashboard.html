@@ -234,7 +234,10 @@
 											 	<div id="openModal_package_received_id{{shipment.id}}" class="modalDialog">                                 
                               <div>	
                                   <a href="#close" title="Close" class="close">X</a>
-        													<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>                                   	
+        													<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
+        													  	{% if finished %}
+        													  			<h6>Thanks for your feedback! This transaction has been marked as complete. </h6>
+   																		{% else %} 	
                                     	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ package_received_form.non_field_errors }}
@@ -253,7 +256,8 @@
                                   			<div class="row paddingbottom10px"> 
                                   				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
 					    													</div>                
-                            					</form>
+                            					</form
+                            					{% endif %}>
                             			</div> 
                             	</div>   <!--div id openmodal..--> 
                     </div>
@@ -271,7 +275,10 @@
 											 	<div id="openModal_enduser_issue_id{{shipment.id}}" class="modalDialog">                                 
                               <div>	
                                   <a href="#close" title="Close" class="close">X</a>
-        													<h6 class="ltbluetext">Report an Issue, Delay or Problem with Order {{shipment.id}} </h6>                                   	
+        													<h6 class="ltbluetext">Report an Issue, Delay or Problem with Order {{shipment.id}} </h6>    
+        													    {% if issuereported %}
+        													  			<h6>We have received your message and will be in touch within 24 hours to resolve this issue. </h6>
+   																		{% else %} 	                               	
                                     	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ enduser_issue_form.non_field_errors }}
@@ -285,6 +292,7 @@
                                   				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
 					    													</div>                
                             					</form>
+                            					{% endif %}
                             			</div> 
                             	</div>   <!--div id openmodal..--> 
                             	

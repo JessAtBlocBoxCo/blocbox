@@ -99,12 +99,14 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         tracking_form = None  
     #Package REceived Modal/Button
     if confirm_id:
+    		finished = False 
     		trans = Transaction.objects.get(pk=confirm_id)
     		if request.method == 'POST':
     				package_received_form = PackageReceived(request.POST, instance=trans)
     				if package_received_form.is_valid():
-    						confirm = package_received_form.save()
-    						confirm.save()
+    						finish = package_received_form.save()
+    						finish.save()
+    						finished = True
     				else:
     						print package_received_form.errors
     		else:
@@ -113,12 +115,14 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     		package_received_form = None
     #EndUser Issues Modal/Button
     if issue_id:
+    	  issuereported = False
     		trans = Transaction.objects.get(pk=issue_id)
     		if request.method == 'POST':
     				enduser_issue_form = EndUserIssue(request.POST, instance=trans)
     				if enduser_issue_form.is_valid():
     						issue = enduser_issue_form.save()
     						issue.save()
+    						issuereported = True
     				else:
     						print enduser_issue_form.errors
     		else:
