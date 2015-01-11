@@ -159,11 +159,12 @@
 															data-tracking-number String empty The tracking number for the track button, must use together with "data-slug" 
 														-->
                    			
-                    				<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
+                    				
                     		                    		
-                    		{% else %}  <!--if no tracking, enter it -->
-                    			<a href="/dashboard/transid{{shipment.id}}/#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
-														 <div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
+                    	{% else %}  <!--if no tracking, enter it -->
+                    			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
+                    					<a href="/dashboard/transid{{shipment.id}}/#openModal_entertracking_transid{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
+														 	<div id="openModal_entertracking_transid{{shipment.id}}" class="modalDialog">
                                   
                                 <div>	<a href="#close" title="Close" class="close">X</a>
         														<h6 class="ltbluetext">Enter a Tracking Number</h6>
@@ -186,16 +187,15 @@
 					    												</div> 
 					    											</form>
 					    											
-					    											
-					    									</div> <!--end modal div-->  
-					    									               
-                            </div>             
-                        	{% endif %} <!--end if no shipping tracking, enter it with modal -->
+					    									</div> <!--end modal div-->  					    									               
+                            </div>    
+                          </div> <!--end enter tracking row-->         
+                      {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
-                    		<!--EDIT TRACKING -->                    		
-                    		{% if shipment.tracking %} 
-                    			</div> <!--end enter tracking row-->
-                    				<div class="row"> <!--edit tracking info-->
+                    	<!--EDIT TRACKING -->                    		
+                    	{% if shipment.tracking %} 
+                    			
+                    			<div class="row"> <!--edit tracking info-->
                     				 	<a href="/dashboard/transid{{shipment.id}}/#openModal_edittracking_transid{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
 														 	<div id="openModal_edittracking_transid{{shipment.id}}" class="modalDialog">                                 
                                   <div>	
