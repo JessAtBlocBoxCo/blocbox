@@ -1863,6 +1863,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         padding-left: 10px;
         padding-right: 10px;
     }
+    .paddingtop50pxmobile {
+        padding-top: 50px;
+    }
     .margintop10pxmobile {
         margin-top: 10px;
     }
