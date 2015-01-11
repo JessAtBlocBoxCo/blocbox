@@ -1,4 +1,5 @@
 """jess to do"""
+ - dashbarod - fix the "message" link on current shipments
 - profile pics: make individualized/link to specific hosts
 	- update search page for host pics
 - allow to upload profile pics
@@ -91,7 +92,9 @@ JESS: populate the "delivery date" field by connecting to trac
 
 """longer term to-do- add to trello"""
 1. host sign-up for users that are already registered - should this process be different?
-
+2. tracing - instead of using that widget, use UPS, USPS etc APIs - 
+3. create notification to users automatically when its delivered  - will need ot integrate those APIs first
+4. current shipments  better word?
 
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
 #they install at:

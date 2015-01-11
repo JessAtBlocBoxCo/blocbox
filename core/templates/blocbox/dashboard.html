@@ -67,17 +67,17 @@
             <!--CURRENT SHIPMENTS CONTAINER-->
             <div class="col-xs-12 col-sm-12 dashbox">
                 <div class="row">
-                    <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Current Shipments</h3> 
+                    <h3 class="col-xs-12 ltbluetext margintop10px nopadding">Current Shipments  (In Progress or Waiting to Be Picked Up) </h3> 
                 </div>
 
                 <!--TOP ROW - HEADERS -->
                 <div class="row textcenter darkgreytext tinytext ">
                     <!--row containing top table-->
                     <div class="col-xs-2">
-                        <p class="marginbottom5px">STATUS </p>
+                        <p class="marginbottom5px">ORDER DATE </p>
                     </div>
                     <div class="col-xs-2">
-                        <p class="marginbottom5px">DELIVERY DATE</p>
+                        <p class="marginbottom5px">SHIPPING SPEED</p>
                     </div>
                     <div class="col-xs-2">
                         <p class="marginbottom5px">NEIGHBOR</p>
@@ -103,7 +103,7 @@
                     
                     
                     <!--STATUS-->
-                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">  <p class=" nomargin">{{ shipment.status }}</p>  </div>
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">  <p class=" nomargin">{{ shipment.date_requested }}</p>  </div>
                      
                           
                     
@@ -114,14 +114,20 @@
                     
                     <!--DELIVERY DATE -->
                     <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
-                        <p class="nomargin"> {% if shipment.dayrangestart %}
-                        																	{% if shipment.dayrangestart == shipment.dayrangeend %}
-                        																			{{ shipment.deliverydatenotracking_rangestart }}
-                        																	{% else %}
-                        																			{{ shipment.deliverydatenotracking_rangestart }} -<br>
-                        																			{{ shipment.deliverydatenotracking_rangeend}} &nbsp;
-                        																	{% endif %}
-                        															{% endif %}
+                        <p class="nomargin"> 
+                        				{% if shipment.dayrangestart %}
+                        								{% if shipment.dayrangestart == shipment.dayrangeend %}
+                        									{{ shipment.dayrangestart }} days
+                        									<!--	{{ shipment.deliverydatenotracking_rangestart }} -->
+                        								{% else %}
+                        									{{ shipment.dayrangestart }} - {{ shipment.dayrangeend }} days
+                        								
+                        									<!--	{{ shipment.deliverydatenotracking_rangestart }} -<br>
+                        										{{ shipment.deliverydatenotracking_rangeend}} -->
+                        								&nbsp;
+                        								{% endif %}
+                        			{% endif %}
+                        		
                         															
                         </p>
                     </div>
