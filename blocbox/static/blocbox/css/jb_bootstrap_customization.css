@@ -1748,6 +1748,15 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         margin-left: auto;
         margin-right: auto;
     }
+    .orangebars {
+        color: #ffffff;
+    }
+    .orangebars:hover {
+        color: rgb(255, 195, 0);
+    }
+    .orangebars:focus {
+        color: rgb(255, 195, 0);
+    }
 }
 
 /*-------------------------------------------------------------*
@@ -1836,15 +1845,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         box-shadow: none;
         background-image: none;
         background-color: rgb(255, 195, 0);
-    }
-    .orangebars {
-        color: #ffffff;
-    }
-    .orangebars:hover {
-        color: rgb(255, 195, 0);
-    }
-    .orangebars:focus {
-        color: rgb(255, 195, 0);
     }
     .desktoponly {
         display: none;
