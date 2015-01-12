@@ -598,7 +598,7 @@ footer {
     width: 250px;
 }
 .bbbasenavbarbtn {
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     font-size: 1.900em;
     font-weight: 300;
     color: black;
