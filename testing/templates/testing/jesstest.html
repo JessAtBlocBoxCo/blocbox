@@ -27,25 +27,26 @@
 			<!--TEST TRACKING API-->
 			<div class="row">
 						<h3>AFTERSHIP API</h3>
-						<p>List the Aftership API key: {{aftership_api_key }} </p>
-					  <p> Show many fields {{ track_manyfields }} </p>
 					 					  
-					  <p> Show the TrackingDict {{ trackingdict }} </p>
-					  <p> 
-					  		Track Title: {{ trackingdict.title }} <br> Tracking Number: {{ trackingdict.tracking_number }} <br> Tag: {{ trackingdict.tag }} <br> 
-					  		Track Order ID: {{ trackingdict.order_id }} <br> 
-					  		Origin Country: {{ trackingdict.origin_country_iso3 }} <br> Destination Country: {{ trackingdict.destination_country_iso3 }} <br> 
-					  		Created At: {{ trackingdict.created_at }} <br> Updated At: {{ trackingdict.updated_at }} <br>
-					  		Tracking Ship Date: {{ trackingdict.tracking_ship_date }} <br> 
-					  		Tracked Count: {{ trackingdict.tracked_count }} <br> Customer Name: {{ trackingdict.customer_name }} <br> Shipment Type: {{ trackingdict.shipment_type }} <br>
-         				Slug: {{ trackingdict.slug }} <br> Tracking Account_Number: {{ trackingdict.tracking_account_number }} <br> 
-         				Source: {{ trackingdict.source }} <br> Tracked_count: {{ trackingdict.tracked_count }} <br> 
-         				Tracking Note: {{ trackingdict.note }} <br> 
-         				
+					 		<p>Show DataDict_all {{ datadict_all }} </p>
+					  	<p> 
+					  		Track Title: {{ trackingdict_single.title }} <br> Tracking Number: {{ trackingdict_single.tracking_number }} <br> Tag: {{ trackingdict_single.tag }} <br> 
+					  		Track Order ID: {{ trackingdict_single.order_id }} <br> 
+					  		Origin Country: {{ trackingdict_single.origin_country_iso3 }} <br> Destination Country: {{ trackingdict_single.destination_country_iso3 }} <br> 
+					  		Created At: {{ trackingdict_single.created_at }} <br> Updated At: {{ trackingdict_single.updated_at }} <br>
+					  		Tracking Ship Date: {{ trackingdict_single.tracking_ship_date }} <br> 
+					  		Tracked Count: {{ trackingdict_single.tracked_count }} <br> Customer Name: {{ trackingdict_single.customer_name }} <br> Shipment Type: {{ trackingdict_single.shipment_type }} <br>
+         				Slug: {{ trackingdict_single.slug }} <br> Tracking Account_Number: {{ trackingdict_single.tracking_account_number }} <br> 
+         				Source: {{ trackingdict_single.source }} <br> Tracked_count: {{ trackingdict_single.tracked_count }} <br> 
+         				Tracking Note: {{ trackingdict_single.note }} <br> 
          		
+         		 	<p> Show the Full trackingdict_single {{ trackingdict_single }} </p>
+         		 	
+         			<p>List the Aftership API key: {{aftership_api_key }} </p>
+         			
          		<h3>Try to call the dictionary within the template -- this works!!</h3>	
          				<p>
-										Track Title: {{trackingdict.title }} <br> Tag: {{ trackingdict.tag }} <br>  Note: {{ trackingdict.note }} <br>       				
+										Track Title: {{trackingdict_single.title }} <br> Tag: {{ trackingdict_single.tag }} <br>  Note: {{ trackingdict_single.note }} <br>       				
          				</p>
 						<h3>Try for track in track_all then list title</h3>
 

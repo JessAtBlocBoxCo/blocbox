@@ -143,9 +143,13 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #Try this: {u'resource': u'/v4/tracking/fedex/591099350463?fields=shipment_type'}}
     #These fields correspond to a URL?, base URL (in __init__.py:  base_url='https://api.aftership.com, then these render as https://api.aftership.com/v4/tracking
     #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?.
-    datadict = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
-    trackingdict = datadict.get(u'tracking') #this gets the value of the TRACKING dictionary - which contains all of the fields. yay!!!
-  
+    datadict_single = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
+    trackingdict_single = datadict_single.get(u'tracking') #this gets the value of the TRACKING dictionary - which contains all of the fields. yay!!!
+    trackingdict = {}
+    datadict_all = api.trackings.get()
+    #for shipment in shipments_all:
+    #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
+    #  trackingdict[shipment.id] = datadict.get(u'tracking') 
     #To see all tracking fields print the variable track_allfields
     #Tracking fields from website
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
@@ -167,7 +171,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'AvailabilityCal': AvailabilityCal, 'AvailabilityCal_MonthObject': AvailabilityCal_MonthObject,
     	  'here': quote(request.get_full_path()),
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
- 				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers,  'trackingdict': trackingdict, 
+ 				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 'trackingdict_single': trackingdict_single, 'trackingdict': trackingdict, 
+ 				'datadict_all': datadict_all,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
