@@ -137,7 +137,7 @@
 														 			<div>
 														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
 																				<div class="row margintopbottom30px">
-																				   	<form action="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}/Thanks" method="post">
+																				   	<form action="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}/Thanks" method="post" class="text-left"> 
 																				        		{% csrf_token %} 
 																				        		<!--{{ compose_form.as_table }} -->
 																				        		<!--compose form has recipient, subject, body -->
@@ -148,7 +148,7 @@
 																										<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
 																								</div>	
 																								<div class="row">																						
-																										<label for="id_body">Body:</label> <textarea cols="55" id="id_body" name="body" rows="12" > </textarea>
+																										<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
 																								</div>	
 																				        <input type="submit" value="{% trans "Send" %} &raquo;"/>
 																				    </form>
