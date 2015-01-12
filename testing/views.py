@@ -152,7 +152,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     track_created_at = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
     destination_country_iso3 = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country_iso3'])
     tracking_ship_date = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
-    track_customeer = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
+    track_customer = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
     track_shipment_type = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
     track_slug = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['slug'])
     tracking_account_number = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['tracking_account_number'])
