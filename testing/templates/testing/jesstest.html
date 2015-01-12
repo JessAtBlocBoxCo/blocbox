@@ -30,8 +30,12 @@
 					  <p>List the track info (title and created_at ) {{ track_info }} </p>
 					  <p>List the track_all {{ track_all }}</p>
 					  <p>List the track_title {{ track_title }} </p>
-
 						
+						<h3>Try for track in track_all then list title</h3>
+						{% for track in track_all %}
+							<p>Tracking number is: {{ track_all.tracking_number }} and title is {{ track_all.title }}</p>
+						{% endfor %}
+						<h3>List each tracking nuber - for shipments in shipments_all</h3>
 						{% for shipment in shipments_all %}
 								<p>Tracking Number for shipment {{ shipment.id }}: {{ shipment.tracking}} </p>
 								
