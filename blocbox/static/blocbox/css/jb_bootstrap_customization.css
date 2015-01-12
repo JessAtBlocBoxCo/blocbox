@@ -813,6 +813,7 @@ color: white;
     background-image: none;
     box-shadow: none;
     background-color: transparent;
+    z-index: 999999;
 }
 
 /*default is border: 1px solid transparent;*/
