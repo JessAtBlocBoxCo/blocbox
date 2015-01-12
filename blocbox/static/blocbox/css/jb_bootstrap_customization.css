@@ -935,7 +935,7 @@ html, body {
     .navbar-orange {
         box-shadow: none;
         background-image: none;
-        background-color: rgb(255, 195, 0);
+        background-color: transparent;
     }
     
     .canvas {
