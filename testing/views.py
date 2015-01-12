@@ -139,12 +139,14 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     # get tracking by slug and number, return 'title' and 'created_at' field: https://www.aftership.com/docs/api/4/trackings/get-trackings-slug-tracking_number
     #Notice that you can always use/:id to replace /:slug/:tracking_number -- .g. DELETE /trackings/:id
     # all of the fields: 
-    track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking
-    #track_created_at = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
+    #From https://www.aftership.com/docs/api/4/trackings/get-trackings, Fields to include: title,order_id,tag,checkpoints, checkpoint_time, message, country_name
+    track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking    
     track_info = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
     track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
     track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
-		
+		#track_created_at = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
+		track_tag = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tag'])
+		track_order_id = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
 		#order_id, origin_country_iso3, shipment_package_count, shipment_type, signed_by, smses, source, tag, title, tracked_count, unique_token, checkpoints (list with sub variables)
     # change tracking title: https://www.aftership.com/docs/api/4/trackings/put-trackings-slug-tracking_number
@@ -166,6 +168,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 
  				'track_allfields': track_allfields, 'track_info': track_info, 'track_tracking_number': track_tracking_number, 'track_title': track_title,
+ 				'track_tag': track_tag, 'track_order_id': track_order_id,
 
  				#'track_created_at': track_created_at,
  				#'track_title': track_title, 'track_created_at': track_created_at, 'track_updated_at': track_updated_at, '
