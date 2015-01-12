@@ -806,9 +806,13 @@ color: white;
 }
 
 .navbar-orange {
-    box-shadow: none;
+    position: absolute;
+    background-repeat: repeat-x;
+    height: 100px;
+    width: 100%;
     background-image: none;
-    background-color: rgb(255, 195, 0);
+    box-shadow: none;
+    background-color: transparent;
 }
 
 /*default is border: 1px solid transparent;*/
@@ -838,16 +842,6 @@ color: white;
     padding-left: 50px;
     padding-right: 50px;
     height: 40px;
-}
-
-navbar-orange {
-    position: relative;
-    background-repeat: repeat-x;
-    height: 100px;
-    width: 100%;
-    background-image: none;
-    box-shadow: none;
-    background-color: transparent;
 }
 
 
