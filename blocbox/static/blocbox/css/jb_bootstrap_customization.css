@@ -1975,7 +1975,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .modalDialog > div {
         width: 300px;
         position: relative;
-        margin: 10% auto;
+        margin: 10% 10%;
         padding: 5px 20px 13px 20px;
         border-radius: 2px;
         background: #fff;
