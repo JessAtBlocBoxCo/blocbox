@@ -120,8 +120,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #test the API
     AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
     #api = aftership.APIv4('488caf4b-e7aa-4634-928b-2df5de94af9f')
-    api = aftership.APIv4('801e84c7-bae1-4afb-b294-51ca02a63d02')
-    #api = aftership.APIv4('AFTERSHIP_API_KEY') #Defined in settings.py
+    #api = aftership.APIv4('801e84c7-bae1-4afb-b294-51ca02a63d02')
+    api = aftership.APIv4('AFTERSHIP_API_KEY') #Defined in settings.py
     couriers = api.couriers.all.get()
     return render(request, 'testing/jesstest.html', { 
         'enduser':enduser, 'host':host, 
