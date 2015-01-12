@@ -124,8 +124,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
     otherfavors_all = transactions_all.exclude(favortype="package")
     #api = aftership.APIv4('801e84c7-bae1-4afb-b294-51ca02a63d02')
-    api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
-    couriers = api.couriers.all.get()
+    api_aftership = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
+    couriers = api_aftership.couriers.all.get()
     #ISSU - WHAT ABOUT WHEN I DONT KNOW THE SLUG??
     number_to_track = '9374869903500264240007' #this is DHL-global-mail
     slug_to_track = 'dhl-global-mail'
@@ -137,7 +137,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
 		# create tracking: https://www.aftership.com/docs/api/4/trackings/post-trackings
     #api.trackings.post(tracking=dict(slug=slug_to_track, tracking_number=number_to_track, title="Test Title for Create Tracking")) 
     # get tracking by slug and number, return 'title' and 'created_at' field: https://www.aftership.com/docs/api/4/trackings/get-trackings-slug-tracking_number
-    tracking_info = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
+    tracking_info = api_aftership.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
     # change tracking title: https://www.aftership.com/docs/api/4/trackings/put-trackings-slug-tracking_number
     #api.trackings.put(slug_modify, number_change, tracking=dict(title="Title Test (changed)"))
     # delete tracking: https://www.aftership.com/docs/api/4/trackings/delete-trackings
@@ -155,7 +155,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'AvailabilityCal': AvailabilityCal, 'AvailabilityCal_MonthObject': AvailabilityCal_MonthObject,
     	  'here': quote(request.get_full_path()),
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
- 				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 'tracking_info': tracking_info,
+ 				'api_aftership': api_aftership, 'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 'tracking_info': tracking_info,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page

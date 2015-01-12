@@ -26,9 +26,13 @@
 						<h3>AFTERSHIP API</h3>
 						<p>List the tracking info {{ tracking_info }}</p>
 						<p>List the Aftership API key: {{aftership_api_key }} </p>
+						<!--
+						<p> Call the API directly from template: {{api_aftership.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at']) }}	</p> -->
+						<p> Call the API directly from template: {{api_aftership.trackings.get('fedex', '591099350463', fields=['title', 'created_at']) }}	</p>
 						
 						{% for shipment in shipments_all %}
 								<p>Tracking Number for shipment {{ shipment.id }}: {{ shipment.tracking}} </p>
+								
 						{% endfor %}
 						
 						<!--MGET TRACKING-->
