@@ -27,6 +27,9 @@
 						<p>List the tracking info {{ tracking_info }}</p>
 						<p>List the Aftership API key: {{aftership_api_key }} </p>
 						
+						{% for shipment in shipments_all %}
+								<p>Tracking Number for shipment {{ shipment.id }}: {{ shipment.tracking}} </p>
+						{% endfor %}
 						
 						<!--MGET TRACKING-->
 						<!--https://www.aftership.com/docs/api/3.0/tracking/get-trackings-slug-tracking_number -->
