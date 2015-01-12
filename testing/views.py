@@ -148,7 +148,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     tracking_ship_date = trackingdict.get(u'tracking_ship_date') #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
     updated_at = trackingdict.get(u'updated_at')
     smses = trackingdict.get(u'smses')
-    origin_country_iso3 = trackigdict.get(u'origin_country_iso3')
+    origin_country_iso3 = trackingdict.get(u'origin_country_iso3')
     custom_fields = trackingdict.get(u'custom_fields')
     customer_name = trackingdict.get(u'customer_name') 
     shipment_type = trackingdict.get(u'shipment_type')
