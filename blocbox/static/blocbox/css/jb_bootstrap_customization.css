@@ -1582,7 +1582,7 @@ html, body {
 .modalDialog > div {
     width: 400px;
     position: relative;
-    margin: 10% 10%;
+    margin: 10% auto;
     padding: 5px 20px 13px 20px;
     border-radius: 2px;
     background: #fff;
@@ -1975,7 +1975,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .modalDialog > div {
         width: 300px;
         position: relative;
-        margin: 10% 10%;
+        margin: 10% auto;
         padding: 5px 20px 13px 20px;
         border-radius: 2px;
         background: #fff;
