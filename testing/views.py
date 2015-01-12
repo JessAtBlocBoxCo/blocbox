@@ -142,10 +142,10 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #From https://www.aftership.com/docs/api/4/trackings/get-trackings, Fields to include: title,order_id,tag,checkpoints, checkpoint_time, message, country_name
     #Try this: {u'resource': u'/v4/tracking/fedex/591099350463?fields=shipment_type'}}
     #These fields correspond to a URL?, base URL (in __init__.py:  base_url='https://api.aftership.com, then these render as https://api.aftership.com/v4/tracking
-    #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?
-    trackings_all = None #api.trackings.objects.all() #that didn't work...
-    track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
-    trackingdict = track_allfields.get(u'tracking')
+    #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?.
+    datadict = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
+    trackingdict = datadict.get(u'tracking') #this gets the value of the TRACKING dictionary - which contains all of the fields. yay!!!
+    
     track_manyfields = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at', 'updated_at'])
     track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
     track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
@@ -185,11 +185,11 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'here': quote(request.get_full_path()),
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 
- 				'track_allfields': track_allfields, 'track_manyfields': track_manyfields, 'track_tracking_number': track_tracking_number, 'track_title': track_title,
+ 				'track_manyfields': track_manyfields, 'track_tracking_number': track_tracking_number, 'track_title': track_title,
  				'track_tag': track_tag, 'track_order_id': track_order_id, 'track_note': track_note, 'track_created_at': track_created_at,
         'origin_country_iso3': origin_country_iso3, 'destination_country_iso3': destination_country_iso3, 'tracking_ship_date': tracking_ship_date, 'tracked_count': tracked_count,
         'track_customer': track_customer, 'track_shipment_type': track_shipment_type, 'track_slug': track_slug, 'tracking_account_number': tracking_account_number, 'track_source': track_source,
-        'trackings_all': trackings_all, 'trackingdict': trackingdict,
+        'trackingdict': trackingdict,
 
  				#'track_created_at': track_created_at,
  				#'track_title': track_title, 'track_created_at': track_created_at, 'track_updated_at': track_updated_at, '
