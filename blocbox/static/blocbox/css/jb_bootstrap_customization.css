@@ -660,7 +660,7 @@ color: white;
     border: 0;
     border-radius: 0px;
 }
-.bbbasenavbarinfo {
+.whitenavinfobtn {
     background-image: url('/static/blocbox/images/info-button.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -671,7 +671,7 @@ color: white;
   text-align: center;
   */
 }
-.bbbasenavbarinfo:hover {
+.whitenavinfobtn:hover {
     background-image: url('/static/blocbox/images/info-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -682,7 +682,7 @@ color: white;
     text-align: center;
     */
 }
-.bbbasenavbarinfo:focus {
+.whitenavinfobtn:focus {
     background-image: url('/static/blocbox/images/info-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;

@@ -363,6 +363,7 @@
 
                     <div class="col-sm-2">
                         <!--col containing ddropdown button-->
+                        {% if user.is_authenticated %}
                         <div class="col-xs-2 col-sm-4">
                             <div class="dropdown textcenter">
                                 <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarstart" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
@@ -373,17 +374,6 @@
                                 <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
                                     <!--nav navbar-nav navbar-right-->
-                                    {% if user.is_authenticated %}
-                                    <!--drop down menu if logged in-->
-                                    {% else %}
-                                    <!--drop down menu if not logged in -->
-                                    <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
-                                    </li>
-
-                                    {% endif %}
-                                    <!--drop down menu items that appears to either user -->
 
                                     <!--starat ahipsment - need to reroute this to go to host page-->
                                     <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Shipment</a>
@@ -428,10 +418,12 @@
                                 <!--end collection of links for toggling -->
                             </div>
                         </div>
-
+                        {% else %}
+                        {% endif %}
+                        
                         <div class="col-xs-2 col-sm-4">
                             <div class="dropdown textcenter">
-                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarinfo" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn whitenavinfobtn" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
                                     <!--info button-->
                                     <a class=""></a>
                                 </button>
