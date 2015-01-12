@@ -145,9 +145,11 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?.
     datadict = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
     trackingdict = datadict.get(u'tracking') #this gets the value of the TRACKING dictionary - which contains all of the fields. yay!!!
+    tracking_ship_date = datadict.get(u'tracking_ship_date') #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
+    track_tracking_number = trackingdict.get(u'tracking_number') #api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
     
     track_manyfields = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at', 'updated_at'])
-    track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
+    
     track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
     track_tag = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tag'])
     track_order_id = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id']) # track_allfields.order_id 
@@ -155,7 +157,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     ##CANNOT ACCESS THE FOLLOWING FIELDS -- WHY NOTE?
     track_created_at = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
     destination_country_iso3 = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country_iso3'])
-    tracking_ship_date = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
+    
     track_customer = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
     track_shipment_type = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
     track_slug = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['slug'])
