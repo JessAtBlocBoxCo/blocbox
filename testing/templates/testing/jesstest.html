@@ -19,6 +19,13 @@
 			{% load scheduletags i18n %}
 			{% load scheduletags %}
 			
+			
+			
+			<!--TEST TRACKING API-->
+			<div class="row">
+				<h3>AFTERSHIP API</h3>
+				<p> List Couriers ASsociated with AfterShip API: {{ couriers }}</p>
+			</div>
 			<!--TEST TRACKING WIDGET-->
 			<div class="row">
 				<h3>TRACKING WIDGET</h3>	
@@ -26,12 +33,12 @@
 							guidance: Include the follow javascript on your page once, ideally right after the opening <body> tag.
 					-->
 					
+				
+				
 				<div id="as-root"> </div>
 				<script> 
 						(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
-				</script>
-
-					
+				</script>					
 				<div class="as-track-button" data-counter="false" data-support="false" data-width="300" data-size="normal"></div>
 					<!--from: https://www.aftership.com/apps/track-button, parameters here: https://www.aftership.com/docs/track-button
 							data-counter: displays the number of shipmetns ina ccount

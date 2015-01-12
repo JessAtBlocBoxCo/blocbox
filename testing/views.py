@@ -28,6 +28,9 @@ from schedule.models.calendars import CalendarRelation
 from schedule.utils import check_event_permissions, coerce_date_dict
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
+#import the aftership API
+import aftership
+
 
 #Write a custom template filter:
 from django.template.defaulttags import register
@@ -114,6 +117,9 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         AvailabilityCal_MonthObject = None
         cal_relations_host = None
         cal_relations_host_count = None
+    #test the API
+    api = aftership.APIv4('AFTERSHIP_API_KEY') #Defined in settings.py
+		couriers = api.couriers.all.get()
     return render(request, 'testing/jesstest.html', { 
         'enduser':enduser, 'host':host, 
         'connections_all':connections_all,
@@ -125,7 +131,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'cal_relations_host_count': cal_relations_host_count,
     	  'cal_list_host': cal_list_host, 
     	  'AvailabilityCal': AvailabilityCal, 'AvailabilityCal_MonthObject': AvailabilityCal_MonthObject,
-    	  'here': quote(request.get_full_path())
+    	  'here': quote(request.get_full_path()),
+    	  'ouriers': couriers,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
