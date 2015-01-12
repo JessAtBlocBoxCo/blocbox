@@ -84,6 +84,7 @@
 
     <div id="bbpage">
         <!-- <a name="top" class="anchorwithnav"></a> -->
+        <div class="mobileonly">
         <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
             <a class="navmenu-brand" href="/beta/">
                 <img class="slidelogo" src={% static 'blocbox/images/Logo-and-name-white.png' %} />
@@ -259,58 +260,57 @@
                 <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
                     <i class="fa fa-bars fa-fw fa-2x orangebars"></i>
         </div>
+        </div>
 
         {% block navbar %}
-        <!-- Fixed-Top version of Navbar
-<nav class="navbar navbar-default navbar-fixed-top whitetext" role="navigation">	
--->
+        <!-- Fixed-Top version of Navbar -->
+   <!-- <nav class="navbar navbar-default navbar-fixed-top whitetext" role="navigation">	-->
+
         <!-- Non-Fixed version of Navbar, removing navbar-fixed-logo -->
-        <!--  <nav class="navbar whitetext" role="navigation">
+    <nav class="navbar whitetext desktoponly" role="navigation">
 
             <div class="container-fluid orangebackground">
                 <div class="navbar-header whitetext">
-                    <button type="button" class="mobileonly navbar-toggle collapsed fa fa-bars fa-2x" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <!--  <button type="button" class="mobileonly navbar-toggle collapsed fa fa-bars fa-2x" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                    </button>
+                    </button> -->
 
                     <!--Add the Fixed Logo Image - the img is now attached to the fix-logo-image in CSS - different depending on screen size  -->
-        <!--     <a href="#top" class="fixed-logo-image"></a>
+         <a href="#top" class="fixed-logo-image"></a>
 
                     <!--Add Logo Name - for the floating Logo version of the navbar, img styled in css page under .name-unfixed > img {.... } -->
-        <!--     <a class="nav-blocbox-name navbarlogo" href="#">
+          <a class="nav-blocbox-name navbarlogo" href="#">
                         <!--removing navbar-brand see what happens -->
 
-        <!--<img class="nav-blocbox-name navbarlogo" /> -->
-        <!--<img src="{% static "blocbox/images/Name-whited2.png" %}" /> -->
+        <img class="nav-blocbox-name navbarlogo" /> 
+       <img src="{% static "blocbox/images/Name-whited2.png" %}" />
 
-        <!--I have added the followingn image to CSS under nav-blocbox-name at mobile media sizes...
+        <!--I have added the followingn image to CSS under nav-blocbox-name at mobile media sizes... -->
  				<a class="navbar-brand" href="#">
  					<img src="{% static "blocbox/images/Logo-and-name---white.png" %}" height="50px" width="250px" class="navbarlogo"/>
- 			  -->
-
-        <!--     </a>
+ 			    </a>
                     <!--add the bran name in text <a class="navbar-brand" href="#">BlocBox</a> -->
 
-        <!--    </div>
+         </div>
                 <!--navbar-header-->
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <!--      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!--jmy changing this to be a navbar-right - to left align, remove the navbar-right tag -->
-        <!--          <ul class="nopaddingtopbottom nav navbar-nav navbar-right">
+           <ul class="nopaddingtopbottom nav navbar-nav navbar-right">
 
                         <li class="marginleftright10px"><a class="whitetext" href="#works">How it Works</a>
                         </li>
 
                         <li class="marginleftright10px"><a class="whitetext" href="#hosting">Become a Host</a>
                         </li>
-                        <!-- <a href="#hosting">Become a Host</a> -->
+                        <a href="#hosting">Become a Host</a>
 
         <!--add sign-in/sign-out to orange navbar -->
-        <!--              {% if user.is_authenticated %}
+                   {% if user.is_authenticated %}
                         <li class="marginleftright10px"><a class="whitetext" href="/logout/">Sign Out</a>
                         </li>
                         {% else %}
@@ -318,20 +318,20 @@
                         </li>
                         <div id="openModal" class="modalDialog">
                             <div class="">	<a href="#close" title="Close" class="close">X</a>
-                                <!--<h6 class="ltbluetext paddingsides15px">Sign In</h6> -->
-        <!--                 <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
+                                <h6 class="ltbluetext paddingsides15px">Sign In</h6> 
+                       <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
                                     {% csrf_token %} {{ login_form.non_field_errors }}
                                     <div class="row">
                                         <div class="col-xs-12 form-group paddingbottom20px">
                                             {{ user_form.email.errors }}
-                                            <!--<label for="id_email">Email Address</label> -->
-        <!--                       <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
+                                            <label for="id_email">Email Address</label> 
+                             <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
                                         </div>
 
                                         <div class="col-xs-12 form-group">
                                             {{ user_form.password.errors }}
-                                            <!--<label for="id_password1">Password</label> -->
-        <!--                <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
+                                           <label for="id_password1">Password</label>
+                      <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
                                         </div>
                                     </div>
                                     <div class="row paddingtopbottom10px">
@@ -354,19 +354,19 @@
                                     </div>
                                 </form>
                                 <!--end form line -->
-        <!--        </div>
+              </div>
                         </div>
                         {% endif %}
 
-                        <!--<li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li> -->
+                        <li><a href='/nudgeneighbor'>Nudge a Neighbor</a></li>
 
-        <!--<li><a href='/contactus'>Contact Us</a></li> -->
+        <li><a href='/contactus'>Contact Us</a></li>
 
-        <!--         </ul>
+             </ul>
                     <!--end collection of links for toggling -->
-        <!--       </div>
+            </div>
                 <!--collapse navbar-collapse -->
-        <!--       </div>
+               </div>
         </nav>
         <!--end nav-->
         {% endblock %}
