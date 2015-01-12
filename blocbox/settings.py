@@ -143,3 +143,4 @@ PAYPAL_BUSINESS = "Blocbox"
 
 #DEFINE THE AFTERSHIP API KEY
 AFTERSHIP_API_KEY = "801e84c7-bae1-4afb-b294-51ca02a63d02"
+#the default one is 488caf4b-e7aa-4634-928b-2df5de94af9f
