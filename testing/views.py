@@ -147,7 +147,6 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     track_tag = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tag'])
     track_order_id = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
     origin_country_iso3 = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['origin_country_iso3'])
-    track_customeer = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
     track_shipment_type = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
     track_slug = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['slug'])
     tracking_account_number = api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['tracking_account_number'])
@@ -158,6 +157,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     track_created_at = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
     destination_country_iso3 = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country_iso3'])
     tracking_ship_date = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
+    track_customeer = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
     #To see all tracking fields print the variable track_allfields
     #Tracking fields from website
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
