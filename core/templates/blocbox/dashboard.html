@@ -137,12 +137,21 @@
 														 			<div>
 														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
 																				<div class="row margintopbottom30px">
-																				   			<form action="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}/Thanks" method="post">
-																				        <!--<form action="" method="post"> -->
+																				   	<form action="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}/Thanks" method="post">
 																				        		{% csrf_token %} 
-																				        		{{ compose_form.as_table }} 
-																				        		<input type="submit" value="{% trans "Send" %} &raquo;"/>
-																				        </form>
+																				        		<!--{{ compose_form.as_table }} -->
+																				        		<!--compose form has recipient, subject, body -->
+																				        <div class="row"></div>		
+																				        		<label for="id_recipient">Recipient:</label> <input id="id_recipient" name="recipient" type="text" />
+																				        </div>
+																				        <div class="row>
+																										<label for="id_subject">Subject:</label><input id="id_subject" maxlength="120" name="subject" type="text" />
+																								</div>	
+																								<div class="row">																						
+																										<label for="id_body">Body:</label> <textarea cols="55" id="id_body" name="body" rows="12">
+																								</div>	
+																				        <input type="submit" value="{% trans "Send" %} &raquo;"/>
+																				    </form>
 																				</div>
 																	</div>														
                         		</div> <!-- id=openModal -->
