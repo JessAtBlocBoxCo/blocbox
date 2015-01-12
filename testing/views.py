@@ -145,7 +145,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?
     trackings_all = None #api.trackings.objects.all() #that didn't work...
     track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
-    trackingdict = track_allfields.get(u'trackings')
+    trackingdict = track_allfields.get(u'tracking')
     track_manyfields = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at', 'updated_at'])
     track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
     track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
