@@ -37,12 +37,12 @@
          				
          				
 						<h3>Try for track in track_all then list title</h3>
+						<p> Show Trackings_All {{ trackings_all }} </p>
 						{% for field in track_allfields %}
 							<p>
 									List field {{field}} List field.created_at {{ field.created_at }}; list field.0 {{ field.0 }}, list field.1 {{ field.1}} <br>
 									Field Title: {{ field.title }} <br>  Field ID: {{ field.id }} <br>
-							 </p>
-							<p>Tracking number is: {{ field.tracking_number }} and title is {{ field.title }}</p>
+									Field Tracking number: {{ field.tracking_number }}<br>
 						{% endfor %}
 						
 						<h3>List All Fields</h3>  <p>List the track_allfields {{ track_allfields }}</p>
