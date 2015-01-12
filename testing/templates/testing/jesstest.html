@@ -27,7 +27,10 @@
 						<p>Tracking Number {{ track_tracking_number }}</p>
 						<p>Tracking Number Single {{track_tracking_number_single }}</p>
 						<p>List the Aftership API key: {{aftership_api_key }} </p>
-					
+					  <p>List the track info (title and created_at ) {{ track_info }} </p>
+					  <p>List the track_all {{ track_all }}</p>
+					  <p>List the track_title {{ track_title }} </p>
+
 						
 						{% for shipment in shipments_all %}
 								<p>Tracking Number for shipment {{ shipment.id }}: {{ shipment.tracking}} </p>

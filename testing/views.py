@@ -145,7 +145,6 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     track_all = api.trackings.get(slug_get_tracking, number_get_tracking) #
     track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
 
-    
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
 		#order_id, origin_country_iso3, shipment_package_count, shipment_type, signed_by, smses, source, tag, title, tracked_count, unique_token, checkpoints (list with sub variables)
     # change tracking title: https://www.aftership.com/docs/api/4/trackings/put-trackings-slug-tracking_number
