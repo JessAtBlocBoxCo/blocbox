@@ -144,11 +144,9 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     track_info = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
     track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
     track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
-    #track_created_at = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
     track_tag = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tag'])
     track_order_id = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
     origin_country_iso3 = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['origin_country_iso3'])
-    destination_country_iso3 = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country_iso3'])
     tracking_ship_date = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
     track_customeer = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
     track_shipment_type = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
@@ -157,6 +155,9 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     track_source = api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['source'])
     tracked_count = api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['tracked_count'])
     track_note = api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['note'])
+    ##CANNOT ACCESS THE FOLLOWING FIELDS -- WHY NOTE?
+    track_created_at = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
+    destination_country_iso3 = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country_iso3'])
     #To see all tracking fields print the variable track_allfields
     #Tracking fields from website
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
@@ -180,10 +181,10 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 
  				'track_allfields': track_allfields, 'track_info': track_info, 'track_tracking_number': track_tracking_number, 'track_title': track_title,
- 				'track_tag': track_tag, 'track_order_id': track_order_id, 'track_note': track_note,
+ 				'track_tag': track_tag, 'track_order_id': track_order_id, 'track_note': track_note, 'track_created_at': track_created_at,
         'origin_country_iso3': origin_country_iso3, 'destination_country_iso3': destination_country_iso3, 'tracking_ship_date': tracking_ship_date, 'tracked_count': tracked_count,
         'track_customer': track_customer, 'track_shipment_type': track_shipment_type, 'track_slug': track_slug, 'tracking_account_number': tracking_account_number, 'track_source': track_source,
-
+		
 
  				#'track_created_at': track_created_at,
  				#'track_title': track_title, 'track_created_at': track_created_at, 'track_updated_at': track_updated_at, '
