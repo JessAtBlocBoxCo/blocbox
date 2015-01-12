@@ -147,6 +147,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #track_created_at = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
     track_tag = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tag'])
     track_order_id = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
+    track_origin_country_iso3 = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['origin_country_iso3'])
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
 		#order_id, origin_country_iso3, shipment_package_count, shipment_type, signed_by, smses, source, tag, title, tracked_count, unique_token, checkpoints (list with sub variables)
     # change tracking title: https://www.aftership.com/docs/api/4/trackings/put-trackings-slug-tracking_number
@@ -169,7 +170,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 
  				'track_allfields': track_allfields, 'track_info': track_info, 'track_tracking_number': track_tracking_number, 'track_title': track_title,
  				'track_tag': track_tag, 'track_order_id': track_order_id,
-
+        'track_origin_country_iso3': track_origin_country_iso3,
  				#'track_created_at': track_created_at,
  				#'track_title': track_title, 'track_created_at': track_created_at, 'track_updated_at': track_updated_at, '
     }) 
