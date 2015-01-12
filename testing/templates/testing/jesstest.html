@@ -35,11 +35,14 @@
 					  		Track Title: {{ track_title }} <br> Tracking Number: {{ track_tracking_number }} <br> Tag: {{ tag }} <br> Track Order ID: {{ track_order_id }} <br> 
 					  		Origin Country: {{ origin_country_iso3 }} <br> Destination Country: {{destination_country_iso3 }} <br> Tracking Ship Date: {{ tracking_ship_date }} <br> 
 					  		Tracked Count: {{ tracked_count }} <br> Customer Name: {{ customer_name }} <br> Shipment Type: {{ shipment_type }} <br>
-         				Track_Slug: {{ track_slug }} <br> Tracking_Account_Number <br> {{ tracking_account_number }} <br> Track_Source: {{ track_source }} <br> 
+         				Track_Slug: {{ track_slug }} <br> Tracking_Account_Number: {{ tracking_account_number }} <br> Track_Source: {{ track_source }} <br> 
          				Tracked_count: {{ tracked_count }} <br> Tracking Note: {{ track_note }} <br> Created At: {{ created_at }} <br> Updated At: {{ updated_at }} <br>
          				
-         				
-         				
+         		
+         		<h3>Try to call the dictionary within the template</h3>	
+         				<p>
+										Track Title: {{trackingdict.title }} <br> Tag: {{ trackingdict.tag }} <br>         				
+         				</p>
 						<h3>Try for track in track_all then list title</h3>
 
 
