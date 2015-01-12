@@ -672,7 +672,7 @@ color: white;
   */
 }
 .whitenavinfobtn:hover {
-    background-image: url('/static/blocbox/images/info-button-active.png');
+    background-image: url('/static/blocbox/images/white-info-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 37px;
@@ -683,7 +683,7 @@ color: white;
     */
 }
 .whitenavinfobtn:focus {
-    background-image: url('/static/blocbox/images/info-button-active.png');
+    background-image: url('/static/blocbox/images/white-info-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 37px;
