@@ -137,14 +137,12 @@
 														 			<div>
 														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
 																				<div class="row margintopbottom30px">
-																				   <div class="col-xs-8 col-xs-offset-2">
 																				   			<form action="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}/Thanks" method="post">
 																				        <!--<form action="" method="post"> -->
 																				        		{% csrf_token %} 
 																				        		<table> 	{{ compose_form.as_table }} 	</table>
 																				        		<input type="submit" value="{% trans "Send" %} &raquo;"/>
 																				        </form>
-																				    </div>
 																				</div>
 																	</div>														
                         		</div> <!-- id=openModal -->
