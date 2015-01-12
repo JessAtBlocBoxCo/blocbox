@@ -31,12 +31,12 @@
 					  <p>List the track_title {{ track_title }} </p>
 						
 						<h3>Try for track in track_all then list title</h3>
-						{% for track in track_all %}
-							<p>List track {{track}} </p>
-							<p>Tracking number is: {{ track.tracking_number }} and title is {{ track.title }}</p>
+						{% for field in track_allfields %}
+							<p>List field {{field}} </p>
+							<p>Tracking number is: {{ field.tracking_number }} and title is {{ field.title }}</p>
 						{% endfor %}
 						
-						<h3>List Track_all</h3>  <p>List the track_all {{ track_all }}</p>
+						<h3>List Track_allfriend</h3>  <p>List the track_allfields {{ track_allfields }}</p>
 						
 						<h3>List each tracking nuber - for shipments in shipments_all</h3>
 						{% for shipment in shipments_all %}

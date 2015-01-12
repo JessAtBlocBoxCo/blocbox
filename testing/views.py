@@ -141,7 +141,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     # all of the fields: 
     track_info = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
     track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
-    track_all = api.trackings.get(slug_get_tracking, number_get_tracking) #
+    track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking
     track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
 
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
@@ -164,7 +164,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'here': quote(request.get_full_path()),
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 
- 				'track_info': track_info, 'track_tracking_number': track_tracking_number, 'track_all': track_all,
+ 				'track_info': track_info, 'track_tracking_number': track_tracking_number, 'track_allfields': track_all,
  				#'track_title': track_title, 'track_created_at': track_created_at, 'track_updated_at': track_updated_at, '
     }) 
 
