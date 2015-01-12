@@ -124,8 +124,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
     otherfavors_all = transactions_all.exclude(favortype="package")
     #api = aftership.APIv4('801e84c7-bae1-4afb-b294-51ca02a63d02')
-    api_aftership = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
-    couriers = api_aftership.couriers.all.get()
+    api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
+    couriers = api.couriers.all.get()
     #ISSU - WHAT ABOUT WHEN I DONT KNOW THE SLUG??
     number_to_track = '9374869903500264240007' #this is DHL-global-mail
     slug_to_track = 'dhl-global-mail'
@@ -137,7 +137,34 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
 		# create tracking: https://www.aftership.com/docs/api/4/trackings/post-trackings
     #api.trackings.post(tracking=dict(slug=slug_to_track, tracking_number=number_to_track, title="Test Title for Create Tracking")) 
     # get tracking by slug and number, return 'title' and 'created_at' field: https://www.aftership.com/docs/api/4/trackings/get-trackings-slug-tracking_number
-    tracking_info = api_aftership.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
+    # all of the fields: 
+    track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number'])
+    track_tracking_number_single = api.trackings.get(slug_get_tracking, number_get_tracking, field='tracking_number')
+    track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title'])
+    track_created_at = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
+    track_updated_at = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['updated_at'])
+    track_slug = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['slug'])
+    track_active = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['active'])
+    track_custom_fields = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['custom_fields']).all
+    track_custom_name = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['custom_name'])
+    track_customer_name = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
+    track_destination_country = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country'])
+    track_emails = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['track_emails']).all
+    track_expected_delivery = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['expected_delivery'])
+    track_order_id = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
+    track_origin_country_iso3 = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['origin_country_iso3'])
+    track_shipment_package_count = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_package_count'])
+    track_shipment_type = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
+    track_signed_by = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['signed_by'])
+    track_smses = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['smses'])
+    track_source = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['source'])
+    track_tag = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tag'])
+    track_tracked_count = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracked_count'])
+    track_unique_token = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['unique_token'])
+    track_checkpoints = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['checkpoints']).all
+    
+    #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
+		#order_id, origin_country_iso3, shipment_package_count, shipment_type, signed_by, smses, source, tag, title, tracked_count, unique_token, checkpoints (list with sub variables)
     # change tracking title: https://www.aftership.com/docs/api/4/trackings/put-trackings-slug-tracking_number
     #api.trackings.put(slug_modify, number_change, tracking=dict(title="Title Test (changed)"))
     # delete tracking: https://www.aftership.com/docs/api/4/trackings/delete-trackings
@@ -155,7 +182,9 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'AvailabilityCal': AvailabilityCal, 'AvailabilityCal_MonthObject': AvailabilityCal_MonthObject,
     	  'here': quote(request.get_full_path()),
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
- 				'api_aftership': api_aftership, 'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 'tracking_info': tracking_info,
+ 				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 
+ 				'track_tracking_number': track_tracking_number, 'track_tracking_number_single': track_tracking_number_single,
+ 				#'track_title': track_title, 'track_created_at': track_created_at, 'track_updated_at': track_updated_at, '
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
