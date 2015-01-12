@@ -140,30 +140,11 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #Notice that you can always use/:id to replace /:slug/:tracking_number -- .g. DELETE /trackings/:id
     # all of the fields: 
     track_info = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
-    track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number'])
-    track_tracking_number_single = api.trackings.get(slug_get_tracking, number_get_tracking, field='tracking_number')
-    track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title'])
-    """track_created_at = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
-    track_updated_at = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['updated_at'])
-    track_slug = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['slug'])
-    track_active = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['active'])
-    track_custom_fields = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['custom_fields']).all
-    track_custom_name = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['custom_name'])
-    track_customer_name = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
-    track_destination_country = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country'])
-    track_emails = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['track_emails']).all
-    track_expected_delivery = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['expected_delivery'])
-    track_order_id = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
-    track_origin_country_iso3 = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['origin_country_iso3'])
-    track_shipment_package_count = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_package_count'])
-    track_shipment_type = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
-    track_signed_by = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['signed_by'])
-    track_smses = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['smses'])
-    track_source = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['source'])
-    track_tag = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tag'])
-    track_tracked_count = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracked_count'])
-    track_unique_token = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['unique_token'])
-    track_checkpoints = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['checkpoints']).all """
+    track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
+    track_tracking_number_single = api.trackings.get(slug_get_tracking, number_get_tracking, field='tracking_number') #this returns ALL of the variables associated with that tracking number...
+    track_all = api.trackings.get(slug_get_tracking, number_get_tracking) #
+    track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
+
     
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
 		#order_id, origin_country_iso3, shipment_package_count, shipment_type, signed_by, smses, source, tag, title, tracked_count, unique_token, checkpoints (list with sub variables)
@@ -185,7 +166,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'here': quote(request.get_full_path()),
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 
- 				'track_info': track_info, 'track_tracking_number': track_tracking_number, 'track_tracking_number_single': track_tracking_number_single,
+ 				'track_info': track_info, 'track_tracking_number': track_tracking_number, 'track_tracking_number_single': track_tracking_number_single, 'track_all': track_all,
  				#'track_title': track_title, 'track_created_at': track_created_at, 'track_updated_at': track_updated_at, '
     }) 
 
