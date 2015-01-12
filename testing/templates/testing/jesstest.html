@@ -28,7 +28,7 @@
 						<h3>AFTERSHIP API</h3>
 						<p>List the Aftership API key: {{aftership_api_key }} </p>
 					  <p> Show many fields {{ track_manyfields }} </p>
-					  <p> Show a part of the many fields with track_manyfields[0] {{ track_manyfields[0] }}</p>
+					  <p> Show a part of the many fields with track_manyfields[0] {{ track_manyfields(0) }}</p>
 					  <p> 
 					  		Track Title: {{ track_title }} <br> Tracking Number: {{ track_tracking_number }} <br> {{ track_tag }} <br> Track Order ID: {{ track_order_id }} <br> 
 					  		Origin Country: {{ origin_country_iso3 }} <br> Destination Country: {{track_destination_country_iso3 }} <br> Tracking Ship Date: {{ tracking_ship_date }} <br> 
