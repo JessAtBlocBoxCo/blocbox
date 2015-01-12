@@ -140,6 +140,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #Notice that you can always use/:id to replace /:slug/:tracking_number -- .g. DELETE /trackings/:id
     # all of the fields: 
     #From https://www.aftership.com/docs/api/4/trackings/get-trackings, Fields to include: title,order_id,tag,checkpoints, checkpoint_time, message, country_name
+    #Try this: {u'resource': u'/v4/tracking/fedex/591099350463?fields=shipment_type'}}
     track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking    
     track_info = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
     track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
@@ -147,7 +148,6 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     track_tag = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tag'])
     track_order_id = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
     origin_country_iso3 = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['origin_country_iso3'])
-    track_shipment_type = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
     track_slug = api.tracking.get(slug_get_tracking, number_get_tracking, fields=['slug'])
     tracking_account_number = api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['tracking_account_number'])
     track_source = api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['source'])
@@ -158,6 +158,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     destination_country_iso3 = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country_iso3'])
     tracking_ship_date = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
     track_customeer = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
+    track_shipment_type = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
     #To see all tracking fields print the variable track_allfields
     #Tracking fields from website
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
