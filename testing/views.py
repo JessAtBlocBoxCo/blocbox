@@ -2,6 +2,7 @@
 import datetime
 import pytz
 from urllib import quote
+from django.conf import settings
 #from django
 from django.shortcuts import render, get_object_or_404, render_to_response
 from django.http import HttpResponse, Http404, HttpResponseRedirect
@@ -30,7 +31,7 @@ from schedule.utils import check_event_permissions, coerce_date_dict
 from paypal.standard.ipn.models import PayPalIPN
 #import the aftership API
 import aftership
-
+AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY
 
 #Write a custom template filter:
 from django.template.defaulttags import register
