@@ -145,26 +145,28 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?.
     datadict = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
     trackingdict = datadict.get(u'tracking') #this gets the value of the TRACKING dictionary - which contains all of the fields. yay!!!
-    tracking_ship_date = datadict.get(u'tracking_ship_date') #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
-    track_tracking_number = trackingdict.get(u'tracking_number') #api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
-    track_title = trackingdict.get(u'title') #api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
-    track_manyfields = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at', 'updated_at'])
-    
-    
-    track_tag = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tag'])
-    track_order_id = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id']) # track_allfields.order_id 
-    origin_country_iso3 = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['origin_country_iso3']) 
-    ##CANNOT ACCESS THE FOLLOWING FIELDS -- WHY NOTE?
-    track_created_at = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
-    destination_country_iso3 = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['destination_country_iso3'])
-    
-    track_customer = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['customer_name'])
-    track_shipment_type = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['shipment_type'])
-    track_slug = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['slug'])
-    tracking_account_number = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['tracking_account_number'])
-    track_source = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['source'])
-    tracked_count = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['tracked_count'])
-    track_note = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields = ['note'])
+    tracking_ship_date = trackingdict.get(u'tracking_ship_date') #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['tracking_ship_date'])
+    updated_at = trackingdict.get(u'updated_at')
+    smses = trackingdict.get(u'smses')
+    origin_country_iso3 = trackigdict.get(u'origin_country_iso3')
+    custom_fields = trackingdict.get(u'custom_fields')
+    customer_name = trackingdict.get(u'customer_name') 
+    shipment_type = trackingdict.get(u'shipment_type')
+    tracked_count = trackingdict.get(u'tracked_count')
+    #rest out of order
+    created_at = trackingdict.get(u'created_at') 
+    destination_country_iso3 = trackingdict.get(u'destination_country_iso3')  
+    origin_country_iso3 = trackingdict.get(u'origin_country_iso3') 
+    tracking_account_number = trackingdict.get(u'tracking_account_number')        
+    tag = trackingdict.get(u'tag')    
+    track_title = trackingdict.get(u'title')
+    track_tracking_number = trackingdict.get(u'tracking_number')
+    track_order_id = trackingdict.get(u'order_id')
+    track_slug = trackingdict.get(u'slug')
+    track_note = trackingdict.get(u'note')
+    track_source = trackingdict.get(u'source')
+    #other - bit cyrrebtkt ysubg
+    track_manyfields = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at', 'updated_at'])    
     #To see all tracking fields print the variable track_allfields
     #Tracking fields from website
     #tracking fields: created_at, updated_at, tracking_number, slug, active, custom_fields (tuple), custom_name, customer_name, destination_country, emails (list?), expected_delivery
@@ -187,11 +189,18 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'here': quote(request.get_full_path()),
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 
- 				'track_manyfields': track_manyfields, 'track_tracking_number': track_tracking_number, 'track_title': track_title,
- 				'track_tag': track_tag, 'track_order_id': track_order_id, 'track_note': track_note, 'track_created_at': track_created_at,
-        'origin_country_iso3': origin_country_iso3, 'destination_country_iso3': destination_country_iso3, 'tracking_ship_date': tracking_ship_date, 'tracked_count': tracked_count,
-        'track_customer': track_customer, 'track_shipment_type': track_shipment_type, 'track_slug': track_slug, 'tracking_account_number': tracking_account_number, 'track_source': track_source,
-        'trackingdict': trackingdict,
+ 				'track_manyfields': track_manyfields, 'trackingdict': trackingdict, 
+				'tracking_ship_date': tracking_ship_date,
+ 				'updated_at': updated_at, 'tag': tag, 'created_at': created_at, 'tracked_count': tracked_count, 'smses': smses, 				
+        'origin_country_iso3': origin_country_iso3, 
+        'destination_country_iso3': destination_country_iso3, 
+        'custom_fields': custom_fields,
+        'customer_name': customer_name, 
+        'shipment_type': track_shipment_type, 
+        'tracking_account_number': tracking_account_number, 
+        'track_tracking_number': track_tracking_number, 'track_title': track_title, 'track_order_id': track_order_id, 'track_note': track_note, 'track_source': track_source,
+ 				'track_slug': track_slug, 'track_source': track_source,
+        
 
  				#'track_created_at': track_created_at,
  				#'track_title': track_title, 'track_created_at': track_created_at, 'track_updated_at': track_updated_at, '
