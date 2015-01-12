@@ -664,7 +664,7 @@ color: white;
     background-image: url('/static/blocbox/images/info-button-white-outline.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 45px;
+    width: 40px;
     cursor: pointer;
     /*
   vertical-align: middle;
@@ -675,7 +675,7 @@ color: white;
     background-image: url('/static/blocbox/images/white-info-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 45px;
+    width: 40px;
     cursor: pointer;
     /*
     vertical-align: middle;
@@ -686,7 +686,7 @@ color: white;
     background-image: url('/static/blocbox/images/white-info-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 45px;
+    width: 40px;
     cursor: pointer;
     /*
     vertical-align: middle;
