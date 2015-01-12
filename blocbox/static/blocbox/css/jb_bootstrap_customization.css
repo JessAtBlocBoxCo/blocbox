@@ -1725,6 +1725,29 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     .mobilehide {
         display: none;
     }
+    .mobilelogo {
+        display: block;
+        position: relative;
+        background-image: url('/static/blocbox/images/Logo-white.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 100px;
+        width: 130px;
+        z-index: inherit;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .mobilename {
+        display: block;
+        position: relative;
+        background-image: url('/static/blocbox/images/name-white.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 240px;
+        height: 40px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /*-------------------------------------------------------------*
@@ -1918,30 +1941,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .mobileonly {
         display: block;
     }
-    .mobilelogo {
-        display: block;
-        position: relative;
-        background-image: url('/static/blocbox/images/Logo-white.png');
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 100px;
-        width: 130px;
-        z-index: inherit;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    .mobilename {
-        display: block;
-        position: relative;
-        background-image: url('/static/blocbox/images/name-white.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 240px;
-        height: 40px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
     .profilepic {
         position: absolute;
         max-width: 125px;
