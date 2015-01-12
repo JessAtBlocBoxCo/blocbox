@@ -840,6 +840,16 @@ color: white;
     height: 40px;
 }
 
+navbar-orange {
+    position: relative;
+    background-repeat: repeat-x;
+    height: 100px;
+    width: 100%;
+    background-image: none;
+    box-shadow: none;
+    background-color: rgb(255, 195, 0);
+}
+
 
 /*-----------------------------------------------------------------------
 *min.css overrides
