@@ -928,10 +928,15 @@ html, body {
     }
     
     .navbar-orange {
-        box-shadow: none;
-        background-image: none;
-        background-color: transparent;
-    }
+            position: absolute;
+            background-repeat: repeat-x;
+            height: 100px;
+            width: 100%;
+            background-image: none;
+            box-shadow: none;
+            background-color: transparent;
+            z-index: 999999;
+        }
     
     .canvas {
         padding: 0;
@@ -1682,7 +1687,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 *DESKTOP (NON-MOBILE)
 *--------------------------------------------------------------*/
 
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
     .marginsides80pxlg {
         margin-left: 80px;
         margin-right: 80px;
