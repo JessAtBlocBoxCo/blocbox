@@ -32,16 +32,20 @@
 					 					  
 					  <p> Show the TrackingDict {{ trackingdict }} </p>
 					  <p> 
-					  		Track Title: {{ track_title }} <br> Tracking Number: {{ track_tracking_number }} <br> Tag: {{ tag }} <br> Track Order ID: {{ track_order_id }} <br> 
-					  		Origin Country: {{ origin_country_iso3 }} <br> Destination Country: {{destination_country_iso3 }} <br> Tracking Ship Date: {{ tracking_ship_date }} <br> 
-					  		Tracked Count: {{ tracked_count }} <br> Customer Name: {{ customer_name }} <br> Shipment Type: {{ shipment_type }} <br>
-         				Track_Slug: {{ track_slug }} <br> Tracking_Account_Number: {{ tracking_account_number }} <br> Track_Source: {{ track_source }} <br> 
-         				Tracked_count: {{ tracked_count }} <br> Tracking Note: {{ track_note }} <br> Created At: {{ created_at }} <br> Updated At: {{ updated_at }} <br>
+					  		Track Title: {{ trackingdict.title }} <br> Tracking Number: {{ trackingdict.tracking_number }} <br> Tag: {{ trackingdict.tag }} <br> 
+					  		Track Order ID: {{ trackingdict.order_id }} <br> 
+					  		Origin Country: {{ trackingdict.origin_country_iso3 }} <br> Destination Country: {{ trackingdict.destination_country_iso3 }} <br> 
+					  		Created At: {{ trackingdict.created_at }} <br> Updated At: {{ trackingdict.updated_at }} <br>
+					  		Tracking Ship Date: {{ trackingdict.tracking_ship_date }} <br> 
+					  		Tracked Count: {{ trackingdict.tracked_count }} <br> Customer Name: {{ trackingdict.customer_name }} <br> Shipment Type: {{ trackingdict.shipment_type }} <br>
+         				Slug: {{ trackingdict.slug }} <br> Tracking Account_Number: {{ trackingdict.tracking_account_number }} <br> 
+         				Source: {{ trackingdict.source }} <br> Tracked_count: {{ trackingdict.tracked_count }} <br> 
+         				Tracking Note: {{ trackingdict.note }} <br> 
          				
          		
-         		<h3>Try to call the dictionary within the template</h3>	
+         		<h3>Try to call the dictionary within the template -- this works!!</h3>	
          				<p>
-										Track Title: {{trackingdict.title }} <br> Tag: {{ trackingdict.tag }} <br>         				
+										Track Title: {{trackingdict.title }} <br> Tag: {{ trackingdict.tag }} <br>  Note: {{ trackingdict.note }} <br>       				
          				</p>
 						<h3>Try for track in track_all then list title</h3>
 
