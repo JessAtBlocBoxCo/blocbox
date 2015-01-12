@@ -141,6 +141,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     # all of the fields: 
     #From https://www.aftership.com/docs/api/4/trackings/get-trackings, Fields to include: title,order_id,tag,checkpoints, checkpoint_time, message, country_name
     #Try this: {u'resource': u'/v4/tracking/fedex/591099350463?fields=shipment_type'}}
+    #These fields correspond to a URL?, base URL (in __init__.py:  base_url='https://api.aftership.com, then these render as https://api.aftership.com/v4/tracking
+    #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?
     track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking    
     track_info = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
     track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
