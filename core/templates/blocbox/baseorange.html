@@ -268,31 +268,31 @@
 
         <!-- Non-Fixed version of Navbar, removing navbar-fixed-logo -->
     <nav class="navbar whitetext desktoponly" role="navigation">
-                <div class="navbar-header whitetext">
+        <div class="navbar-header whitetext">
 
-                    <!--Add the Fixed Logo Image - the img is now attached to the fix-logo-image in CSS - different depending on screen size  -->
-         <a href="#top" class="fixed-logo-image"></a>
+            <!--Add the Fixed Logo Image - the img is now attached to the fix-logo-image in CSS - different depending on screen size  -->
+             <a href="#top" class="fixed-logo-image"></a>
 
-                    <!--Add Logo Name - for the floating Logo version of the navbar, img styled in css page under .name-unfixed > img {.... } -->
-          <a class="nav-blocbox-name navbarlogo" href="#">
-                        <!--removing navbar-brand see what happens -->
+                <!--Add Logo Name - for the floating Logo version of the navbar, img styled in css page under .name-unfixed > img {.... } -->
+              <a class="nav-blocbox-name navbarlogo" href="#">
+                            <!--removing navbar-brand see what happens -->
 
-        <img class="nav-blocbox-name navbarlogo" /> 
-       <img src="{% static "blocbox/images/Name-whited2.png" %}" />
+            <img class="nav-blocbox-name navbarlogo" /> 
+           <img src="{% static "blocbox/images/Name-whited2.png" %}" />
 
-        <!--I have added the followingn image to CSS under nav-blocbox-name at mobile media sizes... -->
- 				<a class="navbar-brand" href="#">
- 					<img src="{% static "blocbox/images/Logo-and-name---white.png" %}" height="50px" width="250px" class="navbarlogo"/>
- 			    </a>
-                    <!--add the bran name in text <a class="navbar-brand" href="#">BlocBox</a> -->
+            <!--I have added the followingn image to CSS under nav-blocbox-name at mobile media sizes... -->
+                    <a class="navbar-brand" href="#">
+                        <img src="{% static "blocbox/images/Logo-and-name---white.png" %}" height="50px" width="250px" class="navbarlogo"/>
+                    </a>
+                        <!--add the bran name in text <a class="navbar-brand" href="#">BlocBox</a> -->
 
          </div>
                 <!--navbar-header-->
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+     <!--      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <!--jmy changing this to be a navbar-right - to left align, remove the navbar-right tag -->
-           <ul class="nopaddingtopbottom nav navbar-nav navbar-right">
+                <!--   <ul class="nopaddingtopbottom nav navbar-nav navbar-right">
 
                         <li class="marginleftright10px"><a class="whitetext" href="#works">How it Works</a>
                         </li>
@@ -302,7 +302,7 @@
                         <a href="#hosting">Become a Host</a>
 
         <!--add sign-in/sign-out to orange navbar -->
-                   {% if user.is_authenticated %}
+                <!--           {% if user.is_authenticated %}
                         <li class="marginleftright10px"><a class="whitetext" href="/logout/">Sign Out</a>
                         </li>
                         {% else %}
@@ -346,7 +346,7 @@
                                     </div>
                                 </form>
                                 <!--end form line -->
-              </div>
+                <!--      </div> 
                         </div>
                         {% endif %}
 
@@ -356,7 +356,7 @@
 
              </ul>
                     <!--end collection of links for toggling -->
-            </div>
+       <!--     </div>
                 <!--collapse navbar-collapse -->
         </nav>
         <!--end nav-->
