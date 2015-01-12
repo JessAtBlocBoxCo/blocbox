@@ -1596,7 +1596,7 @@ html, body {
 }
 .modalDialog > div {
     width: 400px;
-    position: absolute;
+    position: relative;
     margin: 10% auto;
     padding: 5px 20px 13px 20px;
     border-radius: 2px;
