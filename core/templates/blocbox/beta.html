@@ -8,11 +8,11 @@
    <div class="mobileonly">
        <div class="mobilename margintop10px"></div>
     </div>
-    <div class="row text-center mobilehide">
+    <div class="row text-center mobilehide" style="padding-top: 185px;">
         {% if user.is_authenticated %}
         <h1>Welcome, <br> {{user.email}}</h1>
         {% else %}
-        <h1 class="margintop100px">Neighbors Helping Neighbors<br>Never Miss a Package</h1>
+        <h1>Neighbors Helping Neighbors<br>Never Miss a Package</h1>
         {% endif %}
     </div>
 
