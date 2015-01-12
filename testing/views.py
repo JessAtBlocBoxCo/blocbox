@@ -196,7 +196,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         'destination_country_iso3': destination_country_iso3, 
         'custom_fields': custom_fields,
         'customer_name': customer_name, 
-        'shipment_type': track_shipment_type, 
+        'shipment_type': shipment_type, 
         'tracking_account_number': tracking_account_number, 
         'track_tracking_number': track_tracking_number, 'track_title': track_title, 'track_order_id': track_order_id, 'track_note': track_note, 'track_source': track_source,
  				'track_slug': track_slug, 'track_source': track_source,
