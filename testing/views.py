@@ -31,6 +31,7 @@ from schedule.utils import check_event_permissions, coerce_date_dict
 from paypal.standard.ipn.models import PayPalIPN
 #import the aftership API
 import aftership
+AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 
 #Write a custom template filter:
 from django.template.defaulttags import register
@@ -118,7 +119,10 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         cal_relations_host = None
         cal_relations_host_count = None
     #test the API
-    AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
+    #load Transacton table instead of paypal tabl
+    transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
+    shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
+    otherfavors_all = transactions_all.exclude(favortype="package")
     #api = aftership.APIv4('801e84c7-bae1-4afb-b294-51ca02a63d02')
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     couriers = api.couriers.all.get()
@@ -131,13 +135,13 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     number_delete = '9114901159818233737712' #usps
     slug_modify = 'usps'
 		# create tracking: https://www.aftership.com/docs/api/4/trackings/post-trackings
-    api.trackings.post(tracking=dict(slug=slug_to_track, tracking_number=number_to_track, title="Test Title for Create Tracking")) 
+    #api.trackings.post(tracking=dict(slug=slug_to_track, tracking_number=number_to_track, title="Test Title for Create Tracking")) 
     # get tracking by slug and number, return 'title' and 'created_at' field: https://www.aftership.com/docs/api/4/trackings/get-trackings-slug-tracking_number
     tracking_info = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at'])
     # change tracking title: https://www.aftership.com/docs/api/4/trackings/put-trackings-slug-tracking_number
-    api.trackings.put(slug_modify, number_change, tracking=dict(title="Title Test (changed)"))
+    #api.trackings.put(slug_modify, number_change, tracking=dict(title="Title Test (changed)"))
     # delete tracking: https://www.aftership.com/docs/api/4/trackings/delete-trackings
-    api.trackings.delete(slug_modify, number_delete)
+    #api.trackings.delete(slug_modify, number_delete)
     return render(request, 'testing/jesstest.html', { 
         'enduser':enduser, 'host':host, 
         'connections_all':connections_all,

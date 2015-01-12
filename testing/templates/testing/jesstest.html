@@ -23,11 +23,31 @@
 			
 			<!--TEST TRACKING API-->
 			<div class="row">
-				<h3>AFTERSHIP API</h3>
-				<p>List the tracking info {{ tracking_info }}</p>
-				<p>List the Aftership API key: {{aftership_api_key }} </p>
-				<p> List Couriers ASsociated with AfterShip API: {{ couriers }}</p>
-			</div>
+						<h3>AFTERSHIP API</h3>
+						<p>List the tracking info {{ tracking_info }}</p>
+						<p>List the Aftership API key: {{aftership_api_key }} </p>
+						
+						
+						<!--MGET TRACKING-->
+						<!--https://www.aftership.com/docs/api/3.0/tracking/get-trackings-slug-tracking_number -->
+						<h3>Horizontal Form for Adding Tracking Numbers</h3>
+						<form class="form-horizontal">
+								<input type="tracking" class="form-control" name="tracking" placeholder="Enter Tracking Number "> 						
+						</form>
+						
+								 
+						
+						
+						<h3>Inline-Form for Getting Tracking Numbers</h3>
+								<form class="form-inline">
+										<input type="tracking" class=form-control">
+								</form>				
+					
+						<h3> List Couriers ASsociated with AfterShip API </h3>  	<p> {{ couriers }}</p>
+			</div> <!--end div with aftership API -->
+			
+			
+			
 			<!--TEST TRACKING WIDGET-->
 			<div class="row">
 				<h3>TRACKING WIDGET</h3>	
