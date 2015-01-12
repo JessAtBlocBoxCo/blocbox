@@ -31,7 +31,9 @@
 						<p>List the Aftership API key: {{aftership_api_key }} </p>
 					  <p>List the track info (title and created_at ) {{ track_info }} </p>
 					  <p>List the track_title: {{ track_title }} and the track_tag: {{ track_tag }} and the track_order_id: {{ track_order_id }}</p>
-						<p>Origin Country ISO3: {{ track_origin_country_iso3 }}</p>
+						
+						<p>Origin Country ISO3: {{ track_origin_country_iso3 }}; and destination country: {{track_destination_country }}</p>
+						
 						<h3>Try for track in track_all then list title</h3>
 						{% for field in track_allfields %}
 							<p>List field {{field}} </p>
