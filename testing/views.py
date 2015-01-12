@@ -144,12 +144,12 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #These fields correspond to a URL?, base URL (in __init__.py:  base_url='https://api.aftership.com, then these render as https://api.aftership.com/v4/tracking
     #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?
     trackings_all = None #api.trackings.objects.all() #that didn't work...
-    track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking    
+    track_allfields = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
     track_manyfields = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title', 'created_at', 'updated_at'])
     track_tracking_number = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tracking_number']) #this returns {u'tracking': {u'tracking_number': u'591099350463'}}
     track_title = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['title']) #returns {u'tracking': {u'title': u'591099350463'}}
     track_tag = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['tag'])
-    track_order_id = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
+    track_order_id = track_allfields.order_id  # = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['order_id'])
     origin_country_iso3 = api.trackings.get(slug_get_tracking, number_get_tracking, fields=['origin_country_iso3'])
     ##CANNOT ACCESS THE FOLLOWING FIELDS -- WHY NOTE?
     track_created_at = None #api.tracking.get(slug_get_tracking, number_get_tracking, fields=['created_at'])
