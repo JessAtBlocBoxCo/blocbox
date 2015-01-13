@@ -156,6 +156,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     courier_single_slug = courier_single.get(u'slug')
     courier_slugs = {}
     tracking_numbers = {}
+    courier_lists_tests = {}
     for shipment in shipments_all:
     	  if shipment.tracking == None:
     	  	  courier_slugs[shipment.id] = None
@@ -166,7 +167,9 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier_for_list = courier_list[0]
-            courier_slugs[shipment.id] = courier_for_list.get(u'slug')        
+            courier_slugs[shipment.id] = courier_for_list.get(u'slug')  
+            #delete
+            courier_lists_tests[shipment.id] = courier_list      
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
     #To see all tracking fields print the variable track_allfields
