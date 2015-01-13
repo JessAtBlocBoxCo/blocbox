@@ -40,23 +40,9 @@
 									<br> <br>
 									</p>
 							{% endfor %}
+					
 
-
-				
-					<h3> TrackingDict_All - Loop Through</h3>
-					 	
-					 		{% for track in trackingdict_all %}
-					 				Track Title: {{ track.title }} <br> Tracking Number: {{ track.tracking_number }} <br> Tag: {{ track.tag }} <br> 
-					  			Track Order ID: {{ track.order_id }} <br> <br> <br>
-					 		{% endfor %}
-					 		<p> Show TrackingDict_All {{ trackingdict_all }} </p>
-					 	
-					 	<h3>Other Vars</h3>
-					 		<p> Show DataDict_single_onlytracking {{ datadict_single_onlytracking }} </p>
-					 		
-					 		
-					 		
-					 		<p>Show DataDict_all {{ datadict_all }} </p>
+						<h3> Show the tracking variables for the single test tracking number </h3>
 					  	<p> 
 					  		Track Title: {{ trackingdict_single.title }} <br> Tracking Number: {{ trackingdict_single.tracking_number }} <br> Tag: {{ trackingdict_single.tag }} <br> 
 					  		Track Order ID: {{ trackingdict_single.order_id }} <br> 
@@ -68,44 +54,14 @@
          				Source: {{ trackingdict_single.source }} <br> Tracked_count: {{ trackingdict_single.tracked_count }} <br> 
          				Tracking Note: {{ trackingdict_single.note }} <br> 
          		
-         		 	<p> Show the Full trackingdict_single {{ trackingdict_single }} </p>
+         		 	<p> Show the Full Tracking dictionary for a Single Test Trakcing No. {{ trackingdict_single }} </p>
          		 	
          			<p>List the Aftership API key: {{aftership_api_key }} </p>
-         			
-         		<h3>Try to call the dictionary within the template -- this works!!</h3>	
-         				<p>
-										Track Title: {{trackingdict_single.title }} <br> Tag: {{ trackingdict_single.tag }} <br>  Note: {{ trackingdict_single.note }} <br>       				
-         				</p>
-						<h3>Try for track in track_all then list title</h3>
 
-
-						
-						<h3>List each tracking nuber - for shipments in shipments_all</h3>
-						{% for shipment in shipments_all %}
-								<p>Tracking Number for shipment {{ shipment.id }}: {{ shipment.tracking}} </p>
-								
-						{% endfor %}
-						
-						
-						
-						<!--MGET TRACKING-->
-						<!--https://www.aftership.com/docs/api/3.0/tracking/get-trackings-slug-tracking_number -->
-						<h3>Horizontal Form for Adding Tracking Numbers</h3>
-						<form class="form-horizontal">
-								<input type="tracking" class="form-control" name="tracking" placeholder="Enter Tracking Number "> 						
-						</form>
-						
-						
-						
-						
-						<h3>Inline-Form for Getting Tracking Numbers</h3>
-								<form class="form-inline">
-										<input type="tracking" class=form-control">
-								</form>				
+			
 					
 						<h3> List Couriers ASsociated with AfterShip API </h3>  	<p> {{ couriers }}</p>
-			</div> <!--end div with aftership API -->
-			
+
 			
 			
 			<!--TEST TRACKING WIDGET-->
