@@ -180,6 +180,7 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         trans.dayrangeend = dayrangeend
         trans.deliverydatenotracking_rangestart = datenow + timedelta(days=dayrangestart)
         trans.deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
+        trans.payment_option = paymentoption
     trans.save()
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
