@@ -160,6 +160,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  if shipment.tracking:
             shipment_withtracking_id.append(shipment.id)
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
+            #SET UP A TEST HERE - IF TRACKING EXISTS.. ONLY GET TRACKING INFORMAION IF IT IS BEING TRACKED AT AFTERSHIP
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier_for_list = courier_list[0]
