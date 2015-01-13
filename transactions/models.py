@@ -18,7 +18,8 @@ class Transaction(models.Model):
     enduser = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='transaction_enduser', blank=True, null=True) #thius shiws up as payee_id
     #host = models.CharField("Host/Provider", max_length=100, blank=True, null=True)
     #enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
-    price = models.DecimalField('Amount Paid', max_digits=6, decimal_places=2, blank=True, null=True)   
+    price = models.DecimalField('Amount Paid', max_digits=6, decimal_places=2, blank=True, null=True)
+    title = model.CharField("User Provided Title", max_length=100, blank=True, null=True)   
     date_requested = models.DateTimeField(default=datetime.datetime.today)
     date_requested_notime = models.DateField(default = datetime.date.today, null=True)
     favortype = models.CharField("Favor Type", max_length=100, blank=True, null=True)

@@ -97,14 +97,22 @@
                     
                     
                      <!--SHIPMENT DETAILS: ORDER DATE AND SHIPPMENT SPEED  -->
-                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">  
-                    		<div class="row paddingtopbottom2px">
-                    				<p class=" nomargin"> Ordered {{ shipment.date_requested }}</p>      
-                    		</div>
+                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
+                    	
+                    		<!--Transaction Title (if one exists) -->
+                    		{% if shipment.title %}
+                    		 		<div class="row paddingtopbottom2px"> <p class=" nomargin"> {{ shipment.title }}	</p></div>  
+                    		{% endif %}
+                    		<!--Date transaction created-->
+                    		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Ordered {{ shipment.date_requested }}</p> 	</div>
+                    		
+                    		<!--courier and shipmente-type/spped -->
                     		<div class="row">         
                         		<p class="nomargin"> 
                         				{% if shipment.aftership %}
-                        						{{ shipment.shipment_courier}}: {{shipment.aftership.shipment_type }}
+                        						{{ shipment.shipment_courier}}
+                        								<!--show the shipment type if availble -->
+                        								{% if shipment.aftership.shipment_type %}  : {{shipment.aftership.shipment_type }} {% endif %}
                         				{% else %}
                         						{% if shipment.dayrangestart %}
                         								{% if shipment.dayrangestart == shipment.dayrangeend %}
@@ -117,11 +125,12 @@
                         										{{ shipment.deliverydatenotracking_rangeend}} -->
                         								&nbsp;
                         								{% endif %}
-                        						{% endif %}      
-                        				{% endif %}                  		                        															
+                        						{% endif %} <!--if no tracking but has dayrangestart-->      
+                        				{% endif %}  <!--if no tracking -->            		                        															
                         		</p>
                         </div>  
-                        <!--SHIMENT STATUS - FROM AFTERSHIP -->
+                        
+                        <!--Shipment Status - From Aftership-->
                         <div class="row"> 	<p class="nomargin"> Status: {{shipment.aftership.tag}}</p> </div>
                     </div>
                     

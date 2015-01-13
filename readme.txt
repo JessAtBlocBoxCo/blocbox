@@ -147,6 +147,11 @@ The URLs for this site, and the corresponding files are as follows:
 			For IPN or PRO The template loads the form with the statement	{{ form.render }} 
 			blocbox.co/payment/ipn/notify is the notify_url
 			Paypal app documentation: /blocbox/paypal/documentation/README.md -- i am annotating that documentation
+			
+			NOTES ON THE PAYMENT PAGE (was formerly on the html page)
+        <p>There is currently no form at blocbox/payment - there a form at blocbox.co/payment/ipn and a PRO form at blocbox.co/payment/pro</p>
+        <p>The button image was intially a really disgusting 'buy it now' picture with credit cards I updated it to link to your paypal image but i modified the CSS paypal style bcit was too wide relative to height and the margins weren't working within a form.</p>
+        <p>This currently links to a 'Sandbox' paypal account, a cool development feature that allows you to link to fake paypal accounts</p>
 						
 
 4D. blocbox.co/shippackage (template: core/templates/shippackage.html)
