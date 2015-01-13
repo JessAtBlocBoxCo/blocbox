@@ -186,7 +186,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             datadict = api.trackings.get(slug_for_list, tracking_no)
             shipment_tuple['aftership'] = datadict.get(u'tracking')             
         else:
-            shipments_with_tracking['aftership']=None
+            shipment_tuple['aftership']=None
         shipments_with_tracking.append(shipment_tuple)
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
