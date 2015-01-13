@@ -26,10 +26,22 @@
 			
 			<!--TEST TRACKING API-->
 			<div class="row">
-						<h3>AFTERSHIP API</h3>
+				<h2>AFTERSHIP API</h2>
 					 		
-					 		<p> Show DataDict_single_onlytracking {{ datadict_single_onlytracking }} </p>
+					 		
+					 	<h3> TrackingDict_All - Loop Through</h3>
+					 	
+					 		{% for track on trackingdict_all %}
+					 				Track Title: {{ track.title }} <br> Tracking Number: {{ track.tracking_number }} <br> Tag: {{ track.tag }} <br> 
+					  			Track Order ID: {{ track.order_id }} <br> 
+					 		{% endif %}
 					 		<p> Show TrackingDict_All {{ trackingdict_all }} </p>
+					 	
+					 	<h3>Other Vars</h3>
+					 		<p> Show DataDict_single_onlytracking {{ datadict_single_onlytracking }} </p>
+					 		
+					 		
+					 		
 					 		<p>Show DataDict_all {{ datadict_all }} </p>
 					  	<p> 
 					  		Track Title: {{ trackingdict_single.title }} <br> Tracking Number: {{ trackingdict_single.tracking_number }} <br> Tag: {{ trackingdict_single.tag }} <br> 
