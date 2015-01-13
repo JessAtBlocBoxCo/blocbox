@@ -1133,6 +1133,9 @@ html, body {
         padding-left: 0px;
         padding-right: 0px
     }
+    .orangenavbtn {
+        margin-left: 40px;
+    }
 }
 /*-----------------------------------------------------------------------
 * Waitlist Navbar Specific Styles
