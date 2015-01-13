@@ -154,7 +154,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     courier_slugs = {}
     tracking_numbers = {}
     courier_infos = {}
-    trackingdict = {} #this is what we really want - need to do the rest to derive/auto detect the slug to populate this    
+    trackingdict = {} #this is what we really want - need to do the rest to derive/auto detect the slug to populate this   
+    shipping_with_tracking_dict = {} 
     shipments_withtracking = []
     for shipment in shipments_all:
     	  if shipment.tracking:   
@@ -170,6 +171,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             courier_infos[shipment.id] = courier_list
             datadict = api.trackings.get(slug_for_list, tracking_no)
             trackingdict[shipment.id] = datadict.get(u'tracking')
+            shipping_with_tracking_dict[trackingdict[shipment.id]] = shipment
             shipments_withtracking.append(trackingdict[shipment.id])
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
@@ -199,7 +201,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
  				'courier_single': courier_single, 'courier_single_slug': courier_single_slug,
  				'courier_slugs': courier_slugs,
  				'tracking_numbers': tracking_numbers, 'courier_infos': courier_infos,
-        'shipments_withtracking': shipments_withtracking,
+        'shipments_withtracking': shipments_withtracking, 'shipping_with_tracking_dict': shipping_with_tracking_dict,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
