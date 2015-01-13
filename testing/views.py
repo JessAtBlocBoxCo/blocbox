@@ -161,19 +161,19 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
             shipment_tuple = {} 
             shipment_tuple['id'] = shipment.id
-    	  		shipment_tuple['host_id'] = shipment.host_id
-    	  		shipment_tuple['enduser_id']=shipment.enduser_id
-    	  		shipment_tuple['invoice']=shipment.invoice
-    	  		shipment_tuple['trans_table_tracking']=tracking_no
-    	  		shipment_tuple['price']=shipment.price
-    	  		shipment_tuple['dayrangestart']=shipment.dayrangestart
-    	  		shipment_tuple['dayrangeend']=shipment.dayrangeend
-    	  		shipment_tuple['date_requested']=shipment.date_requested_notime
-    	  		shipment_tuple['trans_complete']=shipment.trans_complete
-    	  		shipment_tuple['enduser_rating']=shipment.enduser_rating
-    	  		shipment_tuple['enduser_comments']=shipment.enduser_comments
-    	  		shipment_tuple['enduser_issue']=shipment.enduser_issue
-    	  		#populate the aftership_tracking sub-tuble  
+            shipment_tuple['host_id'] = shipment.host_id
+            shipment_tuple['enduser_id']=shipment.enduser_id
+            shipment_tuple['invoice']=shipment.invoice
+            shipment_tuple['trans_table_tracking']=tracking_no
+            shipment_tuple['price']=shipment.price
+            shipment_tuple['dayrangestart']=shipment.dayrangestart
+            shipment_tuple['dayrangeend']=shipment.dayrangeend
+            shipment_tuple['date_requested']=shipment.date_requested_notime
+            shipment_tuple['trans_complete']=shipment.trans_complete
+            shipment_tuple['enduser_rating']=shipment.enduser_rating
+            shipment_tuple['enduser_comments']=shipment.enduser_comments
+            shipment_tuple['enduser_issue']=shipment.enduser_issue
+            #populate the aftership_tracking sub-tuble  
             shipment_tuple['aftership_tracking']={}         
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
