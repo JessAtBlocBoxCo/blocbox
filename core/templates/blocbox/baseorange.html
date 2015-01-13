@@ -263,18 +263,18 @@
         </div>
 
         {% block navbar %}
-            <nav class="navbar-orange desktoponly" role="navigation">
+        <nav class="navbar-orange desktoponly" role="navigation">
             <div class="row">
                 <!--the "brand" - ultimately we should replace this with styled text rather than an image -->
                 <div class="paddingleft50px">
-                        <a href="#top" class="logo-image"></a>
-                        <a class="col-sm-2 col-sm-offset-1 nav-blocbox-name" href="#"></a>
+                    <a href="#top" class="logo-image"></a>
+                    <a class="col-sm-2 col-sm-offset-1 nav-blocbox-name" href="#"></a>
                     <!--col-->
+                    {% if user.is_authenticated %}
                     <div class="col-sm-3  col-sm-offset-3">
                         <div class="dropdown textright">
                             <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
                             <!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
-                            {% if user.is_authenticated %}
                             <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown">
                                 <!--class="col-sm-3 menubutton"-->
                                 <!--print user name and number of new messages in parentheses -->
@@ -295,62 +295,14 @@
                                 </li>
                                 <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg darkgreytext"></i>&nbsp Sign out</a>
                                 </li>
-
                                 <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
                             </ul>
-
-                            {% else %}
-                            <div class="bbbasenavbar orangenavbtn"><a href="#openModal">Sign in</a>
-                            </div>
-                            <div id="openModal" class="modalDialog">
-                                <div class="">	<a href="#close" title="Close" class="close">X</a>
-                                    <h6 class="ltbluetext paddingsides15px">Sign In</h6>
-                                    <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
-                                        {% csrf_token %} {{ login_form.non_field_errors }}
-                                        <div class="row">
-                                            <div class="col-xs-12 form-group paddingbottom20px">
-                                                {{ user_form.email.errors }}
-                                                <label for="id_email">Email Address</label>-->
-                                                <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
-                                            </div>
-
-                                            <div class="col-xs-12 form-group">
-                                                {{ user_form.password.errors }}
-                                                <label for="id_password1">Password</label>
-                                                <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
-                                            </div>
-                                        </div>
-                                        <div class="row paddingtopbottom10px">
-                                            <div class="col-xs-6 checkbox greytext">
-                                                <label>
-                                                    <input type="checkbox">&nbsp; Remember Me
-                                                </label>
-                                            </div>
-                                            <p class="col-xs-6 textright"><a href="/passwordreset/recover/">Forgot Password?</a>
-                                            </p>
-                                        </div>
-                                        <div class="paddingsides15px">
-                                            <button type="submit" name="submit" class="bluebutton marginsides15px">Sign In</button>
-                                        </div>
-                                        <div class="row">
-                                            <div class="profileboxline100 paddingsides15px margintop20px marginbottom20px"></div>
-                                            <p class="col-xs-6 greytext nopaddingright" style="margin-right: -20px;">Don't have an account?</p>
-                                            <p class="col-xs-3 nopaddingleftright"><a href="/search/">Get Started</a>
-                                            </p>
-                                        </div>
-                                    </form>
-                                    <!--end form line -->
-                                </div>
-                            </div>
-                            {% endif %}
                             <!--end collection of links for toggling -->
                         </div>
                         <!--dropdown -->
                     </div>
-
-                    {% if user.is_authenticated %}
                     <div class="col-sm-2">
                         <!--col containing ddropdown button-->
                         <div class="col-xs-2 col-sm-4">
@@ -435,43 +387,89 @@
                             </div>
                         </div>
                     </div>
-                        {% else %}
-                    <div class="col-sm-1">
-                            <div class="dropdown textcenter">
-                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn whitenavinfobtn" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
-                                    <!--info button-->
-                                    <a class=""></a>
-                                </button>
-                                <!--end info button-->
-                                <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
-                                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
-                                    <!--nav navbar-nav navbar-right-->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
-                                    </li>
-                                    <!--drop down menu items that appears to either user -->
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp Find a BlocBox</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp Support</a>
-                                    </li>
-                                    <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp Love Bloxbox?</a>
-                                    </li>
-                                    <li class="dropdownfont" ole="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp About Blocbox</a>
-                                    </li>
-                                    <li class="dropdownfont" ole="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp Contact Us</a>
-                                    </li>
-                                    <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
+                    {% else %}
+                    <div class="col-sm-3  col-sm-offset-3">
+                        <div class="dropdown textright">
+                            <div class="bbbasenavbar orangenavbtn"><a href="#openModal">Sign in</a>
+                            </div>
+                            <div id="openModal" class="modalDialog">
+                                <div class="">	<a href="#close" title="Close" class="close">X</a>
+                                    <h6 class="ltbluetext paddingsides15px">Sign In</h6>
+                                    <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
+                                        {% csrf_token %} {{ login_form.non_field_errors }}
+                                        <div class="row">
+                                            <div class="col-xs-12 form-group paddingbottom20px">
+                                                {{ user_form.email.errors }}
+                                                <label for="id_email">Email Address</label>-->
+                                                <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
+                                            </div>
+
+                                            <div class="col-xs-12 form-group">
+                                                {{ user_form.password.errors }}
+                                                <label for="id_password1">Password</label>
+                                                <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
+                                            </div>
+                                        </div>
+                                        <div class="row paddingtopbottom10px">
+                                            <div class="col-xs-6 checkbox greytext">
+                                                <label>
+                                                    <input type="checkbox">&nbsp; Remember Me
+                                                </label>
+                                            </div>
+                                            <p class="col-xs-6 textright"><a href="/passwordreset/recover/">Forgot Password?</a>
+                                            </p>
+                                        </div>
+                                        <div class="paddingsides15px">
+                                            <button type="submit" name="submit" class="bluebutton marginsides15px">Sign In</button>
+                                        </div>
+                                        <div class="row">
+                                            <div class="profileboxline100 paddingsides15px margintop20px marginbottom20px"></div>
+                                            <p class="col-xs-6 greytext nopaddingright" style="margin-right: -20px;">Don't have an account?</p>
+                                            <p class="col-xs-3 nopaddingleftright"><a href="/search/">Get Started</a>
+                                            </p>
+                                        </div>
+                                    </form>
+                                    <!--end form line -->
+                                </div>
+                            </div>
+                            <div class="col-sm-1">
+                                <div class="dropdown textcenter">
+                                    <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn whitenavinfobtn" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                        <!--info button-->
+                                        <a class=""></a>
+                                    </button>
+                                    <!--end info button-->
+                                    <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
+                                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
+                                        <!--nav navbar-nav navbar-right-->
+                                        <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'>How It Works</a>
+                                        </li>
+                                        <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'>Join Waitlist</a>
+                                        </li>
+                                        <!--drop down menu items that appears to either user -->
+                                        <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp Find a BlocBox</a>
+                                        </li>
+                                        <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp Support</a>
+                                        </li>
+                                        <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp Love Bloxbox?</a>
+                                        </li>
+                                        <li class="dropdownfont" ole="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp About Blocbox</a>
+                                        </li>
+                                        <li class="dropdownfont" ole="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp Contact Us</a>
+                                        </li>
+                                        <!-- SAY HELLO AND/OR CONTACT US - DECIDE IF WE WANT TO PUT /HOW TO PUT BACK IN          
 <li> <a> <form method="post" action="mailto:admin@blocbox.co"> <button>Say Hello!</button> </form> </a> </li> 
 <li><a href='/contactus'>Contact Us</a></li>  -->
-                                </ul>
-                                <!--end collection of links for toggling -->
+                                    </ul>
+                                    <!--end collection of links for toggling -->
+                                </div>
                             </div>
+                        </div>
                     </div>
-                        {% endif %}
+                    {% endif %}
                 </div>
                 <!--row containing full navbar-->
-                </div>
+            </div>
         </nav>
         <!--nav-->
 
@@ -701,8 +699,8 @@
         {% endblock %}
 
 
-        </div>
-        <!--id=bbpage -->
+    </div>
+    <!--id=bbpage -->
 </body>
 
 </html>
