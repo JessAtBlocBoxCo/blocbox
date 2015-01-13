@@ -127,7 +127,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     couriers = api.couriers.all.get()
     #ISSU - WHAT ABOUT WHEN I DONT KNOW THE SLUG??
-    number_to_track = '9374869903500264240007' #this is DHL-global-mail
+    number_to_track = '591099350463' #this is DHL-global-mail
     slug_to_track = 'dhl-global-mail'
     number_get_tracking = '591099350463' #an amazon order i have in process, fedex
     slug_get_tracking = 'fedex' #i am entering a fedex test number
@@ -147,7 +147,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     trackingdict_single = datadict_single.get(u'tracking') #this gets the value of the TRACKING dictionary - which contains all of the fields. yay!!!
     datadict_all = api.trackings.get()
     trackingdict_all = datadict_all.get(u'trackings')
-    courier_single_allfields = api.couriers.detect.post(tracking=dict(tracking_number='9374869903500264240007')) # api.Courier.detect(number_to_track)
+    courier_single_allfields = api.couriers.detect.post(tracking=dict(tracking_number='591099350463')) # api.Courier.detect(number_to_track)
     courier_single_list = courier_single_allfields.get(u'couriers')
     courier_single = courier_single_list[0]
     courier_single_slug = courier_single.get(u'slug')
