@@ -155,15 +155,17 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     courier_single = courier_single_list[0]
     courier_single_slug = courier_single.get(u'slug')
     courier_slugs = {}
+    tracking_numbers = {}
     for shipment in shipments_all:
     	  if shipment.tracking == None:
     	  	  courier_slugs[shipment.id] = None
     	  else:
             tracking_no = shipment.tracking
-            courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
-            courier_list = courier_allfields.get(u'couriers')
-            courier = courier_list[0]
-            courier_slugs[shipment.id] = courier.get(u'slug')        
+            tracking_numbers[shipment.id] = tracking_no
+            #courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
+            #courier_list = courier_allfields.get(u'couriers')
+            #courier = courier_list[0]
+            #courier_slugs[shipment.id] = courier.get(u'slug')        
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
     #To see all tracking fields print the variable track_allfields
@@ -191,6 +193,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
  				'datadict_all': datadict_all, 'trackingdict_all': trackingdict_all,
  				'courier_single': courier_single, 'courier_single_slug': courier_single_slug,
  				'courier_slugs': courier_slugs,
+ 				'tracking_numbers': tracking_numbers,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
