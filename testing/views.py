@@ -158,9 +158,9 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     shipments_with_tracking = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
     for shipment in shipments_all:
     	  if shipment.tracking:   
-    	  	  tracking_no = str(shipment.tracking) #the str function removes the preceding u'
-    	  	  shipment_tuple = {} 
-    	  		shipment_tuple['id'] = shipment.id
+            tracking_no = str(shipment.tracking) #the str function removes the preceding u'
+            shipment_tuple = {} 
+            shipment_tuple['id'] = shipment.id
     	  		shipment_tuple['host_id'] = shipment.host_id
     	  		shipment_tuple['enduser_id']=shipment.enduser_id
     	  		shipment_tuple['invoice']=shipment.invoice
