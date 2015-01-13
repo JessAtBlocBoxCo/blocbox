@@ -152,7 +152,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #get_courier = api.tracking.get(tracking_number='9374869903500264240007')
     courier_single_allfields = api.couriers.detect.post(tracking=dict(tracking_number='9374869903500264240007')) # api.Courier.detect(number_to_track)
     courier_single_list = courier_single_allfields.get(u'couriers')
-    courier_single = courier_single_list.0
+    courier_single = courier_single_list[0]
     #for shipment in shipments_all:
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
