@@ -629,10 +629,19 @@ footer {
     border: 2px solid #ffffff;
     padding: 2px 20px 2px 20px;
     margin-top: 15px;
+    margin-left: 60px;
     cursor: pointer;
     border-radius: 5px;
     white-space: nowrap;
     width: 120px;
+}
+.orangenavbtn:hover {
+    background-color: #ffffff;
+    color: rgb(255, 195, 0);
+}
+.orangenavbtn:focus {
+    background-color: #ffffff;
+    color: rgb(255, 195, 0);
 }
 .orangenavbtn > a {
 color: white;
