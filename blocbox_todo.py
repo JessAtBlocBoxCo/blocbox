@@ -1,4 +1,6 @@
 """jess dashboard to do"""
+- make the transaciton table update after theyve gone to paypal
+- add a "Title" field
 - update the transactions model - so it just grabs the slug -a nd then gets all of the delivery information AFTER CONFIRM/COMPLETED
 - so edit the "received package" fucntion to modify trans table
 
@@ -19,6 +21,7 @@
 
 #test tracking nos to add
 9449009699938097189973 - not sure, johns
+9405509699939563285640 - USPS priority, already arrived - wnat to see if the type is updated
 591099350463 - fedex, will arrive today
 9374869903500264240007 - DHL global mail, arrive tomorro
 1Z2W6185YW01658200  -UPS surepost, delivered today

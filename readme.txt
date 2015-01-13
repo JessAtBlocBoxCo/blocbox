@@ -156,9 +156,11 @@ The URLs for this site, and the corresponding files are as follows:
 	
 			ISSUE: this is creating transactions prior to the submit button being pressed - i want the transactino to only be created once they've gon to paypal
 			
-
+	
 			Payment table entires are created by that view, which calls the blocbox.paypal.standard.ipn.views.ipn view, when the "pay with paypal" puttin is submitted
 			
+			PAYPAL IPN BASE TABLE IS AT: paypal.standard.models.py - cann add fields there
+						
 			NOTES ON THE PAYMENT PAGE (was formerly on the html page)
         <p>There is currently no form at blocbox/payment - there a form at blocbox.co/payment/ipn and a PRO form at blocbox.co/payment/pro</p>
         <p>The button image was intially a really disgusting 'buy it now' picture with credit cards I updated it to link to your paypal image but i modified the CSS paypal style bcit was too wide relative to height and the margins weren't working within a form.</p>
