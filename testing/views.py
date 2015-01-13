@@ -156,7 +156,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     courier_single_slug = courier_single.get(u'slug')
     courier_slugs = {}
     tracking_numbers = {}
-    courier_lists_tests = {}
+    courier_allfields_test = {}
+    courier_lists_test = {}
     for shipment in shipments_all:
     	  if shipment.tracking:
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
