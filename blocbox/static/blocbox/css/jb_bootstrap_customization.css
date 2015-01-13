@@ -627,7 +627,7 @@ color: white;
 .bbbasenavbarbtn > a {
     color: black;
 }
-.bbbasenavbarinbox {
+.navinboxblue {
     background-color: rgb(255, 255, 255);
     font-size: 1.600em;
     font-weight: 400;
@@ -638,27 +638,32 @@ color: white;
     border: 0;
     border-radius: 0px;
 }
-.bbbasenavbarinbox:hover {
+.navinboxblue:hover {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+.navinboxblue:focus {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
+}
+.navinboxwhite {
     background-color: transparent;
     font-size: 1.600em;
     font-weight: 400;
-    color: rgb(255, 255, 255);
+    color: rgb(41, 128, 185);
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
     border: 0;
     border-radius: 0px;
 }
-.bbbasenavbarinbox:focus {
+.navinboxwhite:hover {
     background-color: transparent;
-    font-size: 1.600em;
-    font-weight: 400;
     color: rgb(255, 255, 255);
-    padding-left: 10px;
-    padding-right: 10px;
-    cursor: pointer;
-    border: 0;
-    border-radius: 0px;
+}
+.navinboxwhite:focus {
+    background-color: transparent;
+    color: rgb(255, 255, 255);
 }
 .whitenavinfobtn {
     background-image: url('/static/blocbox/images/info-button-white-outline.png');
@@ -726,7 +731,7 @@ color: white;
     text-align: center;
     */
 }
-.bbbasenavbarring {
+.navringblue {
     background-image: url('/static/blocbox/images/message-button.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -738,7 +743,7 @@ color: white;
     text-align: center;
     */
 }
-.bbbasenavbarring:hover {
+.navringblue:hover {
     background-image: url('/static/blocbox/images/message-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
@@ -750,7 +755,43 @@ color: white;
     text-align: center;
     */
 }
-.bbbasenavbarring:focus {
+.navringblue:focus {
+    background-image: url('/static/blocbox/images/message-button-active.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 37px;
+    cursor: pointer;
+    vertical-align: middle;
+    /*
+    vertical-align: middle;
+    text-align: center;
+    */
+}
+.navringwhite {
+    background-image: url('/static/blocbox/images/message-button.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 37px;
+    cursor: pointer;
+    vertical-align: middle;
+    /*
+    vertical-align: middle;
+    text-align: center;
+    */
+}
+.navringwhite:hover {
+    background-image: url('/static/blocbox/images/message-button-active.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 37px;
+    cursor: pointer;
+    vertical-align: middle;
+    /*
+    vertical-align: middle;
+    text-align: center;
+    */
+}
+.navringwhite:focus {
     background-image: url('/static/blocbox/images/message-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
