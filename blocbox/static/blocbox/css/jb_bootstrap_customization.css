@@ -1901,9 +1901,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .font10pxmobile {
         font-size: 10px;
     }
-    .navbarlogo {
-        display: none;
-    }
     .navbar {
         margin-top: 0px;
         height: 40px;
