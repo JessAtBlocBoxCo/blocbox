@@ -107,10 +107,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 c_list_first = c_list[0]
                 slug_detected = str(c_list_first.get(u'slug'))
                 # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
-    						api.trackings.post(tracking=dict(
+                api.trackings.post(tracking=dict(
     						    slug=slug_detected, tracking_number=tracking_no_to_add,  
-    						    title="Shipment {{trans.id}}: User {{enduser.email}} to Host {{trans.host.email}}", order_id={{trans.id}} )) 
-    						api.trackings.post(tracking=dict(slug=  	    
+    						    title="Shipment {{trans.id}}: User {{enduser.email}} to Host {{trans.host.email}}", order_id={{trans.id}} )) 	    
             else: 
     	          print tracking_form.errors 
         else:
