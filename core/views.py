@@ -196,6 +196,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipment_tuple['enduser_comments']=shipment.enduser_comments
         shipment_tuple['enduser_issue']=shipment.enduser_issue
         shipment_tuple['payment_option']=shipment.payment_option
+        shipment_tupele['shipment_courier']=shipment.shipment_courier #grabbed from aftership but made all caps
         shipment_tuple['aftership']={}  
         if shipment.on_aftership: 
             #populate the aftership_tracking sub-tuble                 
