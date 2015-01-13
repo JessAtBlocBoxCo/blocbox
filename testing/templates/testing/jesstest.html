@@ -31,8 +31,8 @@
 						<h3>Loop through shipments_with_tracking </h3>
 							{% for shipment in shipments_with_tracking %}
 									<p> Tracking Information for Shipment ID {{shipment.id}} 
-													from {{shipment.enduser.email}} (User ID {{ shipment.enduser.id }} )  
-													to {{shipment.host.email }} (User ID {{shipment.host.id }}: <br>
+													from {{shipment.enduser.email}} (UserID {{ shipment.enduser.id }} )  
+													to {{shipment.host.email }} (UserID {{shipment.host.id }}: <br>
 											Aftership Tracking Number: {{ shipment.aftership.tracking_number }}; Title: {{ shipment.aftership.title }} <br>
 											Tag: {{ shipment.aftership.tag }}; Created At: {{ shipment.aftership.created_at }}; Updated At: {{ shipment.aftership.updated_at }}, <br>
 											Source for Tracking Info: {{ shipment.aftership.source }}; Slug: {{ shipment.aftership.slug }}; <br>

@@ -156,25 +156,25 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     courier_infos = {}
     trackingdict = {}     
     shipments_with_tracking = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
-    for shipment in shipments_all:
-    	  if shipment.tracking:   
-            tracking_no = str(shipment.tracking) #the str function removes the preceding u'
-            shipment_tuple = {} 
-            shipment_tuple['id'] = shipment.id
-            shipment_tuple['host'] = shipment.host
-            shipment_tuple['enduser']=shipment.enduser
-            shipment_tuple['invoice']=shipment.invoice
-            shipment_tuple['trans_table_tracking']=tracking_no
-            shipment_tuple['price']=shipment.price
-            shipment_tuple['dayrangestart']=shipment.dayrangestart
-            shipment_tuple['dayrangeend']=shipment.dayrangeend
-            shipment_tuple['date_requested']=shipment.date_requested_notime
-            shipment_tuple['trans_complete']=shipment.trans_complete
-            shipment_tuple['enduser_rating']=shipment.enduser_rating
-            shipment_tuple['enduser_comments']=shipment.enduser_comments
-            shipment_tuple['enduser_issue']=shipment.enduser_issue
-            #populate the aftership_tracking sub-tuble  
-            shipment_tuple['aftership']={}         
+    for shipment in shipments_all:  
+        tracking_no = str(shipment.tracking) #the str function removes the preceding u'
+        shipment_tuple = {} 
+        shipment_tuple['id'] = shipment.id
+        shipment_tuple['host'] = shipment.host
+        shipment_tuple['enduser']=shipment.enduser
+        shipment_tuple['invoice']=shipment.invoice
+        shipment_tuple['trans_table_tracking']=tracking_no
+        shipment_tuple['price']=shipment.price
+        shipment_tuple['dayrangestart']=shipment.dayrangestart
+        shipment_tuple['dayrangeend']=shipment.dayrangeend
+        shipment_tuple['date_requested']=shipment.date_requested_notime
+        shipment_tuple['trans_complete']=shipment.trans_complete
+        shipment_tuple['enduser_rating']=shipment.enduser_rating
+        shipment_tuple['enduser_comments']=shipment.enduser_comments
+        shipment_tuple['enduser_issue']=shipment.enduser_issue
+        shipment_tuple['aftership']={}  
+        if shipment.tracking: 
+            #populate the aftership_tracking sub-tuble                    
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier_for_list = courier_list[0]
@@ -184,8 +184,10 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             tracking_numbers[shipment.id] = str(tracking_no)
             courier_infos[shipment.id] = courier_list
             datadict = api.trackings.get(slug_for_list, tracking_no)
-            shipment_tuple['aftership'] = datadict.get(u'tracking')   
-            shipments_with_tracking.append(shipment_tuple)           
+            shipment_tuple['aftership'] = datadict.get(u'tracking')             
+        else:
+            shipments_with_tracking['aftership']=None
+        shipments_with_tracking.append(shipment_tuple)
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
     #To see all tracking fields print the variable track_allfields
