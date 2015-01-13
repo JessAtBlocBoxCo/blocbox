@@ -156,24 +156,6 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     time = datetime.datetime.time(date)
     invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
-    #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
-    paypal_dict = {
-        "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
-        "amount": amount, #Amount of the purchase - try to pass this as an argument
-        "item_name": favortype,
-        "quantity": quantity,
-        "cbt": returnmessage, #Sets value for return to merchant button
-        "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
-        "invoice": invoice,
-        #Need to add a filed fo rhost_emai, figuore out how to flag "payment sent"
-        #Receiver email:  	Primary email address of the payment recipient (that is, the merchant). 
-        #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
-        "custom": enduser.email, #this is serving as the User Email field
-        "notify_url": "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/",
-        "return_url": "http://www.blocbox.co/shippackage/host" + str(host.id) +"/",
-        "cancel_return": "http://www.blocbox.co/dashboard/",
-    }    
-    form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #Update transaction table
     datenow = datetime.datetime.now()
     trans = Transaction() 
@@ -193,6 +175,25 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         trans.deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
         trans.payment_option = paymentoption
     trans.save()
+    #NEXT, add the paypal fields
+    #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
+    paypal_dict = {
+        "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
+        "amount": amount, #Amount of the purchase - try to pass this as an argument
+        "item_name": favortype,
+        "quantity": quantity,
+        "cbt": returnmessage, #Sets value for return to merchant button
+        "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
+        "invoice": invoice,
+        #Need to add a filed fo rhost_emai, figuore out how to flag "payment sent"
+        #Receiver email:  	Primary email address of the payment recipient (that is, the merchant). 
+        #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
+        "custom": enduser.email, #this is serving as the User Email field
+        "notify_url": "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/",
+        "return_url": "http://www.blocbox.co/shippackage/host" + str(host.id) +"/",
+        "cancel_return": "http://www.blocbox.co/dashboard/",
+    }    
+    form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
