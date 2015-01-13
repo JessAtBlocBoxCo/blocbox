@@ -1895,6 +1895,15 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .mobilehide {
         display: none;
     }
+    .orangebars {
+        color: #ffffff;
+    }
+    .orangebars:hover {
+        color: rgb(255, 195, 0);
+    }
+    .orangebars:focus {
+        color: rgb(255, 195, 0);
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -2035,6 +2044,15 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .desktoponly {
         display: none;
+    }
+    .orangebars {
+        color: #ffffff;
+    }
+    .orangebars:hover {
+        color: rgb(255, 195, 0);
+    }
+    .orangebars:focus {
+        color: rgb(255, 195, 0);
     }
 }
 
