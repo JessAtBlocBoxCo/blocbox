@@ -117,16 +117,16 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     						    custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
     						    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
     						    )) 	 
-    						#Get the information from the API (is it posted yet?)
-                datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
-                trackingdict_added = datadict_added.get(u'tracking')
-            		#Save this information to trans table
-    						trans.on_aftership = True
-    						trans.shipment_courier = slug_detected
-    						trans.tracking_info_tuple_initial = trackingdict_added
-                trans.expected_delivery = trackingdict_added.get(u'expected_delivery')
-                trans.shipment_type = trackingdict_added.get(u'shipment_type')
-    						trans.save()
+                    #Get the information from the API (is it posted yet?)
+                    datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
+                    trackingdict_added = datadict_added.get(u'tracking')
+                    #Save this information to trans table
+                    trans.on_aftership = True
+                    trans.shipment_courier = slug_detected
+                    trans.tracking_info_tuple_initial = trackingdict_added
+                    trans.expected_delivery = trackingdict_added.get(u'expected_delivery')
+                    trans.shipment_type = trackingdict_added.get(u'shipment_type')
+                    trans.save()
             else: #if tracking form is not valid 
     	          print tracking_form.errors 
     		    #Now, get the tracking info from the API
