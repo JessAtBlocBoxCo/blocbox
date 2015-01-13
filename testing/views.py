@@ -159,7 +159,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  if shipment.tracking == None:
     	  	  courier_slugs[shipment.id] = None
     	  else:
-    	  	  tracking_no = shipment.tracking
+    	      tracking_no = shipment.tracking
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier = courier_list[0]
