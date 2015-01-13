@@ -148,7 +148,6 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     trackingdict = {}
     datadict_all = api.trackings.get()
     trackingdict_all = datadict_all.get(u'trackings')
-
     #for shipment in shipments_all:
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
