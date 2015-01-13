@@ -197,7 +197,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
  				'datadict_all': datadict_all, 'trackingdict_all': trackingdict_all,
  				'courier_single': courier_single, 'courier_single_slug': courier_single_slug,
  				'courier_slugs': courier_slugs,
- 				'tracking_numbers': tracking_numbers,
+ 				'tracking_numbers': tracking_numbers, 'courier_lists_test': courier_lists_test,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
