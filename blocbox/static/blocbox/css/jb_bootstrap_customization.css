@@ -623,16 +623,17 @@ footer {
 }
 .orangenavbtn {
     background-color: transparent;
-    font-size: 1.900em;
+    font-size: 1.700em;
     font-weight: 300;
     color: white;
     border: 2px solid #ffffff;
     padding-left: 10px;
     padding-right: 10px;
+    margin: auto;
     cursor: pointer;
     border-radius: 5px;
     white-space: nowrap;
-    width: 100px;
+    width: 120px;
 }
 .orangenavbtn > a {
 color: white;
