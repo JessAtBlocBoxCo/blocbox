@@ -159,6 +159,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     for shipment in shipments_all:
     	  if shipment.tracking == None:
     	  	  courier_slugs[shipment.id] = None
+    	  	  tracking_numbers[shipment.id] = None
     	  else:
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
             tracking_numbers[shipment.id] = str(tracking_no)
