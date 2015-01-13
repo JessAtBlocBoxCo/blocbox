@@ -717,17 +717,17 @@ color: white;
     background-image: url('/static/blocbox/images/start-button-active.png');
 }
 .navstartwht {
-    background-image: url('/static/blocbox/images/start-button.png');
+    background-image: url('/static/blocbox/images/start-button-wht.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 40px;
     cursor: pointer;
 }
 .navstartwht:hover {
-    background-image: url('/static/blocbox/images/start-button-active.png');
+    background-image: url('/static/blocbox/images/start-button-wht-active.png');
 }
 .navstartwht:focus {
-    background-image: url('/static/blocbox/images/start-button-active.png');
+    background-image: url('/static/blocbox/images/start-button-wht-active.png');
 }
 .navringblue {
     background-image: url('/static/blocbox/images/message-button.png');
