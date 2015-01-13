@@ -147,7 +147,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     trackingdict_single = datadict_single.get(u'tracking') #this gets the value of the TRACKING dictionary - which contains all of the fields. yay!!!
     trackingdict = {}
     datadict_all = api.trackings.get()
-    datadict_single_onlytracking = api.trackings.get("",number_get_tracking)
+    trackingdict_all = datadict_all.get(u'trackings')
+    tracking_slug = 
     #for shipment in shipments_all:
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
@@ -173,7 +174,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'here': quote(request.get_full_path()),
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 'trackingdict_single': trackingdict_single, 'trackingdict': trackingdict, 
- 				'datadict_all': datadict_all,
+ 				'datadict_all': datadict_all, 'trackingdict_all': trackingdict_all,
  				'datadict_single_onlytracking': datadict_single_onlytracking,
     }) 
 
