@@ -87,6 +87,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
     shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
     otherfavors_all = transactions_all.exclude(favortype="package")
+    api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
         hostonly=connections_all[0].host_user
@@ -163,7 +164,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     else:
         compose_form = None        
     #AFTERSHIP STUFF: GET THE SHIPMENT_TRACKING_TUPLE
-    api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     shipments_with_tracking = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
     for shipment in shipments_all:  
         tracking_no = str(shipment.tracking) #the str function removes the preceding u'
