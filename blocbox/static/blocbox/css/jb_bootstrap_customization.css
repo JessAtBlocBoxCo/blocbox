@@ -643,6 +643,18 @@ footer {
     background-color: #ffffff;
     color: rgb(255, 195, 0);
 }
+.orangenavbtn > a {
+color: white;
+}
+.orangenavbtn > a:hover {
+    color: rgb(255, 195, 0);
+}
+.orangenavbtn > a:focus {
+    color: rgb(255, 195, 0);
+}
+.bbbasenavbarbtn > a {
+    color: black;
+}
 .navinboxblue {
     background-color: rgb(255, 255, 255);
     font-size: 1.600em;
