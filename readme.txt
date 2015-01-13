@@ -148,11 +148,23 @@ The URLs for this site, and the corresponding files are as follows:
 			blocbox.co/payment/ipn/notify is the notify_url
 			Paypal app documentation: /blocbox/paypal/documentation/README.md -- i am annotating that documentation
 			
+			Transaction table entries are creted by the view blocbox.paypal.standard.ipn.views.ask_for_money
+			this view is called by two URLS, both defined in blocbox.billing.urls.py
+						shipment: blocbox.co/payment/host<host_id>/days<dayrangestart>to<dayrangeend>/ipn/package/<paymentoption>
+						other favor: blocbox.co/payment/hos<host_id>/ipn/<favortype>/<paymentoption>
+	
+	
+			ISSUE: this is creating transactions prior to the submit button being pressed - i want the transactino to only be created once they've gon to paypal
+			
+
+			Payment table entires are created by that view, which calls the blocbox.paypal.standard.ipn.views.ipn view, when the "pay with paypal" puttin is submitted
+			
 			NOTES ON THE PAYMENT PAGE (was formerly on the html page)
         <p>There is currently no form at blocbox/payment - there a form at blocbox.co/payment/ipn and a PRO form at blocbox.co/payment/pro</p>
         <p>The button image was intially a really disgusting 'buy it now' picture with credit cards I updated it to link to your paypal image but i modified the CSS paypal style bcit was too wide relative to height and the margins weren't working within a form.</p>
         <p>This currently links to a 'Sandbox' paypal account, a cool development feature that allows you to link to fake paypal accounts</p>
-						
+			
+		
 
 4D. blocbox.co/shippackage (template: core/templates/shippackage.html)
 

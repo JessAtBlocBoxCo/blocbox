@@ -111,6 +111,7 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 (IPN) but you may know it as [webhooks](http://www.webhooks.org/). This method
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
+
 def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpackage", dayrangestart=None, dayrangeend=None): #default amount is 2.00, default host is John
     enduser = request.user
     if host_id:
@@ -143,7 +144,7 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     transcount = PayPalIPN.objects.filter(receiver_email=host.email).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
     date = datetime.datetime.now()
     time = datetime.datetime.time(date)
-    invoice = "h" + str(host.id) + "u" + str(enduser.id) + "n" +str(transcount) +"d" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
+    invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
