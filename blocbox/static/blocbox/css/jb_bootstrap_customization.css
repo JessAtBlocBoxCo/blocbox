@@ -716,32 +716,25 @@ color: white;
     background-size: contain;
     width: 37px;
     cursor: pointer;
-    /*
-    vertical-align: middle;
-    text-align: center;
-    */
 }
 .bbbasenavbarstart:hover {
     background-image: url('/static/blocbox/images/start-button-active.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 37px;
-    cursor: pointer;
-    /*
-    vertical-align: middle;
-    text-align: center;
-    */
 }
 .bbbasenavbarstart:focus {
     background-image: url('/static/blocbox/images/start-button-active.png');
+}
+.navstartwht {
+    background-image: url('/static/blocbox/images/start-button.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 37px;
     cursor: pointer;
-    /*
-    vertical-align: middle;
-    text-align: center;
-    */
+}
+.navstartwht:hover {
+    background-image: url('/static/blocbox/images/start-button-active.png');
+}
+.navstartwht:focus {
+    background-image: url('/static/blocbox/images/start-button-active.png');
 }
 .navringblue {
     background-image: url('/static/blocbox/images/message-button.png');
@@ -783,7 +776,7 @@ color: white;
     background-image: url('/static/blocbox/images/message-button.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 37px;
+    width: 40px;
     cursor: pointer;
     vertical-align: middle;
     /*
@@ -795,7 +788,7 @@ color: white;
     background-image: url('/static/blocbox/images/message-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 37px;
+    width: 40px;
     cursor: pointer;
     vertical-align: middle;
     /*
@@ -807,7 +800,7 @@ color: white;
     background-image: url('/static/blocbox/images/message-button-active.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 37px;
+    width: 40px;
     cursor: pointer;
     vertical-align: middle;
     /*
