@@ -162,7 +162,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipment_tuple['host'] = shipment.host
         shipment_tuple['enduser']=shipment.enduser
         shipment_tuple['invoice']=shipment.invoice
-        shipment_tuple['trans_table_tracking']=tracking_no
+        shipment_tuple['tracking']=tracking_no
         shipment_tuple['price']=shipment.price
         shipment_tuple['dayrangestart']=shipment.dayrangestart
         shipment_tuple['dayrangeend']=shipment.dayrangeend
