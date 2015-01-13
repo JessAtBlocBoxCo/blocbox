@@ -174,7 +174,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             shipment_tuple['enduser_comments']=shipment.enduser_comments
             shipment_tuple['enduser_issue']=shipment.enduser_issue
             #populate the aftership_tracking sub-tuble  
-            shipment_tuple['aftership_tracking']={}         
+            shipment_tuple['aftership']={}         
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier_for_list = courier_list[0]
@@ -184,7 +184,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             tracking_numbers[shipment.id] = str(tracking_no)
             courier_infos[shipment.id] = courier_list
             datadict = api.trackings.get(slug_for_list, tracking_no)
-            shipment_tuple['aftership_tracking'] = datadict.get(u'tracking')   
+            shipment_tuple['aftership'] = datadict.get(u'tracking')   
             shipments_with_tracking.append(shipment_tuple)           
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
