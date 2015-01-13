@@ -181,6 +181,20 @@ The URLs for this site, and the corresponding files are as follows:
 6D. Schedul tAgs: schedule.template.scheduletags.py - has lots of the naming convetions for referencing scheduling tags
 
 timezones: to see them all, python > print.pytz.all_timezones
+
+*-----------------------------------------------------------------------*
+7. AFTERSHIP STUFF
+*-----------------------------------------------------------------------*
+- API key is in settings.py
+- https://www.aftership.com/trackings - is the list of trackings, our account is admin@blocbox.co pwd 123G**
+- need to add trackings from dashboard or from other programs that post it to afteership - if add from admin, wont register
+- what i'm trying to do when tracking numbe ris added (core.views.dashboard defines this) is add it to the aftership site AND
+		grab the afterhsip data and put it into our own tracking table. The issue is that the aftership API is slow.. doesn't immediately update-
+		so it doesn't immediately update shipment_type of expected_delivery or 
+- so, need a way to automatically update our transaction table with the afters hip stuff OR.. we just always pull form afterhip API and dont update our trans table
+- isntead, dont update trans tablw tih all that information immediately -
+- but, once transaction is completed - grab updated data from aftership so we can store it
+
 *-----------------------------------------------------------------------*
 END: DJANGO ADMIN SITES
 *-----------------------------------------------------------------------*

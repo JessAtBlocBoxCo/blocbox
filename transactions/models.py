@@ -42,11 +42,14 @@ class Transaction(models.Model):
     #Report an issue
     enduser_issue = models.CharField("EndUser Issue", max_length=300, blank=True, null=True)
     payment_option = models.CharField("Payment Option", max_length=30, blank=True, null=True)
-    #Aftership Variables - just grab the ones that are constant
+    #Aftership Variables grabbed iitially
     on_aftership = models.BooleanField("On Aftership", default=False)
-    tracking_info_tuple = models.CharField("Aftership - All Info", max_length=2000, blank=True, null=True)
     shipment_courier = models.CharField("Courier", max_length=20, blank=True, null=True)
-    expected_delivery = models.DateTimeField(null=True, blank=True)
+    tracking_info_tuple_inital = models.CharField("Aftership Tracking Info Tuple When First Added", max_length=2000, blank=True, null=True)
+    expected_delivery = models.DateTimeField(null=True, blank=True) #iniital
+    shipment_type = models.CharField("Shipment Type on Aftership", max_length=30, blank=True, null=True) #Initial
+    #Aftership variables grabbed after confirmed
+    tracking_info_tuple_confirmd = models.CharField("Aftership Tracking Info Tuple Upon Completion", max_length=2000, blank=True, null=True)
 
 
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
