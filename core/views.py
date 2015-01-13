@@ -99,7 +99,18 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             tracking_form  = TrackingForm(request.POST, instance=trans)
             if tracking_form.is_valid(): 
                 trackadd = tracking_form.save()          
-                trackadd.save()   	     
+                trackadd.save() 
+                tracking_no_to_add = str(trans.tracking) #retrieve the tracking number we just added to the transaction table
+                #Get the courier information
+                c_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no_to_add))                
+                c_list = c_allfields.get(u'couriers')
+                c_list_first = c_list[0]
+                slug_detected = str(c_list_first.get(u'slug'))
+                # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
+    						api.trackings.post(tracking=dict(
+    						    slug=slug_detected, tracking_number=tracking_no_to_add,  
+    						    title="Shipment {{trans.id}}: User {{enduser.email}} to Host {{trans.host.email}}", order_id={{trans.id}} )) 
+    						api.trackings.post(tracking=dict(slug=  	    
             else: 
     	          print tracking_form.errors 
         else:
@@ -177,16 +188,10 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             #populate the aftership_tracking sub-tuble                    
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
-            courier_for_list = courier_list[0]
-            slug_for_list_u = courier_for_list.get(u'slug')
-            slug_for_list = str(slug_for_list_u)
-            courier_slugs = {}
-            tracking_numbers = {}
-            courier_infos = {}
-            courier_slugs[shipment.id] = slug_for_list 
-            tracking_numbers[shipment.id] = str(tracking_no)
-            courier_infos[shipment.id] = courier_list
-            datadict = api.trackings.get(slug_for_list, tracking_no)
+            courier_list_first = courier_list[0]
+            slug_to_detect_u = courier_list_first.get(u'slug')
+            slug_to_detect = str(slug_to_detect_u)
+            datadict = api.trackings.get(slug_to_detect, tracking_no)
             shipment_tuple['aftership'] = datadict.get(u'tracking')             
         else:
             shipment_tuple['aftership']=None
