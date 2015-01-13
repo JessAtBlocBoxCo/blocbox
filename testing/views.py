@@ -162,7 +162,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             courier_list = courier_allfields.get(u'couriers')
             courier_for_list = courier_list[0]
             slug_for_list_u = courier_for_list.get(u'slug')
-            slug_for_list = str(slug_for_list)
+            slug_for_list = str(slug_for_list_u)
             courier_slugs[shipment.id] = slug_for_list 
             tracking_numbers[shipment.id] = str(tracking_no)
             courier_infos[shipment.id] = courier_list
