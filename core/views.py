@@ -38,6 +38,9 @@ from django.contrib import messages
 from django_messages.models import Message
 from django_messages.forms import ComposeForm
 from django_messages.utils import format_quote, get_user_model, get_username_field
+#aftership
+import aftership
+AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 
 #Write a custom template filter:
 from django.template.defaulttags import register
@@ -147,9 +150,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         else:
     		    compose_form = ComposeForm(recipient_filter=None)
     else:
-        compose_form = None
-        
-    #GET THE SHIPMENT_TRACKING_TUPLE
+        compose_form = None        
+    #AFTERSHIP STUFF: GET THE SHIPMENT_TRACKING_TUPLE
+    api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     shipments_with_tracking = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
     for shipment in shipments_all:  
         tracking_no = str(shipment.tracking) #the str function removes the preceding u'
