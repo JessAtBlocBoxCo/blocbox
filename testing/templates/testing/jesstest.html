@@ -28,11 +28,11 @@
 			<div class="row">
 				<h2>AFTERSHIP API</h2>
 					 	
-					 	<p> Delme - show shipments_all is it a list? {{ shipments_all }} </p>
+					 	<p> List of shipment_withtracking_id {{ shipment_withtracking_id }} </p>
 					 <h3>Loop Through EAch of the Dictionary Tuples</h3>
 					 
-					 			{% for shipment in shipments_all %}
-					 					<p> {{ trackingdict.shipment }} </p>
+					 			{% for id in shipment_withtracking_id %}
+					 					<p> {{ trackingdict.id }} </p>
 					 			{% endfor %}
 					 
 					 <h3>Tracking Dictionary Tuple - full Tuples</h3>
