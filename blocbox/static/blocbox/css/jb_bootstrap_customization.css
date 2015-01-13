@@ -1098,7 +1098,7 @@ html, body {
         background-size: contain;
         height: 110px;
         width: 160px;
-        top: 10px;
+        top: 15px;
         left: 6%;
         z-index: 100000;
     }
