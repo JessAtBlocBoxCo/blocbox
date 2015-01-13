@@ -1017,7 +1017,7 @@ html, body {
 
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
     background-color: rgb(255, 195, 0);
-    color: #ffffff;
+    color: rgb(255, 195, 0);
 }
 .orangenavbtn {
     margin-left: 20px;
