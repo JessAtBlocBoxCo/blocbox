@@ -1,4 +1,5 @@
 """jess to do"""
+- figure out a fix to what happens when there is not a tracking on aferhip - it should go thte django error page
 - style the completed transactions section
 - make the completed transacitons move to the completed section
  - dashbarod - fix the "message" link on current shipments
