@@ -28,13 +28,21 @@
 			<div class="row">
 				<h2>AFTERSHIP API</h2>
 					 	
-					 	<p>Tracking Dictionary For each Shipment with a Tracking Number: {{ trackingdict }}</p>
-					 	<p>Dictionary of courier slugs {{ courier_slugs }} </p>
-						<p>List of Courier Infos (all fields): {{ courier_infos }} </p>
-					 	<p>Tracking numbers {{ tracking_numbers }} </p>
-					 	<p>Courier_single {{ courier_single }} </p>
-					 	<p>Courier single slug: {{ courier_single_slug }}</p>
-					 	<h3> TrackingDict_All - Loop Through</h3>
+					 <h3>Loop Through EAch of the Dictionary Tuples</h3>
+					 			{% for shipment in shipments_all %}
+					 					<p> {{ trackingdict.shipment }} </p>
+					 			{% endfor %}
+					 
+					 <h3>Tracking Dictionary Tuple - full Tuples</h3>
+					 		<p>Tracking Dictionary For each Shipment with a Tracking Number: {{ trackingdict }}</p>
+					 		<p>Dictionary of courier slugs {{ courier_slugs }} </p>
+							<p>List of Courier Infos (all fields): {{ courier_infos }} </p>
+					 		<p>Tracking numbers {{ tracking_numbers }} </p>
+					 		<p>Courier_single {{ courier_single }} </p>
+					 		<p>Courier single slug: {{ courier_single_slug }}</p>
+				
+				
+					<h3> TrackingDict_All - Loop Through</h3>
 					 	
 					 		{% for track in trackingdict_all %}
 					 				Track Title: {{ track.title }} <br> Tracking Number: {{ track.tracking_number }} <br> Tag: {{ track.tag }} <br> 
