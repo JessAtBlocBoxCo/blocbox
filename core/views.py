@@ -148,21 +148,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     		    compose_form = ComposeForm(recipient_filter=None)
     else:
         compose_form = None
-    """
-    if modify_id:
-        trans = Transaction.objects.get(pk=modify_id)    
-        if request.method == 'POST':    
-            modify_form  = ModifyTransaction(request.POST, instance=trans)
-            if modify_form.is_valid():
-    	          modify = modify_form.save()
-    	          modify.save()
-            else:
-    	          print modify_form.errors      	     
-        else:
-            modify_form = ModifyTransaction(instance=trans)
-    else:
-        modify_form = None
-    """
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
