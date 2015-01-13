@@ -643,12 +643,6 @@ footer {
     background-color: #ffffff;
     color: rgb(255, 195, 0);
 }
-.orangenavbtn > a {
-color: white;
-}
-.bbbasenavbarbtn > a {
-    color: black;
-}
 .navinboxblue {
     background-color: rgb(255, 255, 255);
     font-size: 1.600em;
