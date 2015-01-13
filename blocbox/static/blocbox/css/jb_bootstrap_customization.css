@@ -1019,6 +1019,9 @@ html, body {
     background-color: rgb(255, 195, 0);
     color: #ffffff;
 }
+.orangenavbtn {
+    margin-left: 40px;
+}
 /*---------------------------------------------------------------------*
 * Jess Adding scheduling stylingn - for free and busy days
 *----------------------------------------------------------------------*/
@@ -1132,9 +1135,6 @@ html, body {
     footer > .container-fluid > div {
         padding-left: 0px;
         padding-right: 0px
-    }
-    .orangenavbtn {
-        margin-left: 40px;
     }
 }
 /*-----------------------------------------------------------------------
