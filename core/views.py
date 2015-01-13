@@ -118,7 +118,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     						    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
     						    )) 	 
     						#Now, get the tracking info
-                datadict_added = api.trackings.get(slug_detected, tracking_to_add)
+                datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
                 trackingdict_added = datadict_added.get(u'tracking')
     						#Now, update the transaction table wth the slug and tracking info tuple   
                 trans.shipment_courier = slug_detected
