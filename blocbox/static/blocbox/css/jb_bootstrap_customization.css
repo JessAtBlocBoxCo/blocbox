@@ -632,6 +632,7 @@ footer {
     cursor: pointer;
     border-radius: 5px;
     white-space: nowrap;
+    width: 120;
 }
 .orangenavbtn > a {
 color: white;
