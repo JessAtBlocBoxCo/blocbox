@@ -28,12 +28,11 @@
 			<div class="row">
 				<h2>AFTERSHIP API</h2>
 					 		
-					 	<p>Tracking numbers {{ tracking_numbers }} </p>
 					 	<p>Dictionary of courier slugs {{ courier_slugs }} </p>
+						<p>List of Courier Infos (all fields): {{ courier_infos }} </p>
+					 	<p>Tracking numbers {{ tracking_numbers }} </p>
 					 	<p>Courier_single {{ courier_single }} </p>
 					 	<p>Courier single slug: {{ courier_single_slug }}</p>
-					 	<p>Courier All Fields Tuple Test: {{ courier_allfields_test }} </p>
-					 	<p>Courier Lists Tuple Test: {{ courier_lists_test }} </p>
 					 	<h3> TrackingDict_All - Loop Through</h3>
 					 	
 					 		{% for track in trackingdict_all %}

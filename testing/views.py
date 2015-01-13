@@ -145,30 +145,30 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     #If i try to access the url it tells me my API key is invalid - how to pass hte API key as an arg?.
     datadict_single = api.trackings.get(slug_get_tracking, number_get_tracking) #all information - not all tracking  
     trackingdict_single = datadict_single.get(u'tracking') #this gets the value of the TRACKING dictionary - which contains all of the fields. yay!!!
-    trackingdict = {}
     datadict_all = api.trackings.get()
     trackingdict_all = datadict_all.get(u'trackings')
-    #Get courier
-    #get_courier = api.tracking.get(tracking_number='9374869903500264240007')
     courier_single_allfields = api.couriers.detect.post(tracking=dict(tracking_number='9374869903500264240007')) # api.Courier.detect(number_to_track)
     courier_single_list = courier_single_allfields.get(u'couriers')
     courier_single = courier_single_list[0]
     courier_single_slug = courier_single.get(u'slug')
     courier_slugs = {}
     tracking_numbers = {}
-    courier_allfields_test = {}
-    courier_lists_test = {}
+    courier_infos = {}
+    trackingdict = {} #this is what we really want - need to do the rest to derive/auto detect the slug to populate this
     for shipment in shipments_all:
     	  if shipment.tracking:
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier_for_list = courier_list[0]
-            courier_slugs[shipment.id] = courier_for_list.get(u'slug')  
-            #delete
+            slug_for_list_u = courier_for_list.get(u'slug')
+            slug_for_list = str(slug_for_list)
+            courier_slugs[shipment.id] = slug_for_list 
             tracking_numbers[shipment.id] = str(tracking_no)
-            courier_allfields_test[shipment.id] = courier_allfields 
-            courier_lists_test[shipment.id] = courier_list     
+            courier_infos[shipment.id] = courier_list
+            datadict = api.trackings.get(slug_for_list, tracking_no)
+            trackingdict[shipment.id] = datadict.get(u'tracking')
+            
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
     #To see all tracking fields print the variable track_allfields
@@ -196,7 +196,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
  				'datadict_all': datadict_all, 'trackingdict_all': trackingdict_all,
  				'courier_single': courier_single, 'courier_single_slug': courier_single_slug,
  				'courier_slugs': courier_slugs,
- 				'tracking_numbers': tracking_numbers, 'courier_allfields_test': courier_allfields_test, 'courier_lists_test': courier_lists_test,
+ 				'tracking_numbers': tracking_numbers, 'courier_infos': courier_infos,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
