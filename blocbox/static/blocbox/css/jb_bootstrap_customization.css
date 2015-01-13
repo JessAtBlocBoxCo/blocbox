@@ -1794,6 +1794,9 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     .orangebars:focus {
         color: rgb(255, 195, 0);
     }
+    .mobilenavtext {
+        font-size: 1.3em;
+    }
 }
 
 /*-------------------------------------------------------------*
@@ -1909,7 +1912,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
 
 @media (max-width: 479px) {
     body {
-        font-size: 16px;
+        font-size: 12px;
     }
     /*make default font-size 10px for mobile */
     h1 {

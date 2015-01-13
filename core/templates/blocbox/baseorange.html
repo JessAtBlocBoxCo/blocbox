@@ -91,89 +91,89 @@
                 </a>
                 {% if user.is_authenticated %}
                 <ul class="nav navmenu-nav">
-                    <li class="active">
-                        <a href='/dashboard/'><i class="fa fa-list fa-fw fa-lg"></i>&nbsp Dashboard</a>
+                    <li class="active mobilenavtext">
+                        <a href='/dashboard/'><i class="mobilenavtext fa fa-list fa-fw fa-lg"></i>&nbsp Dashboard</a>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg"></i>&nbsp Start a Shipment</a>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg"></i>&nbsp Messages ({% load inbox %}{% inbox_count %})</a>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp Search Your Neighborhood</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-home fa-fw fa-lg"></i>
+                        <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-home fa-fw fa-lg"></i>
                         &nbsp My Blocbox
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href='/myblock/'>&nbsp My Block</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href='/profile/'>Profile</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href='/account/'>Account</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg"></i>&nbsp Invite Your Neighbors</a>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/signuphost/'><i class="fa fa-users fa-fw fa-lg"></i>&nbsp Become a Host</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-life-ring fa-fw fa-lg"></i>
+                        <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-life-ring fa-fw fa-lg"></i>
                         &nbsp Support
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Trust & Saftey</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Terms & Privacy</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Report a Problem</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-info fa-fw fa-lg"></i>
+                        <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-info fa-fw fa-lg"></i>
                         &nbsp About Blocbox
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">How it Works</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Terms & Privacy</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Jobs</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Love Blocbox?</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Contact Us</a>
                             </li>
                         </ul>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign out</a>
                     </li>
                 </ul>
                 {% else %}
                 <ul class="nav navmenu-nav">
                     <li>
-                        <a href="#openModal"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign in</a>
+                        <a href="#openModal"><i class="mobilenavtext fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign in</a>
                         <div class="modalDialog" id="openModal">
                             <div class="">	<a href="#close" title="Close" class="close">X</a>
                                 <h6 class="ltbluetext paddingsides15px">Sign In</h6>
@@ -215,40 +215,40 @@
                             </div>
                         </div>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href="#"><i class="fa fa-user fa-fw fa-lg"></i>Get Started</a>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href="#"><i class="fa fa-home fa-fw fa-lg"></i>How it Works</a>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp Search Your Neighborhood</a>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg"></i>&nbsp Invite Your Neighbors</a>
                     </li>
-                    <li>
+                    <li class="mobilenavtext">
                         <a href='/signuphost/'><i class="fa fa-users fa-fw fa-lg"></i>&nbsp Become a Host</a>
                     </li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-info fa-fw fa-lg"></i>
+                        <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-info fa-fw fa-lg"></i>
                         &nbsp About Blocbox
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Trust & Saftey</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Terms & Privacy</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Jobs</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Love Blocbox?</a>
                             </li>
-                            <li>
+                            <li class="mobilenavtext">
                                 <a href="#">Contact Us</a>
                             </li>
                         </ul>
