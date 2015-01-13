@@ -626,11 +626,11 @@ footer {
     font-size: 1.900em;
     font-weight: 300;
     color: white;
+    border: 2px solid #ffffff;
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
-    border: 0;
-    border-radius: 0px;
+    border-radius: 5px;
     white-space: nowrap;
 }
 .orangenavbtn > a {
