@@ -1909,7 +1909,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
 
 @media (max-width: 479px) {
     body {
-        font-size: 12px;
+        font-size: 16px;
     }
     /*make default font-size 10px for mobile */
     h1 {
