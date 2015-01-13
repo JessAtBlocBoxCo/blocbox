@@ -87,7 +87,7 @@
 
             <!--Current or Recent Shipments: currently ordered by ID - so the oldest order is first...-->
 
-            {% for shipment in shipments_all %}
+            {% for shipment in shipments_with_tracking %}
             
 
 
@@ -103,7 +103,10 @@
                     		</div>
                     		<div class="row">         
                         		<p class="nomargin"> 
-                        				{% if shipment.dayrangestart %}
+                        				{% if shipment.aftership %}
+                        						{{ shipment.aftership.slug}}: {{shipment.aftership.shipment_type }}
+                        				{% else %}
+                        						{% if shipment.dayrangestart %}
                         								{% if shipment.dayrangestart == shipment.dayrangeend %}
                         									{{ shipment.dayrangestart }} day shipping
                         									<!--	{{ shipment.deliverydatenotracking_rangestart }} -->
@@ -114,9 +117,13 @@
                         										{{ shipment.deliverydatenotracking_rangeend}} -->
                         								&nbsp;
                         								{% endif %}
-                        			{% endif %}                        		                        															
+                        						{% endif %}      
+                        				{% endif %}                  		                        															
                         		</p>
                         </div>  
+                        <div class="row">
+                        		<p class="nomargin">  {{shipment.aftership.tag}}</p>
+                        </div>
                     </div>
                     
                     

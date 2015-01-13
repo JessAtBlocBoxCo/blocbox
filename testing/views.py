@@ -172,6 +172,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
         shipment_tuple['enduser_rating']=shipment.enduser_rating
         shipment_tuple['enduser_comments']=shipment.enduser_comments
         shipment_tuple['enduser_issue']=shipment.enduser_issue
+        shipment_tuple['payment_option']=shipment.payment_option
         shipment_tuple['aftership']={}  
         if shipment.tracking: 
             #populate the aftership_tracking sub-tuble                    
