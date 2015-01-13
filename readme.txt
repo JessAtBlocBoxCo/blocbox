@@ -142,14 +142,14 @@ The URLs for this site, and the corresponding files are as follows:
 			- need a better phrase
 
 4C. 	blocbox.co/payment (no form - just base template) + blocbox.co/payment/ipn (instant payment notifcaiont - shittier) and blocbox.co/payment/pro (better)
-			Template: core/templates/payment.html; URL patterns defined in blocbox/billing/urls.py
-			View: /blocbox/billing/views.py, which passes a form called PaypalPaymentsForm defined in paypal/standard/forms.py
+			Template: core/templates/payment.html; URL patterns defined in blocbox/transactions/urls.py
+			View: /blocbox/transactions/views.py, which passes a form called PaypalPaymentsForm defined in paypal/standard/forms.py
 			For IPN or PRO The template loads the form with the statement	{{ form.render }} 
 			blocbox.co/payment/ipn/notify is the notify_url
 			Paypal app documentation: /blocbox/paypal/documentation/README.md -- i am annotating that documentation
 			
 			Transaction table entries are creted by the view blocbox.paypal.standard.ipn.views.ask_for_money
-			this view is called by two URLS, both defined in blocbox.billing.urls.py
+			this view is called by two URLS, both defined in blocbox.transactions.urls.py
 						shipment: blocbox.co/payment/host<host_id>/days<dayrangestart>to<dayrangeend>/ipn/package/<paymentoption>
 						other favor: blocbox.co/payment/hos<host_id>/ipn/<favortype>/<paymentoption>
 	

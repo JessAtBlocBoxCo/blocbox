@@ -494,7 +494,7 @@ def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
 
 
-#We may want to move all of this stuff into billing (which could be called ' Transactios')
+#We may want to move all of this stuff into the Transactions app
 def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, calendar_slug_single = "testcalendar1"):
     enduser = request.user
     if host_id:
