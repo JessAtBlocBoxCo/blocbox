@@ -169,7 +169,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             courier_slugs[shipment.id] = courier_for_list.get(u'slug')  
             #delete
             tracking_numbers[shipment.id] = str(tracking_no)
-            courier_lists_tests[shipment.id] = courier_list      
+            courier_allfields_test[shipment.id] = courier_allfields 
+            courier_lists_test[shipment.id] = courier_list     
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
     #To see all tracking fields print the variable track_allfields
@@ -197,7 +198,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
  				'datadict_all': datadict_all, 'trackingdict_all': trackingdict_all,
  				'courier_single': courier_single, 'courier_single_slug': courier_single_slug,
  				'courier_slugs': courier_slugs,
- 				'tracking_numbers': tracking_numbers, 'courier_lists_test': courier_lists_test,
+ 				'tracking_numbers': tracking_numbers, 'courier_allfields_test': courier_allfields_test, 'courier_lists_test': courier_lists_test,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
