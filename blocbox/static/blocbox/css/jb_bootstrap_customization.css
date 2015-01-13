@@ -627,7 +627,7 @@ footer {
     font-weight: 300;
     color: white;
     border: 2px solid #ffffff;
-    padding: 10 45 10 45;
+    padding: 10px 45px 10px 45px;
     cursor: pointer;
     border-radius: 5px;
     white-space: nowrap;
