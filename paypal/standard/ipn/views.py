@@ -84,6 +84,7 @@ def ipn(request, item_check_callable=None, host_id=None):
     invoice_sent = ipn_obj.invoice
     
     #Add other host characteristicsto the model
+    #Eventually add transaction_id to the ipn_obj model
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
         ipn_obj.host_email = host.email
@@ -91,7 +92,6 @@ def ipn(request, item_check_callable=None, host_id=None):
         ipn_obj.host_lname = host.last_name
         ipn_obj.host_st_address1 = host.st_address1
         ipn_obj.host_st_address2 = host.st_address2
-    """Eventuall add: ipn_obj.transaction_id = trans.id - note for some reason it is seeing through the # comment here """
     		
     #the following set_flag is defined in paypal.standard.modle.spy, flat var is passed as the "info" parameter
     if flag is not None:
