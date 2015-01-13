@@ -110,7 +110,21 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
                 api.trackings.post(tracking=dict(
     						    slug=slug_detected, tracking_number=tracking_no_to_add,  
-    						    title="Shipment {{trans.id}}: User {{enduser.email}} to Host {{trans.host.email}}", order_id="{{trans.id}}" )) 	    
+    						    title="Shipment " + trans.id+": User "+enduser.email+" to Host "+trans.host.email, 
+    						    order_id=str(trans.id),
+    						    customer_name = trans.enduser.email,
+    						    emails=[trans.enduser.email, trans.host.email}], #Emails for notifications
+    						    custom_fields=dict(Host_Email={{trans.host.email}}, Invoice={{trans.invoice}})
+    						    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
+    						    )) 	 
+    						#Now, get the tracking info
+                datadict_added = api.trackings.get(slug_detected, tracking_to_add)
+                trackingdict_added = datadict_added.get(u'tracking')
+    						#Now, update the transaction table wth the slug and tracking info tuple   
+                trans.shipment_courier = slug_detected
+                trans.on_aftership = True
+                trans.tracking_info_tuple = trackingdict_added
+                trans.expected_delivery = trackingdict_added.expected_delivery
             else: 
     	          print tracking_form.errors 
         else:

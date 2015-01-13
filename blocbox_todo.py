@@ -1,12 +1,20 @@
-"""jess to do"""
-- figure out a fix to what happens when there is not a tracking on aferhip - it should go thte django error page
-- style the completed transactions section
-- make the completed transacitons move to the completed section
+"""jess dashboard to do"""
+- right now it says tracking doesn't exist when you add tracking but have not yet "tracked" it
+-- so, first order of business is to add a funciton to that modal to add the tracking information
+-- figure out how to add an order ID when you post
+-- create an indicator on the transaciton table for whether it is on aftership - then use this to avoid the error message
+-- separate the en route from the delivered, using the {{tag}} aftership variable
+- - make the completed transacitons move to the completed section
  - dashbarod - fix the "message" link on current shipments
  - make the 'report an issue' send an email to us
+ - move "completed"/package received trasactions to a third - box
+ - make completed style the completed transactions section
+
+"""jess to do"""
+- dashboardthen edit the update trakcing to make sure this is editing existing entry rather than creating new tracking on aftership: this may not matter?
+- figure out a fix to what happens when there is not a tracking on aferhip - it should go thte django error page
  - buy aftership
  - dashboard: finish for other transactions
- - dashboard: make the completed transacitons go to the bottom
  	- ad field for whether completed/how do they update that
 - profile pics: make individualized/link to specific hosts
 	- update search page for host pics
@@ -23,6 +31,7 @@
 - paypal PDT
 - paypal PRO	
 - later: figure out how to make it automatically register lat/long - right now we need to manually enter it for hosts
+- discuss with john: SMS notifications for aftership? 4 cents per SMS.. may not be worth it since meail is so close
 
 """TO DO"""
 QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
