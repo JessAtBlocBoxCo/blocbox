@@ -727,7 +727,7 @@ color: white;
     background-image: url('/static/blocbox/images/start-button.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 37px;
+    width: 40px;
     cursor: pointer;
 }
 .navstartwht:hover {
