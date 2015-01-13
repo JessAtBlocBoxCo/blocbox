@@ -1,5 +1,6 @@
 """jess dashboard to do"""
-- make the transaciton table update after theyve gone to paypal
+- make the payment_processed indicator work
+ make the transaciton table update after theyve gone to paypal
 - add a "Title" field
 - update the transactions model - so it just grabs the slug -a nd then gets all of the delivery information AFTER CONFIRM/COMPLETED
 - so edit the "received package" fucntion to modify trans table
@@ -28,6 +29,7 @@
 1ZXF38300304993998  - UPS, arrived today
             
 """jess to do"""
+- add the ip_obj.transaction_id by passing in URL so the paypal IPN table has a field for the transaction ID, - if the invoice link works, mayb ejust use that
 - dashboardthen edit the update trakcing to make sure this is editing existing entry rather than creating new tracking on aftership: this may not matter?
 - figure out a fix to what happens when there is not a tracking on aferhip - it should go thte django error page
  - buy aftership
