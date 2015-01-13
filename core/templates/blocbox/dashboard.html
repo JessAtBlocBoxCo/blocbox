@@ -179,7 +179,7 @@
      								<!--TRACKING NUMBER-->
                     <div class="col-xs-4 paddingtopbottom20px paddingsides5px ">
                     	                    		
-                    		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
+                    		{% if user_entered_tracking %} <!--if tracking number already on table, list  it -->
 														
 													<div id="as-root"></div>
 														<script>
@@ -239,7 +239,7 @@
                       {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
                     	<!--EDIT TRACKING -->                    		
-                    	{% if shipment.tracking %} 
+                    	{% if user_entered_tracking %} 
                     			
                     			<div class="row"> <!--edit tracking info-->
                     				 	<a href="/dashboard/track_id{{shipment.id}}/#openModal_edittracking_id{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>

@@ -184,7 +184,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipment_tuple['payment_option']=shipment.payment_option
         shipment_tuple['aftership']={}  
         if shipment.tracking: 
-            #populate the aftership_tracking sub-tuble                    
+            #populate the aftership_tracking sub-tuble 
+            user_entered_tracking = True                   
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier_list_first = courier_list[0]
@@ -194,6 +195,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             shipment_tuple['aftership'] = datadict.get(u'tracking')             
         else:
             shipment_tuple['aftership']=None
+            user_entered_tracking = False
         shipments_with_tracking.append(shipment_tuple)
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
@@ -202,7 +204,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
-        'shipments_with_tracking': shipments_with_tracking,
+        'shipments_with_tracking': shipments_with_tracking, 'user_entered_tracking': user_entered_tracking,
     })
     
 
