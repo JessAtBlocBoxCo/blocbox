@@ -110,7 +110,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
                 api.trackings.post(tracking=dict(
     						    slug=slug_detected, tracking_number=tracking_no_to_add,  
-    						    title="Shipment {{trans.id}}: User {{enduser.email}} to Host {{trans.host.email}}", order_id={{trans.id}} )) 	    
+    						    title="Shipment {{trans.id}}: User {{enduser.email}} to Host {{trans.host.email}}", order_id="{{trans.id}}" )) 	    
             else: 
     	          print tracking_form.errors 
         else:
