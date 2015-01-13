@@ -182,6 +182,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             slug_for_list = str(slug_for_list_u)
             courier_slugs = {}
             tracking_numbers = {}
+            courier_infos = {}
             courier_slugs[shipment.id] = slug_for_list 
             tracking_numbers[shipment.id] = str(tracking_no)
             courier_infos[shipment.id] = courier_list
