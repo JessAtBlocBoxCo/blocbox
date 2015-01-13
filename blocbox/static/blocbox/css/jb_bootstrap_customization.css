@@ -628,6 +628,7 @@ footer {
     color: white;
     border: 2px solid #ffffff;
     padding: 2px 20px 2px 20px;
+    margin-top: 15px;
     cursor: pointer;
     border-radius: 5px;
     white-space: nowrap;
