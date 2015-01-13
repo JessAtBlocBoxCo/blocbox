@@ -2,7 +2,12 @@
 - right now it says tracking doesn't exist when you add tracking but have not yet "tracked" it
 -- so, first order of business is to add a funciton to that modal to add the tracking information
 -- figure out how to add an order ID when you post
+
 -- create an indicator on the transaciton table for whether it is on aftership - then use this to avoid the error message
+-- DEAL WITH TRACKING ALREADY EXISTS EXCEPTION - THE INDICATOR SHOUDL DO THIS?
+- APIv4RequestException at /dashboard/track_id24/
+{u'meta': {u'message': u'Tracking already exists.', u'code': 4003, u'type': u'BadRequest'}, u'data': {u'tracking': {u'tracking_number': u'9374869903500264240007', u'id': u'54b575c0b8eb43b6313772d4', u'slug': u'usps'}}}
+
 -- separate the en route from the delivered, using the {{tag}} aftership variable
 - - make the completed transacitons move to the completed section
  - dashbarod - fix the "message" link on current shipments

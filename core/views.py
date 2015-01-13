@@ -124,7 +124,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 trans.shipment_courier = slug_detected
                 trans.on_aftership = True
                 trans.tracking_info_tuple = trackingdict_added
-                trans.expected_delivery = trackingdict_added.expected_delivery
+                trans.expected_delivery = trackingdict_added.get(u'expected_delivery')
             else: 
     	          print tracking_form.errors 
         else:
