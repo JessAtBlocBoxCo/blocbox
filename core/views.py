@@ -114,7 +114,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     						    order_id=str(trans.id),
     						    customer_name = trans.enduser.email,
     						    emails=[trans.enduser.email, trans.host.email], #Emails for notifications
-    						    custom_fields=dict(Host_Email={{trans.host.email}}, Invoice={{trans.invoice}})
+    						    custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
     						    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
     						    )) 	 
     						#Now, get the tracking info
