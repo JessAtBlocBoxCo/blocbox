@@ -752,10 +752,10 @@ color: white;
     vertical-align: middle;
 }
 .navringwhite:hover {
-    background-image: url('/static/blocbox/images/white-info-button-active.png');
+    background-image: url('/static/blocbox/images/nav-circle-wht.png');
 }
 .navringwhite:focus {
-    background-image: url('/static/blocbox/images/white-info-button-active.png');
+    background-image: url('/static/blocbox/images/nav-circle-wht.png');
 }
 .footerlogo {
     max-width: 200px;
