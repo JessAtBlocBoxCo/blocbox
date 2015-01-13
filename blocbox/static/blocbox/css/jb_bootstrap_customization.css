@@ -1091,9 +1091,9 @@ html, body {
         margin-top: 35px;
         margin-left: 40px;
     }
-    .fixed-logo-image {
+    .logo-image {
         display: block;
-        position: fixed;
+        position: absolute;
         background-image: url('/static/blocbox/images/BB-Logo.svg');
         background-repeat: no-repeat;
         background-size: contain;
@@ -1824,7 +1824,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .mobilenavlogo {
         height: 40px;
     }
-    .fixed-logo-image {
+    .logo-image {
         display: none;
     }
     .profilepic {
