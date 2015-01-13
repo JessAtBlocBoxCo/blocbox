@@ -677,38 +677,31 @@ color: white;
     background-color: transparent;
     color: rgb(255, 255, 255);
 }
-.whitenavinfobtn {
+.navinfobtnorg {
     background-image: url('/static/blocbox/images/info-button-white-outline.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 40px;
     cursor: pointer;
-    /*
-  vertical-align: middle;
-  text-align: center;
-  */
 }
-.whitenavinfobtn:hover {
-    background-image: url('/static/blocbox/images/white-info-button-active.png');
+.navinfobtnorg:hover {
+    background-image: url('/static/blocbox/images/info-button-active.png');
+}
+.navinfobtnorg:focus {
+    background-image: url('/static/blocbox/images/info-button-active.png');
+}
+.navinfobtnwht {
+    background-image: url('/static/blocbox/images/info-button-white-outline.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 40px;
     cursor: pointer;
-    /*
-    vertical-align: middle;
-    text-align: center;
-    */
 }
-.whitenavinfobtn:focus {
+.navinfobtnwht:hover {
     background-image: url('/static/blocbox/images/white-info-button-active.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 40px;
-    cursor: pointer;
-    /*
-    vertical-align: middle;
-    text-align: center;
-    */
+}
+.navinfobtnwht:focus {
+    background-image: url('/static/blocbox/images/white-info-button-active.png');
 }
 .bbbasenavbarstart {
     background-image: url('/static/blocbox/images/start-button.png');
