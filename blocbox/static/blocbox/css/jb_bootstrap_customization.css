@@ -639,10 +639,12 @@ footer {
 .orangenavbtn:hover {
     background-color: #ffffff;
     color: rgb(255, 195, 0);
+    text-decoration: none;
 }
 .orangenavbtn:focus {
     background-color: #ffffff;
     color: rgb(255, 195, 0);
+    text-decoration: none;
 }
 .orangenavbtn > a {
 color: white;
