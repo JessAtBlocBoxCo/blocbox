@@ -163,12 +163,12 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  	  tracking_numbers[shipment.id] = None
     	  else:
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
-            tracking_numbers[shipment.id] = str(tracking_no)
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier_for_list = courier_list[0]
             courier_slugs[shipment.id] = courier_for_list.get(u'slug')  
             #delete
+            tracking_numbers[shipment.id] = str(tracking_no)
             courier_lists_tests[shipment.id] = courier_list      
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
