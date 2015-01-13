@@ -27,20 +27,18 @@
 			<!--TEST TRACKING API-->
 			<div class="row">
 				<h2>AFTERSHIP API</h2>
-							<p> {{ shipments_withtracking }} </p>
-					 		<p> TrackingDict.12 : {{ trackingdict.12 }} </p>
-					 		<p> TrackingDict.16 : {{ trackingdict.16 }} </p>      
-					 		<p> TrackingDict.19 : {{ trackingdict.19 }} </p>
-					 		<p> List of shipment_withtracking_id {{ shipment_withtracking_id }} </p>
-					 <h3>Loop Through EAch of the Dictionary Tuples</h3>
+						<h3>Loop through shipments_withtracking </h3>
+							{% for ship in shipments_withtracking %}
+									<p> Tracking Dictionary for this shipments: {{ship}} </p>
+							{% endfor %}
+
+					 	<h3>Now i need to figure out how to link that up with the shipments_all stuff</h3>
 					 
-					 			{% for id in shipment_withtracking_id %}
-					 					<p> Tracking Dictionary for {{id}} is: {{ trackingdict.id }} </p>
-					 			{% endfor %}
+					 		<p> List of shipment_withtracking_id {{ shipment_withtracking_id }} </p>
+
 					 
 					 <h3>Tracking Dictionary Tuple - full Tuples</h3>
-					 		<p>Tra</p>
-					 		<p>Tracking Dictionary For each Shipment with a Tracking Number: {{ trackingdict }}</p>
+
 					 		<p>Dictionary of courier slugs {{ courier_slugs }} </p>
 							<p>List of Courier Infos (all fields): {{ courier_infos }} </p>
 					 		<p>Tracking numbers {{ tracking_numbers }} </p>
