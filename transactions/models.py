@@ -45,9 +45,6 @@ class Transaction(models.Model):
     #Aftership Variables grabbed iitially
     on_aftership = models.BooleanField("On Aftership", default=False)
     shipment_courier = models.CharField("Courier", max_length=20, blank=True, null=True)
-    tracking_info_tuple_inital = models.CharField("Aftership Tracking Info Tuple When First Added", max_length=2000, blank=True, null=True)
-    expected_delivery = models.DateTimeField(null=True, blank=True) #iniital
-    shipment_type = models.CharField("Shipment Type on Aftership", max_length=30, blank=True, null=True) #Initial
     #Aftership variables grabbed after confirmed
     tracking_info_tuple_confirmd = models.CharField("Aftership Tracking Info Tuple Upon Completion", max_length=2000, blank=True, null=True)
 

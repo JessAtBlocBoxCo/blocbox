@@ -104,7 +104,7 @@
                     		<div class="row">         
                         		<p class="nomargin"> 
                         				{% if shipment.aftership %}
-                        						{{ shipment.aftership.slug}}: {{shipment.aftership.shipment_type }}
+                        						{{ shipment.shipment_courier}}: {{shipment.aftership.shipment_type }}
                         				{% else %}
                         						{% if shipment.dayrangestart %}
                         								{% if shipment.dayrangestart == shipment.dayrangeend %}
@@ -121,9 +121,8 @@
                         				{% endif %}                  		                        															
                         		</p>
                         </div>  
-                        <div class="row">
-                        		<p class="nomargin">  {{shipment.aftership.tag}}</p>
-                        </div>
+                        <!--SHIMENT STATUS - FROM AFTERSHIP -->
+                        <div class="row"> 	<p class="nomargin"> Status: {{shipment.aftership.tag}}</p> </div>
                     </div>
                     
                     

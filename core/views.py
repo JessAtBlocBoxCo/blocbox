@@ -122,10 +122,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 trackingdict_added = datadict_added.get(u'tracking')
                 #Save this information to trans table
                 trans.on_aftership = True
-                trans.shipment_courier = slug_detected
-                trans.tracking_info_tuple_initial = trackingdict_added
-                trans.expected_delivery = trackingdict_added.get(u'expected_delivery')
-                trans.shipment_type = trackingdict_added.get(u'shipment_type')
+                trans.shipment_courier = slug_detected.upper()
                 trans.save()
             else: #if tracking form is not valid 
     	          print tracking_form.errors 
@@ -200,7 +197,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipment_tuple['enduser_issue']=shipment.enduser_issue
         shipment_tuple['payment_option']=shipment.payment_option
         shipment_tuple['aftership']={}  
-        if shipment.tracking: 
+        if shipment.on_aftership: 
             #populate the aftership_tracking sub-tuble                 
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
