@@ -154,13 +154,27 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     courier_slugs = {}
     tracking_numbers = {}
     courier_infos = {}
-    trackingdict = {} #this is what we really want - need to do the rest to derive/auto detect the slug to populate this   
-    shipping_with_tracking_dict = {} 
-    shipments_withtracking = []
+    trackingdict = {}     
+    shipments_with_tracking = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
     for shipment in shipments_all:
     	  if shipment.tracking:   
-            tracking_no = str(shipment.tracking) #the str function removes the preceding u'
-            #SET UP A TEST HERE - IF TRACKING EXISTS.. ONLY GET TRACKING INFORMAION IF IT IS BEING TRACKED AT AFTERSHIP
+    	  	  tracking_no = str(shipment.tracking) #the str function removes the preceding u'
+    	  	  shipment_tuple = {} 
+    	  		shipment_tuple['id'] = shipment.id
+    	  		shipment_tuple['host_id'] = shipment.host_id
+    	  		shipment_tuple['enduser_id']=shipment.enduser_id
+    	  		shipment_tuple['invoice']=shipment.invoice
+    	  		shipment_tuple['trans_table_tracking']=tracking_no
+    	  		shipment_tuple['price']=shipment.price
+    	  		shipment_tuple['dayrangestart']=shipment.dayrangestart
+    	  		shipment_tuple['dayrangeend']=shipment.dayrangeend
+    	  		shipment_tuple['date_requested']=shipment.date_requested_notime
+    	  		shipment_tuple['trans_complete']=shipment.trans_complete
+    	  		shipment_tuple['enduser_rating']=shipment.enduser_rating
+    	  		shipment_tuple['enduser_comments']=shipment.enduser_comments
+    	  		shipment_tuple['enduser_issue']=shipment.enduser_issue
+    	  		#populate the aftership_tracking sub-tuble  
+            shipment_tuple['aftership_tracking']={}         
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
             courier_for_list = courier_list[0]
@@ -170,9 +184,8 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             tracking_numbers[shipment.id] = str(tracking_no)
             courier_infos[shipment.id] = courier_list
             datadict = api.trackings.get(slug_for_list, tracking_no)
-            trackingdict[shipment.id] = datadict.get(u'tracking')
-            shipping_with_tracking_dict[trackingdict[shipment.id]] = shipment
-            shipments_withtracking.append(trackingdict[shipment.id])
+            shipment_tuple['aftership_tracking'] = datadict.get(u'tracking')   
+            shipments_with_tracking.append(shipment_tuple)           
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
     #To see all tracking fields print the variable track_allfields
@@ -199,9 +212,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 'trackingdict_single': trackingdict_single, 'trackingdict': trackingdict, 
  				'datadict_all': datadict_all, 'trackingdict_all': trackingdict_all,
  				'courier_single': courier_single, 'courier_single_slug': courier_single_slug,
- 				'courier_slugs': courier_slugs,
- 				'tracking_numbers': tracking_numbers, 'courier_infos': courier_infos,
-        'shipments_withtracking': shipments_withtracking, 'shipping_with_tracking_dict': shipping_with_tracking_dict,
+        'shipments_with_tracking': shipments_with_tracking, 
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
