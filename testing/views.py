@@ -153,6 +153,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     courier_single_allfields = api.couriers.detect.post(tracking=dict(tracking_number='9374869903500264240007')) # api.Courier.detect(number_to_track)
     courier_single_list = courier_single_allfields.get(u'couriers')
     courier_single = courier_single_list[0]
+    courier_single_slug = courier_single.get(u'slug')
     #for shipment in shipments_all:
     #  datadict = api.trackings.get(SLUG_HOW_TO_DEFINE, shipment.tracking)
     #  trackingdict[shipment.id] = datadict.get(u'tracking') 
@@ -179,7 +180,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     	  'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,
  				'aftership_api_key':AFTERSHIP_API_KEY, 'couriers': couriers, 'trackingdict_single': trackingdict_single, 'trackingdict': trackingdict, 
  				'datadict_all': datadict_all, 'trackingdict_all': trackingdict_all,
- 				'courier_single': courier_single,
+ 				'courier_single': courier_single, 'courier_single_slug': courier_single_slug,
     }) 
 
 #bootsrap test - copy of the waitlist sign-up page
