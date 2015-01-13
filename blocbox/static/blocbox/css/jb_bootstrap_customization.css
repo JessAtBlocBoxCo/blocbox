@@ -662,7 +662,7 @@ color: white;
     background-color: transparent;
     font-size: 1.600em;
     font-weight: 400;
-    color: rgb(41, 128, 185);
+    color: #ffffff;
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
@@ -671,11 +671,11 @@ color: white;
 }
 .navinboxwhite:hover {
     background-color: transparent;
-    color: rgb(255, 255, 255);
+    color: rgb(41, 128, 185);
 }
 .navinboxwhite:focus {
     background-color: transparent;
-    color: rgb(255, 255, 255);
+    color: rgb(41, 128, 185));
 }
 .navinfobtnorg {
     background-image: url('/static/blocbox/images/info-button.png');
