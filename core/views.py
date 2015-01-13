@@ -3,6 +3,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
 from django.template import RequestContext, loader #allows it to load templates from blocbox/templates
 from django.views.decorators.csrf import csrf_exempt
+from django.conf import settings
 #Add CORE and TRANSACTIONS models
 from core.models import UserInfo
 from connections.models import Connection
