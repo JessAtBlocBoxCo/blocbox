@@ -634,6 +634,7 @@ footer {
     border-radius: 5px;
     white-space: nowrap;
     width: 120px;
+    text-decoration: none;
 }
 .orangenavbtn:hover {
     background-color: #ffffff;
