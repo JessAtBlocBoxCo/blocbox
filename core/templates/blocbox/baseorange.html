@@ -264,11 +264,12 @@
 
         {% block navbar %}
         <nav class="navbar-orange desktoponly" role="navigation">
-            <div class="row">
+            <div class="row" style="padding-left: 5%; padding-right: 5%">
+                <a href="#top" class="logo-image"></a>
                 <!--the "brand" - ultimately we should replace this with styled text rather than an image -->
-                <div class="paddingleft50px">
-                    <a href="#top" class="logo-image"></a>
-                    <a class="col-sm-2 col-sm-offset-2 nav-blocbox-name" href="#"></a>
+                <div class="col-sm-3" style="padding-left: 115px">
+                    <a class="nav-blocbox-name" href="#"></a>
+                </div>
                     <!--col-->
                     {% if user.is_authenticated %}
                     <div class="col-sm-3  col-sm-offset-3">
@@ -388,7 +389,7 @@
                         </div>
                     </div>
                     {% else %}
-                    <div class="col-sm-3  col-sm-offset-4">
+                    <div class="col-sm-2  col-sm-offset-6">
                         <div class="dropdown textright">
                             <div class="bbbasenavbar orangenavbtn"><a href="#openModal">Sign in</a>
                             </div>
@@ -467,7 +468,6 @@
                                 </div>
                             </div>
                     {% endif %}
-                </div>
                 <!--row containing full navbar-->
             </div>
         </nav>
