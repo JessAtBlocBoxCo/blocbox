@@ -88,7 +88,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     transactions_all_paid = transactions_all.filter(payment_processed=True)
     #shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
     shipments_all = transactions_all.filter(favortype="package")
-    shipmetns_all_paid = shipments_all.filter(payment_processed=True)
+    shipments_all_paid = shipments_all.filter(payment_processed=True)
     otherfavors_all = transactions_all.exclude(favortype="package")
     otherfavors_all_paid = otherfavors_all.filter(payment_processed=True)
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
