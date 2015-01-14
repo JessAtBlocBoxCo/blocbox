@@ -1,4 +1,5 @@
 """jess dashboard to do"""
+- update the tracking widget - dont use the aftership one - crate my own so that it doesnt take so mjuch time to load an dlook like shit
 - make the payment_processed indicator work
  make the transaciton table update after theyve gone to paypal
 - add a "Title" field
