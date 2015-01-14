@@ -1825,10 +1825,10 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         height: 40px;
     }
     .content {
-        padding-bottom: 550px;
+        padding-bottom: 500px;
     }
     .footerlogo {
-        display: none;
+        margin-left: -80px;
     }
 }
 
