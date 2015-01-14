@@ -231,6 +231,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
         }   
     else:
         paypal_form = None
+        paypal_dict = None
         trans_created = None
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
