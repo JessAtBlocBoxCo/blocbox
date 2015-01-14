@@ -1849,6 +1849,11 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         height: 40px;
         min-height: 40px;
     }
+    .inputbox {
+        border: 2px solid #ffffff;
+        background-color: rgb(255, 195, 0);
+        height: 40px;
+    }
     .mobilenavlogo {
         height: 40px;
     }
