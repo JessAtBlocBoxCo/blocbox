@@ -123,7 +123,7 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
 
-def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, dayrangeend=None, invoice_id=None): #default amount is 2.00, default host is John, paymentoption="perpackage", 
+def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, dayrangeend=None, ): #default amount is 2.00, default host is John, paymentoption="perpackage", invoice_id=None
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)

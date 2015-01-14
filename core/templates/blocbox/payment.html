@@ -73,33 +73,33 @@
                 				
                 				<!--per package-->
                 				<tr>
-                				    <td> <label>  <input type="radio" name="payment_option" id="id_perpackage" value="perpackage">PER PACKAGE</label> </td>
+                				    <td> <label>  <input type="radio" name="payment_option" id="id_perpackage" value="perpackage">&nbsp PER PACKAGE</label> </td>
                 				  	<td> <p>Pay for a single package</p> </td>
-                				  	<td> <h6>${{host.price_package_per}}</h6> </td>
+                				  	<td> <p>${{host.price_package_per}}</p> </td>
                 				</tr>
                 				<!--per package checkbox-->
                 				
                 				<!--buden of 10-->
                 				<tr>
-                				    <td> <label>  <input type="radio" name="payment_option" id="id_bundle" value="bundle10" >BUNDLED</label> </td>
+                				    <td> <label>  <input type="radio" name="payment_option" id="id_bundle" value="bundle10" >&nbsp BUNDLED</label> </td>
                 				    <td><p>10 packages (expires in 1 year)</p> </td>
-                				    <td><h6>${{host.price_package_bundle10}}</h6> </td>
+                				    <td><p>${{host.price_package_bundle10}}</p> </td>
                 				</tr>
                 				<!--bundle10 checkbox-->
                 				
                 				<!--Monthly-->
                 				<tr>
-                				    <td><label>  <input type="radio" name="payment_option" id="id_monthly" value="month20" >MONTHLY</label> </td>
+                				    <td><label>  <input type="radio" name="payment_option" id="id_monthly" value="month20" >&nbsp; MONTHLY</label> </td>
                 				    <td> <p>20 packages for the next 30 days</p> </td>
-                				    <td> <h6>${{host.price_package_month20}}</h6> </td>
+                				    <td> <p>${{host.price_package_month20}}</p> </td>
                 				</tr>
                 				<!--monthly checkbox-->
                 				
                 				<!--annual-->
                 				<tr>
-                				    <td><label>   <input type="radio" name="payment_option" id="id_annual" value="annual">ANNUAL</label> </td>
+                				    <td><label>   <input type="radio" name="payment_option" id="id_annual" value="annual">&nbsp ANNUAL</label> </td>
                 				    <td><p>Up to 20 packages per month for an entire year</p> </td>
-                				    <td><h6>${{host.price_package_annual}}</h6> </td>
+                				    <td><p>${{host.price_package_annual}}</p> </td>
                 				</tr>
                 				<!--annual checkbox-->
 									</table> <!--table containg payment options -->
@@ -107,7 +107,7 @@
                 </div> <!--row with the checkboxes-->
 								<!--Enter a Transaction Tite - and add the hidden fields-->
 								<div class="row">
-										<div class="col-xs-5 col-xs-offset-1">
+										<div class="col-xs-5 col-xs-offset">
 											<h6 class="ltbluetext margintop10px marginsides3pct nopadding">Enter a name for this shipment (optional): </h6>
 										</div>
 					  				<div class="form-group col-xs-5" > 
