@@ -64,9 +64,10 @@
            							
 								{% csrf_token %}
 					  				{{ trans_form_package.non_field_errors }}
-					  				{{ trans_form_package.tracking.errors }}
-					  		<div class="row">	<!--row with the checkboxes-->
+					  				
+					  		<div class="row">	<!--Payment option: row with the checkboxes-->
 					  			<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2">	
+					  			{{ trans_form_package.payment_option.errors }}
 	      					<table class="table"> <!--div wit checkbox-->       
 	      								<!--header row -->
 	      								<tr> <th>Option</th> <th>Description</th> <th>Price</th></tr>         				
@@ -107,15 +108,17 @@
                 </div> <!--row with the checkboxes-->
 								<!--Enter a Transaction Tite - and add the hidden fields-->
 								<div class="row">
-										<div class="col-xs-5 col-xs-offset">
-											<label for="id_title">Enter a label for this shipment (optional): </label>
-											<label for="id_note">Include a note for the host (optional): </label>
-										</div>
-					  				<div class="form-group col-xs-5" > 
-					  					<input type="title" class="form-control" id="id_title" placeholder="Enter a brief description of the shipment" >	
-					  					<input type="title" class="form-control" id="id_title" placeholder="Let the host know when you'll pick it up" >	
-					  				</div>
-				  			</div>	
+											{{ trans_form_package.title.errors }}
+											<label for="id_title" class="col-xs-5">Enter a label for this shipment (optional): </label>
+											<input type="text" name="title" class="form-control" id="id_title" placeholder="Enter a brief description of the shipment" >											
+								</div>
+								<div class="row">
+											{{ trans_form_package..errors }}
+											<label for="id_note_to_host" class="col-xs-5">Include a note for the host (optional): </label>
+											<input type="note_to_host" class="form-control" id="id_note_to_host" placeholder="Let the host know when you'll pick it up" >	
+								</div>
+
+												
   												
 					  		<!--submit button -->
 					  		<div class="row">

@@ -304,7 +304,7 @@
                                     	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ package_received_form.non_field_errors }}
-					   																	{{ package_received_form.tracking.errors }}
+					   																	{{ package_received_form.enduser_rating.errors }}
 					   															
 					   															<h6>How would you rate this transaction?</h6>
 					   															<div class="col-xs-12 nopaddingleftright paddingbottom10px">					   															 																												   		
@@ -314,6 +314,8 @@
 					   															 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=4 > 4 	</label> 	</div>
 					   															 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=5 > 5 	</label> 	</div>
 	 																				</div> <!--end div with radios -->
+	 																				<!--hidden input to mark complete-->
+	 																				{{ package_received_form.trans_complete.errors }}
 	 																				<input type="hidden" name="trans_complete" value=True>
                                   			<!--siubmit button-->
                                   			<div class="row paddingbottom10px"> 
@@ -339,7 +341,7 @@
                  	<!--REPORT AN ISSUE -->
                   <div class="col-xs-2 paddingtopbottom20px paddingsides5px "> 
                     	<div class="row">
-                    	   <button type="startashipment" name="user_issue" class="bluebutton" onclick="window.location='/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}';" >
+                    	   <button type="startashipment" class="bluebutton" onclick="window.location='/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}';" >
                     	   	 Report an Issue
 												</button>											
 											 	<div id="openModal_enduser_issue_id{{shipment.id}}" class="modalDialog">                                 
@@ -349,7 +351,7 @@
                                     	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ enduser_issue_form.non_field_errors }}
-					   																	{{ enduser_issue_form.tracking.errors }}
+					   																	{{ enduser_issue_form.enduser_issue.errors }}
 					   															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
 	      																			<input type="text" class="form-control" name="enduser_issue"      					          
 	      																					placeholder="Enter a Description of the Issue ">    	    	   
