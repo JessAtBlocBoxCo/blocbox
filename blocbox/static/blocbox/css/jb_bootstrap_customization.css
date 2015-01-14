@@ -1074,6 +1074,11 @@ html, body {
     height: 50px;
     width: 250px;
 }
+
+.inputbox {
+    border: 1px solid rgb(255, 195, 0);
+    height: 40px;
+}
 /*Make the navbar fixed if its mobile */
 
 @media (max-width: 767px) {
