@@ -1934,8 +1934,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         font-size: 1.3em;
     }
     .mobilelogo {
-        height: 150px;
-        width: 180px;
+        height: 100px;
+        width: 130px;
     }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
