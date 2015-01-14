@@ -10,7 +10,7 @@ from transactions.models import Transaction
 class CreatePackageTransaction(forms.ModelForm):
     class Meta:
         #model = Transaction
-        fields = ('title', 'payment_option', )
+        fields = ('title', 'payment_option', 'note_to_host' )
             #The remaining fields will be hidden input
             #'host', 'enduser', 'dayrangestart', 'dayrangeend', 'invoice', 'price', 'deliverydatenotracking_rangestart', 'deliverydatenotracking_rangeend',)
         

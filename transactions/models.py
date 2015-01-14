@@ -22,7 +22,8 @@ class Transaction(models.Model):
     payment_option = models.CharField("Payment Option", max_length=30, blank=True, null=True)
     youselected = models.CharField(max_length=50, blank=True, null=True)  
     paypal_quantity = models.IntegerField(blank=True, null=True)
-    title = models.CharField("User Provided Title", max_length=100, blank=True, null=True)   
+    title = models.CharField("User Provided Title", max_length=100, blank=True, null=True)
+    note_to_host = models.CharField("Note to Host from User", max_length=200, blank=True, null=True)   
     payment_processed = models.BooleanField("Paid", default=False) #update payment process once they've completed process
     date_requested = models.DateTimeField(default=datetime.datetime.today)
     date_requested_notime = models.DateField(default = datetime.date.today, null=True)
