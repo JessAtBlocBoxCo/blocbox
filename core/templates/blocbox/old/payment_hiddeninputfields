@@ -1,0 +1,7 @@
+    											<!--add the hidden input fields -->                                                                           
+					  			  			<input type="hidden" name="host" value={{host}}>                                                          
+					  			  			<input type="hidden" name="enduser" value={{enduser}}>                                                                                      
+					  			  			<input type="hidden" name="price" value={{anount}}>                                                       
+					  			  			<input type="hidden" name="invoice" value={{invoice}}>                                                    
+					  			  			<input type="hidden" name="deliverydatenotracking_rangestart" value={{deliverydatenotracking_rangestart}}>
+					  			  			<input type="hidden" name="deliverydatenotracking_rangeend" value={{deliverydatenotracking_rangestart}}>	
