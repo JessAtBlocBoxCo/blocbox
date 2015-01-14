@@ -1798,8 +1798,8 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         background-image: url('/static/blocbox/images/name-white.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
         background-repeat: no-repeat;
         background-size: contain;
-        width: 240px;
-        height: 40px;
+        width: 320px;
+        height: 60px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -1936,6 +1936,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .mobilelogo {
         height: 100px;
         width: 130px;
+    }
+    .mobilename {
+        width: 290px;
+        height: 60px;
     }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
@@ -2103,6 +2107,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .mobilelogo {
         height: 100px;
         width: 130px;
+    }
+    .mobilename {
+        width: 240px;
+        height: 40px;
     }
 }
 
