@@ -8,7 +8,7 @@ from transactions.models import Transaction
 #Create a form to add the pricing optioninformation and the title
 #the other fields are automatically added to the transactions table - though this could be changed
 class CreatePackageTransaction(forms.Form): #Note this is NOT a modelForm, the view saves the data from the form th trans
-	  title = forms.CharField(max_length=100)
+    title = forms.CharField(max_length=100)
     payment_option = forms.CharField(max_length=30)
     note_to_host = forms.CharField(max_length=200)
 
