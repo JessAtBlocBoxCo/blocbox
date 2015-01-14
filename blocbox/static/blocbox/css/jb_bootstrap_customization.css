@@ -697,7 +697,7 @@ color: white;
 }
 .navinboxwhite:focus {
     background-color: transparent;
-    color: rgb(41, 128, 185));
+    color: rgb(41, 128, 185);
 }
 .navinfobtnorg {
     background-image: url('/static/blocbox/images/info-button.png');
