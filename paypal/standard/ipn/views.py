@@ -146,7 +146,8 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #Update transaction table
-    datenow = datetime.datetime.now()
+    datenow = datetime.datetime.now()  
+    date = datetime.date.today()
     time = datetime.datetime.time(datenow)
     #population fields to put into the transaciton table
     if dayrangestart:
