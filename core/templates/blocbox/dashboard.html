@@ -130,7 +130,9 @@
                         </div>  
                         
                         <!--Shipment Status - From Aftership-->
-                        <div class="row"> 	<p class="nomargin"> Status: {{shipment.aftership.tag}}</p> </div>
+                        {% if shipment.aftership.tag %}
+                            <div class="row"> 	<p class="nomargin"> Status: {{shipment.aftership.tag}}</p> </div>
+                        {% endif %}
                     </div>
                     
                     
