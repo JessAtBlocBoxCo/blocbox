@@ -1809,7 +1809,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         color: rgb(255, 195, 0);
     }
     .mobilenavtext {
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
     .inputbox {
         border: 2px solid #ffffff;
@@ -1925,6 +1925,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .orangebars:focus {
         color: rgb(255, 195, 0);
+    }
+    .mobilenavtext {
+        font-size: 1.3em;
     }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
