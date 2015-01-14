@@ -1824,6 +1824,12 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         background-color: rgb(255, 195, 0);
         height: 40px;
     }
+    .content {
+        padding-bottom: 550px;
+    }
+    .footerlogo {
+        display: none;
+    }
 }
 
 /*-------------------------------------------------------------*
