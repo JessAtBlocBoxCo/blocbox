@@ -1787,6 +1787,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         background-repeat: no-repeat;
         background-size: contain;
         height: 30%;
+        width: auto;
         z-index: inherit;
         margin-left: auto;
         margin-right: auto;
