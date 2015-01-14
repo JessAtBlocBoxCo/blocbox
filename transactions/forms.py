@@ -27,7 +27,7 @@ class ModifyTransaction(forms.ModelForm):
 class PackageReceived(forms.ModelForm):
 	  class Meta:
 	  		model = Transaction
-	  		fields = ('trans_complete', 'enduser_rating', 'enduser_comments',)
+	  		fields = ('trans_complete', 'enduser_rating', 'enduser_comments', 'date_completed', 'datetime_completed',)
 
 class EndUserIssue(forms.ModelForm):
 		class Meta:
