@@ -144,11 +144,10 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
         business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
     returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
     transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
-    date = datetime.datetime.now()
-    time = datetime.datetime.time(date)
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #Update transaction table
     datenow = datetime.datetime.now()
+    time = datetime.datetime.time(datenow)
     #population fields to put into the transaciton table
     if dayrangestart:
         dayrangestart = int(dayrangestart)
@@ -236,7 +235,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
-    	  'date':date, 'local_timezone':local_timezone, 
+    	  'date':datenow, 'local_timezone':local_timezone, 
     	  'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
     	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form,
     	  'trans_form_package': trans_form_package, 'invoice': invoice,  'transaction_submitted': transaction_submitted,

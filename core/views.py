@@ -92,6 +92,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     otherfavors_all = transactions_all.exclude(favortype="package")
     otherfavors_all_paid = otherfavors_all.filter(payment_processed=True)
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
+    datetimenow = datetime.datetime.now()
+    datetoday = datetime.date.today.now()
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
         hostonly=connections_all[0].host_user
@@ -222,7 +224,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         else:
             shipments_with_tracking_notcomplete.append(shipment_tuple)
     return render(request, 'blocbox/dashboard.html', {
-        'enduser': enduser, 'host': host,
+        'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'transactions_all_paid': transactions_all_paid,
         'shipments_all': shipments_all, 

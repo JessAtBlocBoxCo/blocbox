@@ -328,9 +328,9 @@
 	 																				{{ package_received_form.trans_complete.errors }}
 	 																				<input type="hidden" name="trans_complete" value=True>
 	 																				{{package_received_form.date_completed.errors }}
-	 																				<input type="hidden" name="date_completed" value={{ }}>
+	 																				<input type="hidden" name="date_completed" value={{ datetoday }}>
 	 																				{{ package_received_form.datetime_completed.errors }}
-	 																				<input type="hidden" name="datetime_completed" value={{ }}>
+	 																				<input type="hidden" name="datetime_completed" value={{ datetimenow }}>
                                   			<!--siubmit button-->
                                   			<div class="row paddingbottom10px"> 
                                   				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
