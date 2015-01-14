@@ -31,6 +31,7 @@
 
             
 """jess to do"""
+- for completed hsipmetns colelct fields for like delivery confirmation or whatever afterhsip adds at the end - add tha to the TRANS table and to the completed hsipmetns box
 - add the ip_obj.transaction_id by passing in URL so the paypal IPN table has a field for the transaction ID, - if the invoice link works, mayb ejust use that
 - dashboardthen edit the update trakcing to make sure this is editing existing entry rather than creating new tracking on aftership: this may not matter?
 - figure out a fix to what happens when there is not a tracking on aferhip - it should go thte django error page

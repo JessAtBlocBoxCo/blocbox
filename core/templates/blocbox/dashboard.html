@@ -444,12 +444,9 @@
                 <!--eventually make this "within past 60 ays" or something or have multiple pages-->
                 <div class="row darkgreytext tinytext textcenter">
                     <!--labels-->
-                    <p class="col-xs-4 marginbottom5px">SHIPMENT DETAILS</p>
+                    <p class="col-xs-3 marginbottom5px">SHIPMENT DETAILS</p>
                     <p class="col-xs-3 marginbottom5px">NEIGHBOR</p>
-                    <p class="col-xs-2 marginbottom5px">DELIVERY DATE</p>
-                    <p class="col-xs-2 marginbottom5px">NEIGHBOR</p>
-                    <p class="col-xs-2 marginbottom5px">ADDRESS</p>
-                    <p class="col-xs-2 marginbottom5px">OPTIONS</p>
+                    <p class="col-xs-3 marginbottom5px">TRACKING</p>
                 </div>
                 <!--row, labels-->
                 
@@ -457,17 +454,25 @@
                 
                 				<div class="row whitebackground marginbottom30px">
                 				    <div class="row textcenter tinytext paddingtop10px">
-                				    	<div class="col-xs-4">
+                				    	<!--shipmetn details -->
+                				    	<div class="col-xs-3">
                 				    		{% if shipment.title %} <div class="row">   <p> {{ shipment.title }} </p></div> {% endif %}
                 				    		<div class="row">   <p> Date Ordered: {{ shipment.date_requested }} </p> </div>
                 				    		<div class="row">   <p> Date Completed: {{ shipment.date_completed }} </p></div>
                 				    	</div>
-                				       
-                				        <p class="col-xs-2">Z139W198WQPUTV</p>
-                				        <p class="col-xs-2">Nov. 11</p>
-                				        <p class="col-xs-2">John</p>
-                				        <p class="col-xs-2">420 Grand Ave.</p>
-                				        <p class="col-xs-2">View Receipt</p>
+                				    	
+                				      <!--neighbor-->
+                				     <div class="col-xs-3">
+                                <div class="row">   <p> {{ shipment.host.first_name }} </p></div> 
+                				    		<div class="row">   <p> {{ shipment.host.st_address1}} </p> </div>
+                				    	</div>
+                				    	
+                				    	<!--tracking -->
+                				     <div class="col-xs-3">
+                                <div class="row">   <p> {{ shipment.tracking }} </p></div> 
+                				    		<div class="row">   <p> {{ shipment.shipment_courier}} : {{ shipment.shipment_type }} </p> </div>
+                				    	</div>
+                				    	
                 				    </div>
                 				</div>
                 {% endfor %}
