@@ -228,7 +228,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
             "notify_url": "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/",
             "return_url": "http://www.blocbox.co/shippackage/host" + str(host.id) +"/",
             "cancel_return": "http://www.blocbox.co/dashboard/",
-    }   
+        }   
     else:
         paypal_form = None
         trans_created = None
