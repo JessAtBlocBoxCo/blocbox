@@ -66,7 +66,7 @@
 					  				{{ trans_form_package.non_field_errors }}
 					  				{{ trans_form_package.tracking.errors }}
 					  		<div class="row">	<!--row with the checkboxes-->
-					  			<div class="col-xs-10 col-sm-8">>			
+					  			<div class="col-xs-10 col-sm-8 col-xs-offset-1 col-sm-offset-2">	
 	      					<table class="table"> <!--div wit checkbox-->       
 	      								<!--header row -->
 	      								<tr> <th>Option</th> <th>Description</th> <th>Price</th></tr>         				
@@ -107,18 +107,20 @@
                 </div> <!--row with the checkboxes-->
 								<!--Enter a Transaction Tite - and add the hidden fields-->
 								<div class="row">
-										<div class="col-xs-6">
+										<div class="col-xs-5 col-xs-offset-1">
 											<h6 class="ltbluetext margintop10px marginsides3pct nopadding">Enter a name for this shipment (optional): </h6>
 										</div>
-					  				<div class="form-group col-xs-6" > 
+					  				<div class="form-group col-xs-5" > 
 					  					<input type="title" class="form-control" id="title" placeholder="Enter a brief description of the shipment (optional)" >	
 					  				</div>
 				  			</div>	
   												
 					  		<!--submit button -->
-    						<div class="col-sm-3 marginbottom30px paddingleft69px nopaddingright">
+					  		<div class="row">
+    							<div class="col-sm-3 marginbottom30px ">
         								<button type="submit" class="bluebutton"> Enter Payment Information</button>
-    						</div>
+    							</div>
+    						</div> <!--row with submit button-->
 					  			     			
 					 </form> <!--END FORM FOR PAYPMENT OPTION AND TITLE AND REST OF HIDDEN TRANSACTIO INPUT -->
                 	
