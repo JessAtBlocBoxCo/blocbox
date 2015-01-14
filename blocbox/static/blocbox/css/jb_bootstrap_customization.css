@@ -1203,6 +1203,9 @@ html, body {
     .waitlistbody .collapse.in {
         display: block !important;
     }
+    .content {
+        padding-bottom: 550px;
+    }
 }
 /*make the navbar text for the waitlist/orange header page white and larger*/
 
@@ -1942,6 +1945,12 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         width: 240px;
         height: 40px;
     }
+    .content {
+        padding-bottom: 550px;
+    }
+    .footerlogo {
+        display: none;
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -2115,6 +2124,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .footerlogo {
         display: none;
+    }
+    .content {
+        padding-bottom: 550px;
     }
 }
 
