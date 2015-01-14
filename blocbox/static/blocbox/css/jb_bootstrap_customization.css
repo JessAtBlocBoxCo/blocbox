@@ -1076,8 +1076,8 @@ html, body {
 }
 
 .inputbox {
-    border: 1px solid #ffffff;
-    background-color: rgb(255, 195, 0);
+    border: 2px solid #ffffff;
+    background-color: rgb(255, 203, 19);
     height: 40px;
 }
 
