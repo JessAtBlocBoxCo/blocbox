@@ -160,7 +160,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     #Do the transactions form stuff
     transaction_submitted = False
     trans = Transaction()
-    if transaction_submitted = False
+    if transaction_submitted = False:
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
             if trans_form_package.is_valid():
