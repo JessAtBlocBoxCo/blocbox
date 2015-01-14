@@ -86,7 +86,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     #load Transacton table instead of paypal tabl
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
     transactions_all_paid = transactions_all.filter(payment_processed=True)
-    shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
+    #shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
+    shipments_all = transactions_all.filter(favortype="package")
     shipmetns_all_paid = shipments_all.filter(payment_processed=True)
     otherfavors_all = transactions_all.exclude(favortype="package")
     otherfavors_all_paid = otherfavors_all.filter(payment_processed=True)
