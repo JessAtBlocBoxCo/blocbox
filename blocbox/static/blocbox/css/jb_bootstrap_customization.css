@@ -1996,7 +1996,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         display: none;
     }
     .mobileheader {
-        font-size: 2.00em;
+        font-size: 1.70em;
         font-weight: 300;
         line-height: 1.38em;
     }
