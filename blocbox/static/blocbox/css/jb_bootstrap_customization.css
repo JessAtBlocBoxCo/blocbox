@@ -1227,6 +1227,7 @@ html, body {
     color: rgb(255, 203, 19);
     border-color: white;
     background-color: white;
+    border: 2px;
     width: 178px;
     padding: 0;
     height: 40px;
