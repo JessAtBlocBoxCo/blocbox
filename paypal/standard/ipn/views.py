@@ -209,7 +209,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     #NEXT, add the paypal fields
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     #THEN.. after transaction entry created - retrive the info - including transaction ID 
-    if transaction_submitted: 
+    if transaction_submitted == True: 
         paypal_form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
         #Get the transactions record that was just created
         trans_created = Transaction.objects.get(invoice=invoice)
