@@ -93,7 +93,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     otherfavors_all_paid = otherfavors_all.filter(payment_processed=True)
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     datetimenow = datetime.datetime.now()
-    datetoday = datetime.date.today.now()
+    datetoday = datetime.date.today()
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
         hostonly=connections_all[0].host_user
