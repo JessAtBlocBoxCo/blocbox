@@ -96,7 +96,7 @@
                     
                     
                      <!--SHIPMENT DETAILS: ORDER DATE AND SHIPPMENT SPEED  -->
-                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
+                    <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
                     	
                     		<!--Transaction Title (if one exists) -->
                     		{% if shipment.title %}
@@ -108,12 +108,10 @@
                     		<!--courier and shipmente-type/spped -->
                     		<div class="row">         
                         		<p class="nomargin"> 
-                        				{% if shipment.aftership %}
-                        						{{ shipment.shipment_courier}}
-                        								<!--show the shipment type if availble -->
-                        								{% if shipment.aftership.shipment_type %}  : {{shipment.aftership.shipment_type }} {% endif %}
-                        				{% else %}
+x
+         
                         						{% if shipment.dayrangestart %}
+                        								You expected:
                         								{% if shipment.dayrangestart == shipment.dayrangeend %}
                         									{{ shipment.dayrangestart }} day shipping
                         									<!--	{{ shipment.deliverydatenotracking_rangestart }} -->
@@ -124,26 +122,28 @@
                         										{{ shipment.deliverydatenotracking_rangeend}} -->
                         								&nbsp;
                         								{% endif %}
-                        						{% endif %} <!--if no tracking but has dayrangestart-->      
-                        				{% endif %}  <!--if no tracking -->            		                        															
+                        						{% endif %} <!--if has dayrangestart-->               		                        															
                         		</p>
                         </div>  
                         
                         <!--Shipment Status - From Aftership-->
-                        {% if shipment.aftership.tag %}
-                            <div class="row"> 	<p class="nomargin"> Status: {{shipment.aftership.tag}}</p> </div>
-                        {% endif %}
+                            <div class="row"> 	<p class="nomargin"> 
+                            	Status: {% if shipment.on_aftership %} {{shipment.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p> 
+                            </div>
                     </div>
                     
                     
                     <!--NEIGHBOR: host name and information-->
-                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px ">
+                    <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
                         <div class="row paddingtopbottom2px">
                      	                             
                             <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                         <div class="row">    <p>{{host.first_name}}</p>  </div>
+                         <div class="row">
                             <a href="https://www.google.com/maps/place/{{shipment.host.st_address1}}+{{shipment.host.city}}+{{shipment.host.state}}+{{shipment.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }}
                             </a>
+                          </div>
                         </div>
                         <div class="row">
                         		<!--MESSAGING MODAL -->                          
@@ -189,14 +189,15 @@
                     <div class="col-xs-4 paddingtopbottom20px paddingsides5px ">
                     	                    		
                     		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
-														
-													<div id="as-root"></div>
-														<script>
-															(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
-														</script>
+													
+													<div class="row">	
+														<div id="as-root"></div>
+															<script>
+																(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
+															</script>
 
 
-                					<div class="as-track-button" data-counter="false" data-support="false" data-width="100" data-size="small" data-tracking-number={{shipment.tracking}}></div>
+                						<div class="as-track-button" data-counter="false" data-support="false" data-width="100" data-size="small" data-tracking-number={{shipment.tracking}}></div>
 														<!--from: https://www.aftership.com/apps/track-button, parameters here: https://www.aftership.com/docs/track-button
 															data-counter: displays the number of shipmetns ina ccount
 															data-support: shows 'powered by..' need premium account to disable
@@ -204,6 +205,13 @@
 															data-size: The size of the track button, can be: small, normal or large
 															data-tracking-number String empty The tracking number for the track button, must use together with "data-slug" 
 														-->
+                   				</div>
+                   				
+                   				<!--courier and shipmetn type -->
+                   				<div class="row">
+                   					 <p> {{ shipment.shipment_courier }} {% if shipment.aftership.shipment_type %} : {{ shipment.aftership.shipment_type }} {% endif%} </p>                 				
+                   				</div>
+                   			
                    			
                     				
                     		                    		
@@ -291,9 +299,9 @@
                     </div> <!--end tracking number -->
                     
                     
-                    <!--BUTTON TO CONFIRM/ REVIEW -->
-                    <div class="col-xs-2 paddingtopbottom20px paddingsides5px "> 
-                    	<div class="row">
+                <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW )-->
+                <div class="col-xs-3 paddingtopbottom20px paddingsides5px "> 
+                    	<div class="row"> <!--confirm/review -->
                     	   <button type="package_received" name="package_received" class="bluebutton" onclick="window.location='/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}';" >
                     	   	 I got my package!
 												</button>											
@@ -334,13 +342,8 @@
         												</div>
                        				</div>
                     	</div>
-                  </div> <!--END CONFIRM BUTTON -->
                   
-                  
-                  
-                  
-                 	<!--REPORT AN ISSUE -->
-                  <div class="col-xs-2 paddingtopbottom20px paddingsides5px "> 
+
                     	<div class="row">
                     	   <button type="startashipment" class="bluebutton" onclick="window.location='/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}';" >
                     	   	 Report an Issue
@@ -373,8 +376,8 @@
         											</div>
                        	</div>
                             	
-                    </div>
-                  </div> <!--END REPORT AND ISSUE -->
+                      </div>
+                </div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE -->
                   
                   
                   
