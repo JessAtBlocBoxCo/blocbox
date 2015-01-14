@@ -1786,8 +1786,8 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         background-image: url('/static/blocbox/images/Logo-white.png');
         background-repeat: no-repeat;
         background-size: contain;
-        height: 35%;
-        width: 60%;
+        height: 200px;
+        width: 230px;
         z-index: inherit;
         margin-left: auto;
         margin-right: auto;
@@ -1932,6 +1932,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .mobilenavtext {
         font-size: 1.3em;
+    }
+    .mobilelogo {
+        height: 150px;
+        width: 180px;
     }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
@@ -2095,6 +2099,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .orangebars:focus {
         color: rgb(255, 195, 0);
+    }
+    .mobilelogo {
+        height: 100px;
+        width: 130px;
     }
 }
 
