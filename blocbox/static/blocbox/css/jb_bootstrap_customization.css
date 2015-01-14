@@ -1636,6 +1636,7 @@ html, body {
     padding: 5px 20px 13px 20px;
     border-radius: 2px;
     background: #fff;
+    z-index: 100000000;
 }
 .close {
     background: #FFFFFF;
