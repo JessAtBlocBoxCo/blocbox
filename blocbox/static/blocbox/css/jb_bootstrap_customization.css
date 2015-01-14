@@ -1807,6 +1807,11 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     .mobilenavtext {
         font-size: 1.3em;
     }
+    .inputbox {
+        border: 2px solid #ffffff;
+        background-color: rgb(255, 195, 0);
+        height: 40px;
+    }
 }
 
 /*-------------------------------------------------------------*
@@ -1848,11 +1853,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         margin-top: 0px;
         height: 40px;
         min-height: 40px;
-    }
-    .inputbox {
-        border: 2px solid #ffffff;
-        background-color: rgb(255, 195, 0);
-        height: 40px;
     }
     .mobilenavlogo {
         height: 40px;
@@ -2007,6 +2007,16 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         font-size: 1.70em;
         font-weight: 300;
         line-height: 1.38em;
+    }
+    .waitlistjoinbtn {
+        border-radius: 3px;
+        color: rgb(255, 203, 19);
+        border-color: white;
+        background-color: white;
+        width: 178px;
+        padding: 0;
+        height: 40px;
+        /*same as form-control, the bootstrap style applied to text input */
     }
     .mobileonly {
         display: block;
