@@ -1076,12 +1076,13 @@ html, body {
 }
 
 .inputbox {
-    border: 1px solid rgb(255, 195, 0);
+    border: 1px solid #ffffff;
+    background-color: rgb(255, 195, 0);
     height: 40px;
 }
 
 .form-control::-moz-placeholder {
-    color: rgb(255, 195, 0);
+    color: #ffffff;
     opacity: 1;
 }
 /*Make the navbar fixed if its mobile */
