@@ -14,15 +14,13 @@ admin.autodiscover()
 urlpatterns = patterns('',
 		#Base views - defined in transactions/views.py
 		url(r'^$', 'paypal.standard.ipn.views.ask_for_money', name='payment_default'), #blocbox.co/payment, defaults o host_id=2 which is John
-		url(r'^host(?P<host_id>\d+)/$', 'transactions.views.base', name='paymentbase'), #blocbox.co/payment/host2
-		#default one
-		url(r'^host(?P<host_id>\d+)/days(?P<dayrangestart>\d+)to(?P<dayrangeend>\d+)/$', 'transactions.views.base', name='paymentbase'), 
-		#FAVORthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a FAVOR (e.g., no dayrangestart or dayrange end)
-		url(r'^host(?P<host_id>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask'),
+		url(r'^host(?P<host_id>\d+)/$', 'transactions.views.base', name='paymentbase'), #blocbox.co/payment/host2 
 		#SHIPMENTthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a SHIPMENT - with dayrangestart, danrange end
-		url(r'^host(?P<host_id>\d+)/days(?P<dayrangestart>\d+)to(?P<dayrangeend>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask'),
-		url(r'^ipn/host(?P<host_id>\d+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_noamount'), #blocbox.co/payment/host2 - not really relevant - Default - Package Amount
-		url(r'^ipn/notify(?P<host_id>\d+)/$', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), #this is the notify_url	
+    url(r'^host(?P<host_id>\d+)/days(?P<dayrangestart>\d+)to(?P<dayrangeend>\d+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_shipment'),
+		#FAVORthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a FAVOR (e.g., no dayrangestart or dayrange end)
+		url(r'^host(?P<host_id>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_favor'),
+		#Notify URL for paypal IPAN
+		url(r'^ipn/notify(?P<host_id>\d+)/$', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), 
 		url(r'^ipn/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_nohost'), #blocbox.co/payment/ipn - NOT FUNCTION B/C DOESN'T LINK TO HOST
     url(r'^ipn/return/$', 'paypal.standard.ipn.views.ipn_return_successful', name='ipn_return_successful'), #Eventually may need a return URL
     #STANDARD-PDT URLS
