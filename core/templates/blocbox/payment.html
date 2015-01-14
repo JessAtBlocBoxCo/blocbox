@@ -32,9 +32,13 @@
     		            <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
     		            
     		            <!--show what they've selected-->
-    		            <div class="col-xs-12 col-sm-6">
+    		            <div class="col-xs-12">
     		            		<table class="table">
-    		            				<tr> <th> Payment Option Selected </th><th>Total Due</th> <td rowspan="2">  {{ paypal_form.render }} </td> 	</tr>
+    		            				<tr> 
+    		            					<th> Payment Option Selected </th>
+    		            					<th>Total Due</th> 
+    		            					<th rowspan="2">  {{ paypal_form.render }} </th> 	
+    		            				</tr>
     		            				<tr><td> {{ trans_created.youselected}}</td><td>{{ trans_created.price }}</td></tr>
     		            		</table>    		            
     		            </div> <!--col with table -->
@@ -42,9 +46,6 @@
     		            <!-- the following statement loads the paypal checkout form - integrates with a paypal account
 												the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
     		
-    		            <div class="col-xs-12 col-sm-5">
-    		                 <!-- render is a function specific to the paypal form -defined in paypal.standard.forms.py-->
-    		            </div>  <!--col-->
     		        </div> <!--row-->
     		    </div>
     		</div> <!--end paypal button -->      
