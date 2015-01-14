@@ -18,73 +18,123 @@
     </div>
 
     <div class="row negmargins">
-        <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
-            <div class="row">
+      <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
+      	
+      	
+    <!--IF THEY HAVE DONE ALL THE FORMS - SIGN INTO PAYPAL ACCOUNT -->
+    {% if transaction_submitted %}
+    		<div class="row">
+    		    <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
+    		        <div class="row">
+    		            <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Sign in to your PayPal account to process payment</h6>
+    		            <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
+    		
+    		            <!-- the following statement loads the paypal checkout form - integrates with a paypal account
+												the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
+    		
+    		            <div class="col-xs-12 col-sm-6 marginbottom30px marginsides3pct">
+    		                {{ paypal_form.render }} <!-- render is a function specific to the paypal form -defined in paypal.standard.forms.py-->
+    		            </div>  <!--col-->
+    		        </div> <!--row-->
+    		    </div>
+    		</div> <!--end paypal button -->
+            
+    {% else %}
+        
+        	<!--IF THEY HAVE SELECTED THE PAYMENT OPTION - ENTER TITLE AND SUBMIT PAYMENT -->
+        	{% if amount %}
+            
+               <form action="." method="post" class="text-left"> 				
+						    	{% csrf_token %}
+					       			{{ trans_form_package.non_field_errors }}
+					       			{{ trans_form_package.tracking.errors }}
+					       			
+					       			<!--add the hidden input fields -->
+					       			<input type="hidden" name="host" value={{host}}>
+					       			<input type="hidden" name="enduser" value={{enduser}}>
+					       			<input type="hidden" name="payment_option" value={{payment_option}}>
+					       			<input type="hidden" name="price" value={{anount}}>
+					       			<input type="hidden" name="invoice" value={{invoice}}>
+					       			<input type="hidden" name="deliverydatenotracking_rangestart" value={{deliverydatenotracking_rangestart}}>
+					       			<input type="hidden" name="deliverydatenotracking_rangeend" value={{deliverydatenotracking_rangestart}}>
+					       			
+					       			<h3>Enter a Name for This Shipment (Optional)</h3>
+					       			<input type="text" class="form-control" name="title" 	placeholder="Enter a brief description of the shipment (Optional) ">  
+	      																					
+					       			<!--submit button -->
+    									<div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
+        									<button type="submit" class="bluebutton"">Enter Payment Information</button>
+    									</div>
+					       			
+					     </form> <!--END FORM FOR PAYPMENT OPTION AND TITLE AND REST OF HIDDEN TRANSACTIO INPUT -->
+						
+
+              	<div class="row nopadding">
+              	    <h6 class="col-xs-6 ltbluetext nopadding"> Payment Option Selected:  {{ youselected }}  </h6> 
+              	    <h6 class="col-xs-6 ltbluetext nopadding textright"> Total Due: ${{ amount }} </h6> 
+              	</div>
+           
+              
+        	{% else %} <!--IF THEY HAVE NOT YET SUBMITTED PAYMETN OPTION - SUBIT IT --> 
+          
+         			<div class="row">
                 <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Select a Payment Option
             		{% if host %} for sending packages to {{ host.first_name }} {% endif %}
-            </h6>
+            		</h6>
                 <div class="paddingsides5pct profileboxline100 marginbottom10px"></div>
-            </div>
+  						</div>
             
-            <div class="col-sm-10 col-sm-offset-1 margintop10px">
-                <!--marginbottom30px-->
+        			<div class="col-sm-10 col-sm-offset-1 margintop10px">
+                			<!--per package-->
+                			<div class="checkbox marginbottom20px">
+                			    <label class="col-xs-3">
+                			        <input type="checkbox" name="perpackage" id="id_perpackage" {% if host %} 
+                			        onClick="window.location='/payment/host{{ host.id }}/days{{dayrangestart}}to{{dayrangeend}}/ipn/package/perpackage';" {% endif %}>PER PACKAGE</label>
+                			    <p class="col-xs-6 nopadding">Pay for a single package</p>
+                			    <h6 class="col-xs-1 nomargin textleft">$2</h6>
+                			    <div class="profileboxline100"></div>
+                			</div>
+                			<!--per package checkbox-->
+                			
+                			<!--buden of 10-->
+                			<div class="checkbox marginbottom20px">
+                			    <label class="col-xs-3">
+                			        <input type="checkbox" name="perpackage" id="id_perpackage" {% if host %} 
+                			        onClick="window.location='/payment/host{{ host.id }}/days{{dayrangestart}}to{{dayrangeend}}/ipn/package/bundle10';" {% endif %}>BUNDLED</label>
+                			    <p class="col-xs-6 nopadding">10 packages (expires in 1 year)</p>
+                			    <h6 class="col-xs-1 nomargin textleft">$15</h6>
+                			    <div class="profileboxline100"></div>
+                			</div>
+                			<!--bundle10 checkbox-->
+                			
+                			<!--Monthly-->
+                			<div class="checkbox marginbottom20px">
+                			    <label class="col-xs-3">
+                			        <input type="checkbox" name="perpackage" id="id_perpackage" {% if host %} 
+                			        onClick="window.location='/payment/host{{ host.id }}/days{{dayrangestart}}to{{dayrangeend}}/ipn/package/month20';" {% endif %}>MONTHLY</label>
+                			    <p class="col-xs-6 nopadding">20 packages for the next 30 days</p>
+                			    <h6 class="col-xs-1 nomargin textleft">$15</h6>
+                			    <div class="profileboxline100"></div>
+                			</div>
+                			<!--monthly checkbox-->
+                			
+                			<!--annual-->
+                			<div class="checkbox marginbottom20px">
+                			    <label class="col-xs-3">
+                			        <input type="checkbox" name="perpackage" id="id_perpackage" {% if host %} 
+                			        onClick="window.location='/payment/host{{ host.id }}/days{{dayrangestart}}to{{dayrangeend}}/ipn/package/annual';" {% endif %}>ANNUAL</label>
+                			    <p class="col-xs-6 nopadding">Up to 20 packages per month for an entire year</p>
+                			    <h6 class="col-xs-1 nomargin textleft">$150</h6>
+                			</div>
+                			<!--annual checkbox-->
+						
+						
 
-                <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -->
 
-                <!--per package-->
-                <div class="checkbox marginbottom20px">
-                    <label class="col-xs-3">
-                        <input type="checkbox" name="perpackage" id="id_perpackage" {% if host %} 
-                        onClick="window.location='/payment/host{{ host.id }}/days{{dayrangestart}}to{{dayrangeend}}/ipn/package/perpackage';" {% endif %}>PER PACKAGE</label>
-                    <p class="col-xs-6 nopadding">Pay for a single package</p>
-                    <h6 class="col-xs-1 nomargin textleft">$2</h6>
-                    <div class="profileboxline100"></div>
-                </div>
-                <!--per package checkbox-->
-
-                <!--buden of 10-->
-                <div class="checkbox marginbottom20px">
-                    <label class="col-xs-3">
-                        <input type="checkbox" name="perpackage" id="id_perpackage" {% if host %} 
-                        onClick="window.location='/payment/host{{ host.id }}/days{{dayrangestart}}to{{dayrangeend}}/ipn/package/bundle10';" {% endif %}>BUNDLED</label>
-                    <p class="col-xs-6 nopadding">10 packages (expires in 1 year)</p>
-                    <h6 class="col-xs-1 nomargin textleft">$15</h6>
-                    <div class="profileboxline100"></div>
-                </div>
-                <!--bundle10 checkbox-->
-
-                <!--Monthly-->
-                <div class="checkbox marginbottom20px">
-                    <label class="col-xs-3">
-                        <input type="checkbox" name="perpackage" id="id_perpackage" {% if host %} 
-                        onClick="window.location='/payment/host{{ host.id }}/days{{dayrangestart}}to{{dayrangeend}}/ipn/package/month20';" {% endif %}>MONTHLY</label>
-                    <p class="col-xs-6 nopadding">20 packages for the next 30 days</p>
-                    <h6 class="col-xs-1 nomargin textleft">$15</h6>
-                    <div class="profileboxline100"></div>
-                </div>
-                <!--monthly checkbox-->
-
-                <!--annual-->
-                <div class="checkbox marginbottom20px">
-                    <label class="col-xs-3">
-                        <input type="checkbox" name="perpackage" id="id_perpackage" {% if host %} 
-                        onClick="window.location='/payment/host{{ host.id }}/days{{dayrangestart}}to{{dayrangeend}}/ipn/package/annual';" {% endif %}>ANNUAL</label>
-                    <p class="col-xs-6 nopadding">Up to 20 packages per month for an entire year</p>
-                    <h6 class="col-xs-1 nomargin textleft">$150</h6>
-                </div>
-                <!--annual checkbox-->
-
-                <!--TOTAL DUE - JOHN YOU WILL WANT TO MAKE THIS PRETTY AND SHIT-->
-                {% if amount %}
-
-                <div class="row nopadding">
-                    <h6 class="col-xs-6 col-sm-3 ltbluetext nopadding"> You Selected: </h6> 
-                    <h6 class="col-xs-6 col-sm-4 ltbluetext nopadding">  {{ youselected }}  </h6> 
-                    <h6 class="col-xs-6 col-sm-2 ltbluetext nopadding textright"> Total Due:</h6> 
-                    <h6 class="col-xs-6 col-sm-1 ltbluetext textleft"> ${{ amount }} </h6> 
-                </div>
-
-                {% endif %}
+             {% endif %} <!-- endif amount -->
+      {% endif %} <!--endif invoice.id -->
+             
+             
 
 
             </div>
@@ -92,46 +142,7 @@
         </div>
     </div>
     <!--row-->
-
-
-    {% if amount %}
-    <div class="row">
-        <div class="col-xs-8 col-xs-offset-2 profilebox marginbottom20px">
-
-            <div class="row">
-                <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Sign in to your PayPal account to process payment</h6>
-                <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
-                <!--<p class="marginsides3pct marginbottom20px">Sign in to your PayPal account to process payment</p> -->
-
-                <!-- the following statement loads the paypal checkout form - integrates with a paypal account
-										the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
-
-                <div class="col-xs-12 col-sm-6 marginbottom30px marginsides3pct">
-                    <!--marginleft40px-->
-                    {{ form.render }}
-                    <!-- render is a function specific to the paypal form -defined in paypal.standard.forms.py to post the form-->
-									
-                    <!--<p class="marginbottom20px">Please note that you will not be changed until your host confirms your receipt of your package</p> -->
-                </div>
-                <!--col-->
-            </div>
-            <!--row-->
-
-            <!--old paypal button 
-            <div class="col-sm-4 marginbottom30px">
-                    <img class="col-sm-offset-2 paypal marginleft40px" src="{ % static "blocbox/images/paypal.png" % }"  height="40" width="122" />
-            </div>  -->
-
-        </div>
-        
-         <!--submit button -- Do we still need this?
-    			<div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
-        		<button class="bluebutton" onClick="window.location='/shippackage';">Submit</button>
-    			</div>
-    			-->
-    </div>
-    <!--col, row : payment information -->
-    {% endif %}
+		
 
 
 </div>

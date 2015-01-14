@@ -19,7 +19,7 @@
  - make the 'report an issue' send an email to us
  - move "completed"/package received trasactions to a third - box
  - make completed style the completed transactions section
-
+<!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 #test tracking nos to add
 9449009699938097189973 - not sure, johns
 9405509699939563285640 - USPS priority, already arrived - wnat to see if the type is updated

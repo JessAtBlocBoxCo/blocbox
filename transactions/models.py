@@ -20,7 +20,7 @@ class Transaction(models.Model):
     #enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
     price = models.DecimalField('Amount Paid', max_digits=6, decimal_places=2, blank=True, null=True)
     title = models.CharField("User Provided Title", max_length=100, blank=True, null=True)   
-    payment_processed = models.BooleanField("Payment Processed", default=False) #update payment process once they've completed process
+    payment_processed = models.BooleanField("Paid", default=False) #update payment process once they've completed process
     date_requested = models.DateTimeField(default=datetime.datetime.today)
     date_requested_notime = models.DateField(default = datetime.date.today, null=True)
     favortype = models.CharField("Favor Type", max_length=100, blank=True, null=True)

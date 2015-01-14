@@ -22,6 +22,7 @@ from core.models import UserInfo
 from connections.models import Connection
 #import transaction models
 from transactions.models import Transaction
+from transactions.forms import CreatePackageTransaction
 
 
 @require_POST
@@ -122,7 +123,7 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
 
-def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpackage", dayrangestart=None, dayrangeend=None): #default amount is 2.00, default host is John
+def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpackage", dayrangestart=None, dayrangeend=None, invoice_id=None): #default amount is 2.00, default host is John
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -154,27 +155,32 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     transcount = PayPalIPN.objects.filter(receiver_email=host.email).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
     date = datetime.datetime.now()
     time = datetime.datetime.time(date)
-    invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #Update transaction table
     datenow = datetime.datetime.now()
-    trans = Transaction() 
+    #population fields to put into the transaciton table
     if dayrangestart:
         dayrangestart = int(dayrangestart)
     if dayrangeend:
         dayrangeend = int(dayrangeend)
-    if host_id:
-        trans.host = host
-        trans.enduser = enduser        
-        trans.price = amount
-        trans.favortype = favortype
-        trans.invoice = invoice
-        trans.dayrangestart = dayrangestart
-        trans.dayrangeend = dayrangeend
-        trans.deliverydatenotracking_rangestart = datenow + timedelta(days=dayrangestart)
-        trans.deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
-        trans.payment_option = paymentoption
-    trans.save()
+    invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
+    deliverydatenotracking_rangestart = datenow + timedelta(days=dayrangestart)
+    deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
+    #Do the transactions form stuff
+    transaction_submitted = False
+    if paymentoption:
+        if request.method == 'POST':
+            trans_form_package = CreatePackageTransaction(data=request.POST)
+            if trans_form_package.is_valid():
+                trans_add = trans_form_package.save()          
+                trans_form_package.save() 
+                transaction_submitted = True
+            else:
+                print trans_form_package.errors 
+        else: 
+            trans_form_package = CreatePackageTransaction()
+    else:
+        trans_form_package = None
     #NEXT, add the paypal fields
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     paypal_dict = {
@@ -192,16 +198,23 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
         "notify_url": "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/",
         "return_url": "http://www.blocbox.co/shippackage/host" + str(host.id) +"/",
         "cancel_return": "http://www.blocbox.co/dashboard/",
-    }    
-    form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
+    }   
+    if transaction_submitted: 
+        paypal_form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
+    else:
+        paypal_form = None
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':date, 'local_timezone':local_timezone, 
     	  'amount':amount, "youselected": youselected,
     	  'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
-    	  'here': quote(request.get_full_path()), 'form': form,
+    	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form,
+    	  #pass other arguments for the trans_form
+    	  'trans_form_package': trans_form_package, 'invoice': invoice, 'deliverydatenotracking_rangestart': deliverydatenotracking_rangestart
+		    'deliverydatenotracking_rangeend': deliverydatenotracking_rangeend, 'payment_option': paymentoption,
     })
+
     
 """Need to implement a return view and a cancel view, from documentation:
  	You will also need to implement the 'return_url' and 'cancel_return' views
