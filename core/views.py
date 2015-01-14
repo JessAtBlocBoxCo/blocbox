@@ -184,6 +184,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     else:
         compose_form = None        
     #AFTERSHIP STUFF: GET THE SHIPMENT_TRACKING_TUPLE
+    shipments_with_tracking_allpaid = []
     shipments_with_tracking_complete = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
     shipments_with_tracking_notcomplete = []
     for shipment in shipments_all_paid:  
@@ -219,6 +220,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         else:
             shipment_tuple['aftership']=None
             shipment_tuple['tracking']=None
+        shipments_with_tracking_allpaid.append(shipment_tuple)
         if shipment.trans_complete ==True:
             shipments_with_tracking_complete.append(shipment_tuple)
         else:
@@ -232,7 +234,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
-        'shipments_with_tracking': shipments_with_tracking, 'shipments_with_tracking_complete': shipments_with_tracking_copmlete, 
+        'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_copmlete, 
         'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete,
     })
     
