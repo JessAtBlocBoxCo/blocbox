@@ -33,8 +33,8 @@
     		            
     		            <!--show what they've selected-->
     		            <div class="row nopadding">
-            			  	    <h6 class="col-xs-12 ltbluetext nopadding"> Payment Option Selected:  {{ youselected }}  </h6> 
-            			  	    <h6 class="col-xs-12 ltbluetext nopadding"> Total Due: ${{ price }} </h6> 
+            			  	    <h6 class="col-xs-12 ltbluetext nopadding"> Payment Option Selected:  {{ trans_created.youselected }}  </h6> 
+            			  	    <h6 class="col-xs-12 ltbluetext nopadding"> Total Due: ${{ trans_created.price }} </h6> 
             				</div>
     		
     		            <!-- the following statement loads the paypal checkout form - integrates with a paypal account
@@ -59,7 +59,7 @@
             	    	<div class="paddingsides5pct profileboxline100 marginbottom10px"></div>
   						</div>
                 	
-           		<form action="." method="post"> 
+           		<form action="." role="form" method="post"> 
            			
            							
 								{% csrf_token %}

@@ -123,7 +123,15 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
 
-def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, dayrangeend=None, ): #default amount is 2.00, default host is John, paymentoption="perpackage", invoice_id=None
+""" the ask for money view is triggered in the shipment process after they've confirmed availability
+		the page first display a form asking for the payment option (bundled, per package, etc) and gets 
+		a label for the transaction (title) and a note to the host (note_to_host)
+		once that form has been submitted, a new page is rendered that asks them to confirm infomration
+		and link to their paypal accout.
+		the template for both of these is on payment.html
+		its a bit confusing because there are two forms on one page - thats why we use transaction_submitted true or false
+"""
+def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, dayrangeend=None, ): #default amount is 2.00, default host is John, payment_option="perpackage", invoice_id=None
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -152,23 +160,23 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     #Do the transactions form stuff
     transaction_submitted = False
     trans = Transaction()
-    if paymentoption:
-        if request.method == 'POST':
-            trans_form_package = CreatePackageTransaction(request.POST)
+    if transaction_submitted = False
+        if request.method == 'POST': 
+            trans_form_package = CreatePackageTransaction(request.POST)            
             if trans_form_package.is_valid():
                 #first, get data from the form
                 title = trans_form_package.cleaned_data['title']
                 payment_option = trans_form_package.cleaned_data['payment_option']
                 note = trans_form_package.cleaned_data['note']
-                if paymentoption=="bundle10":
+                if payment_option=="bundle10":
                     price="15.00"
                     youselected="Bundle of 10 Packages"
                     paypal_quantity = 10
-                elif paymentoption=="month20":
+                elif payment_option=="month20":
                     price="15.00"
                     youselected="Monthly"
                     paypal_quantity = 20
-                elif paymentoption=="annual":
+                elif payment_option=="annual":
                     price="150.00"
                     youselected="Annual"
                     paypal_quantity = 240
@@ -196,13 +204,8 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
                 print trans_form_package.errors 
         else: 
             trans_form_package = CreatePackageTransaction()
-    else:
+    else: #if transaction submitted is true
         trans_form_package = None
-        youselected = None
-        price = None
-        paypal_quantity = None
-        payment_option = None
-        title = None
     #NEXT, add the paypal fields
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     #THEN.. after transaction entry created - retrive the info - including transaction ID
@@ -224,17 +227,19 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     }   
     if transaction_submitted: 
         paypal_form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
+        #Get the transactions record that was just created
+        trans_created = Transaction.objects.get(invoice=invoice) 
     else:
         paypal_form = None
+        trans_created = None
     #context = {"form": form}
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':date, 'local_timezone':local_timezone, 
-    	  'price':price, "youselected": youselected,
     	  'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
     	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form,
-    	  'trans_form_package': trans_form_package, 'invoice': invoice, 'deliverydatenotracking_rangestart': deliverydatenotracking_rangestart,
-		    'deliverydatenotracking_rangeend': deliverydatenotracking_rangeend, 'payment_option': paymentoption,  'transaction_submitted': transaction_submitted,
+    	  'trans_form_package': trans_form_package, 'invoice': invoice,  'transaction_submitted': transaction_submitted,
+    	  'trans_created': trans_created,
     })
 
     
