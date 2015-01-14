@@ -65,7 +65,8 @@
 								{% csrf_token %}
 					  				{{ trans_form_package.non_field_errors }}
 					  				{{ trans_form_package.tracking.errors }}
-					  		<div class="row">	<!--row with the checkboxes-->			
+					  		<div class="row">	<!--row with the checkboxes-->
+					  			<div class="col-xs-10 col-sm-8">>			
 	      					<table class="table"> <!--div wit checkbox-->       
 	      								<!--header row -->
 	      								<tr> <th>Option</th> <th>Description</th> <th>Price</th></tr>         				
@@ -102,11 +103,16 @@
                 				</tr>
                 				<!--annual checkbox-->
 									</table> <!--table containg payment options -->
+								</div> <!--col-sm-10 with all the checkboxes-->
                 </div> <!--row with the checkboxes-->
 								<!--Enter a Transaction Tite - and add the hidden fields-->
 								<div class="row">
-										<h6 class="col-xs-6 ltbluetext margintop10px marginsides3pct nopadding">Enter a name for this shipment (optional): </h6>
-					  				<div class="form-group col-xs-6" > <input type="title" class="form-control" id="title" placeholder="Enter a brief description of the shipment (optional)" >	</div>
+										<div class="col-xs-6">
+											<h6 class="ltbluetext margintop10px marginsides3pct nopadding">Enter a name for this shipment (optional): </h6>
+										</div>
+					  				<div class="form-group col-xs-6" > 
+					  					<input type="title" class="form-control" id="title" placeholder="Enter a brief description of the shipment (optional)" >	
+					  				</div>
 				  			</div>	
   												
 					  		<!--submit button -->
