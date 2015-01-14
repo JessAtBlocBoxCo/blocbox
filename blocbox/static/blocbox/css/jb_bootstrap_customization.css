@@ -1961,6 +1961,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .margintop50pxnomobile {
         margin-top: 0px;
     }
+    .paddingtop15pxmobile {
+        padding-top: 15px;
+    }
     .paddingtop30px {
         padding-top: 30px;
     }
@@ -2004,10 +2007,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         font-size: 1.70em;
         font-weight: 300;
         line-height: 1.38em;
-    }
-    .waitlistjoinbtn {
-        padding-top: 15px;
-        /*same as form-control, the bootstrap style applied to text input */
     }
     .mobileonly {
         display: block;
