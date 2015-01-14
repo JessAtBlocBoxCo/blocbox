@@ -15,7 +15,7 @@
 
 -- separate the en route from the delivered, using the {{tag}} aftership variable
 - - make the completed transacitons move to the completed section
- - dashbarod - fix the "message" link on current shipments
+ - dashbarod - fix the "message" link on current shipments, link on how to: https://docs.djangoproject.com/en/1.7/topics/forms/ - see "if cc_mayself"..
  - make the 'report an issue' send an email to us
  - move "completed"/package received trasactions to a third - box
  - make completed style the completed transactions section

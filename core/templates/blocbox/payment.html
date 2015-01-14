@@ -61,9 +61,12 @@
                 	
            		<form action="." role="form" method="post"> 
            			
+           			
            							
 								{% csrf_token %}
 					  				{{ trans_form_package.non_field_errors }}
+					  		
+					  		<p>TEST - SEE IF LOADS FORM AT ALL {{ trans_form_package.as_table }}</p>
 					  				
 					  		<div class="row">	<!--Payment option: row with the checkboxes-->
 					  			<div class="col-xs-12 col-sm-8 col-sm-offset-0">	
