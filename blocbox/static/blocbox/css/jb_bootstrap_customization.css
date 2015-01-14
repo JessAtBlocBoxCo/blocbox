@@ -1786,8 +1786,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         background-image: url('/static/blocbox/images/Logo-white.png');
         background-repeat: no-repeat;
         background-size: contain;
-        height: 100px;
-        width: 130px;
+        height: 30%;
         z-index: inherit;
         margin-left: auto;
         margin-right: auto;
