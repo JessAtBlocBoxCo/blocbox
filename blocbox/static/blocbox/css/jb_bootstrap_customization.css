@@ -1100,7 +1100,7 @@ html, body {
         top: 0;
         right: 0;
         left: 0;
-        z-index: 10000
+        z-index: 10000;
     }
     .waitlistbody .anchor {
         padding-top: 35px;
@@ -1152,7 +1152,7 @@ html, body {
     /*make footer taller */
     footer > .container-fluid > div {
         padding-left: 0px;
-        padding-right: 0px
+        padding-right: 0px;
     }
 }
 /*-----------------------------------------------------------------------
@@ -2112,6 +2112,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .mobilename {
         width: 240px;
         height: 40px;
+    }
+    .footerlogo {
+        display: none;
     }
 }
 
