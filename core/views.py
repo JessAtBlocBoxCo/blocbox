@@ -182,7 +182,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     else:
         compose_form = None        
     #AFTERSHIP STUFF: GET THE SHIPMENT_TRACKING_TUPLE
-    shipments_with_tracking = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
+    shipments_with_tracking_complete = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
+    shipments_with_tracking_notcomplete = []
     for shipment in shipments_all_paid:  
         tracking_no = str(shipment.tracking) #the str function removes the preceding u'
         shipment_tuple = {} 
@@ -216,17 +217,21 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         else:
             shipment_tuple['aftership']=None
             shipment_tuple['tracking']=None
-        shipments_with_tracking.append(shipment_tuple)
+        if shipment.trans_complete ==True:
+            shipments_with_tracking_complete.append(shipment_tuple)
+        else:
+            shipments_with_tracking_notcomplete.append(shipment_tuple)
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
         'transactions_all': transactions_all, 'transactions_all_paid': transactions_all_paid,
-        'shipments_all': shipments_all, 'shipments_all_paid': shipments_all_paid,
-        'otherfavors_all': otherfavors_all, 'otherfavors_all_paid': otherfavors_all_paid,
+        'shipments_all': shipments_all, 
+        'otherfavors_all': otherfavors_all, 
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
-        'shipments_with_tracking': shipments_with_tracking, 
+        'shipments_with_tracking': shipments_with_tracking, 'shipments_with_tracking_complete': shipments_with_tracking_copmlete, 
+        'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete,
     })
     
 
