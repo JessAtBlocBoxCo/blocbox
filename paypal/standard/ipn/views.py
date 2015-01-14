@@ -232,7 +232,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     	  'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
     	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form,
     	  'trans_form_package': trans_form_package, 'invoice': invoice, 'deliverydatenotracking_rangestart': deliverydatenotracking_rangestart,
-		    'deliverydatenotracking_rangeend': deliverydatenotracking_rangeend, 'payment_option': paymentoption,
+		    'deliverydatenotracking_rangeend': deliverydatenotracking_rangeend, 'payment_option': paymentoption,  'transaction_submitted': transaction_submitted,
     })
 
     
