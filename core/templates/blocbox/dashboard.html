@@ -133,7 +133,7 @@
                     
                     <!--NEIGHBOR: host name and information-->
                     <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
-                       	 <div class="row paddingtopbottom2px">  <p>{{host.first_name}}</p>  </div>
+                       	 <div class="row paddingtopbottom2px">  <p>{{shipment.host.first_name}}</p>  </div>
                      	                             
                            
                          <div class="row">
@@ -298,7 +298,7 @@
                     
                     
                			<!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW )-->
-               			<div class="col-xs-2 paddingtopbottom20px paddingsides5px "> 
+               			<div class="col-xs-2 paddingtopbottom20px"> 
                			    	<div class="row"> <!--confirm/review -->
                			    	   <button type="package_received" name="package_received" class="bluebutton" onclick="window.location='/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}';" >
                			    	   	 I got my package!
