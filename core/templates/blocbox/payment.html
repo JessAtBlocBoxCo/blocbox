@@ -32,10 +32,12 @@
     		            <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
     		            
     		            <!--show what they've selected-->
-    		            <div class="row nopadding">
-            			  	    <h6 class="col-xs-12 ltbluetext nopadding"> Payment Option Selected:  {{ trans_created.youselected }}  </h6> 
-            			  	    <h6 class="col-xs-12 ltbluetext nopadding"> Total Due: ${{ trans_created.price }} </h6> 
-            				</div>
+    		            <div class="col-xs-12 col-sm-6">
+    		            		<table class="table">
+    		            				<tr><th><Payment Option Selected/th><th>Total Due</th></tr>
+    		            				<tr><td> {{ trans_created.youselected}}</td><td>{{ trans_created.price }}</td></tr>
+    		            		</table>    		            
+    		            </div> <!--col with table -->
     		
     		            <!-- the following statement loads the paypal checkout form - integrates with a paypal account
 												the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
