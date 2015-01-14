@@ -157,9 +157,9 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
             trans_form_package = CreatePackageTransaction(data=request.POST)
             if trans_form_package.is_valid():
                 #first, get data from the form
-            	  title = trans_form_package.cleaned_data['title']
-            	  payment_option = trans_form_package.cleaned_data['payment_option']
-            	  if paymentoption=="bundle10":
+                title = trans_form_package.cleaned_data['title']
+                payment_option = trans_form_package.cleaned_data['payment_option']
+                if paymentoption=="bundle10":
                     price="15.00"
                     youselected="Bundle of 10 Packages"
                     paypal_quantity = 10
