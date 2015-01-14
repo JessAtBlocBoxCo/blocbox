@@ -9,10 +9,10 @@ from transactions.models import Transaction
 #the other fields are automatically added to the transactions table - though this could be changed
 class CreatePackageTransaction(forms.ModelForm):
     class Meta:
-        model = Transaction
-        fields = ('title', 'payment_option', 
+        #model = Transaction
+        fields = ('title', 'payment_option', )
             #The remaining fields will be hidden input
-            'host', 'enduser', 'dayrangestart', 'dayrangeend', 'invoice', 'price', 'deliverydatenotracking_rangestart', 'deliverydatenotracking_rangeend',)
+            #'host', 'enduser', 'dayrangestart', 'dayrangeend', 'invoice', 'price', 'deliverydatenotracking_rangestart', 'deliverydatenotracking_rangeend',)
         
 class TrackingForm(forms.ModelForm):
     class Meta:

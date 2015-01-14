@@ -22,11 +22,13 @@
 <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 #test tracking nos to add
 9449009699938097189973 - not sure, johns
+1ZX1A509YW10497241 - UPS - shipinag soon (mine)
 9405509699939563285640 - USPS priority, already arrived - wnat to see if the type is updated
 591099350463 - fedex, will arrive today
 9374869903500264240007 - DHL global mail, arrive tomorro
 1Z2W6185YW01658200  -UPS surepost, delivered today
 1ZXF38300304993998  - UPS, arrived today
+
             
 """jess to do"""
 - add the ip_obj.transaction_id by passing in URL so the paypal IPN table has a field for the transaction ID, - if the invoice link works, mayb ejust use that
@@ -53,6 +55,7 @@
 - discuss with john: SMS notifications for aftership? 4 cents per SMS.. may not be worth it since meail is so close
 
 """TO DO"""
+- create the host profile or dashboard with things like options for setting prices
 QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
 1. JOHN - /Fix Mobile/make site responsive
 3. JOHN search page -- fix map top margin and restyle nudge a neighbor message

@@ -44,7 +44,6 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     imageurl= models.URLField('Profile Picture URL', blank=True)
     host = models.BooleanField(blank=True, default=False) #boolean can't be null if want null need NullBooleanField
     hostinterest = models.BooleanField('Interested in Hosting', blank=True, default=False)
-    hostrating = models.DecimalField('Host Rating', max_digits=3, decimal_places=2, blank=True, null=True)
     userrating = models.DecimalField('User Rating',max_digits=3,decimal_places=2, blank=True, null=True)
     favorscompleted = models.IntegerField('Favors Completed',blank=True, null=True)
     favorsrequested = models.IntegerField('Favors Requested',blank=True, null=True)
@@ -77,12 +76,19 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     
 		#Add more host-specific fields
 		#!!! Note - maybe move this to host table that is linked to user table - may make it easeri to connect
+		hostrating = models.DecimalField('Host Rating', max_digits=3, decimal_places=2, blank=True, null=True)
     services_offered = models.CharField('UPDATE TO CHOICES - SERVICES\q OFFERED', max_length=250, blank=True)
     host_aboutme = models.CharField("About Me (Host)",max_length=350,blank=True)
     availability = models.CharField("Availability (Write-In)",max_length=250,blank=True)
     whenimhome_days = models.CharField("When I'm Home: Days of the Week (Write-In)",max_length=250,blank=True)
     whenimhome_hours = models.CharField("When I'm Home: Hours (Write-In)",max_length=250,blank=True)
     address_approx = models.CharField("Approximate Address for Visitors to See", max_length=100, blank=True, null=True) 
+    #host specific pricing
+    price_package_per = models.DecimalField("Price Charged Per Package", max_digits=4, decimal_places=2, blank=True, null=True)
+    price_package_bundle10 = models.DecimalField("Price Charged for Bundle of 10 Packages", max_digits=4, decimal_places=2, blank=True, null=True)
+    price_package_month20 = models.DecimalField("Price Charged for Monthly (up to 20)", max_digits=4, decimal_places=2, blank=True, null=True)
+    price_package_annual = models.DecimalField("Price Charged for Annual Shipmetns", max_digits=5, decimal_places=2, blank=True, null=True)
+    
     
     #addingj custom or text fields
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)

@@ -123,29 +123,12 @@ Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_Ord
 kinda sucks because it drops your customers off at PayPal's website but it's
 easy to implement and doesn't require SSL."""
 
-def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpackage", dayrangestart=None, dayrangeend=None, invoice_id=None): #default amount is 2.00, default host is John
+def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, dayrangeend=None, invoice_id=None): #default amount is 2.00, default host is John, paymentoption="perpackage", 
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
     	  host = None
-    if paymentoption=="bundle10":
-        amount="15.00"
-        youselected="Bundle of 10 Packages"
-        quantity = 1
-        quantity = 10
-    elif paymentoption=="month20":
-        amount="15.00"
-        youselected="Monthly"
-        quantity = 20
-    elif paymentoption=="annual":
-        amount="150.00"
-        youselected="Annual"
-        quantity = 240
-    else:
-        amount="2.00"
-        youselected="Per Package"
-        quantity = 1
     #Define the business/receiver email (frsturated b/c the business name is the receiver email name, can't decouple)
     if host.email:
         business = host.email
@@ -168,12 +151,44 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
     #Do the transactions form stuff
     transaction_submitted = False
+    trans = Transaction()
     if paymentoption:
         if request.method == 'POST':
             trans_form_package = CreatePackageTransaction(data=request.POST)
             if trans_form_package.is_valid():
-                trans_add = trans_form_package.save()          
-                trans_form_package.save() 
+                #first, get data from the form
+            	  title = trans_form_package.cleaned_data['title']
+            	  payment_option = trans_form_package.cleaned_data['payment_option']
+            	  if paymentoption=="bundle10":
+                    price="15.00"
+                    youselected="Bundle of 10 Packages"
+                    paypal_quantity = 10
+                elif paymentoption=="month20":
+                    price="15.00"
+                    youselected="Monthly"
+                    paypal_quantity = 20
+                elif paymentoption=="annual":
+                    price="150.00"
+                    youselected="Annual"
+                    paypal_quantity = 240
+                else:
+                    price="2.00"
+                    youselected="Per Package"
+                    paypal_quantity = 1
+                #Next, add the data to the transaction table
+            	  trans.payment_option = payment_option
+            	  trans.title = title
+                trans.price = price
+                trans.youselected = youselected
+                trans.paypal_quantity = paypal_quantity
+                trans.host = host
+                trans.enduser = enduser
+                trans.dayrangestart = dayrangestart
+                trans.dayrangeend = dayrangeend
+                trans.invoice = invoice
+                trans.deliverydatenotracking_rangestart = deliverydatenotracking_rangestart
+                trans.deliverydatenotracking_rangeend = deliverydatenotracking_rangeend    
+                trans.save() 
                 transaction_submitted = True
             else:
                 print trans_form_package.errors 
@@ -181,13 +196,19 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
             trans_form_package = CreatePackageTransaction()
     else:
         trans_form_package = None
+        youselected = None
+        price = None
+        paypal_quantity = None
+        payment_option = None
+        title = None
     #NEXT, add the paypal fields
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
+    #THEN.. after transaction entry created - retrive the info - including transaction ID
     paypal_dict = {
         "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
-        "amount": amount, #Amount of the purchase - try to pass this as an argument
+        "amount": price, #Amount of the purchase - try to pass this as an argument
         "item_name": favortype,
-        "quantity": quantity,
+        "quantity": paypal_quantity,
         "cbt": returnmessage, #Sets value for return to merchant button
         "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
         "invoice": invoice,
@@ -207,10 +228,9 @@ def ask_for_money(request, host_id=2, favortype="package", paymentoption="perpac
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':date, 'local_timezone':local_timezone, 
-    	  'amount':amount, "youselected": youselected,
+    	  'price':price, "youselected": youselected,
     	  'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
     	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form,
-    	  #pass other arguments for the trans_form
     	  'trans_form_package': trans_form_package, 'invoice': invoice, 'deliverydatenotracking_rangestart': deliverydatenotracking_rangestart,
 		    'deliverydatenotracking_rangeend': deliverydatenotracking_rangeend, 'payment_option': paymentoption,
     })

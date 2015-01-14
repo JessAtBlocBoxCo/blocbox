@@ -19,6 +19,9 @@ class Transaction(models.Model):
     #host = models.CharField("Host/Provider", max_length=100, blank=True, null=True)
     #enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
     price = models.DecimalField('Amount Paid', max_digits=6, decimal_places=2, blank=True, null=True)
+    payment_option = models.CharField("Payment Option", max_length=30, blank=True, null=True)
+    youselected = models.CharField(max_length=50, blank=True, null=True)  
+    paypal_quantity = models.IntegerField(blank=True, null=True)
     title = models.CharField("User Provided Title", max_length=100, blank=True, null=True)   
     payment_processed = models.BooleanField("Paid", default=False) #update payment process once they've completed process
     date_requested = models.DateTimeField(default=datetime.datetime.today)
@@ -43,7 +46,6 @@ class Transaction(models.Model):
     enduser_comments = models.CharField("EndUser Transaction Comments", max_length=200, blank=True, null=True)
     #Report an issue
     enduser_issue = models.CharField("EndUser Issue", max_length=300, blank=True, null=True)
-    payment_option = models.CharField("Payment Option", max_length=30, blank=True, null=True)
     #Aftership Variables grabbed iitially
     on_aftership = models.BooleanField("On Aftership", default=False)
     shipment_courier = models.CharField("Courier", max_length=20, blank=True, null=True)
