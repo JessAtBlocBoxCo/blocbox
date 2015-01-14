@@ -958,10 +958,6 @@ html, body {
     .canvas {
         padding: 0;
     }
-    h1 {
-        font-size: 4.6em;
-        font-weight: 700;
-    }
 }
 
 .mobilenavlogo {
@@ -978,7 +974,7 @@ html, body {
 
 /*Change width of navbar-header - so when it collapses - was 768 */
 
-@media (max-width: 1000px) {
+@media (max-width: 1025px) {
     .navbar-header {
         float: none;
     }
@@ -1016,6 +1012,10 @@ html, body {
     }
     .collapse.in {
         display: block !important;
+    }
+    h1 {
+        font-size: 4.6em;
+        font-weight: 700;
     }
 }
 .hide {
