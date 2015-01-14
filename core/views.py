@@ -183,7 +183,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         compose_form = None        
     #AFTERSHIP STUFF: GET THE SHIPMENT_TRACKING_TUPLE
     shipments_with_tracking = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
-    for shipment in shipments_all:  
+    for shipment in shipments_all_paid:  
         tracking_no = str(shipment.tracking) #the str function removes the preceding u'
         shipment_tuple = {} 
         shipment_tuple['id'] = shipment.id
