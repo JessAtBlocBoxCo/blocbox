@@ -5,10 +5,20 @@ from django.conf import settings
 from core.models import UserInfo
 from transactions.models import Transaction
 
+#Create a form to add the pricing optioninformation and the title
+#the other fields are automatically added to the transactions table - though this could be changed
+class CreatePackageTransaction(forms.ModelForm):
+    class Meta:
+        model = Transaction
+        fields = ('title', 'payment_option', 
+            #The remaining fields will be hidden input
+            'host', 'enduser', 'dayrangestart', 'dayrangeend', 'invoice', 'price', 'deliverydatenotracking_rangestart', 'deliverydatenotracking_rangeend',)
+        
 class TrackingForm(forms.ModelForm):
     class Meta:
         model = Transaction
         fields = ('tracking',)
+
 
 class ModifyTransaction(forms.ModelForm):
     class Meta:
@@ -24,7 +34,8 @@ class EndUserIssue(forms.ModelForm):
 		class Meta:
 				model = Transaction
 				fields = ('enduser_issue',)
-				
+
+
 """
   
 #connect form for useres that are already registered, still works off of userinfo 
