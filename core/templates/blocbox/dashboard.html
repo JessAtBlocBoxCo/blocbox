@@ -86,7 +86,9 @@
 
 
             <!--Current or Recent Shipments: currently ordered by ID - so the oldest order is first...-->
-
+						<p>TEST - SHOW ID FOR TRANSACTIONS PAID: {% for trans in transactions_all_paid %} {{ trans.id }} {% endfor %} </p>
+						<p>TEST - SHOW ID FOR  SHIPMETNS PAID: {% for trans in shipments_all_paid %} {{ trans.id }} {% endfor %} </p>
+						
             {% for shipment in shipments_with_tracking %}
             
 

@@ -85,8 +85,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     connections_count = connections_all.count() #count them,removing status=0 after host_user=host
     #load Transacton table instead of paypal tabl
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
+    transactions_all_paid = Transactions_all.filter(payment_processed=True)
     shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
+    shipmetns_all_paid = shipments_all.filter(payment_processed=True)
     otherfavors_all = transactions_all.exclude(favortype="package")
+    otherfavors_all_paid = otherfavors_all.filter(payment_processed=True)
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
@@ -214,7 +217,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host,
         'connections_all': connections_all, 'connections_count': connections_count,
-        'transactions_all': transactions_all, 'shipments_all': shipments_all, 'otherfavors_all': otherfavors_all,       	
+        'transactions_all': transactions_all, 'transactions_all_paid': transactions_all_paid,
+        'shipments_all': shipments_all, 'shipments_all_paid': shipments_all_paid,
+        'otherfavors_all': otherfavors_all, 'otherfavors_all_paid': otherfavors_all_paid,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
