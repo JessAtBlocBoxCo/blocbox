@@ -1223,7 +1223,7 @@ html, body {
     border: 2px;
     width: 178px;
     padding: 0;
-    height: 34px;
+    height: 40px;
     /*same as form-control, the bootstrap style applied to text input */
 }
 .waitlistjoinbtn:hover {
