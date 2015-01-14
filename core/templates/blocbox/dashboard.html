@@ -467,7 +467,8 @@
                 				    	<!--tracking -->
                 				     <div class="col-xs-3">
                                 <div class="row">   <p> {{ shipment.tracking }} </p></div> 
-                				    		<div class="row">   <p> {{ shipment.shipment_courier}} : {{ shipment.aftership.shipment_type }} </p> </div>
+                				    		<div class="row">   <p> {% if shipment.shipment_courier %} {{ shipment.shipment_courier}} {% else %} {{ shipment.aftership.slug }} {% endif %}
+                				    			: {{ shipment.aftership.shipment_type }} </p> </div>
                 				    	</div>
                 				    	
                 				    </div>
