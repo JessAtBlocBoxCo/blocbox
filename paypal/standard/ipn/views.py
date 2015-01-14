@@ -176,8 +176,8 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
                     youselected="Per Package"
                     paypal_quantity = 1
                 #Next, add the data to the transaction table
-            	  trans.payment_option = payment_option
-            	  trans.title = title
+                trans.payment_option = payment_option
+                trans.title = title
                 trans.price = price
                 trans.youselected = youselected
                 trans.paypal_quantity = paypal_quantity
