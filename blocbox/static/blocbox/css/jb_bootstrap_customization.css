@@ -958,6 +958,10 @@ html, body {
     .canvas {
         padding: 0;
     }
+    h1 {
+        font-size: 4.6em;
+        font-weight: 700;
+    }
 }
 
 .mobilenavlogo {
