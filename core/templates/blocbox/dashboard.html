@@ -76,8 +76,8 @@
                 <!--TOP ROW - HEADERS -->
                 <div class="row textcenter darkgreytext tinytext ">
                     <!--row containing top table--> 
-                    <div class="col-xs-2">  <p class="marginbottom5px">SHIPMENT DETAILS </p>  </div>
-                    <div class="col-xs-2">  <p class="marginbottom5px">NEIGHBOR</p> </div>
+                    <div class="col-xs-3">  <p class="marginbottom5px">SHIPMENT DETAILS </p>  </div>
+                    <div class="col-xs-3">  <p class="marginbottom5px">NEIGHBOR</p> </div>
                     <!-- <div class="col-xs-2">   <p class="marginbottom5px">OPTIONS</p> </div> -->
                     <div class="col-xs-4">   <p class="marginbottom5px">TRACKING</p>  </div>
                     <div class="col-xs-2">   <p class="marginbottom5px">COMPLETE</p>  </div>
@@ -136,16 +136,16 @@
                     
                     <!--NEIGHBOR: host name and information-->
                     <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
-                        <div class="row paddingtopbottom2px">
+                       	 <div class="row paddingtopbottom2px">  <p>{{host.first_name}}</p>  </div>
                      	                             
-                            <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                         <div class="row">    <p>{{host.first_name}}</p>  </div>
+                           
                          <div class="row">
+                         	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             <a href="https://www.google.com/maps/place/{{shipment.host.st_address1}}+{{shipment.host.city}}+{{shipment.host.state}}+{{shipment.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }}
                             </a>
                           </div>
-                        </div>
+                          
                         <div class="row">
                         		<!--MESSAGING MODAL -->                          
                             <a href="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}" class="nomargin"> Message {{ shipment.host.first_name }}</a>                            
@@ -180,7 +180,7 @@
         													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         												</div>
                        			</div> <!--end thanks modal-->
-                    	</div> <!--row with message -->
+                    	  </div> <!--row with message -->
                     </div> <!--row with neighbor information (address and message link -->
                     
                   
@@ -383,7 +383,7 @@
                   
                   
                 </div> <!--row whitebackground-->
-            {% endfor %} <!--for shipmetns in all -->
+            {% endfor %} <!--for shipmetns in shipments not completed -->
 
             </div>
             <!--col, shipments container-->
@@ -436,29 +436,37 @@
             <!--COMPLETED SHIPMENTS Container-->
             <div class="col-xs-12 dashbox marginbottom60px marginbottom30px">
 
-                <h3 class="col-xs-12 ltbluetext nopadding">Completed Shipments and other Transactions</h3> 
+                <h3 class="col-xs-12 ltbluetext nopadding">Completed Shipments</h3> 
                 <!--eventually make this "within past 60 ays" or something or have multiple pages-->
                 <div class="row darkgreytext tinytext textcenter">
                     <!--labels-->
-                    <p class="col-xs-2 marginbottom5px">STATUS</p>
-                    <p class="col-xs-2 marginbottom5px">TRACKING</p>
+                    <p class="col-xs-4 marginbottom5px">SHIPMENT DETAILS</p>
+                    <p class="col-xs-3 marginbottom5px">NEIGHBOR</p>
                     <p class="col-xs-2 marginbottom5px">DELIVERY DATE</p>
                     <p class="col-xs-2 marginbottom5px">NEIGHBOR</p>
                     <p class="col-xs-2 marginbottom5px">ADDRESS</p>
                     <p class="col-xs-2 marginbottom5px">OPTIONS</p>
                 </div>
                 <!--row, labels-->
-                <div class="row whitebackground marginbottom30px">
-                    <div class="row textcenter tinytext paddingtop10px">
-                        <p class="col-xs-2">Received</p>
-                        <p class="col-xs-2">Z139W198WQPUTV</p>
-                        <p class="col-xs-2">Nov. 11</p>
-                        <p class="col-xs-2">John</p>
-                        <p class="col-xs-2">420 Grand Ave.</p>
-                        <p class="col-xs-2">View Receipt</p>
-                    </div>
-                </div>
-                <!--row, text data-->
+                
+                {% for shipment in shipments_with_tracking_completed %}
+                
+                				<div class="row whitebackground marginbottom30px">
+                				    <div class="row textcenter tinytext paddingtop10px">
+                				    	<div class="col-xs-4">
+                				    		{% if shipment.title %} <div class="row">   <p> {{ shipment.title }} </p></div> {% endif %}
+                				    		<div class="row">   <p> Date Ordered: {{ shipment.date_requested }} </p> </div>
+                				    		<div class="row">   <p> Date Completed: {{ shipment.date_completed }} </p></div>
+                				    	</div>
+                				       
+                				        <p class="col-xs-2">Z139W198WQPUTV</p>
+                				        <p class="col-xs-2">Nov. 11</p>
+                				        <p class="col-xs-2">John</p>
+                				        <p class="col-xs-2">420 Grand Ave.</p>
+                				        <p class="col-xs-2">View Receipt</p>
+                				    </div>
+                				</div>
+                {% endfor %}
             </div>
             <!--col, RECENT SHIPMETNS-->
         </div>
