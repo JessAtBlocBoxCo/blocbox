@@ -103,29 +103,14 @@
                    	 			<!--Date transaction created-->
                     			<div class="row paddingtopbottom2px"> <p class=" nomargin"> Order Placed {{ sh.trans.date_requested_notime }}</p> 	</div>
                     		
-                    			<!--Expected Delivery -->
-                    			<div class="row">         
-                    			    		<p class="nomargin"> 
-         															{% if sh.aftership.expected_delivery %}	Scheduled Delivery: {{ sh.aftership.expected_delivery_notime }}
-         															{% else %}						
-                    			    						{% if sh.trans.dayrangestart %}
-                    			    								You expected
-                    			    								{% if sh.trans.dayrangestart == sh.trans.dayrangeend %}	{{ sh.trans.dayrangestart }} day shipping
-                    			    								{% else %}	{{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping                       								
-                    			    								&nbsp;
-                    			    								{% endif %}
-                    			    						{% endif %} <!--if has dayrangestart--> 
-                    			    				{% endif %}              		                        															
-                    			    		</p>
-                    			</div>  
+												<!--ADD: DELIVERED ON -->
                     
                     			<!--Status-->
                     			<div class="row"> 	  <p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p>  </div>
                     
                     			<!--Tracking -->	                    		
                 					{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->		
-                					 <!--courier and shipmetn type -->
-                    			<div class="row nomargin">  <p class="nomargin"> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
+                					
                     			
                     			<!--TRACKING NUMBER -->				
                     			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->							
