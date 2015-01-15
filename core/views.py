@@ -202,6 +202,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     for shipment in shipments_all_paid:  
         tracking_no = str(shipment.tracking) #the str function removes the preceding u'
         shipment_tuple = {} 
+        shipment_tuple['transaction']=shipment
+        """
         shipment_tuple['id'] = shipment.id
         shipment_tuple['host'] = shipment.host
         shipment_tuple['enduser']=shipment.enduser
@@ -221,6 +223,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipment_tuple['note_to_host']=shipment.note_to_host
         shipment_tuple['on_aftership']=shipment.on_aftership
         shipment_tuple['date_completed']=shipment.date_completed
+        """
         shipment_tuple['aftership']={}  
         if shipment.on_aftership: 
             #populate the aftership_tracking sub-tuble                 

@@ -1,6 +1,10 @@
-"""jess dashboard to do"""
+
+1. extract just date from expected_delietry
+ship to 0 and delete the tracking from aftership
 
 2. cdheck if the thanks modal is working after you enter tracking - the html shows up as thanks but
+		functioning open modal URL: http://www.blocbox.co/dashboard/issue_id28/#openModal_enduser_issue_id28/Thanks
+		ulr after i enter: http://www.blocbox.co/dashboard/track_id54/#openModal_entertracking_id54/Thanks
 3. get the post-complete stuff - like date delivered fro amjftershi - add
 2. separte those en route from those waiting to be picked up - put waiting to be picked up first
 4. why didnt john get notify email fix that
