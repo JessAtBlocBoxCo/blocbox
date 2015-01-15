@@ -145,11 +145,12 @@
                     <!--Tracking -->	                    		
                 		{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->		
                 		<!--courier and shipmetn type -->
-                   	<div class="row nomargin">  <p> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
-                   					
+                   	<div class="row nomargin">  <p class="nomargin"> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
+                   	
+                   	<!--TRACKING NUMBER -->				
                    	<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->							
 										<div class="row nomargin">	
-												<p> Tracking: {{ sh.trans.tracking }}
+												<p class="nomargin"> Tracking: {{ sh.trans.tracking }}
 											        <!--EDIT TRACKING -->
                     				 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
 														 	<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 
@@ -221,13 +222,15 @@
                     
                     <!--NEIGHBOR: host name and information-->
                     <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
-                       	 <div class="row nomargin">  <p>{{sh.trans.host.first_name}}</p>  </div>
+                       	 <div class="row nomargin">  <p class="nomargin"> Sent to your neighbor {{sh.trans.host.first_name}}</p>  </div>
                      	                                                        
-                         <div class="row nomargin">
+                         <div class="row nomargin"> 
+                         	<p class="nomargin"> {{sh.trans.host.first_name}}'s Address: 
                          	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
                             </a>
+                            </p>
                           </div>
                           
                         <div class="row nomargin">
