@@ -143,26 +143,41 @@
                     </div>
                     
                     <!--Tracking -->	                    		
-                		{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->													
+                		{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->		
+                		<!--courier and shipmetn type -->
+                   	<div class="row nomargin">  <p> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
+                   					
+                   	<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->							
 										<div class="row nomargin">	
-														<div id="as-root"></div>
-															<script>
-																(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
-															</script>
-
-
-                						<div class="as-track-button" data-counter="false" data-support="false" data-width="100" data-size="small" data-tracking-number={{sh.trans.tracking}}></div>
-														<!--from: https://www.aftership.com/apps/track-button, parameters here: https://www.aftership.com/docs/track-button
-															data-counter: displays the number of shipmetns ina ccount
-															data-support: shows 'powered by..' need premium account to disable
-															data-widt: the width in px of the track button iframe size
-															data-size: The size of the track button, can be: small, normal or large
-															data-tracking-number String empty The tracking number for the track button, must use together with "data-slug" 
-														-->
+												<p> Tracking: {% sh.trans.tracking }}
+											        <!--EDIT TRACKING -->
+                    				 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
+														 	<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 
+                                  <div>	
+                                  		<a href="/dashboard" title="Close" class="close">X</a>
+        															<h6 class="ltbluetext">Update Your Tracking Number</h6>
+        															<p>Enter a tracking number, shipping company or other information</p>
+                                    	
+                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id/Thanks" enctype="multipart/form-data">
+					   															{% csrf_token %}
+					   																	{{ tracking_form.non_field_errors }}
+					   																	{{ tracking_form.tracking.errors }}
+					   															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	      																			<input type="tracking" class="form-control" name="tracking"      					          
+	      																					placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
+	 																						</div>
+	 
+	
+                                  			<!--siubmit button-->
+                                  			<div class="row paddingbottom10px"> 
+                                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					    													</div>                
+                            					</form>
+                            			</div> 
+                            	</div>   <!--div id openmodal..-->  										
+													</p>
                    	</div>
-                   				
-                   	<!--courier and shipmetn type -->
-                   	<div class="row nomargin">  <p> {{ sh.trans.shipment_courier }} {% if sh.aftership.shipment_type %} : {{ sh.aftership.shipment_type }} {% endif%} </p> 	</div>
+                   			
                     		                    		
                    {% else %}  <!--if no tracking, enter it -->
                     			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
@@ -196,37 +211,9 @@
                           </div> <!--end enter tracking row-->         
                    {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
-                   <!--EDIT TRACKING -->                    		
-                    	{% if sh.trans.tracking %} 
-                    			
-                    			<div class="row"> <!--edit tracking info-->
-                    				 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">Edit Tracking #</a>
-														 	<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 
-                                  <div>	
-                                  		<a href="/dashboard" title="Close" class="close">X</a>
-        															<h6 class="ltbluetext">Update Your Tracking Number</h6>
-        															<p>Enter a tracking number, shipping company or other information</p>
-                                    	
-                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id/Thanks" enctype="multipart/form-data">
-					   															{% csrf_token %}
-					   																	{{ tracking_form.non_field_errors }}
-					   																	{{ tracking_form.tracking.errors }}
-					   															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      																			<input type="tracking" class="form-control" name="tracking"      					          
-	      																					placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
-	 																						</div>
-	 
-	
-                                  			<!--siubmit button-->
-                                  			<div class="row paddingbottom10px"> 
-                                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    													</div>                
-                            					</form>
-                            			</div> 
-                            	</div>   <!--div id openmodal..-->  
-                      
-                    			</div> <!--row for edit tracking-->
-                    		{% endif %}
+
+
+
                   </div> <!--end  shipment details -->
   
                        
@@ -245,7 +232,7 @@
                           
                         <div class="row nomargin">
                         		<!--MESSAGING MODAL -->                          
-                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Message {{ shi.trans.host.first_name }}</a>                            
+                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Message {{ sh.trans.host.first_name }}</a>                            
 														 	<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
 														 		{% load i18n %}
 														 			<div>
