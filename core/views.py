@@ -101,7 +101,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         hostonly=None   	
     #reload with transactions for the modal thing to work
     if track_id:
-        trans = Transaction.objects.get(pk=track_id)    
+        trans = Transaction.objects.get(pk=track_id)  
+        courier_on_trans = trans.shipment_courier
+        tracking_on_trans = trans.tracking
         if request.method == 'POST':        
             tracking_form  = TrackingForm(request.POST, instance=trans)
             if tracking_form.is_valid(): 
@@ -132,10 +134,12 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     trans.on_aftership = True
                     trans.shipment_courier = slug_detected.upper()
                     trans.save()
-                else:
+                else: #if they entered nothing delete it       
+                    api.trackings.delete(courier_on_trans, tracking_on_trans)
                     trans.tracking = None
                     trans.on_aftership = None
-                    api.trackings.delete(trans.shipment_courier, trans.tracking) 
+                    trans.save()
+                    
             else: #if tracking form is not valid 
     	          print tracking_form.errors 
     		    #Now, get the tracking info from the API
