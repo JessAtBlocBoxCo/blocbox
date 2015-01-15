@@ -133,24 +133,19 @@
             	{% for sh in shipments_with_tracking_notcomplete_delivered %}    
            				<!--divider defining the whole current shipments part -->
            				<div class="row whitebackground marginbottom30px textleft dashfont">
-           						<h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
+           						<h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }} {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
            						
                				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                 			<div class="col-xs-4 paddingsides5px ">
-                                     		
-                   	 			<!--Date transaction created-->
-                    			<div class="row"> <p class=" nomargin"> Order Placed {{ sh.trans.date_requested_notime }}</p> 	</div>                   		
+                                     		                  		
                     			<!--Status and date delivered-->
-                    			<div class="row"><p class="nomargin"> Status:  {{sh.aftership.tag}} on {{sh.aftership.last_checkpoint.checkpoint_time }}  </p>  </div>
-                    
-                    			<!--Tracking -->
-                    			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->		                    		
-                					{% if sh.trans.tracking %} 	                				  		                    									
-															<div class="row nomargin">	
-													 				<p class="nomargin"> Tracking: {{ sh.trans.tracking }} </p>
-                    					</div>                    					                    					                    		
-                    			{% endif %}  
-      
+                    			<div class="row">
+                    				<p class="nomargin"> {{sh.aftership.tag}} on {{sh.aftership.last_checkpoint.checkpoint_time }}  </p>  </div>
+                            <p class="nomargin"> Delivered to {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}  </p>  </div>
+                    				<!--Tracking -->
+                    				<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->		                    		
+                						{% if sh.trans.tracking %} 	 	<p class="nomargin"> Tracking: {{ sh.trans.tracking }} </p>  		{% endif %}  
+													</div> <!--row-->		      
                     	</div> <!--end  shipment details: waiting to be picke dup packages -->
   
                        
@@ -179,13 +174,13 @@
                	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                	      <div class="col-xs-3"> 
                	      		    	<div class="row"> <!--confirm/review -->
-               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
+               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 25px"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
                	      		    	   	 I got my package! </button>				
                	      		    	   	 {% include "dashboard_subtemplates/package_received_modal.html" %}
                	      		    	</div>
                	      		                 	      		
                	      		    	<div class="row"> <!--report an issue -->
-               	      		    	   <button type="button" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
+               	      		    	   <button type="button" class="bluebutton" style="height: 25px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
                	      		    	   	 Report an Issue	</button>		
 																 </div>
 																 <!--load sub template tag with this omdal -->
@@ -254,14 +249,14 @@
                	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW ) (Packages in Tarnsit)-->
                	      <div class="col-xs-3"> 
                	      		<div class="row"> <!--confirm/review -->
-               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 30px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
+               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
                	      		    	   	 I got my package!	</button>		
                	      		    	   	{% include "dashboard_subtemplates/package_received_modal.html" %}									                                
                	      		</div>
                	      		  
                	      		
                	      		<div class="row">
-               	      		    	<button type="button" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
+               	      		    	<button type="button" class="bluebutton" style="height: 25px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
                	      		    	   	 Report an Issue </button>				
                	      		    	{% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}							              	      		            	
                	      		</div>
@@ -352,13 +347,13 @@
                	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW ) (Packages in Tarnsit)-->
                	      <div class="col-xs-3"> 
                	      		    	<div class="row"> <!--confirm/review -->
-               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 30px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
+               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
                	      		    	   	 I got my package! </button>		
                	      		    	   {% include "dashboard_subtemplates/package_received_modal.html" %}								
                	      		    	</div>
                	      		                	      		
                	      		    	<div class="row">
-               	      		    	   <button type="button" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
+               	      		    	   <button type="button" class="bluebutton" style="height: 25px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
                	      		    	   	 Report an Issue	</button>		
                	      		    	   {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}									              	      		            	
                	      		      </div>
