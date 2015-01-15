@@ -303,14 +303,17 @@
                     			</div>  
                     			
                     
-                    			<!--Status-->
-                    			<div class="row"> 	  <p class="nomargin"> Status:  {{sh.aftership.tag}}  </p>  </div>
+                    			<!--Status and shipment type-->
+                    			<div class="row"> 	  <p class="nomargin"> Status:  {{sh.aftership.tag}} {
+                    						% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }}  )
+                    						{% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}  
+                    				</p>  
+                    			</div>
 
                     			{% if sh.aftership.last_checkpoint.city %}
                      				<div class="row"><p class="nomargin"> Last Location:  {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }} </p></div>
                    			 {% endif %} 
-                    			<!--Shipment type (from api)-->	                  		
-                    			<div class="row nomargin">  <p class="nomargin"> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
+
                     			
                     			<!--TRACKING NUMBER -->	
                     			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->	  			                   									
