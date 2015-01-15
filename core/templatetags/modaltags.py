@@ -47,7 +47,7 @@ def get_item(dictionary, key):
 
 #Enteruser Ereport Issue
 @register.inclusion_tag("modals/enduser_report_issue.html")
-def enduser_report_issue(request): 
+def enduser_report_issue(): 
     request_method = request.method    
     context = {}
     return context	
