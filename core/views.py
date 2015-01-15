@@ -225,19 +225,19 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()
             else:
                 shipment_tuple['aftership']['expected_delivery_notime']=None       
+            if shipment.trans_complete ==True:
+                shipments_with_tracking_complete.append(shipment_tuple)
+            else:
+                shipments_with_tracking_notcomplete.append(shipment_tuple)
+                tag = shipment_tuple['aftership']['tag']
+                if tag == "Delivered":
+                    shipments_with_tracking_notcomplete_delivered.append(shipment_tuple)
+                else:
+                    shipments_with_tracking_notcomplete_notdelivered.append(shipment_tuple)
         else:
             shipment_tuple['aftership']=None
             shipment_tuple['tracking']=None
         shipments_with_tracking_allpaid.append(shipment_tuple)
-        if shipment.trans_complete ==True:
-            shipments_with_tracking_complete.append(shipment_tuple)
-        else:
-            shipments_with_tracking_notcomplete.append(shipment_tuple)
-            tag = shipment_tuple['aftership']['tag']
-            if tag == "Delivered":
-                shipments_with_tracking_notcomplete_delivered.append(shipment_tuple)
-            else:
-                shipments_with_tracking_notcomplete_notdelivered.append(shipment_tuple)
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
