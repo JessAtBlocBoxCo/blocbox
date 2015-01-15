@@ -33,16 +33,16 @@
             <div class="profileboxline margintop20px marginbottom20px"></div>
 
             <div class="col-xs-12 ">
-                <button type="startashipment" name="startashipment" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/startashipment/host{{hostonly.id}}';">
+                <button type="button" name="startashipment" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/startashipment/host{{hostonly.id}}';">
                     {% else %} onclick="window.location='/startashipment';"> {% endif %} Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</button>
             </div>
             <div class="col-xs-12 ">
-                <button type="startashipment" name="startafavor" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/startafavor/host{{hostonly.id}}';">
+                <button type="button" name="startafavor" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/startafavor/host{{hostonly.id}}';">
                     {% else %} onclick="window.location='/startafavor';"> {% endif %} Start a Favor</button>
             </div>
 
             <div class="col-xs-12 ">
-                <button type="startashipment" name="newsearch" class="bluebutton marginbottom30px" onclick="window.location='/search';">Find a new host</button>
+                <button type="button" name="newsearch" class="bluebutton marginbottom30px" onclick="window.location='/search';">Find a new host</button>
             </div>
 
             <div class="profileboxline margintop20px marginbottom20px"></div>
@@ -62,7 +62,137 @@
         </div>
         <!--sidebar-->
 			
-						<!--PTHANK YOU MODALS -- PUTTING THEM ON TOP-->
+					<!--DEFINE MODALS FOR EVERY SHIPMENT AT THE TOP SINCE THEY ARE THE SAME REGARDLESS OF THE SECTION - AVOIDS REPEATING THE CODE -->
+					{%for sh in shipments_with_tracking_allpaid %}
+						
+							<!--ENTER TRACKING MODAL -->
+							<div id="openModal_entertracking_id{{sh.trans.id}}" class="modalDialog">                   
+                 <div>	
+                  	<a href="/dashboard" title="Close" class="close">X</a>
+        						<h6 class="ltbluetext">Enter a Tracking Number</h6>
+        						<p>Enter a tracking number, shipping company or other information</p>                   	
+                    	<form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking/Thanks" enctype="multipart/form-data">
+					   											{% csrf_token %}
+					   											{{ tracking_form.non_field_errors }}
+					   											{{ tracking_form.tracking.errors }}                    	
+                    		  <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	        										<input type="tracking" class="form-control" name="tracking" 	placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	       	   
+	   											</div>                   			                                                             	
+                    		<div class="row paddingbottom10px"> <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button> </div> 
+					    				</form>
+					    	</div> <!--div inside modal --> 					    									               
+              </div>    <!--END ENTER TRACKING MODAL-->
+                
+                    			        
+							<!--EDIT TRACKING MODAL -->
+							<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 
+                  <div>	
+                  		<a href="/dashboard" title="Close" class="close">X</a>
+        											<h6 class="ltbluetext">Update Your Tracking Number</h6>
+        											<p>Enter a tracking number, shipping company or other information</p>
+                    	
+                    	 <form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking/Thanks" enctype="multipart/form-data">
+					   											{% csrf_token %}
+					   											{{ tracking_form.non_field_errors }}
+					   											{{ tracking_form.tracking.errors }}
+					   							<div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	      										<input type="tracking" class="form-control" name="tracking"  	placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	       	   
+	 												</div>
+	            	            
+                  			<div class="row paddingbottom10px"> 	<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button> </div>                
+              				</form>
+              		</div> 
+              </div>   <!--CLOSE EDIT TRACKING MODAL.--> 
+						
+							<!--PACKAGE RECEIVED MODAL-->							
+							<div id="openModal_package_received_id{{sh.trans.id}}" class="modalDialog">                                 
+                 <div>	
+                     <a href="/dashboard" title="Close" class="close">X</a>
+        								<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
+   														<!--form needs to pass True so modalsubmited is registered -->
+                       	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received/Thanks" enctype="multipart/form-data">
+					   									{% csrf_token %}
+					   											{{ package_received_form.non_field_errors }}
+					   											{{ package_received_form.enduser_rating.errors }}
+					   									
+					   									<h6>How would you rate this transaction?</h6>
+					   									<div class="col-xs-12 nopaddingleftright paddingbottom10px">					   															 																												   		
+					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=1 > 1 	</label> 	</div>
+					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=2 > 2 	</label> 	</div>
+					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=3 > 3 	</label> 	</div>
+					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=4 > 4 	</label> 	</div>
+					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=5 > 5 	</label> 	</div>
+	 															</div> <!--end div with radios -->
+	 															<!--hidden input to mark complete-->
+	 															{{ package_received_form.trans_complete.errors }}
+	 															<input type="hidden" name="trans_complete" value=True>
+	 															{{package_received_form.date_completed.errors }}
+	 															<input type="hidden" name="date_completed" value={{ datetoday }}>
+	 															{{ package_received_form.datetime_completed.errors }}
+	 															<input type="hidden" name="datetime_completed" value={{ datetimenow }}>
+                     			<!--siubmit button-->
+                     			<div class="row paddingbottom10px"> 
+                     				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					   								</div>                
+               					</form>
+               			</div> 
+               	</div>   <!--END DIV ID FOR PACKAGE RECEIVED MODAL.--> 
+               	
+               	<!--MESSASGING MODAL --->
+								<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
+										{% load i18n %}
+											<div>
+													<a href="/dashboard" title="Close" class="close">X</a>																																	
+														<div class="row margintopbottom30px">
+														   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
+														        		{% csrf_token %} 
+														        		<!--{{ compose_form.as_table }} -->
+														        		<!--compose form has recipient, subject, body -->
+														        <div class="row">	
+														        		<label for="id_recipient"> Recipient: </label> <input id="id_recipient" name="recipient" type="text" />
+														        </div>
+														        <div class="row">
+																				<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
+																		</div>	
+																		<div class="row">																						
+																				<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
+																		</div>	
+														        <input type="submit" value="{% trans "Send" %} &raquo;"/>
+														    </form>
+														</div>	
+											</div>												
+               	</div> <!-- END MESSAGING MODAL -->
+                
+                
+               <!--ENDUSER REPORT AN ISSUE MODAL -->									
+							 	<div id="openModal_enduser_issue_id{{sh.trans.id}}" class="modalDialog">                                 
+                   <div>	
+                       <a href="/dashboard" title="Close" class="close">X</a>
+        									<h4 class="ltbluetext">Report an issue, delay or other concern with shipment {{sh.trans.id}} </h4>                                   	
+                         	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue/Thanks" enctype="multipart/form-data">
+					   										{% csrf_token %}
+					   												{{ enduser_issue_form.non_field_errors }}
+					   												{{ enduser_issue_form.enduser_issue.errors }}
+					   										 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	      															<input type="text" class="form-control" name="enduser_issue"      					          
+	      																	placeholder="Enter a Description of the Issue ">    	    	   
+	 																		</div>
+                       			<!--siubmit button-->
+                       			<div class="row paddingbottom10px"> 
+                       				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					   									</div>                
+                 					</form>
+                 			</div> 
+              </div>   <!--END: USER ISSUE MODAL.--> 
+						
+				{% endfor %} <!--END DEFINING THE MODALS FOR ALL SHIPMETNS -->
+						
+						
+						
+						
+						
+					<!--DEFINE ALL THANK YOU MODALS-->
+                
                 <!--thanks modal: Enter Tracking-->
                 <div id="openModal_entertracking/Thanks" class="modalDialog"> 
                 		<div>
@@ -88,7 +218,7 @@
               <div id="openModal_message/Thanks" class="modalDialog"> 
               		<div>
                     <a href="/dashboard" title="Close" class="close">X</a>
-        						<h3 class="ltbluetext">Your Message to {{sh.trans.host.first_name}} Has Been Sent! </h3>    
+        						<h3 class="ltbluetext">Your Message Has Been Sent! </h3>    
         						<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         					</div>
               </div> <!--end thanks modal: sent a message-->
@@ -98,7 +228,7 @@
              	<div>
                  	<a href="/dashboard" title="Close" class="close">X</a>
         							<h3 class="ltbluetext">Thanks! </h3>    
-        							<h6>Thanks for your feedback! Order {{sh.trans.id}} has been marked as complete. </h6>
+        							<h6>Thanks for your feedback! This order has been marked as complete. </h6>
         							<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         					</div>
              </div> <!--END THANKS MODAL: MARKED AS COMPLETE -->
@@ -108,7 +238,7 @@
             			<div>
             	        <a href="/dashboard" title="Close" class="close">X</a>
         								<h3 class="ltbluetext">Thanks! </h3>    
-        								<h6>We have received your report regarding order {{sh.trans.id}} and will be in touch within 24 hours to resolve this issue. </h6>
+        								<h6>We have received your report and will be in touch within 24 hours to resolve this issue. </h6>
         								<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         						</div>
            </div> <!--end Thanks modal: End User Issue-->
@@ -116,6 +246,8 @@
                	      		       				              
     <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
    	<div class="col-xs-12 col-sm-10 col-lg-8">
+					
+					
 						
 				<!--SHIPMENTS DELIVERED - WAITING TO BE PICKED UP -->
 				<div class="col-xs-12 col-sm-12 dashbox">
@@ -125,177 +257,66 @@
            				<div class="row whitebackground marginbottom30px textleft dashfont">
            						<h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
                     
-               				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION -->
+               				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                 			<div class="col-xs-3 paddingsides5px ">
                                      		
                    	 			<!--Date transaction created-->
-                    			<div class="row paddingtopbottom2px"> <p class=" nomargin"> Order Placed {{ sh.trans.date_requested_notime }}</p> 	</div>
-                    		
-												<!--ADD: DELIVERED ON -->
-                    
+                    			<div class="row paddingtopbottom2px"> <p class=" nomargin"> Order Placed {{ sh.trans.date_requested_notime }}</p> 	</div>                   		
+													<!--Date delivered -->
+                    			<div class="row> <p class="nomargin"> Delivered On {{sh.aftership.delivered_on }} ADD THIS FIELD</p></div>
                     			<!--Status-->
                     			<div class="row"> 	  <p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p>  </div>
                     
-                    			<!--Tracking -->	                    		
-                					{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->		
-                					
-                    			
-                    			<!--TRACKING NUMBER -->				
-                    			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->							
-													<div class="row nomargin">	
-													 						<p class="nomargin"> Tracking: {{ sh.trans.tracking }}
-													 					        <!--EDIT TRACKING -->
-                    							 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
-													 								 	<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 
-                    			              <div>	
-                    			              		<a href="/dashboard" title="Close" class="close">X</a>
-        									 													<h6 class="ltbluetext">Update Your Tracking Number</h6>
-        									 													<p>Enter a tracking number, shipping company or other information</p>
-                    			                	
-                    			                	 <form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking/Thanks" enctype="multipart/form-data">
-					   							 															{% csrf_token %}
-					   							 																	{{ tracking_form.non_field_errors }}
-					   							 																	{{ tracking_form.tracking.errors }}
-					   							 															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      									 																	<input type="tracking" class="form-control" name="tracking"      					          
-	      									 																			placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
-	 												 																	</div>
-	                  			
-	                  			
-                    			              			<!--siubmit button-->
-                    			              			<div class="row paddingbottom10px"> 
-                    			              				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    						 														</div>                
-                    			        					</form>
-                    			        			</div> 
-                    			        	</div>   <!--div id openmodal..-->  										
-													 							</p>
-                    			</div>
-                    					
-                    					                    		
+                    			<!--Tracking -->
+                    			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->		                    		
+                					{% if sh.trans.tracking %} 	                				  		                    									
+															<div class="row nomargin">	
+													 				<p class="nomargin"> Tracking: {{ sh.trans.tracking }}
+													 					<!--EDIT TRACKING -->
+                    							 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a									
+													 				</p>
+                    					</div>                    					                    					                    		
                     			{% endif %}  
       
-                    		                    		
-
-
-
-                 			</div> <!--end  shipment details -->
+                    	</div> <!--end  shipment details: waiting to be picke dup packages -->
   
                        
                                         
-                    	<!--NEIGHBOR: host name and information-->
+                    	<!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     	<div class="col-xs-3 paddingsides5px ">
+                    		 <!--neigbor name-->
                        	 <div class="row nomargin">  <p class="nomargin"> Sent to your neighbor {{sh.trans.host.first_name}}</p>  </div>
-                     	                                                        
+                     	   <!--neighbor address-->                                                     
                          <div class="row nomargin"> 
-                         	<p class="nomargin"> {{sh.trans.host.first_name}}'s Address: 
-                         	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
-                            <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                            	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
-                            </a>
-                            </p>
-                      </div>
-                          
-                        <div class="row nomargin">
-                        		<!--MESSAGING MODAL -->                          
+                         		<p class="nomargin"> {{sh.trans.host.first_name}}'s Address: 
+                         	 		<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
+                            	<a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                            		{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
+                           		</a>
+                           	</p>
+                      	</div>
+                      
+                      	<!--send a message-->    
+                      	<div class="row nomargin">                       
                             <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a>                            
-														 	<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
-														 		{% load i18n %}
-														 			<div>
-														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
-																				<div class="row margintopbottom30px">
-																				   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
-																				        		{% csrf_token %} 
-																				        		<!--{{ compose_form.as_table }} -->
-																				        		<!--compose form has recipient, subject, body -->
-																				        <div class="row">	
-																				        		<label for="id_recipient"> Recipient: </label> <input id="id_recipient" name="recipient" type="text" />
-																				        </div>
-																				        <div class="row">
-																										<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
-																								</div>	
-																								<div class="row">																						
-																										<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
-																								</div>	
-																				        <input type="submit" value="{% trans "Send" %} &raquo;"/>
-																				    </form>
-																				</div>	
-																	</div>												
-                        		</div> <!-- id=openModal -->
-                    	  </div> <!--row with message -->
-                      </div> <!--row with neighbor information (address and message link -->
+                    	 	</div> <!--row with message -->
+                      </div> <!--End Neighbor Column (packages waiting to be picked up) -->
                     
                   
                            
-               	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW )-->
+               	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                	      <div class="col-xs-3"> 
                	      		    	<div class="row"> <!--confirm/review -->
-               	      		    	   <button type="startashipment" name="package_received" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
-               	      		    	   	 I got my package!
-								      							</button>											
-								      						 	<div id="openModal_package_received_id{{sh.trans.id}}" class="modalDialog">                                 
-               	      		              <div>	
-               	      		                  <a href="/dashboard" title="Close" class="close">X</a>
-        				      												<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
-   							      															<!--form needs to pass True so modalsubmited is registered -->
-               	      		                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received/Thanks" enctype="multipart/form-data">
-					   		      																{% csrf_token %}
-					   		      																		{{ package_received_form.non_field_errors }}
-					   		      																		{{ package_received_form.enduser_rating.errors }}
-					   		      																
-					   		      																<h6>How would you rate this transaction?</h6>
-					   		      																<div class="col-xs-12 nopaddingleftright paddingbottom10px">					   															 																												   		
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=1 > 1 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=2 > 2 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=3 > 3 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=4 > 4 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=5 > 5 	</label> 	</div>
-	 							      																</div> <!--end div with radios -->
-	 							      																<!--hidden input to mark complete-->
-	 							      																{{ package_received_form.trans_complete.errors }}
-	 							      																<input type="hidden" name="trans_complete" value=True>
-	 							      																{{package_received_form.date_completed.errors }}
-	 							      																<input type="hidden" name="date_completed" value={{ datetoday }}>
-	 							      																{{ package_received_form.datetime_completed.errors }}
-	 							      																<input type="hidden" name="datetime_completed" value={{ datetimenow }}>
-               	      		                  			<!--siubmit button-->
-               	      		                  			<div class="row paddingbottom10px"> 
-               	      		                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    	      															</div>                
-               	      		            					</form>
-               	      		            			</div> 
-               	      		            	</div>   <!--div id openmodal..--> 
+               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
+               	      		    	   	 I got my package! </button>				
                	      		    	</div>
-               	      		  
-               	      		
-               	      		    	<div class="row">
-               	      		    	   <button type="startashipment" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
-               	      		    	   	 Report an Issue
-								      							</button>											
-								      						 	<div id="openModal_enduser_issue_id{{sh.trans.id}}" class="modalDialog">                                 
-               	      		              <div>	
-               	      		                  <a href="/dashboard" title="Close" class="close">X</a>
-        				      												<h4 class="ltbluetext">Report an issue, delay or other concern with shipment {{sh.trans.id}} </h4>                                   	
-               	      		                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue/Thanks" enctype="multipart/form-data">
-					   		      																{% csrf_token %}
-					   		      																		{{ enduser_issue_form.non_field_errors }}
-					   		      																		{{ enduser_issue_form.enduser_issue.errors }}
-					   		      																 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      				      																		<input type="text" class="form-control" name="enduser_issue"      					          
-	      				      																				placeholder="Enter a Description of the Issue ">    	    	   
-	 							      																		</div>
-               	      		                  			<!--siubmit button-->
-               	      		                  			<div class="row paddingbottom10px"> 
-               	      		                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    	      															</div>                
-               	      		            					</form>
-               	      		            			</div> 
-               	      		         </div>   <!--div id openmodal..--> 
-
-               	      		            	
-               	      		      </div>
-               	      </div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE -->              
-            			</div> <!--close div containint this shipmet-->
+               	      		                 	      		
+               	      		    	<div class="row"> <!--report an issue -->
+               	      		    	   <button type="button" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
+               	      		    	   	 Report an Issue	</button>		
+																 </div>
+               	      </div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->              
+            			</div> <!--close div containint this shipmet: waiting to be picked up-->
             	{% endfor %}    
 				</div> <!--END SHIPMENTS WAITIN GTO BE PICKED UP -->
 					
@@ -309,7 +330,7 @@
            				<div class="row whitebackground marginbottom30px textleft dashfont">
            						<h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
                     
-               				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION -->
+               				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (need tracking)-->
                 			<div class="col-xs-3 paddingsides5px ">
                                      		
                    	 			<!--Date transaction created-->
@@ -317,101 +338,24 @@
                     		
                     			<!--Expected Delivery -->
                     			<div class="row">         
-                    			    		<p class="nomargin"> 
-         															{% if sh.aftership.expected_delivery %}	Scheduled Delivery: {{ sh.aftership.expected_delivery_notime }}
-         															{% else %}						
-                    			    						{% if sh.trans.dayrangestart %}
-                    			    								You expected
+                    			    		<p class="nomargin"> You expected
                     			    								{% if sh.trans.dayrangestart == sh.trans.dayrangeend %}	{{ sh.trans.dayrangestart }} day shipping
                     			    								{% else %}	{{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping                       								
                     			    								&nbsp;
-                    			    								{% endif %}
-                    			    						{% endif %} <!--if has dayrangestart--> 
-                    			    				{% endif %}              		                        															
+                    			    								{% endif %}             		                        															
                     			    		</p>
                     			</div>  
-                    
-                    			<!--Status-->
-                    			<div class="row"> 	  <p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p>  </div>
-                    
-                    			<!--Tracking -->	                    		
-                					{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->		
-                					 				<!--courier and shipmetn type -->
-                    			<div class="row nomargin">  <p class="nomargin"> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
-                    			
-                    			<!--TRACKING NUMBER -->				
-                    			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->							
-													<div class="row nomargin">	
-													 						<p class="nomargin"> Tracking: {{ sh.trans.tracking }}
-													 					        <!--EDIT TRACKING -->
-                    							 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
-													 								 	<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 
-                    			              <div>	
-                    			              		<a href="/dashboard" title="Close" class="close">X</a>
-        									 													<h6 class="ltbluetext">Update Your Tracking Number</h6>
-        									 													<p>Enter a tracking number, shipping company or other information</p>
-                    			                	
-                    			                	 <form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking/Thanks" enctype="multipart/form-data">
-					   							 															{% csrf_token %}
-					   							 																	{{ tracking_form.non_field_errors }}
-					   							 																	{{ tracking_form.tracking.errors }}
-					   							 															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      									 																	<input type="tracking" class="form-control" name="tracking"      					          
-	      									 																			placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
-	 												 																	</div>
-	                  			
-	                  			
-                    			              			<!--siubmit button-->
-                    			              			<div class="row paddingbottom10px"> 
-                    			              				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    						 														</div>                
-                    			        					</form>
-                    			        			</div> 
-                    			        	</div>   <!--div id openmodal..-->  										
-													 							</p>
-                    			</div>
-                    					
-                    					                    		
-                    			{% else %}  <!--if no tracking, enter it -->
-                    						<div class="row nomargin"> <!--display or enter tracking info -->
-                    								<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
-													 								 	<div id="openModal_entertracking_id{{sh.trans.id}}" class="modalDialog">
-                    			              
-                    			            <div>	
-                    			            	<a href="/dashboard" title="Close" class="close">X</a>
-        									 												<h6 class="ltbluetext">Enter a Tracking Number</h6>
-        									 												<p>Enter a tracking number, shipping company or other information</p>
-                    			              	
-                    			              	<form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking/Thanks" enctype="multipart/form-data">
-					   							 														{% csrf_token %}
-					   							 														{{ tracking_form.non_field_errors }}
-					   							 														{{ tracking_form.tracking.errors }}
-                    			              	
-                    			              		  <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	        								 																<input type="tracking" class="form-control" name="tracking" 
-	        								 															 		placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
-	   											 														</div>
-                    			
-                    			              			<!-- {# tracking_modal request sh.trans.id #}   -->  
-                    			              			                                                             	
-                    			              		<div class="row paddingbottom10px">
-					        				 														<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    						 													</div> 
-					    						 												</form>
-					    						 										</div> <!--div inside modal --> 					    									               
-                    			        </div>    <!--modal div for enter tracking -->
-                    			
-                    			      </div> <!--end enter tracking row-->         
-                    			{% endif %} <!--end if no shipping tracking, enter it with modal -->
-                    		                    		
-
-
-
-                 			</div> <!--end  shipment details -->
+                                       
+                    			<!--Enter Tracking -->	                    		
+                    			<div class="row nomargin"> <!--display or enter tracking info -->
+                    				<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>													                   			
+                    			</div> <!--end enter tracking row-->         
+ 
+                    		                    	
+                 			</div> <!--end  shipment details: need tracking-->
   
-                       
-                                        
-                    	<!--NEIGHBOR: host name and information (Packages in transit)-->
+                                                              
+                    	<!--NEIGHBOR: host name and information (need tracking)-->
                     	<div class="col-xs-3 paddingsides5px ">
                        	 <div class="row nomargin">  <p class="nomargin"> Sent to your neighbor {{sh.trans.host.first_name}}</p>  </div>
                      	                                                        
@@ -421,35 +365,11 @@
                             <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
                             </a>
-                            </p>
-                      </div>
+                          </p>
+                      	</div>
                           
-                        <div class="row nomargin">
-                        		<!--MESSAGING MODAL: PACKAGES IN TRANSI) -->                          
+                        <div class="row nomargin">                        
                             <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a>                            
-														 	<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
-														 		{% load i18n %}
-														 			<div>
-														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
-																				<div class="row margintopbottom30px">
-																				   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
-																				        		{% csrf_token %} 
-																				        		<!--{{ compose_form.as_table }} -->
-																				        		<!--compose form has recipient, subject, body -->
-																				        <div class="row">	
-																				        		<label for="id_recipient"> Recipient: </label> <input id="id_recipient" name="recipient" type="text" />
-																				        </div>
-																				        <div class="row">
-																										<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
-																								</div>	
-																								<div class="row">																						
-																										<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
-																								</div>	
-																				        <input type="submit" value="{% trans "Send" %} &raquo;"/>
-																				    </form>
-																				</div>	
-																	</div>												
-                        		</div> <!-- id=openModal -->
                     	  </div> <!--row with message -->
                       </div> <!--row with neighbor information (address and message link -->
                     
@@ -457,79 +377,22 @@
                            
                	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW ) (Packages in Tarnsit)-->
                	      <div class="col-xs-3"> 
-               	      		    	<div class="row"> <!--confirm/review -->
-               	      		    	   <button type="startashipment" name="package_received" class="bluebutton" style="height: 30px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
-               	      		    	   	 I got my package!
-								      							</button>											
-								      						 	<div id="openModal_package_received_id{{sh.trans.id}}" class="modalDialog">                                 
-               	      		              <div>	
-               	      		                  <a href="/dashboard" title="Close" class="close">X</a>
-        				      												<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
-   							      															<!--form needs to pass True so modalsubmited is registered -->
-               	      		                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received/Thanks" enctype="multipart/form-data">
-					   		      																{% csrf_token %}
-					   		      																		{{ package_received_form.non_field_errors }}
-					   		      																		{{ package_received_form.enduser_rating.errors }}
-					   		      																
-					   		      																<h6>How would you rate this transaction?</h6>
-					   		      																<div class="col-xs-12 nopaddingleftright paddingbottom10px">					   															 																												   		
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=1 > 1 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=2 > 2 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=3 > 3 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=4 > 4 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=5 > 5 	</label> 	</div>
-	 							      																</div> <!--end div with radios -->
-	 							      																<!--hidden input to mark complete-->
-	 							      																{{ package_received_form.trans_complete.errors }}
-	 							      																<input type="hidden" name="trans_complete" value=True>
-	 							      																{{package_received_form.date_completed.errors }}
-	 							      																<input type="hidden" name="date_completed" value={{ datetoday }}>
-	 							      																{{ package_received_form.datetime_completed.errors }}
-	 							      																<input type="hidden" name="datetime_completed" value={{ datetimenow }}>
-               	      		                  			<!--siubmit button-->
-               	      		                  			<div class="row paddingbottom10px"> 
-               	      		                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    	      															</div>                
-               	      		            					</form>
-               	      		            			</div> 
-               	      		            	</div>   <!--div id openmodal..-->
-
-               	      		    	</div>
+               	      		<div class="row"> <!--confirm/review -->
+               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 30px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
+               	      		    	   	 I got my package!	</button>											                                
+               	      		</div>
                	      		  
                	      		
-               	      		    	<div class="row">
-               	      		    	   <button type="startashipment" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
-               	      		    	   	 Report an Issue
-								      							</button>											
-								      						 	<div id="openModal_enduser_issue_id{{sh.trans.id}}" class="modalDialog">                                 
-               	      		              <div>	
-               	      		                  <a href="/dashboard" title="Close" class="close">X</a>
-        				      												<h4 class="ltbluetext">Report an issue, delay or other concern with shipment {{sh.trans.id}} </h4>                                   	
-               	      		                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue/Thanks" enctype="multipart/form-data">
-					   		      																{% csrf_token %}
-					   		      																		{{ enduser_issue_form.non_field_errors }}
-					   		      																		{{ enduser_issue_form.enduser_issue.errors }}
-					   		      																 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      				      																		<input type="text" class="form-control" name="enduser_issue"      					          
-	      				      																				placeholder="Enter a Description of the Issue ">    	    	   
-	 							      																		</div>
-               	      		                  			<!--siubmit button-->
-               	      		                  			<div class="row paddingbottom10px"> 
-               	      		                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    	      															</div>                
-               	      		            					</form>
-               	      		            			</div> 
-               	      		         </div>   <!--div id openmodal..--> 
-
-               	      		            	
-               	      		      </div>
-               	      </div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE -->
-                  
-                                  
-            			</div> <!-- CLOSE DIV DIFING THIS SHIPMENT (AMONG THOSE IN TRAQNSIT )-->
+               	      		<div class="row">
+               	      		    	<button type="button" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
+               	      		    	   	 Report an Issue </button>											              	      		            	
+               	      		</div>
+               	     	</div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (need tracking)-->
+                                                   
+            			</div> <!-- CLOSE DIV DIFING THIS SHIPMENT (waiting for trcking )-->
               {% endfor %}
                     			      
-			</div> <!--SHIPMETNS WAITING FOR TRACKING NUMBER -->
+			</div> <!--END SHIPMETNS WAITING FOR TRACKING NUMBER -->
 		
 		
 						
@@ -566,82 +429,22 @@
                     			</div>  
                     
                     			<!--Status-->
-                    			<div class="row"> 	  <p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p>  </div>
+                    			<div class="row"> 	  <p class="nomargin"> Status:  {{sh.aftership.tag}}  </p>  </div>
                     
-                    			<!--Tracking -->	                    		
-                					{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->		
-                					 				<!--courier and shipmetn type -->
+                    			<!--Shipment type (from api)-->	                  		
                     			<div class="row nomargin">  <p class="nomargin"> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
                     			
-                    			<!--TRACKING NUMBER -->				
-                    			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->							
+                    			<!--TRACKING NUMBER -->	
+                    			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->	  			                   									
 													<div class="row nomargin">	
-													 						<p class="nomargin"> Tracking: {{ sh.trans.tracking }}
-													 					        <!--EDIT TRACKING -->
+													 			<p class="nomargin"> Tracking: {{ sh.trans.tracking }}
+													 					<!--EDIT TRACKING -->
                     							 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
-													 								 	<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 
-                    			              <div>	
-                    			              		<a href="/dashboard" title="Close" class="close">X</a>
-        									 													<h6 class="ltbluetext">Update Your Tracking Number</h6>
-        									 													<p>Enter a tracking number, shipping company or other information</p>
-                    			                	
-                    			                	 <form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking/Thanks" enctype="multipart/form-data">
-					   							 															{% csrf_token %}
-					   							 																	{{ tracking_form.non_field_errors }}
-					   							 																	{{ tracking_form.tracking.errors }}
-					   							 															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      									 																	<input type="tracking" class="form-control" name="tracking"      					          
-	      									 																			placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
-	 												 																	</div>
-	                  			
-	                  			
-                    			              			<!--siubmit button-->
-                    			              			<div class="row paddingbottom10px"> 
-                    			              				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    						 														</div>                
-                    			        					</form>
-                    			        			</div> 
-                    			        	</div>   <!--div id openmodal..-->  										
-													 							</p>
+													 								 	<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 										
+													 			</p>
                     			</div>
-                    					
-                    					                    		
-                    			{% else %}  <!--if no tracking, enter it -->
-                    						<div class="row nomargin"> <!--display or enter tracking info -->
-                    								<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
-													 								 	<div id="openModal_entertracking_id{{sh.trans.id}}" class="modalDialog">
-                    			              
-                    			            <div>	
-                    			            	<a href="/dashboard" title="Close" class="close">X</a>
-        									 												<h6 class="ltbluetext">Enter a Tracking Number</h6>
-        									 												<p>Enter a tracking number, shipping company or other information</p>
-                    			              	
-                    			              	<form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking/Thanks" enctype="multipart/form-data">
-					   							 														{% csrf_token %}
-					   							 														{{ tracking_form.non_field_errors }}
-					   							 														{{ tracking_form.tracking.errors }}
-                    			              	
-                    			              		  <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	        								 																<input type="tracking" class="form-control" name="tracking" 
-	        								 															 		placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
-	   											 														</div>
-                    			
-                    			              			<!-- {# tracking_modal request sh.trans.id #}   -->  
-                    			              			                                                             	
-                    			              		<div class="row paddingbottom10px">
-					        				 														<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    						 													</div> 
-					    						 												</form>
-					    						 										</div> <!--div inside modal --> 					    									               
-                    			        </div>    <!--modal div for enter tracking -->
-                    			
-                    			      </div> <!--end enter tracking row-->         
-                    			{% endif %} <!--end if no shipping tracking, enter it with modal -->
-                    		                    		
-
-
-
-                 			</div> <!--end  shipment details -->
+                    		                    	
+                 			</div> <!--end  shipment details: packages in transi -->
   
                        
                                         
@@ -661,29 +464,6 @@
                         <div class="row nomargin">
                         		<!--MESSAGING MODAL: PACKAGES IN TRANSI) -->                          
                             <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a>                            
-														 	<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
-														 		{% load i18n %}
-														 			<div>
-														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
-																				<div class="row margintopbottom30px">
-																				   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
-																				        		{% csrf_token %} 
-																				        		<!--{{ compose_form.as_table }} -->
-																				        		<!--compose form has recipient, subject, body -->
-																				        <div class="row">	
-																				        		<label for="id_recipient"> Recipient: </label> <input id="id_recipient" name="recipient" type="text" />
-																				        </div>
-																				        <div class="row">
-																										<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
-																								</div>	
-																								<div class="row">																						
-																										<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
-																								</div>	
-																				        <input type="submit" value="{% trans "Send" %} &raquo;"/>
-																				    </form>
-																				</div>	
-																	</div>												
-                        		</div> <!-- id=openModal -->
                     	  </div> <!--row with message -->
                       </div> <!--row with neighbor information (address and message link -->
                     
@@ -692,70 +472,13 @@
                	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW ) (Packages in Tarnsit)-->
                	      <div class="col-xs-3"> 
                	      		    	<div class="row"> <!--confirm/review -->
-               	      		    	   <button type="startashipment" name="package_received" class="bluebutton" style="height: 30px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
-               	      		    	   	 I got my package!
-								      							</button>											
-								      						 	<div id="openModal_package_received_id{{sh.trans.id}}" class="modalDialog">                                 
-               	      		              <div>	
-               	      		                  <a href="/dashboard" title="Close" class="close">X</a>
-        				      												<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
-   							      															<!--form needs to pass True so modalsubmited is registered -->
-               	      		                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received/Thanks" enctype="multipart/form-data">
-					   		      																{% csrf_token %}
-					   		      																		{{ package_received_form.non_field_errors }}
-					   		      																		{{ package_received_form.enduser_rating.errors }}
-					   		      																
-					   		      																<h6>How would you rate this transaction?</h6>
-					   		      																<div class="col-xs-12 nopaddingleftright paddingbottom10px">					   															 																												   		
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=1 > 1 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=2 > 2 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=3 > 3 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=4 > 4 	</label> 	</div>
-					   		      																 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=5 > 5 	</label> 	</div>
-	 							      																</div> <!--end div with radios -->
-	 							      																<!--hidden input to mark complete-->
-	 							      																{{ package_received_form.trans_complete.errors }}
-	 							      																<input type="hidden" name="trans_complete" value=True>
-	 							      																{{package_received_form.date_completed.errors }}
-	 							      																<input type="hidden" name="date_completed" value={{ datetoday }}>
-	 							      																{{ package_received_form.datetime_completed.errors }}
-	 							      																<input type="hidden" name="datetime_completed" value={{ datetimenow }}>
-               	      		                  			<!--siubmit button-->
-               	      		                  			<div class="row paddingbottom10px"> 
-               	      		                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    	      															</div>                
-               	      		            					</form>
-               	      		            			</div> 
-               	      		            	</div>   <!--div id openmodal..-->
-
+               	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 30px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
+               	      		    	   	 I got my package! </button>											
                	      		    	</div>
-               	      		  
-               	      		
+               	      		                	      		
                	      		    	<div class="row">
-               	      		    	   <button type="startashipment" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
-               	      		    	   	 Report an Issue
-								      							</button>											
-								      						 	<div id="openModal_enduser_issue_id{{sh.trans.id}}" class="modalDialog">                                 
-               	      		              <div>	
-               	      		                  <a href="/dashboard" title="Close" class="close">X</a>
-        				      												<h4 class="ltbluetext">Report an issue, delay or other concern with shipment {{sh.trans.id}} </h4>                                   	
-               	      		                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue/Thanks" enctype="multipart/form-data">
-					   		      																{% csrf_token %}
-					   		      																		{{ enduser_issue_form.non_field_errors }}
-					   		      																		{{ enduser_issue_form.enduser_issue.errors }}
-					   		      																 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      				      																		<input type="text" class="form-control" name="enduser_issue"      					          
-	      				      																				placeholder="Enter a Description of the Issue ">    	    	   
-	 							      																		</div>
-               	      		                  			<!--siubmit button-->
-               	      		                  			<div class="row paddingbottom10px"> 
-               	      		                  				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					    	      															</div>                
-               	      		            					</form>
-               	      		            			</div> 
-               	      		         </div>   <!--div id openmodal..--> 
-
-               	      		            	
+               	      		    	   <button type="button" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
+               	      		    	   	 Report an Issue	</button>											              	      		            	
                	      		      </div>
                	      </div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE -->
                   
