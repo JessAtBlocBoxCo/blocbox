@@ -158,14 +158,13 @@
                     	<!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     	<div class="col-xs-3 paddingsides5px ">
                     		 <!--neigbor name-->
-                       	 <div class="row">  <p class="nomargin"> Sent to {{sh.trans.host.first_name}}
+                       	 <div class="row">  
+                       	 	<p class="nomargin"> Sent to {{sh.trans.host.first_name}}
                        	 		<a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a> 
                             {% include "dashboard_subtemplates/message_to_host_modal.html" %} 
-                       	 		</p> 
-                       	 </div>
-                     	   <!--neighbor address-->                                                     
-                         <div class="row"> 
-                         		<p class="nomargin">  
+                       	 	</p> 
+                         	<!--neibhors address-->
+                         	<p class="nomargin">  
                          	 		<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             	<a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             		{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
@@ -173,10 +172,6 @@
                            	</p>
                       	</div>
                       
-                      	<!--send a message-->    
-                      	<div class="row nomargin">                       
-                                                      
-                    	 	</div> <!--row with message -->
                       </div> <!--End Neighbor Column (packages waiting to be picked up) -->
                     
                   
