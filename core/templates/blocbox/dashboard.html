@@ -161,7 +161,6 @@
                        	 <div class="row">  
                        	 	<p class="nomargin"> Sent to {{sh.trans.host.first_name}}
                        	 		<a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a> 
-                            {% include "dashboard_subtemplates/message_to_host_modal.html" %} 
                        	 	</p> 
                          	<!--neibhors address-->
                          	<p class="nomargin">  
@@ -171,6 +170,7 @@
                            		</a> 
                            	</p>
                       	</div>
+                      {% include "dashboard_subtemplates/message_to_host_modal.html" %} 
                       
                       </div> <!--End Neighbor Column (packages waiting to be picked up) -->
                     
