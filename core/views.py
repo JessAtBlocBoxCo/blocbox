@@ -117,14 +117,14 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     slug_detected = str(c_list_first.get(u'slug'))
                     # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
                     api.trackings.post(tracking=dict(
-    						        slug=slug_detected, tracking_number=tracking_no_to_add,  
-    						        title=str(trans.title) + ": Shipment " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
-    						        order_id=str(trans.id),
-    						        customer_name = trans.enduser.email,
-    						        emails=[trans.enduser.email, trans.host.email], #Emails for notifications
-    						        custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
-    						        #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
-    						        )) 	 
+    				            slug=slug_detected, tracking_number=tracking_no_to_add,  
+    				            title=str(trans.title) + ": Shipment " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
+    				            order_id=str(trans.id),
+    				            customer_name = trans.enduser.email,
+    				            emails=[trans.enduser.email, trans.host.email], #Emails for notifications
+    				            custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
+    				            #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
+    				            )) 	 
                     #Get the information from the API (is it posted yet?)
                     datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
                     trackingdict_added = datadict_added.get(u'tracking')
