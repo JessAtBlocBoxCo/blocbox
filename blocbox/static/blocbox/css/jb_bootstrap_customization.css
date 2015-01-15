@@ -1492,6 +1492,9 @@ html, body {
     border-radius: 5px;
     margin-top: 5px;
 }
+
+.height30px { height: 30px }
+
 .bluebutton:hover {
     background-color: white;
     color: #3498db;

@@ -1,6 +1,7 @@
 
 1. ADD A HYPERLINK TO TRACK IT
 2. add to waiting to be picked up - delivered date
+1. make report an issue button smalelr
 2ship to 0 and delete the tracking from aftership
 2. find last location - put it on - ADD THAT FIELD TO SHIPMETN DETAILS - SAME LINE AS STATUS - IF WE HAFE THE DATA
 3. remove the tracking widget - takes too long to load
