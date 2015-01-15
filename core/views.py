@@ -215,7 +215,10 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             shipment_tuple['aftership'] = datadict.get(u'tracking') 
             #extract date-only form of expected delivery 
             expected_delivery = shipment_tuple['aftership']['expected_delivery']
-            shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()        
+            if expected_delivery:
+                shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()
+            else:
+                shipment_tuple['aftership']['expected_delivery_notime']=None       
         else:
             shipment_tuple['aftership']=None
             shipment_tuple['tracking']=None
