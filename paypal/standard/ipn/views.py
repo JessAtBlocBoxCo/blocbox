@@ -246,7 +246,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     })
 
 
-def notify_host_shipment_paid(request, host_id, user_id, trans_id)
+def notify_host_shipment_paid(request, host_id, user_id, trans_id):
     host = get_object_or_404(UserInfo, pk=host_id)
     enduser = get_object_or_404(UserInfo, pk=user_id)
     trans = get_object_or_404(Transaction, pk=trans_id)
