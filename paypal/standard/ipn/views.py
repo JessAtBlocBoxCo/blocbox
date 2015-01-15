@@ -187,6 +187,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
                 #Next, add the data to the transaction table
                 trans.payment_option = payment_option
                 trans.title = title
+                trans.favortype = favortype
                 trans.note_to_host = note_to_host
                 trans.price = price
                 trans.youselected = youselected
