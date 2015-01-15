@@ -3,9 +3,11 @@
 	this is easier to impelemnt if teh layout is relatively straight forward - so additional content is added vertically,
 	
 	NOTE: THE MODALS ON THIS PAGE ARE REALLY COMPLICATED BECAUSE OF THE MULTIPLE FORMS - I HAVE TO BASICALY CREATE ENTIRELY NEW PAGES/URLS OTHERWISE THE FORMS DONT KNWO WHAT TO SUBMIT
+	
+	deletign: {  % load modaltags % }
 -->
 {% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Dashboard{% endblock %} {% block headafter %} {% endblock %} {% block content %}
-{% load modaltags %}
+
 <div class="content container-fluid whitebackground relativediv paddingtop50pxmobile">
 
     <div class="row margintop60px marginbottom30px mobilehide">
@@ -145,10 +147,7 @@
                     			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->		                    		
                 					{% if sh.trans.tracking %} 	                				  		                    									
 															<div class="row nomargin">	
-													 				<p class="nomargin"> Tracking: {{ sh.trans.tracking }}
-													 					<!--EDIT TRACKING -->
-                    							 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a									
-													 				</p>
+													 				<p class="nomargin"> Tracking: {{ sh.trans.tracking }} </p>
                     					</div>                    					                    					                    		
                     			{% endif %}  
       
@@ -166,13 +165,14 @@
                          	 		<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             	<a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             		{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
-                           		</a>
+                           		</a> 
                            	</p>
                       	</div>
                       
                       	<!--send a message-->    
                       	<div class="row nomargin">                       
-                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a>                            
+                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a> 
+                            {% include "dashboard_subtemplates/message_to_host_modal.html" %}                           
                     	 	</div> <!--row with message -->
                       </div> <!--End Neighbor Column (packages waiting to be picked up) -->
                     
@@ -190,7 +190,7 @@
                	      		    	   	 Report an Issue	</button>		
 																 </div>
 																 <!--load sub template tag with this omdal -->
-																 {% include "dashboard_subtemplates/enduser_report_issue.html" %} 
+																 {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} 
                	      </div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->              
             			</div> <!--close div containint this shipmet: waiting to be picked up-->
             	{% endfor %}    
@@ -224,7 +224,8 @@
                                        
                     			<!--Enter Tracking -->	                    		
                     			<div class="row nomargin"> <!--display or enter tracking info -->
-                    				<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>													                   			
+                    				<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>		
+                    				{% include "dashboard_subtemplates/enter_tracking_modal" %}											                   			
                     			</div> <!--end enter tracking row-->         
  
                     		                    	
@@ -245,7 +246,8 @@
                       	</div>
                           
                         <div class="row nomargin">                        
-                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a>                            
+                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a>  
+                            {% include "dashboard_subtemplates/message_to_host_modal.html" %}                          
                     	  </div> <!--row with message -->
                       </div> <!--row with neighbor information (address and message link -->
                     
@@ -255,13 +257,15 @@
                	      <div class="col-xs-3"> 
                	      		<div class="row"> <!--confirm/review -->
                	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 30px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
-               	      		    	   	 I got my package!	</button>											                                
+               	      		    	   	 I got my package!	</button>		
+               	      		    	   	{% include "dashboard_subtemplates/package_received_modal" %}									                                
                	      		</div>
                	      		  
                	      		
                	      		<div class="row">
                	      		    	<button type="button" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
-               	      		    	   	 Report an Issue </button>											              	      		            	
+               	      		    	   	 Report an Issue </button>				
+               	      		    	{% include "dashboard_subtemplates/enduser_report_issue_modal" %}							              	      		            	
                	      		</div>
                	     	</div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (need tracking)-->
                                                    
@@ -315,7 +319,8 @@
 													<div class="row nomargin">	
 													 			<p class="nomargin"> Tracking: {{ sh.trans.tracking }}
 													 					<!--EDIT TRACKING -->
-                    							 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>                                										
+                    							 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
+                    							 	{% include "dashboard_subtemplates/edit_tracking_modal.html" %}                                 										
 													 			</p>
                     			</div>
                     		                    	
@@ -338,7 +343,8 @@
                           
                         <div class="row nomargin">
                         		<!--MESSAGING MODAL: PACKAGES IN TRANSI) -->                          
-                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a>                            
+                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a> 
+                            {% include "dashboard_subtemplates/message_to_host_modal.html" %}                           
                     	  </div> <!--row with message -->
                       </div> <!--row with neighbor information (address and message link -->
                     
@@ -348,12 +354,14 @@
                	      <div class="col-xs-3"> 
                	      		    	<div class="row"> <!--confirm/review -->
                	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 30px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
-               	      		    	   	 I got my package! </button>											
+               	      		    	   	 I got my package! </button>		
+               	      		    	   {% include "dashboard_subtemplates/package_received_modal" %}								
                	      		    	</div>
                	      		                	      		
                	      		    	<div class="row">
                	      		    	   <button type="button" class="bluebutton" style="height: 30px"  onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
-               	      		    	   	 Report an Issue	</button>											              	      		            	
+               	      		    	   	 Report an Issue	</button>		
+               	      		    	   {% include "dashboard_subtemplates/enduser_report_issue_modal" %}									              	      		            	
                	      		      </div>
                	      </div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE -->
                   
