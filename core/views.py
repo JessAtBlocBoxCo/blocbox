@@ -212,7 +212,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             slug_to_detect_u = courier_list_first.get(u'slug')
             slug_to_detect = str(slug_to_detect_u)
             datadict = api.trackings.get(slug_to_detect, tracking_no)
-            shipment_tuple['aftership'] = datadict.get(u'tracking')             
+            shipment_tuple['aftership'] = datadict.get(u'tracking')   
+            shipment_tuple['aftership']['expected_delivery_notime']=shipment_tuple.aftership.expected_delivery.date()        
         else:
             shipment_tuple['aftership']=None
             shipment_tuple['tracking']=None
