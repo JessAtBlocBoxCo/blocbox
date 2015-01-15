@@ -84,19 +84,28 @@
                 </div>
 
 						
-						<p>TEST -SHOW TRACKING_THANKS_MODAL {{ tracking_thanks_modal }}</p>
-						{% if tracking_thanks_modal %}
-						       <div id="openModal_edittracking" class="modalDialog"> 
-                         				<div>
-                         	        <a href="/dashboard" title="Close" class="close">X</a>
-        													<h3 class="ltbluetext">Thanks! </h3>    
-        													<h6> Your tracking information has been updated </h6>
-        													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
-        												</div>
-                     </div>
-            {% endif %}
-                       				
+						<!--PUTTING THE MODAL IDs FOR TRACKING UP TOP - TO GET OUT OF IF-THEN LOGIC -->
+                <!--thanks modal: Enter Tracking-->
+                <div id="openModal_entertracking_id{{shipment.id}}/Thanks" class="modalDialog"> 
+                		<div>
+                      <a href="/dashboard" title="Close" class="close">X</a>
+        							<h3 class="ltbluetext">Thanks! </h3>    
+        							<h6> Your tracking information has been updated </h6>
+        							<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
+        						</div>
+                </div> <!--end thanks modal-->
+                	
 						
+						      <!--thanks modal: EDIT TRACKING-->
+                	<div id="openModal_edittracking_id{{shipment.id}}/Thanks" class="modalDialog"> 
+                		<div>
+                      <a href="/dashboard" title="Close" class="close">X</a>
+        							<h3 class="ltbluetext">Thanks! </h3>    
+        							<h6> Your tracking information has been updated </h6>
+        							<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
+        						</div>
+                	</div>  
+                       				
             {% for shipment in shipments_with_tracking_notcomplete %}
             
 
@@ -256,15 +265,7 @@
 					    											</form>
 					    									</div> <!--div inside modal --> 					    									               
                             </div>    <!--modal div for enter tracking -->
-                            <!--thanks modal -->
-                          	<div id="openModal_entertracking_id{{shipment.id}}/Thanks" class="modalDialog"> 
-                         				<div>
-                         	        <a href="/dashboard" title="Close" class="close">X</a>
-        													<h3 class="ltbluetext">Thanks! </h3>    
-        													<h6> Your tracking information has been updated </h6>
-        													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
-        												</div>
-                       			</div> <!--end thanks modal-->
+
                           </div> <!--end enter tracking row-->         
                       {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
@@ -298,15 +299,7 @@
                             					</form>
                             			</div> 
                             	</div>   <!--div id openmodal..-->  
-                          		<!--thanks modal-->
-                          		<div id="openModal_edittracking_id{{shipment.id}}/Thanks" class="modalDialog"> 
-                         				<div>
-                         	        <a href="/dashboard" title="Close" class="close">X</a>
-        													<h3 class="ltbluetext">Thanks! </h3>    
-        													<h6> Your tracking information has been updated </h6>
-        													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
-        												</div>
-                       				</div>                        
+                      
                     			</div> <!--row for edit tracking-->
                     		{% endif %}
                     </div> <!--end tracking number -->
