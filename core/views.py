@@ -94,7 +94,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     datetimenow = datetime.datetime.now()
     datetoday = datetime.date.today()
-    tracking_thanks_modal = False
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
         hostonly=connections_all[0].host_user
@@ -138,13 +137,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     trans.on_aftership = True
                     trans.shipment_courier = slug_detected.upper()
                     trans.save()
-                    tracking_thanks_modal = True
                 else: #if they entered nothing delete it       
                     api.trackings.delete(courier_on_trans, tracking_on_trans)
                     trans.tracking = None
                     trans.on_aftership = False
-                    trans.save()      
-                    tracking_thanks_modal = True            
+                    trans.save()               
             else: #if tracking form is not valid 
     	          print tracking_form.errors 
     		    #Now, get the tracking info from the API
@@ -158,6 +155,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     		trans = Transaction.objects.get(pk=confirm_id)
     		if request.method == 'POST':
     				package_received_form = PackageReceived(request.POST, instance=trans)
+    				testmethod = "method_is_post"
     				if package_received_form.is_valid():
     						finish = package_received_form.save()
     						finish.save()
@@ -251,9 +249,10 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
         'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
-        'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 'tracking_thanks_modal': tracking_thanks_modal,
+        'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 
         'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_notdelivered,
         'shipments_with_tracking_notcomplete_notrackingno': shipments_with_tracking_notcomplete_notrackingno,
+        'testmethod': testmethod,
     })
     
 
