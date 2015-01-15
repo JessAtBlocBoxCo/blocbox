@@ -151,12 +151,10 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         #trans = None    
         tracking_form = None  
     #Package REceived Modal/Button
-    testmethod="not post"
     if confirm_id:
     		trans = Transaction.objects.get(pk=confirm_id)
     		if request.method == 'POST':
     				package_received_form = PackageReceived(request.POST, instance=trans)
-    				testmethod = "method_is_post"
     				if package_received_form.is_valid():
     						finish = package_received_form.save()
     						finish.save()
@@ -253,7 +251,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 
         'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_notdelivered,
         'shipments_with_tracking_notcomplete_notrackingno': shipments_with_tracking_notcomplete_notrackingno,
-        'testmethod': testmethod,
     })
     
 
