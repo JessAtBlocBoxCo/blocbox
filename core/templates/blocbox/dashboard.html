@@ -74,7 +74,7 @@
                 </div>
 
                 <!--TOP ROW - HEADERS -->
-                <div class="row textcenter darkgreytext tinytext ">
+                <div class="row textleft darkgreytext tinytext ">
                     <!--row containing top table--> 
                     <div class="col-xs-3">  <p class="marginbottom5px">SHIPMENT DETAILS </p>  </div>
                     <div class="col-xs-3">  <p class="marginbottom5px">NEIGHBOR</p> </div>
@@ -112,16 +112,16 @@
 
             		
                 <!--divider defining the whole current shipments part -->
-                <div class="row whitebackground marginbottom30px textcenter dashfont">
+                <div class="row whitebackground marginbottom30px textleft dashfont">
                     
                     
                      <!--SHIPMENT DETAILS: ORDER DATE AND SHIPPMENT SPEED  -->
                     <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
                     	
-                    		<!--Transaction Title (if one exists) -->
-                    		{% if shipment.title %}
-                    		 		<div class="row paddingtopbottom2px"> <p class=" nomargin"> {{ shipment.title }}	</p></div>  
-                    		{% endif %}
+                    		<!--Order # and Title (if one exists) -->
+                    		
+                    		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Order {{shipment.id }}  {% if shipment.title %} : {{ shipment.title }}	 {% endif %}</p></div>  
+                    		
                     		<!--Date transaction created-->
                     		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Ordered {{ shipment.date_requested }}</p> 	</div>
                     		
@@ -148,26 +148,22 @@
                         		</p>
                         </div>  
                         
-                        <!--Shipment Status - From Aftership-->
-                            <div class="row"> 	<p class="nomargin"> 
-                            	Status: {% if shipment.on_aftership %} {{shipment.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p> 
-                            </div>
+
                     </div>
                     
                     
                     <!--NEIGHBOR: host name and information-->
                     <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
-                       	 <div class="row">  <p>{{shipment.host.first_name}}</p>  </div>
-                     	                             
-                           
-                         <div class="row">
+                       	 <div class="row nomargin">  <p>{{shipment.host.first_name}}</p>  </div>
+                     	                                                        
+                         <div class="row nomargin">
                          	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             <a href="https://www.google.com/maps/place/{{shipment.host.st_address1}}+{{shipment.host.city}}+{{shipment.host.state}}+{{shipment.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }}
                             </a>
                           </div>
                           
-                        <div class="row">
+                        <div class="row nomargin">
                         		<!--MESSAGING MODAL -->                          
                             <a href="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}" class="nomargin"> Message {{ shipment.host.first_name }}</a>                            
 														 	<div id="openModal_message_id{{shipment.id}}" class="modalDialog">
@@ -233,6 +229,11 @@
                    				<div class="row nomargin">
                    					 <p> {{ shipment.shipment_courier }} {% if shipment.aftership.shipment_type %} : {{ shipment.aftership.shipment_type }} {% endif%} </p>                 				
                    				</div>
+                   				
+                   				<!--Status-->
+                            <div class="row"> 	
+                            	<p class="nomargin"> Status: {% if shipment.on_aftership %} {{shipment.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p> 
+                            </div>
                    			
                    			
                     				
