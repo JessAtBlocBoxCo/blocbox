@@ -102,8 +102,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     #reload with transactions for the modal thing to work
     if track_id:
         trans = Transaction.objects.get(pk=track_id)  
-        courier_on_trans = trans.shipment_courier
-        tracking_on_trans = trans.tracking
+        courier_on_trans = str(trans.shipment_courier)
+        tracking_on_trans = str(trans.tracking)
         if request.method == 'POST':        
             tracking_form  = TrackingForm(request.POST, instance=trans)
             if tracking_form.is_valid(): 
