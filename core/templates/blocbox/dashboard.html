@@ -113,7 +113,7 @@
             <h6 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h6>   
                     
                	<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION -->
-                <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
+                <div class="col-xs-3 paddingsides5px ">
                     	
                     <!--Order # and Title (if one exists) -->		 
                     		
@@ -180,7 +180,7 @@
                    			
                     		                    		
                    {% else %}  <!--if no tracking, enter it -->
-                    			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
+                    			<div class="row nomargin"> <!--display or enter tracking info -->
                     					<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
 														 	<div id="openModal_entertracking_id{{sh.trans.id}}" class="modalDialog">
                                   
