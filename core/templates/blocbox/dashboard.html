@@ -160,7 +160,7 @@
                     			</div>
                     					
                     					                    		
-                    			% else %}  <!--if no tracking, enter it -->
+                    			{% else %}  <!--if no tracking, enter it -->
                     						<div class="row nomargin"> <!--display or enter tracking info -->
                     								<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
 													 								 	<div id="openModal_entertracking_id{{sh.trans.id}}" class="modalDialog">
@@ -375,7 +375,7 @@
                     			<div class="row"> 	  <p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p>  </div>
                     
                     			<!--Tracking -->	                    		
-                					 				{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->		
+                					{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->		
                 					 				<!--courier and shipmetn type -->
                     			<div class="row nomargin">  <p class="nomargin"> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
                     			
@@ -412,7 +412,7 @@
                     			</div>
                     					
                     					                    		
-                    			% else %}  <!--if no tracking, enter it -->
+                    			{% else %}  <!--if no tracking, enter it -->
                     						<div class="row nomargin"> <!--display or enter tracking info -->
                     								<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
 													 								 	<div id="openModal_entertracking_id{{sh.trans.id}}" class="modalDialog">
@@ -442,7 +442,7 @@
                     			        </div>    <!--modal div for enter tracking -->
                     			
                     			      </div> <!--end enter tracking row-->         
-                    			% endif %} <!--end if no shipping tracking, enter it with modal -->
+                    			{% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
 
 
