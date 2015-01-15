@@ -2144,7 +2144,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         display: none;
     }
     .content {
-        padding-bottom: 600px;
+        padding-bottom: 640px;
     }
     .findhostbtn {
         width: 178px;
