@@ -25,16 +25,16 @@ class ModifyTransaction(forms.ModelForm):
         fields = ('status',)   
 
 #rewriting this not based on the model because its not updating
-"""
 class PackageReceived(forms.Form): 
-    enduser_rating
-    enduser_comments 
-"""
+    enduser_rating=forms.IntegerField(max_value=5)
+    enduser_comments=forms.CharField(max_length=200)
 
+"""
 class PackageReceived(forms.ModelForm):
 	  class Meta:
 	  		model = Transaction
 	  		fields = ('trans_complete', 'enduser_rating', 'enduser_comments', 'date_completed', 'datetime_completed',)
+"""
 
 class EndUserIssue(forms.ModelForm):
 		class Meta:

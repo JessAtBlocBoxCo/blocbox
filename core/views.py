@@ -154,10 +154,16 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     if confirm_id:
     		trans = Transaction.objects.get(pk=confirm_id)
     		if request.method == 'POST':
-    				package_received_form = PackageReceived(request.POST, instance=trans)
+    				#package_received_form = PackageReceived(request.POST, instance=trans)
+    				package_received_form = PackageReceived(request.POST)
     				if package_received_form.is_valid():
-    						finish = package_received_form.save()
-    						finish.save()
+    						#finish = package_received_form.save()
+    						trans.enduser_rating = tracking_form.cleaned_data['enduser_rating']
+    						trans.enduser_comments = tracking_form.cleaned_data['enduser_comments']
+    						trans.trans_complete = True
+    						trans.date_completed = datetoday
+    						trans.datetime_completed = datetimenow
+    						trans.save()
     				else:
     						print package_received_form.errors
     		else:
