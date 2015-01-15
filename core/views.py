@@ -249,7 +249,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
         'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
         'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 'tracking_thanks_modal': tracking_thanks_modal,
-        'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_delivered,
+        'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_notdelivered,
     })
     
 
