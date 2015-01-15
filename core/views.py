@@ -158,8 +158,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     				package_received_form = PackageReceived(request.POST)
     				if package_received_form.is_valid():
     						#finish = package_received_form.save()
-    						trans.enduser_rating = tracking_form.cleaned_data['enduser_rating']
-    						trans.enduser_comments = tracking_form.cleaned_data['enduser_comments']
+    						trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
+    						trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
     						trans.trans_complete = True
     						trans.date_completed = datetoday
     						trans.datetime_completed = datetimenow
