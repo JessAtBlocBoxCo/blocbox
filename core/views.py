@@ -202,6 +202,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     shipments_with_tracking_allpaid = []
     shipments_with_tracking_complete = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
     shipments_with_tracking_notcomplete = []
+    #DEFINE DELIVERED AND NOT DELIVERED
+    shipments_with_tracking_notcomplete_delivered = []
+    shipments_with_tracking_notcomplete_notdelivered = []
     for shipment in shipments_all_paid:  
         tracking_no = str(shipment.tracking) #the str function removes the preceding u'
         shipment_tuple = {} 
@@ -230,6 +233,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             shipments_with_tracking_complete.append(shipment_tuple)
         else:
             shipments_with_tracking_notcomplete.append(shipment_tuple)
+            tag = shipment_tuple['aftership']['tag']
+            if tag == "Delivered":
+                shipments_with_tracking_notcompleted_delivered.append(shipment_tuple)
+            else:
+                shipments_with_tracking_notcompleted_notdelivered.append(shipment_tuple)
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
@@ -241,6 +249,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
         'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
         'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 'tracking_thanks_modal': tracking_thanks_modal,
+        'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_delivered,
     })
     
 
