@@ -139,9 +139,9 @@
                    	 			<!--Date transaction created-->
                     			<div class="row"> <p class=" nomargin"> Order Placed {{ sh.trans.date_requested_notime }}</p> 	</div>                   		
 													<!--Date delivered -->
-                    			<div class="row> <p class="nomargin"> Delivered On {{sh.aftership.delivered_on }} ADD THIS FIELD</p></div>
+                    			<div class="row"> <p class="nomargin"> Delivered On {{sh.aftership.delivered_on }} ADD THIS FIELD</p></div>
                     			<!--Status-->
-                    			<div class="row"> 	  <p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p>  </div>
+                    			<div class="row"><p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p>  </div>
                     
                     			<!--Tracking -->
                     			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->		                    		
