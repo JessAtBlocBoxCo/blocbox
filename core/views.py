@@ -104,7 +104,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     if track_id:
         trans = Transaction.objects.get(pk=track_id)  
         tracking_on_trans = str(trans.tracking)
-        if tracking_on_trans:
+        if trans.tracking:
             courier_on_trans = str(trans.shipment_courier.lower())
         else:
             courier_on_trans = None
