@@ -1,5 +1,7 @@
 
+1. EDIT THE emails to esnd tracking info to
 1. ADD A HYPERLINK TO TRACK IT
+2. add a calendar for host jess@BB
 2. add to waiting to be picked up - delivered date
 1. make report an issue button smalelr
 2ship to 0 and delete the tracking from aftership
@@ -32,16 +34,19 @@
  - make completed style the completed transactions section
 <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 #test tracking nos to add
+615774528257  - sleeping mask, not delivered
+1Z88Y70A0244854175  - ankar keyboard and mouse
+1ZE6E4990234405990  = iphone armband
+
+#ALREADY TRACKED
+9205599999975642680357 - pillow case, delivered 
+591099350463 -- headbands, celivered
 1Z2W6185YW01658200  = laptop case, delivered
-9449009699938097189973 - not sure, johns
-1ZX1A509YW10497241 - UPS - shipinag soon (mine)
-9405509699939563285640 - USPS priority, already arrived - wnat to see if the type is updated
-591099350463 - fedex, will arrive today
-9374869903500264240007 - DHL global mail, arrive tomorro
-1Z2W6185YW01658200  -UPS surepost, delivered today
-1ZXF38300304993998  - UPS, arrived today
-591099350463 -- headbands
-            
+9449009699938097189973 - johns - not yet delivered?
+9374869903500264240007 - DHL global mail,  not delivered?
+1ZX1A509YW10497241 - neti pot, not delivered (UPS)
+9405509699939563285640 - black boots, already arrivedUSPS priority, already arrived - wnat to see if the type is updated
+
 """jess to do"""
 - for completed hsipmetns colelct fields for like delivery confirmation or whatever afterhsip adds at the end - add tha to the TRANS table and to the completed hsipmetns box
 - add the ip_obj.transaction_id by passing in URL so the paypal IPN table has a field for the transaction ID, - if the invoice link works, mayb ejust use that

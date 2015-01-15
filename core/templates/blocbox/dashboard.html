@@ -161,7 +161,7 @@
                        	 <div class="row nomargin">  <p class="nomargin"> Sent to your neighbor {{sh.trans.host.first_name}}</p>  </div>
                      	   <!--neighbor address-->                                                     
                          <div class="row nomargin"> 
-                         		<p class="nomargin"> {{sh.trans.host.first_name}}'s Address: 
+                         		<p class="nomargin"> At: 
                          	 		<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             	<a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             		{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
@@ -238,7 +238,7 @@
                        	 <div class="row nomargin">  <p class="nomargin"> Sent to your neighbor {{sh.trans.host.first_name}}</p>  </div>
                      	                                                        
                          <div class="row nomargin"> 
-                         	<p class="nomargin"> {{sh.trans.host.first_name}}'s Address: 
+                         	<p class="nomargin"> At: 
                          	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
@@ -334,7 +334,7 @@
                        	 <div class="row nomargin">  <p class="nomargin"> Sent to your neighbor {{sh.trans.host.first_name}}</p>  </div>
                      	                                                        
                          <div class="row nomargin"> 
-                         	<p class="nomargin"> {{sh.trans.host.first_name}}'s Address: 
+                         	<p class="nomargin"> At:
                          	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
@@ -419,7 +419,6 @@
         <div class="col-xs-12 col-sm-12 dashbox">
 							<div class="row">  <h3 class="ltbluetext margintop10px nopadding">Completed Shipments </h3>   </div>		              
               {% for sh in shipments_with_tracking_complete %}
-                <p>TEST - SHOW ALL AFTERSHIP FIELDS {{ sh.aftership }} </p>
                 	
                 	<!--start div defining the shipment-->
                 	<div class="row whitebackground marginbottom30px textleft dashfont">

@@ -123,7 +123,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
                     api.trackings.post(tracking=dict(
     				            slug=slug_detected, tracking_number=tracking_no_to_add,  
-    				            title=str(trans.title) + ": Shipment " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
+    				            title=str(trans.title) + ": Order " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
     				            order_id=str(trans.id),
     				            customer_name = trans.enduser.email,
     				            emails=[trans.enduser.email, trans.host.email], #Emails for notifications
