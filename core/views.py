@@ -167,7 +167,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     				else:
     						print package_received_form.errors
     		else:
-    				package_received_form = PackageReceived(instance=trans)
+    			  package_received_form = PackageReceived
+    				#package_received_form = PackageReceived(instance=trans)
     else:
     		package_received_form = None
     #EndUser Issues Modal/Button
