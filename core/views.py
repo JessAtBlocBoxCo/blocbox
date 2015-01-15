@@ -151,6 +151,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         #trans = None    
         tracking_form = None  
     #Package REceived Modal/Button
+    testmethod="not post"
     if confirm_id:
     		trans = Transaction.objects.get(pk=confirm_id)
     		if request.method == 'POST':
