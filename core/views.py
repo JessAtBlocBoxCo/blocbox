@@ -214,7 +214,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             datadict = api.trackings.get(slug_to_detect, tracking_no)
             shipment_tuple['aftership'] = datadict.get(u'tracking') 
             #extract date-only form of expected delivery 
-            expected_delivery = shipment_tuple['afterhip']['expected_delivery']
+            expected_delivery = shipment_tuple['aftership']['expected_delivery']
             shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()        
         else:
             shipment_tuple['aftership']=None
