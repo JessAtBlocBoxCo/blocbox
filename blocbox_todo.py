@@ -1,4 +1,5 @@
 """jess dashboard to do"""
+- edit the note to the host when shipment is sent to include the note to host 
 - update the tracking widget - dont use the aftership one - crate my own so that it doesnt take so mjuch time to load an dlook like shit
 - make the payment_processed indicator work
  make the transaciton table update after theyve gone to paypal
@@ -29,7 +30,7 @@
 9374869903500264240007 - DHL global mail, arrive tomorro
 1Z2W6185YW01658200  -UPS surepost, delivered today
 1ZXF38300304993998  - UPS, arrived today
-
+591099350463 -- headbands
             
 """jess to do"""
 - for completed hsipmetns colelct fields for like delivery confirmation or whatever afterhsip adds at the end - add tha to the TRANS table and to the completed hsipmetns box

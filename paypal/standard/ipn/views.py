@@ -257,7 +257,7 @@ def notify_host_shipment_paid(request, host_id, user_id, trans_id):
     message = render_to_string('emails/notify_host_shipment_paid.txt', { 
         'host': host, 'enduser': enduser, 'emailgreeting': note_to_host, 
         'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
-        'payment_option': trans.payment_option, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
+        'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
         })
     subject = "You have a new request to connect from a neighbor"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
