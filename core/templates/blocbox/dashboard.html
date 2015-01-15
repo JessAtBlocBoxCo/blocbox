@@ -228,9 +228,12 @@
                                                               
                     	<!--NEIGHBOR: host name and information (need tracking)-->
                     	<div class="col-xs-3 paddingsides5px ">
-                       	 <div class="row nomargin">  <p class="nomargin"> Sent to {{sh.trans.host.first_name}}</p>  </div>
-                     	                                                        
-                         <div class="row nomargin"> 
+                       	 <div class="row nomargin">  
+                       	 	
+                       	 	<p class="nomargin"> Sent to {{sh.trans.host.first_name}}
+                       	 	   <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}]</a>  
+                       	 	</p>  
+                       	 	
                          	<p class="nomargin">  	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
@@ -238,10 +241,10 @@
                           </p>
                       	</div>
                           
-                        <div class="row nomargin">                        
-                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a>  
+                        
+                            
                             {% include "dashboard_subtemplates/message_to_host_modal.html" %}                          
-                    	  </div> <!--row with message -->
+
                       </div> <!--row with neighbor information (address and message link -->
                     
                   
@@ -325,19 +328,17 @@
                                         
                     	<!--NEIGHBOR: host name and information (Packages in transit)-->
                     	<div class="col-xs-3 paddingsides5px ">
-                       	 <div class="row nomargin">  <p class="nomargin"> Sent to {{sh.trans.host.first_name}}</p>  </div>
+                       	 <div class="row nomargin">  
+                       	 	<p class="nomargin"> Sent to {{sh.trans.host.first_name}}
+															<a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}]</a> 
+                       	 	</p>  
                      	                                                        
-                         <div class="row nomargin"> 
                          	<p class="nomargin"> <!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
                             <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                             	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                             </a>
-                            </p>
-                      </div>
-                          
-                        <div class="row nomargin">
-                        		<!--MESSAGING MODAL: PACKAGES IN TRANSI) -->                          
-                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a> 
+                           </p>                     
+                            
                             {% include "dashboard_subtemplates/message_to_host_modal.html" %}                           
                     	  </div> <!--row with message -->
                       </div> <!--row with neighbor information (address and message link -->
