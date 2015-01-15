@@ -1,6 +1,9 @@
 """jess dashboard to do"""
-1. add expected delivery
+
+2. cdheck if the thanks modal is working after you enter tracking - the html shows up as thanks but
+3. get the post-complete stuff - like date delivered fro amjftershi - add
 2. separte those en route from those waiting to be picked up - put waiting to be picked up first
+4. why didnt john get notify email fix that
 - edit the note to the host when shipment is sent to include the note to host 
 - update the tracking widget - dont use the aftership one - crate my own so that it doesnt take so mjuch time to load an dlook like shit
 - make the payment_processed indicator work

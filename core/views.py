@@ -105,31 +105,37 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         if request.method == 'POST':        
             tracking_form  = TrackingForm(request.POST, instance=trans)
             if tracking_form.is_valid(): 
-                trackadd = tracking_form.save()          
-                trackadd.save() 
-                tracking_no_to_add = str(trans.tracking) #retrieve the tracking number we just added to the transaction table
-                #Get the courier information
-                c_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no_to_add))                
-                c_list = c_allfields.get(u'couriers')
-                c_list_first = c_list[0]
-                slug_detected = str(c_list_first.get(u'slug'))
-                # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
-                api.trackings.post(tracking=dict(
-    						    slug=slug_detected, tracking_number=tracking_no_to_add,  
-    						    title="Shipment " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
-    						    order_id=str(trans.id),
-    						    customer_name = trans.enduser.email,
-    						    emails=[trans.enduser.email, trans.host.email], #Emails for notifications
-    						    custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
-    						    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
-    						    )) 	 
-                #Get the information from the API (is it posted yet?)
-                datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
-                trackingdict_added = datadict_added.get(u'tracking')
-                #Save this information to trans table
-                trans.on_aftership = True
-                trans.shipment_courier = slug_detected.upper()
-                trans.save()
+            	  tracking_no_entered = tracking_form.cleaned_data['tracking']
+            	  if tracking_no_entered:
+                    trackadd = tracking_form.save()          
+                    trackadd.save() 
+                    tracking_no_to_add = str(trans.tracking) #retrieve the tracking number we just added to the transaction table
+                    #Get the courier information
+                    c_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no_to_add))                
+                    c_list = c_allfields.get(u'couriers')
+                    c_list_first = c_list[0]
+                    slug_detected = str(c_list_first.get(u'slug'))
+                    # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
+                    api.trackings.post(tracking=dict(
+    						        slug=slug_detected, tracking_number=tracking_no_to_add,  
+    						        title=str(trans.title) + ": Shipment " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
+    						        order_id=str(trans.id),
+    						        customer_name = trans.enduser.email,
+    						        emails=[trans.enduser.email, trans.host.email], #Emails for notifications
+    						        custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
+    						        #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
+    						        )) 	 
+                    #Get the information from the API (is it posted yet?)
+                    datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
+                    trackingdict_added = datadict_added.get(u'tracking')
+                    #Save this information to trans table
+                    trans.on_aftership = True
+                    trans.shipment_courier = slug_detected.upper()
+                    trans.save()
+                else:
+                    trans.tracking = None
+                    trans.on_aftership = None
+                    api.trackings.delete(trans.shipment_courier, trans.tracking) 
             else: #if tracking form is not valid 
     	          print tracking_form.errors 
     		    #Now, get the tracking info from the API
