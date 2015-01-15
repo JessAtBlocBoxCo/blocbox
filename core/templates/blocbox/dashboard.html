@@ -77,11 +77,9 @@
                 <!--TOP ROW - HEADERS -->
                 <div class="row textleft darkgreytext tinytext ">
                     <!--row containing top table--> 
-                    <div class="col-xs-3">  <p class="marginbottom5px">SHIPMENT DETAILS </p>  </div>
+                    <div class="col-xs-4">  <p class="marginbottom5px">SHIPMENT DETAILS </p>  </div>
                     <div class="col-xs-3">  <p class="marginbottom5px">NEIGHBOR</p> </div>
-                    <!-- <div class="col-xs-2">   <p class="marginbottom5px">OPTIONS</p> </div> -->
-                    <div class="col-xs-4">   <p class="marginbottom5px">TRACKING</p>  </div>
-                    <div class="col-xs-2">   <p class="marginbottom5px">COMPLETE</p>  </div>
+                    <div class="col-xs-3">   <p class="marginbottom5px">COMPLETE</p>  </div>
                 </div>
 
 						
@@ -110,101 +108,43 @@
             {% for sh in shipments_with_tracking_notcomplete %}
             
             		
-                <!--divider defining the whole current shipments part -->
-                <div class="row whitebackground marginbottom30px textleft dashfont">
+            <!--divider defining the whole current shipments part -->
+            <div class="row whitebackground marginbottom30px textleft dashfont">
                     
                     
-                     <!--SHIPMENT DETAILS: ORDER DATE AND SHIPPMENT SPEED  -->
-                    <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
+               	<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION -->
+                <div class="col-xs-4 paddingtopbottom20px paddingsides5px ">
                     	
-                    		<!--Order # and Title (if one exists) -->
+                    <!--Order # and Title (if one exists) -->		
+                    <div class="row paddingtopbottom2px"> <p class=" nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %}</p></div>  
                     		
-                    		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %}</p></div>  
+                    <!--Date transaction created-->
+                    <div class="row paddingtopbottom2px"> <p class=" nomargin"> Order Placed {{ sh.trans.date_requested_notime }}</p> 	</div>
                     		
-                    		<!--Date transaction created-->
-                    		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Ordered {{ sh.trans.date_requested }}</p> 	</div>
-                    		
-                    		<!--courier and shipmente-type/spped -->
-                    		<div class="row">         
+                    <!--Expected Delivery -->
+                    <div class="row">         
                         		<p class="nomargin"> 
-         												{% if sh.aftership.expected_delivery %}
-         														Scheduled Delivery: {{ sh.aftership.expected_delivery }}
+         												{% if sh.aftership.expected_delivery %}	Scheduled Delivery: {{ sh.aftership.expected_delivery }}
          												{% else %}						
                         						{% if sh.trans.dayrangestart %}
-                        								You expected:
-                        								{% if sh.trans.dayrangestart == sh.trans.dayrangeend %}
-                        									{{ sh.trans.dayrangestart }} day shipping
-                        								{% else %}
-                        									{{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping
-                        								
+                        								You expected
+                        								{% if sh.trans.dayrangestart == sh.trans.dayrangeend %}	{{ sh.trans.dayrangestart }} day shipping
+                        								{% else %}	{{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping                       								
                         								&nbsp;
                         								{% endif %}
                         						{% endif %} <!--if has dayrangestart--> 
                         				{% endif %}              		                        															
                         		</p>
-                        </div>  
-                        
-
+                    </div>  
+                    
+                    <!--Status-->
+                    <div class="row"> 	
+                          <p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p> 
                     </div>
                     
-                    
-                    <!--NEIGHBOR: host name and information-->
-                    <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
-                       	 <div class="row nomargin">  <p>{{sh.trans.host.first_name}}</p>  </div>
-                     	                                                        
-                         <div class="row nomargin">
-                         	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
-                            <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                            	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
-                            </a>
-                          </div>
-                          
-                        <div class="row nomargin">
-                        		<!--MESSAGING MODAL -->                          
-                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Message {{ shi.trans.host.first_name }}</a>                            
-														 	<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
-														 		{% load i18n %}
-														 			<div>
-														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
-																				<div class="row margintopbottom30px">
-																				   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}/Thanks" method="post" class="text-left"> 
-																				        		{% csrf_token %} 
-																				        		<!--{{ compose_form.as_table }} -->
-																				        		<!--compose form has recipient, subject, body -->
-																				        <div class="row">	
-																				        		<label for="id_recipient"> Recipient: </label> <input id="id_recipient" name="recipient" type="text" />
-																				        </div>
-																				        <div class="row">
-																										<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
-																								</div>	
-																								<div class="row">																						
-																										<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
-																								</div>	
-																				        <input type="submit" value="{% trans "Send" %} &raquo;"/>
-																				    </form>
-																				</div>	
-																	</div>												
-                        		</div> <!-- id=openModal -->
-                        	<!--thanks modal -->
-                          	<div id="openModal_message_id{{sh.trans.id}}/Thanks" class="modalDialog"> 
-                         				<div>
-                         	        <a href="/dashboard" title="Close" class="close">X</a>
-        													<h3 class="ltbluetext">Your Message to {{sh.trans.host.first_name}} Has Been Sent! </h3>    
-        													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
-        												</div>
-                       			</div> <!--end thanks modal-->
-                    	  </div> <!--row with message -->
-                    </div> <!--row with neighbor information (address and message link -->
-                    
-                  
-                    
-     								
-     								<!--TRACKING NUMBER-->
-                    <div class="col-xs-4 paddingtopbottom20px paddingsides5px ">
-                    	                    		
-                    		{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->
-													
-													<div class="row nomargin">	
+                    <!--Tracking -->	                    		
+                		{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->													
+										<div class="row nomargin">	
 														<div id="as-root"></div>
 															<script>
 																(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
@@ -223,16 +163,8 @@
                    				
                    				<!--courier and shipmetn type -->
                    				<div class="row nomargin">
-                   					 <p> {{ sh.trans.shipment_courier }} {% if sh.trans.aftership.shipment_type %} : {{ sh.trans.aftership.shipment_type }} {% endif%} </p>                 				
+                   					 <p> {{ sh.trans.shipment_courier }} {% if sh.aftership.shipment_type %} : {{ sh.aftership.shipment_type }} {% endif%} </p>                 				
                    				</div>
-                   				
-                   				<!--Status-->
-                            <div class="row"> 	
-                            	<p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.trans.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p> 
-                            </div>
-                   			
-                   			
-                    				
                     		                    		
                     	{% else %}  <!--if no tracking, enter it -->
                     			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
@@ -298,10 +230,67 @@
                     			</div> <!--row for edit tracking-->
                     		{% endif %}
                     </div> <!--end tracking number -->
+  
+                        
+
+                    </div>
                     
                     
-               			<!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW )-->
-               			<div class="col-xs-2 paddingtopbottom20px"> 
+                    <!--NEIGHBOR: host name and information-->
+                    <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
+                       	 <div class="row nomargin">  <p>{{sh.trans.host.first_name}}</p>  </div>
+                     	                                                        
+                         <div class="row nomargin">
+                         	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
+                            <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                            	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
+                            </a>
+                          </div>
+                          
+                        <div class="row nomargin">
+                        		<!--MESSAGING MODAL -->                          
+                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Message {{ shi.trans.host.first_name }}</a>                            
+														 	<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
+														 		{% load i18n %}
+														 			<div>
+														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
+																				<div class="row margintopbottom30px">
+																				   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}/Thanks" method="post" class="text-left"> 
+																				        		{% csrf_token %} 
+																				        		<!--{{ compose_form.as_table }} -->
+																				        		<!--compose form has recipient, subject, body -->
+																				        <div class="row">	
+																				        		<label for="id_recipient"> Recipient: </label> <input id="id_recipient" name="recipient" type="text" />
+																				        </div>
+																				        <div class="row">
+																										<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
+																								</div>	
+																								<div class="row">																						
+																										<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
+																								</div>	
+																				        <input type="submit" value="{% trans "Send" %} &raquo;"/>
+																				    </form>
+																				</div>	
+																	</div>												
+                        		</div> <!-- id=openModal -->
+                        	<!--thanks modal -->
+                          	<div id="openModal_message_id{{sh.trans.id}}/Thanks" class="modalDialog"> 
+                         				<div>
+                         	        <a href="/dashboard" title="Close" class="close">X</a>
+        													<h3 class="ltbluetext">Your Message to {{sh.trans.host.first_name}} Has Been Sent! </h3>    
+        													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
+        												</div>
+                       			</div> <!--end thanks modal-->
+                    	  </div> <!--row with message -->
+                    </div> <!--row with neighbor information (address and message link -->
+                    
+                  
+                    
+     								
+                  
+                    
+               	<!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW )-->
+               	<div class="col-xs-3 paddingtopbottom20px"> 
                			    	<div class="row"> <!--confirm/review -->
                			    	   <button type="package_received" name="package_received" class="bluebutton" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
                			    	   	 I got my package!
@@ -382,7 +371,7 @@
                			       	</div>
                			            	
                			      </div>
-               			</div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE -->
+               	</div> <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE -->
                   
                   
                   
@@ -470,8 +459,8 @@
                 				    	<!--tracking -->
                 				     <div class="col-xs-3">
                                 <div class="row">   <p> {{ sh.trans.tracking }} </p></div> 
-                				    		<div class="row">   <p> {% if sh.trans.shipment_courier %} {{ sh.trans.shipment_courier}} {% else %} {{ sh.trans.aftership.slug }} {% endif %}
-                				    			: {{ sh.trans.aftership.shipment_type }} </p> </div>
+                				    		<div class="row">   <p> {% if sh.trans.shipment_courier %} {{ sh.trans.shipment_courier}} {% else %} {{ sh.aftership.slug }} {% endif %}
+                				    			: {{ sh.aftership.shipment_type }} </p> </div>
                 				    	</div>
                 				    	
                 				    </div>
