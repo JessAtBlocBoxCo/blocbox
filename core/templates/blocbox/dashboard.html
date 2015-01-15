@@ -158,7 +158,11 @@
                     	<!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     	<div class="col-xs-3 paddingsides5px ">
                     		 <!--neigbor name-->
-                       	 <div class="row nomargin">  <p class="nomargin"> Sent to {{sh.trans.host.first_name}}</p>  </div>
+                       	 <div class="row nomargin">  <p class="nomargin"> Sent to {{sh.trans.host.first_name}}
+                       	 		<a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a> 
+                            {% include "dashboard_subtemplates/message_to_host_modal.html" %} 
+                       	 		</p> 
+                       	 </div>
                      	   <!--neighbor address-->                                                     
                          <div class="row nomargin"> 
                          		<p class="nomargin">  
@@ -171,8 +175,7 @@
                       
                       	<!--send a message-->    
                       	<div class="row nomargin">                       
-                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Send a Message to {{ sh.trans.host.first_name }}</a> 
-                            {% include "dashboard_subtemplates/message_to_host_modal.html" %}                           
+                                                      
                     	 	</div> <!--row with message -->
                       </div> <!--End Neighbor Column (packages waiting to be picked up) -->
                     
