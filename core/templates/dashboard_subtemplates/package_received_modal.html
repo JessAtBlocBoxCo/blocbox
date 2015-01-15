@@ -25,8 +25,8 @@
 	 														
 	 														<!--end user comments -->
 	 														<h6>Provide Feedback or Comments about this Transaction</h6>
-	 														{{ package_received_form.enduser_comments }}
-	 														<div class="form-group"> <input type="text" name="enduser_comments" placeholder="Comments about your experience (optional)">  </div>
+	 														{{ package_received_form.enduser_comments.errors }}
+	 														<div class="form-group"> <input type="text" name="enduser_comments" id="id_enduser_comments" placeholder="Comments about your experience (optional)">  </div>
 	 															
 	 														
 	 														 	<!--hidden input to mark complete-->
