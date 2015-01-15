@@ -159,14 +159,12 @@
 															data-size: The size of the track button, can be: small, normal or large
 															data-tracking-number String empty The tracking number for the track button, must use together with "data-slug" 
 														-->
-                   				</div>
+                   	</div>
                    				
-                   				<!--courier and shipmetn type -->
-                   				<div class="row nomargin">
-                   					 <p> {{ sh.trans.shipment_courier }} {% if sh.aftership.shipment_type %} : {{ sh.aftership.shipment_type }} {% endif%} </p>                 				
-                   				</div>
+                   	<!--courier and shipmetn type -->
+                   	<div class="row nomargin">  <p> {{ sh.trans.shipment_courier }} {% if sh.aftership.shipment_type %} : {{ sh.aftership.shipment_type }} {% endif%} </p> 	</div>
                     		                    		
-                    	{% else %}  <!--if no tracking, enter it -->
+                   {% else %}  <!--if no tracking, enter it -->
                     			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
                     					<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
 														 	<div id="openModal_entertracking_id{{sh.trans.id}}" class="modalDialog">
@@ -196,9 +194,9 @@
                             </div>    <!--modal div for enter tracking -->
 
                           </div> <!--end enter tracking row-->         
-                      {% endif %} <!--end if no shipping tracking, enter it with modal -->
+                   {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
-                    	<!--EDIT TRACKING -->                    		
+                   <!--EDIT TRACKING -->                    		
                     	{% if sh.trans.tracking %} 
                     			
                     			<div class="row"> <!--edit tracking info-->
@@ -229,11 +227,9 @@
                       
                     			</div> <!--row for edit tracking-->
                     		{% endif %}
-                    </div> <!--end tracking number -->
+                  </div> <!--end  shipment details -->
   
-                        
-
-                    </div>
+                       
                     
                     
                     <!--NEIGHBOR: host name and information-->
@@ -375,7 +371,7 @@
                   
                   
                   
-                </div> <!--row whitebackground-->
+            </div> <!--row whitebackground-->
             {% endfor %} <!--for shipmetns in shipments not completed -->
 
             </div>
