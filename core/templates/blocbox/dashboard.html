@@ -304,8 +304,8 @@
                     			
                     
                     			<!--Status and shipment type-->
-                    			<div class="row"> 	  <p class="nomargin"> Status:  {{sh.aftership.tag}} {
-                    						% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }}  )
+                    			<div class="row"> 	  <p class="nomargin"> Status:  {{sh.aftership.tag}} 
+                    						{% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }}  )
                     						{% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}  
                     				</p>  
                     			</div>
