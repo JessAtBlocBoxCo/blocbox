@@ -137,7 +137,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 else: #if they entered nothing delete it       
                     api.trackings.delete(courier_on_trans, tracking_on_trans)
                     trans.tracking = None
-                    trans.on_aftership = None
+                    trans.on_aftership = False
                     trans.save()
                     
             else: #if tracking form is not valid 
