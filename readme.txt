@@ -213,7 +213,21 @@ timezones: to see them all, python > print.pytz.all_timezones
 - so, need a way to automatically update our transaction table with the afters hip stuff OR.. we just always pull form afterhip API and dont update our trans table
 - isntead, dont update trans tablw tih all that information immediately -
 - but, once transaction is completed - grab updated data from aftership so we can store it
+- I HAVE UPDATED THIS.. transactioni entry completed after hit "vdery and enter paymen" but there is an indicator for payment_procesed that needs to be TRUE to show up on dashboard
 
+*-----------------------------------------------------------------------*   
+8. EMAILS                                   
+*-----------------------------------------------------------------------*   
+ - email body templates are in the template/emails folder in respective app
+ 
+ - Request Connect Email to host:
+		the requestconnect email is sent by the function core.views.confirmconnect_mail which is trigered by core.views.signup.connect if the user_form.is_vaolid
+ 		the email template is core.templates.emails.requestconnect.txt
+ 
+ - Email to notify the host a shipment has been ordered
+  - function defined in paypal.standard.ipn.views.notify_host_shipment_paid, triggered by paypal.standard.ipn.views.ipn when the payment goes through
+  - template is transactions.emails.notify_host_shipment_paid.txt
+  
 *-----------------------------------------------------------------------*
 END: DJANGO ADMIN SITES
 *-----------------------------------------------------------------------*

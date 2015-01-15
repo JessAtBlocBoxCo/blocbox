@@ -111,7 +111,8 @@ def ipn(request, item_check_callable=None, host_id=None):
     #JMY ADDED: Update the Transaction Table to confirm we need to transation ID but only have invoice on the paypal IPN
     trans = Transaction.objects.get(invoice=invoice_sent) 
     trans.payment_processed = True
-    trans.save()   
+    trans.save()
+    notify_host_transaction_paid(request, host.id, user.id, trans.id)   
     
     return HttpResponse("OKAY")
 
@@ -244,6 +245,25 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     	  'trans_created': trans_created,
     })
 
+
+def notify_host_shipment_paid(request, host_id, user_id, trans_id)
+    host = get_object_or_404(UserInfo, pk=host_id)
+    enduser = get_object_or_404(UserInfo, pk=user_id)
+    trans = get_object_or_404(Transaction, pk=trans_id)
+    if trans.dayrangestart == trans.dayrangeend:
+        daystoarrival_estimate = str(trans.dayrangestart) + " Business Days"
+    else:
+        daystoarrival_estimate = str(trans.dayrangestart) + " - " + str(trans.dayrangeend) + "Business Days"
+    message = render_to_string('emails/notify_host_shipment_paid.txt', { 
+        'host': host, 'enduser': enduser, 'emailgreeting': note_to_host, 
+        'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
+        'payment_option': trans.payment_option, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
+        })
+    subject = "You have a new request to connect from a neighbor"
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
+    return HttpResponse("A Shipment is coming to you.")
+    
+    
     
 """Need to implement a return view and a cancel view, from documentation:
  	You will also need to implement the 'return_url' and 'cancel_return' views

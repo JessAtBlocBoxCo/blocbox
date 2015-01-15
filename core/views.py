@@ -310,7 +310,7 @@ def user_logout(request):
     # Take the user back to the homepage.
     return HttpResponseRedirect('/beta/')
 
-#Registration Form -- User
+#Registration Form -- User 
 def signupconnect(request, host_id):
     host = get_object_or_404(UserInfo, pk=host_id)
     context = RequestContext(request)
