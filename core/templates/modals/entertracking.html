@@ -1,0 +1,18 @@
+<!--this is core/templates/modals/trackingmodal.html, it is called within modaltags.py - the tracking_modal def
+		which is called on dashboard.html 
+		it is called with tracking_modal shipment.id
+		-->
+		
+{% load modaltags %}
+
+
+				   
+	   <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	        <input type="tracking" class="form-control" name="tracking" 
+	        
+	         
+	        placeholder="Enter Tracking Number for Order {{ trans.invoice }} ">    	  <!--removed id="id_tracking" -->      	   
+	   </div>
+
+
+	 

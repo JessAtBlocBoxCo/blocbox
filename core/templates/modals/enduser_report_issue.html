@@ -1,0 +1,38 @@
+<!--this is core/templates/modals/enduser_report_issue.html, it is called within modaltags.py - the tracking_modal def
+		which is called on dashboard.html 
+		TRYING - NOT PASSING ARGUMENTS - JUST HAVE THE TEMPLATE TAGS RENDER CONSISTENT WITH WHAT WAS ALREADY PASSED..
+		
+		TEMPLATE TAGS ARE CALLED IN EMPLATE WITH:	{ % month_table calendar periods.month "small" +1 % } where
+				- enduser_report_issue is the def defined in modaltags.py: def month_table(context, calendar, month, size="regular", shift=None):
+				- calendar is the second arg
+	
+	SO.. WE WILL CALL THIS WITH { % enduser_report_issue %}
+
+						
+-->
+		
+{% load modaltags %}
+
+
+
+     <!--ENDUSER REPORT AN ISSUE MODAL -->									
+				<div id="openModal_enduser_issue_id{{sh.trans.id}}" class="modalDialog">                                 
+                   <div>	
+                       <a href="/dashboard" title="Close" class="close">X</a>
+        									<h4 class="ltbluetext">Report an issue, delay or other concern with shipment {{sh.trans.id}} </h4>                                   	
+                         	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue/Thanks" enctype="multipart/form-data">
+					   										{% csrf_token %}
+					   												{{ enduser_issue_form.non_field_errors }}
+					   												{{ enduser_issue_form.enduser_issue.errors }}
+					   										 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
+	      															<input type="text" class="form-control" name="enduser_issue"      					          
+	      																	placeholder="Enter a Description of the Issue ">    	    	   
+	 																		</div>
+                       			<!--siubmit button-->
+                       			<div class="row paddingbottom10px"> 
+                       				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+					   									</div>                
+                 					</form>
+                 			</div> 
+         </div>   <!--END: USER ISSUE MODAL.--> 
+	 
