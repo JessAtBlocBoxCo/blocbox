@@ -124,8 +124,7 @@
                     <!--Expected Delivery -->
                     <div class="row">         
                         		<p class="nomargin"> 
-                        				<p>TEST EXP DELIV {{ sh.aftership.expected_delivery_notime }}</p>
-         												{% if sh.aftership.expected_delivery %}	Scheduled Delivery: {{ sh.aftership.expected_delivery }}
+         												{% if sh.aftership.expected_delivery %}	Scheduled Delivery: {{ sh.aftership.expected_delivery_notime }}
          												{% else %}						
                         						{% if sh.trans.dayrangestart %}
                         								You expected
