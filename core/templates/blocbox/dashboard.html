@@ -107,7 +107,9 @@
                     		<!--courier and shipmente-type/spped -->
                     		<div class="row">         
                         		<p class="nomargin"> 
-         
+         												{% if shipment.aftership.expected_delivery %}
+         														Scheduled Delivery: {{ shipment.aftership.expected_delivery %}
+         												{% else %}						
                         						{% if shipment.dayrangestart %}
                         								You expected:
                         								{% if shipment.dayrangestart == shipment.dayrangeend %}
@@ -120,7 +122,8 @@
                         										{{ shipment.deliverydatenotracking_rangeend}} -->
                         								&nbsp;
                         								{% endif %}
-                        						{% endif %} <!--if has dayrangestart-->               		                        															
+                        						{% endif %} <!--if has dayrangestart--> 
+                        				{% endif %}              		                        															
                         		</p>
                         </div>  
                         
