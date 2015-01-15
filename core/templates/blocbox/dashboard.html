@@ -84,6 +84,17 @@
                 </div>
 
 						
+						{% if tracking_thanks_modal %}
+						       <div id="openModal_edittracking" class="modalDialog"> 
+                         				<div>
+                         	        <a href="/dashboard" title="Close" class="close">X</a>
+        													<h3 class="ltbluetext">Thanks! </h3>    
+        													<h6> Your tracking information has been updated </h6>
+        													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
+        												</div>
+                     </div>
+            {% endif %}
+                       				
 						
             {% for shipment in shipments_with_tracking_notcomplete %}
             

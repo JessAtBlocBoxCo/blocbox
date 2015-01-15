@@ -94,6 +94,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     datetimenow = datetime.datetime.now()
     datetoday = datetime.date.today()
+    tracking_thanks_modal = False
     #defing the startashipmentpage as a function of whether they have multiple connections
     if connections_count==1:
         hostonly=connections_all[0].host_user
@@ -134,12 +135,13 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     trans.on_aftership = True
                     trans.shipment_courier = slug_detected.upper()
                     trans.save()
+                    tracking_thanks_modal = True
                 else: #if they entered nothing delete it       
                     api.trackings.delete(courier_on_trans, tracking_on_trans)
                     trans.tracking = None
                     trans.on_aftership = False
-                    trans.save()
-                    
+                    trans.save()      
+                    tracking_thanks_modal = True            
             else: #if tracking form is not valid 
     	          print tracking_form.errors 
     		    #Now, get the tracking info from the API
@@ -247,7 +249,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
         'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
-        'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete,
+        'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 'tracking_thanks_modal': tracking_thanks_modal,
     })
     
 
