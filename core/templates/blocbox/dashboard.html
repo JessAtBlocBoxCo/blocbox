@@ -134,16 +134,14 @@
            				<!--divider defining the whole current shipments part -->
            				<div class="row whitebackground marginbottom30px textleft dashfont">
            						<h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
-                    
-                    <p> TEST CHECKPOINTS {{ sh.aftership.checkpoints }} </p>
-                    <p> TEST LATS CHECKPOINT {{ sh.aftership.last_checkpoint }} </p>
+           						
                				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                 			<div class="col-xs-4 paddingsides5px ">
                                      		
                    	 			<!--Date transaction created-->
                     			<div class="row"> <p class=" nomargin"> Order Placed {{ sh.trans.date_requested_notime }}</p> 	</div>                   		
                     			<!--Status and date delivered-->
-                    			<div class="row"><p class="nomargin"> Status:  {{sh.aftership.tag}} on {{sh.aftership.date_delivered }} ADD DATE_DELIVERED FIELD </p>  </div>
+                    			<div class="row"><p class="nomargin"> Status:  {{sh.aftership.tag}} on {{sh.aftership.last_checkpoint.checkpoint_time }}  </p>  </div>
                     
                     			<!--Tracking -->
                     			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->		                    		
@@ -312,10 +310,15 @@
                     			    				{% endif %}              		                        															
                     			    		</p>
                     			</div>  
+                    			
                     
                     			<!--Status-->
                     			<div class="row"> 	  <p class="nomargin"> Status:  {{sh.aftership.tag}}  </p>  </div>
                     
+                    <div class="row"><p class="nomargin"> Status:  {{sh.aftership.tag}}  </p>  </div>
+                    {% if sh.aftership.last_checkpoint.city %}
+                     <div class="row"><p class="nomargin"> Last Location:  {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }} </p></div>
+                    {% endif %} 
                     			<!--Shipment type (from api)-->	                  		
                     			<div class="row nomargin">  <p class="nomargin"> Shipment Type: {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %}  {{ sh.trans.shipment_courier }} {% endif%} </p> 	</div>
                     			
