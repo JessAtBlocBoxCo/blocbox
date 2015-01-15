@@ -1318,6 +1318,9 @@ html, body {
     margin-left: auto;
     margin-right: auto;
 }
+.phoneonly {
+    display: none;
+}
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
 *--------------------------------------------------------------*/
@@ -1742,6 +1745,9 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .margintop50pxnomobile {
         margin-top: 50px;
     }
+    .phoneonly {
+        display: none;
+    }
 }
 
 /*-------------------------------------------------------------*
@@ -1829,6 +1835,9 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     }
     .footerlogo {
         margin-left: -80px;
+    }
+    .phoneonly {
+        display: none;
     }
 }
 
@@ -1955,6 +1964,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         padding-bottom: 550px;
     }
     .footerlogo {
+        display: none;
+    }
+    .phoneonly {
         display: none;
     }
 }
@@ -2133,6 +2145,20 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .content {
         padding-bottom: 550px;
+    }
+    .findhostbtn {
+        width: 178px;
+        /*same as form-control, the bootstrap style applied to text input */
+    }
+    .findhostbtn:hover {
+        width: 178px;
+        /*same as form-control, the bootstrap style applied to text input */
+    }
+    .phoneonly {
+        display: block;
+    }
+    .nophone {
+        display: none;
     }
 }
 
