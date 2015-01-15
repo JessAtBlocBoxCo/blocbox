@@ -282,7 +282,7 @@
                <div class="row">  <h3 class="ltbluetext margintop10px nopadding">Packages in Transit or Preparing to Ship </h3>   </div>				                      				
             	{% for sh in shipments_with_tracking_notcomplete_notdelivered %}
             
-            
+          
            				<!--divider defining the whole current shipments part (SHIPMENTS IN TRANSIT) -->
            				<div class="row whitebackground marginbottom30px textleft dashfont">
            						<h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
@@ -372,8 +372,7 @@
          </div> <!--col, shipments container -IN TRANSIT-->
 
 
-
-            <!--Favors Box-->
+            <!--OTHER FAVORS Favors Box-->
             <div class="col-xs-12 dashbox margintop30px marginbottom30px">
                 <h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3> 
 
@@ -416,49 +415,35 @@
             <!--col, Favors box--->
 
 
-            <!--COMPLETED SHIPMENTS Container-->
-            <div class="col-xs-12 dashbox marginbottom60px marginbottom30px">
+        <!--COMPLETED SHIPMENTS Container-->
+        <div class="col-xs-12 col-sm-12 dashbox">
+							<div class="row">  <h3 class="ltbluetext margintop10px nopadding">Completed Shipments </h3>   </div>		              
+              {% for sh in shipments_with_tracking_complete %}
+                <p>TEST - SHOW ALL AFTERSHIP FIELDS {{ sh.aftership }} </p>
+                	
+                	<!--start div defining the shipment-->
+                	<div class="row whitebackground marginbottom30px textleft dashfont">
+											<h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>
+                					
+                				<!--shipment details-->
+                				<div class="col-xs-3 paddingsides5px">
+                				    	<div class="row nomargin">   <p> Order Placed {{ sh.trans.date_requested }} </p> </div>
+                				    	<div class="row nomargin">   <p> Order Completed {{ sh.trans.date_completed }} </p></div>
+                				    	<div class="row nomargin"> <p> Delivered {{sh.aftership.date_delivered }} ADD FIELD </p></div>
+                				    	{% if sh.trans.tracking %} <div class="row nomargin"> <p> Tracking: {{sh.trans.tracking }} </p></div> {% endif %}
+                				 </div>
+                				    	
+                				 <!--neighbor-->
+                				 <div class="col-xs-3">
+                                <div class="row nomargin">   <p> Delivered to your neighbor {{ sh.trans.host.first_name }} </p></div> 
+                				    		<div class="row nomargin">   <p> At {{ sh.trans.host.st_address1}} </p> </div>
+                				    		<div class="row nomargin">   <p> You rated {{ sh.trans.host.first_name}} {{sh.enduser_rating}} / 5 </p></div>
+                				 </div>
 
-                <h3 class="col-xs-12 ltbluetext nopadding">Completed Shipments</h3> 
-                <!--eventually make this "within past 60 ays" or something or have multiple pages-->
-                <div class="row darkgreytext tinytext textcenter">
-                    <!--labels-->
-                    <p class="col-xs-3 marginbottom5px">SHIPMENT DETAILS</p>
-                    <p class="col-xs-3 marginbottom5px">NEIGHBOR</p>
-                    <p class="col-xs-3 marginbottom5px">TRACKING</p>
-                </div>
-                <!--row, labels-->
-                
-                {% for sh in shipments_with_tracking_complete %}
-                
-                				<div class="row whitebackground marginbottom30px">
-                				    <div class="row textcenter tinytext">
-                				    	<!--shipmetn details -->
-                				    	<div class="col-xs-3">
-                				    		{% if sh.trans.title %} <div class="row">   <p> {{ sh.trans.title }} </p></div> {% endif %}
-                				    		<div class="row">   <p> Date Ordered: {{ sh.trans.date_requested }} </p> </div>
-                				    		<div class="row">   <p> Date Completed: {{ sh.trans.date_completed }} </p></div>
-                				    	</div>
-                				    	
-                				      <!--neighbor-->
-                				     <div class="col-xs-3">
-                                <div class="row">   <p> {{ sh.trans.host.first_name }} </p></div> 
-                				    		<div class="row">   <p> {{ sh.trans.host.st_address1}} </p> </div>
-                				    	</div>
-                				    	
-                				    	<!--tracking -->
-                				     <div class="col-xs-3">
-                                <div class="row">   <p> {{ sh.trans.tracking }} </p></div> 
-                				    		<div class="row">   <p> {% if sh.trans.shipment_courier %} {{ sh.trans.shipment_courier}} {% else %} {{ sh.aftership.slug }} {% endif %}
-                				    			: {{ sh.aftership.shipment_type }} </p> </div>
-                				    	</div>
-                				    	
-                				    </div>
-                				</div>
+                	</div> <!--end container for this shipemnt -->
                 {% endfor %}
-            </div>
-            <!--col, RECENT SHIPMETNS-->
-        </div> <!--END SHIPMETNS DELIVERE
+          </div> <!--end completed shipmetns -->
+
     </div> <!--END COL WITH ALL TRANSACTIONS -->
 </div>
 
