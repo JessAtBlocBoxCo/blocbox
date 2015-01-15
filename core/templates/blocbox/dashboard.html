@@ -133,7 +133,7 @@
                     
                     <!--NEIGHBOR: host name and information-->
                     <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
-                       	 <div class="row paddingtopbottom2px">  <p>{{shipment.host.first_name}}</p>  </div>
+                       	 <div class="row">  <p>{{shipment.host.first_name}}</p>  </div>
                      	                             
                            
                          <div class="row">
@@ -188,7 +188,7 @@
                     	                    		
                     		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
 													
-													<div class="row">	
+													<div class="row nomargin">	
 														<div id="as-root"></div>
 															<script>
 																(function(e,t,n){var r,i=e.getElementsByTagName(t)[0];if(e.getElementById(n))return;r=e.createElement(t);r.id=n;r.src="//apps.aftership.com/all.js";i.parentNode.insertBefore(r,i)})(document,"script","aftership-jssdk")
@@ -206,7 +206,7 @@
                    				</div>
                    				
                    				<!--courier and shipmetn type -->
-                   				<div class="row">
+                   				<div class="row nomargin">
                    					 <p> {{ shipment.shipment_courier }} {% if shipment.aftership.shipment_type %} : {{ shipment.aftership.shipment_type }} {% endif%} </p>                 				
                    				</div>
                    			
