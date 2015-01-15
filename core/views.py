@@ -105,8 +105,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         if request.method == 'POST':        
             tracking_form  = TrackingForm(request.POST, instance=trans)
             if tracking_form.is_valid(): 
-            	  tracking_no_entered = tracking_form.cleaned_data['tracking']
-            	  if tracking_no_entered:
+                tracking_no_entered = tracking_form.cleaned_data['tracking']
+                if tracking_no_entered:
                     trackadd = tracking_form.save()          
                     trackadd.save() 
                     tracking_no_to_add = str(trans.tracking) #retrieve the tracking number we just added to the transaction table
