@@ -213,7 +213,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     for shipment in shipments_all_paid:  
         tracking_no = str(shipment.tracking) #the str function removes the preceding u'
         shipment_tuple = {} 
-        shipment_tuple['trans']=shipment
+        shipment_tuple['trans']=shipment #get all of the transaction variables
         shipment_tuple['aftership']={}  
         if shipment.on_aftership: 
             #populate the aftership_tracking sub-tuble                 
@@ -229,7 +229,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             if expected_delivery:
                 shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()
             else:
-                shipment_tuple['aftership']['expected_delivery_notime']=None       
+                shipment_tuple['aftership']['expected_delivery_notime']=None  
+            checkpoints = shipment_tuple['aftership']['checkpoints']
+            if checkpoints:
+                shipment_tuple['aftership']['checkpoints'] = checkpoints
+                shipment_tuple['aftership']['last_checkpoint'] = checkpoints[-1] #-nth to last.. so -1 is the last element     
             if shipment.trans_complete ==True:
                 shipments_with_tracking_complete.append(shipment_tuple)
             else:
