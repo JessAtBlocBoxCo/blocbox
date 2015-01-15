@@ -107,11 +107,8 @@
         						</div>
                 	</div>  
                        				
-            {% for shipment in shipments_with_tracking_notcomplete %}
+            {% for sh in shipments_with_tracking_notcomplete %}
             
-
-
-            		<p>TEST {{ shipment.transaction.id }} {{ shipment.transaction.tracking }} {{ shipment.transaction.title }} </p>
             		
                 <!--divider defining the whole current shipments part -->
                 <div class="row whitebackground marginbottom30px textleft dashfont">
@@ -122,27 +119,24 @@
                     	
                     		<!--Order # and Title (if one exists) -->
                     		
-                    		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Order {{shipment.id }}  {% if shipment.title %} : {{ shipment.title }}	 {% endif %}</p></div>  
+                    		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %}</p></div>  
                     		
                     		<!--Date transaction created-->
-                    		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Ordered {{ shipment.date_requested }}</p> 	</div>
+                    		<div class="row paddingtopbottom2px"> <p class=" nomargin"> Ordered {{ sh.trans.date_requested }}</p> 	</div>
                     		
                     		<!--courier and shipmente-type/spped -->
                     		<div class="row">         
                         		<p class="nomargin"> 
-         												{% if shipment.aftership.expected_delivery %}
-         														Scheduled Delivery: {{ shipment.aftership.expected_delivery }}
+         												{% if sh.aftership.expected_delivery %}
+         														Scheduled Delivery: {{ sh.aftership.expected_delivery }}
          												{% else %}						
-                        						{% if shipment.dayrangestart %}
+                        						{% if sh.trans.dayrangestart %}
                         								You expected:
-                        								{% if shipment.dayrangestart == shipment.dayrangeend %}
-                        									{{ shipment.dayrangestart }} day shipping
-                        									<!--	{{ shipment.deliverydatenotracking_rangestart }} -->
+                        								{% if sh.trans.dayrangestart == sh.trans.dayrangeend %}
+                        									{{ sh.trans.dayrangestart }} day shipping
                         								{% else %}
-                        									{{ shipment.dayrangestart }} - {{ shipment.dayrangeend }} day shipping
+                        									{{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping
                         								
-                        									<!--	{{ shipment.deliverydatenotracking_rangestart }} -<br>
-                        										{{ shipment.deliverydatenotracking_rangeend}} -->
                         								&nbsp;
                         								{% endif %}
                         						{% endif %} <!--if has dayrangestart--> 
@@ -156,24 +150,24 @@
                     
                     <!--NEIGHBOR: host name and information-->
                     <div class="col-xs-3 paddingtopbottom20px paddingsides5px ">
-                       	 <div class="row nomargin">  <p>{{shipment.host.first_name}}</p>  </div>
+                       	 <div class="row nomargin">  <p>{{sh.trans.host.first_name}}</p>  </div>
                      	                                                        
                          <div class="row nomargin">
                          	 	<!--linking to a new page, the target="_blank" attribute makes it a new tab--> 
-                            <a href="https://www.google.com/maps/place/{{shipment.host.st_address1}}+{{shipment.host.city}}+{{shipment.host.state}}+{{shipment.host.zipcode}}" target="_blank" class="nomargin">
-                            	{{ shipment.host.st_address1 }}, {{ shipment.host.st_address2 }}
+                            <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                            	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}
                             </a>
                           </div>
                           
                         <div class="row nomargin">
                         		<!--MESSAGING MODAL -->                          
-                            <a href="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}" class="nomargin"> Message {{ shipment.host.first_name }}</a>                            
-														 	<div id="openModal_message_id{{shipment.id}}" class="modalDialog">
+                            <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> Message {{ shi.trans.host.first_name }}</a>                            
+														 	<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
 														 		{% load i18n %}
 														 			<div>
 														 					<a href="/dashboard" title="Close" class="close">X</a>																																	
 																				<div class="row margintopbottom30px">
-																				   	<form action="/dashboard/message{{shipment.id}}/#openModal_message_id{{shipment.id}}/Thanks" method="post" class="text-left"> 
+																				   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}/Thanks" method="post" class="text-left"> 
 																				        		{% csrf_token %} 
 																				        		<!--{{ compose_form.as_table }} -->
 																				        		<!--compose form has recipient, subject, body -->
@@ -192,10 +186,10 @@
 																	</div>												
                         		</div> <!-- id=openModal -->
                         	<!--thanks modal -->
-                          	<div id="openModal_message_id{{shipment.id}}/Thanks" class="modalDialog"> 
+                          	<div id="openModal_message_id{{sh.trans.id}}/Thanks" class="modalDialog"> 
                          				<div>
                          	        <a href="/dashboard" title="Close" class="close">X</a>
-        													<h3 class="ltbluetext">Your Message to {{shipment.host.first_name}} Has Been Sent! </h3>    
+        													<h3 class="ltbluetext">Your Message to {{sh.trans.host.first_name}} Has Been Sent! </h3>    
         													<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         												</div>
                        			</div> <!--end thanks modal-->
@@ -208,7 +202,7 @@
      								<!--TRACKING NUMBER-->
                     <div class="col-xs-4 paddingtopbottom20px paddingsides5px ">
                     	                    		
-                    		{% if shipment.tracking %} <!--if tracking number already on table, list  it -->
+                    		{% if sh.trans.tracking %} <!--if tracking number already on table, list  it -->
 													
 													<div class="row nomargin">	
 														<div id="as-root"></div>
@@ -217,7 +211,7 @@
 															</script>
 
 
-                						<div class="as-track-button" data-counter="false" data-support="false" data-width="100" data-size="small" data-tracking-number={{shipment.tracking}}></div>
+                						<div class="as-track-button" data-counter="false" data-support="false" data-width="100" data-size="small" data-tracking-number={{sh.trans.tracking}}></div>
 														<!--from: https://www.aftership.com/apps/track-button, parameters here: https://www.aftership.com/docs/track-button
 															data-counter: displays the number of shipmetns ina ccount
 															data-support: shows 'powered by..' need premium account to disable
@@ -229,12 +223,12 @@
                    				
                    				<!--courier and shipmetn type -->
                    				<div class="row nomargin">
-                   					 <p> {{ shipment.shipment_courier }} {% if shipment.aftership.shipment_type %} : {{ shipment.aftership.shipment_type }} {% endif%} </p>                 				
+                   					 <p> {{ sh.trans.shipment_courier }} {% if sh.trans.aftership.shipment_type %} : {{ sh.trans.aftership.shipment_type }} {% endif%} </p>                 				
                    				</div>
                    				
                    				<!--Status-->
                             <div class="row"> 	
-                            	<p class="nomargin"> Status: {% if shipment.on_aftership %} {{shipment.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p> 
+                            	<p class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.trans.aftership.tag}} {% else %} No Tracking Provided {% endif %} </p> 
                             </div>
                    			
                    			
@@ -242,25 +236,25 @@
                     		                    		
                     	{% else %}  <!--if no tracking, enter it -->
                     			<div class="row paddingtopbottom2px"> <!--display or enter tracking info -->
-                    					<a href="/dashboard/track_id{{shipment.id}}/#openModal_entertracking_id{{shipment.id}}" class="nomargin textcenter">Enter Tracking #</a>
-														 	<div id="openModal_entertracking_id{{shipment.id}}" class="modalDialog">
+                    					<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
+														 	<div id="openModal_entertracking_id{{sh.trans.id}}" class="modalDialog">
                                   
                                 <div>	
                                 	<a href="/dashboard" title="Close" class="close">X</a>
         														<h6 class="ltbluetext">Enter a Tracking Number</h6>
         														<p>Enter a tracking number, shipping company or other information</p>
                                   	
-                                  	<form class="form-inline" role="form" method="post" action="/dashboard/track_id{{shipment.id}}/#openModal_entertracking_id/Thanks" enctype="multipart/form-data">
+                                  	<form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id/Thanks" enctype="multipart/form-data">
 					   														{% csrf_token %}
 					   														{{ tracking_form.non_field_errors }}
 					   														{{ tracking_form.tracking.errors }}
                                   	
                                   		  <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
 	        																	<input type="tracking" class="form-control" name="tracking" 
-	        																 		placeholder="Enter Tracking Number for Order {{ shipment.id }} ">    	  <!--removed id="id_tracking" -->      	   
+	        																 		placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
 	   																		</div>
 
-                                  			<!-- {# tracking_modal request shipment.id #}   -->  
+                                  			<!-- {# tracking_modal request sh.trans.id #}   -->  
                                   			                                                             	
                                   		<div class="row paddingbottom10px">
 					        											<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
@@ -273,28 +267,26 @@
                       {% endif %} <!--end if no shipping tracking, enter it with modal -->
                     		                    		
                     	<!--EDIT TRACKING -->                    		
-                    	{% if shipment.tracking %} 
+                    	{% if sh.trans.tracking %} 
                     			
                     			<div class="row"> <!--edit tracking info-->
-                    				 	<a href="/dashboard/track_id{{shipment.id}}/#openModal_edittracking_id{{shipment.id}}" class="nomargin textcenter">Edit Tracking #</a>
-														 	<div id="openModal_edittracking_id{{shipment.id}}" class="modalDialog">                                 
+                    				 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">Edit Tracking #</a>
+														 	<div id="openModal_edittracking_id{{sh.trans.id}}" class="modalDialog">                                 
                                   <div>	
                                   		<a href="/dashboard" title="Close" class="close">X</a>
         															<h6 class="ltbluetext">Update Your Tracking Number</h6>
         															<p>Enter a tracking number, shipping company or other information</p>
                                     	
-                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/track_id{{shipment.id}}/#openModal_edittracking_id/Thanks" enctype="multipart/form-data">
+                                    	 <form class="form-inline" role="form" method="post" action="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id/Thanks" enctype="multipart/form-data">
 					   															{% csrf_token %}
 					   																	{{ tracking_form.non_field_errors }}
 					   																	{{ tracking_form.tracking.errors }}
 					   															 <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
 	      																			<input type="tracking" class="form-control" name="tracking"      					          
-	      																					placeholder="Enter Tracking Number for Order {{ shipment.id }} ">    	  <!--removed id="id_tracking" -->      	   
+	      																					placeholder="Enter Tracking Number for Order {{ sh.trans.id }} ">    	  <!--removed id="id_tracking" -->      	   
 	 																						</div>
 	 
-					   														<!--
-                                  			{# edit_tracking_modal request shipment.id #} 
-                                  			-->
+	
                                   			<!--siubmit button-->
                                   			<div class="row paddingbottom10px"> 
                                   				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
@@ -311,15 +303,15 @@
                			<!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW )-->
                			<div class="col-xs-2 paddingtopbottom20px"> 
                			    	<div class="row"> <!--confirm/review -->
-               			    	   <button type="package_received" name="package_received" class="bluebutton" onclick="window.location='/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}';" >
+               			    	   <button type="package_received" name="package_received" class="bluebutton" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
                			    	   	 I got my package!
 															</button>											
-														 	<div id="openModal_package_received_id{{shipment.id}}" class="modalDialog">                                 
+														 	<div id="openModal_package_received_id{{sh.trans.id}}" class="modalDialog">                                 
                			              <div>	
                			                  <a href="/dashboard" title="Close" class="close">X</a>
         																<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
    																						<!--form needs to pass True so modalsubmited is registered -->
-               			                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{shipment.id}}/#openModal_package_received_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
+               			                    	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}/Thanks" enctype="multipart/form-data">
 					   																		{% csrf_token %}
 					   																				{{ package_received_form.non_field_errors }}
 					   																				{{ package_received_form.enduser_rating.errors }}
@@ -346,11 +338,11 @@
                			            					</form>
                			            			</div> 
                			            	</div>   <!--div id openmodal..--> 
-               			            	<div id="openModal_package_received_id{{shipment.id}}/Thanks" class="modalDialog"> 
+               			            	<div id="openModal_package_received_id{{sh.trans.id}}/Thanks" class="modalDialog"> 
                			         				<div>
                			         	        	<a href="/dashboard" title="Close" class="close">X</a>
         																	<h3 class="ltbluetext">Thanks! </h3>    
-        																	<h6>Thanks for your feedback! Shipment {{ shipment.id}} has been marked as complete. </h6>
+        																	<h6>Thanks for your feedback! Shipment {{ sh.trans.id}} has been marked as complete. </h6>
         																	<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         															</div>
                			       				</div>
@@ -358,14 +350,14 @@
                			  
                			
                			    	<div class="row">
-               			    	   <button type="startashipment" class="bluebutton" onclick="window.location='/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}';" >
+               			    	   <button type="startashipment" class="bluebutton" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';" >
                			    	   	 Report an Issue
 															</button>											
-														 	<div id="openModal_enduser_issue_id{{shipment.id}}" class="modalDialog">                                 
+														 	<div id="openModal_enduser_issue_id{{sh.trans.id}}" class="modalDialog">                                 
                			              <div>	
                			                  <a href="/dashboard" title="Close" class="close">X</a>
-        																<h4 class="ltbluetext">Report an issue, delay or other concern with shipment {{shipment.id}} </h4>                                   	
-               			                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{shipment.id}}/#openModal_enduser_issue_id{{shipment.id}}/Thanks" enctype="multipart/form-data">
+        																<h4 class="ltbluetext">Report an issue, delay or other concern with shipment {{sh.trans.id}} </h4>                                   	
+               			                    	 <form class="form-inline" role="form" method="post" action="/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}/Thanks" enctype="multipart/form-data">
 					   																		{% csrf_token %}
 					   																				{{ enduser_issue_form.non_field_errors }}
 					   																				{{ enduser_issue_form.enduser_issue.errors }}
@@ -380,11 +372,11 @@
                			            					</form>
                			            			</div> 
                			         </div>   <!--div id openmodal..--> 
-               			         <div id="openModal_enduser_issue_id{{shipment.id}}/Thanks" class="modalDialog"> 
+               			         <div id="openModal_enduser_issue_id{{sh.trans.id}}/Thanks" class="modalDialog"> 
                			         			<div>
                			         	        <a href="/dashboard" title="Close" class="close">X</a>
         																<h3 class="ltbluetext">Thanks! </h3>    
-        																<h6>We have received your report regarding order {{shipment.id}} and will be in touch within 24 hours to resolve this issue. </h6>
+        																<h6>We have received your report regarding order {{sh.trans.id}} and will be in touch within 24 hours to resolve this issue. </h6>
         																<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         														</div>
                			       	</div>
@@ -458,28 +450,28 @@
                 </div>
                 <!--row, labels-->
                 
-                {% for shipment in shipments_with_tracking_complete %}
+                {% for sh in shipments_with_tracking_complete %}
                 
                 				<div class="row whitebackground marginbottom30px">
                 				    <div class="row textcenter tinytext">
                 				    	<!--shipmetn details -->
                 				    	<div class="col-xs-3">
-                				    		{% if shipment.title %} <div class="row">   <p> {{ shipment.title }} </p></div> {% endif %}
-                				    		<div class="row">   <p> Date Ordered: {{ shipment.date_requested }} </p> </div>
-                				    		<div class="row">   <p> Date Completed: {{ shipment.date_completed }} </p></div>
+                				    		{% if sh.trans.title %} <div class="row">   <p> {{ sh.trans.title }} </p></div> {% endif %}
+                				    		<div class="row">   <p> Date Ordered: {{ sh.trans.date_requested }} </p> </div>
+                				    		<div class="row">   <p> Date Completed: {{ sh.trans.date_completed }} </p></div>
                 				    	</div>
                 				    	
                 				      <!--neighbor-->
                 				     <div class="col-xs-3">
-                                <div class="row">   <p> {{ shipment.host.first_name }} </p></div> 
-                				    		<div class="row">   <p> {{ shipment.host.st_address1}} </p> </div>
+                                <div class="row">   <p> {{ sh.trans.host.first_name }} </p></div> 
+                				    		<div class="row">   <p> {{ sh.trans.host.st_address1}} </p> </div>
                 				    	</div>
                 				    	
                 				    	<!--tracking -->
                 				     <div class="col-xs-3">
-                                <div class="row">   <p> {{ shipment.tracking }} </p></div> 
-                				    		<div class="row">   <p> {% if shipment.shipment_courier %} {{ shipment.shipment_courier}} {% else %} {{ shipment.aftership.slug }} {% endif %}
-                				    			: {{ shipment.aftership.shipment_type }} </p> </div>
+                                <div class="row">   <p> {{ sh.trans.tracking }} </p></div> 
+                				    		<div class="row">   <p> {% if sh.trans.shipment_courier %} {{ sh.trans.shipment_courier}} {% else %} {{ sh.trans.aftership.slug }} {% endif %}
+                				    			: {{ sh.trans.aftership.shipment_type }} </p> </div>
                 				    	</div>
                 				    	
                 				    </div>
