@@ -2,7 +2,7 @@
 1. ADD A HYPERLINK TO TRACK IT
 1. extract just date from expected_delietry
 2ship to 0 and delete the tracking from aftership
-2. find last location - put it on
+2. find last location - put it on - ADD THAT FIELD TO SHIPMETN DETAILS - SAME LINE AS STATUS - IF WE HAFE THE DATA
 3. remove the tracking widget - takes too long to load
 3. get the post-complete stuff - like date delivered fro amjftershi - add
 2. separte those en route from those waiting to be picked up - put waiting to be picked up first
@@ -31,6 +31,7 @@
  - make completed style the completed transactions section
 <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 #test tracking nos to add
+1Z2W6185YW01658200  = laptop case, delivered
 9449009699938097189973 - not sure, johns
 1ZX1A509YW10497241 - UPS - shipinag soon (mine)
 9405509699939563285640 - USPS priority, already arrived - wnat to see if the type is updated
