@@ -8,6 +8,8 @@
                  <div>	
                      <a href="/dashboard" title="Close" class="close">X</a>
         								<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
+        								
+        								<p>TEST {{ package_received_form.as_table }} </p>
    														<!--form needs to pass True so modalsubmited is registered -->
                        	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received/Thanks" enctype="multipart/form-data">
 					   									{% csrf_token %}
