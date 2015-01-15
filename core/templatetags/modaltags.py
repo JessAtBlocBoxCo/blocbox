@@ -45,9 +45,18 @@ from django.template.defaulttags import register
 def get_item(dictionary, key):
     return dictionary.get(key)
 
+#Enteruser Ereport Issue
+@register.inclusion_tag("modals/enduser_report_issue.html")
+def enduser_report_issue(request): 
+    request_method = request.method    
+    context = {}
+    return context	
+
+
+
 #create a view to call the trackin gmodal
 #call it with {% tracking_modal trans_id %} so with shipments ill be {% tracking_modal shipment.id %}
-@register.inclusion_tag("modals/trackingmodal.html")
+@register.inclusion_tag("modals/entertracking.html")
 def tracking_modal(request, trans_id):
     #Add tracking info - a good example of modifying an existing model instead of creating a new one
     trans = Transaction.objects.get(pk=trans_id)
@@ -86,24 +95,6 @@ def edit_tracking_modal(request, trans_id):
     }
     return context	
 
-
-@register.inclusion_tag("modals/modifytransactionmodal.html")
-def modifytrans_modal(request, trans_id):
-    trans = Transaction.objects.get(pk=trans_id)
-    invoice = trans.invoice
-    if request.method == 'POST':        
-        modify_form  = ModifyTransaction(request.POST, instance=trans)
-        if modify_form.is_valid(): 
-            modify = modify_form.save()          
-            modify.save()   	     
-        else: 
-    	      print modify_form.errors 
-    else:
-        modify_form = ModifyTransaction(instance=trans)     
-    context = {
-        'trans_id': trans_id, 'modify_form': modify_form, 'trans': trans, 'invoice': invoice,
-    }
-    return context	
 
 
 """
