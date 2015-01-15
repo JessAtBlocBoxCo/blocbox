@@ -235,9 +235,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             shipments_with_tracking_notcomplete.append(shipment_tuple)
             tag = shipment_tuple['aftership']['tag']
             if tag == "Delivered":
-                shipments_with_tracking_notcompleted_delivered.append(shipment_tuple)
+                shipments_with_tracking_notcomplete_delivered.append(shipment_tuple)
             else:
-                shipments_with_tracking_notcompleted_notdelivered.append(shipment_tuple)
+                shipments_with_tracking_notcomplete_notdelivered.append(shipment_tuple)
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
