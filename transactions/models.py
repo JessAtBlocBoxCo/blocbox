@@ -22,7 +22,7 @@ class Transaction(models.Model):
     payment_option = models.CharField("Payment Option", max_length=30, blank=True, null=True)
     youselected = models.CharField(max_length=50, blank=True, null=True)  
     paypal_quantity = models.IntegerField(blank=True, null=True)
-    title = models.CharField("User Provided Title", max_length=100, blank=True, null=True)
+    title = models.CharField("Title", max_length=100, blank=True, null=True)
     note_to_host = models.CharField("Note to Host from User", max_length=200, blank=True, null=True)   
     payment_processed = models.BooleanField("Paid", default=False) #update payment process once they've completed process
     date_requested = models.DateTimeField(default=datetime.datetime.today)
@@ -50,7 +50,7 @@ class Transaction(models.Model):
     #Report an issue
     enduser_issue = models.CharField("EndUser Issue", max_length=300, blank=True, null=True)
     #Aftership Variables grabbed iitially
-    on_aftership = models.BooleanField("On Aftership", default=False)
+    on_aftership = models.BooleanField("Aftership", default=False)
     shipment_courier = models.CharField("Courier", max_length=20, blank=True, null=True)
     #Aftership variables grabbed after confirmed
     tracking_info_tuple_confirmd = models.CharField("Aftership Tracking Info Tuple Upon Completion", max_length=2000, blank=True, null=True)
