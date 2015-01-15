@@ -1,0 +1,33 @@
+<!--this is core/templates/dashboard_subtemplates/message_to_host.html, it is called within modaltags.py - the tracking_modal def
+		which is called on dashboard.html 
+					
+-->
+		
+
+
+
+       	<!--MESSASGING MODAL --->
+				<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
+						{% load i18n %}
+							<div>
+									<a href="/dashboard" title="Close" class="close">X</a>																																	
+										<div class="row margintopbottom30px">
+										   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
+										        		{% csrf_token %} 
+										        		<!--{{ compose_form.as_table }} -->
+										        		<!--compose form has recipient, subject, body -->
+										        <div class="row">	
+										        		<label for="id_recipient"> Recipient: </label> <input id="id_recipient" name="recipient" type="text" />
+										        </div>
+										        <div class="row">
+																<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
+														</div>	
+														<div class="row">																						
+																<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
+														</div>	
+										        <input type="submit" value="{% trans "Send" %} &raquo;"/>
+										    </form>
+										</div>	
+							</div>												
+       	</div> <!-- END MESSAGING MODAL -->
+	 
