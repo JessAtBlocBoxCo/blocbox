@@ -120,7 +120,8 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
         trans.payment_processed = True
         trans_table_id = trans.id
         trans.save()
-        notify_host_shipment_paid(request,trans_table_id)   
+        notify_host_shipment_paid(request,trans_table_id)
+        notify_enduser_shipment_paid(request, trans_table_id) 
     return HttpResponse("OKAY")
 
 #The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
@@ -269,7 +270,7 @@ def notify_host_shipment_paid(request, trans_id):
         'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
         'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
         })
-    subject = "Your Neighbor" + str(enduser.first_name) + "is sending your a package"
+    subject = "Your Neighbor " + str(enduser.first_name) + " is sending your a package"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
     return HttpResponse("A Shipment is coming to you.")
     
