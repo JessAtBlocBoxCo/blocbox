@@ -279,7 +279,7 @@ def notify_admin_enduser_issue(request, trans_id):
     message = render_to_string('emails/notify_admin_enduser_issue.txt', 
         { 'host': host, 'enduser': enduser, 'trans': trans})
     subject = "[ENDUSER_ISSUE]: User" + str(enduser.email) + " has reported an issue with Order " + str(trans.id)
-    send_mail(subject, message, 'BlocBox EndUser Issues <admin@blocbox.co>', [john@blocbox.co, admin@blocbox.co]) #last is the to-email
+    send_mail(subject, message, 'BlocBox EndUser Issues <admin@blocbox.co>', [john@blocbox.co, admin@blocbox.co,]) #last is the to-email
     return HttpResponse("An email has been sent to the BlocBox team to notify them about this issue.")
 
     
