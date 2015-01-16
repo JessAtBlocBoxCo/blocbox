@@ -136,7 +136,7 @@
            						<h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }} {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
            						
                				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
-                			<div class="col-xs-4 paddingsides5px ">
+                			<div class="col-xs-12 col-sm-4 paddingsides5px ">
                                      		                  		
                     			<!--Status and date delivered-->
                     			<div class="row">
@@ -151,7 +151,7 @@
                        
                                         
                     	<!--NEIGHBOR: host name and information (waiting ot be picked up)-->
-                    	<div class="col-xs-3 paddingsides5px ">
+                    	<div class="col-xs-12 col-sm-3 paddingsides5px ">
                     		 <!--neigbor name-->
                        	 <div class="row">  
                        	 	<p class="nomargin"> Sent to {{sh.trans.host.first_name}}
@@ -172,7 +172,7 @@
                   
                            
                	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
-               	      <div class="col-xs-3"> 
+               	      <div class="col-xs-12 col-sm-3"> 
                	      		    	<div class="row"> <!--confirm/review -->
                	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 25px"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
                	      		    	   	 I got my package! </button>				
@@ -201,7 +201,7 @@
            						<h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
                     
                				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (need tracking)-->
-                			<div class="col-xs-4 paddingsides5px ">
+                			<div class="col-xs-12 col-sm-4 paddingsides5px ">
                                      		
                    	 			<!--Date transaction created-->
                     			<div class="row"> <p class=" nomargin"> Order Placed {{ sh.trans.date_requested_notime }}</p> 	</div>
@@ -227,7 +227,7 @@
   
                                                               
                     	<!--NEIGHBOR: host name and information (need tracking)-->
-                    	<div class="col-xs-3 paddingsides5px ">
+                    	<div class="col-xs-12 col-sm-3 paddingsides5px ">
                        	 <div class="row nomargin">  
                        	 	
                        	 	<p class="nomargin"> Sent to {{sh.trans.host.first_name}}
@@ -250,7 +250,7 @@
                   
                            
                	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW ) (Packages in Tarnsit)-->
-               	      <div class="col-xs-3"> 
+               	      <div class="col-xs-12 col-sm-3"> 
                	      		<div class="row"> <!--confirm/review -->
                	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
                	      		    	   	 I got my package!	</button>		
@@ -283,7 +283,7 @@
            						<h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }} {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>   
                     
                				<!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION -->
-                			<div class="col-xs-4 paddingsides5px ">
+                			<div class="col-xs-12 col-sm-4 paddingsides5px ">
 
                     		
                     			<!--Expected Delivery -->
@@ -330,7 +330,7 @@
                        
                                         
                     	<!--NEIGHBOR: host name and information (Packages in transit)-->
-                    	<div class="col-xs-3 paddingsides5px ">
+                    	<div class="col-xs-12 col-sm-3 paddingsides5px ">
                        	 <div class="row nomargin">  
                        	 	<p class="nomargin"> Sent to {{sh.trans.host.first_name}}
 															<a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}]</a> 
@@ -349,7 +349,7 @@
                   
                            
                	      <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (SECOND ROW ) (Packages in Tarnsit)-->
-               	      <div class="col-xs-3"> 
+               	      <div class="col-xs-12 col-md-3"> 
                	      		    	<div class="row"> <!--confirm/review -->
                	      		    	   <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';" >
                	      		    	   	 I got my package! </button>		
@@ -422,7 +422,7 @@
 											<h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }} {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>
                 					
                 			<!--shipment details-->
-                			<div class="col-xs-4 paddingsides5px">
+                			<div class="col-xs-12 col-sm-5 col-md-4 paddingsides5px">
                 					<div class="row">
                 				    	<p class="nomargin"> Order Completed {{ sh.trans.date_completed }} </p>
                 				    {% if sh.trans.on_aftership %}
@@ -436,7 +436,7 @@
 
                 				    		
                 				 <!--neighbor-->
-                				 <div class="col-xs-3">
+                				 <div class="col-xs-12 col-sm-5 col-md-3">
                               <div class="row nomargin">   
                                 <p class="nomargin"> Delivered to {{ sh.trans.host.first_name }} </p>
                 				    		 <p class="nomargin">{{ sh.trans.host.st_address1}} {{ sh.trans.host.st_address2 }} </p> 
