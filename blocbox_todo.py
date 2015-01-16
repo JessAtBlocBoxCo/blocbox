@@ -1,11 +1,10 @@
 #test tracking nos to add
 
 
-1ZE6E4990234405990  gum, delivered
-TBA001951235001  - xlear refil (AMZN PARCEL?)
+TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFTERSHIP
 
 #ALREADY TRACKED
-1ZE6E4990234405990  = iphone armband, delivered
+1ZE6E4990234405990  = iphone armband and gum, delivered
 1Z88Y70A0244854175  - ankar keyboard and mouse
 9205599999975642680357 - pillow case, delivered 
 591099350463 -- headbands, celivered
@@ -17,8 +16,16 @@ TBA001951235001  - xlear refil (AMZN PARCEL?)
 615774528257  - sleeping mask, not delivered
 
 """jess to do"""
+1. add a check to see if its already on aftership
+1. add some erro rmessages if invalid tracking no.
+1. johns availability - start a shipment - that page - something is off on the footer - fix it
 1. EDIT THE emails to esnd tracking info to
+2. add customer name rather than email so that it gets their first_name
+3. notification prefeernces defaul - profile
+4. notic epreference by package - dashboard
+- HOW TO ESND DIFFERENT EMAILS TO DIFFERENT PEOPLE? ask them?
 1. ADD A HYPERLINK TO TRACK IT
+2. edit tracign -add button to remove tracking, or enter a new one
 2. add a calendar for jess@bb
 3. get the calendar availability thing working
 4. sort out the host profie process
