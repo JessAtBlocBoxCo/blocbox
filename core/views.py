@@ -154,7 +154,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     if track_id:  #if they open a tracking modal
         trans = Transaction.objects.get(pk=track_id)  
         tracking_on_trans = str(trans.tracking)
-        if trans.tracking:
+        if trans.on_aftership:
             courier_on_trans = str(trans.shipment_courier.lower())
         else:
             courier_on_trans = None
@@ -176,7 +176,10 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     				            slug=slug_detected, tracking_number=tracking_no_to_add,  
     				            title=str(trans.title) + ": Order " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
     				            order_id=str(trans.id),
-    				            customer_name = trans.enduser.email,
+    				            if trans.enduser.first_name:
+    				                customer_name = str(trans.enduser.first_name) + " " + str(trans.enduser.last_name),
+    				            else:
+    				                customer_name = str(trans.enduser.email)
     				            emails=[trans.enduser.email, trans.host.email], #Emails for notifications
     				            custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
     				            #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
