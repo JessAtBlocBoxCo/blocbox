@@ -19,6 +19,7 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 
 
 1. johns availability - start a shipment - that page - something is off on the footer - fix it
+2. clean up the availability page - make it smaller, maybe move the policy text below submit button
 1. EDIT THE emails to esnd tracking info to
 2. add customer name rather than email so that it gets their first_name
 3. notification prefeernces defaul - profile
@@ -52,7 +53,7 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 	
 	- email notifications - allow users to opt in or out
 
-"""TO DO"""
+"""TO DO"""    
 - create the host profile or dashboard with things like options for setting prices
 QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
 1. JOHN - /Fix Mobile/make site responsive
