@@ -97,7 +97,7 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
         ipn_obj.host_st_address2 = host.st_address2
     if trans_id:
         trans = Transaction.objects.get(pk=trans_id) 
-        ipn_obn.trans_table_id = trans.id	
+        ipn_obj.trans_table_id = trans.id	
     #the following set_flag is defined in paypal.standard.modle.spy, flat var is passed as the "info" parameter
     if flag is not None:
         #We save errors in the flag field
