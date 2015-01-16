@@ -658,6 +658,40 @@ color: white;
 .orangenavbtn > a:focus {
     color: rgb(255, 195, 0);
 }
+.navbtnwht {
+    background-color: transparent;
+    font-size: 1.500em;
+    font-weight: 400;
+    color: rgb(255, 195, 0);
+    border: 2px solid rgb(255, 195, 0);
+    padding: 2px 25px 2px 25px;
+    margin-top: 15px;
+    margin-left: 60px;
+    cursor: pointer;
+    border-radius: 3px;
+    white-space: nowrap;
+    width: 120px;
+    text-decoration: none;
+}
+.navbtnwht:hover {
+    background-color: rgb(255, 195, 0);
+    color: #ffffff;
+    text-decoration: none;
+}
+.navbtnwht:focus {
+    background-color: rgb(255, 195, 0);
+    color: #ffffff;
+    text-decoration: none;
+}
+.navbtnwht > a {
+    color: white;
+}
+.navbtnwht > a:hover {
+    color: #ffffff;
+}
+.navbtnwht > a:focus {
+    color: #ffffff;
+}
 .bbbasenavbarbtn > a {
     color: black;
 }
