@@ -91,7 +91,7 @@ class PayPalPaymentsForm(forms.Form):
     cancel_return = forms.CharField(widget=ValueHiddenInput())
     return_url = forms.CharField(widget=ReservedValueHiddenInput(attrs={"name": "return"}))
     invoice = forms.CharField(widget=ValueHiddenInput())
-    #transaction_id = forms.CharField(widget=ValueHiddenInput())
+    trans_table_id = forms.CharField(widget=ValueHiddenInput())
 		
 		#Invoice is added tot he payplak IPN - it is in paypal.standard.forms.py -
 		

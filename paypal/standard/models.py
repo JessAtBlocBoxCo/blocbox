@@ -75,7 +75,7 @@ class PayPalStandardBase(Model):
     host_lname = models.CharField("Host Last Name", max_length=255, blank=True)
     host_st_address1 = models.CharField("Host Address Line 1", max_length=255, blank=True)
     host_st_address2 = models.CharField("Host Address Line 2", max_length=255, blank=True) 
-    transaction_id = models.IntegerField(blank=True, null=True)  
+    trans_table_id = models.IntegerField(blank=True, null=True)  
     #enduser_email = models.CharField("User Email", max_length=255, blank=True)
    
 		

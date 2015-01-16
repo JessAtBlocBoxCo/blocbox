@@ -109,7 +109,8 @@ def ipn(request, item_check_callable=None, host_id=None):
     ipn_obj.send_signals()
     
     #JMY ADDED: Update the Transaction Table to confirm we need to transation ID but only have invoice on the paypal IPN
-    trans = Transaction.objects.get(invoice=invoice_sent) 
+    trans_table_id = ipn_obj.trans_table_id
+    trans = Transaction.objects.get(pk=trans_table_id) 
     trans_id = trans.id
     trans.payment_processed = True
     trans.save()
@@ -219,6 +220,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
             "amount": trans_created.price, #Amount of the purchase - try to pass this as an argument
             "item_name": favortype,
             "quantity": paypal_quantity,
+            "trans_table_id": trans_created.id,
             "cbt": returnmessage, #Sets value for return to merchant button
             "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
             "invoice": invoice,
