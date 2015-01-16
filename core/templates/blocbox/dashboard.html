@@ -144,7 +144,7 @@
                             <p class="nomargin"> Delivered to {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}  </p>  
                     				<!--Tracking -->
                     				<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->		                    		
-                						{% if sh.trans.tracking %} 	 	<p class="nomargin"> Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}"> {{ sh.trans.tracking }}  </a>  </p> {% endif %}  
+                						{% if sh.trans.tracking %} 	 	<p class="nomargin"> Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}"  target="_blank"> {{ sh.trans.tracking }}  </a>  </p> {% endif %}  
 													</div> <!--row-->		      
                     	</div> <!--end  shipment details: waiting to be picke dup packages -->
   
@@ -317,7 +317,7 @@
                     			<!--TRACKING NUMBER -->	
                     			<!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->	  			                   									
 													<div class="row nomargin">	
-													 			<p class="nomargin"> Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}"> {{ sh.trans.tracking }} </a>
+													 			<p class="nomargin"> Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}"  target="_blank"> {{ sh.trans.tracking }} </a>
 													 					<!--EDIT TRACKING -->
                     							 	<a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
                     							 	{% include "dashboard_subtemplates/edit_tracking_modal.html" %}                                 										
@@ -447,7 +447,7 @@
                 			 <div class="col-xs-12 col-md-4">
                            <div class="row nomargin">   
                              <p class="nomargin"> 
-                			   		 		Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}"> {{sh.trans.tracking }} </a>
+                			   		 		Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}"  target="_blank"> {{sh.trans.tracking }} </a>
                 				    			{% if sh.aftership.last_checkpoint.city %}
                 				    					<br> Delivered to {{sh.aftership.last_checkpoint.city }}, {{sh.aftership.last_checkpoint.state }} 
                 				    			{% endif %}
