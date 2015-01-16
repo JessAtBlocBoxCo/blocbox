@@ -180,15 +180,15 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
                 if payment_option=="bundle10":
                     price="15.00"
                     youselected="Bundle of 10 Packages"
-                    paypal_quantity = 10
+                    paypal_quantity = 1
                 elif payment_option=="month20":
                     price="15.00"
                     youselected="Monthly"
-                    paypal_quantity = 20
+                    paypal_quantity = 1
                 elif payment_option=="annual":
                     price="150.00"
                     youselected="Annual"
-                    paypal_quantity = 240
+                    paypal_quantity = 1
                 else:
                     price="2.00"
                     youselected="Per Package"

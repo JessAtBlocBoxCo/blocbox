@@ -2,8 +2,7 @@ Hello {{ host.first_name }},
 
 This email is to confirm that you are sending a package to  {{host.first_name}} {{ host.last_name}} [{{ host.email }}].
 
-Please enter your tracking information at www.blocbox.co/dashboard as soon as you receive it.  Once your tracking information is updated, you can easily track your
-shipment's progress on your dashboard.
+Please enter your tracking information at www.blocbox.co/dashboard as soon as you receive it.  Once your tracking information is updated, you can easily track your shipment's progress on your dashboard.
 
 We've told {{host.first_name}} that the shipment is expected to arrive in {{ daystoarrival_estimate }} .
 

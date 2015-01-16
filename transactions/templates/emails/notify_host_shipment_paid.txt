@@ -4,9 +4,7 @@ Your neighbor, {{enduser.first_name}} {{ enduser.last_name}} [{{ enduser.email }
 
 The shipment is expected to arrive in {{ daystoarrival_estimate }} .
 
-Your neighbor submitted a payment of ${{ price }} for {{paymentoption}}
-{% if note_to_host %} and included the following message to you: {{ note_to_host }}. 
-{% else %}. {% endif %}
+Your neighbor submitted a payment of ${{ price }} for {{paymentoption}} {% if note_to_host %} and included the following message to you: {{ note_to_host }}. {% else %}. {% endif %}
 
 
 
