@@ -264,7 +264,7 @@ def notify_host_shipment_paid(request, trans_id):
     else:
         daystoarrival_estimate = str(trans.dayrangestart) + " - " + str(trans.dayrangeend) + "Business Days"
     message = render_to_string('emails/notify_host_shipment_paid.txt', { 
-        'host': host, 'enduser': enduser, 'note_to_host': note_to_host, 
+        'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
         'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
         })
     subject = "Your Neighbor" + str(enduser.first_name) + "is sending your a package"
@@ -280,7 +280,7 @@ def notify_enduser_shipment_paid(request, trans_id):
     else:
         daystoarrival_estimate = str(trans.dayrangestart) + " - " + str(trans.dayrangeend) + "Business Days"
     message = render_to_string('emails/notify_enduser_shipment_paid.txt', { 
-        'host': host, 'enduser': enduser, 'note_to_host': note_to_host, 
+        'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
         'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
         'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
         })
