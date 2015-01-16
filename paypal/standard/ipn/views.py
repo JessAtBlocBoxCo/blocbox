@@ -110,9 +110,10 @@ def ipn(request, item_check_callable=None, host_id=None):
     
     #JMY ADDED: Update the Transaction Table to confirm we need to transation ID but only have invoice on the paypal IPN
     trans = Transaction.objects.get(invoice=invoice_sent) 
+    trans_id = trans.id
     trans.payment_processed = True
     trans.save()
-    notify_host_shipment_paid(request, host.id, user.id, trans.id)   
+    notify_host_shipment_paid(request,trans_id)   
     return HttpResponse("OKAY")
 
 #The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
@@ -245,10 +246,10 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     })
 
 
-def notify_host_shipment_paid(request, host_id, user_id, trans_id):
-    host = get_object_or_404(UserInfo, pk=host_id)
-    enduser = get_object_or_404(UserInfo, pk=user_id)
+def notify_host_shipment_paid(request, trans_id):
     trans = get_object_or_404(Transaction, pk=trans_id)
+    host = trans.host
+    enduser = trans.enduser
     if trans.dayrangestart == trans.dayrangeend:
         daystoarrival_estimate = str(trans.dayrangestart) + " Business Days"
     else:
