@@ -1,0 +1,11 @@
+Hello {{ host.first_name }},
+
+Your neighbor, {{enduser.first_name}} {{ enduser.last_name}} [{{ enduser.email }}], has reported an issue with order {{trans.id}} placed {{trans.date_requested_notime }}.
+
+They included the following note: {{ trans.enduser_comments }}.
+
+Please try to address this issue with the user or contact John at john@blocbox.co.
+
+
+Thanks!
+The BlocBox Team
