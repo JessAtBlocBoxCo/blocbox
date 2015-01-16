@@ -112,8 +112,7 @@ def ipn(request, item_check_callable=None, host_id=None):
     trans = Transaction.objects.get(invoice=invoice_sent) 
     trans.payment_processed = True
     trans.save()
-    if trans.favortype == "package":
-        notify_host_shipment_paid(request, host.id, user.id, trans.id)   
+    notify_host_shipment_paid(request, host.id, user.id, trans.id)   
     return HttpResponse("OKAY")
 
 #The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
