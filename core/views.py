@@ -98,6 +98,53 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
+        #Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
+   	    #Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
+        shipments_with_tracking_allpaid = []
+        shipments_with_tracking_complete = [] 
+        shipments_with_tracking_notcomplete = []
+        shipments_with_tracking_notcomplete_delivered = []
+        shipments_with_tracking_notcomplete_notdelivered = []
+        shipments_with_tracking_notcomplete_notrackingno = []
+        for shipment in shipments_all_paid:  
+            tracking_no = str(shipment.tracking) #the str function removes the preceding u'
+            shipment_tuple = {} 
+            shipment_tuple['trans']=shipment #get all of the transaction variables
+            shipment_tuple['aftership']={}  
+            if shipment.on_aftership: 
+                #populate the aftership_tracking sub-tuble                 
+                courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
+                courier_list = courier_allfields.get(u'couriers')
+                courier_list_first = courier_list[0]
+                slug_to_detect_u = courier_list_first.get(u'slug')
+                slug_to_detect = str(slug_to_detect_u)
+                datadict = api.trackings.get(slug_to_detect, tracking_no)
+                shipment_tuple['aftership'] = datadict.get(u'tracking') 
+                #extract date-only form of expected delivery 
+                expected_delivery = shipment_tuple['aftership']['expected_delivery']
+                if expected_delivery:
+                    shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()
+                else:
+                    shipment_tuple['aftership']['expected_delivery_notime']=None  
+                checkpoints = shipment_tuple['aftership']['checkpoints']
+                if checkpoints:
+                    shipment_tuple['aftership']['checkpoints'] = checkpoints
+                    shipment_tuple['aftership']['last_checkpoint'] = checkpoints[-1] #-nth to last.. so -1 is the last element     
+                if shipment.trans_complete ==True:
+                    shipments_with_tracking_complete.append(shipment_tuple)
+                else:
+                    shipments_with_tracking_notcomplete.append(shipment_tuple)
+                    tag = shipment_tuple['aftership']['tag']
+                    if tag == "Delivered":
+                        shipments_with_tracking_notcomplete_delivered.append(shipment_tuple)
+                    else:
+                        shipments_with_tracking_notcomplete_notdelivered.append(shipment_tuple)
+            else: #if not on aftership
+                shipment_tuple['aftership']=None
+                shipment_tuple['tracking']=None
+                if shipment.trans_complete == False:
+                    shipments_with_tracking_notcomplete_notrackingno.append(shipment_tuple)
+            shipments_with_tracking_allpaid.append(shipment_tuple)
     else: #if not authenticated set these to None
         connections_all = None
         connections_count = None
@@ -198,53 +245,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     		    compose_form = ComposeForm(recipient_filter=None)
     else: #if they dont open the message host modal
         compose_form = None  
-   	#Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
-   	#Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
-    shipments_with_tracking_allpaid = []
-    shipments_with_tracking_complete = [] 
-    shipments_with_tracking_notcomplete = []
-    shipments_with_tracking_notcomplete_delivered = []
-    shipments_with_tracking_notcomplete_notdelivered = []
-    shipments_with_tracking_notcomplete_notrackingno = []
-    for shipment in shipments_all_paid:  
-        tracking_no = str(shipment.tracking) #the str function removes the preceding u'
-        shipment_tuple = {} 
-        shipment_tuple['trans']=shipment #get all of the transaction variables
-        shipment_tuple['aftership']={}  
-        if shipment.on_aftership: 
-            #populate the aftership_tracking sub-tuble                 
-            courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
-            courier_list = courier_allfields.get(u'couriers')
-            courier_list_first = courier_list[0]
-            slug_to_detect_u = courier_list_first.get(u'slug')
-            slug_to_detect = str(slug_to_detect_u)
-            datadict = api.trackings.get(slug_to_detect, tracking_no)
-            shipment_tuple['aftership'] = datadict.get(u'tracking') 
-            #extract date-only form of expected delivery 
-            expected_delivery = shipment_tuple['aftership']['expected_delivery']
-            if expected_delivery:
-                shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()
-            else:
-                shipment_tuple['aftership']['expected_delivery_notime']=None  
-            checkpoints = shipment_tuple['aftership']['checkpoints']
-            if checkpoints:
-                shipment_tuple['aftership']['checkpoints'] = checkpoints
-                shipment_tuple['aftership']['last_checkpoint'] = checkpoints[-1] #-nth to last.. so -1 is the last element     
-            if shipment.trans_complete ==True:
-                shipments_with_tracking_complete.append(shipment_tuple)
-            else:
-                shipments_with_tracking_notcomplete.append(shipment_tuple)
-                tag = shipment_tuple['aftership']['tag']
-                if tag == "Delivered":
-                    shipments_with_tracking_notcomplete_delivered.append(shipment_tuple)
-                else:
-                    shipments_with_tracking_notcomplete_notdelivered.append(shipment_tuple)
-        else: #if not on aftership
-            shipment_tuple['aftership']=None
-            shipment_tuple['tracking']=None
-            if shipment.trans_complete == False:
-                shipments_with_tracking_notcomplete_notrackingno.append(shipment_tuple)
-        shipments_with_tracking_allpaid.append(shipment_tuple)
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
