@@ -199,7 +199,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     				                    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
     				                    )) 	
                         except aftership.APIv4RequestException as error: 
-    				                if error.code == 4003:
+                            if error.code == 4003:
                                 sorry_message = "That tracking numbers is already being tracked! Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."                              
                             elif error.code == 4005:
                             	  sorry_message = "That tracking numbers is invalid. Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."
