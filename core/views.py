@@ -282,20 +282,6 @@ def notify_admin_enduser_issue(request, trans_id):
     send_mail(subject, message, 'BlocBox EndUser Issues <admin@blocbox.co>', [john@blocbox.co, admin@blocbox.co]) #last is the to-email
     return HttpResponse("An email has been sent to the BlocBox team to notify them about this issue.")
 
-
-    
-def notify_host_shipment_paid(request, trans_id):
-    if trans.dayrangestart == trans.dayrangeend:
-        daystoarrival_estimate = str(trans.dayrangestart) + " Business Days"
-    else:
-        daystoarrival_estimate = str(trans.dayrangestart) + " - " + str(trans.dayrangeend) + "Business Days"
-    message = render_to_string('emails/notify_host_shipment_paid.txt', { 
-        'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
-        'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
-        })
-    subject = "Your Neighbor " + str(enduser.first_name) + " is sending your a package"
-    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
-    return HttpResponse("A Shipment is coming to you."
     
 def myblock(request):
     return render(request, 'blocbox/myblock.html')
