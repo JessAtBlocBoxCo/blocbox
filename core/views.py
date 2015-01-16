@@ -53,7 +53,7 @@ def get_item(dictionary, key):
 #-------------------------------------------------------------------------
 #Waitlist, beta, getting started, about and dashboard/profile pages
 #-------------------------------------------------------------------------
-def index(request):
+def waitlist(request):
     return render(request, 'blocbox/index.html') #loads blocbox/templates/blocbox/index.html 
 
 def beta(request):
@@ -81,26 +81,30 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
         host = None
-    connections_all = Connection.objects.filter(end_user=enduser) 
-    connections_count = connections_all.count() #count them,removing status=0 after host_user=host
-    #load Transacton table instead of paypal tabl
-    transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
-    transactions_all_paid = transactions_all.filter(payment_processed=True)
-    #shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
-    shipments_all = transactions_all.filter(favortype="package")
-    shipments_all_paid = shipments_all.filter(payment_processed=True)
-    otherfavors_all = transactions_all.exclude(favortype="package")
-    otherfavors_all_paid = otherfavors_all.filter(payment_processed=True)
+    #Vars that do not depend on authentication
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     datetimenow = datetime.datetime.now()
     datetoday = datetime.date.today()
-    #defing the startashipmentpage as a function of whether they have multiple connections
-    if connections_count==1:
-        hostonly=connections_all[0].host_user
-    else:
-        hostonly=None   	
-    #reload with transactions for the modal thing to work
-    if track_id:
+    #variables requiring authentication
+    if enduser.is_authenticated():
+        connections_all = Connection.objects.filter(end_user=enduser) 
+        connections_count = connections_all.count() #count them,removing status=0 after host_user=host
+        #determine whether they are only connected to one host for pupose of 'start a shipment' link
+        if connections_count==1:
+            hostonly=connections_all[0].host_user
+        else:
+            hostonly=None 
+        transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
+        transactions_all_paid = transactions_all.filter(payment_processed=True)
+        shipments_all_paid = transactions_all_paid.filter(favortype="package")
+        otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
+    else: #if not authenticated set these to None
+        connections_all = None
+        connections_count = None
+        hostonly=None
+        shipments_all_paid = None
+        otherfavors_all_paid = None
+    if track_id:  #if they open a tracking modal
         trans = Transaction.objects.get(pk=track_id)  
         tracking_on_trans = str(trans.tracking)
         if trans.tracking:
@@ -144,20 +148,15 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     trans.save()               
             else: #if tracking form is not valid 
     	          print tracking_form.errors 
-    		    #Now, get the tracking info from the API
         else: #if method is not POST
             tracking_form = TrackingForm(instance=trans) 
-    else:
-        #trans = None    
+    else: #if no track_id (if they dont open the modal)    
         tracking_form = None  
-    #Package REceived Modal/Button
-    if confirm_id:
+    if confirm_id:  #if the open the package_received modal
     		trans = Transaction.objects.get(pk=confirm_id)
     		if request.method == 'POST':
-    				#package_received_form = PackageReceived(request.POST, instance=trans)
-    				package_received_form = PackageReceived(request.POST)
+    				package_received_form = PackageReceived(request.POST) #note this is not a model form
     				if package_received_form.is_valid():
-    						#finish = package_received_form.save()
     						trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
     						trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
     						trans.trans_complete = True
@@ -168,11 +167,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     						print package_received_form.errors
     		else:
     			  package_received_form = PackageReceived()
-    				#package_received_form = PackageReceived(instance=trans)
-    else:
+    else: #if they dont open the packge received modal
     		package_received_form = None
-    #EndUser Issues Modal/Button
-    if issue_id:
+    if issue_id:     #if they open the EndUser Issues Modal/Button
         trans = Transaction.objects.get(pk=issue_id)
         if request.method == 'POST':
             enduser_issue_form = EndUserIssue(request.POST, instance=trans)
@@ -184,9 +181,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         else:
             enduser_issue_form = EndUserIssue(instance=trans)
     else:
-        enduser_issue_form = None
-   	#send a message
-    if message_trans_id:
+        enduser_issue_form = None #if they dont open the report an issue modal
+    if message_trans_id: #if they open the message host modal
         trans = Transaction.objects.get(pk=message_trans_id)
         if request.method == 'POST':
             compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
@@ -200,13 +196,13 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 print compose_form.errors
         else:
     		    compose_form = ComposeForm(recipient_filter=None)
-    else:
-        compose_form = None        
-    #AFTERSHIP STUFF: GET THE SHIPMENT_TRACKING_TUPLE
+    else: #if they dont open the message host modal
+        compose_form = None  
+   	#Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
+   	#Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
     shipments_with_tracking_allpaid = []
-    shipments_with_tracking_complete = [] #WHAT STRUCTURE SHOULD BE: [  {'shipment_id': value, 'shipment_host': value, 'shipment_tracking': {'tracking_ship_date': value, 'expected_delivery': value }}]
+    shipments_with_tracking_complete = [] 
     shipments_with_tracking_notcomplete = []
-    #DEFINE DELIVERED AND NOT DELIVERED
     shipments_with_tracking_notcomplete_delivered = []
     shipments_with_tracking_notcomplete_notdelivered = []
     shipments_with_tracking_notcomplete_notrackingno = []
@@ -252,19 +248,19 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
-        'transactions_all': transactions_all, 'transactions_all_paid': transactions_all_paid,
-        'shipments_all': shipments_all, 
-        'otherfavors_all': otherfavors_all, 
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
+        #shipments lists
         'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
         'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 
         'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_notdelivered,
         'shipments_with_tracking_notcomplete_notrackingno': shipments_with_tracking_notcomplete_notrackingno,
+        #other favors lists
+        'otherfavors_all_paid': otherfavors_all_paid, 
     })
     
-
+    
 def myblock(request):
     return render(request, 'blocbox/myblock.html')
         
@@ -417,6 +413,7 @@ def signupnoconnect(request):
 
 #Registration Form - Host
 #FIGURE OUT - DOES THE HOST NEED TO BE REGISTERED AS UER FIRST? CAN WE IMPORT AL THAT
+#signuphost url is www.blocbox.co/signuphost
 def signuphost(request):
     context = RequestContext(request)
     registered = False 

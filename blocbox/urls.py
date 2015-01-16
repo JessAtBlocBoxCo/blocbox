@@ -1,12 +1,13 @@
 from django.conf.urls import patterns, include, url
-from core import views #it imports views from blocbox modeule so knows where to look for index files
+from core import views #it imports views from blocbox modeule so knows where to look for index files, cneed to ref new URL page sso 'view' means another app in another context
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 admin.autodiscover()
 
 urlpatterns = patterns('',
 
-		url(r'^$', views.index, name='index'),    
+		url(r'^$', views.waitlist, name='waitlist'),    #this currently grabs index.html which is the waitlist
+		url(r'^waitlist/', views.waitlist, name='waitlist'), #also goes to the waitlist
     url(r'beta/', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
     url(r'^search/', views.search, name='search'),   
     url(r'^about/$', views.aboutblocbox, name='about'),
@@ -32,8 +33,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)), 
     url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect'),
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
-    url(r'^signup/', views.signupnoconnect, name='signupnoconnect'), 
-    url(r'^hostsignup/', views.signuphost, name='signuphost'),
+    url(r'^signup/$', views.signupnoconnect, name='signupnoconnect'), 
+    url(r'^signuphost/', views.signuphost, name='signuphost'),
     url(r'^abouthosting/', views.abouthosting, name='abouthosting'),
     url(r'^nudgeaneighbor/', views.nudgeaneighbor, name='nudgeaneighbor'),
     url(r'^login/', views.userlogin, name='login'), # add this for the registration form

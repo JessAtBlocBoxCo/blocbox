@@ -1,44 +1,11 @@
-
-1. EDIT THE emails to esnd tracking info to
-1. ADD A HYPERLINK TO TRACK IT
-2. add a calendar for host jess@BB
-2. add to waiting to be picked up - delivered date
-1. make report an issue button smalelr
-2ship to 0 and delete the tracking from aftership
-2. find last location - put it on - ADD THAT FIELD TO SHIPMETN DETAILS - SAME LINE AS STATUS - IF WE HAFE THE DATA
-3. remove the tracking widget - takes too long to load
-3. get the post-complete stuff - like date delivered fro amjftershi - add
-2. separte those en route from those waiting to be picked up - put waiting to be picked up first
-4. why didnt john get notify email fix that
-- edit the note to the host when shipment is sent to include the note to host 
-- update the tracking widget - dont use the aftership one - crate my own so that it doesnt take so mjuch time to load an dlook like shit
-- make the payment_processed indicator work
- make the transaciton table update after theyve gone to paypal
-- add a "Title" field
-- update the transactions model - so it just grabs the slug -a nd then gets all of the delivery information AFTER CONFIRM/COMPLETED
-- so edit the "received package" fucntion to modify trans table
-
-- right now it says tracking doesnt exist when you add tracking but have not yet "tracked" it
--- so, first order of business is to add a funciton to that modal to add the tracking information
--- figure out how to add an order ID when you post
-
--- create an indicator on the transaciton table for whether it is on aftership - then use this to avoid the error message
--- DEAL WITH TRACKING ALREADY EXISTS EXCEPTION - THE INDICATOR SHOUDL DO THIS?
-- APIv4RequestException at /dashboard/track_id24/
-
--- separate the en route from the delivered, using the {{tag}} aftership variable
-- - make the completed transacitons move to the completed section
- - dashbarod - fix the "message" link on current shipments, link on how to: https://docs.djangoproject.com/en/1.7/topics/forms/ - see "if cc_mayself"..
- - make the 'report an issue' send an email to us
- - move "completed"/package received trasactions to a third - box
- - make completed style the completed transactions section
-<!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 #test tracking nos to add
 615774528257  - sleeping mask, not delivered
-1Z88Y70A0244854175  - ankar keyboard and mouse
-1ZE6E4990234405990  = iphone armband
+1ZE6E4990234405990  = iphone armband, delivered
+1ZE6E4990234405990  gum
+TBA001951235001  - xlear refil (AMZN PARCEL?)
 
 #ALREADY TRACKED
+1Z88Y70A0244854175  - ankar keyboard and mouse
 9205599999975642680357 - pillow case, delivered 
 591099350463 -- headbands, celivered
 1Z2W6185YW01658200  = laptop case, delivered
@@ -46,6 +13,19 @@
 9374869903500264240007 - DHL global mail,  not delivered?
 1ZX1A509YW10497241 - neti pot, not delivered (UPS)
 9405509699939563285640 - black boots, already arrivedUSPS priority, already arrived - wnat to see if the type is updated
+
+1 activate ultra edit
+2. dashboard if not logged in
+1. EDIT THE emails to esnd tracking info to
+1. ADD A HYPERLINK TO TRACK IT
+2. add a calendar for host jess@BB
+2. add to waiting to be picked up - delivered date
+1. make report an issue button smalelr
+2ship to 0 and delete the tracking from aftership
+3 hyperlink to tracking fro tracking nuber
+4 make the 'report an issue' send an email to us link on how to: https://docs.djangoproject.com/en/1.7/topics/forms/ - see "if cc_mayself"..
+
+<!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 
 """jess to do"""
 - for completed hsipmetns colelct fields for like delivery confirmation or whatever afterhsip adds at the end - add tha to the TRANS table and to the completed hsipmetns box

@@ -19,10 +19,13 @@
         <div class="col-xs-10 col-xs-offset-1">
             <div class="profileboxline100"></div>
         </div>
-    </div>
+    </div> <!--emd top row-->
+	
 
-    <div class="row nopaddingleftright">
+  <div class="row nopaddingleftright">
         <!--contains most of page-->
+        
+    {% if user.is_authenticated %}    
         <!--sidebar-->
         <div class=" col-xs-2 col-lg-offset-1 mobilehide">
             <div class="dashpiccontainer">
@@ -56,21 +59,19 @@
             <!--put the address of each connection here-->
             {% for connection in connections_all %}
             <div class="col-xs-12 paddingtopbottom20px">
-                <p>{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}</p>
-                <p>{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}</p>
-                <p>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}</p>
+                <p class="nomargin">{{ connection.host_user.first_name }} {{ connection.host_user.last_name }} 
+                	<br>{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}
+                	<br>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}
+                </p>
             </div>
             {% endfor %}
-        </div>
-        <!--sidebar-->
+        </div> <!--end sidebar-->
 			
 
 						
-						
-						
-						
+											
 					<!--DEFINE ALL THANK YOU MODALS-->
-                
+          <div> 
                 <!--thanks modal: Enter Tracking-->
                 <div id="openModal_entertracking/Thanks" class="modalDialog"> 
                 		<div>
@@ -92,39 +93,38 @@
         						</div>
                 	</div>  
                 	
-            <!--thanks modal: sent a message -->
-              <div id="openModal_message/Thanks" class="modalDialog"> 
+            		<!--thanks modal: sent a message -->
+              	<div id="openModal_message/Thanks" class="modalDialog"> 
               		<div>
                     <a href="/dashboard" title="Close" class="close">X</a>
         						<h3 class="ltbluetext">Your Message Has Been Sent! </h3>    
         						<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         					</div>
-              </div> <!--end thanks modal: sent a message-->
+              	</div> <!--end thanks modal: sent a message-->
                 	
-             <!--THANKS MODAL: Marked as Complete -->
-             <div id="openModal_package_received/Thanks" class="modalDialog"> 
-             	<div>
+             		<!--THANKS MODAL: Marked as Complete -->
+             		<div id="openModal_package_received/Thanks" class="modalDialog"> 
+             		<div>
                  	<a href="/dashboard" title="Close" class="close">X</a>
         							<h3 class="ltbluetext">Thanks! </h3>    
         							<h6>Thanks for your feedback! This order has been marked as complete. </h6>
         							<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         					</div>
-             </div> <!--END THANKS MODAL: MARKED AS COMPLETE -->
+            		</div> <!--END THANKS MODAL: MARKED AS COMPLETE -->
              
-            <!--THANKS modal: enduser issue -->
-            <div id="openModal_enduser_issue/Thanks" class="modalDialog"> 
+            		<!--THANKS modal: enduser issue -->
+            		<div id="openModal_enduser_issue/Thanks" class="modalDialog"> 
             			<div>
             	        <a href="/dashboard" title="Close" class="close">X</a>
         								<h3 class="ltbluetext">Thanks! </h3>    
         								<h6>We have received your report and will be in touch within 24 hours to resolve this issue. </h6>
         								<h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
         						</div>
-           </div> <!--end Thanks modal: End User Issue-->
-               	      		       	
+           			</div> <!--end Thanks modal: End User Issue-->
+          </div> <!--end define thank-you modals00>       	      		       	
                	      		       				              
     <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
-   	<div class="col-xs-12 col-sm-9 col-lg-7">
-					
+   	<div class="col-xs-12 col-sm-9 col-lg-7">				
 					
 						
 				<!--SHIPMENTS DELIVERED - WAITING TO BE PICKED UP -->
@@ -191,8 +191,8 @@
 				</div> <!--END SHIPMENTS WAITIN GTO BE PICKED UP -->
 					
 		
-			<!--PACKAGES WE NEED TRACKIN GINFORMATION FOR -->
-			<div class="col-xs-12 col-sm-12 dashbox">
+				<!--PACKAGES WE NEED TRACKIN GINFORMATION FOR -->
+				<div class="col-xs-12 col-sm-12 dashbox">
 				   <div class="row">  <h3 class="ltbluetext margintop10px nopadding">Waiting For Tracking Information: Enter Tracking Number When Received </h3>   </div>				                      				
             	{% for sh in shipments_with_tracking_notcomplete_notrackingno %}
 				
@@ -268,12 +268,11 @@
             			</div> <!-- CLOSE DIV DIFING THIS SHIPMENT (waiting for trcking )-->
               {% endfor %}
                     			      
-			</div> <!--END SHIPMETNS WAITING FOR TRACKING NUMBER -->
+				</div> <!--END SHIPMETNS WAITING FOR TRACKING NUMBER -->
 		
-		
-						
-        <!--SHIPMENTS IN TRANSIT-->
-       <div class="col-xs-12 col-sm-12 dashbox">
+								
+       	<!--SHIPMENTS IN TRANSIT-->
+       	<div class="col-xs-12 col-sm-12 dashbox">
                <div class="row">  <h3 class="ltbluetext margintop10px nopadding">Packages in Transit or Preparing to Ship </h3>   </div>				                      				
             	{% for sh in shipments_with_tracking_notcomplete_notdelivered %}
             
@@ -366,11 +365,11 @@
                                   
             			</div> <!-- CLOSE DIV DIFING THIS SHIPMENT (AMONG THOSE IN TRAQNSIT )-->
               {% endfor %}
-         </div> <!--col, shipments container -IN TRANSIT-->
+       	</div> <!--col, shipments container -IN TRANSIT-->
 
 
-            <!--OTHER FAVORS Favors Box-->
-            <div class="col-xs-12 dashbox margintop30px marginbottom30px">
+       	<!--OTHER FAVORS Favors Box-->
+       	<div class="col-xs-12 dashbox margintop30px marginbottom30px">
                 <h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3> 
 
                 <!--labels-->
@@ -408,12 +407,11 @@
                 <!--row, text data-->
                 {% endfor %}
 
-            </div>
-            <!--col, Favors box--->
+       	</div> <!--col, Favors box--->
 
 
-        <!--COMPLETED SHIPMENTS Container-->
-        <div class="col-xs-12 col-sm-12 dashbox">
+      	<!--COMPLETED SHIPMENTS Container-->
+      	<div class="col-xs-12 col-sm-12 dashbox">
 							<div class="row">  <h3 class="ltbluetext margintop10px nopadding">Completed Shipments </h3>   </div>		              
               {% for sh in shipments_with_tracking_complete %}
                 	
@@ -446,10 +444,30 @@
 
                 	</div> <!--end container for this shipemnt -->
                 {% endfor %}
-          </div> <!--end completed shipmetns -->
+     		</div> <!--end completed shipmetns -->
 
     </div> <!--END COL WITH ALL TRANSACTIONS -->
-</div>
+	
+		{% else %} <!--if user is not authenticated-->
+		<div class="col-xs-12 col-sm-9 col-lg-7">	
+				 <div class="col-xs-12 col-sm-12 dashbox">
+               <h3 class="ltbluetext margintop10px nopadding">
+               	 You're not logged in! <br>
+               	 <a href="/login">Login to your account </a> to access your dashboard.
+               <h3> 
+               <h4>              	 	
+               	 If you don't have an account, get started by <a href="/search/"> searching for a host in your neighborhood.</a> <br>
+               	 If blocbox is not on your bloc, <a href="/waitlist/">join our waitlist </a> to be notified when Blocbox comes to your bloc. <br>
+               	 You can also <a href="/signup/"> sign up without connecting to a host</a> or email us at info@blocbox.co.
+               	 If you're often at home during the day,  <a href="/signuphost/"> apply to serve as a Blocbox host</a> or <a href="/nudgeaneighbor/">tell a neighbor</a> about the opportunity. <br>
+               </h4>   
+        </div> <!--col-xs12 dashbox-->
+		</div> <!--close if user is not authenticated-->
+		{% endif %}
+	
+	</div> <!--row no padding-->
+</div> <!--contenet -->
+
 
 
 {% endblock %}
