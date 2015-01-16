@@ -204,8 +204,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                             elif error.code == 4005:
                             	  sorry_message = "That tracking numbers is invalid. Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."
                             else:
-                                sorry_message = "Something has gone wrong! Try to re-enter your tracking number. If you can't get this to work, contact us at info@blocbox.co.
-                                                 <br> Error code: " + str(error.code()) + "; Error type: " + error.type() + "; Error Message: " + error.message()
+                                sorry_message = "Something has gone wrong! Try to re-enter your tracking number. If you can't get this to work, contact us at info@blocbox.co. <br> Error code: " + str(error.code()) + "; Error type: " + error.type() + "; Error Message: " + error.message()
                             return render(request, 'blocbox/sorry.html', {'sorry_message': sorry_message, 
                                 	  'suggested_return_url': 'dashboard', 'suggested_return_message': "Return to your Dashboard"})
                         #Get the information from the API (is it posted yet?)
