@@ -250,7 +250,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     })
 
 
-def test_notify_enduser_shipment_paid():
+def test_notify_enduser_shipment_paid(request):
     notify_enduser_shipment_paid(request, 55)
 
 
