@@ -594,7 +594,7 @@ footer {
     margin-bottom: 5px;
     height: 50px;
 }
-.bbbasenavbarbrand {
+.navbarbrand {
     background-image: url('/static/blocbox/images/Logo-and-name---orange-drop2.png');
     background-repeat: no-repeat;
     background-size: contain;
