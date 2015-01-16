@@ -14,10 +14,10 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 1ZX1A509YW10497241 - neti pot, not delivered (UPS)
 9405509699939563285640 - black boots, already arrivedUSPS priority, already arrived - wnat to see if the type is updated
 615774528257  - sleeping mask, not delivered
-
+1ZA3225FYW43921778 - bars
 """jess to do"""
-1. add a check to see if its already on aftership
-1. add some erro rmessages if invalid tracking no.
+
+
 1. johns availability - start a shipment - that page - something is off on the footer - fix it
 1. EDIT THE emails to esnd tracking info to
 2. add customer name rather than email so that it gets their first_name
