@@ -173,7 +173,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     slug_detected = str(c_list_first.get(u'slug'))
                     # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
                     if trans.enduser.first_name:
-    				            customer_name = str(trans.enduser.first_name) + " " + str(trans.enduser.last_name),
+    				            customer_name = str(trans.enduser.first_name) + " " + str(trans.enduser.last_name)
     				        else:
     				            customer_name = str(trans.enduser.email)
                     api.trackings.post(tracking=dict(
