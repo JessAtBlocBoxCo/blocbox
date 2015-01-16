@@ -448,14 +448,13 @@
                            <div class="row nomargin">   
                              <p class="nomargin"> 
                 			   		 		Tracking: {{sh.trans.tracking }} 
-                				    			{% if sh.trans.last_checkpoint.city %}
+                				    			{% if sh.aftership.last_checkpoint.city %}
                 				    					<br> Delivered to {{sh.aftership.last_checkpoint.city }}, {{sh.aftership.last_checkpoint.state }} 
                 				    			{% endif %}
                 				    	</p>
                 				    </div>
                 				</div>
                 			{% endif %}
-=
 
                 	</div> <!--end container for this shipemnt -->
                 {% endfor %}
