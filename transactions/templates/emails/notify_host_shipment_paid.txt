@@ -1,6 +1,6 @@
 Hello {{ host.first_name }},
 
-Your neighbor, {{firstname}} {{ lastname}} [{{ useremail }}], has ordered a shipment to be delivered to you.
+Your neighbor, {{enduser.first_name}} {{ enduser.last_name}} [{{ enduser.email }}], has ordered a shipment to be delivered to you.
 
 The shipment is expected to arrive in {{ daystoarrival_estimate }} .
 

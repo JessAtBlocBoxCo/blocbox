@@ -115,8 +115,9 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
     #JMY ADDED: Update the Transaction Table to confirm we need to transation ID but only have invoice on the paypal IPN
     if trans_id:
         trans.payment_processed = True
+        trans_table_id = trans.id
         trans.save()
-        notify_host_shipment_paid(request,trans.id)   
+        notify_host_shipment_paid(request,trans_table_id)   
     return HttpResponse("OKAY")
 
 #The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
@@ -249,6 +250,10 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     })
 
 
+def test_notify_enduser_shipment_paid():
+    notify_enduser_shipment_paid(request, 55)
+
+
 def notify_host_shipment_paid(request, trans_id):
     trans = get_object_or_404(Transaction, pk=trans_id)
     host = trans.host
@@ -258,15 +263,29 @@ def notify_host_shipment_paid(request, trans_id):
     else:
         daystoarrival_estimate = str(trans.dayrangestart) + " - " + str(trans.dayrangeend) + "Business Days"
     message = render_to_string('emails/notify_host_shipment_paid.txt', { 
-        'host': host, 'enduser': enduser, 'emailgreeting': note_to_host, 
-        'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
+        'host': host, 'enduser': enduser, 'note_to_host': note_to_host, 
         'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
         })
-    subject = "You have a new request to connect from a neighbor"
+    subject = "Your Neighbor" + str(enduser.first_name) + "is sending your a package"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
     return HttpResponse("A Shipment is coming to you.")
     
-    
+def notify_enduser_shipment_paid(request, trans_id):
+    trans = get_object_or_404(Transaction, pk=trans_id)
+    host = trans.host
+    enduser = trans.enduser
+    if trans.dayrangestart == trans.dayrangeend:
+        daystoarrival_estimate = str(trans.dayrangestart) + " Business Days"
+    else:
+        daystoarrival_estimate = str(trans.dayrangestart) + " - " + str(trans.dayrangeend) + "Business Days"
+    message = render_to_string('emails/notify_enduser_shipment_paid.txt', { 
+        'host': host, 'enduser': enduser, 'note_to_host': note_to_host, 
+        'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
+        'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
+        })
+    subject = "Confirmed: You're sending a package to" + str(host.first_name)
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,]) #last is the to-email
+    return HttpResponse("You're sending a package.") 
     
 """Need to implement a return view and a cancel view, from documentation:
  	You will also need to implement the 'return_url' and 'cancel_return' views
