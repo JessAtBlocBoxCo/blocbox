@@ -148,27 +148,28 @@
         <!--HOST CALENDAR -->
         <div class="row">
             <h6 class=" col-xs-12 marginbottom30px">
-          			Next, confirm {{ host.first_name }} is available 	inside your package's expected delivery window (
+          			{{ host.first_name}} is availability to receie packages unless the date is blacked out on the calendar below. Confirm that {{ host.first_name }} is available to receive packages in 
           			{% if dayrangestart == dayrangeend %}
           					{{ dayrangestart }}
           			{% else %}
           					{{ dayrangestart}} to {{ dayrangeend }} 
           			{% endif%}	
-          			days).  Press your browser's 'back' button to select a different timeframe. Click "submit" once availability is confirmed.
+          			Business Days.  Press your browser's 'back' button to select a different timeframe. 
           	</h6>	
         </div>
         <!--row -->
-        <div class="row">
-            <h6 class="col-xs-4">	{{ host.first_name }}'s availability for the next two months is shown here.  
-        					{{ host.first_name }} is available unless the date is blacked out.</h3>
-    			
-							<div class="col-xs-8"> <!--row containing all calendars-->												
-									<div class="row">																						
-												<div class="col-xs-12 col-sm-6">	{% month_table AvailabilityCal AvailabilityCal_MonthObject "small" %}  	</div> 													
-												<div class="col-xs-12 col-sm-6">  {% month_table AvailabilityCal AvailabilityCal_MonthObject "small" +1 %}	</div> 
-									</div> <!--row, containing calendars -->														
-        			</div> <!--row, containing calendars -->
-    			</div> <!--row-->          
+    															
+				<div class="row">		<!--row with calendars-->																	
+						<!--first month-->
+						<div class="col-xs-12 col-sm-4">	{% month_table AvailabilityCal AvailabilityCal_MonthObject "small" %}  	</div> 													
+						<!--second month-->
+						<div class="col-xs-12 col-sm-4">  {% month_table AvailabilityCal AvailabilityCal_MonthObject "small" +1 %}	</div> 			
+						<!--submit button-->
+						<div class="col-xs-12 col-sm-4 marginbottom30px paddingleft69px nopaddingright">
+        				<button class="bluebutton" onClick="window.location='/payment/host{{host.id}}/days{{dayrangestart}}to{{dayrangeend}}';">I Confirm that John is Available</button>    
+    				</div> 
+    	
+				</div> <!--row, containing calendars -->														        
         	<br> <br>
        		<div class="row">
 
@@ -186,10 +187,7 @@
      					 
     	</div> <!--profile box-->
     	
-    	<div class="col-sm-2 col-sm-offset-8 marginbottom30px paddingleft69px nopaddingright">
-    			<!--NOTE: RIGHT NOW THIS LINKS TO JOHN'S HOST PAYMENT - NEED TO UPDATE TO PASS THE ARGUMENT/REFRESH PAGE ONCE TEY SELECT HOST-->
-        	<button class="bluebutton" onClick="window.location='/payment/host{{host.id}}/days{{dayrangestart}}to{{dayrangeend}}';">Submit</button>    
-    	</div> 
+
     	
     	{% endif %} <!--if dayrange - showing calendar-->
 
