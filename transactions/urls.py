@@ -20,7 +20,7 @@ urlpatterns = patterns('',
 		#FAVORthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a FAVOR (e.g., no dayrangestart or dayrange end)
 		url(r'^host(?P<host_id>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_favor'),
 		#Notify URL for paypal IPAN
-		url(r'^ipn/notify(?P<host_id>\d+)/(?P<trans_id>\d+)$', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), 
+		url(r'^ipn/notify(?P<host_id>\d+)/(?P<trans_id>\d+)/$', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), 
 		url(r'^ipn/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_nohost'), #blocbox.co/payment/ipn - NOT FUNCTION B/C DOESN'T LINK TO HOST
     url(r'^ipn/return/$', 'paypal.standard.ipn.views.ipn_return_successful', name='ipn_return_successful'), #Eventually may need a return URL
     #STANDARD-PDT URLS
