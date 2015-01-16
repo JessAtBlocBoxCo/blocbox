@@ -27,7 +27,7 @@ from transactions.forms import CreatePackageTransaction
 
 @require_POST
 @csrf_exempt
-def ipn(request, item_check_callable=None, host_id=None):
+def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
     """
     PayPal IPN endpoint (notify_url).
     Used by both PayPal Payments Pro and Payments Standard to confirm transactions.
@@ -35,6 +35,8 @@ def ipn(request, item_check_callable=None, host_id=None):
     
     PayPal IPN Simulator:
     https://developer.paypal.com/cgi-bin/devscr?cmd=_ipn-link-session
+    
+    #what triggers this view?
     """
     #TODO: Clean up code so that we don't need to set None here and have a lot
     #      of if checks just to determine if flag is set.
@@ -93,7 +95,9 @@ def ipn(request, item_check_callable=None, host_id=None):
         ipn_obj.host_lname = host.last_name
         ipn_obj.host_st_address1 = host.st_address1
         ipn_obj.host_st_address2 = host.st_address2
-    		
+    
+    if trans_id:
+        ipn_obn.trans_table_id = trans_id		
     #the following set_flag is defined in paypal.standard.modle.spy, flat var is passed as the "info" parameter
     if flag is not None:
         #We save errors in the flag field
@@ -109,9 +113,7 @@ def ipn(request, item_check_callable=None, host_id=None):
     ipn_obj.send_signals()
     
     #JMY ADDED: Update the Transaction Table to confirm we need to transation ID but only have invoice on the paypal IPN
-    trans_table_id = ipn_obj.trans_table_id
-    trans = Transaction.objects.get(pk=trans_table_id) 
-    trans_id = trans.id
+    trans = Transaction.objects.get(pk=trans_id) 
     trans.payment_processed = True
     trans.save()
     notify_host_shipment_paid(request,trans_id)   
@@ -220,7 +222,6 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
             "amount": trans_created.price, #Amount of the purchase - try to pass this as an argument
             "item_name": favortype,
             "quantity": paypal_quantity,
-            "trans_table_id": trans_created.id,
             "cbt": returnmessage, #Sets value for return to merchant button
             "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
             "invoice": invoice,
@@ -228,7 +229,7 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
             #Receiver email:  	Primary email address of the payment recipient (that is, the merchant). 
             #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
             "custom": enduser.email, #this is serving as the User Email field
-            "notify_url": "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/",
+            "notify_url": "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/" + str(trans_created.id) + "/",
             "return_url": "http://www.blocbox.co/shippackage/host" + str(host.id) +"/",
             "cancel_return": "http://www.blocbox.co/dashboard/",
         }   
