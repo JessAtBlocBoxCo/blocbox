@@ -191,7 +191,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                         try: 
                             check_if_already_on = api.trackings.get(slug_detected, tracking_no_to_add)
                         except aftership.APIv4RequestException as error:
-                            sorry_message = "Error Code:" + str(error.code()) + "; Error Type: " + str(error.type()) + "; Error Message: " + str(error.message)
+                            sorry_message = "Error Code:" + str(error.code()) + "; Error Type: " + str(error.type()) + "; Error Message: " + str(error.message())
                             return render(request, 'blocbox/sorry.html', {'sorry_message': sorry_message, 'suggested_return_url': 'dashboard', 'suggested_return_message': "Return to your Dashboard"})
                         if check_if_already_on:
                             sorry_message = "That tracking numbers is already being tracked! Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."
