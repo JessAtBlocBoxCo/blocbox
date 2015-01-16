@@ -13,8 +13,8 @@ body {
     font-size: 15px;
     height: 100%;
 }
-
 /*JMY editing rows to o verride the margin-rightand margin-left -15px property */
+
 .row {
     margin-right: 0px;
     margin-left: 0px;
@@ -261,13 +261,13 @@ footer {
     padding-bottom: 2px;
     font-weight: 300;
 }
-
 /*JMY edited dashfont to make it smaller ssince it was currently multiplying tinyfont - 12.21.14*/
+
 .dashfont {
-    font-size: 0.890em; /*font-size: 1.300em */
+    font-size: 0.890em;
+    /*font-size: 1.300em */
     font-weight: 400;
 }
-
 /*Define text alignment attributes*/
 
 .textcenter {
@@ -495,7 +495,6 @@ footer {
 .margintop20px {
     margin-top: 20px;
 }
-
 .margintop30px {
     margin-top: 30px;
 }
@@ -505,7 +504,6 @@ footer {
 .margintop50px {
     margin-top: 50px;
 }
-
 .margintop60px {
     margin-top: 60px;
 }
@@ -652,7 +650,7 @@ footer {
     text-decoration: none;
 }
 .orangenavbtn > a {
-color: white;
+    color: white;
 }
 .orangenavbtn > a:hover {
     color: rgb(255, 195, 0);
@@ -846,18 +844,16 @@ color: white;
 .navbar {
     border: 0px;
     box-shadow: none;
-   <!-- background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%); -->
-    z-index: 1000;
+    <!-- background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%);
+    --> z-index: 1000;
     margin-bottom: 0;
     height: 60px;
 }
-
 .navbar-default {
     box-shadow: none;
     background-image: none;
     background-color: transparent;
 }
-
 .navbar-orange {
     position: absolute;
     background-repeat: repeat-x;
@@ -868,7 +864,6 @@ color: white;
     background-color: transparent;
     z-index: 999999;
 }
-
 /*default is border: 1px solid transparent;*/
 
 /*Orange Fill Page */
@@ -897,8 +892,6 @@ color: white;
     padding-right: 50px;
     height: 40px;
 }
-
-
 /*-----------------------------------------------------------------------
 *min.css overrides
 *-----------------------------------------------------------------------*/
@@ -915,17 +908,15 @@ color: white;
 .navbar-nav.navbar-right:last-child {
     margin-right: 0px;
 }
-
 .drawer {
     background: #373a47;
 }
-
 /*-----------------------------------------------------------------------
 * Slide Bar Styles
 *-----------------------------------------------------------------------*/
 
-
-html, body {
+html,
+body {
     height: 100%;
 }
 .navbar-toggle {
@@ -946,16 +937,14 @@ html, body {
     position: relative;
     z-index: 2;
 }
-
 .slidelogo {
     max-height: 40px;
 }
-
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
     background-color: rgb(255, 195, 0);
     color: #ffffff;
 }
-
 @media (min-width: 0px) {
     .navbar-toggle {
         display: block;
@@ -973,37 +962,34 @@ html, body {
         width: 100%;
         box-shadow: 0;
     }
-    
     .navbar-default {
         box-shadow: none;
         background-image: none;
         background-color: #ffffff;
     }
-    
     .navbar-orange {
-            position: absolute;
-            background-repeat: repeat-x;
-            height: 100px;
-            width: 100%;
-            background-image: none;
-            box-shadow: none;
-            background-color: transparent;
-            z-index: 999999;
-        }
-    
+        position: absolute;
+        background-repeat: repeat-x;
+        height: 100px;
+        width: 100%;
+        background-image: none;
+        box-shadow: none;
+        background-color: transparent;
+        z-index: 999999;
+    }
     .canvas {
         padding: 0;
     }
 }
-
 .mobilenavlogo {
     height: 50px;
     margin: auto;
     position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
-
-
 /*-----------------------------------------------------------------------
 * Generic Navbar Specific Styles (non-waitlist, for base-html)
 *-----------------------------------------------------------------------*/
@@ -1018,7 +1004,6 @@ html, body {
     .navbar-right {
         float: none !important;
     }
-    
     .navbar-toggle {
         display: block;
         border: 0;
@@ -1057,8 +1042,8 @@ html, body {
 .hide {
     display: none;
 }
-
-.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
     background-color: rgb(255, 195, 0);
     color: rgb(255, 195, 0);
 }
@@ -1117,13 +1102,11 @@ html, body {
     height: 50px;
     width: 250px;
 }
-
 .inputbox {
     border: 2px solid #ffffff;
     background-color: rgb(255, 203, 19);
     height: 40px;
 }
-
 .form-control::-moz-placeholder {
     color: #ffffff;
     opacity: 1;
@@ -1341,7 +1324,6 @@ html, body {
     font-size: 2.00em;
     font-weight: 700;
 }
-
 .whitearrow {
     background-image: url('/static/blocbox/images/arrow-white.png');
     height: 70px;
@@ -1531,9 +1513,9 @@ html, body {
     border-radius: 5px;
     margin-top: 5px;
 }
-
-.height30px { height: 30px }
-
+.height30px {
+    height: 30px
+}
 .bluebutton:hover {
     background-color: white;
     color: #3498db;
@@ -1791,7 +1773,6 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         display: none;
     }
 }
-
 /*-------------------------------------------------------------*
 MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)
 *--------------------------------------------------------------*/
@@ -1882,11 +1863,9 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         display: none;
     }
 }
-
 /*-------------------------------------------------------------*
 MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why 
 *--------------------------------------------------------------*/
-
 
 @media (max-width: 550px) {
     body {
@@ -1959,7 +1938,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .navbar-toggle {
         padding: 3px 5px;
     }
-    .navbar-default .navbar-toggle .fa:hover, .navbar-default .navbar-toggle .fa:focus {
+    .navbar-default .navbar-toggle .fa:hover,
+    .navbar-default .navbar-toggle .fa:focus {
         background-color: rgb(255, 195, 0);
         color: #ffffff;
     }
@@ -2149,7 +2129,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         border-radius: 2px;
         background: #fff;
     }
-    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    .navbar-default .navbar-toggle:hover,
+    .navbar-default .navbar-toggle:focus {
         background-color: rgb(255, 195, 0);
         color: rgb(255, 195, 0);
     }
@@ -2203,7 +2184,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         display: none;
     }
 }
-
 /*-------------------------------------------------------------*
 Jasny  STYLES
 *--------------------------------------------------------------*/
@@ -2734,7 +2714,6 @@ Jasny  STYLES
     cursor: pointer;
     filter: alpha(opacity=0);
     opacity: 0;
-
     direction: ltr;
 }
 .fileinput {
@@ -2822,6 +2801,3 @@ Jasny  STYLES
 .input-group-addon:not(:first-child) {
     border-left: 0;
 }
-    
-
-
