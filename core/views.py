@@ -171,7 +171,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     c_list = c_allfields.get(u'couriers') #the couriers field from teh tuple, this could be empty
                     if c_list == []: #if the courier is not detected
                         c_list_first = None  
-                        return HttpResponse("We're sorry. Either the tracking number is invalid or the courier is not supported by Aftership.")
+                        sorry_message = "We're sorry. Either the tracking number is invalid or the courier is not supported by Aftership."
+                        suggested_return_url = '/dashboard/'
+                        suggested_return_message = "Return to your Dashboard"
+                        return render(request, 'blocbox/sorry.html', { 'sorry_message': sorry_message, 
+                        		'suggested_return_url': suggested_return_url, 'suggested_return_message': suggested_return_message })
                     else:    #if the courier is detected
                         c_list_first = c_list[0] #the first element in the list of couriers, since there is only one
                         slug_detected = str(c_list_first.get(u'slug'))
