@@ -85,6 +85,12 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     datetimenow = datetime.datetime.now()
     datetoday = datetime.date.today()
+    shipments_with_tracking_allpaid = []                 
+    shipments_with_tracking_complete = []                
+    shipments_with_tracking_notcomplete = []             
+    shipments_with_tracking_notcomplete_delivered = []   
+    shipments_with_tracking_notcomplete_notdelivered = []
+    shipments_with_tracking_notcomplete_notrackingno = []
     #variables requiring authentication
     if enduser.is_authenticated():
         connections_all = Connection.objects.filter(end_user=enduser) 
@@ -100,12 +106,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
         #Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
    	    #Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
-        shipments_with_tracking_allpaid = []
-        shipments_with_tracking_complete = [] 
-        shipments_with_tracking_notcomplete = []
-        shipments_with_tracking_notcomplete_delivered = []
-        shipments_with_tracking_notcomplete_notdelivered = []
-        shipments_with_tracking_notcomplete_notrackingno = []
         for shipment in shipments_all_paid:  
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
             shipment_tuple = {} 
