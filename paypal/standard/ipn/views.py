@@ -8,7 +8,6 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import render, get_object_or_404, render_to_response
 from django.conf import settings
 from urllib import quote
-from django.template.loader import render_to_string
 #Import Paypal and IPN forms, modesl
 from paypal.standard.forms import PayPalPaymentsForm
 from paypal.standard.ipn.forms import PayPalIPNForm
@@ -24,7 +23,10 @@ from connections.models import Connection
 #import transaction models
 from transactions.models import Transaction
 from transactions.forms import CreatePackageTransaction
-
+##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.views.generic.list import ListView
 
 @require_POST
 @csrf_exempt
