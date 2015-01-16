@@ -172,14 +172,15 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     c_list_first = c_list[0]
                     slug_detected = str(c_list_first.get(u'slug'))
                     # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
+                    if trans.enduser.first_name:
+    				            customer_name = str(trans.enduser.first_name) + " " + str(trans.enduser.last_name),
+    				        else:
+    				            customer_name = str(trans.enduser.email)
                     api.trackings.post(tracking=dict(
     				            slug=slug_detected, tracking_number=tracking_no_to_add,  
     				            title=str(trans.title) + ": Order " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
     				            order_id=str(trans.id),
-    				            if trans.enduser.first_name:
-    				                customer_name = str(trans.enduser.first_name) + " " + str(trans.enduser.last_name),
-    				            else:
-    				                customer_name = str(trans.enduser.email)
+    				            customer_name=customer_name,
     				            emails=[trans.enduser.email, trans.host.email], #Emails for notifications
     				            custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
     				            #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
