@@ -23,7 +23,7 @@ urlpatterns = patterns('',
 		url(r'^ipn/notify(?P<host_id>\d+)/(?P<trans_id>\d+)/$', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), 
 		url(r'^ipn/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_nohost'), #blocbox.co/payment/ipn - NOT FUNCTION B/C DOESN'T LINK TO HOST
     url(r'^ipn/return/$', 'paypal.standard.ipn.views.ipn_return_successful', name='ipn_return_successful'), #Eventually may need a return URL
-    url(r'^testnotifyenduser/$, paypal.standard.ipn.views.test_notify_enduser_shipment_paid', name="test_notify"),
+    url(r'^testnotifyenduser/$', 'paypal.standard.ipn.views.test_notify_enduser_shipment_paid', name='test_notify'),
     #STANDARD-PDT URLS
     #PRO URLS
     #url(r'^pro$', 'transactions.views.paypal_pro', name='paypalpro'), #no real purpose to this bc not linked to a host
