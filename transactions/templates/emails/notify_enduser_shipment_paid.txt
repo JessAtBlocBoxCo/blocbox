@@ -7,9 +7,7 @@ shipment's progress on your dashboard.
 
 We've told {{host.first_name}} that the shipment is expected to arrive in {{ daystoarrival_estimate }} .
 
-Your submitted a payment of ${{ price }} for {{paymentoption}}
-{% if note_to_host %} and included the following message to {{host.first_name}}: {{ note_to_host }}. 
-{% else %}. {% endif %}
+Your submitted a payment of ${{ price }} for {{paymentoption}} {% if note_to_host %} and included the following message to {{host.first_name}}: {{ note_to_host }}. {% else %}. {% endif %}
 
 Please contact us if you have any questions.
 

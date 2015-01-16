@@ -287,7 +287,7 @@ def notify_enduser_shipment_paid(request, trans_id):
         'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
         'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
         })
-    subject = "Confirmed: You're sending a package to" + str(host.first_name)
+    subject = "Confirmed: You're sending a package to " + str(host.first_name)
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,]) #last is the to-email
     return HttpResponse("You're sending a package.") 
     
