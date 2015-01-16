@@ -2,6 +2,8 @@ User {{enduser.first_name}} {{ enduser.last_name}} [{{ enduser.email }}] has rep
 
 The host for order {{ trans.id}} is {{host.first_name}} {{host.last_name}} ({{host.email}}) in {{host.city}}, {{host.state}}.
 
+The enduser included the following message: {{ trans.enduser_comments }}
+
 The enduser's user ID is {{enduser.id}}.
 The host's user ID is {{host.id}}.
 
