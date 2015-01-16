@@ -9,7 +9,7 @@ class PayPalIPNAdmin(admin.ModelAdmin):
     fieldsets = (
         (None, {
             "fields": [
-                "invoice", "payment_status", "payment_date",
+                "invoice", "trans_table_id", "payment_status", "payment_date",
                 "receiver_email", "host_email", "payer_email", "custom", 
                 "item_name", "quantity", "mc_gross",
                 "flag", "txn_id", "txn_type",
@@ -66,7 +66,7 @@ class PayPalIPNAdmin(admin.ModelAdmin):
         #JMY edited this. 
         #"__unicode__", - this is defined with a functionin paypal.standard.models.py - it outputs the TX Id
         #"receiver_id",
-        "invoice", "receiver_email",  "host_email", "custom", "payer_email", "item_name", "quantity", "mc_gross", "payment_status", "created_at", 
+        "invoice", "trans_table_id", "receiver_email",  "host_email", "custom", "payer_email", "item_name", "quantity", "mc_gross", "payment_status", "created_at", 
     ]
     #"flag","flag_info", -- removing flag itself from the list above
     search_fields = ["txn_id", "recurring_payment_id"]
