@@ -172,7 +172,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     if c_list == []: #if the courier is not detected
                         c_list_first = None  
                         sorry_message = "We're sorry. Either the tracking number is invalid or the courier is not supported by Aftership."
-                        suggested_return_url = '/dashboard/'
+                        suggested_return_url = 'dashboard'
                         suggested_return_message = "Return to your Dashboard"
                         return render(request, 'blocbox/sorry.html', { 'sorry_message': sorry_message, 
                         		'suggested_return_url': suggested_return_url, 'suggested_return_message': suggested_return_message })
