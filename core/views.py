@@ -187,9 +187,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                         #see if its already on aftership
                         check_if_already_on = api.trackings.get(slug_detected, tracking_no_to_add)
                         if check_if_already_on:
-                        	  sorry_message = "That tracking numbers is already being tracked! Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."
-                        	  suggested_return_url = 'dashboard'
-                        	  suggested_return_message = "Return to your Dashboard"
+                            sorry_message = "That tracking numbers is already being tracked! Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."
+                            suggested_return_url = 'dashboard'
+                            suggested_return_message = "Return to your Dashboard"
                             return render(request, 'blocbox/sorry.html', {'sorry_message': sorry_message, 
                             	  'suggested_return_url': suggested_return_url, 'suggested_return_message': suggested_return_message })
                         else:
