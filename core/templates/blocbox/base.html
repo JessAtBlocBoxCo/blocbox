@@ -155,7 +155,7 @@
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
                             <li>
-                                <a href="#">Trust & Safety</a>
+                                <a href="#">Trust & Saftey</a>
                             </li>
                             <li>
                                 <a href="#">Terms & Privacy</a>
@@ -311,7 +311,7 @@
 
                     <!--the "brand" - ultimately we should replace this with styled text rather than an image -->
                     <div class="col-xs-6 col-sm-3 col-sm-offset-1 nopaddingleft">
-                        <a class="navbarbrand nomarginleft" href="/beta"></a>
+                        <a class="bbbasenavbar navbarbrand nomarginleft" href="/beta"></a>
                     </div>
                     <!--col-->
                     {% if user.is_authenticated %}
@@ -319,7 +319,7 @@
                         <div class="dropdown textright paddingleft120px">
                             <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
                             <!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
-                            <button class="dropdown-toggle bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn" type="button" id="dropdownMenu1" data-toggle="dropdown">
                                 <!--class="col-sm-3 menubutton"-->
                                 <!--print user name and number of new messages in parentheses -->
                                 {{user.first_name}}
@@ -354,7 +354,7 @@
                         <!--col containing ddropdown button-->
                         <div class="col-xs-2 col-sm-4">
                             <div class="dropdown textcenter">
-                                <button class="dropdown-toggle bbbasenavbarbtn bbbasenavbarstart" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn bbbasenavbarstart" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
                                     <!--info button-->
                                     <a class=""></a>
                                 </button>
@@ -384,7 +384,7 @@
                         <!--drop down menu if logged in-->
                         <div class="col-xs-2 col-sm-4">
                             <div class="dropdown textcenter">
-                                <button class="dropdown-toggle navringblue navinboxblue nopaddingsides" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu2" data-toggle="dropdown">
+                                <button class="dropdown-toggle bbbasenavbar navringblue navinboxblue nopaddingsides" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu2" data-toggle="dropdown">
                                     <div class="" style="padding-bottom: 12px; margin-bottom: 0px; margin-top: 0px;">{% load inbox %}{% inbox_count %}</div>
                                     <!--number of new messages -->
                                 </button>
@@ -408,7 +408,7 @@
 
                         <div class="col-xs-2 col-sm-4">
                             <div class="dropdown textcenter">
-                                <button class="dropdown-toggle bbbasenavbarbtn navinfobtnorg" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn navinfobtnorg" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
                                     <!--info button-->
                                     <a class=""></a>
                                 </button>
@@ -443,7 +443,7 @@
                         {% else %}
                         <div class="col-sm-2  col-sm-offset-4" style="margin-top: 0px">
                             <div class="dropdown textright">
-                                <div class="" style="margin-top: 0px">
+                                <div class="bbbasenavbar" style="margin-top: 0px">
                                     <a href="#openModal" class="navbtnwht textcenter">Sign in</a>
                                 </div>
                                 <div id="openModal" class="modalDialog">
@@ -490,7 +490,7 @@
                         </div>
                         <div class="col-sm-1" style="margin-top: 0px">
                             <div class="dropdown textcenter">
-                                <button class="dropdown-toggle bbbasenavbarbtn navinfobtnorg" style="margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn navinfobtnorg" style="margin-top: 0px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
                                     <!--info button-->
                                     <a class=""></a>
                                 </button>
