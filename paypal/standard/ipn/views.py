@@ -95,9 +95,9 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
         ipn_obj.host_lname = host.last_name
         ipn_obj.host_st_address1 = host.st_address1
         ipn_obj.host_st_address2 = host.st_address2
-    
     if trans_id:
-        ipn_obn.trans_table_id = trans_id		
+        trans = Transaction.objects.get(pk=trans_id) 
+        ipn_obn.trans_table_id = trans.id	
     #the following set_flag is defined in paypal.standard.modle.spy, flat var is passed as the "info" parameter
     if flag is not None:
         #We save errors in the flag field
@@ -113,10 +113,10 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
     ipn_obj.send_signals()
     
     #JMY ADDED: Update the Transaction Table to confirm we need to transation ID but only have invoice on the paypal IPN
-    trans = Transaction.objects.get(pk=trans_id) 
-    trans.payment_processed = True
-    trans.save()
-    notify_host_shipment_paid(request,trans_id)   
+    if trans_id:
+        trans.payment_processed = True
+        trans.save()
+        notify_host_shipment_paid(request,trans.id)   
     return HttpResponse("OKAY")
 
 #The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
