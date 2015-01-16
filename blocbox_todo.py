@@ -1,10 +1,11 @@
 #test tracking nos to add
-615774528257  - sleeping mask, not delivered
-1ZE6E4990234405990  = iphone armband, delivered
-1ZE6E4990234405990  gum
+
+
+1ZE6E4990234405990  gum, delivered
 TBA001951235001  - xlear refil (AMZN PARCEL?)
 
 #ALREADY TRACKED
+1ZE6E4990234405990  = iphone armband, delivered
 1Z88Y70A0244854175  - ankar keyboard and mouse
 9205599999975642680357 - pillow case, delivered 
 591099350463 -- headbands, celivered
@@ -13,28 +14,18 @@ TBA001951235001  - xlear refil (AMZN PARCEL?)
 9374869903500264240007 - DHL global mail,  not delivered?
 1ZX1A509YW10497241 - neti pot, not delivered (UPS)
 9405509699939563285640 - black boots, already arrivedUSPS priority, already arrived - wnat to see if the type is updated
-
-1 activate ultra edit
-2. dashboard if not logged in
-1. EDIT THE emails to esnd tracking info to
-1. ADD A HYPERLINK TO TRACK IT
-2. add a calendar for host jess@BB
-2. add to waiting to be picked up - delivered date
-1. make report an issue button smalelr
-2ship to 0 and delete the tracking from aftership
-3 hyperlink to tracking fro tracking nuber
-4 make the 'report an issue' send an email to us link on how to: https://docs.djangoproject.com/en/1.7/topics/forms/ - see "if cc_mayself"..
-
-<!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
+615774528257  - sleeping mask, not delivered
 
 """jess to do"""
-- for completed hsipmetns colelct fields for like delivery confirmation or whatever afterhsip adds at the end - add tha to the TRANS table and to the completed hsipmetns box
-- add the ip_obj.transaction_id by passing in URL so the paypal IPN table has a field for the transaction ID, - if the invoice link works, mayb ejust use that
-- dashboardthen edit the update trakcing to make sure this is editing existing entry rather than creating new tracking on aftership: this may not matter?
-- figure out a fix to what happens when there is not a tracking on aferhip - it should go thte django error page
- - buy aftership
+1. EDIT THE emails to esnd tracking info to
+1. ADD A HYPERLINK TO TRACK IT
+2. add a calendar for jess@bb
+3. get the calendar availability thing working
+4. sort out the host profie process
+---- 4a. auto add a calendar?
+
+<!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
  - dashboard: finish for other transactions
- 	- ad field for whether completed/how do they update that
 - profile pics: make individualized/link to specific hosts
 	- update search page for host pics
 - allow to upload profile pics
@@ -51,6 +42,8 @@ TBA001951235001  - xlear refil (AMZN PARCEL?)
 - paypal PRO	
 - later: figure out how to make it automatically register lat/long - right now we need to manually enter it for hosts
 - discuss with john: SMS notifications for aftership? 4 cents per SMS.. may not be worth it since meail is so close
+	
+	- email notifications - allow users to opt in or out
 
 """TO DO"""
 - create the host profile or dashboard with things like options for setting prices
