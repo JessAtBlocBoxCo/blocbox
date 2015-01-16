@@ -595,6 +595,7 @@ footer {
     height: 50px;
 }
 .navbarbrand {
+    display: block;
     background-image: url('/static/blocbox/images/Logo-and-name---orange-drop2.png');
     background-repeat: no-repeat;
     background-size: contain;
