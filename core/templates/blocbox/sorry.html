@@ -1,0 +1,37 @@
+<!--this is blocbox/core/templates/blocbox/sorry.html - which we render if there's an error -->
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Sorry{% endblock %} {% block headafter %} {% endblock %} {% block content %}
+
+
+<div class="content container-fluid">
+    <br>
+
+    <div class="row margintop20px">
+				<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">	
+					<br> <br>
+				 	<div class="col-xs-12 dashbox">
+				 			
+               <h3 class="margintop10px nopadding"> Sorry! </h3>
+										
+			     			 
+           	          
+               	<p>              	 	
+               		{{ sorry_message }}
+               		<br> <a href="/{{suggested_return_url}}/">{{suggested_return_message}}</a> 
+               	  <br>
+               	  <br> Questions or feedback? Email us at info@blocbox.co.
+               	  <br> <a href="/beta/">Visit the homepage (Beta)</a>
+               	  <br> <br>
+               	</p>   
+        </div> <!--col-xs12 dashbox-->
+		</div> <!--close if user is not authenticated-->
+
+</div>
+<!--end of top divider - container-fluid  -->
+
+
+
+
+
+
+
+{% endblock %}
