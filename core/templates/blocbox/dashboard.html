@@ -419,16 +419,16 @@
                 	
                 	<!--start div defining the shipment-->
                 	<div class="row whitebackground marginbottom30px textleft dashfont">
-											<h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested}} {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>
+											<h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }} {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>
                 					
                 			<!--shipment details-->
-                			<div class="col-xs-3 paddingsides5px">
-                					<div class="row nomargin">
-                				    	<p> Order Completed {{ sh.trans.date_completed }} </p>
+                			<div class="col-xs-4 paddingsides5px">
+                					<div class="row">
+                				    	<p class="nomargin"> Order Completed {{ sh.trans.date_completed }} </p>
                 				    {% if sh.trans.on_aftership %}
-                				    	<p> Delivered {{sh.aftership.last_checkpoint.checkpoint_time }} </p>
-                				    	<p> Delivered to {{sh.aftership.last_checkpoint.city }}, {{sh.aftership.last_checkpoint.state }} </p>
-                				    	<p> Tracking: {{sh.trans.tracking }} </p>
+                				    	<p class="nomargin"> Delivered {{sh.aftership.last_checkpoint.checkpoint_time }} </p>
+                				    	<p class="nomargin"> Delivered to {{sh.aftership.last_checkpoint.city }}, {{sh.aftership.last_checkpoint.state }} </p>
+                				    	<p class="nomargin"> Tracking: {{sh.trans.tracking }} </p>
                 				    {% endif %}
                 				 </div>
                 			</div>
@@ -438,9 +438,9 @@
                 				 <!--neighbor-->
                 				 <div class="col-xs-3">
                               <div class="row nomargin">   
-                                <p> Delivered to {{ sh.trans.host.first_name }} </p>
-                				    		 <p>{{ sh.trans.host.st_address1}} {{ sh.trans.host.st_address2 }} </p> 
-                				    		 <p> You rated {{ sh.trans.host.first_name}} {{sh.enduser_rating}} / 5 </p>
+                                <p class="nomargin"> Delivered to {{ sh.trans.host.first_name }} </p>
+                				    		 <p class="nomargin">{{ sh.trans.host.st_address1}} {{ sh.trans.host.st_address2 }} </p> 
+                				    		 <p class="nomargin"> You rated {{ sh.trans.host.first_name}} {{sh.enduser_rating}} / 5 </p>
                 				    	</div>
                 				 </div>
 
