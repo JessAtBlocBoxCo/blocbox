@@ -589,6 +589,7 @@ def notifyconnectionconfirmed(request, hostid, userid):
 #-----------------------------------------------------------
 # Confirm or deny requests to connect
 #-----------------------------------------------------------
+#note that the url pattern is http://107.170.128.21/<host_id>/requestconnectconfirm/<user_id> -- defined in blocbox.urls
 def confirmrequestconnect(request, host_id, user_id):
 #url(r'^email/(?P<host_id>\d+)/requestconnectconfirm/(?P<user_id>\d+)/$', views.confirmrequestconnect, name='confirmrequestconnect'),
     context = RequestContext(request)

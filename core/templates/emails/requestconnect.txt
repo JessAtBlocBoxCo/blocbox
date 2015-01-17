@@ -8,7 +8,7 @@ Time of day they would like to pick up packages: {{ pickup_time }}
 
 Click on the following link if you'd like to accept this new neighbor:
 
-http://107.170.128.21/{{host.id}}/requestconnectconfirm/{{ enduser.id}}/
+www.blocbox.co/{{host.id}}/requestconnectconfirm/{{ enduser.id}}/
 
 Thanks!
 The BlocBox Team
