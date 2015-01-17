@@ -38,21 +38,40 @@
 	 
 		 </p>
 				
-		<h3>Try to make a calendar layout</h3>	
+		<h3>Create a calendar layout</h3>	
 			  <!--table for this month-->	
-			  <h4>{{ thismonth }} </h4>
-			  <table class="table">
-			  	<!--first row: weekday names -->
-			  	<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
-			  {% for week in thismonth_calendar %}
-			  	<tr> 
-			  		{% for day in week %}
-			  			<td> {% if day = 0 %}  {% else %} {{day}} {% endif %}	</td>
-			  	  {% endfor %}
-			  	</tr>
-			  {% endfor %}
-
-			</table>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+			  	<h4 class="textcenter">{{ thismonth }} </h4>
+			 		 <table class="table">
+			 		 	<!--first row: weekday names -->
+			 		 	<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
+			 		 {% for week in thismonth_calendar %}
+			 		 	<tr> 
+			 		 		{% for day in week %}
+			 		 			<td> {% if day = 0 %}  {% else %} {{day}} {% endif %}	</td>
+			 		 	  {% endfor %}
+			 		 	</tr>
+			 		 {% endfor %}
+						</table>
+				</div>	  <!--table for this month-->	
+			  
+			  <div class="col-xs-12 col-sm-6">
+			  		<h4 class="textcenter">{{ nextmonth }} </h4>
+			  		<table class="table">
+			  			<!--first row: weekday names -->
+			  			<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
+			  		{% for week in nextmonth_calendar %}
+			  			<tr> 
+			  				{% for day in week %}
+			  					<td> {% if day = 0 %}  {% else %} {{day}} {% endif %}	</td>
+			  			  {% endfor %}
+			  			</tr>
+			  		{% endfor %}
+						</table>
+				</div>
+			</div> <!--end div-row with both months-->
+			
 		
 		
 		<H3>Test the homebrew calendar variables </H3>
