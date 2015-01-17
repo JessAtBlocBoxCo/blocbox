@@ -48,7 +48,7 @@ class ConnectionManager(models.Manager):
         return enduser_hosts
      
     def enduser_is_connected_to_host(self, enduser, hostuser):
-    		enduser_is_connected_to_host = False
+        enduser_is_connected_to_host = False
         if self.filter(end_user=endusr, host_user=hostuser).count() > 0:
             enduser_is_connected_to_host = True
         else:
