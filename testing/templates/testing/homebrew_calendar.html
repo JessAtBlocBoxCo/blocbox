@@ -54,7 +54,10 @@
 					<br> For each conflict that starts this month: {% for conflict in conflicts_startthismonth %} Date from: {{ conflict.date_from }} {% endfor %}      
 					<br> Conflicts that start next month full list {{ conflicts_startnextmonth }}                                                                 
 					<br> For each conflict that starts next month: {% for conflict in conflicts_startnextmonth %} Date from: {{ conflict.date_from }} ; Day from: {{ conflict.date_from.day }} {% endfor %}
-
+					
+				<br> Conflicts that start and end this month: {% conflicts_startandend_thismonth %}
+				<br> Conflicts that start and end next month: {% conflicts_startandend_nextmonth %}
+				<br> Conflicts start this month, end next month: {% conflicts_startthismonth_endnextmonth %}
          
 				<br> Test List: {{test_list }}
 			</p>

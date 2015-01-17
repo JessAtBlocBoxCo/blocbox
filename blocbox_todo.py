@@ -18,7 +18,7 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 1ZA3225FYW43921778 - bars
 """jess to do"""
 
-
+calendar: define a function when user enters date from and date to that forces date to to be after date_from
 1. johns availability - start a shipment - that page - something is off on the footer - fix it
 2. add customer name rather than email so that it gets their first_name
 3. notification prefeernces defaul - profile

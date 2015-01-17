@@ -86,21 +86,45 @@ def homebrew_cal(request):
     conflicts_startmonths = []
     conflicts_startthismonth = []
     conflicts_startnextmonth = []
+    conflicts_startandend_thismonth = []
+    conflicts_startandend_nextmonth = []
+    conflicts_startthismonth_endnextmonth = []
+    conflicts_startthismonth_endlater = []
+    conflicts_startnextmonth_endlater = []
     test_list = []
     for conflict in conflicts:      
         test_list.append(conflict)
         start_month = conflict.date_from.month #date_from.month, this is an integer
+        if conflict.date_to:
+            end_month = conflict.date_to.month
+            conflict_duration_days = conflict.date_from.day - conflict.date_to.day =
+        else:
+            end_month = None
+            conflict_duration_days = 1
         conflicts_startmonths.append(start_month) 
         if start_month == thismonth_num:
             conflicts_startthismonth.append(conflict)
+            if start_month == end_month:
+                conflicts_startandend_thismonth.append(conflict)
+            else:
+                if end_month == start_month + 1:
+                    conflicts_startthismonth_endnextmonth.append(conflict)
+                else:
+                    conflicts_startthismonth_endlater.append(conflict)
         if start_month == nextmonth_num:
             conflicts_startnextmonth.append(conflict)
+            if start_month == end_month:
+                conflicts_startandend_nextmonth.append(conflict)
+            else:
+                conflicts_startnextmonth_endlater.append(conflict)
     #Schedulign fields from user's schedule table
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
     schedule = schedule_list[0]
     return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 
         #pass calendar fields
-    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth,  
+    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
+    	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
+    	  'conflict_duration_days': conflict_duration_days, 
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
