@@ -3,7 +3,11 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 				<div class="col-xs-12 col-sm-6"> <div class="col-xs-12 col-sm-11">
 			  	<h4 class="textcenter">{{ thismonth }} </h4>
 
-<p> TEST {{days_package_may_come_nextmonth }} </p>
+<p> TEST days may come this month: {{days_package_may_come_thismonth }} 
+	<br> days my come next month: {{ days_package_may_come_nextmonth }}
+	<br> conflicts this month: {{ days_withconflicts_thismonth }}
+	<br> conflicts next month: {{ days_withconflicts_nextmonth }}
+</p>
 			 		 <table class="table">
 			 		 	<!--first row: weekday names -->
 			 		 	<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
