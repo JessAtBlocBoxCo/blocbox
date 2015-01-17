@@ -2,8 +2,8 @@
 note, bootstratp td classes: active, success, danger, warning, info -- use some of these for the cal/ovlerapping dates -->
 				<div class="col-xs-12 col-sm-6"> <div class="col-xs-12 col-sm-11">
 			  	<h4 class="textcenter">{{ thismonth }} </h4>
-			  	
-			  	 <p> DELME: DAYS PACKAGES MAY CONME {{ days_package_may_come_thismonth }} and next month: {{ days_package_may_come_nextmonth }} </p> 
+
+
 			 		 <table class="table">
 			 		 	<!--first row: weekday names -->
 			 		 	<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
@@ -15,7 +15,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			 		 								{% if day = today_dayofmonth_num %} <td class="active"> <b> {{ day }} </b> </td> 
 			 		 								{% else %} 	          
 			 		 											<!--danger days-->
-			 		 										  {% if day in days_withconflicts_thismonth and days_package_may_come %}
+			 		 										  {% if day in days_withconflicts_thismonth and days_package_may_come_thismonth %}
 			 		 										  	    <td class="danger"> {{day }} </td>
 			 		 											<!--conflict days --> 
 			 		 											{% elif day in days_withconflicts_thismonth %} <td class="warning"> {{day }} </td> 
@@ -42,9 +42,11 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			  		{% for week in nextmonth_calendar %}
 			  			<tr> 
 			  				{% for day in week %}
-
+																<!--danger days -->
+															  {% if day in days_with_conflicts_nextmonth and days_package_may_come_nextmonth %}
+															  		<td class="danger"> {{day}} </td>
 			 		 											<!--conflict days -->
-			 		 											{% if day in days_withconflicts_nextmonth %} <td class="warning"> {{day }} </td> 
+			 		 											{% elif day in days_withconflicts_nextmonth %} <td class="warning"> {{day }} </td> 
 			 		 											{% else %}	
 			 		 												<td>  		 											  	
 			 		 														{% if day = 0 %}  <!--blank if zero -->
