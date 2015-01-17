@@ -22,7 +22,7 @@ class HostConflicts(models.Model):
     #date_from is the same as 'date' if its only one day
     date_from = models.DateField(null=True) #Remember, blank determines whether or not it can be blank on forms - null is whether required o model
     date_to = models.DateField(blank=True, null=True)
-    duration = models.IntegerField(blank=True, null=True) #when writing an view to take the cal data, make this automatically subtract date_from from date_to 
+    duration = models.IntegerField(blank=True, null=True) #when writing an view to take the cal data, make this automatically subtract date_from from date_to (+1 to capture today)
     allday = models.BooleanField("All Day?", default=False, blank=True)
     am = models.BooleanField("AM Conflict", default=False, blank=True)
     pm = models.BooleanField("PM Conflict", default=False, blank=True)

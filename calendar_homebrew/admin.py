@@ -2,7 +2,7 @@ from django.contrib import admin
 from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
 
 class ConflictsAdmin(admin.ModelAdmin): 
-    list_display = ('id', 'host', 'label', 'date_from', 'date_to', 'allday',)
+    list_display = ('id', 'host', 'label', 'date_from', 'date_to', 'duration', 'allday',)
     list_filter = ['host',  ]
     search_fields = ['host', ]  
 
