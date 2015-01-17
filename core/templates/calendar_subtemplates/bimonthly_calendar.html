@@ -10,9 +10,12 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			 		 				{% for day in week %}
 			 		 								<!--make the square bold if its today -->
 			 		 								{% if day = today_dayofmonth_num %} <td class="active"> <b> {{ day }} </b> </td> 
-			 		 								{% else %} 	
-			 		 											<!--conflict days -->
-			 		 											{% if day in days_withconflicts_thismonth %} <td class="danger"> {{day }} </td> 
+			 		 								{% else %} 	          
+			 		 											<!--danger days-->
+			 		 										  {% if day in days_withconflicts_thismonth and days_packages_may_come %}
+			 		 										  	    <td class="danger"> {{day }} </td>
+			 		 											<!--conflict days --> 
+			 		 											{% elif day in days_withconflicts_thismonth %} <td class="warning"> {{day }} </td> 
 			 		 											{% else %}	
 			 		 												<td>  		 											  	
 			 		 														{% if day = 0 %}  <!--blank if zero -->
