@@ -163,17 +163,20 @@
 					<div class="col-xs-12 col-sm-8 col-md-6">
 					  {% include "calendar_subtemplates/bimonthly_calendar.html" %}
 					</div>  
+				</div> <!--row, containing calendars -->	
 						<!-- old code															
 						<div class="col-xs-12 col-sm-4 col-md-3">	{  % month_table AvailabilityCal AvailabilityCal_MonthObject "small" %  }  	</div> 													
 						<div class="col-xs-12 col-sm-4 col-md-3">  {  % month_table AvailabilityCal AvailabilityCal_MonthObject "small" +1 %  }	</div> 			
 						-->
-						<!--submit button-->
-						<div class="col-xs-12 col-sm-4 col-md-3 marginbottom30px nopaddingright">
+						<!--submit button-->  
+					<div class="row">
+						<div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px nopaddingright">
 								<br> <br>
         				<button class="bluebutton" style="height: 60px" onClick="window.location='/payment/host{{host.id}}/days{{dayrangestart}}to{{dayrangeend}}';">I Confirm that {{host.first_name}} is Available</button>    
     				</div> 
+    			</div>
     	
-				</div> <!--row, containing calendars -->														        
+																	        
         	<br>
         	<div class="row">
        	 		<p class="col-xs-12 darkgreytext marginbottom20px"> If {{ host.first_name }} isn't available, select another connected host or <a href="/search/">search for another neighbor near you </a>  
