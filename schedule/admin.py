@@ -9,7 +9,7 @@ class CalendarAdminOptions(admin.ModelAdmin):
     search_fields = ['name']
 
 class CalendarRelationAdmin(admin.ModelAdmin): 
-    list_display = ('id', 'calendar', 'content_type_id', 'object_id', 'distinction',)
+    list_display = ('id', 'calendar', 'content_type', 'object_id', 'distinction',)
     list_filter = ['calendar', 'object_id', 'distinction']
 
 admin.site.register(CalendarRelation, CalendarRelationAdmin)
