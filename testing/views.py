@@ -101,7 +101,6 @@ def homebrew_cal(request):
             for day in duration_less1:
                 conflict_day = conflict.date_from.day + day
                 days_withconflicts_thismonth.append(conflict_day)
-        days_withconflicts_thismonth.append(conflict_days)
         start_month = conflict.date_from.month #date_from.month, this is an integer
         if conflict.date_to:
             end_month = conflict.date_to.month
