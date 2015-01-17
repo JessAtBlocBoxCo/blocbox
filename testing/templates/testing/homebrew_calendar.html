@@ -15,9 +15,15 @@
 	<div class="row"> <!--TERST THE CALENDAR-->
 		<H3>Test the homebrew calendar </H3>
 			
-			<p> List conflicts for this user: {% for conflict in conflicts %} Conflict: {{ conflict }} <br> {% endfor %} </p>
+			<p> List conflicts for this user: {% for conflict in conflicts %} Conflict ID {{ conflict.id}}: Label {{ conflict.label }} from {{ conflict.date_from }} to {{ conflict.date_to }}<br> {% endfor %} </p>
 			
-			<p> List the schedule for this user: {{ schedule }} </p>
+			<p> List the schedule for this user: {{ schedule }} 
+						User {{user.email}} is available:
+					{% if schedule.monday_available %} Monday {% endif %} 
+					{% if schedule.tuesday_available %} , Tuesday {% endif %} 
+					{% if schedule.wednesday_available %} , Wednesday {% endif %}
+					{% if schedule.thursday_available %} , Thursday.. {% endif %}			
+			</p>
 	
 	</div>				
 
