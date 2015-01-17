@@ -59,14 +59,13 @@
             <!--put the address of each connection here-->
             {% for connection in connections_all %}
             <div class="col-xs-12 paddingtopbottom20px">
-                <p class="nomargin">{{ connection.host_user.first_name }} {{ connection.host_user.last_name }} 
+                <p class="nomargin"> <a href="/hostprofile/host{{connection.host_user.id}}">{{ connection.host_user.first_name }} {{ connection.host_user.last_name }} </a> 
                 	<br>{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}
                 	<br>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}
                 </p>
             </div>
             {% endfor %}
         </div> <!--end sidebar-->
-			
 
 						
 											
