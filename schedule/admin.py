@@ -1,3 +1,4 @@
+#this is blocbox.schedule.admin.py
 from django.contrib import admin
 
 from schedule.models import Calendar, Event, CalendarRelation, Rule
@@ -7,6 +8,10 @@ class CalendarAdminOptions(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ['name']
 
+class CalendarRelationAdmin(admin.ModelAdmin): 
+    list_display = ('id', 'calendar_id', 'object_id', 'distinction',)
+    list_filter = ['calendar_id', 'object_id', 'distinction']
 
+admin.site.register(CalendarRelation, CalendarRelationAdmin)
 admin.site.register(Calendar, CalendarAdminOptions)
-admin.site.register([Rule, Event, CalendarRelation])
+admin.site.register([Rule, Event,])
