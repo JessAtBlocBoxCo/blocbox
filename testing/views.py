@@ -72,8 +72,8 @@ def homebrew_cal(request):
     nextmonth = calendar.month_name[nextmonth_num]
     monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
     monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
-    days_in_thismonth = None
-    days_in_nextmonth = None
+    days_in_thismonth = monthrange_thismonth[1]
+    days_in_nextmonth = monthrange_nextmonth[1]
     #Week Variables
     firstweekday_num = calendar.firstweekday()
     firstweekday = calendar.day_name[firstweekday_num]
