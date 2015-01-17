@@ -32,6 +32,8 @@ from paypal.standard.ipn.models import PayPalIPN
 #import the aftership API
 import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
+#import new homebrew calendar
+from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
 
 #Write a custom template filter:
 from django.template.defaulttags import register
