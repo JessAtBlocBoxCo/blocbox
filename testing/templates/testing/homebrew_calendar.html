@@ -50,7 +50,7 @@
 					{% if schedule.thursday_available %} , Thursday.. {% endif %}			
 			</p>
 			<p> 
-					<br> conflicts that start this month full list {{ conflicst_startthismonth }}
+					<br> conflicts that start this month full list {{ conflicts_startthismonth }}
 					<br>Conflicts that start this month: {% for conflict in conflicts_starthismonth %} Date from: {{ conflict.date_from }} {% endfor %}
 				<br> Conflicts start months: {{ conflicts_startmonths }}           
 				<br> Test List: {{test_list }}
