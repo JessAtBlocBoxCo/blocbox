@@ -666,10 +666,10 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
        	  day = today_dayofmonth_num + int(dayrangestart)
           days_package_may_come.append(day)
        else:
-       	  dayrange = int(dayrangeend) - int(dayrangestart)
-          for i in range(dayrange):
-          	  day = today_dayofmonth_num + i
-              days_package_may_come.append(day)
+           dayrange = int(dayrangeend) - int(dayrangestart)
+           for i in range(dayrange):
+               day = today_dayofmonth_num + i
+               days_package_may_come.append(day)
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
         #Get calendar_homebrew created fields
         conflicts = HostConflicts.objects.filter(host=host)
