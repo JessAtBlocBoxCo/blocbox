@@ -75,8 +75,9 @@
 			 		 								<!--make the square bold if its today -->
 			 		 								{% if day = today_dayofmonth_num %} <td class="active"> <b> {{ day }} </b> </td> 
 			 		 								{% else %} 	
-			 		 										<td> 
-			 		 											{% for conflict in conflicts_startthismonth %} {% if day = conflict.date_from.day %} <td class="warning"> {{day }} </td> {% endif %} {% endfor %}		 		 											  	
+			 		 										
+			 		 											{% for conflict in conflicts_startthismonth %} {% if day = conflict.date_from.day %} <td class="warning"> {{day }} </td> {% endif %} {% endfor %}		
+			 		 										<td>  		 											  	
 			 		 														{% if day = 0 %}  <!--blank if zero -->
 			 		 														{% else %} 
 			 		 															  {{day}} 
