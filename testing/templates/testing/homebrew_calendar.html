@@ -114,8 +114,19 @@
 			  		{% for week in nextmonth_calendar %}
 			  			<tr> 
 			  				{% for day in week %}
-			  					<td> {% if day = 0 %}  {% else %} {{day}} {% endif %}	</td>
-			  			  {% endfor %}
+
+			 		 											<!--conflict days -->
+			 		 											{% if day in days_withconflicts_nextmonth %} <td class="warning"> {{day }} </td> 
+			 		 											{% else %}	
+			 		 												<td>  		 											  	
+			 		 														{% if day = 0 %}  <!--blank if zero -->
+			 		 														{% else %} 
+			 		 															  {{day}} 
+			 		 														{% endif %}	
+			 		 												</td>
+			 		 											{% endif %} <!--endif conflict -->
+
+			  			  {% endfor %} <!--end for day in week -->
 			  			</tr>
 			  		{% endfor %}
 						</table>
