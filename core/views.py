@@ -599,7 +599,7 @@ def confirmrequestconnect(request, host_id, user_id):
     neighborstatus.save() #update the Connections table to connect these user
     notifyconnectionconfirmed(request, host.id, enduser.id) #notify the enduser that the request was successful
     thank_you_message = enduser.first_name + "'s request to connect with you has been confirmed."
-    return render_to_response(request, 'core/templates/blocbox/thanks.html', { 'thank_you_message': thank_you_message, 'suggested_return_url': 'dashboard', 'suggested_return_message': "Return to your dasbhoard." })
+    return render_to_response(request, '/core/templates/blocbox/thanks.html', { 'thank_you_message': thank_you_message, 'suggested_return_url': 'dashboard', 'suggested_return_message': "Return to your dasbhoard." })
     #return HttpResponse("The neighbor's request to connect has been confirmed.") 
     #update this to include host and enduser ids, e.g.: HttpResponse:looking at question %s." % question_id)
 

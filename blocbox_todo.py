@@ -19,8 +19,6 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 
 
 1. johns availability - start a shipment - that page - something is off on the footer - fix it
-2. clean up the availability page - make it smaller, maybe move the policy text below submit button
-1. EDIT THE emails to esnd tracking info to
 2. add customer name rather than email so that it gets their first_name
 3. notification prefeernces defaul - profile
 4. notic epreference by package - dashboard
@@ -31,7 +29,7 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 3. get the calendar availability thing working
 4. sort out the host profie process
 ---- 4a. auto add a calendar?
-
+5. request to connect - add errors if already connected
 <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
  - dashboard: finish for other transactions
 - profile pics: make individualized/link to specific hosts
