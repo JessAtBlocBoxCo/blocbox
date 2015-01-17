@@ -50,11 +50,33 @@ def homebrew_cal(request):
     local_timezone = pytz.timezone(local_timezone) 
     date_today = datetime.date.today()
     datetime_now = datetime.datetime.now()
+    #Year variables
     thisyear = date_today.year
-    thismonth_num = date_today.month
-    nextmonth_num = date_today.month + 1
+    nextyear = date_today.year + 1
+    thisyear_isleap = calendar.isleap(thisyear)
+    nextyear_isleap = calendar.isleap(nextyear)
+    #Month Variables
+    thismonth_num = date_today.month  
+    thismonth_range = calendar.monthrange(thisyear, thismonth_num)
+    thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+    if thismonth_num == 12:
+    	  nextmonth_num = 1
+        nextmonth_range = calendar.monthrange(nextyear, 1)
+        nextmonth_calendar = calendar.monthcalendar(nextyear, 1)
+    else:
+    	  nextmonth_num = date_today.month + 1
+        nextmonth_range = calendar.monthrange(thisyear, nextmonth_num)
+        nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
     thismonth = calendar.month_name[thismonth_num]
     nextmonth = calendar.month_name[nextmonth_num]
+    #Week Variables
+    firstweekday = calendar.firstweekday
+    weekheaders = calendar.weekheader(3) #(n) specifies the width in characgters for one weekday  
+    #DAy Variables
+    today_num_ofmonth = date_today.day
+    today_num_ofweek = calendar.weekday(date_today)
+    today_dayofweek_name =  calendar.day_name(date_today)
+    today_dayofweek_abbr = calendar.day_abbr(date_today) 
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=enduser)
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
@@ -63,7 +85,18 @@ def homebrew_cal(request):
         #pass calendar fields
     	  'conflicts': conflicts, 'schedule': schedule, 
         #pass datefields
-        'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  'thisyear': thisyear, 'thismonth': thismonth,  'nextmonth': nextmonth,
+        'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
+        #year variables
+        'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
+        #Month variables
+        'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_range': thismonth_range, 'nextmonth_range': nextmonth_range,
+        'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
+        #Week variables
+        'firstweekday': firstweekday,  'weekheaders': weekheaders,
+        #DAy variables
+        'today_num_ofmonth': today_num_ofmonth, 'today_num_ofweek': today_num_ofweek, 'today_dayofweek_name': today_dayofweek_name, 
+        'today_dayofweek_abbr': today_dayofweek_abbr,
+        
     })  
     	
 #define the dashboard test
