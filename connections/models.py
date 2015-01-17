@@ -46,6 +46,14 @@ class ConnectionManager(models.Manager):
             	  host = connection.host_user
             	  enduser_hosts.append(host)
         return enduser_hosts
+     
+    def enduser_is_connected_to_host(self, enduser, hostuser):
+    		enduser_is_connected_to_host = False
+        if self.filter(end_user=endusr, host_user=hostuser).count() > 0:
+            enduser_is_connected_to_host = True
+        else:
+            enduser_is_connected_to_host = False
+        return enduser_is_connected_to_host
         
 class Connection(models.Model):
     #A connection is a bi-directional association between two users who

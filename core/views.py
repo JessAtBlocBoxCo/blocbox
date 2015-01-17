@@ -344,6 +344,7 @@ def hostprofile(request, host_id):
         connected = Connection.objects.are_neighbors(user1=enduser, user2=host) #true of false, but not sure how to call thee user...
         enduser_hosts = Connection.objects.enduser_hosts(enduser=enduser)
         enduser_host_connections = Connection.objects.enduser_host_connections(enduser=enduser)
+        enduser_is_connected_to_host = Connection.objects.enduser_is_connected_to_host(enduser=enduser, hostuser=host)
     else:
         connected = False
         enduser_hosts = None
@@ -354,6 +355,7 @@ def hostprofile(request, host_id):
     return render_to_response('blocbox/host-profile.html', {'host':host, 'enduser':enduser, 'connected':connected,
     		'connections_all':connections_all, 'connections_count':connections_count, 'connectionstotal':connections_count,
     		'transactions_count':transactions_count, 'transactions_all':transactions_all, 'enduser_hosts':enduser_hosts, 'enduser_host_connections': enduser_host_connections,
+    		'enduser_is_connected_to_host': enduser_is_connected_to_host,
     		}, context)
 
 def nudgeaneighbor(request):
