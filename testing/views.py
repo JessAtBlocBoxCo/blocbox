@@ -109,7 +109,7 @@ def homebrew_cal(request):
                 if conflict_day <= days_in_thismonth:
                     days_withconflicts_thismonth.append(conflict_day)
                 else:
-                	  conflict_day_spillover = conflict_day - days_in_thismonth
+                    conflict_day_spillover = conflict_day - days_in_thismonth
                     days_withconflicts_nextmonth.append(conflict_day_spillover)
         #remove duplciates - hopefully they dont exist but the might
         days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
