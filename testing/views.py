@@ -82,7 +82,10 @@ def homebrew_cal(request):
     today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=enduser)
-    conflicts_startthismonth =conflicts.filter(date_from.month=thismonth_num)
+    conflicts_startthismonth = []
+    for conflict in conflicts:
+        if conflict.date_from.month = thismonth_num:
+            conflicts_startthismonth.append(conflict)
     #Schedulign fields from user's schedule table
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
     schedule = schedule_list[0]
