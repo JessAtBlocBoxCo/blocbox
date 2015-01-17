@@ -34,10 +34,24 @@
 		    <br> First 3 of weeday headers? {{ weekheaders.3 }}
 		 	<br> DAY VARIABLES
 		 		<br> Today number of month: {{ today_dayofmonth_num }} <br> Today day of week num {{ today_dayofweek_num }} 
-		 		<br> Today Day of Week Name: {{ today_dayofweek_name }}  <br> Today day of Week abbr {{ today_dayofweek_abbr }}
-	 
+		 		<br> Today Day of Week Name: {{ today_dayofweek_name }}  <br> Today day of Week abbr {{ today_dayofweek_abbr }} 
 		 </p>
+		
 				
+		<H3>Test the homebrew calendar variables </H3>
+						
+			<p> List conflicts for this user: {% for conflict in conflicts %} Conflict ID {{ conflict.id}}: Label {{ conflict.label }} from {{ conflict.date_from }} to {{ conflict.date_to }}<br> {% endfor %} </p>
+			
+			<p> List the schedule for this user: {{ schedule }} 
+						User {{user.email}} is available:
+					{% if schedule.monday_available %} Monday {% endif %} 
+					{% if schedule.tuesday_available %} , Tuesday {% endif %} 
+					{% if schedule.wednesday_available %} , Wednesday {% endif %}
+					{% if schedule.thursday_available %} , Thursday.. {% endif %}			
+			</p>
+			<p> Conflicts that start this month:{% for conflict in conflicts_starthismonth %} Date from: {{ conflict.date_from }} {% endfor %}</p>
+			
+			
 		<h3>Create a calendar layout</h3>	
 			  <!--table for this month-->	
 			  <!--note, bootstratp td classes: active, success, danger, warning, info -- use some of these for the cal/ovlerapping dates -->
@@ -78,19 +92,7 @@
 			</div> <!--end div-row with both months-->
 			
 		
-		
-		<H3>Test the homebrew calendar variables </H3>
-			
-			
-			<p> List conflicts for this user: {% for conflict in conflicts %} Conflict ID {{ conflict.id}}: Label {{ conflict.label }} from {{ conflict.date_from }} to {{ conflict.date_to }}<br> {% endfor %} </p>
-			
-			<p> List the schedule for this user: {{ schedule }} 
-						User {{user.email}} is available:
-					{% if schedule.monday_available %} Monday {% endif %} 
-					{% if schedule.tuesday_available %} , Tuesday {% endif %} 
-					{% if schedule.wednesday_available %} , Wednesday {% endif %}
-					{% if schedule.thursday_available %} , Thursday.. {% endif %}			
-			</p>
+
 		
 	</div>				
 

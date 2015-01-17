@@ -82,11 +82,15 @@ def homebrew_cal(request):
     today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=enduser)
+    conflicts_startthismonth =conflicts.filter(date_from.month=thismonth_num)
+    #Schedulign fields from user's schedule table
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
     schedule = schedule_list[0]
     return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 
         #pass calendar fields
-    	  'conflicts': conflicts, 'schedule': schedule, 
+    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth,
+    	  #pass schedul fields
+    	  'schedule': schedule, 
         #pass datefields
         'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
         #year variables
