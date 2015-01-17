@@ -60,7 +60,9 @@ def dashboard_test(request, host_id=None):
     })
 
 
-
+def homebrew_call(request):
+    enduser = request.user
+    return render(request, 'testing/homebrew_calendar.html', 'enduser': enduser, })
     
 #www.blocbox.co/testing/jessstes; .blocbox.co/testing/jesstest/host2/ is to link it to a host's cal
 # rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
