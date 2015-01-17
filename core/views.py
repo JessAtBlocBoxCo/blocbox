@@ -152,94 +152,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipments_all_paid = None
         otherfavors_all_paid = None
     if track_id:  #if they open a tracking modal
-        trans = Transaction.objects.get(pk=track_id)  
-        tracking_on_trans = str(trans.tracking)
-        if trans.on_aftership:
-            courier_on_trans = str(trans.shipment_courier.lower())
-        else:
-            courier_on_trans = None
-        if request.method == 'POST':        
-            tracking_form  = TrackingForm(request.POST, instance=trans)
-            if tracking_form.is_valid(): 
-                tracking_no_entered = tracking_form.cleaned_data['tracking']
-                if tracking_no_entered:
-                    trackadd = tracking_form.save()          
-                    trackadd.save() 
-                    tracking_no_to_add = str(trans.tracking) #retrieve the tracking number we just added to the transaction table
-                    #Get the courier information
-                    c_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no_to_add))                
-                    c_list = c_allfields.get(u'couriers') #the couriers field from teh tuple, this could be empty
-                    if c_list == []: #if the courier is not detected
-                        c_list_first = None  
-                        sorry_message = "Either the tracking number is invalid or the courier is not supported by Aftership."
-                        suggested_return_url = 'dashboard'
-                        suggested_return_message = "Return to your Dashboard"
-                        return render(request, 'blocbox/sorry.html', { 'sorry_message': sorry_message, 
-                        		'suggested_return_url': suggested_return_url, 'suggested_return_message': suggested_return_message })
-                    else:    #if the courier is detected
-                        c_list_first = c_list[0] #the first element in the list of couriers, since there is only one
-                        slug_detected = str(c_list_first.get(u'slug'))
-                        # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
-                        if trans.enduser.first_name:
-                            customer_name = str(trans.enduser.first_name) + " " + str(trans.enduser.last_name)
-                        else:
-                            customer_name = str(trans.enduser.email)   
-                        #aftership error codes: https://www.aftership.com/docs/api/4/errors
-                        #except aftership.APIv4RequestException as error:
-                        #print 'Error:', error.code(), error.type(), error.message()
-                        #see if its already on aftership
-                        try:
-                            api.trackings.post(tracking=dict(
-    				                    slug=slug_detected, tracking_number=tracking_no_to_add,  
-    				                    title=str(trans.title) + ": Order " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
-    				                    order_id=str(trans.id),
-    				                    customer_name=customer_name,
-    				                    emails=[trans.enduser.email, trans.host.email], #Emails for notifications
-    				                    custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
-    				                    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
-    				                    )) 	
-                        except aftership.APIv4RequestException as error: 
-                            if error.code() == 4003:
-                                sorry_message = "That tracking numbers is already being tracked! Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."                              
-                            elif error.code() == 4005:
-                            	  sorry_message = "That tracking numbers is invalid. Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."
-                            else:
-                                sorry_message = "Something has gone wrong! Try to re-enter your tracking number. If you can't get this to work, contact us at info@blocbox.co. <br> Error code: " + str(error.code()) + "; Error type: " + error.type() + "; Error Message: " + error.message()
-                            return render(request, 'blocbox/sorry.html', {'sorry_message': sorry_message, 
-                                	  'suggested_return_url': 'dashboard', 'suggested_return_message': "Return to your Dashboard"})
-                        #Get the information from the API (is it posted yet?)
-                        datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
-                        trackingdict_added = datadict_added.get(u'tracking')
-                        #Save this information to trans table
-                        trans.on_aftership = True
-                        trans.shipment_courier = slug_detected.upper()
-                        trans.save()
-                else: #if they entered nothing delete it       
-                    api.trackings.delete(courier_on_trans, tracking_on_trans)
-                    trans.tracking = None
-                    trans.on_aftership = False
-                    trans.save()               
-            else: #if tracking form is not valid 
-    	          print tracking_form.errors 
-        else: #if method is not POST
-            tracking_form = TrackingForm(instance=trans) 
+        dashboard_tracking_modal(request, track_id) #defined below
     else: #if no track_id (if they dont open the modal)    
         tracking_form = None  
     if confirm_id:  #if the open the package_received modal
-    		trans = Transaction.objects.get(pk=confirm_id)
-    		if request.method == 'POST':
-    				package_received_form = PackageReceived(request.POST) #note this is not a model form
-    				if package_received_form.is_valid():
-    						trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
-    						trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
-    						trans.trans_complete = True
-    						trans.date_completed = datetoday
-    						trans.datetime_completed = datetimenow
-    						trans.save()
-    				else:
-    						print package_received_form.errors
-    		else:
-    			  package_received_form = PackageReceived()
+        package_received_modal(request, confirm_id)
     else: #if they dont open the packge received modal
     		package_received_form = None
     if issue_id:     #if they open the EndUser Issues Modal/Button
@@ -247,19 +164,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     else:
         enduser_issue_form = None #if they dont open the report an issue modal
     if message_trans_id: #if they open the message host modal
-        trans = Transaction.objects.get(pk=message_trans_id)
-        if request.method == 'POST':
-            compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
-            sender = request.user
-        		#Add recipient here?
-            recipient = trans.host.email
-            compose_form.fields['recipient'].initial = recipient
-            if compose_form.is_valid():
-                compose_form.save(sender=request.user)
-            else:
-                print compose_form.errors
-        else:
-    		    compose_form = ComposeForm(recipient_filter=None)
+        message_host_modal(request, message_trans_id)
     else: #if they dont open the message host modal
         compose_form = None  
     return render(request, 'blocbox/dashboard.html', {
@@ -312,6 +217,117 @@ def notify_admin_enduser_issue(request, trans_id):
     send_mail(subject, message, 'BlocBox EndUser Issues <admin@blocbox.co>', ['john@blocbox.co', 'admin@blocbox.co',]) #last is the to-email
     return HttpResponse("An email has been sent to the BlocBox team to notify them about this issue.")
 
+def dashboard_tracking_modal(request, track_id):
+    trans = Transaction.objects.get(pk=track_id)  
+    tracking_on_trans = str(trans.tracking)
+    if trans.on_aftership:
+        courier_on_trans = str(trans.shipment_courier.lower())
+    else:
+        courier_on_trans = None
+    if request.method == 'POST':        
+        tracking_form  = TrackingForm(request.POST, instance=trans)
+        if tracking_form.is_valid(): 
+            tracking_no_entered = tracking_form.cleaned_data['tracking']
+            if tracking_no_entered:
+                trackadd = tracking_form.save()          
+                trackadd.save() 
+                tracking_no_to_add = str(trans.tracking) #retrieve the tracking number we just added to the transaction table
+                #Get the courier information
+                c_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no_to_add))                
+                c_list = c_allfields.get(u'couriers') #the couriers field from teh tuple, this could be empty
+                if c_list == []: #if the courier is not detected
+                    c_list_first = None  
+                    sorry_message = "Either the tracking number is invalid or the courier is not supported by Aftership."
+                    suggested_return_url = 'dashboard'
+                    suggested_return_message = "Return to your Dashboard"
+                    return render(request, 'blocbox/sorry.html', { 'sorry_message': sorry_message, 
+                    		'suggested_return_url': suggested_return_url, 'suggested_return_message': suggested_return_message })
+                else:    #if the courier is detected
+                    c_list_first = c_list[0] #the first element in the list of couriers, since there is only one
+                    slug_detected = str(c_list_first.get(u'slug'))
+                    # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
+                    if trans.enduser.first_name:
+                        customer_name = str(trans.enduser.first_name) + " " + str(trans.enduser.last_name)
+                    else:
+                        customer_name = str(trans.enduser.email)   
+                    #aftership error codes: https://www.aftership.com/docs/api/4/errors
+                    #except aftership.APIv4RequestException as error:
+                    #print 'Error:', error.code(), error.type(), error.message()
+                    #see if its already on aftership
+                    try:
+                        api.trackings.post(tracking=dict(
+    		                    slug=slug_detected, tracking_number=tracking_no_to_add,  
+    		                    title=str(trans.title) + ": Order " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
+    		                    order_id=str(trans.id),
+    		                    customer_name=customer_name,
+    		                    emails=[trans.enduser.email, trans.host.email], #Emails for notifications
+    		                    custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
+    		                    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
+    		                    )) 	
+                    except aftership.APIv4RequestException as error: 
+                        if error.code() == 4003:
+                            sorry_message = "That tracking numbers is already being tracked! Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."                              
+                        elif error.code() == 4005:
+                        	  sorry_message = "That tracking numbers is invalid. Please enter a different tracking number. If you think there's something wrong, contact us at info@blocbox.co."
+                        else:
+                            sorry_message = "Something has gone wrong! Try to re-enter your tracking number. If you can't get this to work, contact us at info@blocbox.co. <br> Error code: " + str(error.code()) + "; Error type: " + error.type() + "; Error Message: " + error.message()
+                        return render(request, 'blocbox/sorry.html', {'sorry_message': sorry_message, 
+                            	  'suggested_return_url': 'dashboard', 'suggested_return_message': "Return to your Dashboard"})
+                    #Get the information from the API (is it posted yet?)
+                    datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
+                    trackingdict_added = datadict_added.get(u'tracking')
+                    #Save this information to trans table
+                    trans.on_aftership = True
+                    trans.shipment_courier = slug_detected.upper()
+                    trans.save()
+            else: #if they entered nothing delete it       
+                api.trackings.delete(courier_on_trans, tracking_on_trans)
+                trans.tracking = None
+                trans.on_aftership = False
+                trans.save()               
+        else: #if tracking form is not valid 
+            print tracking_form.errors 
+    else: #if method is not POST
+        tracking_form = TrackingForm(instance=trans) 
+    return HttpResponse("OK")       
+
+
+def message_host_modal(request, message_trans_id):
+    trans = Transaction.objects.get(pk=message_trans_id)
+    if request.method == 'POST':
+        compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
+        sender = request.user
+    		#Add recipient here?
+        recipient = trans.host.email
+        compose_form.fields['recipient'].initial = recipient
+        if compose_form.is_valid():
+            compose_form.save(sender=request.user)
+        else:
+            print compose_form.errors
+    else:
+        compose_form = ComposeForm(recipient_filter=None)
+    return HttpResponse("OK")
+
+
+def package_received_modal(request, confirm_id):
+    trans = Transaction.objects.get(pk=confirm_id)
+    if request.method == 'POST':
+    		package_received_form = PackageReceived(request.POST) #note this is not a model form
+    		if package_received_form.is_valid():
+    				trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
+    				trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
+    				trans.trans_complete = True
+    				trans.date_completed = datetoday
+    				trans.datetime_completed = datetimenow
+    				trans.save()
+    		else:
+    				print package_received_form.errors
+    else:
+    	  package_received_form = PackageReceived()
+    return HttpResponse("OK")
+
+
+#END DASHBOARD DEFS
     
 def myblock(request):
     return render(request, 'blocbox/myblock.html')
