@@ -720,7 +720,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
     	  #'cal_relations_host_count': cal_relations_host_count, 'cal_relations_host': cal_relations_host, 'cal_list_host': cal_list_host,
-    	  'here': quote(request.get_full_path())
+    	  'here': quote(request.get_full_path()),
     	  #Python calendar variables (independent of conflict app)
         'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
         'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
