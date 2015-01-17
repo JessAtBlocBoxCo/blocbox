@@ -65,7 +65,8 @@ def dashboard_test(request, host_id=None):
 def homebrew_cal(request):
     enduser = request.user
     conflicts = HostConflicts.objects.filter(host=enduser)
-    schedule = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
+    schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
+    schedule = schedule_list[0]
     return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 'conflicts': conflicts, 'schedule': schedule, })
     
 #www.blocbox.co/testing/jessstes; .blocbox.co/testing/jesstest/host2/ is to link it to a host's cal

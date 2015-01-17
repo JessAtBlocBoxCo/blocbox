@@ -15,14 +15,15 @@
 	<div class="row"> <!--TERST THE CALENDAR-->
 		<H3>Test the homebrew calendar </H3>
 			
-			<p> List conflicts for this user: {{ conflicts }} </p>
+			<p> List conflicts for this user: {% for conflict in conflict %} Conflict: {{ conflict }} <br> {% endfor %} </p>
 			
 			<p> List the schedule for this user: {{ schedule }} </p>
 	
 	</div>				
-				
-<br><br> <br><br>	<br><br>
 
+<h3>			
+<br><br> <br><br>	<br><br>
+</h3>	
 </div>		
 {% endblock %}		
 
