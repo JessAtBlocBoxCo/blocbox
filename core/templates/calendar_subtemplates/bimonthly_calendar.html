@@ -15,7 +15,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			 		 								{% if day = today_dayofmonth_num %} <td class="active"> <b> {{ day }} </b> </td> 
 			 		 								{% else %} 	          
 			 		 											<!--danger days-->
-			 		 										  {% if day in days_withconflicts_thismonth and days_packages_may_come %}
+			 		 										  {% if day in days_withconflicts_thismonth and days_package_may_come %}
 			 		 										  	    <td class="danger"> {{day }} </td>
 			 		 											<!--conflict days --> 
 			 		 											{% elif day in days_withconflicts_thismonth %} <td class="warning"> {{day }} </td> 
