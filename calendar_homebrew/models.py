@@ -35,7 +35,7 @@ class HostConflicts(models.Model):
 
 
 #default daily schedule
-class HostWeeklyDefaultSchedule(model.Models):
+class HostWeeklyDefaultSchedule(model.Model):
     host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_calendar', blank=True, null=True) #this shows up as payer_id
     #Boolean fields for each day of week
     #Note that these days are defaulting true - have the user uncheck if not available
