@@ -45,6 +45,7 @@ def get_item(dictionary, key):
 def homebrew_cal(request):
     enduser = request.user
     #Get date fields
+    local_timezone = request.session.setdefault('django_timezone', 'UTC')
     local_timezone = pytz.timezone(local_timezone) 
     date_today = datetime.date.today()
     datetime_now = datetime.datetime.now()
