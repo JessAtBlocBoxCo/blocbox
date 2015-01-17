@@ -2,11 +2,14 @@
 note, bootstratp td classes: active, success, danger, warning, info -- use some of these for the cal/ovlerapping dates -->
 				<div class="col-xs-12 col-sm-6"> <div class="col-xs-12 col-sm-11">
 			  	<h4 class="textcenter">{{ thismonth }} </h4>
+			  	
+			  	 <p> DELME: DAYS PACKAGES MAY CONME {{ days_package_may_come }} </p> 
 			 		 <table class="table">
 			 		 	<!--first row: weekday names -->
 			 		 	<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
 			 		 {% for week in thismonth_calendar %}
 			 		 	<tr> 
+			 		 		
 			 		 				{% for day in week %}
 			 		 								<!--make the square bold if its today -->
 			 		 								{% if day = today_dayofmonth_num %} <td class="active"> <b> {{ day }} </b> </td> 
