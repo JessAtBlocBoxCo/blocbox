@@ -243,18 +243,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     else: #if they dont open the packge received modal
     		package_received_form = None
     if issue_id:     #if they open the EndUser Issues Modal/Button
-        trans = Transaction.objects.get(pk=issue_id)
-        if request.method == 'POST':
-            enduser_issue_form = EndUserIssue(request.POST, instance=trans)
-            if enduser_issue_form.is_valid():
-                issue = enduser_issue_form.save()
-                issue.save()
-                notify_host_enduser_issue(request, trans.id)
-                notify_admin_enduser_issue(request, trans.id)
-            else: 
-                print enduser_issue_form.errors
-        else:
-            enduser_issue_form = EndUserIssue(instance=trans)
+        enduser_report_issue_modal(request, issue_id)
     else:
         enduser_issue_form = None #if they dont open the report an issue modal
     if message_trans_id: #if they open the message host modal
@@ -287,6 +276,21 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         #other favors lists
         'otherfavors_all_paid': otherfavors_all_paid, 
     })
+
+def enduser_report_issue_modal(request, issue_id)
+    trans = Transaction.objects.get(pk=issue_id)
+    if request.method == 'POST':
+        enduser_issue_form = EndUserIssue(request.POST, instance=trans)
+        if enduser_issue_form.is_valid():
+            issue = enduser_issue_form.save()
+            issue.save()
+            notify_host_enduser_issue(request, trans.id)
+            notify_admin_enduser_issue(request, trans.id)
+        else: 
+            print enduser_issue_form.errors
+    else:
+        enduser_issue_form = EndUserIssue(instance=trans)
+    return HttpResponse("OK")
 
 def notify_host_enduser_issue(request, trans_id):
     trans = get_object_or_404(Transaction, pk=trans_id)
