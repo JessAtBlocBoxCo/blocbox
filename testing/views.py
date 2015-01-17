@@ -71,6 +71,7 @@ def homebrew_cal(request):
     thismonth = calendar.month_name[thismonth_num]
     nextmonth = calendar.month_name[nextmonth_num]
     #Week Variables
+    calendar.setfirstweekday(6) #set it to sunday, 0 is monday
     firstweekday_num = calendar.firstweekday()
     firstweekday = calendar.day_name[firstweekday_num]
     weekheader_chars = 3
