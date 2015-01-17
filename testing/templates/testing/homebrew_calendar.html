@@ -49,7 +49,9 @@
 					{% if schedule.wednesday_available %} , Wednesday {% endif %}
 					{% if schedule.thursday_available %} , Thursday.. {% endif %}			
 			</p>
-			<p> Conflicts that start this month:{% for conflict in conflicts_starthismonth %} Date from: {{ conflict.date_from }} {% endfor %}</p>
+			<p> Conflicts that start this month:{% for conflict in conflicts_starthismonth %} Date from: {{ conflict.date_from }} {% endfor %}
+				<br> Conflicts date from list: {{ conflicts_date_from }}
+			</p>
 			
 			
 		<h3>Create a calendar layout</h3>	
