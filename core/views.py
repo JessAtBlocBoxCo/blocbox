@@ -343,7 +343,7 @@ def hostprofile(request, host_id):
     if enduser.is_authenticated():
         connected = Connection.objects.are_neighbors(user1=enduser, user2=host) #true of false, but not sure how to call thee user...
         enduser_hosts = Connection.objects.enduser_hosts(enduser=enduser)
-        enduser_host_connectoins = Connectoin.objects.enduser_host_connections(enduser=enduser)
+        enduser_host_connections = Connection.objects.enduser_host_connections(enduser=enduser)
     else:
         connected = False
         enduser_hosts = None
