@@ -147,7 +147,7 @@ def homebrew_cal(request):
         #Month variables
         'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_range': thismonth_range, 'nextmonth_range': nextmonth_range,
         'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
-        'monthrange_thismonth': weekrange_thismonth, 'monthrange_nextmonth': weekrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth,
+        'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth,
         #Week variables
         'firstweekday': firstweekday,  'weekheaders': weekheaders, 
         #DAy variables
