@@ -3,7 +3,7 @@ from django.contrib import admin
 from schedule.models import Calendar, Event, CalendarRelation, Rule
 
 class CalendarAdminOptions(admin.ModelAdmin):
-    list_display = ('id', 'slug',)
+    list_display = ('id', 'name', 'slug',)
     prepopulated_fields = {"slug": ("name",)}
     search_fields = ['name']
 
