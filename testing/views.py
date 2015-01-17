@@ -71,8 +71,10 @@ def homebrew_cal(request):
     thismonth = calendar.month_name[thismonth_num]
     nextmonth = calendar.month_name[nextmonth_num]
     #Week Variables
-    firstweekday = calendar.firstweekday
-    weekheaders = calendar.weekheader(3) #(n) specifies the width in characgters for one weekday  
+    firstweekday_num = calendar.firstweekday
+    firstweekday = calendar.day_name[firstweekday_num]
+    weekheader_chars = 3
+    weekheaders = calendar.weekheader(weekheader_chars) #(n) specifies the width in characgters for one weekday 
     #DAy Variables
     today_dayofmonth_num = date_today.day
     today_dayofweek_num = date_today.weekday()

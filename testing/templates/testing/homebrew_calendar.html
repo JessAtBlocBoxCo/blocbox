@@ -42,8 +42,16 @@
 			  <!--table for this month-->	
 			  <h4>{{ thismonth }} </h4>
 			  <table class="table">
-				 <th>
-				 </th>
+			  	<!--first row: weekday names -->
+			  	<tr>	<th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th> <th>Sun</th> 	</tr>
+			  {% for week in thismonth_calendar %}
+			  	<tr> 
+			  		{% for day in week %}
+			  				<td> {{day}}</td>
+			  	  {% endfor %}
+			  	</tr>
+			  {% endfor %}
+
 			</table>
 		
 		
