@@ -60,7 +60,7 @@ def dashboard_test(request, host_id=None):
     })
 
 
-def homebrew_call(request):
+def homebrew_cal(request):
     enduser = request.user
     return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, })
     
