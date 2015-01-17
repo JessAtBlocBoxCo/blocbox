@@ -95,25 +95,8 @@ def homebrew_cal(request):
     conflicts_startthismonth_endnextmonth = []
     conflicts_startthismonth_endlater = []
     conflicts_startnextmonth_endlater = []
-    days_withconflicts_thismonth = []
-    days_withconflicts_nextmonth = []
     test_list = []
     for conflict in conflicts:  
-    	  #append the first day
-        days_withconflicts_thismonth.append(conflict.date_from.day)   
-        #append the days after the first day for multi-day conflicts 	  
-        if conflict.duration > 1:
-            duration_less1 = conflict.duration - 1
-            for day in range(duration_less1):
-                conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
-                if conflict_day <= days_in_thismonth:
-                    days_withconflicts_thismonth.append(conflict_day)
-                else:
-                    conflict_day_spillover = conflict_day - days_in_thismonth
-                    days_withconflicts_nextmonth.append(conflict_day_spillover)
-        #remove duplciates - hopefully they dont exist but the might
-        days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
-        days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
         start_month = conflict.date_from.month #date_from.month, this is an integer
         if conflict.date_to:
             end_month = conflict.date_to.month
@@ -135,6 +118,39 @@ def homebrew_cal(request):
                 conflicts_startandend_nextmonth.append(conflict)
             else:
                 conflicts_startnextmonth_endlater.append(conflict)
+    #define days with conflicts
+    days_withconflicts_thismonth = []
+    days_withconflicts_nextmonth = []
+    days_withconflicts_later = []
+    for conflict in conflicts_startthismonth:
+        #append the first day
+        days_withconflicts_thismonth.append(conflict.date_from.day)   
+        #append the days after the first day for multi-day conflicts 	  
+        if conflict.duration > 1:
+            duration_less1 = conflict.duration - 1
+            for day in range(duration_less1):
+                conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
+                if conflict_day <= days_in_thismonth:
+                    days_withconflicts_thismonth.append(conflict_day)
+                else:
+                    conflict_day_spillover = conflict_day - days_in_thismonth
+                    days_withconflicts_nextmonth.append(conflict_day_spillover)
+    for conflict in conflicts_startnextmonth:
+    	  #append the first day
+        days_withconflicts_thismonth.append(conflict.date_from.day)   
+        #append the days after the first day for multi-day conflicts 	  
+        if conflict.duration > 1:
+            duration_less1 = conflict.duration - 1
+            for day in range(duration_less1):
+                conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
+                if conflict_day <= days_in_nextmonth:
+                    days_withconflicts_nextmonth.append(conflict_day)
+                else:
+                    conflict_day_spillover = conflict_day - days_in_thisnext
+                    days_withconflicts_later.append(conflict_day_spillover)
+    #remove duplciates - hopefully they dont exist but the might          
+    days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
+    days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
     #Schedulign fields from user's schedule table
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
     schedule = schedule_list[0]
