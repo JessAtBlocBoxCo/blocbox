@@ -70,8 +70,8 @@ def homebrew_cal(request):
         nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
     thismonth = calendar.month_name[thismonth_num]
     nextmonth = calendar.month_name[nextmonth_num]
-    weekrange_thismonth = calendar(thisyear, thismonth_num)
-    weekrange_nextmonth = calendar(thisyear, nextmonth_num)
+    monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
+    monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
     days_in_thismonth = None
     days_in_nextmonth = None
     #Week Variables
@@ -147,8 +147,9 @@ def homebrew_cal(request):
         #Month variables
         'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_range': thismonth_range, 'nextmonth_range': nextmonth_range,
         'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
+        'monthrange_thismonth': weekrange_thismonth, 'monthrange_nextmonth': weekrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth,
         #Week variables
-        'firstweekday': firstweekday,  'weekheaders': weekheaders, 'weekrange_thismonth': weekrange_thismonth, 'weekrange_nextmonth': weekrange_nextmonth,
+        'firstweekday': firstweekday,  'weekheaders': weekheaders, 
         #DAy variables
         'today_dayofmonth_num': today_dayofmonth_num, 'today_dayofweek_num': today_dayofweek_num, 'today_dayofweek_name': today_dayofweek_name, 
         'today_dayofweek_abbr': today_dayofweek_abbr,

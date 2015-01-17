@@ -28,12 +28,12 @@
 		 		<br> This Month Calendar: {{ thismonth_calendar }} <br> Next Month calendar: {{ nextmonth_calendar }}
 		 		<br> first week of thismonth_calendar {{ thismonth_calendar.0 }}
 		 		<br> first day of thismonth_calendar {{ thismonth_calendar.0.0 }} 
-		 	<br> for week in thismonth_calendar {% for week in thismonth_calendar %} {{ week }} {% endfor %}
+		 		<br> for week in thismonth_calendar {% for week in thismonth_calendar %} {{ week }} {% endfor %}
+		 		<br> Week range this month {{ monthrange_thismonth }}
+		    <br> Week range next month {{ monthrange_nextmonth }}
 		  <br> WEEK VARIABLES
 		    <br> First weekday setting: {{ firstweekday }} <br> Week HeadersS: {{ weekheaders }}
 		    <br> First 3 of weeday headers? {{ weekheaders.3 }}
-		    <br> Week range this month {{ weekrange_thismonth }}
-		    <br> Week range next month {{ weekrange_nextmonth }}
 		 	<br> DAY VARIABLES
 		 		<br> Today number of month: {{ today_dayofmonth_num }} <br> Today day of week num {{ today_dayofweek_num }} 
 		 		<br> Today Day of Week Name: {{ today_dayofweek_name }}  <br> Today day of Week abbr {{ today_dayofweek_abbr }} 
