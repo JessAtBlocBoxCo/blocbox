@@ -51,7 +51,7 @@
             		{% if connected %} 
             				{{ host.st_address1 }},
             		{% else %} 
-            				{{ host.address_approx }}, {{ host.neighborhood }},
+            		{{ host.address_approx }},  {% if host.neighborhood %} {{ host.neighborhood }}, {% endif %}
             		{% endif %} 
             		{{ host.city }} {{ host.state }}
             </h5>
@@ -67,6 +67,8 @@
         					{% endif %} 
         							+  Connect
         				</button>
+        				
+        				<p>TESTTEST {{ enduser_host_connections}} and enduser hosts {{ enduser_hosts}} </p>
             {% endif %} 
         </div>
 	

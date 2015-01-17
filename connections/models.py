@@ -30,6 +30,23 @@ class ConnectionManager(models.Manager):
         elif self.filter(end_user=user2, host_user=user1):
             connection = self.filter(end_user=user2, host_user=user1)
         connection.delete()
+    
+    def enduser_host_connections(self, enduser):
+        enduser_host_connections = []
+        enduser_hosts = []
+        if self.filter(end_user=enduser).count() > 0:
+            enduser_host_connections = self.objects.filter(self.host_user)
+        return enduser_host_connections
+
+    
+    def enduser_hosts(self, enduser):
+        enduser_hosts = []
+        if self.filter(end_user=enduser).count() >0:
+            enduser_host_connections = self.objects.filter(self.host_user)
+            for connection in enduser_host_connection:
+            	  host = connection['host_user']
+            	  enduser_hosts.append(host)
+        return enduser_hosts
         
 class Connection(models.Model):
     #A connection is a bi-directional association between two users who

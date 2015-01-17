@@ -342,15 +342,19 @@ def hostprofile(request, host_id):
     enduser = request.user
     if enduser.is_authenticated():
         connected = Connection.objects.are_neighbors(user1=enduser, user2=host) #true of false, but not sure how to call thee user...
+        enduser_hosts = Connection.objects.enduser_hosts(enduser=enduser)
+        enduser_host_connectoins = Connectoin.objects.enduser_host_connections(enduser=enduser)
     else:
         connected = False
+        enduser_hosts = None
     connections_all = Connection.objects.filter(host_user=host) 
     connections_count = Connection.objects.filter(host_user=host).count() #count them,removing status=0 after host_user=host   
     transactions_all = Transaction.objects.filter(host=host)
     transactions_count = Transaction.objects.filter(host=host).count() #count all of the transactions
     return render_to_response('blocbox/host-profile.html', {'host':host, 'enduser':enduser, 'connected':connected,
     		'connections_all':connections_all, 'connections_count':connections_count, 'connectionstotal':connections_count,
-    		'transactions_count':transactions_count, 'transactions_all':transactions_all }, context)
+    		'transactions_count':transactions_count, 'transactions_all':transactions_all, 'enduser_hosts':enduser_hosts, 'enduser_host_connection': enduser_host_connections,
+    		}, context)
 
 def nudgeaneighbor(request):
     enduser = request.user
