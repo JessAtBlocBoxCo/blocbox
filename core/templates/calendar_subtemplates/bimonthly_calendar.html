@@ -1,0 +1,58 @@
+<!--this is blocbox/core/templates/calendar_subtemplates/bimonthly_calendar.html -->
+
+			<div class="row">
+				<div class="col-xs-12 col-sm-6"> <div class="col-xs-11">
+			  	<h4 class="textcenter">{{ thismonth }} </h4>
+			 		 <table class="table">
+			 		 	<!--first row: weekday names -->
+			 		 	<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
+			 		 {% for week in thismonth_calendar %}
+			 		 	<tr> 
+			 		 				{% for day in week %}
+			 		 								<!--make the square bold if its today -->
+			 		 								{% if day = today_dayofmonth_num %} <td class="active"> <b> {{ day }} </b> </td> 
+			 		 								{% else %} 	
+			 		 											<!--conflict days -->
+			 		 											{% if day in days_withconflicts_thismonth %} <td class="warning"> {{day }} </td> 
+			 		 											{% else %}	
+			 		 												<td>  		 											  	
+			 		 														{% if day = 0 %}  <!--blank if zero -->
+			 		 														{% else %} 
+			 		 															  {{day}} 
+			 		 														{% endif %}	
+			 		 												</td>
+			 		 											{% endif %} <!--endif conflict -->
+			 		 								{% endif %} <!--end if today-->
+			 		 				{% endfor %} <!--for day in week-->
+			 		 	</tr>
+			 		 {% endfor %} <!--for week in month-->
+						</table>
+				</div> </div>	  <!--table for this month-->	
+			  
+			  <div class="col-xs-12 col-sm-6"> <div class="col-xs-10 col-xs-offset-1">
+			  		<h4 class="textcenter">{{ nextmonth }} </h4>
+			  		<table class="table">
+			  			<!--first row: weekday names -->
+			  			<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
+			  		{% for week in nextmonth_calendar %}
+			  			<tr> 
+			  				{% for day in week %}
+
+			 		 											<!--conflict days -->
+			 		 											{% if day in days_withconflicts_nextmonth %} <td class="warning"> {{day }} </td> 
+			 		 											{% else %}	
+			 		 												<td>  		 											  	
+			 		 														{% if day = 0 %}  <!--blank if zero -->
+			 		 														{% else %} 
+			 		 															  {{day}} 
+			 		 														{% endif %}	
+			 		 												</td>
+			 		 											{% endif %} <!--endif conflict -->
+
+			  			  {% endfor %} <!--end for day in week -->
+			  			</tr>
+			  		{% endfor %}
+						</table>
+				</div> </div> <!--div for next month -->
+				
+			</div> <!--end div-row with both months-->
