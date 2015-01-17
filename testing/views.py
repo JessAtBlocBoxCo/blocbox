@@ -95,11 +95,13 @@ def homebrew_cal(request):
     days_withconflicts_nextmonth = []
     test_list = []
     for conflict in conflicts:  
-        days_withconflicts_thismonth.append(conflict.date_from.day)    	  
+    	  #append the first day
+        days_withconflicts_thismonth.append(conflict.date_from.day)   
+        #append the days after the first day for multi-day conflicts 	  
         if conflict.duration > 1:
             duration_less1 = conflict.duration - 1
             for day in range(duration_less1):
-                conflict_day = conflict.date_from.day + day
+                conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
                 days_withconflicts_thismonth.append(conflict_day)
         start_month = conflict.date_from.month #date_from.month, this is an integer
         if conflict.date_to:
