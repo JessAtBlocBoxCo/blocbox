@@ -70,6 +70,10 @@ def homebrew_cal(request):
         nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
     thismonth = calendar.month_name[thismonth_num]
     nextmonth = calendar.month_name[nextmonth_num]
+    weekrange_thismonth = calendar(thisyear, thismonth_num)
+    weekrange_nextmonth = calendar(thisyear, nextmonth_num)
+    days_in_thismonth = None
+    days_in_nextmonth = None
     #Week Variables
     firstweekday_num = calendar.firstweekday()
     firstweekday = calendar.day_name[firstweekday_num]
@@ -104,7 +108,6 @@ def homebrew_cal(request):
                 conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
                 days_withconflicts_thismonth.append(conflict_day)
         #remove duplciates - hopefully they dont exist but the might
-        days_withconflicts_thismonth = [1,1,1,2,]
         days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
         start_month = conflict.date_from.month #date_from.month, this is an integer
         if conflict.date_to:
@@ -145,7 +148,7 @@ def homebrew_cal(request):
         'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_range': thismonth_range, 'nextmonth_range': nextmonth_range,
         'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
         #Week variables
-        'firstweekday': firstweekday,  'weekheaders': weekheaders,
+        'firstweekday': firstweekday,  'weekheaders': weekheaders, 'weekrange_thismonth': weekrange_thismonth, 'weekrange_nextmonth': weekrange_nextmonth,
         #DAy variables
         'today_dayofmonth_num': today_dayofmonth_num, 'today_dayofweek_num': today_dayofweek_num, 'today_dayofweek_name': today_dayofweek_name, 
         'today_dayofweek_abbr': today_dayofweek_abbr,

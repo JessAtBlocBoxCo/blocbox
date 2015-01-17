@@ -32,6 +32,8 @@
 		  <br> WEEK VARIABLES
 		    <br> First weekday setting: {{ firstweekday }} <br> Week HeadersS: {{ weekheaders }}
 		    <br> First 3 of weeday headers? {{ weekheaders.3 }}
+		    <br> Week range this month {{ weekrange_thismonth }}
+		    <br> Week range next month {{ weekrange_nextmonth }}
 		 	<br> DAY VARIABLES
 		 		<br> Today number of month: {{ today_dayofmonth_num }} <br> Today day of week num {{ today_dayofweek_num }} 
 		 		<br> Today Day of Week Name: {{ today_dayofweek_name }}  <br> Today day of Week abbr {{ today_dayofweek_abbr }} 
@@ -65,6 +67,7 @@
        <br> duratin days for each conflict: {% for conflict in conflicts %} {{ conflict.duration_days }} {% endfor %}
        	<br> Days with conflicts this month: {{ days_withconflicts_thismonth }}
 				<br> Test List: {{test_list }}
+				
 			</p>
 			
 			
