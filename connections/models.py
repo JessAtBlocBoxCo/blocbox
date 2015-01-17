@@ -35,14 +35,14 @@ class ConnectionManager(models.Manager):
         enduser_host_connections = []
         enduser_hosts = []
         if self.filter(end_user=enduser).count() > 0:
-            enduser_host_connections = self.objects.filter(self.host_user)
+            enduser_host_connections = self.filter(self.host_user)
         return enduser_host_connections
 
     
     def enduser_hosts(self, enduser):
         enduser_hosts = []
         if self.filter(end_user=enduser).count() >0:
-            enduser_host_connections = self.objects.filter(self.host_user)
+            enduser_host_connections = self.filter(self.host_user)
             for connection in enduser_host_connection:
             	  host = connection['host_user']
             	  enduser_hosts.append(host)
