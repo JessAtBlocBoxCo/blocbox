@@ -701,7 +701,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                         days_withconflicts_nextmonth.append(conflict_day_spillover)
         for conflict in conflicts_startnextmonth:
         	  #append the first day
-            days_withconflicts_thismonth.append(conflict.date_from.day)   
+            days_withconflicts_nextmonth.append(conflict.date_from.day)   
             #append the days after the first day for multi-day conflicts 	  
             if conflict.duration > 1:
                 duration_less1 = conflict.duration - 1
