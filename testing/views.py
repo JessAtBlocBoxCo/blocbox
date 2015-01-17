@@ -74,7 +74,7 @@ def homebrew_cal(request):
     weekheaders = calendar.weekheader(3) #(n) specifies the width in characgters for one weekday  
     #DAy Variables
     today_num_ofmonth = date_today.day
-    today_num_ofweek = calendar.weekday(date_today)
+    today_num_ofweek = datetime.weekday(date_today)
     today_dayofweek_name =  calendar.day_name(date_today)
     today_dayofweek_abbr = calendar.day_abbr(date_today) 
     #Get calendar_homebrew created fields
