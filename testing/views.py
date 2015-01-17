@@ -83,9 +83,13 @@ def homebrew_cal(request):
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=enduser)
     conflicts_date_from = []
+    conflicts_startmonths = []
     conflicts_startthismonth = []
     for conflict in conflicts:
-        conflicts_date_from.append(conflict.date_from())
+    	  date_from = conflict.date_from
+    	  start_month = date_from.month
+        conflicts_date_from.append(date_from)
+        conflicts_startmonths.append(start_month)
         if conflict.date_from.month == thismonth_num:
             conflicts_startthismonth.append(conflict)
     #Schedulign fields from user's schedule table
@@ -93,7 +97,7 @@ def homebrew_cal(request):
     schedule = schedule_list[0]
     return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 
         #pass calendar fields
-    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_date_from': conflicts_date_from,
+    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_date_from': conflicts_date_from, 'conflicts_startmonths': conflicts_startmonths
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
