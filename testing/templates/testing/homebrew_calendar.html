@@ -51,7 +51,11 @@
 			</p>
 			<p> 
 					<br> Conflicts that start this month full list {{ conflicts_startthismonth }}
-					<br> For each conflict that starts this month: {% for conflict in conflicts_startthismonth %} Date from: {{ conflict.date_from }} {% endfor %}      
+					<br> For each conflict that starts this month: 
+								{% for conflict in conflicts_startthismonth %} 
+											Date from: {{ conflict.date_from }} , Duration: {{ conflict.duration }} 
+							{% endfor %}  
+						    
 					<br> Conflicts that start next month full list {{ conflicts_startnextmonth }}                                                                 
 					<br> For each conflict that starts next month: {% for conflict in conflicts_startnextmonth %} Date from: {{ conflict.date_from }} ; Day from: {{ conflict.date_from.day }} {% endfor %}
 					
