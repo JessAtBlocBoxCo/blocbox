@@ -52,8 +52,6 @@ def homebrew_cal(request):
     datetime_today = datetime.datetime.today()
     thisyear = date_today.year
     thismonth = date_today.month
-    thisyear_paren = date_today.year()
-    thismonth_paren = date_today.month()
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=enduser)
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
@@ -63,7 +61,7 @@ def homebrew_cal(request):
     	  'conflicts': conflicts, 'schedule': schedule, 
         #pass datefields
         'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now, 'datetime_today': datetime_today,
-        'thisyear': thisyear, 'thismonth': thismonth, 'thisyear_paren': thisyear_paren, 'thismonth_paren': thismonth_paren, 
+        'thisyear': thisyear, 'thismonth': thismonth,  
     })  
     	
 #define the dashboard test
