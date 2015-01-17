@@ -182,7 +182,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'otherfavors_all_paid': otherfavors_all_paid, 
     })
 
-def enduser_report_issue_modal(request, issue_id)
+def enduser_report_issue_modal(request, issue_id):
     trans = Transaction.objects.get(pk=issue_id)
     if request.method == 'POST':
         enduser_issue_form = EndUserIssue(request.POST, instance=trans)
