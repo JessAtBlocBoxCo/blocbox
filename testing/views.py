@@ -91,9 +91,17 @@ def homebrew_cal(request):
     conflicts_startthismonth_endnextmonth = []
     conflicts_startthismonth_endlater = []
     conflicts_startnextmonth_endlater = []
+    days_withconflicts_thismonth = []
+    days_withconflicts_nextmonth = []
     test_list = []
-    for conflict in conflicts:      
-        test_list.append(conflict)
+    for conflict in conflicts:  
+    	  days_withconflicts_thismonth.append(conflict.date_from.day)    	  
+        if conflict.duration > 1:
+        	  duration_less1 = conflict.duration - 1
+        	  for day in duration_less1:
+        	  	  conflict_day = conflict.date_from.day + day
+        	      days_withconflicts_thismonth.append(conflict_day)
+        days_withconflicts_thismonth.append(conflict_days)
         start_month = conflict.date_from.month #date_from.month, this is an integer
         if conflict.date_to:
             end_month = conflict.date_to.month
@@ -122,6 +130,7 @@ def homebrew_cal(request):
         #pass calendar fields
     	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
+    	  'days_withconflicts_thismonth': days_withconflicts_thismonth,
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
