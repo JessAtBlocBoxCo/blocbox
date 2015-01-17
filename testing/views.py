@@ -34,6 +34,7 @@ import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 #import new homebrew calendar
 from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+import calendar #REMEMBER TO DO THIS!!
 
 #Write a custom template filter:
 from django.template.defaulttags import register
@@ -49,9 +50,9 @@ def homebrew_cal(request):
     local_timezone = pytz.timezone(local_timezone) 
     date_today = datetime.date.today()
     datetime_now = datetime.datetime.now()
-    datetime_today = datetime.datetime.today()
     thisyear = date_today.year
-    thismonth = date_today.month
+    thismonth_num = date_today.month
+    thismonth = calendar.month_name[thismonth_num]
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=enduser)
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
@@ -60,8 +61,7 @@ def homebrew_cal(request):
         #pass calendar fields
     	  'conflicts': conflicts, 'schedule': schedule, 
         #pass datefields
-        'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now, 'datetime_today': datetime_today,
-        'thisyear': thisyear, 'thismonth': thismonth,  
+        'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  'thisyear': thisyear, 'thismonth': thismonth,  
     })  
     	
 #define the dashboard test
