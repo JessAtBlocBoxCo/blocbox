@@ -97,10 +97,10 @@ def homebrew_cal(request):
         start_month = conflict.date_from.month #date_from.month, this is an integer
         if conflict.date_to:
             end_month = conflict.date_to.month
-            conflict_duration_days = conflict.date_from.day - conflict.date_to.day
+            conflict['duration_days'] = conflict.date_from.day - conflict.date_to.day
         else:
             end_month = None
-            conflict_duration_days = 1
+            conflict['duration_days'] = 1
         conflicts_startmonths.append(start_month) 
         if start_month == thismonth_num:
             conflicts_startthismonth.append(conflict)
@@ -124,7 +124,6 @@ def homebrew_cal(request):
         #pass calendar fields
     	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
-    	  'conflict_duration_days': conflict_duration_days, 
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
