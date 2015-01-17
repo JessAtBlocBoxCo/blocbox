@@ -113,6 +113,7 @@ def homebrew_cal(request):
                     days_withconflicts_nextmonth.append(conflict_day_spillover)
         #remove duplciates - hopefully they dont exist but the might
         days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
+        days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
         start_month = conflict.date_from.month #date_from.month, this is an integer
         if conflict.date_to:
             end_month = conflict.date_to.month
@@ -141,7 +142,7 @@ def homebrew_cal(request):
         #pass calendar fields
     	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
-    	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'dayswithconflicts_nextmonth': dayswithconflicts_nextmonth,
+    	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
