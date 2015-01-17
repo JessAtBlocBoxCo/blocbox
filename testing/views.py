@@ -43,6 +43,7 @@ def get_item(dictionary, key):
     return dictionary.get(key)
 
 #new conflict/scheduling app
+#calendar vars: https://docs.python.org/2/library/calendar.html#calendar.month_name
 def homebrew_cal(request):
     enduser = request.user
     #Get date fields
@@ -75,7 +76,7 @@ def homebrew_cal(request):
     #DAy Variables
     today_num_ofmonth = date_today.day
     today_num_ofweek = date_today.weekday
-    today_dayofweek_name =  calendar.day_name(date_today)
+    today_dayofweek_name =  calendar.day_name[date_today] #day name is san array
     today_dayofweek_abbr = calendar.day_abbr(date_today) 
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=enduser)
