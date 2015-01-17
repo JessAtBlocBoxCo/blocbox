@@ -35,7 +35,7 @@ AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 #import new homebrew calendar
 from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
 import calendar #REMEMBER TO DO THIS!!
-
+calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
 #Write a custom template filter:
 from django.template.defaulttags import register
 @register.filter
@@ -71,7 +71,6 @@ def homebrew_cal(request):
     thismonth = calendar.month_name[thismonth_num]
     nextmonth = calendar.month_name[nextmonth_num]
     #Week Variables
-    calendar.setfirstweekday(6) #set it to sunday, 0 is monday
     firstweekday_num = calendar.firstweekday()
     firstweekday = calendar.day_name[firstweekday_num]
     weekheader_chars = 3
