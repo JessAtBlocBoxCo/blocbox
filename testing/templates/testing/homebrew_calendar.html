@@ -47,7 +47,7 @@
 			  {% for week in thismonth_calendar %}
 			  	<tr> 
 			  		{% for day in week %}
-			  				<td> {{day}}</td>
+			  			<td> {% if day = 0 %}  {% else %} {{day}} {% endif %}	</td>
 			  	  {% endfor %}
 			  	</tr>
 			  {% endfor %}
