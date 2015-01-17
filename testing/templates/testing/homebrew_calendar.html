@@ -48,9 +48,13 @@
 			 		 	<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
 			 		 {% for week in thismonth_calendar %}
 			 		 	<tr> 
-			 		 		{% for day in week %}
+			 		 	{% for day in week %}
+			 		 			<!--make the square bold if its today -->
+			 		 		{% if day = today_dayofmonth_num %} <td class="active"> {{ day }} </td> 
+			 		 		{% else %}
 			 		 			<td> {% if day = 0 %}  {% else %} {{day}} {% endif %}	</td>
-			 		 	  {% endfor %}
+			 		 		{% endif %}
+			 		 	{% endfor %}
 			 		 	</tr>
 			 		 {% endfor %}
 						</table>

@@ -52,6 +52,7 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 	- email notifications - allow users to opt in or out
 
 """TO DO"""    
+JOHN: the bottonm footer creeps up and overrides stuff on the page unless you put hella breaks in at the bottom. not sure whats going on there
 - create the host profile or dashboard with things like options for setting prices
 QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
 JOHN: dashboard - the top bar with e.g. "message" etc.. is covered up by stuff following it. can yuo fix?
