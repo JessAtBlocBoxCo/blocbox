@@ -57,7 +57,7 @@
         </div>
     
         <div class="col-xs-12  col-sm-2">
-        		{% if connected %} 	<button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
+        		{% if enduser_is_connected_to_host %} 	<button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
         		{% else %} 		
         				<!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
         				<button class="bluebutton"	
@@ -208,7 +208,7 @@
             		</div>
             		<div class="col-xs-4 margintop10px paddingright7pt5pct">
             			
-            			    {% if connected %} 	<button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
+            			    {% if enduser_is_connected_to_host %} 	<button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
         							{% else %} 					<button class="bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/';">+  Connect</button>
             					{% endif %}
             		
