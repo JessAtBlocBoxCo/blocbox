@@ -45,7 +45,7 @@ def get_item(dictionary, key):
 #new conflict/scheduling app
 #calendar vars: https://docs.python.org/2/library/calendar.html#calendar.month_name
 def homebrew_cal(request):
-    enduser = request.user
+    host = request.user
     #Get date fields
     local_timezone = request.session.setdefault('django_timezone', 'UTC')
     local_timezone = pytz.timezone(local_timezone) 
@@ -58,16 +58,12 @@ def homebrew_cal(request):
     nextyear_isleap = calendar.isleap(nextyear)
     #Month Variables
     thismonth_num = date_today.month  
-    thismonth_range = calendar.monthrange(thisyear, thismonth_num)
     thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
     if thismonth_num == 12:
         nextmonth_num = 1
-        nextmonth_range = calendar.monthrange(nextyear, 1)
-        nextmonth_calendar = calendar.monthcalendar(nextyear, 1)
     else:
         nextmonth_num = date_today.month + 1
-        nextmonth_range = calendar.monthrange(thisyear, nextmonth_num)
-        nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
+    nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
     thismonth = calendar.month_name[thismonth_num]
     nextmonth = calendar.month_name[nextmonth_num]
     monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
@@ -85,7 +81,7 @@ def homebrew_cal(request):
     today_dayofweek_name =  calendar.day_name[today_dayofweek_num] #day name is san array 
     today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
     #Get calendar_homebrew created fields
-    conflicts = HostConflicts.objects.filter(host=enduser)
+    conflicts = HostConflicts.objects.filter(host=host)
     conflicts_date_from = []
     conflicts_startmonths = []
     conflicts_startthismonth = []
@@ -152,9 +148,9 @@ def homebrew_cal(request):
     days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
     days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
     #Schedulign fields from user's schedule table
-    schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
+    schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=host)
     schedule = schedule_list[0]
-    return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 
+    return render(request, 'testing/homebrew_calendar.html', { 'host': host, 
         #pass calendar fields
     	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
@@ -166,17 +162,13 @@ def homebrew_cal(request):
         #year variables
         'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
         #Month variables
-        'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_range': thismonth_range, 'nextmonth_range': nextmonth_range,
-        'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
+        'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
         'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth,
         #Week variables
         'firstweekday': firstweekday,  'weekheaders': weekheaders, 
         #DAy variables
         'today_dayofmonth_num': today_dayofmonth_num, 'today_dayofweek_num': today_dayofweek_num, 'today_dayofweek_name': today_dayofweek_name, 
-        'today_dayofweek_abbr': today_dayofweek_abbr,
-        #Test vars
-        'test_list': test_list,
-        
+        'today_dayofweek_abbr': today_dayofweek_abbr,        
     })  
     	
 #define the dashboard test

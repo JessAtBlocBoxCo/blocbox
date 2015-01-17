@@ -42,6 +42,10 @@ from django_messages.utils import format_quote, get_user_model, get_username_fie
 #aftership
 import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
+#import new homebrew calendar jazz
+from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+import calendar 
+calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
 
 #Write a custom template filter:
 from django.template.defaulttags import register
@@ -618,42 +622,117 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     else:
         host = None  
     connections_all = Connection.objects.filter(end_user=enduser) 
-    #Add the calendar variables
-    try:
-        date = coerce_date_dict(request.GET)
-    except ValueError:
-        raise Http404
-    if date:
-        try:
-            date = datetime.datetime(**date)
-        except ValueError:
-            raise Http404
+    #Get date fields
+    local_timezone = request.session.setdefault('django_timezone', 'UTC')
+    local_timezone = pytz.timezone(local_timezone) 
+    date_today = datetime.date.today()
+    datetime_now = datetime.datetime.now()
+    #Year variables
+    thisyear = date_today.year
+    nextyear = date_today.year + 1
+    thisyear_isleap = calendar.isleap(thisyear)
+    nextyear_isleap = calendar.isleap(nextyear)
+    #Month Variables
+    thismonth_num = date_today.month      
+    if thismonth_num == 12:
+        nextmonth_num = 1
     else:
-        date = timezone.now()
-        local_timezone = request.session.setdefault('django_timezone', 'UTC')     
-    local_timezone = pytz.timezone(local_timezone) #this is working]    #for a single calendar called i
-    #cal_list_host = []
+        nextmonth_num = date_today.month + 1
+    thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+    nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
+    thismonth = calendar.month_name[thismonth_num]
+    nextmonth = calendar.month_name[nextmonth_num]
+    monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
+    monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
+    days_in_thismonth = monthrange_thismonth[1]
+    days_in_nextmonth = monthrange_nextmonth[1]  
+    #define empty list vars
+    conflicts_date_from = []
+    conflicts_startmonths = []
+    conflicts_startthismonth = []
+    conflicts_startnextmonth = []
+    conflicts_startandend_thismonth = []
+    conflicts_startandend_nextmonth = []
+    conflicts_startthismonth_endnextmonth = []
+    conflicts_startthismonth_endlater = []
+    conflicts_startnextmonth_endlater = []
+    days_withconflicts_thismonth = []
+    days_withconflicts_nextmonth = []
+    days_withconflicts_later = []
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
-        #cal_relations_host = CalendarRelation.objects.filter(object_id=host.id)        
-        #cal_relations_host_count = CalendarRelation.objects.filter(object_id=host.id).count()
-        #for cal in cal_relations_host:
-        #    cal_list_host.append(get_object_or_404(Calendar, id=cal.calendar_id))
-        #        AvailabilityCal_Slug = "AvailabilityUser" + str(host.id)
-        AvailabilityCal_Slug = "availabilityuser" + str(host.id)
-        AvailabilityCal = get_object_or_404(Calendar, slug=AvailabilityCal_Slug)
-        AvailabilityCal_EventList = GET_EVENTS_FUNC(request, AvailabilityCal)
-        AvailabilityCal_MonthObject = Month(AvailabilityCal_EventList, date, None, None, local_timezone)
-    else:
-        AvailabilityCal = None
-        AvailabilityCal_MonthObject = None
+        #Get calendar_homebrew created fields
+        conflicts = HostConflicts.objects.filter(host=host)
+        for conflict in conflicts:  
+            start_month = conflict.date_from.month #date_from.month, this is an integer
+            if conflict.date_to:
+                end_month = conflict.date_to.month
+            else:
+                end_month = None
+            conflicts_startmonths.append(start_month) 
+            if start_month == thismonth_num:
+                conflicts_startthismonth.append(conflict)
+                if start_month == end_month:
+                    conflicts_startandend_thismonth.append(conflict)
+                else:
+                    if end_month == start_month + 1:
+                        conflicts_startthismonth_endnextmonth.append(conflict)
+                    else:
+                        conflicts_startthismonth_endlater.append(conflict)
+            if start_month == nextmonth_num:
+                conflicts_startnextmonth.append(conflict)
+                if start_month == end_month:
+                    conflicts_startandend_nextmonth.append(conflict)
+                else:
+                    conflicts_startnextmonth_endlater.append(conflict)
+        #define days with conflicts
+        for conflict in conflicts_startthismonth:
+            #append the first day
+            days_withconflicts_thismonth.append(conflict.date_from.day)   
+            #append the days after the first day for multi-day conflicts 	  
+            if conflict.duration > 1:
+                duration_less1 = conflict.duration - 1
+                for day in range(duration_less1):
+                    conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
+                    if conflict_day <= days_in_thismonth:
+                        days_withconflicts_thismonth.append(conflict_day)
+                    else:
+                        conflict_day_spillover = conflict_day - days_in_thismonth
+                        days_withconflicts_nextmonth.append(conflict_day_spillover)
+        for conflict in conflicts_startnextmonth:
+        	  #append the first day
+            days_withconflicts_thismonth.append(conflict.date_from.day)   
+            #append the days after the first day for multi-day conflicts 	  
+            if conflict.duration > 1:
+                duration_less1 = conflict.duration - 1
+                for day in range(duration_less1):
+                    conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
+                    if conflict_day <= days_in_nextmonth:
+                        days_withconflicts_nextmonth.append(conflict_day)
+                    else:
+                        conflict_day_spillover = conflict_day - days_in_thisnext
+                        days_withconflicts_later.append(conflict_day_spillover)
+        #remove duplciates - hopefully they dont exist but the might          
+        days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
+        days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
+    else: #if no host specified that stuff is empty/none
+        conflicts = None	
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
-		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend, 'date':date, 
-		    'AvailabilityCal': AvailabilityCal, 'AvailabilityCal_MonthObject': AvailabilityCal_MonthObject,
+		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
     	  #'cal_relations_host_count': cal_relations_host_count, 'cal_relations_host': cal_relations_host, 'cal_list_host': cal_list_host,
     	  'here': quote(request.get_full_path())
+    	  #Python calendar variables (independent of conflict app)
+        'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
+        'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
+        'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
+        'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
+        #conflict app variables (if host)
+    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
+    	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
+    	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,  
 		})
     
+        
 
 #starat a shipmetn view if requested from navbar
 def nav_startashipment(request, host=None):
