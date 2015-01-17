@@ -180,7 +180,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             courier_list = courier_allfields.get(u'couriers')
             if courier_list == []:
                 courier_slugs[shipment.id] = None
-                tracking_number[shipment.id]=None
+                tracking_numbers[shipment.id]=None
                 courier_infos[shipment.id]=None
                 shipment_tuple['aftership']=None
             else:
