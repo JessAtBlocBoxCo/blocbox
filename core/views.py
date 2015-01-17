@@ -645,7 +645,8 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
     monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
     days_in_thismonth = monthrange_thismonth[1]
-    days_in_nextmonth = monthrange_nextmonth[1]  
+    days_in_nextmonth = monthrange_nextmonth[1] 
+    today_dayofmonth_num = date_today.day 
     #define empty list vars
     conflicts_date_from = []
     conflicts_startmonths = []
@@ -726,6 +727,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
         'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
         'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
+        'today_dayofmonth_num': today_dayofmonth_num,
         #conflict app variables (if host)
     	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
