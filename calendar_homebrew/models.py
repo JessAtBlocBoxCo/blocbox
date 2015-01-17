@@ -19,7 +19,6 @@ from django.conf import settings
 #Define a conflicts model - conflicts populate the availability model?
 class HostConflicts(models.Model):
     host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict', blank=True, null=True) #this shows up as payer_id
-    host_email = models.CharField(max_length=40, blank=True, null=True)
     #date_from is the same as 'date' if its only one day
     date_from = models.DateField(null=True) #Remember, blank determines whether or not it can be blank on forms - null is whether required o model
     date_to = models.DateField(blank=True, null=True)
@@ -38,7 +37,6 @@ class HostConflicts(models.Model):
 #default daily schedule
 class HostWeeklyDefaultSchedule(models.Model):
     host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_weeklyschedule', blank=True, null=True) 
-    host_email = models.CharField(max_length=40, blank=True, null=True)
     #Boolean fields for each day of week
     #Note that these days are defaulting true - have the user uncheck if not available
     monday_available = models.BooleanField("Mon", default=True, blank=True)
