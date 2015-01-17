@@ -79,7 +79,8 @@
 			 		 										<!--make the square bold if its today -->
 			 		 										{% if day = today_dayofmonth_num %} <td class="active"> <b> {{ day }} </b> </td> 
 			 		 										{% else %} 	<td> {% if day = 0 %}  {% else %} {{day}} {% endif %}	</td>
-			 		 										{% endif %} <!--end if not today-->
+			 		 										{% endif %} <!--end if today-->
+			 		 								{% endif %} <!--if conflict-->
 			 		 						{% endfor %} <!--end for conflicts -->
 			 		 				{% endfor %} <!--for day in week-->
 			 		 	</tr>
