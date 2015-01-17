@@ -13,7 +13,19 @@
 				<br><br> <br><br> <br><br>
 	
 	<div class="row"> <!--TERST THE CALENDAR-->
-		<H3>Test the homebrew calendar </H3>
+		<h3> Test date variables </h3>
+		 <p>
+		 		Date today: {{ date_today }}
+		 		<br> Datetime Today: {{ dateimte_today }}
+		 		<br> Datetime Now: {{ datetime_now }} 
+		 		<br> Local Timezone: {{ local_timezone }}
+		 		<br> This Year: {{ thisyear }} <br> This Month: {{ thismonth }} <br> ThisYear_paren {{ thisyear_paren }} <br> {{thismonth_paren }}
+		 
+		 
+		 </p>
+				
+		<H3>Test the homebrew calendar variables </H3>
+			
 			
 			<p> List conflicts for this user: {% for conflict in conflicts %} Conflict ID {{ conflict.id}}: Label {{ conflict.label }} from {{ conflict.date_from }} to {{ conflict.date_to }}<br> {% endfor %} </p>
 			
@@ -24,7 +36,7 @@
 					{% if schedule.wednesday_available %} , Wednesday {% endif %}
 					{% if schedule.thursday_available %} , Thursday.. {% endif %}			
 			</p>
-	
+			]
 	</div>				
 
 <h3>			

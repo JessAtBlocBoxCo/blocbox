@@ -41,7 +41,30 @@ from django.template.defaulttags import register
 def get_item(dictionary, key):
     return dictionary.get(key)
 
-
+#new conflict/scheduling app
+def homebrew_cal(request):
+    enduser = request.user
+    #Get date fields
+    local_timezone = pytz.timezone(local_timezone) 
+    date_today = datetime.date.today()
+    datetime_now = datetime.datetime.now()
+    datetime_today = datetime.datetime.today()
+    thisyear = date_today.year
+    thismonth = date_today.month
+    thisyear_paren = date_today.year()
+    thismonth_paren = date_today.month()
+    #Get calendar_homebrew created fields
+    conflicts = HostConflicts.objects.filter(host=enduser)
+    schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
+    schedule = schedule_list[0]
+    return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 
+        #pass calendar fields
+    	  'conflicts': conflicts, 'schedule': schedule, 
+        #pass datefields
+        'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now, 'datetime_today': datetime_today,
+        'thisyear': thisyear, 'thismonth': thismonth, 'thisyear_paren': thisyear_paren, 'thismonth_paren': thismonth_paren, 
+    })  
+    	
 #define the dashboard test
 def dashboard_test(request, host_id=None):
     enduser = request.user
@@ -62,12 +85,6 @@ def dashboard_test(request, host_id=None):
     })
 
 
-def homebrew_cal(request):
-    enduser = request.user
-    conflicts = HostConflicts.objects.filter(host=enduser)
-    schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
-    schedule = schedule_list[0]
-    return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 'conflicts': conflicts, 'schedule': schedule, })
     
 #www.blocbox.co/testing/jessstes; .blocbox.co/testing/jesstest/host2/ is to link it to a host's cal
 # rendering calendar, note that claneder_slug is passed as argument in URL in base scheduling app
