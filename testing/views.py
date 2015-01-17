@@ -97,7 +97,7 @@ def homebrew_cal(request):
     schedule = schedule_list[0]
     return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 
         #pass calendar fields
-    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_date_from': conflicts_date_from, 'conflicts_startmonths': conflicts_startmonths
+    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_date_from': conflicts_date_from, 'conflicts_startmonths': conflicts_startmonths,
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
