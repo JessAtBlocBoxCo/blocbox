@@ -178,14 +178,20 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             #populate the aftership_tracking sub-tuble                    
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
-            courier_for_list = courier_list[0]
-            slug_for_list_u = courier_for_list.get(u'slug')
-            slug_for_list = str(slug_for_list_u)
-            courier_slugs[shipment.id] = slug_for_list 
-            tracking_numbers[shipment.id] = str(tracking_no)
-            courier_infos[shipment.id] = courier_list
-            datadict = api.trackings.get(slug_for_list, tracking_no)
-            shipment_tuple['aftership'] = datadict.get(u'tracking')             
+            if courier_list = []:
+                courier_slugs[shipment.id] = Nond
+                tracking_number[shipment.id]=None
+                courier_infos[shipment.id]=None
+                shipment_tuple['aftership']=None
+            else:
+                courier_for_list = courier_list[0]
+                slug_for_list_u = courier_for_list.get(u'slug')
+                slug_for_list = str(slug_for_list_u)
+                courier_slugs[shipment.id] = slug_for_list 
+                tracking_numbers[shipment.id] = str(tracking_no)
+                courier_infos[shipment.id] = courier_list
+                datadict = api.trackings.get(slug_for_list, tracking_no)
+                shipment_tuple['aftership'] = datadict.get(u'tracking')             
         else:
             shipment_tuple['aftership']=None
         shipments_with_tracking.append(shipment_tuple)
