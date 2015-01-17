@@ -25,7 +25,7 @@ class HostConflicts(models.Model):
     allday = models.BooleanField("All Day?", default=False, blank=True)
     am = models.BooleanField("AM Conflict", default=False, blank=True)
     pm = models.BooleanField("PM Conflict", default=False, blank=True)
-    time_from = models.time("Time: From", blank=True, null=True)
+    time_from = models.TimeField("Time: From", blank=True, null=True)
     time_to = models.TimeField("Time: To", blank=True, null=True)
     datetime_added = models.DateTimeField(default=datetime.datetime.today, blank=True, null=True)
     date_added = models.DateField("Date Conflict Added by Host", default = datetime.date.today, blank=True, null=True)
