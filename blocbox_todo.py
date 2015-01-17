@@ -24,7 +24,6 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 3. notification prefeernces defaul - profile
 4. notic epreference by package - dashboard
 - HOW TO ESND DIFFERENT EMAILS TO DIFFERENT PEOPLE? ask them?
-1. ADD A HYPERLINK TO TRACK IT
 2. edit tracign -add button to remove tracking, or enter a new one
 2. add a calendar for jess@bb
 3. get the calendar availability thing working
@@ -55,6 +54,7 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 """TO DO"""    
 - create the host profile or dashboard with things like options for setting prices
 QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
+JOHN: dashboard - the top bar with e.g. "message" etc.. is covered up by stuff following it. can yuo fix?
 1. JOHN - /Fix Mobile/make site responsive
 3. JOHN search page -- fix map top margin and restyle nudge a neighbor message
 4. JESS: Remove sign in after welcome pagE

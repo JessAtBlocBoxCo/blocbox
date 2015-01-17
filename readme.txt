@@ -200,7 +200,7 @@ The URLs for this site, and the corresponding files are as follows:
 6D. Schedul tAgs: schedule.template.scheduletags.py - has lots of the naming convetions for referencing scheduling tags
 
 timezones: to see them all, python > print.pytz.all_timezones
-
+#time slots stuff i was owkring on was at blocbox.schedule.templates.schedule.calendar_dayWITHTIMESLOTS.htaml
 *-----------------------------------------------------------------------*
 7. AFTERSHIP STUFF
 *-----------------------------------------------------------------------*
