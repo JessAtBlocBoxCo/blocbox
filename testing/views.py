@@ -85,7 +85,9 @@ def homebrew_cal(request):
     conflicts_date_from = []
     conflicts_startmonths = []
     conflicts_startthismonth = []
-    for conflict in conflicts:
+    test_list = []
+    for conflict in conflicts:      
+        text_list.append(conflict)
         start_month = conflict.date_from.month #date_from.month
         conflicts_startmonths.append(start_month) 
         if start_month == thismonth_num:
@@ -95,7 +97,7 @@ def homebrew_cal(request):
     schedule = schedule_list[0]
     return render(request, 'testing/homebrew_calendar.html', { 'enduser': enduser, 
         #pass calendar fields
-    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_date_from': conflicts_date_from, 'conflicts_startmonths': conflicts_startmonths,
+    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startmonths': conflicts_startmonths,  'test_list': test_list,
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
