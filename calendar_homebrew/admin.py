@@ -7,7 +7,7 @@ class ConflictsAdmin(admin.ModelAdmin):
     search_fields = ['host', 'host_email', ]  
 
 class WeeklyScheduleAdmin(admin.ModelAdmin): 
-    list_display = ('id', 'host', 'host_email', 'monday_available', 'tuesday_available', 'wednesday_available', 'thursday_available', 'friday_available', 'saturday_available', 'sundahy_available',)
+    list_display = ('id', 'host', 'host_email', 'monday_available', 'tuesday_available', 'wednesday_available', 'thursday_available', 'friday_available', 'saturday_available', 'sunday_available',)
     list_filter = ['host', 'host_email', ]
     search_fields = ['host', 'host_email', ] 
     
