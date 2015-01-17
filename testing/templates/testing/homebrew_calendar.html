@@ -61,7 +61,7 @@
 					
 				<br> Conflicts that start and end this month: {{ conflicts_startandend_thismonth }}
 				<br> Conflicts that start and end next month: {{ conflicts_startandend_nextmonth }}
-				<br> Conflicts start this month, end next month: {% conflicts_startthismonth_endnextmonth %}
+				<br> Conflicts start this month, end next month: {{ conflicts_startthismonth_endnextmonth }}
        <br> duratin days for each conflict: {% for conflict in conflicts %} {{ conflict.duration_days }} {% endfor %}
 				<br> Test List: {{test_list }}
 			</p>
