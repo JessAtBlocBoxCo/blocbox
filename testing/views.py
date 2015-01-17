@@ -178,7 +178,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
             #populate the aftership_tracking sub-tuble                    
             courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
             courier_list = courier_allfields.get(u'couriers')
-            if courier_list = []:
+            if courier_list == []:
                 courier_slugs[shipment.id] = Nond
                 tracking_number[shipment.id]=None
                 courier_infos[shipment.id]=None
