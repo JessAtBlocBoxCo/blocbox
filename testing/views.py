@@ -90,7 +90,7 @@ def homebrew_cal(request):
         test_list.append(conflict)
         start_month = conflict.date_from.month #date_from.month
         conflicts_startmonths.append(start_month) 
-        if str(start_month) == str(thismonth_num):
+        if start_month == 1:
             conflicts_startthismonth.append(conflict)
     #Schedulign fields from user's schedule table
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
