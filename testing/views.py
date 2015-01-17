@@ -60,7 +60,7 @@ def homebrew_cal(request):
     thismonth_range = calendar.monthrange(thisyear, thismonth_num)
     thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
     if thismonth_num == 12:
-    	  nextmonth_num = 1
+        nextmonth_num = 1
         nextmonth_range = calendar.monthrange(nextyear, 1)
         nextmonth_calendar = calendar.monthcalendar(nextyear, 1)
     else:
