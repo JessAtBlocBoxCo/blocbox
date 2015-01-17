@@ -74,10 +74,10 @@ def homebrew_cal(request):
     firstweekday = calendar.firstweekday
     weekheaders = calendar.weekheader(3) #(n) specifies the width in characgters for one weekday  
     #DAy Variables
-    today_num_ofmonth = date_today.day
-    today_num_ofweek = date_today.weekday
-    today_dayofweek_name =  calendar.day_name[date_today] #day name is san array
-    today_dayofweek_abbr = calendar.day_abbr(date_today) 
+    today_dayofmonth_num = date_today.day
+    today_dayofweek_num = date_today.weekday
+    today_dayofweek_name =  calendar.day_name[today_dayofweek_num] #day name is san array 
+    today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=enduser)
     schedule_list = HostWeeklyDefaultSchedule.objects.filter(host=enduser)
@@ -95,7 +95,7 @@ def homebrew_cal(request):
         #Week variables
         'firstweekday': firstweekday,  'weekheaders': weekheaders,
         #DAy variables
-        'today_num_ofmonth': today_num_ofmonth, 'today_num_ofweek': today_num_ofweek, 'today_dayofweek_name': today_dayofweek_name, 
+        'today_dayofmonth_num': today_dayofmonth_num, 'today_dayofweek_num': today_dayofweek_num, 'today_dayofweek_name': today_dayofweek_name, 
         'today_dayofweek_abbr': today_dayofweek_abbr,
         
     })  
