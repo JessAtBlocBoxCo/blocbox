@@ -729,7 +729,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                     if conflict_day <= days_in_nextmonth:
                         days_withconflicts_nextmonth.append(conflict_day)
                     else:
-                        conflict_day_spillover = conflict_day - days_in_thisnext
+                        conflict_day_spillover = conflict_day - days_in_nextmonth
                         days_withconflicts_later.append(conflict_day_spillover)
         #remove duplciates - hopefully they dont exist but the might          
         days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
