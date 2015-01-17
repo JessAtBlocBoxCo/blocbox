@@ -660,16 +660,25 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_withconflicts_thismonth = []
     days_withconflicts_nextmonth = []
     days_withconflicts_later = []
-    days_package_may_come = []
+    days_package_may_come_thismonth = []
+    days_package_may_come_nextmonth = []
     if dayrangestart:
        if dayrangestart == dayrangeend:
        	  day = today_dayofmonth_num + int(dayrangestart)
-          days_package_may_come.append(day)
+       	  if day > days_in_thismonth:
+       	      spillover_days = day - days_in_thismonth
+       	      days_package_may_come_nextmonth.append(spillover_days)
+       	  else:
+              days_package_may_come_thismonth.append(day)
        else:
            dayrange = int(dayrangeend) - int(dayrangestart)
            for i in range(dayrange):
                day = today_dayofmonth_num + i
-               days_package_may_come.append(day)
+               if day > days_in_thismonth:
+                   spillover_days = day - days_in_thismonth
+                   days_package_may_come_nextmonth.append(spillover_days)
+               else:
+                   days_package_may_come_thismonth.append(day)
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
         #Get calendar_homebrew created fields
         conflicts = HostConflicts.objects.filter(host=host)
@@ -743,7 +752,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
     	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,       
     	  #days package may come
-    	  'days_package_may_come': days_package_may_come,
+    	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
 		})
     
         
