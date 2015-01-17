@@ -660,6 +660,15 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_withconflicts_thismonth = []
     days_withconflicts_nextmonth = []
     days_withconflicts_later = []
+    days_package_may_come = []
+    if dayrangestart:
+       if dayrangestart == dayrangeend:
+       	  day = today_dayofmonth_num + dayrangestart
+          days_package_may_come.append(day)
+       else:
+       	  dayrange = dayrangeend - dayrangestart:
+          for day in range(dayrange):
+              days_package_may_come.append(day)
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
         #Get calendar_homebrew created fields
         conflicts = HostConflicts.objects.filter(host=host)
@@ -731,7 +740,9 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         #conflict app variables (if host)
     	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
-    	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,  
+    	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,       
+    	  #days package may come
+    	  'days_package_may_come': days_package_may_come,
 		})
     
         
