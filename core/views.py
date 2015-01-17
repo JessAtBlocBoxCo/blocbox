@@ -666,7 +666,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
        	  day = today_dayofmonth_num + dayrangestart
           days_package_may_come.append(day)
        else:
-       	  dayrange = dayrangeend - dayrangestart:
+       	  dayrange = dayrangeend - dayrangestart
           for day in range(dayrange):
               days_package_may_come.append(day)
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
