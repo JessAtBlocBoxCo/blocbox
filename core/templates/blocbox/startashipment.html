@@ -159,11 +159,12 @@
         </div>
         <!--row -->
     															
-				<div class="row">		<!--row with calendars-->																	
-						<!--first month-->
-						<div class="col-xs-12 col-sm-4 col-md-3">	{% month_table AvailabilityCal AvailabilityCal_MonthObject "small" %}  	</div> 													
-						<!--second month-->
+				<div class="row">		<!--row with calendars-->		
+					{% include "calendar_subtemplates/bimonthly_calendar.html" %}
+						<!-- old code															
+						<div class="col-xs-12 col-sm-4 col-md-3">	{  % month_table AvailabilityCal AvailabilityCal_MonthObject "small" %  }  	</div> 													
 						<div class="col-xs-12 col-sm-4 col-md-3">  {% month_table AvailabilityCal AvailabilityCal_MonthObject "small" +1 %}	</div> 			
+						-->
 						<!--submit button-->
 						<div class="col-xs-12 col-sm-4 col-md-3 marginbottom30px nopaddingright">
 								<br> <br>
