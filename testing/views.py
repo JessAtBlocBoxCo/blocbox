@@ -86,8 +86,8 @@ def homebrew_cal(request):
     conflicts_startmonths = []
     conflicts_startthismonth = []
     for conflict in conflicts:
-    	  date_from = conflict.date_from
-    	  start_month = date_from.month
+        date_from = conflict.date_from
+        start_month = date_from.month
         conflicts_date_from.append(date_from)
         conflicts_startmonths.append(start_month)
         if conflict.date_from.month == thismonth_num:
