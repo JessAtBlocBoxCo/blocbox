@@ -85,7 +85,7 @@ def homebrew_cal(request):
     conflicts_date_from = []
     conflicts_startthismonth = []
     for conflict in conflicts:
-        conflicts_date_from.append(conflict.date_from)
+        conflicts_date_from.append(conflict.date_from())
         if conflict.date_from.month == thismonth_num:
             conflicts_startthismonth.append(conflict)
     #Schedulign fields from user's schedule table
