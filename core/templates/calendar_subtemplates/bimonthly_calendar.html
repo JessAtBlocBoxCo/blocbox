@@ -43,8 +43,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			  			<tr> 
 			  				{% for day in week %}
 																<!--danger days -->
-															  {% if day in days_with_conflicts_nextmonth and days_package_may_come_nextmonth %}
-															  		<td class="danger"> {{day}} </td>
+															  {% if day in days_with_conflicts_nextmonth and in days_package_may_come_nextmonth %} <td class="danger"> {{day}} </td>
 			 		 											<!--conflict days -->
 			 		 											{% elif day in days_withconflicts_nextmonth %} <td class="warning"> {{day }} </td> 
 			 		 											{% else %}	
