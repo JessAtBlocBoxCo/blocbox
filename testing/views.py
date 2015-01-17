@@ -64,7 +64,7 @@ def homebrew_cal(request):
         nextmonth_range = calendar.monthrange(nextyear, 1)
         nextmonth_calendar = calendar.monthcalendar(nextyear, 1)
     else:
-    	  nextmonth_num = date_today.month + 1
+        nextmonth_num = date_today.month + 1
         nextmonth_range = calendar.monthrange(thisyear, nextmonth_num)
         nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
     thismonth = calendar.month_name[thismonth_num]
