@@ -740,7 +740,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         for day in days_package_may_come_thismonth:
             if day in days_withconflicts_thismonth:
                 host_package_conflict = True
-        for day in days_with_conflict_nextmonth:
+        for day in days_package_may_come_nextmonth:
             if day in days_withconflicts_nextmonth:
                 host_package_conflict = True
     else: #if no host specified that stuff is empty/none
