@@ -40,7 +40,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     city = models.CharField(max_length=30, blank=True)
     state = models.CharField(max_length=2, blank=True) #upate this so drop-down 
     #The picture field isn't working i need to isntal the imagefield thing... will do later.. for now use linktoimage
-    #picture = models.ImageField(upload_to='profile_images', blank=True)  
+    profile_pic_uploaded = models.ImageField(upload_to='profilepics', blank=True, null=True)  
     imageurl= models.URLField('Profile Picture URL', blank=True)
     host = models.BooleanField(blank=True, default=False) #boolean can't be null if want null need NullBooleanField
     hostinterest = models.BooleanField('Interested in Hosting', blank=True, default=False)
