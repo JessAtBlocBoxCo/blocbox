@@ -31,9 +31,8 @@ calendar: define a function when user enters date from and date to that forces d
 4. notic epreference by package - dashboard
 - HOW TO ESND DIFFERENT EMAILS TO DIFFERENT PEOPLE? ask them?
 2. edit tracign -add button to remove tracking, or enter a new one
-2. add a calendar for jess@bb
-3. get the calendar availability thing working
-4. sort out the host profie process
+-- make an upload picture modal
+-host profile process
 ---- 4a. auto add a calendar?
 5. request to connect - add errors if already connected
 <!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
@@ -62,7 +61,6 @@ JOHN: the profile pictures ar enow upload-able and linked to the folder /home/dj
 	this is true on the profile and dashboard page
 	on profle - you need to appply the sahe "dashpic" and "Dashcoainter" type of styles you did to the dashboard if you want it to look better
 	
-	also let me know how you want me to format the 'upload your picture' form. it will be easy to write the back end for that onc eyou design it/tell me wher eyou want it]
 	**ALOS APPLIES TO HPV PAGE **
 JOHN: the bottonm footer creeps up and overrides stuff on the page unless you put hella breaks in at the bottom. not sure whats going on there
 - create the host profile or dashboard with things like options for setting prices
