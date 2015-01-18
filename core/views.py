@@ -663,6 +663,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_package_may_come_thismonth = []
     days_package_may_come_nextmonth = []
     if dayrangestart:
+    	 #if only a one day window
        if dayrangestart == dayrangeend:
        	  day = today_dayofmonth_num + int(dayrangestart)
        	  if day > days_in_thismonth:
@@ -670,12 +671,12 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
        	      days_package_may_come_nextmonth.append(spillover_days)
        	  else:
               days_package_may_come_thismonth.append(day)
-       else:
+       else: #if a multi day window
            dayrange = int(dayrangeend) - int(dayrangestart)
            for i in range(dayrange):
-               day = today_dayofmonth_num + i
+               day = today_dayofmonth_num + int(dayrangestart) + i
                if day > days_in_thismonth:
-                   spillover_days = day - days_in_thismonth
+                   spillover_days = day - days_in_nextmonth
                    days_package_may_come_nextmonth.append(spillover_days)
                else:
                    days_package_may_come_thismonth.append(day)
