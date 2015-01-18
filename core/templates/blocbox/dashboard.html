@@ -29,8 +29,8 @@
         <!--sidebar-->
         <div class=" col-xs-2 col-lg-offset-1 mobilehide">
             <div class="dashpiccontainer">
-            	{% if enduser.profile_pic_uploaded %}
-                <img class="dashpic" src="{{enduser.profile_pic_uploaded.url}}" />
+            	{% if user.profile_pic_uploaded %}
+                <img class="dashpic" src="{{user.profile_pic_uploaded.url}}" />
             	{% else %}
             		<p> <a href='.'> Upload a profile picture</p>	
             	{% endif %}
