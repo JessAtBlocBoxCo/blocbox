@@ -150,4 +150,4 @@ AFTERSHIP_API_KEY_DEFAULT = '488caf4b-e7aa-4634-928b-2df5de94af9f'
 #MEDIA_ROOT  FOR USER UPLOADED PICTURES AND POTENTIALLY OTHER FILES
 MEDIA_ROOT = '/static/user_uploads/'
 #MEDIA_URL is the base public url of that dir (not sure how different)
-MEDIA_URL = '/static/profile_pics/'
+MEDIA_URL = '/static/user_uplaods/'

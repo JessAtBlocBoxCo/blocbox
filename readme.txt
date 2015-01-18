@@ -120,10 +120,17 @@ The URLs for this site, and the corresponding files are as follows:
 		-Share via link
 
 3C. blocbox.co/scheduling: access the schedule app. templates are at /schedule/templates/schedule
-		Main URL (blocbox.co/schedule) pulls the template calendar_list.hmtl, which extends /schedule/templates/site_base.html (one level up)
+		Main URL (blocboccccx.co/schedule) pulls the template calendar_list.hmtl, which extends /schedule/templates/site_base.html (one level up)
 		http://www.blocbox.co/scheduling/calendar/tri_month/testcalendar1/: is the tri_month calendar view for testcalendar1, template at:  ca
 		Yearly View: www.blocbox.co/scheduling/calendar/year/[calendarname], template at calendar_year.html, it loads the _monthly_table.html per month		
 
+3D. Profile pictures/uplaoding
+		path where uploaded pictures goes:\blocbox\blocbox\blocbox\static\user_uploads\profilepics
+	 	see: ImageField in https://docs.djangoproject.com/en/1.7/ref/models/fields/\
+	 	requires specifyign in blocbox.blocbox.settings:
+	 		 MEDIA_ROOT: the full path to dir where django stores uploaded files
+	 		 MEDIA_URL: the base public URL of that directory
+	 	
 *-----------------------------------------------------------------------*
 4. TRANSACTION PAGES
 *-----------------------------------------------------------------------*
@@ -227,7 +234,8 @@ timezones: to see them all, python > print.pytz.all_timezones
  - Email to notify the host a shipment has been ordered
   - function defined in paypal.standard.ipn.views.notify_host_shipment_paid, triggered by paypal.standard.ipn.views.ipn when the payment goes through
   - template is transactions.emails.notify_host_shipment_paid.txt
-  
+ 
+
 *-----------------------------------------------------------------------*
 END: DJANGO ADMIN SITES
 *-----------------------------------------------------------------------*
