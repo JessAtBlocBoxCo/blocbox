@@ -23,7 +23,7 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px hostinfobox relativediv">
             <div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
             {% if enduser.profile_pic_uploaded %}
-                <img class="profilepic" src="user_uploads/{{profile_pic_uploaded}}" />
+                <img class="profilepic" src="user_uploads/{{enduser.profile_pic_uploaded}}" />
             {% else %}
                 <p>Upload your profile picture</p>
             {% endif %}
