@@ -25,8 +25,8 @@ pass the host_package-conflict indicator to the transaction table\\-
 1. fix the day in week/warning thing - it need to be day of month
 calendar: define a function when user enters date from and date to that forces date to to be after date_from]]
 	2. figure out what to do with conflicts that end more in more than the next month out - add a new month?
-1. johns availability - start a shipment - that page - something is off on the footer - fix it
-2. add customer name rather than email so that it gets their first_name
+3. search box isnnt working when i type new address
+search page is taking a reall long time to load with the urls
 3. notification prefeernces defaul - profile
 4. notic epreference by package - dashboard
 - HOW TO ESND DIFFERENT EMAILS TO DIFFERENT PEOPLE? ask them?
@@ -62,6 +62,7 @@ JOHN: the profile pictures ar enow upload-able and linked to the folder /home/dj
 	on profle - you need to appply the sahe "dashpic" and "Dashcoainter" type of styles you did to the dashboard if you want it to look better
 	
 	**ALOS APPLIES TO HPV PAGE **
+	***ALSO APPLIES TO SEARCH PAGE**
 JOHN: the bottonm footer creeps up and overrides stuff on the page unless you put hella breaks in at the bottom. not sure whats going on there
 - create the host profile or dashboard with things like options for setting prices
 QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
