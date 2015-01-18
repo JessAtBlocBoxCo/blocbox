@@ -22,7 +22,11 @@
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px hostinfobox relativediv">
             <div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
-                <img class="profilepic" src="{% static 'blocbox/images/JB-2.png' %}" />
+            {% if enduser.profile_pic_uploaded %}
+                <img class="profilepic" src="user_uploads/{{profile_pic_uploaded}}" />
+            {% else %}
+                <p>Upload your profile picture</p>
+            {% endif %}
             </div>
 
             <div class="col-xs-10 col-xs-offset-2 col-sm-9 col-sm-offset-3">
