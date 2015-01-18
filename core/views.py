@@ -58,7 +58,7 @@ def get_item(dictionary, key):
 #Waitlist, beta, getting started, about and dashboard/profile pages
 #-------------------------------------------------------------------------
 def waitlist(request):
-    return render(request, 'blocbox/index.html') #loads blocbox/templates/blocbox/index.html 
+    return render(request, 'blocbox/waitlist.html') #loads blocbox/templates/blocbox/waitlist.html 
 
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
