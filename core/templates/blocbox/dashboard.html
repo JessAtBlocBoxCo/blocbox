@@ -32,7 +32,8 @@
             	{% if user.profile_pic_uploaded %}
                 <img class="dashpic" src="{{user.profile_pic_uploaded.url}}" />
             	{% else %}
-            		<p> <a href='.'> Upload a profile picture</p>	
+            		<br>
+            		<p class="textcenter"> <a href='.'> Upload a profile picture</p>	
             	{% endif %}
             </div>
             <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
