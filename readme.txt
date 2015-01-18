@@ -134,7 +134,9 @@ The URLs for this site, and the corresponding files are as follows:
 	 	the permission looke like: -rw-r--xr-x, the last three are the permission for "everyoen" (first three are owner, second 3 are group)
 	 	if it says "r-x" it means "everyoen" can read and executive, but cannot write. only owner can write
 	 	to let everyoen write use cmd : $ chmod 777 filename; 777 =  (no restrictsion on anyone)
-	 	write by anybody permission = 002
+	 	
+	 	note MEDIA_ROOT needs to be an absolute path
+	 	i was not able to 
 *-----------------------------------------------------------------------*
 4. TRANSACTION PAGES
 *-----------------------------------------------------------------------*

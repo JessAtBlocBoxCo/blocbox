@@ -149,6 +149,7 @@ AFTERSHIP_API_KEY_DEFAULT = '488caf4b-e7aa-4634-928b-2df5de94af9f'
 
 #MEDIA_ROOT  FOR USER UPLOADED PICTURES AND POTENTIALLY OTHER FILES
 #basedir is blocbox/blocbox. Note: needs to be 'writable' -- can't use static because thats not writable
-MEDIA_ROOT = '/testuser_uploads/'
+#needs to be an absolute filepath e.g., "/var/www/example.com/media/"
+MEDIA_ROOT = '/home/django/blocbox/user_uploads/'
 #MEDIA_URL is the base public url of that dir (not sure how different)
-MEDIA_URL = '/testuser_uplaods/'
+MEDIA_URL = '/user_uploads/'
