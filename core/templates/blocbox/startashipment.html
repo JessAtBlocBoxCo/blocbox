@@ -148,14 +148,19 @@
         <!--HOST CALENDAR -->
         <div class="row">
             <h6 class=" col-xs-12 marginbottom30px">
-            	<p>TEST - SHOW HOST_PACKAGE_CONFLICT {{ host_package_conflict }} </p>
-          			{{ host.first_name}} is availability to receive packages unless the date is blacked out on the calendar below. Confirm that {{ host.first_name }} is available to receive packages in 
+            	{% if host_package_conflict %} 
+            		Unfortunately, {{ host.first_name }} John is not available on one of the days that the package my arrive. You can still send the package and pick it up with {{ host.first_name}} returns
+            		, but we won't refund your order if {{ host.fist_name }} is not available when it arrives. 
+            	<br>  You can also select a different shipment speed or <a href="/search/">search for another neighbor near you </a> 
+              {% else %} <!--if host is available -->
+          			Woohoo! {{ host.first_name}} is availability during the next 
           			{% if dayrangestart == dayrangeend %}
           					{{ dayrangestart }}
           			{% else %}
           					{{ dayrangestart}} to {{ dayrangeend }} 
           			{% endif%}	
-          			Business Days.  Press your browser's 'back' button to select a different timeframe. 
+          			Business Days. 
+          		{% endif %}
           	</h6>	
         </div>
         <!--row -->
@@ -181,7 +186,7 @@
 																	        
         	<br>
         	<div class="row">
-       	 		<p class="col-xs-12 darkgreytext marginbottom20px"> If {{ host.first_name }} isn't available, select another connected host or <a href="/search/">search for another neighbor near you </a>  
+       	 		<p class="col-xs-12 darkgreytext marginbottom20px"> If {{ host.first_name }} isn't available, select another connected host or 
      						to connect with. </p>
      			</div>
        		<div class="row">

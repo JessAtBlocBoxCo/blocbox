@@ -17,7 +17,9 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 615774528257  - sleeping mask, not delivered
 1ZA3225FYW43921778 - bars
 """jess to do"""
-
+make the process for hosts to enter their availability
+pass the host_package-conflict indicator to the transaction table\\-
+- update availability app so that its business days
 1. fix the day in week/warning thing - it need to be day of month
 calendar: define a function when user enters date from and date to that forces date to to be after date_from]]
 	2. figure out what to do with conflicts that end more in more than the next month out - add a new month?
