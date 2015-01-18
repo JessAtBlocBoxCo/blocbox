@@ -125,12 +125,16 @@ The URLs for this site, and the corresponding files are as follows:
 		Yearly View: www.blocbox.co/scheduling/calendar/year/[calendarname], template at calendar_year.html, it loads the _monthly_table.html per month		
 
 3D. Profile pictures/uplaoding
-		path where uploaded pictures goes:\blocbox\blocbox\blocbox\static\user_uploads\profilepics
-	 	see: ImageField in https://docs.djangoproject.com/en/1.7/ref/models/fields/\
+ 		see: ImageField in https://docs.djangoproject.com/en/1.7/ref/models/fields/\
 	 	requires specifyign in blocbox.blocbox.settings:
-	 		 MEDIA_ROOT: the full path to dir where django stores uploaded files
+	 		 MEDIA_ROOT: the full path to dir where django stores uploaded files (blocbox/blocbox/user_uploads)
 	 		 MEDIA_URL: the base public URL of that directory
-	 	
+	 	these directories must be 'writable' - 
+	 	use the 'll' cmd in linux to check permissions on the directories (or ls -l)
+	 	the permission looke like: -rw-r--xr-x, the last three are the permission for "everyoen" (first three are owner, second 3 are group)
+	 	if it says "r-x" it means "everyoen" can read and executive, but cannot write. only owner can write
+	 	to let everyoen write use cmd : $ chmod 777 filename; 777 =  (no restrictsion on anyone)
+	 	write by anybody permission = 002
 *-----------------------------------------------------------------------*
 4. TRANSACTION PAGES
 *-----------------------------------------------------------------------*
