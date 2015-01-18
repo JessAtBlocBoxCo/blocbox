@@ -1,5 +1,5 @@
 <!--this is blocbox/core/templates/blocbox/profile.html, URL is http://www.blocbox.co/profile/ , it extends base.html -->
-{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Connect to Get Started{% endblock %} {% block headafter %}
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Profile{% endblock %} {% block headafter %}
 <!--<link rel="stylesheet" href="/static/blocbox/css/standardize.css">
   <link rel="stylesheet" href="/static/blocbox/css/host-profile-visitor.css"> -->
 {% endblock %} {% block content %}
@@ -23,7 +23,7 @@
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px hostinfobox relativediv">
             <div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
             {% if enduser.profile_pic_uploaded %}
-                <img class="dashpic" src="{{enduser.profile_pic_uploaded.url}}" />
+                <img class="profilepic" src="{{enduser.profile_pic_uploaded.url}}" />
             {% else %}
                 <p>Upload your profile picture</p>
             {% endif %}
