@@ -29,7 +29,11 @@
         <!--sidebar-->
         <div class=" col-xs-2 col-lg-offset-1 mobilehide">
             <div class="dashpiccontainer">
-                <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}" />
+            	{% if host.profile_pic_uploaded %}
+                <img class="dashpic" src="{{host.profile_pic_uploaded.url}}" />
+            	{% else %}
+                 <!--what to do if no pic?-->
+            {% endif %}
             </div>
             <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
             <p class="darkgreytext margintop5px tinytext textcenter">EDIT PROFILE</p>

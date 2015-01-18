@@ -127,7 +127,7 @@ The URLs for this site, and the corresponding files are as follows:
 3D. Profile pictures/uplaoding
  		see: ImageField in https://docs.djangoproject.com/en/1.7/ref/models/fields/\
 	 	requires specifyign in blocbox.blocbox.settings:
-	 		 MEDIA_ROOT: absolute path to where uplaods go. currently: home/django/blocbox/blocbox/user_uploads
+	 		 MEDIA_ROOT: absolute path to where uplaods go. currently: home/django/blocbox/blocbox/static/user_uploads
 	 		 MEDIA_URL: the base public URL of that directory
 	 	these directories must be 'writable' - 
 	 	use the 'll' cmd in linux to check permissions on the directories (or ls -l)
@@ -136,6 +136,9 @@ The URLs for this site, and the corresponding files are as follows:
 	 	to let everyoen write use cmd : $ chmod 777 filename; 777 =  (no restrictsion on anyone)
 	 	
 	 	note MEDIA_ROOT needs to be an absolute path
+	 	
+	 	note NEED to put this in static because thats a recognized URL path - remmebe,r the absolute path
+	 			to the file ins't itnerept directly -it goes through urls.py
 	 
 *-----------------------------------------------------------------------*
 4. TRANSACTION PAGES
