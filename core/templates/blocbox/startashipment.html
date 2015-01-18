@@ -153,11 +153,11 @@
             		, but we won't refund your order if {{ host.fist_name }} is not available when it arrives. 
             	<br>  You can also select a different shipment speed or <a href="/search/">search for another neighbor near you </a> 
               {% else %} <!--if host is available -->
-          			Woohoo! {{ host.first_name}} is availability during the next 
+          			Woohoo! {{ host.first_name}} is availability  
           			{% if dayrangestart == dayrangeend %}
-          					{{ dayrangestart }}
+          					in {{ dayrangestart }}
           			{% else %}
-          					{{ dayrangestart}} to {{ dayrangeend }} 
+          					during the next {{ dayrangestart}} to {{ dayrangeend }} 
           			{% endif%}	
           			Business Days. 
           		{% endif %}
