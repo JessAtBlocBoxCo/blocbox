@@ -35,16 +35,36 @@
 			     	
 				//Content STring for the InfoWindow - 
 				//removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
+			  	
+			  	{% if host.profile_pic_uploaded.url %}
+			  	
 			  	var hostcontentString = '<div class="col-xs-9" id="content">'+
-                '<img class="blockpic margintop20px nopadding col-xs-3" src="{{host.profile_pic_uploaded.url}}" alt="" />'+
+               '<img class="blockpic margintop20px nopadding col-xs-3" src="{{host.profile_pic_uploaded.url}}" alt="" />'+
                 '<div class="row">'+    
-      			'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
-      			'<div class="InfoWindowBody col-xs-8">'+
-      				'<h5 class="nomargintop"> {{ host.address_approx }}, {{ host.city }}, {{ host.state }} </h5>'+
-      				'<h6><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
-      			'</div>'+
+      						'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
+      							'<div class="InfoWindowBody col-xs-8">'+
+      							'<h5 class="nomargintop"> {{ host.address_approx }}, {{ host.city }}, {{ host.state }} </h5>'+
+      							'<h6><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
+      						'</div>'+
                 '</div> '+   
       			'</div>';
+      			
+      			{% else %}
+      				
+      			var hostcontentString = '<div class="col-xs-9" id="content">'+
+                '<img class="blockpic margintop20px nopadding col-xs-3" alt="" />'+
+                	'<div class="row">'+    
+      						'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
+      							'<div class="InfoWindowBody col-xs-8">'+
+      								'<h5 class="nomargintop"> {{ host.address_approx }}, {{ host.city }}, {{ host.state }} </h5>'+
+      								'<h6><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
+      							'</div>'+
+                	'</div> '+   
+      					'</div>';
+      			
+      			
+      			
+      			{% endif %}
 		
 				//define info window
 				var infowindow{{host.id}} = new google.maps.InfoWindow({
