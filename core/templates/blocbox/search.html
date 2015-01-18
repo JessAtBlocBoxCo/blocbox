@@ -36,7 +36,7 @@
 				//Content STring for the InfoWindow - 
 				//removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
 			  	
-			  	{% if host.profile_pic_uploaded.url %}
+			  	{% if host.profile_pic_uploaded %}
 			  	
 			  	var hostcontentString = '<div class="col-xs-9" id="content">'+
                '<img class="blockpic margintop20px nopadding col-xs-3" src="{{host.profile_pic_uploaded.url}}" alt="" />'+
