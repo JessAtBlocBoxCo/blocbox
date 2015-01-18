@@ -672,7 +672,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
        	  else:
               days_package_may_come_thismonth.append(day)
        else: #if a multi day window
-           dayrange = int(dayrangeend) - int(dayrangestart)
+           dayrange = int(dayrangeend) - int(dayrangestart) + 1
            for i in range(dayrange):
                day = today_dayofmonth_num + int(dayrangestart) + i
                if day > days_in_thismonth:
