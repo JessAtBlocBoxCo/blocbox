@@ -735,8 +735,17 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         #remove duplciates - hopefully they dont exist but the might          
         days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
         days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
+        #determine if there is a conflict
+        host_package_conflict = False
+        for day in days_package_may_come_thismonth:
+            if day in days_withconflicts_thismonth:
+                host_package_conflict = True
+        for day in days_with_conflict_nextmonth:
+            if day in days_withconflicts_nextmonth:
+                host_package_conflict = True
     else: #if no host specified that stuff is empty/none
         conflicts = None	
+        host_package_conflict = False
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
@@ -754,6 +763,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,       
     	  #days package may come
     	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
+    	  'host_package_conflict': host_package_conflict,
 		})
     
         

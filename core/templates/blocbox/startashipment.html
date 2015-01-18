@@ -148,7 +148,8 @@
         <!--HOST CALENDAR -->
         <div class="row">
             <h6 class=" col-xs-12 marginbottom30px">
-          			{{ host.first_name}} is availability to receie packages unless the date is blacked out on the calendar below. Confirm that {{ host.first_name }} is available to receive packages in 
+            	<p>TEST - SHOW HOST_PACKAGE_CONFLICT {{ host_package_conflict }} </p>
+          			{{ host.first_name}} is availability to receive packages unless the date is blacked out on the calendar below. Confirm that {{ host.first_name }} is available to receive packages in 
           			{% if dayrangestart == dayrangeend %}
           					{{ dayrangestart }}
           			{% else %}
