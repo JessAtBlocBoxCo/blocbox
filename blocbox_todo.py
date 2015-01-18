@@ -62,7 +62,8 @@ JOHN: the profile pictures ar enow upload-able and linked to the folder /home/dj
 	this is true on the profile and dashboard page
 	on profle - you need to appply the sahe "dashpic" and "Dashcoainter" type of styles you did to the dashboard if you want it to look better
 	
-	also let me know how you want me to format the 'upload your picture' form. it will be easy to write the back end for that onc eyou design it/tell me wher eyou want it 
+	also let me know how you want me to format the 'upload your picture' form. it will be easy to write the back end for that onc eyou design it/tell me wher eyou want it]
+	**ALOS APPLIES TO HPV PAGE **
 JOHN: the bottonm footer creeps up and overrides stuff on the page unless you put hella breaks in at the bottom. not sure whats going on there
 - create the host profile or dashboard with things like options for setting prices
 QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
