@@ -27,7 +27,7 @@
 <div class="content container-fluid offwhitebackground relativediv">
 
     <!--top matter-->
-    <p class="darkgreytext textcenter margintop100px marginbottom20px">Complete the following steps to verify shipping destination, notify your Blocbox host, and complete payment</p>
+    <p class="darkgreytext textcenter marginbottom20px">Complete the following steps to verify shipping destination, notify your Blocbox host, and complete payment</p>
     <div class="row">
         <div class="col-xs-8 col-xs-offset-2 nopadding">
             <p class="col-xs-3 ltbluetext textshadow textleft">1 HOST AVAILABILITY</p>
@@ -133,21 +133,22 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days10to14';">10-14 Days</a>
                     </li>
                 </ul>
-            </div>      <!--dropdown menu-->
-        </div>   
+            </div>
+            <!--dropdown menu-->
+        </div>
     </div>
-        <!--row-->
-        {% endif %}
+    <!--row-->
+    {% endif %}
 
 
 
 
 
-        <!--add the calendar associated with this host (its still under the if-host condition)-->
-        {% if dayrangestart %}
-        <!--HOST CALENDAR -->
-        <div class="row">
-            <h6 class=" col-xs-12 marginbottom30px">
+    <!--add the calendar associated with this host (its still under the if-host condition)-->
+    {% if dayrangestart %}
+    <!--HOST CALENDAR -->
+    <div class="row">
+        <h6 class=" col-xs-12 marginbottom30px">
             	{% if host_package_conflict %} 
             		Unfortunately, {{ host.first_name }} is not available on one of the days that the package my arrive. You can still send the package and pick it up with {{ host.first_name}} returns
             		, but we won't refund your order if {{ host.first_name }} is not available when it arrives. 
@@ -162,52 +163,52 @@
           			Business Days. 
           		{% endif %}
           	</h6>	
+    </div>
+    <!--row -->
+
+    <div class="row">
+        <!--row with calendars-->
+        <div class="col-xs-12">
+            {% include "calendar_subtemplates/bimonthly_calendar.html" %}
         </div>
-        <!--row -->
-    															
-				<div class="row">		<!--row with calendars-->		
-					<div class="col-xs-12">
-					  {% include "calendar_subtemplates/bimonthly_calendar.html" %}
-					</div>  
-					<p> Red cells = conflict with package delivery window; yellow = host unavailable; blue = package arrival window </p>
-				</div> <!--row, containing calendars -->	
-						<!-- old code															
+        <p>Red cells = conflict with package delivery window; yellow = host unavailable; blue = package arrival window</p>
+    </div>
+    <!--row, containing calendars -->
+    <!-- old code															
 						<div class="col-xs-12 col-sm-4 col-md-3">	{  % month_table AvailabilityCal AvailabilityCal_MonthObject "small" %  }  	</div> 													
 						<div class="col-xs-12 col-sm-4 col-md-3">  {  % month_table AvailabilityCal AvailabilityCal_MonthObject "small" +1 %  }	</div> 			
 						-->
-						<!--submit button-->  
-					<div class="row">
-						<div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px nopaddingright">
-								<br> <br>
-        				<button class="bluebutton" style="height: 60px" onClick="window.location='/payment/host{{host.id}}/days{{dayrangestart}}to{{dayrangeend}}';">I Confirm that {{host.first_name}} is Available</button>    
-    				</div> 
-    			</div>
-    	
-																	        
-        	<br>
-        	<div class="row">
-       	 		<p class="col-xs-12 darkgreytext marginbottom20px"> If {{ host.first_name }} isn't available, select another connected host or 
-     						to connect with. </p>
-     			</div>
-       		<div class="row">
-           	<p class="col-xs-12 darkgreytext marginbottom20px">Avaiability policy: Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. 
-           		If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. 
-           		However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, 
-           		you will be charged even if the host misses the delivery.  You're likely to still get the package, 
-           		but it may not be available for pickup until a later date.</p>
-       		</div>
-       		
+    <!--submit button-->
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px nopaddingright">
+            <br>
+            <br>
+            <button class="bluebutton" style="height: 60px" onClick="window.location='/payment/host{{host.id}}/days{{dayrangestart}}to{{dayrangeend}}';">I Confirm that {{host.first_name}} is Available</button>
+        </div>
+    </div>
 
-     					 
-    	</div> <!--profile box-->
-    	
 
-    	
-    	{% endif %} <!--if dayrange - showing calendar-->
+    <br>
+    <div class="row">
+        <p class="col-xs-12 darkgreytext marginbottom20px">If {{ host.first_name }} isn't available, select another connected host or to connect with.</p>
+    </div>
+    <div class="row">
+        <p class="col-xs-12 darkgreytext marginbottom20px">Avaiability policy: Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery. You're likely to still get the package, but it may not be available for pickup until a later date.</p>
+    </div>
 
-	{% endif %}
+
+
+</div>
+<!--profile box-->
+
+
+
+{% endif %}
+<!--if dayrange - showing calendar-->
+
+{% endif %}
 </div>
 
 
 
-{% endblock %} 
+{% endblock %}
