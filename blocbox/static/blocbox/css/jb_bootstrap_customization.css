@@ -95,6 +95,7 @@ h6 {
 /*Style body of page to ensure footer falls below the page content*/
 
 .content {
+    padding-top: 30px;
     padding-bottom: 440px;
 }
 /*Style the footer class - fix to bottom of page, make font slightly smaller */
