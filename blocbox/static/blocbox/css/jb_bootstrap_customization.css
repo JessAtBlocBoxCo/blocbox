@@ -1634,6 +1634,7 @@ body {
     overflow: visible;
     min-height: 100%;
     border-radius: 2px;
+    margin-bottom: 30px;
 }
 .dashpiccontainer {
     border-radius: 50%;
