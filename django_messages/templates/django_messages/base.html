@@ -1,18 +1,10 @@
 <!--this is /blocbox/django_messages/templates/django_messages/base.html, extends blocbox/base.html, extended by other messagign pages -->
-{% extends "blocbox/base.html" %}
-
-{% load i18n %}
-{% load url from future %} 
-{% block bodyclass %}about{% endblock %}
-
-{% with active_page=inbox %}  
-
-{% block content %}
+{% extends "blocbox/base.html" %} {% load i18n %} {% load url from future %} {% block bodyclass %}about{% endblock %} {% with active_page=inbox %} {% block content %}
 <div class="content container-fluid fillpage whitebackground relativediv">
 
-{% block sidebar %}
+    {% block sidebar %}
 
-    <div class="row margintop60px marginbottom10px mobilehide">
+    <div class="row marginbottom10px mobilehide">
         <a href="/dashboard/" class="col-xs-2 col-xs-offset-1 subnavtext textcenter">DASHBOARD</a>
         <a href="/messages/inbox/" class="col-xs-2 subnavtextcurrent textcenter">MESSAGES ({% load inbox %}	{% inbox_count %} NEW)</a>
         <a href="/myblock/" class="col-xs-2 subnavtext textcenter">MY BLOCK</a>
@@ -22,29 +14,32 @@
             <div class="profileboxline100"></div>
         </div>
     </div>
-{% endblock %} <!--sidebar-->
+    {% endblock %}
+    <!--sidebar-->
 
-  
 
-	<div class="col-xs-12 col-sm-12">
-		
-		<div class="row"> <!--top navigation row for the subpages-->
-	
-    	<a href="/messages/inbox" class="col-xs-2 col-xs-offset-1  {% ifequal request.path "/messages/inbox/" %} subnavtextcurrent {% endifequal %}  subnavtext textcenter">{% trans "INBOX" %} ({% load inbox %}	{% inbox_count %})</a>
-    	<a href="/messages/compose/" class="col-xs-2 {% ifequal request.path "/messages/compose/" %} subnavtextcurrent {% endifequal %} subnavtext textcenter">{% trans "COMPOSE" %} </a>
-    	<a href="/messages/outbox/" class="col-xs-2 {% ifequal request.path "/messages/outbox/" %} subnavtextcurrent {% endifequal %} subnavtext textcenter">{% trans "SENT" %}</a>
-    	<a href="/messages/trash/" class="col-xs-2 {% ifequal request.path "/messages/archive/" %}  subnavtextcurrent {% endifequal %}  subnavtext textcenter">{% trans "ARCHIVE" %}</a>
-    	<a href="/messages/messagesettings/" class="col-xs-2 {% ifequal request.path "/messages/messagesettings/" %}  subnavtextcurrent {% endifequal %} subnavtext textcenter">SETTINGS</a>
-		
-		</div> <!--row-->
 
-		{% block messagingcontent %}
-		{% endblock %}
+    <div class="col-xs-12 col-sm-12">
 
-	</div>
+        <div class="row">
+            <!--top navigation row for the subpages-->
+
+            <a href="/messages/inbox" class="col-xs-2 col-xs-offset-1  {% ifequal request.path " /messages/inbox/ " %} subnavtextcurrent {% endifequal %}  subnavtext textcenter">{% trans "INBOX" %} ({% load inbox %}	{% inbox_count %})</a>
+            <a href="/messages/compose/" class="col-xs-2 {% ifequal request.path " /messages/compose/ " %} subnavtextcurrent {% endifequal %} subnavtext textcenter">{% trans "COMPOSE" %} </a>
+            <a href="/messages/outbox/" class="col-xs-2 {% ifequal request.path " /messages/outbox/ " %} subnavtextcurrent {% endifequal %} subnavtext textcenter">{% trans "SENT" %}</a>
+            <a href="/messages/trash/" class="col-xs-2 {% ifequal request.path " /messages/archive/ " %}  subnavtextcurrent {% endifequal %}  subnavtext textcenter">{% trans "ARCHIVE" %}</a>
+            <a href="/messages/messagesettings/" class="col-xs-2 {% ifequal request.path " /messages/messagesettings/ " %}  subnavtextcurrent {% endifequal %} subnavtext textcenter">SETTINGS</a>
+
+        </div>
+        <!--row-->
+
+        {% block messagingcontent %} {% endblock %}
+
+    </div>
 
 </div>
-{% endblock %} <!--content-->
+{% endblock %}
+<!--content-->
 
 {% endwith %}
 
