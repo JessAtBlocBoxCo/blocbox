@@ -352,6 +352,8 @@ def hostprofile(request, host_id):
     else:
         connected = False
         enduser_hosts = None
+        enduser_host_connections = None
+        enduser_is_connected_to_host = False
     connections_all = Connection.objects.filter(host_user=host) 
     connections_count = Connection.objects.filter(host_user=host).count() #count them,removing status=0 after host_user=host   
     transactions_all = Transaction.objects.filter(host=host)
