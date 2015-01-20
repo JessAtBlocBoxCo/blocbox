@@ -2239,7 +2239,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     #map-canvas {
         height: 40em;
-        padding-top: 40px;
+        margin-top: 45px;
     }
 }
 /*-------------------------------------------------------------*
