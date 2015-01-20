@@ -951,13 +951,6 @@ body {
     background-color: rgb(255, 195, 0);
     color: #ffffff;
 }
-@media (min-width: 0px) {
-    .navbar-toggle {
-        display: block;
-        margin-top: 15px;
-        margin-bottom: 4px;
-    }
-}
 @media (min-width: 992px) {
     body {
         padding: 0;
