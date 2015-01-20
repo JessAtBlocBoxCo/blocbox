@@ -2035,7 +2035,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         line-height: 1.38em;
     }
     h5 {
-        font-size: 1.27em;
+        font-size: 1.17em;
         line-height: 1.38;
         font-weight: 300;
     }
@@ -2082,6 +2082,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .paddingsides10pxmobile {
         padding-left: 10px;
         padding-right: 10px;
+    }
+    .paddingsides30pxmobile {
+        padding-left: 30px;
+        padding-right: 30px;
     }
     .margintop20pxmobile {
         margin-top: 20px;
