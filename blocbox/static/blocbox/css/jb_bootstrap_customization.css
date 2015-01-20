@@ -1871,9 +1871,6 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     .phoneonly {
         display: none;
     }
-    .navbar-default {
-        background-color: #ffffff;
-    }
 }
 /*-------------------------------------------------------------*
 MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why 
