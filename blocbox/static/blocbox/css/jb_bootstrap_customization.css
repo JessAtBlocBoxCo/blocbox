@@ -1636,6 +1636,13 @@ body {
     border-radius: 2px;
     margin-bottom: 30px;
 }
+.dashinfobox {
+    background-color: rgb(255, 255, 255);
+    overflow: visible;
+    padding: 10px;
+    margin-bottom: 20px;
+    text-align: left;
+}
 .dashpiccontainer {
     border-radius: 50%;
     border: 7px solid rgb(250, 250, 250);
