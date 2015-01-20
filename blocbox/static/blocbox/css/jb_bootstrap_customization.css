@@ -1351,6 +1351,7 @@ body {
     z-index: 5;
     width: 100%;
     height: 45em;
+    margin-top: 70px;
     background-size: cover;
     background-position: center center;
 }
@@ -2238,7 +2239,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         font-size: 15px;
     }
     #map-canvas {
-        height: 29em;
+        height: 28.2em;
         margin-top: 45px;
     }
 }
