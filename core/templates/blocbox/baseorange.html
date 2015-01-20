@@ -92,25 +92,25 @@
                 {% if user.is_authenticated %}
                 <ul class="nav navmenu-nav">
                     <li class="active mobilenavtext">
-                        <a href='/dashboard/'><i class="mobilenavtext fa fa-list fa-fw fa-lg"></i>&nbsp Dashboard</a>
+                        <a href='/dashboard/'><i class="mobilenavtext fa fa-list fa-fw fa-lg"></i>&nbsp; Dashboard</a>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg"></i>&nbsp Start a Shipment</a>
+                        <a href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg"></i>&nbsp; Start a Shipment</a>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg"></i>&nbsp Messages ({% load inbox %}{% inbox_count %})</a>
+                        <a href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg"></i>&nbsp; Messages ({% load inbox %}{% inbox_count %})</a>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp Search Your Neighborhood</a>
+                        <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp; Search Your Neighborhood</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-home fa-fw fa-lg"></i>
-                        &nbsp My Blocbox
+                        &nbsp; My Blocbox
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
                             <li class="mobilenavtext">
-                                <a href='/myblock/'>&nbsp My Block</a>
+                                <a href='/myblock/'>&nbsp; My Block</a>
                             </li>
                             <li class="mobilenavtext">
                                 <a href='/profile/'>Profile</a>
@@ -121,14 +121,14 @@
                         </ul>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg"></i>&nbsp Invite Your Neighbors</a>
+                        <a href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg"></i>&nbsp; Invite Your Neighbors</a>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/signuphost/'><i class="fa fa-users fa-fw fa-lg"></i>&nbsp Become a Host</a>
+                        <a href='/signuphost/'><i class="fa fa-users fa-fw fa-lg"></i>&nbsp; Become a Host</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-life-ring fa-fw fa-lg"></i>
-                        &nbsp Support
+                        &nbsp; Support
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
@@ -145,7 +145,7 @@
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-info fa-fw fa-lg"></i>
-                        &nbsp About Blocbox
+                        &nbsp; About Blocbox
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
@@ -167,13 +167,13 @@
                         </ul>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign out</a>
+                        <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign out</a>
                     </li>
                 </ul>
                 {% else %}
                 <ul class="nav navmenu-nav">
                     <li>
-                        <a href="#openModal" class="mobilenavtext"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp Sign in</a>
+                        <a href="#openModal" class="mobilenavtext"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign in</a>
                         <div class="modalDialog" id="openModal">
                             <div class="">	<a href="#close" title="Close" class="close">X</a>
                                 <h6 class="ltbluetext paddingsides15px">Sign In</h6>
@@ -222,17 +222,17 @@
                         <a href="#"><i class="fa fa-home fa-fw fa-lg"></i>How it Works</a>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp Search Your Neighborhood</a>
+                        <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp; Search Your Neighborhood</a>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg"></i>&nbsp Invite Your Neighbors</a>
+                        <a href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg"></i>&nbsp; Invite Your Neighbors</a>
                     </li>
                     <li class="mobilenavtext">
-                        <a href='/signuphost/'><i class="fa fa-users fa-fw fa-lg"></i>&nbsp Become a Host</a>
+                        <a href='/signuphost/'><i class="fa fa-users fa-fw fa-lg"></i>&nbsp; Become a Host</a>
                     </li>
                     <li class="dropdown">
                         <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-info fa-fw fa-lg"></i>
-                        &nbsp About Blocbox
+                        &nbsp; About Blocbox
                         <b class="caret"></b>
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
@@ -286,15 +286,15 @@
                         <ul class="dropdown-menu" style="margin-left: 125px;" role="menu" aria-labelledby="dropdownMenu1">
                             <!--nav navbar-nav navbar-right-->
                             <!--drop down menu if logged in-->
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-list fa-fw fa-lg greytext"></i>&nbsp Dashboard</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-list fa-fw fa-lg greytext"></i>&nbsp; Dashboard</a>
                             </li>
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-th-large fa-fw fa-lg greytext"></i>&nbsp My Block</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-th-large fa-fw fa-lg greytext"></i>&nbsp; My Block</a>
                             </li>
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/profile/'><i class="fa fa-user fa-fw fa-lg greytext"></i>&nbsp Profile</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/profile/'><i class="fa fa-user fa-fw fa-lg greytext"></i>&nbsp; Profile</a>
                             </li>
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-dollar fa-fw fa-lg greytext"></i>&nbsp Account</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-dollar fa-fw fa-lg greytext"></i>&nbsp; Account</a>
                             </li>
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg greytext"></i>&nbsp Sign out</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg greytext"></i>&nbsp; Sign out</a>
                             </li>
                         </ul>
                         <!--end collection of links for toggling -->
@@ -315,15 +315,15 @@
                                 <!--nav navbar-nav navbar-right-->
 
                                 <!--starat ahipsment - need to reroute this to go to host page-->
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Shipment</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp; Start a Shipment</a>
                                 </li>
                                 <!--starta  favor: need to redirect this to a page that routes to whether 1/o-->
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp Start a Favor</a> 
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp; Start a Favor</a> 
                                 </li>
 
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/signuphost/'><i class="fa fa-users fa-fw fa-lg greentext"></i>&nbsp Become a Host</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/signuphost/'><i class="fa fa-users fa-fw fa-lg greentext"></i>&nbsp; Become a Host</a>
                                 </li>
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg greentext"></i>&nbsp Nudge a Neighbor</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg greentext"></i>&nbsp; Nudge a Neighbor</a>
                                 </li>
                             </ul>
                             <!--end collection of links for toggling -->
@@ -341,11 +341,11 @@
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2" style="left: -175px">
                                 <!--nav navbar-nav navbar-right-->
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg ltbluetext"></i>&nbsp Inbox</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg ltbluetext"></i>&nbsp; Inbox</a>
                                 </li>
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/compose/'><i class="fa fa-pencil-square-o fa-fw fa-lg ltbluetext"></i>&nbsp New Message</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/compose/'><i class="fa fa-pencil-square-o fa-fw fa-lg ltbluetext"></i>&nbsp; New Message</a>
                                 </li>
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-cog fa-fw fa-lg ltbluetext"></i>&nbsp Notification Settings</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-cog fa-fw fa-lg ltbluetext"></i>&nbsp; Notification Settings</a>
                                 </li>
                             </ul>
                             <!--end collection of links for toggling -->
@@ -361,15 +361,15 @@
                             <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu  paddingright10px" role="menu" aria-labelledby="dropdownMenu3" style="left: -145px;">
                                 <!--drop down menu items that appears to either user -->
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp Find a BlocBox</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp; Find a BlocBox</a>
                                 </li>
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp Support</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp; Support</a>
                                 </li>
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp Love Bloxbox?</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp; Love Bloxbox?</a>
                                 </li>
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp About Blocbox</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; About Blocbox</a>
                                 </li>
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp Contact Us</a>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp; Contact Us</a>
                                 </li>
                             </ul>
                             <!--end collection of links for toggling -->
@@ -434,23 +434,23 @@
                         <!--list of links within the dropdown menu .. removing dropdown-menu-right-->
                         <ul class="dropdown-menu paddingright10px" role="menu" aria-labelledby="dropdownMenu3" style="left: -170%">
                             <!--nav navbar-nav navbar-right-->
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp How It Works</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; How It Works</a>
                             </li>
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'><i class="fa fa-user fa-fw fa-lg yellowtext"></i>&nbsp Join Waitlist</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'><i class="fa fa-user fa-fw fa-lg yellowtext"></i>&nbsp; Join Waitlist</a>
                             </li>
                             <!--drop down menu items that appears to either user -->
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp Find a BlocBox</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp; Find a BlocBox</a>
                             </li>
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp Support</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp; Support</a>
                             </li>
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp Love Bloxbox?</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp; Love Bloxbox?</a>
                             </li>
-                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp About Blocbox</a>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; About Blocbox</a>
                             </li>
                             <li class="dropdownfont" role="presentation">
                                 <a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'>
                                     <form method="post" action="mailto:admin@blocbox.co?subject=Hello!">
-                                        <button class="hiddenbtn nopaddingleftright"><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp Contact Us</button> 
+                                        <button class="hiddenbtn nopaddingleftright"><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp; Contact Us</button> 
                                     </form> 
                                 </a>
                             </li>
@@ -534,7 +534,7 @@
                                     <div class="row paddingtopbottom10px">
                                         <div class="col-xs-6 checkbox greytext">
                                             <label>
-                                                <input type="checkbox">&nbsp; Remember Me
+                                                <input type="checkbox">&nbsp;; Remember Me
                                             </label>
                                         </div>
                                         <p class="col-xs-6 textright"><a href="/passwordreset/recover/">Forgot Password?</a>
