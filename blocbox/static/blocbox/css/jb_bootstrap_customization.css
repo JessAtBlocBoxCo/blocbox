@@ -2231,14 +2231,14 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         display: none;
     }
     #search-box {
-        top: 60px;
+        top: 50px;
         left: 10px;
         padding: 0 11px 0 13px;
         width: 300px;
         font-size: 15px;
     }
     #map-canvas {
-        height: 40em;
+        height: 29em;
         margin-top: 45px;
     }
 }
