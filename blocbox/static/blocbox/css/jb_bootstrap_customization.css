@@ -2146,7 +2146,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .navbar-default .navbar-toggle:hover,
     .navbar-default .navbar-toggle:focus {
         background-color: rgb(255, 195, 0);
-        color: #ffffff;
+        color: rgb(255, 195, 0);
     }
     .navbar-toggle {
         padding: 3px 5px;
