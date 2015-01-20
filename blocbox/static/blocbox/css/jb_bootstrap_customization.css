@@ -2232,10 +2232,14 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     #search-box {
         top: 60px;
-        left: 20px;
+        left: 10px;
         padding: 0 11px 0 13px;
         width: 300px;
         font-size: 15px;
+    }
+    #map-canvas {
+        height: 40em;
+        padding-top: 40px;
     }
 }
 /*-------------------------------------------------------------*
