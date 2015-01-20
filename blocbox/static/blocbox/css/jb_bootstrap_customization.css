@@ -2201,6 +2201,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .nophone {
         display: none;
     }
+    .navbar-default {
+        background-color: #ffffff;
+    }
 }
 /*-------------------------------------------------------------*
 Jasny  STYLES
