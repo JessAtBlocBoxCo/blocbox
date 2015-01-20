@@ -94,6 +94,10 @@ h6 {
 }
 /*Style body of page to ensure footer falls below the page content*/
 
+.SafariFix{
+    -webkit-user-select:auto;
+}
+
 .content {
     padding-top: 70px;
     padding-bottom: 440px;
