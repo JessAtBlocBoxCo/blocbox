@@ -360,7 +360,8 @@ def hostprofile(request, host_id):
     transactions_count = Transaction.objects.filter(host=host).count() #count all of the transactions
     return render_to_response('blocbox/host-profile.html', {'host':host, 'enduser':enduser, 'connected':connected,
     		'connections_all':connections_all, 'connections_count':connections_count, 'connectionstotal':connections_count,
-    		'transactions_count':transactions_count, 'transactions_all':transactions_all, 'enduser_hosts':enduser_hosts, 'enduser_host_connections': enduser_host_connections,
+    		'transactions_count':transactions_count, 'transactions_all':transactions_all, 'enduser_hosts':enduser_hosts, 
+    		'enduser_host_connections': enduser_host_connections,
     		'enduser_is_connected_to_host': enduser_is_connected_to_host,
     		}, context)
 
