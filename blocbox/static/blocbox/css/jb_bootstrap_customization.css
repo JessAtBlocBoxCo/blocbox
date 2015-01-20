@@ -2230,6 +2230,13 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .nophone {
         display: none;
     }
+    #search-box {
+        top: 60px;
+        left: 20px;
+        padding: 0 11px 0 13px;
+        width: 300px;
+        font-size: 15px;
+    }
 }
 /*-------------------------------------------------------------*
 Jasny  STYLES
