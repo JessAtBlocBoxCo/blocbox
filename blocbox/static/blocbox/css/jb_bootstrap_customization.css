@@ -1226,6 +1226,9 @@ body {
         padding-top: 60px;
         padding-bottom: 550px;
     }
+    .contentbottomonly {
+        padding-bottom: 550px;
+    }
 }
 /*make the navbar text for the waitlist/orange header page white and larger*/
 
@@ -1866,6 +1869,9 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         padding-top: 80px;
         padding-bottom: 800px;
     }
+    .contentbottomonly {
+        padding-bottom: 800px;
+    }
     .footerlogo {
         margin-left: -80px;
     }
@@ -1994,6 +2000,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .content {
         padding-top: 60px;
+        padding-bottom: 550px;
+    }
+    .contentbottomonly {
         padding-bottom: 550px;
     }
     .footerlogo {
@@ -2183,6 +2192,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .content {
         padding-top: 60px;
+        padding-bottom: 570px;
+    }
+    .contentbottomonly {
         padding-bottom: 570px;
     }
     .findhostbtn {
