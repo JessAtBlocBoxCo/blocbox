@@ -25,9 +25,6 @@
             <!--IF THEY HAVE DONE ALL THE FORMS - SIGN INTO PAYPAL ACCOUNT -->
             {% if transaction_submitted %}
             <div class="row">
-                <div class="col-xs-12 profilebox marginbottom20px">
-                    <div class="row">
-
                         <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Sign into your PayPal account to process payment</h6>
                         <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
 
@@ -49,10 +46,7 @@
 
                         <!-- the following statement loads the paypal checkout form - integrates with a paypal account
 												the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
-
-                    </div>
                     <!--row-->
-                </div>
             </div>
             <!--end paypal button -->
 
