@@ -1222,6 +1222,7 @@ body {
         display: block !important;
     }
     .content {
+        padding-top: 50px;
         padding-bottom: 550px;
     }
 }
