@@ -1182,6 +1182,7 @@ body {
 .waitlistbody .navbar-default .navbar-toggle:hover,
 .waitlistbody .navbar-default .navbar-toggle:focus {
     background-color: #FFFFFF;
+    color: rgb(255, 203, 19);
 }
 /*Change width of navbar-header - so when it collapses - was 768 */
 
