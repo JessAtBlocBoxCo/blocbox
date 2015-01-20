@@ -1570,7 +1570,7 @@ body {
     min-width: 175px;
     border: solid;
     border-width: 2px;
-    margin-left: 15%;
+    margin-left: auto;
     margin-right: auto;
     padding-left: 10px;
     padding-right: 10px;
