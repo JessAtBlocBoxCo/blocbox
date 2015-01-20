@@ -1222,7 +1222,7 @@ body {
         display: block !important;
     }
     .content {
-        padding-top: 50px;
+        padding-top: 60px;
         padding-bottom: 550px;
     }
 }
@@ -1862,6 +1862,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         height: 40px;
     }
     .content {
+        padding-top: 60px;
         padding-bottom: 500px;
     }
     .footerlogo {
@@ -1994,6 +1995,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         height: 40px;
     }
     .content {
+        padding-top: 60px;
         padding-bottom: 550px;
     }
     .footerlogo {
@@ -2182,6 +2184,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         display: none;
     }
     .content {
+        padding-top: 60px;
         padding-bottom: 570px;
     }
     .findhostbtn {
