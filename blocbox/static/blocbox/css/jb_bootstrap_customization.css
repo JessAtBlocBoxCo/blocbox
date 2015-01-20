@@ -1566,14 +1566,14 @@ body {
     font-weight: 500;
     color: #3498db;
     border-color: rgb(223, 226, 226);
-    height: 32px;
+    height: 40px;
     min-width: 175px;
     border: solid;
     border-width: 2px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
     cursor: pointer;
     vertical-align: top;
     text-align: center;
