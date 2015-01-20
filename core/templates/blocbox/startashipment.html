@@ -145,8 +145,8 @@
     <!--add the calendar associated with this host (its still under the if-host condition)-->
     {% if dayrangestart %}
     <!--HOST CALENDAR -->
-    <div class="row">
-        <h6 class=" col-xs-12 marginbottom30px">
+    <div class="row paddingtop20px">
+        <h6 class=" col-xs-12 marginbottom20px">
             	{% if host_package_conflict %} 
             		Unfortunately, {{ host.first_name }} is not available on one of the days that the package my arrive. You can still send the package and pick it up with {{ host.first_name}} returns
             		, but we won't refund your order if {{ host.first_name }} is not available when it arrives. 
@@ -179,8 +179,6 @@
     <!--submit button-->
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px nopaddingright">
-            <br>
-            <br>
             <button class="bluebutton" style="height: 60px" onClick="window.location='/payment/host{{host.id}}/days{{dayrangestart}}to{{dayrangeend}}';">I Confirm that {{host.first_name}} is Available</button>
         </div>
     </div>
