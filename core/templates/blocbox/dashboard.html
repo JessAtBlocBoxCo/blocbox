@@ -1,3 +1,4 @@
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Dashboard{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 <!-- this is blocbox/core/templates/blocbox/dashboard.html , URL is www.blocbox.co/dashboard
 	i think we shoudl only have one dashboard and then just have additional stuff for hosts, using if--then logic.. 
 	this is easier to impelemnt if teh layout is relatively straight forward - so additional content is added vertically,
@@ -6,7 +7,6 @@
 	
 	deletign: {  % load modaltags % }
 -->
-{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Dashboard{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 
 <div class="content container-fluid whitebackground relativediv">
 

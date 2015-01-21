@@ -1,5 +1,5 @@
-<!--this is blocbox/templates/payment.html -- URL is www.blocbox.co/payment, the view is defined in transactions.views.py ; url patters in transactions.urls.py-->
 {% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Payment{% endblock %}
+<!--this is blocbox/templates/payment.html -- URL is www.blocbox.co/payment, the view is defined in transactions.views.py ; url patters in transactions.urls.py-->
 
 <!--not sure that i need this top bit.. -->
 {% if integration.test_mode %} {{ integration.generate_form.sandbox }} {% else %} {{ integration.generate_form.render }} {% endif %} {% block headafter %} {% endblock %} {% block content %}
