@@ -2173,20 +2173,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         float: none;
         max-height: 50px;
     }
-    .modalDialog {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.3);
-        z-index: 9999999999;
-        opacity: 0;
-        -webkit-transition: opacity 400ms ease-in;
-        -moz-transition: opacity 400ms ease-in;
-        transition: opacity 400ms ease-in;
-        pointer-events: none;
-    }
     .modalDialog > div {
         width: 300px;
         position: absolute;
