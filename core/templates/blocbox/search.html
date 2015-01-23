@@ -29,7 +29,7 @@
 
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
-        {%for host in hosts_all%}
+        {% for host in hosts_all %}
 
         //Content STring for the InfoWindow - 
         //removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
@@ -47,7 +47,7 @@
             '</div> ' +
             '</div>';
 
-        {%else %}
+        {% else %}
 
         var hostcontentString = '<div class="col-xs-9" id="content">' +
             '<img class="blockpic margintop20px nopadding col-xs-3" alt="" />' +
@@ -115,7 +115,7 @@
             });
         });
 
-        {%endfor%}
+        {% endfor %}
 
         // Create the search box 
         var input = /** @type {HTMLInputElement} */ (document.getElementById('search-box'));
