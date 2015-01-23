@@ -25,28 +25,28 @@
             <!--IF THEY HAVE DONE ALL THE FORMS - SIGN INTO PAYPAL ACCOUNT -->
             {% if transaction_submitted %}
             <div class="row">
-                        <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Sign into your PayPal account to process payment</h6>
-                        <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
+                <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Sign into your PayPal account to process payment</h6>
+                <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
 
-                        <!--show what they've selected-->
+                <!--show what they've selected-->
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2" style="padding-top: 20px; padding-bottom: 20px;">
-                            <table class="table">
-                                <tr>
-                                    <th>Payment Option Selected</th>
-                                    <th>Total Due</th>
-                                    <th rowspan="2">{{ paypal_form.render }}</th>
-                                </tr>
-                                <tr>
-                                    <td>{{ trans_created.youselected}}</td>
-                                    <td>{{ trans_created.price }}</td>
-                                </tr>
-                            </table>
-                        </div>
-                        <!--col with table -->
+                    <table class="table">
+                        <tr>
+                            <th>Payment Option Selected</th>
+                            <th>Total Due</th>
+                            <th rowspan="2">{{ paypal_form.render }}</th>
+                        </tr>
+                        <tr>
+                            <td>{{ trans_created.youselected}}</td>
+                            <td>{{ trans_created.price }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <!--col with table -->
 
-                        <!-- the following statement loads the paypal checkout form - integrates with a paypal account
+                <!-- the following statement loads the paypal checkout form - integrates with a paypal account
 												the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
-                    <!--row-->
+                <!--row-->
             </div>
             <!--end paypal button -->
 
