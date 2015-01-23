@@ -67,8 +67,9 @@ def search(request):
     enduser = request.user
     users_all = UserInfo.objects.all
     hosts_all = UserInfo.objects.filter(host=1)
+    hosts_list_onlyjb = hosts_all.filter(id=2)
     return render(request, 'blocbox/search.html', {
-        'enduser': enduser, 'hosts_all': hosts_all, 'users_all': users_all,    
+        'enduser': enduser, 'hosts_all': hosts_all, 'users_all': users_all, 'hosts_list_onlyjb': hosts_list_onlyjb,   
     })
 
 def aboutblocbox(request):

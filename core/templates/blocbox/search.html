@@ -1,4 +1,6 @@
-<!--this is blocbox/core/templates/blocbox/search.html, it extends blocbox/base.html url is www.blocbox.co/search-->
+<!--this is blocbox/core/templates/blocbox/search.html, it extends blocbox/base.html url is www.blocbox.co/search
+JMY NOTE: to make this page easier to read i am looping through a list of hosts that includes only JB (for host in hosts_lists_onlyjb)
+if you want to loop through all hosts use hosts_all -- but that will make it hard to load -->
 {% extends "blocbox/base.html" %}
 {% load staticfiles %} 
 
@@ -18,6 +20,7 @@ GOOGLE MAP EMBED SCRIPT - START
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEzt5IVa62j3CQ10oJ-rNtwzd4GsCHxXI&sensor=true&libraries=places">
 </script>
 
+
 <!-- Initialize the map - place markers and so forth
 -->
 <script type="text/javascript">
@@ -30,8 +33,9 @@ GOOGLE MAP EMBED SCRIPT - START
         };
 
         var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-
-        {% for host in hosts_all %}
+				
+				
+        {% for host in hosts_lists_onlyjb %}
 
         //Content STring for the InfoWindow - 
         //removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
