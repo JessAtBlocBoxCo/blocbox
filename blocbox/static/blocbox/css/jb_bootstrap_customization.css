@@ -2175,7 +2175,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .modalDialog > div {
         width: 300px;
-        position: relative;
+        position: absolute;
         margin: 10% auto;
         padding: 5px 20px 13px 20px;
         border-radius: 2px;
@@ -2249,13 +2249,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     #map-canvas {
         height: 28.2em;
         margin-top: 45px;
-    }
-    .modalDialog > div {
-        width: 300px;
-        position: absolute;
-        margin: 10% auto;
-        padding: 5px 20px 13px 20px;
-        z-index: 100000000;
     }
 }
 /*-------------------------------------------------------------*
