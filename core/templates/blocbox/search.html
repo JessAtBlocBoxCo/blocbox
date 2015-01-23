@@ -72,7 +72,8 @@ GOOGLE MAP EMBED SCRIPT - START
 
           //define info window
           var infowindow{{host.id}} = new google.maps.InfoWindow({
-              content: hostcontentString
+              content: hostcontentString,
+              maxWidth: 200
           });	
 
            //define lat long for each host host.address_latitude, host.address_longitude 
