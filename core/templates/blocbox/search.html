@@ -1,175 +1,221 @@
 {% extends "blocbox/base.html" %}
 <!--this is blocbox/core/templates/blocbox/search.html, it extends blocbox/base.html url is www.blocbox.co/search-->
 
-{% load staticfiles %} 
+{% load staticfiles %} {% block title %}Find a BlocBox Near You{% endblock %}
 
-	{% block title %}Find a BlocBox Near You{% endblock %}
-	
-	
-	<!--add custom contend to the head -->
-	{% block headafter %}	
-	
-	
-	<!--------------------------------------------------------------------------------------------------
+
+<!--add custom contend to the head -->
+{% block headafter %}
+
+
+<!--------------------------------------------------------------------------------------------------
  	GOOGLE MAP EMBED SCRIPT - START
 	---------------------------------------------------------------------------------------------------->
 
-	<!-- Load the google Maps API -->
-    <script type="text/javascript"
-      	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEzt5IVa62j3CQ10oJ-rNtwzd4GsCHxXI&sensor=true&libraries=places">
-    </script>
-    
-   	<!-- Initialize the map - place markers and so forth
-   	-->
-   	<script type="text/javascript">
-			function initialize() {
-  				var mapOptions = {
-  				//higher/closer zoom is closer
-    			zoom: 13, 
-    			//Center it at 420 Grand Ave, Brookly, NY 11238, 40.686529, -73.949413, approx grand and gates 
-    			center: new google.maps.LatLng(40.686529, -73.949413)
-  				};
+<!-- Load the google Maps API -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEzt5IVa62j3CQ10oJ-rNtwzd4GsCHxXI&sensor=true&libraries=places">
+</script>
 
-  				var map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
-				
-  		{% for host in hosts_all %}
-			     	
-				//Content STring for the InfoWindow - 
-				//removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
-			  	
-			  	{% if host.profile_pic_uploaded %}
-			  	
-			  	var hostcontentString = '<div class="col-xs-9" id="content">'+
-               '<img class="blockpic margintop20px nopadding col-xs-3" src="{{host.profile_pic_uploaded.url}}" alt="" />'+
-                '<div class="row">'+    
-      						'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
-      							'<div class="InfoWindowBody col-xs-8">'+
-      							'<h5 class="nomargintop"> {{ host.address_approx }}, {{ host.city }}, {{ host.state }} </h5>'+
-      							'<h6><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
-      						'</div>'+
-                '</div> '+   
-      			'</div>';
-      			
-      			{% else %}
-      				
-      			var hostcontentString = '<div class="col-xs-9" id="content">'+
-                '<img class="blockpic margintop20px nopadding col-xs-3" alt="" />'+
-                	'<div class="row">'+    
-      						'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
-      							'<div class="InfoWindowBody col-xs-8">'+
-      								'<h5 class="nomargintop"> {{ host.address_approx }}, {{ host.city }}, {{ host.state }} </h5>'+
-      								'<h6><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
-      							'</div>'+
-                	'</div> '+   
-      					'</div>';
-      			
-      			
-      			
-      			{% endif %}
-		
-				//define info window
-				var infowindow{{host.id}} = new google.maps.InfoWindow({
-     				 content: hostcontentString
-  				});	
-				
-				//define lat long for each host host.address_latitude, host.address_longitude 
-				var HostLatLong{{host.id}} = new google.maps.LatLng( {{host.address_latitude }}, {{ host.address_longitude }});
-         	
-				
-				//add a new marker with infowindow
-				var HostMarker{{host.id}} = new google.maps.Marker({
-					position: HostLatLong{{host.id}},
-					map: map,
-					title: "{{ host.first_name }}"
-				}); 
-			
-					//it keeps opening the info window of last host.. 
-		  		google.maps.event.addListener(HostMarker{{host.id}}, 'click', function() {
-    			infowindow{{host.id}}.open(map,HostMarker{{host.id}});
-  					});
-  					
-  		{% endfor %}	
-  				
-  				// Create the search box 
-  				var input = /** @type {HTMLInputElement} */( document.getElementById('search-box'));			
-  				map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-  				var searchBox = new google.maps.places.SearchBox(/** @type {HTMLInputElement} */(input));
-  				 
-  				// Listen for the event fired when the user selects an item from the
-  				// pick list. Retrieve the matching places for that item.
-  				google.maps.event.addListener(searchBox, 'places_changed', function() {
-  				var places = searchBox.getPlaces();
-  				
-  					var markers = [];
-  					for (var i = 0, marker; marker = markers[i]; i++) {marker.setMap(null); }
-  				
-  				  // For each place, get the icon, place name, and location: i think thiis has to do with when you search...
-  				  markers = [];
-  				  var bounds = new google.maps.LatLngBounds();
-  				  for (var i = 0, place; place = places[i]; i++) {
-  				    var image = {
-  				      url: place.icon,
-  				      //i've changed these parameters but nothing really happens...
-  				      size: new google.maps.Size(71, 71), //(71, 71) - not sure what this changes
-  				      origin: new google.maps.Point(0, 0), // was (0,0)
-  				      anchor: new google.maps.Point(17, 34), //(17, 34)
-  				      scaledSize: new google.maps.Size(25, 25)
-  				    };
-  				
-  				    // Create a marker for each place.
-  				    var marker = new google.maps.Marker({
-  				      map: map,
-  				      icon: image,
-  				      title: place.name,
-  				      position: place.geometry.location
-  				    });
-  				
-  				    markers.push(marker);
-  				
-  				    bounds.extend(place.geometry.location);
-  				  }
-  				
-  				  map.fitBounds(bounds);
-  				});
-  				
-  				// Bias the SearchBox results towards places that are within the bounds of the current map's viewport.
-  				google.maps.event.addListener(map, 'bounds_changed', function() {
-  				  var bounds = map.getBounds();
-  				  searchBox.setBounds(bounds);
-  				})
-  					
-			}	/*end initialize function */	
-		   	
-				google.maps.event.addDomListener(window, 'load', initialize);	
-				//window.onload = initialize;
-		 </script> 
-		<!--------------------------------------------------------------------------------------------------
+<!-- Initialize the map - place markers and so forth
+   	-->
+<script type="text/javascript">
+    function initialize() {
+        var mapOptions = {
+            //higher/closer zoom is closer
+            zoom: 13,
+            //Center it at 420 Grand Ave, Brookly, NY 11238, 40.686529, -73.949413, approx grand and gates 
+            center: new google.maps.LatLng(40.686529, -73.949413)
+        };
+
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+        { %
+            for host in hosts_all %
+        }
+
+        //Content STring for the InfoWindow - 
+        //removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
+
+        { %
+            if host.profile_pic_uploaded %
+        }
+
+        var hostcontentString = '<div class="col-xs-9" id="content">' +
+            '<img class="blockpic margintop20px nopadding col-xs-3" src="{{host.profile_pic_uploaded.url}}" alt="" />' +
+            '<div class="row">' +
+            '<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>' +
+            '<div class="InfoWindowBody col-xs-8">' +
+            '<h5 class="nomargintop"> {{ host.address_approx }}, {{ host.city }}, {{ host.state }} </h5>' +
+            '<h6><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>' +
+            '</div>' +
+            '</div> ' +
+            '</div>';
+
+        { %
+            else %
+        }
+
+        var hostcontentString = '<div class="col-xs-9" id="content">' +
+            '<img class="blockpic margintop20px nopadding col-xs-3" alt="" />' +
+            '<div class="row">' +
+            '<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>' +
+            '<div class="InfoWindowBody col-xs-8">' +
+            '<h5 class="nomargintop"> {{ host.address_approx }}, {{ host.city }}, {{ host.state }} </h5>' +
+            '<h6><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>' +
+            '</div>' +
+            '</div> ' +
+            '</div>';
+
+
+
+        { % endif %
+        }
+
+        //define info window
+        var infowindow {
+            {
+                host.id
+            }
+        } = new google.maps.InfoWindow({
+            content: hostcontentString
+        });
+
+        //define lat long for each host host.address_latitude, host.address_longitude 
+        var HostLatLong {
+            {
+                host.id
+            }
+        } = new google.maps.LatLng({
+            {
+                host.address_latitude
+            }
+        }, {
+            {
+                host.address_longitude
+            }
+        });
+
+
+        //add a new marker with infowindow
+        var HostMarker {
+            {
+                host.id
+            }
+        } = new google.maps.Marker({
+            position: HostLatLong {
+                {
+                    host.id
+                }
+            },
+            map: map,
+            title: "{{ host.first_name }}"
+        });
+
+        //it keeps opening the info window of last host.. 
+        google.maps.event.addListener(HostMarker {
+            {
+                host.id
+            }
+        }, 'click', function () {
+            infowindow {
+                {
+                    host.id
+                }
+            }.open(map, HostMarker {
+                {
+                    host.id
+                }
+            });
+        });
+
+        { % endfor %
+        }
+
+        // Create the search box 
+        var input = /** @type {HTMLInputElement} */ (document.getElementById('search-box'));
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+        var searchBox = new google.maps.places.SearchBox( /** @type {HTMLInputElement} */ (input));
+
+        // Listen for the event fired when the user selects an item from the
+        // pick list. Retrieve the matching places for that item.
+        google.maps.event.addListener(searchBox, 'places_changed', function () {
+            var places = searchBox.getPlaces();
+
+            var markers = [];
+            for (var i = 0, marker; marker = markers[i]; i++) {
+                marker.setMap(null);
+            }
+
+            // For each place, get the icon, place name, and location: i think thiis has to do with when you search...
+            markers = [];
+            var bounds = new google.maps.LatLngBounds();
+            for (var i = 0, place; place = places[i]; i++) {
+                var image = {
+                    url: place.icon,
+                    //i've changed these parameters but nothing really happens...
+                    size: new google.maps.Size(71, 71), //(71, 71) - not sure what this changes
+                    origin: new google.maps.Point(0, 0), // was (0,0)
+                    anchor: new google.maps.Point(17, 34), //(17, 34)
+                    scaledSize: new google.maps.Size(25, 25)
+                };
+
+                // Create a marker for each place.
+                var marker = new google.maps.Marker({
+                    map: map,
+                    icon: image,
+                    title: place.name,
+                    position: place.geometry.location
+                });
+
+                markers.push(marker);
+
+                bounds.extend(place.geometry.location);
+            }
+
+            map.fitBounds(bounds);
+        });
+
+        // Bias the SearchBox results towards places that are within the bounds of the current map's viewport.
+        google.maps.event.addListener(map, 'bounds_changed', function () {
+            var bounds = map.getBounds();
+            searchBox.setBounds(bounds);
+        })
+
+    } /*end initialize function */
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+    //window.onload = initialize;
+</script>
+<!--------------------------------------------------------------------------------------------------
  		GOOGLE MAP - END
 		---------------------------------------------------------------------------------------------------->
-	{% endblock %} <!--end additions to head -->
-	
+{% endblock %}
+<!--end additions to head -->
+
 {% block navbartitle %} Find a BlocBox {% endblock %}
 
-<!--add content -->	
+<!--add content -->
 
 
 {% block content %}
 
-	<!--Add the search box to the page   -->
-	<input id="search-box" class="controls"  name="Address" placeholder="Enter your address to find a blocbox near you" type="search">
+<!--Add the search box to the page   -->
+<input id="search-box" class="controls" name="Address" placeholder="Enter your address to find a blocbox near you" type="search">
 
-	<div class="container-fluid offwhitebackground" id="map-canvas"> <!--this line adds the map per id=map-canvas-->
-	
-	</div> <!--container-fluid offwhitebackground -->
-	
-<div class="contentbottomonly container-fluid darkbluebackground text-center"> 
+<div class="container-fluid offwhitebackground" id="map-canvas">
+    <!--this line adds the map per id=map-canvas-->
+
+</div>
+<!--container-fluid offwhitebackground -->
+
+<div class="contentbottomonly container-fluid darkbluebackground text-center">
     <h6 class="whitetext nomargin paddingtopbottom10px">
         Don't see a BlocBox host in your hood? <a class="whitetext textunderline" href="/nudgeaneighbor/">Nudge a neighbor</a> to let them know about the opportunity to host or <a class="whitetext textunderline" href="">host a box yourself</a>.
      	
 
      	<br>
-     	</h6>  
-  </div> 
-  
+     	</h6> 
+</div>
+
 
 {% endblock %}
