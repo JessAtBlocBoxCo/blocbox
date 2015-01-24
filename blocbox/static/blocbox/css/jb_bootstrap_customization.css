@@ -2251,6 +2251,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         height: 28.2em;
         margin-top: 45px;
     }
+    .blockpic {
+        width: 75px;
+        height: 75px;
+    }
 }
 /*-------------------------------------------------------------*
 Jasny  STYLES
