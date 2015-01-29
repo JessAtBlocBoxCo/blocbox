@@ -32,8 +32,9 @@
     				<label for="exampleInputEmail1">Email address</label> --->
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-offset-2">
-                            <label for="id_email">Enter Your Email{{ user_form.email.errors }}</label>
+                            <label for="id_email">Enter Your Email</label>
                             <input type="email" class="form-control-white" name="email" id="id_email" placeholder="you@example.com">
+                            <p>{{ user_form.email.errors }}</p>
                         </div>
 
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margintop10pxmobile">
