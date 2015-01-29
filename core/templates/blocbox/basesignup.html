@@ -27,14 +27,16 @@
 
                 {% csrf_token %} {{ user_form.non_field_errors }}
 
-                <div class="form-group">
+                <div class="form-group has-error has-feedback">
                     <!-- NOT INCLUDING LABLES FOR FORM ELEMENTS BUT CAN PUT BACK IN LATER
     				<label for="exampleInputEmail1">Email address</label> --->
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-offset-2">
                             {{ user_form.email.errors }}
-                            <label for="id_email">Enter Your Email</label>
-                            <input type="email" class="form-control-white" name="email" id="id_email" placeholder="you@example.com">
+                            <label class="control-label" for="id_email">Enter Your Email</label>
+                            <input type="email" class="form-control-white" name="email" id="id_email" placeholder="you@example.com" aria-describedby="inputError2Status">
+                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+                            <span id="inputError2Status" class="sr-only">(error)</span>
                         </div>
 
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margintop10pxmobile">
