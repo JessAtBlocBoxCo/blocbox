@@ -2125,7 +2125,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .paddingtop15pxmobile {
         padding-top: 15px;
     }
-    .paddingtop30px {
+    .paddingtop30pxmobile {
         padding-top: 30px;
     }
     .paddingsides3pxmobile {
