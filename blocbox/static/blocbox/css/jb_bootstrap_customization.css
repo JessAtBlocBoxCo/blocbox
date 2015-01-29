@@ -631,10 +631,6 @@ footer {
     color: #ffffff;
     opacity: 1;
 }
-.form-control-white::-moz-placeholder {
-    color: rgb(223, 226, 226);
-    opacity: 1;
-}
 
 /*CSS for JS drawers*/
 .hideit > div {
