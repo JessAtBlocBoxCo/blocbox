@@ -32,11 +32,8 @@
     				<label for="exampleInputEmail1">Email address</label> --->
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-offset-2">
-                            {{ user_form.email.errors }}
-                            <label class="control-label" for="id_email">Enter Your Email</label>
-                            <input type="email" class="form-control-white" name="email" id="id_email" placeholder="you@example.com" aria-describedby="inputError2Status">
-                            <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
-                            <span id="inputError2Status" class="sr-only">(error)</span>
+                            <label for="id_email">Enter Your Email</label>
+                            <input type="email" class="form-control-white" name="email" id="id_email" placeholder="you@example.com">{{ user_form.email.errors }}
                         </div>
 
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margintop10pxmobile">
