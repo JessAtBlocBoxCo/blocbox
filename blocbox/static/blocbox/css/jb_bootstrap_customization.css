@@ -531,6 +531,9 @@ footer {
 .margintop145px {
     margin-top: 145px;
 }
+.margintop40pxnomobile {
+    margin-top: 40px;
+}
 .margintopbottom30px {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -1892,6 +1895,9 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     }
     .margintop20pxnomobile {
         margin-top: 20px;
+    }
+    .margintop40pxnomobile {
+        margin-top: 0px;
     }
     .desktoponly {
         display: none;
