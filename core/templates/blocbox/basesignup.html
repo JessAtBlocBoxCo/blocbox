@@ -38,8 +38,8 @@
                         </div>
 
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margintop10pxmobile">
-                            {{ user_form.zipcode.errors|striptags}}
                             <label for="id_zipcode">Enter Your Zipcode</label>
+                            <p class="redtext">{{ user_form.zipcode.errors|striptags}}</p>
                             <input type="number" class="form-control-white" name="zipcode" id="id_zipcode" placeholder="Zipcode">
                         </div>
                     </div>
@@ -48,13 +48,13 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-md-offset-2">
-                            {{ user_form.password.errors }}
                             <label for="password">Create a Password</label>
+                            <p class="redtext">{{ user_form.password.errors|striptags }}</p>
                             <input type="password" class="form-control-white" name="password" id="id_password" placeholder="Password">
                         </div>
                         <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 margintop10pxmobile">
-                            {{ user_form.password2.errors }}
                             <label for="password2">Confirm Your Password</label>
+                            <p class="redtext">{{ user_form.password2.errors|striptags }}</p>
                             <input type="password" class="form-control-white" name="password2" id="id_password2" placeholder="Password">
                         </div>
                     </div>
