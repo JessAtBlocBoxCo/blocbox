@@ -10,8 +10,8 @@
         <!--top row showing Sender, Subjec,t Received, Action, trans=translate, this was  -->
         <div class="col-xs-10 col-xs-offset-1">
             {% for message in message_list %}
-            <div class="row inboxmessbox ">
-                <div class="col-xs-2 inboxpiccontainer paddingtopbottom30px">
+            <div class="row inboxmessbox paddingtopbottom10px">
+                <div class="col-xs-2 inboxpiccontainer">
                     <img class="inboxpic" src="" />
                 </div>
                 <p class="col-xs-2 textcenter paddingtopbottom30px">{{ message.sender }}</p>
