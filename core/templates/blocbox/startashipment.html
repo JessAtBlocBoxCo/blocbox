@@ -144,8 +144,8 @@
     <!--add the calendar associated with this host (its still under the if-host condition)-->
     {% if dayrangestart %}
     <!--HOST CALENDAR -->
-    <div class="row paddingtop10px">
-        <h6 class=" col-xs-12 marginbottom10px">
+    <div class="row marginsides3pct paddingtop10px">
+        <h6 class="col-xs-12 marginbottom10px">
             	{% if host_package_conflict %} 
             		Unfortunately, {{ host.first_name }} is not available on one of the days that your package may arrive. </h6>
             		<p>You can still send the package and pick it up when {{ host.first_name}} returns
@@ -185,7 +185,7 @@
 
 <!--    <p class="col-xs-12 col-sm-10 col-sm-offset-1 darkgreytext marginbottom10px">If {{ host.first_name }} isn't available, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search your neighborhood</a> for another host.</p> -->
 
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom30px">
+    <div class="col-xs-12 marginsides3pct marginbottom30px">
             <p class="darkgreytext">Please note, if you choose a date or time when the host is unavailble, we cannot garuntee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
         <div id="openModal2" class="modalDialog">
             <div class="modalupfront">	<a href="#close" title="Close" class="close">X</a>
