@@ -22,7 +22,7 @@
                        {% if message.replied %}</em>{% endif %}
                        {% if message.new %}</strong>{% endif %}</div>
                 <p class="col-xs-3 textcenter paddingtopbottom30px">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
-                <p class="col-xs-1 textcenter paddingtopbottom30px"><a href="{% url 'messages_delete' message.id %}">{% trans "delete" %}</a>
+                <p class="col-xs-1 textcenter paddingtopbottom30px"><a href="{% url 'messages_delete' message.id %}">{% trans "<i class="fa fa-archive"></i>" %}</a>
                 </p>
             </div>
             {% endfor %}
