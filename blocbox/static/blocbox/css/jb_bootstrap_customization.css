@@ -1807,7 +1807,7 @@ body {
 }
 .inboxpiccontainer {
     border-radius: 50%;
-    border: 7px solid rgb(250, 250, 250);
+    border: 3px solid rgb(250, 250, 250);
     height: 75px;
     width: 75px;
     overflow: hidden;
