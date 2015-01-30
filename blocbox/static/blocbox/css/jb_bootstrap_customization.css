@@ -1764,7 +1764,7 @@ body {
 .close:hover {
     background: #f25f52;
     color: white;
-    border: 2px solid white;
+    border: 2px solid #f25f52;
 }
 .form-inline .form-control {
     width: 100%;
