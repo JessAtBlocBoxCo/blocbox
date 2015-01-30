@@ -1714,6 +1714,9 @@ body {
     width: 160px;
     position: relative;
 }
+.navbar-fixed-top, .navbar-fixed-bottom {
+    transform: none;
+}
 .modalDialog {
     position: fixed;
     top: 0;
