@@ -147,11 +147,12 @@
     <div class="row paddingtop10px">
         <h6 class=" col-xs-12 marginbottom10px">
             	{% if host_package_conflict %} 
-            		Unfortunately, {{ host.first_name }} is not available on one of the days that your package may arrive. You can still send the package and pick it up with {{ host.first_name}} returns
-            		, but we won't refund your order if {{ host.first_name }} is not available when it arrives. 
-            	<br>  You can also select a different shipment speed or <a href="/search/">search for another neighbor near you </a> 
+            		Unfortunately, {{ host.first_name }} is not available on one of the days that your package may arrive. </h6>
+            		<p>You can still send the package and pick it up when {{ host.first_name}} returns
+            		, but we cannot refund your order if {{ host.first_name }} is not available when it arrives. 
+                        <br>  You can also select a different shipment speed, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search for another host near you</a>.</p>
               {% else %} <!--if host is available -->
-          			Woohoo! {{ host.first_name}} is availability  
+          			<h6>Woohoo! {{ host.first_name}} is availability  
           			{% if dayrangestart == dayrangeend %}
           					in {{ dayrangestart }}
           			{% else %}
@@ -182,8 +183,7 @@
         </div>
     </div>
 
-
-    <p class="col-xs-12 col-sm-10 col-sm-offset-1 darkgreytext marginbottom10px">If {{ host.first_name }} isn't available, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search your neighborhood</a> for another host.</p>
+<!--    <p class="col-xs-12 col-sm-10 col-sm-offset-1 darkgreytext marginbottom10px">If {{ host.first_name }} isn't available, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search your neighborhood</a> for another host.</p> -->
 
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom30px">
             <p class="darkgreytext">Please note, if you choose a date or time when the host is unavailble, we cannot garuntee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
