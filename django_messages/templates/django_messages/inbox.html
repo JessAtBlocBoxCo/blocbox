@@ -15,7 +15,7 @@
                     <img class="inboxpic" src="" />
                 </div>
                 <p class="col-xs-2 textcenter paddingtopbottom30px">{{ message.sender }}</p>
-                <div class="col-xs-5 paddingtopbottom30px">
+                <div class="col-xs-4 paddingtopbottom30px">
                     {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
