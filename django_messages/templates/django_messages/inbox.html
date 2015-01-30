@@ -14,15 +14,15 @@
                 <div class="col-xs-2 inboxpiccontainer">
                     <img class="inboxpic" src="" />
                 </div>
-                <p class="col-xs-2 textcenter">{{ message.sender }}</p>
-                <div class="col-xs-4">
+                <p class="col-xs-2 textcenter paddingtop30px">{{ message.sender }}</p>
+                <div class="col-xs-4 paddingtop30px">
                     {% if message.new %}<strong>{% endif %}
                        {% if message.replied %}<em>{% endif %}
                        <a href="{{message.get_absolute_url }}">{{ message.subject }}</a>
                        {% if message.replied %}</em>{% endif %}
                        {% if message.new %}</strong>{% endif %}</div>
-                <p class="col-xs-3 textcenter">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
-                <p class="col-xs-1 textcenter"><a href="{% url 'messages_delete' message.id %}"><i class="fa fa-archive fa-lg"></i></a>
+                <p class="col-xs-3 textcenter paddingtop30px">{{ message.sent_at|date:_("DATETIME_FORMAT") }}</p>
+                <p class="col-xs-1 textcenter paddingtop30px"><a href="{% url 'messages_delete' message.id %}"><i class="fa fa-archive fa-lg"></i></a>
                 </p>
             </div>
             {% endfor %}
