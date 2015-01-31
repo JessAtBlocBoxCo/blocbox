@@ -17,9 +17,13 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 1ZA3225FYW43921778 - bars
 <<<<<<< HEAD
 
-"PRIORITIES"
+"PRIORITIES: MUST HAPPEN BEFORE JOHN-ONLY BETA"
+1. HANDING OUT FLYERS - getting up and doing it in the morning - 
+2. NEXT DOOR POST. 
+3. BODEGA - APPROACH SOME -- tomorow en route out of how / 
+4. BRAINSTORMING next step for user acquisition: handing out at post office
 1. LANDING/SIGN IN
-2. SHIPMENT PROCESS
+2. SHIPMENT PROCESS AND PAYMENT PROCESS
 3. SIGNUP PROCESS
 4. DASHBAORD
 5. MESSAGING/NOTIFICATIONS
@@ -29,6 +33,11 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 9. HOST SIGN UP
 10. MYBLOCK
 11. OTHER FAVORS
+
+
+"PRIORITIES POST JOHN BETA"
+13. SHARING MECHANISMS.
+12. INSURANCE 
 
 
 "JESS TO-DO"
@@ -54,7 +63,6 @@ JESS: shipment - tracking information - automate that/connect to carrier - also 
 JESS: shipment - figure out what to do with conflicts that end more in more than the next month out - add a new month?
 JESS: shipment - select a host - then the process - LOAD - to connect to a host...
 JESS: shipment - shippackage: connect the host address fields to data table so populate,
-JESS: shipment - payment page -- do the django app for payment
 JESS: shipment - paypal PDT
 JESS: shipment - paypal PRO	
 JESS: shipment - NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
