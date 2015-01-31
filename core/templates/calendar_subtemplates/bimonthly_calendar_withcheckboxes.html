@@ -10,8 +10,16 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			 		 	<tr> 
 			 		 		
 			 		 				{% for day in week %}
+			 		 					
+			 		 					<form>  
 			 		 								<!--make the square bold if its today -->
-			 		 								{% if day = today_dayofmonth_num %} <td class="active"> <b> {{ day }} </b> </td> 
+			 		 								{% if day = today_dayofmonth_num %} 
+			 		 									<td class="active"> <b> 
+			 		 														{{ day }} 
+															<label>
+																	<input type="checkbox" name="day1" id="id_day1" value= > {{ day }}
+															</label>
+			 		 										</b> </td> 
 			 		 								{% else %} 	          
 			 		 											<!--danger days-->
 			 		 										  {% if day in days_withconflicts_thismonth and day in days_package_may_come_thismonth %}  <td class="danger"> {{day }} </td>
@@ -28,6 +36,8 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			 		 												</td>
 			 		 											{% endif %} <!--endif conflict -->
 			 		 								{% endif %} <!--end if today-->
+			 		 				
+			 		 				</form>
 			 		 				{% endfor %} <!--for day in week-->
 			 		 	</tr>
 			 		 {% endfor %} <!--for week in month-->

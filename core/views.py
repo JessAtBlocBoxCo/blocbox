@@ -9,7 +9,7 @@ from core.models import UserInfo
 from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
-from core.forms import UserForm, HostForm
+from core.forms import UserForm, HostForm, CalendarCheckBoxes
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue
 #Important the authentication and login functions -- not sure that i can use with custom model

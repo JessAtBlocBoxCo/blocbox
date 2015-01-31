@@ -119,10 +119,6 @@ The URLs for this site, and the corresponding files are as follows:
 		-Share via flyers
 		-Share via link
 
-3C. blocbox.co/scheduling: access the schedule app. templates are at /schedule/templates/schedule
-		Main URL (blocboccccx.co/schedule) pulls the template calendar_list.hmtl, which extends /schedule/templates/site_base.html (one level up)
-		http://www.blocbox.co/scheduling/calendar/tri_month/testcalendar1/: is the tri_month calendar view for testcalendar1, template at:  ca
-		Yearly View: www.blocbox.co/scheduling/calendar/year/[calendarname], template at calendar_year.html, it loads the _monthly_table.html per month		
 
 3D. Profile pictures/uplaoding
  		see: ImageField in https://docs.djangoproject.com/en/1.7/ref/models/fields/\
@@ -202,21 +198,10 @@ The URLs for this site, and the corresponding files are as follows:
 *-----------------------------------------------------------------------*
 6. SCHEDULE/CALENDAR APP - HOW IT WORKS
 *-----------------------------------------------------------------------*
-6a. Schedule templates: blocbox/schedule/templates/schedule
-			calendarbase.html extends base.html extends schedule/templates/site_base.html extends blocbox/core/tempaltes/blocbox/base.html
-6B. Schedule Tables:
-		Calendar: lists each of the calendars,
-				fields: "name" and "slug' - dont know the difference
-				i think we need separate one for each user, so name should be tied to user
-		Calendar relations: lists relationship between a calendar and a user
-			
-		Events
-		Rules
-6C. Views: most called by schedule.views.calendar_by_periods	
-6D. Schedul tAgs: schedule.template.scheduletags.py - has lots of the naming convetions for referencing scheduling tags
+App: calendar_homebrew
+form for checkboxes: calendar_homebrew/forms.
+Bimonthly template: blocbox/core/templates/calendar_subtemplates
 
-timezones: to see them all, python > print.pytz.all_timezones
-#time slots stuff i was owkring on was at blocbox.schedule.templates.schedule.calendar_dayWITHTIMESLOTS.htaml
 *-----------------------------------------------------------------------*
 7. AFTERSHIP STUFF
 *-----------------------------------------------------------------------*
