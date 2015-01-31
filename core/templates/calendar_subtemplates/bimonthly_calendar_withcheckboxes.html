@@ -11,33 +11,40 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			 		 		
 			 		 				{% for day in week %}
 			 		 					
-			 		 					<form>  
+		<form  method="post" role="form" action=".">  
 			 		 								<!--make the square bold if its today -->
 			 		 								{% if day = today_dayofmonth_num %} 
 			 		 									<td class="active"> <b> 
-			 		 														{{ day }} 
-															<label>
-																	<input type="checkbox" name="day1" id="id_day1" value= > {{ day }}
-															</label>
-			 		 										</b> </td> 
+			 		 											<label>	<input type="checkbox" name="day1" id="id_day1" value="{{thismonth}}/{{day}}/{{thisyear}}" > {{ day }} </label>	
+															</b> 
+														</td> 
 			 		 								{% else %} 	          
 			 		 											<!--danger days-->
-			 		 										  {% if day in days_withconflicts_thismonth and day in days_package_may_come_thismonth %}  <td class="danger"> {{day }} </td>
+			 		 										  {% if day in days_withconflicts_thismonth and day in days_package_may_come_thismonth %}  
+			 		 										  	<td class="danger"> 
+			 		 										  			<label>	<input type="checkbox" name="day1" id="id_day1" value="{{thismonth}}/{{day}}/{{thisyear}}" > {{ day }} </label>	
+			 		 										  	</td>
 			 		 										  <!--days it may come, no conflict-->
-			 		 										  {% elif day in days_package_may_come_thismonth %} <td class="info"> {{ day}} </td>
+			 		 										  {% elif day in days_package_may_come_thismonth %} 
+			 		 										  	<td class="info"> 
+			 		 										  			<label>	<input type="checkbox" name="day1" id="id_day1" value="{{thismonth}}/{{day}}/{{thisyear}}" > {{ day }} </label>	
+			 		 										  	</td>
 			 		 											<!--conflict days --> 
-			 		 											{% elif day in days_withconflicts_thismonth %} <td class="warning"> {{day }} </td> 
+			 		 											{% elif day in days_withconflicts_thismonth %} 
+			 		 													<td class="warning"> 
+			 		 															<label>	<input type="checkbox" name="day1" id="id_day1" value="{{thismonth}}/{{day}}/{{thisyear}}" > {{ day }} </label>	 
+			 		 													</td> 
 			 		 											{% else %}	
 			 		 												<td>  		 											  	
 			 		 														{% if day = 0 %}  <!--blank if zero -->
 			 		 														{% else %} 
-			 		 															  {{day}} 
+			 		 															  <label>	<input type="checkbox" name="day1" id="id_day1" value="{{thismonth}}/{{day}}/{{thisyear}}" > {{ day }} </label>	 
 			 		 														{% endif %}	
 			 		 												</td>
 			 		 											{% endif %} <!--endif conflict -->
 			 		 								{% endif %} <!--end if today-->
 			 		 				
-			 		 				</form>
+			 		 				
 			 		 				{% endfor %} <!--for day in week-->
 			 		 	</tr>
 			 		 {% endfor %} <!--for week in month-->
@@ -53,18 +60,27 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			  			<tr> 
 			  				{% for day in week %}
 																<!--danger days -->
-															  {% if day in days_withconflicts_nextmonth and day in days_package_may_come_nextmonth %} <td class="danger"> {{day}} </td>
+															  {% if day in days_withconflicts_nextmonth and day in days_package_may_come_nextmonth %} 
+															  	<td class="danger"> 
+															  			<label>	<input type="checkbox" name="day1" id="id_day1" value="{{nextmonth}}/{{day}}/{{nextmonth_calendar_year}}" > {{ day }} </label>  
+															  	</td>
 			 		 											<!--conflict days -->
-			 		 											{% elif day in days_withconflicts_nextmonth %} <td class="warning"> {{day }} </td> 
+			 		 											{% elif day in days_withconflicts_nextmonth %} 
+			 		 												<td class="warning"> 
+			 		 														<label>	<input type="checkbox" name="day1" id="id_day1" value="{{nextmonth}}/{{day}}/{{nextmonth_calendar_year}}" > {{ day }} </label>  
+			 		 												</td> 
 			 		 											{% else %}	
 			 		 												<td>  		 											  	
 			 		 														{% if day = 0 %}  <!--blank if zero -->
 			 		 														{% else %} 
-			 		 															  {{day}} 
+			 		 															  <label>	<input type="checkbox" name="day1" id="id_day1" value="{{nextmonth}}/{{day}}/{{nextmonth_calendar_year}}" > {{ day }} </label>  
 			 		 														{% endif %}	
+			 		 												
+		</form>							
 			 		 												</td>
 			 		 											{% endif %} <!--endif conflict -->
-
+									
+									
 			  			  {% endfor %} <!--end for day in week -->
 			  			</tr>
 			  		{% endfor %}

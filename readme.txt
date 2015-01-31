@@ -200,7 +200,8 @@ The URLs for this site, and the corresponding files are as follows:
 *-----------------------------------------------------------------------*
 App: calendar_homebrew
 form for checkboxes: calendar_homebrew/forms.
-Bimonthly template: blocbox/core/templates/calendar_subtemplates
+Bimonthly template: blocbox/core/templates/calendar_subtemplates: bimonthly_calendar.hmtl and bimonthly_calendar_withcheckboxes.html
+The form for the checkboxes version is defined at calendar_homebrew/forms - its called
 
 *-----------------------------------------------------------------------*
 7. AFTERSHIP STUFF

@@ -9,7 +9,7 @@ from core.models import UserInfo
 from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
-from core.forms import UserForm, HostForm, CalendarCheckBoxes
+from core.forms import UserForm, HostForm
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue
 #Important the authentication and login functions -- not sure that i can use with custom model
@@ -44,6 +44,7 @@ import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 #import new homebrew calendar jazz
 from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+from calendar_homebrew.forms import CalendarCheckBoxes
 import calendar 
 calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
 
@@ -640,8 +641,10 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     thismonth_num = date_today.month      
     if thismonth_num == 12:
         nextmonth_num = 1
+        nextmonth_calendar_year = nextyear
     else:
         nextmonth_num = date_today.month + 1
+        nextmonth_calendar_year = thisyear
     thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
     nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
     thismonth = calendar.month_name[thismonth_num]
@@ -750,6 +753,18 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     else: #if no host specified that stuff is empty/none
         conflicts = None	
         host_package_conflict = False
+    #ADD THE FORM
+    if request.method == 'POST':
+        cal_form = CalendarCheckBoxes(data=request.POST)
+        if cal_form.is_valid():
+        	   day1 = cal_form.cleaned_data['day1']
+        	   #day2 = cal_form.cleaned_data['day2']
+             calsave = cal_form.save()
+             calsave.save()
+        else:
+            print cal_form.errors
+    else:
+        cal_form = CalendarCheckBoxes()    
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
@@ -768,6 +783,8 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  #days package may come
     	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
     	  'host_package_conflict': host_package_conflict,
+    	  #Calendar check boxes form
+    	  'cal_form': cal_form, 'nextmonth_calendar_year': nextmonth_calendar_year,
 		})
     
         
