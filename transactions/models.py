@@ -40,7 +40,7 @@ class Transaction(models.Model):
     cal_checkbox4 = models.DateField(blank=True, null=True)
     cal_checkbox5 = models.DateField(blank=True, null=True)
     cal_checkbox6 = models.DateField(blank=True, null=True)
-    cal_checkbox7 = models.Datefield(blank=True, null=True)
+    cal_checkbox7 = models.DateField(blank=True, null=True)
     #to get a date use DateField (datetime.date.today), to get date with time use DateTimeField
     #datenow = models.DateField("Date When Requested (Duplicative but needed)", blank=True, null=True)
     deliverydatenotracking_rangestart = models.DateField("Expected Delivery Date Range Start, Before Tracking Information Entered", blank=True, null=True)
