@@ -16,6 +16,7 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 9405509699939563285640 - black boots, already arrivedUSPS priority, already arrived - wnat to see if the type is updated
 615774528257  - sleeping mask, not delivered
 1ZA3225FYW43921778 - bars
+<<<<<<< HEAD
 
 "PRIORITIES"
 1. LANDING
@@ -68,6 +69,28 @@ JESS: search - search bar placement
 6. JESS: make an upload picture modal
 6. JESS: host profile process
 6. JESS:---- 4a. auto add a calendar?
+=======
+"""jess to do"""
+-- availalbility days - change ot business days
+-- do a risky - if he leaves day after or day before... it is supposed to come. 
+-- startashipment - availability - change button logic if have conflict button says "i accept accountability" or whatever.
+- startashipemt - if is availabl e- maybe dont need button or dont need step? just take them to the payment option?
+make the process for hosts to enter their availability
+pass the host_package-conflict indicator to the transaction table\\-
+- update availability app so that its business days
+1. fix the day in week/warning thing - it need to be day of month
+calendar: define a function when user enters date from and date to that forces date to to be after date_from]]
+	2. figure out what to do with conflicts that end more in more than the next month out - add a new month?
+3. search box isnnt working when i type new address
+search page is taking a reall long time to load with the urls
+3. notification prefeernces defaul - profile
+4. notic epreference by package - dashboard
+- HOW TO ESND DIFFERENT EMAILS TO DIFFERENT PEOPLE? ask them?
+2. edit tracign -add button to remove tracking, or enter a new one
+-- make an upload picture modal
+-host profile process
+---- 4a. auto add a calendar?
+>>>>>>> e6a204d783f920bb68dcbab2145b5301b36122a8
 5. request to connect - add errors if already connected
 6. JESS:<!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 6. JESS: - dashboard: finish for other transactions
