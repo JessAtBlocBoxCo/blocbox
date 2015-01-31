@@ -130,8 +130,9 @@
                     <li role="presentation"><a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ host.id }}/days10to14';">10-14 Days</a>
                     </li>
                 </ul>
-            </div>
-            <!--dropdown menu-->
+            </div> <!--dropdown menu-->
+            
+             {% include "calendar_subtemplates/bimonthly_calendar.html" %}
         </div>
     </div>
     <!--row-->
@@ -167,6 +168,7 @@
         <!--row with calendars-->
         <div class="col-xs-12">
             {% include "calendar_subtemplates/bimonthly_calendar.html" %}
+       
         </div>
         <p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p>
     </div>
