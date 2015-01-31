@@ -140,7 +140,6 @@ JOHN: signup - Page that thanks host for confirming connection to use - Styling
 
 4.    
 JOHN: dashboard - Styling boxes
-JOHN: dashboard - Styling boxes
 JOHN: dashboard - Style fonts
 JOHN: dashboard - Placeholders or hide boxes when now shipments in process
 JOHN: dashboard - Legend for the calendar
