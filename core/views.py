@@ -757,10 +757,10 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     if request.method == 'POST':
         cal_form = CalendarCheckBoxes(data=request.POST)
         if cal_form.is_valid():
-        	   day1 = cal_form.cleaned_data['day1']
-        	   #day2 = cal_form.cleaned_data['day2']
-             calsave = cal_form.save()
-             calsave.save()
+            day1 = cal_form.cleaned_data['day1']
+            #day2 = cal_form.cleaned_data['day2']
+            calsave = cal_form.save()
+            calsave.save()
         else:
             print cal_form.errors
     else:
