@@ -18,6 +18,7 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 1ZA3225FYW43921778 - bars
 """jess to do"""
 -- availalbility days - change ot business days
+-- do a risky - if he leaves day after or day before... it is supposed to come. 
 -- startashipment - availability - change button logic if have conflict button says "i accept accountability" or whatever.
 - startashipemt - if is availabl e- maybe dont need button or dont need step? just take them to the payment option?
 make the process for hosts to enter their availability
