@@ -97,7 +97,10 @@
         {% if dayrangestart %} {% else %}
 
         <div class="row">
-            <h6 class="col-xs-12 col-sm-12 margintop30px marginbottom30px"> 	When will your package arrive? 	</h6>
+            <h6 class="col-xs-12 col-sm-12 margintop30px marginbottom30px"> 	
+            		When will your package arrive?  Select up to 6 dates....{{ host.first_name }}'s Availability is shown below... [ADD MORE TEXT ABOUT INTERPRETING CALENDAR]
+            
+            </h6>
             
              {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}
              	

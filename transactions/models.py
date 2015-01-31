@@ -34,6 +34,13 @@ class Transaction(models.Model):
     favorstatus = models.CharField("Favor Status (Non-Shipments)", max_length=50, blank=True, null=True)
     dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)
     dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)
+    cal_checkbox1 = models.DateField(blank=True, null=True)
+    cal_checkbox2 = models.DateField(blank=True, null=True)
+    cal_checkbox3 = models.DateField(blank=True, null=True)
+    cal_checkbox4 = models.DateField(blank=True, null=True)
+    cal_checkbox5 = models.DateField(blank=True, null=True)
+    cal_checkbox6 = models.DateField(blank=True, null=True)
+    cal_checkbox7 = models.Datefield(blank=True, null=True)
     #to get a date use DateField (datetime.date.today), to get date with time use DateTimeField
     #datenow = models.DateField("Date When Requested (Duplicative but needed)", blank=True, null=True)
     deliverydatenotracking_rangestart = models.DateField("Expected Delivery Date Range Start, Before Tracking Information Entered", blank=True, null=True)
