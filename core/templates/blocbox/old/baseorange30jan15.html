@@ -1,0 +1,601 @@
+<!doctype html>
+<!--  this is blocbox/core/templates/blocbox/baseorange.html
+			it is extended by blocbox/basewaitlist.html, which is extended by index.html (waitlist) and beta.html (beta site)
+			contains most of the head materials and other base formatting for the color block pages 
+-->
+
+{% load staticfiles %}
+
+
+<html lang="en" class="fullheight">
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--  Meta Tags - Describe the Site -->
+    <meta name="Description" CONTENT="Package Delivery Holding and Receiving, Storage, Pet Care, Dog Walking, Child Care,
+   					Mailbox Rental, Missed Packages, 800 USPS, 800 UPS">
+
+    <!--  add the favicon to appear in tab, Hide this line for IE (needed for Firefox and others) -->
+    <![if !IE]>
+    <link rel="icon" href="{% static 'blocbox/images/Block-Outline-Orange.png' %}" type="image/x-icon" />
+    <![endif]>
+    <!--  This is needed for IE -->
+    <link rel="shortcut icon" href="{% static 'blocbox/images/Block-Outline-Orange.ico' %}" type="image/ico" />
+    <!--  end favicon insert -->
+
+
+    <!--  add typekit font -->
+    <script type="text/javascript" src="http://use.typekit.net/olu7nwz.js"></script>
+    <script type="text/javascript">
+        try {
+            Typekit.load();
+        } catch (e) {}
+    </script>
+
+    <!--  Adding Bootstrap CSS page-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <!--  Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+
+    <!--  add font-awesome-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css">
+
+    <!-- link to john's css overwrides - a new CSS file - needs to be called after we call the CSS bootstrap -->
+    <link rel="stylesheet" href="{% static 'blocbox/css/jb_bootstrap_customization.css' %}">
+    <!-- link to jasny-bootstrap extension - will fold into jb_bootstrap_custimization at some point -->
+    <link rel="stylesheet" href="{% static 'blocbox/css/jasny-bootstrap.css' %}">
+
+
+    <!--  jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!--  Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--  Jasny-bootstrap extention - Latest compiled and minified JavaScript -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/js/jasny-bootstrap.min.js"></script>
+
+
+
+    <!--  Google Tracking SNippet -Goes in every page -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-51513611-1', 'blocbox.co');
+        ga('send', 'pageview');
+    </script>
+
+    {% block headadds %} {% endblock %}
+
+</head>
+
+<body class="whitetext fullheight waitlistbody">
+
+    <div id="bbpage">
+        <!--  <a name="top" class="anchorwithnav"></a> -->
+        <div class="mobileonly">
+            <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+                <a class="navmenu-brand" href="/beta/">
+                    <img class="slidelogo" src={% static 'blocbox/images/Logo-and-name-white.png' %} />
+                </a>
+                {% if user.is_authenticated %}
+                <ul class="nav navmenu-nav">
+                    <li class="active mobilenavtext">
+                        <a href='/dashboard/'><i class="mobilenavtext fa fa-list fa-fw fa-lg"></i>&nbsp; Dashboard</a>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg"></i>&nbsp; Start a Shipment</a>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg"></i>&nbsp; Messages ({% load inbox %}{% inbox_count %})</a>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp; Search Your Neighborhood</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-home fa-fw fa-lg"></i>
+                        &nbsp; My Blocbox
+                        <b class="caret"></b>
+                    </a>
+                        <ul class="dropdown-menu navmenu-nav">
+                            <li class="mobilenavtext">
+                                <a href='/myblock/'>&nbsp; My Block</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href='/profile/'>Profile</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href='/account/'>Account</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg"></i>&nbsp; Invite Your Neighbors</a>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/signuphost/'><i class="fa fa-users fa-fw fa-lg"></i>&nbsp; Become a Host</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-life-ring fa-fw fa-lg"></i>
+                        &nbsp; Support
+                        <b class="caret"></b>
+                    </a>
+                        <ul class="dropdown-menu navmenu-nav">
+                            <li class="mobilenavtext">
+                                <a href="#">Trust & Saftey</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Terms & Privacy</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Report a Problem</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-info fa-fw fa-lg"></i>
+                        &nbsp; About Blocbox
+                        <b class="caret"></b>
+                    </a>
+                        <ul class="dropdown-menu navmenu-nav">
+                            <li class="mobilenavtext">
+                                <a href="#">How it Works</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Terms & Privacy</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Jobs</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Love Blocbox?</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign out</a>
+                    </li>
+                </ul>
+                {% else %}
+                <ul class="nav navmenu-nav">
+                    <li>
+                        <a href="#openModal1" class="mobilenavtext"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign in</a>
+                        <div class="modalDialog" id="openModal1">
+                            <div class="">	<a href="#close" title="Close" class="close">X</a>
+                                <h6 class="ltbluetext paddingsides15px">Sign In</h6>
+                                <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
+                                    {% csrf_token %} {{ login_form.non_field_errors }}
+                                    <div class="row">
+                                        <div class="col-xs-12 form-group paddingbottom20px">
+                                            {{ user_form.email.errors }}
+                                            <label for="id_email">Email Address</label>
+                                            <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
+                                        </div>
+
+                                        <div class="col-xs-12 form-group">
+                                            {{ user_form.password.errors }}
+                                            <label for="id_password1">Password</label>
+                                            <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
+                                        </div>
+                                    </div>
+                                    <div class="row paddingtopbottom10px">
+                                        <div class="col-xs-6 checkbox greytext">
+                                            <label>
+                                                <input type="checkbox">&nbsp; Remember Me
+                                            </label>
+                                        </div>
+                                        <p class="col-xs-6 textright"><a href="/passwordreset/recover/">Forgot Password?</a>
+                                        </p>
+                                    </div>
+                                    <div class="paddingsides15px">
+                                        <button type="submit" name="submit" class="bluebutton marginsides15px">Sign In</button>
+                                    </div>
+                                    <div class="row">
+                                        <div class="profileboxline100 paddingsides15px margintop20px marginbottom20px"></div>
+                                        <p class="col-xs-6 greytext nopaddingright" style="margin-right: -20px;">Don't have an account?</p>
+                                        <p class="col-xs-3 nopaddingleftright"><a href="/search/">Get Started</a>
+                                        </p>
+                                    </div>
+                                </form>
+                                <!-- end form line -->
+                            </div>
+                        </div>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href="#"><i class="fa fa-user fa-fw fa-lg"></i>Get Started</a>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href="#"><i class="fa fa-home fa-fw fa-lg"></i>How it Works</a>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp; Search Your Neighborhood</a>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg"></i>&nbsp; Invite Your Neighbors</a>
+                    </li>
+                    <li class="mobilenavtext">
+                        <a href='/signuphost/'><i class="fa fa-users fa-fw fa-lg"></i>&nbsp; Become a Host</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle mobilenavtext" data-toggle="dropdown" href="#"><i class="fa fa-info fa-fw fa-lg"></i>
+                        &nbsp; About Blocbox
+                        <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu navmenu-nav">
+                            <li class="mobilenavtext">
+                                <a href="#">Trust & Saftey</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Terms & Privacy</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Jobs</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Love Blocbox?</a>
+                            </li>
+                            <li class="mobilenavtext">
+                                <a href="#">Contact Us</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                {% endif %}
+            </nav>
+            <div class="navbar navbar-default navbar-fixed-top">
+                <button type="button" class="navbar-toggle orangebars" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+                    <i class="fa fa-bars fa-fw fa-2x"></i>
+                </button>
+            </div>
+        </div>
+
+        {% block navbar %}
+        <nav class="navbar-orange desktoponly" role="navigation">
+            <div class="row" style="padding-left: 5%; padding-right: 5%">
+                <a href="#top" class="logo-image"></a>
+                <!-- the "brand" - ultimately we should replace this with styled text rather than an image -->
+                <div class="col-sm-3" style="padding-left: 118px">
+                    <a class="nav-blocbox-name" href="#"></a>
+                </div>
+                <!-- col-->
+                {% if user.is_authenticated %}
+                <div class="col-sm-3  col-sm-offset-4 margintop30px">
+                    <div class="dropdown textright">
+                        <!--  class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
+                        <!--  button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
+                        <button class="dropdown-toggle whitetext bbbasenavbar navnamewhite" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                            <!--  class="col-sm-3 menubutton"-->
+                            <!--  print user name and number of new messages in parentheses -->
+                            {{user.first_name}}
+                            <span class="caret"></span> 
+                        </button>
+                        <!--  list of links within the dropdown menu .. removing dropdown-menu-right-->
+                        <ul class="dropdown-menu" style="margin-left: 125px;" role="menu" aria-labelledby="dropdownMenu1">
+                            <!--  nav navbar-nav navbar-right-->
+                            <!--  drop down menu if logged in-->
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/dashboard/'><i class="fa fa-list fa-fw fa-lg greytext"></i>&nbsp; Dashboard</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/myblock/'><i class="fa fa-th-large fa-fw fa-lg greytext"></i>&nbsp; My Block</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/profile/'><i class="fa fa-user fa-fw fa-lg greytext"></i>&nbsp; Profile</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-dollar fa-fw fa-lg greytext"></i>&nbsp; Account</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg greytext"></i>&nbsp; Sign out</a>
+                            </li>
+                        </ul>
+                        <!--  end collection of links for toggling -->
+                    </div>
+                    <!--  dropdown -->
+                </div>
+                <div class="col-sm-2" style="padding-top: 23px">
+                    <!-- col containing ddropdown button-->
+                    <div class="col-xs-2 col-sm-4">
+                        <div class="dropdown textcenter">
+                            <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn navstartwht" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                <!--  info button-->
+                                <a class=""></a>
+                            </button>
+                            <!--  end info button-->
+                            <!--  list of links within the dropdown menu .. removing dropdown-menu-right-->
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3" style="left: -155px;">
+                                <!-- nav navbar-nav navbar-right-->
+
+                                <!--  starat ahipsment - need to reroute this to go to host page-->
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp; Start a Shipment</a>
+                                </li>
+                                <!--  starta  favor: need to redirect this to a page that routes to whether 1/o-->
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nav_startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp; Start a Favor</a> 
+                                </li>
+
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/signuphost/'><i class="fa fa-users fa-fw fa-lg greentext"></i>&nbsp; Become a Host</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeaneighbor/'><i class="fa fa-hand-o-right fa-fw fa-lg greentext"></i>&nbsp; Nudge a Neighbor</a>
+                                </li>
+                            </ul>
+                            <!--  end collection of links for toggling -->
+                        </div>
+                    </div>
+
+                    <!--  drop down menu if logged in-->
+                    <div class="col-xs-2 col-sm-4">
+                        <div class="dropdown textcenter">
+                            <button class="dropdown-toggle bbbasenavbar navringwhite navinboxwhite nopaddingsides" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu2" data-toggle="dropdown">
+                                <div class="" style="padding-bottom: 12px; margin-bottom: 0px; margin-top: 0px;">{% load inbox %}{% inbox_count %}</div>
+                                <!-- number of new messages -->
+                            </button>
+                            <!--  end message button-->
+                            <!--  list of links within the dropdown menu .. removing dropdown-menu-right-->
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2" style="left: -175px">
+                                <!-- nav navbar-nav navbar-right-->
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/inbox/'><i class="fa fa-inbox fa-fw fa-lg ltbluetext"></i>&nbsp; Inbox</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/messages/compose/'><i class="fa fa-pencil-square-o fa-fw fa-lg ltbluetext"></i>&nbsp; New Message</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/account/'><i class="fa fa-cog fa-fw fa-lg ltbluetext"></i>&nbsp; Notification Settings</a>
+                                </li>
+                            </ul>
+                            <!--  end collection of links for toggling -->
+                        </div>
+                    </div>
+                    <div class="col-xs-2 col-sm-4">
+                        <div class="dropdown textcenter">
+                            <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn navinfobtnwht" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                                <!--  info button-->
+                                <a class=""></a>
+                            </button>
+                            <!--  end info button-->
+                            <!--  list of links within the dropdown menu .. removing dropdown-menu-right-->
+                            <ul class="dropdown-menu  paddingright10px" role="menu" aria-labelledby="dropdownMenu3" style="left: -145px;">
+                                <!-- drop down menu items that appears to either user -->
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp; Find a BlocBox</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp; Support</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp; Love Bloxbox?</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; About Blocbox</a>
+                                </li>
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp; Contact Us</a>
+                                </li>
+                            </ul>
+                            <!--  end collection of links for toggling -->
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                <div class="col-sm-2  col-sm-offset-6" style="margin-top: 35px; overflow: visible">
+                    <div class="bbbasenavbar" style="margin-top: 17px; padding-left: 60px">
+                        <a href="#openModal2" class="orangenavbtn textcenter">Sign in</a>
+                    </div>
+                    <div id="openModal2" class="modalDialog">
+                        <div class="modalupfront">	<a href="#close" title="Close" class="close">X</a>
+                            <h6 class="ltbluetext paddingsides15px">Sign In</h6>
+                            <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
+                                {% csrf_token %} {{ login_form.non_field_errors }}
+                                <div class="row">
+                                    <div class="col-xs-12 form-group paddingbottom20px">
+                                        {{ user_form.email.errors }}
+                                        <label for="id_email">Email Address</label>
+                                        <input type="email" class="form-control" name="email" id="id_email" placeholder="Enter Email">
+                                    </div>
+
+                                    <div class="col-xs-12 form-group">
+                                        {{ user_form.password.errors }}
+                                        <label for="id_password1">Password</label>
+                                        <input type="password" class="form-control" name="password" id="id_password1" placeholder="Enter Password">
+                                    </div>
+                                </div>
+                                <div class="row paddingtopbottom10px">
+                                    <div class="col-xs-6 checkbox greytext">
+                                        <label>
+                                            <input type="checkbox">&nbsp; Remember Me
+                                        </label>
+                                    </div>
+                                    <p class="col-xs-6 textright"><a href="/passwordreset/recover/">Forgot Password?</a>
+                                    </p>
+                                </div>
+                                <div class="paddingsides15px">
+                                    <button type="submit" name="submit" class="bluebutton marginsides15px">Sign In</button>
+                                </div>
+                                <div class="row">
+                                    <div class="profileboxline100 paddingsides15px margintop20px marginbottom20px"></div>
+                                    <p class="col-xs-6 greytext nopaddingright" style="margin-right: -20px;">Don't have an account?</p>
+                                    <p class="col-xs-3 nopaddingleftright"><a href="/search/">Get Started</a>
+                                    </p>
+                                </div>
+                            </form>
+                            <!-- end form line -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-1" style="margin-top: 23px">
+                    <div class="dropdown textcenter">
+                        <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn navinfobtnwht" style="margin-top: 26px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
+                            <!-- info button-->
+                            <a class=""></a>
+                        </button>
+                        <!-- end info button-->
+                        <!-- list of links within the dropdown menu .. removing dropdown-menu-right-->
+                        <ul class="dropdown-menu paddingright10px" role="menu" aria-labelledby="dropdownMenu3" style="left: -170%">
+                            <!-- nav navbar-nav navbar-right-->
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; How It Works</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'><i class="fa fa-user fa-fw fa-lg yellowtext"></i>&nbsp; Join Waitlist</a>
+                            </li>
+                            <!-- drop down menu items that appears to either user -->
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/search'><i class="fa fa-map-marker fa-fw fa-lg yellowtext"></i>&nbsp; Find a BlocBox</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-question fa-fw fa-lg yellowtext"></i>&nbsp; Support</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'><i class="fa fa-heart fa-fw fa-lg yellowtext"></i>&nbsp; Love Bloxbox?</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/aboutblocbox'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; About Blocbox</a>
+                            </li>
+                            <li class="dropdownfont" role="presentation">
+                                <a class="paddingleft10px" role="menuitem" tabindex="-1" href='/nudgeneighbor'>
+                                    <form method="post" action="mailto:admin@blocbox.co?subject=Hello!">
+                                        <button class="hiddenbtn nopaddingleftright"><i class="fa fa-phone fa-fw fa-lg yellowtext"></i>&nbsp; Contact Us</button>
+                                    </form>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- end collection of links for toggling -->
+                    </div>
+                </div>
+                {% endif %}
+                <!-- row containing full navbar-->
+            </div>
+        </nav>
+        <!-- end nav-->
+        {% endblock %}
+
+
+        <!-- site content goes here -->
+        {% block content %}{% endblock %} {% block footer %}
+        <footer>
+            <div class="container-fluid darkgreenbackground">
+                <div class="row paddingtopbottom50px">
+                    <div class="col-sm-2 col-sm-offset-2">
+                        <img class="footerlogo" src="{% static 'blocbox/images/BB-Logo.svg' %}" />
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <h3 class="nomargintop whitetext">Discover</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='privacy/'>How It Works</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='privacy/'>Limitless Possibilities</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='contactus/'>Support Center</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='signuphost/'>Trust &amp; Saftey</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='signuphost/'>Invite Your Neighbors</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <h3 class="nomargintop whitetext">Hosting</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='privacy/'>Why Host</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='privacy/'>Neighbors Helping Neighbors</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='contactus/'>Responsible Hosting</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='signuphost/'>Saftey</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-2">
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <h3 class="nomargintop whitetext">Blocbox</h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='contactus/'>About</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='privacy/'>Terms &amp; Privacy</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='contactus/'>Jobs</a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="paddingsides3pxmobile">
+                                <a class="whitetext dropdownfont" href='signuphost/'>Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- add social links -->
+                <div class="row">
+                    <div class="footerline"></div>
+                </div>
+                <div class="row paddingtop20px">
+                    <h5 class="whitetext textcenter">SAY HELLO!</h5>
+                </div>
+                <div class="row paddingbottom50px paddingtop20px">
+                    <div class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3">
+                        <div class="col-xs-4 textcenter">
+                            <a href="https://www.facebook.com/blocboxco" target="_blank"><i class="textcenter fa fa-facebook fa-2x whitetext"></i></a>
+                        </div>
+                        <div class="col-xs-4 textcenter">
+                            <a href="https://twitter.com/BlocboxCo" target="_blank"><i class="textcenter fa fa-twitter fa-2x whitetext"></i></a>
+                        </div>
+                        <div class="col-xs-4 textcenter">
+                            <a>
+                                <form method="post" action="mailto:admin@blocbox.co">
+                                    <button class="hiddenbtn"><i class="textcenter fa fa-envelope fa-2x whitetext"></i>
+                                    </button>
+                                </form>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- end div within footer -->
+            </div>
+        </footer>
+        {% endblock %}
+
+
+    </div>
+    <!-- id=bbpage -->
+</body>
+
+</html>
