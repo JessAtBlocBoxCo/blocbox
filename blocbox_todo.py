@@ -16,116 +16,139 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 9405509699939563285640 - black boots, already arrivedUSPS priority, already arrived - wnat to see if the type is updated
 615774528257  - sleeping mask, not delivered
 1ZA3225FYW43921778 - bars
-"""jess to do"""
--- availalbility days - change ot business days
--- startashipment - availability - change button logic if have conflict button says "i accept accountability" or whatever.
-- startashipemt - if is availabl e- maybe dont need button or dont need step? just take them to the payment option?
-make the process for hosts to enter their availability
-pass the host_package-conflict indicator to the transaction table\\-
-- update availability app so that its business days
-1. fix the day in week/warning thing - it need to be day of month
-calendar: define a function when user enters date from and date to that forces date to to be after date_from]]
-	2. figure out what to do with conflicts that end more in more than the next month out - add a new month?
-3. search box isnnt working when i type new address
-search page is taking a reall long time to load with the urls
-3. notification prefeernces defaul - profile
-4. notic epreference by package - dashboard
-- HOW TO ESND DIFFERENT EMAILS TO DIFFERENT PEOPLE? ask them?
-2. edit tracign -add button to remove tracking, or enter a new one
--- make an upload picture modal
--host profile process
----- 4a. auto add a calendar?
-5. request to connect - add errors if already connected
-<!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
- - dashboard: finish for other transactions
-- profile pics: make individualized/link to specific hosts
-	- update search page for host pics
-- allow to upload profile pics
-- integrate availability calendar into when package will arrive - overlay "today"s date and the expected delivery
-- on dashboard maybe just do "date ordered" and "delivery speed" (e.g., 2-3 days) that way we dont hav eto say exactly when it will arrive, wh
-		which is prob redundant with the tracking info
-- scheduling/availability - intregrate into start a shipment
-- fix the connect/host2 thing - connecting if already a user - make sure the emails are sending to thoe host, add a field for confirmed, right now its logging as connected een before host confirms
-- update readme to describe navstaratshipment, et
-- update the navbar in beta so if they're not logged on doesn't call nav_starta s hipment - do if/or on user authenticated
-- stop error message if people visit the dashboard without login - just re-rout them to login or sign up
-- create a styalized error message
-- paypal PDT
-- paypal PRO	
-- later: figure out how to make it automatically register lat/long - right now we need to manually enter it for hosts
-- discuss with john: SMS notifications for aftership? 4 cents per SMS.. may not be worth it since meail is so close
-	
-	- email notifications - allow users to opt in or out
 
-"""TO DO"""   
-JOHN: the profile pictures ar enow upload-able and linked to the folder /home/django/blocbox/blocbox/static/user_uploads
-	this is true on the profile and dashboard page
-	on profle - you need to appply the sahe "dashpic" and "Dashcoainter" type of styles you did to the dashboard if you want it to look better
-	
-	**ALOS APPLIES TO HPV PAGE **
-	***ALSO APPLIES TO SEARCH PAGE**
-JOHN: the bottonm footer creeps up and overrides stuff on the page unless you put hella breaks in at the bottom. not sure whats going on there
-- create the host profile or dashboard with things like options for setting prices
-QUESTION: WHY IS HEADER 4 SO SMALL ON THE DASHBOARD?
-JOHN: dashboard - the top bar with e.g. "message" etc.. is covered up by stuff following it. can yuo fix?
-1. JOHN - /Fix Mobile/make site responsive
-3. JOHN search page -- fix map top margin and restyle nudge a neighbor message
+"PRIORITIES"
+1. LANDING
+2. SHIPMENT PROCESS
+3. SIGNUP PROCESS
+4. DASHBAORD
+5. MESSAGING/NOTIFICATIONS
+6. HOST SEARCH
+7. USER PROFILE
+8. HOST PROFILE
+9. HOST SIGN UP
+10. MYBLOCK
+
+
+"JESS TO-DO"
+
+JESS: add pages - account, support, Messages settings
+1. JESS: landing - fix anchor links to "how it works"
+1. JESS: shipment - availalbility days - change ot business days - update availability app so that its business days
+2. JESS: shipment - availability - change button logic if have conflict button says "i accept accountability" or whatever.
+5. JESS: shipment - pass the host_package-conflict indicator to the transaction table\\-
+6. JESS: shipment - fix the day in week/warning thing - it need to be day of month
+7. JESS: shipment - calendar: define a function when user enters date from and date to that forces date to to be after date_from]]
+JESS: shipment - issue with payment option (bundled vers speciifc) and per-package items like "status" - thse are difference sorts.. so paypal shoudl just be for the money, transactions table for the favor/shipment/transaction
+JESS: shipment - tracking information - automate that/connect to carrier - also figure out which tracking number code matched to what carrier
+7. JESS: shipment - figure out what to do with conflicts that end more in more than the next month out - add a new month?
+3. JESS: shipment - select a host - then the process - LOAD - to connect to a host...
+4. JESS: shipment - shippackage: connect the host address fields to data table so populate,
+2. JESS: shipment - payment page -- do the django app for payment
+1. JESS: search - after entering new search address, host pin disappears, also zooms in very close
+2. JESS: search - page is taking a reall long time to load with the urls
+
+4. JESS: host admin - make the process for hosts to enter their availability
+
+JESS: messages - Change {{ message.sender }} to first and last name instead of email
+JESS: messages - Inbox - Change {{ message.sent_at|date:_("DATETIME_FORMAT") }} to month and date (ex. May 7)
+JESS: nav - Link to become a host (on nav) - When signed in presents message, "Looks like you're already signed in! Sign out if you'd like to register as a new user Or, you can visit your dashboard or search for a new host to connect with.”
+JESS: dashbaord - Upload a picture not working
+JESS: messages - connection success email to user - add link in email to sign in
+JESS: signup - page - add additional required fields (name, adddress, etc)
+JESS: search - search bar placement
+
+- remove reference to paying after they receive the package -- theyre going to be charged up front
+
+12. JESS: myblock - : fill this in = sjpw who you are connected to- just do basic list
+3. JESS: notification prefeernces defaul - profile
+4. JESS:  notice preference by package - dashboard
+6. JESS:- HOW TO SEND DIFFERENT EMAILS TO DIFFERENT PEOPLE? ask them?
+2. edit tracking -add button to remove tracking, or enter a new one
+6. JESS: make an upload picture modal
+6. JESS: host profile process
+6. JESS:---- 4a. auto add a calendar?
+5. request to connect - add errors if already connected
+6. JESS:<!--NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
+6. JESS: - dashboard: finish for other transactions
+6. JESS: - profile pics: make individualized/link to specific hosts
+6. JESS: - update search page for host pics
+6. JESS: - allow to upload profile pics
+6. JESS: - integrate availability calendar into when package will arrive - overlay "today"s date and the expected delivery
+6. JESS: - on dashboard maybe just do "date ordered" and "delivery speed" (e.g., 2-3 days) that way we dont hav eto say exactly when it will arrive, which is prob redundant with the tracking info
+6. JESS: - scheduling/availability - intregrate into start a shipment
+6. JESS: - fix the connect/host2 thing - connecting if already a user - make sure the emails are sending to thoe host, add a field for confirmed, right now its logging as connected een before host confirms
+6. JESS: - update readme to describe navstaratshipment, et
+6. JESS: - update the navbar in beta so if they're not logged on doesn't call nav_starta s hipment - do if/or on user authenticated
+6. JESS: - stop error message if people visit the dashboard without login - just re-rout them to login or sign up
+6. JESS: - create a styalized error message
+6. JESS: - paypal PDT
+6. JESS: - paypal PRO	
+6. JESS: - later: figure out how to make it automatically register lat/long - right now we need to manually enter it for hosts
+6. JESS: - discuss with john: SMS notifications for aftership? 4 cents per SMS.. may not be worth it since meail is so close
+6. JESS:  email notifications - allow users to opt in or out
 4. JESS: Remove sign in after welcome pagE
 7. JESS: Restore User nav on beta page
-    8. JESS: Inbox: call a snippet from the message, like {{ message.snippet }}, change delete and trash to “archive”?, Change {{ message.sender }} to the user name (e.g. “John”)?    
-2. JOHN: add process/for other favors
-1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
-3. JOHNS: general issues with sign-up page: aligning and spacing is kinda weird
-4. JOHN: there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" 
-			(less verbose though) and then a separate button saying "sign up to be a host"
-1. JOHN/JESS: package incoming process/when it arrives
-BOTH: need to re-think "start a favor" - need a better term
-1. JOHN: add green check box next to verified info
+8. JESS: Inbox: call a snippet from the message, like {{ message.snippet }}, change delete and trash to “archive”?, Change {{ message.sender }} to the user name (e.g. “John”)?
+1. JESS HPV verified info: if not connected, say "Verified Info" --
+11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
+7. JESS to form and table - add need_meals
+1. JESS dashboard: connect to transactions table to populate actually transactions
 12. JESS: ADD Tracking # API
 2. JESS: verified info on HPV - only show symbol if verified, then in connect version show the DATA.
 3. JESS: update "when i'm home" informatiorfn for host profile... visitor
 4. JESS: update table to have fields for what other services they are offering
 5. JESS: updating HPV so that it truly reflects what services you offer
-6. JOHN: sign-up - "by continugin i agree" - put below button
-7. JESS: add to email sent to host - the text they fill in for when they usually get packages
 JESS: connect tracking number o tracking EPI
 JESS: populate the "delivery date" field by connecting to trac
-8. SIGN-UP: two bowls of shit, one bowl, then sneaky second bowl of shit
+7. JESS: add to email sent to host - the text they fill in for when they usually get packages
 9. JESS table: add two use cases (1) wifi sharing; (2) community dinners/food as a use-case.. add this totable adn then also update the checkboxes: add NEED_MEALS
-
-11. john: style the profile pic - so the user uplaodssimplepic, and then converted to glossy bubble
 13. jess: google map - link the search page to the fields in table so it automatically popualtes with hosts nearby (e.g., not hard coded)
-14.: john: update "my block" p age with th enice map that you first crated
-15. jess: update back-end of "my block" page after john adds themap and after youve fixed the search page to populate from the table
-13. JOHN: create HOSTdashboard - or version of this for thishost.
 14. JESS: add a calendar for availablity - figure out a django app for this
 15. jess: fig invalid login credentials plac e- redirect to a forgot password
-1. JESS HPV verified info: if not connected, say "Verified Info" --
-11. JESS dashboard:  create a field for profilepic links - the NULL/DEFAULT value is images/profilepics/blankprofilepic.png
-7. JESS to form and table - add need_meals
-1. JESS dashboard: connect to transactions table to populate actually transactions
+15. jess: update back-end of "my block" page after john adds themap and after youve fixed the search page to populate from the table
+
+"JOHN TO-DO"
+
+JOHN: host box on mobile
+JOHN: style profile page
+JOHN: Thank you for registering
+JOHN: Sign into your BB account - style
+JOHN: Page that thanks host for confirming connection to use - Styling
+JOHN: dashboard - Styling boxes
+JOHN: dashboard - Styling boxes
+JOHN: dashboard - Style fonts
+JOHN: dashboard - Placeholders or hide boxes when now shipments in process
+JOHN: dashboard - Legend for the calendar
+JOHN: inbox - Style when no messages
+JOHN: User profile page - style
+JOHN: footer - responsive 
+JOHN: the profile pictures ar enow upload-able and linked to the folder /home/django/blocbox/blocbox/static/user_uploads
+this is true on the profile and dashboard page on profle - you need to appply the sahe "dashpic" and "Dashcoainter" type of styles you did to the dashboard if you want it to look better
+JOHN: - create the host profile or dashboard with things like options for setting prices
+1. JOHN - /Fix Mobile/make site responsive
+2. JOHN: add process/for other favors
+1. JOHN: FIX PLACEMENT OF ERROR MESSAGES
+3. JOHNS: general issues with sign-up page: aligning and spacing is kinda weird
+4. JOHN: there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" (less verbose though) and then a separate button saying "sign up to be a host"
+1. JOHN/JESS: package incoming process/when it arrives
+1. JOHN: add green check box next to verified info
+6. JOHN: sign-up - "by continugin i agree" - put below button
+11. JOHN: style the profile pic - so the user uplaodssimplepic, and then converted to glossy bubble
+14.: JOHN: update "my block" p age with th enice map that you first crated
+13. JOHN: create HOSTdashboard - or version of this for thishost.
 - JOHN: fix image on footer (at least for I.E.) - the blocbox logo is narrow/too tall
-	JESS: issue with payment option (bundled vers speciifc) and per-package items like "status" - thse are difference sorts.. so paypal shoudl just be for the money, 
-		transactions table for the favor/shipment/transaction
-		JESS: tracking information - automate that/connect to carrier - also figure out which tracking number code matched to what carrier
- - remove reference to paying after they receive the package -- theyre going to be charged up front
+
+"BOTH TO-DO"
+BOTH: need to re-think "start a favor" - need a better term
         
+"NOTES"
+8. SIGN-UP: two bowls of shit, one bowl, then sneaky second bowl of shit
+
 """JESS NOTES/QUESTIONS FOR JOHN"""
 1. do we need to split up dashboard containers by type of transaction or can we just have a field/colum for that (e.g, shipments and dog walkign one)
 2. dashboard: HOW DO WE WANT THESE TABLES TO LOOK ON MOBILE?-->            
 3. dashboard: -THE TABLE FORMAT MAY BE TOO RESTRICTIVE - AMAZON, ETC - IN THE RECENT ORDERS, THEY ALL USE BOXES RATHER THAN TALE FORMAT-->
-4. dashboard: maybe delivery date ad status can be collapsed into a single field? 
-
-
-3. JESS: staratahipment -select a host - then the process - LOAD - to connect to a host...
-4. JESS: shippackage: connect the host address fields to data table so populate,
-2. JESS: payment page -- do the django app for payment
-1. JESS START-A-SHIPMENT/CALENDAr:embed into availability
-2. JESS CALENDR: show black-out dates on the bimonthly view
-5. JESS: send a user an email when they ship package
-6. JESS: messagig system figure out how to integratem with email/so messages are sent as emails	
-12. JESS MYBLOCK: fill this in = sjpw who you are connected to- just do basic list
-
 
 """Jess - transaction tasks"""
 1. allow the user to modify the paypalIPN table - add fields later - like tracking, 
@@ -152,37 +175,12 @@ JESS: populate the "delivery date" field by connecting to trac
 """JESS NOTES ON HOW TO ISNTALL DJANGO PACKAGES"""
 #they install at:
 
-
 #3. footer is cropping up
 
 #4. landing page may be broken.
 
 
-
-
 # build out the process for a non-package transaction
-
-# User Dashboard: rsearch carrier API embedd tracking capability ito the website
-
-# Complete start-a-shipment
-
-# Complete payment page
-
-#4. Write Pitch Draft - outline with timing and suggestions for what slide should accompany
-
-#5. HALP email
-
-#6. Navbar/ drop downs
-
-#7. Review stock questions (on gdrive) to ensure we have answers to all. NOT suggesting we write answers. We�ll review them this weekend.
-
-
-
-
-
-
-
-
 
 
 
