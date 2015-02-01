@@ -753,18 +753,26 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     else: #if no host specified that stuff is empty/none
         conflicts = None	
         host_package_conflict = False
-    #ADD THE FORM
+    """Calendar checkbox form """
+    cal_checkboxes_entered = False
+    packagedays = []
     if request.method == 'POST':
         cal_form = CalendarCheckBoxes(data=request.POST)
-        if cal_form.is_valid():
-            day1 = cal_form.cleaned_data['day1']
-            #day2 = cal_form.cleaned_data['day2']
+        if cal_form.is_valid():  
+            for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	          
+                if cal_form.cleaned_data['month1day'+str(daynumber)]:
+                    checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                    packagedays.append(checked_day)
+                if cal_form.cleaned_data['month2day'+str(daynumber)]:
+                    checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                    packagedays.append(checked_day)                   
             calsave = cal_form.save()
             calsave.save()
+            cal_checkboxes_entered = True
         else:
             print cal_form.errors
     else:
-        cal_form = CalendarCheckBoxes()    
+        cal_form = CalendarCheckBoxes()  
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
@@ -775,7 +783,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
         'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
         'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
-        'today_dayofmonth_num': today_dayofmonth_num,
+        'today_dayofmonth_num': today_dayofmonth_num, 'nextmonth_calendar_year': nextmonth_calendar_year,
         #conflict app variables (if host)
     	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
@@ -784,7 +792,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
     	  'host_package_conflict': host_package_conflict,
     	  #Calendar check boxes form
-    	  'cal_form': cal_form, 'nextmonth_calendar_year': nextmonth_calendar_year,
+    	  'cal_form': cal_form, 'cal_checkboxes_entered': cal_checkboxes_entered, 'packagedays': packagedays,
 		})
     
         
