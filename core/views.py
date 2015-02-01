@@ -700,7 +700,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     #if dayrangestart:
     	 """if only a one day window"""
        #if dayrangestart == dayrangeend:
-       if packagedays
+       if packagedays:
        	  day = today_dayofmonth_num + int(dayrangestart)
        	  if day > days_in_thismonth:
        	      spillover_days = day - days_in_thismonth
