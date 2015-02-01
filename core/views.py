@@ -765,7 +765,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                     checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
                     packagedays.append(checked_day)
             for daynumber in range(1,32): 
-                daycheckedmonth2 = cal_form.cleaned_data['month1day'+str(daynumber)] 
+                daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
                 if daycheckedmonth2:
                     checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
                     packagedays.append(checked_day)                   
