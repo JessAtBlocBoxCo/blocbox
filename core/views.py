@@ -34,6 +34,7 @@ from schedule.utils import check_event_permissions, coerce_date_dict
 from django.utils import timezone
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
+from paypal.standard.ipn.views import ask_for_money
 #Import Messaging Stuff
 from django.contrib import messages
 from django_messages.models import Message
@@ -679,6 +680,8 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
             packagedays_count = len(packagedays)
             month1days_count = len(days_package_may_come_thismonth)
             month2days_count = len(days_package_may_come_nextmonth)
+            #!!! CALL THE ASK_FOR_MONEY VIEW FROM THE PAYPAL.STANDARD.IPN.VIEWS DOC - IS THIS POSSIBLE?
+            ask_for_money(request, host_id=host.id, favortype="package", package_days=packagedays)
         else:
             print cal_form.errors
     else:

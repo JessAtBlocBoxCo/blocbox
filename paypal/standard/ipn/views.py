@@ -140,7 +140,7 @@ easy to implement and doesn't require SSL."""
 		the template for both of these is on payment.html
 		its a bit confusing because there are two forms on one page - thats why we use transaction_submitted true or false
 """
-def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, dayrangeend=None, ): #default amount is 2.00, default host is John, payment_option="perpackage", invoice_id=None
+def ask_for_money(request, host_id=2, favortype="package", package_days = None, ): #default amount is 2.00, default host is John, payment_option="perpackage", invoice_id=None
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -159,13 +159,13 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     date = datetime.date.today()
     time = datetime.datetime.time(datenow)
     #population fields to put into the transaciton table
-    if dayrangestart:
-        dayrangestart = int(dayrangestart)
-    if dayrangeend:
-        dayrangeend = int(dayrangeend)
+    #if dayrangestart:
+    #    dayrangestart = int(dayrangestart)
+    #if dayrangeend:
+    #    dayrangeend = int(dayrangeend)
+    #deliverydatenotracking_rangestart = datenow + timedelta(days=dayrangestart)
+    #deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
     invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
-    deliverydatenotracking_rangestart = datenow + timedelta(days=dayrangestart)
-    deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
     #Do the transactions form stuff
     transaction_submitted = False
     trans = Transaction()
@@ -203,11 +203,11 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
                 trans.paypal_quantity = paypal_quantity
                 trans.host = host
                 trans.enduser = enduser
-                trans.dayrangestart = dayrangestart
-                trans.dayrangeend = dayrangeend
                 trans.invoice = invoice
-                trans.deliverydatenotracking_rangestart = deliverydatenotracking_rangestart
-                trans.deliverydatenotracking_rangeend = deliverydatenotracking_rangeend    
+                #trans.dayrangestart = dayrangestart
+                #trans.dayrangeend = dayrangeend
+                #trans.deliverydatenotracking_rangestart = deliverydatenotracking_rangestart
+                #trans.deliverydatenotracking_rangeend = deliverydatenotracking_rangeend    
                 trans.save() 
                 transaction_submitted = True
             else:
@@ -247,7 +247,6 @@ def ask_for_money(request, host_id=2, favortype="package", dayrangestart=None, d
     return render(request, 'blocbox/payment.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':datenow, 'local_timezone':local_timezone, 
-    	  'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,
     	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form,
     	  'trans_form_package': trans_form_package, 'invoice': invoice,  'transaction_submitted': transaction_submitted,
     	  'trans_created': trans_created,
