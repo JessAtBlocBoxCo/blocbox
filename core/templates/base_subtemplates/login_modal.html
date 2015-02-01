@@ -4,7 +4,7 @@
        <div id="open_login_modal" class="modalDialog">
            <div class="modalupfront">	<!--modalupfront-->
            	<a href="#close" title="Close" class="close">X</a>
-               <h6 class="ltbluetext paddingsides15px paddingtop20px">Sign In</h6>
+               <h5 class="ltbluetext paddingsides15px paddingtop20px">Sign In</h5>
                <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
                    {% csrf_token %} {{ login_form.non_field_errors }}
                    <div class="row">
@@ -27,7 +27,7 @@
                    </div>
                    <div class="row">
                        <div class="profileboxline100 paddingsides15px margintop20px marginbottom20px"></div>
-                       <p class="col-xs-12 greytext nopaddingright">Don't have an account?&nbsp;<a href="/search/">Get Started</a></p>
+                       <h6 class="col-xs-12 greytext nopaddingright">Don't have an account?&nbsp;<a href="/search/">Get Started</a></h6>
                    </div>
                </form>
            </div>
