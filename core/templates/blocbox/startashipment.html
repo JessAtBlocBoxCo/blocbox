@@ -100,9 +100,11 @@
             <h6 class="col-xs-12 col-sm-12 margintop30px marginbottom30px"> 	
             		When will your package arrive?  Select up to 6 dates....{{ host.first_name }}'s Availability is shown below... [ADD MORE TEXT ABOUT INTERPRETING CALENDAR]
             
+             {% if cal_checkboxes_entered %} <br> You checked the following days: {{ packagedays }} {% endif %}
+            	
             </h6>
             
-          		{% if cal_checkboxes_entered %} <h4>You checked the following days: {{ packagedays }} </h4>  {% endif %}
+          		
             	
              {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}
              	
