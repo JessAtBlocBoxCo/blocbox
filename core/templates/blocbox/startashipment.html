@@ -95,20 +95,21 @@
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
     	
-    {% if packagedays_count %} <!--if calendar checkboxes have been checked -->
+    	{% if packagedays_count %} <!--if calendar checkboxes have been checked -->
         
      
    		 <div class="row marginsides3pct paddingtop10px">
-   		     <h6 class="marginbottom10px">
+   		     
    		         	{% if host_package_conflict %} 
-   		         			
-   		         			Unfortunately, {{ host.first_name }} is not available on one of the days that your package may arrive. </h6>
-   		         			<br>You can still send the package and pick it up when {{ host.first_name}} returns, but we cannot refund your order if {{ host.first_name }} is not available when it arrives. 
-   		               <br> You can also select a different shipment speed, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search for another host near you</a>.
+   		         			<h6 class="marginbottom10px">
+   		         				Unfortunately, {{ host.first_name }} is not available on one of the days that your package may arrive. </h6>
+   		         				<br>You can still send the package and pick it up when {{ host.first_name}} returns, but we cannot refund your order if {{ host.first_name }} is not available when it arrives. 
+   		               	<br> You can also select a different shipment speed, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search for another host near you</a>.
    		           
    		           {% else %} <!--if host is available -->
-   		       			
-   		       			<h6>Woohoo! {{ host.first_name}} is available on the {% if packagedays_count == 1 %} day {% else %} {{ packagedays_count }} days {% endif %} that you checked: {% for day in packagedays %} {{ day}}, {% endfor %} </h6>	
+   		       				<h6 class="marginbottom10px">
+   		       					Woohoo! {{ host.first_name}} is available on the {% if packagedays_count == 1 %} day {% else %} {{ packagedays_count }} days {% endif %} that you checked: {% for day in packagedays %} {{ day}}, {% endfor %} 
+   		       				</h6>	
    		       		
    		       		{% endif %} <!--end if host conflict -->
    		 </div>
@@ -124,7 +125,7 @@
     		</div>
 
         
-    {% else %} <!--if calendar checkboxes have not been checked -->
+    	{% else %} <!--if calendar checkboxes have not been checked -->
 
         <div class="row">
             <h6 class="col-xs-12 col-sm-12 margintop30px marginbottom30px"> 	
