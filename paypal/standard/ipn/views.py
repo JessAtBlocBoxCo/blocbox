@@ -151,71 +151,12 @@ def ask_for_money(request, host_id=2, favortype="package", package_days = None, 
         business = host.email
     else:
         business = settings.PAYPAL_RECEIVER_EMAIL #want it to show as business name (Blocbox)
-    returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name
-    transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email) 
+    returnmessage = "Return to Blocbox and Ship Your Package to " + host.first_name     
     local_timezone = request.session.setdefault('django_timezone', 'UTC') 
     #Update transaction table
     datenow = datetime.datetime.now()  
     date = datetime.date.today()
     time = datetime.datetime.time(datenow)
-    #population fields to put into the transaciton table
-    #if dayrangestart:
-    #    dayrangestart = int(dayrangestart)
-    #if dayrangeend:
-    #    dayrangeend = int(dayrangeend)
-    #deliverydatenotracking_rangestart = datenow + timedelta(days=dayrangestart)
-    #deliverydatenotracking_rangeend = datenow + timedelta(days=dayrangeend)
-    invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
-    #Do the transactions form stuff
-    transaction_submitted = False
-    trans = Transaction()
-    if transaction_submitted == False:
-        if request.method == 'POST': 
-            trans_form_package = CreatePackageTransaction(request.POST)            
-            if trans_form_package.is_valid():
-                #first, get data from the form
-                title = trans_form_package.cleaned_data['title']
-                payment_option = trans_form_package.cleaned_data['payment_option']
-                note_to_host = trans_form_package.cleaned_data['note_to_host']
-                if payment_option=="bundle10":
-                    price="15.00"
-                    youselected="Bundle of 10 Packages"
-                    paypal_quantity = 1
-                elif payment_option=="month20":
-                    price="15.00"
-                    youselected="Monthly"
-                    paypal_quantity = 1
-                elif payment_option=="annual":
-                    price="150.00"
-                    youselected="Annual"
-                    paypal_quantity = 1
-                else:
-                    price="2.00"
-                    youselected="Per Package"
-                    paypal_quantity = 1
-                #Next, add the data to the transaction table
-                trans.payment_option = payment_option
-                trans.title = title
-                trans.favortype = favortype
-                trans.note_to_host = note_to_host
-                trans.price = price
-                trans.youselected = youselected
-                trans.paypal_quantity = paypal_quantity
-                trans.host = host
-                trans.enduser = enduser
-                trans.invoice = invoice
-                #trans.dayrangestart = dayrangestart
-                #trans.dayrangeend = dayrangeend
-                #trans.deliverydatenotracking_rangestart = deliverydatenotracking_rangestart
-                #trans.deliverydatenotracking_rangeend = deliverydatenotracking_rangeend    
-                trans.save() 
-                transaction_submitted = True
-            else:
-                print trans_form_package.errors 
-        else: 
-            trans_form_package = CreatePackageTransaction()
-    else: #if transaction submitted is true
-        trans_form_package = None
     #NEXT, add the paypal fields
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     #THEN.. after transaction entry created - retrive the info - including transaction ID 
@@ -234,8 +175,8 @@ def ask_for_money(request, host_id=2, favortype="package", package_days = None, 
             #Receiver email:  	Primary email address of the payment recipient (that is, the merchant). 
             #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
             "custom": enduser.email, #this is serving as the User Email field
-            "notify_url": "http://www.blocbox.co/payment/ipn/notify" + str(host.id) +"/" + str(trans_created.id) + "/",
-            "return_url": "http://www.blocbox.co/shippackage/host" + str(host.id) +"/",
+            "notify_url": "http://www.blocbox.co/transactions/ipn/notify" + str(host.id) +"/" + str(trans_created.id) + "/",
+            "return_url": "http://www.blocbox.co/transactions/shippackage/host" + str(host.id) +"/",
             "cancel_return": "http://www.blocbox.co/dashboard/",
         }   
         paypal_form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
@@ -244,13 +185,13 @@ def ask_for_money(request, host_id=2, favortype="package", package_days = None, 
         paypal_dict = None
         trans_created = None
     #context = {"form": form}
-    return render(request, 'blocbox/payment.html', {
+    return render(request, 'blocbox/payment_enter_paypal.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':datenow, 'local_timezone':local_timezone, 
-    	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form,
-    	  'trans_form_package': trans_form_package, 'invoice': invoice,  'transaction_submitted': transaction_submitted,
-    	  'trans_created': trans_created,
+    	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form, 'trans_created': trans_created,
+    	  'trans_form_package': trans_form_package, 'invoice': invoice,  'transaction_submitted': transaction_submitted,    	  
     })
+
 
 
 def test_notify_enduser_shipment_paid(request):
