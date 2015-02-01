@@ -102,9 +102,11 @@
             
             </h6>
             
+          		{% if cal_checkboxes_entered %}  You checked teh following days: {{ packagedays }} {% endif %}
+            	
              {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}
              	
-						<P>DELETE ME: TEST PACKAGE DAYS {{ packagedays }} </P>
+
     
         </div>
     </div>
