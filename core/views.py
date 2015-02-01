@@ -795,7 +795,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
     	  'host_package_conflict': host_package_conflict,
     	  #Calendar check boxes form
-    	  'cal_form': cal_form, 'cal_checkboxes_entered': cal_checkboxes_entered, 'packagedays': packagedays,
+    	  'cal_form': cal_form, 'cal_checkboxes_entered': cal_checkboxes_entered, 'packagedays': packagedays, 'packagedays_count': packagedays_count,
 		})
     
         
