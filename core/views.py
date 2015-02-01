@@ -769,8 +769,6 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                 if daycheckedmonth2:
                     checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
                     packagedays.append(checked_day)                   
-            calsave = cal_form.save()
-            calsave.save()
             cal_checkboxes_entered = True
         else:
             print cal_form.errors
