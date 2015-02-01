@@ -89,12 +89,42 @@
     <!--end div_text_container-->
 
     <!--confirming availabiility-->
-    {% if host %}
+ {% if host %}
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
         <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">Confirm {{host.first_name}}'s Availability</h6>
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
-        {% if packagedays_count %} {% else %}
+    	
+    {% if packagedays_count %} <!--if calendar checkboxes have been checked -->
+        
+     
+   		 <div class="row marginsides3pct paddingtop10px">
+   		     <h6 class="marginbottom10px">
+   		         	{% if host_package_conflict %} 
+   		         			
+   		         			Unfortunately, {{ host.first_name }} is not available on one of the days that your package may arrive. </h6>
+   		         			<br>You can still send the package and pick it up when {{ host.first_name}} returns, but we cannot refund your order if {{ host.first_name }} is not available when it arrives. 
+   		               <br> You can also select a different shipment speed, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search for another host near you</a>.
+   		           
+   		           {% else %} <!--if host is available -->
+   		       			
+   		       			<h6>Woohoo! {{ host.first_name}} is available on the {{ packagedays_count }} that you checked: {{packagedays }} </h6>	
+   		       		
+   		       		{% endif %} <!--end if host conflict -->
+   		 </div>
+    
+    
+    		<div class="row">
+    		    <div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px paddingtop20px nopaddingright">
+    		        <button class="bluebutton" style="height: 60px" 
+    		        		onClick="window.location='/payment/host{{host.id}}/month1days{{days_package_may_come_thismonth}}month2days{{days_package_may_come_nextmonth}}';">
+    		        		{{host.first_name}} is Available! Proceed to Payment
+    		        </button>
+    		    </div>
+    		</div>
+
+        
+    {% else %} <!--if calendar checkboxes have not been checked -->
 
         <div class="row">
             <h6 class="col-xs-12 col-sm-12 margintop30px marginbottom30px"> 	
@@ -105,66 +135,24 @@
             	<br> <br> DELETE ME TEST: DAYS MAY COME THIS MONTH: {{days_package_may_come_thismonth}} AND DAYS MAY COME NEXT MONTH: {{ days_package_may_come_nextmonth }}
             </h6>
             
-            	
-             {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}
-             	
-
+            <div class="row"> <!--row with the calendar-->
+        				<div class="col-xs-12"> 	{% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} </div>
+        				<p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p>    				
+    				</div>
+                          
+        </div>
+    </div>
     
-        </div>
-    </div>
     <!--row-->
-    {% endif %}
+    {% endif %} <!--if no packagedays_count/ if the calendar checkboxes have not been checked -->
 
 
 
-
-
-    <!--add the calendar associated with this host (its still under the if-host condition)-->
-    {% if packagedays_count %}
-    <!--HOST CALENDAR -->
-    <div class="row marginsides3pct paddingtop10px">
-        <h6 class="marginbottom10px">
-            	{% if host_package_conflict %} 
-            		Unfortunately, {{ host.first_name }} is not available on one of the days that your package may arrive. </h6>
-            		<p>You can still send the package and pick it up when {{ host.first_name}} returns, but we cannot refund your order if {{ host.first_name }} is not available when it arrives. 
-                        <br>  You can also select a different shipment speed, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search for another host near you</a>.</p>
-              {% else %} <!--if host is available -->
-          			<h6>Woohoo! {{ host.first_name}} is availability  
-          			{% if dayrangestart == dayrangeend %}
-          					in {{ dayrangestart }}
-          			{% else %}
-          					during the next {{ dayrangestart}} to {{ dayrangeend }} 
-          			{% endif%}	
-          			Business Days. 
-          		{% endif %}
-          	</h6>	
-    </div>
-    <!--row -->
-
-    <div class="row">
-        <!--row with calendars-->
-        <div class="col-xs-12">
-            {% include "calendar_subtemplates/bimonthly_calendar.html" %}
-       
-        </div>
-        <p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p>
-    </div>
-    <!--row, containing calendars -->
-    <!-- old code															
-						<div class="col-xs-12 col-sm-4 col-md-3">	{  % month_table AvailabilityCal AvailabilityCal_MonthObject "small" %  }  	</div> 													
-						<div class="col-xs-12 col-sm-4 col-md-3">  {  % month_table AvailabilityCal AvailabilityCal_MonthObject "small" +1 %  }	</div> 			
-						-->
-    <!--submit button-->
-    <div class="row">
-        <div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px paddingtop20px nopaddingright">
-            <button class="bluebutton" style="height: 60px" onClick="window.location='/payment/host{{host.id}}/days{{dayrangestart}}to{{dayrangeend}}';">I Confirm that {{host.first_name}} is Available</button>
-        </div>
-    </div>
-
-<!--    <p class="col-xs-12 col-sm-10 col-sm-offset-1 darkgreytext marginbottom10px">If {{ host.first_name }} isn't available, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search your neighborhood</a> for another host.</p> -->
-
+		
+	
+		<!--availability policy MODAL-->
     <div class="col-xs-12 marginsides3pct marginbottom30px">
-            <p class="darkgreytext">Please note, if you choose a date or time when the host is unavailble, we cannot garuntee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
+            <p class="darkgreytext">Please note, if you choose a date or time when the host is unavailble, we cannot guarantee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
         <div id="openModal2" class="modalDialog">
             <div class="modalupfront">	<a href="#close" title="Close" class="close">X</a>
                 <h6 class="ltbluetext">Availability Policy</h6>
@@ -178,7 +166,9 @@
 
 
 
-{% endif %}
-<!--if dayrange - showing calendar-->
+	
 
-{% endif %} {% endblock %}
+
+{% endif %} <!--end if host -->
+
+{% endblock %}
