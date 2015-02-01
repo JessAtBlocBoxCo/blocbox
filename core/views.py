@@ -657,9 +657,11 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     """Calendar checkbox form """
     cal_checkboxes_entered = False
     packagedays = []
-    month1days = []
-    month2days = []
     packagedays_count = None
+    days_package_may_come_thismonth = []
+    days_package_may_come_nextmonth = []
+    month1days_count = None
+    month2days_count = None
     if request.method == 'POST':
         cal_form = CalendarCheckBoxes(data=request.POST)
         if cal_form.is_valid():  
@@ -668,15 +670,17 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                 if daycheckedmonth1:
                     checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
                     packagedays.append(checked_day)
-                    month1days.append(daynumber)
+                    days_package_may_come_thismonth.append(daynumber)
             for daynumber in range(1,32): 
                 daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
                 if daycheckedmonth2:
                     checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
                     packagedays.append(checked_day)
-                    month2days.append(daynumber)                   
+                    days_package_may_come_nextmonth.append(daynumber)                   
             cal_checkboxes_entered = True
             packagedays_count = len(packagedays)
+            month1days_count = len(days_package_may_come_thismonth)
+            month2days_count = len(days_package_may_come_nextmonth)
         else:
             print cal_form.errors
     else:
@@ -694,13 +698,9 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_withconflicts_thismonth = []
     days_withconflicts_nextmonth = []
     days_withconflicts_later = []
-    days_package_may_come_thismonth = []
-    days_package_may_come_nextmonth = []
-    #if packagedays_count:
+   	"""
     if dayrangestart:
-    #if only a one day window
-    #if dayrangestart == dayrangeend:
-        if packagedays_count==1:
+        if dayrangestart == dayrangeend:
        	     day = today_dayofmonth_num + int(dayrangestart)
        	     if day > days_in_thismonth:
        	         spillover_days = day - days_in_thismonth
@@ -716,6 +716,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                     days_package_may_come_nextmonth.append(spillover_days)
                 else:
                     days_package_may_come_thismonth.append(day)
+    """
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
         #Get calendar_homebrew created fields
         conflicts = HostConflicts.objects.filter(host=host)
@@ -802,7 +803,6 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  'host_package_conflict': host_package_conflict,
     	  #Calendar check boxes form
     	  'cal_form': cal_form, 'cal_checkboxes_entered': cal_checkboxes_entered, 'packagedays': packagedays, 'packagedays_count': packagedays_count,
-    	  'month1days': month1days, 'month2days': month2days,
 		})
     
         
