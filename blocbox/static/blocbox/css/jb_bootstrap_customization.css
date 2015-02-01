@@ -476,6 +476,9 @@ footer {
 .paddingtop20px {
     padding-top: 20px;
 }
+.paddingtop50px {
+    padding-top: 50px;
+}
 /*Define Generic Border Attributes*/
 
 .borderblack3px {
