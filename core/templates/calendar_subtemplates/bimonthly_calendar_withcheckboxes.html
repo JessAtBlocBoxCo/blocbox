@@ -3,7 +3,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 				
 				
 <form  method="post" role="form" 
-	action="/payment/host{{host.id}}/month1days{{days_package_may_come_thismonth}}month2days{{days_package_may_come_nextmonth}}">  
+	action="/payment/host{{host.id}}">  
 			
 	{% csrf_token %} {{ cal_form.non_field_errors }}
 			 	
