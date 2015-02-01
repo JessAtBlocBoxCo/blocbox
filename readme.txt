@@ -140,20 +140,20 @@ The URLs for this site, and the corresponding files are as follows:
 4. TRANSACTION PAGES
 *-----------------------------------------------------------------------*
 
-4A. blocbox.co/startashipment (template: core/templates/blocbox/startashipment.html, view is core/views/startafavor
+4A. blocbox.co/transactions/startashipment (template: core/templates/blocbox/startashipment.html, view is core/views/startafavor
 	- links to a host site if you only have one: blocbox.co/starashipment/host10 (if only connected to 10)
 	- if connected to multiple, givesyou the option to pick
 	- once the host is connected, you select the shipment speed - this links to
 			blocbox.co/startashipment/host10/days3to4 where 3 = dayrangestart and 4 = dayrangeend
 
-4B. 	blocbox.co/startafavor (template: core/templates/blocbox/startafavor.html, view is core/views/startafavor
+4B. 	blocbox.co/transactions/startafavor (template: core/templates/blocbox/startafavor.html, view is core/views/startafavor
 			- issue: if they are connected to multiple hosts do they really need to "select" one or is it more of a bid? e.g., who will take? this may b ea next-level step 
 				since at beta people will only have one host. but this is an issue unique to other favors, since "start a shipment" host sleection is deterined by 
 				user preference (where they want the shipment to go) but that doesn't really apply to other favors as much, which may be more like a bid - 
 				thats also true because everyone presumably will do shipping, but not everyone wil do the other favors
 			- need a better phrase
 
-4C. 	blocbox.co/transactions (formerly blocbox.co/payment) (no form - just base template) + blocbox.co/transactions/ipn (instant payment notifcaiont - shittier) and blocbox.co/payment/pro (better)
+4C. 	blocbox.co/transactions/payment (formerly blocbox.co/payment) (no form - just base template) + blocbox.co/transactions/ipn (instant payment notifcaiont - shittier) and blocbox.co/payment/pro (better)
 			Templates: 
 				core/templates/startashipment.html; URL patterns defined in blocbox/transactions/urls.py
 				core/templates/payment_enter_paypal.html when the user enters paypal information

@@ -124,7 +124,7 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
         notify_enduser_shipment_paid(request, trans_table_id) 
     return HttpResponse("OKAY")
 
-#The paypal_ipn view: www.blocbox.co/payment/ipn: Instant Payment Notification
+#The paypal_ipn view: www.blocbox.co/transactions/ipn: Instant Payment Notification
 """About the IPN: After completing the purchase PayPal makes an HTTP
 POST to your `notify_url`. PayPal calls this process [Instant Payment
 Notification](https://cms.paypal.com/cms_content/US/en_US/files/developer/PP_OrderMgmt_IntegrationGuide.pdf)
