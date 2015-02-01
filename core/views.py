@@ -654,6 +654,33 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_in_thismonth = monthrange_thismonth[1]
     days_in_nextmonth = monthrange_nextmonth[1] 
     today_dayofmonth_num = date_today.day 
+    """Calendar checkbox form """
+    cal_checkboxes_entered = False
+    packagedays = []
+    month1days = []
+    month2days = []
+    packagedays_count = None
+    if request.method == 'POST':
+        cal_form = CalendarCheckBoxes(data=request.POST)
+        if cal_form.is_valid():  
+            for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
+                daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
+                if daycheckedmonth1:
+                    checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                    packagedays.append(checked_day)
+                    month1days.append(daynumber)
+            for daynumber in range(1,32): 
+                daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
+                if daycheckedmonth2:
+                    checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                    packagedays.append(checked_day)
+                    month2days.append(daynumber)                   
+            cal_checkboxes_entered = True
+            packagedays_count = len(packagedays)
+        else:
+            print cal_form.errors
+    else:
+        cal_form = CalendarCheckBoxes()  
     #define empty list vars
     conflicts_date_from = []
     conflicts_startmonths = []
@@ -669,9 +696,11 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_withconflicts_later = []
     days_package_may_come_thismonth = []
     days_package_may_come_nextmonth = []
-    if dayrangestart:
-    	 #if only a one day window
-       if dayrangestart == dayrangeend:
+    if packagedays_count:
+    #if dayrangestart:
+    	 """if only a one day window"""
+       #if dayrangestart == dayrangeend:
+       if packagedays
        	  day = today_dayofmonth_num + int(dayrangestart)
        	  if day > days_in_thismonth:
        	      spillover_days = day - days_in_thismonth
@@ -753,29 +782,6 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     else: #if no host specified that stuff is empty/none
         conflicts = None	
         host_package_conflict = False
-    """Calendar checkbox form """
-    cal_checkboxes_entered = False
-    packagedays = []
-    packagedays_count = None
-    if request.method == 'POST':
-        cal_form = CalendarCheckBoxes(data=request.POST)
-        if cal_form.is_valid():  
-            for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
-                daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
-                if daycheckedmonth1:
-                    checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
-                    packagedays.append(checked_day)
-            for daynumber in range(1,32): 
-                daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
-                if daycheckedmonth2:
-                    checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
-                    packagedays.append(checked_day)                   
-            cal_checkboxes_entered = True
-            packagedays_count = len(packagedays)
-        else:
-            print cal_form.errors
-    else:
-        cal_form = CalendarCheckBoxes()  
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
@@ -796,6 +802,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  'host_package_conflict': host_package_conflict,
     	  #Calendar check boxes form
     	  'cal_form': cal_form, 'cal_checkboxes_entered': cal_checkboxes_entered, 'packagedays': packagedays, 'packagedays_count': packagedays_count,
+    	  'month1days': month1days, 'month2days': month2days,
 		})
     
         
