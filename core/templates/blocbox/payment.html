@@ -71,10 +71,12 @@
                 	
                 	<h5>DELETE ME: TEST FORM DATA PACKAGE DAYS {{ packagedays }} </h5>
                 	
-                    <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Select a Payment Option
-            				{% if host %} for Sending Packages to {{ host.first_name }} {% endif %}
-            				</h6>
-                    <div class="paddingsides5pct profileboxline100 marginbottom10px"></div>
+                	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+       										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
+       										    Select a Payment Option {% if host %} for Sending Packages to {{ host.first_name }} {% endif %}
+       										 </h6>
+    								</div>
+
                 </div>
 
                 <form action="." role="form" method="post">
