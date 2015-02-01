@@ -696,8 +696,8 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_withconflicts_later = []
     days_package_may_come_thismonth = []
     days_package_may_come_nextmonth = []
-    if packagedays_count:
-    #if dayrangestart:
+    #if packagedays_count:
+    if dayrangestart:
     #if only a one day window
     #if dayrangestart == dayrangeend:
         if packagedays_count==1:
