@@ -1983,13 +1983,9 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         display: none;
     }
     .modalDialog > div {
-        width: 300px;
+        width: 400px;
         position: absolute;
-        left: 260px;
-        margin: 10% auto;
-        padding: 5px 20px 13px 20px;
-        border-radius: 2px;
-        background: #fff;
+        left: 345px;
     }
 }
 /*-------------------------------------------------------------*
@@ -2125,7 +2121,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         display: none;
     }
     .modalDialog > div {
-        width: 430px;
+        width: 400px;
         position: absolute;
         left: 290px;
     }
