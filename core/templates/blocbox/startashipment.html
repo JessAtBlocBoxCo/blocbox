@@ -108,7 +108,7 @@
    		           
    		           {% else %} <!--if host is available -->
    		       			
-   		       			<h6>Woohoo! {{ host.first_name}} is available on the {% if packagedays_count ==1 %} day {% else %} {{ packagedays_count }} days {% endif %} that you checked: {% for day in packagedays %} {{ day}}, {% endfor %} </h6>	
+   		       			<h6>Woohoo! {{ host.first_name}} is available on the {% if packagedays_count == 1 %} day {% else %} {{ packagedays_count }} days {% endif %} that you checked: {% for day in packagedays %} {{ day}}, {% endfor %} </h6>	
    		       		
    		       		{% endif %} <!--end if host conflict -->
    		 </div>
