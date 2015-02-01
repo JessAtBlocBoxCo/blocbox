@@ -698,24 +698,24 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_package_may_come_nextmonth = []
     if packagedays_count:
     #if dayrangestart:
-    	 """if only a one day window"""
-       #if dayrangestart == dayrangeend:
-       if packagedays:
-       	  day = today_dayofmonth_num + int(dayrangestart)
-       	  if day > days_in_thismonth:
-       	      spillover_days = day - days_in_thismonth
-       	      days_package_may_come_nextmonth.append(spillover_days)
-       	  else:
-              days_package_may_come_thismonth.append(day)
-       else: #if a multi day window
-           dayrange = int(dayrangeend) - int(dayrangestart) + 1
-           for i in range(dayrange):
-               day = today_dayofmonth_num + int(dayrangestart) + i
-               if day > days_in_thismonth:
-                   spillover_days = day - days_in_nextmonth
-                   days_package_may_come_nextmonth.append(spillover_days)
-               else:
-                   days_package_may_come_thismonth.append(day)
+    	  """if only a one day window"""
+        #if dayrangestart == dayrangeend:
+        if packagedays:
+       	     day = today_dayofmonth_num + int(dayrangestart)
+       	     if day > days_in_thismonth:
+       	         spillover_days = day - days_in_thismonth
+       	         days_package_may_come_nextmonth.append(spillover_days)
+       	     else:
+                 days_package_may_come_thismonth.append(day)
+        else: #if a multi day window
+            dayrange = int(dayrangeend) - int(dayrangestart) + 1
+            for i in range(dayrange):
+                day = today_dayofmonth_num + int(dayrangestart) + i
+                if day > days_in_thismonth:
+                    spillover_days = day - days_in_nextmonth
+                    days_package_may_come_nextmonth.append(spillover_days)
+                else:
+                    days_package_may_come_thismonth.append(day)
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
         #Get calendar_homebrew created fields
         conflicts = HostConflicts.objects.filter(host=host)
