@@ -707,7 +707,7 @@ footer {
     cursor: pointer;
     border-radius: 3px;
     white-space: nowrap;
-    width: 120px;
+    width: auto;
     text-decoration: none;
 }
 .orangenavbtn:hover {
