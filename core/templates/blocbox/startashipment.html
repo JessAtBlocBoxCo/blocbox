@@ -108,7 +108,7 @@
    		           
    		           {% else %} <!--if host is available -->
    		       			
-   		       			<h6>Woohoo! {{ host.first_name}} is available on the {{ packagedays_count }} that you checked: {{packagedays }} </h6>	
+   		       			<h6>Woohoo! {{ host.first_name}} is available on the {{ packagedays_count }} that you checked: {% for day in packagedays %} {{ day}}, {% endif %} </h6>	
    		       		
    		       		{% endif %} <!--end if host conflict -->
    		 </div>
@@ -132,7 +132,6 @@
             
              {% if packagedays_count %} <br> <br> You checked {{ packagedays_count }} days: {{ packagedays }} {% endif %}
             	
-            	<br> <br> DELETE ME TEST: DAYS MAY COME THIS MONTH: {{days_package_may_come_thismonth}} AND DAYS MAY COME NEXT MONTH: {{ days_package_may_come_nextmonth }}
             </h6>
             
             <div class="row"> <!--row with the calendar-->
