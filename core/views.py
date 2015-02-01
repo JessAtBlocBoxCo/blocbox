@@ -655,7 +655,6 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_in_nextmonth = monthrange_nextmonth[1] 
     today_dayofmonth_num = date_today.day 
     """Calendar checkbox form """
-    cal_checkboxes_entered = False
     packagedays = []
     packagedays_count = None
     days_package_may_come_thismonth = []
@@ -677,7 +676,6 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                     checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
                     packagedays.append(checked_day)
                     days_package_may_come_nextmonth.append(daynumber)                   
-            cal_checkboxes_entered = True
             packagedays_count = len(packagedays)
             month1days_count = len(days_package_may_come_thismonth)
             month2days_count = len(days_package_may_come_nextmonth)
@@ -800,7 +798,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
     	  'host_package_conflict': host_package_conflict,
     	  #Calendar check boxes form
-    	  'cal_form': cal_form, 'cal_checkboxes_entered': cal_checkboxes_entered, 'packagedays': packagedays, 'packagedays_count': packagedays_count,
+    	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
 		})
     
         

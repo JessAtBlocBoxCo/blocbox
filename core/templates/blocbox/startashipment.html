@@ -94,15 +94,15 @@
         <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">Confirm {{host.first_name}}'s Availability</h6>
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
-        {% if dayrangestart %} {% else %}
+        {% if packagedays_count %} {% else %}
 
         <div class="row">
             <h6 class="col-xs-12 col-sm-12 margintop30px marginbottom30px"> 	
             		When will your package arrive?  Select up to 6 dates....{{ host.first_name }}'s Availability is shown below... [ADD MORE TEXT ABOUT INTERPRETING CALENDAR]
             
-             {% if cal_checkboxes_entered %} <br> You checked {{ packagedays_count }} days: {{ packagedays }} {% endif %}
+             {% if packagedays_count %} <br> <br> You checked {{ packagedays_count }} days: {{ packagedays }} {% endif %}
             	
-            	DELETE ME TEST: DAYS MAY COME THIS MONTH: {{days_package_may_come_thismonth}} AND DAYS MAY COME NEXT MONTH: {{ days_package_may_come_nextmonth }}
+            	<br> <br> DELETE ME TEST: DAYS MAY COME THIS MONTH: {{days_package_may_come_thismonth}} AND DAYS MAY COME NEXT MONTH: {{ days_package_may_come_nextmonth }}
             </h6>
             
             	
