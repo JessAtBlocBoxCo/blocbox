@@ -698,8 +698,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     days_withconflicts_thismonth = []
     days_withconflicts_nextmonth = []
     days_withconflicts_later = []
-   	"""
-    if dayrangestart:
+    """if dayrangestart:
         if dayrangestart == dayrangeend:
        	     day = today_dayofmonth_num + int(dayrangestart)
        	     if day > days_in_thismonth:
@@ -715,8 +714,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                     spillover_days = day - days_in_nextmonth
                     days_package_may_come_nextmonth.append(spillover_days)
                 else:
-                    days_package_may_come_thismonth.append(day)
-    """
+                    days_package_may_come_thismonth.append(day) """
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
         #Get calendar_homebrew created fields
         conflicts = HostConflicts.objects.filter(host=host)
