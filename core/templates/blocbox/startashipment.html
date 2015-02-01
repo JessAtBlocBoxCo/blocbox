@@ -77,8 +77,7 @@
         <!--row-->
     </div>
     <!--profilebox-->
-    {% endif %}
-    <!--end pick host if not specified-->
+    {% endif %}  <!--end pick host if not specified-->
 
     <div class="text_container col-xs-8 col-xs-offset-2">
         <div>
@@ -89,35 +88,164 @@
     <!--end div_text_container-->
 
     <!--confirming availabiility-->
- {% if host %}
+{% if host %}
+ 	  
+ 	  
+
+       {% if transaction_submitted %}
+            <div class="row">
+            	
+            	    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+        						<h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">Sign into your PayPal account to process payment</h6>
+    							
+    							</div>
+    							
+    	
+                
+                <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding"></h6>
+                <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
+                <div class="row">
+                <!--show what they've selected-->
+                <div class="col-xs-12 col-sm-6 col-sm-offset-1" style="padding-top: 20px; padding-bottom: 20px;">
+                    <table class="table">
+                        <tr>
+                            <th>Payment Option Selected</th>
+                            <th>Total Due</th>
+                            <!-- <th rowspan="2">{{ paypal_form.render }}</th> -->
+                        </tr>
+                        <tr>
+                            <td>{{ trans_created.youselected}}</td>
+                            <td>{{ trans_created.price }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-4" style="padding-top: 20px; padding-bottom: 20px;">
+                    <table class="table">
+                        <tr>
+                            <th>Payment Method</th>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 60px; padding-top: 20px">{{ paypal_form.render }}</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                <!--col with table -->
+
+                <!-- the following statement loads the paypal checkout form - integrates with a paypal account
+												the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
+                <!--row-->
+            </div>
+            <!--end paypal button -->
+
+
+
+    {% else %} <!--IF TRANSACTION NOT SUBMITTED-->
+       
+       
+       
+     {% if packagedays_count %}  <!--IF CALENDARD CHECKBOXES - SELECT PAYMETN OPTIONS -->     	
+                	
+                	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+       										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
+       										    Select a Payment Option {% if host %} for Sending Packages to {{ host.first_name }} {% endif %}
+       										 </h6>
+    								</div>
+
+							<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
+                <form action="." role="form" method="post">
+
+
+
+                    {% csrf_token %} {{ trans_form_package.non_field_errors }}
+
+
+                    <div class="row">
+                        <!--Payment option: row with the checkboxes-->
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
+                            {{ trans_form_package.payment_option.errors }}
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <label> <input type="radio" name="payment_option" id="id_perpackage" value="perpackage">&nbsp; PER PACKAGE</label>
+                                    </td>
+                                    <td> <p>Pay for a single package</p>  </td>
+                                    <td>   <p>${{host.price_package_per}}</p>  </td>
+                                </tr>
+                                <!--per package checkbox-->
+
+                                <!--buden of 10-->
+                                <tr>
+                                    <td>
+                                        <label> <input type="radio" name="payment_option" id="id_bundle" value="bundle10">&nbsp; BUNDLED</label>
+                                    </td>
+                                    <td>   <p>10 packages (expires in 1 year)</p>   </td>
+                                    <td>   <p>${{host.price_package_bundle10}}</p> </td>
+                                </tr>
+                                <!--bundle10 checkbox-->
+
+                                <!--Monthly-->
+                                <tr>
+                                    <td>
+                                        <label> <input type="radio" name="payment_option" id="id_monthly" value="month20">&nbsp; MONTHLY</label>
+                                    </td>
+                                    <td>  <p>20 packages for the next 30 days</p> </td>
+                                    <td>    <p>${{host.price_package_month20}}</p>  </td>
+                                </tr>
+                                <!--monthly checkbox-->
+
+                                <!--annual-->
+                                <tr>
+                                    <td>
+                                        <label>     <input type="radio" name="payment_option" id="id_annual" value="annual">&nbsp; ANNUAL</label>
+                                    </td>
+                                    <td> <p>Up to 20 packages per month for an entire year</p> </td>
+                                    <td>      <p>${{host.price_package_annual}}</p>  </td>
+                                </tr>
+                                <!--annual checkbox-->
+                            </table>
+                            <!--table containg payment options -->
+                        </div>
+                        <!--col-sm-10 with all the checkboxes-->
+                    </div>
+                    <!--row with the checkboxes-->
+                    <!--Enter a Transaction Tite - and add the hidden fields-->
+                    <div class="row">
+                        {{ trans_form_package.title.errors }}
+                        <label for="id_title" class="col-xs-12 col-sm-4 col-sm-offset-1">Enter a label for this shipment (optional):</label>
+                        <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="title" class="form-control" id="id_title" placeholder="Enter a brief description of the shipment">
+                    </div>
+                    <div class="row paddingtop10px">
+                        {{ trans_form_package.note_to_host.errors }}
+                        <label for="id_note_to_host" class="col-xs-12 col-sm-4 col-sm-offset-1">Include a note for the host (optional):</label>
+                        <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="note_to_host" class="form-control" id="id_note_to_host" placeholder="Let the host know when you'll pick it up">
+                    </div>
+
+
+
+                    <!--submit button -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
+                            <button type="submit" name="submit" class="bluebutton">Verify and Provide Payment Information</button>
+                        </div>
+                    </div>
+                    <!--row with submit button-->
+
+                </form>
+                 
+							</div> <!--profile box -->
+
+      {% else %} <!--IF CLAENDAR CHECKBOXES NOT CHEKCED YET -->
+            <!--end else -->
+
+
+
+
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
         <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">Confirm {{host.first_name}}'s Availability</h6>
     </div>
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
     	
-    	{% if packagedays_count %} <!--if calendar checkboxes have been checked -- start the payment process -->
-        
-     
-   		 <div class="row marginsides3pct paddingtop10px">
-   		     
-   		         	{% if host_package_conflict %} 
-   		         			<h6 class="marginbottom10px">
-   		         				Unfortunately, {{ host.first_name }} is not available on one of the days that your package may arrive. </h6>
-   		         				<br>You can still send the package and pick it up when {{ host.first_name}} returns, but we cannot refund your order if {{ host.first_name }} is not available when it arrives. 
-   		               	<br> You can also select a different shipment speed, <a href='/nav_startashipment/'>select another connected host</a> or <a href="/search/">search for another host near you</a>.
-   		           
-   		           {% else %} <!--if host is available -->
-   		       				<h6 class="marginbottom10px">
-   		       					Woohoo! {{ host.first_name}} is available on the {% if packagedays_count == 1 %} day {% else %} {{ packagedays_count }} days {% endif %} that you checked: {% for day in packagedays %} {{ day}}, {% endfor %} 
-   		       				</h6>	
-   		       		
-   		       		{% endif %} <!--end if host conflict -->
-   		 </div>
-    
-    
-
-        
-    	{% else %} <!--if calendar checkboxes have not been checked -->
 
         <div class="row">
             <h6 class="col-xs-12 col-sm-12 margintop30px marginbottom30px"> 	
@@ -133,25 +261,27 @@
     				</div>
                           
         </div>
-    
-    <!--row-->
-    {% endif %} <!--if no packagedays_count/ if the calendar checkboxes have not been checked -->
+    		
+    			<!--availability policy MODAL-->
+    			<div class="col-xs-12 marginsides3pct marginbottom30px">
+    			        <p class="darkgreytext">Please note, if you choose a date or time when the host is unavailble, we cannot guarantee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
+    			    <div id="openModal2" class="modalDialog">
+    			        <div class="modalupfront">	<a href="#close" title="Close" class="close">X</a>
+    			            <h6 class="ltbluetext">Availability Policy</h6>
+    			            <p class="darkgreytext marginbottom20px">Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery. You're likely to still get the package, but it may not be available for pickup until a later date.</p>
+    			        </div>
+    			    </div>
+    			</div>
+    			
 
+    	{% endif %} <!--if no packagedays_count/ if the calendar checkboxes have not been checked -->
 
+	{% endif %} <!--if transaction_sumitted - end if not submitted -->
 
 		
 	
-		<!--availability policy MODAL-->
-    <div class="col-xs-12 marginsides3pct marginbottom30px">
-            <p class="darkgreytext">Please note, if you choose a date or time when the host is unavailble, we cannot guarantee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
-        <div id="openModal2" class="modalDialog">
-            <div class="modalupfront">	<a href="#close" title="Close" class="close">X</a>
-                <h6 class="ltbluetext">Availability Policy</h6>
-                <p class="darkgreytext marginbottom20px">Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery. You're likely to still get the package, but it may not be available for pickup until a later date.</p>
-            </div>
-        </div>
-    </div>
 
+    			
 </div>
 <!--profile box-->
 
