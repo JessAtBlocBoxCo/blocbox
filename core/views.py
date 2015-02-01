@@ -680,8 +680,6 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
             packagedays_count = len(packagedays)
             month1days_count = len(days_package_may_come_thismonth)
             month2days_count = len(days_package_may_come_nextmonth)
-            #!!! CALL THE ASK_FOR_MONEY VIEW FROM THE PAYPAL.STANDARD.IPN.VIEWS DOC - IS THIS POSSIBLE?
-            ask_for_money(request, host_id=host.id, favortype="package", package_days=packagedays)
         else:
             print cal_form.errors
     else:

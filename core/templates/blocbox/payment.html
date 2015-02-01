@@ -64,9 +64,7 @@
 
 
             {% else %}
-
-            <div>
-                <!--div with all of else -->              	
+          	
                 	
                 	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
        										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
@@ -115,11 +113,8 @@
                                     <td>
                                         <label> <input type="radio" name="payment_option" id="id_monthly" value="month20">&nbsp; MONTHLY</label>
                                     </td>
-                                    <td>
-                                        <p>20 packages for the next 30 days</p>
-                                    </td>
-                                    <td>
-                                        <p>${{host.price_package_month20}}</p>
+                                    <td>  <p>20 packages for the next 30 days</p> </td>
+                                    <td>    <p>${{host.price_package_month20}}</p>
                                     </td>
                                 </tr>
                                 <!--monthly checkbox-->
@@ -169,10 +164,6 @@
                 </form>
                 <!--END FORM FOR PAYPMENT OPTION AND TITLE AND REST OF HIDDEN TRANSACTIO INPUT -->
 
-
-
-            </div>
-            <!--div containing if-else haven't submitted payment yet -->
 
             {% endif %}
             <!--end else -->
