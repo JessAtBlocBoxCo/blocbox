@@ -756,6 +756,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     """Calendar checkbox form """
     cal_checkboxes_entered = False
     packagedays = []
+    packagedays_count = None
     if request.method == 'POST':
         cal_form = CalendarCheckBoxes(data=request.POST)
         if cal_form.is_valid():  
@@ -770,6 +771,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                     checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
                     packagedays.append(checked_day)                   
             cal_checkboxes_entered = True
+            packagedays_count = len(packagedays)
         else:
             print cal_form.errors
     else:
