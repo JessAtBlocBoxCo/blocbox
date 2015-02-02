@@ -29,7 +29,7 @@
     <p class="darkgreytext textcenter margintop40px marginbottom20px">Complete the following steps to verify shipping destination, notify your Blocbox host, and complete payment</p>
     <div class="row mobilehide">
         <div class="col-xs-8 col-xs-offset-2 nopadding">
-            <p class="col-xs-3 ltbluetext textshadow textleft nopadding">1 HOST AVAILABILITY TEST {{transaction_form_submitted}}</p>
+            <p class="col-xs-3 ltbluetext textshadow textleft nopadding">1 HOST AVAILABILITY</p>
             <div class="col-xs-2 divline margintop10px"></div>
             <p class="col-xs-2 ltgreytext textcenter">2 PAYMENT</p>
             <div class="col-xs-2 divline margintop10px"></div>
@@ -111,8 +111,9 @@
     								</div>
 
 							<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
-                <form action="/transactions/startashipment/host{{host.id}}/packagedays_count{{packagedays_count}}/" role="form" method="post">
-															<!--action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/" -->
+                <form  action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/"  role="form" method="post">  
+                	
+															<!-- action="/transactions/startashipment/host{{host.id}}/packagedays_count{{packagedays_count}}/" -->
 
                     {% csrf_token %} {{ trans_form_package.non_field_errors }}
 
