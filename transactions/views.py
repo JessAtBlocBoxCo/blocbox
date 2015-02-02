@@ -160,19 +160,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     favortype='package'
     #transaction_form_submitted = False
     packagedays_count = None
-    if packagedays_count:
-    """if request.method == 'POST':
-        enduser_issue_form = EndUserIssue(request.POST, instance=trans)
-        if enduser_issue_form.is_valid():
-            issue = enduser_issue_form.save()
-            issue.save()
-            notify_host_enduser_issue(request, trans.id)
-            notify_admin_enduser_issue(request, trans.id)
-        else: 
-            print enduser_issue_form.errors
-    else:
-        enduser_issue_form = EndUserIssue(instance=trans)
-    return HttpResponse("OK")"""       
+    if packagedays_count:     
         trans = Transaction()
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
