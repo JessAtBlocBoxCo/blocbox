@@ -195,22 +195,19 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 title = trans_form_package.cleaned_data['title']
                 payment_option = trans_form_package.cleaned_data['payment_option']
                 note_to_host = trans_form_package.cleaned_data['note_to_host']
+                paypal_quantity = 1
                 if payment_option=="bundle10":
                     price="15.00"
-                    youselected="Bundle of 10 Packages"
-                    paypal_quantity = 1
+                    youselected="Bundle of 10 Packages"                    
                 elif payment_option=="month20":
                     price="15.00"
-                    youselected="Monthly"
-                    paypal_quantity = 1
+                    youselected="Monthly"                    
                 elif payment_option=="annual":
                     price="150.00"
                     youselected="Annual"
-                    paypal_quantity = 1
-                else:
+               else:
                     price="2.00"
                     youselected="Per Package"
-                    paypal_quantity = 1
                 #Next, add the data to the transaction table
                 trans.payment_option = payment_option
                 trans.title = title
@@ -260,8 +257,8 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
 		    })
 
 
-def redirect_to_payment(request, host_id, invoice, favortype):
-    return HttpResponseRedirect("/transactions/payment/host" + str(host_id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/")  
+
+ 
 
 #starat a shipmetn view if requested from navbar
 def nav_startashipment(request, host=None):

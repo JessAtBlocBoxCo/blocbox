@@ -156,6 +156,7 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
     datenow = datetime.datetime.now()  
     date = datetime.date.today()
     time = datetime.datetime.time(datenow)
+    paypal_quantity = 1  
     #NEXT, add the paypal fields
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     #THEN.. after transaction entry created - retrive the info - including transaction ID 
