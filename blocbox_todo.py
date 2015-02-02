@@ -125,13 +125,9 @@ JESS: other favors - add two use cases (1) wifi sharing; (2) community dinners/f
         
 "JOHN TO-DO"
 
-1.
-JOHN: footer - responsive
-JOHN: footer - fix image on footer (at least for I.E.) - the blocbox logo is narrow/too tall
 
 2.    
 JOHN: landing - there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" (less verbose though) and then a separate button saying "sign up to be a host"
-JOHN: signin - Sign into your BB account - style
 
 3.    
 JOHN: signup - Thank you for registering
