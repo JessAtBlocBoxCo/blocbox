@@ -178,7 +178,7 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
         "cancel_return": "http://www.blocbox.co/dashboard/",
     }   
     paypal_form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
-    #context = {"form": form}
+    #context = {"for: form}
     return render(request, 'blocbox/payment_enter_paypal.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':datenow, 'local_timezone':local_timezone, 
