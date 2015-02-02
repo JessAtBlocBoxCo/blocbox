@@ -178,51 +178,49 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     if packagedays_count:
         transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
         invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
-        transaction_submitted = False
         trans = Transaction()
-        if transaction_submitted == False:
-            if request.method == 'POST': 
-                trans_form_package = CreatePackageTransaction(request.POST)            
-                if trans_form_package.is_valid():
-                    #first, get data from the form
-                    title = trans_form_package.cleaned_data['title']
-                    payment_option = trans_form_package.cleaned_data['payment_option']
-                    note_to_host = trans_form_package.cleaned_data['note_to_host']
-                    if payment_option=="bundle10":
-                        price="15.00"
-                        youselected="Bundle of 10 Packages"
-                        paypal_quantity = 1
-                    elif payment_option=="month20":
-                        price="15.00"
-                        youselected="Monthly"
-                        paypal_quantity = 1
-                    elif payment_option=="annual":
-                        price="150.00"
-                        youselected="Annual"
-                        paypal_quantity = 1
-                    else:
-                        price="2.00"
-                        youselected="Per Package"
-                        paypal_quantity = 1
-                    #Next, add the data to the transaction table
-                    trans.payment_option = payment_option
-                    trans.title = title
-                    trans.favortype = favortype
-                    trans.note_to_host = note_to_host
-                    trans.price = price
-                    trans.youselected = youselected
-                    trans.paypal_quantity = paypal_quantity
-                    trans.host = host
-                    trans.enduser = enduser
-                    trans.invoice = invoice
-                    trans.save() 
-                    transaction_submitted = True
+        if request.method == 'POST': 
+            trans_form_package = CreatePackageTransaction(request.POST)            
+            if trans_form_package.is_valid():
+                #first, get data from the form
+                title = trans_form_package.cleaned_data['title']
+                payment_option = trans_form_package.cleaned_data['payment_option']
+                note_to_host = trans_form_package.cleaned_data['note_to_host']
+                if payment_option=="bundle10":
+                    price="15.00"
+                    youselected="Bundle of 10 Packages"
+                    paypal_quantity = 1
+                elif payment_option=="month20":
+                    price="15.00"
+                    youselected="Monthly"
+                    paypal_quantity = 1
+                elif payment_option=="annual":
+                    price="150.00"
+                    youselected="Annual"
+                    paypal_quantity = 1
                 else:
-                    print trans_form_package.errors 
-            else: 
-                trans_form_package = CreatePackageTransaction()
-        else: #if transaction submitted is true
-            trans_form_package = None
+                    price="2.00"
+                    youselected="Per Package"
+                    paypal_quantity = 1
+                #Next, add the data to the transaction table
+                trans.payment_option = payment_option
+                trans.title = title
+                trans.favortype = favortype
+                trans.note_to_host = note_to_host
+                trans.price = price
+                trans.youselected = youselected
+                trans.paypal_quantity = paypal_quantity
+                trans.host = host
+                trans.enduser = enduser
+                trans.invoice = invoice
+                trans.save() 
+            else:
+                print trans_form_package.errors 
+        else: 
+            trans_form_package = CreatePackageTransaction()
+    else: #if transaction submitted is true
+        trans_form_package = None
+        invoice = None
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
@@ -244,7 +242,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  #Calendar check boxes form
     	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
     	  #payment stuff once the calendar checkboxes are checked
-    	  'trans_form_package': trans_form_package, 'invoice': invoice,  'transaction_submitted': transaction_submitted,
+    	  'trans_form_package': trans_form_package, 'invoice': invoice, 
 		})
     
         
