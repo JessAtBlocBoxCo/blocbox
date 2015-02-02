@@ -224,17 +224,20 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 trans.arrivalwindow_day1 = trans_form_package.cleaned_data['arrivalwindow_day1']                               
                 trans.save() 
                 transaction_form_submitted = True
+                return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
+                cal_form = None   
             else:
                 print trans_form_package.errors 
         else: 
             trans_form_package = CreatePackageTransaction()
     #if the transaction form has been submitted redirect to new page
-    if transaction_form_submitted:
-        return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
-        cal_form = None   
+    #if transaction_form_submitted:
+    #    return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
+    #    cal_form = None   
     #if the transaction form has not been submitted  
-    else:   	   
+    #else:   	   
     #if the calendar checkboxes have been checked 	  
+    if trans_form_submitted == False:
         return render(request, 'blocbox/startashipment.html', {
 		        'enduser':enduser, 'host': host, 'connections_all': connections_all, 
         	  #'cal_relations_host_count': cal_relations_host_count, 'cal_relations_host': cal_relations_host, 'cal_list_host': cal_list_host,
