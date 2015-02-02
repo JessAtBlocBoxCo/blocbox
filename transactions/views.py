@@ -227,7 +227,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 trans.arrivalwindow_day4 = trans_form_package.cleaned_data['arrivalwindow_day4']
                 trans.arrivalwindow_day5 = trans_form_package.cleaned_data['arrivalwindow_day5']
                 trans.arrivalwindow_day6 = trans_form_package.cleaned_data['arrivalwindow_day6']
-                trans.arrivalwindow_day7 = trans_form_package.cleaned_data['arrivalwindow_day7'] {                             
+                trans.arrivalwindow_day7 = trans_form_package.cleaned_data['arrivalwindow_day7']                            
                 trans.save() 
                 transaction_form_submitted = True
                 #return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
