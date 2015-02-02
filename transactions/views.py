@@ -209,7 +209,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 trans_form_package = CreatePackageTransaction()
         #if the calendar checkboxes have not been submitted   
         else:      
-        	  packagedays = []     
+            packagedays = []     
             if request.method == 'POST':
                 cal_form = CalendarCheckBoxes(data=request.POST)
                 if cal_form.is_valid():  
