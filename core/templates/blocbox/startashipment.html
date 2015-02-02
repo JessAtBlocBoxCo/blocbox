@@ -106,12 +106,11 @@
                 	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
        										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
        										    Select a Payment Option {% if host %} for Sending Packages to {{ host.first_name }} {% endif %}
-       										    	  TEST SHOW PACKAGE DAYS {{ packagedays }}
        										 </h6>
     								</div>
 
 							<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
-                <form action="."   role="form" method="post">  
+                <form action="/transactions/startashipment/host{{host.id}}/cal_form_submittedTrue/invoice{{invoice}}/packagedays_count{{packagedays_count}}/" role="form" method="post">  
                 	
 											<!-- action="/transactions/startashipment/host{{host.id}}/cal_form_submittedTrue/invoice{{invoice}}/" 
 											      action="/transactions/startashipment/host{{host.id}}/trans_submittedTrue/invoice{{invoice}}/" 
