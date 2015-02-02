@@ -205,7 +205,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 elif payment_option=="annual":
                     price="150.00"
                     youselected="Annual"
-               else:
+                else:
                     price="2.00"
                     youselected="Per Package"
                 #Next, add the data to the transaction table
