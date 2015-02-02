@@ -219,6 +219,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 trans.host = host
                 trans.enduser = enduser
                 trans.invoice = invoice
+                trans.arrivalwindow_day1 = packagedays.0                
                 trans.save() 
                 transaction_form_submitted = True
             else:
