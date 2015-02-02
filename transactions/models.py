@@ -32,6 +32,7 @@ class Transaction(models.Model):
     tracking = models.CharField("Tracking Number", max_length=50, blank=True, null=True)
     status = models.CharField("Status", max_length=50, blank=True, null=True)
     favorstatus = models.CharField("Favor Status (Non-Shipments)", max_length=50, blank=True, null=True)    
+    arrivalwindow_days_count = models.IntegerField(blank=True, null=True)
     arrivalwindow_day1 = models.DateField(blank=True, null=True)
     arrivalwindow_day2 = models.DateField(blank=True, null=True)
     arrivalwindow_day3 = models.DateField(blank=True, null=True)
