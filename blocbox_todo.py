@@ -130,9 +130,6 @@ JESS: other favors - add two use cases (1) wifi sharing; (2) community dinners/f
 2.    
 JOHN: landing - there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" (less verbose though) and then a separate button saying "sign up to be a host"
 
-3.    
-JOHN: signup - Page that thanks host for confirming connection to use - Styling
-
 4.    
 JOHN: dashboard - Styling boxes
 JOHN: dashboard - Style fonts

@@ -140,7 +140,8 @@
             <!--SHIPMENTS DELIVERED - WAITING TO BE PICKED UP -->
             <div class="col-xs-12 col-sm-12 dashbox">
                 <div class="row">
-                    <h3 class="ltbluetext margintop10px nopadding">Packages Waiting to be picked up: Click the package received button when you've picked up the package</h3> 
+                    <h3 class="ltbluetext margintop10px nopadding">Packages Waiting to be Picked Up</h3>
+                    <p class="">Click the package received button when you've picked up the package</p>
                 </div>
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
@@ -217,7 +218,8 @@
             <!--PACKAGES WE NEED TRACKIN GINFORMATION FOR -->
             <div class="col-xs-12 col-sm-12 dashbox">
                 <div class="row">
-                    <h3 class="ltbluetext margintop10px nopadding">Waiting For Tracking Information: Enter Tracking Number When Received </h3> 
+                    <h3 class="ltbluetext margintop10px nopadding">Waiting For Tracking Information</h3>
+                    <p class="">Enter Tracking Number When Received </p>
                 </div>
                 {% for sh in shipments_with_tracking_notcomplete_notrackingno %}
 
