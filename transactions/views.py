@@ -77,7 +77,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     days_package_may_come_nextmonth = []
     month1days_count = None
     month2days_count = None
-    if packagedays_count == None:
+    if packagedays == []:
         if request.method == 'POST':
             cal_form = CalendarCheckBoxes(data=request.POST)
             if cal_form.is_valid():  
