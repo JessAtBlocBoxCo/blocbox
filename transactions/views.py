@@ -92,8 +92,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                     if daycheckedmonth2:
                         checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
                         packagedays.append(checked_day)
-                        days_package_may_come_nextmonth.append(daynumber)                   
-                packagedays_count = len(packagedays)
+                        days_package_may_come_nextmonth.append(daynumber)                                   
                 month1days_count = len(days_package_may_come_thismonth)
                 month2days_count = len(days_package_may_come_nextmonth)
             else:
@@ -102,6 +101,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
             cal_form = CalendarCheckBoxes()
     else: 
         cal_form = None  
+    packagedays_count = len(packagedays)    
     #define empty list vars
     conflicts_date_from = []
     conflicts_startmonths = []
