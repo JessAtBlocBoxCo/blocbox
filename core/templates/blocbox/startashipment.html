@@ -169,7 +169,7 @@
                         <!--col-sm-10 with all the checkboxes-->
                     </div>
                     <!--row with the checkboxes-->
-                    <!--Enter a Transaction Tite - and add the hidden fields-->
+                    <!--Enter a Transaction Tite -->
                     <div class="row">
                         {{ trans_form_package.title.errors }}
                         <label for="id_title" class="col-xs-12 col-sm-4 col-sm-offset-1">Enter a label for this shipment (optional):</label>
@@ -180,6 +180,11 @@
                         <label for="id_note_to_host" class="col-xs-12 col-sm-4 col-sm-offset-1">Include a note for the host (optional):</label>
                         <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="note_to_host" class="form-control" id="id_note_to_host" placeholder="Let the host know when you'll pick it up">
                     </div>
+                    
+                    <!--HIDDEN FIELD FOR PACKAGE DAYS -->
+                    {{ trans_form_package.arrivalwindow_day1.errors }}
+                    <input type="hidden" name="arrivalwindow_day1"   value={{packagedays.0}}>
+                    
 
 
 
