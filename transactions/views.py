@@ -98,7 +98,9 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
             else:
                 print cal_form.errors
         else:
-            cal_form = CalendarCheckBoxes()  
+            cal_form = CalendarCheckBoxes()
+    else: 
+        cal_form = None  
     #define empty list vars
     conflicts_date_from = []
     conflicts_startmonths = []
