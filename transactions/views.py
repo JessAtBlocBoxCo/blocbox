@@ -235,28 +235,29 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
         #return redirect('ipn_ask_shipment', host_id=host.id, favortype=favortype, invoice=Invoice)
         redirect_to_payment(request, host_id = host.id, invoice=invoice, favortype=favortype)
         #action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/" 
-    return render(request, 'blocbox/startashipment.html', {
-		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
-    	  #'cal_relations_host_count': cal_relations_host_count, 'cal_relations_host': cal_relations_host, 'cal_list_host': cal_list_host,
-    	  'here': quote(request.get_full_path()),
-    	  #Python calendar variables (independent of conflict app)
-        'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
-        'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
-        'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
-        'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
-        'today_dayofmonth_num': today_dayofmonth_num, 'nextmonth_calendar_year': nextmonth_calendar_year,
-        #conflict app variables (if host)
-    	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
-    	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
-    	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,       
-    	  #days package may come
-    	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
-    	  'host_package_conflict': host_package_conflict,
-    	  #Calendar check boxes form
-    	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
-    	  #payment stuff once the calendar checkboxes are checked
-    	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted,
-		})
+    else:
+        return render(request, 'blocbox/startashipment.html', {
+		        'enduser':enduser, 'host': host, 'connections_all': connections_all, 
+        	  #'cal_relations_host_count': cal_relations_host_count, 'cal_relations_host': cal_relations_host, 'cal_list_host': cal_list_host,
+        	  'here': quote(request.get_full_path()),
+        	  #Python calendar variables (independent of conflict app)
+            'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
+            'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
+            'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
+            'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
+            'today_dayofmonth_num': today_dayofmonth_num, 'nextmonth_calendar_year': nextmonth_calendar_year,
+            #conflict app variables (if host)
+        	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
+        	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
+        	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,       
+        	  #days package may come
+        	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
+        	  'host_package_conflict': host_package_conflict,
+        	  #Calendar check boxes form
+        	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
+        	  #payment stuff once the calendar checkboxes are checked
+        	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted,
+		    })
 
 
 def redirect_to_payment(request, host_id, invoice, favortype):
