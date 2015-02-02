@@ -24,6 +24,7 @@ from transactions.models import Transaction
 #billing and payment stuff to import
 from billing import gateway, CreditCard
 from paypal.standard.forms import PayPalPaymentsForm
+from paypal.standard.ipn import views
 #import new homebrew calendar jazz
 from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
 from calendar_homebrew.forms import CalendarCheckBoxes
