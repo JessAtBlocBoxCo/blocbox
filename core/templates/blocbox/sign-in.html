@@ -15,19 +15,22 @@
 								<!--START FORM HERE -->
             		<form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
             		    {% csrf_token %} {{ login_form.non_field_errors }}
-            		
-            		    <div class="form-group">
-            		        {{ user_form.email.errors }}
-            		        <!--<label for="id_email">Email Address</label> -->
-                            <input type="email" class="form-control input-lg" name="email" id="id_email" placeholder="Enter Email">
-            		    </div>
-            		
-            		    <div class="form-group">
-            		        {{ user_form.password.errors }}
-            		        <!--<label for="id_password1">Password</label> -->
-                            <input type="password" class="form-control input-lg" name="password" id="id_password1" placeholder="Enter Password">
-            		    </div>            		
-                        <button type="submit" name="submit" class="bluebutton">Sign In</button>
+            		    <div class="row">
+                            <div class="form-group col-xs-12 col-sm-5 col-sm-offset-2">
+                                {{ user_form.email.errors }}
+                                <!--<label for="id_email">Email Address</label> -->
+                                <input type="email" class="form-control input-lg" name="email" id="id_email" placeholder="Enter Email">
+                            </div>
+
+                            <div class="form-group col-xs-12 col-sm-3">
+                                {{ user_form.password.errors }}
+                                <!--<label for="id_password1">Password</label> -->
+                                <input type="password" class="form-control input-lg" name="password" id="id_password1" placeholder="Enter Password">
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-4 col-sm-offset-4">   		
+                            <button type="submit" name="submit" class="bluebutton">Sign In</button>
+                        </div>  
             		</form>            	
            			 <p> <a href="/passwordreset/recover/">Forgot Your Password?</a> </p>
            			 <br>
