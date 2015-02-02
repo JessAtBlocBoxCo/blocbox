@@ -1987,7 +1987,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         padding-bottom: 800px;
     }
     .contentbottomonly {
-        padding-bottom: 800px;
+        padding-bottom: 200px;
     }
     .footerlogo {
         margin-left: -80px;
@@ -2125,7 +2125,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         padding-bottom: 550px;
     }
     .contentbottomonly {
-        padding-bottom: 550px;
+        padding-bottom: 170px;
     }
     .footerlogo {
         display: none;
