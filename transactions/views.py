@@ -231,7 +231,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     else: #if the calendar checkboxes have not been checked
         trans_form_package = None
         invoice = None
-    if transaction_form_submitted:
+    if transaction_form_submitted == True:
         #return redirect('ipn_ask_shipment', host_id=host.id, favortype=favortype, invoice=Invoice)
         redirect_to_payment(request, host_id = host.id, invoice=invoice, favortype=favortype)
         #action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/" 
