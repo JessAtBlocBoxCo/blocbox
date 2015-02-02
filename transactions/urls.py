@@ -10,15 +10,23 @@ from paypal.standard.ipn import views
 admin.autodiscover()
 
 
-#url patterns preceded by blocbox.co/payment - the namespace is payment, so need to reverse call with, eg payment:paypal_ipn
+#url patterns preceded by blocbox.co/transactions (e.g., www.blocbox.co/transactions/startashipment) - the namespace is transactions, so need to reverse call with, eg payment:paypal_ipn
 urlpatterns = patterns('',
 		#Base views - defined in transactions/views.py
-		url(r'^$', 'paypal.standard.ipn.views.ask_for_money', name='payment_default'), #blocbox.co/payment, defaults o host_id=2 which is John
-		url(r'^host(?P<host_id>\d+)/$', 'transactions.views.base', name='paymentbase'), #blocbox.co/payment/host2 
+		url(r'^$', 'paypal.standard.ipn.views.ask_for_money', name='payment_default'), #blocbox.co/transactions, defaults o host_id=2 which is John
+		url(r'^startashipment/$', 'transactions.views.startashipment', name='startashipment'),
+    url(r'^nav_startashipment/$', 'transactions.views.nav_startashipment', name='nav_startashipment'),
+    url(r'^nav_startafavor/$', 'transactions.views.nav_startafavor', name='nav_startafavor'),
+    url(r'^startashipment/host(?P<host_id>\d+)/$', 'transactions.views.startashipment', name='startashipment'),
+    url(r'^startashipment/host(?P<host_id>\d+)/packagedays_count(?P<packagedays_count>\d+)/$', 'transactions.views.startashipment', name='startashipmentdays'),
+    url(r'^startafavor/$', 'transactions.views.startafavor', name='startafavor'),
+    url(r'^startafavor/host(?P<host_id>\d+)/$', 'transactions.views.startafavor', name='startafavor'),
+    url(r'^shippackage/$', 'transactions.views.shippackage', name='shippackage_nohost'),  #this shouldn't really be used b/c not linked to a host  
+    url(r'^shippackage/host(?P<host_id>\d+)/$', 'transactions.views.shippackage', name='shippackage'),
 		#SHIPMENTthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a SHIPMENT - with dayrangestart, danrange end
-    url(r'^host(?P<host_id>\d+)/days(?P<dayrangestart>\d+)to(?P<dayrangeend>\d+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_shipment'),
+    url(r'^payment/host(?P<host_id>\d+)/invoice(?P<invoice>\w+)/favortype(?P<favortype>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_shipment'),
 		#FAVORthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a FAVOR (e.g., no dayrangestart or dayrange end)
-		url(r'^host(?P<host_id>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_favor'),
+		url(r'^payment/host(?P<host_id>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_favor'),
 		#Notify URL for paypal IPAN
 		url(r'^ipn/notify(?P<host_id>\d+)/(?P<trans_id>\d+)/$', 'paypal.standard.ipn.views.ipn', name='paypal_ipn_notify'), 
 		url(r'^ipn/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_nohost'), #blocbox.co/payment/ipn - NOT FUNCTION B/C DOESN'T LINK TO HOST

@@ -19,20 +19,13 @@
 
     <div class="row">
 
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
 
 
             <!--IF THEY HAVE DONE ALL THE FORMS - SIGN INTO PAYPAL ACCOUNT -->
             {% if transaction_submitted %}
             <div class="row">
-            	
-            	    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
-        						<h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">Sign into your PayPal account to process payment</h6>
-    							
-    							</div>
-    							
-    	
-                
-                <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding"></h6>
+                <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Sign into your PayPal account to process payment</h6>
                 <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
                 <div class="row">
                 <!--show what they've selected-->
@@ -79,7 +72,7 @@
        										 </h6>
     								</div>
 
-							<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
+
                 <form action="." role="form" method="post">
 
 
@@ -120,8 +113,11 @@
                                     <td>
                                         <label> <input type="radio" name="payment_option" id="id_monthly" value="month20">&nbsp; MONTHLY</label>
                                     </td>
-                                    <td>  <p>20 packages for the next 30 days</p> </td>
-                                    <td>    <p>${{host.price_package_month20}}</p>
+                                    <td>
+                                        <p>20 packages for the next 30 days</p>
+                                    </td>
+                                    <td>
+                                        <p>${{host.price_package_month20}}</p>
                                     </td>
                                 </tr>
                                 <!--monthly checkbox-->
@@ -169,14 +165,17 @@
                     <!--row with submit button-->
 
                 </form>
-                 
-							</div> <!--profile box -->
+                <!--END FORM FOR PAYPMENT OPTION AND TITLE AND REST OF HIDDEN TRANSACTIO INPUT -->
+
 
             {% endif %}
             <!--end else -->
 
 
 
+
+        </div>
+        <!--col containing everything-->
     </div>
     <!--row negmargins containing everything -->
 </div>

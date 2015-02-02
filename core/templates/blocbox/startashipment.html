@@ -1,5 +1,5 @@
 {% extends "blocbox/base.html" %} {% load staticfiles %}
-<!--this is blocbox/templates/startashipment.html -- URL is www.blocbox.co/startashipment -->
+<!--this is blocbox/templates/startashipment.html -- URL is www.blocbox.co/transactions/startashipment -->
 
 <!--load the scheduling tags-->
 {% load i18n %} {% load scheduletags i18n %} {% load scheduletags %} {% block title %}Start a Shipment{% endblock %} {% block headafter %}
@@ -58,7 +58,7 @@
 
                         {% for connection in connections_all %}
                         <li role="presentation">
-                            <a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ connection.host_user.id }}';">
+                            <a role="menuitem" tabindex="-1" onClick="window.location='/transactions/startashipment/host{{ connection.host_user.id }}';">
       	  	    								{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}: 
       	  	        						{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }} 	  
       	  	    						</a>
@@ -90,72 +90,30 @@
     <!--confirming availabiility-->
 {% if host %}
  	  
- 	  
-
-       {% if transaction_submitted %}
-            <div class="row">
-            	
-            	    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
-        						<h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">Sign into your PayPal account to process payment</h6>
-    							
-    							</div>
-    							
-    	
-                
-                <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding"></h6>
-                <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
-                <div class="row">
-                <!--show what they've selected-->
-                <div class="col-xs-12 col-sm-6 col-sm-offset-1" style="padding-top: 20px; padding-bottom: 20px;">
-                    <table class="table">
-                        <tr>
-                            <th>Payment Option Selected</th>
-                            <th>Total Due</th>
-                            <!-- <th rowspan="2">{{ paypal_form.render }}</th> -->
-                        </tr>
-                        <tr>
-                            <td>{{ trans_created.youselected}}</td>
-                            <td>{{ trans_created.price }}</td>
-                        </tr>
-                    </table>
-                </div>
-                <div class="col-sm-4" style="padding-top: 20px; padding-bottom: 20px;">
-                    <table class="table">
-                        <tr>
-                            <th>Payment Method</th>
-                        </tr>
-                        <tr>
-                            <td style="padding-left: 60px; padding-top: 20px">{{ paypal_form.render }}</td>
-                        </tr>
-                    </table>
-                </div>
-                </div>
-                <!--col with table -->
-
-                <!-- the following statement loads the paypal checkout form - integrates with a paypal account
-												the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
-                <!--row-->
-            </div>
-            <!--end paypal button -->
-
-
-
-    {% else %} <!--IF TRANSACTION NOT SUBMITTED-->
-       
-       
-       
+ 	 {% if transaction_form_submitted %}
+ 	 	
+                 	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+       										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
+       										   Transaction Form Submitted. should redirect...
+       										    	
+       										 </h6>
+    								</div>      
+   {% else %}
+   	
+   	    
      {% if packagedays_count %}  <!--IF CALENDARD CHECKBOXES - SELECT PAYMETN OPTIONS -->     	
                 	
                 	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
        										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
        										    Select a Payment Option {% if host %} for Sending Packages to {{ host.first_name }} {% endif %}
+       										    	
        										 </h6>
     								</div>
 
 							<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
-                <form action="." role="form" method="post">
-
-
+                <form  raction="/transactions/startashipment/host{{host.id}}/packagedays_count{{packagedays_count}}/"  role="form" method="post">  
+                	
+															<!--  action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/" -->
 
                     {% csrf_token %} {{ trans_form_package.non_field_errors }}
 
@@ -274,11 +232,8 @@
     			
 
     	{% endif %} <!--if no packagedays_count/ if the calendar checkboxes have not been checked -->
-
-	{% endif %} <!--if transaction_sumitted - end if not submitted -->
-
 		
-	
+	{% endif %} <!--end if transaction form submitted -->
 
     			
 </div>

@@ -21,15 +21,8 @@ urlpatterns = patterns('',
     url(r'^dashboard/issue_id(?P<issue_id>\d+)/', views.dashboard, name='dashboard'),
     url(r'^dashboard/message(?P<message_trans_id>\d+)/', views.dashboard, name='dashboard'),
     url(r'^myblock/',views.myblock, name='myblock'),  
-    url(r'^startashipment/$', views.startashipment, name='startashipment'),
-    url(r'^nav_startashipment/$', views.nav_startashipment, name='nav_startashipment'),
-    url(r'^nav_startafavor/$', views.nav_startafavor, name='nav_startafavor'),
-    url(r'^startashipment/host(?P<host_id>\d+)/$', views.startashipment, name='startashipment'),
-    url(r'^startashipment/host(?P<host_id>\d+)/days(?P<dayrangestart>\d+)to(?P<dayrangeend>\d+)/$', views.startashipment, name='startashipmentdays'),
-    url(r'^startafavor/$', views.startafavor, name='startafavor'),
-    url(r'^startafavor/host(?P<host_id>\d+)/$', views.startafavor, name='startafavor'),
-    url(r'^shippackage/$', views.shippackage, name='shippackage_nohost'),  #this shouldn't really be used b/c not linked to a host  
-    url(r'^shippackage/host(?P<host_id>\d+)/$', views.shippackage, name='shippackage'),
+    #the transactions subdomain includes all of the start a shipment / start a favor and payment views
+ 		url(r'^transactions/', include('transactions.urls', namespace='transactions')), #because of the namepsac,e need to reeverse with reverse(payment:)
     url(r'^admin/', include(admin.site.urls)), 
     url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect'),
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
@@ -51,8 +44,6 @@ urlpatterns = patterns('',
  		url(r'^passwordreset/',include('password_reset.urls')),
  		url(r'^messages/', include('django_messages.urls')),
  		url(r'^scheduling/', include('schedule.urls')),
- 		#url(r'^payment/', views.payment, name='payment'),
- 		url(r'^payment/', include('transactions.urls', namespace='payment')), #because of the namepsac,e need to reeverse with reverse(payment:)
  		url(r'^datascience/', include('datasci.urls')),
  		
 )
