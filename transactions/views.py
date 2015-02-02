@@ -36,7 +36,7 @@ from transactions.forms import CreatePackageTransaction
 
 #The Start a shipment process
 #We may want to move all of this stuff into the Transactions app
-def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1",):
+def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1", transaction_form_submitted=None):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
