@@ -139,8 +139,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
         invoice = None
     if transaction_form_submitted == True:
         return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
-        #redirect_to_payment(request, host_id = host.id, invoice=invoice, favortype=favortype)
-        #action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/" 
+        cal_form = None   
     else: #if the transaction form has not been submitted
         #calendar check boxes form
         if request.method == 'POST':
@@ -164,8 +163,6 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 print cal_form.errors
         else:
             cal_form = CalendarCheckBoxes()
-    else: 
-        cal_form = None  
     packagedays_count = len(packagedays)    
     if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
         #Get calendar_homebrew created fields
