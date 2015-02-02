@@ -221,34 +221,42 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 trans.host = host
                 trans.enduser = enduser
                 trans.invoice = invoice
-                trans.arrivalwindow_days_count = trans_form_package.cleaned_data['packagedays_count']
+                arrivalwindow_days_count = trans_form_package.cleaned_data['packagedays_count']
+                trans.arrivalwindow_days_count = arrivalwindow_days_count
                 day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
                 if day1:
                     trans.arrivalwindow_day1 = day1
-                    trans.arrivalwindow_string = str(day1)
                 day2 = trans_form_package.cleaned_data['arrivalwindow_day2']
                 if day2:   
                     trans.arrivalwindow_day2 = day2
-                    arrivalwindow_string = str(day1) + ", " + str(day2)
                 day3 = trans_form_package.cleaned_data['arrivalwindow_day3']
                 if day3:
                     trans.arrivalwindow_day3 = day3
-                    arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3)
                 day4 = trans_form_package.cleaned_data['arrivalwindow_day4']
                 if day4:
                     trans.arrivalwindow_day4 = day4
-                    arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4)
                 day5 = trans_form_package.cleaned_data['arrivalwindow_day5']
                 if day5:
                     trans.arrivalwindow_day5 = day5
-                    arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4) + ", " + str(day5)
                 day6 = trans_form_package.cleaned_data['arrivalwindow_day6']
                 if day6:
                     trans.arrivalwindow_day6 = day6
-                    arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4) + ", " + str(day5) + ", " + str(day6)
                 day7 = trans_form_package.cleaned_data['arrivalwindow_day7'] 
                 if day7:
                     trans.arrivalwindow_day7 = day7      
+                if arrivalwindow_days_count == 1:
+                    trans.arrivalwindow_string = str(day1)
+                if arrivalwindow_days_count == 2:
+                    arrivalwindow_string = str(day1) + ", " + str(day2)
+                if arrivalwindow_days_count == 3:
+                    arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3)
+                if arrivalwindow_days_count == 4:
+                    arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4)
+                if arrivalwindow_days_count == 5:
+                    arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4) + ", " + str(day5)
+                if arrivalwindow_days_count == 6:
+                	  arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4) + ", " + str(day5) + ", " + str(day6)
+                if arrivalwindow_days_count == 7:
                     arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4) + ", " + str(day5) + ", " + str(day6) + ", " + str(day7)               
                 trans.save() 
                 transaction_form_submitted = True
