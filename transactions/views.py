@@ -36,7 +36,7 @@ from transactions.forms import CreatePackageTransaction
 
 #The Start a shipment process
 #We may want to move all of this stuff into the Transactions app
-def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1", transaction_form_submitted=False, invoice=None):
+def startashipment(request, invoice, host_id=None, transaction_form_submitted=False, ):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -90,6 +90,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     days_withconflicts_later = []
     #if host/no host - get caklendar_homebrew created fields
     if host:
+    	  invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
         conflicts = HostConflicts.objects.filter(host=host)
         for conflict in conflicts:  
             start_month = conflict.date_from.month #date_from.month, this is an integer
@@ -161,7 +162,6 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     trans_form_package = None 
     if packagedays_count:   
         transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
-        invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
         trans = Transaction()
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
