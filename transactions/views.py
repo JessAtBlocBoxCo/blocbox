@@ -5,7 +5,7 @@ import pytz
 from urllib import quote
 from django.views.decorators.csrf import csrf_exempt
 #from django
-from django.shortcuts import render, get_object_or_404, render_to_response
+from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
 from django.core.mail import send_mail
