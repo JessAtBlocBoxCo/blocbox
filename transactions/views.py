@@ -43,7 +43,8 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     local_timezone = request.session.setdefault('django_timezone', 'UTC')
     local_timezone = pytz.timezone(local_timezone) 
     date_today = datetime.date.today()
-    datetime_now = datetime.datetime.now()
+    datetime_now = datetime.datetime.now()         
+    time = datetime.datetime.time(datetime_now)
     #Year variables
     thisyear = date_today.year
     nextyear = date_today.year + 1
