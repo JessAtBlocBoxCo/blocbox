@@ -278,6 +278,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 print trans_form_package.errors 
         else: 
             trans_form_package = CreatePackageTransaction()
+    else:
             day1string = None
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
