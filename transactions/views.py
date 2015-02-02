@@ -224,11 +224,12 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 trans.invoice = invoice
                 trans.save() 
                 transaction_form_submitted = True
-                return redirect('paypal.standard.ipn.views.ask_for_money', host_id=host.id, favortype=favortype, invoice=Invoice)
             else:
                 print trans_form_package.errors 
         else: 
             trans_form_package = CreatePackageTransaction()
+    if transaction_form_submitted:
+        return redirect('ipn_ask_shipment', host_id=host.id, favortype=favortype, invoice=Invoice)
     else: #if the calendar checkboxes have not been checked
         trans_form_package = None
         invoice = None
