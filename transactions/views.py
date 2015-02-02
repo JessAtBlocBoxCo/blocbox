@@ -223,6 +223,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 trans.invoice = invoice
                 trans.save() 
                 transaction_form_submitted = True
+                return redirect('paypal.standard.ipn.views.ask_for_money', host_id=host.id, favortype=favortype, invoice=Invoice)
             else:
                 print trans_form_package.errors 
         else: 
@@ -252,8 +253,9 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     	  #payment stuff once the calendar checkboxes are checked
     	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted,
 		})
-    
-        
+
+
+       
 
 #starat a shipmetn view if requested from navbar
 def nav_startashipment(request, host=None):
