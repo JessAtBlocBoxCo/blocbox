@@ -184,7 +184,7 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':datenow, 'local_timezone':local_timezone, 
     	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form, 'trans_created': trans_created,
-    	  'trans_form_package': trans_form_package, 'invoice': invoice,  'transaction_submitted': transaction_submitted,    	  
+    	  'invoice': invoice,  'transaction_submitted': transaction_submitted,    	  
     })
 
 
