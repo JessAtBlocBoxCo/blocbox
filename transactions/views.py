@@ -188,6 +188,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         else:
             cal_form = CalendarCheckBoxes()     
         packagedays_count = len(packagedays) 
+    trans_form_submitted = False
     if cal_form_submitted == True:
         trans = Transaction()
         testvar = 'testvar'
