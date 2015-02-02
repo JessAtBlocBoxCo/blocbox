@@ -2,7 +2,7 @@ Hello {{ host.first_name }},
 
 Your neighbor, {{enduser.first_name}} {{ enduser.last_name}} [{{ enduser.email }}], has ordered a shipment to be delivered to you.
 
-The shipment is expected to arrive in {{ daystoarrival_estimate }} .
+The shipment is expected to arrive {{ arrivalwindow_estimate }} .
 
 Your neighbor submitted a payment of ${{ price }} for {{paymentoption}} {% if note_to_host %} and included the following message to you: {{ note_to_host }}. {% else %}. {% endif %}
 

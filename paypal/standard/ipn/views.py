@@ -196,10 +196,11 @@ def notify_host_shipment_paid(request, trans_id):
     trans = get_object_or_404(Transaction, pk=trans_id)
     host = trans.host
     enduser = trans.enduser
-    if trans.dayrangestart == trans.dayrangeend:
-        daystoarrival_estimate = str(trans.dayrangestart) + " Business Days"
+    if trans.arrivalwindow_days_count == 1:
+        arrivalwindow_estimate = 'on '+ str(trans.sarrivalwindow_day1)
     else:
-        daystoarrival_estimate = str(trans.dayrangestart) + " - " + str(trans.dayrangeend) + "Business Days"
+    	  daystring = str(arrivalwindow_day1) + str(arrivalwindow_day2) + str(arrivalwindow_day3) + str(arrivalwindow_day4) + str(arrivalwindow_day5) + str(arrivalwindow_day6) + str(arrivalwindow_day7)
+    	  arrivalwindow_estimate = 'on one of the following ' + str(trans.arrivalwindow_days_count) + ' days: ' + daystring
     message = render_to_string('emails/notify_host_shipment_paid.txt', { 
         'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
         'payment_option': trans.youselected, 'price': trans.price, 'daystoarrival_estimate': daystoarrival_estimate
