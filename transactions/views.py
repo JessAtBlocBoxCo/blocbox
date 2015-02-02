@@ -161,7 +161,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     trans_form_package = None
     invoice = None  
     #if the transaction form has been submitted redirect to new page
-    if transaction_form_submitted == True:
+    if transaction_form_submitted:
         return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
         cal_form = None   
     #if the transaction form has not been submitted  
