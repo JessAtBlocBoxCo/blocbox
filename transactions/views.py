@@ -257,19 +257,19 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 if day7:
                     trans.arrivalwindow_day7 = day7      
                 if arrivalwindow_days_count == 1:
-                    trans.arrivalwindow_string = str(day1)
+                    trans.arrivalwindow_string = str(day1string)
                 if arrivalwindow_days_count == 2:
-                    trans.arrivalwindow_string = str(day1) + ", " + str(day2)
+                    trans.arrivalwindow_string = str(day1string) + ", " + str(day2string)
                 if arrivalwindow_days_count == 3:
-                    trans.arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3)
+                    trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string)
                 if arrivalwindow_days_count == 4:
-                    trans.arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4)
+                    trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string)
                 if arrivalwindow_days_count == 5:
-                    trans.arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4) + ", " + str(day5)
+                    trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string)
                 if arrivalwindow_days_count == 6:
-                	  trans.arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4) + ", " + str(day5) + ", " + str(day6)
+                	  trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string)
                 if arrivalwindow_days_count == 7:
-                    trans.arrivalwindow_string = str(day1) + ", " + str(day2) + ", " + str(day3) + ", " + str(day4) + ", " + str(day5) + ", " + str(day6) + ", " + str(day7)               
+                    trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string) + ", " + str(day7string)               
                 trans.save() 
                 transaction_form_submitted = True
                 #return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
