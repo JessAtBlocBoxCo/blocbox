@@ -157,55 +157,56 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     #do payment variables/ transaction form stuff once they've checked the calendar day
     favortype='package'
     transaction_form_submitted = False
-    if packagedays_count:
-        transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
-        invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
-        trans = Transaction()
-        if request.method == 'POST': 
-            trans_form_package = CreatePackageTransaction(request.POST)            
-            if trans_form_package.is_valid():
-                #first, get data from the form
-                title = trans_form_package.cleaned_data['title']
-                payment_option = trans_form_package.cleaned_data['payment_option']
-                note_to_host = trans_form_package.cleaned_data['note_to_host']
-                paypal_quantity = 1
-                if payment_option=="bundle10":
-                    price="15.00"
-                    youselected="Bundle of 10 Packages"                    
-                elif payment_option=="month20":
-                    price="15.00"
-                    youselected="Monthly"                    
-                elif payment_option=="annual":
-                    price="150.00"
-                    youselected="Annual"
-                else:
-                    price="2.00"
-                    youselected="Per Package"
-                #Next, add the data to the transaction table
-                trans.payment_option = payment_option
-                trans.title = title
-                trans.favortype = favortype
-                trans.note_to_host = note_to_host
-                trans.price = price
-                trans.youselected = youselected
-                trans.paypal_quantity = paypal_quantity
-                trans.host = host
-                trans.enduser = enduser
-                trans.invoice = invoice
-                trans.arrivalwindow_day1 = packagedays[0]                               
-                trans.save() 
-                transaction_form_submitted = True
-            else:
-                print trans_form_package.errors 
-        else: 
-            trans_form_package = CreatePackageTransaction()
-    else: #if the calendar checkboxes have not been checked
-        trans_form_package = None
-        invoice = None
+    packagedays_count = None
     if transaction_form_submitted == True:
         return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
         cal_form = None   
-    else: #if the transaction form has not been submitted
+    else: #if the transaction form has not been submitted    	    	
+        if packagedays_count:  #if the calendar checkboxes have been hecked
+            transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
+            invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
+            trans = Transaction()
+            if request.method == 'POST': 
+                trans_form_package = CreatePackageTransaction(request.POST)            
+                if trans_form_package.is_valid():
+                    #first, get data from the form
+                    title = trans_form_package.cleaned_data['title']
+                    payment_option = trans_form_package.cleaned_data['payment_option']
+                    note_to_host = trans_form_package.cleaned_data['note_to_host']
+                    paypal_quantity = 1
+                    if payment_option=="bundle10":
+                        price="15.00"
+                        youselected="Bundle of 10 Packages"                    
+                    elif payment_option=="month20":
+                        price="15.00"
+                        youselected="Monthly"                    
+                    elif payment_option=="annual":
+                        price="150.00"
+                        youselected="Annual"
+                    else:
+                        price="2.00"
+                        youselected="Per Package"
+                    #Next, add the data to the transaction table
+                    trans.payment_option = payment_option
+                    trans.title = title
+                    trans.favortype = favortype
+                    trans.note_to_host = note_to_host
+                    trans.price = price
+                    trans.youselected = youselected
+                    trans.paypal_quantity = paypal_quantity
+                    trans.host = host
+                    trans.enduser = enduser
+                    trans.invoice = invoice
+                    trans.arrivalwindow_day1 = packagedays[0]                               
+                    trans.save() 
+                    transaction_form_submitted = True
+                else:
+                    print trans_form_package.errors 
+            else: 
+                trans_form_package = CreatePackageTransaction()
+                
+                
+                
         #calendar check boxes form
         if request.method == 'POST':
             cal_form = CalendarCheckBoxes(data=request.POST)
@@ -228,6 +229,12 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 print cal_form.errors
         else:
             cal_form = CalendarCheckBoxes()
+       
+
+    else: #if the calendar checkboxes have not been checked
+        trans_form_package = None
+        invoice = None
+        
         packagedays_count = len(packagedays)    
         return render(request, 'blocbox/startashipment.html', {
 		        'enduser':enduser, 'host': host, 'connections_all': connections_all, 
