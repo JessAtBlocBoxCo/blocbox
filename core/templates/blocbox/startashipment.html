@@ -90,16 +90,23 @@
     <!--confirming availabiility-->
 {% if host %}
  	  
- 	    
-       
-       
+ 	 {% if transaction_form_submitted %}
+ 	 	
+                 	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+       										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
+       										   Transaction Form Submitted. should redirect...
+       										    	
+       										 </h6>
+    								</div>      
+   {% else %}
+   	
+   	    
      {% if packagedays_count %}  <!--IF CALENDARD CHECKBOXES - SELECT PAYMETN OPTIONS -->     	
                 	
                 	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
        										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
        										    Select a Payment Option {% if host %} for Sending Packages to {{ host.first_name }} {% endif %}
        										    	
-       										    	<br> DELETE ME TEST TRANSACTION FORM SUBMITTED {{transaction_form_submitted}}
        										 </h6>
     								</div>
 
@@ -232,7 +239,7 @@
 <!--profile box-->
 
 
-
+{% endif %} <!--end if transaction form submitted -->
 
 {% endif %} <!--end if host -->
 
