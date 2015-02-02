@@ -221,7 +221,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 trans.host = host
                 trans.enduser = enduser
                 trans.invoice = invoice
-                trans.arrivalwindow_day1 = packagedays[0]                               
+                trans.arrivalwindow_day1 = trans_form_package.cleaned_data['arrivalwindow_day1']                               
                 trans.save() 
                 transaction_form_submitted = True
             else:
