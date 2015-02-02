@@ -1,0 +1,185 @@
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Payment{% endblock %}
+<!--this is blocbox/templates/payment.html -- URL is www.blocbox.co/payment, the view is defined in transactions.views.py ; url patters in transactions.urls.py-->
+
+<!--not sure that i need this top bit.. -->
+{% if integration.test_mode %} {{ integration.generate_form.sandbox }} {% else %} {{ integration.generate_form.render }} {% endif %} {% block headafter %} {% endblock %} {% block content %}
+
+<div class="content container-fluid fillpage offwhitebackground relativediv nopaddingmobile">
+
+    <p class="darkgreytext textcenter margintop40pxnomobile marginbottom20px">Complete the following steps to verify shipping destination, notfiy your Blocbox host, and complete payment</p>
+    <div class="row mobilehide">
+        <div class="col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 nopadding">
+            <p class="col-xs-3 ltgreytext textleft">1 HOST AVAILABILITY</p>
+            <div class="col-xs-2 divline margintop10px"></div>
+            <p class="col-xs-2 ltbluetext  textshadow textcenter">2 PAYMENT</p>
+            <div class="col-xs-2 divline margintop10px"></div>
+            <p class="col-xs-3 ltgreytext textright">3 SHIP YOUR ORDER</p>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
+
+
+            <!--IF THEY HAVE DONE ALL THE FORMS - SIGN INTO PAYPAL ACCOUNT -->
+            {% if transaction_submitted %}
+            <div class="row">
+                <h6 class="col-xs-12 ltbluetext margintop10px marginsides3pct nopadding">Sign into your PayPal account to process payment</h6>
+                <div class="marginsides3pct profileboxline100 marginbottom10px"></div>
+                <div class="row">
+                <!--show what they've selected-->
+                <div class="col-xs-12 col-sm-6 col-sm-offset-1" style="padding-top: 20px; padding-bottom: 20px;">
+                    <table class="table">
+                        <tr>
+                            <th>Payment Option Selected</th>
+                            <th>Total Due</th>
+                            <!-- <th rowspan="2">{{ paypal_form.render }}</th> -->
+                        </tr>
+                        <tr>
+                            <td>{{ trans_created.youselected}}</td>
+                            <td>{{ trans_created.price }}</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-sm-4" style="padding-top: 20px; padding-bottom: 20px;">
+                    <table class="table">
+                        <tr>
+                            <th>Payment Method</th>
+                        </tr>
+                        <tr>
+                            <td style="padding-left: 60px; padding-top: 20px">{{ paypal_form.render }}</td>
+                        </tr>
+                    </table>
+                </div>
+                </div>
+                <!--col with table -->
+
+                <!-- the following statement loads the paypal checkout form - integrates with a paypal account
+												the button et is defined in blocbox/paypal/standard/forms.py , the image links (JB_PAYPAL_IMAGE) are defined at paypal/standard/conf.py -->
+                <!--row-->
+            </div>
+            <!--end paypal button -->
+
+
+
+            {% else %}
+          	
+                	
+                	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+       										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
+       										    Select a Payment Option {% if host %} for Sending Packages to {{ host.first_name }} {% endif %}
+       										 </h6>
+    								</div>
+
+
+                <form action="." role="form" method="post">
+
+
+
+                    {% csrf_token %} {{ trans_form_package.non_field_errors }}
+
+
+                    <div class="row">
+                        <!--Payment option: row with the checkboxes-->
+                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
+                            {{ trans_form_package.payment_option.errors }}
+                            <table class="table">
+                                <tr>
+                                    <td>
+                                        <label> <input type="radio" name="payment_option" id="id_perpackage" value="perpackage">&nbsp; PER PACKAGE</label>
+                                    </td>
+                                    <td>
+                                        <p>Pay for a single package</p>
+                                    </td>
+                                    <td>
+                                        <p>${{host.price_package_per}}</p>
+                                    </td>
+                                </tr>
+                                <!--per package checkbox-->
+
+                                <!--buden of 10-->
+                                <tr>
+                                    <td>
+                                        <label> <input type="radio" name="payment_option" id="id_bundle" value="bundle10">&nbsp; BUNDLED</label>
+                                    </td>
+                                    <td>   <p>10 packages (expires in 1 year)</p>   </td>
+                                    <td>   <p>${{host.price_package_bundle10}}</p> </td>
+                                </tr>
+                                <!--bundle10 checkbox-->
+
+                                <!--Monthly-->
+                                <tr>
+                                    <td>
+                                        <label> <input type="radio" name="payment_option" id="id_monthly" value="month20">&nbsp; MONTHLY</label>
+                                    </td>
+                                    <td>
+                                        <p>20 packages for the next 30 days</p>
+                                    </td>
+                                    <td>
+                                        <p>${{host.price_package_month20}}</p>
+                                    </td>
+                                </tr>
+                                <!--monthly checkbox-->
+
+                                <!--annual-->
+                                <tr>
+                                    <td>
+                                        <label>
+                                            <input type="radio" name="payment_option" id="id_annual" value="annual">&nbsp; ANNUAL</label>
+                                    </td>
+                                    <td>
+                                        <p>Up to 20 packages per month for an entire year</p>
+                                    </td>
+                                    <td>
+                                        <p>${{host.price_package_annual}}</p>
+                                    </td>
+                                </tr>
+                                <!--annual checkbox-->
+                            </table>
+                            <!--table containg payment options -->
+                        </div>
+                        <!--col-sm-10 with all the checkboxes-->
+                    </div>
+                    <!--row with the checkboxes-->
+                    <!--Enter a Transaction Tite - and add the hidden fields-->
+                    <div class="row">
+                        {{ trans_form_package.title.errors }}
+                        <label for="id_title" class="col-xs-12 col-sm-4 col-sm-offset-1">Enter a label for this shipment (optional):</label>
+                        <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="title" class="form-control" id="id_title" placeholder="Enter a brief description of the shipment">
+                    </div>
+                    <div class="row paddingtop10px">
+                        {{ trans_form_package.note_to_host.errors }}
+                        <label for="id_note_to_host" class="col-xs-12 col-sm-4 col-sm-offset-1">Include a note for the host (optional):</label>
+                        <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="note_to_host" class="form-control" id="id_note_to_host" placeholder="Let the host know when you'll pick it up">
+                    </div>
+
+
+
+                    <!--submit button -->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
+                            <button type="submit" name="submit" class="bluebutton">Verify and Provide Payment Information</button>
+                        </div>
+                    </div>
+                    <!--row with submit button-->
+
+                </form>
+                <!--END FORM FOR PAYPMENT OPTION AND TITLE AND REST OF HIDDEN TRANSACTIO INPUT -->
+
+
+            {% endif %}
+            <!--end else -->
+
+
+
+
+        </div>
+        <!--col containing everything-->
+    </div>
+    <!--row negmargins containing everything -->
+</div>
+<!--content-->
+
+
+{% endblock %}
