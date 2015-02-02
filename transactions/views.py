@@ -36,7 +36,7 @@ from transactions.forms import CreatePackageTransaction
 
 #The Start a shipment process
 #We may want to move all of this stuff into the Transactions app
-def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1", transaction_form_submitted=False):
+def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1", transaction_form_submitted=False, invoice=None):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -209,8 +209,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
             else: 
                 trans_form_package = CreatePackageTransaction()
         #if the calendar checkboxes have not been submitted   
-        else:   
-            invoice = None    
+        else:      
             packagedays = []     
             if request.method == 'POST':
                 cal_form = CalendarCheckBoxes(data=request.POST)
