@@ -158,8 +158,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     favortype='package'
     #transaction_form_submitted = False
     packagedays_count = None
-    trans_form_package = None
-    invoice = None  
+    trans_form_package = None 
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted:
         return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
@@ -210,7 +209,8 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
             else: 
                 trans_form_package = CreatePackageTransaction()
         #if the calendar checkboxes have not been submitted   
-        else:      
+        else:   
+            invoice = None    
             packagedays = []     
             if request.method == 'POST':
                 cal_form = CalendarCheckBoxes(data=request.POST)
