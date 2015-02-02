@@ -182,6 +182,7 @@
                     </div>
                     
                     <!--HIDDEN FIELD FOR PACKAGE DAYS -->
+                    {{ trans_form_package.packagedays_count.errors }} <input type="hidden" name="packagedays_count" value={{ packagedays_count}}>
                     {{ trans_form_package.arrivalwindow_day1.errors }}  <input type="hidden" name="arrivalwindow_day1"   value={{packagedays.0}}>
                   	{% if packagedays.1 %} {{ trans_form_package.arrivalwindow_day2.errors }} <input type="hidden" name="arrivalwindow_day2"   value={{packagedays.1}}> {% endif %}
                   	{% if packagedays.2 %} {{ trans_form_package.arrivalwindow_day3.errors }} <input type="hidden" name="arrivalwindow_day3"   value={{packagedays.2}}> {% endif %}

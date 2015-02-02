@@ -11,6 +11,7 @@ class CreatePackageTransaction(forms.Form): #Note this is NOT a modelForm, the v
     title = forms.CharField(max_length=100, required=False)
     payment_option = forms.CharField(max_length=30)
     note_to_host = forms.CharField(max_length=200, required=False)
+    packagedays_count = forms.IntegerField(required=False)
     arrivalwindow_day1 = forms.CharField(max_length=30, required=False) #needs to be in YYYY-MM-DD 
     arrivalwindow_day2 = forms.CharField(max_length=30, required=False)
     arrivalwindow_day3 = forms.CharField(max_length=30, required=False)
