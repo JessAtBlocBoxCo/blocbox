@@ -213,10 +213,9 @@ def notify_enduser_shipment_paid(request, trans_id):
     host = trans.host
     enduser = trans.enduser
     if trans.arrivalwindow_days_count == 1:
-        arrivalwindow_estimate = 'on '+ str(trans.sarrivalwindow_day1)
+        arrivalwindow_estimate = 'on '+ str(trans.sarrivalwindow_string)
     else:
-    	  daystring = str(trans.arrivalwindow_day1) + str(trans.arrivalwindow_day2) + str(trans.arrivalwindow_day3) + str(trans.arrivalwindow_day4) + str(trans.arrivalwindow_day5) + str(trans.arrivalwindow_day6) + str(trans.arrivalwindow_day7)
-    	  arrivalwindow_estimate = 'on one of the following ' + str(trans.arrivalwindow_days_count) + ' days: ' + daystring
+    	  arrivalwindow_estimate = 'on one of the following ' + str(trans.arrivalwindow_days_count) + ' days: ' + trans.arrivalwindow_string
     message = render_to_string('emails/notify_enduser_shipment_paid.txt', { 
         'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
         'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,

@@ -163,7 +163,8 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     cal_form_submitted = False
     if cal_form_submitted == False:     
         trans_form_package = None 
-        packagedays = []     
+        packagedays = []  
+        packagedays_string = []
         if request.method == 'POST':
             cal_form = CalendarCheckBoxes(data=request.POST)
             if cal_form.is_valid():  
@@ -172,13 +173,17 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     if daycheckedmonth1:
                     	  #checked day needs to be in YYYY-MM-DD  format
                         checked_day = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
+                        checked_day_string = str(thismonth) + " " + str(daynumber)
                         packagedays.append(checked_day)
+                        packagedays_string.append(checked_day_string)
                         days_package_may_come_thismonth.append(daynumber)
                 for daynumber in range(1,32): 
                     daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
                     if daycheckedmonth2:
                         checked_day = str(thisyear) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
+                        checked_day_string = str(nextmonth) + " " + str(daynumber)
                         packagedays.append(checked_day)
+                        packagedays_string.append(checked_day_string)
                         days_package_may_come_nextmonth.append(daynumber)                                   
                 month1days_count = len(days_package_may_come_thismonth)
                 month2days_count = len(days_package_may_come_nextmonth)
@@ -224,24 +229,31 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 arrivalwindow_days_count = trans_form_package.cleaned_data['packagedays_count']
                 trans.arrivalwindow_days_count = arrivalwindow_days_count
                 day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
+                day1string = trans_form_package.cleaned_data['arrivalwindow_day1string']
                 if day1:
                     trans.arrivalwindow_day1 = day1
                 day2 = trans_form_package.cleaned_data['arrivalwindow_day2']
+                day2string = trans_form_package.cleaned_data['arrivalwindow_day2string']
                 if day2:   
                     trans.arrivalwindow_day2 = day2
                 day3 = trans_form_package.cleaned_data['arrivalwindow_day3']
+                day3string = trans_form_package.cleaned_data['arrivalwindow_day3string']
                 if day3:
                     trans.arrivalwindow_day3 = day3
                 day4 = trans_form_package.cleaned_data['arrivalwindow_day4']
+                day4string = trans_form_package.cleaned_data['arrivalwindow_day4string']
                 if day4:
                     trans.arrivalwindow_day4 = day4
                 day5 = trans_form_package.cleaned_data['arrivalwindow_day5']
+                day5string = trans_form_package.cleaned_data['arrivalwindow_day5string']
                 if day5:
                     trans.arrivalwindow_day5 = day5
                 day6 = trans_form_package.cleaned_data['arrivalwindow_day6']
+                day6string = trans_form_package.cleaned_data['arrivalwindow_day6string']
                 if day6:
                     trans.arrivalwindow_day6 = day6
                 day7 = trans_form_package.cleaned_data['arrivalwindow_day7'] 
+                day7string = trans_form_package.cleaned_data['arrivalwindow_day7string'] 
                 if day7:
                     trans.arrivalwindow_day7 = day7      
                 if arrivalwindow_days_count == 1:
@@ -290,7 +302,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
         	  'host_package_conflict': host_package_conflict,
         	  #Calendar check boxes form
-        	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count, 'cal_form_submitted': cal_form_submitted,
+        	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_string': packagedays_string, 'packagedays_count': packagedays_count, 'cal_form_submitted': cal_form_submitted,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted,
 		    })

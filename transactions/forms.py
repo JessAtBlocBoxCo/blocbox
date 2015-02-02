@@ -19,7 +19,14 @@ class CreatePackageTransaction(forms.Form): #Note this is NOT a modelForm, the v
     arrivalwindow_day5 = forms.CharField(max_length=30, required=False)
     arrivalwindow_day6 = forms.CharField(max_length=30, required=False)
     arrivalwindow_day7 = forms.CharField(max_length=30, required=False)
-      
+    arrivalwindow_day1string = forms.CharField(max_length=30, required=False) #needs to be in YYYY-MM-DD 
+    arrivalwindow_day2string = forms.CharField(max_length=30, required=False)
+    arrivalwindow_day3string = forms.CharField(max_length=30, required=False)
+    arrivalwindow_day4string = forms.CharField(max_length=30, required=False)
+    arrivalwindow_day5string = forms.CharField(max_length=30, required=False)
+    arrivalwindow_day6string = forms.CharField(max_length=30, required=False)
+    arrivalwindow_day7string = forms.CharField(max_length=30, required=False)   
+          
 class TrackingForm(forms.ModelForm):
     class Meta:
         model = Transaction
