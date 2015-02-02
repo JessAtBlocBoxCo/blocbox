@@ -76,28 +76,29 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     days_package_may_come_nextmonth = []
     month1days_count = None
     month2days_count = None
-    if request.method == 'POST':
-        cal_form = CalendarCheckBoxes(data=request.POST)
-        if cal_form.is_valid():  
-            for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
-                daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
-                if daycheckedmonth1:
-                    checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
-                    packagedays.append(checked_day)
-                    days_package_may_come_thismonth.append(daynumber)
-            for daynumber in range(1,32): 
-                daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
-                if daycheckedmonth2:
-                    checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
-                    packagedays.append(checked_day)
-                    days_package_may_come_nextmonth.append(daynumber)                   
-            packagedays_count = len(packagedays)
-            month1days_count = len(days_package_may_come_thismonth)
-            month2days_count = len(days_package_may_come_nextmonth)
+    if packagedays_count == None:
+        if request.method == 'POST':
+            cal_form = CalendarCheckBoxes(data=request.POST)
+            if cal_form.is_valid():  
+                for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
+                    daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
+                    if daycheckedmonth1:
+                        checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                        packagedays.append(checked_day)
+                        days_package_may_come_thismonth.append(daynumber)
+                for daynumber in range(1,32): 
+                    daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
+                    if daycheckedmonth2:
+                        checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                        packagedays.append(checked_day)
+                        days_package_may_come_nextmonth.append(daynumber)                   
+                packagedays_count = len(packagedays)
+                month1days_count = len(days_package_may_come_thismonth)
+                month2days_count = len(days_package_may_come_nextmonth)
+            else:
+                print cal_form.errors
         else:
-            print cal_form.errors
-    else:
-        cal_form = CalendarCheckBoxes()  
+            cal_form = CalendarCheckBoxes()  
     #define empty list vars
     conflicts_date_from = []
     conflicts_startmonths = []
