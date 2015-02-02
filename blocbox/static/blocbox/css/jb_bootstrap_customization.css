@@ -825,6 +825,12 @@ footer {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    background-color: transparent;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 0;
+    border-radius: 0px;
+    white-space: nowrap;
 }
 .navinfobtnwht:hover {
     background-image: url('/static/blocbox/images/white-info-button-active.png');
