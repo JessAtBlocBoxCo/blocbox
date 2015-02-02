@@ -159,80 +159,80 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     #transaction_form_submitted = False
     packagedays_count = None
     trans_form_package = None 
+    if packagedays_count:   
+        transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
+        invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
+        trans = Transaction()
+        if request.method == 'POST': 
+            trans_form_package = CreatePackageTransaction(request.POST)            
+            if trans_form_package.is_valid():
+                #first, get data from the form
+                title = trans_form_package.cleaned_data['title']
+                payment_option = trans_form_package.cleaned_data['payment_option']
+                note_to_host = trans_form_package.cleaned_data['note_to_host']
+                paypal_quantity = 1
+                if payment_option=="bundle10":
+                    price="15.00"
+                    youselected="Bundle of 10 Packages"                    
+                elif payment_option=="month20":
+                    price="15.00"
+                    youselected="Monthly"                    
+                elif payment_option=="annual":
+                    price="150.00"
+                    youselected="Annual"
+                else:
+                    price="2.00"
+                    youselected="Per Package"
+                #Next, add the data to the transaction table
+                trans.payment_option = payment_option
+                trans.title = title
+                trans.favortype = favortype
+                trans.note_to_host = note_to_host
+                trans.price = price
+                trans.youselected = youselected
+                trans.paypal_quantity = paypal_quantity
+                trans.host = host
+                trans.enduser = enduser
+                trans.invoice = invoice
+                trans.arrivalwindow_day1 = packagedays[0]                               
+                trans.save() 
+                transaction_form_submitted = True
+            else:
+                print trans_form_package.errors 
+        else: 
+            trans_form_package = CreatePackageTransaction()
+    #if the calendar checkboxes have not been submitted   
+    else:      
+        packagedays = []     
+        if request.method == 'POST':
+            cal_form = CalendarCheckBoxes(data=request.POST)
+            if cal_form.is_valid():  
+                for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
+                    daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
+                    if daycheckedmonth1:
+                        checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                        packagedays.append(checked_day)
+                        days_package_may_come_thismonth.append(daynumber)
+                for daynumber in range(1,32): 
+                    daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
+                    if daycheckedmonth2:
+                        checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                        packagedays.append(checked_day)
+                        days_package_may_come_nextmonth.append(daynumber)                                   
+                month1days_count = len(days_package_may_come_thismonth)
+                month2days_count = len(days_package_may_come_nextmonth)
+            else:
+                print cal_form.errors
+        else:
+            cal_form = CalendarCheckBoxes()     
+    packagedays_count = len(packagedays)  
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted:
         return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
         cal_form = None   
     #if the transaction form has not been submitted  
     else:   	   
-        #if the calendar checkboxes have been checked 	
-        if packagedays_count:   
-            transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
-            invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
-            trans = Transaction()
-            if request.method == 'POST': 
-                trans_form_package = CreatePackageTransaction(request.POST)            
-                if trans_form_package.is_valid():
-                    #first, get data from the form
-                    title = trans_form_package.cleaned_data['title']
-                    payment_option = trans_form_package.cleaned_data['payment_option']
-                    note_to_host = trans_form_package.cleaned_data['note_to_host']
-                    paypal_quantity = 1
-                    if payment_option=="bundle10":
-                        price="15.00"
-                        youselected="Bundle of 10 Packages"                    
-                    elif payment_option=="month20":
-                        price="15.00"
-                        youselected="Monthly"                    
-                    elif payment_option=="annual":
-                        price="150.00"
-                        youselected="Annual"
-                    else:
-                        price="2.00"
-                        youselected="Per Package"
-                    #Next, add the data to the transaction table
-                    trans.payment_option = payment_option
-                    trans.title = title
-                    trans.favortype = favortype
-                    trans.note_to_host = note_to_host
-                    trans.price = price
-                    trans.youselected = youselected
-                    trans.paypal_quantity = paypal_quantity
-                    trans.host = host
-                    trans.enduser = enduser
-                    trans.invoice = invoice
-                    trans.arrivalwindow_day1 = packagedays[0]                               
-                    trans.save() 
-                    transaction_form_submitted = True
-                else:
-                    print trans_form_package.errors 
-            else: 
-                trans_form_package = CreatePackageTransaction()
-        #if the calendar checkboxes have not been submitted   
-        else:      
-            packagedays = []     
-            if request.method == 'POST':
-                cal_form = CalendarCheckBoxes(data=request.POST)
-                if cal_form.is_valid():  
-                    for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
-                        daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
-                        if daycheckedmonth1:
-                            checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
-                            packagedays.append(checked_day)
-                            days_package_may_come_thismonth.append(daynumber)
-                    for daynumber in range(1,32): 
-                        daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
-                        if daycheckedmonth2:
-                            checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
-                            packagedays.append(checked_day)
-                            days_package_may_come_nextmonth.append(daynumber)                                   
-                    month1days_count = len(days_package_may_come_thismonth)
-                    month2days_count = len(days_package_may_come_nextmonth)
-                else:
-                    print cal_form.errors
-            else:
-                cal_form = CalendarCheckBoxes()     
-        packagedays_count = len(packagedays)    
+    #if the calendar checkboxes have been checked 	  
         return render(request, 'blocbox/startashipment.html', {
 		        'enduser':enduser, 'host': host, 'connections_all': connections_all, 
         	  #'cal_relations_host_count': cal_relations_host_count, 'cal_relations_host': cal_relations_host, 'cal_list_host': cal_list_host,
@@ -254,6 +254,8 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
         	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted,
+        	  #testing
+        	  'transcount': transcount,
 		    })
 
 
