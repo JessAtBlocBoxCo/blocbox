@@ -260,7 +260,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
 
 
 def redirect_to_payment(request, host_id, invoice, favortype):
-    return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/")  
+    return HttpResponseRedirect("/transactions/payment/host" + str(host_id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/")  
 
 #starat a shipmetn view if requested from navbar
 def nav_startashipment(request, host=None):
