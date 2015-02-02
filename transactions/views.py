@@ -171,13 +171,14 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
                     daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
                     if daycheckedmonth1:
-                        checked_day = str(thismonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                    	  #checked day needs to be in YYYY-MM-DD  format
+                        checked_day = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
                         packagedays.append(checked_day)
                         days_package_may_come_thismonth.append(daynumber)
                 for daynumber in range(1,32): 
                     daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
                     if daycheckedmonth2:
-                        checked_day = str(nextmonth) + "/" + str(daynumber) + "/" + str(thisyear) #month/day/year i think....
+                        checked_day = str(thisyear) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
                         packagedays.append(checked_day)
                         days_package_may_come_nextmonth.append(daynumber)                                   
                 month1days_count = len(days_package_may_come_thismonth)
