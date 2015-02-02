@@ -162,6 +162,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     packagedays_count = None
     if packagedays_count:     
         trans = Transaction()
+        testvar = 'testvar'
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
             if trans_form_package.is_valid():
@@ -201,6 +202,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
             trans_form_package = CreatePackageTransaction()
     #if the calendar checkboxes have not been submitted   
     else:    
+    	  testvar = None
         trans_form_package = None 
         packagedays = []     
         if request.method == 'POST':
@@ -253,6 +255,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted,
+        	  'testvar': testvar,
 		    })
 
 
