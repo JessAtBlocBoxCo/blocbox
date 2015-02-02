@@ -140,7 +140,7 @@
             <!--SHIPMENTS DELIVERED - WAITING TO BE PICKED UP -->
             <div class="col-xs-12 col-sm-12 dashbox">
                 <div class="row">
-                    <h3 class="ltbluetext margintop10px nopadding">Packages Waiting to be Picked Up</h3>
+                    <h3 class="ltbluetext margintop10px marginbottom5px nopadding">Packages Waiting to be Picked Up</h3>
                     <p class="">Click the package received button when you've picked up the package</p>
                 </div>
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
@@ -225,7 +225,7 @@
 
                 <!--divider defining the whole current shipments part (need tracking) -->
                 <div class="row dashinfobox dashfont">
-                    <h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4> 
+                    <h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h4> 
 
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (need tracking)-->
                     <div class="col-xs-12 col-sm-4 paddingsides5px ">
