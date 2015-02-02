@@ -225,6 +225,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     else: #if transaction submitted is true
         trans_form_package = None
         invoice = None
+        favortype = None
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
