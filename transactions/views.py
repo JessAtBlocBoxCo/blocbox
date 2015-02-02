@@ -220,14 +220,26 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 trans.paypal_quantity = paypal_quantity
                 trans.host = host
                 trans.enduser = enduser
-                trans.invoice = invoice
-                trans.arrivalwindow_day1 = trans_form_package.cleaned_data['arrivalwindow_day1']   
-                trans.arrivalwindow_day2 = trans_form_package.cleaned_data['arrivalwindow_day2']
-                trans.arrivalwindow_day3 = trans_form_package.cleaned_data['arrivalwindow_day3']
-                trans.arrivalwindow_day4 = trans_form_package.cleaned_data['arrivalwindow_day4']
-                trans.arrivalwindow_day5 = trans_form_package.cleaned_data['arrivalwindow_day5']
-                trans.arrivalwindow_day6 = trans_form_package.cleaned_data['arrivalwindow_day6']
-                trans.arrivalwindow_day7 = trans_form_package.cleaned_data['arrivalwindow_day7']                            
+                trans.invoice = invoice             
+                trans.arrivalwindow_day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
+                day2 = trans_form_package.cleaned_data['arrivalwindow_day2']
+                if day2:   
+                    trans.arrivalwindow_day2 = trans_form_package.cleaned_data['arrivalwindow_day2']
+                day3 = trans_form_package.cleaned_data['arrivalwindow_day3']
+                if day3:
+                    trans.arrivalwindow_day3 = trans_form_package.cleaned_data['arrivalwindow_day3']
+                day4 = trans_form_package.cleaned_data['arrivalwindow_day4']
+                if day4:
+                    trans.arrivalwindow_day4 = trans_form_package.cleaned_data['arrivalwindow_day4']
+                day5 = trans_form_package.cleaned_data['arrivalwindow_day5']
+                if day5:
+                    trans.arrivalwindow_day5 = trans_form_package.cleaned_data['arrivalwindow_day5']
+                day6 = trans_form_package.cleaned_data['arrivalwindow_day6']
+                if day6:
+                    trans.arrivalwindow_day6 = trans_form_package.cleaned_data['arrivalwindow_day6']
+                day7 = trans_form_package.cleaned_data['arrivalwindow_day7'] 
+                if day7:
+                    trans.arrivalwindow_day7 = trans_form_package.cleaned_data['arrivalwindow_day7']                            
                 trans.save() 
                 transaction_form_submitted = True
                 #return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
