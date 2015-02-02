@@ -35,7 +35,7 @@ from transactions.forms import CreatePackageTransaction
 
 #The Start a shipment process
 #We may want to move all of this stuff into the Transactions app
-def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, calendar_slug_single = "testcalendar1"):
+def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"):
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -179,6 +179,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         conflicts = None	
         host_package_conflict = False
     #do payment variables/ transaction form stuff once they've checked the calendar days
+    transaction_form_submitted = False
     favortype='package'
     if packagedays_count:
         transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
@@ -219,6 +220,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                 trans.enduser = enduser
                 trans.invoice = invoice
                 trans.save() 
+                transaction_form_submitted = True
             else:
                 print trans_form_package.errors 
         else: 
@@ -247,7 +249,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  #Calendar check boxes form
     	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
     	  #payment stuff once the calendar checkboxes are checked
-    	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 
+    	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted,
 		})
     
         
