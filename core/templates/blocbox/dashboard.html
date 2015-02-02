@@ -146,7 +146,7 @@
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont">
-                    <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }}	 {% endif %} </h3>
+                    <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                     <h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }}</h4> 
 
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
