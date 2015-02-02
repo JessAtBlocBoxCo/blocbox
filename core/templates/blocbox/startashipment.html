@@ -183,7 +183,9 @@
                     
                     <!--HIDDEN FIELD FOR PACKAGE DAYS -->
                   {{ trans_form_package.packagedays_count.errors }} <input type="hidden" name="packagedays_count" value={{ packagedays_count}}>
-                  {{ trans_form_package.arrivalwindow_day1.errors }}  <input type="hidden" name="arrivalwindow_day1"   value={{packagedays.0}}>  <input type="hidden" name="arrivalwindow_day1string"   value={{packagedays_string.0}}>
+                  {{ trans_form_package.arrivalwindow_day1.errors }}  
+                  		<input type="hidden" name="arrivalwindow_day1"   value={{packagedays.0}}>  
+                  		<input type="hidden" name="arrivalwindow_day1string"   value={{packagedays_string.0}}>
                   {% if packagedays.1 %} {{ trans_form_package.arrivalwindow_day2.errors }} 
                   		<input type="hidden" name="arrivalwindow_day2"   value={{packagedays.1}}>  
                   		<input type="hidden" name="arrivalwindow_day2string"   value={{packagedays_string.1}}> 
@@ -266,6 +268,7 @@
  <h5> TEST PACKAGE DAYS {{ packagedays }} TEST INVOICE {{invoice}} TEST COIUNT {{packagedays_count}}
  	 <br> TEST CAL_FORM_SUBMITTED {{cal_form_submitted}}  TRANS FORM SUBMITTED {{ transaction_form_submitted }}
 		<br> PACKAGEDAYS_sTRING {{ packagedays_string }} TRY 0 AND 0 {{ packagedays_string.0 }} {{ packagedays_string.1 }}
+		<br> day1string: {{ day1string }} 
  	 
  	 </h5>
     		
