@@ -43,11 +43,7 @@ from django_messages.utils import format_quote, get_user_model, get_username_fie
 #aftership
 import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
-#import new homebrew calendar jazz
-from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
-from calendar_homebrew.forms import CalendarCheckBoxes
-import calendar 
-calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
+
 
 #Write a custom template filter:
 from django.template.defaulttags import register

@@ -24,7 +24,11 @@ from transactions.models import Transaction
 #billing and payment stuff to import
 from billing import gateway, CreditCard
 from paypal.standard.forms import PayPalPaymentsForm
-
+#import new homebrew calendar jazz
+from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+from calendar_homebrew.forms import CalendarCheckBoxes
+import calendar 
+calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
 
 #The Start a shipment process
 #We may want to move all of this stuff into the Transactions app
