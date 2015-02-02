@@ -158,6 +158,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     favortype='package'
     transaction_form_submitted = False
     packagedays_count = None
+    trans_form_package = None
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
         return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
@@ -231,7 +232,6 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                     print cal_form.errors
             else:
                 cal_form = CalendarCheckBoxes()
-                trans_form_package = None
                 invoice = None       
         packagedays_count = len(packagedays)    
         return render(request, 'blocbox/startashipment.html', {
