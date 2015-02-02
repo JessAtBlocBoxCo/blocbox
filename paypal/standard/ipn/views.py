@@ -183,8 +183,7 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
     return render(request, 'blocbox/payment_enter_paypal.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
     	  'date':datenow, 'local_timezone':local_timezone, 
-    	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form, 'trans_created': trans_created,
-    	  'invoice': invoice,  'transaction_submitted': transaction_submitted,    	  
+    	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form, 'trans_created': trans_created, 'invoice': invoice,     	  
     })
 
 
