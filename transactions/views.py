@@ -179,6 +179,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
         conflicts = None	
         host_package_conflict = False
     #do payment variables/ transaction form stuff once they've checked the calendar days
+    favortype='package'
     if packagedays_count:
         transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
         invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
@@ -222,10 +223,9 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
                 print trans_form_package.errors 
         else: 
             trans_form_package = CreatePackageTransaction()
-    else: #if transaction submitted is true
+    else: #if the calendar checkboxes have not been checked
         trans_form_package = None
         invoice = None
-        favortype = None
     return render(request, 'blocbox/startashipment.html', {
 		    'enduser':enduser, 'host': host, 'connections_all': connections_all, 
 		    'dayrangestart': dayrangestart, 'dayrangeend': dayrangeend,  
