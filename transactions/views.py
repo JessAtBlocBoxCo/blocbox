@@ -160,12 +160,23 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     favortype='package'
     #transaction_form_submitted = False
     packagedays_count = None
-    if packagedays_count:   
+    if packagedays_count:
+    """if request.method == 'POST':
+        enduser_issue_form = EndUserIssue(request.POST, instance=trans)
+        if enduser_issue_form.is_valid():
+            issue = enduser_issue_form.save()
+            issue.save()
+            notify_host_enduser_issue(request, trans.id)
+            notify_admin_enduser_issue(request, trans.id)
+        else: 
+            print enduser_issue_form.errors
+    else:
+        enduser_issue_form = EndUserIssue(instance=trans)
+    return HttpResponse("OK")"""       
         trans = Transaction()
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
             if trans_form_package.is_valid():
-                #first, get data from the form
                 title = trans_form_package.cleaned_data['title']
                 payment_option = trans_form_package.cleaned_data['payment_option']
                 note_to_host = trans_form_package.cleaned_data['note_to_host']
@@ -201,7 +212,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         else: 
             trans_form_package = CreatePackageTransaction()
     #if the calendar checkboxes have not been submitted   
-    else:      
+    else:    
         trans_form_package = None 
         packagedays = []     
         if request.method == 'POST':
