@@ -229,11 +229,11 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 arrivalwindow_days_count = trans_form_package.cleaned_data['packagedays_count']
                 trans.arrivalwindow_days_count = arrivalwindow_days_count
                 day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
-                day1string = trans_form_package['arrivalwindow_day1string']
+                day1string = trans_form_package.cleaned_data['arrivalwindow_day1string']
                 if day1:
                     trans.arrivalwindow_day1 = day1
                 day2 = trans_form_package.cleaned_data['arrivalwindow_day2']
-                day2string = trans_form_package['arrivalwindow_day2string']
+                day2string = trans_form_package.cleaned_data['arrivalwindow_day2string']
                 if day2:   
                     trans.arrivalwindow_day2 = day2
                 day3 = trans_form_package.cleaned_data['arrivalwindow_day3']
