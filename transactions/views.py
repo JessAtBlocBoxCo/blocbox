@@ -257,11 +257,11 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 if day7:
                     trans.arrivalwindow_day7 = day7      
                 if arrivalwindow_days_count == 1:
-                    trans.arrivalwindow_string = day1string
+                    trans.arrivalwindow_string = str(day1string)
                 if arrivalwindow_days_count == 2:
-                    trans.arrivalwindow_string = day1string + ", " + day2string
+                    trans.arrivalwindow_string = str(day1string) + ", " + str(day2string)
                 if arrivalwindow_days_count == 3:
-                    trans.arrivalwindow_string = day1string + ", " + day2string + ", " + day3string
+                    trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string)
                 if arrivalwindow_days_count == 4:
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string)
                 if arrivalwindow_days_count == 5:
