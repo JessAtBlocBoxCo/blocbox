@@ -160,7 +160,8 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     favortype='package'
     #transaction_form_submitted = False
     packagedays_count = None
-    if packagedays_count == None:     
+    cal_form_submitted == False:
+    if cal_form_submitted == False:     
         testvar = None
         trans_form_package = None 
         packagedays = []     
@@ -181,12 +182,13 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                         days_package_may_come_nextmonth.append(daynumber)                                   
                 month1days_count = len(days_package_may_come_thismonth)
                 month2days_count = len(days_package_may_come_nextmonth)
+                cal_form_submitted = True
             else:
                 print cal_form.errors
         else:
             cal_form = CalendarCheckBoxes()     
         packagedays_count = len(packagedays) 
-    else:  
+    if cal_form_submitted == True:
         trans = Transaction()
         testvar = 'testvar'
         if request.method == 'POST': 
@@ -251,7 +253,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
         	  'host_package_conflict': host_package_conflict,
         	  #Calendar check boxes form
-        	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
+        	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count, 'cal_form_submitted': cal_form_submitted,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted,
         	  'testvar': testvar,
