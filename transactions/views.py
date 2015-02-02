@@ -29,6 +29,9 @@ from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
 from calendar_homebrew.forms import CalendarCheckBoxes
 import calendar 
 calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
+#import transaction models
+from transactions.models import Transaction
+from transactions.forms import CreatePackageTransaction
 
 #The Start a shipment process
 #We may want to move all of this stuff into the Transactions app
