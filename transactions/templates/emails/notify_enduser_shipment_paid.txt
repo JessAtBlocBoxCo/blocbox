@@ -4,7 +4,7 @@ This email is to confirm that you are sending a package to  {{host.first_name}} 
 
 Please enter your tracking information at www.blocbox.co/dashboard as soon as you receive it.  Once your tracking information is updated, you can easily track your shipment's progress on your dashboard.
 
-We've told {{host.first_name}} that the shipment is expected to arrive in {{ daystoarrival_estimate }} .
+We've told {{host.first_name}} that the shipment is expected to arrive {{ arrivalwindow_estimate }}.
 
 Your submitted a payment of ${{ price }} for {{paymentoption}} {% if note_to_host %} and included the following message to {{host.first_name}}: {{ note_to_host }}. {% else %}. {% endif %}
 
