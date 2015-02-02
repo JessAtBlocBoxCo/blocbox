@@ -72,7 +72,6 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     today_dayofmonth_num = date_today.day 
     """Calendar checkbox form """
     packagedays = []
-    packagedays_count = None
     days_package_may_come_thismonth = []
     days_package_may_come_nextmonth = []
     month1days_count = None
