@@ -246,7 +246,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     	  #Calendar check boxes form
     	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_count': packagedays_count,
     	  #payment stuff once the calendar checkboxes are checked
-    	  'trans_form_package': trans_form_package, 'invoice': invoice, 
+    	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 
 		})
     
         
