@@ -88,7 +88,73 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     days_withconflicts_thismonth = []
     days_withconflicts_nextmonth = []
     days_withconflicts_later = []
-    """Calendar checkbox form """
+    #if host/no host
+        if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
+        #Get calendar_homebrew created fields
+        conflicts = HostConflicts.objects.filter(host=host)
+        for conflict in conflicts:  
+            start_month = conflict.date_from.month #date_from.month, this is an integer
+            if conflict.date_to:
+                end_month = conflict.date_to.month
+            else:
+                end_month = None
+            conflicts_startmonths.append(start_month) 
+            if start_month == thismonth_num:
+                conflicts_startthismonth.append(conflict)
+                if start_month == end_month:
+                    conflicts_startandend_thismonth.append(conflict)
+                else:
+                    if end_month == start_month + 1:
+                        conflicts_startthismonth_endnextmonth.append(conflict)
+                    else:
+                        conflicts_startthismonth_endlater.append(conflict)
+            if start_month == nextmonth_num:
+                conflicts_startnextmonth.append(conflict)
+                if start_month == end_month:
+                    conflicts_startandend_nextmonth.append(conflict)
+                else:
+                    conflicts_startnextmonth_endlater.append(conflict)
+        #define days with conflicts
+        for conflict in conflicts_startthismonth:
+            #append the first day
+            days_withconflicts_thismonth.append(conflict.date_from.day)   
+            #append the days after the first day for multi-day conflicts 	  
+            if conflict.duration > 1:
+                duration_less1 = conflict.duration - 1
+                for day in range(duration_less1):
+                    conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
+                    if conflict_day <= days_in_thismonth:
+                        days_withconflicts_thismonth.append(conflict_day)
+                    else:
+                        conflict_day_spillover = conflict_day - days_in_thismonth
+                        days_withconflicts_nextmonth.append(conflict_day_spillover)
+        for conflict in conflicts_startnextmonth:
+        	  #append the first day
+            days_withconflicts_nextmonth.append(conflict.date_from.day)   
+            #append the days after the first day for multi-day conflicts 	  
+            if conflict.duration > 1:
+                duration_less1 = conflict.duration - 1
+                for day in range(duration_less1):
+                    conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
+                    if conflict_day <= days_in_nextmonth:
+                        days_withconflicts_nextmonth.append(conflict_day)
+                    else:
+                        conflict_day_spillover = conflict_day - days_in_nextmonth
+                        days_withconflicts_later.append(conflict_day_spillover)
+        #remove duplciates - hopefully they dont exist but the might          
+        days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
+        days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
+        #determine if there is a conflict
+        host_package_conflict = False
+        for day in days_package_may_come_thismonth:
+            if day in days_withconflicts_thismonth:
+                host_package_conflict = True
+        for day in days_package_may_come_nextmonth:
+            if day in days_withconflicts_nextmonth:
+                host_package_conflict = True
+    else: #if no host specified that stuff is empty/none
+        conflicts = None	
+        host_package_conflict = False  
     #do payment variables/ transaction form stuff once they've checked the calendar day
     favortype='package'
     transaction_form_submitted = False
@@ -163,74 +229,7 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
                 print cal_form.errors
         else:
             cal_form = CalendarCheckBoxes()
-    packagedays_count = len(packagedays)    
-    if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
-        #Get calendar_homebrew created fields
-        conflicts = HostConflicts.objects.filter(host=host)
-        for conflict in conflicts:  
-            start_month = conflict.date_from.month #date_from.month, this is an integer
-            if conflict.date_to:
-                end_month = conflict.date_to.month
-            else:
-                end_month = None
-            conflicts_startmonths.append(start_month) 
-            if start_month == thismonth_num:
-                conflicts_startthismonth.append(conflict)
-                if start_month == end_month:
-                    conflicts_startandend_thismonth.append(conflict)
-                else:
-                    if end_month == start_month + 1:
-                        conflicts_startthismonth_endnextmonth.append(conflict)
-                    else:
-                        conflicts_startthismonth_endlater.append(conflict)
-            if start_month == nextmonth_num:
-                conflicts_startnextmonth.append(conflict)
-                if start_month == end_month:
-                    conflicts_startandend_nextmonth.append(conflict)
-                else:
-                    conflicts_startnextmonth_endlater.append(conflict)
-        #define days with conflicts
-        for conflict in conflicts_startthismonth:
-            #append the first day
-            days_withconflicts_thismonth.append(conflict.date_from.day)   
-            #append the days after the first day for multi-day conflicts 	  
-            if conflict.duration > 1:
-                duration_less1 = conflict.duration - 1
-                for day in range(duration_less1):
-                    conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
-                    if conflict_day <= days_in_thismonth:
-                        days_withconflicts_thismonth.append(conflict_day)
-                    else:
-                        conflict_day_spillover = conflict_day - days_in_thismonth
-                        days_withconflicts_nextmonth.append(conflict_day_spillover)
-        for conflict in conflicts_startnextmonth:
-        	  #append the first day
-            days_withconflicts_nextmonth.append(conflict.date_from.day)   
-            #append the days after the first day for multi-day conflicts 	  
-            if conflict.duration > 1:
-                duration_less1 = conflict.duration - 1
-                for day in range(duration_less1):
-                    conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
-                    if conflict_day <= days_in_nextmonth:
-                        days_withconflicts_nextmonth.append(conflict_day)
-                    else:
-                        conflict_day_spillover = conflict_day - days_in_nextmonth
-                        days_withconflicts_later.append(conflict_day_spillover)
-        #remove duplciates - hopefully they dont exist but the might          
-        days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
-        days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
-        #determine if there is a conflict
-        host_package_conflict = False
-        for day in days_package_may_come_thismonth:
-            if day in days_withconflicts_thismonth:
-                host_package_conflict = True
-        for day in days_package_may_come_nextmonth:
-            if day in days_withconflicts_nextmonth:
-                host_package_conflict = True
-    else: #if no host specified that stuff is empty/none
-        conflicts = None	
-        host_package_conflict = False  
-    else:
+        packagedays_count = len(packagedays)    
         return render(request, 'blocbox/startashipment.html', {
 		        'enduser':enduser, 'host': host, 'connections_all': connections_all, 
         	  #'cal_relations_host_count': cal_relations_host_count, 'cal_relations_host': cal_relations_host, 'cal_list_host': cal_list_host,
