@@ -31,16 +31,14 @@ class Transaction(models.Model):
     invoice = models.CharField("Invoice ID", max_length=100, blank=True, null=True)
     tracking = models.CharField("Tracking Number", max_length=50, blank=True, null=True)
     status = models.CharField("Status", max_length=50, blank=True, null=True)
-    favorstatus = models.CharField("Favor Status (Non-Shipments)", max_length=50, blank=True, null=True)
-    dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)
-    dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)
-    cal_checkbox1 = models.DateField(blank=True, null=True)
-    cal_checkbox2 = models.DateField(blank=True, null=True)
-    cal_checkbox3 = models.DateField(blank=True, null=True)
-    cal_checkbox4 = models.DateField(blank=True, null=True)
-    cal_checkbox5 = models.DateField(blank=True, null=True)
-    cal_checkbox6 = models.DateField(blank=True, null=True)
-    cal_checkbox7 = models.DateField(blank=True, null=True)
+    favorstatus = models.CharField("Favor Status (Non-Shipments)", max_length=50, blank=True, null=True)    
+    arrivalwindow_day1 = models.DateField(blank=True, null=True)
+    arrivalwindow_day2 = models.DateField(blank=True, null=True)
+    arrivalwindow_day3 = models.DateField(blank=True, null=True)
+    arrivalwindow_day4 = models.DateField(blank=True, null=True)
+    arrivalwindow_day5 = models.DateField(blank=True, null=True)
+    arrivalwindow_day6 = models.DateField(blank=True, null=True)
+    arrivalwindow_day7 = models.DateField(blank=True, null=True)
     #to get a date use DateField (datetime.date.today), to get date with time use DateTimeField
     #datenow = models.DateField("Date When Requested (Duplicative but needed)", blank=True, null=True)
     deliverydatenotracking_rangestart = models.DateField("Expected Delivery Date Range Start, Before Tracking Information Entered", blank=True, null=True)
@@ -61,7 +59,9 @@ class Transaction(models.Model):
     shipment_courier = models.CharField("Courier", max_length=20, blank=True, null=True)
     #Aftership variables grabbed after confirmed
     tracking_info_tuple_confirmd = models.CharField("Aftership Tracking Info Tuple Upon Completion", max_length=2000, blank=True, null=True)
-
+    #no longer in use
+    dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)     
+    dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)   
 
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
     #define transaciton type choices
