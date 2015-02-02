@@ -58,7 +58,7 @@
 
                         {% for connection in connections_all %}
                         <li role="presentation">
-                            <a role="menuitem" tabindex="-1" onClick="window.location='/startashipment/host{{ connection.host_user.id }}';">
+                            <a role="menuitem" tabindex="-1" onClick="window.location='/transactions/startashipment/host{{ connection.host_user.id }}';">
       	  	    								{{ connection.host_user.first_name }} {{ connection.host_user.last_name }}: 
       	  	        						{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }} 	  
       	  	    						</a>
