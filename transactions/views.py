@@ -88,9 +88,8 @@ def startashipment(request, host_id=None, calendar_slug_single = "testcalendar1"
     days_withconflicts_thismonth = []
     days_withconflicts_nextmonth = []
     days_withconflicts_later = []
-    #if host/no host
-        if host: #Eventually can link to the calendar relations, right now just calling it AvailabilityUser { { host.id } }
-        #Get calendar_homebrew created fields
+    #if host/no host - get caklendar_homebrew created fields
+    if host:
         conflicts = HostConflicts.objects.filter(host=host)
         for conflict in conflicts:  
             start_month = conflict.date_from.month #date_from.month, this is an integer
