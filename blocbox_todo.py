@@ -71,6 +71,7 @@ JESS: shipment - NOTE: when i implement the PRO version, need to update URL to /
 JESS: shipment - update readme to describe navstaratshipment, et
 
 4.
+JESS: signup - after completing sign up page, it directs to a page that thanks them and asks them to sign in. Can they go directly to their dashboard? If not, the link to sign in on the thank you page should trigger the sign in modal, not take them to a stand-alone sign in page.
 JESS: signup - page - add additional required fields (name, adddress, etc)
 JESS: signup - request to connect - add errors if already connected
 JESS: signup - fix the connect/host2 thing - connecting if already a user - make sure the emails are sending to thoe host, add a field for confirmed, right now its logging as connected een before host confirms
@@ -130,8 +131,6 @@ JESS: other favors - add two use cases (1) wifi sharing; (2) community dinners/f
 JOHN: landing - there should be a direct tlink to signing up as a host on the landing page. i think it shoudl say "esarch for a host in your neighborhood to get started" (less verbose though) and then a separate button saying "sign up to be a host"
 
 3.    
-JOHN: signup - Thank you for registering
-JOHN: signup - "by continugin i agree" - put below button
 JOHN: signup - Page that thanks host for confirming connection to use - Styling
 
 4.    
