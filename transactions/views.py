@@ -220,7 +220,8 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 trans.paypal_quantity = paypal_quantity
                 trans.host = host
                 trans.enduser = enduser
-                trans.invoice = invoice             
+                trans.invoice = invoice
+                trans.arrivalwindow_days_count = packagedays_count            
                 trans.arrivalwindow_day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
                 day2 = trans_form_package.cleaned_data['arrivalwindow_day2']
                 if day2:   
