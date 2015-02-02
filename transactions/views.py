@@ -177,7 +177,7 @@ def startashipment(request, host_id=None, dayrangestart=None, dayrangeend=None, 
     #do payment variables/ transaction form stuff once they've checked the calendar days
     if packagedays_count:
         transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
-        invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date.month) + str(date.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
+        invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) #h2u14n13d112210 = transaciton between host2, user14, host's 13th transaction
         trans = Transaction()
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
