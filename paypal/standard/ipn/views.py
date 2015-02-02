@@ -138,9 +138,8 @@ easy to implement and doesn't require SSL."""
 		once that form has been submitted, a new page is rendered that asks them to confirm infomration
 		and link to their paypal accout.
 		the template for both of these is on payment.html
-		its a bit confusing because there are two forms on one page - thats why we use transaction_submitted true or false
 """
-def ask_for_money(request, host_id=2, favortype="package", package_days = None, ): #default amount is 2.00, default host is John, payment_option="perpackage", invoice_id=None
+def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #default amount is 2.00, default host is John, payment_option="perpackage", invoice_id=None
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
@@ -160,30 +159,25 @@ def ask_for_money(request, host_id=2, favortype="package", package_days = None, 
     #NEXT, add the paypal fields
     #For a list of fields: https://developer.paypal.com/webapps/developer/docs/classic/paypal-payments-standard/integration-guide/Appx_websitestandard_htmlvariables/
     #THEN.. after transaction entry created - retrive the info - including transaction ID 
-    if transaction_submitted == True: 
-        #Get the transactions record that was just created
-        trans_created = Transaction.objects.get(invoice=invoice)
-        paypal_dict = {
-            "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
-            "amount": trans_created.price, #Amount of the purchase - try to pass this as an argument
-            "item_name": favortype,
-            "quantity": paypal_quantity,
-            "cbt": returnmessage, #Sets value for return to merchant button
-            "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
-            "invoice": invoice,
-            #Need to add a filed fo rhost_emai, figuore out how to flag "payment sent"
-            #Receiver email:  	Primary email address of the payment recipient (that is, the merchant). 
-            #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
-            "custom": enduser.email, #this is serving as the User Email field
-            "notify_url": "http://www.blocbox.co/transactions/ipn/notify" + str(host.id) +"/" + str(trans_created.id) + "/",
-            "return_url": "http://www.blocbox.co/transactions/shippackage/host" + str(host.id) +"/",
-            "cancel_return": "http://www.blocbox.co/dashboard/",
-        }   
-        paypal_form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
-    else:
-        paypal_form = None
-        paypal_dict = None
-        trans_created = None
+    #Get the transactions record that was just created
+    trans_created = Transaction.objects.get(invoice=invoice)
+    paypal_dict = {
+        "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
+        "amount": trans_created.price, #Amount of the purchase - try to pass this as an argument
+        "item_name": favortype,
+        "quantity": paypal_quantity,
+        "cbt": returnmessage, #Sets value for return to merchant button
+        "image_url": "http://www.blocbox.co/static/blocbox/images/Logo-and-name---orange-drop2_paypal.png",
+        "invoice": invoice,
+        #Need to add a filed fo rhost_emai, figuore out how to flag "payment sent"
+        #Receiver email:  	Primary email address of the payment recipient (that is, the merchant). 
+        #If the payment is sent to a non-primary email address on your PayPal account, the receiver_email is still your primary email. 
+        "custom": enduser.email, #this is serving as the User Email field
+        "notify_url": "http://www.blocbox.co/transactions/ipn/notify" + str(host.id) +"/" + str(trans_created.id) + "/",
+        "return_url": "http://www.blocbox.co/transactions/shippackage/host" + str(host.id) +"/",
+        "cancel_return": "http://www.blocbox.co/dashboard/",
+    }   
+    paypal_form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #context = {"form": form}
     return render(request, 'blocbox/payment_enter_paypal.html', {
 		    'enduser':enduser, 'host':host, 'invoice': invoice,
