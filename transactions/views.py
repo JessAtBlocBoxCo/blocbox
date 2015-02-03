@@ -1,7 +1,7 @@
 #This is blocbox.transactions.views.py
 from django.shortcuts import render
 import datetime
-Import random
+import random
 import pytz
 from urllib import quote
 from django.views.decorators.csrf import csrf_exempt
