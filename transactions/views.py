@@ -273,8 +273,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string) + ", or" + str(day7string)               
                 trans.save() 
                 transaction_form_submitted = True
-                #return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
-                #cal_form = None   
             else:
                 print trans_form_package.errors 
         else: 
