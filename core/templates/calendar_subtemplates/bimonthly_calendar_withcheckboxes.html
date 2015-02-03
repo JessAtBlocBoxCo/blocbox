@@ -44,7 +44,11 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 
 			 		 						<td>  			 		 						{% if day = 0 %}  <!--blank if zero -->
 			 		 						       {% else %} <!-- if no conflict, day not zero -->
-			 		 						 <label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	 
+			 		 				
+			 		 				
+			 		 <!-- 	 <label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	  --> 
+			 		 		<button type="button" name="month1day{{day}}" style="height: 5px">	  {{ day }}   </button>
+			 		 						 
 			 		 						{% endif %}	
 			 		 						</td>
 			 		 						{% endif %} <!--conflict -->
