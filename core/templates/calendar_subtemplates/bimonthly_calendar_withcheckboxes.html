@@ -36,7 +36,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			 		 											<!--danger days-->
 			 		 										  {% if day in days_withconflicts_thismonth and day in days_package_may_come_thismonth %}  
 			 		 										  	<td class="danger"> 
-			 		 										  			<label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	
+			 		 								 {{ day }} 
 			 		 										  	</td>
 			 		 										  <!--days it may come, no conflict-->
 			 		 										  {% elif day in days_package_may_come_thismonth %} 
@@ -45,8 +45,8 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 			 		 										  	</td>
 			 		 											<!--conflict days --> 
 			 		 											{% elif day in days_withconflicts_thismonth %} 
-			 		 													<td class="warning"> 
-			 		 															<label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	 
+			 		 							<td class="warning"> 
+			 		 						    {{ day }} 
 			 		 													</td> 
 			 		 											{% else %}	
 			 		 												<td>  		 											  	
@@ -82,19 +82,18 @@ note, bootstratp td classes: active, success, danger, warning, info -- use some 
 																<!--danger days -->
 															  {% if day in days_withconflicts_nextmonth and day in days_package_may_come_nextmonth %} 
 															  	<td class="danger"> 
-															  			<label>	<input type="checkbox" name="month2day{{day}}" id="id_month2day{{day}}" > {{ day }} </label>  
+													 {{ day }} 
 															  	</td>
 			 		 											<!--conflict days -->
 			 		 											{% elif day in days_withconflicts_nextmonth %} 
-			 		 												<td class="warning"> 
-			 		 														<label>	<input type="checkbox" name="month2day{{day}}" id="id_month2day{{day}}"  > {{ day }} </label>  
-			 		 												</td> 
+			 		 						<td class="warning">  {{ day }}  </td> 
 			 		 											{% else %}	
 			 		 												<td>  		 											  	
-			 		 														{% if day = 0 %}  <!--blank if zero -->
-			 		 														{% else %} 
-			 		 															  <label>	<input type="checkbox" name="month2day{{day}}" id="id_month2day{{day}}"  > {{ day }} </label>  
-			 		 														{% endif %}	
+			 		 						{% if day = 0 %}  <!--blank if zero -->
+			 		 						{% else %} 
+			 		 						  <label>	<input type="checkbox" name="month2day{{day}}" id="id_month2day{{day}}"  > {{ day }} </label>  
+			 
+{% endif %}	
 			 		 												
 						
 			 		 												</td>
