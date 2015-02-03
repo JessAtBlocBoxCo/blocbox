@@ -64,6 +64,8 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 			  
 
 
+
+
 <!--NEXT MONTH CALENDAR-->
 <div class="col-xs-12 col-sm-6"> <div class="col-xs-12 col-sm-11">
 <h4 class="textcenter">{{ nextmonth }} </h4>
@@ -72,12 +74,12 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 			 		 		{{ cal_form.month2day6.errors }} 	{{ cal_form.month2day7.errors }} 	{{ cal_form.month2day8.errors }} 	{{ cal_form.month2day9.errors }} {{ cal_form.month2day10.errors }}
 			  		
 <table class="table">
-			  			<!--first row: weekday names -->
-			  			<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
+<!--first row: weekday names -->
+<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
 
 {% for week in nextmonth_calendar %}
 			  			<tr> 
-			  				{% for day in week %}
+{% for day in week %}
 											
 			 		 						<!--conflict days JB NEED TO STYKE CLASS-->
 			 		 						{% if day in days_withconflicts_nextmonth %} 
@@ -101,9 +103,11 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 </div> <!--div for next month -->
 				
 				
-				<div class="row">
-         	<div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px paddingtop20px nopaddingright">
-            <button class="bluebutton" type="submit" name="submit" style="height: 60px">	
+<div class="row">
+ 
+<div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px paddingtop20px nopaddingright">
+
+<button class="bluebutton" type="submit" name="submit" style="height: 60px">	
             	  {{host.first_name}} is Available! Proceed to Payment
            </button>
         	
