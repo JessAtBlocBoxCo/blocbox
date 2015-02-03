@@ -16,95 +16,89 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 			 		 <table class="table">
 			 		 	<!--first row: weekday names -->
 			 		 	<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
-			 		 {% for week in thismonth_calendar %}
-			 		 	<tr> 
+
+ {% for week in thismonth_calendar %}
+<tr> 
 			 		 		
-			 		 				{% for day in week %}
+{% for day in week %}
 			 		 					
 
 			 	
-			 	
-			 	
-			 		 								<!--make the square bold if its today -->
-			 		 								{% if day = today_dayofmonth_num %} 
-			 		 									<td class="active"> <b> 
-			 		 										
-			 		 											<label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	
-															</b> 
-														</td> 
-			 		 								{% else %} 	          
-			 		 											<!--danger days-->
-			 		 										  {% if day in days_withconflicts_thismonth and day in days_package_may_come_thismonth %}  
-			 		 										  	<td class="danger"> 
-			 		 								 {{ day }} 
-			 		 										  	</td>
-			 		 										  <!--days it may come, no conflict-->
-			 		 										  {% elif day in days_package_may_come_thismonth %} 
-			 		 										  	<td class="info"> 
-			 		 										  			<label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	
-			 		 										  	</td>
-			 		 											<!--conflict days --> 
-			 		 											{% elif day in days_withconflicts_thismonth %} 
-			 		 							<td class="warning"> 
-			 		 						    {{ day }} 
-			 		 													</td> 
-			 		 											{% else %}	
-			 		 												<td>  		 											  	
-			 		 														{% if day = 0 %}  <!--blank if zero -->
-			 		 														{% else %} 
-			 		 															  <label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	 
-			 		 														{% endif %}	
-			 		 												</td>
-			 		 											{% endif %} <!--endif conflict -->
-			 		 								{% endif %} <!--end if today-->
+<!--BEFORE TODAY: grey it out -- using INFO class JB needs to style  -->
+
+{%  if day in days_before_today %}			
+       <td class="info"> {{ day }}   </td> 			
+{% else %}
+
+
+			 		 						<!--TODAY: make square bold if today -->
+			 		 						{% if day = today_dayofmonth_num %} 
+<td class="active"> <b> 
+<label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	</b>  </td> 
+			 		 						{% else %} 	          
+			 		 						<!--conflict days FOR JB DO WE EANT CLASS IS DANGER OR WARNING?? WE NO LONGER NEEE BOTH SINCE THEY CANT CHECK BIX IF CONFLICT SO ONKY CONFLICT WARNING --> 
+			 		 						{% if day in days_withconflicts_thismonth %} 
+
+<td class="warning"> {{ day }}   </td> 
+			 		 						{% else %}	
+
+			 		 						<td>  			 		 						{% if day = 0 %}  <!--blank if zero -->
+			 		 						       {% else %} <!-- if no conflict, day not zero -->
+			 		 						 <label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	 
+			 		 						{% endif %}	
+			 		 						</td>
+			 		 						{% endif %} <!--conflict -->
+			 		 						{% endif %} <!--today-->
+
+{% endif %} <!--before today -->
 			 		 				
 			 		 				
-			 		 				{% endfor %} <!--for day in week-->
-			 		 	</tr>
-			 		 {% endfor %} <!--for week in month-->
-						</table>
-				</div> </div>	  <!--table for this month-->	
+{% endfor %} <!--day in week-->
+</tr>
+{% endfor %} <!--week in month-->
+</table>
+</div> 
+</div>	  
+<!--table for this month-->	
 			  
 			  
-			  <!--NEXT MONTH CALENDAR-->
-			  <div class="col-xs-12 col-sm-6"> <div class="col-xs-12 col-sm-11">
-			  		<h4 class="textcenter">{{ nextmonth }} </h4>
+
+
+<!--NEXT MONTH CALENDAR-->
+<div class="col-xs-12 col-sm-6"> <div class="col-xs-12 col-sm-11">
+<h4 class="textcenter">{{ nextmonth }} </h4>
 			  		
 			  			{{ cal_form.month2day1.errors }} 	{{ cal_form.month2day2.errors }} 	{{ cal_form.month2day3.errors }} 	{{ cal_form.month2day4.errors }} {{ cal_form.month2day5.errors }}
 			 		 		{{ cal_form.month2day6.errors }} 	{{ cal_form.month2day7.errors }} 	{{ cal_form.month2day8.errors }} 	{{ cal_form.month2day9.errors }} {{ cal_form.month2day10.errors }}
 			  		
-			  		<table class="table">
+<table class="table">
 			  			<!--first row: weekday names -->
 			  			<tr>	<th>Sun</th> <th>Mon</th> <th>Tue</th> <th>Wed</th> <th>Thur</th> <th>Fri</th> <th>Sat</th>  	</tr>
-			  		{% for week in nextmonth_calendar %}
+
+{% for week in nextmonth_calendar %}
 			  			<tr> 
 			  				{% for day in week %}
-																<!--danger days -->
-															  {% if day in days_withconflicts_nextmonth and day in days_package_may_come_nextmonth %} 
-															  	<td class="danger"> 
-													 {{ day }} 
-															  	</td>
-			 		 											<!--conflict days -->
-			 		 											{% elif day in days_withconflicts_nextmonth %} 
-			 		 						<td class="warning">  {{ day }}  </td> 
-			 		 											{% else %}	
-			 		 												<td>  		 											  	
-			 		 						{% if day = 0 %}  <!--blank if zero -->
-			 		 						{% else %} 
+											
+			 		 						<!--conflict days JB NEED TO STYKE CLASS-->
+			 		 						{% if day in days_withconflicts_nextmonth %} 
+			 		 						         <td class="warning">  {{ day }}  </td> 
+			 		 						{% else %}	
+			 		 						<td>  		 								{% if day = 0 %}  <!--blank if zero -->
+			 		 						{% else %} <!-- if not zero -->
 			 		 						  <label>	<input type="checkbox" name="month2day{{day}}" id="id_month2day{{day}}"  > {{ day }} </label>  
 			 
-{% endif %}	
-			 		 												
-						
-			 		 												</td>
-			 		 											{% endif %} <!--endif conflict -->
+{% endif %}	<!-- if zero -->
+			 								
+</td>
+			 		 						{% endif %} <!--endif conflict -->
 									
-									
-			  			  {% endfor %} <!--end for day in week -->
+{% endfor %} <!--end for day in week -->
 			  			</tr>
-			  		{% endfor %}
-						</table>
-				</div> </div> <!--div for next month -->
+{% endfor %}
+
+</table>
+</div> 
+</div> <!--div for next month -->
 				
 				
 				<div class="row">
