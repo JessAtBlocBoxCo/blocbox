@@ -1620,8 +1620,8 @@ body {
 }
 .greybutton:hover {
     background-color: white;
-    color: #3498db;
-    border-color: #3498db;
+    color: rgb(103, 114, 119);
+    border-color: rgb(103, 114, 119);
     border: solid;
     border-width: 2px;
 }
