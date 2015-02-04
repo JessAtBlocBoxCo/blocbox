@@ -257,19 +257,15 @@
                     <div class="col-xs-12 col-sm-3 paddingsides5px ">
                         <div class="row nomargin">
 
-                            <p class="nomargin">Sent to</p>
-                            <p class="nomargin"><a href="#hostmodal" class="ltbluetext">{{sh.trans.host.first_name}}</a></p>
-                            <div id="hostmodal" class="modalDialog">
-                                <div class="modalupfront">	<a href="#close" title="Close" class="close">X</a>
-                                    <p class="nomargin">{{sh.trans.host.first_name}}
-                                        <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}]</a>
-                                        <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                                        <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                                            {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
+                            <p class="nomargin">Sent to <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}]</a></p>
+                            <p class="nomargin">{{sh.trans.host.first_name}}</p>
+
+                            <p class="nomargin">
+                                <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                                <a href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                            	{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                            </a>
+                            </p>
                         </div>
 
 
