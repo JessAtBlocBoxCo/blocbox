@@ -1599,6 +1599,35 @@ body {
 .bluebutton:active {
     top: 1px;
 }
+.greybutton {
+    background-color: rgb(223, 226, 226);
+    font-size: 1.143em;
+    font-weight: 500;
+    color: rgb(103, 114, 119);
+    border-color: (255, 255, 255);
+    height: 40px;
+    width: 100%;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.greybutton:hover {
+    background-color: white;
+    color: #3498db;
+    border-color: #3498db;
+    border: solid;
+    border-width: 2px;
+}
+.greybutton:active {
+    top: 1px;
+}
 .inactivebutton {
     background-color: rgb(255, 255, 255);
     font-size: 1.143em;

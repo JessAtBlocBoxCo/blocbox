@@ -49,12 +49,13 @@ JESS: landing - fix anchor links to "how it works"
 
 2.
 JESS: signin - fix invalid login credentials plac e- redirect to a forgot password
-JESS: signin - Remove sign in after welcome pagE
+JESS: signin - Remove sign in after welcome page
 JESS: signin - Link to become a host (on nav) - When signed in presents message, "Looks like you're already signed in! Sign out if you'd like to register as a new user Or, you can visit your dashboard or search for a new host to connect with.”
 
 3.
 fold tolgether first two pages of shipment into one: 
 fix expected delivery window: number of days
+JESS: shipment - Fix the shipment message to user 
 JESS: shipment - availalbility days - change ot business days - update availability app so that its business days
 JESS: shipment - availability - change button logic if have conflict button says "i accept accountability" or whatever.
 JESS: shipment - pass the host_package-conflict indicator to the transaction table\\-
