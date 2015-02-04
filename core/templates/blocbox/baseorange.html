@@ -171,14 +171,14 @@
                         <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign out</a>
                     </li>
                 </ul>
-                {% else %}
+                {% else %} <!--if user is not authenticated-->	
+                
+                {% include "base_subtemplates/login_modal.html" %}
+                	
                 <ul class="nav navmenu-nav">
                     <li>
                         <a href="#open_login_modal" class="mobilenavtext"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign in</a>
- 												
- 												<!--JMY EDIT - INCLUDE THE LOGIN MODAL BASE TEMPLATE -->		
- 												{% include "base_subtemplates/login_modal.html" %}
-                    
+ 													                    
                     </li>
                     <li class="mobilenavtext">
                         <a href="#"><i class="fa fa-user fa-fw fa-lg"></i>Get Started</a>
