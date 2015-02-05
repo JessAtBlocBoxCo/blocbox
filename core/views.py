@@ -42,6 +42,7 @@ from django.contrib import messages
 from django_messages.models import Message
 from django_messages.forms import ComposeForm
 from django_messages.utils import format_quote, get_user_model, get_username_field
+from django_messages.views import notify_user_received_message
 #aftership
 import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
@@ -343,17 +344,6 @@ def message_host_modal(request, message_trans_id):
     return HttpResponse("OK")
 
 
-#----------------------------------------------------------------
-#NOTIFY USERS THEY RECEIVED MESSAGSE THROUGH THE SYSTEM -- MOVE THIS TO THE MESSAGINGAPP
-#----------------------------------------------------------------
-def notify_user_received_message(request, sender_id, recipient_email, subject, body):
-    sender = get_object_or_404(UserInfo, pk=sender_id)
-    recipient = get_object_or_404(UserInfo, email=recipient_email)
-    message = render_to_string('emails/notify_user_receivedmessage.txt', 
-        { 'subject': subject, 'body': body, 'recipient': recipient, 'sender': sender, })
-    subject = "Your Neighbor " + str(sender.first_name) + " has sent you a message"
-    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [recipient_email,]) 
-    return HttpResponse("An email has been sent to the host to notify them about this issue.")
 
 
 def package_received_modal(request, confirm_id):

@@ -75,7 +75,11 @@ def compose(request, recipient=None, form_class=ComposeForm,
         sender = request.user
         form = form_class(request.POST, recipient_filter=recipient_filter)
         if form.is_valid():
+            subject = form.cleaned_data['subject']
+            body = form.cleaned_data['body']
+            recipient_email = form.cleaned_data['recipient']
             form.save(sender=request.user)
+            notify_user_received_message(request, sender.id, recipient_email, subject, body):
             messages.info(request, _(u"Message successfully sent."))
             if success_url is None:
                 success_url = reverse('messages_inbox')
@@ -222,3 +226,17 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
         context['reply_form'] = form
     return render_to_response(template_name, context,
         context_instance=RequestContext(request))
+
+
+
+#----------------------------------------------------------------
+#NOTIFY USERS THEY RECEIVED MESSAGSE THROUGH THE SYSTEM -- MOVE THIS TO THE MESSAGINGAPP
+#----------------------------------------------------------------
+def notify_user_received_message(request, sender_id, recipient_email, subject, body):
+    sender = get_object_or_404(UserInfo, pk=sender_id)
+    recipient = get_object_or_404(UserInfo, email=recipient_email)
+    message = render_to_string('emails/notify_user_receivedmessage.txt', 
+        { 'subject': subject, 'body': body, 'recipient': recipient, 'sender': sender, })
+    subject = "Your Neighbor " + str(sender.first_name) + " has sent you a message"
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [recipient_email,]) 
+    return HttpResponse("An email has been sent to the user.")
