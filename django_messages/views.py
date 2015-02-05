@@ -7,10 +7,10 @@ from django.utils.translation import ugettext as _
 from django.utils import timezone
 from django.core.urlresolvers import reverse
 from django.conf import settings
-
 from django_messages.models import Message
 from django_messages.forms import ComposeForm
 from django_messages.utils import format_quote, get_user_model, get_username_field
+from core.models import UserInfo
 
 User = get_user_model()
 
