@@ -444,6 +444,7 @@ def signupconnect(request, host_id):
     #set to false initially; code changes value to True when registraiont succeeds
     registered = False 
     hostsignup = False
+    usersignup = True
     if request.method == 'POST': 
         #if its HTTP post, we're interested in processing form data
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
@@ -475,7 +476,7 @@ def signupconnect(request, host_id):
     #the template is here: /home/django/blocbox/core/templates/blocbox/blocbox.html
     return render_to_response(
             'blocbox/sign-up-connect.html', #formerly registeruser.html
-    	      {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, },
+    	      {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup },
     	      context)
    	#PASS ARGUMENTS
 		#return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
@@ -487,6 +488,7 @@ def signupnoconnect(request):
     #set to false initially; code changes value to True when registraiont succeeds
     registered = False 
     hostsignup = False
+    usersignup = True
     if request.method == 'POST': 
         #if its HTTP post, we're interested in processing form data
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
@@ -515,7 +517,7 @@ def signupnoconnect(request):
   
     return render_to_response(
             'blocbox/sign-up-withoutconnect.html', 
-    	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, },
+    	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup },
     	      context)
 
 
@@ -526,6 +528,7 @@ def signuphost(request):
     context = RequestContext(request)
     registered = False 
     hostsignup = True
+    usersignup = False
     if request.method == 'POST':
         host_form = HostForm(data=request.POST)
         if host_form.is_valid():
@@ -549,7 +552,7 @@ def signuphost(request):
 
     return render_to_response(
             'blocbox/sign-up-host.html',
-    	      {'host_form': host_form, 'registered': registered, 'hostsignup': hostsignup},
+    	      {'host_form': host_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup},
     	      context)
 
 
