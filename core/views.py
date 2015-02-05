@@ -426,12 +426,7 @@ def userlogin(request):
             print "Invalid login details: {0}, {1}".format(email, password)
             badlogin = True
             #return HttpResponse("Invalid login details supplied.")
-    # The request is not a HTTP POST, so display the login form.
-    # This scenario would most likely be a HTTP GET.
-    else:
-        # No context variables to pass to the template system, hence the
-        # blank dictionary object...
-        return render_to_response('blocbox/sign-in.html', {'badlogin': badlogin, }, context)
+    return render_to_response('blocbox/sign-in.html', {'badlogin': badlogin, }, context)
 
 #logout function
 @login_required
