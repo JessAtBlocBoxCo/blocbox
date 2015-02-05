@@ -79,7 +79,7 @@ def compose(request, recipient=None, form_class=ComposeForm,
             body = form.cleaned_data['body']
             recipient_email = form.cleaned_data['recipient']
             form.save(sender=request.user)
-            notify_user_received_message(request, sender.id, recipient_email, subject, body):
+            notify_user_received_message(request, sender.id, recipient_email, subject, body)
             messages.info(request, _(u"Message successfully sent."))
             if success_url is None:
                 success_url = reverse('messages_inbox')
