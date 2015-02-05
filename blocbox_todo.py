@@ -36,12 +36,7 @@
 
 1.  JESS: add pages: Messages settings
 2. JESS: make the message system also send a message to gmail etc (as well as within blocbox messages)
-2.
-JESS: signin - Remove sign in after welcome page
-JESS: signin - Link to become a host (on nav) - When signed in presents message, 
-	"Looks like you're already signed in! Sign out if you'd like to register as a new user 
-	Or, you can visit your dashboard or search for a new host to connect with.”
-
+c
 3.
 fold tolgether first two pages of shipment into one: 
 fix expected delivery window: number of days

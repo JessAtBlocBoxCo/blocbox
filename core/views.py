@@ -347,8 +347,8 @@ def message_host_modal(request, message_trans_id):
 #NOTIFY USERS THEY RECEIVED MESSAGSE THROUGH THE SYSTEM -- MOVE THIS TO THE MESSAGINGAPP
 #----------------------------------------------------------------
 def notify_user_received_message(request, sender_id, recipient_email, subject, body):
-	  sender = get_object_or_404(UserInfo, pk=sender_id)
-	  recipient = get_object_or_404(UserInfo, email=recipient_email)
+    sender = get_object_or_404(UserInfo, pk=sender_id)
+    recipient = get_object_or_404(UserInfo, email=recipient_email)
     message = render_to_string('emails/notify_user_receivedmessage.txt', 
         { 'subject': subject, 'body': body, 'recipient': recipient, 'sender': sender, })
     subject = "Your Neighbor " + str(sender.first_name) + " has sent you a message"
