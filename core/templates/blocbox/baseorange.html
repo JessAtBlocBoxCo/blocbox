@@ -67,7 +67,7 @@
                 (i[r].q = i[r].q || []).push(arguments)
             }, i[r].l = 1 * new Date();
             a = s.createElement(o),
-            m = s.getElementsByTagName(o)[0];
+                m = s.getElementsByTagName(o)[0];
             a.async = 1;
             a.src = g;
             m.parentNode.insertBefore(a, m)
@@ -85,10 +85,10 @@
 
     <div id="bbpage">
         <!--  <a name="top" class="anchorwithnav"></a> -->
-        
-     {% include "base_subtemplates/login_modal.html" %}
-                        	
-                        	
+
+        {% include "base_subtemplates/login_modal.html" %}
+
+
         <div class="mobileonly">
             <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
                 <a class="navmenu-brand" href="/beta/">
@@ -175,14 +175,15 @@
                         <a href='/logout/'><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign out</a>
                     </li>
                 </ul>
-                {% else %} <!--if user is not authenticated-->	
-                
+                {% else %}
+                <!--if user is not authenticated-->
 
-                	
+
+
                 <ul class="nav navmenu-nav">
                     <li>
                         <a href="#open_login_modal" class="mobilenavtext"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign in</a>
- 													                    
+
                     </li>
                     <li class="mobilenavtext">
                         <a href="#"><i class="fa fa-user fa-fw fa-lg"></i>Get Started</a>
@@ -250,7 +251,7 @@
                             <!--  class="col-sm-3 menubutton"-->
                             <!--  print user name and number of new messages in parentheses -->
                             {{user.first_name}}
-                            <span class="caret"></span> 
+                            <span class="caret"></span>
                         </button>
                         <!--  list of links within the dropdown menu .. removing dropdown-menu-right-->
                         <ul class="dropdown-menu" style="margin-left: 125px;" role="menu" aria-labelledby="dropdownMenu1">
@@ -288,7 +289,7 @@
                                 <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/transactions/nav_startashipment/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp; Start a Shipment</a>
                                 </li>
                                 <!--  starta  favor: need to redirect this to a page that routes to whether 1/o-->
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/transactions/nav_startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp; Start a Favor</a> 
+                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/transactions/nav_startafavor/'><i class="fa fa-plus fa-fw fa-lg greentext"></i>&nbsp; Start a Favor</a>
                                 </li>
 
                                 <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/signuphost/'><i class="fa fa-users fa-fw fa-lg greentext"></i>&nbsp; Become a Host</a>
@@ -353,9 +354,9 @@
                     </div>
                     <div class="col-sm-4 col-md-3 col-lg-3">
                         <div class="textcenter" style="padding-top: 19px">
-                        	
+
                             <a href="#open_login_modal" class="orangenavbtn textcenter">Sign in</a>
-                            
+
                         </div>
                     </div>
                     <div class="col-sm-2 col-md-2 col-lg-2">
@@ -368,9 +369,9 @@
                             <ul class="dropdown-menu paddingright10px" role="menu" aria-labelledby="dropdownMenu3" style="left: -170%">
                                 <!-- nav navbar-nav navbar-right-->
                                 <li class="dropdownfont" role="presentation">
-                                			<a class="paddingleft10px" role="menuitem" tabindex="-1" href="#howitworks">
-                                					<i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; How It Works
-                                			</a>
+                                    <a class="paddingleft10px" role="menuitem" tabindex="-1" href="#howitworks">
+                                        <i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; How It Works
+                                    </a>
                                 </li>
                                 <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'><i class="fa fa-user fa-fw fa-lg yellowtext"></i>&nbsp; Join Waitlist</a>
                                 </li>
