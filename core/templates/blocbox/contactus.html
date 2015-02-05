@@ -1,0 +1,40 @@
+<!--this is core/templates/blocbox/account.html - url is blocbox.co/contactus or blocbox.co/support. it extends base.html-->
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Contact Us/Support{% endblock %} {% block headafter %} {% endblock %} {% block content %}
+<div class="content container-fluid">
+    <!--this is the container that surrounds the form, too short -->
+
+    <br>
+    <br>
+    <h3>Contact Us</h3>
+    
+    	<div class="row margintopbottom30px">
+										   	<form action="#openModal_message/Thanks" method="post" class="text-left"> 
+										        		{% csrf_token %} 
+										        		<!--{{ compose_form.as_table }} -->
+										        		<!--compose form has recipient, subject, body -->
+										        <div class="row">	
+										        		<label for="id_recipient"> Recipient: </label> <input id="id_recipient" name="recipient" type="text" />
+										        </div>
+										        <div class="row">
+																<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
+														</div>	
+														<div class="row">																						
+																<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
+														</div>	
+										        <input type="submit" value="{% trans "Send" %} &raquo;"/>
+										    </form>
+			</div>
+			
+			
+			 <!--thanks modal: sent a message -->
+         <div id="openModal_message/Thanks" class="modalDialog">
+                <div>
+                    <a href="/dashboard" title="Close" class="close">X</a>
+                    <h3 class="ltbluetext">Your Message Has Been Sent! We will be in contact within 24 hours. </h3>
+                    <h4> <a href="/dashboard"> Return to Dashboard</a> </h4>
+                </div>
+         </div>
+            			
+
+</div>
+{% endblock %}
