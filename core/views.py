@@ -94,7 +94,7 @@ def contactus(request):
             })
             subject = "[CONTACT US]: " + str(reply_to_email) + " has sent a message via the Contact Us/Support Page"
             send_mail(subject, message,  'Blocbox Contact Us <admin@blocbox.co>', ['john@blocbox.co',  'admin@blocbox.co',])
-            return HttpReponse("An email has been sent to the BlocBox team with your message.")
+            return HttpResponse("An email has been sent to the BlocBox team with your message.")
         else:  #if form is not valid
             print contactus_form.errors
     else: #if request is not post
