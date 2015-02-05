@@ -81,13 +81,13 @@ def contactus(request):
             contactus_subject = contactus_form.cleaned_data['contactus_subject']
             contactus_body = contactus_form.cleaned_data['contactus_body']
             if enduser.is_authenticated():
-                 sender_info = "User ID " + str(enduser.id) + ": " +str(enduser.first_name) + str(enduser.last_name) + " at " + str(enduser.email) 
-                 reply_to_email = enduser.email
-                 isregistered = "The message was sent by a registered user."
+                sender_info = "User ID " + str(enduser.id) + ": " +str(enduser.first_name) + str(enduser.last_name) + " at " + str(enduser.email) 
+                reply_to_email = enduser.email
+                isregistered = "The message was sent by a registered user."
             else:
-            	   sender_info = "A Guest User/ Not Authenticated User: " + str(enduser)
-                 reply_to_email = contactus_form.cleaned_data['reply_to_email']
-                 isregistered = "The message was sent by an unregistered user or a user that was not signed in."
+                sender_info = "A Guest User/ Not Authenticated User: " + str(enduser)
+                reply_to_email = contactus_form.cleaned_data['reply_to_email']
+                isregistered = "The message was sent by an unregistered user or a user that was not signed in."
             message = render_to_string('emails/notify_admin_contactus.txt', { 
                 'enduser': enduser, 'sender_info': sender_info, 'contactus_subject': contactus_subject, 'contactus_body': contactus_body, 
                 'reply_to_email': reply_to_email, 'isregistered': isregistered,
