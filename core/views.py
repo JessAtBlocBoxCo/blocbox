@@ -75,8 +75,7 @@ def contactus(request):
     recipient = 'admin@blocbox.co'
     if request.method == 'POST':
         compose_form = ComposeForm(request.POST, recipient_filter='admin@blocbox.co') 
-        sender = request.user
-        
+        sender = request.user       
         compose_form.fields['recipient'].initial = recipient
         if compose_form.is_valid():
             compose_form.save(sender=request.user)
@@ -85,7 +84,23 @@ def contactus(request):
     else:
         compose_form = ComposeForm(recipient_filter='admin@blocbox.co')
     return render(request, 'blocbox/contactus.html', {'enduser': enduser, 'compose_form': compose_form, 'recipient': recipient })
-    	
+
+"""   
+    enduser = trans.enduser
+    if trans.arrivalwindow_days_count == 1:
+        arrivalwindow_estimate = 'on '+ str(trans.sarrivalwindow_string)
+    else:
+    	  arrivalwindow_estimate = 'on one of the following ' + str(trans.arrivalwindow_days_count) + ' days: ' + trans.arrivalwindow_string
+    message = render_to_string('emails/notify_enduser_shipment_paid.txt', { 
+        'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
+        'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
+        'payment_option': trans.youselected, 'price': trans.price, 'arrivalwindow_estimate': arrivalwindow_estimate
+        })
+    subject = "Confirmed: You're sending a package to " + str(host.first_name)
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,]) #last is the to-email
+    return HttpResponse("You're sending a package.") 
+"""    
+    
 def aboutblocbox(request):
     enduser = request.user
     return render(request, 'blocbox/aboutblocbox.html', {'enduser': enduser,})
@@ -174,14 +189,12 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         dashboard_tracking_modal(request, track_id) #defined below
     else: #if no track_id (if they dont open the modal)    
         tracking_form = None  
+    package_received_form = None
     if confirm_id:  #if the open the package_received modal
-        package_received_modal(request, confirm_id)
-    else: #if they dont open the packge received modal
-    		package_received_form = None
+        package_received_modal(request, confirm_id) 	
+    enduser_issue_form = None #if they dont open the report an issue modal
     if issue_id:     #if they open the EndUser Issues Modal/Button
         enduser_report_issue_modal(request, issue_id)
-    else:
-        enduser_issue_form = None #if they dont open the report an issue modal
     if message_trans_id: #if they open the message host modal
         message_host_modal(request, message_trans_id)
     else: #if they dont open the message host modal
