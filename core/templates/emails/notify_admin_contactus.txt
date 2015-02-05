@@ -1,4 +1,4 @@
-A User has senet a message through the Contact Us/ Support Link. 
+A User has sent a message through the Contact Us/ Support Link. 
 {{ isregistered }}
 
 Sender: {{ sender_info}}
