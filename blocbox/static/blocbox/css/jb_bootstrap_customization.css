@@ -121,11 +121,12 @@ footer {
     width: 100%
 }
 /*add anchor class to add padding - should be about the same size as the margin */
-
+/*
 .anchor {
     font-size: 0px;
     display: none;
 }
+*/
 .anchorwithnav {
     padding-top: 35px;
     font-size: 0px;
