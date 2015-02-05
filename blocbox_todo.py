@@ -27,7 +27,8 @@ NOTE FOR JOHN:
 	or displaty - none?  Note that ia lso commented out anchorwitrhnav because it was presumably creating similar issues. 
 	its also possible this was my fault - i recall styling something with the anchors a long time ago. 
 	
-2.
+2.there is this weird thing on the basewaitlist site where if you make the page horizontally smaller the 'stop missing you rpackages' text becomes
+ mis-aligned
 "PRIORITIES POST JOHN BETA"
 13. SHARING MECHANISMS.
 12. INSURANCE 
