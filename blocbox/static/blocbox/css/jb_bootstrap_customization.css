@@ -132,12 +132,13 @@ footer {
     font-size: 0px;
     display: none;
 }
-*/
+
 .waitlistbody .anchorwithnav {
     padding-top: 45px;
     font-size: 0px;
     display: none;
 }
+*/
 /*Define Generic Background Colors*/
 
 .orangebackground {
@@ -1185,9 +1186,11 @@ body {
         left: 0;
         z-index: 10000;
     }
+    /*
     .waitlistbody .anchor {
         padding-top: 35px;
     }
+    */
     /*and add padding to the anchor because there's a navbar now */
 }
 /*Restrictions specific to larger screens - Have a floating logo and so forth for min-width 768 - make the navbar not float */
