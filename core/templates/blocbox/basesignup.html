@@ -10,6 +10,7 @@
             <!--the text to display once they register depends on whether they signed up WITH or WITHOUT a request to sgin up,
 					so this block is defined separately on sign-up-connect.html and sign-up-withoutconnect.html -->
             {% block welcome %} {% endblock %} {% else %} 
+            	<h3>TEST HOSTSIGNUP {{ hostsignup }} </h3>
             	{% if user.is_authenticated AND hostsignup == False %}
             			<br>
             			<br>
