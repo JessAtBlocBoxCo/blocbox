@@ -72,10 +72,11 @@ def search(request):
 
 def contactus(request):
     enduser = request.user
+    recipient = 'admin@blocbox.co'
     if request.method == 'POST':
         compose_form = ComposeForm(request.POST, recipient_filter='admin@blocbox.co') 
         sender = request.user
-        recipient = 'admin@blocbox.co'
+        
         compose_form.fields['recipient'].initial = recipient
         if compose_form.is_valid():
             compose_form.save(sender=request.user)
