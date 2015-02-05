@@ -10,8 +10,15 @@
 					<br> <br>
 				 	<div class="col-xs-12 dashbox">
 				 			
+				 		{% if badlogin %}
+				 			
+				 			 <h3 class="margintop10px nopadding"> The email or password you entered was not recognized. Please try again or
+				 			 			<a href="/passwordreset/recover/">reset your password</a>. </h3>
+				 			 
+				 		{% else %}
                <h3 class="margintop10px nopadding"> Sign in to your BlocBox Account </h3>
-										
+						
+					  {% endif %}			
 								<!--START FORM HERE -->
             		<form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
             		    {% csrf_token %} {{ login_form.non_field_errors }}

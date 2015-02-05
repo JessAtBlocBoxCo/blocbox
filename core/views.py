@@ -405,11 +405,11 @@ def nudgeaneighbor(request):
 #-------------------------------------------------------------------------
 def userlogin(request):
     context = RequestContext(request)
+    badlogin = False
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
         user = authenticate(email=email, password=password)
-
         # If we have a User object, the details are correct.
         # If None (Python's way of representing the absence of a value), no user with matching credentials was found.
         if user:
@@ -418,21 +418,20 @@ def userlogin(request):
                 # If the account is valid and active, we can log the user in.
                 # We'll send the user back to the homepage.
                 login(request, user)
-                return HttpResponseRedirect('/dashboard/') #update in future to go to beta, with user credentials
+                return HttpResponseRedirect('/dashboard/') 
             else:
                 # An inactive account was used - no logging in!
                 return HttpResponse("Your BlocBox account is disabled.")
-        else:
-            # Bad login details were provided. So we can't log the user in.
+        else: # if not user/Bad login details were provided. So we can't log the user in.
             print "Invalid login details: {0}, {1}".format(email, password)
-            return HttpResponse("Invalid login details supplied.")
-
+            badlogin = True
+            #return HttpResponse("Invalid login details supplied.")
     # The request is not a HTTP POST, so display the login form.
     # This scenario would most likely be a HTTP GET.
     else:
         # No context variables to pass to the template system, hence the
         # blank dictionary object...
-        return render_to_response('blocbox/sign-in.html', {}, context)
+        return render_to_response('blocbox/sign-in.html', {'badlogin': badlogin, }, context)
 
 #logout function
 @login_required
