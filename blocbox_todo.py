@@ -17,7 +17,18 @@
 
 """JESS QUESTIONS/ISSUES FOR JOHN TO ADDRESS"""
 1. on baseorange.html on like 425-ish it says "limitless possibilities" but links to the "privacy" page -- what is it supposed to link to? 
- 
+...likewise "trust and safety" links to "signuphost" and "invite your neighbors" also to "signuphost"
+-- what pages should they be linking to?                         
+5. what does the messages settings page entail?
+
+NOTE FOR JOHN: 
+1. the anchors were mishebaving because you had styuled them something funny so i commented out the anchor styling in your CSS page
+	if you want to keep them styled you gotta make sure they dont mess up the functionality. not sour what the source was. maybe font=0 made it not appear?
+	or displaty - none?  Note that ia lso commented out anchorwitrhnav because it was presumably creating similar issues. 
+	its also possible this was my fault - i recall styling something with the anchors a long time ago. 
+	
+2.there is this weird thing on the basewaitlist site where if you make the page horizontally smaller the 'stop missing you rpackages' text becomes
+ mis-aligned
 "PRIORITIES POST JOHN BETA"
 13. SHARING MECHANISMS.
 12. INSURANCE 
@@ -25,10 +36,10 @@
 
 "JESS TO-DO"
 
-JESS: add pages - account, support, Messages settings
 
 1.    
 JESS: landing - fix anchor links to "how it works"
+	JESS: add pages: Messages settings
 
 2.
 JESS: signin - fix invalid login credentials plac e- redirect to a forgot password
