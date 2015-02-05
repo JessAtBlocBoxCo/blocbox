@@ -26,6 +26,28 @@
 	      								<input type="text" class="form-control" name="contactus_body" id="id_contactus_body"  placeholder="Enter Message Body ">    	    	   
 	 									</div>
 	 							</div>
+	 						
+	 					{% if enduser.is_authenticated %}
+	 					{% else %}
+
+	 					{{ contactus_form.reply_to_email.errors }}
+	 							
+	 							<div class="row">
+	 									<div class="col-xs-12 col-sm-6 form-group nopaddingleftright paddingbottom10px">
+	 											<h4> Looks like you're not registered.  How can we reach you? </h4>
+	      								<input type="text" class="form-control" name="contactus_body" id="id_contactus_body"  placeholder="Please Provide a Valid Email Address ">    	    	   
+	 									</div>
+	 							</div>
+	 						
+	 						
+	 					{% endif %}
+	 						
+	 							<div class="row">
+	 									<div class="col-xs-12 col-sm-6 form-group nopaddingleftright paddingbottom10px">
+	      								<input type="text" class="form-control" name="contactus_body" id="id_contactus_body"  placeholder="Enter Message Body ">    	    	   
+	 									</div>
+	 							</div>
+	 							
                     
                 <!--siubmit button-->
                 <div class="row">
