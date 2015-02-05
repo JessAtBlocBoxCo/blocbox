@@ -99,7 +99,7 @@ def contactus(request):
             print contactus_form.errors
     else: #if request is not post
         contactus_form = ContactUs()
-    return render(request, 'blocbox/contactus.html', {'enduser': enduser, 'contactus_form': compose_form,  })
+    return render(request, 'blocbox/contactus.html', {'enduser': enduser, 'contactus_form': contactus_form,  })
    
    
     
