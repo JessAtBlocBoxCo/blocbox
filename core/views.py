@@ -85,7 +85,7 @@ def contactus(request):
                  reply_to_email = enduser.email
                  isregistered = "The message was sent by a registered user."
             else:
-            	   sender_info = "A Guest User/ Not Authenticated User: " {{ enduser }}
+            	   sender_info = "A Guest User/ Not Authenticated User: " + str(enduser)
                  reply_to_email = contactus_form.cleaned_data['reply_to_email']
                  isregistered = "The message was sent by an unregistered user or a user that was not signed in."
             message = render_to_string('emails/notify_admin_contactus.txt', { 
