@@ -1,0 +1,13 @@
+A User has senet a message through the Contact Us/ Support Link. 
+{{ isregistered }}
+
+Sender: {{ sender_info}}
+
+Message Suject: {{ contactus_subject }}.
+
+Message Body: {{ contactus_body }}.
+
+This user can be reached at: {{ reply_to_email }}.
+
+Please respond to the user's inquiry within 24 hours.
+
