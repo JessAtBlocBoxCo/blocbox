@@ -139,8 +139,7 @@ The URLs for this site, and the corresponding files are as follows:
 4. ACCOUNT: www.blocbox.co/account, template core/templatse/blocbox/account.html, view is core.views.account
 
 5. CONTACT US/ SUPPORT: www.blocbox.co/contactus and www.blocbox.co/support both point to core/templates/blocbox/contactus.html
-		- includes a form
-		
+		- includes a form to send to admin@blocbox.co -- JB needs to style etc
 *-----------------------------------------------------------------------*
 4. TRANSACTION PAGES
 *-----------------------------------------------------------------------*
