@@ -6,29 +6,32 @@
     <br>
     <br>
     <h3>Contact Us</h3>
-    
-    	<div class="row margintopbottom30px">
-										   	<form action="#openModal_message/Thanks" method="post" class="text-left"> 
-										        		{% csrf_token %} 
-										        		<!--{{ compose_form.as_table }} -->
-										        		<!--compose form has recipient, subject, body -->
-										        <div class="row">	
-										        		<label for="id_recipient"> Recipient: </label> 
-										        					<input id="id_recipient" name="recipient" type="text" value="{{recipient}}" placeholder="{{recipient}}" />
-										        </div>
-										        <div class="row">
-																<label for="id_subject"> Subject:</label> <input id="id_subject" maxlength="120" name="subject" type="text" />
-														</div>	
-														<div class="row">																						
-																<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
-														</div>	
-										        <input type="submit" value="{% trans "Send" %} &raquo;"/>
-										    </form>
+              
+      
+      <div> <!--div with contact us form -->                                                 	
+              <form class="form-inline" role="form" method="post" action="#openModal_contactus/Thanks" enctype="multipart/form-data">
+					   				{% csrf_token %}
+					   				{{ contactus_form.non_field_errors }}
+					   										
+					   				{{ contactus_form.contactus_subject.errors }}
+					   				 <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-group nopaddingleftright paddingbottom10px">
+	      										<input type="text" class="form-control" name="contactus_subject" id="id_contactus_subject"  placeholder="Enter text here ">    	    	   
+	 									 </div>
+	 															
+	 									{{ contactus_form.contactus_body.errors }}
+	 									<div class="col-xs-12 col-sm-6 col-sm-ofset-3 form-group nopaddingleftright paddingbottom10px">
+	      								<input type="text" class="form-control" name="contactus_body" id="id_contactus_body"  placeholder="Enter text here ">    	    	   
+	 									</div>
+                    
+                    <!--siubmit button-->
+                    <div class="row paddingbottom10px"> 
+                       				<button type="submit" name="submit" class="col-xs-12 col-sm-6 col-sm-offset-3 bluebutton">Submit</button>
+					   				</div>                
+              </form>
 			</div>
-			
-			
-			 <!--thanks modal: sent a message -->
-         <div id="openModal_message/Thanks" class="modalDialog">
+		
+			<!--thanks modal: sent a message -->
+         <div id="openModal_contactus/Thanks" class="modalDialog">
                 <div>
                     <a href="/dashboard" title="Close" class="close">X</a>
                     <h3 class="ltbluetext">Your Message Has Been Sent! We will be in contact within 24 hours. </h3>

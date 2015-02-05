@@ -18,7 +18,12 @@ class UserForm(forms.ModelForm):
             'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other'
             )
-
+#Contact us form - on www.blocbox.co/support and www/blocbox.co/contactus
+class ContactUs(forms.Form): 
+    contactus_subject=forms.CharField(max_length=150, required=False)
+    contactus_body = forms.CharField(max_length=1000, required=False)
+    reply_to_email = forms.EmailField(required=False)
+    
 #The hostPRofileForm should include the UserProfileForm and other stuff specific to host
 #Need a second about_me field for hosts that is required
 class HostForm(forms.ModelForm):
@@ -27,6 +32,7 @@ class HostForm(forms.ModelForm):
         fields = ('host_aboutme', 'services_offered', 'availability', 'hostrating',)
    
 #connect form for useres that are already registered, still works off of userinfo 
+#NOTE - I DONT THINK THIS IS IN USE, DELETE IF NOT
 class ConnectForm(forms.ModelForm):
     class Meta:
         model = UserInfo
@@ -34,4 +40,5 @@ class ConnectForm(forms.ModelForm):
             'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other'
             )
+
 

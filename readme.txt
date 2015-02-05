@@ -140,6 +140,9 @@ The URLs for this site, and the corresponding files are as follows:
 
 5. CONTACT US/ SUPPORT: www.blocbox.co/contactus and www.blocbox.co/support both point to core/templates/blocbox/contactus.html
 		- includes a form to send to admin@blocbox.co -- JB needs to style etc
+		- the form is at core.forms.contactus
+		- The email template to notify us that someone contacted us is at core/templates/email/notify_admin_contactus.txt
+		
 *-----------------------------------------------------------------------*
 4. TRANSACTION PAGES
 *-----------------------------------------------------------------------*
