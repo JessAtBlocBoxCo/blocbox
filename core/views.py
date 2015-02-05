@@ -329,14 +329,31 @@ def message_host_modal(request, message_trans_id):
         sender = request.user
     		#Add recipient here?
         recipient = trans.host.email
-        compose_form.fields['recipient'].initial = recipient
+        compose_form.fields['recipient'].initial = recipient	
         if compose_form.is_valid():
             compose_form.save(sender=request.user)
+            subject = compose_form.cleaned_data['subject']
+            body = compose_form.cleaned_data['body']
+            recipient_email = compose_form.cleaned_data['recipient']
+            notify_user_received_message(request, sender.id, recipient_email, subject, body) 
         else:
             print compose_form.errors
     else:
         compose_form = ComposeForm(recipient_filter=None)
     return HttpResponse("OK")
+
+
+#----------------------------------------------------------------
+#NOTIFY USERS THEY RECEIVED MESSAGSE THROUGH THE SYSTEM -- MOVE THIS TO THE MESSAGINGAPP
+#----------------------------------------------------------------
+def notify_user_received_message(request, sender_id, recipient_email, subject, body):
+	  sender = get_object_or_404(UserInfo, pk=sender_id)
+	  recipient = get_object_or_404(UserInfo, email=recipient_email)
+    message = render_to_string('emails/notify_user_receivedmessage.txt', 
+        { 'subject': subject, 'body': body, 'recipient': recipient, 'sender': sender, })
+    subject = "Your Neighbor " + str(sender.first_name) + " has sent you a message"
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [recipient_email,]) 
+    return HttpResponse("An email has been sent to the host to notify them about this issue.")
 
 
 def package_received_modal(request, confirm_id):
@@ -355,6 +372,8 @@ def package_received_modal(request, confirm_id):
     else:
     	  package_received_form = PackageReceived()
     return HttpResponse("OK")
+
+
 
 
 #END DASHBOARD DEFS
@@ -653,8 +672,7 @@ def waitlist_confirmation(request):
 
 
 
-
-#--------------------------------------------------------------
+#----------------------------------------------------------------
 #OLD
 #----------------------------------------------------------------
 #Origial index, redefine as oldindex
