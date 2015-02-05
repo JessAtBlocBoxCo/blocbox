@@ -26,7 +26,10 @@ NOTE FOR JOHN:
 	if you want to keep them styled you gotta make sure they dont mess up the functionality. not sour what the source was. maybe font=0 made it not appear?
 	or displaty - none?  Note that ia lso commented out anchorwitrhnav because it was presumably creating similar issues. 
 	its also possible this was my fault - i recall styling something with the anchors a long time ago. 
-	
+	there was also this:     .waitlistbody .anchor {
+        padding-top: 35px;
+    }
+    
 2.there is this weird thing on the basewaitlist site where if you make the page horizontally smaller the 'stop missing you rpackages' text becomes
  mis-aligned
 "PRIORITIES POST JOHN BETA"
