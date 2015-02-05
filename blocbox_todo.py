@@ -22,10 +22,12 @@
 5. what does the messages settings page entail?
 
 NOTE FOR JOHN: 
-	3. created page: contactus - www.blocbox.co/support and www/blocbox/co/contactus both point towards contactus.html 
-4. created 'account' page (www/blocbox/co/account at core/templatse/blocbox/account.html --
-  not convinced we need this in addition to dashboard and profile but i will let you sort that out. no strong opinions
+1. the anchors were mishebaving because you had styuled them something funny so i commented out the anchor styling in your CSS page
+	if you want to keep them styled you gotta make sure they dont mess up the functionality. not sour what the source was. maybe font=0 made it not appear?
+	or displaty - none?  Note that ia lso commented out anchorwitrhnav because it was presumably creating similar issues. 
+	its also possible this was my fault - i recall styling something with the anchors a long time ago. 
 	
+2.
 "PRIORITIES POST JOHN BETA"
 13. SHARING MECHANISMS.
 12. INSURANCE 
