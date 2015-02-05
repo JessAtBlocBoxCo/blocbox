@@ -135,7 +135,12 @@ The URLs for this site, and the corresponding files are as follows:
 	 	
 	 	note NEED to put this in static because thats a recognized URL path - remmebe,r the absolute path
 	 			to the file ins't itnerept directly -it goes through urls.py
-	 
+
+4. ACCOUNT: www.blocbox.co/account, template core/templatse/blocbox/account.html, view is core.views.account
+
+5. CONTACT US/ SUPPORT: www.blocbox.co/contactus and www.blocbox.co/support both point to core/templates/blocbox/contactus.html
+		- includes a form
+		
 *-----------------------------------------------------------------------*
 4. TRANSACTION PAGES
 *-----------------------------------------------------------------------*

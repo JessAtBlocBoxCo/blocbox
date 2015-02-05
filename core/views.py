@@ -70,6 +70,21 @@ def search(request):
         'enduser': enduser, 'hosts_all': hosts_all, 'users_all': users_all, 'hosts_list_onlyjb': hosts_list_onlyjb,   
     })
 
+def contactus(request):
+    enduser = request.user
+    if request.method == 'POST':
+        compose_form = ComposeForm(request.POST, recipient_filter='admin@blocbox.co') 
+        sender = request.user
+        recipient = 'admin@blocbox.co'
+        compose_form.fields['recipient'].initial = recipient
+        if compose_form.is_valid():
+            compose_form.save(sender=request.user)
+        else:
+            print compose_form.errors
+    else:
+        compose_form = ComposeForm(recipient_filter='admin@blocbox.co')
+    return render(request, 'blocbox/contactus.html', {'enduser': enduser, 'compose_form': compose_form, 'recipient': recipient })
+    	
 def aboutblocbox(request):
     enduser = request.user
     return render(request, 'blocbox/aboutblocbox.html', {'enduser': enduser,})
@@ -338,7 +353,12 @@ def myblock(request):
 def profile(request):
     enduser = request.user
     return render(request, 'blocbox/profile.html', {'enduser':enduser,})
-    
+
+def account(request):
+    enduser = request.user
+    return render(request, 'blocbox/account.html', {'enduser': enduser,})
+ 
+     
 def hostprofile(request, host_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=host_id)

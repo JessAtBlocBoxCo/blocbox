@@ -17,7 +17,14 @@
 
 """JESS QUESTIONS/ISSUES FOR JOHN TO ADDRESS"""
 1. on baseorange.html on like 425-ish it says "limitless possibilities" but links to the "privacy" page -- what is it supposed to link to? 
- 
+...likewise "trust and safety" links to "signuphost" and "invite your neighbors" also to "signuphost"
+-- what pages should they be linking to?
+2. also - do we have a contactus page?                           
+3. created page: contactus - the support and contactus url both point to the same pag
+4. created 'account' page --not convinced we need this in addition to dashboard and profile but i will let you sort that out. no strong opinions
+5. what does the messages settings page entail?
+
+	
 "PRIORITIES POST JOHN BETA"
 13. SHARING MECHANISMS.
 12. INSURANCE 
@@ -25,10 +32,10 @@
 
 "JESS TO-DO"
 
-JESS: add pages - account, support, Messages settings
 
 1.    
 JESS: landing - fix anchor links to "how it works"
+	JESS: add pages: Messages settings
 
 2.
 JESS: signin - fix invalid login credentials plac e- redirect to a forgot password

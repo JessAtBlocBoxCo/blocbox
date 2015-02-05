@@ -8,12 +8,17 @@ urlpatterns = patterns('',
 
 		url(r'^$', views.waitlist, name='waitlist'),    #this currently grabs index.html which is the waitlist
 		url(r'^waitlist/', views.waitlist, name='waitlist'), #also goes to the waitlist
-    url(r'beta/', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
+    url(r'beta/$', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
     url(r'^search/', views.search, name='search'),   
     url(r'^about/$', views.aboutblocbox, name='about'),
     url(r'^aboutblocbox/$', views.aboutblocbox, name='aboutblocbox'), 
+    url(r'^contactus/$', views.contactus, name='contactus'),
+    url(r'^support/$', views.contactus, name='contactus'),
+    
+JESS: add pages - account, support, Messages settings
     url(r'^hostprofile/host(?P<host_id>\d+)/$',views.hostprofile, name='hostprofile'),  
     url(r'^profile/$', views.profile, name='profile'),
+    url(r'^account/$', views.account, name='account'),
     url(r'^dashboard/$', views.dashboard, name='dashboard'),
     #need different URLs for the different modals on the dashboard - otherwise forms dont know what to submit
     url(r'^dashboard/track_id(?P<track_id>\d+)/',views.dashboard, name='dashboard'), 
