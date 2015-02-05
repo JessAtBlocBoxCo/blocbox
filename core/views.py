@@ -22,6 +22,7 @@ from django.views.generic.list import ListView
 #import scheduling stuff
 import datetime
 datetoday = datetime.date.today()
+datetimenow = datetime.datetime.now()
 import pytz
 from urllib import quote
 #from schedule import periods
@@ -118,7 +119,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         host = None
     #Vars that do not depend on authentication
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
-    datetimenow = datetime.datetime.now()
     shipments_with_tracking_allpaid = []                 
     shipments_with_tracking_complete = []                
     shipments_with_tracking_notcomplete = []             
