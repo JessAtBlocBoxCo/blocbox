@@ -2,7 +2,7 @@
 {% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Contact Us/Support{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 <div class="content container-fluid">
     <!--this is the container that surrounds the form, too short -->
-
+{% load i18n %}
     <br>
     <br>
     <h3>Contact Us</h3>
@@ -21,7 +21,7 @@
 														<div class="row">																						
 																<label for="id_body" >Body:</label> <textarea cols="50" id="id_body" name="body" rows="12" >  </textarea>
 														</div>	
-										        <input type="submit" value="Send" &raquo;"/>
+										        <input type="submit" value="{% trans "Send" %} &raquo;"/>
 										    </form>
 			</div>
 			
