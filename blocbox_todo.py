@@ -34,10 +34,8 @@
 "JESS TO-DO"
 
 
-1.    
-JESS: landing - fix anchor links to "how it works"
-	JESS: add pages: Messages settings
-JESS: make the message system also send a message to gmail etc (as well as within blocbox messages)
+1.  JESS: add pages: Messages settings
+2/ JESS: make the message system also send a message to gmail etc (as well as within blocbox messages)
 2.
 JESS: signin - fix invalid login credentials plac e- redirect to a forgot password
 JESS: signin - Remove sign in after welcome page
