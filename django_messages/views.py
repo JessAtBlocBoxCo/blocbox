@@ -10,8 +10,10 @@ from django.conf import settings
 from django_messages.models import Message
 from django_messages.forms import ComposeForm
 from django_messages.utils import format_quote, get_user_model, get_username_field
+#JMY ADDING
 from core.models import UserInfo
 from django.template.loader import render_to_string
+from django.core.mail import send_mail
 
 User = get_user_model()
 
