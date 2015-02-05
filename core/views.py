@@ -523,6 +523,7 @@ def signupnoconnect(request):
 def signuphost(request):
     context = RequestContext(request)
     registered = False 
+    hostsignup = True
     if request.method == 'POST':
         host_form = HostForm(data=request.POST)
         if host_form.is_valid():
@@ -546,7 +547,7 @@ def signuphost(request):
 
     return render_to_response(
             'blocbox/sign-up-host.html',
-    	      {'host_form': host_form, 'registered': registered},
+    	      {'host_form': host_form, 'registered': registered, 'hostsignup': hostsignup},
     	      context)
 
 
