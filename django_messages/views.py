@@ -234,7 +234,8 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
 #----------------------------------------------------------------
 def notify_user_received_message(request, sender_id, recipient_email, subject, body):
     sender = get_object_or_404(UserInfo, pk=sender_id)
-    recipient = get_object_or_404(UserInfo, email=recipient_email)
+    recipient = None
+    #recipient = get_object_or_404(UserInfo, email=recipient_email)
     message = render_to_string('emails/notify_user_receivedmessage.txt', 
         { 'subject': subject, 'body': body, 'recipient': recipient, 'sender': sender, })
     subject = "Your Neighbor " + str(sender.first_name) + " has sent you a message"
