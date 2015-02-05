@@ -1,24 +1,5 @@
-"#Test tracking nos to add"
-
-TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFTERSHIP
-9400115901531302012915 - tile for parents
-
-#ALREADY TRACKED
-1ZE6E4990234405990  = iphone armband and gum, delivered
-1Z88Y70A0244854175  - ankar keyboard and mouse
-9205599999975642680357 - pillow case, delivered 
-591099350463 -- headbands, celivered
-1Z2W6185YW01658200  = laptop case, delivered
-9449009699938097189973 - johns - not yet delivered?
-9374869903500264240007 - DHL global mail,  not delivered?
-1ZX1A509YW10497241 - neti pot, not delivered (UPS)
-9405509699939563285640 - black boots, already arrivedUSPS priority, already arrived - wnat to see if the type is updated
-615774528257  - sleeping mask, not delivered
-1ZA3225FYW43921778 - bars
-<<<<<<< HEAD
 
 "PRIORITIES: MUST HAPPEN BEFORE JOHN-ONLY BETA"
-1. HANDING OUT FLYERS - getting up and doing it in the morning - 
 2. NEXT DOOR POST. 
 3. BODEGA - APPROACH SOME -- tomorow en route out of how / 
 4. BRAINSTORMING next step for user acquisition: handing out at post office
@@ -34,7 +15,9 @@ TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFT
 10. MYBLOCK
 11. OTHER FAVORS
 
-
+"""JESS QUESTIONS/ISSUES FOR JOHN TO ADDRESS"""
+1. on baseorange.html on like 425-ish it says "limitless possibilities" but links to the "privacy" page -- what is it supposed to link to? 
+ 
 "PRIORITIES POST JOHN BETA"
 13. SHARING MECHANISMS.
 12. INSURANCE 
@@ -424,3 +407,21 @@ So when you push to origin, it will push to both repositories
 -- HPV,
 2. JOHN waitlist: fix the colors
 3. JOHN: start a shipment: add a hyperlink to the payment page when the user "submits"
+
+"#Test tracking nos to add"
+
+TBA001951235001  - xlear refil (AMZN PARCEL?), delivered  - NOT SUPPORTED BY AFTERSHIP
+9400115901531302012915 - tile for parents
+
+#ALREADY TRACKED
+1ZE6E4990234405990  = iphone armband and gum, delivered
+1Z88Y70A0244854175  - ankar keyboard and mouse
+9205599999975642680357 - pillow case, delivered 
+591099350463 -- headbands, celivered
+1Z2W6185YW01658200  = laptop case, delivered
+9449009699938097189973 - johns - not yet delivered?
+9374869903500264240007 - DHL global mail,  not delivered?
+1ZX1A509YW10497241 - neti pot, not delivered (UPS)
+9405509699939563285640 - black boots, already arrivedUSPS priority, already arrived - wnat to see if the type is updated
+615774528257  - sleeping mask, not delivered
+1ZA3225FYW43921778 - bars

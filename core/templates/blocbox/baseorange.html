@@ -1,6 +1,6 @@
 <!doctype html>
 <!--  this is blocbox/core/templates/blocbox/baseorange.html
-			it is extended by blocbox/basewaitlist.html, which is extended by index.html (waitlist) and beta.html (beta site)
+			it is extended by blocbox/basewaitlist.html, which is extended by waitlist.html  and beta.html (beta site)
 			contains most of the head materials and other base formatting for the color block pages 
 -->
 
@@ -155,7 +155,7 @@
                     </a>
                         <ul class="dropdown-menu navmenu-nav">
                             <li class="mobilenavtext">
-                                <a href="#">How it Works</a>
+                                <a href="#howitworks">How it Works</a>
                             </li>
                             <li class="mobilenavtext">
                                 <a href="#">Terms & Privacy</a>
@@ -188,7 +188,7 @@
                         <a href="#"><i class="fa fa-user fa-fw fa-lg"></i>Get Started</a>
                     </li>
                     <li class="mobilenavtext">
-                        <a href="#"><i class="fa fa-home fa-fw fa-lg"></i>How it Works</a>
+                        <a href="#howitworks"><i class="fa fa-home fa-fw fa-lg"></i>How it Works</a>
                     </li>
                     <li class="mobilenavtext">
                         <a href='/dashboard/'><i class="fa fa-search fa-fw fa-lg"></i>&nbsp; Search Your Neighborhood</a>
@@ -367,7 +367,10 @@
                             <!-- list of links within the dropdown menu .. removing dropdown-menu-right-->
                             <ul class="dropdown-menu paddingright10px" role="menu" aria-labelledby="dropdownMenu3" style="left: -170%">
                                 <!-- nav navbar-nav navbar-right-->
-                                <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/beta'><i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; How It Works</a>
+                                <li class="dropdownfont" role="presentation">
+                                			<a class="paddingleft10px" role="menuitem" tabindex="-1" href="#howitworks">
+                                					<i class="fa fa-home fa-fw fa-lg yellowtext"></i>&nbsp; How It Works
+                                			</a>
                                 </li>
                                 <li class="dropdownfont" role="presentation"><a class="paddingleft10px" role="menuitem" tabindex="-1" href='/'><i class="fa fa-user fa-fw fa-lg yellowtext"></i>&nbsp; Join Waitlist</a>
                                 </li>
@@ -416,7 +419,7 @@
                         </div>
                         <div class="row">
                             <div class="paddingsides3pxmobile">
-                                <a class="whitetext dropdownfont" href='privacy/'>How It Works</a>
+                                <a class="whitetext dropdownfont" href="howitworks">How It Works</a>
                             </div>
                         </div>
                         <div class="row">
