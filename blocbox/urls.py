@@ -14,8 +14,6 @@ urlpatterns = patterns('',
     url(r'^aboutblocbox/$', views.aboutblocbox, name='aboutblocbox'), 
     url(r'^contactus/$', views.contactus, name='contactus'),
     url(r'^support/$', views.contactus, name='contactus'),
-    
-JESS: add pages - account, support, Messages settings
     url(r'^hostprofile/host(?P<host_id>\d+)/$',views.hostprofile, name='hostprofile'),  
     url(r'^profile/$', views.profile, name='profile'),
     url(r'^account/$', views.account, name='account'),
