@@ -1742,7 +1742,8 @@ body {
     background-color: rgb(255, 255, 255);
     overflow: visible;
     padding: 10px;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     text-align: left;
 }
 .dashpiccontainer {
