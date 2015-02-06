@@ -335,7 +335,7 @@ def message_host_modal(request, message_trans_id):
             compose_form.save(sender=request.user)
             subject = compose_form.cleaned_data['subject']
             body = compose_form.cleaned_data['body']
-            recipient_email = compose_form.cleaned_data['recipient']
+            recipient_email = trans.host.email
             notify_user_received_message(request, sender.id, recipient_email, subject, body) 
         else:
             print compose_form.errors
@@ -602,7 +602,6 @@ def typical_mail(request, userinfo_id):
     host = get_object_or_404(UserInfo, pk=userinfo_id)
     message = "Test Simple Mail Message - defined in core/views.py def typical_mail"
     subject = "Test Subject for Simple Mail"
-		
     #from email should be default email defined in settings.py: admin@blocbox.co
     send_mail(subject, message, 'admin@blocbox.co', [host.email,]) #last is the to-email
 

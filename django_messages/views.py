@@ -80,7 +80,8 @@ def compose(request, recipient=None, form_class=ComposeForm,
         if form.is_valid():
             subject = form.cleaned_data['subject']
             body = form.cleaned_data['body']
-            recipient_email = form.cleaned_data['recipient']
+            recipient_email_list = form.cleaned_data['recipient']
+            recipient_email = recipient_email_list.0
             form.save(sender=request.user)
             notify_user_received_message(request, sender.id, recipient_email, subject, body)
             messages.info(request, _(u"Message successfully sent."))
@@ -237,8 +238,7 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
 #----------------------------------------------------------------
 def notify_user_received_message(request, sender_id, recipient_email, subject, body):
     sender = get_object_or_404(UserInfo, pk=sender_id)
-    recipient = None
-    #recipient = get_object_or_404(UserInfo, email=recipient_email)
+    recipient = get_object_or_404(UserInfo, email=recipient_email)
     message = render_to_string('emails/notify_user_receivedmessage.txt', 
         { 'subject': subject, 'body': body, 'recipient': recipient, 'sender': sender, })
     subject = "Your Neighbor " + str(sender.first_name) + " has sent you a message"
