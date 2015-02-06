@@ -145,20 +145,6 @@
                 <div class="row dashinfobox dashfont">
                     <h3 class="nomargin paddingbottom10px">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                     <h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }}</h4>
-
-                    <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
-                    <div class="col-xs-12 col-sm-6 paddingsides5px ">
-
-                        <!--Status and date delivered-->
-                        <div class="row">
-                            <p class="nomargin">{{sh.aftership.tag}} on {{sh.aftership.last_checkpoint.checkpoint_time }}</p>
-                            <p class="nomargin">Delivered to {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
-                            <!--Tracking -->
-                            <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
-                            {% if sh.trans.tracking %}
-                            <p class="nomargin">Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
-                            </p>{% endif %}
-                        </div>
                         <!--row-->
                     </div>
                     <!--end  shipment details: waiting to be picke dup packages -->
@@ -167,21 +153,11 @@
 
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-3 paddingsides5px ">
-                        <!--neigbor name-->
-                        <div class="row">
-                            <p class="nomargin">SENT TO {{sh.trans.host.first_name}}
-                                <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a>
-                            </p>
-                            <!--neibhors address-->
-                            <p class="nomargin">
-                                <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                                <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                            		{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
-                           		</a>
-                            </p>
-                        </div>
-                        {% include "dashboard_subtemplates/message_to_host_modal.html" %}
-
+                        <p class="nomargin">{{sh.aftership.tag}} on {{sh.aftership.last_checkpoint.checkpoint_time }}</p>
+                        <!--Tracking -->
+                        {% if sh.trans.tracking %}
+                        <p class="nomargin">Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
+                        </p>{% endif %}
                     </div>
                     <!--End Neighbor Column (packages waiting to be picked up) -->
 
@@ -189,22 +165,36 @@
 
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-3">
-                        <div class="row">
-                            <!--confirm/review -->
-                            <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
-                                I got my package!</button>
-                            {% include "dashboard_subtemplates/package_received_modal.html" %}
-                        </div>
-
-                        <div class="row">
-                            <!--report an issue -->
-                            <button type="button" class="greybutton" style="height: 25px" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
-                                Report an Issue</button>
-                        </div>
-                        <!--load sub template tag with this omdal -->
-                        {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
+                            <p class="nomargin">SENT TO {{sh.trans.host.first_name}}
+                                <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a>
+                            </p>
+                            <!--neibhors address-->
+                            <p class="nomargin">
+                                <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                                <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                    {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                                </a>
+                            </p>
+                        {% include "dashboard_subtemplates/message_to_host_modal.html" %}
+                        <p class="nomargin">Delivered to {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
+                </div>
+                <div class="row">
+                    <div class="row">
+                        <!--confirm/review -->
+                        <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                            I got my package!</button>
+                        {% include "dashboard_subtemplates/package_received_modal.html" %}
+                    </div>
+
+                    <div class="row">
+                        <!--report an issue -->
+                        <button type="button" class="greybutton" style="height: 25px" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                            Report an Issue</button>
+                    </div>
+                    <!--load sub template tag with this omdal -->
+                    {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
                 </div>
                 <!--close div containint this shipmet: waiting to be picked up-->
                 {% endfor %}
