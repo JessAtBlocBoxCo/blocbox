@@ -1,0 +1,37 @@
+<!--this is blocbox/core/templates/bocbox/jesstest.html, extends base.html, URL is www.blocbox.co/jesstest -->
+{% extends "blocbox/base.html" %}
+
+{% block title %}Jess Test / JessTest.html {% endblock %}
+
+<!--the title of the current page that will appear as active/greyed i the navbar -->
+{% block navbartitle %} Aftership Test{% endblock %}
+
+{% block content %}
+
+	
+<div class="container-fluid">     
+		<h1>AFTERSHIP TEST - SHOWING VARIABLES</h1>			
+
+		<h3> Shipments with tracking information embedded- all paid</h3>
+		
+				<p> {% for shipment in shipments_with_tracking_allpaid %} <br> {{ shipment }} {% endfor %} </p>
+    
+    <h3> Show shipments with tracking information embedded - if complete</h3> 
+   		 <p> {% for shipment in shipments_with_tracking_complete %) <br> {{ shipment }} {% endfor %} </p>
+    
+    <h3> Show shipment tuple with tracking information - if not complete - but delivered </h3>
+    		<p> {% for shipment in shipments_with_tracking_notcomplete_deliverd %} <br> {{ shipment}} {% endfor %} </p>
+    
+    <h3> Sghow shipment tuple for shipments without tracking information </h3>
+    <p> {% for shipments_with_tracking_notcomplete_notrackingno %) <br> {{ shipment }} {% endfor %} </p>
+    
+    
+
+
+
+<br><br> <br> <br>
+</div>			
+				
+
+{% endblock %}		
+
