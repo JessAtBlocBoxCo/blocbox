@@ -36,7 +36,6 @@ calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, defaul
 #Write a custom template filter:
 from django.template.defaulttags import register
 #Define general date vars to use in lots of functions
-local_timezone = pytz.timezone(local_timezone) 
 date_today = datetime.date.today()
 datetime_now = datetime.datetime.now()
 thisyear = date_today.year
@@ -222,7 +221,7 @@ def homebrew_cal(request):
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
-        'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
+        'date_today': date_today, 'datetime_now': datetime_now,  
         #year variables
         'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
         #Month variables
