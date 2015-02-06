@@ -68,7 +68,14 @@ import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 couriers = api.couriers.all.get()
-    
+#Create empty list variab les
+shipments_with_tracking_allpaid = []                 
+shipments_with_tracking_complete = []                
+shipments_with_tracking_notcomplete = []             
+shipments_with_tracking_notcomplete_delivered = []   
+shipments_with_tracking_notcomplete_notdelivered = []
+shipments_with_tracking_notcomplete_notrackingno = []
+
 #Define get_item function
 @register.filter
 def get_item(dictionary, key):
