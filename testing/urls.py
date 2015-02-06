@@ -5,6 +5,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.contrib import admin
 admin.autodiscover()
 
+#all url patterns preceded by blocbox.co/testing
 urlpatterns = patterns('',
 		url(r'^$', 'testing.views.jesscaltest', name='testingbase'),   #default view is calendar test 		
  		url(r'^dashboard/$', 'testing.views.dashboard_test', name='dashboard_test'),
@@ -13,6 +14,7 @@ urlpatterns = patterns('',
  		#pass the same test but with a host_id in the URL - dont need a KWARG explicit statmenet bc it is passed in the URL name
  		url(r'^jesstest/host(?P<host_id>\d+)/$', 'testing.views.jesscaltest', name='jesstestwithhost'),	 		
  		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
+ 		url(r'^aftership/$', 'testing.views.aftership', name='aftership_test'),
  		url(r'^bootstraptest/$', 'testing.views.bootstraptest', name='bootstraptest'),
 )
 

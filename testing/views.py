@@ -29,57 +29,121 @@ from schedule.models.calendars import CalendarRelation
 from schedule.utils import check_event_permissions, coerce_date_dict
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
-#import the aftership API
-import aftership
-AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 #import new homebrew calendar
 from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
 import calendar #REMEMBER TO DO THIS!!
 calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
 #Write a custom template filter:
 from django.template.defaulttags import register
+#Define general date vars to use in lots of functions
+local_timezone = pytz.timezone(local_timezone) 
+date_today = datetime.date.today()
+datetime_now = datetime.datetime.now()
+thisyear = date_today.year
+nextyear = date_today.year + 1
+thisyear_isleap = calendar.isleap(thisyear)
+nextyear_isleap = calendar.isleap(nextyear)
+thismonth_num = date_today.month  
+thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+if thismonth_num == 12:
+    nextmonth_num = 1
+else:
+    nextmonth_num = date_today.month + 1
+nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
+thismonth = calendar.month_name[thismonth_num]
+nextmonth = calendar.month_name[nextmonth_num]
+monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
+monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
+days_in_thismonth = monthrange_thismonth[1]
+days_in_nextmonth = monthrange_nextmonth[1]
+firstweekday_num = calendar.firstweekday()
+firstweekday = calendar.day_name[firstweekday_num]
+weekheader_chars = 3
+weekheaders = calendar.weekheader(weekheader_chars) #(n) specifies the width in characgters for one weekday 
+today_dayofmonth_num = date_today.day
+today_dayofweek_num = date_today.weekday()
+today_dayofweek_name =  calendar.day_name[today_dayofweek_num] #day name is san array 
+today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
+#AFTERSHIP API STUFF
+import aftership
+AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
+api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
+couriers = api.couriers.all.get()
+    
+#Define get_item function
 @register.filter
 def get_item(dictionary, key):
     return dictionary.get(key)
 
+def aftership(request):
+    enduser = request.user
+    if enduser.is_authenticated():
+        transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
+        transactions_all_paid = transactions_all.filter(payment_processed=True)
+        shipments_all_paid = transactions_all_paid.filter(favortype="package")
+        otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
+        #Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
+   	    #Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
+        for shipment in shipments_all_paid:  
+            tracking_no = str(shipment.tracking) #the str function removes the preceding u'
+            shipment_tuple = {} 
+            shipment_tuple['trans']=shipment #get all of the transaction variables
+            shipment_tuple['aftership']={}  
+            if shipment.on_aftership: 
+                #populate the aftership_tracking sub-tuble                 
+                courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
+                courier_list = courier_allfields.get(u'couriers')
+                courier_list_first = courier_list[0]
+                slug_to_detect_u = courier_list_first.get(u'slug')
+                slug_to_detect = str(slug_to_detect_u)
+                datadict = api.trackings.get(slug_to_detect, tracking_no)
+                shipment_tuple['aftership'] = datadict.get(u'tracking') 
+                #extract date-only form of expected delivery 
+                expected_delivery = shipment_tuple['aftership']['expected_delivery']
+                if expected_delivery:
+                    shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()
+                else:
+                    shipment_tuple['aftership']['expected_delivery_notime']=None  
+                checkpoints = shipment_tuple['aftership']['checkpoints']
+                if checkpoints:
+                    shipment_tuple['aftership']['checkpoints'] = checkpoints
+                    shipment_tuple['aftership']['last_checkpoint'] = checkpoints[-1] #-nth to last.. so -1 is the last element     
+                if shipment.trans_complete ==True:
+                    shipments_with_tracking_complete.append(shipment_tuple)
+                else:
+                    shipments_with_tracking_notcomplete.append(shipment_tuple)
+                    tag = shipment_tuple['aftership']['tag']
+                    if tag == "Delivered":
+                        shipments_with_tracking_notcomplete_delivered.append(shipment_tuple)
+                    else:
+                        shipments_with_tracking_notcomplete_notdelivered.append(shipment_tuple)
+            else: #if not on aftership
+                shipment_tuple['aftership']=None
+                shipment_tuple['tracking']=None
+                if shipment.trans_complete == False:
+                    shipments_with_tracking_notcomplete_notrackingno.append(shipment_tuple)
+            shipments_with_tracking_allpaid.append(shipment_tuple)
+    else: #if not authenticated set these to None
+        connections_all = None
+        connections_count = None
+        hostonly=None
+        shipments_all_paid = None
+        otherfavors_all_paid = None	  
+    return render(request, 'testing/aftership.html', {'enduser': enduser,
+        #shipments lists
+        'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
+        'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 
+        'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_notdelivered,
+        'shipments_with_tracking_notcomplete_notrackingno': shipments_with_tracking_notcomplete_notrackingno,
+        #other favors lists
+        'otherfavors_all_paid': otherfavors_all_paid, 
+    })
+
+    	
 #new conflict/scheduling app
 #calendar vars: https://docs.python.org/2/library/calendar.html#calendar.month_name
 def homebrew_cal(request):
     host = request.user
-    #Get date fields
-    local_timezone = request.session.setdefault('django_timezone', 'UTC')
-    local_timezone = pytz.timezone(local_timezone) 
-    date_today = datetime.date.today()
-    datetime_now = datetime.datetime.now()
-    #Year variables
-    thisyear = date_today.year
-    nextyear = date_today.year + 1
-    thisyear_isleap = calendar.isleap(thisyear)
-    nextyear_isleap = calendar.isleap(nextyear)
-    #Month Variables
-    thismonth_num = date_today.month  
-    thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
-    if thismonth_num == 12:
-        nextmonth_num = 1
-    else:
-        nextmonth_num = date_today.month + 1
-    nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
-    thismonth = calendar.month_name[thismonth_num]
-    nextmonth = calendar.month_name[nextmonth_num]
-    monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
-    monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
-    days_in_thismonth = monthrange_thismonth[1]
-    days_in_nextmonth = monthrange_nextmonth[1]
-    #Week Variables
-    firstweekday_num = calendar.firstweekday()
-    firstweekday = calendar.day_name[firstweekday_num]
-    weekheader_chars = 3
-    weekheaders = calendar.weekheader(weekheader_chars) #(n) specifies the width in characgters for one weekday 
-    #DAy Variables
-    today_dayofmonth_num = date_today.day
-    today_dayofweek_num = date_today.weekday()
-    today_dayofweek_name =  calendar.day_name[today_dayofweek_num] #day name is san array 
-    today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
     #Get calendar_homebrew created fields
     conflicts = HostConflicts.objects.filter(host=host)
     conflicts_date_from = []
@@ -154,8 +218,7 @@ def homebrew_cal(request):
         #pass calendar fields
     	  'conflicts': conflicts, 'conflicts_startthismonth': conflicts_startthismonth, 'conflicts_startnextmonth': conflicts_startnextmonth, 
     	  'conflicts_startandend_thismonth': conflicts_startandend_thismonth, 'conflicts_startandend_nextmonth': conflicts_startandend_nextmonth,
-    	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,  
-    	  
+    	  'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,      	  
     	  #pass schedul fields
     	  'schedule': schedule, 
         #pass datefields
@@ -217,7 +280,6 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     else:
         date = timezone.now()
         local_timezone = request.session.setdefault('django_timezone', 'UTC')     
-    local_timezone = pytz.timezone(local_timezone) #this is working]
     thismonthname = Month(date, None, None, local_timezone) 
     cal_list = Calendar.objects.all()
     calendar_objects = {} 
@@ -254,9 +316,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
     transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
     shipments_all = list(transactions_all.filter(favortype="package").order_by('id'))
     otherfavors_all = transactions_all.exclude(favortype="package")
-    #api = aftership.APIv4('801e84c7-bae1-4afb-b294-51ca02a63d02')
-    api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
-    couriers = api.couriers.all.get()
+
     #ISSU - WHAT ABOUT WHEN I DONT KNOW THE SLUG??
     number_to_track = '591099350463' #this is DHL-global-mail
     slug_to_track = 'dhl-global-mail'
