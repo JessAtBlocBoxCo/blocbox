@@ -35,14 +35,9 @@
 
 
 1.  JESS: add pages: Messages settings
-2. JESS: make the message system also send a message to gmail etc (as well as within blocbox messages)
-c
+2. expected delivery window: make sure dayrangestart and dayrangeend are no longer used/ delete them where they show up
 3.
-fold tolgether first two pages of shipment into one: 
-fix expected delivery window: number of days
 JESS: shipment - Fix the shipment message to user 
-JESS: shipment - availalbility days - change ot business days - update availability app so that its business days
-JESS: shipment - availability - change button logic if have conflict button says "i accept accountability" or whatever.
 JESS: shipment - pass the host_package-conflict indicator to the transaction table\\-
 JESS: shipment - fix the day in week/warning thing - it need to be day of month
 JESS: shipment - calendar: define a function when user enters date from and date to that forces date to to be after date_from]]
