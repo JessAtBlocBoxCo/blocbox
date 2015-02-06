@@ -145,7 +145,7 @@
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont">
                    <div class="row paddingbottom20px">
-                    <h3 class="nomargin paddingbottom10px col-sm-6">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
+                    <h3 class="nomargin col-sm-6 nopadding">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                     <div class="col-sm-3">
                         <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>
