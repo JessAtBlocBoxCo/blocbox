@@ -145,10 +145,10 @@
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont">
                     <h3 class="nomargin paddingbottom10px">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
-                    <h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }}</h4>
-
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-xs-12 col-sm-4 paddingsides5px ">
+                       <p>ORDERED</p>
+                        <h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }}</h4>
 
                         <!--Status and date delivered-->
                         <div class="row">
