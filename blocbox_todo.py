@@ -34,7 +34,7 @@
 "JESS TO-DO"
 
 
-1.  JESS: add pages: Messages settings
+
 2. expected delivery window: make sure dayrangestart and dayrangeend are no longer used/ delete them where they show up
 3.
 JESS: shipment - Fix the shipment message to user 
