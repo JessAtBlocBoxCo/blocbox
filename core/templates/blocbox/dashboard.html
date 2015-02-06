@@ -210,6 +210,7 @@
 
                 <!--divider defining the whole current shipments part (need tracking) -->
                 <div class="row dashinfobox dashfont">
+                   <div class="row">
                     <h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h4>
 
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (need tracking)-->
@@ -253,12 +254,11 @@
                             </a>
                             </p>
                         </div>
-
-
-
                         {% include "dashboard_subtemplates/message_to_host_modal.html" %}
 
                     </div>
+                    </div>
+                </div>
                     <!--row with neighbor information (address and message link -->
 
 
