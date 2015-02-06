@@ -80,7 +80,7 @@ def compose(request, recipient=None, form_class=ComposeForm,
         if form.is_valid():
             subject = form.cleaned_data['subject']
             body = form.cleaned_data['body']
-            recipient_email_list = form.cleaned_data['recipient']s
+            recipient_email_list = form.cleaned_data['recipient']
             form.save(sender=request.user)
             for recipient_email in recipient_email_list:
                 notify_user_received_message(request, sender.id, recipient_email, subject, body)
