@@ -145,13 +145,13 @@
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont">
                    <div class="row">
-                    <h3 class="nomargin paddingbottom10px col-sm-8">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
-                    <div class="col-sm-2">
+                    <h3 class="nomargin paddingbottom10px col-sm-6">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
+                    <div class="col-sm-3">
                         <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
                     </div>
-                       <div class="col-sm-2">
+                       <div class="col-sm-3">
                            <button type="button" class="greybutton" style="height: 25px" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                                Report an Issue</button>
                            <!--load sub template tag with this omdal -->
