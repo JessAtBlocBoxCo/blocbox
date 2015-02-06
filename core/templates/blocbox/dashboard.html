@@ -144,11 +144,11 @@
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont">
                     <h3 class="nomargin paddingbottom10px">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
-                    <h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }}</h4>
                         <!--row-->
-                    </div>
                     <!--end  shipment details: waiting to be picke dup packages -->
-
+            <div class="col-xs-12 col-sm-3 paddingsides5px ">
+                <h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }}</h4>
+            </div>
 
 
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
@@ -197,6 +197,8 @@
                 </div>
                 <!--close div containint this shipmet: waiting to be picked up-->
                 {% endfor %}
+        </div>
+
             <!--END SHIPMENTS WAITIN GTO BE PICKED UP -->
 
 
@@ -255,11 +257,8 @@
                             </p>
                         </div>
                         {% include "dashboard_subtemplates/message_to_host_modal.html" %}
+                       </div>
 
-                    </div>
-                    </div>
-                </div>
-            </div>
                     <!--row with neighbor information (address and message link -->
 
 
