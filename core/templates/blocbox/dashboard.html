@@ -161,12 +161,13 @@
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-xs-12 col-sm-4">
                        <p>ORDERED</p>
-                        <h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }}</h4>
+                        <h4 class="nomargin"> Order {{sh.trans.id }}</h4>
+                        <h4 class="nomargin"> Placed {{ sh.trans.date_requested_notime }}</h4>
 
                         <!--Status and date delivered-->
                         <div class="row">
-                            <p class="nomargin">{{sh.aftership.tag}} on {{sh.aftership.last_checkpoint.checkpoint_time }}</p>
-
+                            <p class="nomargin">{{sh.aftership.tag}} on</p>
+                            <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
                             <!--Tracking -->
                             <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
                         </div>
@@ -181,7 +182,8 @@
                         <!--neigbor name-->
                         <p>SHIPPED</p>
                         {% if sh.trans.tracking %}
-                        <p class="nomargin">Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
+                        <p class="nomargin">Tracking Number</p>
+                        <p><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
                         </p>{% endif %}
 
                     </div>
@@ -193,7 +195,8 @@
                     <div class="col-xs-12 col-sm-4">
                     <p>AWAITING PICKUP</p>
                         <div class="row">
-                            <p class="nomargin">SENT TO {{sh.trans.host.first_name}}
+                            <p class="nomargin">SENT TO</p>
+                            <p class="nomargin"> {{sh.trans.host.first_name}}
                                 <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a>
                             </p>
                             <!--neibhors address-->
@@ -205,7 +208,8 @@
                             </p>
                         </div>
                         {% include "dashboard_subtemplates/message_to_host_modal.html" %}
-                        <p class="nomargin">Delivered to {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
+                        <p class="nomargin">Delivered to</p>
+                        <p class="nomargin"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
                 </div>
