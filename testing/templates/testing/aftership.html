@@ -17,7 +17,7 @@
 				<p> {% for shipment in shipments_with_tracking_allpaid %} <br> {{ shipment }} {% endfor %} </p>
     
     <h3> Show shipments with tracking information embedded - if complete</h3> 
-   		 <p> {% for shipment in shipments_with_tracking_complete } <br> {{ shipment }} {% endfor %} </p>
+   		 <p> {% for shipment in shipments_with_tracking_complete %} <br> {{ shipment }} {% endfor %} </p>
     
     <h3> Show shipment tuple with tracking information - if not complete - but delivered </h3>
     		<p> {% for shipment in shipments_with_tracking_notcomplete_deliverd %} <br> {{ shipment}} {% endfor %} </p>
