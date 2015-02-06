@@ -80,10 +80,10 @@ def compose(request, recipient=None, form_class=ComposeForm,
         if form.is_valid():
             subject = form.cleaned_data['subject']
             body = form.cleaned_data['body']
-            recipient_email_list = form.cleaned_data['recipient']
-            recipient_email = recipient_email_list.0
+            recipient_email_list = form.cleaned_data['recipient']s
             form.save(sender=request.user)
-            notify_user_received_message(request, sender.id, recipient_email, subject, body)
+            for recipient_email in recipient_email_list:
+                notify_user_received_message(request, sender.id, recipient_email, subject, body)
             messages.info(request, _(u"Message successfully sent."))
             if success_url is None:
                 success_url = reverse('messages_inbox')

@@ -335,8 +335,9 @@ def message_host_modal(request, message_trans_id):
             compose_form.save(sender=request.user)
             subject = compose_form.cleaned_data['subject']
             body = compose_form.cleaned_data['body']
-            recipient_email = trans.host.email
-            notify_user_received_message(request, sender.id, recipient_email, subject, body) 
+            recipient_email_list = compose_form.cleaned_data['recipient']
+            for recipient in recipient_email_list:
+                notify_user_received_message(request, sender.id, recipient_email, subject, body) 
         else:
             print compose_form.errors
     else:
