@@ -14,6 +14,7 @@ from django_messages.utils import format_quote, get_user_model, get_username_fie
 from core.models import UserInfo
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 
 User = get_user_model()
 
