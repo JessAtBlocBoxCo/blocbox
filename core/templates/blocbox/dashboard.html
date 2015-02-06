@@ -153,12 +153,10 @@
                         <!--Status and date delivered-->
                         <div class="row">
                             <p class="nomargin">{{sh.aftership.tag}} on {{sh.aftership.last_checkpoint.checkpoint_time }}</p>
-                            <p class="nomargin">Delivered to {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
+
                             <!--Tracking -->
                             <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
-                            {% if sh.trans.tracking %}
-                            <p class="nomargin">Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
-                            </p>{% endif %}
+
                         </div>
                         <!--row-->
                     </div>
@@ -169,19 +167,10 @@
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-4 paddingsides5px ">
                         <!--neigbor name-->
-                        <div class="row">
-                            <p class="nomargin">SENT TO {{sh.trans.host.first_name}}
-                                <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a>
-                            </p>
-                            <!--neibhors address-->
-                            <p class="nomargin">
-                                <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                                <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                            		{{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
-                           		</a>
-                            </p>
-                        </div>
-                        {% include "dashboard_subtemplates/message_to_host_modal.html" %}
+                        <p>SHIPPED</p>
+                        {% if sh.trans.tracking %}
+                        <p class="nomargin">Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
+                        </p>{% endif %}
 
                     </div>
                     <!--End Neighbor Column (packages waiting to be picked up) -->
@@ -190,7 +179,21 @@
 
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-4">
-
+                    <p>AWAITING PICKUP</p>
+                        <div class="row">
+                            <p class="nomargin">SENT TO {{sh.trans.host.first_name}}
+                                <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a>
+                            </p>
+                            <!--neibhors address-->
+                            <p class="nomargin">
+                                <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                                <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                    {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                                </a>
+                            </p>
+                        </div>
+                        {% include "dashboard_subtemplates/message_to_host_modal.html" %}
+                        <p class="nomargin">Delivered to {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
                     <div>
