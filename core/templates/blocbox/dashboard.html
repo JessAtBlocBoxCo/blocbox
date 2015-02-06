@@ -144,7 +144,20 @@
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont">
-                    <h3 class="nomargin paddingbottom10px">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
+                   <div class="row">
+                    <h3 class="nomargin paddingbottom10px col-sm-8">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
+                    <div class="col-sm-2">
+                        <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                            I got my package!</button>
+                        {% include "dashboard_subtemplates/package_received_modal.html" %}
+                    </div>
+                       <div class="col-sm-2">
+                           <button type="button" class="greybutton" style="height: 25px" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                               Report an Issue</button>
+                           <!--load sub template tag with this omdal -->
+                           {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
+                       </div>
+                    </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-xs-12 col-sm-4 paddingsides5px ">
                        <p>ORDERED</p>
@@ -156,7 +169,6 @@
 
                             <!--Tracking -->
                             <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
-
                         </div>
                         <!--row-->
                     </div>
@@ -196,22 +208,6 @@
                         <p class="nomargin">Delivered to {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
-                    <div>
-                        <div class="row">
-                            <!--confirm/review -->
-                            <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
-                                I got my package!</button>
-                            {% include "dashboard_subtemplates/package_received_modal.html" %}
-                        </div>
-
-                        <div class="row">
-                            <!--report an issue -->
-                            <button type="button" class="greybutton" style="height: 25px" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
-                                Report an Issue</button>
-                        </div>
-                        <!--load sub template tag with this omdal -->
-                        {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
-                    </div>
                 </div>
                 <!--close div containint this shipmet: waiting to be picked up-->
                 {% endfor %}
