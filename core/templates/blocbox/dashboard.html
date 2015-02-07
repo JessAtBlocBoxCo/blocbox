@@ -184,6 +184,10 @@
                         {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
+                    
+                       
+                       
+                       
                     <div class="col-xs-12 col-sm-3">
                         <div class="marginbottom10px">
                             <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
@@ -353,7 +357,7 @@
                         <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
-                            Add Tracking #</button>
+                            Check Shipping Details</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
                         <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
