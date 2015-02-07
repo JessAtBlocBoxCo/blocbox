@@ -547,6 +547,10 @@ footer {
 .margintop40pxnomobile {
     margin-top: 40px;
 }
+.margintopbottom10px {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 .margintopbottom30px {
     margin-top: 30px;
     margin-bottom: 30px;
