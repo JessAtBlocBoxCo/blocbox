@@ -42,15 +42,17 @@
             <!--start a shipment/start a favor buttons-->
             <div class="profileboxline margintop20px marginbottom20px"></div>
 
+            <div class="col-xs-12">
                <div class="row">
-               <div class="col-sm-3 nopadding">
+               <div class="col-sm-2 nopadding">
                 <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
                 </button>
                    </div>
-                   <p class="col-sm-9">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
+                   <p class="col-sm-10">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                 </div>
                 <button type="button" name="startashipment" class="bluebutton marginbottom30px" style="height: 50px" {% if hostonly %} onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
                     {% else %} onclick="window.location='/transactions/startashipment';"> {% endif %} Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</button>
+            </div>
             
             <div class="col-xs-12 ">
                 <button type="button" name="startafavor" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/transactions/startafavor/host{{hostonly.id}}';">
