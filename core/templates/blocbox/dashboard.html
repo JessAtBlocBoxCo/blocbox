@@ -185,7 +185,7 @@
                             <p><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
                             </p>{% endif %}
                             <!--Status and date delivered-->
-                            <div class="row" style="padding-top: 10px;">
+                            <div class="row" style="padding-top: 5px;">
                                 <p class="nomargin">{{sh.aftership.tag}} on</p>
                                 <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
                                 <!--Tracking -->
@@ -215,7 +215,7 @@
                                 </p>
                             </div>
                             {% include "dashboard_subtemplates/message_to_host_modal.html" %}
-                            <p class="nomargin" style="padding-top: 10px;">Delivered to</p>
+                            <p class="nomargin" style="padding-top: 5px;">Delivered to</p>
                             <p class="nomargin"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                         </div>
                     </div>
@@ -280,9 +280,6 @@
                             </a>
                             </p>
                         </div>
-
-
-
                         {% include "dashboard_subtemplates/message_to_host_modal.html" %}
 
                     </div>
