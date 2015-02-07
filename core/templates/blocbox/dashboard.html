@@ -236,7 +236,7 @@
                 {% for sh in shipments_with_tracking_notcomplete_notrackingno %}
 
                 <!--divider defining the whole current shipments part (need tracking) -->
-                <div class="row dashinfobox dashfont">
+                <div class="row dashinfobox dashfont paddingright10px">
                     <h4 class="nomargin"> Order {{sh.trans.id }}  {% if sh.trans.title %} : {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h4>
 
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (need tracking)-->
