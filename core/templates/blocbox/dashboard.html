@@ -163,8 +163,8 @@
                         </div>
                         <div class="col-sm-12">
                            <p class="textcenter">ORDERED</p>
-                            <h4 class="nomargin"> Order {{sh.trans.id }}</h4>
-                            <h4 class="nomargin"> Placed {{ sh.trans.date_requested_notime }}</h4>
+                            <h4 class="nomargin">Order {{sh.trans.id }} placed</h4>
+                            <p class="nomargin">{{ sh.trans.date_requested_notime }}</p>
                         </div>
                         <!--row-->
                     </div>
@@ -181,12 +181,12 @@
                         <div class="col-sm-12">
                             <p class="textcenter">SHIPPED</p>
                             {% if sh.trans.tracking %}
-                            <p class="nomargin">Tracking Number</p>
+                            <h4 class="nomargin">Tracking Number</h4>
                             <p><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
                             </p>{% endif %}
                             <!--Status and date delivered-->
                             <div class="row" style="padding-top: 5px;">
-                                <p class="nomargin">{{sh.aftership.tag}} on</p>
+                                <h4 class="nomargin">{{sh.aftership.tag}} on</h4>
                                 <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
                                 <!--Tracking -->
                                 <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
@@ -205,7 +205,7 @@
                         <div class="col-sm-12">
                             <p class="textcenter">AWAITING PICKUP</p>
                             <div class="row">
-                                <p class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></p>
+                                <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
                                 <!--neibhors address-->
                                 <p class="nomargin">
                                     <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
@@ -215,7 +215,7 @@
                                 </p>
                             </div>
                             {% include "dashboard_subtemplates/message_to_host_modal.html" %}
-                            <p class="nomargin" style="padding-top: 5px;">Delivered to</p>
+                            <h4 class="nomargin" style="padding-top: 5px;">Delivered to</h4>
                             <p class="nomargin"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                         </div>
                     </div>
