@@ -143,9 +143,10 @@
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont">
-                   <div class="row paddingbottom10px">
-                    <h3 class="nomargin col-sm-6">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
+                   <div class="col-sm-3">
+                    <h3 class="nomargin col-sm-3">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                     <div class="col-sm-3">
+                        <pclass="greytext">Click the package received button when you've picked up the package</p>
                         <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
@@ -158,7 +159,7 @@
                        </div>
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
-                    <div class="col-xs-12 col-sm-4">
+                    <div class="col-xs-12 col-sm-3">
                         <div class="margintopbottom20px">
                             <div class="statusgrey"></div>
                         </div>
@@ -182,7 +183,7 @@
 
 
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
-                    <div class="col-xs-12 col-sm-4">
+                    <div class="col-xs-12 col-sm-3">
                         <div class="margintopbottom20px">
                             <div class="statusgrey" style="padding: 5px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
                         </div>
@@ -200,7 +201,7 @@
 
 
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
-                    <div class="col-xs-12 col-sm-4">
+                    <div class="col-xs-12 col-sm-3">
                         <div class="margintopbottom20px">
                             <div class="statusgrey"></div>
                         </div>
