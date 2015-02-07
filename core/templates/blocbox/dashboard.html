@@ -347,14 +347,14 @@
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-3">
                         <div class="marginbottom10px">
-                            <div class="statusorange" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
                         </div>
                         <!--neigbor name-->
                         <div class="col-sm-12">
                             <p class="textcenter">IN TRANSIT</p>
                             <h4 class="nomargin">Tracking Number</h4>
                             <div class="row nomargin">
-                                <p class="nomargin">Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }} </a>
+                                <p class="nomargin"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }} </a>
                                     <!--EDIT TRACKING -->
                                     <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a> {% include "dashboard_subtemplates/edit_tracking_modal.html" %}
                                 </p>
