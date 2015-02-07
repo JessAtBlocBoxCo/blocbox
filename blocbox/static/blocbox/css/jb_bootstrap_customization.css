@@ -1842,6 +1842,9 @@ body {
 }
 .statusicon {
     margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
 }
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
