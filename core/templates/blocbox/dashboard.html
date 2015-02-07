@@ -149,6 +149,8 @@
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
+                       <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                           Message {{ sh.trans.host.first_name }}</button>
                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                                Report an Issue</button>
                            <!--load sub template tag with this omdal -->
