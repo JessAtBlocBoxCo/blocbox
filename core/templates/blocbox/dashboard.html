@@ -159,7 +159,9 @@
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-xs-12 col-sm-4">
-                        <div class="margintopbottom10px statusgrey"></div>
+                        <div class="margintopbottom10px">
+                            <div class="statusgrey"></div>
+                        </div>
                        <p>ORDERED</p>
                         <h4 class="nomargin"> Order {{sh.trans.id }}</h4>
                         <h4 class="nomargin"> Placed {{ sh.trans.date_requested_notime }}</h4>
@@ -179,7 +181,9 @@
 
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-4">
-                        <div class="margintopbottom10px statusgrey"></div>
+                        <div class="margintopbottom10px">
+                            <div class="statusgrey"></div>
+                        </div>
                         <!--neigbor name-->
                         <p>SHIPPED</p>
                         {% if sh.trans.tracking %}
@@ -194,7 +198,9 @@
 
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-4">
-                        <div class="margintopbottom10px statusgrey"></div>
+                        <div class="margintopbottom10px">
+                            <div class="statusgrey"></div>
+                        </div>
                     <p>AWAITING PICKUP</p>
                         <div class="row">
                             <p class="nomargin">SENT TO</p>
