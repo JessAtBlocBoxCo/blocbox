@@ -142,7 +142,7 @@
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
-                <div class="row dashinfobox dashfont">
+                <div class="row dashinfobox dashfont paddingright10px">
                    <div class="col-sm-3" style="padding-left: 5px;">
                     <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop10px">Click the package received button when you've picked up the package</p>
