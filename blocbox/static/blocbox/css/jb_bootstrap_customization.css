@@ -1845,6 +1845,26 @@ body {
     width: 60px;
     height: 60px;
 }
+.statusgreen{
+    background-image: url('/static/blocbox/images/status-green.png');
+    margin: auto;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+}
+.statusorange{
+    background-image: url('/static/blocbox/images/status-orange.png');
+    margin: auto;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+}
 .statusicon {
     margin: auto;
     text-align: center;
