@@ -27,7 +27,7 @@
 
         {% if user.is_authenticated %}
         <!--sidebar-->
-        <div class=" col-xs-2 col-lg-offset-1 mobilehide">
+        <div class=" col-md-3 col-lg-2 col-lg-offset-1 mobilehide">
             <div class="dashpiccontainer">
                 {% if user.profile_pic_uploaded %}
                 <img class="dashpic" src="{{user.profile_pic_uploaded.url}}" />{% else %}
@@ -161,7 +161,7 @@
         <!--end define thank-you modals00>       	      		       	
                	      		       				              
     <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
-        <div class="col-xs-12 col-sm-9 col-md-10 col-lg-8 nopaddingsidesmobile nopaddingright">
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-8 nopaddingsidesmobile nopaddingright">
 
             <!--SHIPMENTS DELIVERED - WAITING TO BE PICKED UP -->
             <!--<h6 class="ltbluetext margintop10px nomarginbottom nopadding">PACKAGES WAITING TO BE PICKED UP</h6>
