@@ -867,6 +867,7 @@ footer {
     background-repeat: no-repeat;
     background-size: contain;
     width: 37px;
+    height: 37px;
     cursor: pointer;
 }
 .bbbasenavbarstart:hover {
