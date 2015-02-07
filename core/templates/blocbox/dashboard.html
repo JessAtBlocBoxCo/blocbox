@@ -195,8 +195,6 @@
                     </div>
                     <!--End Neighbor Column (packages waiting to be picked up) -->
 
-
-
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-3" style="padding-right: 5px;">
                         <div class="marginbottom10px">
@@ -226,13 +224,10 @@
             </div>
             <!--END SHIPMENTS WAITIN GTO BE PICKED UP -->
 
+            
 
             <!--PACKAGES WE NEED TRACKIN GINFORMATION FOR -->
-            <div class="col-xs-12 col-sm-12 dashbox">
-                <div class="row">
-                    <h3 class="ltbluetext margintop10px nopadding">Waiting For Tracking Information</h3>
-                    <p class="">Enter Tracking Number When Received </p>
-                </div>
+            <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_notcomplete_notrackingno %}
 
                 <!--divider defining the whole current shipments part (need tracking) -->
