@@ -1762,7 +1762,7 @@ body {
 }
 .dashpiccontainer {
     border-radius: 50%;
-    border: 7px solid rgb(250, 250, 250);
+    border: 7px solid rgb(255, 255, 255);
     height: 160px;
     width: 160px;
     overflow: hidden;
