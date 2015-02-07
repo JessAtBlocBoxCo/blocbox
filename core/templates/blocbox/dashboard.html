@@ -161,6 +161,7 @@
                         <div class="margintopbottom20px">
                             <div class="statusgrey"></div>
                         </div>
+                        <div class="col-sm-12">
                            <p class="textcenter">ORDERED</p>
                             <h4 class="nomargin"> Order {{sh.trans.id }}</h4>
                             <h4 class="nomargin"> Placed {{ sh.trans.date_requested_notime }}</h4>
@@ -172,6 +173,7 @@
                                 <!--Tracking -->
                                 <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
                             </div>
+                        </div>
                         <!--row-->
                     </div>
                     <!--end  shipment details: waiting to be picke dup packages -->
@@ -184,11 +186,13 @@
                             <div class="statusgrey" style="padding: 5px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
                         </div>
                         <!--neigbor name-->
+                        <div class="col-sm-12">
                             <p class="textcenter">SHIPPED</p>
                             {% if sh.trans.tracking %}
                             <p class="nomargin">Tracking Number</p>
                             <p><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
                             </p>{% endif %}
+                        </div>
                     </div>
                     <!--End Neighbor Column (packages waiting to be picked up) -->
 
@@ -199,6 +203,7 @@
                         <div class="margintopbottom20px">
                             <div class="statusgrey"></div>
                         </div>
+                        <div class="col-sm-12">
                             <p class="textcenter">AWAITING PICKUP</p>
                             <div class="row">
                                 <p class="nomargin">SENT TO</p>
@@ -216,6 +221,7 @@
                             {% include "dashboard_subtemplates/message_to_host_modal.html" %}
                             <p class="nomargin">Delivered to</p>
                             <p class="nomargin"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
+                        </div>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
                 </div>
