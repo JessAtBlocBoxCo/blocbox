@@ -1824,6 +1824,7 @@ body {
 }
 .statusgrey{
     background-image: url('/static/blocbox/images/status-grey.png');
+    margin: auto;
     display: block;
     position: relative;
     background-repeat: no-repeat;
