@@ -50,6 +50,8 @@
                    </div>
                    <p class="col-sm-10 textright" style="padding-top: 7px;">{% else %} onclick="window.location='/transactions/startashipment';"> {% endif %} Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                 </div>
+                <button type="button" name="startashipment" class="bluebutton marginbottom30px" style="height: 50px" {% if hostonly %} onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
+                    {% else %} onclick="window.location='/transactions/startashipment';"> {% endif %} Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</button>
             </div>
             
             <div class="col-xs-12 ">
