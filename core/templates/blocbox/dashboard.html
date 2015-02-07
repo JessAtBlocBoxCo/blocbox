@@ -164,7 +164,7 @@
                         <div class="col-sm-12">
                            <p class="textcenter">ORDERED</p>
                             <h4 class="nomargin">Order {{sh.trans.id }} placed</h4>
-                            <p class="nomargin">{{ sh.trans.date_requested_notime }}</p>
+                            <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
                         </div>
                         <!--row-->
                     </div>
@@ -182,12 +182,12 @@
                             <p class="textcenter">SHIPPED</p>
                             {% if sh.trans.tracking %}
                             <h4 class="nomargin">Tracking Number</h4>
-                            <p><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
+                            <p class="dashtext" ><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a>
                             </p>{% endif %}
                             <!--Status and date delivered-->
                             <div class="row" style="padding-top: 5px;">
                                 <h4 class="nomargin">{{sh.aftership.tag}} on</h4>
-                                <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
+                                <p class="nomargin dashtext">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
                                 <!--Tracking -->
                                 <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
                             </div>
@@ -207,7 +207,7 @@
                             <div class="row">
                                 <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
                                 <!--neibhors address-->
-                                <p class="nomargin">
+                                <p class="nomargin dashtext">
                                     <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
                                     <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                                         {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
@@ -216,7 +216,7 @@
                             </div>
                             {% include "dashboard_subtemplates/message_to_host_modal.html" %}
                             <h4 class="nomargin" style="padding-top: 5px;">Delivered to</h4>
-                            <p class="nomargin"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
+                            <p class="nomargin dashtext"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                         </div>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->

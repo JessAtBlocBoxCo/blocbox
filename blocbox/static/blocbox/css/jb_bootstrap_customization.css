@@ -287,6 +287,11 @@ footer {
     /*font-size: 1.300em */
     font-weight: 400;
 }
+.dashtext {
+    font-size: 1.000em;
+    /*font-size: 1.300em */
+    font-weight: 400;
+}
 /*Define text alignment attributes*/
 
 .textcenter {
