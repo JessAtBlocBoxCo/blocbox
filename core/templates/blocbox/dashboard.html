@@ -162,8 +162,8 @@
                         <div class="margintopbottom20px">
                             <div class="statusgrey"></div>
                         </div>
-                        <div class="col-sm-8 col-sm-offset-2">
-                           <p>ORDERED</p>
+                        <div class="col-sm-10 col-sm-offset-1">
+                           <p class="textcenter">ORDERED</p>
                             <h4 class="nomargin"> Order {{sh.trans.id }}</h4>
                             <h4 class="nomargin"> Placed {{ sh.trans.date_requested_notime }}</h4>
 
@@ -187,8 +187,8 @@
                             <div class="statusgrey"></div>
                         </div>
                         <!--neigbor name-->
-                        <div class="col-sm-8 col-sm-offset-2">
-                            <p>SHIPPED</p>
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <p class="textcenter">SHIPPED</p>
                             {% if sh.trans.tracking %}
                             <p class="nomargin">Tracking Number</p>
                             <p><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
@@ -204,8 +204,8 @@
                         <div class="margintopbottom20px">
                             <div class="statusgrey"></div>
                         </div>
-                        <div class="col-sm-8 col-sm-offset-2">
-                        <p>AWAITING PICKUP</p>
+                        <div class="col-sm-10 col-sm-offset-1">
+                            <p class="textcenter">AWAITING PICKUP</p>
                             <div class="row">
                                 <p class="nomargin">SENT TO</p>
                                 <p class="nomargin"> {{sh.trans.host.first_name}}
