@@ -1827,6 +1827,7 @@ body {
     margin: auto;
     display: block;
     position: relative;
+    padding: 10px 10px;
     background-repeat: no-repeat;
     background-size: contain;
     width: 60px;
