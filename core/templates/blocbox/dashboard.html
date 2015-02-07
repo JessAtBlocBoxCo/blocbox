@@ -144,19 +144,17 @@
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont">
                    <div class="col-sm-3">
-                    <h3 class="nomargin col-sm-3">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
-                    <div class="col-sm-3">
+                    <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <pclass="greytext">Click the package received button when you've picked up the package</p>
-                        <button type="button" name="package_received" class="bluebutton" style="height: 25px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" name="package_received" class="bluebutton" style="height: 40px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
-                    </div>
-                       <div class="col-sm-3">
-                           <button type="button" class="greybutton" style="height: 25px" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                       <button type="button" name="package_received" class="greybutton" style="height: 40px"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                           I got my package!</button>
+                           <button type="button" class="greybutton" style="height: 40px" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                                Report an Issue</button>
                            <!--load sub template tag with this omdal -->
                            {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
-                       </div>
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-xs-12 col-sm-3">
