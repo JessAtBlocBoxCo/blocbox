@@ -920,6 +920,27 @@ footer {
 .navringwhite:focus {
     background-image: url('/static/blocbox/images/nav-circle-wht.png');
 }
+.searchbtn {
+    background-image: url('/static/blocbox/images/search-button.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 37px;
+    height: 37px;
+    cursor: pointer;
+    background-color: transparent;
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 0;
+    border-radius: 0px;
+    white-space: nowrap;
+}
+.searchbtn:hover {
+    background-image: url('/static/blocbox/images/search-button-active.png');
+}
+.searchbtn:focus {
+    background-image: url('/static/blocbox/images/search-button-active.png');
+}
 .footerlogo {
     max-width: 200px;
     min-height: 175px;
