@@ -40,8 +40,8 @@ class ModifyTransaction(forms.ModelForm):
 
 #rewriting this not based on the model because its not updating
 class PackageReceived(forms.Form): 
-    enduser_rating=forms.IntegerField(max_value=5)
-    enduser_comments=forms.CharField(max_length=200)
+    enduser_rating=forms.IntegerField(max_value=5, required=False)
+    enduser_comments=forms.CharField(max_length=200, required=False)
 
 """
 class PackageReceived(forms.ModelForm):
