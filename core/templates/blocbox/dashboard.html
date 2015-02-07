@@ -43,6 +43,13 @@
             <div class="profileboxline margintop20px marginbottom20px"></div>
 
             <div class="col-xs-12 ">
+               <div class="row">
+               <div class="col-sm-3">
+                <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
+                </button>
+                   </div>
+                   <p class="col-sm-6">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
+                </div>
                 <button type="button" name="startashipment" class="bluebutton marginbottom30px" style="height: 50px" {% if hostonly %} onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
                     {% else %} onclick="window.location='/transactions/startashipment';"> {% endif %} Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</button>
             </div>
@@ -143,26 +150,27 @@
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont" style="padding-right: 5px;">
-                   <div class="col-sm-3" style="padding-left: 5px;">
-                    <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
+                    <div class="col-sm-3" style="padding-left: 5px;">
+                        <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop10px">Click the package received button when you've picked up the package</p>
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
-                       <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
-                           Message {{ sh.trans.host.first_name }}</button>
-                       <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
-                               Report an Issue</button>
-                           <!--load sub template tag with this omdal -->
-                           {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
+                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                            Message {{ sh.trans.host.first_name }}</button>
+                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                            Report an Issue</button>
+                        <!--load sub template tag with this omdal -->
+                        {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-xs-12 col-sm-3">
                         <div class="marginbottom10px">
-                            <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <div class="col-sm-12">
-                           <p class="textcenter">ORDERED</p>
+                            <p class="textcenter">ORDERED</p>
                             <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
                             <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
                         </div>
@@ -173,14 +181,15 @@
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-3">
                         <div class="marginbottom10px">
-                            <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <!--neigbor name-->
                         <div class="col-sm-12">
                             <p class="textcenter">SHIPPED</p>
                             {% if sh.trans.tracking %}
                             <h4 class="nomargin">Tracking Number</h4>
-                            <p class="dashtext" ><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a>
+                            <p class="dashtext"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a>
                             </p>{% endif %}
                             <!--Status and date delivered-->
                             <div class="row" style="padding-top: 5px;">
@@ -196,7 +205,8 @@
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-3" style="padding-right: 5px;">
                         <div class="marginbottom10px">
-                            <div class="statusorange" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusorange" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <p class="textcenter">AWAITING PICKUP</p>
@@ -222,9 +232,9 @@
             </div>
             <!--END SHIPMENTS WAITIN GTO BE PICKED UP -->
 
- 
-            
-            
+
+
+
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_notcomplete_notrackingno %}
                 <!--divider defining the whole current shipments part -->
@@ -235,7 +245,7 @@
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             Add Tracking #</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
-                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
                         <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                             Report an Issue</button>
@@ -245,7 +255,8 @@
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-xs-12 col-sm-3">
                         <div class="marginbottom10px">
-                            <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <p class="textcenter">ORDERED</p>
@@ -264,7 +275,8 @@
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-3">
                         <div class="marginbottom10px">
-                            <div class="statusorange" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusorange" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <!--neigbor name-->
                         <div class="col-sm-12">
@@ -275,14 +287,15 @@
                                 <!--display or enter tracking info -->
                                 <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a> {% include "dashboard_subtemplates/enter_tracking_modal.html" %}
                             </div>
-                            </div>
                         </div>
+                    </div>
                     <!--End Neighbor Column (packages waiting to be picked up) -->
 
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-3" style="padding-right: 5px;">
                         <div class="marginbottom10px">
-                            <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <p class="textcenter">SHIPPED TO</p>
@@ -300,17 +313,17 @@
                         </div>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
-                <!--close div containint this shipmet: waiting to be picked up-->
+                    <!--close div containint this shipmet: waiting to be picked up-->
                 </div>
                 {% endfor %}
             </div>
             <!--END SHIPMETNS WAITING FOR TRACKING NUMBER -->
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
             <!--SHIPMENTS IN TRANSIT-->
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_notcomplete_notdelivered %}
@@ -322,7 +335,7 @@
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             Add Tracking #</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
-                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
                         <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                             Report an Issue</button>
@@ -332,7 +345,8 @@
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-xs-12 col-sm-3">
                         <div class="marginbottom10px">
-                            <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <p class="textcenter">ORDERED</p>
@@ -347,7 +361,8 @@
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-3">
                         <div class="marginbottom10px">
-                            <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <!--neigbor name-->
                         <div class="col-sm-12">
@@ -384,7 +399,8 @@
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-3" style="padding-right: 5px;">
                         <div class="marginbottom10px">
-                            <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i></div>
+                            <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                            </div>
                         </div>
                         <div class="col-sm-12">
                             <p class="textcenter">SHIPPED TO</p>
@@ -407,9 +423,9 @@
                 {% endfor %}
             </div>
             <!--col, shipments container -IN TRANSIT-->
-            
-            
-            
+
+
+
             <!--OTHER FAVORS Favors Box-->
             <div class="col-xs-12 dashbox margintop30px marginbottom30px">
                 <h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3>
