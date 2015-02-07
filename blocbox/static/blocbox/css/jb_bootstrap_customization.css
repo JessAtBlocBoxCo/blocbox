@@ -1822,6 +1822,11 @@ body {
 .form-inline .form-control {
     width: 100%;
 }
+.statusgrey{
+    background-image: url('/static/blocbox/images/status-grey.png');
+    width: 60px;
+    height: 60px;
+}
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
 *--------------------------------------------------------------*/
