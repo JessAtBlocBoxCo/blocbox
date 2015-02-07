@@ -162,16 +162,18 @@
                         <div class="margintopbottom20px">
                             <div class="statusgrey"></div>
                         </div>
-                       <p>ORDERED</p>
-                        <h4 class="nomargin"> Order {{sh.trans.id }}</h4>
-                        <h4 class="nomargin"> Placed {{ sh.trans.date_requested_notime }}</h4>
+                        <div class="col-sm-8 col-sm-offset-2">
+                           <p>ORDERED</p>
+                            <h4 class="nomargin"> Order {{sh.trans.id }}</h4>
+                            <h4 class="nomargin"> Placed {{ sh.trans.date_requested_notime }}</h4>
 
-                        <!--Status and date delivered-->
-                        <div class="row">
-                            <p class="nomargin">{{sh.aftership.tag}} on</p>
-                            <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
-                            <!--Tracking -->
-                            <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
+                            <!--Status and date delivered-->
+                            <div class="row">
+                                <p class="nomargin">{{sh.aftership.tag}} on</p>
+                                <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
+                                <!--Tracking -->
+                                <!--I AM ELIMIATING TRACKIGN MODAL -TAKES TOO LONG TO LAOD - SEE PREVIOUS VERSION OF PAGE FOR THAT CODE -->
+                            </div>
                         </div>
                         <!--row-->
                     </div>
@@ -185,12 +187,13 @@
                             <div class="statusgrey"></div>
                         </div>
                         <!--neigbor name-->
-                        <p>SHIPPED</p>
-                        {% if sh.trans.tracking %}
-                        <p class="nomargin">Tracking Number</p>
-                        <p><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
-                        </p>{% endif %}
-
+                        <div class="col-sm-8 col-sm-offset-2">
+                            <p>SHIPPED</p>
+                            {% if sh.trans.tracking %}
+                            <p class="nomargin">Tracking Number</p>
+                            <p><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{ sh.trans.tracking }}  </a>
+                            </p>{% endif %}
+                        </div>
                     </div>
                     <!--End Neighbor Column (packages waiting to be picked up) -->
 
@@ -201,23 +204,25 @@
                         <div class="margintopbottom20px">
                             <div class="statusgrey"></div>
                         </div>
-                    <p>AWAITING PICKUP</p>
-                        <div class="row">
-                            <p class="nomargin">SENT TO</p>
-                            <p class="nomargin"> {{sh.trans.host.first_name}}
-                                <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a>
-                            </p>
-                            <!--neibhors address-->
-                            <p class="nomargin">
-                                <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                                <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                                    {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
-                                </a>
-                            </p>
+                        <div class="col-sm-8 col-sm-offset-2">
+                        <p>AWAITING PICKUP</p>
+                            <div class="row">
+                                <p class="nomargin">SENT TO</p>
+                                <p class="nomargin"> {{sh.trans.host.first_name}}
+                                    <a href="/dashboard/message{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}" class="nomargin"> [Message {{ sh.trans.host.first_name }}] </a>
+                                </p>
+                                <!--neibhors address-->
+                                <p class="nomargin">
+                                    <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                                    <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                        {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                                    </a>
+                                </p>
+                            </div>
+                            {% include "dashboard_subtemplates/message_to_host_modal.html" %}
+                            <p class="nomargin">Delivered to</p>
+                            <p class="nomargin"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                         </div>
-                        {% include "dashboard_subtemplates/message_to_host_modal.html" %}
-                        <p class="nomargin">Delivered to</p>
-                        <p class="nomargin"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
                 </div>
