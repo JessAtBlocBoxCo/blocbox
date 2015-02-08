@@ -1902,9 +1902,10 @@ body {
 }
 .shiparrow {
     background-image: url('/static/blocbox/images/ship-arrow.png');
-    height: 40px;
+    height: 60px;
     text-align: center;
     vertical-align: middle;
+    position: relative;
     margin: auto;
     display: block;
     background-repeat: no-repeat;
