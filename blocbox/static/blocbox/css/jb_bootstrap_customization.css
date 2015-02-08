@@ -1080,7 +1080,6 @@ body {
         box-shadow: 0;
     }
     .navbar-default {
-        box-shadow: none;
         background-image: none;
         background-color: #ffffff;
     }
