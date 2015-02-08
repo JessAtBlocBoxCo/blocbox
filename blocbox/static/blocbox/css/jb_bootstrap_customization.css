@@ -971,11 +971,11 @@ footer {
 
 .navbar {
     border: 0px;
-    box-shadow: none;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
     <!-- background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%);
     --> z-index: 1000;
     margin-bottom: 0;
-    height: 60px;
+    height: 66px;
 }
 .navbar-default {
     box-shadow: none;
