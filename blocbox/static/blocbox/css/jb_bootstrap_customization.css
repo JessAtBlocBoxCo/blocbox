@@ -1911,6 +1911,17 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
 }
+.shipline {
+    background-image: url('/static/blocbox/images/ship-line.png');
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
 *--------------------------------------------------------------*/
