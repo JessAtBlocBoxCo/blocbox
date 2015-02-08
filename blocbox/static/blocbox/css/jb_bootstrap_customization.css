@@ -1900,6 +1900,11 @@ body {
     vertical-align: middle;
     color: white;
 }
+.shiparrow {
+    background-image: url('/static/blocbox/images/ship-arrow.png');
+    text-align: center;
+    vertical-align: middle;
+}
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
 *--------------------------------------------------------------*/
