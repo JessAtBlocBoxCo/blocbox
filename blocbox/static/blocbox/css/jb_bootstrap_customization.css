@@ -1906,6 +1906,10 @@ body {
     width: 100px;
     text-align: center;
     vertical-align: middle;
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
