@@ -1941,9 +1941,7 @@ body {
     background-size: contain;
 }
 .dashboxborder {
-    border-right: solid;
-    border-right-width: 0.063em;
-    border-right-color: rgb(236, 240, 241);
+    border-right: 0.063em solid rgb(236, 240, 241);
 }
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
