@@ -222,8 +222,7 @@
                                 <p class="textcenter">DELIVERED</p>
                                 {% if sh.trans.tracking %}
                                 <h4 class="nomargin">Tracking Number</h4>
-                                <p class="dashtext"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a>
-                                </p>{% endif %}
+                                <p class="dashtext"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a></p>{% endif %}
                             </div>
                             <!--End Neighbor Column (packages waiting to be picked up) -->
 
@@ -579,7 +578,7 @@
                             <div class="col-sm-4">
                                 <!--Expected Delivery -->
                                     <h4 class="nomargin">Order Completed</h4>
-                                    <p class="nomargin">{{ sh.trans.date_completed }} {% if sh.trans.on_aftership %}</p>
+                                <p class="nomargin">{{ sh.trans.date_completed }} {% if sh.trans.on_aftership %}{% endif%}</p>
                             </div>
                         </div>
 
