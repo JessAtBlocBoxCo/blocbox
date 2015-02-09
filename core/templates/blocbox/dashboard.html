@@ -219,7 +219,7 @@
                             <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                             <div class="col-xs-12 col-sm-4">
                                 <!--neigbor name-->
-                                <p class="textcenter">SHIPPED</p>
+                                <p class="textcenter">DELIVERED</p>
                                 {% if sh.trans.tracking %}
                                 <h4 class="nomargin">Tracking Number</h4>
                                 <p class="dashtext"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a>
@@ -449,6 +449,14 @@
 
                         <div class="row">
                             <div class="col-sm-4 col-sm-offset-4">
+                                <!--Status and shipment type-->
+                                <div class="row">
+                                    <h4 class="nomargin">Status</h4>
+                                    <p class="nomargin">{{sh.aftership.tag}} {% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }} ) {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
                                 <!--Expected Delivery -->
                                 <div class="row">
                                     <h4 class="nomargin">Scheduled Delivery</h4>
@@ -456,17 +464,6 @@
                                         {% if sh.aftership.expected_delivery %} {{ sh.aftership.expected_delivery_notime }} {% else %} {% if sh.trans.dayrangestart %} You expected {% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %} {% endif %}
                                         <!--if has dayrangestart-->
                                         {% endif %}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-4 col-sm-offset-4">
-                                <!--Status and shipment type-->
-                                <div class="row">
-                                    <h4 class="nomargin">Status</h4>
-                                    <p class="nomargin">{{sh.aftership.tag}} {% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }} ) {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}
                                     </p>
                                 </div>
                             </div>
@@ -546,7 +543,7 @@
                         <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
-                            Check Shipping Details</button>
+                            Rate Your Experience</button>
                         {% include "dashboard_subtemplates/package_received_modal.html" %}
                         <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
@@ -623,7 +620,7 @@
                             <div class="col-sm-4 col-sm-offset-4">
                                 <!--Expected Delivery -->
                                 <div class="row">
-                                    <h4>Order Completed </h4>
+                                    <h4 class="nomargin">Order Completed </h4>
                                     <p class="nomargin">{{ sh.trans.date_completed }} {% if sh.trans.on_aftership %}</p>
                                 </div>
                             </div>
@@ -644,16 +641,6 @@
                             <div class="col-sm-4 col-sm-offset-4">
                                 <h4>Delivered</h4> 
                                 <p>{{sh.aftership.last_checkpoint.checkpoint_time }} {% endif %}</p>
-                            </div>
-                        </div>
-                        <div class="row nomargin">
-                            <div class="col-sm-4 col-sm-offset-4">
-                                <h4>Sent to </h4>
-                                <p class="nomargin">
-                                    {{ sh.trans.host.first_name }}
-                                    <!--<br>{ { sh.trans.host.st_address1}} {{ sh.trans.host.st_address2 }} -->
-                                    <br>
-                                </p>
                             </div>
                         </div>
                         <div class="row nomargin">
