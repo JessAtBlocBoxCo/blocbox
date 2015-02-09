@@ -190,7 +190,6 @@
                             <div class="col-sm-2 col-sm-offset-1 marginbottom10px">
                                 <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
                                 </div>
-                                <p class="textcenter">ORDERED</p>
                             </div>
                             <div>
                                 <div class="col-sm-2 shipline"></div>
@@ -198,7 +197,6 @@
                             <div class="col-sm-2 marginbottom10px">
                                 <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
                                 </div>
-                                <p class="textcenter">SHIPPED</p>
                             </div>
                             <div>
                                 <div class="col-sm-2 shiparrow"></div>
@@ -206,12 +204,12 @@
                             <div class="col-sm-2 marginbottom10px">
                                 <div class="statusorange" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
                                 </div>
-                                <p class="textcenter">AWAITING PICKUP</p>
                             </div>
                         </div> 
                     </div>
                        
                     <div class="col-xs-12 col-sm-3">
+                            <p class="textcenter">ORDERED</p>
                             <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
                             <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
                     </div>
@@ -220,6 +218,7 @@
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-3">
                         <!--neigbor name-->
+                            <p class="textcenter">SHIPPED</p>
                             {% if sh.trans.tracking %}
                             <h4 class="nomargin">Tracking Number</h4>
                             <p class="dashtext"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a>
@@ -234,6 +233,7 @@
 
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-3">
+                            <p class="textcenter">AWAITING PICKUP</p>
                             <div class="row">
                                 <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
                                 <!--neibhors address-->
