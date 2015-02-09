@@ -209,7 +209,7 @@
 
 
                         <div class="row">
-                            <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+                            <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
                                 <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
                                 <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
@@ -217,7 +217,7 @@
                             <!--end  shipment details: waiting to be picke dup packages -->
 
                             <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
-                            <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+                            <div class="col-xs-12 col-sm-4">
                                 <!--neigbor name-->
                                 <p class="textcenter">DELIVERED</p>
                                 {% if sh.trans.tracking %}
@@ -227,7 +227,7 @@
                             <!--End Neighbor Column (packages waiting to be picked up) -->
 
                             <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
-                            <div class="col-xs-12 col-sm-3 col-sm-offset-1 nopaddingright">
+                            <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">AWAITING PICKUP</p>
                                 <div class="row">
                                     <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
@@ -245,18 +245,18 @@
 
                         <!--Second row of details-->
                         <div class="row paddingtop5px">
-                            <div class="col-sm-3 col-sm-offset-1">
+                            <div class="col-sm-4">
                                 <!--Status and shipment type-->
                                     <h4 class="nomargin">Delivery Option</h4>
                                     <p class="nomargin">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}
                                     </p>
                             </div>
                             <!--Status and date delivered-->
-                            <div class="col-sm-3 col-sm-offset-1 nopaddingright">
+                            <div class="col-sm-4">
                                 <h4 class="nomargin">{{sh.aftership.tag}}</h4>
                                 <p class="nomargin dashtext">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
                             </div>
-                            <div class="col-sm-3 col-sm-offset-1">
+                            <div class="col-sm-4">
                                 <h4 class="nomargin">Delivered to</h4>
                                 <p class="nomargin dashtext"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                             </div>
