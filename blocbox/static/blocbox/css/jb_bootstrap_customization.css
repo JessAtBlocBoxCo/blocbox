@@ -1572,6 +1572,16 @@ body {
     margin-right: auto;
     background-color: rgb(236, 240, 241);
 }
+.vertline {
+    position: relative;
+    clear: both;
+    z-index: 6;
+    width: 0.063em;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(236, 240, 241);
+}
 .profileboxline100 {
     position: relative;
     clear: both;
