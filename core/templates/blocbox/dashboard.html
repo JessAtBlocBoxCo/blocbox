@@ -247,8 +247,8 @@
                         <div class="row paddingtop5px">
                             <div class="col-sm-4">
                                 <!--Status and shipment type-->
-                                    <h4 class="nomargin">Delivery Option</h4>
-                                    <p class="nomargin">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}
+                                <h4 class="col-sm-10 col-sm-offset-2 nomargintopbottom">Delivery Option</h4>
+                                <p class="col-sm-10 col-sm-offset-2  nomargintopbottom">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}
                                     </p>
                             </div>
                             <!--Status and date delivered-->
@@ -257,8 +257,8 @@
                                 <p class="nomargin dashtext">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
                             </div>
                             <div class="col-sm-4">
-                                <h4 class="nomargin">Delivered to</h4>
-                                <p class="nomargin dashtext"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
+                                <h4 class="col-sm-11 col-sm-offset-1 nopaddingright nomargintopbottom">Delivered to</h4>
+                                <p class="col-sm-11 col-sm-offset-1 nopaddingright nomargintopbottom dashtext"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</p>
                             </div>
                         </div>
                     </div>
