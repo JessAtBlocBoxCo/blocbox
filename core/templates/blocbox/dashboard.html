@@ -350,7 +350,8 @@
                             <!--Expected Delivery -->
                             <div class="row paddingtop10px">
                                 <div class="col-sm-4">
-                                    <p class="nomargin">You expected {% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %}
+                                    <h4 class="nomargin">You Selected</h4>
+                                    <p class="nomargin">{% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %}
                                     </p>
                                 </div>
                             </div>
