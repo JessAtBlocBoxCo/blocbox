@@ -249,12 +249,12 @@
                             <div class="col-sm-4">
                                 <!--Status and shipment type-->
                                     <h4 class="nomargin">Delivery Option</h4>
-                                    <p class="nomargin">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}
+                                    <p class="nomargin">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}
                                     </p>
                             </div>
                             <!--Status and date delivered-->
                             <div class="col-sm-4">
-                                <h4 class="nomargin">{{sh.aftership.tag}} on</h4>
+                                <h4 class="nomargin">{{sh.aftership.tag}}</h4>
                                 <p class="nomargin dashtext">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
                             </div>
                             <div class="col-sm-4">
@@ -566,30 +566,26 @@
                             </div>
                         </div>
 
-                        <div class="row">
-
-                        </div>
-
                         <div class="row paddingtop5px">
                             <div class="col-sm-4">
                                 <h4 class="nomargin">Delivery Option</h4>
-                                <p class="nomargin">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}</p>
+                                <p class="nomargin">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}</p>
                             </div>
                             <div class="col-sm-4">
                                 <!--Status and shipment type-->
-                                <h4 class="nomargin">{{sh.aftership.tag}} </h4>
+                                <h4 class="nomargin">{{sh.aftership.tag}}</h4>
                                 <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
                             </div>
                             <div class="col-sm-4">
                                 <!--Expected Delivery -->
-                                    <h4 class="nomargin">Order Completed </h4>
+                                    <h4 class="nomargin">Order Completed</h4>
                                     <p class="nomargin">{{ sh.trans.date_completed }} {% if sh.trans.on_aftership %}</p>
                             </div>
                         </div>
 
                         <div class="row paddingtop5px">
                             <div class="col-sm-4  col-sm-offset-8">
-                                <h4 class="nomargin">Your rating </h4>
+                                <h4 class="nomargin">Your Rating</h4>
                                 <p class="nomargin">{{ sh.trans.host.first_name}} {{sh.trans.enduser_rating}} / 5.0</p>
                             </div>
                         </div>
@@ -600,6 +596,8 @@
                 {% endfor %}
             </div>
             <!--end completed shipmetns -->
+            
+            
             <!--OTHER FAVORS Favors Box-->
             <div class="col-xs-12 dashbox margintop30px marginbottom30px">
                 <h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3>
