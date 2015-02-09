@@ -310,11 +310,9 @@
 
                     <div class="row">
                     <div class="col-xs-12 col-sm-4">
-                        <div class="col-sm-12">
                             <p class="textcenter">ORDERED</p>
                             <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
                             <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
-                        </div>
                         <!--row-->
                     </div>
                     <!--end  shipment details: waiting to be picke dup packages -->
@@ -322,7 +320,6 @@
                     <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                     <div class="col-xs-12 col-sm-4">
                         <!--neigbor name-->
-                        <div class="col-sm-12">
                             <p class="textcenter">AWAITING TRACKING #</p>
                             <h4 class="nomargin">Tracking Number</h4>
                             <!--Enter Tracking -->
@@ -330,13 +327,11 @@
                                 <!--display or enter tracking info -->
                                 <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a> {% include "dashboard_subtemplates/enter_tracking_modal.html" %}
                             </div>
-                        </div>
                     </div>
                     <!--End Neighbor Column (packages waiting to be picked up) -->
 
                     <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                     <div class="col-xs-12 col-sm-4" style="padding-right: 5px;">
-                        <div class="col-sm-12">
                             <p class="textcenter">SHIPPED TO</p>
                             <div class="row">
                                 <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
@@ -349,7 +344,6 @@
                                 </p>
                             </div>
                             {% include "dashboard_subtemplates/message_to_host_modal.html" %}
-                        </div>
                     </div>
                         </div>
                         <div class="row">
