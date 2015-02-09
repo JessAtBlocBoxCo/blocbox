@@ -1572,16 +1572,6 @@ body {
     margin-right: auto;
     background-color: rgb(236, 240, 241);
 }
-.vertline {
-    position: relative;
-    clear: both;
-    z-index: 6;
-    width: 0.063em;
-    height: 239px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: rgb(236, 240, 241);
-}
 .profileboxline100 {
     position: relative;
     clear: both;
@@ -1949,6 +1939,11 @@ body {
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
+}
+.dashboxborder {
+    border-right: solid;
+    border-right-width: 0.063em;
+    border-right-color: rgb(236, 240, 241);
 }
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
