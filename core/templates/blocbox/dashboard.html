@@ -308,50 +308,50 @@
                             </div>
                         </div>
 
-                    <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                            <p class="textcenter">ORDERED</p>
-                            <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
-                            <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
-                        <!--row-->
-                    </div>
-                    <!--end  shipment details: waiting to be picke dup packages -->
-
-                    <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
-                    <div class="col-xs-12 col-sm-4">
-                        <!--neigbor name-->
-                            <p class="textcenter">AWAITING TRACKING #</p>
-                            <h4 class="nomargin">Tracking Number</h4>
-                            <!--Enter Tracking -->
-                            <div class="row nomargin">
-                                <!--display or enter tracking info -->
-                                <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a> {% include "dashboard_subtemplates/enter_tracking_modal.html" %}
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <p class="textcenter">ORDERED</p>
+                                <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
+                                <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
+                                <!--row-->
                             </div>
-                    </div>
-                    <!--End Neighbor Column (packages waiting to be picked up) -->
+                            <!--end  shipment details: waiting to be picke dup packages -->
 
-                    <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
-                    <div class="col-xs-12 col-sm-4">
-                            <p class="textcenter">SHIPPED TO</p>
-                            <div class="row">
-                                <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
-                                <!--neibhors address-->
-                                <p class="nomargin dashtext">
-                                    <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                                    <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                            <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
+                            <div class="col-xs-12 col-sm-4">
+                                <!--neigbor name-->
+                                <p class="textcenter">AWAITING TRACKING #</p>
+                                <h4 class="nomargin">Tracking Number</h4>
+                                <!--Enter Tracking -->
+                                <div class="row nomargin">
+                                    <!--display or enter tracking info -->
+                                    <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a> {% include "dashboard_subtemplates/enter_tracking_modal.html" %}
+                                </div>
+                            </div>
+                            <!--End Neighbor Column (packages waiting to be picked up) -->
+
+                            <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
+                            <div class="col-xs-12 col-sm-4">
+                                <p class="textcenter">SHIPPED TO</p>
+                                <div class="row">
+                                    <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
+                                    <!--neibhors address-->
+                                    <p class="nomargin dashtext">
+                                        <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                                        <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                                         {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                     </a>
-                                </p>
+                                    </p>
+                                </div>
+                                {% include "dashboard_subtemplates/message_to_host_modal.html" %}
                             </div>
-                            {% include "dashboard_subtemplates/message_to_host_modal.html" %}
-                    </div>
                         </div>
                         <div class="row">
                             <!--Expected Delivery -->
                             <div class="row paddingtop10px">
-                               <div class="col-sm-4">
-                                <p class="nomargin">You expected {% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %}
-                                </p>
+                                <div class="col-sm-4">
+                                    <p class="nomargin">You expected {% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %}
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -383,78 +383,100 @@
                         {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
-                    <div class="col-xs-12 col-sm-3">
-                        <div class="marginbottom10px">
-                            <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
+
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-sm-2 col-sm-offset-1 marginbottom10px">
+                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <p class="textcenter">ORDERED</p>
-                            <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
-                            <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
+                            <div>
+                                <div class="col-sm-2 shiparrow"></div>
+                            </div>
+                            <div class="col-sm-2 marginbottom10px">
+                                <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="col-sm-2 shipdash"></div>
+                            </div>
+                            <div class="col-sm-2 marginbottom10px">
+                                <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                                </div>
+                            </div>
                         </div>
 
-                        <!--row-->
-                    </div>
-                    <!--end  shipment details: waiting to be picke dup packages -->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <p class="textcenter">ORDERED</p>
+                                <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
+                                <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
+                                <!--row-->
+                            </div>
+                            <!--end  shipment details: waiting to be picke dup packages -->
 
-                    <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
-                    <div class="col-xs-12 col-sm-3">
-                        <div class="marginbottom10px">
-                            <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
+                            <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
+                            <div class="col-xs-12 col-sm-4">
+                                <!--neigbor name-->
+                                <p class="textcenter">IN TRANSIT</p>
+                                <h4 class="nomargin">Tracking Number</h4>
+                                <div class="row nomargin">
+                                    <p class="nomargin"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a>
+                                        <!--EDIT TRACKING -->
+                                        <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a> {% include "dashboard_subtemplates/edit_tracking_modal.html" %}
+                                    </p>
+                                </div>
                             </div>
-                        </div>
-                        <!--neigbor name-->
-                        <div class="col-sm-12">
-                            <p class="textcenter">IN TRANSIT</p>
-                            <h4 class="nomargin">Tracking Number</h4>
-                            <div class="row nomargin">
-                                <p class="nomargin"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a>
-                                    <!--EDIT TRACKING -->
-                                    <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a> {% include "dashboard_subtemplates/edit_tracking_modal.html" %}
-                                </p>
-                            </div>
-                            <!--Expected Delivery -->
-                            <div class="row">
-                                <p class="nomargin">
-                                    {% if sh.aftership.expected_delivery %} Scheduled Delivery: {{ sh.aftership.expected_delivery_notime }} {% else %} {% if sh.trans.dayrangestart %} You expected {% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %} {% endif %}
-                                    <!--if has dayrangestart-->
-                                    {% endif %}
-                                </p>
-                            </div>
-                            <!--Status and shipment type-->
-                            <div class="row">
-                                <p class="nomargin">Status: {{sh.aftership.tag}} {% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }} ) {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}
-                                </p>
-                            </div>
-                            {% if sh.aftership.last_checkpoint.city %}
-                            <div class="row">
-                                <p class="nomargin">Last Location: {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }}</p>
-                            </div>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <!--End Neighbor Column (packages waiting to be picked up) -->
+                            <!--End Neighbor Column (packages waiting to be picked up) -->
 
-                    <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
-                    <div class="col-xs-12 col-sm-3" style="padding-right: 5px;">
-                        <div class="marginbottom10px">
-                            <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
-                            </div>
-                        </div>
-                        <div class="col-sm-12">
-                            <p class="textcenter">SHIPPED TO</p>
-                            <div class="row">
-                                <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
-                                <!--neibhors address-->
-                                <p class="nomargin dashtext">
-                                    <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                                    <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                            <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
+                            <div class="col-xs-12 col-sm-4">
+                                <p class="textcenter">SHIPPED TO</p>
+                                <div class="row">
+                                    <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
+                                    <!--neibhors address-->
+                                    <p class="nomargin dashtext">
+                                        <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                                        <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                                         {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                     </a>
-                                </p>
+                                    </p>
+                                </div>
+                                {% include "dashboard_subtemplates/message_to_host_modal.html" %}
                             </div>
-                            {% include "dashboard_subtemplates/message_to_host_modal.html" %}
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-4">
+                                <!--Expected Delivery -->
+                                <div class="row">
+                                    <p class="nomargin">
+                                        {% if sh.aftership.expected_delivery %} Scheduled Delivery: {{ sh.aftership.expected_delivery_notime }} {% else %} {% if sh.trans.dayrangestart %} You expected {% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %} {% endif %}
+                                        <!--if has dayrangestart-->
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-4">
+                                <!--Status and shipment type-->
+                                <div class="row">
+                                    <p class="nomargin">Status: {{sh.aftership.tag}} {% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }} ) {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-4 col-sm-offset-4">
+                                {% if sh.aftership.last_checkpoint.city %}
+                                <div class="row">
+                                    <p class="nomargin">Last Location: {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }}</p>
+                                </div>
+                                {% endif %}
+                            </div>
                         </div>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
