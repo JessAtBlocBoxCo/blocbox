@@ -516,6 +516,10 @@ footer {
 .nomarginbottom {
     margin-bottom: 0px;
 }
+.nomargintopbottom {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
 .nomarginleft {
     margin-left: 0px;
 }
