@@ -668,52 +668,7 @@
                 </div>
                 {% endfor %}
             </div>
-            <!--col, shipments container -IN TRANSIT-->
-
-            
-            
-            
-            
-            
-            
-            
-            
-
-
-            <div class="col-xs-12 col-sm-12 nopaddingleftright">
-
-
-                <!--start div defining the shipment-->
-                <div class="row whitebackground marginbottom30px textleft dashfont">
-                    <h4 class="nomargin"> Order {{sh.trans.id }} Placed {{ sh.trans.date_requested_notime }} {% if sh.trans.title %} : {{ sh.trans.title }}	 {% endif %} </h4>
-
-                    <!--shipment details-->
-                    <div class="col-xs-12 col-md-4 paddingsides5px">
-
-                    </div>
-
-                    <!--neighbor-->
-                    <div class="col-xs-12 col-md-3">
-
-                    </div>
-
-                    <!--tracking-->
-                    {% if sh.trans.tracking %}
-                    <div class="col-xs-12 col-md-4">
-                        <div class="row nomargin">
-                            <p class="nomargin">
-                                Track: <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank"> {{sh.trans.tracking }} </a> {% if sh.aftership.last_checkpoint.city %}
-                                <br>Delivered to {{sh.aftership.last_checkpoint.city }}, {{sh.aftership.last_checkpoint.state }} {% endif %}
-                            </p>
-                        </div>
-                    </div>
-                    {% endif %}
-
-                </div>
-                <!--end container for this shipemnt -->
-                {% endfor %}
-            </div>
-            <!--end completed shipmetns -->
+             <!--end completed shipmetns -->
 
         </div>
         <!--END COL WITH ALL TRANSACTIONS -->
