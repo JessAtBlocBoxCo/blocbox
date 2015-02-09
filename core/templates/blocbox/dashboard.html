@@ -448,13 +448,21 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-sm-4 col-sm-offset-4">
+                            <div class="col-sm-4">
                                 <!--Status and shipment type-->
                                 <div class="row">
-                                    <h4 class="nomargin">Status</h4>
-                                    <p class="nomargin">{{sh.aftership.tag}} {% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }} ) {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}
+                                    <h4 class="nomargin">Delivery Option</h4>
+                                    <p class="nomargin">{% if sh.aftership.shipment_type %} ( {{ sh.aftership.shipment_type }} ) {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}
                                     </p>
                                 </div>
+                            </div>
+                            <div class="col-sm-4">
+                                {% if sh.aftership.last_checkpoint.city %}
+                                <div class="row">
+                                    <h4 class="nomargin">{{sh.aftership.tag}}</h4>
+                                    <p class="nomargin">{{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }}</p>
+                                </div>
+                                {% endif %}
                             </div>
                             <div class="col-sm-4">
                                 <!--Expected Delivery -->
@@ -466,17 +474,6 @@
                                         {% endif %}
                                     </p>
                                 </div>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-sm-4 col-sm-offset-4">
-                                {% if sh.aftership.last_checkpoint.city %}
-                                <div class="row">
-                                    <h4 class="nomargin">Last Location</h4>
-                                    <p class="nomargin">{{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }}</p>
-                                </div>
-                                {% endif %}
                             </div>
                         </div>
                     </div>
