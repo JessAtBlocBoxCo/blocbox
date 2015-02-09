@@ -487,53 +487,6 @@
             </div>
             <!--col, shipments container -IN TRANSIT-->
 
-
-
-            <!--OTHER FAVORS Favors Box-->
-            <div class="col-xs-12 dashbox margintop30px marginbottom30px">
-                <h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3>
-
-                <!--labels-->
-                <div class="row darkgreytext tinytext textcenter">
-                    <!--label-->
-                    <p class="col-xs-2 marginbottom5px">STATUS</p>
-                    <p class="col-xs-2 marginbottom5px">DESCRIPTION</p>
-                    <p class="col-xs-2 marginbottom5px">COMPLETION DATE</p>
-                    <p class="col-xs-3 marginbottom5px">NEIGHBOR'S ADDRESS</p>
-                    <p class="col-xs-2 marginbottom5px">OPTIONS</p>
-                </div>
-                <!--row, label -->
-
-                <!--test data-->
-                <div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter">
-                    <!--test row-->
-                    <p class="col-xs-2">In progress</p>
-                    <p class="col-xs-2">House Sitting</p>
-                    <p class="col-xs-2">Nov. 19</p>
-                    <p class="col-xs-3">[TestRow]</p>
-                    <p class="col-xs-2">Modify</p>
-                </div>
-                <!--row, text data-->
-
-                <!--Actual Data-->
-                {% for favor in otherfavors_all %}
-                <div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter">
-                    <!--test row-->
-                    <p class="col-xs-2">{{ favor.invoice }}</p>
-                    <p class="col-xs-2">{{ favor.item_name }}</p>
-                    <p class="col-xs-2">[ADDME]</p>
-                    <p class="col-xs-3">{{ favor.host_st_address1 }}, {{ favor.host_st_address2 }} ({{ favor.host_fname }})</p>
-                    <p class="col-xs-2">[ADDME]</p>
-                </div>
-                <!--row, text data-->
-                {% endfor %}
-
-            </div>
-            <!--col, Favors box--->
-
-            
-            
-            
             <!--COMPLETED SHIPMENTS Container-->
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_complete %}
@@ -640,7 +593,7 @@
 
                         <div class="row paddingtop5px">
                             <div class="col-sm-4 col-sm-offset-4">
-                                <h4 class="nomargin">Delivered</h4> 
+                                <h4 class="nomargin">Delivered</h4>
                                 <p>{{sh.aftership.last_checkpoint.checkpoint_time }} {% endif %}</p>
                             </div>
                             <div class="col-sm-4">
@@ -654,10 +607,51 @@
                 </div>
                 {% endfor %}
             </div>
-             <!--end completed shipmetns -->
-
+            <!--end completed shipmetns -->
         </div>
         <!--END COL WITH ALL TRANSACTIONS -->
+
+        <!--OTHER FAVORS Favors Box-->
+        <div class="col-xs-12 dashbox margintop30px marginbottom30px">
+            <h3 class="col-xs-12 ltbluetext nopadding">Other Transactions</h3>
+
+            <!--labels-->
+            <div class="row darkgreytext tinytext textcenter">
+                <!--label-->
+                <p class="col-xs-2 marginbottom5px">STATUS</p>
+                <p class="col-xs-2 marginbottom5px">DESCRIPTION</p>
+                <p class="col-xs-2 marginbottom5px">COMPLETION DATE</p>
+                <p class="col-xs-3 marginbottom5px">NEIGHBOR'S ADDRESS</p>
+                <p class="col-xs-2 marginbottom5px">OPTIONS</p>
+            </div>
+            <!--row, label -->
+
+            <!--test data-->
+            <div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter">
+                <!--test row-->
+                <p class="col-xs-2">In progress</p>
+                <p class="col-xs-2">House Sitting</p>
+                <p class="col-xs-2">Nov. 19</p>
+                <p class="col-xs-3">[TestRow]</p>
+                <p class="col-xs-2">Modify</p>
+            </div>
+            <!--row, text data-->
+
+            <!--Actual Data-->
+            {% for favor in otherfavors_all %}
+            <div class="row whitebackground marginbottom30px paddingtop10px tinytext textcenter">
+                <!--test row-->
+                <p class="col-xs-2">{{ favor.invoice }}</p>
+                <p class="col-xs-2">{{ favor.item_name }}</p>
+                <p class="col-xs-2">[ADDME]</p>
+                <p class="col-xs-3">{{ favor.host_st_address1 }}, {{ favor.host_st_address2 }} ({{ favor.host_fname }})</p>
+                <p class="col-xs-2">[ADDME]</p>
+            </div>
+            <!--row, text data-->
+            {% endfor %}
+
+        </div>
+        <!--col, Favors box--->
 
         {% else %}
         <!--if user is not authenticated-->
