@@ -1527,7 +1527,6 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     overflow: hidden;
-    z-index: -1;
 }
 .profilepic {
     position: relative;
