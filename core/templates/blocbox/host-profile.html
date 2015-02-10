@@ -25,10 +25,25 @@
   
   
     <div class="row">
-        <div class="col-xs-12 nopaddingleftright">
-            <div class="orangebackground profilecover"></div>
+        <div class="col-xs-12 bluebackground profilecover nopaddingleftright">
+            <div class="col-sm-2 col-sm-offset-1">
+                {% if host.profile_pic_uploaded %}
+                <img class="profilepic" src="{{host.profile_pic_uploaded.url}}" />
+                {% else %}
+                {% endif %}
+            </div>
+            <div class="col-sm-3">
+                <p class="hostname negmarginright15px">{{ host.first_name }}</p> <!--class="hostname"-->
+                <h5 class="paddingtop7px">
+                    {% if connected %} 
+                    {{ host.st_address1 }},
+                    {% else %} 
+                    {{ host.address_approx }},  {% if host.neighborhood %} {{ host.neighborhood }}, {% endif %}
+                    {% endif %} 
+                    {{ host.city }} {{ host.state }}
+                </h5>
+            </div>
         </div>
-        
     </div>
  
    
@@ -36,29 +51,6 @@
 	
 
     <div class="row marginbottom20px hostinfobox relativediv">
-        <div class="col-xs-12 col-xs-offset-3 col-sm-2 col-sm-offset-1 relativediv">
-        	{% if host.profile_pic_uploaded %}
-                <img class="profilepic" src="{{host.profile_pic_uploaded.url}}" />
-          {% else %}
-          {% endif %}
-           
-        </div>
-    
-        <div class="col-xs-3 col-xs-offset-2 col-sm-1 col-sm-offset-0">
-    	   <p class="hostname negmarginright15px">{{ host.first_name }}</p> <!--class="hostname"-->
-        </div>
-    
-        <div class="col-xs-5 col-xs-offset-1 col-sm-offset-0">
-        		
-            <h5 class="paddingtop7px">
-            		{% if connected %} 
-            				{{ host.st_address1 }},
-            		{% else %} 
-            		{{ host.address_approx }},  {% if host.neighborhood %} {{ host.neighborhood }}, {% endif %}
-            		{% endif %} 
-            		{{ host.city }} {{ host.state }}
-            </h5>
-        </div>
     
         <div class="col-xs-12  col-sm-2">
         		{% if enduser_is_connected_to_host %} 	<button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
