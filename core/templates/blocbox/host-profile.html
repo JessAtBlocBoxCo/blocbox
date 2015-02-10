@@ -26,13 +26,13 @@
                 <div class="col-sm-3 nopaddingleft">
                     <p class="hostname textleft whitetext nomargin">{{ host.first_name }}</p>
                     <!--class="hostname"-->
-                    <h5 class="whitetext textleft nomargin">
+                    <p class="whitetext textleft nomargin">
                     {% if connected %} 
                     {{ host.st_address1 }},
                     {% else %} 
                     {{ host.address_approx }},  {% if host.neighborhood %} {{ host.neighborhood }}, {% endif %}
-                    {% endif %}</h5>
-                    <h5 class="whitetext textleft nomargin">{{ host.city }} {{ host.state }}</h5>
+                    {% endif %}</p>
+                    <p class="whitetext textleft nomargin">{{ host.city }} {{ host.state }}</p>
                     {% if enduser_is_connected_to_host %}
                     <button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
                     {% else %}
@@ -72,6 +72,21 @@
 
     <!--First Row of info> -->
 
+
+  <!--  <div class="row marginbottom20px hostinfobox relativediv">
+
+        <div class="col-xs-12  col-sm-2">
+            {% if enduser_is_connected_to_host %}
+            <button class="bluebutton" onClick="window.location='/startashipment/';">Start a Shipment</button>
+            {% else %}
+            <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
+          <!--  <button class="bluebutton" {% if user.is_authenticated %} onClick="window.location='/connect/host{{ host.id }}/';">
+                {% else %} onClick="window.location='/signupconnect/host{{ host.id }}/';"> {% endif %} + Connect
+            </button>
+
+            {% endif %}
+        </div>
+    </div> -->
     <!--closing row profilebox -->
 
 
