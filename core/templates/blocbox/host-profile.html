@@ -23,7 +23,7 @@
                     {% if host.profile_pic_uploaded %}
                     <img class="profilepic" src="{{host.profile_pic_uploaded.url}}" /> {% else %} {% endif %}
                 </div>
-                <div class="col-sm-2 nopaddingleft">
+                <div class="col-sm-3 nopaddingleft">
                     <p class="hostname textleft whitetext nomargin">{{ host.first_name }}</p>
                     <!--class="hostname"-->
                     <h5 class="whitetext textleft nomargin">
@@ -34,7 +34,7 @@
                     {% endif %}</h5>
                     <h5 class="whitetext textleft nomargin">{{ host.city }} {{ host.state }}</h5>
                 </div>
-                <div class="col-sm-4 col-sm-offset-2">
+                <div class="col-sm-4 col-sm-offset-1">
                     <div class="col-sm-4 whitetext">
                         <p class="whitetext">When I'm Home</p>
                         <div class="row">
