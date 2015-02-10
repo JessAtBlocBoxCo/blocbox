@@ -1662,12 +1662,12 @@ body {
     height: 40px;
     width: 175px;
     border: solid 2px;
-margin-left: 0px;
+    margin-left: 0px;
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
     vertical-align: top;
-    text-align: left;
+    text-align: center;
     border-radius: 3px;
 }
 .greybutton {
