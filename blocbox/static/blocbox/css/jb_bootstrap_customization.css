@@ -1530,10 +1530,9 @@ body {
     z-index: -1;
 }
 .profilepic {
-    position: absolute;
+    position: relative;
     max-width: 200px;
     max-height: 200px;
-    bottom: -60px;
 }
 .hostinfobox {
     background-color: rgb(255, 255, 255);
