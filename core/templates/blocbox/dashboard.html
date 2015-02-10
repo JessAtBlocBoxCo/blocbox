@@ -170,7 +170,7 @@
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont" style="padding-right: 5px;">
-                    <div class="col-sm-3 dashboxborder" style="padding-left: 5px;">
+                    <div class="col-sm-4 dashboxborder" style="padding-left: 5px;">
                         <h3 class="ltbluetext nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop15px">Click the package received button when you've picked up the package</p>
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
@@ -244,10 +244,10 @@
 
                         <!--Second row of details-->
                         <div class="row paddingtop5px">
-                            <div class="col-sm-4">
+                            <div class="col-sm-3">
                                 <!--Status and shipment type-->
-                                <h4 class="col-sm-10 col-sm-offset-2 nomargintopbottom">Delivery Option</h4>
-                                <p class="col-sm-10 col-sm-offset-2  nomargintopbottom">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}
+                                <h4 class="nomargintopbottom">Delivery Option</h4>
+                                <p class="nomargintopbottom">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}
                                     </p>
                             </div>
                             <!--Status and date delivered-->
