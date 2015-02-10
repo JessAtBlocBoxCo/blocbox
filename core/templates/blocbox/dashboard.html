@@ -170,7 +170,7 @@
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont" style="padding-right: 5px;">
-                    <div class="col-sm-3 dashboxborder" style="padding-left: 5px;">
+                    <div class="col-sm-3" style="padding-left: 5px;">
                         <h3 class="ltbluetext nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop15px">Click the package received button when you've picked up the package</p>
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
@@ -184,7 +184,7 @@
                         {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
-                    <div class="col-sm-9" style="padding-top: 6px; padding-left: 0px;">
+                    <div class="col-sm-9 dashboxborder" style="padding-top: 6px; padding-left: 0px;">
                         <div class="row">
                             <div class="col-sm-2 col-sm-offset-1 marginbottom10px">
                                 <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
