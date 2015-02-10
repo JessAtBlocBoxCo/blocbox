@@ -33,14 +33,14 @@
                 {% endif %}
             </div>
             <div class="col-sm-3">
-                <p class="hostname whitetext">{{ host.first_name }}</p> <!--class="hostname"-->
-                <h5 class="whitetext">
+                <p class="hostname textleft whitetext">{{ host.first_name }}</p> <!--class="hostname"-->
+                <h5 class="whitetext textleft">
                     {% if connected %} 
                     {{ host.st_address1 }},
                     {% else %} 
                     {{ host.address_approx }},  {% if host.neighborhood %} {{ host.neighborhood }}, {% endif %}
                     {% endif %}</h5>
-                    <h5>{{ host.city }} {{ host.state }}</h5>
+                <h5 class="whitetext textleft">{{ host.city }} {{ host.state }}</h5>
             </div>
         </div>
     </div>
