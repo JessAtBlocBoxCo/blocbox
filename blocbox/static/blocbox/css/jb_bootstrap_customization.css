@@ -2221,8 +2221,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .profilepic {
         position: absolute;
-        max-width: 150px;
-        max-height: 150px;
+        max-width: 135px;
+        max-height: 135px;
         bottom: 10px;
     }
     .sideboxtext {
