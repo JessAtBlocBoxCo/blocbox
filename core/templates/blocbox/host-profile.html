@@ -27,12 +27,12 @@
                 <div class="col-sm-7 textleft" style="padding-top: 6px;">
                     <p class="hostname textleft whitetext nomargin">{{ host.first_name }}</p>
                     <!--class="hostname"-->
-                    <p class="whitetext textleft nomargin">
+                    <h6 class="whitetext textleft nomargin">
                     {% if connected %} 
                     {{ host.st_address1 }},
                     {% else %} 
                     {{ host.address_approx }},  
-                    {% endif %}</p>
+                    {% endif %}</h6>
                     <p class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</p>
                     {% if enduser_is_connected_to_host %}
                     <button class="whitebutton margintop20px" onClick="window.location='/startashipment/';">Start a Shipment</button>
