@@ -27,12 +27,19 @@
                     <div class="col-sm-7 textleft" style="padding-top: 11px;">
                         <p class="hostname textleft whitetext nomargin">{{ host.first_name }}</p>
                         <!--class="hostname"-->
+                        <div class="row">
+                        <div class="col-sm-1">
+                            <i class="fa fa-map-marker fa-fw textwhite"></i>
+                        </div>
+                        <div class="col-sm-11">
                         <h6 class="whitetext textleft nomargin">
                     {% if connected %} 
                     {{ host.st_address1 }},
                     {% else %} 
                     {{ host.address_approx }},  
                     {% endif %}</h6>
+                            </div>
+                        </div>
                         <h6 class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</h6> {% if enduser_is_connected_to_host %}
                         <button class="whitebutton" style="margin-top: 17px;" onClick="window.location='/startashipment/';">Send a Message</button>
                         {% else %}
