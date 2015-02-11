@@ -20,11 +20,11 @@
         <div class="col-xs-12 bluebackground profilecover nopaddingleftright">
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-1">
-                    <div class="col-sm-5" style="padding-top: 13px;">
+                    <div class="col-sm-5" style="padding-top: 18px;">
                         {% if host.profile_pic_uploaded %}
                         <img class="profilepic" src="{{host.profile_pic_uploaded.url}}" /> {% else %} {% endif %}
                     </div>
-                    <div class="col-sm-7 textleft" style="padding-top: 6px;">
+                    <div class="col-sm-7 textleft" style="padding-top: 11px;">
                         <p class="hostname textleft whitetext nomargin">{{ host.first_name }}</p>
                         <!--class="hostname"-->
                         <h6 class="whitetext textleft nomargin">
@@ -34,7 +34,7 @@
                     {{ host.address_approx }},  
                     {% endif %}</h6>
                         <h6 class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</h6> {% if enduser_is_connected_to_host %}
-                        <button class="whitebutton margintop20px" onClick="window.location='/startashipment/';">Start a Shipment</button>
+                        <button class="whitebutton" style="margin-top: 18px;" onClick="window.location='/startashipment/';">Start a Shipment</button>
                         {% else %}
                         <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
                         <button class="whitebutton margintop20px" {% if user.is_authenticated %} onClick="window.location='/connect/host{{ host.id }}/';">
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-sm-5 col-sm-offset-1 paddingtop15px nopaddingright">
-                    <div class="col-sm-4 whitetext">
+                    <div class="col-sm-4 whitetext" style="height: 149px;">
                         <p class="dashfont whitetext">WHEN&nbsp;I'M&nbsp;HOME</p>
                         <div class="bluecircle textcenter">
                             <p class="paddingtop15px"><i class="fa fa-calendar-o fa-fw fa-2x textwhite"></i>
@@ -53,14 +53,14 @@
                         <p class="paddingtop10px nomargin">{{ host.whenimhome_days }}</p>
                         <p class="momargin" style="padding-top: 2px;">{{ host.whenimhome_hours }}</p>
                     </div>
-                    <div class="col-sm-4 whitetext sideborders">
+                    <div class="col-sm-4 whitetext  sideborders" style="height: 149px;">
                         <p class="dashfont whitetext">HELPING</p>
                         <div class="bluecircle">
                             <p class="pricetext paddingtop10px">{{ connections_count }}</p>
                         </div>
                         <p class="paddingtop10px">Neighbors</p>
                     </div>
-                    <div class="col-sm-4 whitetext">
+                    <div class="col-sm-4 whitetext" style="height: 149px;">
                         <p class="dashfont whitetext">SUCCESS RATE</p>
                         <div class="bluecircle">
                             <p class="pricetext paddingtop10px">{{ transactions_count }}</p>
