@@ -19,11 +19,12 @@
     <div class="row">
         <div class="col-xs-12 bluebackground profilecover nopaddingleftright">
             <div class="row">
-                <div class="col-sm-2 col-sm-offset-1" style="padding-top: 13px;">
+                <div class="col-sm-3 col-sm-offset-1">
+                   <div class="col-sm-6" style="padding-top: 13px;">
                     {% if host.profile_pic_uploaded %}
                     <img class="profilepic" src="{{host.profile_pic_uploaded.url}}" /> {% else %} {% endif %}
                 </div>
-                <div class="col-sm-3 nopaddingleft textleft" style="padding-top: 6px;">
+                <div class="col-sm-6 nopaddingleft textleft" style="padding-top: 6px;">
                     <h3 class="textleft whitetext nomargin">{{ host.first_name }}</h3>
                     <!--class="hostname"-->
                     <p class="whitetext textleft nomargin">
@@ -41,6 +42,7 @@
                         {% else %} onClick="window.location='/signupconnect/host{{ host.id }}/';"> {% endif %} + Connect
                     </button>
                     {% endif %}
+                </div>
                 </div>
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="col-sm-4 whitetext">
