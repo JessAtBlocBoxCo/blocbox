@@ -1684,15 +1684,6 @@ body {
 .btn-white:active {
     top: 1px;
 }
-.fa-before:before {
-    display: inline-block;
-    font-family: FontAwesome;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
 .greybutton {
     background-color: rgb(223, 226, 226);
     font-size: 1.143em;
