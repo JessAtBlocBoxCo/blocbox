@@ -1965,6 +1965,7 @@ body {
 .bluecircle {
     background-image: url('/static/blocbox/images/circle-darkblue.png');
     height: 60px;
+    width: 60px;
     text-align: center;
     vertical-align: middle;
     position: relative;
