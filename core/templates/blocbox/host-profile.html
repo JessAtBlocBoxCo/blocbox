@@ -41,7 +41,8 @@
                         <button class="whitebutton" style="margin-top: 15px;" onClick="window.location='/startashipment/';">Send a Message</button>
                         {% else %}
                         <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
-                        <a class="btn whitebutton" style="margin-top: 15px;" onClick="window.location='/connect/host{{ host.id }}/';"><i class="fa fa-user-plus fa-fw whitetext"></i>&nbsp;Connect</a>
+                        <a class="btn whitebutton" style="margin-top: 15px;" onClick="window.location='/connect/host{{ host.id }}/';">
+                        <i class="fa fa-user-plus"></i>&nbsp;Connect</a>
                         {% endif %}
                     </div>
                 </div>
