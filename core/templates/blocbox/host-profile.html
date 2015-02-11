@@ -173,7 +173,14 @@
             <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
             <div class="profilebox">
                 <!--this is a style hack to get around the min-height problem-->
-                <p class="ltbluetext centerboxheader">Package Receipt</p>
+                <div class="row">
+                <div class="col-sm-11">
+                    <p class="ltbluetext centerboxheader">Package Receipt</p>
+                    </div>
+                    <div class="col-sm-1">
+                        <i class="fa fa-question-circle fa-fw ltgreytext"></i>
+                    </div>
+                </div>
                 <div class="profileboxline"></div>
                 <p class="centerboxtext paddingtopbottom5px nomarginbottom">
                     {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
