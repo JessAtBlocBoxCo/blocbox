@@ -35,10 +35,10 @@
                     {% endif %}</p>
                     <p class="whitetext textleft nomargin">{{ host.city }} {{ host.state }}</p>
                     {% if enduser_is_connected_to_host %}
-                    <button class="whitebutton paddingtop20px" onClick="window.location='/startashipment/';">Start a Shipment</button>
+                    <button class="whitebutton margintop20px" onClick="window.location='/startashipment/';">Start a Shipment</button>
                     {% else %}
                     <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
-                    <button class="whitebutton paddingtop20px" {% if user.is_authenticated %} onClick="window.location='/connect/host{{ host.id }}/';">
+                    <button class="whitebutton margintop20px" {% if user.is_authenticated %} onClick="window.location='/connect/host{{ host.id }}/';">
                         {% else %} onClick="window.location='/signupconnect/host{{ host.id }}/';"> {% endif %} + Connect
                     </button>
                     {% endif %}
