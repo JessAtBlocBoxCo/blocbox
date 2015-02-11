@@ -214,6 +214,9 @@ footer {
 .ltgreytext {
     color: rgb(223, 226, 226);
 }
+.ltergreytext {
+    color: rgb(250, 250, 250);
+}
 .textinbluebackground {
     color: rgb(18, 67, 100);
 }
