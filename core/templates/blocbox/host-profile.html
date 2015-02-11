@@ -33,7 +33,7 @@
                     {% else %} 
                     {{ host.address_approx }},  
                     {% endif %}</h6>
-                    <p class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</p>
+                    <h6 class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</h6>
                     {% if enduser_is_connected_to_host %}
                     <button class="whitebutton margintop20px" onClick="window.location='/startashipment/';">Start a Shipment</button>
                     {% else %}
