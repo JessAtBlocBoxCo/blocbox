@@ -45,7 +45,7 @@
                         <button class="whitebutton" style="margin-top: 16px;" onClick="window.location='/startashipment/';">Send a Message</button>
                         {% else %}
                         <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
-                        <button class="whitebutton margintop20px" onClick="window.location='/connect/host{{ host.id }}/';"><i class="fa fa-user-plus fa-fw textwhite"></i> Connect</button>
+                        <button class="whitebutton margintop20px" onClick="window.location='/connect/host{{ host.id }}/';"><i class="fa fa-user-plus fa-fw whitetext"></i> Connect</button>
                         {% endif %}
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="col-sm-4 whitetext" style="height: 149px;">
                         <p class="dashfont whitetext paddingtop5px">WHEN&nbsp;I'M&nbsp;HOME</p>
                         <div class="bluecircle textcenter">
-                            <p class="paddingtop15px"><i class="fa fa-calendar-o fa-fw fa-2x textwhite"></i>
+                            <p class="paddingtop15px"><i class="fa fa-calendar-o fa-fw fa-2x whitetext"></i>
                             </p>
                         </div>
                         <p class="paddingtop10px nomargin">{{ host.whenimhome_days }}</p>
