@@ -61,6 +61,25 @@
     <!-- Meta Tags - Describe the Site -->
     <meta name="Description" CONTENT="Package Delivery Holding and Receiving, Storage, Pet Care, Dog Walking, Child Care,
        Mailbox Rental, Missed Packages, 800 USPS, 800 UPS">
+       
+    <!--JB popover customization-->
+    <script>
+        $('[data-toggle="tooltip"]').tooltip({
+            'placement': 'top'
+        });
+        $('[data-toggle="popover"]').popover({
+            trigger: 'hover',
+            'placement': 'top'
+        });
+
+        $('#userNameField').tooltip({
+            'show': true,
+            'placement': 'bottom',
+            'title': "Please remember to..."
+        });
+
+        $('#userNameField').tooltip('show');
+    </script>
 
     <!--Google Tracking SNippet -Goes in every page -->
     <script>
