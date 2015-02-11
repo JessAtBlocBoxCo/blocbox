@@ -1962,6 +1962,17 @@ body {
     border-left: 2px solid rgb(41, 128, 185);
     border-right: 2px solid rgb(41, 128, 185);
 }
+.bluecircle {
+    background-image: url('/static/blocbox/images/circle-darkblue.png');
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
 *--------------------------------------------------------------*/
