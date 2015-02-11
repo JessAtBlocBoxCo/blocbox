@@ -1675,6 +1675,16 @@ body {
     text-align: center;
     border-radius: 3px;
 }
+.whitebutton:hover {
+    background-color: white;
+    color: #3498db;
+    border-color: #3498db;
+    border: solid;
+    border-width: 2px;
+}
+.whitebutton:active {
+    top: 1px;
+}
 .greybutton {
     background-color: rgb(223, 226, 226);
     font-size: 1.143em;
