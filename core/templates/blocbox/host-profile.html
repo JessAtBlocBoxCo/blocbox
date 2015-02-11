@@ -38,10 +38,10 @@
                             </div>
                         </div>
                         {% if enduser_is_connected_to_host %}
-                        <button class="whitebutton" style="margin-top: 16px;" onClick="window.location='/startashipment/';">Send a Message</button>
+                        <button class="whitebutton" style="margin-top: 15px;" onClick="window.location='/startashipment/';">Send a Message</button>
                         {% else %}
                         <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
-                        <button class="whitebutton margintop20px" onClick="window.location='/connect/host{{ host.id }}/';">+ Connect</button>
+                        <button class="whitebutton" style="margin-top: 15px;" onClick="window.location='/connect/host{{ host.id }}/';">+ Connect</button>
                         {% endif %}
                     </div>
                 </div>
