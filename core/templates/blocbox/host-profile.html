@@ -34,7 +34,7 @@
                     {{ host.address_approx }},  
                     {% endif %}</h6>
                         <h6 class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</h6> {% if enduser_is_connected_to_host %}
-                        <button class="whitebutton" style="margin-top: 18px;" onClick="window.location='/startashipment/';">Start a Shipment</button>
+                        <button class="whitebutton" style="margin-top: 17px;" onClick="window.location='/startashipment/';">Send a Message</button>
                         {% else %}
                         <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
                         <button class="whitebutton margintop20px" {% if user.is_authenticated %} onClick="window.location='/connect/host{{ host.id }}/';">
