@@ -64,6 +64,9 @@
        
     <!--JB popover customization-->
     <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+        })
         $('[data-toggle="tooltip"]').tooltip({
             'placement': 'top'
         });
