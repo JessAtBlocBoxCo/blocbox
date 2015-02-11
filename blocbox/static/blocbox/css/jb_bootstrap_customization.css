@@ -989,7 +989,7 @@ footer {
     <!-- background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%);
     --> z-index: 1000;
     margin-bottom: 0;
-    height: 66px;
+    height: 70px;
 }
 .navbar-default {
     background-image: none;
@@ -1349,7 +1349,7 @@ body {
         display: block !important;
     }
     .content {
-        padding-top: 60px;
+        padding-top: 70px;
         padding-bottom: 550px;
     }
     .contentbottomonly {
