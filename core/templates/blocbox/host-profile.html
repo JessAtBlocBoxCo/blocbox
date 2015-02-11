@@ -247,7 +247,7 @@
                         {% if enduser_is_connected_to_host %}
                         <button class="bluebutton " onClick="window.location='/startashipment/' ; ">Start a Shipment</button>
                         {% else %}
-                        <a class="bluebutton " onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
+                        <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
                             <i class="fa fa-user-plus"></i>&nbsp;&nbsp;Connect</a>
                         {% endif %}
                     </div>
