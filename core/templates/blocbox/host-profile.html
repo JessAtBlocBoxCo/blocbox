@@ -38,11 +38,12 @@
                             </div>
                         </div>
                         {% if enduser_is_connected_to_host %}
-                        <button class="whitebutton" style="margin-top: 15px;" onClick="window.location='/startashipment/';">Send a Message</button>
+                        <button class="btn-white" style="margin-top: 15px;" onClick="window.location='/startashipment/';">Send a Message</button>
                         {% else %}
-                        <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered-->
-                        <a class="btn" style="margin-top: 15px;" onClick="window.location='/connect/host{{ host.id }}/';">
-                            <i class="fa fa-user-plus pull-left"></i>&nbsp;Connect</a>
+                        <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered onClick="window.location='/connect/host{{ host.id }}/';"-->
+                        <a class="btn btn-white" style="margin-top: 15px;" href="#">
+                            <i class="fa fa-user-plus whitetext"></i>&nbsp;Connect
+                        </a>
                         {% endif %}
                     </div>
                 </div>
@@ -195,9 +196,9 @@
                     </div>
                 </div>
             </div>
-            
+
             <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
-               <div class="profilebox">
+            <div class="profilebox">
                 <!--this is a style hack to get around the min-height problem-->
                 <div class="row">
                     <div class="centerboxheader nopadding">
@@ -235,9 +236,9 @@
                     </div>
                 </div>
                 <!--row containg pricing info-->
-                
+
                 <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
-                
+
                 <div class="row marginbottom10px">
                     <div class="col-xs-offset-2 col-xs-6 paddingtop15px">
                         <p class="ltbluetext">Connect and try your first package for free</p>
