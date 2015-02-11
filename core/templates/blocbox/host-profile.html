@@ -203,17 +203,13 @@
                         <p class="ltbluetext paddingtop5px ">Connect and try your first package for free</p>
                     </div>
                     <div class="col-xs-4 margintop10px paddingright7pt5pct ">
-
                         {% if enduser_is_connected_to_host %}
                         <button class="bluebutton " onClick="window.location='/startashipment/' ; ">Start a Shipment</button>
                         {% else %}
                         <button class="bluebutton " onClick="window.location='/{{ host.id }}/signupconnect/' ; ">+ Connect</button>
                         {% endif %}
-
                     </div>
                 </div>
-                <!--row-->
-                <br>
             </div>
             <!--profileboxlong-->
             <div class="profilebox margintop20px paddingbottom10px ">
