@@ -1678,7 +1678,7 @@ body {
 .whitebutton:hover {
     background-color: white;
     color: #3498db;
-    border-color: #3498db;
+    border-color: white;
     border: solid;
     border-width: 2px;
 }
