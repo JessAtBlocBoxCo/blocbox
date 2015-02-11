@@ -1979,6 +1979,11 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
 }
+.addresstext {
+    font-size: 1.00em;
+    line-height: 1.38;
+    font-weight: 300;
+}
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
 *--------------------------------------------------------------*/
