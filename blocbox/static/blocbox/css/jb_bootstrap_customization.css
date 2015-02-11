@@ -1958,6 +1958,10 @@ body {
 .dashboxborder {
     border-left: 0.063em solid rgb(236, 240, 241);
 }
+.sideborders {
+    border-left: 2px solid rgb(41, 128, 185);
+    border-right: 2px solid rgb(41, 128, 185);
+}
 /*-------------------------------------------------------------*
 * MY BLOCK PAGE STYLES
 *--------------------------------------------------------------*/
