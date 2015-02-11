@@ -79,6 +79,8 @@ h6 {
 .dashpricetext {
     font-size: 1.4em;
     font-weight: 300;
+    margin-top: none;
+    margin-bottom: 5px;
 }
 .subnavtext {
     font-size: 1.067em;
