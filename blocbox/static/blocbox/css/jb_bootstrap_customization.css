@@ -1968,7 +1968,8 @@ body {
     text-align: center;
     vertical-align: middle;
     position: relative;
-    margin: auto;
+    margin-right: auto;
+    margin-left: auto;
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
