@@ -1684,6 +1684,7 @@ body {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.50);
     bottom: 2px;
     text-decoration: none;
+    text-shadow: none;
 }
 .btn-white:active {
     top: 1px;
