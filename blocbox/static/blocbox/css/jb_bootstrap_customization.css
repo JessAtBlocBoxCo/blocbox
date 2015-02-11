@@ -1673,13 +1673,13 @@ body {
     vertical-align: top;
     text-align: center;
     border-radius: 3px;
-    text-decoration: none;
 }
 .btn-white:hover {
     background-color: white;
     color: #3498db;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.50);
     bottom: 2px;
+    text-decoration: none;
 }
 .btn-white:active {
     top: 1px;
