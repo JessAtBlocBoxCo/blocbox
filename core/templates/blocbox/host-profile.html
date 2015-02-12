@@ -22,7 +22,9 @@
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="col-sm-5" style="padding-top: 18px;">
                         {% if host.profile_pic_uploaded %}
-                        <img class="profilepic" src="{{host.profile_pic_uploaded.url}}" /> {% else %} {% endif %}
+                        <div class="dashpiccontainer">
+                        <img class="dashpic" src="{{host.profile_pic_uploaded.url}}" /> {% else %} {% endif %}
+                        </div>
                     </div>
                     <div class="col-sm-7 textleft" style="padding-top: 15px;">
                         <p class="hostname textleft whitetext nomargin">{{ host.first_name }}</p>
