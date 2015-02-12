@@ -144,9 +144,15 @@
               <div class="col-sm-8 nopaddingleft">
                   <h6 class="dashfont greytext textleft">OFFERED TASKS</h6>
               </div>
+                   {% if enduser_is_connected_to_host %}
+                   <div class="col-sm-4 nopaddingright">
+                       <h6 class="dashfont darkgreytext textright"><i class="fa fa-plus-circle fa-fw greentext"></i>&nbsp;REQUEST A TASK</h6>
+                   </div>
+                   {% else %}
                    <div class="col-sm-4 nopaddingright">
                        <h6 class="dashfont darkgreytext textright"><i class="fa fa-plus-circle fa-fw"></i>&nbsp;REQUEST A TASK</h6>
                    </div>
+                   {% endif %}
                    </div>
                <div class="profilebox"><!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
                    <div class="row">
