@@ -184,6 +184,9 @@ footer {
 .lightgreybackground {
     background-color: rgb(236, 240, 241);
 }
+.greybackground {
+    background-color: #edefed;
+}
 .darkgreybackground {
     background-color: rgb(103, 114, 119);
 }
