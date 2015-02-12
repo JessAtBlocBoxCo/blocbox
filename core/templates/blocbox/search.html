@@ -161,19 +161,17 @@ GOOGLE MAP - END
 
 
 {% block content %}
-
+<div class="content fillviewheight whitebackground text-center relativediv">
 <!--Add the search box to the page   -->
-<div>
-    <input id="search-box" class="controls"  name="Address" placeholder="Enter your address to find a blocbox near you" type="search">
-</div>
+    <div>
+        <input id="search-box" class="controls"  name="Address" placeholder="Enter your address to find a blocbox near you" type="search">
+    </div>
 
-<div class="content fillviewheight container-fluid whitebackground textcenter"> 
     <div class="container-fluid offwhitebackground" id="map-canvas"> <!--this line adds the map per id=map-canvas-->
 
     </div> <!--container-fluid offwhitebackground -->
     <h5 class="darkgreytext nomargin paddingtop20px paddingbottom30px">
         Don't see a BlocBox host in your hood? <a class="darkergreytext textunderline" href="/nudgeaneighbor/">Nudge a neighbor</a> to let them know about the opportunity to host or <a class="darkergreytext textunderline" href="">host a box yourself</a>.</h5>  
-</div> 
 
-
+</div>
 {% endblock %}
