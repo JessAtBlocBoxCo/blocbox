@@ -1489,10 +1489,12 @@ body {
 *--------------------------------------------------------------*/
 
 #map-canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
     z-index: 5;
     width: 100%;
     height: 40em;
-    margin-top: 70px;
     background-size: cover;
     background-position: center center;
 }
@@ -2614,7 +2616,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     #map-canvas {
         height: 28.2em;
-        margin-top: 45px;
     }
     .blockpic {
         width: 75px;
