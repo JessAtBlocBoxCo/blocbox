@@ -1790,6 +1790,16 @@ body {
     text-align: center;
     border-radius: 5px;
 }
+.dog-grey {
+    background-image: url('/static/blocbox/images/dog-grey.png');
+    margin: auto;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 70px;
+}
 /*-------------------------------------------------------------*
 * HOST PROFILE VISITOR PAGE STYLES
 *--------------------------------------------------------------*/
