@@ -333,6 +333,9 @@ footer {
 .absolute {
     position: absolute;
 }
+.fixed {
+    position: fixed;
+}
 .alignbottomdiv {
     position: absolute;
     padding-bottom: 20px;
