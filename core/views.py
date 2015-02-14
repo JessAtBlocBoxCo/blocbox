@@ -262,6 +262,7 @@ def message_host_modal(request, message_trans_id):
     		#Add recipient here?
         if compose_form.is_valid(): 
             body = compose_form.cleaned_data['body']
+            subject = compose_form.cleaned_data['subject']
             compose_form.save(sender=request.user)            
             for recipient in recipient_email_list:
                 notify_user_received_message(request, sender.id, recipient_email, subject, body) 
