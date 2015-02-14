@@ -23,7 +23,7 @@
         <div class="profileboxline"></div>
         <div class="col-sm-12 paddingtop30px">
             <textarea class="form-control" placeholder="Reply" rows="4"></textarea>
-            <div class="row">
+            <div class="row paddingtop10px">
             {% ifequal message.recipient.pk user.pk %}
             <div class="col-sm-2 col-sm-offset-8 nopaddingleft">
             <a class="btn bluebutton" href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
