@@ -65,6 +65,7 @@ JESS: dashboard - create a field for profilepic links - the NULL/DEFAULT value i
 JESS: dashboard - connect to transactions table to populate actually transactions
 
 6.
+JESS: messages - create reminder email that is sent to user if tracking number has not been entered
 JESS: messages - connection success email to user - add link in email to sign in
 JESS: messages - Change {{ message.sender }} to first and last name instead of email
 JESS: messages - Inbox - Change {{ message.sent_at|date:_("DATETIME_FORMAT") }} to month and date (ex. May 7)

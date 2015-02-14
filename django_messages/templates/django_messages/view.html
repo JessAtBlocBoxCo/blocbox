@@ -1,7 +1,7 @@
 {% extends "django_messages/base.html" %} {% load i18n %} {% load url from future %} {% block title %}View Message{% endblock %} {% block messagingcontent %}
 
 <div class="row paddingtop30px">
-    <div class="col-sm-7 col-sm-offset-1 offwhitebackground paddingtopbottom30px">
+    <div class="col-sm-7 col-sm-offset-1 offwhitebackground paddingtopbottom20px">
         <dl class="message-headers">
             <!-- <dt>{% trans "Subject" %}</dt> -->
             <dd><strong>{{ message.subject }}</strong>
@@ -15,13 +15,13 @@
     <dd>{{ message.recipient }}</dd> -->
 
         </dl>
-        <div class="col-sm-10 col-sm-offset-2">
+        <div class="col-sm-10 col-sm-offset-2 paddingbottom20px">
             <div class="profilebox whitebackground">
                 {{ message.body|linebreaksbr }}
             </div>
             <dd class="textright">{{ message.sent_at|date:_("DATETIME_FORMAT")}}</dd>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-10 paddingbottom20px">
             <div class="profilebox whitebackground">
                 <br />
                 <br />
