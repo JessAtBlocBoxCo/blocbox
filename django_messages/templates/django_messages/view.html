@@ -26,11 +26,12 @@
                 <br />
                 <br />
             </div>
+            {% ifequal message.recipient.pk user.pk %}
+            <a href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
+            <a href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
         </div>
-        <br />
-        <br /> {% ifequal message.recipient.pk user.pk %}
-        <a href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
-        <a href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a> {% comment %}Example reply_form integration {% if reply_form %}
+ 
+        {% comment %}Example reply_form integration {% if reply_form %}
         <h1>{% trans "Compose reply"%}</h1>
         <form action="{% url 'messages_reply' message.id %}" method="post">
             {% csrf_token %}
