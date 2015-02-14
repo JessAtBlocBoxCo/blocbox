@@ -28,7 +28,6 @@
 {% endif %} {% endcomment %} 
 </div>
 
-{% if user.is_authenticated %}
 <!--sidebar-->
 <div class="col-md-3 col-lg-2 mobilehide">
     <div class="dashpiccontainer">
@@ -99,7 +98,6 @@
             <br>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}
         </p>
     </div>
-    {% endfor %}
 </div>
 
 
