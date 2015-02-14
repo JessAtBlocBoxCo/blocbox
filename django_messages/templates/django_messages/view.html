@@ -21,11 +21,11 @@
             <dd class="textright greytext">{{ message.sent_at|date:_("DATETIME_FORMAT")}}</dd>
         </div>
         <div class="profileboxline"></div>
-        <div class="col-sm-12 paddingtopbottom20px">
+        <div class="col-sm-12 paddingtopbottom30px">
             <textarea class="form-control" placeholder="Reply" rows="4"></textarea>
             {% ifequal message.recipient.pk user.pk %}
-            <a href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
-            <a href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
+            <a class="textright" href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
+            <a class="textright" href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
         </div>
  
         {% comment %}Example reply_form integration {% if reply_form %}
