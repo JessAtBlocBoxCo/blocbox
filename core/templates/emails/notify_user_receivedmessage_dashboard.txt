@@ -1,0 +1,13 @@
+Hello {{ recipient.first_name }},
+
+Your neighbor, {{sender.first_name}} {{ sender.last_name}} [{{ sender.email }}], sent you the following message
+regarding order {{ trans.id }}, invoice {{ trans.invoice }}:
+
+
+{{ message_body }}.
+
+
+Please login to your account and visit your inbox at www.blocbox.co/messages/inbox/ to reply to this message.
+
+Thanks!
+The BlocBox Team
