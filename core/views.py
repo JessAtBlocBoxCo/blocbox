@@ -257,7 +257,7 @@ def message_host_modal(request, message_trans_id):
         if message_form.is_valid():
             message_body = message_form.cleaned_data['message_body']
             #note: the email template is in core/blocbox/templates/emails..
-            message = return_to_string('emails/notify_user_receivedmessage_dashboard.txt', {'host': host, 'sender': sender, 'trans': trans, 'message_body': message_body})
+            message = render_to_string('emails/notify_user_receivedmessage_dashboard.txt', {'host': host, 'sender': sender, 'trans': trans, 'message_body': message_body})
             subject = "[BLOCBOX MESSAGE]: User " + str(sender.email) + "has sent you a message regarding Order " + str(trans.id)
             send_mail(subject, message, 'Blocbox Messages <admin@blocbox.co>', [host.email,])
         else:
