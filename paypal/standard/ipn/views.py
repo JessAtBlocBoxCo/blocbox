@@ -188,10 +188,6 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
 
 
 
-def test_notify_enduser_shipment_paid(request):
-    notify_enduser_shipment_paid(request, 55)
-    return HttpResponse("You're sending a package.") 
-
 def notify_host_shipment_paid(request, trans_id):
     trans = get_object_or_404(Transaction, pk=trans_id)
     host = trans.host
