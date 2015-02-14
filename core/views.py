@@ -252,6 +252,7 @@ def dashboard_tracking_modal(request, track_id):
     trans = Transaction.objects.get(pk=track_id)  
     tracking_on_trans = str(trans.tracking)
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
+    enduser = trans.enduser
     if trans.on_aftership:
         courier_on_trans = str(trans.shipment_courier.lower())
     else:
