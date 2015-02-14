@@ -6,7 +6,7 @@ Please enter your tracking information at www.blocbox.co/dashboard as soon as yo
 
 We've told {{host.first_name}} that the shipment is expected to arrive {{ arrivalwindow_estimate }}.
 
-Your submitted a payment of ${{ price }} for {{payment_option}} {% if note_to_host %} and included the following message to {{host.first_name}}: {{ note_to_host }}. {% else %}. {% endif %}
+Your submitted a payment of ${{ price }} ({{payment_option}}) {% if note_to_host %} and included the following message to {{host.first_name}}: {{ note_to_host }}. {% else %}. {% endif %}
 
 Please contact us if you have any questions.
 

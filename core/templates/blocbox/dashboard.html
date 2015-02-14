@@ -163,7 +163,13 @@
             <!--end Thanks modal: End User Issue-->
         </div>
         <!--end define thank-you modals00>       	      		       	
-               	      		       				              
+               	      		     
+    <!--INCLUD ALL OF THE MODAL SUBTEMPLATES --> 
+						{% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
+						{% include "dashboard_subtemplates/message_to_host_modal.html" %}
+						{% include "dashboard_subtemplates/package_received_modal.html" %}
+						{% include "dashboard_subtemplates/enter_tracking_modal.html" %}
+						{% include "dashboard_subtemplates/edit_tracking_modal.html" %}
     <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
        
         <div class="col-xs-12 col-md-9 col-lg-8 nopaddingsidesmobile nopaddingright">
@@ -177,15 +183,17 @@
                     <div class="col-sm-3" style="padding-left: 5px;">
                         <h3 class="ltbluetext nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop15px">Click the package received button when you've picked up the package</p>
-                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>
-                        {% include "dashboard_subtemplates/package_received_modal.html" %}
-                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                            
+                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
-                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                            
+                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                             Report an Issue</button>
-                        <!--load sub template tag with this omdal -->
-                        {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     <div class="col-sm-9 dashboxborder" style="padding-top: 6px; padding-left: 0px;">
@@ -243,7 +251,7 @@
                                         </a>
                                     </p>
                                 </div>
-                                {% include "dashboard_subtemplates/message_to_host_modal.html" %}
+                                
                             </div>
                         </div>
 
@@ -292,15 +300,19 @@
                     <div class="col-sm-3" style="padding-left: 5px;">
                         <h3 class="ltbluetext nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
-                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
                             Add Tracking #</button>
-                        {% include "dashboard_subtemplates/package_received_modal.html" %}
-                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        
+                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
-                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                            
+                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                             Report an Issue</button>
                         <!--load sub template tag with this omdal -->
-                        {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
+                        
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
 
@@ -343,7 +355,8 @@
                                 <!--Enter Tracking -->
                                 <div class="row nomargin">
                                     <!--display or enter tracking info -->
-                                    <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a> {% include "dashboard_subtemplates/enter_tracking_modal.html" %}
+                                    <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a> 
+                                   
                                 </div>
                             </div>
                             <!--End Neighbor Column (packages waiting to be picked up) -->
@@ -361,7 +374,6 @@
                                     </a>
                                     </p>
                                 </div>
-                                {% include "dashboard_subtemplates/message_to_host_modal.html" %}
                             </div>
                         </div>
                         <div class="row">
@@ -389,6 +401,7 @@
             <!--END SHIPMETNS WAITING FOR TRACKING NUMBER -->
 
 
+						 		
             <!--SHIPMENTS IN TRANSIT-->
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_notcomplete_notdelivered %}
@@ -397,15 +410,20 @@
                     <div class="col-sm-3" style="padding-left: 5px;">
                         <h3 class="ltbluetext nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
-                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             Check Shipping Details</button>
-                        {% include "dashboard_subtemplates/package_received_modal.html" %}
-                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                       
+                        	<!--message modal -->
+                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        	onclick="window.location='/dashboard/openModal_message_id{{sh.trans.id}}/#{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
-                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                        
+                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                             Report an Issue</button>
                         <!--load sub template tag with this omdal -->
-                        {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
+                        
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
 
@@ -448,7 +466,8 @@
                                 <div class="row nomargin">
                                     <p class="nomargin"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a>
                                         <!--EDIT TRACKING -->
-                                        <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a> {% include "dashboard_subtemplates/edit_tracking_modal.html" %}
+                                        <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a> 
+                                        
                                     </p>
                                 </div>
                             </div>
@@ -467,7 +486,7 @@
                                     </a>
                                     </p>
                                 </div>
-                                {% include "dashboard_subtemplates/message_to_host_modal.html" %}
+                              
                             </div>
                         </div>
 
@@ -522,15 +541,16 @@
                     <div class="col-sm-3" style="padding-left: 5px;">
                         <h3 class="nomargin">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
-                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             Archive Shipment</button>
-                        {% include "dashboard_subtemplates/package_received_modal.html" %}
-                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
-                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        		onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                             Report an Issue</button>
-                        <!--load sub template tag with this omdal -->
-                        {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
+
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
 
@@ -573,7 +593,7 @@
                                 <div class="row nomargin">
                                     <p class="nomargin"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a>
                                         <!--EDIT TRACKING -->
-                                        <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a> {% include "dashboard_subtemplates/edit_tracking_modal.html" %}
+                                        <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a> 
                                     </p>
                                 </div>
                             </div>
@@ -592,7 +612,6 @@
                                         </a>
                                     </p>
                                 </div>
-                                {% include "dashboard_subtemplates/message_to_host_modal.html" %}
                             </div>
                         </div>
 
