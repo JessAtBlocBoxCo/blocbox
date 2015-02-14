@@ -48,7 +48,7 @@
                <div class="col-sm-2 nopadding">
                 <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button"  
                 	{% if hostonly %} onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';"
-                	{% if else %} onclick="window.location='/transactions/startashipment';"
+                	{% else %} onclick="window.location='/transactions/startashipment';"
                   {% endif %}
                 >
                 </button>
