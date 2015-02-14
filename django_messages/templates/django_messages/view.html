@@ -24,10 +24,10 @@
         <div class="col-sm-12 paddingtop30px">
             <textarea class="form-control" placeholder="Reply" rows="4"></textarea>
             {% ifequal message.recipient.pk user.pk %}
-            <div class="col-sm-2 col-sm-offset-8">
+            <div class="col-sm-2 col-sm-offset-8 nopaddingleft">
             <a class="btn bluebutton" href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
             </div>
-            <div class="col-sm-2 nopadding">
+            <div class="col-sm-2 nopaddingright">
             <a class="btn greybutton" href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
             </div>
         </div>
