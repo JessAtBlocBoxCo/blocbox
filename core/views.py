@@ -252,7 +252,6 @@ def message_host_modal(request, message_trans_id):
     trans = Transaction.objects.get(pk=message_trans_id)
     host = trans.host
     sender = trans.enduser
-    #note: the email template is in core/blocbox/templates/emails...
     if request.method == 'POST':
         message_form = MessageHost(request.POST)
         if message_form.is_valid():
