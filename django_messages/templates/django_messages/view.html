@@ -21,11 +21,7 @@
             <dd class="textright greytext">{{ message.sent_at|date:_("DATETIME_FORMAT")}}</dd>
         </div>
         <div class="col-sm-10 paddingbottom20px">
-            <textarea class="form-control" placeholder="Reply" rows="3"></textarea>
-            <div class="chatbox whitebackground">
-                <br />
-                <br />
-            </div>
+            <textarea class="form-control" placeholder="Reply" rows="4"></textarea>
             {% ifequal message.recipient.pk user.pk %}
             <a href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
             <a href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
