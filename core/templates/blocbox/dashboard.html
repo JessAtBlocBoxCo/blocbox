@@ -164,19 +164,24 @@
         </div>
         <!--end define thank-you modals00>       	      		       	
                	      		     
-    <!--INCLUD ALL OF THE MODAL SUBTEMPLATES --> 
-						{% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
-						{% include "dashboard_subtemplates/message_to_host_modal.html" %}
-						{% include "dashboard_subtemplates/package_received_modal.html" %}
-						{% include "dashboard_subtemplates/enter_tracking_modal.html" %}
-						{% include "dashboard_subtemplates/edit_tracking_modal.html" %}
-    <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
+
        
         <div class="col-xs-12 col-md-9 col-lg-8 nopaddingsidesmobile nopaddingright">
             <!--SHIPMENTS DELIVERED - WAITING TO BE PICKED UP -->
             <!--<h6 class="ltbluetext margintop10px nomarginbottom nopadding">PACKAGES WAITING TO BE PICKED UP</h6>
             <p class="greytext">Click the package received button when you've picked up the package</p> -->
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
+               
+               
+        <!--INCLUD ALL OF THE MODAL SUBTEMPLATES --> 
+						{% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}
+						{% include "dashboard_subtemplates/message_to_host_modal.html" %}
+						{% include "dashboard_subtemplates/package_received_modal.html" %}
+						{% include "dashboard_subtemplates/enter_tracking_modal.html" %}
+						{% include "dashboard_subtemplates/edit_tracking_modal.html" %}
+    <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->           
+               
+               
                 {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 <!--divider defining the whole current shipments part -->
                 <div class="row dashinfobox dashfont" style="padding-right: 5px;">
