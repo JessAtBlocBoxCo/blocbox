@@ -33,16 +33,9 @@
 
 "JESS TO-DO"
 
-
-
-2. expected delivery window: make sure dayrangestart and dayrangeend are no longer used/ delete them where they show up
-3.
-JESS: shipment - Fix the shipment message to user 
 JESS: shipment - pass the host_package-conflict indicator to the transaction table\\-
-JESS: shipment - fix the day in week/warning thing - it need to be day of month
-JESS: shipment - calendar: define a function when user enters date from and date to that forces date to to be after date_from]]
-JESS: shipment - issue with payment option (bundled vers speciifc) and per-package items like "status" - thse are difference sorts.. so paypal shoudl just be for the money, transactions table for the favor/shipment/transaction
-JESS: shipment - tracking information - automate that/connect to carrier - also figure out which tracking number code matched to what carrier
+JESS: shipment - issue with payment option (bundled vers speciifc) and per-package items like "status" - 
+	thse are difference sorts.. so paypal shoudl just be for the money, transactions table for the favor/shipment/transaction
 JESS: shipment - figure out what to do with conflicts that end more in more than the next month out - add a new month?
 JESS: shipment - select a host - then the process - LOAD - to connect to a host...
 JESS: shipment - shippackage: connect the host address fields to data table so populate,

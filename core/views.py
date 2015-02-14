@@ -11,7 +11,7 @@ from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
 from core.forms import UserForm, HostForm, ContactUs
 from connections.forms import ConnectForm
-from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue
+from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
 #Important the authentication and login functions -- not sure that i can use with custom model
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
@@ -195,7 +195,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     enduser_issue_form = None #if they dont open the report an issue modal
     if issue_id:     #if they open the EndUser Issues Modal/Button
         enduser_report_issue_modal(request, issue_id)
-    compose_form = None 
+    message_form = None 
     if message_trans_id: #if they open the message host modal
         message_host_modal(request, message_trans_id)     
     return render(request, 'blocbox/dashboard.html', {
@@ -203,7 +203,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'connections_all': connections_all, 'connections_count': connections_count,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
-        'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'compose_form': compose_form, 
+        'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'message_form': message_form, 
         #shipments lists
         'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
         'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 
@@ -247,6 +247,27 @@ def notify_admin_enduser_issue(request, trans_id):
     subject = "[ENDUSER_ISSUE]: User " + str(enduser.email) + " has reported an issue with Order " + str(trans.id)
     send_mail(subject, message, 'BlocBox EndUser Issues <admin@blocbox.co>', ['john@blocbox.co', 'admin@blocbox.co',]) #last is the to-email
     return HttpResponse("An email has been sent to the BlocBox team to notify them about this issue.")
+
+def message_host_modal(request, message_trans_id):
+    trans = Transaction.objects.get(pk=message_trans_id)
+    host = trans.host
+    sender = trans.enduser
+    #note: the email template is in core/blocbox/templates/emails...
+    message = render_to_string('emails/notify_user_receivedmessage.txt, { '
+    if request.method == 'POST':
+        message_form = MessageHost(request.POST)
+        if message_form.is_valid():
+            message_body = message_form.cleaned_data['message_body']
+            #note: the email template is in core/blocbox/templates/emails..
+            message = return_to_string('emails/notify_user_receivedmessage_dashboard.txt', {'host': host, 'sender': sender, 'trans': trans})
+            subject = "[BLOCBOX MESSAGE]: User " + str(sender.email) + "has sent you a message regarding Order " + str(trans.id)
+            send_mail(subject, message, 'Blocbox Messages <admin@blocbox.co>', [host.email,])
+        else:
+            print compose_form.errors
+    else:
+        message_form = MessageHost()
+    return HttpResponse("OK")
+
 
 def dashboard_tracking_modal(request, track_id):
     trans = Transaction.objects.get(pk=track_id)  
@@ -325,26 +346,6 @@ def dashboard_tracking_modal(request, track_id):
     return HttpResponse("OK")       
 
 
-def message_host_modal(request, message_trans_id):
-    trans = Transaction.objects.get(pk=message_trans_id)
-    if request.method == 'POST':
-        compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
-        sender = request.user
-    		#Add recipient here?
-        recipient = trans.host.email
-        compose_form.fields['recipient'].initial = recipient	
-        if compose_form.is_valid():
-            compose_form.save(sender=request.user)
-            subject = compose_form.cleaned_data['subject']
-            body = compose_form.cleaned_data['body']
-            recipient_email_list = compose_form.cleaned_data['recipient']
-            for recipient in recipient_email_list:
-                notify_user_received_message(request, sender.id, recipient_email, subject, body) 
-        else:
-            print compose_form.errors
-    else:
-        compose_form = ComposeForm(recipient_filter=None)
-    return HttpResponse("OK")
 
 
 
