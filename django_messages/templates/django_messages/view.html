@@ -27,7 +27,7 @@
             <div class="col-sm-2 col-sm-offset-8">
             <a class="btn bluebutton" href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
             </div>
-            <div class="col-sm-2">
+            <div class="col-sm-2 nopadding">
             <a class="btn greybutton" href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
             </div>
         </div>
