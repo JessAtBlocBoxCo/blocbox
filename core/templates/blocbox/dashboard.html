@@ -55,7 +55,7 @@
                   {% endif %}
                 >
                 </button>
-                   </div>
+                </div>
                    <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px" >Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                 </div>
                 <!--<button type="button" name="startashipment" class="bluebutton marginbottom30px" style="height: 50px" {% if hostonly %} onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
@@ -73,10 +73,6 @@
                 </div>
             </div>
             
-            <!-- <div class="col-xs-12 ">
-                <button type="button" name="startafavor" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/transactions/startafavor/host{{hostonly.id}}';">
-                    {% else %} onclick="window.location='/transactions/startafavor';"> {% endif %} Start a Favor</button>
-            </div> -->
 
             <!--Find a new host button-->
             <div class="col-md-10 col-md-offset-1 col-lg-12 marginbottom15px nopadding">
@@ -89,6 +85,16 @@
                 </div>
             </div>
 
+						<!--Account Balance-->
+					{% if user.account_balance %}
+            <div class="profileboxline margintop20px marginbottom20px"></div>
+            <div class="col-xs-12">
+                <p class="darkgreytext tinytext textcenter">ACCOUNT BALANCE</p>
+                <p class="pricetext textcenter">{{ user.account_balance }} <!-- {% if connections_count = 1 %} neighbor {% else %} neighbors {% endif %} --></p>
+            </div>
+					{% endif %}
+						
+						<!--neighborhood connections-->
             <div class="profileboxline margintop20px marginbottom20px"></div>
             <div class="col-xs-12">
                 <p class="darkgreytext tinytext textcenter">NEIGHBORHOOD CONNECTIONS</p>
