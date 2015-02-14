@@ -165,7 +165,7 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
     #Account balance
     if enduser.account_balance:
         if enduser.account_balance >= trans_created.price:
-            remaining_balance = enduser.account_balance - price
+            remaining_balance = enduser.account_balance - trans_created.price
         else:
             remaining_balance = 0
     else:
