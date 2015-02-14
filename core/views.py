@@ -253,13 +253,13 @@ def notify_admin_enduser_issue(request, trans_id):
     
 def message_host_modal(request, message_trans_id):
     trans = Transaction.objects.get(pk=message_trans_id)
+    recipient_email = trans.host.email
+    recipient_email_list = []
+    recipient_email_list.append(recipient_email)
+    sender = request.user
     if request.method == 'POST':
-        compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
-        sender = request.user
+        compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id        
     		#Add recipient here?
-        recipient_email = trans.host.email
-        recipient_email_list = []
-        recipient_email_list.append(recipient_email)
         if compose_form.is_valid(): 
             body = compose_form.cleaned_data['body']
             compose_form.save(sender=request.user)            
