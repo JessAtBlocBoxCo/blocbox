@@ -33,13 +33,13 @@
 <div class="col-md-3 col-lg-2 mobilehide nopaddingright">
     <div class="dashpiccontainer">
         {% if user.profile_pic_uploaded %}
-        <img class="dashpic" src="{{host.profile_pic_uploaded.url}}" />{% else %}
+        <img class="dashpic" src="{{user.profile_pic_uploaded.url}}" />{% else %}
         <br>
         <br>
         <p class="textcenter"> <a href='.'> Upload a <br> profile picture!</p>	
             {% endif %}
     </div>
-    <h3 class="margintop10px nomarginbottom textcenter">{{ host.first_name }}</h3>
+    <h3 class="margintop10px nomarginbottom textcenter">{% trans "Sender" %}</h3>
     <p class="darkgreytext margintop5px tinytext textcenter">VIEW PROFILE</p>
 
     <!--start a shipment/start a favor buttons-->
