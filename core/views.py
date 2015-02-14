@@ -257,7 +257,6 @@ def message_host_modal(request, message_trans_id):
     		#Add recipient here?
         recipient_email = trans.host.email
         recipient_email_list = []
-        compose_form.fields['recipient'].initial = recipient	
         if compose_form.is_valid():
             compose_form.save(sender=request.user)
             subject = "Re: Transaction ID " + str(trans.id)
