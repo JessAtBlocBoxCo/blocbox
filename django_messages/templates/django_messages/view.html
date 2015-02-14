@@ -4,7 +4,7 @@
     <div class="col-sm-7 col-sm-offset-1 offwhitebackground paddingtopbottom20px">
         <dl class="message-headers">
             <!-- <dt>{% trans "Subject" %}</dt> -->
-            <h3 class="nomargintop">{{ message.subject }}</h3>
+            <h3 class="paddingleft15px nomargintop">{{ message.subject }}</h3>
 
             <!--  <dt>{% trans "Sender" %}</dt>
     <dd>{{ message.sender }}</dd>
@@ -23,12 +23,14 @@
         <div class="profileboxline"></div>
         <div class="col-sm-12 paddingtop30px">
             <textarea class="form-control" placeholder="Reply" rows="4"></textarea>
+            <div class="row">
             {% ifequal message.recipient.pk user.pk %}
             <div class="col-sm-2 col-sm-offset-8 nopaddingleft">
             <a class="btn bluebutton" href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
             </div>
             <div class="col-sm-2 nopaddingright">
             <a class="btn greybutton" href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
+            </div>
             </div>
         </div>
  
