@@ -1,7 +1,7 @@
 {% extends "django_messages/base.html" %} {% load i18n %} {% load url from future %} {% block title %}View Message{% endblock %} {% block messagingcontent %}
 
-<div class="row">
-<div class="col-sm-8 col-sm-offset-1">
+<div class="row paddingtop30px">
+<div class="col-sm-8 col-sm-offset-1 offwhitebackground">
 <dl class="message-headers">
     <dt>{% trans "Subject" %}</dt>
     <dd><strong>{{ message.subject }}</strong>
