@@ -248,23 +248,31 @@ def notify_admin_enduser_issue(request, trans_id):
     send_mail(subject, message, 'BlocBox EndUser Issues <admin@blocbox.co>', ['john@blocbox.co', 'admin@blocbox.co',]) #last is the to-email
     return HttpResponse("An email has been sent to the BlocBox team to notify them about this issue.")
 
-def message_host_modal(request, message_trans_id):
+    
+ def message_host_modal(request, message_trans_id):
     trans = Transaction.objects.get(pk=message_trans_id)
-    host = trans.host
-    sender = trans.enduser
     if request.method == 'POST':
-        message_form = MessageHost(request.POST)
-        if message_form.is_valid():
-            message_body = message_form.cleaned_data['message_body']
-            #note: the email template is in core/blocbox/templates/emails..
-            message = render_to_string('emails/notify_user_receivedmessage_dashboard.txt', {'host': host, 'sender': sender, 'trans': trans, 'message_body': message_body})
-            subject = "[BLOCBOX MESSAGE]: User " + str(sender.email) + "has sent you a message regarding Order " + str(trans.id)
-            send_mail(subject, message, 'Blocbox Messages <admin@blocbox.co>', [host.email,])
+        compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
+        sender = request.user
+    		#Add recipient here?
+        recipient_email = trans.host.email
+        recipient_email_list = []
+        compose_form.fields['recipient'].initial = recipient	
+        if compose_form.is_valid():
+            compose_form.save(sender=request.user)
+            subject = "Re: Transaction ID " + str(trans.id)
+            body = compose_form.cleaned_data['body']
+            recipient_email_list.append(recipient_email)
+            for recipient in recipient_email_list:
+                notify_user_received_message(request, sender.id, recipient_email, subject, body) 
         else:
             print compose_form.errors
     else:
-        message_form = MessageHost()
+        compose_form = ComposeForm(recipient_filter=None)
     return HttpResponse("OK")
+    
+    
+    
 
 
 def dashboard_tracking_modal(request, track_id):

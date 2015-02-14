@@ -10,13 +10,13 @@
 												<h4 class="ltbluetext">Send a message to {{sh.trans.host.first_name}} about shipment {{sh.trans.id}} </h4>
 										   	<form action="/dashboard/message_id{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
 										        		{% csrf_token %} 
-										        				{{ message_form.non_field_errors }}
-					   												{{ message_form.message_body.errors }}
+										        				{{ compose_form.non_field_errors }}
+					   												{{ compose_form.body.errors }}
 										        		<!--{{ message_form.as_table }} -->
 										        		<!--compose form has recipient, subject, body -->
 
 					   									<div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-	      												<textarea class="form-control" name="message_body" id="id_message_body" rows="4"> </textarea>   	    	   
+	      												<textarea class="form-control" name="body" id="id_body" rows="4"> </textarea>   	    	   
 	 														</div>
 	 															
               								<div class="row paddingbottom10px"> 
