@@ -247,6 +247,6 @@ def notify_user_received_message(request, sender_id, recipient_email, subject, b
     recipient = get_object_or_404(UserInfo, email=recipient_email)
     message = render_to_string('emails/notify_user_receivedmessage.txt', 
         { 'subject': subject, 'body': body, 'recipient': recipient, 'sender': sender, })
-    subject = "Your Neighbor " + str(sender.first_name) + " has sent you a message"
+    subject = "Your neighbor " + str(sender.first_name) + " has sent you a message"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [recipient.email,]) 
     return HttpResponse("An email has been sent to the user.")
