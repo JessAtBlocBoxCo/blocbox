@@ -46,7 +46,11 @@
             <div class="col-md-10 col-md-offset-1 col-lg-12 marginbottom15px nopadding">
                <div class="row">
                <div class="col-sm-2 nopadding">
-                <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button"  onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
+                <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button"  
+                	{% if hostonly %} onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';"
+                	{% if else %} onclick="window.location='/transactions/startashipment';"
+                  {% endif %}
+                >
                 </button>
                    </div>
                    <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px" >Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
@@ -468,7 +472,12 @@
                                 <!--Expected Delivery -->
                                     <h4 class="nomargin">Scheduled Delivery</h4>
                                     <p class="nomargin">
-                                        {% if sh.aftership.expected_delivery %} {{ sh.aftership.expected_delivery_notime }} {% else %} {% if sh.trans.dayrangestart %} You expected {% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %} {% endif %}
+                                        {% if sh.aftership.expected_delivery %} {{ sh.aftership.expected_delivery_notime }} 
+                                        			{% else %} 
+                                        					{% if sh.trans.dayrangestart %} 
+                                        							You expected the package to arrive
+                                        								{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }}
+                                        								{% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %} {% endif %}
                                         <!--if has dayrangestart-->
                                         {% endif %}
                                     </p>
