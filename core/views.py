@@ -249,7 +249,7 @@ def notify_admin_enduser_issue(request, trans_id):
     return HttpResponse("An email has been sent to the BlocBox team to notify them about this issue.")
 
     
- def message_host_modal(request, message_trans_id):
+def message_host_modal(request, message_trans_id):
     trans = Transaction.objects.get(pk=message_trans_id)
     if request.method == 'POST':
         compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id
