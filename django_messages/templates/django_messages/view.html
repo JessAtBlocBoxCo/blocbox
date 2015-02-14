@@ -1,5 +1,6 @@
 {% extends "django_messages/base.html" %} {% load i18n %} {% load url from future %} {% block title %}View Message{% endblock %} {% block messagingcontent %}
 
+<div class="row">
 <div class="col-sm-7 col-sm-offset-1">
     <dl class="message-headers">
         <dt>{% trans "Subject" %}</dt>
@@ -99,6 +100,7 @@
         </p>
     </div>
     {% endfor %}
+</div>
 </div>
 
 
