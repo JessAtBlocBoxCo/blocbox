@@ -8,7 +8,7 @@
 									<a href="/dashboard" title="Close" class="close">X</a>																																	
 										<div class="row margintopbottom30px">
 												<h4 class="ltbluetext">Send a message to {{sh.trans.host.first_name}} about shipment {{sh.trans.id}} </h4>
-										   	<form action="/dashboard/message{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
+										   	<form action="/dashboard/message_id{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
 										        		{% csrf_token %} 
 										        				{{ message_form.non_field_errors }}
 					   												{{ message_form.message_body.errors }}
