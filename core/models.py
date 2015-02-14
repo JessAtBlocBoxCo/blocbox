@@ -50,6 +50,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     FBlink = models.URLField('Facebook Profile Link', blank=True)
     intro_message = models.CharField(max_length=350, blank=True) #Intro Message to Host
     pickup_time = models.CharField(max_length=150, blank=True) 
+    #account balane - amount of money left if bought bundled
+    account_balance = models.DecimalField("Account Balance", max_digits=6, decimal_places=2, blank=True, null=True)
     #the following i thought were on AbstractBaseUser but aren't showing up
     #had to set a lot of these up as blank=true because of custom form may want to rechange later
     is_admin = models.BooleanField('Admin User',default=False, blank=True)
@@ -88,7 +90,6 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     price_package_bundle10 = models.DecimalField("Price Charged for Bundle of 10 Packages", max_digits=4, decimal_places=2, blank=True, null=True)
     price_package_month20 = models.DecimalField("Price Charged for Monthly (up to 20)", max_digits=4, decimal_places=2, blank=True, null=True)
     price_package_annual = models.DecimalField("Price Charged for Annual Shipmetns", max_digits=5, decimal_places=2, blank=True, null=True)   
-    
     #addingj custom or text fields
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
     customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)
