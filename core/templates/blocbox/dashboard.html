@@ -251,8 +251,18 @@
                             <div class="col-sm-4">
                                 <!--Status and shipment type-->
                                 <h4 class="col-sm-10 col-sm-offset-2 nomargintopbottom">Delivery Option</h4>
-                                <p class="col-sm-10 col-sm-offset-2  nomargintopbottom">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}
-                                    </p>
+                                <p class="col-sm-10 col-sm-offset-2  nomargintopbottom">
+                                {% if sh.trans.on_aftership %}
+                                			{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} 
+                                			{% else %} 
+                                				{{ sh.trans.shipment_courier }} 
+                                			{% endif%}
+                               	{% else %} You expected the package to arrive
+                               				      {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    				{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} day shipping &nbsp; 
+                                    				{% endif %}
+                               	{% endif %} <!--on aftership -->
+                                </p>
                             </div>
                             <!--Status and date delivered-->
                             <div class="col-sm-4 nopaddingright">
@@ -355,11 +365,17 @@
                             </div>
                         </div>
                         <div class="row">
-                            <!--Expected Delivery -->
+                            <!--Delivery Option??-->
                             <div class="row paddingtop10px">
                                 <div class="col-sm-4">
                                     <h4 class="nomargin">Delivery Option</h4>
-                                    <p class="nomargin">{% if sh.trans.dayrangestart == sh.trans.dayrangeend %} {{ sh.trans.dayrangestart }} day shipping {% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %}
+                                    <p class="nomargin">
+                                    			{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} 	
+                                    			{% else %} You expected it to arrive
+                                    				{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    				{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} day shipping &nbsp; 
+                                    				{% endif %}
+                                    			(% endif %}	
                                     </p>
                                 </div>
                             </div>
@@ -459,8 +475,18 @@
                             <div class="col-sm-4">
                                 <!--Status and shipment type-->
                                     <h4 class="nomargin">Delivery Option</h4>
-                                    <p class="nomargin">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} ( {{ sh.trans.shipment_courier }} ) {% endif%}
-                                    </p>
+                                  <p class="nomargin"> 
+                                    {% if sh.trans.on_aftership %}
+                                			{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} 
+                                			{% else %} 
+                                					{{ sh.trans.shipment_courier }} 
+                                			{% endif%}
+                               			{% else %} You expected the package to arrive
+                               				      {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    				{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} day shipping &nbsp; 
+                                    				{% endif %}
+                               			{% endif %} <!--on aftership -->
+                                  </p>
                             </div>
                             <div class="col-sm-4">
                                 {% if sh.aftership.last_checkpoint.city %}
@@ -473,12 +499,10 @@
                                     <h4 class="nomargin">Scheduled Delivery</h4>
                                     <p class="nomargin">
                                         {% if sh.aftership.expected_delivery %} {{ sh.aftership.expected_delivery_notime }} 
-                                        			{% else %} 
-                                        					{% if sh.trans.dayrangestart %} 
-                                        							You expected the package to arrive
-                                        								{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }}
-                                        								{% else %} {{ sh.trans.dayrangestart }} - {{ sh.trans.dayrangeend }} day shipping &nbsp; {% endif %} {% endif %}
-                                        <!--if has dayrangestart-->
+                                        {% else %} You expected the package to arrive
+                                        						{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }}
+                                        						{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} day shipping &nbsp; 
+                                        						{% endif %} 
                                         {% endif %}
                                     </p>
                             </div>
@@ -576,7 +600,18 @@
                         <div class="row paddingtop5px">
                             <div class="col-sm-4">
                                 <h4 class="nomargin">Delivery Option</h4>
-                                <p class="nomargin">{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%}</p>
+                                <p class="nomargin">
+                                {% if sh.trans.on_aftership %}
+                                			{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} 
+                                			{% else %}  {{ sh.trans.shipment_courier }} 
+                                			{% endif%}
+                               	{% else %} You expected the package to arrive
+                               				      {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    				{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} day shipping &nbsp; 
+                                    				{% endif %}
+                               	{% endif %} <!--on aftership -->
+                                                  
+                                </p>
                             </div>
                             <div class="col-sm-4">
                                 <!--Status and shipment type-->
