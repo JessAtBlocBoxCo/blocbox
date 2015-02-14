@@ -197,7 +197,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     trans_form_submitted = False
     if cal_form_submitted == True:
         trans = Transaction()
-        userinfo = UserInfo.objcts.get(pk=enduser.id) 
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
             if trans_form_package.is_valid():
@@ -292,9 +291,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string) + ", or" + str(day7string)               
                 trans.save() 
                 transaction_form_submitted = True
-                #Update user info table
-                userinfo.account_balance = new_account_balance
-                userinfo.save()
             else:
                 print trans_form_package.errors 
         else: 
