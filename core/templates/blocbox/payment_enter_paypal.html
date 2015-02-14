@@ -36,13 +36,27 @@
                     <table class="table">
                         <tr>
                             <th>Payment Option Selected</th>
-                            <th>Total Due</th>
+                            <th>Total</th>
                             <!-- <th rowspan="2">{{ paypal_form.render }}</th> -->
                         </tr>
                         <tr>
                             <td>{{ trans_created.youselected}}</td>
                             <td>{{ trans_created.price }}</td>
                         </tr>
+                      {% if user.account_balance %}
+                      	<tr>
+                      			<td>Acount Balance</td>
+                      			<td>{{ user.account_balance }}</td>
+                      	</tr>
+                      	<tr>
+                      			<td>Total due</td>
+                      			<td> {{trans_created.amount_due }} </td>                      			
+                      	</tr>
+                      	<tr>
+                      			<td>Remaining Balance</td>
+                      			<td> {{ remaining_balance }}</td>
+                      	</tr>
+                      {% endif %}
                     </table>
                 	</div>
                	 	<div class="col-sm-4" style="padding-top: 20px; padding-bottom: 20px;">

@@ -162,9 +162,17 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
     #THEN.. after transaction entry created - retrive the info - including transaction ID 
     #Get the transactions record that was just created
     trans_created = Transaction.objects.get(invoice=invoice)
+    #Account balance
+    if enduser.account_balance:
+        if enduser.account_balance >= trans_created.price:
+            remaining_balance = enduser.account_balance - price
+        else:
+            remaining_balance = 0
+    else:
+        remaining_balance = None
     paypal_dict = {
         "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
-        "amount": trans_created.price, #Amount of the purchase - try to pass this as an argument
+        "amount": trans_created.amount_due, #Amount of the purchase - try to pass this as an argument
         "item_name": favortype,
         "quantity": paypal_quantity,
         "cbt": returnmessage, #Sets value for return to merchant button
@@ -181,7 +189,7 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
     paypal_form = PayPalPaymentsForm(initial=paypal_dict) #in paypal/standard/forms.py
     #context = {"for: form}
     return render(request, 'blocbox/payment_enter_paypal.html', {
-		    'enduser':enduser, 'host':host, 'invoice': invoice,
+		    'enduser':enduser, 'host':host, 'invoice': invoice, 'remaining_balance': remaining_balance,
     	  'date':datenow, 'local_timezone':local_timezone, 
     	  'here': quote(request.get_full_path()), 'paypal_form': paypal_form, 'trans_created': trans_created, 'invoice': invoice,     	  
     })

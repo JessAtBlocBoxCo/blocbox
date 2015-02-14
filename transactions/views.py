@@ -197,6 +197,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     trans_form_submitted = False
     if cal_form_submitted == True:
         trans = Transaction()
+        userinfo = UserInfo.objcts.get(pk=enduser.id) 
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
             if trans_form_package.is_valid():
@@ -227,6 +228,17 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 trans.host = host
                 trans.enduser = enduser
                 trans.invoice = invoice
+                #Account balance/ create amount_due
+                if enduser.account_balance:
+                    if enduser.account_balance >= price:
+                        trans.amount_due = 0
+                        new_account_balance = enduser.account_balance - price
+                    else:
+                        trans.amount_due = enduser.price - enduser.account_balance
+                        new_account_balance = 0
+                else:
+                    trans.amount_due = price
+                    new_account_balance = None
                 arrivalwindow_days_count = trans_form_package.cleaned_data['packagedays_count']
                 trans.arrivalwindow_days_count = arrivalwindow_days_count
                 day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
@@ -280,6 +292,9 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string) + ", or" + str(day7string)               
                 trans.save() 
                 transaction_form_submitted = True
+                #Update user info table
+                userinfo.account_balance = new_account_balance
+                userinfo.save()
             else:
                 print trans_form_package.errors 
         else: 
