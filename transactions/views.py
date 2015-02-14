@@ -259,17 +259,24 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     trans.arrivalwindow_day7 = day7      
                 if arrivalwindow_days_count == 1:
                     trans.arrivalwindow_string = str(day1string)
+                    trans.arrivalwindow_lastday = day1
                 if arrivalwindow_days_count == 2:
                     trans.arrivalwindow_string = str(day1string) + ", or" + str(day2string)
+                    trans.arrivalwindow_lastday = day2
                 if arrivalwindow_days_count == 3:
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", or" + str(day3string)
+                    trans.arrivalwindow_lastday = day3
                 if arrivalwindow_days_count == 4:
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", or " + str(day4string)
+                    trans.arrivalwindow_lastday = day4
                 if arrivalwindow_days_count == 5:
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", or" + str(day5string)
+                    trans.arrivalwindow_lastday = day5
                 if arrivalwindow_days_count == 6:
                 	  trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", or" + str(day6string)
+                		trans.arrivalwindow_lastday = day6
                 if arrivalwindow_days_count == 7:
+                	  trans.arrivalwindow_lastday = day7
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string) + ", or" + str(day7string)               
                 trans.save() 
                 transaction_form_submitted = True
