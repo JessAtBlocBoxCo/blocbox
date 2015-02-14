@@ -196,6 +196,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     if issue_id:     #if they open the EndUser Issues Modal/Button
         enduser_report_issue_modal(request, issue_id)
     message_form = None 
+    recipient_email_list = None
     if message_trans_id: #if they open the message host modal
         message_host_modal(request, message_trans_id)     
     return render(request, 'blocbox/dashboard.html', {
@@ -204,6 +205,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
         'track_id': track_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'message_form': message_form, 
+        'recipient_email_list': recipient_email_list,
         #shipments lists
         'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
         'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 
@@ -257,11 +259,12 @@ def message_host_modal(request, message_trans_id):
     		#Add recipient here?
         recipient_email = trans.host.email
         recipient_email_list = []
+        recipient_email_list.append(recipient_email)
         if compose_form.is_valid():
-            compose_form.save(sender=request.user)
-            subject = "Re: Transaction ID " + str(trans.id)
+            subject = 
             body = compose_form.cleaned_data['body']
-            recipient_email_list.append(recipient_email)
+            compose_form.save(sender=request.user)
+            
             for recipient in recipient_email_list:
                 notify_user_received_message(request, sender.id, recipient_email, subject, body) 
         else:
