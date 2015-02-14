@@ -32,12 +32,11 @@
 
 
 "JESS TO-DO"
-
-JESS: shipment - pass the host_package-conflict indicator to the transaction table\\-
+JESS: make the "apply your account balance" button work - linke to a form or something
+JESS: make the account balance work - dedcut from balance versus charge
+JESS: stop it from saying "This field is required" during start a shipmetn process at "select a paymetn option"
 JESS: shipment - issue with payment option (bundled vers speciifc) and per-package items like "status" - 
 	thse are difference sorts.. so paypal shoudl just be for the money, transactions table for the favor/shipment/transaction
-JESS: shipment - figure out what to do with conflicts that end more in more than the next month out - add a new month?
-JESS: shipment - select a host - then the process - LOAD - to connect to a host...
 JESS: shipment - shippackage: connect the host address fields to data table so populate,
 JESS: shipment - paypal PDT
 JESS: shipment - paypal PRO	
