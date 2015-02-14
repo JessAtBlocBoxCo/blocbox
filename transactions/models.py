@@ -18,7 +18,8 @@ class Transaction(models.Model):
     enduser = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='transaction_enduser', blank=True, null=True) #thius shiws up as payee_id
     #host = models.CharField("Host/Provider", max_length=100, blank=True, null=True)
     #enduser = models.CharField("EndUser/Receiver", max_length=100, blank=True, null=True)
-    price = models.DecimalField('Amount Paid', max_digits=6, decimal_places=2, blank=True, null=True)
+    price = models.DecimalField('Price', max_digits=6, decimal_places=2, blank=True, null=True)
+    amount_due = models.DecimalField('Amount Due', max_digits=6, decimal_places=2, blank=True, null=True)
     payment_option = models.CharField("Payment Option", max_length=30, blank=True, null=True)
     youselected = models.CharField(max_length=50, blank=True, null=True)  
     paypal_quantity = models.IntegerField(blank=True, null=True)

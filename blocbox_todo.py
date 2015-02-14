@@ -33,6 +33,8 @@
 
 "JESS TO-DO"
 JESS: make the "apply your account balance" button work - linke to a form or something
+JESS: if account balcne is less than total - allow to apply account balance but reduce total
+	-- so they're not charged "price"' crate a new variable for residual_price or price_balance
 JESS: make the account balance work - dedcut from balance versus charge
 JESS: stop it from saying "This field is required" during start a shipmetn process at "select a paymetn option"
 JESS: shipment - issue with payment option (bundled vers speciifc) and per-package items like "status" - 
