@@ -16,7 +16,7 @@
         </dl>
         <div class="col-sm-10 col-sm-offset-2 paddingbottom20px">
             <div class="chatbox whitebackground">
-                {{ message.body|linebreaksbr }}
+                <h6>{{ message.body|linebreaksbr }}</h6>
             </div>
             <dd class="textright greytext">{{ message.sent_at|date:_("DATETIME_FORMAT")}}</dd>
         </div>
