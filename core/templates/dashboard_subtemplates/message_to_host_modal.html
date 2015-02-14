@@ -21,9 +21,9 @@
 	 														
 	 														<!--HIDDEN FIELDS-->
 	 														{{ compose_form.subject.errors }}
-	 														<input type="hidden" name="subject"   value="Re: Transaction ID {{ trans.id }}">  
+	 														<input type="hidden" name="subject"   value="Re: Transaction ID {{ sh.trans.host.first_name }}">  
 	 														{{ compose_form.recipient.errors }}
-	 														<input type="hidden" name="recipient" value="{{recipient_email_list}}">
+	 														<input type="hidden" name="recipient" value="{{sh.trans.host.email}}">
 	 														<!--SUBMIT BUTON-->
               								<div class="row paddingbottom10px"> 
                        					<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
