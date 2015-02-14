@@ -225,7 +225,8 @@
                                 <p class="textcenter">DELIVERED</p>
                                 {% if sh.trans.tracking %}
                                 <h4 class="col-sm-11 col-sm-offset-1 nomargintopbottom">Tracking Number</h4>
-                                <p class="col-sm-11 col-sm-offset-1 dashtext"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a></p>{% endif %}
+                                <p class="col-sm-11 col-sm-offset-1 dashtext"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a></p>
+                                {% endif %}
                             </div>
                             <!--End Neighbor Column (packages waiting to be picked up) -->
 
@@ -254,13 +255,12 @@
                                 <p class="col-sm-10 col-sm-offset-2  nomargintopbottom">
                                 {% if sh.trans.on_aftership %}
                                 			{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} 
-                                			{% else %} 
-                                				{{ sh.trans.shipment_courier }} 
+                                			{% else %} 	{{ sh.trans.shipment_courier }} 
                                 			{% endif%}
                                	{% else %} You expected the package to arrive
-                               				      {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
-                                    				{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} day shipping &nbsp; 
-                                    				{% endif %}
+                               				{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    	{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} day shipping &nbsp; 
+                                    	{% endif %}
                                	{% endif %} <!--on aftership -->
                                 </p>
                             </div>
@@ -375,7 +375,7 @@
                                     				{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
                                     				{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} day shipping &nbsp; 
                                     				{% endif %}
-                                    			(% endif %}	
+                                    			{% endif %}	
                                     </p>
                                 </div>
                             </div>
@@ -478,8 +478,7 @@
                                   <p class="nomargin"> 
                                     {% if sh.trans.on_aftership %}
                                 			{% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} 
-                                			{% else %} 
-                                					{{ sh.trans.shipment_courier }} 
+                                			{% else %} 	{{ sh.trans.shipment_courier }} 
                                 			{% endif%}
                                			{% else %} You expected the package to arrive
                                				      {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
