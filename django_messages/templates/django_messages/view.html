@@ -6,6 +6,7 @@
     <dt>{% trans "Subject" %}</dt>
     <dd><strong>{{ message.subject }}</strong>
     </dd>
+    
     <dt>{% trans "Sender" %}</dt>
     <dd>{{ message.sender }}</dd>
     <dt>{% trans "Date" %} </dt>
@@ -13,7 +14,9 @@
     <dt>{% trans "Recipient" %}</dt>
     <dd>{{ message.recipient }}</dd>
 </dl>
+<div class="col-sm-10 col-sm-offset-2 whitebackground">
 {{ message.body|linebreaksbr }}
+    </div>
 <br />
 <br /> {% ifequal message.recipient.pk user.pk %}
 <a href="{% url 'messages_reply' message.id %}">{% trans "Reply" %}</a> {% endifequal %}
