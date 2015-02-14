@@ -55,10 +55,8 @@ class EndUserIssue(forms.ModelForm):
 				model = Transaction
 				fields = ('enduser_issue',)
 
-class MessageHost(forms.ModelForm):
-    class Meta:
-        model = Transaction
-        fields = ('message_body',)
+class MessageHost(forms.Form):
+    message_body = forms.CharField(max_length=700, required=False)
 """
   
 #connect form for useres that are already registered, still works off of userinfo 
