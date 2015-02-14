@@ -65,6 +65,8 @@ JESS: dashboard - create a field for profilepic links - the NULL/DEFAULT value i
 JESS: dashboard - connect to transactions table to populate actually transactions
 
 6.
+JESS: messages - Edit "view" page to allow instant reply from message
+JESS: messages - tell john how to style the compose messages page
 JESS: messages - create reminder email that is sent to user if tracking number has not been entered
 JESS: messages - connection success email to user - add link in email to sign in
 JESS: messages - Change {{ message.sender }} to first and last name instead of email
