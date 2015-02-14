@@ -14,8 +14,11 @@
     <dd>{{ message.recipient }}</dd> -->
     
 </dl>
-<div class="col-sm-10 col-sm-offset-2 whitebackground">
+<div class="col-sm-10 col-sm-offset-2">
+    <dd class="textleft">{{ message.sent_at|date:_("DATETIME_FORMAT")}}</dd>
+    <div class="profilebox whitebackground">
 {{ message.body|linebreaksbr }}
+    </div>
     </div>
 <br />
 <br /> {% ifequal message.recipient.pk user.pk %}
