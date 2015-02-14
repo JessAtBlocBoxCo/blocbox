@@ -274,7 +274,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     trans.arrivalwindow_lastday = day5
                 if arrivalwindow_days_count == 6:
                 	  trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", or" + str(day6string)
-                		trans.arrivalwindow_lastday = day6
+                    trans.arrivalwindow_lastday = day6
                 if arrivalwindow_days_count == 7:
                 	  trans.arrivalwindow_lastday = day7
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string) + ", or" + str(day7string)               
