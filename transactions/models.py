@@ -40,6 +40,7 @@ class Transaction(models.Model):
     arrivalwindow_day5 = models.DateField(blank=True, null=True)
     arrivalwindow_day6 = models.DateField(blank=True, null=True)
     arrivalwindow_day7 = models.DateField(blank=True, null=True)
+    arrivalwindow_lastday = models.DateField(blank=True, null=True)
     arrivalwindow_string = models.CharField(max_length=200, blank=True, null=True)
     #to get a date use DateField (datetime.date.today), to get date with time use DateTimeField
     #datenow = models.DateField("Date When Requested (Duplicative but needed)", blank=True, null=True)
