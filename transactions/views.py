@@ -233,7 +233,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                         trans.amount_due = 0
                         new_account_balance = enduser.account_balance - price
                     else:
-                        trans.amount_due = enduser.price - enduser.account_balance
+                        trans.amount_due = price - enduser.account_balance
                         new_account_balance = 0
                 else:
                     trans.amount_due = price
