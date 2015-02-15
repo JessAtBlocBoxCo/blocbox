@@ -1,8 +1,12 @@
 <!--this is blocbox/core/templates/calendar_subtemplates/bimonthly_calendar_withcheckboxes.html 
 note, bootstratp td classes: active, success, danger, warning, info -- usettttt some of these for the cal/ovlerapping dates test mobile edit test edit  -->
-				
-				
-<form  method="post" role="form" action=".">  
+
+
+{% if payment_needed %}			
+	<form  method="post" role="form" action=".">  
+{% else %}
+	<form method="post" role="form" action="/payment/host{{host.id}}/invoice{{invoice}}/favortypepackage/balanceTrue/">
+{% endif %}
 			
 	{% csrf_token %} {{ cal_form.non_field_errors }}
 			 	
@@ -110,9 +114,9 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
  
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px paddingtop20px nopaddingright">
 
-<button class="bluebutton" type="submit" name="submit" style="height: 60px">	
+					<button class="bluebutton" type="submit" name="submit" style="height: 60px">	
             	  {{host.first_name}} is Available! Proceed to Payment
-           </button>
+          </button>
         	
         	</div>
     		</div>
