@@ -1,4 +1,4 @@
-
+www.
 "PRIORITIES: MUST HAPPEN BEFORE JOHN-ONLY BETA"
 2. NEXT DOOR POST. 
 3. BODEGA - APPROACH SOME -- tomorow en route out of how / 

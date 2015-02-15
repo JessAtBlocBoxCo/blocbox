@@ -67,14 +67,17 @@
 											{% if user.account_balance > trans_create.price %}                        
                          <tr>
   													<td style="padding-left: 60px; padding-top: 20px">
-                            		<button type="submit" name="submit" class="bluebutton">
+                            		<button type="button" name="submit" class="bluebutton"
+                            			onclick="window.location='/transactions/shippackage/host{{host.id}}/account_balance/trans{{trans.id}}/';"
+                            		>
                             				Apply your account balance</button>
                         		</td>
                     		</tr>
-                    	{% endif %}
+                    	{% else %}
                         <tr>
                             <td style="padding-left: 60px; padding-top: 20px">{{ paypal_form.render }}</td>
                         </tr>
+                       {% endif %}
                     </table>
                 	</div>
                 </div>

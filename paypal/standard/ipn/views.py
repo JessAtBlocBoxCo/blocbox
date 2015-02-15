@@ -23,10 +23,12 @@ from connections.models import Connection
 #import transaction models
 from transactions.models import Transaction
 from transactions.forms import CreatePackageTransaction
+from transactions.views import notify_host_shipment_paid, notify_enduser_shipment_paid
 ##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.views.generic.list import ListView
+
 
 @require_POST
 @csrf_exempt
@@ -196,38 +198,7 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
 
 
 
-def notify_host_shipment_paid(request, trans_id):
-    trans = get_object_or_404(Transaction, pk=trans_id)
-    host = trans.host
-    enduser = trans.enduser
-    if trans.arrivalwindow_days_count == 1:
-        arrivalwindow_estimate = 'on '+ str(trans.sarrivalwindow_string)
-    else:
-    	  arrivalwindow_estimate = 'on one of the following ' + str(trans.arrivalwindow_days_count) + ' days: ' + trans.arrivalwindow_string
-    message = render_to_string('emails/notify_host_shipment_paid.txt', { 
-        'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
-        'payment_option': trans.youselected, 'price': trans.price, 'arrivalwindow_estimate': arrivalwindow_estimate
-        })
-    subject = "Your Neighbor " + str(enduser.first_name) + " is sending your a package"
-    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
-    return HttpResponse("A Shipment is coming to you.")
-    
-def notify_enduser_shipment_paid(request, trans_id):
-    trans = get_object_or_404(Transaction, pk=trans_id)
-    host = trans.host
-    enduser = trans.enduser
-    if trans.arrivalwindow_days_count == 1:
-        arrivalwindow_estimate = 'on '+ str(trans.sarrivalwindow_string)
-    else:
-    	  arrivalwindow_estimate = 'on one of the following ' + str(trans.arrivalwindow_days_count) + ' days: ' + trans.arrivalwindow_string
-    message = render_to_string('emails/notify_enduser_shipment_paid.txt', { 
-        'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
-        'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
-        'payment_option': trans.youselected, 'price': trans.price, 'arrivalwindow_estimate': arrivalwindow_estimate
-        })
-    subject = "Confirmed: You're sending a package to " + str(host.first_name)
-    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,]) #last is the to-email
-    return HttpResponse("You're sending a package.") 
+
     
 """Need to implement a return view and a cancel view, from documentation:
  	You will also need to implement the 'return_url' and 'cancel_return' views

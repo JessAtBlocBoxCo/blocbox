@@ -24,6 +24,7 @@ urlpatterns = patterns('',
     url(r'^startafavor/host(?P<host_id>\d+)/$', 'transactions.views.startafavor', name='startafavor'),
     url(r'^shippackage/$', 'transactions.views.shippackage', name='shippackage_nohost'),  #this shouldn't really be used b/c not linked to a host  
     url(r'^shippackage/host(?P<host_id>\d+)/$', 'transactions.views.shippackage', name='shippackage'),
+		url(r'^shippackage/host(?P<host_id>\d+)/account_balance/trans_id(?P<trans_id>\d+)/$', 'transactions.views.shippackage_accountbalance', name='shippackage_accountbalance'),
 		#SHIPMENTthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a SHIPMENT - with dayrangestart, danrange end
     url(r'^payment/host(?P<host_id>\d+)/invoice(?P<invoice>\w+)/favortype(?P<favortype>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_shipment'),
 		#FAVORthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a FAVOR (e.g., no dayrangestart or dayrange end)

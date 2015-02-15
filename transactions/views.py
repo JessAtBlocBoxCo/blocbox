@@ -378,6 +378,48 @@ def shippackage(request, host_id): #passes the host_id argument in URL
     	  host = None
     return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host,} )
 
-
+def shippackage_accountbalance(request, host_id, trans_id):
+    enduser = request.user
+    host = get_object_or_404(UserInfo, pk=host_id)
+    trans = Transaction.objects.get(pk=trans_id)
+    trans.payment_processed = True
+    trans.save()
+    notify_host_shipment_paid(request,trans_table_id)
+    notify_enduser_shipment_paid(request, trans_table_id) 
+    return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, 'trans': trans})
 
 #paypal_ipn views at blocbox/paypal/standard/ipn/views.py
+
+
+def notify_host_shipment_paid(request, trans_id):
+    trans = get_object_or_404(Transaction, pk=trans_id)
+    host = trans.host
+    enduser = trans.enduser
+    if trans.arrivalwindow_days_count == 1:
+        arrivalwindow_estimate = 'on '+ str(trans.sarrivalwindow_string)
+    else:
+    	  arrivalwindow_estimate = 'on one of the following ' + str(trans.arrivalwindow_days_count) + ' days: ' + trans.arrivalwindow_string
+    message = render_to_string('emails/notify_host_shipment_paid.txt', { 
+        'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
+        'payment_option': trans.youselected, 'price': trans.price, 'arrivalwindow_estimate': arrivalwindow_estimate
+        })
+    subject = "Your Neighbor " + str(enduser.first_name) + " is sending your a package"
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
+    return HttpResponse("A Shipment is coming to you.")
+    
+def notify_enduser_shipment_paid(request, trans_id):
+    trans = get_object_or_404(Transaction, pk=trans_id)
+    host = trans.host
+    enduser = trans.enduser
+    if trans.arrivalwindow_days_count == 1:
+        arrivalwindow_estimate = 'on '+ str(trans.sarrivalwindow_string)
+    else:
+    	  arrivalwindow_estimate = 'on one of the following ' + str(trans.arrivalwindow_days_count) + ' days: ' + trans.arrivalwindow_string
+    message = render_to_string('emails/notify_enduser_shipment_paid.txt', { 
+        'host': host, 'enduser': enduser, 'note_to_host': trans.note_to_host, 
+        'useremail': enduser.email, 'firstname':enduser.first_name, 'lastname':enduser.last_name,
+        'payment_option': trans.youselected, 'price': trans.price, 'arrivalwindow_estimate': arrivalwindow_estimate
+        })
+    subject = "Confirmed: You're sending a package to " + str(host.first_name)
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,]) #last is the to-email
+    return HttpResponse("You're sending a package.") 
