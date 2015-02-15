@@ -35,9 +35,9 @@
            
                     <!--HIDDEN FIELDS FOR SENDER AND RECIPIENT - the values should auto population-->
 	 										{{ reply_form.subject.errors }}
-	 										<input type="hidden" name="subject" id="id_subject" value="reply_subject">  
+	 										<input type="hidden" name="subject" id="id_subject" value="{{ reply_subject }}">  
 	 										{{ compose_form.recipient.errors }}
-	 										<input type="hidden" name="recipient" id="id_recipient" value="reply_recipient" > 
+	 										<input type="hidden" name="recipient" id="id_recipient" value="{{ reply_recipient }}" > 
 	 									
 					 				<div class="row paddingtop5px">
                 		{% ifequal message.recipient.pk user.pk %}
