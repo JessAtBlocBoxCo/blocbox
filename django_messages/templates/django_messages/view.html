@@ -37,7 +37,7 @@
 	 										{{ reply_form.subject.errors }}
 	 										<input type="hidden" name="subject" id="id_subject" value="{{ reply_subject }}">  
 	 										{{ compose_form.recipient.errors }}
-	 										<input type="hidden" name="recipient" id="id_recipient" value="{{ reply_recipient }}" > 
+	 										<input type="hidden" name="recipient" id="id_recipient" value="{{ reply_recipient.email }}" > 
 	 									
 					 				<div class="row paddingtop5px">
                 		{% ifequal message.recipient.pk user.pk %}
