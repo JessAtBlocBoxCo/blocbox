@@ -130,7 +130,10 @@
                         	{% endif %}	
                         		
                         		{{ trans_form_package.non_field_errors }}
-                            {{ trans_form_package.payment_option.errors }}
+                        		
+                        		{% if transaction_form_submitted %}
+                            	{{ trans_form_package.payment_option.errors }}
+                            {% endif %}
                             
                           {% if payment_needed %}
                             <table class="table">
