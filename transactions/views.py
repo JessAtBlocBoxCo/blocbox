@@ -198,6 +198,13 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         packagedays_count = len(packagedays) 
     trans_form_submitted = False
     if cal_form_submitted == True:
+    	  #Determine if payment is needed or balance will suffice
+    	  package_price = host.price_package_per
+    	  balance = enduser.account_balance
+    	  if balance >= package_price:
+    	      payment_needed = False
+    	  else:
+    	      payment_needed = True
         trans = Transaction()
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
@@ -302,6 +309,8 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 print trans_form_package.errors 
         else: 
             trans_form_package = CreatePackageTransaction()
+    else: #if cal form not submitted
+        payment_needed = True
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
         return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
@@ -329,6 +338,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_string': packagedays_string, 'packagedays_count': packagedays_count, 'cal_form_submitted': cal_form_submitted,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits,
+		    		'payment_needed': payment_needed,
 		    })
 
 
