@@ -387,7 +387,7 @@ def shippackage_accountbalance(request, host_id, trans_id):
     trans.payment_processed = True
     trans.save()
     #update user info to subtract that amount from their balance
-    userinfo = UserInfo.objcts.get(pk=enduser.id) 
+    userinfo = UserInfo.objects.get(pk=enduser.id) 
     new_account_balance = enduser.account_balance - trans.amount_due 
     userinfo.account_balance = new_account_balance
     userinfo.save()
