@@ -175,13 +175,13 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None, ): #pass teh
     if enduser.account_balance:
         if enduser.account_balance >= trans_created.price:
             remaining_balance = enduser.account_balance - trans_created.price
-            payment_not_needed = False
+            payment_not_needed = True
         else:
             remaining_balance = 0
-            payment_not_needed = True
+            payment_not_needed = False
     else:
         remaining_balance = None
-        payment_not_needed = True
+        payment_not_needed = False
     paypal_dict = {
         "business": business, #settings.PAYPAL_RECEIVER_EMAIL,  #THIS is causing it to show as 'return to admin@blocbox.co'
         "amount": trans_created.amount_due, #Amount of the purchase - try to pass this as an argument
