@@ -33,8 +33,10 @@
                 </div>
             </div>
         </div>
-
-        {% comment %}Example reply_form integration {% if reply_form %}
+				
+				<!--THIS WAS INITALLY WRAPPE DIN COMMENT TAG TO IGNORE - COMMENT AND THEN ENDCOMMENT -->
+        <!--Example reply_form integration -->
+        {% if reply_form %}
         <h1>{% trans "Compose reply"%}</h1>
         <form action="{% url 'messages_reply' message.id %}" method="post">
             {% csrf_token %}
@@ -43,7 +45,7 @@
             </table>
             <input type="submit" value="{% trans " Send " %} &raquo;"/>
         </form>
-        {% endif %} {% endcomment %}
+        {% endif %} <!--{ % endcomment % }-->
     </div>
 
     <!--sidebar-->
