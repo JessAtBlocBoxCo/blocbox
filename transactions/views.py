@@ -223,7 +223,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     youselected="Per Package"
                     balance_created = None
                 #Next, add the data to the transaction table
-                trans.balance_created = balance_create
+                trans.balance_created = balance_created
                 trans.payment_option = payment_option
                 trans.title = title
                 trans.favortype = favortype
