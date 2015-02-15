@@ -1,0 +1,126 @@
+{% extends "django_messages/base.html" %} {% load i18n %} {% load url from future %} {% block title %}View Message{% endblock %} {% block messagingcontent %}
+
+<div class="row paddingtop30px">
+    <div class="col-sm-7 col-sm-offset-1 offwhitebackground paddingtopbottom20px">
+        <dl class="message-headers">
+            <!-- <dt>{% trans "Subject" %}</dt> -->
+            <h3 class="paddingleft15px nomargintop">{{ message.subject }}</h3>
+
+            <!--  <dt>{% trans "Sender" %}</dt>
+    <dd>{{ message.sender }}</dd>
+    <dt>{% trans "Date" %} </dt>
+    <dd>{{ message.sent_at|date:_("DATETIME_FORMAT")}}</dd>
+    <dt>{% trans "Recipient" %}</dt>
+    <dd>{{ message.recipient }}</dd> -->
+
+        </dl>
+        <div class="col-sm-10 col-sm-offset-2 paddingbottom20px">
+            <div class="chatbox whitebackground">
+                <h5>{{ message.body|linebreaksbr }}</h5>
+            </div>
+            <dd class="textright greytext">{{ message.sent_at|date:_("DATETIME_FORMAT")}}</dd>
+        </div>
+        <div class="profileboxline"></div>
+        <div class="col-sm-12 paddingtop30px">
+            <textarea class="form-control" placeholder="Reply" rows="3"></textarea>
+            <div class="row paddingtop5px">
+                {% ifequal message.recipient.pk user.pk %}
+                <div class="col-sm-2 col-sm-offset-8 nopaddingleft">
+                    <a class="btn bluebutton" href="{% url 'messages_reply' message.id %}">{% trans "Send" %}</a> {% endifequal %}
+                </div>
+                <div class="col-sm-2 nopaddingright">
+                    <a class="btn greybutton" href="{% url 'messages_delete' message.id %}">{% trans "Delete" %}</a>
+                </div>
+            </div>
+        </div>
+				
+				<!--THIS WAS INITALLY WRAPPE DIN COMMENT TAG TO IGNORE - COMMENT AND THEN ENDCOMMENT -->
+        <!--Example reply_form integration -->
+        {% if reply_form %}
+        <h1>{% trans "Compose reply"%}</h1>
+        <form action="{% url 'messages_reply' message.id %}" method="post">
+            {% csrf_token %}
+            <table>
+                {{ reply_form.as_table }}
+            </table>
+            <input type="submit" value="{% trans " Send " %} &raquo;"/>
+        </form>
+        {% endif %} <!--{ % endcomment % }-->
+    </div>
+
+    <!--sidebar-->
+    <div class="col-sm-3 mobilehide nopaddingright">
+        <div class="dashpiccontainer">
+            {% if user.profile_pic_uploaded %}
+            <img class="dashpic" src="{{user.profile_pic_uploaded.url}}" />{% else %}
+            <br>
+            <br>
+            <p class="textcenter"> <a href='.'> Upload a <br> profile picture!</p>	
+            {% endif %}
+    </div>
+    <h3 class="margintop10px nomarginbottom textcenter">{{ message.sender }}</h3>
+    <p class="darkgreytext margintop5px tinytext textcenter">VIEW PROFILE</p>
+
+    <!--start a shipment/start a favor buttons-->
+    <div class="profileboxline margintop20px marginbottom20px"></div>
+
+    <!--Start a shipment button-->
+    <div class="col-md-10 col-md-offset-1 col-lg-12 marginbottom15px nopadding">
+        <div class="row">
+            <div class="col-sm-2 nopadding">
+                <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button"  onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
+                </button>
+            </div>
+            <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px" >Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
+        </div>
+        <!--<button type="button" name="startashipment" class="bluebutton marginbottom30px" style="height: 50px" {% if hostonly %} onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
+{% else %} onclick="window.location='/transactions/startashipment';"> {% endif %} Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</button> -->
+    </div>
+
+    <!--Start a favor button-->
+    <div class="col-md-10 col-md-offset-1 col-lg-12 marginbottom15px nopadding">
+        <div class="row">
+            <div class="col-sm-2 nopadding">
+                <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button"  onclick="window.location='/transactions/startafavor/host{{hostonly.id}}';">
+                </button>
+            </div>
+            <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px" >Start a Favor</p>
+        </div>
+    </div>
+
+    <!-- <div class="col-xs-12 ">
+<button type="button" name="startafavor" class="bluebutton marginbottom30px" {% if hostonly %} onclick="window.location='/transactions/startafavor/host{{hostonly.id}}';">
+{% else %} onclick="window.location='/transactions/startafavor';"> {% endif %} Start a Favor</button>
+</div> -->
+
+    <!--Find a new host button-->
+    <div class="col-md-10 col-md-offset-1 col-lg-12 marginbottom15px nopadding">
+        <div class="row">
+            <div class="col-sm-2 nopadding">
+                <button class="searchbtn" type="button"  onclick="window.location='/search';">
+                </button>
+            </div>
+            <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px" >Find a New Host</p>
+        </div>
+    </div>
+
+    <div class="profileboxline margintop20px marginbottom20px"></div>
+    <div class="col-xs-12">
+        <p class="darkgreytext tinytext textcenter">NEIGHBORHOOD CONNECTIONS</p>
+        <p class="pricetext textcenter">{{ connections_count }} <!-- {% if connections_count = 1 %} neighbor {% else %} neighbors {% endif %} --></p>
+    </div>
+    <div class="profileboxline margintop20px marginbottom20px"></div>
+    <!--put the address of each connection here-->
+    {% for connection in connections_all %}
+    <div class="col-xs-12 paddingtopbottom20px">
+        <p class="nomargin"> <a href="/hostprofile/host{{connection.host_user.id}}">{{ connection.host_user.first_name }} {{ connection.host_user.last_name }} </a>
+                <br>{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}
+                <br>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}
+            </p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
