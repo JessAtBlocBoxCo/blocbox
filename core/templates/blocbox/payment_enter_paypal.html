@@ -43,18 +43,18 @@
                             <td>{{ trans_created.youselected}}</td>
                             <td>{{ trans_created.price }}</td>
                         </tr>
-                      {% if user.account_balance %}
+                      {% if user.account_balance_packages %}
                       	<tr>
                       			<td>Acount Balance</td>
-                      			<td>{{ user.account_balance }}</td>
+                      			<td>{{ user.account_balance_packages }} Packages</td>
                       	</tr>
                       	<tr>
                       			<td>Total due</td>
-                      			<td> {{trans_created.amount_due }} </td>                      			
+                      			<td> ${{trans_created.amount_due }} </td>                      			
                       	</tr>
                       	<tr>
                       			<td>Remaining Balance</td>
-                      			<td> {{ remaining_balance }}</td>
+                      			<td> {{ remaining_balance }} Packages</td>
                       	</tr>
                       {% endif %}
                     </table>

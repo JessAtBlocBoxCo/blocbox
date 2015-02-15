@@ -129,8 +129,8 @@
                         
                         
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
-                        	{% if enduser.account_balance %}
-                        		<p> You have an account balance of {{enduser.account_balance }} </p>
+                        	{% if enduser.account_balance_packages %}
+                        		<p> You have an account balance of {{enduser.account_balance_packages }} packages </p>
                         	{% endif %}	
                         		
  
@@ -248,7 +248,7 @@
 									 <table  class="table col-sm-10 col-sm-offset-1"> 
 									      <tr>
                       			<td>Acount Balance</td>
-                      			<td>{{ user.account_balance }}</td>
+                      			<td>{{ user.account_balance_packages }} Packages</td>
                       	</tr>
                       	<tr>
                       			<td>Total due</td>
@@ -256,7 +256,7 @@
                       	</tr>
                       	<tr>
                       			<td>Remaining Balance</td>
-                      			<td> {{ remaining_balance }}</td>
+                      			<td> {{ remaining_balance }} Packages </td>
                       	</tr>
 										</table>
                   		
