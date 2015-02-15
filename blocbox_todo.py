@@ -32,22 +32,17 @@ www.
 
 
 "JESS TO-DO"
-JESS: FACEBOOK API so we have profile pics and stuff
-JESS: APPLY the account balance if they select bundled
-JESS: MAKE IT SO ACCOUTN BALANCE cannot be negative       
-JESS: make the "apply your account balance" button work - linke to a form or something
-JESS: if account balcne is less than total - allow to apply account balance but reduce total
-	-- so they're not charged "price"' crate a new variable for residual_price or price_balance
-JESS: make the account balance work - dedcut from balance versus charge
-JESS: stop it from saying "This field is required" during start a shipmetn process at "select a paymetn option"
-JESS: shipment - issue with payment option (bundled vers speciifc) and per-package items like "status" - 
-	thse are difference sorts.. so paypal shoudl just be for the money, transactions table for the favor/shipment/transaction
-JESS: shipment - shippackage: connect the host address fields to data table so populate,
+
+
+1.
 JESS: shipment - paypal PDT
 JESS: shipment - paypal PRO	
 JESS: shipment - NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 JESS: shipment - update readme to describe navstaratshipment, et
 
+2. 
+JESS: FACEBOOK API so we have profile pics and stuff
+	
 4.
 JESS: signup - after completing sign up page, it directs to a page that thanks them and asks them to sign in. Can they go directly to their dashboard? If not, the link to sign in on the thank you page should trigger the sign in modal, not take them to a stand-alone sign in page.
 JESS: signup - page - add additional required fields (name, adddress, etc)
