@@ -45,6 +45,13 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
         host = None  
+    #Determine if payment is needed or balance will suffice
+    package_price = host.price_package_per
+    balance = enduser.account_balance
+    if balance >= package_price:
+        payment_needed = False
+    else:
+        payment_needed = True
     connections_all = Connection.objects.filter(end_user=enduser) 
     #Get date fields
     local_timezone = request.session.setdefault('django_timezone', 'UTC')
@@ -198,13 +205,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         packagedays_count = len(packagedays) 
     trans_form_submitted = False
     if cal_form_submitted == True:
-    	  #Determine if payment is needed or balance will suffice
-        package_price = host.price_package_per
-        balance = enduser.account_balance
-        if balance >= package_price:
-    	      payment_needed = False
-        else:
-    	      payment_needed = True
         trans = Transaction()
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
@@ -309,8 +309,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 print trans_form_package.errors 
         else: 
             trans_form_package = CreatePackageTransaction()
-    else: #if cal form not submitted
-        payment_needed = True
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
         return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
