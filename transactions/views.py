@@ -319,7 +319,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         if payment_needed:
             return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
         else:
-            return HttpResponseRedirect("/transaction/shippackage/host" + str(host.id) + "/account_balance/invoice/" + str(invoice) + "/")
+            return HttpResponseRedirect("/transaction/shippackage/host" + str(host.id) + "/account_balance/invoice" + str(invoice) + "/")
     #if the transaction form has not been submitted  
     else:   	   
         return render(request, 'blocbox/startashipment.html', {
