@@ -415,8 +415,8 @@ def shippackage_accountbalance(request, host_id, invoice):
     #update user info to subtract that amount from their balance
     userinfo.account_balance = new_account_balance
     userinfo.save()
-    notify_host_shipment_paid(request,trans_id)
-    notify_enduser_shipment_paid(request, trans_id) 
+    notify_host_shipment_paid(request,trans.id)
+    notify_enduser_shipment_paid(request, trans.id) 
     return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, 'trans': trans})
 
 #paypal_ipn views at blocbox/paypal/standard/ipn/views.py
