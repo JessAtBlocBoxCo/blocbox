@@ -34,7 +34,7 @@ www.
 "JESS TO-DO"
 JESS: FACEBOOK API so we have profile pics and stuff
 JESS: APPLY the account balance if they select bundled
-                        
+                 JESS: MAKE IT SO ACCOUTN BALANCE cannot be negative       
 JESS: make the "apply your account balance" button work - linke to a form or something
 JESS: if account balcne is less than total - allow to apply account balance but reduce total
 	-- so they're not charged "price"' crate a new variable for residual_price or price_balance
