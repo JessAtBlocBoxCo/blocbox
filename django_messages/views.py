@@ -235,28 +235,6 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
             'recipient': [message.sender,]
             })
         context['reply_form'] = form
-    #Embed the reply form
-    form_class=ComposeForm()
-    if request.method == "POST":
-        sender = request.user
-        form = form_class(request.POST, recipient_filter=recipient_filter)
-        if form.is_valid():            
-            subject = form.cleaned_data['subject']
-            body = form.cleaned_data['body']
-            recipient_email_list = form.cleaned_data['recipient']
-            form.save(sender=request.user, parent_msg=parent)
-            for recipient_email in recipient_email_list:
-                notify_user_received_message(request, sender.id, recipient_email, subject, body)                
-            messages.info(request, _(u"Message successfully sent."))
-            if success_url is None:
-                success_url = reverse('messages_inbox')
-            return HttpResponseRedirect(success_url)
-    else:
-        form = form_class(initial={
-            'body': quote_helper(parent.sender, parent.body),
-            'subject': subject_template % {'subject': parent.subject},
-            'recipient': [parent.sender,]
-            })
     return render_to_response(template_name, context,
         context_instance=RequestContext(request))
 
