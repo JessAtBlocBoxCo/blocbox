@@ -235,7 +235,7 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
             'recipient': [message.sender,]
             })
         context['reply_form'] = form
-        context['reply_recipient'] = message.sender.email
+        context['reply_recipient'] = message.sender
         context['reply_subject'] = subject_template % {'subject': message.subject}
 
     return render_to_response(template_name, 
