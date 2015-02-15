@@ -131,6 +131,8 @@
                         		
                         		{{ trans_form_package.non_field_errors }}
                             {{ trans_form_package.payment_option.errors }}
+                            
+                          {% if payment_needed %}
                             <table class="table">
                                 <tr>
                                     <td>
@@ -171,6 +173,11 @@
                                 </tr>
                                 <!--annual checkbox-->
                             </table>
+                            
+                          <!--if payment is not needed make it hidden and automatically apply per package --> 
+                          {% else %} 
+                          			<input type="hidden" name="payment_option"   value="perpackage">  
+                          {% endif %}
                             <!--table containg payment options -->
                         </div>
                         <!--col-sm-10 with all the checkboxes-->
@@ -217,8 +224,10 @@
 											<input type="hidden" name="arrivalwindow_day7"   value={{packagedays.6}}> 
 											<input type="hidden" name="arrivalwindow_day7string"   value="{{packagedays_string.6}}"> 
 									{% endif %}
-
-                    <!--submit button -->
+		
+		
+								<!-- if payment is needed then go to paypal page -->
+             		{% if payment_needed %}
                     <!--NEED TO MAKE IT SKIP THE PAYMENT OPTIONS IF THEY HAVE AN ACCOUNT BALANCE -- GO STRAIGHT TO PAYEMTN PAGE-->
                     <div class="row">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
@@ -226,7 +235,32 @@
                         </div>
                     </div>
                     <!--row with submit button-->
-
+								<!--if payment not needed do the balance calculations now -->
+								{% else %}
+									 <table  class="table"> 
+									      <tr>
+                      			<td>Acount Balance</td>
+                      			<td>{{ user.account_balance }}</td>
+                      	</tr>
+                      	<tr>
+                      			<td>Total due</td>
+                      			<td> ${{ amount_due }} </td>                      			
+                      	</tr>
+                      	<tr>
+                      			<td>Remaining Balance</td>
+                      			<td> {{ remaining_balance }}</td>
+                      	</tr>
+										</table>
+                  		
+										 <div class="row">
+                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
+                           <button type="button" name="submit" class="bluebutton"
+                            onclick="window.location='/transactions/shippackage/host{{host.id}}/account_balance/trans{{trans_created.id}}/';">
+                        </div>
+                    </div>
+                    
+										
+									{% endif %}
                 </form>
                  
 

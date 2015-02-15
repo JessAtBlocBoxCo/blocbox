@@ -50,8 +50,12 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     balance = enduser.account_balance
     if balance >= package_price:
         payment_needed = False
+        amount_due = 0.00
+        remaining_balance = balance - package_price
     else:
         payment_needed = True
+        amount_due = None #this is processed on the payment page if they aren't applying account balance
+        remaining_balance = None 
     connections_all = Connection.objects.filter(end_user=enduser) 
     #Get date fields
     local_timezone = request.session.setdefault('django_timezone', 'UTC')
@@ -336,7 +340,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_string': packagedays_string, 'packagedays_count': packagedays_count, 'cal_form_submitted': cal_form_submitted,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits,
-		    		'payment_needed': payment_needed,
+		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance,
 		    })
 
 
