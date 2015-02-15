@@ -234,14 +234,16 @@ def view(request, message_id, form_class=ComposeForm, quote_helper=format_quote,
             'subject': subject_template % {'subject': message.subject},
             'recipient': [message.sender,]
             })
-        context['reply_form'] = form
+        #context['reply_form'] = form
+        reply_form = form
         reply_recipient = [message.sender,]
         reply_subject = subject_template % {'subject': message.subject}
     else:
         reply_subject = None
         reply_recipient = None
-    return render_to_response(template_name, {'reply_subject':reply_subject, 'reply_recipient': reply_recipient,}, context,
-        context_instance=RequestContext(request))
+    return render_to_response(template_name, {'reply_subject':reply_subject, 'reply_recipient': reply_recipient, 'reply_form': reply_form, }, 
+    		#context,context_instance=RequestContext(request)
+    		)
 
 
 
