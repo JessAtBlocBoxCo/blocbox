@@ -209,7 +209,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 if payment_option=="bundle10":
                     price=15
                     youselected="Bundle of 10 Packages"  
-                    balanced_created = price - 2                  
+                    balance_created = price - 2                  
                 elif payment_option=="month20":
                     price=15
                     youselected="Monthly"       
