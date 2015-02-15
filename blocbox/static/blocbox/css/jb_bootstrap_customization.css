@@ -1504,7 +1504,7 @@ body {
 #map-canvas {
     z-index: 5;
     width: 100%;
-    height: 38em;
+    height: 37em;
     margin-top: 70px;
     background-size: cover;
     background-position: center center;
