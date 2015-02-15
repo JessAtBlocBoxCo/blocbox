@@ -51,7 +51,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     intro_message = models.CharField(max_length=350, blank=True) #Intro Message to Host
     pickup_time = models.CharField(max_length=150, blank=True) 
     #account balane - amount of money left if bought bundled
-    account_balance = models.DecimalField("Account Balance", max_digits=6, decimal_places=2, blank=True, null=True)
+    #account_balance = models.DecimalField("Account Balance", max_digits=6, decimal_places=2, blank=True, null=True)
+    account_balance_packages = models.IntegerField(blank=True, null=True)
     #the following i thought were on AbstractBaseUser but aren't showing up
     #had to set a lot of these up as blank=true because of custom form may want to rechange later
     is_admin = models.BooleanField('Admin User',default=False, blank=True)

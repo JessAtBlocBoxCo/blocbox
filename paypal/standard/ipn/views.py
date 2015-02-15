@@ -124,9 +124,9 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
         trans.payment_method = "Paypal"
         trans.save()
         #update the userinfo table to add an account balance
-        if trans.balance_created:
+        if trans.balance_created_packages:
     		    userinfo = UserInfo.objects.get(pk=trans.enduser.id) 
-    		    userinfo.account_balance = trans.balance_created
+    		    userinfo.account_balance_package = trans.balance_created_packages
     		    userinfo.save()
         #send emails
         notify_host_shipment_paid(request,trans_table_id)
@@ -172,9 +172,9 @@ def ask_for_money(request, host_id=2, favortype=None, invoice=None,): #pass teh 
     #Get the transactions record that was just created
     trans_created = Transaction.objects.get(invoice=invoice)
     #Account balance
-    if enduser.account_balance:
-        if enduser.account_balance >= trans_created.price:
-            remaining_balance = enduser.account_balance - trans_created.price
+    if enduser.account_balance_packages:
+        if enduser.account_balance > 0:
+            remaining_balance = enduser.account_balance_packages - 1
         else:
             remaining_balance = 0
     else:

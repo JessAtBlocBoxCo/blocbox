@@ -47,11 +47,11 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         host = None  
     #Determine if payment is needed or balance will suffice
     package_price = host.price_package_per
-    balance = enduser.account_balance
-    if balance >= package_price:
+    balance = enduser.account_balance_packages
+    if balance > 0:
         payment_needed = False
         amount_due = 0.00
-        remaining_balance = balance - package_price
+        remaining_balance = balance - 1
     else:
         payment_needed = True
         amount_due = None #this is processed on the payment page if they aren't applying account balance
@@ -246,13 +246,13 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 trans.enduser = enduser
                 trans.invoice = invoice
                 #Account balance/ create amount_due
-                if enduser.account_balance:
-                    if enduser.account_balance >= price:
+                if enduser.account_balance_packages:
+                    if enduser.account_balance_packages > 0:
                         trans.amount_due = 0
                         trans.payment_needed = False
                     else:
-                        trans.amount_due = price - enduser.account_balance
-                        trans.payment_needed
+                        trans.amount_due = price
+                        trans.payment_needed = True
                 else:
                     trans.amount_due = price
                     trans.payment_needed = True
@@ -405,15 +405,15 @@ def shippackage_accountbalance(request, host_id, invoice):
     host = get_object_or_404(UserInfo, pk=host_id)
     trans = Transaction.objects.get(invoice=invoice)
     userinfo = UserInfo.objects.get(pk=enduser.id) 
-    new_account_balance = enduser.account_balance - trans.price 
+    new_account_balance = enduser.account_balance_packages - 1
     #update transaction table
     trans.payment_processed = True
     trans.payment_method = "Balance"
-    trans.account_balance_before = enduser.account_balance
+    trans.account_balance_before = enduser.account_balance_packages
     trans.account_balance_after = new_account_balance
     trans.save()
     #update user info to subtract that amount from their balance
-    userinfo.account_balance = new_account_balance
+    userinfo.account_balance_packages = new_account_balance
     userinfo.save()
     notify_host_shipment_paid(request,trans.id)
     notify_enduser_shipment_paid(request, trans.id) 
