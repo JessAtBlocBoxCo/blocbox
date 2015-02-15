@@ -38,20 +38,20 @@
                 <p class="textcenter">YOUR HOST'S ADDRESS</p>
                 <div class="row margintop30px">
                     <p class="tinytext greytext nomarginbottom">C/O Your Blocbox Host</p>
-                    <h6 class="offwhitebackground nomargintop paddingtopbottom2px">John Burgeson</h6>
+                    <h6 class="offwhitebackground nomargintop paddingtopbottom2px"> {{ host.first_name }} {{ host.last_name }}</h6>
                     <p class="tinytext greytext nomarginbottom">Street Address</p>
-                    <h6 class="offwhitebackground nomargintop paddingtopbottom2px">420 Grand Ave. Apt 2</h6>
+                    <h6 class="offwhitebackground nomargintop paddingtopbottom2px"> {{ host.st_address1 }} {% if host.st_address2 %} , {{ host.st_address2 }} {% endif %}</h6>
                     <div class="col-sm-8 nopaddingleft">
                         <p class="tinytext greytext nomarginbottom">City</p>
-                        <h6 class="offwhitebackground nomargintop paddingtopbottom2px">Brooklyn</h6>
+                        <h6 class="offwhitebackground nomargintop paddingtopbottom2px"> {{ host.city }}</h6>
                     </div>
                     <div class="col-sm-4 nopadding">
                         <p class="tinytext greytext nomarginbottom">State</p>
-                        <h6 class="offwhitebackground nomargintop paddingtopbottom2px">NY</h6>
+                        <h6 class="offwhitebackground nomargintop paddingtopbottom2px"> {{ host.state }}</h6>
                     </div>
                     <div class="col-sm-4 nopadding">
                         <p class="tinytext greytext nomarginbottom">Zip Code</p>
-                        <h6 class="offwhitebackground nomargintop paddingtopbottom2px">11238</h6>
+                        <h6 class="offwhitebackground nomargintop paddingtopbottom2px"> {{ host.zipcode }}</h6>
                     </div>
                 </div>
             </div>
