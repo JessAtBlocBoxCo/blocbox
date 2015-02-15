@@ -201,9 +201,9 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     	  #Determine if payment is needed or balance will suffice
         package_price = host.price_package_per
         balance = enduser.account_balance
-    	  if balance >= package_price:
+        if balance >= package_price:
     	      payment_needed = False
-    	  else:
+        else:
     	      payment_needed = True
         trans = Transaction()
         if request.method == 'POST': 
