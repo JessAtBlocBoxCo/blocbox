@@ -242,8 +242,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                         trans.amount_due = price - enduser.account_balance
                 else:
                     trans.amount_due = price
-                #if no account balance but they created one, apply it
-                if trans.price
                 arrivalwindow_days_count = trans_form_package.cleaned_data['packagedays_count']
                 trans.arrivalwindow_days_count = arrivalwindow_days_count
                 day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
