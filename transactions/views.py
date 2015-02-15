@@ -384,8 +384,8 @@ def shippackage_accountbalance(request, host_id, trans_id):
     trans = Transaction.objects.get(pk=trans_id)
     trans.payment_processed = True
     trans.save()
-    notify_host_shipment_paid(request,trans_table_id)
-    notify_enduser_shipment_paid(request, trans_table_id) 
+    notify_host_shipment_paid(request,trans_id)
+    notify_enduser_shipment_paid(request, trans_id) 
     return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, 'trans': trans})
 
 #paypal_ipn views at blocbox/paypal/standard/ipn/views.py
