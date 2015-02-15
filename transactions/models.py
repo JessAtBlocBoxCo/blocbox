@@ -23,6 +23,7 @@ class Transaction(models.Model):
     payment_option = models.CharField("Payment Option", max_length=30, blank=True, null=True)
     #payment_method: either paypal of account balance
     payment_method = models.CharField("Payment Method", max_length=20, blank=True, null=True)
+    payment_needed = models.BooleanField(default=False)
     account_balance_before = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     account_balance_after = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     balance_created = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
