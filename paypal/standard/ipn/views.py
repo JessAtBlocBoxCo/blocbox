@@ -121,7 +121,14 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
     if trans_id:
         trans.payment_processed = True
         trans_table_id = trans.id
+        trans.payment_method = "Paypal"
         trans.save()
+        #update the userinfo table to add an account balance
+    		if trans.balance_created:
+    			  userinfo = UserInfo.objects.get(pk=trans.enduser.id) 
+    		    userinfo.account_balance = trans.balance_created
+    		    userinfo.save()
+        #send emails
         notify_host_shipment_paid(request,trans_table_id)
         notify_enduser_shipment_paid(request, trans_table_id) 
     return HttpResponse("OKAY")

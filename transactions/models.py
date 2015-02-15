@@ -25,6 +25,7 @@ class Transaction(models.Model):
     payment_method = models.CharField("Payment Method", max_length=20, blank=True, null=True)
     account_balance_before = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     account_balance_after = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
+    balance_created = models.DecimalField(max_digits=6, decimal_places=2, blank=True, null=True)
     youselected = models.CharField(max_length=50, blank=True, null=True)  
     paypal_quantity = models.IntegerField(blank=True, null=True)
     title = models.CharField("Title", max_length=100, blank=True, null=True)

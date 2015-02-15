@@ -208,17 +208,22 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 paypal_quantity = 1
                 if payment_option=="bundle10":
                     price=15
-                    youselected="Bundle of 10 Packages"                    
+                    youselected="Bundle of 10 Packages"  
+                    balanced_created = price - 2                  
                 elif payment_option=="month20":
                     price=15
-                    youselected="Monthly"                    
+                    youselected="Monthly"       
+                    balance_created = price - 2             
                 elif payment_option=="annual":
                     price=150
                     youselected="Annual"
+                    balance_created = price - 2
                 else:
                     price=2
                     youselected="Per Package"
+                    balance_created = None
                 #Next, add the data to the transaction table
+                trans.balance_created = balance_create
                 trans.payment_option = payment_option
                 trans.title = title
                 trans.favortype = favortype
@@ -233,13 +238,12 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 if enduser.account_balance:
                     if enduser.account_balance >= price:
                         trans.amount_due = 0
-                        new_account_balance = enduser.account_balance - price
                     else:
                         trans.amount_due = price - enduser.account_balance
-                        new_account_balance = 0
                 else:
                     trans.amount_due = price
-                    new_account_balance = None
+                #if no account balance but they created one, apply it
+                if trans.price
                 arrivalwindow_days_count = trans_form_package.cleaned_data['packagedays_count']
                 trans.arrivalwindow_days_count = arrivalwindow_days_count
                 day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
@@ -384,11 +388,15 @@ def shippackage_accountbalance(request, host_id, trans_id):
     enduser = request.user
     host = get_object_or_404(UserInfo, pk=host_id)
     trans = Transaction.objects.get(pk=trans_id)
-    trans.payment_processed = True
-    trans.save()
-    #update user info to subtract that amount from their balance
     userinfo = UserInfo.objects.get(pk=enduser.id) 
     new_account_balance = enduser.account_balance - trans.price 
+    #update transaction table
+    trans.payment_processed = True
+    trans.payment_method = "Balance"
+    trans.account_balance_before = enduser.account_balance
+    trans.account_balance_after = new_account_balance
+    trans.save()
+    #update user info to subtract that amount from their balance
     userinfo.account_balance = new_account_balance
     userinfo.save()
     notify_host_shipment_paid(request,trans_id)
