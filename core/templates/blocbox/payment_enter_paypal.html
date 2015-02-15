@@ -64,8 +64,14 @@
                         <tr>
                             <th>Payment Method</th>
                         </tr>
-											{% if payment_not_needed %}                        
-                         <tr>
+											{% if payment_needed %}     
+												
+												 <tr>
+                            <td style="padding-left: 60px; padding-top: 20px">{{ paypal_form.render }}</td>
+                        </tr>
+                                           
+                    	{% else %}
+                    		 <tr>
   													<td style="padding-left: 60px; padding-top: 20px">
                             		<button type="button" name="submit" class="bluebutton"
                             			onclick="window.location='/transactions/shippackage/host{{host.id}}/account_balance/trans{{trans_created.id}}/';"
@@ -73,10 +79,8 @@
                             				Apply your account balance</button>
                         		</td>
                     		</tr>
-                    	{% else %}
-                        <tr>
-                            <td style="padding-left: 60px; padding-top: 20px">{{ paypal_form.render }}</td>
-                        </tr>
+                    		
+
                        {% endif %}
                     </table>
                 	</div>

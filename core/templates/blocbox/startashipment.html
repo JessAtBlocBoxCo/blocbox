@@ -117,12 +117,20 @@
 															action="/transactions/startashipment/host{{host.id}}/packagedays_count{{packagedays_count}}/"  
 															action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/" -->
 
-                    {% csrf_token %} {{ trans_form_package.non_field_errors }}
+                    {% csrf_token %} 
 
 
                     <div class="row">
                         <!--Payment option: row with the checkboxes-->
+                        
+                        <h3> TEST PAYMENT NEEDED: {{ payment_needed }} </h3>
+                        
                         <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
+                        	{% if enduser.account_balance %}
+                        		<p> You have an account balance of {{enduser.account_balance }} </p>
+                        	{% endif %}	
+                        		
+                        		{{ trans_form_package.non_field_errors }}
                             {{ trans_form_package.payment_option.errors }}
                             <table class="table">
                                 <tr>
@@ -265,13 +273,6 @@
 		
 	{% endif %} <!--end if transaction form submitted -->
 
- <h5> TEST PACKAGE DAYS {{ packagedays }} TEST INVOICE {{invoice}} TEST COIUNT {{packagedays_count}}
- 	 <br> TEST CAL_FORM_SUBMITTED {{cal_form_submitted}}  TRANS FORM SUBMITTED {{ transaction_form_submitted }}
-		<br> PACKAGEDAYS_sTRING {{ packagedays_string }} TRY 0 AND 0 {{ packagedays_string.0 }} {{ packagedays_string.1 }}
-		<br> day1string: {{ day1string }} 
-TEST RANDOM3DIGITS {{ random3digits }}
- 	 
- 	 </h5>
     		
 </div>
 <!--profile box-->
