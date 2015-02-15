@@ -64,7 +64,7 @@
                         <tr>
                             <th>Payment Method</th>
                         </tr>
-											{% if payment_needed %}     
+											{% if trans_created.payment_needed %}     
 												
 												 <tr>
                             <td style="padding-left: 60px; padding-top: 20px">{{ paypal_form.render }}</td>

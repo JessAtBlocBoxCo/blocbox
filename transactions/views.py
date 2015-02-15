@@ -197,7 +197,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
             cal_form = CalendarCheckBoxes()     
         packagedays_count = len(packagedays) 
     trans_form_submitted = False
-    payment_needed = True
     if cal_form_submitted == True:
         trans = Transaction()
         if request.method == 'POST': 
@@ -239,11 +238,13 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 if enduser.account_balance:
                     if enduser.account_balance >= price:
                         trans.amount_due = 0
-                        payment_needed = False
+                        trans.payment_needed = False
                     else:
                         trans.amount_due = price - enduser.account_balance
+                        trans.payment_needed
                 else:
                     trans.amount_due = price
+                    trans.payment_needed = True
                 arrivalwindow_days_count = trans_form_package.cleaned_data['packagedays_count']
                 trans.arrivalwindow_days_count = arrivalwindow_days_count
                 day1 = trans_form_package.cleaned_data['arrivalwindow_day1']
@@ -328,7 +329,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_string': packagedays_string, 'packagedays_count': packagedays_count, 'cal_form_submitted': cal_form_submitted,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits,
-        	  'payment_needed': payment_needed,
 		    })
 
 
