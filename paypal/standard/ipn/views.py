@@ -148,15 +148,12 @@ easy to implement and doesn't require SSL."""
 		and link to their paypal accout.
 		the template for both of these is on payment.html
 """
-def ask_for_money(request, host_id=2, favortype=None, invoice=None, balance=None): #pass teh favor type and invoice in the URL pattern (www.blocbox.co/transactions/payment/
+def ask_for_money(request, host_id=2, favortype=None, invoice=None,): #pass teh favor type and invoice in the URL pattern (www.blocbox.co/transactions/payment/
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
     	  host = None
-    #if no paymetn needed
-    if balance:
-       payment_option="perpackage"
     #Define the business/receiver email (frsturated b/c the business name is the receiver email name, can't decouple)
     if host.email:
         business = host.email

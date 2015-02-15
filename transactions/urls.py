@@ -24,10 +24,9 @@ urlpatterns = patterns('',
     url(r'^startafavor/host(?P<host_id>\d+)/$', 'transactions.views.startafavor', name='startafavor'),
     url(r'^shippackage/$', 'transactions.views.shippackage', name='shippackage_nohost'),  #this shouldn't really be used b/c not linked to a host  
     url(r'^shippackage/host(?P<host_id>\d+)/$', 'transactions.views.shippackage', name='shippackage'),
-		url(r'^shippackage/host(?P<host_id>\d+)/account_balance/trans(?P<trans_id>\d+)/$', 'transactions.views.shippackage_accountbalance', name='shippackage_accountbalance'),
+		url(r'^shippackage/host(?P<host_id>\d+)/account_balance/invoice(?P<invoice>\w+)/$', 'transactions.views.shippackage_accountbalance', name='shippackage_accountbalance'),
 		#SHIPMENTthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a SHIPMENT - with dayrangestart, danrange end
     url(r'^payment/host(?P<host_id>\d+)/invoice(?P<invoice>\w+)/favortype(?P<favortype>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_shipment'),
-    url(r'^payment/host(?P<host_id>\d+)/invoice(?P<invoice>\w+)/favortype(?P<favortype>\w+)/balance(?P<balance>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_shipment_balance'),
 		#FAVORthe blocbox.paypal.standard.ipn.views.ask_for_money view triggered by a FAVOR (e.g., no dayrangestart or dayrange end)
 		url(r'^payment/host(?P<host_id>\d+)/ipn/(?P<favortype>\w+)/(?P<paymentoption>\w+)/$', 'paypal.standard.ipn.views.ask_for_money', name='ipn_ask_favor'),
 		#Notify URL for paypal IPAN

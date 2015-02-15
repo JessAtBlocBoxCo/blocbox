@@ -315,8 +315,11 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
             trans_form_package = CreatePackageTransaction()
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
-        return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
-        cal_form = None   
+        cal_form = None 
+        if payment_needed:
+            return HttpResponseRedirect("/transactions/payment/host" + str(host.id) + "/invoice" + str(invoice) + "/favortype" + str(favortype) + "/") 
+        else:
+            return HttpResponseRediret("/transaction/shippackage/host" +string(host.id) + "/account_balance/invoice/" + str(invoice) + "/")
     #if the transaction form has not been submitted  
     else:   	   
         return render(request, 'blocbox/startashipment.html', {
@@ -397,10 +400,10 @@ def shippackage(request, host_id): #passes the host_id argument in URL
     	  host = None
     return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host,} )
 
-def shippackage_accountbalance(request, host_id, trans_id):
+def shippackage_accountbalance(request, host_id, invoice):
     enduser = request.user
     host = get_object_or_404(UserInfo, pk=host_id)
-    trans = Transaction.objects.get(pk=trans_id)
+    trans = Transaction.objects.get(invoice=invoice)
     userinfo = UserInfo.objects.get(pk=enduser.id) 
     new_account_balance = enduser.account_balance - trans.price 
     #update transaction table

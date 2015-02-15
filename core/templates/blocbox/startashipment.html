@@ -129,7 +129,7 @@
                         		<p> You have an account balance of {{enduser.account_balance }} </p>
                         	{% endif %}	
                         		
-                        		<h3> TEST TRANSACTINO FORM SUBITTED {{ transaction_form_submitted }} </h3>
+ 
                         		{{ trans_form_package.non_field_errors }}
                         		
                         		{% if transaction_form_submitted %}
@@ -258,9 +258,7 @@
                   		
 										 <div class="row">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
-                           <button type="button" name="submit" class="bluebutton"
-                            onclick="window.location='/transactions/shippackage/host{{host.id}}/account_balance/trans{{trans_created.id}}/';">
-                          		Apply Account Balance </button>
+                           <button type="submit" name="submit" class="bluebutton">	Apply Account Balance </button>
                         </div>
                     </div>
                     
