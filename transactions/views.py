@@ -9,7 +9,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
-from django.core.mail import send_mail
 from django.template import RequestContext, loader #allows it to load templates from blocbox/template
 from django.views.generic.list import ListView
 from django.utils import timezone
@@ -34,6 +33,9 @@ calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, defaul
 #import transaction models
 from transactions.models import Transaction
 from transactions.forms import CreatePackageTransaction
+##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
 
 #The Start a shipment process
 def startashipment(request, host_id=None, transaction_form_submitted=False, invoice=None, cal_form_submitted=False, packagedays_count = None, ):
