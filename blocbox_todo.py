@@ -32,11 +32,8 @@ www.
 
 
 "JESS TO-DO"
-JESS: UPDATE ACOUNT BALANCE AFTER THEY CONFIRM IT
-	                #Update user info table
-	                userinfo = UserInfo.objcts.get(pk=enduser.id) 
-                userinfo.account_balance = new_account_balance
-                userinfo.save()
+JESS: FACEBOOK API so we have profile pics and stuff
+JESS: APPLY the account balance if they select bundled
                         
 JESS: make the "apply your account balance" button work - linke to a form or something
 JESS: if account balcne is less than total - allow to apply account balance but reduce total

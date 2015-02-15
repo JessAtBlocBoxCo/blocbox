@@ -124,8 +124,8 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
         trans.payment_method = "Paypal"
         trans.save()
         #update the userinfo table to add an account balance
-    		if trans.balance_created:
-    			  userinfo = UserInfo.objects.get(pk=trans.enduser.id) 
+        if trans.balance_created:
+    		    userinfo = UserInfo.objects.get(pk=trans.enduser.id) 
     		    userinfo.account_balance = trans.balance_created
     		    userinfo.save()
         #send emails
