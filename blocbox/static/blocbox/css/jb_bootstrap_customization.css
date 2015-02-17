@@ -2182,6 +2182,7 @@ input[type="checkbox"] + label span {
     border: 2px solid rgb(245, 245, 245);
     border-radius: 100%;
     color: rgb(127, 140, 141);
+    font-weight: 400;
 }
 input[type="checkbox"] + label span:hover {
     background-color: #3498db;
@@ -2191,6 +2192,7 @@ input[type="checkbox"]:checked + label span {
     border: 2px solid #3498db;
     background-color: #3498db;
     color: white;
+    font-weight: 700;
 }
 
 .carousel-control.right {
