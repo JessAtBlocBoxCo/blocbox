@@ -2194,7 +2194,7 @@ input[type="checkbox"]:checked + label span {
     background-image: none;
 }
 .datetext {
-    font-size: 1.5em;
+    font-size: 1.3em;
     text-align: center;
 }
 
