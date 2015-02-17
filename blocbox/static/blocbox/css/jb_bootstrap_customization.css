@@ -2189,8 +2189,8 @@ input[type="checkbox"] + label span:hover {
     color: white;
 }
 input[type="checkbox"]:checked + label span {
-    border: 2px solid #2980b9;
-    background-color: #3498db;
+    border: 2px solid rgb(39, 174, 96);
+    background-color: #2ecc71;
     color: white;
     font-weight: 700;
 }
