@@ -2187,6 +2187,10 @@ input[type="checkbox"]:checked + label span {
     color: white;
 }
 
+.carousel-control.right {
+    background-image: none;
+}
+
 /*----------------------------------------------------------------------------
 *Modifying for different screen dimensions 
 *Mobile portrait width: 320 
