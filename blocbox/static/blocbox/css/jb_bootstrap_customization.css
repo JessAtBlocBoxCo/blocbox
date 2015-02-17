@@ -2130,7 +2130,7 @@ body {
 /*danger*/
 .table > thead > tr > td.danger, .table > tbody > tr > td.danger, .table > tfoot > tr > td.danger, .table > thead > tr > th.danger, .table > tbody > tr > th.danger, .table > tfoot > tr > th.danger, .table > thead > tr.danger > td, .table > tbody > tr.danger > td, .table > tfoot > tr.danger > td, .table > thead > tr.danger > th, .table > tbody > tr.danger > th, .table > tfoot > tr.danger > th {
     background-color: #f25f52;
-    color: #ffffff;
+    color: #4f0807;
 }
 
 input[type="checkbox"] {
