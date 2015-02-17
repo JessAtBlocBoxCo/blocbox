@@ -283,7 +283,7 @@
 
 
                 <h6 class="col-xs-12 col-sm-12 marginsides3pct margintop10px marginbottom5px"> 	
-            		When will your package arrive?  Select up to 6 dates....{{ host.first_name }}'s Availability is shown below...
+                    Let {{ host.first_name }} know when you expect your package to arrive based on your shipping method. Dates that {{ host.first_name }} is unavailable are marked in red. 
             
              {% if packagedays_count %} <br> <br> You checked {{ packagedays_count }} days: {{ packagedays }} {% endif %}
             	
@@ -292,7 +292,7 @@
                 <div class="row">
                     <!--row with the calendar-->
                     <div class="col-xs-12"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} </div>
-                    <p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p>
+                   <!-- <p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p> -->
                 </div>
 
             </div>
