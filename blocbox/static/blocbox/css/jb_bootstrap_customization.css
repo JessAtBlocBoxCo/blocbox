@@ -2221,7 +2221,19 @@ input[type="checkbox"]:checked + label span {
     color: rgb(127, 140, 141);
 }
 .carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
-    top: 8%;
+    top: 100%;
+}
+.bluearrowright {
+    background-image: url('/static/blocbox/images/arrow-lightblue-right.png');
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40px;
+    width: 40px;
+    z-index: inherit;
+    margin-left: auto;
+    margin-right: auto;
 }
 /*----------------------------------------------------------------------------
 *Modifying for different screen dimensions 
