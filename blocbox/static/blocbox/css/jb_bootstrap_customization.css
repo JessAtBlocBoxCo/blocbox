@@ -2143,31 +2143,7 @@ input[type="checkbox"] + label span {
     height:35px;
     vertical-align:middle;
     cursor:pointer;
-    width: 30px;
-    height: 30px;
-    border-radius: 100px;
-    
-    position: relative;
-    -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
-
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    -o-transition: all .5s ease;
-    -ms-transition: all .5s ease;
-    transition: all .5s ease;
-    cursor: pointer;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    z-index: 1;
-
-    background: #333;
-
-    -webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
-    -moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
-    box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+    border: 2px solid rgb(223, 226, 226);
 }
 input[type="checkbox"]:checked + label span {
     border: 2px solid #3498db;
