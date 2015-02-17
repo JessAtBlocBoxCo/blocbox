@@ -2140,8 +2140,8 @@ body {
     border-radius: 100%;
     background-color: rgb(250, 250, 250);
     display:inline-block;
-    width:35px;
-    height:35px;
+    width:45px;
+    height:45px;
     vertical-align:middle;
 }
 /*danger*/
@@ -2153,8 +2153,8 @@ body {
     border-radius: 100%;
     background-color: #f25f52;
     display:inline-block;
-    width:35px;
-    height:35px;
+    width:45px;
+    height:45px;
     vertical-align:middle;
 }
 
@@ -2169,8 +2169,8 @@ input[type="checkbox"] {
 }
 input[type="checkbox"] + label span {
     display:inline-block;
-    width:35px;
-    height:35px;
+    width:45px;
+    height:45px;
     vertical-align:middle;
     cursor:pointer;
     border: 2px solid rgb(245, 245, 245);
