@@ -2143,7 +2143,7 @@ input[type="checkbox"] + label span {
     height:35px;
     vertical-align:middle;
     cursor:pointer;
-    border: 2px solid rgb(250, 250, 250);
+    border: 2px solid rgb(245, 245, 245);
     border-radius: 100%;
 }
 input[type="checkbox"] + label span:hover {
