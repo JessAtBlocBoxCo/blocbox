@@ -2203,10 +2203,15 @@ input[type="checkbox"]:checked + label span {
     text-align: center;
 }
 .monthtext {
-    text-transform: uppercase;
-    font-size: 1.200em;
+    font-size: 1.300em;
     /*font-size: 1.300em */
     font-weight: 400;
+}
+.daytext {
+    font-size: 0.900em;
+    /*font-size: 1.300em */
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 /*----------------------------------------------------------------------------
