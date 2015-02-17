@@ -33,8 +33,8 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 
 			 		 						<!--TODAY: make square bold if today -->
 			 		 						{% if day = today_dayofmonth_num %} 
-<td class="active"> <b> 
-<label>	<input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" > {{ day }} </label>	</b>  </td> 
+                    <td class="active"> <b> <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" >{
+                        <label for="id_month1day{{day}}"><span></span>{{ day }}</label>	</b>  </td> 
 			 		 						{% else %} 	          
 			 		 						<!--conflict days FOR JB DO WE EANT CLASS IS DANGER OR WARNING?? WE NO LONGER NEEE BOTH SINCE THEY CANT CHECK BIX IF CONFLICT SO ONKY CONFLICT WARNING --> 
 			 		 						{% if day in days_withconflicts_thismonth %} 
