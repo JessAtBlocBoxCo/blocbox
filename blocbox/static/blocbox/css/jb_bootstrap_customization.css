@@ -2127,12 +2127,12 @@ body {
     background-color: rgb(250, 250, 250);
     color: rgb(127, 140, 141);
     padding: 8px;
+    border-radius: 100%;
 }
 /*danger*/
 .table > thead > tr > td.danger, .table > tbody > tr > td.danger, .table > tfoot > tr > td.danger, .table > thead > tr > th.danger, .table > tbody > tr > th.danger, .table > tfoot > tr > th.danger, .table > thead > tr.danger > td, .table > tbody > tr.danger > td, .table > tfoot > tr.danger > td, .table > thead > tr.danger > th, .table > tbody > tr.danger > th, .table > tfoot > tr.danger > th {
     background-color: #f25f52;
     color: #7e0c0b;
-    width:35px;
     height:35px;
     border-radius: 100%;
 }
