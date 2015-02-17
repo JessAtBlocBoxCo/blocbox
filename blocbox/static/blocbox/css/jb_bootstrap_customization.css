@@ -2229,8 +2229,8 @@ input[type="checkbox"]:checked + label span {
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
     z-index: inherit;
     margin-left: auto;
     margin-right: auto;
