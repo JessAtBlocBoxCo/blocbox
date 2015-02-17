@@ -2165,8 +2165,8 @@ body {
     line-height: 1.42857;
     padding: 3px;
     vertical-align: top;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 input[type="checkbox"] {
     display:none;
