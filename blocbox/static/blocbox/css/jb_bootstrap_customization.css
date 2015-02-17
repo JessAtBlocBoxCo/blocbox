@@ -2146,10 +2146,16 @@ body {
 }
 /*danger*/
 .table > thead > tr > td.danger, .table > tbody > tr > td.danger, .table > tfoot > tr > td.danger, .table > thead > tr > th.danger, .table > tbody > tr > th.danger, .table > tfoot > tr > th.danger, .table > thead > tr.danger > td, .table > tbody > tr.danger > td, .table > tfoot > tr.danger > td, .table > thead > tr.danger > th, .table > tbody > tr.danger > th, .table > tfoot > tr.danger > th {
-    background-color: #f25f52;
+    background-color: transparent;
     color: #7e0c0b;
-    height:35px;
+}
+.dangercircle {
     border-radius: 100%;
+    background-color: #f25f52;
+    display:inline-block;
+    width:35px;
+    height:35px;
+    vertical-align:middle;
 }
 
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
