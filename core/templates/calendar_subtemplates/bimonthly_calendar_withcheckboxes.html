@@ -15,8 +15,12 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                 <div class="item active">
   	 	
                     <div class="col-xs-12 col-sm-8 col-sm-offset-2" style="padding-left: 70px; padding-right: 70px"> <div class="col-xs-12"> <!--start first calenda-->
-                        <h4 class="textcenter monthtext">{{ thismonth }}</h4>
-						
+                       <div class="row">
+                        <h4 class="col-xs-10 colxs-offset-1 textcenter monthtext">{{ thismonth }}</h4>
+                           <div class="col-sm-1 nopaddingleftright" style="padding-top: 3px;">
+                               <i class="fa fa-question-circle fa-fw lterbluetext textright"></i>
+                           </div>
+                        </div>
 						{{ cal_form.month1day1.errors }} 	{{ cal_form.month1day2.errors }} 	{{ cal_form.month1day3.errors }} 	{{ cal_form.month1day4.errors }} {{ cal_form.month1day5.errors }}
 			 		 	{{ cal_form.month1day6.errors }} 	{{ cal_form.month1day7.errors }} 	{{ cal_form.month1day8.errors }} 	{{ cal_form.month1day9.errors }} {{ cal_form.month1day10.errors }}
 			 		 
