@@ -2129,7 +2129,6 @@ body {
     display:inline-block;
     width:45px;
     height:45px;
-    margin-bottom: 5px;
     vertical-align:middle;
 }
 /*warning*/
@@ -2144,7 +2143,6 @@ body {
     display:inline-block;
     width:45px;
     height:45px;
-    margin-bottom: 5px;
     vertical-align:middle;
 }
 /*danger*/
@@ -2159,7 +2157,6 @@ body {
     display:inline-block;
     width:45px;
     height:45px;
-    margin-bottom: 5px;
     vertical-align:middle;
 }
 
