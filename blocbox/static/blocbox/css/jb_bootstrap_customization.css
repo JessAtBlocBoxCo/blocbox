@@ -2155,7 +2155,7 @@ input[type="checkbox"] + label span {
     cursor:pointer;
     border: 2px solid rgb(245, 245, 245);
     border-radius: 100%;
-    color: rgb(103, 114, 119);
+    color: rgb(127, 140, 141);
 }
 input[type="checkbox"] + label span:hover {
     background-color: #3498db;
