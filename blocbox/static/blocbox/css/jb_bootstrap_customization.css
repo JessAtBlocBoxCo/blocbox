@@ -2219,7 +2219,9 @@ input[type="checkbox"]:checked + label span {
     margin-bottom: 5px;
     color: rgb(127, 140, 141);
 }
-
+.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+    top: 8%;
+}
 /*----------------------------------------------------------------------------
 *Modifying for different screen dimensions 
 *Mobile portrait width: 320 
