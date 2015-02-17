@@ -27,7 +27,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 <!--BEFORE TODAY: grey it out -- using INFO class JB needs to style  -->
 
 {%  if day < today_dayofmonth_num %}			
-       <td class="warning">{{ day }}</td> 			
+                                 <td class="warning"><span style="padding: 5px 9px">{{ day }}</span></td> 			
 {% else %}
 
 
@@ -39,7 +39,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 			 		 						<!--conflict days FOR JB DO WE EANT CLASS IS DANGER OR WARNING?? WE NO LONGER NEEE BOTH SINCE THEY CANT CHECK BIX IF CONFLICT SO ONKY CONFLICT WARNING --> 
 			 		 						{% if day in days_withconflicts_thismonth %} 
 
-<td class="danger">{{ day }}</td> 
+                    <td class="danger"><span style="padding: 5px 9px">{{ day }}</span></td> 
 			 		 						{% else %}	
 
 			 		 						<td>  			 		 						{% if day = 0 %}  <!--blank if zero -->
