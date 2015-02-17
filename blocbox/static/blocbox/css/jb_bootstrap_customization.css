@@ -2126,6 +2126,7 @@ body {
 .table > thead > tr > td.warning, .table > tbody > tr > td.warning, .table > tfoot > tr > td.warning, .table > thead > tr > th.warning, .table > tbody > tr > th.warning, .table > tfoot > tr > th.warning, .table > thead > tr.warning > td, .table > tbody > tr.warning > td, .table > tfoot > tr.warning > td, .table > thead > tr.warning > th, .table > tbody > tr.warning > th, .table > tfoot > tr.warning > th {
     color: rgb(127, 140, 141);
     padding: 8px;
+    background-color: transparent;
 }
 .warningcircle {
     border-radius: 100%;
