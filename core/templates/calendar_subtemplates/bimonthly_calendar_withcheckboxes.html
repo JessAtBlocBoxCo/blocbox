@@ -34,19 +34,19 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 <!--BEFORE TODAY: grey it out -- using INFO class JB needs to style  -->
 
 {%  if day < today_dayofmonth_num %}			
-                                 <td class="warning marginbottom5px"><span class="warningcircle" style="padding: 5px 9px">{{ day }}</span></td> 			
+                                 <td class="warning marginbottom5px"><span class="warningcircle" style="padding: 8px 9px">{{ day }}</span></td> 			
 {% else %}
 
 
 			 		 						<!--TODAY: make square bold if today -->
 			 		 						{% if day = today_dayofmonth_num %} 
                         <td class="active"> <b> <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" >
-                            <label for="id_month1day{{day}}" class="activecircle" style="padding: 5px 9px;">{{ day }}</label>	</b>  </td> 
+                            <label for="id_month1day{{day}}" class="activecircle" style="padding: 8px 9px;">{{ day }}</label>	</b>  </td> 
 			 		 						{% else %} 	          
 			 		 						<!--conflict days FOR JB DO WE EANT CLASS IS DANGER OR WARNING?? WE NO LONGER NEEE BOTH SINCE THEY CANT CHECK BIX IF CONFLICT SO ONKY CONFLICT WARNING --> 
 			 		 						{% if day in days_withconflicts_thismonth %} 
 
-                    <td class="danger"><span class="dangercircle" style="padding: 5px 9px">{{ day }}</span></td> 
+                    <td class="danger"><span class="dangercircle" style="padding: 8px 9px">{{ day }}</span></td> 
 			 		 						{% else %}	
 
 			 		 						<td>  			 		 						{% if day = 0 %}  <!--blank if zero -->
