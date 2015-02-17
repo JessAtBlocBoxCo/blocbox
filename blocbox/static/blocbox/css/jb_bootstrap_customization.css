@@ -2190,6 +2190,9 @@ input[type="checkbox"]:checked + label span {
 .carousel-control.right {
     background-image: none;
 }
+.carousel-control.left {
+    background-image: none;
+}
 
 /*----------------------------------------------------------------------------
 *Modifying for different screen dimensions 
