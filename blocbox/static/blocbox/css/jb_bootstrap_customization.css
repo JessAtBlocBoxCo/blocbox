@@ -2138,8 +2138,8 @@ input[type="checkbox"] {
 }
 input[type="checkbox"] + label span {
     display:inline-block;
-    width:40px;
-    height:40px;
+    width:30px;
+    height:30px;
     vertical-align:middle;
     background:url(check_radio_sheet.png) left top no-repeat;
     cursor:pointer;
