@@ -77,7 +77,8 @@
         <!--row-->
     </div>
     <!--profilebox-->
-    {% endif %}  <!--end pick host if not specified-->
+    {% endif %}
+    <!--end pick host if not specified-->
 
     <div class="text_container col-xs-8 col-xs-offset-2">
         <div>
@@ -88,243 +89,242 @@
     <!--end div_text_container-->
 
     <!--confirming availabiility-->
-{% if host %}
- 	  
- 	 {% if transaction_form_submitted %}
- 	 	
-                 	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
-       										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
+    {% if host %} {% if transaction_form_submitted %}
+
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+        <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
        										   Transaction Form Submitted. should redirect...
        										    	
        										 </h6>
-    								</div>      
-   {% else %}
-   	
-   	    
-     {% if cal_form_submitted %}  <!--IF CALENDARD CHECKBOXES - SELECT PAYMETN OPTIONS -->     	
-                	
-                	  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
-       										 <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
+    </div>
+    {% else %} {% if cal_form_submitted %}
+    <!--IF CALENDARD CHECKBOXES - SELECT PAYMETN OPTIONS -->
+
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+        <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
        										 	{% if payment_needed %}
        										    Select a Payment Option {% if host %} for Sending Packages to {{ host.first_name }} {% endif %}
        										  {% else %}
        										  	Verify and Provide Optional Shipment Details
        										  {% endif %}
        										 </h6>
-    								</div>
+    </div>
 
-							<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
-                <form action="/transactions/startashipment/host{{host.id}}/cal_form_submittedTrue/invoice{{invoice}}/packagedays_count{{packagedays_count}}/" role="form" method="post">  
-                	
-											<!-- action="/transactions/startashipment/host{{host.id}}/cal_form_submittedTrue/invoice{{invoice}}/" 
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
+        <form action="/transactions/startashipment/host{{host.id}}/cal_form_submittedTrue/invoice{{invoice}}/packagedays_count{{packagedays_count}}/" role="form" method="post">
+
+            <!-- action="/transactions/startashipment/host{{host.id}}/cal_form_submittedTrue/invoice{{invoice}}/" 
 											      action="/transactions/startashipment/host{{host.id}}/trans_submittedTrue/invoice{{invoice}}/" 
 															action="/transactions/startashipment/host{{host.id}}/packagedays_count{{packagedays_count}}/"  
 															action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/" -->
 
-                    {% csrf_token %} 
+            {% csrf_token %}
 
 
-                    <div class="row">
-                        <!--Payment option: row with the checkboxes-->
-                        
-                        
-                        <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
-                        	{% if enduser.account_balance_packages %}
-                        		<p> You have an account balance of {{enduser.account_balance_packages }} packages </p>
-                        	{% endif %}	
-                        		
- 
-                        		{{ trans_form_package.non_field_errors }}
-                        		
-                        		{% if transaction_form_submitted %}
-                            	{{ trans_form_package.payment_option.errors }}
-                            {% endif %}
-                            
-                          {% if payment_needed %}
-                            <table class="table">
-                                <tr>
-                                    <td>
-                                        <label> <input type="radio" name="payment_option" id="id_perpackage" value="perpackage">&nbsp; PER PACKAGE</label>
-                                    </td>
-                                    <td> <p>Pay for a single package</p>  </td>
-                                    <td>   <p>${{host.price_package_per}}</p>  </td>
-                                </tr>
-                                <!--per package checkbox-->
-
-                                <!--buden of 10-->
-                                <tr>
-                                    <td>
-                                        <label> <input type="radio" name="payment_option" id="id_bundle" value="bundle10">&nbsp; BUNDLED</label>
-                                    </td>
-                                    <td>   <p>10 packages (expires in 1 year)</p>   </td>
-                                    <td>   <p>${{host.price_package_bundle10}}</p> </td>
-                                </tr>
-                                <!--bundle10 checkbox-->
-
-                                <!--Monthly-->
-                                <tr>
-                                    <td>
-                                        <label> <input type="radio" name="payment_option" id="id_monthly" value="month20">&nbsp; MONTHLY</label>
-                                    </td>
-                                    <td>  <p>20 packages for the next 30 days</p> </td>
-                                    <td>    <p>${{host.price_package_month20}}</p>  </td>
-                                </tr>
-                                <!--monthly checkbox-->
-
-                                <!--annual-->
-                                <tr>
-                                    <td>
-                                        <label>     <input type="radio" name="payment_option" id="id_annual" value="annual">&nbsp; ANNUAL</label>
-                                    </td>
-                                    <td> <p>Up to 20 packages per month for an entire year</p> </td>
-                                    <td>      <p>${{host.price_package_annual}}</p>  </td>
-                                </tr>
-                                <!--annual checkbox-->
-                            </table>
-                            
-                          <!--if payment is not needed make it hidden and automatically apply per package --> 
-                          {% else %} 
-                          			<input type="hidden" name="payment_option"   value="perpackage">  
-                          {% endif %}
-                            <!--table containg payment options -->
-                        </div>
-                        <!--col-sm-10 with all the checkboxes-->
-                    </div>
-                    <!--row with the checkboxes-->
-                    <!--Enter a Transaction Tite -->
-                    <div class="row">
-                        {{ trans_form_package.title.errors }}
-                        <label for="id_title" class="col-xs-12 col-sm-4 col-sm-offset-1">Enter a label for this shipment (optional):</label>
-                        <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="title" class="form-control" id="id_title" placeholder="Enter a brief description of the shipment">
-                    </div>
-                    <div class="row paddingtop10px">
-                        {{ trans_form_package.note_to_host.errors }}
-                        <label for="id_note_to_host" class="col-xs-12 col-sm-4 col-sm-offset-1">Include a note for the host (optional):</label>
-                        <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="note_to_host" class="form-control" id="id_note_to_host" placeholder="Let the host know when you'll pick it up">
-                    </div>
-                    
-                    <!--HIDDEN FIELD FOR PACKAGE DAYS -->
-                  {{ trans_form_package.packagedays_count.errors }} <input type="hidden" name="packagedays_count" value={{ packagedays_count}}>
-                  {{ trans_form_package.arrivalwindow_day1.errors }}  
-                  		<input type="hidden" name="arrivalwindow_day1"   value={{packagedays.0}}>  
-                  		<input type="hidden" name="arrivalwindow_day1string"   value="{{packagedays_string.0}}">
-                  {% if packagedays.1 %} {{ trans_form_package.arrivalwindow_day2.errors }} 
-                  		<input type="hidden" name="arrivalwindow_day2"   value={{packagedays.1}}>  
-                  		<input type="hidden" name="arrivalwindow_day2string"   value="{{packagedays_string.1}}"> 
-                  {% endif %}
-                  {% if packagedays.2 %} {{ trans_form_package.arrivalwindow_day3.errors }} 
-                  		<input type="hidden" name="arrivalwindow_day3"   value={{packagedays.2}}> 
-                  		<input type="hidden" name="arrivalwindow_day3string"   value="{{packagedays_string.2}}"> 
-                  {% endif %}
-                  {% if packagedays.3 %} {{ trans_form_package.arrivalwindow_day4.errors }} 
-                  		<input type="hidden" name="arrivalwindow_day4"   value={{packagedays.3}}> 
-                  		<input type="hidden" name="arrivalwindow_day4string"   value="{{packagedays_string.3}}"> 
-                 	{% endif %}
-                  {% if packagedays.4 %} {{ trans_form_package.arrivalwindow_day5.errors }} 
-                  		<input type="hidden" name="arrivalwindow_day5"   value={{packagedays.4}}> 
-                  		<input type="hidden" name="arrivalwindow_day5string"   value="{{packagedays_string.4}}"> 
-                  {% endif %}  
-									{% if packagedays.5 %} {{ trans_form_package.arrivalwindow_day6.errors }} 
-											<input type="hidden" name="arrivalwindow_day6"   value={{packagedays.5}}> 
-											<input type="hidden" name="arrivalwindow_day6string"   value="{{packagedays_string.5}}"> 
-									{% endif %}
-									{% if packagedays.6 %} {{ trans_form_package.arrivalwindow_day7.errors }} 
-											<input type="hidden" name="arrivalwindow_day7"   value={{packagedays.6}}> 
-											<input type="hidden" name="arrivalwindow_day7string"   value="{{packagedays_string.6}}"> 
-									{% endif %}
-		
-		
-								<!-- if payment is needed then go to paypal page -->
-             		{% if payment_needed %}
-                    <!--NEED TO MAKE IT SKIP THE PAYMENT OPTIONS IF THEY HAVE AN ACCOUNT BALANCE -- GO STRAIGHT TO PAYEMTN PAGE-->
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
-                            <button type="submit" name="submit" class="bluebutton">Verify and Provide Payment Information</button>
-                        </div>
-                    </div>
-                    <!--row with submit button-->
-								<!--if payment not needed do the balance calculations now -->
-								{% else %}
-									 <table  class="table col-sm-10 col-sm-offset-1"> 
-									      <tr>
-                      			<td>Acount Balance</td>
-                      			<td>{{ user.account_balance_packages }} Packages</td>
-                      	</tr>
-                      	<tr>
-                      			<td>Total due</td>
-                      			<td> ${{ amount_due }} </td>                      			
-                      	</tr>
-                      	<tr>
-                      			<td>Remaining Balance</td>
-                      			<td> {{ remaining_balance }} Packages </td>
-                      	</tr>
-										</table>
-                  		
-										 <div class="row">
-                        <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
-                           <button type="submit" name="submit" class="bluebutton">	Apply Account Balance </button>
-                        </div>
-                    </div>
-                    
-										
-									{% endif %}
-                </form>
-                 
+            <div class="row">
+                <!--Payment option: row with the checkboxes-->
 
 
-      {% else %} <!--END IF CALENDAR BOXES CHECKED/ START IF CLAENDAR CHECKBOXES NOT CHEKCED YET -->
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
+                    {% if enduser.account_balance_packages %}
+                    <p> You have an account balance of {{enduser.account_balance_packages }} packages </p>
+                    {% endif %} {{ trans_form_package.non_field_errors }} {% if transaction_form_submitted %} {{ trans_form_package.payment_option.errors }} {% endif %} {% if payment_needed %}
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="radio" name="payment_option" id="id_perpackage" value="perpackage">&nbsp; PER PACKAGE</label>
+                            </td>
+                            <td>
+                                <p>Pay for a single package</p>
+                            </td>
+                            <td>
+                                <p>${{host.price_package_per}}</p>
+                            </td>
+                        </tr>
+                        <!--per package checkbox-->
+
+                        <!--buden of 10-->
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="radio" name="payment_option" id="id_bundle" value="bundle10">&nbsp; BUNDLED</label>
+                            </td>
+                            <td>
+                                <p>10 packages (expires in 1 year)</p>
+                            </td>
+                            <td>
+                                <p>${{host.price_package_bundle10}}</p>
+                            </td>
+                        </tr>
+                        <!--bundle10 checkbox-->
+
+                        <!--Monthly-->
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="radio" name="payment_option" id="id_monthly" value="month20">&nbsp; MONTHLY</label>
+                            </td>
+                            <td>
+                                <p>20 packages for the next 30 days</p>
+                            </td>
+                            <td>
+                                <p>${{host.price_package_month20}}</p>
+                            </td>
+                        </tr>
+                        <!--monthly checkbox-->
+
+                        <!--annual-->
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="radio" name="payment_option" id="id_annual" value="annual">&nbsp; ANNUAL</label>
+                            </td>
+                            <td>
+                                <p>Up to 20 packages per month for an entire year</p>
+                            </td>
+                            <td>
+                                <p>${{host.price_package_annual}}</p>
+                            </td>
+                        </tr>
+                        <!--annual checkbox-->
+                    </table>
+
+                    <!--if payment is not needed make it hidden and automatically apply per package -->
+                    {% else %}
+                    <input type="hidden" name="payment_option" value="perpackage"> {% endif %}
+                    <!--table containg payment options -->
+                </div>
+                <!--col-sm-10 with all the checkboxes-->
+            </div>
+            <!--row with the checkboxes-->
+            <!--Enter a Transaction Tite -->
+            <div class="row">
+                {{ trans_form_package.title.errors }}
+                <label for="id_title" class="col-xs-12 col-sm-4 col-sm-offset-1">Enter a label for this shipment (optional):</label>
+                <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="title" class="form-control" id="id_title" placeholder="Enter a brief description of the shipment">
+            </div>
+            <div class="row paddingtop10px">
+                {{ trans_form_package.note_to_host.errors }}
+                <label for="id_note_to_host" class="col-xs-12 col-sm-4 col-sm-offset-1">Include a note for the host (optional):</label>
+                <input class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-0" type="text" name="note_to_host" class="form-control" id="id_note_to_host" placeholder="Let the host know when you'll pick it up">
+            </div>
+
+            <!--HIDDEN FIELD FOR PACKAGE DAYS -->
+            {{ trans_form_package.packagedays_count.errors }}
+            <input type="hidden" name="packagedays_count" value={{ packagedays_count}}> {{ trans_form_package.arrivalwindow_day1.errors }}
+            <input type="hidden" name="arrivalwindow_day1" value={{packagedays.0}}>
+            <input type="hidden" name="arrivalwindow_day1string" value="{{packagedays_string.0}}"> {% if packagedays.1 %} {{ trans_form_package.arrivalwindow_day2.errors }}
+            <input type="hidden" name="arrivalwindow_day2" value={{packagedays.1}}>
+            <input type="hidden" name="arrivalwindow_day2string" value="{{packagedays_string.1}}"> {% endif %} {% if packagedays.2 %} {{ trans_form_package.arrivalwindow_day3.errors }}
+            <input type="hidden" name="arrivalwindow_day3" value={{packagedays.2}}>
+            <input type="hidden" name="arrivalwindow_day3string" value="{{packagedays_string.2}}"> {% endif %} {% if packagedays.3 %} {{ trans_form_package.arrivalwindow_day4.errors }}
+            <input type="hidden" name="arrivalwindow_day4" value={{packagedays.3}}>
+            <input type="hidden" name="arrivalwindow_day4string" value="{{packagedays_string.3}}"> {% endif %} {% if packagedays.4 %} {{ trans_form_package.arrivalwindow_day5.errors }}
+            <input type="hidden" name="arrivalwindow_day5" value={{packagedays.4}}>
+            <input type="hidden" name="arrivalwindow_day5string" value="{{packagedays_string.4}}"> {% endif %} {% if packagedays.5 %} {{ trans_form_package.arrivalwindow_day6.errors }}
+            <input type="hidden" name="arrivalwindow_day6" value={{packagedays.5}}>
+            <input type="hidden" name="arrivalwindow_day6string" value="{{packagedays_string.5}}"> {% endif %} {% if packagedays.6 %} {{ trans_form_package.arrivalwindow_day7.errors }}
+            <input type="hidden" name="arrivalwindow_day7" value={{packagedays.6}}>
+            <input type="hidden" name="arrivalwindow_day7string" value="{{packagedays_string.6}}"> {% endif %}
+
+
+            <!-- if payment is needed then go to paypal page -->
+            {% if payment_needed %}
+            <!--NEED TO MAKE IT SKIP THE PAYMENT OPTIONS IF THEY HAVE AN ACCOUNT BALANCE -- GO STRAIGHT TO PAYEMTN PAGE-->
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
+                    <button type="submit" name="submit" class="bluebutton">Verify and Provide Payment Information</button>
+                </div>
+            </div>
+            <!--row with submit button-->
+            <!--if payment not needed do the balance calculations now -->
+            {% else %}
+            <table class="table col-sm-10 col-sm-offset-1">
+                <tr>
+                    <td>Acount Balance</td>
+                    <td>{{ user.account_balance_packages }} Packages</td>
+                </tr>
+                <tr>
+                    <td>Total due</td>
+                    <td> ${{ amount_due }} </td>
+                </tr>
+                <tr>
+                    <td>Remaining Balance</td>
+                    <td> {{ remaining_balance }} Packages </td>
+                </tr>
+            </table>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
+                    <button type="submit" name="submit" class="bluebutton"> Apply Account Balance </button>
+                </div>
+            </div>
+
+
+            {% endif %}
+        </form>
 
 
 
+        {% else %}
+        <!--END IF CALENDAR BOXES CHECKED/ START IF CLAENDAR CHECKBOXES NOT CHEKCED YET -->
 
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
-        <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">Confirm {{host.first_name}}'s Availability</h6>
-    </div>
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
-    	
 
-        <div class="row">
-        	                        
-        	                        
-            <h6 class="col-xs-12 col-sm-12 marginsides3pct margintop10px marginbottom5px"> 	
+
+
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+            <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">Confirm {{host.first_name}}'s Availability</h6>
+        </div>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
+
+
+            <div class="row">
+
+
+                <h6 class="col-xs-12 col-sm-12 marginsides3pct margintop10px marginbottom5px"> 	
             		When will your package arrive?  Select up to 6 dates....{{ host.first_name }}'s Availability is shown below...
             
              {% if packagedays_count %} <br> <br> You checked {{ packagedays_count }} days: {{ packagedays }} {% endif %}
             	
             </h6>
-            
-            <div class="row"> <!--row with the calendar-->
-        				<div class="col-xs-12"> 	{% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} </div>
-        				<p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p>    				
-    				</div>
-                          
+
+                <div class="row">
+                    <!--row with the calendar-->
+                    <div class="col-xs-12"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} </div>
+                    <p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p>
+                </div>
+
+            </div>
+
+            <!--availability policy MODAL-->
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px">
+                <p class="darkgreytext">Please note, if you choose a date or time when the host is unavailble, we cannot guarantee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
+                <div id="openModal2" class="modalDialog">
+                    <div class="modalupfront"> <a href="#close" title="Close" class="close">X</a>
+                        <h6 class="ltbluetext">Availability Policy</h6>
+                        <p class="darkgreytext marginbottom20px">Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery. You're likely to still get the package, but it may not be available for pickup until a later date.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            {% endif %}
+            <!--if no packagedays_count/ if the calendar checkboxes have not been checked -->
+
+            {% endif %}
+            <!--end if transaction form submitted -->
+
+
         </div>
-    		
-    			<!--availability policy MODAL-->
-    			<div class="col-xs-12 col-sm-6 col-sm-offset-3 marginbottom30px">
-    			        <p class="darkgreytext">Please note, if you choose a date or time when the host is unavailble, we cannot guarantee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
-    			    <div id="openModal2" class="modalDialog">
-    <div class="modalupfront"> <a href="#close" title="Close" class="close">X</a>
-        <h6 class="ltbluetext">Availability Policy</h6>
-        <p class="darkgreytext marginbottom20px">Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery. You're likely to still get the package, but it may not be available for pickup until a later date.</p>
+        <!--profile box-->
+
+
+
+
+        {% endif %}
+        <!--end if host -->
+
     </div>
-</div>
-    			</div>
-    			
 
-    	{% endif %} <!--if no packagedays_count/ if the calendar checkboxes have not been checked -->
-		
-	{% endif %} <!--end if transaction form submitted -->
-
-    		
-</div>
-<!--profile box-->
-
-
-
-
-{% endif %} <!--end if host -->
-
-</div>
-
-{% endblock %}
+    {% endblock %}
