@@ -907,8 +907,8 @@ footer {
     background-image: url('/static/blocbox/images/start-button.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 37px;
-    height: 37px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
 }
 .bbbasenavbarstart:hover {
@@ -934,7 +934,7 @@ footer {
     background-image: url('/static/blocbox/images/message-button.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 37px;
+    width: 40px;
     cursor: pointer;
     vertical-align: middle;
 }
@@ -962,8 +962,8 @@ footer {
     background-image: url('/static/blocbox/images/search-button.png');
     background-repeat: no-repeat;
     background-size: contain;
-    width: 37px;
-    height: 37px;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
     background-color: transparent;
     color: black;
