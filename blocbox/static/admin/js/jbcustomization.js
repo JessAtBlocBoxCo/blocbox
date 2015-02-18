@@ -11,8 +11,9 @@
 *
 * Date: 2013-2-4
 */
-$(document).ready(function(){
     
+jQuery(document).ready(function($){
+
 $('[data-toggle="tooltip"]').tooltip({
 'placement': 'top'
 });
@@ -29,8 +30,6 @@ $('#userNameField').tooltip({
 
 $('#userNameField').tooltip('show');
 
-
-jQuery(document).ready(function($){
     //set animation timing
     var animationDelay = 2500,
         //loading bar effect
