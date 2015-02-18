@@ -1501,6 +1501,7 @@ body {
 .cd-headline.rotate-1 .cd-words-wrapper {
     display: inline-block;
     perspective: 300px;
+    width: 100%;
 }
 .cd-headline.rotate-1 b {
     opacity: 0;
