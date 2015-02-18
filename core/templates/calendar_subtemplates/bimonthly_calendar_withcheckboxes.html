@@ -18,8 +18,15 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                         <!--start first calenda-->
                         <div class="row">
                             <h4 class="col-xs-4 col-xs-offset-4 textcenter monthtext">{{ thismonth }}</h4>
-                            <div class="col-xs-4 margintop10px paddingtop5px" >
-                                <a class="textright ltbluetext daytext" href="#carousel-example-generic" role="button" data-slide="next" style="margin-left: 30px; text-decoration: none; color: rgb(41, 128, 185);">Next Month</a>
+                            <div class="col-xs-4 margintop10px paddingtop5px">
+                                <div class="row">
+                                    <a class="col-xs-10 textright ltbluetext daytext" href="#carousel-example-generic" role="button" data-slide="next" style="margin-left: 30px; text-decoration: none; color: rgb(41, 128, 185);">Next Month</a>
+                                    <div class="col-xs-2">
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                            <div class="bluearrowright" aria-hidden="true" style="margin-left: -50px"></div>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         {{ cal_form.month1day1.errors }} {{ cal_form.month1day2.errors }} {{ cal_form.month1day3.errors }} {{ cal_form.month1day4.errors }} {{ cal_form.month1day5.errors }} {{ cal_form.month1day6.errors }} {{ cal_form.month1day7.errors }} {{ cal_form.month1day8.errors }} {{ cal_form.month1day9.errors }} {{ cal_form.month1day10.errors }}
@@ -43,9 +50,9 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 
                                 <!--BEFORE TODAY: grey it out -- using INFO class JB needs to style  -->
 
-                                {% if day < today_dayofmonth_num %} 
-                                   <td class="warning marginbottom5px">
-                                   <span class="warningcircle" style="padding: 8px 9px">{{ day }}</span>
+                                {% if day
+                                < today_dayofmonth_num %} <td class="warning marginbottom5px">
+                                    <span class="warningcircle" style="padding: 8px 9px">{{ day }}</span>
                                     </td>
                                     {% else %}
 
