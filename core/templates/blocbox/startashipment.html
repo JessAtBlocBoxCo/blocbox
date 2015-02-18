@@ -282,50 +282,50 @@
             <div class="row">
 
                 <div class="col-xs-12 col-sm-5">
-                <h6 class="marginleft3pct margintop10px marginbottom5px" style="line-height: 1.58em"> 	
+                    <h6 class="marginleft3pct margintop10px marginbottom5px" style="line-height: 1.58em"> 	
                     Let {{ host.first_name }} know when you expect your package to arrive based on your shipping method. </h6>
-                    
+
                     <h6 class=" darkgreytext marginleft3pct margintop30px marginbottom5px">Dates that {{ host.first_name }} is unavailable are marked in red. If your package arrives on a date when {{ host.first_name }} is unavailble, we cannot guarantee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.
-            
-             {% if packagedays_count %} <br> <br> You checked {{ packagedays_count }} days: {{ packagedays }} {% endif %}
-            	
-            </h6>
-                    <!--availability policy MODAL-->
-                    <div class="marginleft3pct margintop20px marginbottom10px">
-                        <p class="darkgreytext">Please note, if your package arrives on a date when the host is unavailble, we cannot guarantee reciept of delivery. For more details, please see our <a href="#openModal2" class="ltbluetext">Availability Policy</a>.</p>
+                        <!--availability policy MODAL-->
                         <div id="openModal2" class="modalDialog">
                             <div class="modalupfront"> <a href="#close" title="Close" class="close">X</a>
                                 <h6 class="ltbluetext">Availability Policy</h6>
-                                <p class="darkgreytext marginbottom20px">Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery. You're likely to still get the package, but it may not be available for pickup until a later date.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <p class="darkgreytext marginbottom20px">Hosts are accountable for all packages delivered on days that they commmited to being available and are required to regularly update their availability. If they miss the package, you will not be charged, and the host is responsible for tracking down the missed delivery. However, if you send a package to a host that might arrive on a day when they have stated they are unavailable, you will be charged even if the host misses the delivery. You're likely to still get the package, but it may not be available for pickup until a later date.</p>
                 </div>
-                    <!--row with the calendar-->
-                    <div class="col-xs-6"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} </div>
-                   <!-- <p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p> -->
-
             </div>
 
+            {% if packagedays_count %}
+            <br>
+            <br> You checked {{ packagedays_count }} days: {{ packagedays }} {% endif %}
 
-
-
-            {% endif %}
-            <!--if no packagedays_count/ if the calendar checkboxes have not been checked -->
-
-            {% endif %}
-            <!--end if transaction form submitted -->
-
+            </h6>
 
         </div>
-        <!--profile box-->
-
-
-
-
-        {% endif %}
-        <!--end if host -->
+        <!--row with the calendar-->
+        <div class="col-xs-6"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} </div>
+        <!-- <p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p> -->
 
     </div>
 
-    {% endblock %}
+
+
+
+    {% endif %}
+    <!--if no packagedays_count/ if the calendar checkboxes have not been checked -->
+
+    {% endif %}
+    <!--end if transaction form submitted -->
+
+
+</div>
+<!--profile box-->
+
+
+
+
+{% endif %}
+<!--end if host -->
+
+</div>
+
+{% endblock %}
