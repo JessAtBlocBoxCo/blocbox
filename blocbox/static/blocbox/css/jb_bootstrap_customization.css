@@ -2162,6 +2162,7 @@ body {
 }
 .bluecircle {
     background-image: url('/static/blocbox/images/circle-darkblue.png');
+    color: white;
     height: 60px;
     width: 60px;
     text-align: center;
@@ -2172,6 +2173,10 @@ body {
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
+}
+.bluecircle:hover {
+    background-image: url('/static/blocbox/images/circle-darkblue.png');
+    color: rgb(41, 128, 185);
 }
 .addresstext {
     font-size: 1.20em;
