@@ -13,23 +13,6 @@
 */
     
 jQuery(document).ready(function($){
-
-$('[data-toggle="tooltip"]').tooltip({
-'placement': 'top'
-});
-$('[data-toggle="popover"]').popover({
-trigger: 'hover',
-'placement': 'top'
-});
-
-$('#userNameField').tooltip({
-'show': true,
-'placement': 'bottom',
-'title': "Please remember to..."
-});
-
-$('#userNameField').tooltip('show');
-
     //set animation timing
     var animationDelay = 2500,
         //loading bar effect
@@ -182,4 +165,19 @@ $('#userNameField').tooltip('show');
         $oldWord.removeClass('is-visible').addClass('is-hidden');
         $newWord.removeClass('is-hidden').addClass('is-visible');
     }
+    $('[data-toggle="tooltip"]').tooltip({
+        'placement': 'top'
+    });
+    $('[data-toggle="popover"]').popover({
+        trigger: 'hover',
+        'placement': 'top'
+    });
+
+    $('#userNameField').tooltip({
+        'show': true,
+        'placement': 'bottom',
+        'title': "Please remember to..."
+    });
+
+    $('#userNameField').tooltip('show');
 });
