@@ -1796,6 +1796,30 @@ body {
     text-align: center;
     border-radius: 5px;
 }
+.selector:hover {
+    background-color: rgb(255, 255, 255);
+    font-size: 1.143em;
+    font-weight: 500;
+    color: #3498db;
+    border-color: rgb(223, 226, 226);
+    height: 40px;
+    width: 100%;
+    border: solid;
+    border-width: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    cursor: pointer;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 5px;
+}
+.selector:hover {
+    background-color: #3498db;
+    color: rgb(250, 250, 250);
+    border-color: rgb(223, 226, 226);
+}
 .dog-grey {
     background-image: url('/static/blocbox/images/dog-grey.png');
     margin: auto;
