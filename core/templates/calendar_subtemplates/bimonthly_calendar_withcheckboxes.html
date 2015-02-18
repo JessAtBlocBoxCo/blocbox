@@ -16,7 +16,12 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                 <div class="col-xs-12 container-fluid">
                     <div class="col-xs-12">
                         <!--start first calenda-->
-                            <h4 class="textcenter monthtext">{{ thismonth }}</h4>
+                        <div class="row">
+                            <h4 class="col-xs-6 col-xs-offset-3 textcenter monthtext">{{ thismonth }}</h4>
+                            <div class="col-xs-3 paddingtop5px">
+                                <a class="textright ltbluetext daytext" href="#carousel-example-generic" role="button" data-slide="next" style="margin-right: -40px; text-decoration: none;">Next Month</a>
+                            </div>
+                        </div>
                         {{ cal_form.month1day1.errors }} {{ cal_form.month1day2.errors }} {{ cal_form.month1day3.errors }} {{ cal_form.month1day4.errors }} {{ cal_form.month1day5.errors }} {{ cal_form.month1day6.errors }} {{ cal_form.month1day7.errors }} {{ cal_form.month1day8.errors }} {{ cal_form.month1day9.errors }} {{ cal_form.month1day10.errors }}
 
                         <table class="table marginbottom5px">
