@@ -2161,7 +2161,8 @@ body {
     border-right: 2px solid rgb(41, 128, 185);
 }
 .bluecircle {
-    background-image: url('/static/blocbox/images/circle-darkblue.png');
+    background-color: rgb(41, 128, 185);
+    border-radius: 100%;
     color: white;
     height: 60px;
     width: 60px;
@@ -2175,8 +2176,9 @@ body {
     background-size: contain;
 }
 .bluecircle:hover {
-    background-image: url('/static/blocbox/images/circle-darkblue.png');
     color: rgb(41, 128, 185);
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
 }
 .addresstext {
     font-size: 1.20em;
