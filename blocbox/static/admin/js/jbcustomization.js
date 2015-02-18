@@ -11,7 +11,8 @@
 *
 * Date: 2013-2-4
 */
-
+$(document).ready(function(){
+    
 $('[data-toggle="tooltip"]').tooltip({
 'placement': 'top'
 });
