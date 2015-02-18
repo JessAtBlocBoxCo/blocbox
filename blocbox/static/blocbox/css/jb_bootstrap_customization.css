@@ -2349,7 +2349,19 @@ input[type="checkbox"]:checked + label span {
     top: 100%;
 }
 .bluearrowright {
-    background-image: url('/static/blocbox/images/arrow-lightblue-right.png');
+    background-image: url('/static/blocbox/images/arrow-ltblue-right.png');
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 25px;
+    width: 25px;
+    z-index: inherit;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bluearrowleft {
+    background-image: url('/static/blocbox/images/arrow-ltblue-left.png');
     display: block;
     position: relative;
     background-repeat: no-repeat;
