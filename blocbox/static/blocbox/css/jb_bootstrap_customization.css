@@ -1839,6 +1839,7 @@ body {
         text-align: center;
         vertical-align: middle;
         white-space: nowrap;
+    border: none;
 }
 /*-------------------------------------------------------------*
 * HOST PROFILE VISITOR PAGE STYLES
