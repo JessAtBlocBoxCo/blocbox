@@ -20,7 +20,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                             <h4 class="col-xs-4 col-xs-offset-4 textcenter monthtext">{{ thismonth }}</h4>
                             <div class="col-xs-4 margintop10px paddingtop5px nopaddingleftright">
                                 <div class="row">
-                                    <a class="col-xs-9 textright ltbluetext paddingtop5px nopaddingleftright" href="#carousel-example-generic" role="button" data-slide="next" style=" text-decoration: none; color: rgb(41, 128, 185);">Next Month</a>
+                                    <a class="col-xs-9 textright ltbluetext paddingtop5px nopaddingleftright" href="#carousel-example-generic" role="button" data-slide="next" style=" text-decoration: none; color: rgb(41, 128, 185);">Next</a>
                                     <div class="col-xs-2">
                                         <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
                                             <div class="bluearrowright" aria-hidden="true" style="margin-left: -15px"></div>
@@ -110,7 +110,23 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
             <div class="item">
                 <div class="col-xs-12">
                     <div class="col-xs-12">
-                        <h4 class="textcenter monthtext">{{nextmonth}} </h4> {{ cal_form.month2day1.errors }} {{ cal_form.month2day2.errors }} {{ cal_form.month2day3.errors }} {{ cal_form.month2day4.errors }} {{ cal_form.month2day5.errors }} {{ cal_form.month2day6.errors }} {{ cal_form.month2day7.errors }} {{ cal_form.month2day8.errors }} {{ cal_form.month2day9.errors }} {{ cal_form.month2day10.errors }}
+                        <div class="row">
+                            <div class="col-xs-4 col-xs-offset-4  margintop10px paddingtop5px nopaddingleftright">
+                                <div class="row">
+                                    <div class="col-xs-2">
+                                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                            <div class="bluearrowright" aria-hidden="true" style="margin-left: -15px"></div>
+                                        </a>
+                                    </div>
+                                    <a class="col-xs-9 textright ltbluetext paddingtop5px nopaddingleftright" href="#carousel-example-generic" role="button" data-slide="next" style=" text-decoration: none; color: rgb(41, 128, 185);">Previous</a>
+                                </div>
+                            </div>
+                            <h4 class="col-xs-4 textcenter monthtext">{{nextmonth}} </h4>
+                        </div>
+                        
+                        
+                        
+                        {{ cal_form.month2day1.errors }} {{ cal_form.month2day2.errors }} {{ cal_form.month2day3.errors }} {{ cal_form.month2day4.errors }} {{ cal_form.month2day5.errors }} {{ cal_form.month2day6.errors }} {{ cal_form.month2day7.errors }} {{ cal_form.month2day8.errors }} {{ cal_form.month2day9.errors }} {{ cal_form.month2day10.errors }}
 
                         <table class="table marginbottom5px">
                             <!--first row: weekday names -->
