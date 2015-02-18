@@ -51,10 +51,25 @@
                                 <button type="button" class="btn-question nopaddingleftright" data-container="body" data-toggle="popover" title="{{ host.first_name }}'s Availability" data-content="{{ host.availability }}" data-placement="right" data-trigger="hover"><i class="fa fa-question-circle fa-fw lterbluetext textright"></i></button>
                             </div>
                         </div>
-                        <div class="bluecircle textcenter">
-                            <p class="paddingtop15px"><i class="fa fa-calendar-o fa-fw fa-2x textwhite"></i>
-                            </p>
+                        <a class="bluecircle textcenter" href="#openModal1">
+                            <a class="paddingtop15px" href="#openModal1"><i class="fa fa-calendar-o fa-fw fa-2x textwhite"></i>
+                            </a>
+                        </a>
+                        
+                        <!--calendar MODAL-->
+                        <div id="openModal1" class="modalDialog">
+                            <div class="modalupfront"> <a href="#close" title="Close" class="close">X</a>
+                                <h6 class="ltbluetext">{{ host.first_name }}'s Availability</h6>
+                                <div class="col-xs-12"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} </div>
+                            </div>
                         </div>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
                         <p class="paddingtop10px nomargin">{{ host.whenimhome_days }}</p>
                         <p class="momargin" style="padding-top: 2px;">{{ host.whenimhome_hours }}</p>
                     </div>
