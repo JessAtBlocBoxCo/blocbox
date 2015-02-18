@@ -1840,6 +1840,7 @@ body {
         vertical-align: middle;
         white-space: nowrap;
     border: none;
+    background-color: transparent;
 }
 /*-------------------------------------------------------------*
 * HOST PROFILE VISITOR PAGE STYLES
