@@ -65,6 +65,10 @@ h6 {
     font-weight: 400;
     line-height: 1.38em;
 }
+.h1weight {
+    font-weight: 500;
+}
+
 .tinytext {
     font-size: 0.800em;
     font-weight: 400;
