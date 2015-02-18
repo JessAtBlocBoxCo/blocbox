@@ -1784,7 +1784,7 @@ body {
     color: #3498db;
     border-color: rgb(223, 226, 226);
     height: 40px;
-    min-width: 250px;
+    width: 100%;
     border: solid;
     border-width: 2px;
     margin-left: auto;
