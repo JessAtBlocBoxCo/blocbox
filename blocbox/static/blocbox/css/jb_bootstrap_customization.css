@@ -1509,7 +1509,6 @@ body {
     transform: rotateX(180deg);
     display: inline-block;
     position: absolute;
-    left: 50%;
     top: 0;
 }
 .cd-headline.rotate-1 b.is-visible {
@@ -1523,7 +1522,6 @@ body {
     transform: rotateX(180deg);
     display: inline-block;
     position: absolute;
-    left: 50%;
     top: 0;
 }
 
