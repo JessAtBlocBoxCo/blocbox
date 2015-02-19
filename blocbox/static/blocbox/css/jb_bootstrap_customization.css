@@ -2119,7 +2119,6 @@ a > .offercard:focus {
 }
 .close {
     background: #FFFFFF;
-    font-size: .80em;
     color: #606061;
     line-height: 20px;
     position: absolute;
@@ -2127,11 +2126,6 @@ a > .offercard:focus {
     text-align: center;
     top: 10px;
     width: 25px;
-    text-decoration: none;
-    border: 2px solid #606061;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    border-radius: 12px;
 }
 .close:hover {
     background: #f25f52;
