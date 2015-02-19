@@ -1725,14 +1725,14 @@ body {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
     border: 2px solid rgb(255, 203, 19);
 }
-.a > offercard {
+a > .offercard {
     color: inherit;
 }
-.a > offercard:hover {
+a > .offercard:hover {
     color: inherit;
     text-decoration: none;
 }
-.a > offercard:focus {
+a > .offercard:focus {
     color: inherit;
     text-decoration: none;
 }
