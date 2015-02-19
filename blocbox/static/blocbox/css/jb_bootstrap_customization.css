@@ -1742,16 +1742,17 @@ body {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 .btn-details {
-    background-color: rgb(127, 140, 141);
+    background-color: rgb(223, 226, 226);
     color: white;
     position: absolute;
     border-radius: 5px;
     top: 15px;
-    left: 30px;
+    left: 15px;
 }
 .btn-details:hover {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
     cursor: zoom-in;
+    color: white;
 }
 .offercard .btn-details {
     visibility: hidden;
