@@ -1734,13 +1734,12 @@ body {
     padding: 30px 10px 5px 10px;
     border-radius: 3px;
     margin-bottom: 30px;
-    z-index: 10;
 }
-.offercard:hover {
+.offerdetails:hover {
     cursor: zoom-in;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
-.offercard:focus {
+.offerdetails:focus {
     cursor: zoom-in;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
@@ -1769,7 +1768,6 @@ a > .offercard:focus {
     position: absolute;
     right: 30px;
     top: 15px;
-    z-index: 10;
 }
 .startoffer:hover {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
