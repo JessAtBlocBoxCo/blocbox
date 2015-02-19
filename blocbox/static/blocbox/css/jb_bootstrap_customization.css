@@ -1769,7 +1769,7 @@ a > .offercard:focus {
     position: absolute;
     right: 30px;
     top: 15px;
-    z-index: 100;
+    z-index: 10;
 }
 .startoffer:hover {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
