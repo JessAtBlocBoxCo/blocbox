@@ -1683,7 +1683,6 @@ body {
 }
 .profilebox {
     background-color: rgb(255, 255, 255);
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     overflow: visible;
     min-height: 100%;
     min-height: 150px;
@@ -1751,7 +1750,7 @@ body {
     left: 15px;
 }
 .btn-details:hover {
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
     cursor: zoom-in;
     color: white;
 }
@@ -1794,7 +1793,7 @@ a > .offercard:focus {
     top: 15px;
 }
 .btn-startoffer:hover {
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }
 .packagebg {
     padding-top: 30px;
