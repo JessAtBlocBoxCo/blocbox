@@ -1713,16 +1713,17 @@ body {
     overflow: visible;
     min-height: 100%;
     padding: 15px 0px 15px 0px;
+    border-radius: 2px;
 }
 .offercard:hover {
     cursor: zoom-in;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgb(26, 188, 156);
+    border: 2px solid rgb(26, 188, 156);
 }
 .offercard:focus {
     cursor: zoom-in;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgb(26, 188, 156);
+    border: 2px solid rgb(26, 188, 156);
 }
 .a > offercard {
     color: inherit;
