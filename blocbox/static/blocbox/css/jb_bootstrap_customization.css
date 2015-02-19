@@ -1771,6 +1771,29 @@ a > .offercard:focus {
     background: #fff;
     z-index: 100000000;
 }
+.modalheader {
+    text-align: left;
+    font-size: 1.3em;
+    font-weight: 400;
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+}
+.centerboxtext {
+    text-align: left;
+    font-size: 1.143em;
+    font-weight: 300;
+    padding-left: 7.5%;
+    padding-right: 7.7%;
+    padding-top: 10px;
+}
+.modaltext {
+    text-align: left;
+    font-size: 1.143em;
+    font-weight: 300;
+    padding-left: 3.5%;
+    padding-right: 3.7%;
+    padding-top: 10px;
+}
 
 
 .divline {
@@ -1782,12 +1805,6 @@ a > .offercard:focus {
     z-index: 6;
     height: 0.063em;
     background-color: rgb(255, 255, 255);
-}
-.centerboxheader {
-    text-align: left;
-    font-size: 1.3em;
-    font-weight: 400;
-    padding-left: 7.5%;
 }
 .sideboxtext {
     font-size: 1.143em;
@@ -1803,14 +1820,6 @@ a > .offercard:focus {
     height: 40px;
     width: 40px;
     margin: auto;
-}
-.centerboxtext {
-    text-align: left;
-    font-size: 1.143em;
-    font-weight: 300;
-    padding-left: 7.5%;
-    padding-right: 7.7%;
-    padding-top: 10px;
 }
 .bluebutton {
     background-color: #3498db;
