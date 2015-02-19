@@ -2129,7 +2129,7 @@ a > .offercard:focus {
     text-decoration: none;
 }
 .close:hover {
-
+    color: #f25f52;
 }
 .form-inline .form-control {
     width: 100%;
