@@ -68,23 +68,30 @@ h6 {
 .h1weight {
     font-weight: 500;
 }
+a {
+    color: inherit;
+}
 
 a:link {
     background-color: inherit;
+    color: inherit;
 }
 
 a:visited {
     background-color: inherit;
+    color: inherit;
 }
 
 a:hover {
     background-color: inherit;
     text-decoration: none;
+    color: inherit;
 }
 
 a:active {
     background-color: inherit;
     text-decoration: none;
+    color: inherit;
 } 
 
 .tinytext {
