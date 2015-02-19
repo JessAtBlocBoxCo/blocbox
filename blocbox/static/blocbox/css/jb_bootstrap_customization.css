@@ -1762,18 +1762,14 @@ a > .offercard:focus {
     visibility: visible;
 }
 .startoffer {
-    background-color: transparent;
-    color: rgb(26, 188, 156);
+    background-color: rgb(26, 188, 156);
+    color: white;
     border: 1px solid rgb(39, 174, 96);
     border-radius: 5px;
     z-index: 100;
 }
 .startoffer:hover {
-    background-color: rgb(26, 188, 156);
-    color: white;
-    border: 1px solid rgb(39, 174, 96);
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
-    z-index: 100;
 }
 .packagebg {
     padding-top: 30px;
