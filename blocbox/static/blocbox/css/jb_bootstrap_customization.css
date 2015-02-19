@@ -1761,6 +1761,18 @@ a > .offercard:focus {
     color: rgb(255, 203, 19);
     text-shadow: 2px 2px 2px rgba(255, 203, 19, 0.25)
 }
+
+.modalDialog > div > .packageoffer  {
+    width: 600px;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 15px;
+    border-radius: 3px;
+    background: #fff;
+    z-index: 100000000;
+}
+
+
 .divline {
     z-index: 6;
     height: 0.063em;
