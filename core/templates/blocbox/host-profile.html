@@ -48,7 +48,8 @@
                                 <p class="dashfont whitetext paddingtop5px">WHEN&nbsp;I'M&nbsp;HOME</p>
                             </div>
                             <div class="col-sm-1 nopaddingleftright" style="padding-top: 1px;">
-                                <button type="button" class="btn-question nopaddingleftright" data-container="body" data-toggle="popover" title="{{ host.first_name }}'s Availability" data-content="{{ host.availability }}" data-placement="right" data-trigger="hover"><i class="fa fa-question-circle fa-fw lterbluetext textright"></i></button>
+                                <button type="button" class="btn-question nopaddingleftright" data-container="body" data-toggle="popover" title="{{ host.first_name }}'s Availability" data-content="{{ host.availability }}" data-placement="right" data-trigger="hover"><i class="fa fa-question-circle fa-fw lterbluetext textright"></i>
+                                </button>
                             </div>
                         </div>
                         <a class="btn-calendar textcenter" href="#openModal1">
@@ -63,8 +64,8 @@
                             </div>
                         </div>
                         <a href="#openModal1 textwhite">
-                        <p class="paddingtop10px nomargin">{{ host.whenimhome_days }}</p>
-                        <p class="momargin" style="padding-top: 2px;">{{ host.whenimhome_hours }}</p>
+                            <p class="paddingtop10px nomargin">{{ host.whenimhome_days }}</p>
+                            <p class="momargin" style="padding-top: 2px;">{{ host.whenimhome_hours }}</p>
                         </a>
                     </div>
                     <div class="col-sm-4 whitetext  sideborders" style="height: 149px;">
@@ -80,7 +81,8 @@
                                 <p class="dashfont whitetext paddingtopbottom5px">RATING</p>
                             </div>
                             <div class="col-sm-1 nopaddingleftright" style="padding-top: 3px;">
-                                <button type="button" class="btn-question" data-container="body" data-toggle="popover" title="popover title" data-content="test test test test" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle fa-fw lterbluetext textright"></i></button>
+                                <button type="button" class="btn-question" data-container="body" data-toggle="popover" title="popover title" data-content="test test test test" data-placement="bottom" data-trigger="hover"><i class="fa fa-question-circle fa-fw lterbluetext textright"></i>
+                                </button>
                             </div>
                         </div>
                         <div class="btn-calendar">
@@ -114,7 +116,8 @@
                         <p class="col-sm-10 greentext nopadding">Verified Info</p>
                     </div>
                     <div class="col-sm-1">
-                        <button type="button" class="btn-question" data-container="body" data-toggle="popover" title="popover title" data-content="test test test test" data-placement="right" data-trigger="hover"><i class="fa fa-question-circle fa-fw fa-lg ltergreytext"></i></button>
+                        <button type="button" class="btn-question" data-container="body" data-toggle="popover" title="popover title" data-content="test test test test" data-placement="right" data-trigger="hover"><i class="fa fa-question-circle fa-fw fa-lg ltergreytext"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="profileboxline"></div>
@@ -158,7 +161,7 @@
                 </div>
 
                 <div style="height: 678px; overflow: scroll">
-                 <!--   <div class="profilebox">
+                    <!--   <div class="profilebox">
                         <!--adding nopaddingsides so this image doesn't create unwanted margin in mobile -->
                     <!--     <div class="row">
                             <div class="centerboxheader nopadding">
@@ -197,7 +200,7 @@
                         </div>
                         <!--row containg pricing info-->
 
-                        <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
+                    <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
 
                     <!--     <div class="row marginbottom10px">
                             <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
@@ -223,20 +226,20 @@
                     <div class="row nopaddingleftright">
                         <div class="col-sm-4 nopaddingleft">
                             <!--Packages Card-->
-                                <div class="offercard">
-                                    <div class="btn-details">
-                                       <a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Details</a>
-                                       </div>
-                                      <div class="btn-startoffer">
-                                       {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
-                                    <a class="" href="#openModal2" title="Click for Details"> 
-                                <div class="packagebg">
-                                    <i class="fa fa-cube fa-fw fa-5x package-i"></i>
+                            <div class="offercard">
+                                <div class="btn-details">
+                                    <a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Details</a>
                                 </div>
-                                <div class="paddingsides15px">
-                                    <h6 class="textcenter">Package Receipt</h6>
-                                </div>
-                                <div class="profileboxline"></div>
+                                <div class="btn-startoffer">
+                                    {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                <a class="" href="#openModal2" title="Click for Details">
+                                    <div class="packagebg">
+                                        <i class="fa fa-cube fa-fw fa-5x package-i"></i>
+                                    </div>
+                                    <div class="paddingsides15px">
+                                        <h6 class="textcenter">Package Receipt</h6>
+                                    </div>
+                                    <div class="profileboxline"></div>
                                     <div class="paddingtopbottom5px paddingsides15px">
                                         <p class="textright dashfont darkgreytext nomargin">$2 PER PACKAGE</p>
                                     </div>
@@ -244,14 +247,14 @@
                                     <div class="paddingtopbottom5px paddingsides15px">
                                         <p class="textright dashfont darkgreytext nomargin">$15 FOR 10 PACKAGES</p>
                                     </div>
-                                        {% if enduser_is_connected_to_host %}{% else %}
+                                    {% if enduser_is_connected_to_host %}{% else %}
                                     <div class="profileboxline"></div>
                                     <div class="paddingtopbottom5px paddingsides15px">
                                         <p class="textcenter dashfont greentext nomargin">FIRST 3 PACKAGES FREE</p>
                                     </div>
-                                        {% endif %}
-                                    </a>
-                                </div>
+                                    {% endif %}
+                                </a>
+                            </div>
 
                             <!--Packages MODAL2-->
                             <div id="openModal2" class="modalDialog">
@@ -263,9 +266,9 @@
                                     </div>
                                     <div class="profileboxline"></div>
                                     <div class="col-sm-12 paddingtopbottom5px">
-                                    <p class="modaltext">
-                                        {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
-                                    </p>
+                                        <p class="modaltext">
+                                            {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
+                                        </p>
                                     </div>
                                     <div class="row" style="padding-left: 7.5%; padding-right: 7.7%">
                                         <div class="col-sm-4 col-sm-2" style="padding-bottom: 7px;">
@@ -291,14 +294,11 @@
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
-                                            
+
                                             <div class="row">
-                                               
-                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
-                                                <div class="col-sm-2 nopadding">
-                                                    <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
-                                                    </button>
-                                                </div>
+                                                <div class="btn-startoffer">
+                                                    <a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start a Shipment {% if hostonly %} to {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                                   </div>
                                             </div>
                                             {% else %}
                                             <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
@@ -307,8 +307,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--End of Packages Card-->
-                            
+                            </div>
+                            <!--End of Packages Card-->
+
                             <!--Packages Card-->
                             <a class="" href="#openModal2">
                                 <div class="offercard paddingsides15px marginbottom30px">
@@ -391,8 +392,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--End of Packages Card-->
-                            
+                            </div>
+                            <!--End of Packages Card-->
+
                             <!--Packages Card-->
                             <a class="" href="#openModal2">
                                 <div class="offercard paddingsides15px marginbottom30px">
@@ -475,15 +477,16 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--End of Packages Card-->
-                    
+                            </div>
+                            <!--End of Packages Card-->
+
                         </div>
 
-                        
-                        
-                        
+
+
+
                         <div class="col-sm-4" style="padding-left: 7.5px; padding-right: 7.5px;">
-                           
+
                             <!--Packages Card-->
                             <a class="" href="#openModal2">
                                 <div class="offercard paddingsides15px marginbottom30px">
@@ -566,8 +569,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--End of Packages Card-->
-                            
+                            </div>
+                            <!--End of Packages Card-->
+
                             <!--Packages Card-->
                             <a class="" href="#openModal2">
                                 <div class="offercard paddingsides15px marginbottom30px">
@@ -650,11 +654,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--End of Packages Card-->
-                            
+                            </div>
+                            <!--End of Packages Card-->
+
                         </div>
                         <div class="col-sm-4 nopaddingright">
-                           
+
                             <!--Packages Card-->
                             <a class="" href="#openModal2">
                                 <div class="offercard paddingsides15px marginbottom30px">
@@ -737,8 +742,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--End of Packages Card-->
-                            
+                            </div>
+                            <!--End of Packages Card-->
+
                             <!--Packages Card-->
                             <a class="" href="#openModal2">
                                 <div class="offercard paddingsides15px marginbottom30px">
@@ -821,8 +827,9 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div><!--End of Packages Card-->
-                            
+                            </div>
+                            <!--End of Packages Card-->
+
                         </div>
                     </div>
 
