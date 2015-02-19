@@ -1766,6 +1766,8 @@ a > .offercard:focus {
     color: white;
     border: 1px solid rgb(39, 174, 96);
     border-radius: 5px;
+    position: absolute;
+    right: 0;
     z-index: 100;
 }
 .startoffer:hover {
