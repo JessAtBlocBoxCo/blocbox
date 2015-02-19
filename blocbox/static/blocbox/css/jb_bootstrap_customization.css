@@ -1761,6 +1761,12 @@ a > .offercard:focus {
 .offercard:hover .startoffer{
     visibility: visible;
 }
+.startoffer {
+    background-color: rgb(26, 188, 156);
+    color: white;
+    border-radius: 5px;
+    z-index: 100;
+}
 .packagebg {
     padding-top: 30px;
     padding-bottom: 30px;
