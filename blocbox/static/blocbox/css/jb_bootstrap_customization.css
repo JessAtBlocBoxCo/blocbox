@@ -1732,7 +1732,7 @@ body {
     overflow: visible;
     min-height: 100%;
     padding: 15px 0px 5px 0px;
-    border-radius: 2px;
+    border-radius: 3px;
 }
 .offercard:hover {
     cursor: zoom-in;
