@@ -1773,8 +1773,8 @@ a > .offercard:focus {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
 .packagebg {
-    padding-top: 20px;
-    padding-bottom: 15px;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 .package-i {
     color: rgb(255, 203, 19);
