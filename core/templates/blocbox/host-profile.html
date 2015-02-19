@@ -100,7 +100,7 @@
 
     <div class="row margintop20px marginbottom20px" style="margin-left: 32px; margin-right: -72px;">
         <!--Second Row of info> -->
-        <div class="col-xs-12 col-sm-4 col-sm-offset-1 offwhitebackground paddingbottom20px">
+        <div class="col-xs-12 col-sm-3 col-sm-offset-1 offwhitebackground paddingbottom20px">
             <h6 class="dashfont greytext textleft">ABOUT</h6>
             <div class="profilebox">
                 <p class="orangetext centerboxheader">Hi Neighbor!</p>
@@ -140,7 +140,7 @@
             </div>
         </div>
 
-        <div class="col-sm-6 nopaddingsides">
+        <div class="col-sm-7 nopaddingsides">
             <div class="col-sm-11 offwhitebackground" style="height: 733px;">
                 <div class="row">
                     <div class="col-sm-8 nopaddingleft">
@@ -222,10 +222,11 @@
 
                     <div class="row nopaddingleftright">
                         <div class="col-sm-4 nopaddingleft">
-                           
+                            {% if enduser_is_connected_to_host %}<p><i class="fa fa-plus-circle fa-fw greentext"></i></p>{% else %}{% endif %}
                             <!--Packages Card-->
                             <a class="" href="#openModal2" title="Click for Details">
                                 <div class="offercard paddingsides15px marginbottom30px">
+                                
                                 <div class="packagebg">
                                     <i class="fa fa-cube fa-fw fa-5x package-i"></i>
                                 </div>
