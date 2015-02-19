@@ -1736,6 +1736,15 @@ body {
     color: inherit;
     text-decoration: none;
 }
+.packagebg {
+    background-color: #22A7F0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.package-i {
+    color: cf9f69;
+    border: 1px solid white;
+}
 .divline {
     z-index: 6;
     height: 0.063em;
