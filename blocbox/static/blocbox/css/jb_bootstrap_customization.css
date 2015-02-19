@@ -1716,7 +1716,8 @@ body {
 }
 .offercard:hover {
     cursor: zoom-in;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+    border: 1px solid color: rgb(26, 188, 156);
 }
 .a > offercard {
     color: inherit;
