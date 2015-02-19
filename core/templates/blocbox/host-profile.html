@@ -271,12 +271,12 @@
                                         </p>
                                     </div>
                                     <div class="row" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-4 col-sm-2" style="padding-bottom: 7px;">
+                                        <div class="col-sm-5 col-sm-offset-1" style="padding-bottom: 7px;">
                                             <p class="dashpricetext">$2</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
                                             <p class="tinytext lightweight">Pay for a single package</p>
                                         </div>
-                                        <div class="col-sm-4" style="padding-bottom: 7px;">
+                                        <div class="col-sm-5" style="padding-bottom: 7px;">
                                             <p class="dashpricetext">$15</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
                                             <p class="tinytext lightweight">10 packages
@@ -294,7 +294,6 @@
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
-
                                             <div class="row">
                                                 <div class="btn-startoffer">
                                                     <a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start a Shipment {% if hostonly %} to {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
