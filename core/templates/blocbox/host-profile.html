@@ -223,10 +223,10 @@
                     <div class="row nopaddingleftright">
                         <div class="col-sm-4 nopaddingleft">
                             <!--Packages Card-->
-                            <a class="" href="#openModal2" title="Click for Details">
                                 <div class="offercard">
                                     <div class="startoffer">
                                        {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start Offer&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                    <a class="" href="#openModal2" title="Click for Details"> 
                                 <div class="packagebg">
                                     <i class="fa fa-cube fa-fw fa-5x package-i"></i>
                                 </div>
@@ -249,8 +249,9 @@
                                     <div class="paddingtop5px paddingsides15px">
                                         <p class="dashfont ltgreytext nomargin">Click for details</p>
                                     </div>
+                                    </a>
                                 </div>
-                            </a>
+
                             <!--Packages MODAL2-->
                             <div id="openModal2" class="modalDialog">
                                 <div class="packageoffer"> <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
