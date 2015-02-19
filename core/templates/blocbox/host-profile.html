@@ -287,16 +287,18 @@
 
                                     <div class="row marginbottom10px">
                                         <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
+                                            {% if enduser_is_connected_to_host %}{% else %}
                                             <p class="ltbluetext">Connect and try your first package for free</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
                                             <div class="row">
+                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                                                 <div class="col-sm-2 nopadding">
                                                     <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
                                                     </button>
                                                 </div>
-                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                                             </div>
                                             {% else %}
                                             <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
