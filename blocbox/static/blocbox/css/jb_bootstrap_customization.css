@@ -1762,7 +1762,7 @@ a > .offercard:focus {
     text-shadow: 2px 2px 2px rgba(255, 203, 19, 0.25)
 }
 
-.modalDialog > div .packageoffer  {
+.modalDialog .packageoffer  {
     width: 600px;
     position: relative;
     margin: 10% auto;
