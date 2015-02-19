@@ -1762,8 +1762,8 @@ a > .offercard:focus {
     visibility: visible;
 }
 .startoffer {
-    background-color: rgb(26, 188, 156);
-    color: white;
+    background-color: rgb(250, 250, 250);
+    color: rgb(26, 188, 156);
     border-radius: 5px;
     z-index: 100;
 }
