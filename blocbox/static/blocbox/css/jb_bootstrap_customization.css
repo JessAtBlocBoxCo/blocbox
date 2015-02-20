@@ -1743,11 +1743,9 @@ body {
 .btn-details {
     background-color: rgb(223, 226, 226);
     color: white;
-    position: absolute;
+    position: relative;
     border-radius: 5px;
     border: 1px solid rgb(235, 235, 235);
-    top: 15px;
-    left: 15px;
 }
 .btn-details:hover {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
@@ -1788,9 +1786,7 @@ a > .offercard:focus {
     color: white;
     border: 1px solid rgb(39, 174, 96);
     border-radius: 5px;
-    position: absolute;
-    right: 30px;
-    top: 15px;
+    position: relative;
 }
 .btn-startoffer:hover {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);

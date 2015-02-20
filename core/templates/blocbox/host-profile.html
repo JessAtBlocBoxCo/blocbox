@@ -227,11 +227,13 @@
                         <div class="col-sm-4 nopaddingleft">
                             <!--Packages Card-->
                             <div class="offercard">
-                                <div class="btn-details">
+                               <div class="row">
+                                <div class="col-sm-5 btn-details">
                                     <a class="btn textright" type="button" href="#openModal2" title="Click for Details">Details</a>
                                 </div>
-                                <div class="btn-startoffer">
+                                <div class="col-sm-5 col-sm-offset-2 btn-startoffer">
                                     {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                </div>
                                 <a href="#openModal2" title="Click for Details">
                                     <div class="packagebg">
                                         <i class="fa fa-cube fa-fw fa-5x package-i"></i>
