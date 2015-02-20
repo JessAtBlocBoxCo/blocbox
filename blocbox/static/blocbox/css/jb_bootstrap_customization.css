@@ -1817,6 +1817,9 @@ a > .offercard:focus {
 }
 .btn-startmodal:hover {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+    background-color: white;
+    border: 2px solid rgb(26, 188, 156);
+    color: rgb(26, 188, 156);
 }
 .packagebg {
     padding-top: 30px;
