@@ -1849,6 +1849,26 @@ a > .offercard:focus {
     color: rgb(255, 203, 19);
     text-shadow: 2px 2px 2px rgba(255, 203, 19, 0.25)
 }
+.wifi-i {
+    color: #333;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25)
+}
+.storage-i {
+    color: rgb(14, 41, 59);
+    text-shadow: 2px 2px 2px rgba(14, 41, 59, 0.25)
+}
+.house-sitting-i {
+    color: rgb(145, 61, 136);
+    text-shadow: 2px 2px 2px rgba(145, 61, 136, 0.25)
+}
+.emergency-i {
+    color: #f25f52;
+    text-shadow: 2px 2px 2px #f25f52(0.25)
+}
+.tools-i {
+    color: rgb(127, 140, 141);
+    text-shadow: 2px 2px 2px rgba(127, 140, 141, 0.25)
+}
 .modalDialog .packageoffer  {
     width: 600px;
     position: relative;
