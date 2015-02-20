@@ -83,8 +83,8 @@ JESS: user profile - make an upload picture modal
 JESS: user profile - pics: make individualized/link to specific hosts
         
 9.
+JESS: host profile - fix calendar modal to connect to host calendar
 JESS: host profile - make the process for hosts to enter their availability
-JESS: host profile process
 JESS: host profile:  verified info: if not connected, say "Verified Info" --
 JESS: host profile - verified info on HPV - only show symbol if verified, then in connect version show the DATA.
 JESS: host profile - update "when i'm home" informatiorfn for host profile... visitor
