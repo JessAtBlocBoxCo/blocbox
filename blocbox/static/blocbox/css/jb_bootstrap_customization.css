@@ -1802,7 +1802,6 @@ a > .offercard:focus {
     font-size: 1.143em;
     font-weight: 400;
     height: 40px;
-    color: white;
     border-radius: 5px;
     position: relative;
     -moz-user-select: none;
