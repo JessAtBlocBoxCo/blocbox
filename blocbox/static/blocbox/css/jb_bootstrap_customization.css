@@ -1795,6 +1795,16 @@ a > .offercard:focus {
 .btn-startoffer:hover {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
 }
+.btn-startmodal {
+    background-color: rgb(26, 188, 156);
+    color: white;
+    border: 1px solid rgb(39, 174, 96);
+    border-radius: 5px;
+    position: relative;
+}
+.btn-startmodal:hover {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.15);
+}
 .packagebg {
     padding-top: 30px;
     padding-bottom: 15px;
