@@ -1817,7 +1817,7 @@ a > .offercard:focus {
     width: 600px;
     position: relative;
     margin: 10% auto;
-    padding: 15px 15px;
+    padding: 15px 0px 15px 0px;
     border-radius: 3px;
     background: #fff;
     z-index: 100000000;
@@ -1833,8 +1833,8 @@ a > .offercard:focus {
     text-align: left;
     font-size: 1.3em;
     font-weight: 400;
-    padding-left: 3.5%;
-    padding-right: 3.5%;
+    padding-left: 7.5%;
+    padding-right: 7.5%;
 }
 .centerboxtext {
     text-align: left;
@@ -1848,8 +1848,8 @@ a > .offercard:focus {
     text-align: left;
     font-size: 1.143em;
     font-weight: 300;
-    padding-left: 3.5%;
-    padding-right: 3.7%;
+    padding-left: 7.5%;
+    padding-right: 7.7%;
     padding-top: 10px;
 }
 .divline {
