@@ -1797,6 +1797,9 @@ a > .offercard:focus {
 }
 .btn-startmodal {
     background-color: rgb(26, 188, 156);
+    font-size: 1.143em;
+    font-weight: 400;
+    height: 40px;
     color: white;
     border: 1px solid rgb(39, 174, 96);
     border-radius: 5px;
