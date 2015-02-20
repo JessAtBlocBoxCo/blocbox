@@ -265,13 +265,9 @@
                                         </div>
                                     </div>
                                     <div class="profileboxline"></div>
-                                        <p class="modaltext paddingtopbottom5px">
-                                            {% if enduser_is_connected_to_host %}
-                                            {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability.
-                                            {% else %}
-                                            {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
-                                            {% endif %}
-                                        </p>
+                                    <p class="modaltext paddingtopbottom5px">
+                                        {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
+                                    </p>
                                     <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
                                         <div class="col-sm-5 col-sm-offset-1">
                                             <p class="dashpricetext">$2</p>
@@ -311,80 +307,67 @@
                             </div>
                             <!--End of Packages Card-->
 
-                            <!--Packages Card-->
-                            <a class="" href="#openModal2">
-                                <div class="offercard paddingsides15px marginbottom30px">
+                            <!--Pet Care Card-->
+                            <div class="offercard">
+                                <div class="btn-details">
+                                    <a class="btn textright" type="button" href="#openModal3" title="Click for Details">Details</a>
+                                </div>
+                                <div class="btn-startoffer">
+                                    {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                <a href="#openModal3" title="Click for Details">
                                     <div class="packagebg">
-                                        <i class="fa fa-cube fa-fw fa-5x package-i"></i>
+                                        <div class="dog-grey"></div>
                                     </div>
                                     <div class="paddingsides15px">
-                                        <h6 class="textcenter">Package Receipt</h6>
+                                        <h6 class="textcenter">Pet Care</h6>
                                     </div>
                                     <div class="profileboxline"></div>
                                     <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$2 PER PACKAGE</p>
+                                        <p class="textright dashfont darkgreytext nomargin">PRICE TBD BY HOST</p>
                                     </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$15 FOR 10 PACKAGES</p>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtop5px paddingsides15px">
-                                        <p class="dashfont ltgreytext nomargin">Click for details</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!--Packages MODAL2-->
-                            <div id="openModal2" class="modalDialog">
-                                <div class="whitebackground"> <a href="#close" title="Close" class="close">X</a>
+                                </a>
+                            </div>
+
+                            <!--Pet Care MODAL3-->
+                            <div id="openModal3" class="modalDialog">
+                                <div class="packageoffer"> <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
                                     <div class="row">
-                                        <div class="centerboxheader nopadding">
-                                            <p class="col-sm-12 ltbluetext nopadding"><i class="fa fa-cube fa-fw fa-lg"></i>&nbsp;Package Receipt</p>
+                                        <div class="modalheader nopadding">
+                                            <p class="col-sm-12 nopadding"><i class="package-i fa fa-cube fa-fw fa-lg"></i>&nbsp;Pet Care</p>
                                         </div>
                                     </div>
                                     <div class="profileboxline"></div>
-                                    <p class="centerboxtext paddingtopbottom5px nomarginbottom">
-                                        {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
+                                    <p class="modaltext paddingtopbottom5px">
+                                        {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
                                     </p>
-                                    <div class="row" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                    <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
+                                        <div class="col-sm-5 col-sm-offset-1">
                                             <p class="dashpricetext">$2</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
-                                            <p class="tinytext lightweight">Pay for a single package</p>
+                                            <p class="tinytext lightweight">Pay for a Single Package</p>
                                         </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                        <div class="col-sm-5">
                                             <p class="dashpricetext">$15</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
-                                            <p class="tinytext lightweight">10 packages
-                                                <br>(expires in 1 year)</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$25</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">MONTHLY</h4>
-                                            <p class="tinytext lightweight">20 packages for the next 30 days</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$150</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">ANNUAL</h4>
-                                            <p class="tinytext lightweight">Up to 20 packages a month for one year</p>
+                                            <p class="tinytext lightweight">10 packages (Expires in 1 year)</p>
                                         </div>
                                     </div>
                                     <!--row containg pricing info-->
+                                    <p class="modaltext paddingbottom15px">{{ host.availability }}</p>
 
                                     <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
-
                                     <div class="row marginbottom10px">
                                         <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
+                                            {% if enduser_is_connected_to_host %}{% else %}
                                             <p class="ltbluetext">Connect and try your first package for free</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
                                             <div class="row">
-                                                <div class="col-sm-2 nopadding">
-                                                    <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
-                                                    </button>
+                                                <div class="btn-startmodal">
+                                                    <a class="textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start a Shipment {% if hostonly %} to {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
                                                 </div>
-                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                                             </div>
                                             {% else %}
                                             <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
@@ -394,82 +377,69 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End of Packages Card-->
+                            <!--End of Pet Care Card-->
 
-                            <!--Packages Card-->
-                            <a class="" href="#openModal2">
-                                <div class="offercard paddingsides15px marginbottom30px">
+                            <!--Wifi Card-->
+                            <div class="offercard">
+                                <div class="btn-details">
+                                    <a class="btn textright" type="button" href="#openModal4" title="Click for Details">Details</a>
+                                </div>
+                                <div class="btn-startoffer">
+                                    {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                <a href="#openModal4" title="Click for Details">
                                     <div class="packagebg">
                                         <i class="fa fa-cube fa-fw fa-5x package-i"></i>
                                     </div>
                                     <div class="paddingsides15px">
-                                        <h6 class="textcenter">Package Receipt</h6>
+                                        <h6 class="textcenter">Wifi Sharing</h6>
                                     </div>
                                     <div class="profileboxline"></div>
                                     <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$2 PER PACKAGE</p>
+                                        <p class="textright dashfont darkgreytext nomargin">REQUEST FOR PRICING</p>
                                     </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$15 FOR 10 PACKAGES</p>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtop5px paddingsides15px">
-                                        <p class="dashfont ltgreytext nomargin">Click for details</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!--Packages MODAL2-->
-                            <div id="openModal2" class="modalDialog">
-                                <div class="whitebackground"> <a href="#close" title="Close" class="close">X</a>
+                                </a>
+                            </div>
+
+                            <!--Packages MODAL4-->
+                            <div id="openModal4" class="modalDialog">
+                                <div class="packageoffer"> <a href="#close" title="Close" class="close"><i class="fa fa-wifi fa-fw fa-lg"></i></a>
                                     <div class="row">
-                                        <div class="centerboxheader nopadding">
-                                            <p class="col-sm-12 ltbluetext nopadding"><i class="fa fa-cube fa-fw fa-lg"></i>&nbsp;Package Receipt</p>
+                                        <div class="modalheader nopadding">
+                                            <p class="col-sm-12 nopadding"><i class="package-i fa fa-cube fa-fw fa-lg"></i>&nbsp;Wifi Sharing</p>
                                         </div>
                                     </div>
                                     <div class="profileboxline"></div>
-                                    <p class="centerboxtext paddingtopbottom5px nomarginbottom">
-                                        {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
+                                    <p class="modaltext paddingtopbottom5px">
+                                        {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
                                     </p>
-                                    <div class="row" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                    <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
+                                        <div class="col-sm-5 col-sm-offset-1">
                                             <p class="dashpricetext">$2</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
-                                            <p class="tinytext lightweight">Pay for a single package</p>
+                                            <p class="tinytext lightweight">Pay for a Single Package</p>
                                         </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                        <div class="col-sm-5">
                                             <p class="dashpricetext">$15</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
-                                            <p class="tinytext lightweight">10 packages
-                                                <br>(expires in 1 year)</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$25</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">MONTHLY</h4>
-                                            <p class="tinytext lightweight">20 packages for the next 30 days</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$150</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">ANNUAL</h4>
-                                            <p class="tinytext lightweight">Up to 20 packages a month for one year</p>
+                                            <p class="tinytext lightweight">10 packages (Expires in 1 year)</p>
                                         </div>
                                     </div>
                                     <!--row containg pricing info-->
+                                    <p class="modaltext paddingbottom15px">{{ host.availability }}</p>
 
                                     <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
-
                                     <div class="row marginbottom10px">
                                         <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
+                                            {% if enduser_is_connected_to_host %}{% else %}
                                             <p class="ltbluetext">Connect and try your first package for free</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
                                             <div class="row">
-                                                <div class="col-sm-2 nopadding">
-                                                    <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
-                                                    </button>
+                                                <div class="btn-startmodal">
+                                                    <a class="textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start a Shipment {% if hostonly %} to {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
                                                 </div>
-                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                                             </div>
                                             {% else %}
                                             <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
@@ -479,89 +449,75 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End of Packages Card-->
-
+                            <!--End of Wifi Card-->
                         </div>
-
-
+                        <!--End of 1st column-->
 
 
                         <div class="col-sm-4" style="padding-left: 7.5px; padding-right: 7.5px;">
+                            <!--Start of 2nd Column-->
 
-                            <!--Packages Card-->
-                            <a class="" href="#openModal2">
-                                <div class="offercard paddingsides15px marginbottom30px">
+                            <div class="offercard">
+                                <!--Storage Card-->
+                                <div class="btn-details">
+                                    <a class="btn textright" type="button" href="#openModal5" title="Click for Details">Details</a>
+                                </div>
+                                <div class="btn-startoffer">
+                                    {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                <a href="#openModal5" title="Click for Details">
                                     <div class="packagebg">
-                                        <i class="fa fa-cube fa-fw fa-5x package-i"></i>
+                                        <i class="fa fa-cubes fa-fw fa-5x package-i"></i>
                                     </div>
                                     <div class="paddingsides15px">
-                                        <h6 class="textcenter">Package Receipt</h6>
+                                        <h6 class="textcenter">Storage</h6>
                                     </div>
                                     <div class="profileboxline"></div>
                                     <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$2 PER PACKAGE</p>
+                                        <p class="textright dashfont darkgreytext nomargin">REQUEST FOR PRICING</p>
                                     </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$15 FOR 10 PACKAGES</p>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtop5px paddingsides15px">
-                                        <p class="dashfont ltgreytext nomargin">Click for details</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!--Packages MODAL2-->
-                            <div id="openModal2" class="modalDialog">
-                                <div class="whitebackground"> <a href="#close" title="Close" class="close">X</a>
+                                </a>
+                            </div>
+
+                            <!--Storage MODAL5-->
+                            <div id="openModal5" class="modalDialog">
+                                <div class="packageoffer"> <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
                                     <div class="row">
-                                        <div class="centerboxheader nopadding">
-                                            <p class="col-sm-12 ltbluetext nopadding"><i class="fa fa-cube fa-fw fa-lg"></i>&nbsp;Package Receipt</p>
+                                        <div class="modalheader nopadding">
+                                            <p class="col-sm-12 nopadding"><i class="package-i fa fa-cubes fa-fw fa-lg"></i>&nbsp;Storage</p>
                                         </div>
                                     </div>
                                     <div class="profileboxline"></div>
-                                    <p class="centerboxtext paddingtopbottom5px nomarginbottom">
-                                        {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
+                                    <p class="modaltext paddingtopbottom5px">
+                                        {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
                                     </p>
-                                    <div class="row" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                    <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
+                                        <div class="col-sm-5 col-sm-offset-1">
                                             <p class="dashpricetext">$2</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
-                                            <p class="tinytext lightweight">Pay for a single package</p>
+                                            <p class="tinytext lightweight">Pay for a Single Package</p>
                                         </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                        <div class="col-sm-5">
                                             <p class="dashpricetext">$15</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
-                                            <p class="tinytext lightweight">10 packages
-                                                <br>(expires in 1 year)</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$25</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">MONTHLY</h4>
-                                            <p class="tinytext lightweight">20 packages for the next 30 days</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$150</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">ANNUAL</h4>
-                                            <p class="tinytext lightweight">Up to 20 packages a month for one year</p>
+                                            <p class="tinytext lightweight">10 packages (Expires in 1 year)</p>
                                         </div>
                                     </div>
                                     <!--row containg pricing info-->
+                                    <p class="modaltext paddingbottom15px">{{ host.availability }}</p>
 
                                     <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
-
                                     <div class="row marginbottom10px">
                                         <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
+                                            {% if enduser_is_connected_to_host %}{% else %}
                                             <p class="ltbluetext">Connect and try your first package for free</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
                                             <div class="row">
-                                                <div class="col-sm-2 nopadding">
-                                                    <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
-                                                    </button>
+                                                <div class="btn-startmodal">
+                                                    <a class="textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start a Shipment {% if hostonly %} to {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
                                                 </div>
-                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                                             </div>
                                             {% else %}
                                             <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
@@ -571,82 +527,71 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End of Packages Card-->
+                            <!--End of Storage Card-->
 
-                            <!--Packages Card-->
-                            <a class="" href="#openModal2">
-                                <div class="offercard paddingsides15px marginbottom30px">
+
+
+                            <div class="offercard">
+                                <!--House Sitting Card-->
+                                <div class="btn-details">
+                                    <a class="btn textright" type="button" href="#openModal6" title="Click for Details">Details</a>
+                                </div>
+                                <div class="btn-startoffer">
+                                    {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                <a href="#openModal6" title="Click for Details">
                                     <div class="packagebg">
-                                        <i class="fa fa-cube fa-fw fa-5x package-i"></i>
+                                        <i class="fa fa-home fa-fw fa-5x package-i"></i>
                                     </div>
                                     <div class="paddingsides15px">
-                                        <h6 class="textcenter">Package Receipt</h6>
+                                        <h6 class="textcenter">House Sitting</h6>
                                     </div>
                                     <div class="profileboxline"></div>
                                     <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$2 PER PACKAGE</p>
+                                        <p class="textright dashfont darkgreytext nomargin">$15 PER DAY</p>
                                     </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$15 FOR 10 PACKAGES</p>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtop5px paddingsides15px">
-                                        <p class="dashfont ltgreytext nomargin">Click for details</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!--Packages MODAL2-->
-                            <div id="openModal2" class="modalDialog">
-                                <div class="whitebackground"> <a href="#close" title="Close" class="close">X</a>
+                                </a>
+                            </div>
+
+                            <!--House Sitting MODAL6-->
+                            <div id="openModal6" class="modalDialog">
+                                <div class="packageoffer"> <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
                                     <div class="row">
-                                        <div class="centerboxheader nopadding">
-                                            <p class="col-sm-12 ltbluetext nopadding"><i class="fa fa-cube fa-fw fa-lg"></i>&nbsp;Package Receipt</p>
+                                        <div class="modalheader nopadding">
+                                            <p class="col-sm-12 nopadding"><i class="package-i fa fa-home fa-fw fa-lg"></i>&nbsp;House Sitting</p>
                                         </div>
                                     </div>
                                     <div class="profileboxline"></div>
-                                    <p class="centerboxtext paddingtopbottom5px nomarginbottom">
-                                        {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
+                                    <p class="modaltext paddingtopbottom5px">
+                                        {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
                                     </p>
-                                    <div class="row" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                    <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
+                                        <div class="col-sm-5 col-sm-offset-1">
                                             <p class="dashpricetext">$2</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
-                                            <p class="tinytext lightweight">Pay for a single package</p>
+                                            <p class="tinytext lightweight">Pay for a Single Package</p>
                                         </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                        <div class="col-sm-5">
                                             <p class="dashpricetext">$15</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
-                                            <p class="tinytext lightweight">10 packages
-                                                <br>(expires in 1 year)</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$25</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">MONTHLY</h4>
-                                            <p class="tinytext lightweight">20 packages for the next 30 days</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$150</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">ANNUAL</h4>
-                                            <p class="tinytext lightweight">Up to 20 packages a month for one year</p>
+                                            <p class="tinytext lightweight">10 packages (Expires in 1 year)</p>
                                         </div>
                                     </div>
                                     <!--row containg pricing info-->
+                                    <p class="modaltext paddingbottom15px">{{ host.availability }}</p>
 
                                     <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
-
                                     <div class="row marginbottom10px">
                                         <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
+                                            {% if enduser_is_connected_to_host %}{% else %}
                                             <p class="ltbluetext">Connect and try your first package for free</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
                                             <div class="row">
-                                                <div class="col-sm-2 nopadding">
-                                                    <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
-                                                    </button>
+                                                <div class="btn-startmodal">
+                                                    <a class="textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request {% if hostonly %}{{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
                                                 </div>
-                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                                             </div>
                                             {% else %}
                                             <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
@@ -656,85 +601,73 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End of Packages Card-->
-
                         </div>
+                        <!--End of House Sitting Card-->
+
                         <div class="col-sm-4 nopaddingright">
+                            <!--Start of 3rd Column-->
 
-                            <!--Packages Card-->
-                            <a class="" href="#openModal2">
-                                <div class="offercard paddingsides15px marginbottom30px">
+                            <div class="offercard">
+                                <!--Emergency Card-->
+                                <div class="btn-details">
+                                    <a class="btn textright" type="button" href="#openModal7" title="Click for Details">Details</a>
+                                </div>
+                                <div class="btn-startoffer">
+                                    {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                <a href="#openModal7" title="Click for Details">
                                     <div class="packagebg">
-                                        <i class="fa fa-cube fa-fw fa-5x package-i"></i>
+                                        <i class="fa fa-plus-square fa-fw fa-5x package-i"></i>
                                     </div>
                                     <div class="paddingsides15px">
-                                        <h6 class="textcenter">Package Receipt</h6>
+                                        <h6 class="textcenter">Emergency Help</h6>
                                     </div>
                                     <div class="profileboxline"></div>
                                     <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$2 PER PACKAGE</p>
+                                        <p class="textright dashfont darkgreytext nomargin">REQUEST FOR PRICING</p>
                                     </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$15 FOR 10 PACKAGES</p>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtop5px paddingsides15px">
-                                        <p class="dashfont ltgreytext nomargin">Click for details</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!--Packages MODAL2-->
-                            <div id="openModal2" class="modalDialog">
-                                <div class="whitebackground"> <a href="#close" title="Close" class="close">X</a>
+                                </a>
+                            </div>
+
+                            <!--Emergency MODAL7-->
+                            <div id="openModal7" class="modalDialog">
+                                <div class="packageoffer"> <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
                                     <div class="row">
-                                        <div class="centerboxheader nopadding">
-                                            <p class="col-sm-12 ltbluetext nopadding"><i class="fa fa-cube fa-fw fa-lg"></i>&nbsp;Package Receipt</p>
+                                        <div class="modalheader nopadding">
+                                            <p class="col-sm-12 nopadding"><i class="package-i fa fa-plus-square fa-fw fa-lg"></i>&nbsp;Emergency Help</p>
                                         </div>
                                     </div>
                                     <div class="profileboxline"></div>
-                                    <p class="centerboxtext paddingtopbottom5px nomarginbottom">
-                                        {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
+                                    <p class="modaltext paddingtopbottom5px">
+                                        {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
                                     </p>
-                                    <div class="row" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                    <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
+                                        <div class="col-sm-5 col-sm-offset-1">
                                             <p class="dashpricetext">$2</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
-                                            <p class="tinytext lightweight">Pay for a single package</p>
+                                            <p class="tinytext lightweight">Pay for a Single Package</p>
                                         </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                        <div class="col-sm-5">
                                             <p class="dashpricetext">$15</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
-                                            <p class="tinytext lightweight">10 packages
-                                                <br>(expires in 1 year)</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$25</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">MONTHLY</h4>
-                                            <p class="tinytext lightweight">20 packages for the next 30 days</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$150</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">ANNUAL</h4>
-                                            <p class="tinytext lightweight">Up to 20 packages a month for one year</p>
+                                            <p class="tinytext lightweight">10 packages (Expires in 1 year)</p>
                                         </div>
                                     </div>
                                     <!--row containg pricing info-->
+                                    <p class="modaltext paddingbottom15px">{{ host.availability }}</p>
 
                                     <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
-
                                     <div class="row marginbottom10px">
                                         <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
+                                            {% if enduser_is_connected_to_host %}{% else %}
                                             <p class="ltbluetext">Connect and try your first package for free</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
                                             <div class="row">
-                                                <div class="col-sm-2 nopadding">
-                                                    <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
-                                                    </button>
+                                                <div class="btn-startmodal">
+                                                    <a class="textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request {% if hostonly %}{{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
                                                 </div>
-                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                                             </div>
                                             {% else %}
                                             <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
@@ -744,82 +677,70 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End of Packages Card-->
+                            <!--End of Emergency Card-->
 
-                            <!--Packages Card-->
-                            <a class="" href="#openModal2">
-                                <div class="offercard paddingsides15px marginbottom30px">
+
+                            <!--Tool Rental Card-->
+                            <div class="offercard">
+                                <div class="btn-details">
+                                    <a class="btn textright" type="button" href="#openModal8" title="Click for Details">Details</a>
+                                </div>
+                                <div class="btn-startoffer">
+                                    {% if enduser_is_connected_to_host %}<a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>{% else %}{% endif %}</div>
+                                <a href="#openModal8" title="Click for Details">
                                     <div class="packagebg">
-                                        <i class="fa fa-cube fa-fw fa-5x package-i"></i>
+                                        <i class="fa fa-wrench fa-fw fa-5x package-i"></i>
                                     </div>
                                     <div class="paddingsides15px">
-                                        <h6 class="textcenter">Package Receipt</h6>
+                                        <h6 class="textcenter">Tool Rental</h6>
                                     </div>
                                     <div class="profileboxline"></div>
                                     <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$2 PER PACKAGE</p>
+                                        <p class="textright dashfont darkgreytext nomargin">REQUEST FOR PRICING</p>
                                     </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$15 FOR 10 PACKAGES</p>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtop5px paddingsides15px">
-                                        <p class="dashfont ltgreytext nomargin">Click for details</p>
-                                    </div>
-                                </div>
-                            </a>
-                            <!--Packages MODAL2-->
-                            <div id="openModal2" class="modalDialog">
-                                <div class="whitebackground"> <a href="#close" title="Close" class="close">X</a>
+                                </a>
+                            </div>
+
+                            <!--Tool MODAL8-->
+                            <div id="openModal8" class="modalDialog">
+                                <div class="packageoffer"> <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
                                     <div class="row">
-                                        <div class="centerboxheader nopadding">
-                                            <p class="col-sm-12 ltbluetext nopadding"><i class="fa fa-cube fa-fw fa-lg"></i>&nbsp;Package Receipt</p>
+                                        <div class="modalheader nopadding">
+                                            <p class="col-sm-12 nopadding"><i class="package-i fa fa-wrench fa-fw fa-lg"></i>&nbsp;Tool Rental</p>
                                         </div>
                                     </div>
                                     <div class="profileboxline"></div>
-                                    <p class="centerboxtext paddingtopbottom5px nomarginbottom">
-                                        {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
+                                    <p class="modaltext paddingtopbottom5px">
+                                        {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
                                     </p>
-                                    <div class="row" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                    <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
+                                        <div class="col-sm-5 col-sm-offset-1">
                                             <p class="dashpricetext">$2</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
-                                            <p class="tinytext lightweight">Pay for a single package</p>
+                                            <p class="tinytext lightweight">Pay for a Single Package</p>
                                         </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
+                                        <div class="col-sm-5">
                                             <p class="dashpricetext">$15</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
-                                            <p class="tinytext lightweight">10 packages
-                                                <br>(expires in 1 year)</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$25</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">MONTHLY</h4>
-                                            <p class="tinytext lightweight">20 packages for the next 30 days</p>
-                                        </div>
-                                        <div class="col-sm-3" style="padding-bottom: 7px;">
-                                            <p class="dashpricetext">$150</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">ANNUAL</h4>
-                                            <p class="tinytext lightweight">Up to 20 packages a month for one year</p>
+                                            <p class="tinytext lightweight">10 packages (Expires in 1 year)</p>
                                         </div>
                                     </div>
                                     <!--row containg pricing info-->
+                                    <p class="modaltext paddingbottom15px">{{ host.availability }}</p>
 
                                     <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
-
                                     <div class="row marginbottom10px">
                                         <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
+                                            {% if enduser_is_connected_to_host %}{% else %}
                                             <p class="ltbluetext">Connect and try your first package for free</p>
+                                            {% endif %}
                                         </div>
                                         <div class="col-xs-5 paddingright7pt5pct ">
                                             {% if enduser_is_connected_to_host %}
                                             <div class="row">
-                                                <div class="col-sm-2 nopadding">
-                                                    <button name="startashipment" class="bbbasenavbarbtn bbbasenavbarstart" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">
-                                                    </button>
+                                                <div class="btn-startmodal">
+                                                    <a class="textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request {% if hostonly %} from {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
                                                 </div>
-                                                <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Start a Shipment {% if hostonly %} to {{hostonly.first_name }} {% endif %}</p>
                                             </div>
                                             {% else %}
                                             <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
@@ -829,48 +750,12 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--End of Packages Card-->
-
+                            <!--End of Tool Card-->
                         </div>
+                        <!--End of 3rd column-->
                     </div>
-
-                    <div class="row nopaddingleftright">
-
-
-                    </div>
+                    <!--End of row-->
                 </div>
-                <!--   <div class="profilebox marginbottom30px">
-                <!--verified info -->
-                <!--   <div class="row">
-                    <div class="centerboxheader nopadding">
-                        <p class="col-sm-10 purpletext nopadding">Offered Tasks</p>
-                    </div>
-                    <div class="col-sm-1 nopaddingright" style="padding-left: 25px;">
-                        <a tabindex="0" role="button" title="Question" data-container="body" href="#" data-toggle="popover" data-content="Text explaining what offered Tasks is"><i class="fa fa-question-circle fa-fw fa-lg ltergreytext textright"></i></a>
-                    </div>
-                </div>
-                <div class="profileboxline"></div>
-                <!--house icon-->
-                <!--      <div class="row marginsides7pt5pct margintop20px">
-                    <div class="col-sm-3">
-                        <i class="fa fa-cube fa-fw fa-2x"></i>
-                        <p class="textcenter paddingtop10px">Package Receipt</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <i class="fa fa-home fa-fw fa-2x"></i>
-                        <p class="textcenter paddingtop10px">House Sitting</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <i class="fa fa-cubes fa-fw fa-2x"></i>
-                        <p class="textcenter paddingtop10px">Storage</p>
-                    </div>
-                    <div class="col-sm-3">
-                        <i class="fa fa-plus-square fa-fw fa-2x"></i>
-                        <p class="textcenter paddingtop10px">Emergency</p>
-                    </div>
-                </div>
-            </div> -->
-
             </div>
         </div>
     </div>
