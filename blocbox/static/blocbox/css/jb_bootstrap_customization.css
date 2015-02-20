@@ -1854,8 +1854,8 @@ a > .offercard:focus {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25)
 }
 .storage-i {
-    color: rgb(14, 41, 59);
-    text-shadow: 2px 2px 2px rgba(14, 41, 59, 0.25)
+    color: rgb(103, 128, 159);
+    text-shadow: 2px 2px 2px rgba(103, 128, 159, 0.25)
 }
 .house-sitting-i {
     color: rgb(145, 61, 136);
@@ -1863,7 +1863,7 @@ a > .offercard:focus {
 }
 .emergency-i {
     color: #f25f52;
-    text-shadow: 2px 2px 2px #f25f52(0.25)
+    text-shadow: 2px 2px 2px  rgba(242, 95, 82, 0.25)
 }
 .tools-i {
     color: rgb(127, 140, 141);
