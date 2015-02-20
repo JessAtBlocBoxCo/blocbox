@@ -1742,7 +1742,7 @@ body {
 }
 .btn-details {
     background-color: rgb(223, 226, 226);
-    color: white;
+    color: rgb(127, 140, 141);
     position: relative;
     border-radius: 5px;
     border: 1px solid rgb(235, 235, 235);
