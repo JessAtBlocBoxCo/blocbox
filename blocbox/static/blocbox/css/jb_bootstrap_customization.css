@@ -2200,9 +2200,9 @@ a > .offercard:focus {
     color: #606061;
     line-height: 20px;
     position: absolute;
-    right: 12px;
+    right: 15px;
     text-align: center;
-    top: 10px;
+    top: 15px;
     width: 25px;
     text-decoration: none;
 }
