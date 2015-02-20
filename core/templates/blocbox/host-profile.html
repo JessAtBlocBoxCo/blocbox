@@ -298,7 +298,7 @@
                                             {% if enduser_is_connected_to_host %}
                                             <div class="row">
                                                 <div class="btn-startmodal">
-                                                    <a class="btn textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start a Shipment {% if hostonly %} to {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-2x"></i></a>
+                                                    <a class="textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start a Shipment {% if hostonly %} to {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-2x"></i></a>
                                                 </div>
                                             </div>
                                             {% else %}
