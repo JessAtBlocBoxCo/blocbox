@@ -267,7 +267,11 @@
                                     <div class="profileboxline"></div>
                                     <div class="col-sm-12 paddingtopbottom5px">
                                         <p class="modaltext">
+                                            {% if enduser_is_connected_to_host %}
+                                            {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability.
+                                            {% else %}
                                             {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view.
+                                            {% endif %}
                                         </p>
                                     </div>
                                     <div class="row paddingbottom15px" style="padding-left: 7.5%; padding-right: 7.7%">
