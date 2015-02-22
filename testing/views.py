@@ -92,6 +92,7 @@ def facebook(request):
         facebook_first_name = request.POST["facebook_first_name"]
         facebook_last_name = request.POST["facebook_last_name"]
         facebook_link = request.POST["facebook_link"]
+        facebook_email = request.POST["facebook_email"]
         facebook_response_all = request.POST["facebook_response_all"]
         if enduser.is_authenticated():
             user = get_object_or_404(UserInfo, pk=enduser.id)
@@ -107,6 +108,8 @@ def facebook(request):
                 user.facebook_first_name = facebook_first_name
             if facebook_last_name:
                 user.facebook_last_name = facebook_last_name
+            if facebook_email:
+                user.facebook_email = facebook_email
             if facebook_response_all:
                 user.facebook_response_all = facebook_response_all
             user.save()
