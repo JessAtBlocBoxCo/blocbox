@@ -115,8 +115,11 @@ def facebook(request):
                 user.facebook_last_name = facebook_last_name
             if facebook_email:
                 user.facebook_email = facebook_email
-            """
+          
             if facebook_response_all:
+                user.facebook_response_all = response
+              """
+            if response:
                 user.facebook_response_all = response
             user.save()
             message = "Success! You posted data to the user model"
