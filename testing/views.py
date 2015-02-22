@@ -91,7 +91,7 @@ def sendfacebookdata(request):
         return HttpResponse("OK")
     elif request.method == 'POST':
         ## access you data by playing around with the request.POST object
-        request.POST.get('data')
+        data = request.POST.get('data')
         if enduser.is_authenticated():
             user = get_object_or_404(UserInfo, pk=enduser.id)
             user.facebook_id = data.facebook_id
