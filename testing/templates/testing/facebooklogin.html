@@ -118,6 +118,7 @@
       var facebook_locale = response.locale;
       var facebook_link = response.link;
       var facebook_gender = response.gender;
+      var facebook_email = response.email;
       var facebook_response_all = response.toSource();
   	  // Test some code to pass variablest to the server: http://stackoverflow.com/questions/27100825/how-pass-javascript-function-s-value-to-django-view
     	$.ajax({
@@ -129,7 +130,7 @@
     		// 'facebook_response': facebook_response,
     		data: { 'facebook_id': facebook_id, 'facebook_first_name': facebook_first_name, 'facebook_last_name': facebook_last_name,
     						 'facebook_locale': facebook_locale, 'facebook_link': facebook_link, 'facebook_gender': facebook_gender, 
-    						 'facebook_response_all': facebook_response_all },
+    						 'facebook_email': facebook_email, 'facebook_response_all': facebook_response_all },
     		// what to do when the call is success 
     		success:function(response) {
     				console.log( 'You successfully posted the facebook data to the URL with these variables:' + 
