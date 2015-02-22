@@ -83,9 +83,7 @@ def get_item(dictionary, key):
 
 def facebook(request):
     enduser = request.user
-    if request.method == 'GET':
-    		message = "The request.method was GET"
-    elif request.method == 'POST':
+    if request.is_ajax():
         ## access you data by playing around with the request.POST object
         data = request.POST.get('data')
         if enduser.is_authenticated():
@@ -97,7 +95,7 @@ def facebook(request):
         else:
             message = "The user is not authenticated"
     else:
-        message = "The reqest method was neither GET or POST?"
+        message = "The reqest method was not Ajax"
     return render(request, 'testing/facebooklogin.html', {'enduser': enduser, 'post_message': message   })
 
 def sendfacebookdata(request):
