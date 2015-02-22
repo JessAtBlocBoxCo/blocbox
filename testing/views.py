@@ -86,10 +86,10 @@ def facebook(request):
     enduser = request.user
     if request.is_ajax():
         ## access you data by playing around with the request.POST object
-        data = request.POST.get('data')
+        facebook_id = request.POST["facebook_id"]
         if enduser.is_authenticated():
             user = get_object_or_404(UserInfo, pk=enduser.id)
-            user.facebook_id = data.facebook_id
+            user.facebook_id = facebook_id
             #user.facebook_locale = data.facebook_response.locale
             user.save()
             message = "Success! You posted data to the user model"
