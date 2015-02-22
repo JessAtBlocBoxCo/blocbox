@@ -85,45 +85,35 @@
       document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
       document.getElementById('user_facebook_id').innerHTML = 'Facebook Username (id):' + response.id ;
       document.getElementById('facebook_first_name').innerHTML = 'Facebook First Name:' + response.first_name ;
-      document.getElementById('facebook_last_name').innerHTML = 'Facebook Last Name::' + response.last_name ;
+      document.getElementById('facebook_last_name').innerHTML = 'Facebook Last Name:' + response.last_name ;
+      document.getElementById('facebook_email').innerHTML = 'Facebook Email:' + response.email ;
+      document.getElementById('facebook_gender').innherHTML = 'Facebook Gender:' + response.gender;
+      document.getElementById('facebook_link').innerHTML = 'Facebook link:' + response.link;
+      document.getElementById('facebook_locale').innerHTML = 'Facebook Locale:' + response.locale;
+      document.getElementById('facebook_response_full').innerHTML = 'Facebook Response Full:' + response;
     });
    	//test return last name of current user 
-  	FB.api('/me', {fields: 'last_name'}, function(response) {
-  	console.log(response);
-  	});
+  	FB.api('/me', {fields: 'last_name'}, function(response) { console.log(response);	});
   	//test return all of the user things: the respone
-  	FB.api('/me', function(response) {
-  	console.log(response);
-		});
+  	FB.api('/me', function(response) { console.log(response);	});
     
   }
 
 </script>
 
 
-
-
-
-
-
 <div class="content container-fluid offwhitebackground relativediv">
 	
-	
-	
-
 <!--
 	status - whether logged in or not - says "thnk you for loggin in" if logged in
 -->
 <br>
 <div id="status"> </div>
 
-
 <!--
   The Login Button social plugin. This button use the JavaScript SDK to present a graphical Login button that triggers the FB.login() function when clicked.
 -->
-
 <fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fb_login_button"> Login with Facebook </fb:login-button>
-
 <br>
 
 
@@ -135,16 +125,24 @@
 <br>
 
 <!--TEST - SHOW THE USERS FACEBOOK LOGIN NAME SO WE CAN ADD IT TO THE TABLE-->
-<br>
-<div id="user_facebook_id"> </div>
-<br>
 
-<br>
-<div id="facebook_first_name"> </div>
-<br>
+<h3>Show individual response objecs</h3>
+<div id="user_facebook_id"> </div> <br>
 
-<br> <div id="facebook_last_name"> </div> <br>
+<div id="facebook_first_name"> </div> <br>
 
+<div id="facebook_last_name"> </div> <br>
+
+<div id="facebook_email"> </div> <br>
+
+<div id="facebook_link"> </div> <br>
+
+<div id="facebook_gender"></div> <br>
+
+<div id="facebook_locale"></div> <br>
+
+<h3>Test showing the full response object</h3>
+<div id="facebook_response_full"></div>
 <!--
 <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"> Login with Facebook</div>
 -->
