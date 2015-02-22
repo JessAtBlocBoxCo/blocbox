@@ -98,7 +98,9 @@
    	//test return last name of current user 
   	//FB.api('/me', {fields: 'last_name'}, function(response) { console.log(response);	});
   	//test return all of the user things: the respone
-  	FB.api('/me', function(response) { console.log(response);	});
+  	FB.api('/me', function(response) { 
+  				console.log('The response from facebook for the user is shown in the line below');
+  				console.log(response);	});
     
   }
   
@@ -124,10 +126,10 @@
     		complete:function(){ console.log( 'You completed the call passing the facebook data to the URL' )},
     		// what to do when there is an error
     		error:function (xhr, textStatus, thrownError){ 
-    			console.log( 'There was an error...xhr textStatus and ThrownError loggd below' );
-    			console.log(xhr);
-    			console.log(testStatus);
-    			console.log(thrownError);
+    			console.log( 'There was an error...error variables shown below');
+    			console.log( 'XHR is: ' + xhr);
+    			console.log( 'textStatus is:' + textStatus);
+    			console.log( 'thrownError is:' + thrownError);
     			}
 		});
   })}
