@@ -64,14 +64,7 @@
     statusChangeCallback(response);
   });
   
-  //test return last name of current user 
-  FB.api('/me', {fields: 'last_name'}, function(response) {
-  console.log(response);
-  });
-  //test read the javascript facebook page
-  FB.api('/113124472034820', function(response) {
-  console.log(response);
-	});
+
 	
   };
 
@@ -92,6 +85,15 @@
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
     });
+   	//test return last name of current user 
+  	FB.api('/me', {fields: 'last_name'}, function(response) {
+  	console.log(response);
+  	});
+  	//test read the javascript facebook page
+  	FB.api('/113124472034820', function(response) {
+  	console.log(response);
+		});
+    
   }
 
 </script>
