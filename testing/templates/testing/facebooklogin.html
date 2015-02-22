@@ -6,6 +6,9 @@
 
 
 <script>
+	//include the javascript file for override the before send thing that is causing error
+	{% include "javascript_includes/override_beforesend.js" %}
+	
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -127,7 +130,7 @@
     		// what to do when there is an error
     		error:function (xhr, textStatus, thrownError){ 
     			console.log( 'There was an error...error variables shown below');
-    			console.log( 'XHR is: ' + xhr);
+    			console.log( 'XHR is: ' + xhr.toSource());
     			console.log( 'textStatus is:' + textStatus);
     			console.log( 'thrownError is:' + thrownError);
     			}
@@ -136,6 +139,7 @@
 		
 </script>
 
+{% csrf_token %} <!--allows it to post -->
 
 <div class="content container-fluid offwhitebackground relativediv">
 	
