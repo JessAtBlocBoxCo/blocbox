@@ -87,24 +87,6 @@ def facebook(request):
     if request.is_ajax():
         ## access you data by playing around with the request.POST object
         facebook_id = request.POST["facebook_id"]
-        if enduser.is_authenticated():
-            user = get_object_or_404(UserInfo, pk=enduser.id)
-            user.facebook_id = facebook_id
-            #user.facebook_locale = data.facebook_response.locale
-            user.save()
-            message = "Success! You posted data to the user model"
-        else:
-            message = "The user is not authenticated"
-    else:
-        message = "The request method was not Ajax"
-    return render(request, 'testing/facebooklogin.html', {'enduser': enduser, 'post_message': message   })
-
-def sendfacebookdata(request):
-    enduser = request.user
-    if request.method == 'GET':
-    		message = "The request.method was GET"
-    elif request.method == 'POST':
-        ## access you data by playing around with the request.POST object
         facebook_id = request.POST["facebook_id"]
         facebook_gender = request.POST["facebook_gender"]
         facebook_locale = request.POST["facebook_locale"]
@@ -128,14 +110,14 @@ def sendfacebookdata(request):
                 user.facebook_last_name = facebook_last_name
             if facebook_response_all:
                 user.facebook_response_all = facebook_response_all
-            #user.facebook_locale = data.facebook_response.locale
             user.save()
             message = "Success! You posted data to the user model"
         else:
             message = "The user is not authenticated"
     else:
-        message = "The reqest method was neither GET or POST?"
-    return HttpResponse(message)
+        message = "The request method was not Ajax"
+    return render(request, 'testing/facebooklogin.html', {'enduser': enduser, 'post_message': message   })
+
 
 #test the ajax_text function on a page with the following - it will show an alert on the page:
 """
