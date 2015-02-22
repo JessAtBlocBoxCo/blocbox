@@ -75,6 +75,8 @@ shipments_with_tracking_notcomplete = []
 shipments_with_tracking_notcomplete_delivered = []   
 shipments_with_tracking_notcomplete_notdelivered = []
 shipments_with_tracking_notcomplete_notrackingno = []
+#import json
+import json
 
 #Define get_item function
 @register.filter
@@ -94,6 +96,7 @@ def facebook(request):
         facebook_link = request.POST["facebook_link"]
         facebook_email = request.POST["facebook_email"]
         facebook_response_all = request.POST["facebook_response_all"]
+        response = json.loads(request.body)
         if enduser.is_authenticated():
             user = get_object_or_404(UserInfo, pk=enduser.id)
             if facebook_id: 
@@ -111,7 +114,7 @@ def facebook(request):
             if facebook_email:
                 user.facebook_email = facebook_email
             if facebook_response_all:
-                user.facebook_response_all = facebook_response_all
+                user.facebook_response_all = response
             user.save()
             message = "Success! You posted data to the user model"
         else:
