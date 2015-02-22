@@ -87,7 +87,6 @@ def facebook(request):
     if request.is_ajax():
         ## access you data by playing around with the request.POST object
         facebook_id = request.POST["facebook_id"]
-        facebook_id = request.POST["facebook_id"]
         facebook_gender = request.POST["facebook_gender"]
         facebook_locale = request.POST["facebook_locale"]
         facebook_first_name = request.POST["facebook_first_name"]
