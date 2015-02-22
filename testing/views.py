@@ -82,8 +82,24 @@ def get_item(dictionary, key):
     return dictionary.get(key)
 
 def facebook(request):
-   enduser = request.user
-   return render(request, 'testing/facebooklogin.html', {'enduser': enduser,    })
+    enduser = request.user
+    return render(request, 'testing/facebooklogin.html', {'enduser': enduser,    })
+
+def sendfacebookdata(request):
+	  enduser = request.user
+    if request.method == 'GET':
+        return HttpResponse("OK")
+    elif request.method == 'POST':
+        ## access you data by playing around with the request.POST object
+        request.POST.get('data')
+        if enduser.is_authenticated():
+            user = get_object_or_404(UserInfo, pk=enduser.id)
+            user.facebook_id = data.id
+            user.save()
+        return HttpResponse("OK")
+    else:
+        return HttpResponse("OK")
+	 
 
 def aftership(request):
     enduser = request.user

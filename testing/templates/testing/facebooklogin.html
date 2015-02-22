@@ -23,8 +23,7 @@
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log into Blocbox.';
     } else {
-      // The person is not logged into Facebook, so we're not sure if
-      // they are logged into this app or not.
+      // The person is not logged into Facebook, so we're not sure if they are logged into this app or not.
       document.getElementById('status').innerHTML = 'Please log into Facebook.';
     }
   }
@@ -87,9 +86,11 @@
       document.getElementById('facebook_first_name').innerHTML = 'Facebook First Name:' + response.first_name ;
       document.getElementById('facebook_last_name').innerHTML = 'Facebook Last Name:' + response.last_name ;
       document.getElementById('facebook_email').innerHTML = 'Facebook Email:' + response.email ;
-      document.getElementById('facebook_gender').innherHTML = 'Facebook Gender:' + response.gender;
+      document.getElementById('facebook_gender').innerHTML = 'Facebook Gender:' + response.gender;
       document.getElementById('facebook_link').innerHTML = 'Facebook link:' + response.link;
       document.getElementById('facebook_locale').innerHTML = 'Facebook Locale:' + response.locale;
+      document.getElementById('facebook_verified').innerHTML = 'Facebook Verified:' + response.verified ;
+      //show the full response objecti -- toSource shows the full object
       document.getElementById('facebook_response_full').innerHTML = 'Facebook Response Full:' + response.toSource();
     });
    	//test return last name of current user 
@@ -140,6 +141,8 @@
 <div id="facebook_gender"></div> <br>
 
 <div id="facebook_locale"></div> <br>
+
+<div id="facebook_verified"></div> <br>
 
 <h3>Test showing the full response object</h3>
 <div id="facebook_response_full"></div>
