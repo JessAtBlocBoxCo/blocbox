@@ -108,7 +108,7 @@
   }
   //test another ajax function
   $(document).ready(function () { 
-  	$get("/testing/ajax_text/", function(data) { alert(data); }); });
+  	$.get("/testing/ajax_text/", function(data) { alert(data); }); });
   		
   function PostFacebookData() {
   	FB.api('/me', function(response) {
