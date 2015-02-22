@@ -112,8 +112,13 @@
   function PostFacebookData() {
   	FB.api('/me', function(response) {
       //save the value of the response in a variable
-      var facebook_response = response.toSource();
       var facebook_id = response.id;
+      var facebook_first_name = response.first_name;
+      var facebook_last_name = response.last_name;
+      var facebook_locale = response.locale;
+      var facebook_link = response.link;
+      var facebook_gender = response.gender;
+      var facebook_response_all = response.toSource();
   	  // Test some code to pass variablest to the server: http://stackoverflow.com/questions/27100825/how-pass-javascript-function-s-value-to-django-view
     	$.ajax({
     		// points to the url where your data will be posted
@@ -122,10 +127,11 @@
     		method: "POST",
     		// data that you will like to return 
     		// 'facebook_response': facebook_response,
-    		data: { 'facebook_id': facebook_id },
+    		data: { 'facebook_id': facebook_id, 'facebook_first_name': facebook_first_name, 'facebook_last_name': facebook_last_name,
+    						 'facebook_locale': facebook_locale, 'facebook_link': facebook_link, 'facebook_gender', facebook_gender, 
+    						 'facebook_response_all': facebook_response_all},
     		// what to do when the call is success 
     		success:function(response) {
-    				console.log(response);
     				console.log( 'You successfully posted the facebook data to the URL!');
     				},
     		// what to do when the call is complete ( you can right your clean from code here)
@@ -166,8 +172,6 @@
 <div  class="fb-like"  data-share="true"  data-width="450"  data-show-faces="true"> </div>
 <br>
 
-<h3>Show the post message: {{ post_message}} </h3>
-<!--TEST - SHOW THE USERS FACEBOOK LOGIN NAME SO WE CAN ADD IT TO THE TABLE-->
 
 <h3>Show individual response objecs</h3>
 <div id="user_facebook_id"> </div> <br>

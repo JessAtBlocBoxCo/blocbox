@@ -42,8 +42,16 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     #The picture field isn't working i need to isntal the imagefield thing... will do later.. for now use linktoimage
     profile_pic_uploaded = models.ImageField(upload_to='profilepics', blank=True, null=True)  
     imageurl= models.URLField('Profile Picture URL', blank=True)
+    #facebook fields
     facebook_id = models.CharField(max_length=40, blank=True)
     facebook_locale = models.CharField(max_length=10, blank=True)
+    facebook_email = models.EmailField(max_length=254, blank=True)
+    facebook_gender = models.CharField(max_length=15, blank=True)
+    facebook_link = models.URLField(blank=True)
+    facebook_verified = models.BooleanField(blank=True, default=False)
+    facebook_first_name = models.CharField(max_length=30, blank=True)
+    facebook_last_name = models.CharField(max_length =30, blank=True)
+    facebook_response_all = models.CharField(max_length = 500, blank=True)
     host = models.BooleanField(blank=True, default=False) #boolean can't be null if want null need NullBooleanField
     hostinterest = models.BooleanField('Interested in Hosting', blank=True, default=False)
     userrating = models.DecimalField('User Rating',max_digits=3,decimal_places=2, blank=True, null=True)
