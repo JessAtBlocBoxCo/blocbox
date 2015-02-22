@@ -115,7 +115,7 @@
   	  // Test some code to pass variablest to the server: http://stackoverflow.com/questions/27100825/how-pass-javascript-function-s-value-to-django-view
     	$.ajax({
     		// points to the url where your data will be posted
-    		url:'/testing/sendfacebookdata/', //current URL
+    		url:'/testing/facebook/', //current URL, was sendfacebookdata
     		// post for security reason
     		type: "POST",
     		// data that you will like to return 
@@ -164,6 +164,7 @@
 <div  class="fb-like"  data-share="true"  data-width="450"  data-show-faces="true"> </div>
 <br>
 
+<h3>Show the post message: {{ post_message}} </h3>
 <!--TEST - SHOW THE USERS FACEBOOK LOGIN NAME SO WE CAN ADD IT TO THE TABLE-->
 
 <h3>Show individual response objecs</h3>

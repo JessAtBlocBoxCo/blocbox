@@ -83,7 +83,22 @@ def get_item(dictionary, key):
 
 def facebook(request):
     enduser = request.user
-    return render(request, 'testing/facebooklogin.html', {'enduser': enduser,    })
+    if request.method == 'GET':
+    		message = "The request.method was GET"
+    elif request.method == 'POST':
+        ## access you data by playing around with the request.POST object
+        data = request.POST.get('data')
+        if enduser.is_authenticated():
+            user = get_object_or_404(UserInfo, pk=enduser.id)
+            user.facebook_id = data.facebook_id
+            #user.facebook_locale = data.facebook_response.locale
+            user.save()
+            message = "Success! You posted data to the user model"
+        else:
+            message = "The user is not authenticated"
+    else:
+        message = "The reqest method was neither GET or POST?"
+    return render(request, 'testing/facebooklogin.html', {'enduser': enduser, 'post_message': message   })
 
 def sendfacebookdata(request):
     enduser = request.user
