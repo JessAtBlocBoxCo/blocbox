@@ -81,7 +81,7 @@ shipments_with_tracking_notcomplete_notrackingno = []
 def get_item(dictionary, key):
     return dictionary.get(key)
 
-def ajax_text(request):
+def ajax_test(request):
     if request.is_ajax():
         message = "Ajax Text Worked - this is ajax"
     else:
