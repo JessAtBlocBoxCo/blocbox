@@ -88,7 +88,7 @@ def facebook(request):
     enduser = request.user
     if request.is_ajax():
         ## access you data by playing around with the request.POST object
-        facebook_id = request.POST["facebook_id"]
+        """facebook_id = request.POST["facebook_id"]
         facebook_gender = request.POST["facebook_gender"]
         facebook_locale = request.POST["facebook_locale"]
         facebook_first_name = request.POST["facebook_first_name"]
@@ -96,7 +96,7 @@ def facebook(request):
         facebook_link = request.POST["facebook_link"]
         facebook_email = request.POST["facebook_email"]
         facebook_response_all = request.POST["facebook_response_all"]
-        response = json.loads(request.body)
+        response = json.loads(request.body)"""
         if enduser.is_authenticated():
             user = get_object_or_404(UserInfo, pk=enduser.id)
             if facebook_id: 
