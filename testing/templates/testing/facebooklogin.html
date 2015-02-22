@@ -19,16 +19,14 @@
       testAPI();
       // JMY ADDING ANOTHER ELEMENT TO THIS TO HIDE THAT BUTTON
       document.getElementById('fb_login_button').style.display = 'none';
-      document.getElementbyId('user_facebook_id').innerHTML = 'Facebook Username:' + response.id;
+      document.getElementbyId('user_facebook_id').innerHTML = 'Facebook Username:' + response.id ;
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+      document.getElementById('status').innerHTML = 'Please log into Blocbox.';
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+      document.getElementById('status').innerHTML = 'Please log into Facebook.';
     }
   }
 
@@ -124,7 +122,7 @@
 
 <!--TEST - SHOW THE USERS FACEBOOK LOGIN NAME SO WE CAN ADD IT TO THE TABLE-->
 <br>
-<h3 id="user_facebook_id"> </h3>
+<div id="user_facebook_id"> </div>
 <br>
 
 <!--
