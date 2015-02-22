@@ -114,7 +114,7 @@
     		// post for security reason
     		type: "POST",
     		// data that you will like to return 
-    		data: { facebook_response: facebook_response, facebook_id: facebook_id},
+    		data: { facebook_response: facebook_response, facebook_id: facebook_id },
     		// what to do when the call is success 
     		success:function(response){console.log( 'You successfully posted the facebook data to the URL! The respone was' + response.toSource() )},
     		// what to do when the call is complete ( you can right your clean from code here)
@@ -122,7 +122,7 @@
     		// what to do when there is an error
     		error:function (xhr, textStatus, thrownError){ console.log( 'There was an error...' )}
 		});
-  }}
+  })}
 		
 </script>
 
