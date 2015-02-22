@@ -43,6 +43,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     profile_pic_uploaded = models.ImageField(upload_to='profilepics', blank=True, null=True)  
     imageurl= models.URLField('Profile Picture URL', blank=True)
     facebook_id = models.CharField(max_length=40, blank=True)
+    facebook_locale = models.CharField(max_length=10, blank=True)
     host = models.BooleanField(blank=True, default=False) #boolean can't be null if want null need NullBooleanField
     hostinterest = models.BooleanField('Interested in Hosting', blank=True, default=False)
     userrating = models.DecimalField('User Rating',max_digits=3,decimal_places=2, blank=True, null=True)

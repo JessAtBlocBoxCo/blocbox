@@ -16,7 +16,7 @@
     // for FB.getLoginStatus().
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
-      testAPI();
+      BlocboxFacebookLogin();
       // JMY ADDING ANOTHER ELEMENT TO THIS TO HIDE THAT BUTTON
       document.getElementById('fb_login_button').style.display = 'none';
     } else if (response.status === 'not_authorized') {
@@ -77,7 +77,7 @@
 
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
-  function testAPI() {
+  function BlocboxFacebookLogin() {
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
@@ -92,9 +92,28 @@
       document.getElementById('facebook_verified').innerHTML = 'Facebook Verified:' + response.verified ;
       //show the full response objecti -- toSource shows the full object
       document.getElementById('facebook_response_full').innerHTML = 'Facebook Response Full:' + response.toSource();
+      
+      //save the value of the response in a variable
+      var facebook_response = response.toSource();
+      var facebook_id = response.id;
     });
+    // Test some code to pass variablest to the server: http://stackoverflow.com/questions/27100825/how-pass-javascript-function-s-value-to-django-view
+    $.ajax({
+    	// points to the url where your data will be posted
+    	url:'/sendfacebookdata/$',
+    	// post for security reason
+    	type: "POST",
+    	// data that you will like to return 
+    	data: { facebook_response: facebook_response, facebook_id: facebook_id},
+    	// what to do when the call is success 
+    	success:function(response){console.log( 'You successfully posted the facebook data to the URL! The respone was' + response.toSource() )},
+    	// what to do when the call is complete ( you can right your clean from code here)
+    	complete:function(){ console.log( 'You completed the call passing the facebook data to the URL' )},
+    	// what to do when there is an error
+    	error:function (xhr, textStatus, thrownError){ console.log( 'There was an error...' )}
+		});
    	//test return last name of current user 
-  	FB.api('/me', {fields: 'last_name'}, function(response) { console.log(response);	});
+  	//FB.api('/me', {fields: 'last_name'}, function(response) { console.log(response);	});
   	//test return all of the user things: the respone
   	FB.api('/me', function(response) { console.log(response);	});
     
