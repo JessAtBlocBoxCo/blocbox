@@ -94,7 +94,8 @@ def sendfacebookdata(request):
         request.POST.get('data')
         if enduser.is_authenticated():
             user = get_object_or_404(UserInfo, pk=enduser.id)
-            user.facebook_id = data.id
+            user.facebook_id = data.facebook_id
+            #user.facebook_locale = data.facebook_response.locale
             user.save()
         return HttpResponse("OK")
     else:
