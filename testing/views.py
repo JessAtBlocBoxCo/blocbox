@@ -86,7 +86,7 @@ def facebook(request):
     return render(request, 'testing/facebooklogin.html', {'enduser': enduser,    })
 
 def sendfacebookdata(request):
-	  enduser = request.user
+    enduser = request.user
     if request.method == 'GET':
         return HttpResponse("OK")
     elif request.method == 'POST':
