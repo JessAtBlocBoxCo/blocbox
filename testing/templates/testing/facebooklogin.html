@@ -116,8 +116,8 @@
     	$.ajax({
     		// points to the url where your data will be posted
     		url:'/testing/facebook/', //current URL, was sendfacebookdata
-    		// post for security reason
-    		type: "POST",
+    		// post for security reason - replacing with METHOD - was initally 'type'
+    		method: "POST",
     		// data that you will like to return 
     		// 'facebook_response': facebook_response,
     		data: { 'facebook_id': facebook_id },
