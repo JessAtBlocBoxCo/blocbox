@@ -19,7 +19,7 @@
       testAPI();
       // JMY ADDING ANOTHER ELEMENT TO THIS TO HIDE THAT BUTTON
       document.getElementById('fb_login_button').style.display = 'none';
-      document.getElementById('user_facebook_id').innerHTML = 'Facebook Username:' + response.id ;
+      document.getElementById('user_facebook_id').innerHTML = 'Facebook Username (id):' + response.id ;
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log into Blocbox.';
@@ -84,6 +84,15 @@
       document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
     });
   }
+  //test return last name of current user 
+  FB.api('/me', {fields: 'last_name'}, function(response) {
+  console.log(response);
+  
+  //test read the javascript facebook page
+  FB.api('/113124472034820', function(response) {
+  console.log(response);
+});
+});
 </script>
 
 
