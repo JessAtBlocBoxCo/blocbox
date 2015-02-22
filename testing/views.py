@@ -83,20 +83,12 @@ def get_item(dictionary, key):
 
 def facebook(request):
     enduser = request.user
-    if request.method == 'POST':
-        data = request.POST.get('data')
-        if enduser.is_authenticated():
-            user = get_object_or_404(UserInfo, pk=enduser.id)
-            user.facebook_id = data.facebook_id
-            user.save()
-        else:
-           return HttpResponse("The user is not authenticated/ post method failed")
     return render(request, 'testing/facebooklogin.html', {'enduser': enduser,    })
 
 def sendfacebookdata(request):
     enduser = request.user
     if request.method == 'GET':
-        return HttpResponse("OK")
+    		message = "The request.method was GET"
     elif request.method == 'POST':
         ## access you data by playing around with the request.POST object
         data = request.POST.get('data')
@@ -105,9 +97,12 @@ def sendfacebookdata(request):
             user.facebook_id = data.facebook_id
             #user.facebook_locale = data.facebook_response.locale
             user.save()
-        return HttpResponse("OK")
+            message = "Success! You posted data to the user model"
+        else:
+            message = "The user is not authenticated"
     else:
-        return HttpResponse("OK")
+        message = "The reqest method was neither GET or POST?"
+    return HttpResponse(message)
 	 
 
 def aftership(request):
