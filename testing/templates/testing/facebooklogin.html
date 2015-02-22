@@ -119,7 +119,8 @@
     		// post for security reason
     		type: "POST",
     		// data that you will like to return 
-    		data: { facebook_response: facebook_response, facebook_id: facebook_id },
+    		// 'facebook_response': facebook_response,
+    		data: { 'facebook_id': facebook_id },
     		// what to do when the call is success 
     		success:function(response) {
     				console.log(response);
