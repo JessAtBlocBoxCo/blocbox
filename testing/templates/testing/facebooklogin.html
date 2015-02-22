@@ -3,9 +3,7 @@
 	{% block headafter %} {% endblock %} 
 
 {% block content %}
-<div class="content container-fluid offwhitebackground relativediv">
-	
-	
+
 	<script>
   window.fbAsyncInit = function() {
     FB.init({
@@ -112,6 +110,10 @@
   the FB.login() function when clicked.
 -->
 
+
+<div class="content container-fluid offwhitebackground relativediv">
+	
+	
 	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button>
 
 	<div id="status"> </div>
