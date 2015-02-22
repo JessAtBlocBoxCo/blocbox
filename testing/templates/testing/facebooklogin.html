@@ -179,6 +179,11 @@
 <div  class="fb-like"  data-share="true"  data-width="450"  data-show-faces="true"> </div>
 <br>
 
+{% if user.facebook_id %}
+		<h3> Show the user facebook profile if we get their ID </h3>
+ 	 <img class="dashpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large"/>
+{% else %}
+            		
 
 <h3>Show individual response objecs</h3>
 <div id="user_facebook_id"> </div> <br>
