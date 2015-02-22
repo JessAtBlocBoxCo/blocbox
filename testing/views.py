@@ -121,7 +121,7 @@ def facebook(request):
               """
             if response:
                 user.facebook_response_all = response
-                user.facebook_id = response._id
+                user.facebook_id = response.id
                 user.facebook_first_name = response.first_name
                 user.facebook_last_name = response.last_name
                 user.facebook_email = response.email                
