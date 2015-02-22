@@ -81,6 +81,13 @@ shipments_with_tracking_notcomplete_notrackingno = []
 def get_item(dictionary, key):
     return dictionary.get(key)
 
+def ajax_text(request):
+    if request.is_ajax():
+        message = "Ajax Text Worked - this is ajax"
+    else:
+        message = "Not ajax -- ajax test failed"
+    return HttpResponse(message)
+    
 def facebook(request):
     enduser = request.user
     if request.is_ajax():
@@ -95,7 +102,7 @@ def facebook(request):
         else:
             message = "The user is not authenticated"
     else:
-        message = "The reqest method was not Ajax"
+        message = "The request method was not Ajax"
     return render(request, 'testing/facebooklogin.html', {'enduser': enduser, 'post_message': message   })
 
 def sendfacebookdata(request):
