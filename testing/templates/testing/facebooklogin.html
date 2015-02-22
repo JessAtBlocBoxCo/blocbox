@@ -3,8 +3,9 @@
 	{% block headafter %} {% endblock %} 
 
 {% block content %}
+<div class="content container-fluid offwhitebackground relativediv">
 	
-<script>
+	<script>
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     console.log('statusChangeCallback');
@@ -91,13 +92,13 @@
   the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
+	<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> </fb:login-button>
 
-<div id="status">
+	<div id="status"> </div>
+
+
+
+<br><br><br><br><br>
+
 </div>
-
-
-
-
 {% endblock %}
