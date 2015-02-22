@@ -81,6 +81,10 @@ shipments_with_tracking_notcomplete_notrackingno = []
 def get_item(dictionary, key):
     return dictionary.get(key)
 
+def facebook(request):
+   enduser = request.user
+   return render(request, 'testing/facebooklogin.html', {'enduser': enduser,    })
+
 def aftership(request):
     enduser = request.user
     if enduser.is_authenticated():
