@@ -81,13 +81,7 @@ shipments_with_tracking_notcomplete_notrackingno = []
 def get_item(dictionary, key):
     return dictionary.get(key)
 
-def ajax_test(request):
-    if request.is_ajax():
-        message = "Ajax Text Worked - this is ajax"
-    else:
-        message = "Not ajax -- ajax test failed"
-    return HttpResponse(message)
-    
+  
 def facebook(request):
     enduser = request.user
     if request.is_ajax():
@@ -111,10 +105,10 @@ def sendfacebookdata(request):
     		message = "The request.method was GET"
     elif request.method == 'POST':
         ## access you data by playing around with the request.POST object
-        data = request.POST.get('data')
+        facebook_id = request.POST["facebook_id")
         if enduser.is_authenticated():
             user = get_object_or_404(UserInfo, pk=enduser.id)
-            user.facebook_id = data.facebook_id
+            user.facebook_id = facebook_id
             #user.facebook_locale = data.facebook_response.locale
             user.save()
             message = "Success! You posted data to the user model"
@@ -123,7 +117,20 @@ def sendfacebookdata(request):
     else:
         message = "The reqest method was neither GET or POST?"
     return HttpResponse(message)
-	 
+
+#test the ajax_text function on a page with the following - it will show an alert on the page:
+"""
+  $(document).ready(function () { 
+  	$.get("/testing/ajax_test/", function(data) { alert(data); }); });
+"""	
+def ajax_test(request):
+    if request.is_ajax():
+        message = "Ajax Text Worked - this is ajax"
+    else:
+        message = "Not ajax -- ajax test failed"
+    return HttpResponse(message)
+ 
+ 
 
 def aftership(request):
     enduser = request.user
