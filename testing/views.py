@@ -83,6 +83,14 @@ def get_item(dictionary, key):
 
 def facebook(request):
     enduser = request.user
+    if request.method == 'POST':
+        data = request.POST.get('data')
+        if enduser.is_authenticated():
+            user = get_object_or_404(UserInfo, pk=enduser.id)
+            user.facebook_id = data.facebook_id
+            user.save()
+        else:
+           return HttpResponse("The user is not authenticated/ post method failed")
     return render(request, 'testing/facebooklogin.html', {'enduser': enduser,    })
 
 def sendfacebookdata(request):
