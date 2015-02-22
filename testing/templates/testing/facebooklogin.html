@@ -19,7 +19,7 @@
       testAPI();
       // JMY ADDING ANOTHER ELEMENT TO THIS TO HIDE THAT BUTTON
       document.getElementById('fb_login_button').style.display = 'none';
-      document.getElementbyId('user_facebook_id').innerHTML = 'Facebook Username:' + response.id ;
+      document.getElementById('user_facebook_id').innerHTML = 'Facebook Username:' + response.id ;
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log into Blocbox.';
