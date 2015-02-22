@@ -17,6 +17,8 @@
     if (response.status === 'connected') {
       // Logged into your app and Facebook.
       testAPI();
+      // JMY ADDING ANOTHER ELEMENT TO THIS TO HIDE THAT BUTTON
+      document.getElementById('fb_login_button').style.display = 'none';
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
       document.getElementById('status').innerHTML = 'Please log ' +
@@ -80,8 +82,7 @@
     console.log('Welcome!  Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Successful login for: ' + response.name);
-      document.getElementById('status').innerHTML =
-        'Thanks for logging in, ' + response.name + '!';
+      document.getElementById('status').innerHTML = 'Thanks for logging in, ' + response.name + '!';
     });
   }
 </script>
@@ -109,7 +110,7 @@
   The Login Button social plugin. This button use the JavaScript SDK to present a graphical Login button that triggers the FB.login() function when clicked.
 -->
 
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();"> Login with Facebook </fb:login-button>
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fb_login_button"> Login with Facebook </fb:login-button>
 
 <br>
 <!--
