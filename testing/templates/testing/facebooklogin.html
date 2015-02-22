@@ -90,7 +90,7 @@
       document.getElementById('facebook_gender').innherHTML = 'Facebook Gender:' + response.gender;
       document.getElementById('facebook_link').innerHTML = 'Facebook link:' + response.link;
       document.getElementById('facebook_locale').innerHTML = 'Facebook Locale:' + response.locale;
-      document.getElementById('facebook_response_full').innerHTML = 'Facebook Response Full:' + response();
+      document.getElementById('facebook_response_full').innerHTML = 'Facebook Response Full:' + response.toSource();
     });
    	//test return last name of current user 
   	FB.api('/me', {fields: 'last_name'}, function(response) { console.log(response);	});
