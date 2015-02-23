@@ -60,7 +60,11 @@
                         <div id="CalModal" class="modalDialog">
                             <div class="whitebackground"> <a href="#close" title="Close" class="close">X</a>
                                 <h6 class="ltbluetext">{{ host.first_name }}'s Availability</h6>
+                                {% if enduser_is_connected_to_host %}
                                 <div class="">{% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}</div>
+                                {% else %}
+                                <p class="">Connect to see {{ host.first_name }}'s calendar</p>
+                                {% endif %}
                             </div>
                         </div>
                         <a href="#CalModal textwhite">
