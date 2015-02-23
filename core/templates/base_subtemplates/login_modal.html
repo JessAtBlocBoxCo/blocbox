@@ -11,12 +11,11 @@
         <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
             {% csrf_token %} {{ login_form.non_field_errors }}
             <div class="row">
-                <div class="col-xs-12 form-group">
+                <div class="col-xs-12 form-group paddingtop10px">
                     {{ user_form.email.errors }}
                     <input type="email" class="form-control input-lg" name="email" id="id_email" placeholder="Enter Email">
                 </div>
-
-                <div class="col-xs-12 form-group">
+                <div class="col-xs-12 form-group paddingtop30px">
                     {{ user_form.password.errors }}
                     <input type="password" class="form-control input-lg" name="password" id="id_password1" placeholder="Enter Password">
                 </div>
