@@ -63,7 +63,11 @@
                                 {% if enduser_is_connected_to_host %}
                                 <div class="">{% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}</div>
                                 {% else %}
+                                <div class="row">
                                 <p class="darkgreytext">Connect to see {{ host.first_name }}'s calendar</p>
+                                <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
+                                    <i class="fa fa-user-plus"></i>&nbsp;&nbsp;Connect</a>
+                                </div>
                                 {% endif %}
                             </div>
                         </div>
