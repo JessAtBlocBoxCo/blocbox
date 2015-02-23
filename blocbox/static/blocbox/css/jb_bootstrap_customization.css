@@ -1989,13 +1989,16 @@ a > .offercard:focus {
     height: 40px;
     width: 175px;
     border: 2px solid rgb(255, 255, 255);
-    margin-left: 0px;
-    padding-left: 10px;
-    padding-right: 10px;
+    margin: 0px 0px;
     cursor: pointer;
-    vertical-align: top;
     text-align: center;
     border-radius: 3px;
+    -moz-user-select: none;
+    display: inline-block;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    vertical-align: middle;
+    white-space: nowrap;
 }
 .btn-white:hover {
     background-color: white;
