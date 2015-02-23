@@ -25,11 +25,11 @@
                             <div class="col-sm-1 nopadding">
                                 <i class="fa fa-map-marker fa-fw greentext textshadow"></i>
                             </div>
-                            <div class="col-sm-10 nopadding addresstext">
+                            <a class="col-sm-10 nopadding addresstext" href="">
                                 <p class="whitetext textleft nomargin">
                                     {% if connected %} {{ host.st_address1 }}, {% else %} {{ host.address_approx }}, {% endif %}</p>
                                 <p class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</p>
-                            </div>
+                            </a>
                         </div>
                         {% if enduser_is_connected_to_host %}
                         <button class="btn-white" style="margin-top: 15px;" onClick="window.location='/startashipment/';">Send a Message</button>
