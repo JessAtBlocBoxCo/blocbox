@@ -52,18 +52,18 @@
                                 </button>
                             </div>
                         </div>
-                        <a class="btn-calendar textcenter" href="#openModal1">
-                            <p href="#openModal1" style="padding-top: 13px"><i class="fa fa-calendar-o fa-fw fa-2x"></i>
+                        <a class="btn-calendar textcenter" href="#CalModal">
+                            <p href="#CalModal" style="padding-top: 13px"><i class="fa fa-calendar-o fa-fw fa-2x"></i>
                             </p>
                         </a>
-                        <!--calendar MODAL1-->
-                        <div id="openModal1" class="modalDialog">
+                        <!--calendar CalModal-->
+                        <div id="CalModal" class="modalDialog">
                             <div class="whitebackground"> <a href="#close" title="Close" class="close">X</a>
                                 <h6 class="ltbluetext">{{ host.first_name }}'s Availability</h6>
                                 <div class="">{% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}</div>
                             </div>
                         </div>
-                        <a href="#openModal1 textwhite">
+                        <a href="#CalModal textwhite">
                             <!-- <p class="paddingtop10px nomargin">{{ host.whenimhome_days }}</p> -->
                             <p class="paddingtop10px nomargin">{{ host.whenimhome_hours }}</p>
                             <p class="nomargin lterbluetext" style="padding-top: 2px;">Click for Host Calendar</p>
