@@ -2378,6 +2378,25 @@ a > .offercard:focus {
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
 }
+.coverstatus {
+    background-color: rgb(41, 128, 185);
+    border-radius: 100%;
+    color: rgb(101, 188, 245);
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+.coverstatus:hover {
+    color: white;
+}
+.coverstatus:active {
+    color: white;
+}
 .addresstext {
     font-size: 1.20em;
     line-height: 1.38;
