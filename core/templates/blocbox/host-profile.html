@@ -64,8 +64,8 @@
                                 <div class="">{% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}</div>
                                 {% else %}
                                 <div class="row">
-                                <p class="darkgreytext">Connect to see {{ host.first_name }}'s calendar</p>
-                                <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
+                                <p class="col-sm-8 darkgreytext">Connect to See {{ host.first_name }}'s Calendar</p>
+                                <a class="col-sm-4 btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
                                     <i class="fa fa-user-plus"></i>&nbsp;&nbsp;Connect</a>
                                 </div>
                                 {% endif %}
