@@ -2352,9 +2352,8 @@ a > .offercard:focus {
     border-right: 2px solid rgb(41, 128, 185);
 }
 .btn-calendar {
-    background-color: rgb(41, 128, 185);
+    background-color: rgb(101, 188, 245);
     border-radius: 100%;
-    border: 2px solid white;
     color: white;
     height: 60px;
     width: 60px;
