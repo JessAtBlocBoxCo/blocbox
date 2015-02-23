@@ -2352,7 +2352,7 @@ a > .offercard:focus {
     border-right: 2px solid rgb(41, 128, 185);
 }
 .btn-calendar {
-    background-color: rgb(41, 128, 185);
+    background-color: rgb(101, 188, 245);
     border-radius: 100%;
     color: white;
     height: 60px;
@@ -2379,7 +2379,7 @@ a > .offercard:focus {
     border-radius: 100%;
 }
 .coverstatus {
-    background-color: rgb(101, 188, 245);
+    background-color: rgb(41, 128, 185);
     border-radius: 100%;
     color: white;
     height: 60px;
