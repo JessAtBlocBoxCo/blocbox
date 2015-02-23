@@ -73,7 +73,7 @@ a {
 }
 
 a:link {
-    color: none;
+    color: inherit;
 }
 
 a:visited {
