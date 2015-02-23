@@ -2,39 +2,41 @@
 
 
 <div id="open_login_modal" class="modalDialog">
-        <!--modalupfront-->
+    <!--modalupfront-->
     <div>
-    <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
-        <div class="logo-orange paddingtop50px"></div>
-            <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
-                {% csrf_token %} {{ login_form.non_field_errors }}
-                <div class="row">
-                    <div class="col-xs-12 form-group">
-                        {{ user_form.email.errors }}
-                        <input type="email" class="form-control input-lg" name="email" id="id_email" placeholder="Enter Email">
-                    </div>
+        <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
+        <div class="paddingtop50px">
+            <div class="logo-orange"></div>
+        </div>
+        <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
+            {% csrf_token %} {{ login_form.non_field_errors }}
+            <div class="row">
+                <div class="col-xs-12 form-group">
+                    {{ user_form.email.errors }}
+                    <input type="email" class="form-control input-lg" name="email" id="id_email" placeholder="Enter Email">
+                </div>
 
-                    <div class="col-xs-12 form-group">
-                        {{ user_form.password.errors }}
-                        <input type="password" class="form-control input-lg" name="password" id="id_password1" placeholder="Enter Password">
-                    </div>
+                <div class="col-xs-12 form-group">
+                    {{ user_form.password.errors }}
+                    <input type="password" class="form-control input-lg" name="password" id="id_password1" placeholder="Enter Password">
                 </div>
-                <div class="row">
-                    <p class="col-xs-6 col-xs-offset-6 textright">
-                    	<a href="/passwordreset/recover/">Forgot Password?</a>
-                    </p>
-                </div>
-                <div class="paddingsides15px">
-                    <button type="submit" name="submit" class="bluebutton marginsides15px">Sign In</button>
-                </div>
-                <div class="row">
-                    <div class="profileboxline100 paddingsides15px margintop20px marginbottom10px"></div>
-                    <h6 class="col-xs-12 greytext nopaddingright">
+            </div>
+            <div class="row">
+                <p class="col-xs-6 col-xs-offset-6 textright">
+                    <a href="/passwordreset/recover/">Forgot Password?</a>
+                </p>
+            </div>
+            <div class="paddingsides15px">
+                <button type="submit" name="submit" class="bluebutton marginsides15px">Sign In</button>
+            </div>
+            <div class="row">
+                <div class="profileboxline100 paddingsides15px margintop20px marginbottom10px"></div>
+                <h6 class="col-xs-12 greytext nopaddingright">
                     			Don't have an account?&nbsp;<a href="/search/">Get Started</a> 
                     </h6>
-                </div>
-            </form>
-        </div>
+            </div>
+        </form>
+    </div>
 </div>
 
 <!--OTHER MODAL
