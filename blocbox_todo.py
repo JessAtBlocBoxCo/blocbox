@@ -50,6 +50,7 @@ JESS: signup - request to connect - add errors if already connected
 JESS: signup - fix the connect/host2 thing - connecting if already a user - make sure the emails are sending to thoe host, add a field for confirmed, right now its logging as connected een before host confirms
 
 5.
+JESS: dashbaord - Connect user/host address href to external link of gmaps location
 JESS: dashbaord - Upload a picture not working
 JESS: dashboard - finish for other transactions
 JESS: dashbaord - stop error message if people visit the dashboard without login - just re-rout them to login or sign up
