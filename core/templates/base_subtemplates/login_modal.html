@@ -5,7 +5,8 @@
         <!--modalupfront-->
     <div>
     <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
-            <form class="form-inline paddingtop50px" role="form" method="post" action="/login/" enctype="multipart/form-data">
+        <div class="logo-orange paddingtop50px"></div>
+            <form class="form-inline" role="form" method="post" action="/login/" enctype="multipart/form-data">
                 {% csrf_token %} {{ login_form.non_field_errors }}
                 <div class="row">
                     <div class="col-xs-12 form-group">

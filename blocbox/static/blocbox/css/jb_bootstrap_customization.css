@@ -1070,6 +1070,14 @@ footer {
     padding-right: 50px;
     height: 40px;
 }
+.logo-orange {
+    display: block;
+    background-image: url('/static/blocbox/images/logo-orange.png'); 
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+}
 /*-----------------------------------------------------------------------
 *min.css overrides
 *-----------------------------------------------------------------------*/
