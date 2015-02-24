@@ -921,6 +921,7 @@ footer {
     height: 40px;
     cursor: pointer;
     border: 2px solid rgb(255, 195, 0);
+    vertical-align: middle;
 }
 .navinfobtnorg:hover {
     background-color: white;
