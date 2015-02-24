@@ -1702,13 +1702,12 @@ body {
     color: white;
     font-size: 0.900em;
     font-weight: 400;
-    bottom: 20px;
-    height: 1.1em;
+    bottom: 10px;
     -webkit-border-radius: 80px;
     -moz-border-radius: 80px;
     border-radius: 80px;
     z-index: 100;
-    width: 150px;
+    width: 125px;
     padding: 3px 10px;
 }
 .hostinfobox {
