@@ -1696,6 +1696,18 @@ body {
     max-width: 150px;
     max-height: 150px;
 }
+.hostbadge {
+    background-color: rgb(71, 158, 159);
+    position: absolute;
+    color: white;
+    font-size: 0.900em;
+    font-weight: 400;
+    bottom: 20px;
+    height: 1.1em;
+    -webkit-border-radius: 80px;
+    -moz-border-radius: 80px;
+    border-radius: 80px;
+}
 .hostinfobox {
     background-color: rgb(255, 255, 255);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -2827,18 +2839,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         max-width: 100px;
         max-height: 100px;
         bottom: 10px;
-    }
-    .hostnotice {
-        background-color: rgb(71, 158, 159);
-        position: absolute;
-        color: white;
-        font-size: 0.900em;
-        font-weight: 400;
-        bottom: 20px;
-        height: 1.1em;
-        -webkit-border-radius: 80px;
-        -moz-border-radius: 80px;
-        border-radius: 80px;
     }
     .sideboxtext {
         text-align: left;
