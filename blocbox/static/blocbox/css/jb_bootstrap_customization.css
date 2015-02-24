@@ -181,12 +181,12 @@ footer {
 /*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
 
 .greenbackground {
-    background-color: #2ecc71;
+    background-color: rgb(97, 183, 184);
 }
 /*become a blocbox host, etc */
 
 .darkgreenbackground {
-    background-color: rgb(39, 174, 96);
+    background-color: rgb(71, 158, 159);
 }
 /*for the footer on the waitlist etc */
 
