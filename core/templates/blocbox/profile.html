@@ -38,7 +38,7 @@
                             </a>
                             <a class="col-sm-10 nopadding addresstext" href="">
                                 <p class="whitetext textleft nomargin">{{ enduser.st_address1 }}</p>
-                                <p class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</p>
+                                <p class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ enduser.city }},&nbsp;{{ enduser.state }}{% endif %}</p>
                             </a>
                         </div>
                         {% if enduser_is_connected_to_host %}
@@ -134,7 +134,7 @@
             <div class="col-sm-11 offwhitebackground" style="height: 733px;">
                 <div class="row">
                     <div class="col-sm-8 nopaddingleft">
-                        <h6 class="dashfont greytext textleft">OFFERED TASKS</h6>
+                        <h6 class="dashfont greytext textleft">INTERESTED TASKS</h6>
                     </div>
                     {% if enduser_is_connected_to_host %}
                     <div class="col-sm-4 nopaddingright">
