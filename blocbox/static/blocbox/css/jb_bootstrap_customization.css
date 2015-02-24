@@ -312,16 +312,20 @@ footer {
 .linktext:hover {
     color: rgb(49, 104, 147);
 }
-.dropdownfont {
-    font-size: 1.200em;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    font-weight: 300;
+.dropdown-menu > li > a {
+    clear: both;
     color: rgb(103,114,119);
+    display: block;
+    font-weight: 400;
+    font-size: 1.200em;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
 }
-.dropdownfont:hover {
+.dropdown-menu > li > a:hover {
     color: black;
 }
+
 /*JMY edited dashfont to make it smaller ssince it was currently multiplying tinyfont - 12.21.14*/
 
 .dashfont {
