@@ -194,7 +194,12 @@ footer {
     background-color: rgb(250, 250, 250);
 }
 /*Hex equiv: #FAFAFA */
-
+.bluegreendiv {
+    background-color: rgb(121, 204, 205);
+}
+.darkbluegreendiv {
+    background-color: rgb(97, 183, 184);
+}
 .lightgreybackground {
     background-color: rgb(236, 240, 241);
 }
