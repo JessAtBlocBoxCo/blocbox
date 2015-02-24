@@ -1620,7 +1620,7 @@ body {
 #map-canvas {
     z-index: 5;
     width: 100%;
-    height: 39em;
+    height: 70vh;
     margin-top: 70px;
     background-size: cover;
     background-position: center center;
