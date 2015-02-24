@@ -918,12 +918,15 @@ footer {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    border: 2px solid rgb(255, 195, 0);
 }
 .navinfobtnorg:hover {
-    background-image: url('/static/blocbox/images/info-button-active.png');
+    background-color: white;
+    color: rgb(255, 195, 0);
 }
 .navinfobtnorg:focus {
-    background-image: url('/static/blocbox/images/info-button-active.png');
+    background-color: white;
+    color: rgb(255, 195, 0);
 }
 .navinfobtnwht {
     background-image: url('/static/blocbox/images/info-button-white-outline.png');
