@@ -47,7 +47,7 @@ GOOGLE MAP EMBED SCRIPT - START
             '<div class="row">'+    
             	'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
             	'<div class="InfoWindowBody col-xs-8">'+
-            '<h5 class="nomargintop">Near {{ host.address_approx }}, {% if host.neighborhood %} {{ host.neighborhood }}<br>{{ host.city }}, {{ host.state }} </h5>'+
+            '<h5 class="nomargintop">Near {{ host.address_approx }}, {% if host.neighborhood %} {{ host.neighborhood }}{% else %}{% endif %}<br>{{ host.city }}, {{ host.state }} </h5>'+
            				 '<h6 class="linktext"><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
             	'</div>'+
             '</div> '+   
