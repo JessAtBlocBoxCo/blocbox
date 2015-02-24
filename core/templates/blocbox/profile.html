@@ -5,7 +5,7 @@
 {% endblock %} {% block content %}
 
 <!--My attempt to color the background-->
-<div class="content nopaddingleftright container-fluid offwhitebackground text-center relativediv">
+<div class="content nopaddingleftright container-fluid whitebackground text-center relativediv">
 
 {% if user.is_authenticated %}
 
@@ -168,71 +168,7 @@
                                     <div class="paddingsides15px">
                                         <h6 class="textcenter">Package Receipt</h6>
                                     </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$2 PER PACKAGE</p>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$15 FOR 10 PACKAGES</p>
-                                    </div>
-                                    {% if enduser_is_connected_to_host %}{% else %}
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textcenter dashfont greentext nomargin">FIRST 3 PACKAGES FREE</p>
-                                    </div>
-                                    {% endif %}
                                 </a>
-                            </div>
-
-                            <!--Packages MODAL2-->
-                            <div id="openModal2" class="modalDialog">
-                                <div class="packageoffer"> <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
-                                    <div class="row">
-                                        <div class="modalheader nopadding">
-                                            <p class="col-sm-12 nopadding"><i class="fa fa-cube fa-fw fa-lg"></i>&nbsp;Package Receipt</p>
-                                        </div>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <p class="modaltext paddingtopbottom5px">
-                                        {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
-                                    </p>
-                                    <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-5 col-sm-offset-1">
-                                            <p class="dashpricetext">$2</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
-                                            <p class="tinytext lightweight">Pay for a Single Package</p>
-                                        </div>
-                                        <div class="col-sm-5">
-                                            <p class="dashpricetext">$15</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
-                                            <p class="tinytext lightweight">10 packages (Expires in 1 year)</p>
-                                        </div>
-                                    </div>
-                                    <!--row containg pricing info-->
-                                    <p class="modaltext paddingbottom15px">{{ host.availability }}</p>
-
-                                    <!--<p class="centerboxtext" style="padding-top: 0px;">John's availability: {{ host.availability }}</p> -->
-                                    <div class="row marginbottom10px">
-                                        <div class="col-xs-offset-1 col-xs-6 paddingtop15px">
-                                            {% if enduser_is_connected_to_host %}{% else %}
-                                            <p class="ltbluetext">Connect and try your first package for free</p>
-                                            {% endif %}
-                                        </div>
-                                        <div class="col-xs-5 paddingright7pt5pct ">
-                                            {% if enduser_is_connected_to_host %}
-                                            <div class="row">
-                                                <div class="btn-startmodal">
-                                                    <a class="textright" type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start a Shipment {% if hostonly %} to {{hostonly.first_name }}{% endif %}&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
-                                                </div>
-                                            </div>
-                                            {% else %}
-                                            <a class="btn bluebutton" onClick="window.location='/{{ host.id }}/signupconnect/' ; ">
-                                                <i class="fa fa-user-plus"></i>&nbsp;&nbsp;Connect</a>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <!--End of Packages Card-->
 
