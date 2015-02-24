@@ -1708,6 +1708,8 @@ body {
     -moz-border-radius: 80px;
     border-radius: 80px;
     z-index: 100;
+    width: 150px;
+    padding: 3px 10px;
 }
 .hostinfobox {
     background-color: rgb(255, 255, 255);
