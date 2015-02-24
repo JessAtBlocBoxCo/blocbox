@@ -2426,7 +2426,7 @@ a > .offercard:focus {
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
 }
-.coverstatus {
+.hoststatus {
     background-color: rgb(121, 204, 205);
     border-radius: 100%;
     color: white;
@@ -2439,10 +2439,29 @@ a > .offercard:focus {
     margin-left: auto;
     display: block;
 }
-.coverstatus:hover {
+.hoststatus:hover {
     color: white;
 }
-.coverstatus:active {
+.hoststatus:active {
+    color: white;
+}
+.userstatus {
+    background-color: rgb(133, 193, 234);
+    border-radius: 100%;
+    color: white;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+.userstatus:hover {
+    color: white;
+}
+.userstatus:active {
     color: white;
 }
 .addresstext {
