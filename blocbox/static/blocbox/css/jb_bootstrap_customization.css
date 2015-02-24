@@ -2022,7 +2022,7 @@ a > .offercard:focus {
 }
 .btn-white:hover {
     background-color: white;
-    color: #3498db;
+    color:  rgb(97, 183, 184);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.50);
     bottom: 2px;
     text-decoration: none;
@@ -2400,7 +2400,7 @@ a > .offercard:focus {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
 .btn-calendar:hover {
-    color: rgb(41, 128, 185);
+    color: rgb(97, 183, 184);
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.50);
