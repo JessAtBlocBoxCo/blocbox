@@ -2828,7 +2828,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         max-height: 100px;
         bottom: 10px;
     }
-    .hostbadge {
+    .hostnotice {
         background-color: rgb(71, 158, 159);
         position: absolute;
         color: white;
