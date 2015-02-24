@@ -879,39 +879,37 @@ footer {
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
-    border: 0;
-    border-radius: 0px;
+    border: 2px solid rgb(41, 128, 185);
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
 }
 .navinboxblue:hover {
-    background-color: transparent;
-    color: rgb(255, 255, 255);
+    background-color: rgb(41, 128, 185);
+    color: white;
 }
 .navinboxblue:focus {
-    background-color: transparent;
-    color: rgb(255, 255, 255);
+    background-color: rgb(41, 128, 185);
+    color: white;
 }
 .navinboxwhite {
     background-color: transparent;
     font-size: 1.600em;
     font-weight: 400;
-    color: rgb(41, 128, 185);
-    border: 2px solid rgb(41, 128, 185);
-    border-radius: 100px;
+    color: #ffffff;
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
     border: 0;
     border-radius: 0px;
-    width: 40px;
-    height: 40px;
 }
 .navinboxwhite:hover {
-    background-color: rgb(41, 128, 185);
-    color: white;
+    background-color: transparent;
+    color: rgb(41, 128, 185);
 }
 .navinboxwhite:focus {
-    background-color: rgb(41, 128, 185);
-    color: white;
+    background-color: transparent;
+    color: rgb(41, 128, 185);
 }
 .navinfobtnorg {
     background-color: rgb(255, 195, 0);
