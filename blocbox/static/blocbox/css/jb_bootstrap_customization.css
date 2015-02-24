@@ -910,7 +910,9 @@ footer {
     color: rgb(41, 128, 185);
 }
 .navinfobtnorg {
-    background-image: url('/static/blocbox/images/info-button.png');
+    background-color: rgb(255, 195, 0);
+    color: white;
+    border-radius: 100;
     background-repeat: no-repeat;
     background-size: contain;
     width: 40px;
