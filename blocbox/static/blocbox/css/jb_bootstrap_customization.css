@@ -2836,6 +2836,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         font-weight: 400;
         bottom: 20px;
         height: 1.1em;
+        -webkit-border-radius: 80px;
+        -moz-border-radius: 80px;
         border-radius: 80px;
     }
     .sideboxtext {
