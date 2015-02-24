@@ -2399,7 +2399,7 @@ a > .offercard:focus {
     border-left: 2px solid rgb(71, 158, 159);
     border-right: 2px solid rgb(71, 158, 159);
 }
-.btn-calendar {
+.btn-host-cal {
     background-color: rgb(121, 204, 205);
     border-radius: 100%;
     color: white;
@@ -2415,14 +2415,40 @@ a > .offercard:focus {
     background-size: contain;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
 }
-.btn-calendar:hover {
+.btn-host-cal:hover {
     color: rgb(97, 183, 184);
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.50);
 }
-.btn-calendar:active {
+.btn-host-cal:active {
     color: rgb(41, 128, 185);
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+}
+.btn-user-cal {
+    background-color: rgb(133, 193, 234);
+    border-radius: 100%;
+    color: white;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+.btn-user-cal:hover {
+    color: rgb(37, 116, 169);
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+}
+.btn-user-cal:active {
+    color: rgb(37, 116, 169);
     background-color: rgb(255, 255, 255);
     border-radius: 100%;
 }
