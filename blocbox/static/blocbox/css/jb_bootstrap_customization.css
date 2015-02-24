@@ -1707,6 +1707,7 @@ body {
     -webkit-border-radius: 80px;
     -moz-border-radius: 80px;
     border-radius: 80px;
+    z-index: 100;
 }
 .hostinfobox {
     background-color: rgb(255, 255, 255);
