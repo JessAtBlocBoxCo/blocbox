@@ -7,7 +7,7 @@
 <!--My attempt to color the background-->
 <div class="content nopaddingleftright container-fluid offwhitebackground text-center relativediv">
 
-    {% if user.is_authenticated %}
+{% if user.is_authenticated %}
 
     <div class="row">
         <div class="col-xs-12 bluebackground profilecover nopaddingleftright">
@@ -29,8 +29,7 @@
                                 <i class="fa fa-map-marker fa-fw greentext textshadow"></i>
                             </a>
                             <a class="col-sm-10 nopadding addresstext" href="">
-                                <p class="whitetext textleft nomargin">
-                                    {{ enduser.st_address1 }}{% else %} {% endif %}</p>
+                                <p class="whitetext textleft nomargin">{{ enduser.st_address1 }}</p>
                                 <p class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ host.city }},&nbsp;{{ host.state }}{% endif %}</p>
                             </a>
                         </div>
