@@ -306,6 +306,12 @@ footer {
 .textshadow {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.20); 
 }
+.linktext {
+    color: rgb(41, 128, 185);
+}
+.linktext:hover {
+    color: rgb(49, 104, 147);
+}
 .dropdownfont {
     font-size: 1.200em;
     padding-top: 2px;
