@@ -1711,7 +1711,8 @@ body {
     text-align: center;
     padding: 2px 10px;
     margin: auto;
-    left: 0
+    left: 0;
+    right: 0;
 }
 .hostinfobox {
     background-color: rgb(255, 255, 255);
