@@ -871,26 +871,26 @@ footer {
 .bbbasenavbarbtn > a {
     color: black;
 }
-.navinboxblue {
-    background-color: transparent;
+.btn-inbox-green {
+    background-color: rgb(71, 158, 159);
     font-size: 1.600em;
     font-weight: 400;
-    color: rgb(41, 128, 185);
+    color: white;
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
-    border: 2px solid rgb(41, 128, 185);
+    border: 2px solid rgb(71, 158, 159);
     border-radius: 100px;
     width: 40px;
     height: 40px;
 }
-.navinboxblue:hover {
-    background-color: rgb(41, 128, 185);
-    color: white;
+.btn-inbox-green:hover {
+    background-color: white;
+    color: rgb(71, 158, 159);
 }
-.navinboxblue:focus {
-    background-color: rgb(41, 128, 185);
-    color: white;
+.btn-inbox-green:focus {
+    background-color: white;
+    color: rgb(71, 158, 159);
 }
 .navinboxwhite {
     background-color: transparent;
