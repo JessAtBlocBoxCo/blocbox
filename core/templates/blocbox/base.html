@@ -117,6 +117,7 @@
 
 <body class="fullheight mainsite">
     <div id="bbpage">
+        {% include "base_subtemplates/login_modal.html" %}
         <div class="mobileonly">
             <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
                 <a class="navmenu-brand" href="/beta/">
@@ -204,7 +205,7 @@
                     </li>
                     {% else %}
                     <li>
-                        <a href="#openModal1"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign in</a>
+                        <a href="#open_login_modal"><i class="fa fa-sign-out fa-fw fa-lg"></i>&nbsp; Sign in</a>
                         <div id="openModal1" class="modalDialog">
                             <div class="">	<a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
                                 <h6 class="ltbluetext paddingsides15px">Sign In</h6>
