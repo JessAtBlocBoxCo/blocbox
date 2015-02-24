@@ -2384,8 +2384,8 @@ a > .offercard:focus {
     border-left: 0.063em solid rgb(236, 240, 241);
 }
 .sideborders {
-    border-left: 2px solid rgb(41, 128, 185);
-    border-right: 2px solid rgb(41, 128, 185);
+    border-left: 2px solid rgb(71, 158, 159);
+    border-right: 2px solid rgb(71, 158, 159);
 }
 .btn-calendar {
     background-color: rgb(121, 204, 205);
