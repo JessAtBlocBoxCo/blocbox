@@ -2256,7 +2256,7 @@ a > .offercard:focus {
 }
 .profilepiccontainer {
     border-radius: 50%;
-    border: 7px solid rgb(255, 255, 255);
+    border: 5px solid rgb(255, 255, 255);
     max-width: 143px;
     max-height: 143px;
     overflow: hidden;
