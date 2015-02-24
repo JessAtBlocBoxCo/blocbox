@@ -1700,7 +1700,7 @@ body {
     bottom: 5px;
     -webkit-border-radius: 80px;
     -moz-border-radius: 80px;
-    border-radius: 80px;
+    border-radius: 60px;
     z-index: 100;
     width: 90px;
     text-align: center;
@@ -2395,9 +2395,12 @@ a > .offercard:focus {
 .dashboxborder {
     border-left: 0.063em solid rgb(236, 240, 241);
 }
-.sideborders {
+.hostborders {
     border-left: 2px solid rgb(71, 158, 159);
     border-right: 2px solid rgb(71, 158, 159);
+}
+.userborder {
+    border-left: 2px solid rgb(37, 116, 169);
 }
 .btn-host-cal {
     background-color: rgb(121, 204, 205);
