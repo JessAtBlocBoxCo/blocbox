@@ -14,7 +14,10 @@
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="col-sm-5" style="padding-top: 20px;">
-                        {% if enduser.profile_pic_uploaded %}
+                        {% if user.facebook_id %}
+                        <img class="dashpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large"/>
+                        {% else %}
+                        {% if user.profile_pic_uploaded %}
                         <div class="profilepiccontainer">
                             <img class="profilepic" src="{{enduser.profile_pic_uploaded.url}}" /> {% else %}
                             <p class="textcenter"><a href='.'> Upload your profile picture! </a> </p>
