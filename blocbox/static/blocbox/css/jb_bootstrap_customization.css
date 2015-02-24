@@ -1999,7 +1999,7 @@ a > .offercard:focus {
     top: 1px;
 }
 .btn-white {
-    background-color: #3498db;
+    background-color: transparent;
     font-size: 1.143em;
     font-weight: 400;
     letter-spacing: .5px;
@@ -2384,7 +2384,7 @@ a > .offercard:focus {
     border-right: 2px solid rgb(41, 128, 185);
 }
 .btn-calendar {
-    background-color: rgb(101, 188, 245);
+    background-color: rgb(97, 183, 184);
     border-radius: 100%;
     color: white;
     height: 60px;
@@ -2411,7 +2411,7 @@ a > .offercard:focus {
     border-radius: 100%;
 }
 .coverstatus {
-    background-color: rgb(41, 128, 185);
+    background-color: rgb(97, 183, 184);
     border-radius: 100%;
     color: white;
     height: 60px;
