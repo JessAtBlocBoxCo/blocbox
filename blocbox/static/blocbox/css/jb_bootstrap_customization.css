@@ -317,6 +317,10 @@ footer {
     padding-top: 2px;
     padding-bottom: 2px;
     font-weight: 300;
+    color: #333;
+}
+.dropdownfont:hover {
+    color: black;
 }
 /*JMY edited dashfont to make it smaller ssince it was currently multiplying tinyfont - 12.21.14*/
 
