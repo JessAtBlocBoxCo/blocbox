@@ -2026,6 +2026,7 @@ a > .offercard:focus {
 .btn-white:hover {
     background-color: white;
     color:  rgb(97, 183, 184);
+    border: 2px solid rgb(255, 255, 255);
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.50);
     bottom: 2px;
     text-decoration: none;
