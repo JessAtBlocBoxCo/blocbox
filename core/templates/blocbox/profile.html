@@ -82,11 +82,6 @@
         </div>
     </div>
 
-
-    <!--DELME - A BUNCH OF TETS DO NOT DELETE - KEEP COMMENTED OUT 
-<p> {% if connected %} THESE USERS ARE CONNECTED: end user id is {{ enduser.id }} and their name is {{ enduser.first_name }} {% endif %} </p>
--->
-
     <div class="row margintop20px marginbottom20px" style="margin-left: 32px; margin-right: -72px;">
         <!--Second Row of info> -->
         <div class="col-xs-12 col-sm-3 col-sm-offset-1 offwhitebackground paddingbottom20px">
@@ -136,15 +131,6 @@
                     <div class="col-sm-8 nopaddingleft">
                         <h6 class="dashfont greytext textleft">INTERESTED TASKS</h6>
                     </div>
-                    {% if enduser_is_connected_to_host %}
-                    <div class="col-sm-4 nopaddingright">
-                        <a href="#"><h6 class="dashfont darkgreytext textright"><i class="fa fa-plus-circle fa-fw greentext"></i>&nbsp;REQUEST A NEW TASK</h6></a>
-                    </div>
-                    {% else %}
-                    <div class="col-sm-4 nopaddingright">
-                        <h6 class="dashfont darkgreytext textright"><i class="fa fa-plus-circle fa-fw"></i>&nbsp;REQUEST A NEW TASK</h6>
-                    </div>
-                    {% endif %}
                 </div>
 
                 <div style="height: 678px; overflow: scroll">
