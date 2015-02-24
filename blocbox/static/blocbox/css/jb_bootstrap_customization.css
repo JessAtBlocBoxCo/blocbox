@@ -872,7 +872,7 @@ footer {
     color: black;
 }
 .navinboxblue {
-    background-color: rgb(255, 255, 255);
+    background-color: transparent;
     font-size: 1.600em;
     font-weight: 400;
     color: rgb(41, 128, 185);
@@ -894,20 +894,24 @@ footer {
     background-color: transparent;
     font-size: 1.600em;
     font-weight: 400;
-    color: #ffffff;
+    color: rgb(41, 128, 185);
+    border: 2px solid rgb(41, 128, 185);
+    border-radius: 100px;
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
     border: 0;
     border-radius: 0px;
+    width: 40px;
+    height: 40px;
 }
 .navinboxwhite:hover {
-    background-color: transparent;
-    color: rgb(41, 128, 185);
+    background-color: rgb(41, 128, 185);
+    color: white;
 }
 .navinboxwhite:focus {
-    background-color: transparent;
-    color: rgb(41, 128, 185);
+    background-color: rgb(41, 128, 185);
+    color: white;
 }
 .navinfobtnorg {
     background-color: rgb(255, 195, 0);
@@ -974,20 +978,6 @@ footer {
 }
 .navstartwht:focus {
     background-image: url('/static/blocbox/images/start-button-wht-active.png');
-}
-.navringblue {
-    background-image: url('/static/blocbox/images/message-button.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 40px;
-    cursor: pointer;
-    vertical-align: middle;
-}
-.navringblue:hover {
-    background-image: url('/static/blocbox/images/message-button-active.png');
-}
-.navringblue:focus {
-    background-image: url('/static/blocbox/images/message-button-active.png');
 }
 .navringwhite {
     background-image: url('/static/blocbox/images/info-button-white-ring.png');
