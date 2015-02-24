@@ -2251,6 +2251,8 @@ a > .offercard:focus {
     height: 143px;
     width: 143px;
     position: relative;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 .navbar-fixed-top, .navbar-fixed-bottom {
     transform: none;
