@@ -2229,6 +2229,8 @@ a > .offercard:focus {
     height: 160px;
     width: 160px;
     position: relative;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
 .profilepiccontainer {
     border-radius: 50%;
