@@ -1819,6 +1819,18 @@ body {
 .interestcard:focus {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 }
+.interestcard .btn-details {
+    visibility: hidden;
+}
+.interestcard:hover .btn-details {
+    visibility: visible;
+}
+.interestcard .btn-startoffer {
+    visibility: hidden;
+}
+.interestcard:hover .btn-startoffer {
+    visibility: visible;
+}
 .inactive:hover {
     background: rgba(0, 0, 0, 0.25);
 } 
