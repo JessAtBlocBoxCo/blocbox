@@ -911,7 +911,7 @@ footer {
     background-color: transparent;
     color: rgb(41, 128, 185);
 }
-.navinfobtnorg {
+.btn-info-org {
     background-color: rgb(255, 195, 0);
     color: white;
     font-size: 1.900em;
@@ -926,11 +926,11 @@ footer {
     border: 2px solid rgb(255, 195, 0);
     vertical-align: middle;
 }
-.navinfobtnorg:hover {
+.btn-info-org:hover {
     background-color: white;
     color: rgb(255, 195, 0);
 }
-.navinfobtnorg:focus {
+.btn-info-org:focus {
     background-color: white;
     color: rgb(255, 195, 0);
 }
@@ -954,19 +954,28 @@ footer {
 .navinfobtnwht:focus {
     background-image: url('/static/blocbox/images/white-info-button-active.png');
 }
-.bbbasenavbarstart {
-    background-image: url('/static/blocbox/images/start-button.png');
+.btn-start-green {
+    background-color: rgb(71, 158, 159);
+    color: white;
+    font-size: 1.900em;
+    font-weight: 400;
+    border-radius: 100px;
+    text-align: center;
     background-repeat: no-repeat;
     background-size: contain;
     width: 40px;
     height: 40px;
     cursor: pointer;
+    border: 2px solid rgb(71, 158, 159);
+    vertical-align: middle;
 }
-.bbbasenavbarstart:hover {
-    background-image: url('/static/blocbox/images/start-button-active.png');
+.btn-start-green:hover {
+    background-color: white;
+    color: rgb(71, 158, 159);
 }
-.bbbasenavbarstart:focus {
-    background-image: url('/static/blocbox/images/start-button-active.png');
+.btn-start-green:focus {
+    background-color: white;
+    color: rgb(71, 158, 159);
 }
 .navstartwht {
     background-image: url('/static/blocbox/images/start-button-wht.png');
