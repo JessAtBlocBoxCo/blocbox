@@ -3992,3 +3992,6 @@ Jasny  STYLES
     -moz-outline-style: none;
     -moz-outline: none;
 }
+input[type=checkbox]:checked,input[type=radio]:checked,input[type=checkbox]:focus,input[type=radio]:focus {
+    outline: none !important;
+}
