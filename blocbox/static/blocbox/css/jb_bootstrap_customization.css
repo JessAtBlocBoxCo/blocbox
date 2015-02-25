@@ -965,6 +965,7 @@ footer {
     background-size: contain;
     width: 40px;
     height: 40px;
+    line-height: 40px;
     cursor: pointer;
     border: 2px solid rgb(97, 183, 184);
     vertical-align: middle;
