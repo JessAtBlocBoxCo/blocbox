@@ -1803,6 +1803,22 @@ body {
 .offercard:focus {
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
 }
+.interestcard {
+    text-decoration: none;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    overflow: visible;
+    min-height: 100%;
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
+.interestcard:hover {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.interestcard:focus {
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
 .inactive:hover {
     background: rgba(0, 0, 0, 0.25);
 } 
