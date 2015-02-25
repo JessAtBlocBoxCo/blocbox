@@ -138,26 +138,23 @@
 
                 <div style="height: 678px; overflow: scroll">
                     <div class="row nopaddingleftright">
-                        <div class="col-sm-4 nopaddingleft">
+                        <div class="col-sm-12 nopaddingleft">
                             <!--Packages Card-->
                             <div class="offercard">
                                 <div class="row">
-                                    <div class="col-sm-5 btn-details">
-                                        <a type="button" href="#openModal2" title="Click for Details">Details</a>
-                                    </div>
-                                    {% if enduser_is_connected_to_host %}
-                                    <div class="col-sm-5 col-sm-offset-2 btn-startoffer">
-                                        <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
-                                    </div>{% else %}{% endif %}
-                                </div>
-                                <a href="#openModal2" title="Click for Details">
-                                    <div class="packagebg">
+                                    <div class="col-xs-1 packagebg">
                                         <div class="package-i"></div>
                                     </div>
-                                    <div class="paddingsides15px">
+                                    <div class="col-xs-3 paddingsides15px">
                                         <h6 class="textcenter">Package Receipt</h6>
                                     </div>
-                                </a>
+                                    <div class="col-sm-2 btn-details">
+                                        <a type="button" href="#openModal2" title="Click for Details">Details</a>
+                                    </div>
+                                    <div class="col-sm-2 col-sm-offset-2 btn-startoffer">
+                                        <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                    </div>
+                                </div>
                             </div>
                             <!--End of Packages Card-->
 
