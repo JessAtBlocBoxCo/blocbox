@@ -3983,6 +3983,6 @@ Jasny  STYLES
     border-color: #5cb85c; }
 .checkbox-success input[type="checkbox"]:checked + label::after {
     color: #fff; }
-.checkbox:focus {
-    outline: none;
-}
+
+.btn:focus, .btn:active:focus, .btn.active:focus { outline: none; ! important; outline-style: none; }
+.checkbox:focus, .checkbox:active:focus, .checkbox.active:focus { outline: none; ! important; outline-style: none; }
