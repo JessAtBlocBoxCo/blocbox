@@ -7,7 +7,7 @@
 <!--My attempt to color the background-->
 <div class="content nopaddingleftright container-fluid whitebackground text-center relativediv">
 
-{% if user.is_authenticated %}
+    {% if user.is_authenticated %}
 
     <div class="row">
         <div class="col-xs-12 bluebackground profilecover nopaddingleftright">
@@ -16,10 +16,9 @@
                     <div class="col-sm-5" style="padding-top: 20px;">
                         {% if user.facebook_id %}
                         <div class="profilepiccontainer">
-                            <img class="profilepic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large"/>
+                            <img class="profilepic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" />
                         </div>
-                        {% else %}
-                        {% if user.profile_pic_uploaded %}
+                        {% else %} {% if user.profile_pic_uploaded %}
                         <div class="profilepiccontainer">
                             <img class="profilepic" src="{{enduser.profile_pic_uploaded.url}}" />
                         </div>
@@ -143,16 +142,19 @@
                             <div class="offercard">
                                 <div class="row">
                                     <div class="col-xs-2 packagebg">
-                                        <div class="package-i"></div>
+                                        <div class="package-i" style="width: 50px; height: 50px"></div>
                                     </div>
                                     <div class="col-xs-3 paddingsides15px">
                                         <h6 class="textcenter">Package Receipt</h6>
                                     </div>
-                                    <div class="col-sm-2 btn-details">
-                                        <a type="button" href="#openModal2" title="Click for Details">Details</a>
-                                    </div>
                                     <div class="col-sm-2 col-sm-offset-2 btn-startoffer">
                                         <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                    </div>
+                                    <div class="col-sm-2 btn-details">
+                                        <a type="button" href="#openModal2" title="Click for Details">Edit</a>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
                                     </div>
                                 </div>
                             </div>
