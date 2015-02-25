@@ -955,7 +955,7 @@ footer {
     background-image: url('/static/blocbox/images/white-info-button-active.png');
 }
 .btn-start-green {
-    background-color: rgb(71, 158, 159);
+    background-color: rgb(97, 183, 184);
     color: white;
     font-size: 1.900em;
     font-weight: 400;
@@ -966,16 +966,16 @@ footer {
     width: 40px;
     height: 40px;
     cursor: pointer;
-    border: 2px solid rgb(71, 158, 159);
+    border: 2px solid rgb(97, 183, 184);
     vertical-align: middle;
 }
 .btn-start-green:hover {
     background-color: white;
-    color: rgb(71, 158, 159);
+    color: rgb(97, 183, 184);
 }
 .btn-start-green:focus {
     background-color: white;
-    color: rgb(71, 158, 159);
+    color: rgb(97, 183, 184);
 }
 .navstartwht {
     background-image: url('/static/blocbox/images/start-button-wht.png');
