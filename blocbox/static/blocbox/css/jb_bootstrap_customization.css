@@ -2378,6 +2378,18 @@ a > .offercard:focus {
 .close:hover {
     color: #f25f52;
 }
+.interestclose {
+    background: #FFFFFF;
+    color: #606061;
+    line-height: 20px;
+    position: relative;
+    text-align: center;
+    width: 25px;
+    text-decoration: none;
+}
+.interestclose:hover {
+    color: #f25f52;
+}
 .form-inline .form-control {
     width: 100%;
 }
