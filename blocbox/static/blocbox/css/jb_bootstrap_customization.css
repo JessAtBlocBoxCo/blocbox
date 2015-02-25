@@ -282,8 +282,16 @@ footer {
 .yellowtext {
     color: rgb(255, 195, 0);
 }
+.ltbluegreentext {
+    background-color: rgb(121, 204, 205);
+}
+.bluegreentext {
+    background-color: rgb(97, 183, 184);
+}
+.darkbluegreentext{
+    background-color: rgb(71, 158, 159);
+}
 /*Define generic font attributes*/
-
 .lightweight {
     font-weight: 300;
 }

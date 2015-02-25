@@ -73,6 +73,7 @@ JESS: messages - add to email sent to host - the text they fill in for when they
 
 7.
 JESS: search - search bar placement
+JESS: search - start more zoomed in on me and after search
 JESS: search - how can we get more pins? Worth looking at repalcing gmaps?
 JESS: search - after entering new search address, host pin disappears, also zooms in very close
 JESS: search - page is taking a reall long time to load with the urls
