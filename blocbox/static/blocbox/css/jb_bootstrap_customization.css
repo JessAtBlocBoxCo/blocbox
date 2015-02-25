@@ -1912,8 +1912,7 @@ a > .offercard:focus {
     padding-bottom: 15px;
 }
 .userbg {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 5px 10px 5px;
 }
 .package-i {
     color: rgb(255, 203, 19);
