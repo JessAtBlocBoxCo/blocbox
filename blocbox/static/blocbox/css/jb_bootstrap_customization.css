@@ -2389,6 +2389,12 @@ a > .offercard:focus {
 .interestclose:hover {
     color: #f25f52;
 }
+.interestcard .interestclose {
+    visibility: hidden;
+}
+.interestcard:hover .interestclose {
+    visibility: visible;
+}
 .form-inline .form-control {
     width: 100%;
 }
