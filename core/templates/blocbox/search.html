@@ -43,7 +43,12 @@ GOOGLE MAP EMBED SCRIPT - START
         {% if host.profile_pic_uploaded %}
 
         var hostcontentString = '<div id="content">'+
-            '<img class="blockpic margintop20px nopadding col-xs-3" src="{{host.profile_pic_uploaded.url}}" alt="" />'+
+            '<div class="col-xs-3">'+
+                '<div class="hostbadge">'+
+                    '<p class="nomargin">HOST</p>'+
+                '</div> '+
+                '<img class="blockpic margintop20px nopadding" src="{{host.profile_pic_uploaded.url}}" alt="" />'+
+            '</div> '+
             '<div class="row">'+    
             	'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
             	'<div class="InfoWindowBody col-xs-8">'+
