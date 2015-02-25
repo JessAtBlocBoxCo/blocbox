@@ -43,6 +43,7 @@ GOOGLE MAP EMBED SCRIPT - START
         {% if host.profile_pic_uploaded %}
 
         var hostcontentString = '<div id="content">'+
+            '<div class="row">'+
             '<div class="col-xs-4">'+
                 '<div class="hostbadge">'+
                     '<p class="nomargin">HOST</p>'+
@@ -53,8 +54,9 @@ GOOGLE MAP EMBED SCRIPT - START
             	'<h1 class="InfoWindowName margintop20px nomarginbottom col-xs-8"><b> {{ host.first_name }}</b></h1>'+
             	'<div class="InfoWindowBody col-xs-8">'+
             '<h5 class="nomargintop">Near {{ host.address_approx }}, {% if host.neighborhood %} {{ host.neighborhood }}{% else %}{% endif %}<br>{{ host.city }}, {{ host.state }} </h5>'+
-           				 '<h6 class="linktext"><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
             	'</div>'+
+            '</div>'+
+            '<h6 class="linktext"><a href="/hostprofile/host2/">Connect with {{ host.first_name }} to stop missing packages or get help with other stuff.</a> </h6>'+
             '</div> '+   
             '</div>';
 
