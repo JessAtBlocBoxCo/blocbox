@@ -1677,11 +1677,12 @@ body {
 .InfoWindowName {
     color: rgb(0, 0, 0);
     font-size: 2.5em;
+    font-weight: 500;
     font-family: brandon-grotesque;
     font: brandon-grotesque;
 }
 .InfoWindowBody {
-    font-size: 0.9em;
+    font-size: 1.2em;
     font-family: brandon-grotesque;
     font: brandon-grotesque;
 }
