@@ -916,6 +916,7 @@ footer {
     color: white;
     font-size: 1.900em;
     font-weight: 400;
+    line-height: 38px;
     border-radius: 100px;
     text-align: center;
     background-repeat: no-repeat;
@@ -965,7 +966,7 @@ footer {
     background-size: contain;
     width: 40px;
     height: 40px;
-    line-height: 40px;
+    line-height: 38px;
     cursor: pointer;
     border: 2px solid rgb(97, 183, 184);
     vertical-align: middle;
