@@ -764,11 +764,11 @@ footer {
 }
 .navbarbrand {
     display: block;
-    background-image: url('/static/blocbox/images/goodhood.png');
+    background-image: url('/static/blocbox/images/Logo-and-name---orange-drop2.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 260px;
-    height: 40px;
+    height: 55px;
 }
 .hiddenbtn {
     background-color: transparent;
