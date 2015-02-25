@@ -3994,4 +3994,7 @@ Jasny  STYLES
 }
 input[type=checkbox]:checked,input[type=radio]:checked,input[type=checkbox]:focus,input[type=radio]:focus {
     outline: none !important;
+    outline-style: none;
+    -moz-outline-style: none;
+    -moz-outline: none;
 }
