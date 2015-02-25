@@ -2379,8 +2379,7 @@ a > .offercard:focus {
     color: #f25f52;
 }
 .interestclose {
-    background: #FFFFFF;
-    color: #606061;
+    color: rgb(223, 226, 226);
     line-height: 20px;
     position: relative;
     text-align: center;
