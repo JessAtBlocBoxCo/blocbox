@@ -137,7 +137,7 @@
 
                 <div style="height: 678px; overflow: scroll">
                     <div class="row nopaddingleftright">
-                        <div class="col-sm-12 nopaddingleft">
+                        <div class="col-sm-12 nopaddingleftright">
                             <!--Packages Card-->
                             <div class="offercard">
                                 <div class="row">
@@ -167,26 +167,26 @@
                             <!--Pet Care Card-->
                             <div class="offercard">
                                 <div class="row">
-                                    <div class="col-sm-5 btn-details">
-                                        <a type="button" href="#openModal3" title="Click for Details">Details</a>
+                                    <div class="col-xs-1 userbg">
+                                        <div class="package-i" style="width: 40px; height: 40px"></div>
                                     </div>
-                                    {% if enduser_is_connected_to_host %}
-                                    <div class="col-sm-5 col-sm-offset-2 btn-startoffer">
-                                        <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
-                                    </div>{% else %}{% endif %}
+                                    <div class="col-xs-4 paddingsides15px" style="padding-top: 8px">
+                                        <h6 class="padingleft10px textleft">Package Receipt</h6>
+                                    </div>
+                                    <div class="col-sm-2 col-sm-offset-2 paddingsides5px" style="padding-top: 12px">
+                                        <div class="btn-startoffer" style="width: 80px">
+                                            <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 paddingsides5px"  style="padding-top: 12px">
+                                        <div class="btn-details" style="width: 80px">
+                                            <a type="button" href="#openModal2" title="Click for Details">Edit</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
+                                    </div>
                                 </div>
-                                <a href="#openModal3" title="Click for Details">
-                                    <div class="packagebg">
-                                        <div class="dog-grey"></div>
-                                    </div>
-                                    <div class="paddingsides15px">
-                                        <h6 class="textcenter">Pet Care</h6>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">PRICE TBD BY HOST</p>
-                                    </div>
-                                </a>
                             </div>
 
                             <!--Pet Care MODAL3-->
@@ -243,26 +243,26 @@
                             <!--Wifi Card-->
                             <div class="offercard">
                                 <div class="row">
-                                    <div class="col-sm-5 btn-details">
-                                        <a type="button" href="#openModal4" title="Click for Details">Details</a>
+                                    <div class="col-xs-1 userbg">
+                                        <div class="package-i" style="width: 40px; height: 40px"></div>
                                     </div>
-                                    {% if enduser_is_connected_to_host %}
-                                    <div class="col-sm-5 col-sm-offset-2 btn-startoffer">
-                                        <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
-                                    </div>{% else %}{% endif %}
+                                    <div class="col-xs-4 paddingsides15px" style="padding-top: 8px">
+                                        <h6 class="padingleft10px textleft">Package Receipt</h6>
+                                    </div>
+                                    <div class="col-sm-2 col-sm-offset-2 paddingsides5px" style="padding-top: 12px">
+                                        <div class="btn-startoffer" style="width: 80px">
+                                            <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 paddingsides5px"  style="padding-top: 12px">
+                                        <div class="btn-details" style="width: 80px">
+                                            <a type="button" href="#openModal2" title="Click for Details">Edit</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
+                                    </div>
                                 </div>
-                                <a href="#openModal4" title="Click for Details">
-                                    <div class="packagebg">
-                                        <i class="fa fa-wifi fa-fw fa-5x wifi-i"></i>
-                                    </div>
-                                    <div class="paddingsides15px">
-                                        <h6 class="textcenter">Wifi Sharing</h6>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">REQUEST FOR PRICING</p>
-                                    </div>
-                                </a>
                             </div>
 
                             <!--Packages MODAL4-->
@@ -322,28 +322,27 @@
                         <div class="col-sm-4" style="padding-left: 7.5px; padding-right: 7.5px;">
 
                             <div class="offercard">
-                                <!--Storage Card-->
                                 <div class="row">
-                                    <div class="col-sm-5 btn-details">
-                                        <a type="button" href="#openModal5" title="Click for Details">Details</a>
+                                    <div class="col-xs-1 userbg">
+                                        <div class="package-i" style="width: 40px; height: 40px"></div>
                                     </div>
-                                    {% if enduser_is_connected_to_host %}
-                                    <div class="col-sm-5 col-sm-offset-2 btn-startoffer">
-                                        <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
-                                    </div>{% else %}{% endif %}
+                                    <div class="col-xs-4 paddingsides15px" style="padding-top: 8px">
+                                        <h6 class="padingleft10px textleft">Package Receipt</h6>
+                                    </div>
+                                    <div class="col-sm-2 col-sm-offset-2 paddingsides5px" style="padding-top: 12px">
+                                        <div class="btn-startoffer" style="width: 80px">
+                                            <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 paddingsides5px"  style="padding-top: 12px">
+                                        <div class="btn-details" style="width: 80px">
+                                            <a type="button" href="#openModal2" title="Click for Details">Edit</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
+                                    </div>
                                 </div>
-                                <a href="#openModal5" title="Click for Details">
-                                    <div class="packagebg">
-                                        <i class="fa fa-cubes fa-fw fa-5x storage-i"></i>
-                                    </div>
-                                    <div class="paddingsides15px">
-                                        <h6 class="textcenter">Storage</h6>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">REQUEST FOR PRICING</p>
-                                    </div>
-                                </a>
                             </div>
 
                             <!--Storage MODAL5-->
@@ -400,28 +399,27 @@
 
 
                             <div class="offercard">
-                                <!--House Sitting Card-->
                                 <div class="row">
-                                    <div class="col-sm-5 btn-details">
-                                        <a type="button" href="#openModal6" title="Click for Details">Details</a>
+                                    <div class="col-xs-1 userbg">
+                                        <div class="package-i" style="width: 40px; height: 40px"></div>
                                     </div>
-                                    {% if enduser_is_connected_to_host %}
-                                    <div class="col-sm-5 col-sm-offset-2 btn-startoffer">
-                                        <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
-                                    </div>{% else %}{% endif %}
+                                    <div class="col-xs-4 paddingsides15px" style="padding-top: 8px">
+                                        <h6 class="padingleft10px textleft">Package Receipt</h6>
+                                    </div>
+                                    <div class="col-sm-2 col-sm-offset-2 paddingsides5px" style="padding-top: 12px">
+                                        <div class="btn-startoffer" style="width: 80px">
+                                            <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 paddingsides5px"  style="padding-top: 12px">
+                                        <div class="btn-details" style="width: 80px">
+                                            <a type="button" href="#openModal2" title="Click for Details">Edit</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
+                                    </div>
                                 </div>
-                                <a href="#openModal6" title="Click for Details">
-                                    <div class="packagebg">
-                                        <i class="fa fa-home fa-fw fa-5x house-sitting-i"></i>
-                                    </div>
-                                    <div class="paddingsides15px">
-                                        <h6 class="textcenter">House Sitting</h6>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">$15 PER DAY</p>
-                                    </div>
-                                </a>
                             </div>
 
                             <!--House Sitting MODAL6-->
@@ -480,28 +478,27 @@
                             <!--Start of 3rd Column-->
 
                             <div class="offercard">
-                                <!--Emergency Card-->
                                 <div class="row">
-                                    <div class="col-sm-5 btn-details">
-                                        <a type="button" href="#openModal7" title="Click for Details">Details</a>
+                                    <div class="col-xs-1 userbg">
+                                        <div class="package-i" style="width: 40px; height: 40px"></div>
                                     </div>
-                                    {% if enduser_is_connected_to_host %}
-                                    <div class="col-sm-5 col-sm-offset-2 btn-startoffer">
-                                        <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
-                                    </div>{% else %}{% endif %}
+                                    <div class="col-xs-4 paddingsides15px" style="padding-top: 8px">
+                                        <h6 class="padingleft10px textleft">Package Receipt</h6>
+                                    </div>
+                                    <div class="col-sm-2 col-sm-offset-2 paddingsides5px" style="padding-top: 12px">
+                                        <div class="btn-startoffer" style="width: 80px">
+                                            <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 paddingsides5px"  style="padding-top: 12px">
+                                        <div class="btn-details" style="width: 80px">
+                                            <a type="button" href="#openModal2" title="Click for Details">Edit</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
+                                    </div>
                                 </div>
-                                <a href="#openModal7" title="Click for Details">
-                                    <div class="packagebg">
-                                        <i class="fa fa-plus-square fa-fw fa-5x emergency-i"></i>
-                                    </div>
-                                    <div class="paddingsides15px">
-                                        <h6 class="textcenter">Emergency Help</h6>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">REQUEST FOR PRICING</p>
-                                    </div>
-                                </a>
                             </div>
 
                             <!--Emergency MODAL7-->
@@ -559,26 +556,26 @@
                             <!--Tool Rental Card-->
                             <div class="offercard">
                                 <div class="row">
-                                    <div class="col-sm-5 btn-details">
-                                        <a type="button" href="#openModal8" title="Click for Details">Details</a>
+                                    <div class="col-xs-1 userbg">
+                                        <div class="package-i" style="width: 40px; height: 40px"></div>
                                     </div>
-                                    {% if enduser_is_connected_to_host %}
-                                    <div class="col-sm-5 col-sm-offset-2 btn-startoffer">
-                                        <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Request&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
-                                    </div>{% else %}{% endif %}
+                                    <div class="col-xs-4 paddingsides15px" style="padding-top: 8px">
+                                        <h6 class="padingleft10px textleft">Package Receipt</h6>
+                                    </div>
+                                    <div class="col-sm-2 col-sm-offset-2 paddingsides5px" style="padding-top: 12px">
+                                        <div class="btn-startoffer" style="width: 80px">
+                                            <a type="button" onclick="window.location='/transactions/startashipment/host{{hostonly.id}}';">Start&nbsp;<i class="fa fa-plus-circle fa-fw fa-lg"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2 paddingsides5px"  style="padding-top: 12px">
+                                        <div class="btn-details" style="width: 80px">
+                                            <a type="button" href="#openModal2" title="Click for Details">Edit</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <a href="#close" title="Close" class="close"><i class="fa fa-times-circle fa-fw fa-lg"></i></a>
+                                    </div>
                                 </div>
-                                <a href="#openModal8" title="Click for Details">
-                                    <div class="packagebg">
-                                        <i class="fa fa-wrench fa-fw fa-5x tools-i"></i>
-                                    </div>
-                                    <div class="paddingsides15px">
-                                        <h6 class="textcenter">Tool Rental</h6>
-                                    </div>
-                                    <div class="profileboxline"></div>
-                                    <div class="paddingtopbottom5px paddingsides15px">
-                                        <p class="textright dashfont darkgreytext nomargin">REQUEST FOR PRICING</p>
-                                    </div>
-                                </a>
                             </div>
 
                             <!--Tool MODAL8-->
