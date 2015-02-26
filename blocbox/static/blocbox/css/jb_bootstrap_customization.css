@@ -2312,6 +2312,8 @@ a > .offercard:focus {
     background-image: url('/static/blocbox/images/paypal.png');
     display: block;
     position: relative;
+    background-position: center;
+    object-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     height: 50px;
