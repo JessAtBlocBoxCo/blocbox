@@ -107,8 +107,8 @@ a:active {
     text-decoration: none;
 }
 .subnavtextcurrent {
-    font-size: 1.00em;
-    font-weight: 500;
+    font-size: 1.10em;
+    font-weight: 700;
     color: rgb(211, 84, 0);
     text-shadow: 0px 2px 5px rgb(236, 240, 241)
 }
