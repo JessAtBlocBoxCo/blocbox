@@ -2308,6 +2308,17 @@ a > .offercard:focus {
     text-align: center;
     border-radius: 5px;
 }
+.paypal-logo {
+    background-image: url('/static/blocbox/images/paypal.png');
+    height: 50px;
+    width: 130px;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    vertical-align: top;
+    text-align: center;
+}
 .bluebox {
     background-color: rgb(52, 152, 219);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
