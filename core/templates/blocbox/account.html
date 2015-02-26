@@ -27,6 +27,31 @@
         </div>
         <!--row-->
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 margintop30px paddingbottom20px">
+            <div class="profilebox margintop30px">
+                <div class="centerboxheader nopadding">
+                    <p class="col-sm-10 bluegreytext nopadding">Mobile Phone</p>
+                </div>
+                <div class="profileboxline"></div>
+                <div class="row paddingbottom20px">
+                    <div class="col-sm-3 col-sm-offset-1 paddingtop20px">
+                        <h6 class="darkgreytext">Receive mobile updates by regular SMS text message.</h6>
+                    </div>
+                    <div class="col-xs-12 col-sm-7 paddingtop30px">
+                        <div class="checkbox checkbox-success checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                            <input id="inlineCheckbox16" type="checkbox" value="option1">
+                            <label for="inlineCheckbox16">Enable Text Message Notications</label>
+                        </div>
+                        <form class="form-inline">
+                            <div class="form-group">
+                                <label for="smsphone">Recieve SMS notifications to:&nbsp;</label>
+                                <input type="tel" class="form-control" id="smsphone" placeholder="XXX-XXX-XXXX">
+                            </div>
+                        </form>
+                        <a>Modify phone number</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="profilebox">
                 <p class="bluegreytext centerboxheader">Notification Settings</p>
                 <div class="profileboxline"></div>
@@ -130,32 +155,7 @@
                     </div>
                 </div>
             </div>
-            <div class="profilebox margintop30px">
-                <div class="centerboxheader nopadding">
-                    <p class="col-sm-10 bluegreytext nopadding">Mobile Phone</p>
-                </div>
-                <div class="profileboxline"></div>
-                <div class="row paddingbottom20px">
-                    <div class="col-sm-3 col-sm-offset-1 paddingtop20px">
-                        <h6 class="darkgreytext">Receive mobile updates by regular SMS text message.</h6>
-                    </div>
-                    <div class="col-xs-12 col-sm-7 paddingtop30px">
-                        <div class="checkbox checkbox-success checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                            <input id="inlineCheckbox15" type="checkbox" value="option1">
-                            <label for="inlineCheckbox15">Enable Text Message Notications</label>
-                        </div>
-                        <form class="form-inline">
-                            <div class="form-group">
-                                <label for="smsphone">Recieve SMS notifications to:&nbsp;</label>
-                                <input type="tel" class="form-control" id="smsphone" placeholder="XXX-XXX-XXXX">
-                            </div>
-                        </form>
-                        <a>Modify phone number</a>
-                    </div>
-                </div>
-            </div>
         </div>
-
     </div>
 </div>
 {% endblock %}
