@@ -172,7 +172,10 @@ footer {
 /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
 
 .darkbluebackground {
-    background-color: rgb(37, 116, 169);
+    background-color: #3498db;
+}
+.darkerbluebackground {
+    background-color: #2574a9;
 }
 /*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
 
