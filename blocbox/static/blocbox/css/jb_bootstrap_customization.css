@@ -2074,7 +2074,7 @@ a > .offercard:focus {
 .bluebutton:active {
     top: 1px;
 }
-.btn-white {
+.btn-orange {
     background-color: rgb(255, 203, 19);
     font-size: 1.143em;
     font-weight: 400;
@@ -2096,7 +2096,7 @@ a > .offercard:focus {
     vertical-align: middle;
     white-space: nowrap;
 }
-.btn-white:hover {
+.btn-orange:hover {
     background-color: white;
     color:  rgb(97, 183, 184);
     border: 2px solid rgb(255, 255, 255);
@@ -2105,7 +2105,40 @@ a > .offercard:focus {
     text-decoration: none;
     text-shadow: none;
 }
-.btn-white:active {
+.btn-orange:active {
+    top: 1px;
+}
+.btn-grey {
+    background-color: transparent;
+    font-size: 1.143em;
+    font-weight: 400;
+    letter-spacing: .5px;
+    color: rgb(103, 114, 119);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    height: 40px;
+    width: 175px;
+    border: 2px solid rgb(103, 114, 119);
+    margin: 0px 0px;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 3px;
+    -moz-user-select: none;
+    display: inline-block;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.btn-grey:hover {
+    background-color: rgb(103, 114, 119);
+    color:  white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.50);
+    bottom: 2px;
+    text-decoration: none;
+    text-shadow: none;
+}
+.btn-grey:active {
     top: 1px;
 }
 .greybutton {
