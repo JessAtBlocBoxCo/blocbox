@@ -2201,6 +2201,16 @@ a > .offercard:focus {
 .inactivebutton:hover:before {
     content: "+ Connect";
 }
+.paymentcard {
+    text-decoration: none;
+    background-color: transparent;
+    border: 2px solid rgb(103, 114, 119);
+    overflow: visible;
+    min-height: 100%;
+    padding: 10px 10px 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
 .addresssvg {
     fill: #3498db;
 }
