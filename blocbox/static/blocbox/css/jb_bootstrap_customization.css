@@ -2109,7 +2109,7 @@ a > .offercard:focus {
     top: 1px;
 }
 .btn-grey {
-    background-color: transparent;
+    background-color: rgb(250, 250, 250);
     font-size: 1.143em;
     font-weight: 400;
     letter-spacing: .5px;
