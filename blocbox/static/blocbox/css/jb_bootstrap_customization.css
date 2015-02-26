@@ -2394,9 +2394,6 @@ a > .offercard:focus {
 .interestcard:hover .interestclose {
     visibility: visible;
 }
-.form-inline .form-control {
-    width: 100%;
-}
 .statusgrey{
     background-image: url('/static/blocbox/images/status-grey.png');
     margin: auto;
