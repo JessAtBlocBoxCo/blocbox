@@ -2310,6 +2310,10 @@ a > .offercard:focus {
 }
 .paypal-logo {
     background-image: url('/static/blocbox/images/paypal.png');
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
     height: 50px;
     width: 130px;
     margin: auto;
