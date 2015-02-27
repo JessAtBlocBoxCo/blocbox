@@ -2203,12 +2203,21 @@ a > .offercard:focus {
 }
 .paymentcard {
     text-decoration: none;
+    color: rgb(71, 82, 93);
     background-color: transparent;
     border: 2px solid rgb(103, 114, 119);
     overflow: visible;
     height: 142px;
     padding: 10px 10px 5px 10px;
     border-radius: 3px;
+}
+.paymentcard:hover {
+    background-color: rgb(71, 82, 93);
+    border: 2px solid rgb(103, 114, 119);
+}
+.paymentcard:focus {
+    background-color: rgb(71, 82, 93);
+    border: 2px solid rgb(103, 114, 119);
 }
 .paymentcardactive {
     text-decoration: none;
