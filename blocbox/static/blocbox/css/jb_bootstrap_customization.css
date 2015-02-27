@@ -2214,10 +2214,12 @@ a > .offercard:focus {
 .paymentcard:hover {
     background-color: rgb(71, 82, 93);
     border: 2px solid rgb(103, 114, 119);
+    color: white;
 }
 .paymentcard:focus {
     background-color: rgb(71, 82, 93);
     border: 2px solid rgb(103, 114, 119);
+    color: white;
 }
 .paymentcardactive {
     text-decoration: none;
