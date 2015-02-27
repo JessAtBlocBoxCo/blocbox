@@ -167,12 +167,12 @@ footer {
 /*Hex Equiv:  #FFCB13 */
 
 .bluebackground {
-    background-color: #59ABE3;
+    background-color: rgb(89,171,227);
 }
 /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
 
 .darkbluebackground {
-    background-color: #3498db;
+    background-color: rgb(52, 152, 219);
 }
 .darkerbluebackground {
     background-color: #2574a9;
@@ -2205,6 +2205,16 @@ a > .offercard:focus {
     text-decoration: none;
     background-color: transparent;
     border: 2px solid rgb(103, 114, 119);
+    overflow: visible;
+    height: 142px;
+    padding: 10px 10px 5px 10px;
+    border-radius: 3px;
+}
+.paymentcardactive {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(89,171,227);
+    border: 2px solid  rgb(52, 152, 219);
     overflow: visible;
     height: 142px;
     padding: 10px 10px 5px 10px;
