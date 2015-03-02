@@ -105,6 +105,10 @@ JESS: other favors - add two use cases (1) wifi sharing; (2) community dinners/f
         
 "JOHN TO-DO"
 
+Message modal on HPV
+Label each mobile page for what it is
+
+
 1. JOHN: shipment - Legend for the calendar
 
 2.    
