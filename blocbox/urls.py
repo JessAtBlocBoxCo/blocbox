@@ -16,12 +16,14 @@ urlpatterns = patterns('',
     url(r'^support/$', views.contactus, name='contactus'),
     url(r'^hostprofile/host(?P<host_id>\d+)/$',views.hostprofile, name='hostprofile'),  
     url(r'^profile/$', views.profile, name='profile'),
+                       
     url(r'^account/$', views.account, name='account'),
     url(r'^account/notifications/$', views.notifications, name='notifications'),
     url(r'^account/payment-options/$', views.paymentoptions, name='paymentoptions'),
     url(r'^account/past-transactions/$', views.pasttransactions, name='pasttransactions'),
     url(r'^account/security/$', views.security, name='security'),
-    url(r'^account/settings/$', views.settings, name='settings'),                             
+    url(r'^account/settings/$', views.settings, name='settings'),     
+                       
     url(r'^dashboard/$', views.dashboard, name='dashboard'),
     #need different URLs for the different modals on the dashboard - otherwise forms dont know what to submit
     url(r'^dashboard/track_id(?P<track_id>\d+)/',views.dashboard, name='dashboard'), 
