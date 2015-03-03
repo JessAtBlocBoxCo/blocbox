@@ -390,6 +390,10 @@ def editprofile(request):
     enduser=request.user
     return render(request, 'blocbox/editprofile.html', {'enduser': enduser})
 
+def addinterest(request):
+    enduser=request.user
+    return render(request, 'blocbox/editprofile/addinterest.html', {'enduser': enduser})
+
 def account(request):
     enduser = request.user
     return render(request, 'blocbox/account.html', {'enduser': enduser,})
