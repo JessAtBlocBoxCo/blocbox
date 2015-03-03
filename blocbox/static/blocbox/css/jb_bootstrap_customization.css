@@ -179,6 +179,9 @@ footer {
 }
 /*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
 
+.ltgreenbackground {
+    background-color: rgb(121, 204, 205);
+}
 .greenbackground {
     background-color: rgb(97, 183, 184);
 }
@@ -187,6 +190,7 @@ footer {
 .darkgreenbackground {
     background-color: rgb(71, 158, 159);
 }
+
 /*for the footer on the waitlist etc */
 
 .offwhitebackground {
