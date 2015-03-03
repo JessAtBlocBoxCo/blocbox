@@ -1503,22 +1503,20 @@ body {
     background-color: rgb(255, 203, 19);
     color: rgb(255, 255, 255);
 }
-.getstartedbtn {
+.btn-get-started {
     border-radius: 3px;
-    color: rgb(255, 203, 19);
-    border-color: white;
-    background-color: white;
-    border: 2px;
+    color: white;
+    background-color: rgb(255, 203, 19);
+    border: 2px solid rgb(255, 203, 19);
     width: 178px;
     padding: 0;
     height: 54px;
     /*same as form-control, the bootstrap style applied to text input */
 }
-.getstartedbtn:hover {
-    border-width: 2px;
-    border-style: solid;
-    background-color: rgb(255, 203, 19);
-    color: rgb(255, 255, 255);
+.btn-get-started:hover {
+    border: 2px solid white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 203, 19);
 }
 .findhostbtn {
     border-radius: 3px;
