@@ -1510,9 +1510,7 @@ body {
     border-radius: 3px;
     font-size: 1.27em;
     color: rgb(255, 255, 255);
-    border-color: white;
-    border-width: 2px;
-    border-style: solid;
+    border: 2px solid white;
     background-color: transparent;
     width: 178px;
     padding: 0;
@@ -1520,16 +1518,7 @@ body {
     /*same as form-control, the bootstrap style applied to text input */
 }
 .findhostbtn:hover {
-    border-radius: 3px;
-    font-size: 1.27em;
-    color: rgb(255, 255, 255);
-    border-color: white;
-    border-width: 2px;
-    border-style: solid;
-    background-color: #2ecc71;
-    width: 178px;
-    padding: 0;
-    height: 54px;
+    background-color: rgb(121, 204, 205);
     /*same as form-control, the bootstrap style applied to text input */
 }
 .waitlistjoinbtngreen {
