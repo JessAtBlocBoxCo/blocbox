@@ -290,6 +290,9 @@ footer {
 .darkbluegreentext{
     color: rgb(71, 158, 159);
 }
+.darkerbluegreentext {
+    color: rgb(40, 88, 88)
+}
 /*Define generic font attributes*/
 .lightweight {
     font-weight: 300;
