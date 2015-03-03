@@ -35,10 +35,12 @@ www.
 
 
 1.
+JESS: shipment - Look at the March calendar, can you define the days that are outside of the monthly date range? Meaning the 0s that appear? If you can define them I can style them.
 JESS: shipment - paypal PDT
 JESS: shipment - paypal PRO	
 JESS: shipment - NOTE: when i implement the PRO version, need to update URL to /pro/ rather than /ipn/ -
 JESS: shipment - update readme to describe navstaratshipment, et
+    
 
 2. 
 JESS: FACEBOOK API so we have profile pics and stuff
