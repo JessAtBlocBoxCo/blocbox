@@ -1064,6 +1064,16 @@ footer {
     margin-right: auto;
     background-color: rgb(255, 255, 255);
 }
+.hiwline {
+    position: relative;
+    clear: both;
+    z-index: 6;
+    width: 85%;
+    height: 0.063em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(71, 158, 159);
+}
 /*Make the footer text dark green for the dargreen footer on the waitlist page */
 
 .waitlistbody > div > footer > div > div > div > a {
