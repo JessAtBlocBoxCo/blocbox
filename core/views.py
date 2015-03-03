@@ -397,6 +397,26 @@ def addinterest(request):
 def account(request):
     enduser = request.user
     return render(request, 'blocbox/account.html', {'enduser': enduser,})
+
+def notifications(request):
+    enduser = request.user
+    return render(request, 'blocbox/account/notifications.html', {'enduser': enduser,})
+
+def paymentoptions(request):
+    enduser = request.user
+    return render(request, 'blocbox/account/payment-options.html', {'enduser': enduser,})
+
+def pasttransactions(request):
+    enduser = request.user
+    return render(request, 'blocbox/account/past-transactions.html', {'enduser': enduser,})
+
+def security(request):
+    enduser = request.user
+    return render(request, 'blocbox/account/security.html', {'enduser': enduser,})
+
+def settings(request):
+    enduser = request.user
+    return render(request, 'blocbox/account/settings.html', {'enduser': enduser,})
  
      
 def hostprofile(request, host_id):
