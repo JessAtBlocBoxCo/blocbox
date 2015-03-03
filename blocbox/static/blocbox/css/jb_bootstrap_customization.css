@@ -2994,6 +2994,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .orangetext {
         color: rgb(255, 195, 0);
     }
+    .darkorangetext {
+        color: rgb(70, 55, 0);
+    }
+    
     /*Hex Equiv:  #FFCB13 */
     .fullorange {
         background-color: rgb(255, 195, 0);
