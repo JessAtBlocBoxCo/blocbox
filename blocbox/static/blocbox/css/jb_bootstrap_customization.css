@@ -1141,6 +1141,27 @@ footer {
     width: 125px;
     margin: auto;
 }
+.price-cricle {
+    background-color: rgb(255, 195, 0);
+    color: white;
+    border-radius: 100px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 70px;
+    height: 70px;
+    line-height: 38px;
+    border: 2px solid rgb(255, 195, 0);
+    vertical-align: middle;
+}
+.price-cricle:hover {
+    background-color: white;
+    color: rgb(97, 183, 184);
+}
+.price-cricle:focus {
+    background-color: white;
+    color: rgb(97, 183, 184);
+}
 /*-----------------------------------------------------------------------
 *min.css overrides
 *-----------------------------------------------------------------------*/
