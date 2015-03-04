@@ -40,14 +40,6 @@
                                 <p class="whitetext textleft nomargin">{% if host.neighborhood %} {{ host.neighborhood }}{% else %}{{ enduser.city }},&nbsp;{{ enduser.state }}{% endif %}</p>
                             </a>
                         </div>
-                        {% if enduser_is_connected_to_host %}
-                        <button class="btn-orange" style="margin-top: 15px;" onClick="window.location='/startashipment/';">Send a Message</button>
-                        {% else %}
-                        <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered onClick="window.location='/connect/host{{ host.id }}/';"-->
-                        <a class="btn-orange" type="button" style="margin-top: 15px;" onClick="window.location='/connect/host{{ host.id }}/';">
-                            <i class="fa fa-user-plus"></i>&nbsp;&nbsp;Connect
-                        </a>
-                        {% endif %}
                     </div>
                 </div>
                 <div class="col-sm-4 col-sm-offset-2 paddingtop15px nopaddingright">
