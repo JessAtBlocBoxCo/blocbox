@@ -955,6 +955,31 @@ footer {
     background-color: transparent;
     color: rgb(255, 195, 0);
 }
+.btn-info-wht {
+    background-color: transparent;
+    color: white;
+    font-size: 1.900em;
+    font-weight: 400;
+    line-height: 38px;
+    border-radius: 100px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+    vertical-align: middle;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.btn-info-wht:hover {
+    background-color: rgb(255, 195, 0);
+    color: rgb(255, 255, 255);
+}
+.btn-info-wht:focus {
+    background-color: rgb(255, 195, 0);
+    color: rgb(255, 255, 255);
+}
 .navinfobtnwht {
     background-image: url('/static/blocbox/images/info-button-white-outline.png');
     background-repeat: no-repeat;
