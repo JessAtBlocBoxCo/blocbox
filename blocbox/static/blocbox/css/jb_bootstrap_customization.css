@@ -1151,6 +1151,7 @@ footer {
     margin: auto;
     width: 110px;
     height: 110px;
+    padding: 10px;
     line-height: 38px;
     border: 2px solid rgb(255, 195, 0);
     vertical-align: middle;
