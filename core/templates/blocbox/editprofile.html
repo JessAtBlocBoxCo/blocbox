@@ -28,7 +28,19 @@
 
         <div class="row">
             <div class=" col-xs-3 mobilehide">
-                <img class="dashpic" src="{% static 'blocbox/images/profilepics/jessyeats.png' %}" />
+                {% if user.facebook_id %}
+                <div class="profilepiccontainer">
+                    <img class="profilepic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" />
+                </div>
+                {% else %} {% if user.profile_pic_uploaded %}
+                <div class="profilepiccontainer">
+                    <img class="profilepic" src="{{enduser.profile_pic_uploaded.url}}" />
+                </div>
+                {% else %}
+                <div class="profilepiccontainer">
+                    <p class="textcenter"><a href='.'> Upload your profile picture! </a> </p>
+                </div>
+                {% endif %} {% endif %}
                 <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
                 <div class="profileboxline margintop20px marginbottom20px"></div>
                 <a class="btn-orange" type="button" style="margin-top: 15px;" onClick="/profile/">View My Profile</a>
