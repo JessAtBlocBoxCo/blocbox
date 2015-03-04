@@ -1,5 +1,5 @@
 <!--this is core/templates/blocbox/account.html - url is blocbox.co/account. it extends base.html-->
-{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Account{% endblock %} {% block headafter %} {% endblock %} {% block content %}
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Settings{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 <div class="content container-fluid offwhitebackground relativediv">
     <!--this is the container that surrounds the form, too short -->
 
@@ -19,11 +19,11 @@
 
         <div class="row">
             <!--top navigation row for the subpages-->
-            <a href="/account/" class="col-xs-2 col-xs-offset-1 subnavtext darkgreytext textcenter">NOTIFICATIONS</a>
+            <a href="/account/" class="col-xs-2 col-xs-offset-1 subnavtext textcenter">NOTIFICATIONS</a>
             <a href="/payment-options/" class="col-xs-2 subnavtext textcenter">PAYMENT</a>
             <a href="/past-transactions/" class="col-xs-2 subnavtext textcenter">TRANSACTIONS</a>
             <a href="/security/" class="col-xs-2 subnavtext textcenter">SECURITY</a>
-            <a href="/settings/" class="col-xs-2 subnavtext textcenter">SETTINGS</a>
+            <a href="/settings/" class="col-xs-2 subnavtext darkgreytext textcenter">SETTINGS</a>
         </div>
         <!--row-->
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 margintop30px paddingbottom20px">
