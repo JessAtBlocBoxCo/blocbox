@@ -1,17 +1,117 @@
-<!--this is blocbox/core/templates/blocbox/host-profile.html, URL is http://www.blocbox.co/3/hostprofile/ (e.g., for john - user id #3) -->
-{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Edit Your Profile{% endblock %} {% block headafter %}
-<!--<link rel="stylesheet" href="/static/blocbox/css/standardize.css">
-<link rel="stylesheet" href="/static/blocbox/css/host-profile-visitor.css"> -->
-{% endblock %} {% block content %}
+<!--this is core/templates/blocbox/account.html - url is blocbox.co/account. it extends base.html-->
+{% extends "blocbox/base.html" %} {% load staticfiles %} {% block title %}Account{% endblock %} {% block headafter %} {% endblock %} {% block content %}
+<div class="content container-fluid offwhitebackground relativediv">
+    <!--this is the container that surrounds the form, too short -->
 
+    <div class="row margintop30px marginbottom10px mobilehide">
+        <a href="dashboard.html" class="col-xs-2 col-xs-offset-1 subnavtext textcenter">DASHBOARD</a>
+        <a href="/messages/inbox/" class="col-xs-2 subnavtext textcenter">MESSAGES</a>
+        <a href="/myblock/" class="col-xs-2 subnavtext textcenter">MY BLOCK</a>
+        <a href="/profile/" class="col-xs-2 subnavtext textcenter">PROFILE</a>
+        <a href="/account/" class="col-xs-2 subnavtextcurrent textcenter">ACCOUNT</a>
 
+        <div class="col-xs-10 col-xs-offset-1 paddingtop10px">
+            <div class="profileboxline100"></div>
+        </div>
+    </div>
+    <!--emd top row-->
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom30px">
 
+        <div class="row">
+            <!--top navigation row for the subpages-->
+            <a href="" class="col-xs-2 col-xs-offset-1 subnavtext darkgreytext textcenter">NOTIFICATIONS</a>
+            <a href="" class="col-xs-2 subnavtext textcenter">PAYMENT</a>
+            <a href="" class="col-xs-2 subnavtext textcenter">TRANSACTIONS</a>
+            <a href="" class="col-xs-2 subnavtext textcenter">SECURITY</a>
+            <a href="" class="col-xs-2 subnavtext textcenter">SETTINGS</a>
+        </div>
 
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 margintop30px paddingbottom20px">
+            <div class="profilebox margintop30px">
+                <div class="centerboxheader nopadding">
+                    <p class="col-sm-10 bluegreytext nopadding">Subscriptions</p>
+                </div>
+                <div class="profileboxline"></div>
+                <div class="row paddingbottom20px" style="padding-left: 7.5%; padding-right: 7.5%">
+                    <div class="col-sm-4 nopaddingleft paddingtop20px">
+                        <h6 class="darkgreytext">Current payment plans for tasks</h6>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 paddingtop30px" style="padding-left: 25px">
+                        <div class="col-xs-5">
+                            <a href="">
+                                <div class="paymentcardactive textcenter" type="button" href="">
+                                    <p class="nomargin paddingtop10px paddingbottom5px" style="font-weight: 400; font-size: 2.5em; line-height: 40px;">{{ enduser.account_balance_packages }}</p>
+                                    <p>Packages Remaining</p>
+                                    <p class="textcenter paddingtop5px">BUNDLE</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-5">
+                            <a href="">
+                                <div class="paymentcard" type="button" href="">
+                                    <p class="textcenter paddingtopbottom20px" style="font-size: 6.00em; line-height: 20px;">+</p>
+                                    <p class="textcenter">ADD
+                                        <br>SUBSCRIPTION</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profilebox margintop30px">
+                <div class="centerboxheader nopadding">
+                    <p class="col-sm-10 bluegreytext nopadding">Payment Method</p>
+                </div>
+                <div class="profileboxline"></div>
+                <div class="row paddingbottom20px" style="padding-left: 7.5%; padding-right: 7.5%">
+                    <div class="col-sm-4 nopaddingleft paddingtop20px">
+                        <h6 class="darkgreytext">Chose how you pay for tasks</h6>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 paddingtop30px">
+                        <div class="col-xs-5">
+                            <a href="">
+                                <div class="paymentcardactive textcenter" type="button" href="">
+                                    <i class="fa fa-paypal fa-fw fa-3x paddingtopbottom10px"></i>
+                                    <p class="textcenter paddingtop20px">PAYPAL</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-xs-5">
+                            <a href="">
+                                <div class="paymentcard" type="button" href="">
+                                    <p class="textcenter paddingtopbottom20px" style="font-size: 6.00em; line-height: 20px;">+</p>
+                                    <p class="textcenter">ADD PAYMENT INFORMATION</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="profilebox margintop30px">
+                <div class="centerboxheader nopadding">
+                    <p class="col-sm-10 bluegreytext nopadding">Payout Preference</p>
+                </div>
+                <div class="profileboxline"></div>
+                <div class="row paddingbottom20px" style="padding-left: 7.5%; padding-right: 7.5%">
+                    <div class="col-sm-4 nopaddingleft paddingtop20px">
+                        <h6 class="darkgreytext">When you receive a payment for a task, choose how we send you the funds. Paypal, Venmo, Direct Deposit, etc...</h6>
+                    </div>
+                    <div class="col-xs-12 col-sm-8 paddingtop30px" style="padding-left: 25px">
+                        <div class="col-xs-5">
+                            <a href="">
+                                <div class="paymentcard" type="button" href="">
+                                    <p class="textcenter paddingtopbottom20px" style="font-size: 6.00em; line-height: 20px;">+</p>
+                                    <p class="textcenter">ADD PAYOUT METHOD</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<h6>TEST TEST TEST!!!!!</h6>
-
-
-
+        </div>
+    </div>
+</div>
 
 
 
