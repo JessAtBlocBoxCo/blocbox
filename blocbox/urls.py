@@ -18,11 +18,11 @@ urlpatterns = patterns('',
     url(r'^profile/$', views.profile, name='profile'),
                        
     url(r'^account/$', views.account, name='account'),
-    url(r'^account/notifications/$', views.notifications, name='notifications'),
-    url(r'^account/payment-options/$', views.paymentoptions, name='paymentoptions'),
-    url(r'^account/past-transactions/$', views.pasttransactions, name='pasttransactions'),
-    url(r'^account/security/$', views.security, name='security'),
-    url(r'^account/settings/$', views.settings, name='settings'),     
+    url(r'^notifications/$', views.notifications, name='notifications'),
+    url(r'^payment-options/$', views.paymentoptions, name='paymentoptions'),
+    url(r'^past-transactions/$', views.pasttransactions, name='pasttransactions'),
+    url(r'^security/$', views.security, name='security'),
+    url(r'^settings/$', views.settings, name='settings'),     
                        
     url(r'^dashboard/$', views.dashboard, name='dashboard'),
     #need different URLs for the different modals on the dashboard - otherwise forms dont know what to submit
@@ -56,7 +56,7 @@ urlpatterns = patterns('',
  		url(r'^scheduling/', include('schedule.urls')),
  		url(r'^datascience/', include('datasci.urls')),
         url(r'^editprofile/$', views.editprofile, name='editprofile'),
-        url(r'^editprofile/addinterest/$', views.addinterest, name='addinterest'),
+        url(r'^addinterest/$', views.addinterest, name='addinterest'),
  		
 )
 

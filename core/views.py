@@ -418,7 +418,6 @@ def settings(request):
     enduser = request.user
     return render(request, 'blocbox/settings.html', {'enduser': enduser,})
  
-     
 def hostprofile(request, host_id):
     context = RequestContext(request)
     host = get_object_or_404(UserInfo, pk=host_id)
