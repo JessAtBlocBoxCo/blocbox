@@ -1559,6 +1559,17 @@ body {
     width: 178px;
     padding: 0;
     height: 54px;
+    position: relative;
+    border-radius: 5px;
+    -moz-user-select: none;
+    background-image: none;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    padding: 5px 5px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
     /*same as form-control, the bootstrap style applied to text input */
 }
 .btn-get-started:hover {
