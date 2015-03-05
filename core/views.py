@@ -61,9 +61,6 @@ def get_item(dictionary, key):
 def waitlist(request):
     return render(request, 'blocbox/waitlist.html') #loads blocbox/templates/blocbox/waitlist.html 
 
-def joinwaitlist(request):
-    return render(request, 'blocbox/join-waitlist.html')
-
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
@@ -692,6 +689,9 @@ def confirmrequestconnect(request, host_id, user_id):
 #waitlist almost finished and confirmation
 def waitlist_almostfinished(request):
 		return render(request, 'blocbox/almost-finished.html')
+    
+def join_waitlist(request):
+        return render(request, 'blocbox/join-waitlist.html')
 
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
