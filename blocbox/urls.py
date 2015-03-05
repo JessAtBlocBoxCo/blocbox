@@ -8,7 +8,6 @@ urlpatterns = patterns('',
 
 		url(r'^$', views.waitlist, name='waitlist'),    #this currently grabs index.html which is the waitlist
 		url(r'^waitlist/', views.waitlist, name='waitlist'), #also goes to the waitlist
-        url(r'^joinwaitlist/', views.joinwaitlist, name='joinwaitlist'),
     url(r'beta/$', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
     url(r'^search/', views.search, name='search'),   
     url(r'^about/$', views.aboutblocbox, name='about'),
@@ -44,6 +43,7 @@ urlpatterns = patterns('',
     url(r'^login/', views.userlogin, name='login'), # add this for the registration form
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^almostfinished/$', views.waitlist_almostfinished, name='waitlist_almostfinished'),
+    url(r'^joinwaitlist/$', views.joinwaitlist, name='joinwaitlist'),
     url(r'^waitlistconfirmation/$', views.waitlist_confirmation, name='waitlist_confirmation'),
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well
  		#the carret sasy beginning must match, the $ says end of string must match
