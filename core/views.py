@@ -61,6 +61,9 @@ def get_item(dictionary, key):
 def waitlist(request):
     return render(request, 'blocbox/waitlist.html') #loads blocbox/templates/blocbox/waitlist.html 
 
+def joinwaitlist(request):
+    return render(request, 'blocbox/join-waitlist.html')
+
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
@@ -417,10 +420,6 @@ def security(request):
 def settings(request):
     enduser = request.user
     return render(request, 'blocbox/settings.html', {'enduser': enduser,})
-
-def joinwaitlist(request):
-    enduser = request.user
-    return render(request, 'blocbox/join-waitlist.html', {'enduser': enduser,})
  
 def hostprofile(request, host_id):
     context = RequestContext(request)
