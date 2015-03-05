@@ -1554,10 +1554,11 @@ body {
 .btn-get-started {
     border-radius: 3px;
     color: white;
+    font-size: 1.5em;
+    font-weight: 500;
     background-color: rgb(255, 203, 19);
     border: 2px solid rgb(255, 203, 19);
     width: 178px;
-    padding: 0;
     height: 54px;
     position: relative;
     border-radius: 5px;
