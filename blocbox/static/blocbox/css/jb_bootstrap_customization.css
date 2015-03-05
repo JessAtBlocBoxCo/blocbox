@@ -1533,23 +1533,6 @@ body {
 
 /*Style the waitlistbutton - already within white background*/
 
-.waitlistjoinbtn {
-    border-radius: 3px;
-    color: rgb(255, 203, 19);
-    border-color: white;
-    background-color: white;
-    border: 2px;
-    width: 178px;
-    padding: 0;
-    height: 40px;
-    /*same as form-control, the bootstrap style applied to text input */
-}
-.waitlistjoinbtn:hover {
-    border-width: 2px;
-    border-style: solid;
-    background-color: rgb(255, 203, 19);
-    color: rgb(255, 255, 255);
-}
 .btn-get-started {
     border-radius: 3px;
     color: white;
@@ -3023,7 +3006,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     }
     .inputbox {
         border: 2px solid #ffffff;
-        background-color: rgb(255, 195, 0);
+        background-color: transparent;
     }
     .content {
         padding-top: 80px;
