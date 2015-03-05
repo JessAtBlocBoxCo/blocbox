@@ -1567,13 +1567,19 @@ body {
     cursor: pointer;
     display: inline-block;
     margin-bottom: 0;
-    padding: 5px 5px;
+    padding: 10px 10px 10px 10px;
     text-align: center;
     vertical-align: middle;
     white-space: nowrap;
+    text-decoration: none;
     /*same as form-control, the bootstrap style applied to text input */
 }
 .btn-get-started:hover {
+    border: 2px solid white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 203, 19);
+}
+.btn-get-started:focus{
     border: 2px solid white;
     background-color: rgb(255, 255, 255);
     color: rgb(255, 203, 19);
