@@ -3025,7 +3025,6 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     .inputbox {
         border: 2px solid #ffffff;
         background-color: rgb(255, 195, 0);
-        height: 40px;
     }
     .content {
         padding-top: 80px;
