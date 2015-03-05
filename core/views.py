@@ -690,8 +690,8 @@ def confirmrequestconnect(request, host_id, user_id):
 def waitlist_almostfinished(request):
 		return render(request, 'blocbox/almost-finished.html')
     
-def join_waitlist(request):
-        return render(request, 'blocbox/join-waitlist.html')
+def joinwaitlist(request):
+        return render(request, 'blocbox/joinwaitlist.html')
 
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
