@@ -417,6 +417,10 @@ def security(request):
 def settings(request):
     enduser = request.user
     return render(request, 'blocbox/settings.html', {'enduser': enduser,})
+
+def joinwaitlist(request):
+    enduser = request.user
+    return render(request, 'blocbox/join-waitlist.html', {'enduser': enduser,})
  
 def hostprofile(request, host_id):
     context = RequestContext(request)
