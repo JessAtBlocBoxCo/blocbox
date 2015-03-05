@@ -760,7 +760,8 @@ footer {
     transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
     width: 100%;
 }
-.form-control-orange::-moz-placeholder {
+
+.form-control::-moz-placeholder {
     color: #ffffff;
     opacity: 1;
 }
