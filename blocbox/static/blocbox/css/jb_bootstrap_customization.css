@@ -770,6 +770,10 @@ footer {
     color: #ffffff;
 }
 
+.form-control:focus {
+    border-color: rgb(255, 195, 0);
+}
+
 /*CSS for JS drawers*/
 .hideit > div {
     display: none;
