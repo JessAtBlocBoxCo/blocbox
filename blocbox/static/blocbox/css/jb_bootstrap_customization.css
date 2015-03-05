@@ -1559,9 +1559,8 @@ body {
     background-color: rgb(255, 203, 19);
     border: 2px solid rgb(255, 203, 19);
     width: 178px;
-    height: 54px;
+    height: 60px;
     position: relative;
-    border-radius: 5px;
     -moz-user-select: none;
     background-image: none;
     cursor: pointer;
