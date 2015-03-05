@@ -766,6 +766,10 @@ footer {
     opacity: 1;
 }
 
+.form-control {
+    color: rgb(255, 203, 19);
+}
+
 /*CSS for JS drawers*/
 .hideit > div {
     display: none;
