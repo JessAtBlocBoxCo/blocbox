@@ -1391,7 +1391,6 @@ body {
 .inputbox {
     border: 2px solid #ffffff;
     background-color: rgb(255, 203, 19);
-    height: 40px;
 }
 
 /*Make the navbar fixed if its mobile */
