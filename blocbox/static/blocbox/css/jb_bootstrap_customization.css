@@ -4035,7 +4035,7 @@ Jasny  STYLES
 
 
 .checkbox {
-    padding-left: 30px; }
+    padding-left: 20px; }
 .checkbox label {
     display: inline-block;
     position: relative;
@@ -4124,8 +4124,8 @@ Jasny  STYLES
 .checkbox-danger input[type="checkbox"]:checked + label::after {
     color: #fff; }
 .checkbox-info input[type="checkbox"]:checked + label::before {
-    background-color: #5bc0de;
-    border-color: #5bc0de; }
+    background-color: rgb(97, 183, 184);
+    border-color: rgb(97, 183, 184); }
 .checkbox-info input[type="checkbox"]:checked + label::after {
     color: #fff; }
 .checkbox-warning input[type="checkbox"]:checked + label::before {
