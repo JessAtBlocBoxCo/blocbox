@@ -4134,8 +4134,8 @@ Jasny  STYLES
 .checkbox-warning input[type="checkbox"]:checked + label::after {
     color: #fff; }
 .checkbox-success input[type="checkbox"]:checked + label::before {
-    background-color: #5cb85c;
-    border-color: #5cb85c; }
+    background-color: rgb(255, 195, 0);
+    border-color: rgb(255, 195, 0); }
 .checkbox-success input[type="checkbox"]:checked + label::after {
     color: #fff; }
 
