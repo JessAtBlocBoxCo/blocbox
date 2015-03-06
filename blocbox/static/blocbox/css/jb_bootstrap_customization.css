@@ -400,6 +400,7 @@ footer {
 }
 .fillviewheight {
     height: 100vh;
+    min-height: 625px;
 }
 .fullheight {
     height: 100%;
