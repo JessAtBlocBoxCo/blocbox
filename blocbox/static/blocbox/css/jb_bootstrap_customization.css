@@ -763,7 +763,7 @@ footer {
 }
 
 .form-control::-moz-placeholder {
-    color: #ffffff;
+    color: rgb( 245, 245, 245);
     opacity: 1;
 }
 
