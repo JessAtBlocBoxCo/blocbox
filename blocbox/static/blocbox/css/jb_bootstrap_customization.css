@@ -4083,7 +4083,7 @@ Jasny  STYLES
     -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
     -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
     transition: border 0.15s ease-in-out, color 0.15s ease-in-out; }
-.waitlistcheckbox checkbox label::after {
+.waitlistcheckbox .checkbox label::after {
     display: inline-block;
     position: absolute;
     width: 19px;
