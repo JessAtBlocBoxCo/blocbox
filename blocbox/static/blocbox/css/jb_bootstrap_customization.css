@@ -4044,8 +4044,8 @@ Jasny  STYLES
     content: "";
     display: inline-block;
     position: absolute;
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     left: 0;
     margin-top: 3px;
     margin-left: -20px;
@@ -4058,15 +4058,15 @@ Jasny  STYLES
 .checkbox label::after {
     display: inline-block;
     position: absolute;
-    width: 19px;
-    height: 19px;
+    width: 16px;
+    height: 16px;
     left: 0;
     top: 0;
     margin-top: 3px;
     margin-left: -20px;
     padding-left: 3px;
     padding-top: 1px;
-    font-size: 15px;
+    font-size: 11px;
     color: rgb(255, 195, 0); }
 .waitlistcheck .checkbox label::before {
     content: "";
