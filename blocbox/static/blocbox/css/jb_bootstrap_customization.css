@@ -4049,9 +4049,9 @@ Jasny  STYLES
     left: 0;
     margin-top: 3px;
     margin-left: -20px;
-    border: 2px solid white;
+    border: 1px solid #cccccc;
     border-radius: 3px;
-    background-color: transparent;
+    background-color: #fff;
     -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
     -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
     transition: border 0.15s ease-in-out, color 0.15s ease-in-out; }
