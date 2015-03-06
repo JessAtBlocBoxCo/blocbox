@@ -4068,6 +4068,34 @@ Jasny  STYLES
     padding-top: 1px;
     font-size: 11px;
     color: rgb(255, 195, 0); }
+.waitlistcheckbox .checkbox label::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 0;
+    margin-top: 3px;
+    margin-left: -20px;
+    border: 2px solid #ffffff;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    -o-transition: border 0.15s ease-in-out, color 0.15s ease-in-out;
+    transition: border 0.15s ease-in-out, color 0.15s ease-in-out; }
+.waitlistcheckbox checkbox label::after {
+    display: inline-block;
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    left: 0;
+    top: 0;
+    margin-top: 3px;
+    margin-left: -20px;
+    padding-left: 3px;
+    padding-top: 1px;
+    font-size: 11px;
+    color: rgb(255, 195, 0); }
 .checkbox input[type="checkbox"] {
     opacity: 0; }
 .checkbox input[type="checkbox"]:focus + label::before {
