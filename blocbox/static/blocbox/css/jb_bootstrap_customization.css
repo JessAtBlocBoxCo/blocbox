@@ -4035,7 +4035,7 @@ Jasny  STYLES
 
 
 .checkbox {
-    padding-left: 20px; }
+    padding-left: 30px; }
 .checkbox label {
     display: inline-block;
     position: relative;
@@ -4066,7 +4066,7 @@ Jasny  STYLES
     margin-left: -20px;
     padding-left: 3px;
     padding-top: 1px;
-    font-size: 11px;
+    font-size: 15px;
     color: rgb(255, 195, 0); }
 .waitlistcheck .checkbox label::before {
     content: "";
@@ -4094,7 +4094,7 @@ Jasny  STYLES
     margin-left: -20px;
     padding-left: 3px;
     padding-top: 1px;
-    font-size: 11px;
+    font-size: 15px;
     color: rgb(255, 195, 0); }
 .checkbox input[type="checkbox"] {
     opacity: 0; }
