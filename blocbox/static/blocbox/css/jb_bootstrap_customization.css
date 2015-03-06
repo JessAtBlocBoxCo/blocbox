@@ -764,7 +764,7 @@ footer {
 
 .form-control::-moz-placeholder {
     color: rgb( 245, 245, 245);
-    opacity: 1;
+    opacity: .90;
 }
 
 .form-control {
