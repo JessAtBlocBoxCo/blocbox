@@ -766,6 +766,10 @@ footer {
     color: #ffffff;
     opacity: .80;
 }
+.form-control::-webkit-placeholder {
+    color: #ffffff;
+    opacity: .80;
+}
 
 .form-control {
     color: #ffffff;
