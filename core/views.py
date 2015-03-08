@@ -9,7 +9,7 @@ from core.models import UserInfo
 from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
-from core.forms import UserForm, HostForm, ContactUs
+from core.forms import UserForm, HostForm, ContactUs, NotificationSettings
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
 #Important the authentication and login functions -- not sure that i can use with custom model
@@ -395,8 +395,18 @@ def addinterest(request):
     return render(request, 'blocbox/editprofile/addinterest.html', {'enduser': enduser})
 
 def account(request):
-    enduser = request.user
-    return render(request, 'blocbox/account.html', {'enduser': enduser,})
+    enduser = request.user   
+    trans = Transaction.objects.get(pk=issue_id)
+    if request.method == 'POST':
+        form = NotificationSettings(request.POST, instance-enduser)
+        if form.is_valid():
+            notify = form.save()
+            notify.save()
+        else: 
+            print form.errors
+    else:
+        form = NotificationSettings(instance=enduser)
+    return render(request, 'blocbox/account.html', {'enduser': enduser, 'form': form, })
 
 def paymentoptions(request):
     enduser = request.user

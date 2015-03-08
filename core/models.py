@@ -109,7 +109,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     notifyuser_packagereceived = models.BooleanField(blank=True, default=True)
     notifyuser_blocboxnews = models.BooleanField(blank=True, default=True)
     
-    
+
     #addingj custom or text fields
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
     customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)
