@@ -55,7 +55,7 @@ def watch_packages():
             else:
                 status_change = True
             #if status change is true then upate status and send a notificaton to the user
-            if status_change = True:
+            if status_change == True:
             trans.last_tracking_status = new_status
             trans.save()
             #send mail
