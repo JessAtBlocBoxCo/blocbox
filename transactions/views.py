@@ -405,15 +405,23 @@ def shippackage_accountbalance(request, host_id, invoice):
     trans = Transaction.objects.get(invoice=invoice)
     userinfo = UserInfo.objects.get(pk=enduser.id) 
     new_account_balance = enduser.account_balance_packages - 1
+    #update user info to subtract that amount from their balance
+    #something is causing this to be deducted twice - so updatint trans after
+    if trans.balance_after_package:
+        userbalance_updated = True
+    else:
+        userbalance_updated = False
+    if userbalance_updated == False:
+        userinfo.account_balance_packages = new_account_balance
+        userinfo.save()
+        userbalance_updated = True
+    #something was cuasing this to be deducted twice so updating trans after
     #update transaction table
     trans.payment_processed = True
     trans.payment_method = "Balance"
-    trans.account_balance_before = enduser.account_balance_packages
-    trans.account_balance_after = new_account_balance
+    trans.balance_before_packages = enduser.account_balance_packages
+    trans.balance_after_packages = new_account_balance
     trans.save()
-    #update user info to subtract that amount from their balance
-    userinfo.account_balance_packages = new_account_balance
-    userinfo.save()
     notify_host_shipment_paid(request,trans.id)
     notify_enduser_shipment_paid(request, trans.id) 
     return render(request, 'blocbox/shippackage.html', {'enduser':enduser, 'host':host, 'trans': trans})
