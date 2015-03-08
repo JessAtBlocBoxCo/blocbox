@@ -315,16 +315,17 @@ def dashboard_tracking_modal(request, track_id):
                     #except aftership.APIv4RequestException as error:
                     #print 'Error:', error.code(), error.type(), error.message()
                     #see if its already on aftership
+                    if enduser.notifyuser_trackinginfo:
+                        notifyemails = [trans.enduser.email, trans.host.email]
+                    else:
+                        notifyemails = [trans.host.email]
                     try:
                         api.trackings.post(tracking=dict(
     		                    slug=slug_detected, tracking_number=tracking_no_to_add,  
     		                    title=str(trans.title) + ": Order " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
     		                    order_id=str(trans.id),
     		                    customer_name=customer_name,
-    		                    if enduser.notifyuser_trackinginfo:
-    		                        emails=[trans.enduser.email, trans.host.email], #Emails for notifications
-    		                    else:
-    		                        emails=[trans.host.email],
+    		                    emails = notifyemails,
     		                    custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
     		                    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
     		                    )) 	
