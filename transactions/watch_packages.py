@@ -1,15 +1,14 @@
 import os
 import sys
+from django.conf import settings
+from django.core.management import execute_from_command_line
 import datetime
-import pytz
-from urllib import quote
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
 from django.template import RequestContext, loader #allows it to load templates from blocbox/template
 from django.views.generic.list import ListView
 from django.utils import timezone
-from django.conf import settings
 #from django.template.loader import render_to_string
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
