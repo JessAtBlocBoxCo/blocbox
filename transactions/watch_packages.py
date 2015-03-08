@@ -1,6 +1,8 @@
 import os
 import sys
 from django.conf import settings
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
+#settings.configure(DEBUG=True, TEMPLATE_DEBUG=True,TEMPLATE_DIRS=('/yourprojet/templates',))
 from django.core.management import execute_from_command_line
 import datetime
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
@@ -75,5 +77,4 @@ def notify_enduser_tracking_change(request, hostid, enduserid, transid):
 
 
 if __name__ == "__main__":
-    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
     sys.exit(main())
