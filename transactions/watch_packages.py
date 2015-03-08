@@ -38,6 +38,7 @@ api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 transactions_onaftership = Transaction.objects.filter(on_aftership=True)
 
 def main():
+	  response_messages_list = []
     for trans in transactions_onaftership:
         slug = str(trans.shipment_courier.lower())
         tracking = trans.tracking
@@ -54,6 +55,8 @@ def main():
         #if there wasn't a status, add it
         if current_status == None:
             trans.last_tracking_status = current_status
+            responsemessage = "Tracking status was added for trans id" + str(trans.id) + ", it was previously empty"
+            response_messages_list.append(responsemesssage)
         #if there was a current status, see if its different
         else:
             if new_status == current_status:
@@ -65,8 +68,16 @@ def main():
                 trans.last_tracking_status = new_status
                 trans.save()
                 #send mail
-                notify_enduser_tracking_change(request, host.id, enduser.id, trans.id)
-    return HttpResponse("OK")
+                #notify_enduser_tracking_change(request, host.id, enduser.id, trans.id)
+                message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans})
+                subject = "Your tracking information has been updated"
+                send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
+                responsemessage ="An email has been sent to the user notifying them of the tracking change for trans id" + str(trans.id)
+                response_messages_list.append(responsemessage)
+            else:
+                responsemessage = "The status did not change for trans id " + str(trans.id)
+                response_messages_list.append(responsemessage)
+        return HttpResponse(responsemessages_list)
 
 #using .txt file and passing value(s)    
 def notify_enduser_tracking_change(request, hostid, enduserid, transid):
