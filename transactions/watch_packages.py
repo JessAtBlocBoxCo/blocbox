@@ -70,7 +70,7 @@ def main():
                 trans.save()
                 #send mail
                 #notify_enduser_tracking_change(request, host.id, enduser.id, trans.id)
-                message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans
+                message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,
                 		'new_status': new_status})
                 #if its expired dont do anything
                 if new_status = 'Expired':
