@@ -56,10 +56,10 @@ def watch_packages():
                 status_change = True
             #if status change is true then upate status and send a notificaton to the user
             if status_change == True:
-            trans.last_tracking_status = new_status
-            trans.save()
-            #send mail
-            notify_enduser_tracking_change(host.id, enduser.id, trans.id):
+                trans.last_tracking_status = new_status
+                trans.save()
+                #send mail
+                notify_enduser_tracking_change(host.id, enduser.id, trans.id):
     return HttpResponse("OK")
 
 #using .txt file and passing value(s)    
