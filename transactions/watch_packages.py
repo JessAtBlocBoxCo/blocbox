@@ -76,7 +76,7 @@ def main():
                 responsemessage ="An email has been sent to the user notifying them of the tracking change for trans id" + str(trans.id)
                 response_messages_list.append(responsemessage)
             else:
-                responsemessage = "The status did not change for trans id " + str(trans.id)
+                responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"
                 response_messages_list.append(responsemessage)
     return HttpResponse(response_messages_list)
 
