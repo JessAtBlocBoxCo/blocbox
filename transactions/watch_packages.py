@@ -76,5 +76,5 @@ def notify_enduser_tracking_change(request, hostid, enduserid, transid):
 
 
 if __name__ == "__main__":
-	  os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
     sys.exit(main())
