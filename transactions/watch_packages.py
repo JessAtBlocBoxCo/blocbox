@@ -66,7 +66,7 @@ def watch_packages():
 def notify_enduser_tracking_change(request, hostid, enduserid, transid):
     host = get_object_or_404(UserInfo, pk=hostid)
     enduser = get_object_or_404(UserInfo, pk=enduserid)
-    trans = get_object_or_404(Transaction, pk=transid):
+    trans = get_object_or_404(Transaction, pk=transid)
     message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans}
     subject = "Your tracking information has been updated"
     send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
