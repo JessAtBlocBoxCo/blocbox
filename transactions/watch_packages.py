@@ -59,7 +59,7 @@ def watch_packages():
                 trans.last_tracking_status = new_status
                 trans.save()
                 #send mail
-                notify_enduser_tracking_change(host.id, enduser.id, trans.id):
+                notify_enduser_tracking_change(host.id, enduser.id, trans.id)
     return HttpResponse("OK")
 
 #using .txt file and passing value(s)    
