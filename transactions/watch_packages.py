@@ -84,8 +84,7 @@ def main():
                     responsemessage = "Transaction ID " + str(trans.id) + " has expired" + "\n"
                 elif new_status == 'Delivered':
                     subject = "Your Package Has Been Delivered to the Host"  
-                    message_body = "Your package, transaction ID " + str(trans.id) + trans_title + " has been delivered to your host, " +
-                        host.first_name + host.last_name + ", at " + host_address_full + "!"                  
+                    message_body = "Your package, transaction ID " + str(trans.id) + trans_title + " has been delivered to your host, " + host.first_name + host.last_name + ", at " + host_address_full + "!"                  
                     responsemessage ="An email has been sent to the user notifying them that trans id " + str(trans.id) + " was delivered" + "\n"
                 elif new_status == 'Exception':
                     subject = "There was a delivery exception for transaction ID " + str(trans.id)
@@ -96,8 +95,7 @@ def main():
                     subject = "Your Package is in Transit"
                     responsemessage = "An email was sent to the user notifying them that trans ID " + str(trans.id) + " is in transit"
                 else:
-                	  message_body = "There was a tracking update for your package, transaction ID " + str(trans.id) + trans_title +
-                	      ".  The status was changed from " + current_status + " to: " + new_status + "."
+                	  message_body = "There was a tracking update for your package, transaction ID " + str(trans.id) + trans_title + ".  The status was changed from " + current_status + " to: " + new_status + "."
                     subject = "The tracking information for your package has been updated"
                     responsemessage = "Tracking info for trans ID " + str(trans.id) + " has been updated to " + new_status + " an email was sent" + "\n"
                 message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,
