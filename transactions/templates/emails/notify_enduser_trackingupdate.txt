@@ -1,9 +1,9 @@
 Hello {{ enduser.first_name }},
 
-FIX THIS EMAIL - TAILOR IT TO THE SHIPMENT/TRACKING CHANGE - THIS IS JUST A TEST
+{{ message_body }}
 
-There was a tracking update to the order you sent to  {{host.first_name}} {{ host.last_name}} [{{ host.email }}].
 
+This message was sent in regards to transaction id {{trans.id}} sent to {{host.first_name}} {{ host.last_name}} [{{ host.email }}].
 
 Please contact us if you have any questions.
 

@@ -65,7 +65,7 @@ def main():
             else:
                 status_change = True
             #if status change is true then upate status and send a notificaton to the user
-            if status_change == True:
+            if status_change == False:
                 trans.last_tracking_status = new_status
                 trans.save()
                 #send mail
@@ -89,11 +89,15 @@ def main():
                     responsemessage ="An email has been sent to the user notifying them that trans id " + str(trans.id) + " was delivered" + "\n"
                 elif new_status == 'Exception':
                     subject = "There was a delivery exception for transaction ID " + str(trans.id)
+                    message_body = "There was a delivery exception for your package, transaction ID " + str(trans.id) + trans_title + "."
                     responsemessage = "An email was sent to the user notifying them that trans ID " + str(trans.id) + " had a delivery exception" + "\n"
                 elif new_status == 'InTransit':
+                	  message_body = "Your package, trasnaction ID " + str(trans.id) + trans_title + " is in transit!"
                     subject = "Your Package is in Transit"
                     responsemessage = "An email was sent to the user notifying them that trans ID " + str(trans.id) + " is in transit"
                 else:
+                	  message_body = "There was a tracking update for your package, transaction ID " + str(trans.id) + trans_title +
+                	      ".  The status was changed from " + current_status + " to: " + new_status + "."
                     subject = "The tracking information for your package has been updated"
                     responsemessage = "Tracking info for trans ID " + str(trans.id) + " has been updated to " + new_status + " an email was sent" + "\n"
                 message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,
