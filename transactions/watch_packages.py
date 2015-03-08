@@ -34,10 +34,10 @@ transactions_onaftership = Transaction.objects.filter(on_aftership=True)
 
 def watch_packages():
     for trans in transactions_onaftership:
-    	  slug = trans.shipment_courier
-    	  tracking = trans.tracking
-    	  host = trans.host
-    	  enduser = trans.enduser
+        slug = trans.shipment_courier
+        tracking = trans.tracking
+        host = trans.host
+        enduser = trans.enduser
         if trans.last_tracking_status:
             current_status = trans.last_tracking_status
         else:
