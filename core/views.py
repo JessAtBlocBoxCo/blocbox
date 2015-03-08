@@ -340,8 +340,8 @@ def dashboard_tracking_modal(request, track_id):
                             	  'suggested_return_url': 'dashboard', 'suggested_return_message': "Return to your Dashboard"})
                     #Get the information from the API (is it posted yet?)
                     datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
-                		tracking_info = datadict.get(u'tracking') 
-                		tag = tracking_info['tag']
+                    tracking_info = datadict_added.get(u'tracking') 
+                    tag = tracking_info['tag']
                     #Save this information to trans table
                     trans.on_aftership = True
                     trans.shipment_courier = slug_detected.upper()
