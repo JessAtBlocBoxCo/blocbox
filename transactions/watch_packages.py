@@ -39,7 +39,7 @@ transactions_onaftership = Transaction.objects.filter(on_aftership=True)
 
 def main():
     for trans in transactions_onaftership:
-        slug = trans.shipment_courier
+        slug = str(trans.shipment_courier.lower())
         tracking = trans.tracking
         host = trans.host
         enduser = trans.enduser
