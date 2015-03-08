@@ -49,10 +49,8 @@ def main():
             current_status = None
         #get the trackig status from aftership        
         datadict = api.trackings.get(slug, tracking)
-        if datadict['tag']:
-            new_status = datadict['tag']
-        else:
-            new_status = "No Tag Entry"
+        tracking_info = datadict_added.get(u'tracking') 
+        new_status = tracking_info['tag']
         #if there wasn't a status, add it
         if current_status == None:
             trans.last_tracking_status = current_status
