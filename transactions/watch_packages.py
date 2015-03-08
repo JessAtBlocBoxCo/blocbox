@@ -55,6 +55,7 @@ def main():
         #if there wasn't a status, add it
         if current_status == None:
             trans.last_tracking_status = current_status
+            trans.save()
             responsemessage = "Tracking status was added for trans id" + str(trans.id) + ", it was previously empty"
             response_messages_list.append(responsemessage)
         #if there was a current status, see if its different
