@@ -18,7 +18,7 @@ urlpatterns = patterns('',
     url(r'^profile/$', views.profile, name='profile'),
                        
     url(r'^account/$', views.account, name='account'),
-    url(r'^notifications/$', views.notifications, name='notifications'),
+    url(r'^notifications/$', views.account, name='notifications'),
     url(r'^payment-options/$', views.paymentoptions, name='paymentoptions'),
     url(r'^past-transactions/$', views.pasttransactions, name='pasttransactions'),
     url(r'^security/$', views.security, name='security'),

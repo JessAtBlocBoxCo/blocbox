@@ -398,10 +398,6 @@ def account(request):
     enduser = request.user
     return render(request, 'blocbox/account.html', {'enduser': enduser,})
 
-def notifications(request):
-    enduser = request.user
-    return render(request, 'blocbox/notifications.html', {'enduser': enduser,})
-
 def paymentoptions(request):
     enduser = request.user
     return render(request, 'blocbox/payment-options.html', {'enduser': enduser,})
