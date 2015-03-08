@@ -48,3 +48,4 @@ class NotificationSettings(forms.ModelForm):
         model = UserInfo
         fields = ('notifyuser_hostnewtask', 'notifyuser_message', 'notifyuser_packageships',
     						'notifyuser_packageissue', 'notifyuser_packagereceived', 'notifyuser_blocboxnews')
+    						

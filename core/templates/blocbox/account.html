@@ -66,24 +66,32 @@
                     <div class="col-sm-9 col-xs-12  paddingtop30px">
                     	
                     <!--THE FORM FOR NOTIFICATINO SETTINGS -->
-            				<form>
+            				<form role="form" method="post" action="." enctype="multipart/form-data">
             					
+            					{% csrf_token %} {{ form.non_field_errors }}
+            						
                         <p class="dashfont darkgreytext marginbottom5px">MY BLOCK</p>
   
           
+              						{{ form.notifyuser_hostnewtask.errors}}
+    						
+    					
+    						
                         <div class="row">
                             <p class="col-xs-10 nomargin">When a connected host offers a new task</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox5" type="checkbox" value="option1" checked> <!--  -->
+                                <input id="inlineCheckbox5" type="checkbox" name="notifyuser_hostnewtask" value="True" checked> <!--  -->
  																<label for="inlineCheckbox5"> &nbsp </label>
                             </div>
                         </div>
 
+								
                         <p class="dashfont darkgreytext paddingtop10px marginbottom5px">MESSAGES</p>
                         <div class="row">
+                        			{{ form.notifyuser_message.errors }}
                             <p class="col-xs-10 nomargin">When I receive a message from another person on Blocbox</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox7" type="checkbox" value="option1" checked>
+                                <input id="inlineCheckbox7" type="checkbox" name="notifyuser_message" value="True" checked>
                                 <label for="inlineCheckbox5"> &nbsp </label>
                             </div>
         
@@ -91,25 +99,39 @@
 
                         <p class="dashfont darkgreytext paddingtop10px marginbottom5px">PACKAGE RECEIPT</p>
                         <div class="row">
+                        	
+                        	{{ form.notifyuser_packageships.errors }}
+    				}
+    						
+    						
                             <p class="col-xs-10 nomargin">When my package ships</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox9" type="checkbox" value="option1" checked>
+                                <input id="inlineCheckbox9" type="checkbox" name="notifyuser_packageships" value="True" checked>
                                 <label for="inlineCheckbox5"> &nbsp </label>
                                 
                             </div>
                           
                         </div>
                         <div class="row">
+                        	
+                        			{{ form.notifyuser_packageissue.errors }}
+    		
+    						
                             <p class="col-xs-10 nomargin">When there's an issue with my package</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox11" type="checkbox" value="option1" checked>
+                                <input id="inlineCheckbox11" type="checkbox" name="notifyuser_packageissue" value="True" checked>
                                 <label for="inlineCheckbox5"> &nbsp </label>
                             </div>
                         </div>
                         <div class="row">
+                        	
+                        					{{ form.notifyuser_packagereceived.errors }}
+    						
                             <p class="col-xs-10 nomargin">When my package is recieved by my host</p>
+                           
+                            
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox13" type="checkbox" value="option1" checked>
+                                <input id="inlineCheckbox13" type="checkbox" name="notifyuser_packagereceived" value="True" checked>
                                 <label for="inlineCheckbox5"> &nbsp </label>
                                  
                             </div>
@@ -117,9 +139,12 @@
 
                         <p class="dashfont darkgreytext paddingtop10px marginbottom5px">GENERAL</p>
                         <div class="row">
+                        	
+                        		{{ form.notifyuser_blocboxnews.errors }}
+                        		
                             <p class="col-xs-10 nomargin">About general promotions, updates, and news about Blocbox, along with user surveys and assorted forms of love from Blocbox</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox15" type="checkbox" value="option1" checked>
+                                <input id="inlineCheckbox15" type="checkbox" name="notifyuser_blocboxnews" value="True" checked>
                                 <label for="inlineCheckbox5"> &nbsp </label>
                                 
                             </div>
