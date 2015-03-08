@@ -321,7 +321,10 @@ def dashboard_tracking_modal(request, track_id):
     		                    title=str(trans.title) + ": Order " + str(trans.id)+": User " + enduser.email+" to Host " + trans.host.email, 
     		                    order_id=str(trans.id),
     		                    customer_name=customer_name,
-    		                    emails=[trans.enduser.email, trans.host.email], #Emails for notifications
+    		                    if enduser.notifyuser_trackinginfo:
+    		                        emails=[trans.enduser.email, trans.host.email], #Emails for notifications
+    		                    else:
+    		                        emails=[trans.host.email],
     		                    custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
     		                    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
     		                    )) 	
