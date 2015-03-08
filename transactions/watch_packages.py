@@ -86,7 +86,7 @@ def main():
                     responsemessage = "An email was sent to the user notifying them that trans ID " + str(trans.id) + " is in transit"
                 else:
                     subject = "The tracking information for your package has been updated"
-                    responsemessage = "Tracking info for trans ID " + str(trans.id) + " has been updated to " new_status + " an email was sent"
+                    responsemessage = "Tracking info for trans ID " + str(trans.id) + " has been updated to " + new_status + " an email was sent"
                 send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])    
                 response_messages_list.append(responsemessage)
             else:
