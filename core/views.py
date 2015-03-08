@@ -344,6 +344,7 @@ def dashboard_tracking_modal(request, track_id):
                     #Save this information to trans table
                     trans.on_aftership = True
                     trans.shipment_courier = slug_detected.upper()
+                    trans.last_tracking_status = datadict_added.get(u'tag')
                     trans.save()
             else: #if they entered nothing delete it       
                 api.trackings.delete(courier_on_trans, tracking_on_trans)
