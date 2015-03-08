@@ -1,7 +1,10 @@
 import os
 import sys
 from django.conf import settings
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.blocbox.settings")
+path = '/home/django/blocbox/blocbox'
+if path not in sys.path:
+    sys.path.append(path)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
 #settings.configure(DEBUG=True, TEMPLATE_DEBUG=True,TEMPLATE_DIRS=('/yourprojet/templates',))
 from django.core.management import execute_from_command_line
 import datetime
