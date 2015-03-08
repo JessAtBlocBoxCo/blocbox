@@ -1,7 +1,7 @@
 import os
 import sys
 from django.conf import settings
-path = '/home/django/blocbox/blocbox'
+path = '/home/django/blocbox'
 if path not in sys.path:
     sys.path.append(path)
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
