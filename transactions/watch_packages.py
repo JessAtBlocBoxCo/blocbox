@@ -73,15 +73,15 @@ def main():
                 message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,
                 		'new_status': new_status})
                 #if its expired dont do anything
-                if new_status = 'Expired':
+                if new_status == 'Expired':
                     responsemessage = "Transaction ID " + str(trans.id) + " has expired"
-                elif new_status = 'Delivered':
+                elif new_status == 'Delivered':
                     subject = "Your Package Has Been Delivered to the Host"                    
                     responsemessage ="An email has been sent to the user notifying them that trans id " + str(trans.id) + " was delivered"
-                elif new_status = 'Exception':
+                elif new_status == 'Exception':
                     subject = "There was a delivery exception for transaction ID " + str(trans.id)
                     responsemessage = "An email was sent to the user notifying them that trans ID " + str(trans.id) + " had a delivery exception"
-                elif new_status = 'InTransit':
+                elif new_status == 'InTransit':
                     subject = "Your Package is in Transit"
                     responsemessage = "An email was sent to the user notifying them that trans ID " + str(trans.id) + " is in transit"
                 else:
