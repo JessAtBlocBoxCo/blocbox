@@ -396,7 +396,6 @@ def addinterest(request):
 
 def account(request):
     enduser = request.user   
-    trans = Transaction.objects.get(pk=issue_id)
     if request.method == 'POST':
         form = NotificationSettings(request.POST, instance-enduser)
         if form.is_valid():
