@@ -80,7 +80,8 @@
                         <div class="row">
                             <p class="col-xs-10 nomargin">When a connected host offers a new task</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox5" type="checkbox" name="notifyuser_hostnewtask" value="True" checked> <!--  -->
+                                <input id="inlineCheckbox5" type="checkbox" name="notifyuser_hostnewtask" value="True" 
+                                {% if enduser.notifyuser_hostnewtask %} checked {% endif %} > <!--  -->
  																<label for="inlineCheckbox5"> &nbsp </label>
                             </div>
                         </div>
@@ -91,7 +92,8 @@
                         			{{ form.notifyuser_message.errors }}
                             <p class="col-xs-10 nomargin">When I receive a message from another person on Blocbox</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox7" type="checkbox" name="notifyuser_message" value="True" checked>
+                                <input id="inlineCheckbox7" type="checkbox" name="notifyuser_message" value="True" 
+                                	{% if enduser.notifyuser_message %} checked {% endif %} >
                                 <label for="inlineCheckbox5"> &nbsp </label>
                             </div>
         
@@ -106,7 +108,8 @@
     						
                             <p class="col-xs-10 nomargin">When my package ships</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox9" type="checkbox" name="notifyuser_packageships" value="True" checked>
+                                <input id="inlineCheckbox9" type="checkbox" name="notifyuser_packageships" value="True" 
+                                {% if enduser.notifyuser_packageships %} checked {% endif %} >
                                 <label for="inlineCheckbox5"> &nbsp </label>
                                 
                             </div>
@@ -119,7 +122,8 @@
     						
                             <p class="col-xs-10 nomargin">When there's an issue with my package</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox11" type="checkbox" name="notifyuser_packageissue" value="True" checked>
+                                <input id="inlineCheckbox11" type="checkbox" name="notifyuser_packageissue" value="True" 
+                                		{% if enduser.notifyuser_packageissues %} checked {% endif %} >
                                 <label for="inlineCheckbox5"> &nbsp </label>
                             </div>
                         </div>
@@ -131,7 +135,8 @@
                            
                             
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox13" type="checkbox" name="notifyuser_packagereceived" value="True" checked>
+                                <input id="inlineCheckbox13" type="checkbox" name="notifyuser_packagereceived" value="True" 
+                                	{% if enduser.notifyuser_packagereceived %} checked {% endif %}>
                                 <label for="inlineCheckbox5"> &nbsp </label>
                                  
                             </div>
@@ -144,7 +149,8 @@
                         		
                             <p class="col-xs-10 nomargin">About general promotions, updates, and news about Blocbox, along with user surveys and assorted forms of love from Blocbox</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox15" type="checkbox" name="notifyuser_blocboxnews" value="True" checked>
+                                <input id="inlineCheckbox15" type="checkbox" name="notifyuser_blocboxnews" value="True" 
+                                	{% if enduser.notifyuser_blocboxnews %} checked {% endif %}>
                                 <label for="inlineCheckbox5"> &nbsp </label>
                                 
                             </div>
