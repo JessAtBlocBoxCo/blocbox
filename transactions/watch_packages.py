@@ -89,7 +89,7 @@ def main():
                 elif new_status == 'Exception':
                     subject = "There was a delivery exception for transaction ID " + str(trans.id)
                     message_body = "There was a delivery exception for your package, transaction ID " + str(trans.id) + " " + trans_title + "."
-                    responsemessage = "An email was sent to " + str(enduser.email) " notifying them that trans ID " + str(trans.id) + " had a delivery exception" + "\n"
+                    responsemessage = "An email was sent to " + str(enduser.email) + " notifying them that trans ID " + str(trans.id) + " had a delivery exception" + "\n"
                 elif new_status == 'InTransit':
                     message_body = "Your package, transaction ID " + str(trans.id) + " " + trans_title + " is in transit!"
                     subject = "Your Package is in Transit"
