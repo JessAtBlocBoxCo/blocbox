@@ -397,7 +397,7 @@ def addinterest(request):
 def account(request):
     enduser = request.user   
     if request.method == 'POST':
-        form = NotificationSettings(request.POST, instance-enduser)
+        form = NotificationSettings(request.POST, instance=enduser)
         if form.is_valid():
             notify = form.save()
             notify.save()
