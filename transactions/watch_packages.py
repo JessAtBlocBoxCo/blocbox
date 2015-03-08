@@ -38,7 +38,7 @@ api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 transactions_onaftership = Transaction.objects.filter(on_aftership=True)
 
 def main():
-	  response_messages_list = []
+    response_messages_list = []
     for trans in transactions_onaftership:
         slug = str(trans.shipment_courier.lower())
         tracking = trans.tracking
