@@ -1,3 +1,5 @@
+import os
+import sys
 import datetime
 import pytz
 from urllib import quote
@@ -31,7 +33,7 @@ api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 #GET A LIST OF ALL TRANSACTIONS ON AFTERHIP
 transactions_onaftership = Transaction.objects.filter(on_aftership=True)
 
-def watch_packages():
+def main():
     for trans in transactions_onaftership:
         slug = trans.shipment_courier
         tracking = trans.tracking
@@ -71,4 +73,8 @@ def notify_enduser_tracking_change(request, hostid, enduserid, transid):
     send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
     return HttpResponse("An email has been sent to the user notifying them that the tracking information was updated")
             
-	
+
+
+if __name__ == "__main__":
+	  os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
+    sys.exit(main())
