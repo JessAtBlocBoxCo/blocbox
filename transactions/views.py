@@ -407,7 +407,7 @@ def shippackage_accountbalance(request, host_id, invoice):
     new_account_balance = enduser.account_balance_packages - 1
     #update user info to subtract that amount from their balance
     #something is causing this to be deducted twice - so updatint trans after
-    if trans.balance_after_package:
+    if trans.balance_after_packages:
         userbalance_updated = True
     else:
         userbalance_updated = False
