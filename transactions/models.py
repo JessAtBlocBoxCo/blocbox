@@ -72,6 +72,7 @@ class Transaction(models.Model):
     shipment_courier = models.CharField("Courier", max_length=20, blank=True, null=True)
     #Aftership variables grabbed after confirmed
     tracking_info_tuple_confirmd = models.CharField("Aftership Tracking Info Tuple Upon Completion", max_length=2000, blank=True, null=True)
+    last_tracking_status = models.CharField(max_length=75, blank=True, null=True)
     #no longer in use
     dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)     
     dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)   
