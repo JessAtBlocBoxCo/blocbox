@@ -101,6 +101,15 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     price_package_bundle10 = models.DecimalField("Price Charged for Bundle of 10 Packages", max_digits=4, decimal_places=2, blank=True, null=True)
     price_package_month20 = models.DecimalField("Price Charged for Monthly (up to 20)", max_digits=4, decimal_places=2, blank=True, null=True)
     price_package_annual = models.DecimalField("Price Charged for Annual Shipmetns", max_digits=5, decimal_places=2, blank=True, null=True)   
+    #notification settings
+    notifyuser_hostnewtask = models.BooleanField(blank=True, default=True)
+    notifyuser_message = models.BooleanField(blank=True, default=True)
+    notifyuser_packageships = models.BooleanField(blank=True, default=True)
+    notifyuser_packageissue = models.BooleanField(blank=True, default=True)
+    notifyuser_packagereceived = models.BooleanField(blank=True, default=True)
+    notifyuser_blocboxnews = models.BooleanField(blank=True, default=True)
+    
+    
     #addingj custom or text fields
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
     customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)
