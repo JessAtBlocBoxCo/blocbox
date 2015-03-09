@@ -109,7 +109,7 @@ def main():
     #the httpResponse produces a formatted output when called from command line but not from python shell.. when i sort this out go back to hhptResponse
     return response_messages_list
 
-def test_celery_beat(enduserid, transid, hostid):
+def test_celery_beat(enduserid, hostid, transid):
     trans = Transaction.objects.get(pk=transid)
     enduser = UserInfo.objects.get(pk=enduserid)
     host = UserInfo.objects.get(pk=hostid)
