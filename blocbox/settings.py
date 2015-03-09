@@ -59,6 +59,9 @@ BROKER_URL = "amqp://jess:goodhood@localhost:5672/blocbox"
 CELERY_RESULT_BACKEND = "database"
 CELERY_RESULT_DBURI="postgresql://django:OgdDdrmVUF@localhost/django" #"postgresql://<DB_USER>:<DB_PASSWORD>@localhost/<DB_NAME>"
  
+#TRY CELERY IMPORTS
+CELERY_IMPORTS = ['transactions.tasks']
+
 #SET CELERY TIMEZONE AND SCHEDULE TASKS
 CELERY_TIMEZONE = "US/Eastern"
 from datetime import timedelta
