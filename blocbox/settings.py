@@ -56,6 +56,8 @@ INSTALLED_APPS = (
 import djcelery
 djcelery.setup_loader()
 
+#set the broker url
+BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
