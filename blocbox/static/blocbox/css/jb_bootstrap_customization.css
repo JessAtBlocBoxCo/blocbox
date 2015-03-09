@@ -762,15 +762,6 @@ footer {
     width: 100%;
 }
 
-.form-control::-moz-placeholder {
-    color: #ffffff;
-    opacity: .80;
-}
-.form-control::-webkit-placeholder {
-    color: #ffffff;
-    opacity: .80;
-}
-
 .form-control::-webkit-input-placeholder { color: white; opacity: .80; }
 
 .form-control:-moz-placeholder { color: white; opacity: .80; }
