@@ -57,7 +57,7 @@ INSTALLED_APPS = (
 #set the broker url
 BROKER_URL = "amqp://jess:goodhood@localhost:5672/blocbox"
 CELERY_RESULT_BACKEND = "database"
-CELERY_RESULT_DBURI="postgresql://django:OgdDdrmVUF@localhost/django" #"postgresql://<DB_USER>:<DB_PASSWORD>@localhost/<DB_NAME>"
+CELERY_RESULT_DBURI="postgresql://django:OgdDdrmVUF@localhost/django" 
  
 #TRY CELERY IMPORTS
 CELERY_IMPORTS = ['transactions.tasks']
