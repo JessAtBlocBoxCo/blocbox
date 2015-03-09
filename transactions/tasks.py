@@ -8,7 +8,7 @@ app = Celery()
 @app.task
 def add(x, y):  return x + y
 
-@app.ask
+@app.task
 def watch_packages():
     watch_packages_task()
     
