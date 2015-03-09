@@ -39,7 +39,7 @@ INSTALLED_APPS = (
     'core',
     'transactions',
     'south',   
-    'djcelery',
+    #'djcelery',
     'datasci',
     'password_reset',
     'django_messages',
