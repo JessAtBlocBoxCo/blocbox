@@ -66,8 +66,11 @@ CELERYBEAT_SCHEDULE = {
     'watch_packages_every_30_minutes': {
         'task': 'tasks.watch_packages',
         'schedule': timedelta(minutes=30),
-        'args': (16, 16)
     },
+    'test_celery_beat_every_30_seconds': {
+    	  'task': 'tasks.test_celery_beat',
+    	  'schedule': timedelta(seconds=30),
+    }
 }   
 
 MIDDLEWARE_CLASSES = (

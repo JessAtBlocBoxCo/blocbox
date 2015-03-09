@@ -108,7 +108,11 @@ def main():
     #return HttpResponse(response_messages_list)
     #the httpResponse produces a formatted output when called from command line but not from python shell.. when i sort this out go back to hhptResponse
     return response_messages_list
-    
+
+def test_celery_beat():
+    notify_enduser_tracking_change(request, 2, 1, 170)
+    return "An email has been sent to test the celery beat -should happen every 30 seconds - the less shit transaction"
+        
 #using .txt file and passing value(s)    
 def notify_enduser_tracking_change(request, hostid, enduserid, transid):
     host = get_object_or_404(UserInfo, pk=hostid)
