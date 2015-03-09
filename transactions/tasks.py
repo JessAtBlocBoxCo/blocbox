@@ -9,7 +9,7 @@ app = Celery()
 def add(x, y):  return x + y
 
 @app.ask
-def watch_packages_task:
+def watch_packages_task():
     watch_packages()
     
 
