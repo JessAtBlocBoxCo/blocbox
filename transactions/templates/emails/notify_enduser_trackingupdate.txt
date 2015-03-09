@@ -4,7 +4,7 @@ Hello {{ enduser.first_name }},
 
 Full tracking information can be found at: {{ tracking_link }}.
 
-This message is regarding transaction id {{trans.id}} sent to {{host.first_name}} {{ host.last_name}} [{{ host.email }}].
+This message is regarding shipment ID {{trans.id}} sent to {{host.first_name}} {{ host.last_name}} [{{ host.email }}].
 
 Please contact us if you have any questions.
 
