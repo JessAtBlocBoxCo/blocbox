@@ -1,0 +1,16 @@
+.hgignore
+CHANGES.txt
+README.txt
+setup.py
+pyzipcode/__init__.py
+pyzipcode/import.py
+pyzipcode/settings.py
+pyzipcode/tests.py
+pyzipcode/zipcodes.db
+pyzipcode.egg-info/PKG-INFO
+pyzipcode.egg-info/SOURCES.txt
+pyzipcode.egg-info/dependency_links.txt
+pyzipcode.egg-info/entry_points.txt
+pyzipcode.egg-info/not-zip-safe
+pyzipcode.egg-info/requires.txt
+pyzipcode.egg-info/top_level.txt
