@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 import os
+import celery
 
 from celery import Celery
 
