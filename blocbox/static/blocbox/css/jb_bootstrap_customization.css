@@ -771,13 +771,13 @@ footer {
     opacity: .80;
 }
 
-.form-control::-webkit-input-placeholder { color: white; }
+.form-control::-webkit-input-placeholder { color: white; opacity: .80; }
 
-.form-control:-moz-placeholder { color: white; }
+.form-control:-moz-placeholder { color: white; opacity: .80; }
 
-.form-control::-moz-placeholder { color: white; }
+.form-control::-moz-placeholder { color: white; opacity: .80; }
 
-.form-control:-ms-input-placeholder { color: white; }
+.form-control:-ms-input-placeholder { color: white; opacity: .80; }
 
 .form-control {
     color: #ffffff;
