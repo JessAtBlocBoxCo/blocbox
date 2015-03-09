@@ -60,18 +60,18 @@ CELERY_RESULT_BACKEND = "database"
 CELERY_RESULT_DBURI="postgresql://django:OgdDdrmVUF@localhost/django" 
  
 #TRY CELERY IMPORTS
-CELERY_IMPORTS = ['transactions.tasks']
+CELERY_IMPORTS = ['tasks']
 
 #SET CELERY TIMEZONE AND SCHEDULE TASKS
 CELERY_TIMEZONE = "US/Eastern"
 from datetime import timedelta
 CELERYBEAT_SCHEDULE = {
     'watch_packages_every_30_minutes': {
-        'task': 'transactions.tasks.watch_packages',
+        'task': 'tasks.watch_packages',
         'schedule': timedelta(minutes=30),
     },
     'test_celery_beat_every_45_seconds': {
-    	  'task': 'transactions.tasks.test_schedule',
+    	  'task': 'tasks.test_schedule',
     	  'schedule': timedelta(seconds=45),
     	  'args': (1,2,170)
     }
