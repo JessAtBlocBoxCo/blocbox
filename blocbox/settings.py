@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'core',
     'transactions',
     'south',   
+    'djcelery',
     'datasci',
     'password_reset',
     'django_messages',
@@ -50,6 +51,10 @@ INSTALLED_APPS = (
     'paypal.standard.ipn',
 		'testing',
 )
+
+#import celery and set it up
+import djcelery
+djcelery.setup_loader()
 
 
 MIDDLEWARE_CLASSES = (
