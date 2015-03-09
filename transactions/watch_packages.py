@@ -105,7 +105,8 @@ def main():
             else:
                 responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"
                 response_messages_list.append(responsemessage)
-    return HttpResponse(response_messages_list)
+    return str(response_messages_list)
+    #return HttpResponse(response_messages_list)
     #return response_messages_list
     
 #using .txt file and passing value(s)    
