@@ -5,9 +5,9 @@ from django.conf import settings
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from watch_packages import main as watch_packages_task
 from watch_packages import test_celery_beat
-#app = Celery()
+app = Celery()
 #app = Celery('tasks', broker=BROKER_URL)
-app = Celery('tasks', backend='amqp', broker='amqp://guest@localhost:5672//')
+#app = Celery('tasks', backend='amqp', broker='amqp://guest@localhost:5672//')
 #app = Celery('tasks', backend='amqp', broker="amqp://jess:goodhood@localhost:5672/blocbox")
 
 @app.task
