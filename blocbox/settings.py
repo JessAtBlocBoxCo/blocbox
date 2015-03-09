@@ -58,6 +58,7 @@ djcelery.setup_loader()
 
 #set the broker url
 BROKER_URL = 'amqp://guest:guest@localhost:5672//'
+CELERY_IMPORTS = ['blocbox.transactions.tasks']
 
 #SET CELERY TIMEZONE AND SCHEDULE TASKS
 CELERY_TIMEZONE = "US/Eastern"
