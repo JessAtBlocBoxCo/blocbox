@@ -59,6 +59,17 @@ djcelery.setup_loader()
 #set the broker url
 BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 
+#SET CELERY TIMEZONE AND SCHEDULE TASKS
+CELERY_TIMEZONE = "US/Eastern"
+from datetime import timedelta
+CELERYBEAT_SCHEDULE = {
+    'watch_packages_every_30_minutes': {
+        'task': 'tasks.watch_packages',
+        'schedule': timedelta(minutes=30),
+        'args': (16, 16)
+    },
+}   
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
