@@ -1,5 +1,7 @@
 
-from pysqlite2 import dbapi2 as sqlite3
+#from pysqlite2 import dbapi2 as sqlite3
+#JMY editing to just impot sqlite3
+import sqlite3
 import os
 import csv
 try:

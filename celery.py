@@ -14,7 +14,9 @@ app = Celery('blocbox')
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.
 app.config_from_object('django.conf:settings')
+
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
+#this allows celery to autodiscover tasks that follow the app/tasks.py convention
 
 
 @app.task(bind=True)
