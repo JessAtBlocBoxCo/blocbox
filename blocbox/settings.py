@@ -64,11 +64,11 @@ CELERY_TIMEZONE = "US/Eastern"
 from datetime import timedelta
 CELERYBEAT_SCHEDULE = {
     'watch_packages_every_30_minutes': {
-        'task': 'transactions.tasks.watch_packages',
+        'task': 'tasks.watch_packages',
         'schedule': timedelta(minutes=30),
     },
     'test_celery_beat_every_30_seconds': {
-    	  'task': 'transactions.tasks.test_celery_beat',
+    	  'task': 'tasks.test_celery_beat',
     	  'schedule': timedelta(seconds=45),
     	  'args': (1,2,170)
     }
