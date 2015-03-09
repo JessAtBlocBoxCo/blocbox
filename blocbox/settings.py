@@ -59,10 +59,8 @@ djcelery.setup_loader()
 #set the broker url
 BROKER_URL = 'amqp://guest:guest@localhost:5672//'
 CELERY_IMPORTS = ['transactions.tasks']
-app.conf.update(
-    CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend',
-)
-
+#CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
+    
 #SET CELERY TIMEZONE AND SCHEDULE TASKS
 CELERY_TIMEZONE = "US/Eastern"
 from datetime import timedelta
