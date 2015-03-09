@@ -105,8 +105,9 @@ def main():
             else:
                 responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"
                 response_messages_list.append(responsemessage)
-    return HttpResponse(response_messages_list)
-
+    #return HttpResponse(response_messages_list)
+    return response_messages_list
+    
 #using .txt file and passing value(s)    
 def notify_enduser_tracking_change(request, hostid, enduserid, transid):
     host = get_object_or_404(UserInfo, pk=hostid)

@@ -12,7 +12,7 @@ def watch_packages():
     response_messages_list = []
     watch_packages_task()
     #return ("OK")
-    return response_messages_list    
+    #return response_messages_list    
 
 """
 @app.task
