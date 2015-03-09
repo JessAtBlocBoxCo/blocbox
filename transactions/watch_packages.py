@@ -70,8 +70,8 @@ def main():
                 trans.save()
                 #send mail
                 #notify_enduser_tracking_change(request, host.id, enduser.id, trans.id)
-
                 #if its expired dont do anythin
+                tracking_link = "https://blocbox.aftership.com/" + str(trans.tracking)
                 if trans.title:
                     trans_title = "(" + trans.title + ")"
                 else:
@@ -99,7 +99,7 @@ def main():
                     subject = "The tracking information for your package has been updated"
                     responsemessage = "Tracking info for trans ID " + str(trans.id) + " has been updated to " + new_status + " an email was sent" + "\n"
                 message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,
-                		'new_status': new_status, 'message_body': message_body})
+                		'new_status': new_status, 'message_body': message_body, 'tracking_link': tracking_link, })
                 send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])    
                 response_messages_list.append(responsemessage)
             else:
