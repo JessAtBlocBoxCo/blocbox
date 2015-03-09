@@ -779,6 +779,12 @@ footer {
     border-color: rgb(255, 195, 0);
 }
 
+.box-sizing(@box-model) {
+    -webkit-box-sizing: @box-model; // Safari <= 5
+    -moz-box-sizing: @box-model; // Firefox <= 19
+    box-sizing: @box-model;
+}
+
 /*CSS for JS drawers*/
 .hideit > div {
     display: none;
