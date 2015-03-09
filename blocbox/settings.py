@@ -67,8 +67,8 @@ CELERYBEAT_SCHEDULE = {
         'task': 'transactions.tasks.watch_packages',
         'schedule': timedelta(minutes=30),
     },
-    'test_celery_beat_every_30_seconds': {
-    	  'task': 'transactions.tasks.test_celery_beat',
+    'test_celery_beat_every_45_seconds': {
+    	  'task': 'transactions.tasks.test_schedule',
     	  'schedule': timedelta(seconds=45),
     	  'args': (1,2,170)
     }
