@@ -4,4 +4,4 @@ from __future__ import absolute_import
 
 #from .__celery import app as celery_app
 #JMY: removing the .__ because that wasn't working
-from __celery import app as celery_app
+from celeryconf import app as celery_app
