@@ -10,7 +10,8 @@ def add(x, y):  return x + y
 
 @app.task
 def watch_packages():
-    watch_packages_task()
+    watch_packages_task
+    return ("OK")
     
 
 if __name__ == '__main__':
