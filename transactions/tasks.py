@@ -11,7 +11,8 @@ def add(x, y):  return x + y
 @app.task
 def watch_packages():
     watch_packages_task()
-    return ("OK")
+    #return ("OK")
+    return HttpResponse(response_messages_list)
     
 
 if __name__ == '__main__':
