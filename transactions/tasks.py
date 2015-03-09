@@ -2,8 +2,9 @@
 from celery import Celery
 from django.conf import settings
 from django.http import HttpResponse, Http404, HttpResponseRedirect
-app = Celery()
+#app = Celery()
 #app = Celery('tasks', broker=BROKER_URL)
+app = Celery('tasks', backend='amqp', broker='amqp://guest@localhost//')
 
 @app.task
 def add(x, y):  return x + y
