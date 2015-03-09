@@ -52,15 +52,13 @@ INSTALLED_APPS = (
 		'testing',
 )
 
-#import celery and set it up
-import djcelery
-djcelery.setup_loader()
+
 
 #set the broker url
-BROKER_URL = 'amqp://guest:guest@localhost:5672//'
-CELERY_IMPORTS = ['transactions.tasks']
-#CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
-    
+BROKER_URL = "amqp://jess:goodhood@localhost:5672/blocbox"
+CELERY_RESULT_BACKEND = "database"
+CELERY_RESULT_DBURI="postgresql://django:OgdDdrmVUF@localhost/django" #"postgresql://<DB_USER>:<DB_PASSWORD>@localhost/<DB_NAME>"
+ 
 #SET CELERY TIMEZONE AND SCHEDULE TASKS
 CELERY_TIMEZONE = "US/Eastern"
 from datetime import timedelta
@@ -177,3 +175,8 @@ AFTERSHIP_API_KEY_DEFAULT = '488caf4b-e7aa-4634-928b-2df5de94af9f'
 MEDIA_ROOT = '/home/django/blocbox/blocbox/static/user_uploads/'
 #MEDIA_URL is the base public url of that dir (not sure how different)
 MEDIA_URL = '/static/user_uploads/'
+
+
+#import celery and set it up - should be at very bottom of settings file
+import djcelery
+djcelery.setup_loader()
