@@ -16,8 +16,8 @@ def watch_packages():
 	  return task   
 
 from watch_packages import test_celery_beat
-def test_schedule():
-    return test_celery_beat()
+def test_schedule(enduserid, hostid, transid):
+    return test_celery_beat(enduserid, hostid, transid)
 
 
 

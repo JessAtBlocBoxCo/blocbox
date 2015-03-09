@@ -70,6 +70,7 @@ CELERYBEAT_SCHEDULE = {
     'test_celery_beat_every_30_seconds': {
     	  'task': 'tasks.test_celery_beat',
     	  'schedule': timedelta(seconds=30),
+    	  'args': (1,2,170)
     }
 }   
 

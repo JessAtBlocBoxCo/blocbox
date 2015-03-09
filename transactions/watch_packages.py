@@ -109,20 +109,19 @@ def main():
     #the httpResponse produces a formatted output when called from command line but not from python shell.. when i sort this out go back to hhptResponse
     return response_messages_list
 
-def test_celery_beat():
+def test_celery_beat(enduserid, transid, hostid):
+    trans = Transaction.objects.get(pk=issue_id)
+    enduser = UserInfo.objects.get(pk=enduserid)
+    host = UserInfo.objects.get(pk=hostid)
+    message_body = "this is a test of celery beat - send every 30 seconds"
+    subject = "Testing Celery Beat - shoudl second every 30 seconds"
+	  message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,
+                		'message_body': message_body, }
+		send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
     notify_enduser_tracking_change(request, 2, 1, 170)
     return "An email has been sent to test the celery beat -should happen every 30 seconds - the less shit transaction"
         
-#using .txt file and passing value(s)    
-def notify_enduser_tracking_change(request, hostid, enduserid, transid):
-    host = get_object_or_404(UserInfo, pk=hostid)
-    enduser = get_object_or_404(UserInfo, pk=enduserid)
-    trans = get_object_or_404(Transaction, pk=transid)
-    message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans})
-    subject = "Your tracking information has been updated"
-    send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
-    return HttpResponse("An email has been sent to the user notifying them that the tracking information was updated")
-            
+       
 
 
 if __name__ == "__main__":
