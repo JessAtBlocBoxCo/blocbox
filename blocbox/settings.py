@@ -64,15 +64,18 @@ CELERY_TIMEZONE = "US/Eastern"
 from datetime import timedelta
 CELERYBEAT_SCHEDULE = {
     'watch_packages_every_30_minutes': {
-        'task': 'tasks.watch_packages',
+        'task': 'transactions.tasks.watch_packages',
         'schedule': timedelta(minutes=30),
     },
     'test_celery_beat_every_30_seconds': {
-    	  'task': 'tasks.test_celery_beat',
+    	  'task': 'transactions.tasks.test_celery_beat',
     	  'schedule': timedelta(seconds=45),
     	  'args': (1,2,170)
     }
 }   
+
+# store schedule in the DB:
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
