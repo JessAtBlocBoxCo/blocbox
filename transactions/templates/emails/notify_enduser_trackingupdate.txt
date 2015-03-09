@@ -2,9 +2,9 @@ Hello {{ enduser.first_name }},
 
 {{ message_body }}
 
-This message was sent in regards to transaction id {{trans.id}} sent to {{host.first_name}} {{ host.last_name}} [{{ host.email }}].
+Full tracking information can be found at: {{ tracking_link }}.
 
-Full tracking information can be found at: {{ tracking_link }}
+This message is regarding transaction id {{trans.id}} sent to {{host.first_name}} {{ host.last_name}} [{{ host.email }}].
 
 Please contact us if you have any questions.
 
