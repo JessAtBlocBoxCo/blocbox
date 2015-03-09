@@ -10,7 +10,8 @@ def add(x, y):  return x + y
 
 from watch_packages import main as watch_packages_task
 def watch_packages():
-	  return watch_packages_task()
+	  task = watch_packages_task()
+	  return HttpResponse(task)
 	  #return task
 	  #return HttpResponse(task)
     #return watch_packages_task()
