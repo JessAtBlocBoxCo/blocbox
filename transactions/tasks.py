@@ -7,13 +7,14 @@ app = Celery()
 @app.task
 def add(x, y):  return x + y
 
-#from watch_packages import main as watch_packages_task
-#def watch_packages():
-    #watch_packages_task()
+from watch_packages import main as watch_packages_task
+def watch_packages():
+    response_messages_list = []
+    watch_packages_task()
     #return ("OK")
-    #return response_messages_list    
+    return response_messages_list    
 
-
+"""
 @app.task
 def watch_packages():
     response_messages_list = []
@@ -85,7 +86,7 @@ def watch_packages():
                 response_messages_list.append(responsemessage)
     return HttpResponse(response_messages_list)
 
-#using .txt file and passing value(s)    
+   
 def notify_enduser_tracking_change(request, hostid, enduserid, transid):
     host = get_object_or_404(UserInfo, pk=hostid)
     enduser = get_object_or_404(UserInfo, pk=enduserid)
@@ -94,7 +95,7 @@ def notify_enduser_tracking_change(request, hostid, enduserid, transid):
     subject = "Your tracking information has been updated"
     send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
     return HttpResponse("An email has been sent to the user notifying them that the tracking information was updated")
-            
+"""
 
 
 if __name__ == '__main__':
