@@ -9,8 +9,7 @@ def add(x, y):  return x + y
 
 from watch_packages import main as watch_packages_task
 def watch_packages():
-    response_messages_list = []
-    watch_packages_task()
+    return watch_packages_task()
     #return ("OK")
     #return response_messages_list    
 
