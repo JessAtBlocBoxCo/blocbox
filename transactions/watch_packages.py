@@ -110,7 +110,7 @@ def main():
     return response_messages_list
 
 def test_celery_beat(enduserid, transid, hostid):
-    trans = Transaction.objects.get(pk=issue_id)
+    trans = Transaction.objects.get(pk=transid)
     enduser = UserInfo.objects.get(pk=enduserid)
     host = UserInfo.objects.get(pk=hostid)
     message_body = "this is a test of celery beat - send every 30 seconds"
