@@ -583,10 +583,8 @@ def signupnoconnect(request):
             add_neighbors_nearby_task(userid=user.id)
     	      #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
     	      #if 'picture' in request.FILES:
-    	      #    profile.picture = request.FILES['picture']
-    	         	      
-    	      registered = True #Update our variable to tell the template registration was successful
-    	  		
+    	      #    profile.picture = request.FILES['picture']  	      
+            registered = True #Update our variable to tell the template registration was successful    	  		
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors
