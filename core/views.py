@@ -46,7 +46,10 @@ from django_messages.views import notify_user_received_message
 #aftership
 import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
-
+#pyzipcode
+import pyzipcode
+from pyzipcode import ZipCodeDatabase
+zcdb = ZipCodeDatabase()
 
 #Write a custom template filter:
 from django.template.defaulttags import register
@@ -513,7 +516,15 @@ def signupconnect(request, host_id):
             # Now we hash the password with the set_passworth method
             # Once hashed, we ca update the user object
             user.set_password(user.password)
-            user.save()   	      
+            user.save()   	
+            #get nearby zips
+            zipcodeform = user_form.cleaned_data['zipcode']
+            zipcode = zcdb[zipcodeform]
+            zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+            user.city = zipcode.city
+            user.state = zipcode.state
+            user.zipcodes_nearby = zipcodes_nearby
+            user.save()
             #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
             #if 'picture' in request.FILES:
             #profile.picture = request.FILES['picture']       	      
