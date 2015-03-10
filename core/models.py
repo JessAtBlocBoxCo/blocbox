@@ -105,11 +105,13 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     notifyuser_hostnewtask = models.BooleanField(blank=True, default=True)
     notifyuser_message = models.BooleanField(blank=True, default=True)
     notifyuser_packageships = models.BooleanField(blank=True, default=True)
-    notifyuser_packageissue = models.BooleanField(blank=True, default=True)
+    notifyuser_deliveryexception = models.BooleanField(blank=True, default=True)
     notifyuser_packagereceived = models.BooleanField(blank=True, default=True)
     notifyuser_blocboxnews = models.BooleanField(blank=True, default=True)
     notifyuser_trackinginfo = models.BooleanField(blank=True, default=True)
-
+    notifyuser_newhostonblock = models.BooleanField(blank=True, default=True)
+    #zipcodes nearby - start this as a character string thats long
+    zipcodes_nearby = models.CharField(max_length=1000, blank=True, null=True)
     #addingj custom or text fields
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
     customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)

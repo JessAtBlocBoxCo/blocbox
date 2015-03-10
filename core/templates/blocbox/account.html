@@ -73,10 +73,17 @@
                         <p class="dashfont darkgreytext marginbottom5px">MY BLOCK</p>
   
           
-              						{{ form.notifyuser_hostnewtask.errors}}
-    						
+              						{{ form.notifyuser_newhostonblock.errors}}
+                        <div class="row">
+                            <p class="col-xs-10 nomargin">When there's a new host in my neighborhood</p>
+                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                <input id="inlineCheckbox5" type="checkbox" name="notifyuser_newhostonblock" value="True" 
+                                {% if enduser.notifyuser_newhostonblock %} checked {% endif %} > <!--  -->
+ 																<label for="inlineCheckbox5"> &nbsp </label>
+                            </div>
+                        </div>    						
     					
-    						
+    											{{ form.notifyuser_hostnewtask.errors}}
                         <div class="row">
                             <p class="col-xs-10 nomargin">When a connected host offers a new task</p>
                             <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
@@ -101,50 +108,7 @@
 
                         <p class="dashfont darkgreytext paddingtop10px marginbottom5px">TRACKING</p>
                        
-                       
-                       <!--
-                        <div class="row">		{{ form.notifyuser_packageships.errors }}
-    			
-                            <p class="col-xs-10 nomargin">When my package ships</p>
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox9" type="checkbox" name="notifyuser_packageships" value="True" 
-                                {% if enduser.notifyuser_packageships %} checked {% endif %} >
-                                <label for="inlineCheckbox9"> &nbsp </label>
-                                
-                            </div>
-                          
-                        </div>
-                        -->
                         
-                 
-                        <div class="row">  {{ form.notifyuser_trackinginfo.errors }}
-    		   						
-                            <p class="col-xs-10 nomargin">Tracking Information</p>
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox11" type="checkbox" name="notifyuser_trackinginfo" value="True" 
-                                		{% if enduser.notifyuser_trackinginfo %} checked {% endif %} >
-                                <label for="inlineCheckbox11"> &nbsp </label>
-                            </div>
-                        </div>
-                       
-                        
-                        <!--
-                        <div class="row">
-                        	
-                        			{{ form.notifyuser_packageissue.errors }}
-    		
-    						
-                            <p class="col-xs-10 nomargin">When there's a delivery exception</p>
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox11" type="checkbox" name="notifyuser_packageissue" value="True" 
-                                		{% if enduser.notifyuser_packageissue %} checked {% endif %} >
-                                <label for="inlineCheckbox11"> &nbsp </label>
-                            </div>
-                        </div>
-                        -->
-                        
-                        
-                        <!---
                         <div class="row">                        	
                         					{{ form.notifyuser_packagereceived.errors }}  						
                             <p class="col-xs-10 nomargin">When my package is recieved by my host</p>
@@ -156,7 +120,41 @@
                                  
                             </div>
                         </div>
-													-->
+                                          
+                       
+                        <div class="row">		{{ form.notifyuser_packageships.errors }}
+    			
+                            <p class="col-xs-10 nomargin">When my package ships</p>
+                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                <input id="inlineCheckbox9" type="checkbox" name="notifyuser_packageships" value="True" 
+                                {% if enduser.notifyuser_packageships %} checked {% endif %} >
+                                <label for="inlineCheckbox9"> &nbsp </label>
+                                
+                            </div>
+                          
+                        </div>
+                       
+           
+                       
+                        
+                        
+                        <div class="row">
+                        	
+                        			{{ form.notifyuser_packageissue.errors }}
+    		
+    						
+                            <p class="col-xs-10 nomargin">When there's a delivery exception</p>
+                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                <input id="inlineCheckbox11" type="checkbox" name="notifyuser_deliveryexception" value="True" 
+                                		{% if enduser.notifyuser_deliveryexception %} checked {% endif %} >
+                                <label for="inlineCheckbox11"> &nbsp </label>
+                            </div>
+                        </div>
+                        
+                        
+                        
+     
+												
 													
                         <p class="dashfont darkgreytext paddingtop10px marginbottom5px">GENERAL</p>
                         <div class="row">
