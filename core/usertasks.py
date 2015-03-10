@@ -109,7 +109,7 @@ def set_default_mileradius_task(mileradius):
     return responsemessage
 
 def set_mileradius_user_task(userid, mileradius):
-    enduser = UserInfo.objects.filter(pk=userid)
+    enduser = UserInfo.objects.get(pk=userid)
     enduser.zipcodes_nearby_mileradius = mileradius
     enduser.save()
     responsemessage = "The mileradius variable has been set to " + str(mileradius) + " for user " + str(enduser.email) + "."
