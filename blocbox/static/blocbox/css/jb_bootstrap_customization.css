@@ -1640,79 +1640,78 @@ body {
     display: none;
 }
 
+/*JS Animation on Landing*/
+
+.cd-words-wrapper {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+}
+.cd-words-wrapper b {
+    display: inline-block;
+    position: absolute;
+    white-space: nowrap;
+    text-align: center;
+    left: 0;
+    top: 0;
+}
+.cd-words-wrapper b.is-visible {
+    position: relative;
+    text-align: center;
+}
+.no-js .cd-words-wrapper b {
+    opacity: 0;
+}
+.no-js .cd-words-wrapper b.is-visible {
+    opacity: 1;
+}
+
 .cd-headline.rotate-1 .cd-words-wrapper {
-    display: inline-block;
+    -webkit-perspective: 300px;
+    -moz-perspective: 300px;
     perspective: 300px;
-    width: 100%;
 }
 .cd-headline.rotate-1 b {
     opacity: 0;
-    transform-origin: 50% 100%;
-    -ms-transform-origin: 50% 100%;
     -webkit-transform-origin: 50% 100%;
-    transform: rotateX(180deg);
-    -ms-transform: rotateX(180deg);
+    -moz-transform-origin: 50% 100%;
+    -ms-transform-origin: 50% 100%;
+    -o-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
     -webkit-transform: rotateX(180deg);
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
 }
 .cd-headline.rotate-1 b.is-visible {
-    position: relative;
     opacity: 1;
-    transform: rotateX(0deg);
-    -ms-transform: rotateX(0deg);
     -webkit-transform: rotateX(0deg);
-}
-.cd-headline.rotate-1 b {
-    opacity: 0;
-    transform-origin: 50% 100%;
-    -ms-transform-origin: 50% 100%;
-    -webkit-transform-origin: 50% 100%;
-    transform: rotateX(180deg);
-    -ms-transform: rotateX(180deg);
-    -webkit-transform: rotateX(180deg);
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left:0;
-    right:0;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-.cd-headline.rotate-1 b.is-visible {
-    position: relative;
-    opacity: 1;
-    transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
     -ms-transform: rotateX(0deg);
-    -webkit-transform: rotateX(0deg);
-    animation: cd-rotate-1-in 1.2s;
+    -o-transform: rotateX(0deg);
+    transform: rotateX(0deg);
     -webkit-animation: cd-rotate-1-in 1.2s;
+    -moz-animation: cd-rotate-1-in 1.2s;
+    animation: cd-rotate-1-in 1.2s;
 }
-
 .cd-headline.rotate-1 b.is-hidden {
-    transform: rotateX(180deg);
-    -ms-transform: rotateX(180deg);
     -webkit-transform: rotateX(180deg);
-    animation: cd-rotate-1-out 1.2s;
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
     -webkit-animation: cd-rotate-1-out 1.2s;
+    -moz-animation: cd-rotate-1-out 1.2s;
+    animation: cd-rotate-1-out 1.2s;
 }
 
-@keyframes cd-rotate-1-in {
+@-webkit-keyframes cd-rotate-1-in {
     0% {
-        transform: rotateX(180deg);
-        -ms-transform: rotateX(180deg);
         -webkit-transform: rotateX(180deg);
         opacity: 0;
     }
     35% {
-        transform: rotateX(120deg);
-        -ms-transform: rotateX(120deg);
         -webkit-transform: rotateX(120deg);
         opacity: 0;
     }
@@ -1720,23 +1719,62 @@ body {
         opacity: 0;
     }
     100% {
-        transform: rotateX(360deg);
-        -ms-transform: rotateX(360deg);
         -webkit-transform: rotateX(360deg);
         opacity: 1;
     }
 }
-
-@keyframes cd-rotate-1-out {
+@-moz-keyframes cd-rotate-1-in {
     0% {
-        transform: rotateX(0deg);
-        -ms-transform: rotateX(0deg);
+        -moz-transform: rotateX(180deg);
+        opacity: 0;
+    }
+    35% {
+        -moz-transform: rotateX(120deg);
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    100% {
+        -moz-transform: rotateX(360deg);
+        opacity: 1;
+    }
+}
+@keyframes cd-rotate-1-in {
+    0% {
+        -webkit-transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg);
+        -ms-transform: rotateX(180deg);
+        -o-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+        opacity: 0;
+    }
+    35% {
+        -webkit-transform: rotateX(120deg);
+        -moz-transform: rotateX(120deg);
+        -ms-transform: rotateX(120deg);
+        -o-transform: rotateX(120deg);
+        transform: rotateX(120deg);
+        opacity: 0;
+    }
+    65% {
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateX(360deg);
+        -moz-transform: rotateX(360deg);
+        -ms-transform: rotateX(360deg);
+        -o-transform: rotateX(360deg);
+        transform: rotateX(360deg);
+        opacity: 1;
+    }
+}
+@-webkit-keyframes cd-rotate-1-out {
+    0% {
         -webkit-transform: rotateX(0deg);
         opacity: 1;
     }
     35% {
-        transform: rotateX(-40deg);
-        -ms-transform: rotateX(-40deg);
         -webkit-transform: rotateX(-40deg);
         opacity: 1;
     }
@@ -1744,13 +1782,56 @@ body {
         opacity: 0;
     }
     100% {
-        transform: rotateX(180deg);
-        -ms-transform: rotateX(180deg);
         -webkit-transform: rotateX(180deg);
         opacity: 0;
     }
 }
-
+@-moz-keyframes cd-rotate-1-out {
+    0% {
+        -moz-transform: rotateX(0deg);
+        opacity: 1;
+    }
+    35% {
+        -moz-transform: rotateX(-40deg);
+        opacity: 1;
+    }
+    65% {
+        opacity: 0;
+    }
+    100% {
+        -moz-transform: rotateX(180deg);
+        opacity: 0;
+    }
+}
+@keyframes cd-rotate-1-out {
+    0% {
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        -ms-transform: rotateX(0deg);
+        -o-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        opacity: 1;
+    }
+    35% {
+        -webkit-transform: rotateX(-40deg);
+        -moz-transform: rotateX(-40deg);
+        -ms-transform: rotateX(-40deg);
+        -o-transform: rotateX(-40deg);
+        transform: rotateX(-40deg);
+        opacity: 1;
+    }
+    65% {
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: rotateX(180deg);
+        -moz-transform: rotateX(180deg);
+        -ms-transform: rotateX(180deg);
+        -o-transform: rotateX(180deg);
+        transform: rotateX(180deg);
+        opacity: 0;
+    }
+}
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
 *--------------------------------------------------------------*/
@@ -4189,4 +4270,25 @@ input[type=checkbox]:checked,input[type=radio]:checked,input[type=checkbox]:focu
     outline-style: none;
     -moz-outline-style: none;
     -moz-outline: none;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
 }
