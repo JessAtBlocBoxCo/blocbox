@@ -46,6 +46,6 @@ class ConnectForm(forms.ModelForm):
 class NotificationSettings(forms.ModelForm):
     class Meta:
         model = UserInfo
-        fields = ('notifyuser_hostnewtask', 'notifyuser_message', 'notifyuser_packageships',
-    						'notifyuser_packageissue', 'notifyuser_packagereceived', 'notifyuser_blocboxnews', 'notifyuser_trackinginfo')
+        fields = ('notifyuser_hostnewtask', 'notifyuser_message', 'notifyuser_packageships', 'notifyuser_newhostonblock',
+    						'notifyuser_deliveryexception', 'notifyuser_packagereceived', 'notifyuser_blocboxnews', 'notifyuser_trackinginfo')
     						
