@@ -49,6 +49,6 @@ class NotificationSettings(forms.ModelForm):
     class Meta:
         model = UserInfo
         fields = ('notifyuser_hostnewtask', 'notifyuser_message', 'notifyuser_packageships', 'notifyuser_newhostonblock',
-    						'notifyuser_deliveryexception', 'notifyuser_packagereceived', 'notifyuser_blocboxnews', 'notifyuser_trackinginfo'
-    						'zipcodes_nearby_mileradius')
+    						'notifyuser_deliveryexception', 'notifyuser_packagereceived', 'notifyuser_blocboxnews', 
+    						'notifyuser_trackinginfo', 'zipcodes_nearby_mileradius')
     						
