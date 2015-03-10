@@ -48,8 +48,8 @@ def set_default_mileradius(mileradius):
     return set_default_mileradius_task(mileradius)
 
 @app.task
-def set_mileradius_user(mileradius):
-    return set_mileradius_user_task(mileradius)
+def set_mileradius_user(userid, mileradius):
+    return set_mileradius_user_task(userid, mileradius)
 
 
 if __name__ == '__main__':
