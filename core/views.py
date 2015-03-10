@@ -571,7 +571,6 @@ def signupnoconnect(request):
     	      # Now we hash the password with the set_passworth method
     	      # Once hashed, we ca update the user object
     	      user.set_password(user.password)
-    	      user.save()
     	      #get zipcode
             zipcodeform = user_form.cleaned_data['zipcode']
             zipcode = zcdb[zipcodeform]           
@@ -581,6 +580,8 @@ def signupnoconnect(request):
             user.state = zipcode.state
             user.zipcodes_nearby = zipcodes_nearby_json
             user.save()
+            #get neighbors nearby
+            add_neighbors_nearby_task(userid=user.id)
     	      #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
     	      #if 'picture' in request.FILES:
     	      #    profile.picture = request.FILES['picture']
