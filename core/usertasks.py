@@ -140,19 +140,19 @@ def add_neighbors_nearby_task():
     	          users_1mile.append(userz.id)
         for zip in zipcodes_2mile:
     	      userszip = UserInfo.objects.filter(zipcode=zip)
-    	      for userz in userzip:
+    	      for userz in userszip:
     	          users_2mile.append(userz.id)
         for zip in zipcodes_3mile:
             userszip = UserInfo.objects.filter(zipcode=zip)
-            for userz in userzip:
+            for userz in userszip:
                 users_3mile.append(userz.id)
         for zip in zipcodes_4mile:
             userszip = UserInfo.objects.filter(zipcode=zip)
-            for userz in userzip:
+            for userz in userszip:
                 users_4mile.append(userz.id)
         for zip in zipcodes_5mile:
             userszip = UserInfo.objects.filter(zipcode=zip)
-            for userz in userzip:
+            for userz in userszip:
                 users_5mile.append(userz.id)
         if users_1mile:
             user.neighbors_1mileradius = json.dumps(users_1mile)
