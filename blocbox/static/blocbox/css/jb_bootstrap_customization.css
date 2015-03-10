@@ -1652,7 +1652,8 @@ body {
     position: absolute;
     white-space: nowrap;
     text-align: center;
-    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
     top: 0;
 }
 .cd-words-wrapper b.is-visible {
