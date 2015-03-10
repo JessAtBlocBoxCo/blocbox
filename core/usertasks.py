@@ -164,4 +164,5 @@ def add_neighbors_nearby_task():
             user.neighbors_4mileradius = json.dumps(users_4mile)
         if users_5mile:
             user.neighbors_5mileradius = json.dumps(users_5mile)
+        user.save()
     return "Users were added for 1, 2, 3, 4, 5 mile radius"
