@@ -1031,7 +1031,7 @@ footer {
     background-image: url('/static/blocbox/images/white-info-button-active.png');
 }
 .btn-start-green {
-    background-color: rgb(97, 183, 184);
+    background-color: rgb(71, 158, 159);
     color: white;
     font-size: 2.700em;
     font-weight: 400;
@@ -1049,11 +1049,11 @@ footer {
 }
 .btn-start-green:hover {
     background-color: white;
-    color: rgb(97, 183, 184);
+    color: rgb(71, 158, 159);
 }
 .btn-start-green:focus {
     background-color: white;
-    color: rgb(97, 183, 184);
+    color: rgb(71, 158, 159);
 }
 .btn-start-blue {
     background-color: rgb(37, 116, 169);
