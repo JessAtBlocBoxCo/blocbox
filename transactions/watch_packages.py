@@ -84,7 +84,7 @@ def main():
                 if new_status == 'Expired':
                     responsemessage = "Transaction ID " + str(trans.id) + " has expired" + "\n"                
                 elif new_status == 'Delivered':
-                	  if enduser.notifyuser_packagereceived == True:
+                    if enduser.notifyuser_packagereceived == True:
                 	      sendit = True
                     subject = "Your Package Has Been Delivered to the Host"  
                     message_body = "Your package, transaction ID " + str(trans.id) + " " + trans_title + " has been delivered to your host, " + host.first_name + host.last_name + ", at " + host_address_full + "!"                  
