@@ -571,7 +571,6 @@ def signupnoconnect(request):
     	      # Now we hash the password with the set_passworth method
     	      # Once hashed, we ca update the user object
     	      user.set_password(user.password)
-    	      #get zipcode
             zipcodeform = user_form.cleaned_data['zipcode']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
