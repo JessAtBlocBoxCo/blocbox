@@ -113,11 +113,11 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     #zipcodes nearby - start this as a character string thats long
     zipcodes_nearby = models.CharField(max_length=1000, blank=True, null=True)
     zipcodes_nearby_mileradius = models.IntegerField(blank=True, null=True, default=2)
-    neighbors_1mileradius = CharField(max_length=200, blank=True, null=True)
-    neighbors_2mileradius = CharField(max_length=400, blank=True, null=True)
-    neighbors_3mileradius = CharField(max_length=600, blank=True, null=True)
-    neighbors_4mileradius = CharField(max_length=800, blank=True, null=True)
-    neighbors_5mileradius = CharField(max_length=1000, blank=True, null=True)
+    neighbors_1mileradius = models.CharField(max_length=200, blank=True, null=True)
+    neighbors_2mileradius = models.CharField(max_length=400, blank=True, null=True)
+    neighbors_3mileradius = models.CharField(max_length=600, blank=True, null=True)
+    neighbors_4mileradius = models.CharField(max_length=800, blank=True, null=True)
+    neighbors_5mileradius = models.CharField(max_length=1000, blank=True, null=True)
     #addingj custom or text fields
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
     customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)
