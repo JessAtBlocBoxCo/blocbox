@@ -56,7 +56,8 @@ INSTALLED_APPS = (
 
 
 #set the broker url
-BROKER_URL = "amqp://jess:goodhood@localhost:5672/blocbox"
+#BROKER_URL = "amqp://jess:goodhood@localhost:5672/blocbox"
+BROKER_URL = 'django://'
 CELERY_RESULT_BACKEND = "database"
 CELERY_RESULT_DBURI="postgresql://django:OgdDdrmVUF@localhost/django" 
  
