@@ -353,3 +353,9 @@ class PeriodicTaskAdmin(admin.ModelAdmin):
 admin.site.register(IntervalSchedule)
 admin.site.register(CrontabSchedule)
 admin.site.register(PeriodicTask, PeriodicTaskAdmin)
+
+
+from djcelery.models import TaskMeta
+class TaskMetaAdmin(admin.ModelAdmin):
+    readonly_fields = ('result',)    
+admin.site.register(TaskMeta, TaskMetaAdmin)
