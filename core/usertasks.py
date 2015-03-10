@@ -134,10 +134,10 @@ def add_neighbors_nearby_task():
         users_3mile = []
         users_4mile = []
         users_5mile = []
-    	  for zip in zipcodes_1mile:
+        for zip in zipcodes_1mile:
     	      users= UserInfo.objects.filter(zipcode=zip)
     	      users_1mile.append(users)
-    	  for zip in zipcodes_2mile:
+        for zip in zipcodes_2mile:
     	      users = UserInfo.objects.filter(zipcode=zip)
     	      users_2mile.append(users)
         for zip in zipcodes_3mile:
