@@ -86,7 +86,7 @@ def delete_zipcodes_nearby():
         responsemessage = responsemessage + "The zipcode_nearby entry was deleted for " + str(user.email) + "."
     return responsemessage
 
-def add_zipcodes_nearby_all(mileradius)
+def add_zipcodes_nearby_all(mileradius):
     users_all = UserInfo.objects
     responsemessage = ""
     for user in users_all:
