@@ -44,13 +44,13 @@ def add_zips_nearby_all(mileradius):
     return add_zipcodes_nearby_all(mileradius)
 
 @app.task 
-def default_mileradius(mileradius):
-    return default_mileradius_task(mileradius)
+def set_default_mileradius(mileradius):
+    return set_default_mileradius_task(mileradius)
 
 @app.task
 def set_mileradius_user(mileradius):
     return set_mileradius_user_task(mileradius)
 
-set default_mileradius_task, set_mileradius_user_task
+
 if __name__ == '__main__':
     app.worker_main()
