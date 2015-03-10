@@ -40,8 +40,8 @@ def delete_zips_nearby():
     return delete_zipcodes_nearby()
     
 @app.task
-def add_zips_nearby_all(mileradius):
-    return add_zipcodes_nearby_all(mileradius)
+def add_zips_nearby_all():
+    return add_zipcodes_nearby_all()
 
 @app.task 
 def set_default_mileradius(mileradius):

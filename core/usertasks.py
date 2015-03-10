@@ -86,11 +86,15 @@ def delete_zipcodes_nearby():
         responsemessage = responsemessage + "The zipcode_nearby entry was deleted for " + str(user.email) + "."
     return responsemessage
 
-def add_zipcodes_nearby_all(mileradius):
+def add_zipcodes_nearby_all():
     users_all = UserInfo.objects.all()
     responsemessage = ""
     for user in users_all:
         zip = user.zipcode
+        if user.zipcodes_nearby_mileradius:
+            mileradius = user.zipcodes_nearby_mileradius
+        else:
+            mileradius = 2
         zipcode = zcdb[zip]
         zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, mileradius)]
         zipcodes_nearby_json = json.dumps(zipcodes_nearby)
