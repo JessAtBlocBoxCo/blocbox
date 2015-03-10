@@ -119,9 +119,12 @@ def set_mileradius_user_task(userid, mileradius):
     responsemessage = "The mileradius variable has been set to " + str(mileradius) + " for user " + str(enduser.email) + "."
     return responsemessage
 
-def add_neighbors_nearby_task():
-    users_all = UserInfo.objects.all()
-    for user in users_all:
+def add_neighbors_nearby_task(userid=None):
+	  if userid:
+	      users_list = UserInfo.objects.get(pk=userid)
+    else:
+        users_list = UserInfo.objects.all()
+    for user in users_list:
         zip = user.zipcode
         zipcode = zcdb[zip]
         zipcodes_1mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 1)]
