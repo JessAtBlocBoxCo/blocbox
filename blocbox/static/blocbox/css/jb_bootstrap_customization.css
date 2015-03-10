@@ -109,8 +109,8 @@ a:active {
 .subnavtextcurrent {
     font-size: 1.00em;
     font-weight: 700;
-    color: rgb(211, 84, 0);
-    text-shadow: 0px 2px 5px rgb(236, 240, 241)
+    color: rgb(241, 102, 100);
+    text-shadow: 0px 2px 5px rgb(236, 240, 241);
 }
 .subnavtextcurrent:hover {
     color: rgb(211, 84, 0);
