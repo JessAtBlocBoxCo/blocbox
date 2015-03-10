@@ -405,21 +405,24 @@ def addinterest(request):
     return render(request, 'blocbox/editprofile/addinterest.html', {'enduser': enduser})
 
 def account(request):
-    enduser = request.user   
-    if request.method == 'POST':
-        form = NotificationSettings(request.POST, instance=enduser)
-        if form.is_valid():
-            notify = form.save()
-            notify.save()
-            user = UserInfo.objects.get(pk=enduser.id)
-            mileradius = user_form.cleaned_data['zipcodes_nearby_mileradius']
-            if mileradius == 0:
-                user.notifynotifyuser_newhostonblock = False
-                user.save()
-        else: 
-            print form.errors
+    enduser = request.user  
+    if enduser.is_authenticated():
+        if request.method == 'POST':
+            form = NotificationSettings(request.POST, instance=enduser)
+            if form.is_valid():
+                notify = form.save()
+                notify.save()
+                user = UserInfo.objects.get(pk=enduser.id)
+                mileradius = user_form.cleaned_data['zipcodes_nearby_mileradius']
+                if mileradius == 0:
+                    user.notifynotifyuser_newhostonblock = False
+                    user.save()
+            else: 
+                print form.errors
+        else:
+            form = NotificationSettings(instance=enduser)
     else:
-        form = NotificationSettings(instance=enduser)
+        form = None
     return render(request, 'blocbox/account.html', {'enduser': enduser, 'form': form, })
 
 def paymentoptions(request):

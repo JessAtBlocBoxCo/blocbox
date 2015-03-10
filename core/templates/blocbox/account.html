@@ -27,30 +27,9 @@
         </div>
         <!--row-->
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 margintop30px paddingbottom20px">
-          <!--  <div class="profilebox">
-                <div class="centerboxheader nopadding">
-                    <p class="col-sm-10 bluegreytext nopadding">Mobile Phone</p>
-                </div>
-                <div class="profileboxline"></div>
-                <div class="row paddingbottom20px" style="padding-left: 7.5%; padding-right: 7.5%">
-                    <div class="col-sm-4 nopaddingleft paddingtop20px">
-                        <h6 class="darkgreytext">Receive mobile updates by regular SMS text message.</h6>
-                    </div>
-                    <div class="col-xs-12 col-sm-8 paddingtop30px">
-                        <div class="checkbox checkbox-success checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                            <input id="inlineCheckbox16" type="checkbox" value="option1">
-                            <label for="inlineCheckbox16">Enable Text Message Notications</label>
-                        </div>
-                        <form class="form-inline paddingtop10px">
-                            <div class="form-group paddingleft10px">
-                                <label for="smsphone">Recieve SMS notifications to:&nbsp;</label>
-                                <input type="tel" class="form-control" id="smsphone" placeholder="XXX-XXX-XXXX">
-                            </div>
-                        </form>
-                        <a class="paddingleft10px paddingtop5px" href="">Modify phone number</a>
-                    </div>
-                </div>
-            </div> -->
+   
+   			{% if user.is_authenticated %}
+   						
 
             <div class="profilebox">
                 <p class="bluegreytext centerboxheader">Notification Settings</p>
@@ -194,6 +173,26 @@
                 </div>
             </div>
         </div>
+       
+       	{% else %}
+        <!--if user is not authenticated-->
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+            <div class="col-xs-12 dashbox">
+                <h3 class="margintop10px nopadding">v <a href="/login">Login to your account </a> to access your dashboard. </h3>
+                <h6>  <br>         	 	
+                	<br> If you don't have an account, get started by <a href="/search/"> searching for a host in your neighborhood.</a> 
+               		<br> If you can't find a host, <a href="/waitlist/">join our waitlist </a> to be notified when Blocbox comes to your neighborhood 
+               		 				or <a href="/signup/"> sign up without connecting to a host.</a> 
+               		<br> If you're often at home during the day,  <a href="/signuphost/"> apply to serve as a Blocbox host</a> or <a href="/nudgeaneighbor/">tell a neighbor</a> about the opportunity. 
+               		<br> <br> Questions or feedback? Email us at info@blocbox.co. 
+               	  <br> <a href="/beta/">Return to the homepage (Beta)</a> 
+               	  <br> <br>
+               </h6>
+            </div>
+            <!--col-xs12 dashbox-->
+        </div>
+     		<!--close if user is not authenticated-->
+      {% endif %}
     </div>
 </div>
 {% endblock %}
