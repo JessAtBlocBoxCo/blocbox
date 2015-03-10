@@ -96,7 +96,7 @@ def main():
                     message_body = "There was a delivery exception for your package, transaction ID " + str(trans.id) + " " + trans_title + "."
                     responsemessage = "An email was sent to " + str(enduser.email) + " notifying them that trans ID " + str(trans.id) + " had a delivery exception" + "\n"
                 elif new_status == 'InTransit':
-                	  if enduser.notifyuser_packageships = True:
+                	  if enduser.notifyuser_packageships == True:
                 	      sendit = True
                     message_body = "Your package, transaction ID " + str(trans.id) + " " + trans_title + " is in transit!"
                     subject = "Your Package is in Transit"
@@ -107,7 +107,7 @@ def main():
                     responsemessage = "Tracking info for trans ID " + str(trans.id) + " has been updated to " + new_status + " no email sent" + "\n"
                 message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,
                 		'new_status': new_status, 'message_body': message_body, 'tracking_link': tracking_link, })
-                if sendit = True:
+                if sendit == True:
                     send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])    
                 response_messages_list.append(responsemessage)
             else:
