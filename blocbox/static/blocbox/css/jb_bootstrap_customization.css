@@ -1651,11 +1651,13 @@ body {
     display: inline-block;
     position: absolute;
     white-space: nowrap;
+    text-align: center;
     left: 0;
     top: 0;
 }
 .cd-words-wrapper b.is-visible {
     position: relative;
+    text-align: center;
 }
 .no-js .cd-words-wrapper b {
     opacity: 0;
