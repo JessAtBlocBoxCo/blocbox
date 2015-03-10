@@ -883,8 +883,8 @@ footer {
     background-color: transparent;
     font-size: 1.500em;
     font-weight: 400;
-    color: rgb(255, 195, 0);
-    border: 2px solid rgb(255, 195, 0);
+    color: #ffffff;
+    border: 2px solid rgb(255, 255, 255);
     padding: 2px 25px 2px 25px;
     margin-top: 15px;
     margin-left: 60px;
