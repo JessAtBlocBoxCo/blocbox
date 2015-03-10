@@ -1,0 +1,56 @@
+[2015-03-10 11:48:49,943: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2015-03-10 11:48:50,073: INFO/MainProcess] Connected to django://localhost//
+[2015-03-10 11:48:50,114: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:254: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2015-03-10 11:48:50,115: WARNING/MainProcess] w1@BlocBoxonDjango ready.
+[2015-03-10 11:49:05,168: INFO/MainProcess] Received task: tasks.test_schedule[64ffdae2-5e84-42e8-bff7-2b18216e0381]
+[2015-03-10 11:49:05,180: INFO/MainProcess] Received task: tasks.watch_packages[02dd89e4-ce79-4a4e-a265-1f726f0cbe79]
+[2015-03-10 11:49:05,292: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:05,486: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:05,669: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:05,863: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:06,054: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:06,224: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:06,389: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:06,548: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:06,707: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:06,849: INFO/MainProcess] Task tasks.test_schedule[64ffdae2-5e84-42e8-bff7-2b18216e0381] succeeded in 1.680092995s: An email has been sent to test the celery beat -should happene very minute - the less shit transaction
+[2015-03-10 11:49:06,860: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:07,049: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:07,206: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:07,364: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:07,519: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:07,677: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:07,834: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:07,986: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:08,167: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:08,326: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:08,475: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:08,631: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 11:49:08,723: INFO/MainProcess] Task tasks.watch_packages[02dd89e4-ce79-4a4e-a265-1f726f0cbe79] succeeded in 3.540691139s: [u'The status did not change for trans id 140; the status is: Exception\n', u'The status did not change for trans id 76; the...
+[2015-03-10 11:50:05,388: INFO/MainProcess] Received task: tasks.test_schedule[877cd6c4-ceef-479b-b9e8-27c90d66921f]
+[2015-03-10 11:50:07,674: INFO/MainProcess] Task tasks.test_schedule[877cd6c4-ceef-479b-b9e8-27c90d66921f] succeeded in 2.28485976602s: An email has been sent to test the celery beat -should happene very minute - the less shit transaction
+[2015-03-10 11:51:05,568: INFO/MainProcess] Received task: tasks.test_schedule[d9babfb6-174d-405b-b2cb-89010a328169]
+[2015-03-10 11:51:07,954: INFO/MainProcess] Task tasks.test_schedule[d9babfb6-174d-405b-b2cb-89010a328169] succeeded in 2.38482393604s: An email has been sent to test the celery beat -should happene very minute - the less shit transaction
+[2015-03-10 11:52:05,769: INFO/MainProcess] Received task: tasks.test_schedule[0d5a8d9b-475d-4292-8955-1c9f5e197554]
+[2015-03-10 11:52:08,217: INFO/MainProcess] Task tasks.test_schedule[0d5a8d9b-475d-4292-8955-1c9f5e197554] succeeded in 2.44657043199s: An email has been sent to test the celery beat -should happene very minute - the less shit transaction
