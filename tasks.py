@@ -5,7 +5,7 @@ from django.conf import settings
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from transactions.watch_packages import main as watch_packages_task
 from transactions.watch_packages import test_celery_beat
-from core.usertasks import get_zipcodes_nearby, add_zipcodes_nearby
+from core.usertasks import get_zipcodes_nearby, add_zipcodes_nearby, delete_zipcodes_nearby, add_zipcodes_nearby_all
 from celeryconf import app
 #app = Celery('blocbox')
 #app = Celery('tasks', broker=BROKER_URL)
@@ -34,6 +34,14 @@ def get_zips_nearby(userid, mileradius):
 @app.task
 def add_zips_nearby(userid, mileradius):
    return add_zipcodes_nearby(userid, mileradius)
+ 
+@app.task
+def delete_zips_nearby():
+    return delete_zipcodes_nearby()
+    
+@app.task
+def add_zips_nearby_all(mileradius):
+    return add_zipcodes_nearby_all(mileradius)
  
 if __name__ == '__main__':
     app.worker_main()

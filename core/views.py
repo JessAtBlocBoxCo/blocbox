@@ -4,6 +4,8 @@ from django.core.urlresolvers import reverse
 from django.template import RequestContext, loader #allows it to load templates from blocbox/templates
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
+import json
+jsonDec = json.decoder.JSONDecoder()
 #Add CORE and TRANSACTIONS models
 from core.models import UserInfo
 from connections.models import Connection
@@ -517,11 +519,12 @@ def signupconnect(request, host_id):
             user.save()   	
             #get nearby zips
             zipcodeform = user_form.cleaned_data['zipcode']
-            zipcode = zcdb[zipcodeform]
+            zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+            zipcodes_nearby_json = json.dumps(zipcodes_nearby)
             user.city = zipcode.city
             user.state = zipcode.state
-            user.zipcodes_nearby = zipcodes_nearby
+            user.zipcodes_nearby = zipcodes_nearby_json
             user.save()
             #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
             #if 'picture' in request.FILES:

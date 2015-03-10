@@ -33,6 +33,9 @@ from django_messages.views import notify_user_received_message
 import pyzipcode
 from pyzipcode import ZipCodeDatabase
 zcdb = ZipCodeDatabase()
+#json
+import json
+jsonDec = json.decoder.JSONDecoder()
 
 #GET A LIST OF ALL TRANSACTIONS ON AFTERHIP
 transactions_onaftership = Transaction.objects.filter(on_aftership=True)
@@ -44,6 +47,7 @@ def get_zipcodes_nearby(userid, mileradius):
     zip = enduser.zipcode
     zipcode = zcdb[zip]
     zipnearby_string = enduser.zipcodes_nearby
+    zipnearby_list = jsonDec.decode(zipnearby_string)
     if zipnearby_string:
         responsemessage = "The zipcode_nearby string is on the User Table for " + str(enduser.email) + ". The zipcodes nearby string is " + str(enduser.zipcodes_nearby) + "."
     else:
@@ -53,7 +57,7 @@ def get_zipcodes_nearby(userid, mileradius):
     if zipnearby_string:
         responsemessage = responsemessage + " Testing separateing the string into elements separated by comma : "
         eachzip = ""
-        for zip in zipnearby_string:
+        for zip in zipnearby_list:
             eachzip = eachzip + str(zip) + ", "
         responsemessage = responsemessage + str(eachzip)
     return responsemessage
@@ -65,13 +69,33 @@ def add_zipcodes_nearby(userid, mileradius):
     zipcode = zcdb[zip]
     zipnearby_string = enduser.zipcodes_nearby
     zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, mileradius)]
-    if zipnearby_string:
-        responsemessage = "The zipcode_nearby string is on the User Table for " + str(enduser.email) + ". The zipcodes nearby string is " + str(enduser.zipcodes_nearby) + "."
-    else:
-        enduser.zipcodes_nearby = str(zipcodes_nearby)
-        enduser.save()
-        responsemessage = "The zipcode_nearby string was empty on the User Table for " + str(enduser.email) + "."     
-        new_zipnearby_string = enduser.zipcodes_nearby
-        responsemessage = " The table has been updated. The zipcodes_nearby string is: " + str(new_zipnearby_string) + "."
+    zipcodes_nearby_json = json.dumps(zipcodes_nearby)
+    enduser.zipcodes_nearby = zipcodes_nearby_json
+    enduser.save()    
+    new_zipnearby_string = enduser.zipcodes_nearby
+    responsemessage = " The table has been updated. The zipcodes_nearby string is: " + str(new_zipnearby_string) + "."
     responsemessage = responsemessage + " The zipcodes in a " + str(mileradius) + " mile radius of " + str(enduser.email) + " are: " + str(zipcodes_nearby) + "."
     return responsemessage
+
+def delete_zipcodes_nearby():
+    users_all = UserInfo.objects
+    responsemessage = ""
+    for user in users_all:
+        user.zipcodes_nearby = None
+        user.save()
+        responsemessage = responsemessage + "The zipcode_nearby entry was deleted for " + str(user.email) + "."
+    return responsemessage
+
+def add_zipcodes_nearby_all(mileradius)
+    users_all = UserInfo.objects
+    responsemessage = ""
+    for user in users_all:
+        zip = user.zipcode
+        zipcode = zcdb[zip]
+        zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, mileradius)]
+        zipcodes_nearby_json = json.dumps(zipcodes_nearby)
+        user.zipcodes_nearby = zipcodes_nearby_json
+        user.save()
+        responsemessage = responsemessage + "The zipcode_nearby entry was added for " + str(user.email) \
+            + ". The zipcodes within a " + str(mileradius) + " mile radius are: " + str(zipcodes_nearby) "."
+        return responsemessage
