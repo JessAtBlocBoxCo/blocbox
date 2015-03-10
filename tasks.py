@@ -53,7 +53,7 @@ def set_mileradius_user(userid, mileradius):
     return set_mileradius_user_task(userid, mileradius)
 
 @app.task
-def add_neighbors_nearby()
+def add_neighbors_nearby():
     return add_neighbors_nearby()
     
 if __name__ == '__main__':
