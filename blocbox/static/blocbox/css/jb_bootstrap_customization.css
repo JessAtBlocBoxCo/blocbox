@@ -836,8 +836,17 @@ footer {
     border-radius: 0px;
     white-space: nowrap;
 }
+.nav-text {
+    font-family: proxima nova soft;
+    font-size: 1.00em;
+    font-weight: 400;
+    line-height: 1.38em;
+    color: white;
+}
+
 .orangenavbtn {
     background-color: transparent;
+    font-family: proxima nova soft;
     font-size: 1.00em;
     font-weight: 400;
     line-height: 1.38em;
