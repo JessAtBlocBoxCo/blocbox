@@ -50,6 +50,12 @@ def get_zipcodes_nearby(userid, mileradius):
         responsemessage = "The zipcode_nearby string is empty on the User Table for " + str(enduser.email) + "." 
     zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, mileradius)]
     responsemessage = responsemessage + " The zipcodes in a " + str(mileradius) + " mile radius of " + str(enduser.email) + " are: " + str(zipcodes_nearby) + "."
+    if zipnearby_string:
+        responsemessage = responsemessage + " Testing separateing the string into elements separated by comma : "
+        eachzip = None
+        for zip in zipnearby_string:
+            eachzip = eachzip + str(zip) + ", "
+        responsemessage = responsemessage + str(eachzip)
     return responsemessage
 
 def add_zipcodes_nearby(userid, mileradius):
