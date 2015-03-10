@@ -51,3 +51,21 @@ def get_zipcodes_nearby(userid, mileradius):
     zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, mileradius)]
     responsemessage = responsemessage + " The zipcodes in a " + str(mileradius) + " mile radius of " + str(enduser.email) + " are: " + str(zipcodes_nearby) + "."
     return responsemessage
+
+def add_zipcodes_nearby(userid, mileradius):
+    enduser = UserInfo.objects.get(pk=userid)
+    responsemessage = None
+    zip = enduser.zipcode
+    zipcode = zcdb[zip]
+    zipnearby_string = enduser.zipcodes_nearby
+    zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, mileradius)]
+    if zipnearby_string:
+        responsemessage = "The zipcode_nearby string is on the User Table for " + str(enduser.email) + ". The zipcodes nearby string is " + str(enduser.zipcodes_nearby) + "."
+    else:
+    	  enduser.zipcodes_nearby = str(zipcodes_nearby)
+    	  enduser.save()
+        responsemessage = "The zipcode_nearby string was empty on the User Table for " + str(enduser.email) + "."     
+        new_zipnearby_string = enduser.zipcodes_nearby
+        responsemessage = " The table has been updated. The zipcodes_nearby string is: " + str(new_zipnearby_string) + "."
+    responsemessage = responsemessage + " The zipcodes in a " + str(mileradius) + " mile radius of " + str(enduser.email) + " are: " + str(zipcodes_nearby) + "."
+    return responsemessage
