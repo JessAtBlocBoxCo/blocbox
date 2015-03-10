@@ -80,9 +80,9 @@ def main():
                     host_address_full = host.st_address1 + ", " + host.st_address2
                 else:
                     host_address_full = host.st_address1
-                if new_status == 'Expired':
-                    responsemessage = "Transaction ID " + str(trans.id) + " has expired" + "\n"
                 sendit = False
+                if new_status == 'Expired':
+                    responsemessage = "Transaction ID " + str(trans.id) + " has expired" + "\n"                
                 elif new_status == 'Delivered':
                 	  if enduser.notifyuser_packagereceived == True:
                 	      sendit = True
