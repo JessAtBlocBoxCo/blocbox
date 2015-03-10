@@ -1,6 +1,0 @@
- id |               task_id                | status  |                                                                          result                                                                          |           date_done           | traceback | hidden |                     meta                     
-----+--------------------------------------+---------+----------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------+-----------+--------+----------------------------------------------
-  1 | 5bbaa248-1edd-4e71-ba7e-27d47c5dff04 | SUCCESS | gAJLBC4=                                                                                                                                                 | 2015-03-09 20:55:29.286659-04 |           | f      | eJxrYKotZIzgYGBgSM7IzEkpSs0rZIotZC7WAwBWuwcA
-  2 | c2e25da0-1433-4ad6-927c-3017d1a6fe1a | SUCCESS | gAJVakFuIGVtYWlsIGhhcyBiZWVuIHNlbnQgdG8gdGVzdCB0aGUgY2VsZXJ5IGJlYXQgLXNob3VsZCBoYXBwZW4gZXZlcnkgMzAgc2Vjb25kcyAtIHRoZSBsZXNzIHNoaXQgdHJhbnNhY3Rpb25xAS4= | 2015-03-09 20:58:26.488531-04 |           | f      | eJxrYKotZIzgYGBgSM7IzEkpSs0rZIotZC7WAwBWuwcA
-(2 rows)
-
