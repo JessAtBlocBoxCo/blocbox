@@ -411,6 +411,11 @@ def account(request):
         if form.is_valid():
             notify = form.save()
             notify.save()
+            user = UserInfo.objects.get(pk=enduser.id)
+            mileradius = user_form.cleaned_data['zipcodes_nearby_mileradius']
+            if mileradius == 0:
+                user.notifynotifyuser_newhostonblock = False
+                user.save()
         else: 
             print form.errors
     else:
