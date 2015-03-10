@@ -105,7 +105,7 @@ def set_default_mileradius_task(mileradius):
     for user in users_all:
         user.zipcodes_nearby_mileradius = mileradius
         user.save()
-    responsemessage "The mileradius for all users has been set to " + str(mileradius) + " miles."
+    responsemessage = "The mileradius for all users has been set to " + str(mileradius) + " miles."
     return responsemessage
 
 def set_mileradius_user_task(userid, mileradius):
