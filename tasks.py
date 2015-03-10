@@ -29,7 +29,7 @@ def test_schedule(enduserid, hostid, transid):
 
 @app.task
 def get_zips_nearby(userid):
-    return get_zipcodes_nearby(userid, mileradius)
+    return get_zipcodes_nearby(userid)
 
 @app.task
 def add_zips_nearby(userid, mileradius):
