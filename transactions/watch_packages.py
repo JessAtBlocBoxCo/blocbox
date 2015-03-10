@@ -82,25 +82,33 @@ def main():
                     host_address_full = host.st_address1
                 if new_status == 'Expired':
                     responsemessage = "Transaction ID " + str(trans.id) + " has expired" + "\n"
+                sendit = False
                 elif new_status == 'Delivered':
+                	  if enduser.notifyuser_packagereceived == True:
+                	      sendit = True
                     subject = "Your Package Has Been Delivered to the Host"  
                     message_body = "Your package, transaction ID " + str(trans.id) + " " + trans_title + " has been delivered to your host, " + host.first_name + host.last_name + ", at " + host_address_full + "!"                  
                     responsemessage ="An email has been sent to " + str(enduser.email) + " notifying them that trans id " + str(trans.id) + " was delivered" + "\n"
                 elif new_status == 'Exception':
+                	  if enduser.notifyuser_deliveryexception == True:
+                	      sendit = True
                     subject = "There was a delivery exception for transaction ID " + str(trans.id)
                     message_body = "There was a delivery exception for your package, transaction ID " + str(trans.id) + " " + trans_title + "."
                     responsemessage = "An email was sent to " + str(enduser.email) + " notifying them that trans ID " + str(trans.id) + " had a delivery exception" + "\n"
                 elif new_status == 'InTransit':
+                	  if enduser.notifyuser_packageships = True:
+                	      sendit = True
                     message_body = "Your package, transaction ID " + str(trans.id) + " " + trans_title + " is in transit!"
                     subject = "Your Package is in Transit"
-                    responsemessage = "An email was sent to " + str(enduser.email) + " notifying them that trans ID " + str(trans.id) + " is in transit"
+                    responsemessage = "Package for " + str(enduser.email) + " trans ID " + str(trans.id) + " is in transit. email sent? " + str(sendit)
                 else:
                     message_body = "There was a tracking update for your package, transaction ID " + str(trans.id) + " " + trans_title + ".  The status was changed from " + current_status + " to: " + new_status + "."
                     subject = "The tracking information for your package has been updated"
-                    responsemessage = "Tracking info for trans ID " + str(trans.id) + " has been updated to " + new_status + " an email was sent" + "\n"
+                    responsemessage = "Tracking info for trans ID " + str(trans.id) + " has been updated to " + new_status + " no email sent" + "\n"
                 message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,
                 		'new_status': new_status, 'message_body': message_body, 'tracking_link': tracking_link, })
-                send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])    
+                if sendit = True:
+                    send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])    
                 response_messages_list.append(responsemessage)
             else:
                 responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"

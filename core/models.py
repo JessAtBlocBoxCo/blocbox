@@ -105,7 +105,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     notifyuser_hostnewtask = models.BooleanField(blank=True, default=True)
     notifyuser_message = models.BooleanField(blank=True, default=True)
     notifyuser_packageships = models.BooleanField(blank=True, default=True)
-    notifyuser_packageissue = models.BooleanField(blank=True, default=True)
+    notifyuser_deliveryexception = models.BooleanField(blank=True, default=True)
     notifyuser_packagereceived = models.BooleanField(blank=True, default=True)
     notifyuser_blocboxnews = models.BooleanField(blank=True, default=True)
     notifyuser_trackinginfo = models.BooleanField(blank=True, default=True)
