@@ -41,7 +41,7 @@ jsonDec = json.decoder.JSONDecoder()
 transactions_onaftership = Transaction.objects.filter(on_aftership=True)
 
 
-def get_zipcodes_nearby(userid, mileradius):
+def get_zipcodes_nearby(userid):
     enduser = UserInfo.objects.get(pk=userid)
     responsemessage = None
     zip = enduser.zipcode
@@ -49,13 +49,12 @@ def get_zipcodes_nearby(userid, mileradius):
     zipnearby_string = enduser.zipcodes_nearby
     zipnearby_list = jsonDec.decode(zipnearby_string)
     if zipnearby_string:
-        responsemessage = "The zipcode_nearby string is on the User Table for " + str(enduser.email) + ". The zipcodes nearby string is " + str(enduser.zipcodes_nearby) + "."
+        responsemessage = "The zipcode_nearby string is on the User Table for " + str(enduser.email) \
+            + ". The zipcodes nearby string is " + str(enduser.zipcodes_nearby) + "."
     else:
         responsemessage = "The zipcode_nearby string is empty on the User Table for " + str(enduser.email) + "." 
-    zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, mileradius)]
-    responsemessage = responsemessage + " The zipcodes in a " + str(mileradius) + " mile radius of " + str(enduser.email) + " are: " + str(zipcodes_nearby) + "."
     if zipnearby_string:
-        responsemessage = responsemessage + " Testing separateing the string into elements separated by comma : "
+        responsemessage = responsemessage + " Testing separating the string into elements separated by comma : "
         eachzip = ""
         for zip in zipnearby_list:
             eachzip = eachzip + str(zip) + ", "
