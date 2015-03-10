@@ -113,8 +113,8 @@ def test_celery_beat(enduserid, hostid, transid):
     trans = Transaction.objects.get(pk=transid)
     enduser = UserInfo.objects.get(pk=enduserid)
     host = UserInfo.objects.get(pk=hostid)
-    message_body = "this is a test of celery beat - send every 45 seconds"
-    subject = "Testing Celery Beat - shoudl second every 45 seconds"
+    message_body = "this is a test of celery beat - send every minute"
+    subject = "Testing Celery Beat - shoudl second every minute"
     message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,'message_body': message_body, })
     send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
     return "An email has been sent to test the celery beat -should happene very minute - the less shit transaction"
