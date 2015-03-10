@@ -121,7 +121,7 @@ def set_mileradius_user_task(userid, mileradius):
 
 def add_neighbors_nearby_task(userid=None):
     if userid:
-	      users_list = UserInfo.objects.get(pk=userid)
+	      users_list = UserInfo.objects.filter(id=userid)
     else:
         users_list = UserInfo.objects.all()
     for user in users_list:
