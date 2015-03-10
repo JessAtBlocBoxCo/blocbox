@@ -44,13 +44,14 @@ transactions_onaftership = Transaction.objects.filter(on_aftership=True)
 def get_zipcodes_nearby(userid):
     enduser = UserInfo.objects.get(pk=userid)
     responsemessage = None
+    mileradius = enduser.zipcodes_nearby_mileradius
     zip = enduser.zipcode
     zipcode = zcdb[zip]
     zipnearby_string = enduser.zipcodes_nearby
     zipnearby_list = jsonDec.decode(zipnearby_string)
     if zipnearby_string:
         responsemessage = "The zipcode_nearby string is on the User Table for " + str(enduser.email) \
-            + ". The zipcodes nearby string is " + str(enduser.zipcodes_nearby) + "."
+            + ". The zipcodes within " + str(mileradius) + " miles are " + str(enduser.zipcodes_nearby) + "."
     else:
         responsemessage = "The zipcode_nearby string is empty on the User Table for " + str(enduser.email) + "." 
     if zipnearby_string:
@@ -99,10 +100,17 @@ def add_zipcodes_nearby_all(mileradius):
             + ". The zipcodes within a " + str(mileradius) + " mile radius are: " + str(zipcodes_nearby) + "."
     return responsemessage
 
-def set_default_mileradius_all_task(mileradius);
+def set_default_mileradius_task(mileradius):
     users_all = UserInfo.objects.all()
     for user in users_all:
         user.zipcodes_nearby_mileradius = mileradius
         user.save()
     responsemessage "The mileradius for all users has been set to " + str(mileradius) + " miles."
+    return responsemessage
+
+def set_mileradius_user_task(userid, mileradius):
+    enduser = UserInfo.objects.filter(pk=userid)
+    enduser.zipcodes_nearby_mileradius = mileradius
+    enduser.save()
+    responsemessage = "The mileradius variable has been set to " + str(mileradius) + " for user " + str(enduser.email) + "."
     return responsemessage
