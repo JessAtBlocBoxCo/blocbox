@@ -837,7 +837,6 @@ footer {
     white-space: nowrap;
 }
 .nav-text {
-    font-family: "proxima-nova-soft";
     font-size: 1.10em;
     font-weight: 400;
     line-height: 1.38em;
@@ -847,7 +846,6 @@ footer {
 
 .orangenavbtn {
     background-color: transparent;
-    font-family: "proxima-nova-soft";
     font-size: 1.30em;
     font-weight: 400;
     line-height: 1.38em;
