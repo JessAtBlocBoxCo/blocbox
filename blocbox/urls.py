@@ -55,9 +55,9 @@ urlpatterns = patterns('',
  		url(r'^passwordreset/',include('password_reset.urls')),
  		url(r'^messages/', include('django_messages.urls')),
  		url(r'^scheduling/', include('schedule.urls')),
- 		url(r'^datascience/', include('datasci.urls')),
-        url(r'^editprofile/$', views.editprofile, name='editprofile'),
-        url(r'^addinterest/$', views.addinterest, name='addinterest'),
+ 		#url(r'^datascience/', include('datasci.urls')),
+    url(r'^editprofile/$', views.editprofile, name='editprofile'),
+    url(r'^addinterest/$', views.addinterest, name='addinterest'),
  		
 )
 
