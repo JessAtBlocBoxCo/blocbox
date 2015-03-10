@@ -310,18 +310,16 @@ def dashboard_tracking_modal(request, track_id):
                     c_list_first = c_list[0] #the first element in the list of couriers, since there is only one
                     slug_detected = str(c_list_first.get(u'slug'))
                     # create tracking at aftership: https://www.aftership.com/docs/api/4/trackings/post-trackings
-                    if trans.enduser.first_name:
-                        customer_name = str(trans.enduser.first_name) + " " + str(trans.enduser.last_name)
+                    # Change customer_name to hos name
+                    if trans.host.first_name:
+                        customer_name = str(trans.host.first_name) + " " + str(trans.host.last_name)
                     else:
-                        customer_name = str(trans.enduser.email)   
+                        customer_name = str(trans.host.email)   
                     #aftership error codes: https://www.aftership.com/docs/api/4/errors
-                    #except aftership.APIv4RequestException as error:
-                    #print 'Error:', error.code(), error.type(), error.message()
-                    #see if its already on aftership
-                    if enduser.notifyuser_trackinginfo:
-                        notifyemails = [trans.enduser.email, trans.host.email]
-                    else:
-                        notifyemails = [trans.host.email]
+                    #if enduser.notifyuser_trackinginfo:
+                    #    notifyemails = [trans.enduser.email, trans.host.email]
+                    #else:
+                    notifyemails = [trans.host.email]
                     try:
                         api.trackings.post(tracking=dict(
     		                    slug=slug_detected, tracking_number=tracking_no_to_add,  
@@ -329,7 +327,7 @@ def dashboard_tracking_modal(request, track_id):
     		                    order_id=str(trans.id),
     		                    customer_name=customer_name,
     		                    emails = notifyemails,
-    		                    custom_fields=dict(Host_Email=trans.host.email, Invoice=trans.invoice)
+    		                    custom_fields=dict(Enduser_Recipient_Email=trans.enduser.email, Invoice=trans.invoice)
     		                    #Eventually consider add SMSEs here to add phone notifications - its 4 cents per SMS so may not be worth it
     		                    )) 	
                     except aftership.APIv4RequestException as error: 
