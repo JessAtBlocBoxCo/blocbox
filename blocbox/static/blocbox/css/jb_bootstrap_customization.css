@@ -1003,10 +1003,12 @@ footer {
 .btn-info-wht:hover {
     background-color: rgb(255, 195, 0);
     color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 195, 0);
 }
 .btn-info-wht:focus {
     background-color: rgb(255, 195, 0);
     color: rgb(255, 255, 255);
+    border: 2px solid rgb(255, 195, 0);
 }
 .navinfobtnwht {
     background-image: url('/static/blocbox/images/info-button-white-outline.png');
