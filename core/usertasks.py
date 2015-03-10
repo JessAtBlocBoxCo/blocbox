@@ -149,9 +149,14 @@ def add_neighbors_nearby_task():
         for zip in zipcodes_5mile:
             users = UserInfo.objects.filter(zipcode=zip)
             users_5mile.append(users)
-        user.neighbors_1mileradius = json.dumps(users_1mile)
-        user.neighbors_2mileradius = json.dumps(users_2mile)
-        user.neighbors_3mileradius = json.dumps(users_3mile)
-        user.neighbors_4mileradius = json.dumps(users_4mile)
-        user.neighbors_5mileradius = json.dumps(users_5mile)
+        if users_1mile != []:
+            user.neighbors_1mileradius = json.dumps(users_1mile)
+        if users_2mile != []:
+            user.neighbors_2mileradius = json.dumps(users_2mile)
+        if users_3mile != []:
+            user.neighbors_3mileradius = json.dumps(users_3mile)
+        if users_4mile != []:
+            user.neighbors_4mileradius = json.dumps(users_4mile)
+        if users_5mile != []:
+            user.neighbors_5mileradius = json.dumps(users_5mile)
     return "Users were added for 1, 2, 3, 4, 5 mile radius"
