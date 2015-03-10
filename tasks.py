@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from transactions.watch_packages import main as watch_packages_task
 from transactions.watch_packages import test_celery_beat
+from core.usertasks import get_zipcodes_nearby
 from celeryconf import app
 #app = Celery('blocbox')
 #app = Celery('tasks', broker=BROKER_URL)
@@ -26,6 +27,10 @@ def test_schedule(enduserid, hostid, transid):
     return test_celery_beat(enduserid, hostid, transid)
 
 
-
+@app.task
+def get_zipcodes_nearby(userid, mileradius):
+    return get_zipcodes_nearby(userid, mileradius)
+ 
+ 
 if __name__ == '__main__':
     app.worker_main()
