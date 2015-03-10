@@ -12,6 +12,7 @@ from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
 from core.forms import UserForm, HostForm, ContactUs, NotificationSettings
+from core.usertasks import add_neighbors_nearby_task
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
 #Important the authentication and login functions -- not sure that i can use with custom model
@@ -515,9 +516,8 @@ def signupconnect(request, host_id):
             user = user_form.save()
             # Now we hash the password with the set_passworth method
             # Once hashed, we ca update the user object
-            user.set_password(user.password)
-            user.save()   	
-            #get nearby zips
+            user.set_password(user.password)	
+            #get nearby zips and opulate the city and state
             zipcodeform = user_form.cleaned_data['zipcode']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
@@ -526,6 +526,8 @@ def signupconnect(request, host_id):
             user.state = zipcode.state
             user.zipcodes_nearby = zipcodes_nearby_json
             user.save()
+            #add neighbors nearbyu
+            add_neighbors_nearby_task(userid=user.id)
             #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
             #if 'picture' in request.FILES:
             #profile.picture = request.FILES['picture']       	      
@@ -570,7 +572,15 @@ def signupnoconnect(request):
     	      # Once hashed, we ca update the user object
     	      user.set_password(user.password)
     	      user.save()
-    	      
+    	      #get zipcode
+            zipcodeform = user_form.cleaned_data['zipcode']
+            zipcode = zcdb[zipcodeform]           
+            zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+            zipcodes_nearby_json = json.dumps(zipcodes_nearby)
+            user.city = zipcode.city
+            user.state = zipcode.state
+            user.zipcodes_nearby = zipcodes_nearby_json
+            user.save()
     	      #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
     	      #if 'picture' in request.FILES:
     	      #    profile.picture = request.FILES['picture']
