@@ -838,9 +838,10 @@ footer {
 }
 .nav-text {
     font-family: "proxima-nova-soft";
-    font-size: 1.30em;
+    font-size: 1.10em;
     font-weight: 400;
     line-height: 1.38em;
+    letter-spacing: 1.5px;
     color: white;
 }
 
