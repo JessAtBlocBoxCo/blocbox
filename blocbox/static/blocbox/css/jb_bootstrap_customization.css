@@ -1401,7 +1401,7 @@ body {
 
 .waitlistbody .nav-blocbox-name {
     display: block;
-    background-image: url('/static/blocbox/images/Logo-and-name-white.png');
+    background-image: url('/static/blocbox/images/Logo-name.png');
     background-repeat: no-repeat;
     background-size: contain;
     height: 50px;
