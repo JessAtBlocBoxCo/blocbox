@@ -52,7 +52,7 @@ def get_zipcodes_nearby(userid, mileradius):
     responsemessage = responsemessage + " The zipcodes in a " + str(mileradius) + " mile radius of " + str(enduser.email) + " are: " + str(zipcodes_nearby) + "."
     if zipnearby_string:
         responsemessage = responsemessage + " Testing separateing the string into elements separated by comma : "
-        eachzip = None
+        eachzip = ""
         for zip in zipnearby_string:
             eachzip = eachzip + str(zip) + ", "
         responsemessage = responsemessage + str(eachzip)
