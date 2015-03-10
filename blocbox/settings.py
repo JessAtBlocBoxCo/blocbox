@@ -69,18 +69,19 @@ CELERY_IMPORTS = ['tasks']
 CELERY_TIMEZONE = "US/Eastern"
 from datetime import timedelta
 CELERYBEAT_SCHEDULE = {
+
     'watch_packages_every_30_minutes': {
         'task': 'tasks.watch_packages',
         'schedule': timedelta(minutes=30),
     },
-
+		'test_celery_beat_every_minute': {
+    	  'task': 'tasks.test_schedule',
+    	  'schedule': timedelta(minutes=1),
+    	  'args': (1,2,170)
+			}
 }   
 
-"""'test_celery_beat_every_45_seconds': {
-    	  'task': 'tasks.test_schedule',
-    	  'schedule': timedelta(seconds=45),
-    	  'args': (1,2,170)
-}"""
+
     
 # store schedule in the DB:
 CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
