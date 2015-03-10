@@ -98,4 +98,4 @@ def add_zipcodes_nearby_all(mileradius):
         user.save()
         responsemessage = responsemessage + "The zipcode_nearby entry was added for " + str(user.email) \
             + ". The zipcodes within a " + str(mileradius) + " mile radius are: " + str(zipcodes_nearby) + "."
-        return responsemessage
+    return responsemessage
