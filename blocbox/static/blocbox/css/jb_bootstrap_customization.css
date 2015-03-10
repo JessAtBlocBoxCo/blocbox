@@ -800,7 +800,7 @@ footer {
 }
 .navbarbrand {
     display: block;
-    background-image: url('/static/blocbox/images/logo-name-green.png');
+    background-image: url('/static/blocbox/images/logo-name-white.png');
     background-repeat: no-repeat;
     background-size: contain;
     width: 260px;
