@@ -121,11 +121,15 @@ def test_celery_beat(enduserid, hostid, transid):
     trans = Transaction.objects.get(pk=transid)
     enduser = UserInfo.objects.get(pk=enduserid)
     host = UserInfo.objects.get(pk=hostid)
-    message_body = "this is a test of celery beat - send every minute"
+    message_body = "this is a test of celery beat - send every 30 minues if the user has delivery notifications on"
     subject = "Testing scheduled celery tasks"
     message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,'message_body': message_body, })
-    send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
-    return "An email has been sent to test the celery beat -should happene very minute - the less shit transaction"
+    if enduser.notifyuser_packagereceived == True:
+        send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
+        returnmessage = "An email was sent to test the celery beat -t he user has delivery notifications on"
+    else:
+        returnmessage = "The user does not appear to have delivery received notifications on"
+    return returnmessage
         
        
 
