@@ -132,6 +132,9 @@ a:active {
 .contentbottomonly {
     padding-bottom: 200px;
 }
+.contentsearch {
+    padding-bottom: 440px;
+}
 /*Style the footer class - fix to bottom of page, make font slightly smaller */
 
 footer {
