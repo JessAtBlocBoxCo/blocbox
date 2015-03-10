@@ -13,11 +13,13 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = UserInfo
         fields = ('email', 'password', 'password2', 'zipcode', 'hostinterest', 
-            'first_name', 'last_name', 'zipcode', 'st_address1', 'st_address2', 'city', 'state',
+            'first_name', 'last_name', 'zipcode', 'st_address1', 'st_address2', 
             'about_me', 'intro_message', 'pickup_time', 'FBlink', 'imageurl', 'userrating', 'host',
             'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other'
             )
+            #removed: 'city', 'state',
+            
 #Contact us form - on www.blocbox.co/support and www/blocbox.co/contactus
 class ContactUs(forms.Form): 
     contactus_subject=forms.CharField(max_length=150, required=False)
