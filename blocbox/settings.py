@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'south',   
     'djcelery',
     'kombu.transport.django',
-    'datasci',
     'password_reset',
     'django_messages',
     'dateutil',
