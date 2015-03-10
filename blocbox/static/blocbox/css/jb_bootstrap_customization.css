@@ -1412,7 +1412,7 @@ body {
 
 .waitlistbody .nav-blocbox-name {
     display: block;
-    background-image: url('/static/blocbox/images/Logo-name.png');
+    background-image: url('/static/blocbox/images/Logo-name-white.png');
     background-repeat: no-repeat;
     background-size: contain;
     height: 80px;
@@ -1451,7 +1451,7 @@ body {
     }
     .waitlistbody .nav-blocbox-name {
         display: block;
-        background-image: url('/static/blocbox/images/logo-name.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
+        background-image: url('/static/blocbox/images/logo-name-white.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
         background-repeat: no-repeat;
         background-size: contain;
         height: 80px;
