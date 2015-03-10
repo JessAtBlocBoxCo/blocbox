@@ -118,3 +118,40 @@ def set_mileradius_user_task(userid, mileradius):
     enduser.save()
     responsemessage = "The mileradius variable has been set to " + str(mileradius) + " for user " + str(enduser.email) + "."
     return responsemessage
+
+def add_neighbors_nearby_task():
+    users_all = UserInfo.objects.all()
+    for user in users_all:
+        zip = user.zipcode
+        zipcode = zcdb[zip]
+        zipcodes_1mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 1)]
+        zipcodes_2mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+        zipcodes_3mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 3)]
+        zipcodes_4mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 4)]
+        zipcodes_5mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 5)]
+        users_1mile = []
+        users_2mile = []
+        users_3mile = []
+        users_4mile = []
+        users_5mile = []
+    	  for zip in zipcodes_1mile:
+    	      users= UserInfo.objects.filter(zipcode=zip)
+    	      users_1mile.append(users)
+    	  for zip in zipcodes_2mile:
+    	      users = UserInfo.objects.filter(zipcode=zip)
+    	      users_2mile.append(users)
+        for zip in zipcodes_3mile:
+            users = UserInfo.objects.filter(zipcode=zip)
+            users_3mile.append(users)
+        for zip in zipcodes_4mile:
+            users = UserInfo.objects.filter(zipcode=zip)
+            users_4mile.append(users)
+        for zip in zipcodes_5mile:
+            users = UserInfo.objects.filter(zipcode=zip)
+            users_5mile.append(users)
+        user.neighbors_1mileradius = json.dumps(users_1mileradius)
+        user.neighbors_2mileradius = json.dumps(users_2mileradius)
+        user.neighbors_3mileradius = json.dumps(users_3mileradius)
+        user.neighbors_4mileradius = json.dumps(users_4mileradius)
+        user.neighbors_5mileradius = json.dumps(users_5mileradius)
+    return "Users were added for 1, 2, 3, 4, 5 mile radius"
