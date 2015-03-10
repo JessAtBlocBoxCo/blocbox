@@ -73,13 +73,14 @@ CELERYBEAT_SCHEDULE = {
         'task': 'tasks.watch_packages',
         'schedule': timedelta(minutes=30),
     },
+   	'test_celery_beat_every_30_minutes': {
+    	  'task': 'tasks.test_schedule',
+    	  'schedule': timedelta(minutes=30),
+    	  'args': (1,2,170)
+		}
 }   
 
-"""		'test_celery_beat_every_minute': {
-    	  'task': 'tasks.test_schedule',
-    	  'schedule': timedelta(minutes=1),
-    	  'args': (1,2,170)
-			}"""
+
 
     
 # store schedule in the DB:
