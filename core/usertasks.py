@@ -98,3 +98,11 @@ def add_zipcodes_nearby_all(mileradius):
         responsemessage = responsemessage + "The zipcode_nearby entry was added for " + str(user.email) \
             + ". The zipcodes within a " + str(mileradius) + " mile radius are: " + str(zipcodes_nearby) + "."
     return responsemessage
+
+def set_default_mileradius_all_task(mileradius);
+    users_all = UserInfo.objects.all()
+    for user in users_all:
+        user.zipcodes_nearby_mileradius = mileradius
+        user.save()
+    responsemessage "The mileradius for all users has been set to " + str(mileradius) + " miles."
+    return responsemessage
