@@ -78,7 +78,7 @@ def add_zipcodes_nearby(userid, mileradius):
     return responsemessage
 
 def delete_zipcodes_nearby():
-    users_all = UserInfo.objects
+    users_all = UserInfo.objects.all
     responsemessage = ""
     for user in users_all:
         user.zipcodes_nearby = None
@@ -87,7 +87,7 @@ def delete_zipcodes_nearby():
     return responsemessage
 
 def add_zipcodes_nearby_all(mileradius):
-    users_all = UserInfo.objects
+    users_all = UserInfo.objects.all
     responsemessage = ""
     for user in users_all:
         zip = user.zipcode
