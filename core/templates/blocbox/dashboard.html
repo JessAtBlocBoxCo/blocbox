@@ -544,7 +544,7 @@
                             </div>
                             <div class="col-sm-4">
    
-                                <h4 class="nomargin"> {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} {{ sh.trans.last_tracking_status }} {% endif %} </h4>
+                                <h4 class="nomargin"> Status: {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} {{ sh.trans.last_tracking_status }} {% endif %} </h4>
                                 <p class="nomargin">  
                                 		{% if sh.trans.on_aftership %} 
                                 				{% if sh.aftership.last_checkpoint_city %} 
@@ -555,9 +555,9 @@
                                 							Last Checkpoint: {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} 
                                 				{% endif %} 
                                 		{% endif %}
-                                <br> Last Updated: 
-                                			{% if sh.trans.on_aftership %} {{ sh.aftership.last_checkpoint.checkpoint_time }} 
-                                			{% else %} {{ sh.trans.last_tracking_datetime }}
+                                <br>  
+                                			{% if sh.trans.on_aftership %} Last Updated: {{ sh.aftership.last_checkpoint.checkpoint_time }} 
+                                			{% else %} {% if sh.trans.last_tracking_datetime %} Last Updated: {{ sh.trans.last_tracking_datetime }} {% endif %}
                                 			{% endif %}
                                 </p>
                             </div>
