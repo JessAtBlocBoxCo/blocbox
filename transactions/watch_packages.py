@@ -52,8 +52,14 @@ def main():
         datadict = api.trackings.get(slug, tracking)
         tracking_info = datadict.get(u'tracking') 
         new_status = tracking_info['tag']
-        last_tracking_datetime = tracking_info['last_checkpoint']['checkpoint_time']
-        last_tracking_date = last_tracking_datetime.date() 
+        checkpoints = datadict['checkpoints']
+        if checkpoints:
+            last_checkpoint = checkpoints[-1]
+            last_tracking_datetime = last_checkpoint['checkpoint_time']
+            last_tracking_date = last_tracking_datetime.date() 
+        else:
+            last_tracking_datetime = None
+            last_tracking_date = None
         #if there wasn't a status, add it
         if current_status == None:
             trans.last_tracking_status = new_status
