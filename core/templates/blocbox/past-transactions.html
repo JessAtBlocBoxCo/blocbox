@@ -55,7 +55,6 @@
 
                       	<div class="row">
                             <div class="col-xs-4 col-sm-4">
-                                <p class="textcenter">ORDERED</p>
                                 <h4 class="nomargin">Order {{trans.id }} placed on</h4>  <p class="nomargin dashtext">{{ trans.date_requested_notime }}</p>
                             </div>
                             <!--end  shipment details: waiting to be picke dup packages -->
@@ -63,7 +62,6 @@
                             <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                             <div class="col-xs-4 col-sm-4">
                                 <!--neigbor name-->
-                                <p class="textcenter">DELIVERED</p>
                                 <h4 class="nomargin">Tracking Number</h4>
                                 <div class="row nomargin">
                                     <p class="nomargin"><a href="https://blocbox.aftership.com/{{ trans.tracking }}" target="_blank">{{ trans.tracking }} </a> </p>
@@ -73,7 +71,6 @@
 
                             <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                             <div class="col-xs-4 col-sm-4">
-                                <p class="textcenter">COMPLETED</p>
                                 <div class="row">
                                     <h4 class="nomargin">Sent to<a href="">&nbsp;{{trans.host.first_name}}</a></h4>
                                     <!--neibhors address-->
