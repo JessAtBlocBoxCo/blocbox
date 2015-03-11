@@ -190,9 +190,9 @@
                       <!--could update so only if confirm id matches this trans id -->
                     
                       {% ifequal confirm_id_int sh.trans.id %}    {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}                    	  	
-                      {% ifequal issue_id sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}                   	
-                    	{% ifequal message_trans_id sh.trans.id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}                        
-                      {% ifequal track_id sh.trans.id %}  {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}
+                      {% ifequal issue_id_int sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}                   	
+                    	{% ifequal message_trans_id_int sh.trans.id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}                        
+                      {% ifequal track_id_int sh.trans.id %}  {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}
                        	
                         <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
 
@@ -311,10 +311,10 @@
 
 
                     <!--INCLUD ALL OF THE MODAL SUBTEMPLATES -->
-                  {% if confirm_id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endif %}
-                 	{% if issue_Id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endif %}
-                	{% if message_trans_id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %}  {% endif %}
-                	{% if track_id %}   {% include "dashboard_subtemplates/enter_tracking_modal.html" %} {% endif %}
+                  {% ifequal confirm_id_int sh.trans.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
+                 	{% ifequal issue_id_int sh.trans.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+                	{% ifequal message_trans_id_int sh.trans.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %}  {% endifequal %}
+                	{% ifequal track_id_int sh.trans.id %}   {% include "dashboard_subtemplates/enter_tracking_modal.html" %} {% endifequal %}
                     <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
 
 
@@ -425,10 +425,10 @@
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_notcomplete_notdelivered %} 
                 	
-                {% if confirm_id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endif %}
-                {% if issue_id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}  {% endif %} 
-              	{% if message_trans_id %}	{% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endif %}
-              	{% if track_id %} {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endif %}
+                {% ifequal confirm_id_int sh.trans.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
+                {% ifequal issue_id_int sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}  {% endifequal %} 
+              	{% ifequal message_trans_id_int sh.trans.id %}	{% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+              	{% ifequal track_id_int sh.trans.id %} {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}
 
 
 
@@ -557,8 +557,8 @@
                 <!--divider defining the whole current shipments part -->
 
                 <!--INCLUD ALL OF THE MODAL SUBTEMPLATES -->
-              {% if issue_id %}    {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endif %}
-            {% if message_trans_id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endif %}
+              {% ifequal issue_id_int sh.trans.id %}    {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+            	{% ifequal message_trans_id_int sh.trans.id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
 
                 <div class="row dashinfobox dashfont" style="padding-right: 5px;">
