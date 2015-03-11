@@ -188,12 +188,11 @@
 
                         <!--INCLUD ALL OF THE MODAL SUBTEMPLATES - only if that URL is called - to save memroy-->
                       <!--could update so only if confirm id matches this trans id -->
-                      <p>test show confirn id and sh.trans.d:  {{ confirm_id }} and {{ sh.trans.id }}</p>
-                      {% if confirm_id = sh.trans.id %}    {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endif %}                    	  	
-                      {% if issue_id = sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endif %}                   	
-                    	{% if message_trans_id = sh.trans.id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endif %}
-                        
-                      {% if track_id = sh.trans.id %}  {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endif %}
+                    
+                      {% ifequal confirm_id sh.trans.id %}    {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endif %}                    	  	
+                      {% ifequal issue_id sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endif %}                   	
+                    	{% ifequal message_trans_id sh.trans.id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endif %}                        
+                      {% ifequal track_id sh.trans.id %}  {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endif %}
                        	
                         <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
 
