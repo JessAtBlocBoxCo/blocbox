@@ -82,6 +82,13 @@ a:active {
     color: inherit;
 } 
 
+.hiw-header {
+    font-size: 3.9em;
+    font-weight: 400;
+    margin-top: 0px;
+    color: rgb(71, 158, 159);
+}
+
 .tinytext {
     font-size: 0.800em;
     font-weight: 400;
