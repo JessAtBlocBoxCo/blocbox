@@ -394,8 +394,8 @@ def dashboard_tracking_modal(request, track_id):
 def package_received_modal(request, confirm_id):
     trans = Transaction.objects.get(pk=confirm_id)
     if request.method == 'POST':
-    		package_received_form = PackageReceived(request.POST) #note this is not a model form
-    		if package_received_form.is_valid():
+        package_received_form = PackageReceived(request.POST) #note this is not a model form
+        if package_received_form.is_valid():
             trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
             trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
             trans.trans_complete = True
