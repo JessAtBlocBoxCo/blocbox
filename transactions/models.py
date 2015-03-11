@@ -70,7 +70,7 @@ class Transaction(models.Model):
     enduser_issue = models.CharField("EndUser Issue", max_length=300, blank=True, null=True)
     #Aftership Variables grabbed iitially
     on_aftership = models.BooleanField("Aftership", default=False)
-    aftership_expired = models.BooleanField("Aftership", default=False)
+    aftership_expired = models.BooleanField("Expired?", default=False)
     shipment_courier = models.CharField("Courier", max_length=20, blank=True, null=True)
     #Aftership variables grabbed after confirmed
     tracking_info_tuple_confirmd = models.CharField("Aftership Tracking Info Tuple Upon Completion", max_length=2000, blank=True, null=True)
