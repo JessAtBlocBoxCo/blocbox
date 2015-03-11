@@ -47,7 +47,7 @@ class ResetPassword(forms.ModelForm):
     	
     class Meta:
         model = UserInfo
-        fields = ('password')
+        fields = ('password', )
     
     #check that current password is correct
     def clean_old_password(self):
