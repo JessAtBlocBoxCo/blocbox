@@ -526,15 +526,39 @@
                                 <!--Status and shipment type-->
                                 <h4 class="nomargin">Delivery Method</h4>
                                 <p class="nomargin">
-                                    {% if sh.trans.on_aftership %} {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%} {% else %} You expected it to arrive {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} {% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; {% endif %} {% endif %}
+                                    {% if sh.trans.on_aftership %} 
+                                    			{% if sh.aftership.shipment_type %}  {{ sh.aftership.shipment_type }} 
+                                    			{% else %} {{ sh.trans.shipment_courier }} 
+                                    			{% endif%} 
+                                   	{% else %} <!--if not on aftership -->
+                                   			{% if sh.trans.shipment_courier %} 
+                                   						{{ sh.trans.shipment_courier }} 
+                                    		{% else %} You expected it to arrive 
+                                    					{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    					{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; 
+                                    					{% endif %} 
+                                    {% endif %}
                                     <!--on aftership -->
                                 </p>
                             </div>
                             <div class="col-sm-4">
-                                {% if sh.aftership.last_checkpoint.city %}
-                                <h4 class="nomargin">{{sh.aftership.tag}}</h4>
-                                <p class="nomargin">{{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }}</p>
-                                {% endif %}
+                                {% if sh.aftership.last_checkpoint.city %}  
+                                <h4 class="nomargin"> {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} {{ sh.trans.last_tracking_status }} {% endif %} </h4>
+                                <p class="nomargin">  
+                                		{% if sh.trans.on_aftership %} 
+                                				{% if sh.aftership.last_checkpoint_city %} 
+                                							Last Checkpoint: {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }}
+                                				{% endif %}
+                                		{% else %} <!--if not on aftership b/c expired get from our tables -->			
+                                				{% if sh.trans.last_checkpoint_city %}
+                                							Last Checkpoint: {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} 
+                                				{% endif %} 
+                                		{% endif %}
+                                <br> Last Updated: 
+                                			{% if sh.trans.on_aftership %} {{ sh.aftership.last_checkpoint.checkpoint_time }} 
+                                			{% else %} {{ sh.trans.last_tracking_datetime }}
+                                			{% endif %}
+                                </p>
                             </div>
                             <div class="col-sm-4">
                                 <!--Expected Delivery -->
