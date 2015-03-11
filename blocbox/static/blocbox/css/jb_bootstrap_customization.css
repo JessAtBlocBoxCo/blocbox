@@ -1285,14 +1285,7 @@ footer {
     border: 2px solid rgb(97, 183, 184);
     vertical-align: middle;
 }
-.pro-circle:hover {
-    background-color: white;
-    color: rgb(97, 183, 184);
-}
-.pro-circle:focus {
-    background-color: white;
-    color: rgb(97, 183, 184);
-}
+
 .pro-slip-circle {
     background-color: transparent;
     background-image: url('/static/blocbox/images/UPS-Slip.png'); 
@@ -1308,14 +1301,6 @@ footer {
     line-height: 38px;
     border: 0px solid rgb(97, 183, 184);
     vertical-align: middle;
-}
-.pro-circle:hover {
-    background-color: white;
-    color: rgb(97, 183, 184);
-}
-.pro-circle:focus {
-    background-color: white;
-    color: rgb(97, 183, 184);
 }
 /*-----------------------------------------------------------------------
 *min.css overrides
