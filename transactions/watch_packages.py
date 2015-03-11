@@ -36,10 +36,11 @@ api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 
 #GET A LIST OF ALL TRANSACTIONS ON AFTERHIP
 transactions_onaftership = Transaction.objects.filter(on_aftership=True)
+trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
 
 def main():
     response_messages_list = []
-    for trans in transactions_onaftership:
+    for trans in trans_aftership_notarchived:
         slug = str(trans.shipment_courier.lower())
         tracking = trans.tracking
         host = trans.host
