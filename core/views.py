@@ -36,7 +36,7 @@ from schedule.forms import EventForm, OccurrenceForm
 from schedule.models import Calendar, Occurrence, Event
 from schedule.models.calendars import CalendarRelation
 from schedule.utils import check_event_permissions, coerce_date_dict
-from django.utils import timezone, encoding
+from django.utils import timezone
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
 from paypal.standard.ipn.views import ask_for_money
@@ -204,7 +204,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         dashboard_tracking_modal(request, track_id) #defined below  
     package_received_form = None #is None if they dont open package recieved modal
     if confirm_id:  #if the open the package_received modal
+    	  confirm_id_int = confirm_id.strip()
+    	  confirm_id_int = int(confirm_id_int)
         package_received_modal(request, confirm_id) 	
+    else:
+        confirm_id_int = None
     enduser_issue_form = None #if they dont open the report an issue modal
     if issue_id:     #if they open the EndUser Issues Modal/Button
         enduser_report_issue_modal(request, issue_id)
@@ -216,7 +220,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
-        'track_id': track_id, 'confirm_id': confirm_id, 'message_trans_id': message_trans_id, 'issue_id': issue_id,
+        'track_id': track_id, 'confirm_id': confirm_id, 'confirm_id_int': confirm_id_int, 'message_trans_id': message_trans_id, 'issue_id': issue_id, 
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'message_form': message_form, 
         'recipient_email_list': recipient_email_list,
         #shipments lists

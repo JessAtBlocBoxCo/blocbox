@@ -189,7 +189,7 @@
                         <!--INCLUD ALL OF THE MODAL SUBTEMPLATES - only if that URL is called - to save memroy-->
                       <!--could update so only if confirm id matches this trans id -->
                     
-                    {% if confirm_id %} {% ifequal smart_str(confirm_id) smart_str(sh.trans.id) %}    {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %} {% endif %}                   	  	
+                      {% ifequal confirm_id_int sh.trans.id %}    {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}                    	  	
                       {% ifequal issue_id sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}                   	
                     	{% ifequal message_trans_id sh.trans.id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}                        
                       {% ifequal track_id sh.trans.id %}  {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}
