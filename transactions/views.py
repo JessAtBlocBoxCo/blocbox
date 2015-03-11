@@ -219,10 +219,10 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 if payment_option=="bundle10":
                     price=15
                     youselected="Bundle of 10 Packages"  
-                    balance_created = price - 2                  
-                elif payment_option=="month20":
+                    balance_created = 9 #10 minus the 1 they just bought                  
+                elif payment_option=="bundle20":
                     price=15
-                    youselected="Monthly"       
+                    youselected="Bundle of 20 Packages"       
                     balance_created = price - 2             
                 elif payment_option=="annual":
                     price=150
