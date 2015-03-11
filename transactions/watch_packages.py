@@ -52,7 +52,7 @@ def main():
         datadict = api.trackings.get(slug, tracking)
         tracking_info = datadict.get(u'tracking') 
         new_status = tracking_info['tag']
-        checkpoints = datadict['checkpoints']
+        checkpoints = tracking_info['checkpoints']
         if checkpoints:
             last_checkpoint = checkpoints[-1]
             last_tracking_datetime = last_checkpoint['checkpoint_time']
