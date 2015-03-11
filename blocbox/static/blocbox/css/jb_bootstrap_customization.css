@@ -1886,8 +1886,8 @@ body {
 
 .homesearch {
     background-image: url('/static/blocbox/images/homesearch.png');
-    height: 70px;
-    width: 70px;
+    height: 380px;
+    width: 380px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
