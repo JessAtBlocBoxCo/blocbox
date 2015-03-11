@@ -175,7 +175,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 last_tracking_date = last_tracking_datetime.date()
                 if last_tracking_datetime:
                     shipment_tuple['aftership']['last_tracking_datetime'] = last_tracking_datetime
-                    shipmetn_tuple['aftership']['last_tracking_date'] = last_tracking_date
+                    shipment_tuple['aftership']['last_tracking_date'] = last_tracking_date
                 else:
                     shipment_tuple['aftership']['last_tracking_datetime'] = None
                     shipment_tuple['aftership']['last_tracking_date'] = None
