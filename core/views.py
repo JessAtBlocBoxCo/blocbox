@@ -455,9 +455,12 @@ def pasttransactions(request):
         shipments_completed = None
         shipments_archived = None
         otherfavors_completed = None
-        otherfavors_archived = None       
+        otherfavors_archived = None  
+        transactions_completed = None
+        transactions_archived = None     
     return render(request, 'blocbox/past-transactions.html', {'enduser': enduser, 'shipments_completed': shipments_completed,
-    	   'shipments_archived': shipments_archived, 'otherfavors_completed': otherfavors_completed, 'otherfavors_archived': otherfavors_archived, })
+    	   'shipments_archived': shipments_archived, 'otherfavors_completed': otherfavors_completed, 'otherfavors_archived': otherfavors_archived, 
+    	   'transactions_completed': transactions_completed, 'transactions_archived': transactions_archived, })
 
 def security(request):
     enduser = request.user
