@@ -430,8 +430,27 @@ def paymentoptions(request):
     return render(request, 'blocbox/payment-options.html', {'enduser': enduser,})
 
 def pasttransactions(request):
-    enduser = request.user
-    return render(request, 'blocbox/past-transactions.html', {'enduser': enduser,})
+    enduser = request.user    
+    shipments_completed = []                 
+    shipments_archived = [] 
+    otherfavors_completed = []
+    otherfavors_archived = []               
+    #variables requiring authentication
+    if enduser.is_authenticated():
+        transactions_all = Transaction.objects.filter(enduser=enduser)
+        transactions_completed = transactions_all.filter(trans_complete=True)
+        transactions_archived = transactions_all.filter(trans_archived=True)
+        shipments_completed = transactions_completed.filter(favortype="package")
+        shipments_archived = transactions_archived.filter(favortype="package")
+        otherfavors_completed = transactions_completed.exclude(favortype="package")
+        otherfavors_archived = transactions_archived.exclude(favortype="package") 
+    else:
+        shipments_completed = None
+        shipments_archived = None
+        otherfavors_completed = None
+        otherfavors_archived = None       
+    return render(request, 'blocbox/past-transactions.html', {'enduser': enduser, 'shipments_completed': shipments_completed,
+    	   'shipments_archived': shipments_archived, 'otherfavors_completed': otherfavors_completed, 'otherfavors_archived': otherfavors_archived, })
 
 def security(request):
     enduser = request.user
