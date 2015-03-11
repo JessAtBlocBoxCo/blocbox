@@ -56,6 +56,9 @@ def main():
             if trans.aftership_expired == False:
                 trans.aftership_expired = True
                 trans.save()
+            if trans.on_aftership == True:
+                trans.on_aftership = False
+                trans.save()
         checkpoints = tracking_info['checkpoints']
         if checkpoints:
             last_checkpoint = checkpoints[-1]
@@ -97,6 +100,7 @@ def main():
                 if new_status == 'Expired':
                     responsemessage = "Transaction ID " + str(trans.id) + " has expired" + "\n"  
                     trans.aftership_expired = True
+                    trans.on_aftership = False
                     trans.save()              
                 elif new_status == 'Delivered':
                     if enduser.notifyuser_packagereceived == True:
