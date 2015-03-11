@@ -55,7 +55,6 @@ def main():
         #update time updated, its formatted like this in api: 'last_updated_at': u'2015-03-10T16:43:41+00:00'
         last_tracking_unicode = tracking_info['last_updated_at']
         last_tracking_datetime = datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S.%fZ')
-        last_tracking_datetime = datetime(last_tracking_datetime)
         trans.last_tracking_datetime = last_tracking_datetime
         trans.last_tracking_date = last_tracking_datetime.date()
         trans.save()
