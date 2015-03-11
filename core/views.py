@@ -49,6 +49,7 @@ from django_messages.views import notify_user_received_message
 #aftership
 import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
+api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 #pyzipcode
 import pyzipcode
 from pyzipcode import ZipCodeDatabase
@@ -130,7 +131,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         trans.trans_archived=True
         trans.save()
     #Vars that do not depend on authentication
-    api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     shipments_with_tracking_allpaid = []                 
     shipments_with_tracking_complete = []                
     shipments_with_tracking_notcomplete = []             
