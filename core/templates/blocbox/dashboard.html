@@ -536,7 +536,8 @@
                                     		{% else %} You expected it to arrive 
                                     					{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
                                     					{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; 
-                                    					{% endif %} 
+                                    					{% endif %}
+                                    		{% endif %} 
                                     {% endif %}
                                     <!--on aftership -->
                                 </p>
