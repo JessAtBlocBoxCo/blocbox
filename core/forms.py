@@ -11,7 +11,6 @@ class UserForm(forms.ModelForm):
     zipcode = forms.CharField(label="Zip Code")
     
     error_messages = {
-        'duplicate_username': _("A user with that username already exists."),
         'password_mismatch': _("The two password fields didn't match."),
     }
     
