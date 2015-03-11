@@ -37,7 +37,7 @@ class Transaction(models.Model):
     payment_processed = models.BooleanField("Paid", default=False) #update payment process once they've completed process
     date_requested = models.DateTimeField(default=datetime.datetime.today)
     date_requested_notime = models.DateField(default = datetime.date.today, null=True)
-    de = models.CharField("Favor Type", max_length=100, blank=True, null=True)
+    favortype = models.CharField("Favor Type", max_length=100, blank=True, null=True)
     invoice = models.CharField("Invoice ID", max_length=100, blank=True, null=True)
     tracking = models.CharField("Tracking Number", max_length=50, blank=True, null=True)
     status = models.CharField("Status", max_length=50, blank=True, null=True)
