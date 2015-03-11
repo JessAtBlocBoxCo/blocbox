@@ -60,6 +60,7 @@ class Transaction(models.Model):
     testfieldagain = models.CharField("test field", max_length=50, blank=True, null=True)
     #End user Complete Transaction and rating
     trans_complete = models.BooleanField("Complete?", default=False) #Boolean fields cannot be null
+    trans_archived = models.BooleanField("Archived?", default=False) #Boolean fields cannot be null
     datetime_completed = models.DateTimeField(null=True, blank=True)
     date_completed = models.DateField(null=True, blank=True)
     RATING_CHOICES = ( (1, 0.2), (2, 0.4), (3, 0.6), (4, 0.8), (5, 1.0) )
