@@ -66,6 +66,8 @@ def main():
             trans.last_tracking_datetime = last_tracking_datetime
             trans.last_tracking_date = last_tracking_datetime.date() 
             trans.save()
+        else:
+            last_tracking_datetime = None
         responsemessage = "The last tracking dateitme was " + str(last_tracking_datetime) + "and the last date is " + str(trans.last_tracking_date) + "."
         response_messages_list.append(responsemessage)
         #if there wasn't a status, add it
