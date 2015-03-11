@@ -517,19 +517,24 @@ def security(request):
 
 def settings(request):
     enduser = request.user
+    passwordreset_completed = False
     if enduser.is_authenticated():
         user = get_object_or_404(UserInfo, pk=enduser.id)
-        form = PasswordReset(data=request.POST)
-        """if form.is_valid(): 
-            #check that the old password was correct
-            passwordnew = 
-            # Now we hash the password with the set_passworth method
-            # Once hashed, we ca update the user object
-            user.set_password(user.password)
-         """  
+        if request.method == 'POST': 
+            form = PasswordReset(data=request.POST)
+            if form.is_valid(): 
+                user = form.save()
+                # Now we hash the password with the set_passworth method, Once hashed, we ca update the user object
+                user.set_password(user.password)
+                user.save()
+                passwordreset_completed = True
+            else:
+                print user_form.errors
+        else:
+            form = PasswordReset()
     else:
         form = None
-    return render(request, 'blocbox/settings.html', {'enduser': enduser, 'form': form})
+    return render(request, 'blocbox/settings.html', {'enduser': enduser, 'form': form, 'passwordreset_completed': passwordreset_completed })
  
 def hostprofile(request, host_id):
     context = RequestContext(request)

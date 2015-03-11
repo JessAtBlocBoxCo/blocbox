@@ -10,9 +10,7 @@ class UserForm(forms.ModelForm):
     password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
     zipcode = forms.CharField(label="Zip Code")
     
-    error_messages = {
-        'password_mismatch': "The two password fields didn't match.",
-    }
+    error_messages = {  'password_mismatch': "The two password fields didn't match.", }
     
     class Meta:
         model = UserInfo
@@ -34,12 +32,44 @@ class UserForm(forms.ModelForm):
                 code='password_mismatch',
             )
         return password2
+
+
         
-class ResetPassword(forms.Form):
-    passwordold = forms.CharField(label='Old Password', widget=forms.PasswordInput)
-    passwordnew = forms.CharField(label='New Password', widget=forms.PasswordInput)
-    passwordnew2 = forms.CharField(label='New Password Confirmation', widget=forms.PasswordInput) 
+class ResetPassword(forms.ModelForm):
+    old_password = forms.CharField(label='Old Password', widget=forms.PasswordInput)
+    password = forms.CharField(label='New Password', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='New Password Confirmation', widget=forms.PasswordInput) 
     
+    error_messages = {  
+        'password_mismatch': "The two password fields didn't match.", 
+        'password_incorrect': "Your old password was entered incorrectly. ",
+    }
+    	
+    class Meta:
+        model = UserInfo
+        fields = ('password')
+    
+    #check that current password is correct
+    def clean_old_password(self):
+        old_password = self.cleaned_data["old_password"]
+        if not self.user.check_password(old_password):
+            raise forms.ValidationError(
+                self.error_messages['password_incorrect'],
+                code='password_incorrect',
+            )
+        return old_password
+    
+    #check that the new second password matches first
+    def clean_password2(self):
+        password = self.cleaned_data.get("password")
+        password2 = self.cleaned_data.get("password2")
+        if password and password2 and password != password2:
+            raise forms.ValidationError(
+                self.error_messages['password_mismatch'],
+                code='password_mismatch',
+            )
+        return password2
+        
 #Contact us form - on www.blocbox.co/support and www/blocbox.co/contactus
 class ContactUs(forms.Form): 
     contactus_subject=forms.CharField(max_length=150, required=False)
