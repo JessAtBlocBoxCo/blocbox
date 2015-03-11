@@ -19,7 +19,21 @@ class UserForm(forms.ModelForm):
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other'
             )
             #removed: 'city', 'state',
-            
+    def clean_password2(self):
+        password = self.cleaned_data.get("password")
+        password2 = self.cleaned_data.get("password2")
+        if password and password2 and password != password2:
+            raise forms.ValidationError(
+                self.error_messages['password_mismatch'],
+                code='password_mismatch',
+            )
+        return password2
+        
+class ResetPassword(forms.Form):
+    passwordold = forms.CharField(label='Old Password', widget=forms.PasswordInput)
+    passwordnew = forms.CharField(label='New Password', widget=forms.PasswordInput)
+    passwordnew2 = forms.CharField(label='New Password Confirmation', widget=forms.PasswordInput) 
+    
 #Contact us form - on www.blocbox.co/support and www/blocbox.co/contactus
 class ContactUs(forms.Form): 
     contactus_subject=forms.CharField(max_length=150, required=False)

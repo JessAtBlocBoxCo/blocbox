@@ -11,7 +11,7 @@ from core.models import UserInfo
 from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
-from core.forms import UserForm, HostForm, ContactUs, NotificationSettings
+from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, ResetPassword
 from core.usertasks import add_neighbors_nearby_task
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
@@ -517,7 +517,19 @@ def security(request):
 
 def settings(request):
     enduser = request.user
-    return render(request, 'blocbox/settings.html', {'enduser': enduser,})
+    if enduser.is_authenticated():
+        user = get_object_or_404(UserInfo, pk=enduser.id)
+        form = PasswordReset(data=request.POST)
+        """if form.is_valid(): 
+            #check that the old password was correct
+            passwordnew = 
+            # Now we hash the password with the set_passworth method
+            # Once hashed, we ca update the user object
+            user.set_password(user.password)
+         """  
+    else:
+        form = None
+    return render(request, 'blocbox/settings.html', {'enduser': enduser, 'form': form})
  
 def hostprofile(request, host_id):
     context = RequestContext(request)
