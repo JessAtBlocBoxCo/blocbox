@@ -1124,3 +1124,5 @@ You must only enable the serializers that you will actually use.
   warnings.warn('Using settings.DEBUG leads to a memory leak, never '
 
 [2015-03-11 16:12:00,957: WARNING/MainProcess] w1@BlocBoxonDjango ready.
+[2015-03-11 16:15:16,545: INFO/MainProcess] Received task: tasks.add[546e37a6-44b9-493a-9328-fad7d0dda9b3]
+[2015-03-11 16:15:16,588: INFO/MainProcess] Task tasks.add[546e37a6-44b9-493a-9328-fad7d0dda9b3] succeeded in 0.0417451059984s: 8
