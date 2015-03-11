@@ -63,8 +63,12 @@ def main():
         if checkpoints:
             last_checkpoint = checkpoints[-1]
             last_tracking_datetime = last_checkpoint['checkpoint_time']
+            last_checkpoint_city = last_checkpoint['city']
+            last_checkpoint_state = last_checkpoint['state']
             trans.last_tracking_datetime = last_tracking_datetime
-            trans.last_tracking_date = last_tracking_datetime.date() 
+            trans.last_tracking_date = last_tracking_datetime.date()
+            trans.last_checkpoint_city = last_checkpoint_city
+            trans.last_checkpoint_state = last_checkpoint_state 
             trans.save()
         else:
             last_tracking_datetime = None
