@@ -37,52 +37,94 @@
                    <div class="col-xs-12 col-sm-12 offwhitebackground margintop30px paddingtop10px" style="padding-left: 25px">
 										{% for trans in shipments_archived %}										
                         <!--Packages Card-->
-                        <div class="interestcard" style="margin-bottom: 10px">
-                            <div class="row">
-                                <div class="col-xs-1 userbg">
-                                    <div class="package-i" style="width: 40px; height: 40px"></div>
+                        
+                   <div class="row dashinfobox dashfont" style="padding-right: 5px;">
+                    <div class="col-sm-3" style="padding-left: 5px;">
+                        <div class="row">
+                            <div class="col-xs-2 userbg nopaddingleft">
+                                <div class="package-i" style="width: 30px; height: 30px"></div>
+                            </div>
+                            <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">Package Receipt: {% if trans.title %}  {{ trans.title }} {% else %} Enter Package Description {% endif %} </h3>
+                        </div>
+                    </div>
+                    <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
+
+                    <div class="col-sm-9">
+                        <div class="row">
+                            <div class="col-sm-2 col-sm-offset-1 marginbottom10px">
+                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i> </div>
+                            </div>
+                            <div>   <div class="col-sm-2 shipline"></div>  </div>
+                            <div class="col-sm-2 marginbottom10px">
+                                <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
+                            </div>
+                            <div>  <div class="col-sm-2 shipline"></div> </div>
+                            <div class="col-sm-2 marginbottom10px">
+                                <div class="statusgreen" style="padding: 9px 5px;"><i class="fa fa-check fa-fw fa-3x statusicon"></i> </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-4">
+                                <p class="textcenter">ORDERED</p>
+                                <h4 class="nomargin">Order {{trans.id }} placed on</h4>  <p class="nomargin dashtext">{{ trans.date_requested_notime }}</p>
+                            </div>
+                            <!--end  shipment details: waiting to be picke dup packages -->
+
+                            <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
+                            <div class="col-xs-12 col-sm-4">
+                                <!--neigbor name-->
+                                <p class="textcenter">DELIVERED</p>
+                                <h4 class="nomargin">Tracking Number</h4>
+                                <div class="row nomargin">
+                                    <p class="nomargin"><a href="https://blocbox.aftership.com/{{ trans.tracking }}" target="_blank">{{ trans.tracking }} </a> </p>
                                 </div>
-                                <div class="col-xs-4 paddingsides15px" style="padding-top: 2px">
-                                    <h6 class="padingleft10px textleft">Package Receipt</h6>
-                                </div>
+                            </div>
+                            <!--End Neighbor Column (packages waiting to be picked up) -->
+
+                            <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
+                            <div class="col-xs-12 col-sm-4">
+                                <p class="textcenter">COMPLETED</p>
                                 <div class="row">
-                                    <div class="col-xs-12 col-sm-4">
-                                        <p class="textcenter">ORDERED</p>
-                                        <h4 class="col-sm-10 col-sm-offset-2 nomargintopbottom">Order {{ trans.id }} placed on</h4>
-                                        <p class="col-sm-10 col-sm-offset-2 nomargintopbottom dashtext">{{ trans.date_requested_notime }}</p>
-                                    </div>
-                                    <!--end  shipment details: waiting to be picke dup packages -->
-
-                                    <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
-                                    <div class="col-xs-12 col-sm-4">
-                                        <!--neigbor name-->
-                                        <p class="textcenter">DELIVERED</p>
-                                        {% if trans.tracking %}
-                                        <h4 class="col-sm-11 col-sm-offset-1 nomargintopbottom">Tracking Number</h4>
-                                        <p class="col-sm-11 col-sm-offset-1 dashtext"><a href="https://blocbox.aftership.com/{{ trans.tracking }}" target="_blank">
-                                        			{{ trans.tracking }}</a>
-                                        </p>
-                                        {% endif %}
-                                    </div>
-                                    <!--End Neighbor Column (packages waiting to be picked up) -->
-
-                                    <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
-                                    <div class="col-xs-12 col-sm-4">
-                                        <p class="textcenter">AWAITING PICKUP</p>
-                                        <div class="col-sm-11 col-sm-offset-1 nopaddingright">
-                                            <h4 class="nomargin">Sent to<a href="">&nbsp;{{trans.host.first_name}}</a></h4>
-                                            <!--neibhors address-->
-                                            <p class="nomargin dashtext">
-                                                <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                                            <a class="nomargin" href="https://www.google.com/maps/place/{{trans.host.st_address1}}+{{trans.host.city}}+{{trans.host.state}}+{{trans.host.zipcode}}" target="_blank" class="nomargin">
-                                                {{ trans.host.st_address1 }}, {{ trans.host.st_address2 }} <br> {{ trans.host.city }}, {{ trans.host.state }} {{trans.host.zipcode}}
-                                            </a>
-                                            </p>
-                                        </div>
-                                    </div>
+                                    <h4 class="nomargin">Sent to<a href="">&nbsp;{{trans.host.first_name}}</a></h4>
+                                    <!--neibhors address-->
+                                    <p class="nomargin dashtext">
+                                        <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
+                                        <a class="nomargin" href="https://www.google.com/maps/place/{{trans.host.st_address1}}+{{trans.host.city}}+{{trans.host.state}}+{{trans.host.zipcode}}" target="_blank" class="nomargin">
+                                            {{ trans.host.st_address1 }}, {{ trans.host.st_address2 }} <br> {{ trans.host.city }}, {{ trans.host.state }} {{trans.host.zipcode}}
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="row paddingtop5px">
+                            <div class="col-sm-4">
+                                <!--Status and shipment type-->
+                                <h4 class="nomargin">{{sh.aftership.tag}}</h4>
+                                <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <!--Expected Delivery -->
+                                <h4 class="nomargin">Order Completed</h4>
+                                <p class="nomargin">{{ trans.date_completed }} {% if trans.on_aftership %}{% endif%}</p>
+                            </div>
+                            <div class="col-sm-4">
+                                <h4 class="nomargin">Your Rating</h4>
+                                <p class="nomargin">{{ trans.host.first_name}} {{trans.enduser_rating}} / 5.0</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
+                    <!--close div containint this shipmet: waiting to be picked up-->
+                </div>
+                
+                
+                
+                
+                
+                        
+                        
                       {% endfor %} <!--End of Packages Card-->
 
 
