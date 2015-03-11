@@ -30,6 +30,7 @@ urlpatterns = patterns('',
     url(r'^dashboard/confirm_id(?P<confirm_id>\d+)/',views.dashboard, name='dashboard'),
     url(r'^dashboard/issue_id(?P<issue_id>\d+)/', views.dashboard, name='dashboard'),
     url(r'^dashboard/message_id(?P<message_trans_id>\d+)/', views.dashboard, name='dashboard'),
+    url(r'^dashboard/archive_id(?P<archive_id>\d+)/', views.dashboard, name='dashboard'),
     url(r'^myblock/',views.myblock, name='myblock'),  
     #the transactions subdomain includes all of the start a shipment / start a favor and payment views
  		url(r'^transactions/', include('transactions.urls', namespace='transactions')), #because of the namepsac,e need to reeverse with reverse(payment:)

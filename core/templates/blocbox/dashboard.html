@@ -555,8 +555,8 @@
                             <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         </div>
                         <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
-                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
-                            Archive Shipment</button>
+                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
+                        	onclick="window.location='/dashboard/archive_id{{sh.trans.id}}';"> Archive Shipment</button>
                         <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                             Message {{ sh.trans.host.first_name }}</button>
                         <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">

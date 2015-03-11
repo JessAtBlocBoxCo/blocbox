@@ -118,12 +118,17 @@ def abouthosting(request):
     enduser = request.user
     return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
 
-def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None ): #modify_id=None
+def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None): #modify_id=None
     enduser = request.user
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
         host = None
+    #if archive_id archive the shipments
+    if archive_id:
+        trans = get_object_or_404(Transaction, pk=archive_id)
+        trans.trans_archived=True
+        trans.save()
     #Vars that do not depend on authentication
     api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
     shipments_with_tracking_allpaid = []                 
