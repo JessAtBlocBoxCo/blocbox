@@ -1898,7 +1898,7 @@ body {
 }
 
 .shippingentry {
-    background-image: url('/static/blocbox/images/Shipping-Entry.png.png');
+    background-image: url('/static/blocbox/images/Shipping-Entry.png');
     height: 350px;
     width: 350px;
     display: block;
