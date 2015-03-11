@@ -84,9 +84,10 @@ a:active {
 
 .hiw-header {
     font-size: 3.9em;
-    font-weight: 500;
+    font-weight: 700;
     margin-top: 0px;
     color: rgb(71, 158, 159);
+    line-height: 1.38;
 }
 
 .tinytext {
