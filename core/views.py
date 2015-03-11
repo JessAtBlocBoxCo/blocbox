@@ -521,7 +521,7 @@ def settings(request):
     if enduser.is_authenticated():
         user = get_object_or_404(UserInfo, pk=enduser.id)
         if request.method == 'POST': 
-            form = ResetPassword(data=request.POST)
+            form = ResetPassword(data=request.POST, user=request.user)
             if form.is_valid(): 
                 user = form.save()
                 # Now we hash the password with the set_passworth method, Once hashed, we ca update the user object

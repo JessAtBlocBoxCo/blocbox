@@ -50,7 +50,6 @@ class ResetPassword(forms.ModelForm):
         fields = ('password', )
     
     #check that current password is correct
-    user = request.user
     def clean_old_password(self):
         old_password = self.cleaned_data["old_password"]
         if not user.check_password(old_password): # if not self.user.check_password(old_password):
