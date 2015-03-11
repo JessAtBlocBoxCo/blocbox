@@ -402,7 +402,7 @@ def package_received_modal(request, confirm_id):
             trans.date_completed = datetoday
             trans.datetime_completed = datetimenow
     				#get last aftership stuff
-    		    slug = str(trans.shipment_courier.lower())
+            slug = str(trans.shipment_courier.lower())
             tracking = trans.tracking
             datadict = api.trackings.get(slug, tracking)
             tracking_info = datadict.get(u'tracking') 
