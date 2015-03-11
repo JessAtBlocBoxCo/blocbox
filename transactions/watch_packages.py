@@ -52,10 +52,11 @@ def main():
         datadict = api.trackings.get(slug, tracking)
         tracking_info = datadict.get(u'tracking') 
         new_status = tracking_info['tag']
+        last_tracking_datetime = tracking_info['last_checkpoint']['checkpoint_time']
+        last_tracking_date = last_tracking_datetime.date() 
         #if there wasn't a status, add it
         if current_status == None:
             trans.last_tracking_status = new_status
-            trans.save()
             responsemessage = "Tracking status was added for trans id" + str(trans.id) + ", it was previously empty"
             response_messages_list.append(responsemessage)
         #if there was a current status, see if its different
@@ -67,7 +68,6 @@ def main():
             #if status change is true then upate status and send a notificaton to the user
             if status_change == True:
                 trans.last_tracking_status = new_status
-                trans.save()
                 #send mail
                 #notify_enduser_tracking_change(request, host.id, enduser.id, trans.id)
                 #if its expired dont do anythin
@@ -113,6 +113,11 @@ def main():
             else:
                 responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"
                 response_messages_list.append(responsemessage)
+        #Update the last tracking date
+        trans.last_tracking_datetime = trans.last_tracking_datetime
+        trans.last_tracking_date = trans.last_tracking_date
+        #save the info to the transactions table
+        trans.save()    
     #return HttpResponse(response_messages_list)
     #the httpResponse produces a formatted output when called from command line but not from python shell.. when i sort this out go back to hhptResponse
     return response_messages_list
