@@ -1278,8 +1278,32 @@ footer {
     background-repeat: no-repeat;
     background-size: contain;
     margin: auto;
-    width: 130px;
-    height: 130px;
+    width: 150px;
+    height: 150px;
+    padding: 25px 10px 10px 10px;
+    line-height: 38px;
+    border: 2px solid rgb(97, 183, 184);
+    vertical-align: middle;
+}
+.pro-circle:hover {
+    background-color: white;
+    color: rgb(97, 183, 184);
+}
+.pro-circle:focus {
+    background-color: white;
+    color: rgb(97, 183, 184);
+}
+.pro-slip-circle {
+    background-color: rgb(97, 183, 184);
+    background-image: url('/static/blocbox/images/Logo-orange.png'); 
+    color: white;
+    border-radius: 100px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: auto;
+    width: 150px;
+    height: 150px;
     padding: 25px 10px 10px 10px;
     line-height: 38px;
     border: 2px solid rgb(97, 183, 184);
