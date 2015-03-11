@@ -54,6 +54,7 @@ def main():
         new_status = tracking_info['tag']
         #update time updated
         last_tracking_datetime = tracking_info['last_updated_at']
+        last_tracking_datetime = datetime(last_tracking_datetime)
         trans.last_tracking_datetime = last_tracking_datetime
         trans.last_tracking_date = last_tracking_datetime.date()
         trans.save()
