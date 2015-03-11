@@ -554,11 +554,10 @@
                             </div>
                             <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} {% else %} Enter Package Description {% endif %} </h3>
                         </div>
-                        <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
+                        <p class="greytext paddingtop10px">Archived shipments can be found in the past transactions section of your account page</p>
                         <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
                         	onclick="window.location='/dashboard/archive_id{{sh.trans.id}}';"> Archive Shipment</button>
-                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
-                            Message {{ sh.trans.host.first_name }}</button>
+                        <!--JMY REMOVED 'MESSAGE JOHN' - NOT ESSENTIAL HERE - AND THE MORE WE CAN REMOVE THE FASTER IT WILL LOAD -->
                         <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                             Report an Issue</button>
 
@@ -568,31 +567,22 @@
                     <div class="col-sm-9">
                         <div class="row">
                             <div class="col-sm-2 col-sm-offset-1 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
-                                </div>
+                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i> </div>
                             </div>
-                            <div>
-                                <div class="col-sm-2 shipline"></div>
-                            </div>
+                            <div>   <div class="col-sm-2 shipline"></div>  </div>
                             <div class="col-sm-2 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
-                                </div>
+                                <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
                             </div>
-                            <div>
-                                <div class="col-sm-2 shipline"></div>
-                            </div>
+                            <div>  <div class="col-sm-2 shipline"></div> </div>
                             <div class="col-sm-2 marginbottom10px">
-                                <div class="statusgreen" style="padding: 9px 5px;"><i class="fa fa-check fa-fw fa-3x statusicon"></i>
-                                </div>
+                                <div class="statusgreen" style="padding: 9px 5px;"><i class="fa fa-check fa-fw fa-3x statusicon"></i> </div>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
-                                <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
-                                <!--row-->
+                                <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>  <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
                             </div>
                             <!--end  shipment details: waiting to be picke dup packages -->
 
@@ -602,10 +592,7 @@
                                 <p class="textcenter">DELIVERED</p>
                                 <h4 class="nomargin">Tracking Number</h4>
                                 <div class="row nomargin">
-                                    <p class="nomargin"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a>
-                                        <!--EDIT TRACKING -->
-                                        <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
-                                    </p>
+                                    <p class="nomargin"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a> </p>
                                 </div>
                             </div>
                             <!--End Neighbor Column (packages waiting to be picked up) -->
@@ -628,14 +615,6 @@
 
                         <div class="row paddingtop5px">
                             <div class="col-sm-4">
-                                <h4 class="nomargin">Delivery Method</h4>
-                                <p class="nomargin">
-                                    {% if sh.trans.on_aftership %} {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%} {% else %} You expected it to arrive {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} {% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; {% endif %} {% endif %}
-                                    <!--on aftership -->
-
-                                </p>
-                            </div>
-                            <div class="col-sm-4">
                                 <!--Status and shipment type-->
                                 <h4 class="nomargin">{{sh.aftership.tag}}</h4>
                                 <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
@@ -645,10 +624,7 @@
                                 <h4 class="nomargin">Order Completed</h4>
                                 <p class="nomargin">{{ sh.trans.date_completed }} {% if sh.trans.on_aftership %}{% endif%}</p>
                             </div>
-                        </div>
-
-                        <div class="row paddingtop5px">
-                            <div class="col-sm-4  col-sm-offset-8">
+                            <div class="col-sm-4">
                                 <h4 class="nomargin">Your Rating</h4>
                                 <p class="nomargin">{{ sh.trans.host.first_name}} {{sh.trans.enduser_rating}} / 5.0</p>
                             </div>
