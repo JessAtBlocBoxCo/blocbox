@@ -217,19 +217,19 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 note_to_host = trans_form_package.cleaned_data['note_to_host']
                 paypal_quantity = 1
                 if payment_option=="bundle10":
-                    price=15
+                    price=host.price_package_bundle10
                     youselected="Bundle of 10 Packages"  
                     balance_created = 9 #10 minus the 1 they just bought                  
                 elif payment_option=="bundle20":
-                    price=15
+                    price=host.price_package_bundle20
                     youselected="Bundle of 20 Packages"       
-                    balance_created = price - 2             
+                    balance_created = 19 #20 minus the 1 they just bought             
                 elif payment_option=="annual":
-                    price=150
+                    price=host.price_package_annual
                     youselected="Annual"
-                    balance_created = price - 2
+                    balance_created = 1000 #Notional - this option is not in place currently
                 else:
-                    price=2
+                    price=host.price_package_per
                     youselected="Per Package"
                     balance_created = None
                 #Next, add the data to the transaction table
