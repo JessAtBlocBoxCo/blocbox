@@ -90,13 +90,13 @@
                       	<div class="row paddingtop5px">
                             <div class="col-sm-4">
                                 <!--Status and shipment type-->
-                                <h4 class="nomargin">{{sh.aftership.tag}}</h4>
-                                <p class="nomargin">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
+                                <h4 class="nomargin">{{sh.trans.last_tracking_status}}</h4>
+                                <p class="nomargin">{{sh.trans.last_checkpoint_date }}</p>
                             </div>
                             <div class="col-sm-4">
                                 <!--Expected Delivery -->
                                 <h4 class="nomargin">Order Completed</h4>
-                                <p class="nomargin">{{ trans.date_completed }} {% if trans.on_aftership %}{% endif%}</p>
+                                <p class="nomargin">{{ trans.date_completed }} </p>
                             </div>
                             <div class="col-sm-4">
                                 <h4 class="nomargin">Your Rating</h4>

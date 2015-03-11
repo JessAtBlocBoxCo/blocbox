@@ -401,7 +401,25 @@ def package_received_modal(request, confirm_id):
     				trans.trans_complete = True
     				trans.date_completed = datetoday
     				trans.datetime_completed = datetimenow
-    				trans.save()
+    				#get last aftership stuff
+    		    slug = str(trans.shipment_courier.lower())
+            tracking = trans.tracking
+            datadict = api.trackings.get(slug, tracking)
+            tracking_info = datadict.get(u'tracking') 
+            new_status = tracking_info['tag']
+            trans.last_tracking_status = new_status
+            trans.save()
+            checkpoints = tracking_info['checkpoints']
+            if checkpoints:
+                last_checkpoint = checkpoints[-1]
+                last_tracking_datetime = last_checkpoint['checkpoint_time']
+                last_checkpoint_city = last_checkpoint['city']
+                last_checkpoint_state = last_checkpoint['state']
+                trans.last_tracking_datetime = last_tracking_datetime
+                trans.last_tracking_date = last_tracking_datetime.date()
+                trans.last_checkpoint_city = last_checkpoint_city
+                trans.last_checkpoint_state = last_checkpoint_state 
+    				    trans.save()
     		else:
     				print package_received_form.errors
     else:
