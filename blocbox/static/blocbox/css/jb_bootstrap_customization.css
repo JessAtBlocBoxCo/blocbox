@@ -1879,6 +1879,24 @@ body {
         opacity: 0;
     }
 }
+
+/*-----------------------------------------------------------------------
+* LANDING STYLES
+*-----------------------------------------------------------------------*/
+
+.homesearch {
+    background-image: url('/static/blocbox/images/homesearch.png');
+    height: 70px;
+    width: 70px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
 *--------------------------------------------------------------*/
