@@ -215,16 +215,16 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         confirm_id_int = None
     enduser_issue_form = None #if they dont open the report an issue modal
     if issue_id:     #if they open the EndUser Issues Modal/Button
-    	  issue_id_int = issue_id.strip()
-    	  issue_id_int = int(issue_id)
+        issue_id_int = issue_id.strip()
+        issue_id_int = int(issue_id)
         enduser_report_issue_modal(request, issue_id)
     else:
         issue_id_int = None
     message_form = None 
     recipient_email_list = None
     if message_trans_id: #if they open the message host modal
-    	  message_trans_id_int = message_trans_id.strip()
-    	  message_trans_id_int = int(message_trans_id_int)
+        message_trans_id_int = message_trans_id.strip()
+        message_trans_id_int = int(message_trans_id_int)
         message_host_modal(request, message_trans_id)  
     else:
         message_trans_id_int = None   
