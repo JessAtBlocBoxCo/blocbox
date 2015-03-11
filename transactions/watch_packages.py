@@ -52,6 +52,10 @@ def main():
         datadict = api.trackings.get(slug, tracking)
         tracking_info = datadict.get(u'tracking') 
         new_status = tracking_info['tag']
+        if new_status = 'Expired':
+            if trans.aftership_expired == False:
+                trans.aftership_expired = True
+                trans.save()
         checkpoints = tracking_info['checkpoints']
         if checkpoints:
             last_checkpoint = checkpoints[-1]
@@ -91,7 +95,9 @@ def main():
                     host_address_full = host.st_address1
                 sendit = False
                 if new_status == 'Expired':
-                    responsemessage = "Transaction ID " + str(trans.id) + " has expired" + "\n"                
+                    responsemessage = "Transaction ID " + str(trans.id) + " has expired" + "\n"  
+                    trans.aftership_expired = True
+                    trans.save()              
                 elif new_status == 'Delivered':
                     if enduser.notifyuser_packagereceived == True:
                 	      sendit = True
