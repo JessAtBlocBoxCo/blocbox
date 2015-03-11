@@ -543,7 +543,7 @@
                                 </p>
                             </div>
                             <div class="col-sm-4">
-                                {% if sh.aftership.last_checkpoint.city %}  
+   
                                 <h4 class="nomargin"> {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} {{ sh.trans.last_tracking_status }} {% endif %} </h4>
                                 <p class="nomargin">  
                                 		{% if sh.trans.on_aftership %} 
@@ -565,7 +565,13 @@
                                 <!--Expected Delivery -->
                                 <h4 class="nomargin">Scheduled Delivery</h4>
                                 <p class="nomargin">
-                                    {% if sh.aftership.expected_delivery %} {{ sh.aftership.expected_delivery_notime }} {% else %} You expected it to arrive {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} {% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; {% endif %} {% endif %}
+                                    {% if sh.aftership.expected_delivery %} 
+                                    		{{ sh.aftership.expected_delivery_notime }} 
+                                    {% else %} You expected it to arrive 
+                                    		{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    		{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; 
+                                    		{% endif %} 
+                                    {% endif %}
                                 </p>
                             </div>
                         </div>
