@@ -11,7 +11,7 @@ class UserForm(forms.ModelForm):
     zipcode = forms.CharField(label="Zip Code")
     
     error_messages = {
-        'password_mismatch': _("The two password fields didn't match."),
+        'password_mismatch': "The two password fields didn't match.",
     }
     
     class Meta:
