@@ -126,7 +126,8 @@ def ipn(request, item_check_callable=None, host_id=None, trans_id=None):
         #update the userinfo table to add an account balance
         if trans.balance_created_packages:
     		    userinfo = UserInfo.objects.get(pk=trans.enduser.id) 
-    		    userinfo.account_balance_package = trans.balance_created_packages
+    		    new_balance = trans.balance_created_packages
+    		    userinfo.account_balance_package = new_balance
     		    userinfo.save()
         #send emails
         notify_host_shipment_paid(request,trans_table_id)
