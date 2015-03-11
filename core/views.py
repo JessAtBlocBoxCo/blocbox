@@ -36,7 +36,7 @@ from schedule.forms import EventForm, OccurrenceForm
 from schedule.models import Calendar, Occurrence, Event
 from schedule.models.calendars import CalendarRelation
 from schedule.utils import check_event_permissions, coerce_date_dict
-from django.utils import timezone
+from django.utils import timezone, encoding
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
 from paypal.standard.ipn.views import ask_for_money
