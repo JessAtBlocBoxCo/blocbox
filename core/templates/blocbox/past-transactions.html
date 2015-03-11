@@ -38,11 +38,11 @@
 										
 										
 										
-										<!--PAST TRANSACTIONS -->
-										{% for trans in shipments_archived %}										
+								<!--PAST TRANSACTIONS -->
+								{% for trans in shipments_archived %}										
                        
                         
-                   <div class="row dashinfobox dashfont" style="padding-right: 5px;">
+                <div class="row dashinfobox dashfont" style="padding-right: 5px;">
                     <div class="col-sm-11" style="padding-left: 5px;">
                         <div class="row">
                             <div class="col-xs-2 userbg nopaddingleft">
@@ -53,7 +53,7 @@
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
 
-                        <div class="row">
+                      	<div class="row">
                             <div class="col-xs-4 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
                                 <h4 class="nomargin">Order {{trans.id }} placed on</h4>  <p class="nomargin dashtext">{{ trans.date_requested_notime }}</p>
@@ -85,9 +85,9 @@
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                      	</div>
 
-                        <div class="row paddingtop5px">
+                      	<div class="row paddingtop5px">
                             <div class="col-sm-4">
                                 <!--Status and shipment type-->
                                 <h4 class="nomargin">{{sh.aftership.tag}}</h4>
@@ -102,17 +102,9 @@
                                 <h4 class="nomargin">Your Rating</h4>
                                 <p class="nomargin">{{ trans.host.first_name}} {{trans.enduser_rating}} / 5.0</p>
                             </div>
-                        </div>
+                       </div>
                     </div>
-                    <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
-                    <!--close div containint this shipmet: waiting to be picked up-->
-                </div>
-                
-                
-                
-                
-                
-                        
+               
                         
                       {% endfor %} <!--End of Packages Card-->
 
