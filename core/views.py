@@ -521,7 +521,7 @@ def settings(request):
     if enduser.is_authenticated():
         user = get_object_or_404(UserInfo, pk=enduser.id)
         if request.method == 'POST': 
-            form = PasswordReset(data=request.POST)
+            form = ResetPassword(data=request.POST)
             if form.is_valid(): 
                 user = form.save()
                 # Now we hash the password with the set_passworth method, Once hashed, we ca update the user object
@@ -531,7 +531,7 @@ def settings(request):
             else:
                 print user_form.errors
         else:
-            form = PasswordReset()
+            form = ResetPassword()
     else:
         form = None
     return render(request, 'blocbox/settings.html', {'enduser': enduser, 'form': form, 'passwordreset_completed': passwordreset_completed })
