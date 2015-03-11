@@ -52,7 +52,7 @@ def main():
         datadict = api.trackings.get(slug, tracking)
         tracking_info = datadict.get(u'tracking') 
         new_status = tracking_info['tag']
-        if new_status = 'Expired':
+        if new_status == 'Expired':
             if trans.aftership_expired == False:
                 trans.aftership_expired = True
                 trans.save()
