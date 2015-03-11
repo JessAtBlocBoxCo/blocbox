@@ -204,8 +204,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         dashboard_tracking_modal(request, track_id) #defined below  
     package_received_form = None #is None if they dont open package recieved modal
     if confirm_id:  #if the open the package_received modal
-    	  confirm_id_int = confirm_id.strip()
-    	  confirm_id_int = int(confirm_id_int)
+        confirm_id_int = confirm_id.strip()
+        confirm_id_int = int(confirm_id_int)
         package_received_modal(request, confirm_id) 	
     else:
         confirm_id_int = None
