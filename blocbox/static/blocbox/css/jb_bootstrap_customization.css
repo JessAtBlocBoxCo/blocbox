@@ -1294,7 +1294,7 @@ footer {
     color: rgb(97, 183, 184);
 }
 .pro-slip-circle {
-    background-color: rgb(97, 183, 184);
+    background-color: transparent;
     background-image: url('/static/blocbox/images/UPS-Slip.png'); 
     color: white;
     border-radius: 100px;
