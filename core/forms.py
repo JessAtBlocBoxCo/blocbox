@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.conf import settings
 from core.models import UserInfo
 from connections.models import Connection
+from django.core.validators import validate_email
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
@@ -33,7 +34,10 @@ class UserForm(forms.ModelForm):
             )
         return password2
 
-
+    def validate_email_supplied(self):
+        email = self.cleaned_data.get("email")
+        return validate_email(email)
+        
         
 class ResetPassword(forms.ModelForm):
     old_password = forms.CharField(label='Old Password', widget=forms.PasswordInput)
