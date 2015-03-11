@@ -1278,8 +1278,8 @@ footer {
     background-repeat: no-repeat;
     background-size: contain;
     margin: auto;
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     padding: 25px 10px 10px 10px;
     line-height: 38px;
     border: 2px solid rgb(97, 183, 184);
@@ -1302,11 +1302,11 @@ footer {
     background-repeat: no-repeat;
     background-size: contain;
     margin: auto;
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
     padding: 25px 10px 10px 10px;
     line-height: 38px;
-    border: 2px solid rgb(97, 183, 184);
+    border: 0px solid rgb(97, 183, 184);
     vertical-align: middle;
 }
 .pro-circle:hover {
