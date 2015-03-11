@@ -413,7 +413,8 @@ def package_received_modal(request, confirm_id):
             tracking_info = datadict.get(u'tracking') 
             new_status = tracking_info['tag']
             trans.last_tracking_status = new_status            
-            last_tracking_datetime = tracking_info['last_updated_at']
+            last_tracking_unicde = tracking_info['last_updated_at']
+            last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
             trans.last_tracking_datetime = last_tracking_datetime
             trans.last_tracking_date = last_tracking_datetime.date()
             trans.save()
