@@ -420,7 +420,7 @@ def package_received_modal(request, confirm_id):
                 trans.last_checkpoint_city = last_checkpoint_city
                 trans.last_checkpoint_state = last_checkpoint_state 
                 trans.save()
-    		else:
+        else:
     				print package_received_form.errors
     else:
     	  package_received_form = PackageReceived()
