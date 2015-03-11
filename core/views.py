@@ -529,7 +529,7 @@ def settings(request):
                 user.save()
                 passwordreset_completed = True
             else:
-                print user_form.errors
+                print form.errors
         else:
             form = ResetPassword()
     else:
