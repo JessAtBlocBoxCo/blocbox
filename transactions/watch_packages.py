@@ -60,6 +60,8 @@ def main():
         else:
             last_tracking_datetime = None
             last_tracking_date = None
+        responsemessage = "The last tracking dateitme was " + str(last_tracking_datetime) + "and the last date is " + str(last_tracking_date) + "."
+        response_messages_list.append(responsemessage)
         #if there wasn't a status, add it
         if current_status == None:
             trans.last_tracking_status = new_status
