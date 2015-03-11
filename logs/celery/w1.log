@@ -54,3 +54,1048 @@ You must only enable the serializers that you will actually use.
 [2015-03-10 11:51:07,954: INFO/MainProcess] Task tasks.test_schedule[d9babfb6-174d-405b-b2cb-89010a328169] succeeded in 2.38482393604s: An email has been sent to test the celery beat -should happene very minute - the less shit transaction
 [2015-03-10 11:52:05,769: INFO/MainProcess] Received task: tasks.test_schedule[0d5a8d9b-475d-4292-8955-1c9f5e197554]
 [2015-03-10 11:52:08,217: INFO/MainProcess] Task tasks.test_schedule[0d5a8d9b-475d-4292-8955-1c9f5e197554] succeeded in 2.44657043199s: An email has been sent to test the celery beat -should happene very minute - the less shit transaction
+[2015-03-10 11:57:01,763: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2015-03-10 11:57:01,891: INFO/MainProcess] Connected to django://localhost//
+[2015-03-10 11:57:01,931: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:254: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2015-03-10 11:57:01,932: WARNING/MainProcess] w1@BlocBoxonDjango ready.
+[2015-03-10 11:57:11,969: INFO/MainProcess] Received task: tasks.test_schedule[fa35112f-e927-48e4-8c21-127408a6c875]
+[2015-03-10 11:57:13,408: INFO/MainProcess] Task tasks.test_schedule[fa35112f-e927-48e4-8c21-127408a6c875] succeeded in 1.43748983595s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 11:58:12,169: INFO/MainProcess] Received task: tasks.test_schedule[4af8b538-4400-4bdf-828a-ed7aed90ed40]
+[2015-03-10 11:58:14,556: INFO/MainProcess] Task tasks.test_schedule[4af8b538-4400-4bdf-828a-ed7aed90ed40] succeeded in 2.38543506403s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 11:59:12,353: INFO/MainProcess] Received task: tasks.test_schedule[0b2ef889-ef28-49cb-ba47-6f20902fdccf]
+[2015-03-10 11:59:14,738: INFO/MainProcess] Task tasks.test_schedule[0b2ef889-ef28-49cb-ba47-6f20902fdccf] succeeded in 2.38385398802s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:00:12,541: INFO/MainProcess] Received task: tasks.test_schedule[4627d5f4-67c5-4329-882b-6cf6a52c8f98]
+[2015-03-10 12:00:13,951: INFO/MainProcess] Task tasks.test_schedule[4627d5f4-67c5-4329-882b-6cf6a52c8f98] succeeded in 1.40869714698s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:01:12,726: INFO/MainProcess] Received task: tasks.test_schedule[fcd8c798-a01a-4fa0-8ab4-ef0038a080fe]
+[2015-03-10 12:01:15,146: INFO/MainProcess] Task tasks.test_schedule[fcd8c798-a01a-4fa0-8ab4-ef0038a080fe] succeeded in 2.41919493402s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:02:12,921: INFO/MainProcess] Received task: tasks.test_schedule[1020fdb9-96a0-4ca9-8c8c-93fc3041c091]
+[2015-03-10 12:02:14,424: INFO/MainProcess] Task tasks.test_schedule[1020fdb9-96a0-4ca9-8c8c-93fc3041c091] succeeded in 1.50241547602s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:03:13,120: INFO/MainProcess] Received task: tasks.test_schedule[782ed19b-f4e7-46a7-985c-c9ec04883000]
+[2015-03-10 12:03:14,662: INFO/MainProcess] Task tasks.test_schedule[782ed19b-f4e7-46a7-985c-c9ec04883000] succeeded in 1.54014200298s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:04:13,302: INFO/MainProcess] Received task: tasks.test_schedule[38e3a6c3-e41c-4d6c-91fc-a82e5caa1688]
+[2015-03-10 12:04:16,991: INFO/MainProcess] Task tasks.test_schedule[38e3a6c3-e41c-4d6c-91fc-a82e5caa1688] succeeded in 3.68819395796s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:05:13,515: INFO/MainProcess] Received task: tasks.test_schedule[30fc2ce0-59dd-4ced-b378-482fdd4c49df]
+[2015-03-10 12:05:16,246: INFO/MainProcess] Task tasks.test_schedule[30fc2ce0-59dd-4ced-b378-482fdd4c49df] succeeded in 2.729984209s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:06:13,713: INFO/MainProcess] Received task: tasks.test_schedule[7dedc85c-b3f8-4ea8-ab46-c96b79bd4bd5]
+[2015-03-10 12:06:15,179: INFO/MainProcess] Task tasks.test_schedule[7dedc85c-b3f8-4ea8-ab46-c96b79bd4bd5] succeeded in 1.46502757899s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:07:34,452: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2015-03-10 12:07:34,598: INFO/MainProcess] Connected to django://localhost//
+[2015-03-10 12:07:34,646: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:254: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2015-03-10 12:07:34,646: WARNING/MainProcess] w1@BlocBoxonDjango ready.
+[2015-03-10 12:19:06,836: INFO/MainProcess] Received task: tasks.watch_packages[1133a71f-b08e-4427-8303-630960b39c37]
+[2015-03-10 12:19:06,881: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:07,083: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:07,270: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:07,467: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:07,627: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:07,787: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:07,988: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:08,158: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:08,358: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:08,565: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:08,760: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:08,915: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:09,075: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:09,239: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:09,402: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:09,616: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:09,782: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:09,937: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:10,095: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:10,286: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:10,442: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:19:10,555: INFO/MainProcess] Task tasks.watch_packages[1133a71f-b08e-4427-8303-630960b39c37] succeeded in 3.71656939999s: [u'The status did not change for trans id 140; the status is: Exception\n', u'The status did not change for trans id 76; the...
+[2015-03-10 12:37:45,288: INFO/MainProcess] Received task: tasks.test_schedule[15a27f6b-0d1f-4027-bd88-b02941709e39]
+[2015-03-10 12:37:47,445: INFO/MainProcess] Task tasks.test_schedule[15a27f6b-0d1f-4027-bd88-b02941709e39] succeeded in 2.155721127s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 12:49:09,145: INFO/MainProcess] Received task: tasks.watch_packages[156ea44a-2e56-45a9-8188-c4261bd8b4d6]
+[2015-03-10 12:49:09,192: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:09,398: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:09,615: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:09,769: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:09,933: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:10,114: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:10,322: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:10,510: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:10,717: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:10,870: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:11,025: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:11,181: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:11,344: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:11,503: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:11,656: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:11,840: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:11,997: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:12,164: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:12,316: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:12,464: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:12,620: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 12:49:12,714: INFO/MainProcess] Task tasks.watch_packages[156ea44a-2e56-45a9-8188-c4261bd8b4d6] succeeded in 3.56807821s: [u'The status did not change for trans id 140; the status is: Exception\n', u'The status did not change for trans id 76; the...
+[2015-03-10 13:07:47,507: INFO/MainProcess] Received task: tasks.test_schedule[d27dff18-bb6b-4e1f-8918-1ba3d8850b8d]
+[2015-03-10 13:07:49,098: INFO/MainProcess] Task tasks.test_schedule[d27dff18-bb6b-4e1f-8918-1ba3d8850b8d] succeeded in 1.588646135s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 13:19:04,593: INFO/MainProcess] Received task: tasks.watch_packages[f6146b8f-8d61-41f7-9851-0f0a2add5a56]
+[2015-03-10 13:19:04,648: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:04,850: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:05,076: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:05,283: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:05,444: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:05,644: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:05,811: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:05,998: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:06,158: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:06,316: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:06,470: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:06,661: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:06,831: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:06,993: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:07,180: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:07,335: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:07,490: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:07,652: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:07,808: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:07,959: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:08,116: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:19:08,211: INFO/MainProcess] Task tasks.watch_packages[f6146b8f-8d61-41f7-9851-0f0a2add5a56] succeeded in 3.61653845798s: [u'The status did not change for trans id 140; the status is: Exception\n', u'The status did not change for trans id 76; the...
+[2015-03-10 13:37:48,206: INFO/MainProcess] Received task: tasks.test_schedule[4768e3d1-451a-4240-afea-7b4b108c80e5]
+[2015-03-10 13:37:51,113: INFO/MainProcess] Task tasks.test_schedule[4768e3d1-451a-4240-afea-7b4b108c80e5] succeeded in 2.90199435502s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 13:49:05,344: INFO/MainProcess] Received task: tasks.watch_packages[5fb0443b-eee1-4b25-a885-f0440628c6fc]
+[2015-03-10 13:49:05,395: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:05,593: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:05,780: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:05,965: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:06,177: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:06,363: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:06,558: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:06,748: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:06,910: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:07,064: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:08,912: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:09,102: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:09,300: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:09,462: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:09,615: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:09,770: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:09,926: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:10,094: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:10,245: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:10,395: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:10,552: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-10 13:49:10,655: INFO/MainProcess] Task tasks.watch_packages[5fb0443b-eee1-4b25-a885-f0440628c6fc] succeeded in 5.30861284002s: [u'The status did not change for trans id 140; the status is: Exception\n', u'The status did not change for trans id 76; the...
+[2015-03-10 14:07:43,810: INFO/MainProcess] Received task: tasks.test_schedule[61ce6580-dad0-405a-b5a6-778b84bf9893]
+[2015-03-10 14:07:45,306: INFO/MainProcess] Task tasks.test_schedule[61ce6580-dad0-405a-b5a6-778b84bf9893] succeeded in 1.49346799799s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-10 14:08:46,926: ERROR/MainProcess] Process 'Worker-6' pid:12497 exited with 'signal 9 (SIGKILL)'
+[2015-03-10 14:08:46,938: ERROR/MainProcess] Thread 'Supervisor' crashed: OSError(12, 'Cannot allocate memory')
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/billiard/pool.py", line 472, in run
+    return self.body()
+  File "/usr/local/lib/python2.7/dist-packages/billiard/pool.py", line 531, in body
+    pool._maintain_pool()
+  File "/usr/local/lib/python2.7/dist-packages/billiard/pool.py", line 1246, in _maintain_pool
+    self._repopulate_pool(joined)
+  File "/usr/local/lib/python2.7/dist-packages/billiard/pool.py", line 1231, in _repopulate_pool
+    self._create_worker_process(self._avail_index())
+  File "/usr/local/lib/python2.7/dist-packages/billiard/pool.py", line 1062, in _create_worker_process
+    w.start()
+  File "/usr/local/lib/python2.7/dist-packages/billiard/process.py", line 137, in start
+    self._popen = Popen(self)
+  File "/usr/local/lib/python2.7/dist-packages/billiard/forking.py", line 99, in __init__
+    self.pid = os.fork()
+OSError: [Errno 12] Cannot allocate memory
+[2015-03-11 09:37:53,140: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2015-03-11 09:37:53,364: INFO/MainProcess] Connected to django://localhost//
+[2015-03-11 09:37:53,419: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:254: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2015-03-11 09:37:53,420: WARNING/MainProcess] w1@BlocBoxonDjango ready.
+[2015-03-11 09:37:53,427: INFO/MainProcess] Received task: tasks.watch_packages[da63b170-4fab-46d0-88e1-b63912ce4374]
+[2015-03-11 09:37:53,442: INFO/MainProcess] Received task: tasks.test_schedule[f45e2adb-47d0-4043-8f8a-ae835a5302c8]
+[2015-03-11 09:37:53,472: INFO/MainProcess] Received task: tasks.watch_packages[23cadd4d-8725-46f5-8ef1-452051cad0a5]
+[2015-03-11 09:37:53,509: INFO/MainProcess] Received task: tasks.test_schedule[c9bd0183-3500-48d6-803a-8fc84233d16c]
+[2015-03-11 09:37:53,554: INFO/MainProcess] Received task: tasks.watch_packages[0f2cb7ac-4797-46b8-8b0e-84a14e56da7b]
+[2015-03-11 09:37:53,614: INFO/MainProcess] Received task: tasks.test_schedule[269b0277-be8f-4191-9a23-425107c5f852]
+[2015-03-11 09:37:53,671: INFO/MainProcess] Received task: tasks.watch_packages[52276f49-30ff-4172-9997-db66c12fed57]
+[2015-03-11 09:37:53,733: INFO/MainProcess] Received task: tasks.test_schedule[e8af0796-38c9-494e-9a19-d957b02cd3d1]
+[2015-03-11 09:37:53,798: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:53,804: INFO/MainProcess] Received task: tasks.watch_packages[56c01304-9ce3-42d3-8993-19a1a09e77c7]
+[2015-03-11 09:37:53,904: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:53,924: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:53,941: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,019: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-10 09:34:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,094: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-10 09:34:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,099: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-10 09:34:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,121: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,125: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-10 09:34:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,228: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,229: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,232: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,233: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-19 13:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,313: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,337: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-19 13:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,342: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-19 13:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,348: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-19 13:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,429: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,439: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 10:31:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,442: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,444: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,541: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,568: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 10:31:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,574: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 10:31:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,579: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 10:31:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,656: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-16 08:28:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,664: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,668: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,669: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,735: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,784: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-16 08:28:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,785: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-16 08:28:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,790: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-16 08:28:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,829: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 10:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:54,876: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,876: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,883: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:54,905: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,013: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 10:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,019: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 10:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,021: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 10:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,035: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-05 16:53:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,114: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,117: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,121: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,123: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,267: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-05 16:53:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,269: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-05 16:53:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,263: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-05 16:53:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,272: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-17 09:22:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,361: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,364: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,366: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,366: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,480: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-17 09:22:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,558: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,589: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,690: INFO/MainProcess] Task tasks.test_schedule[269b0277-be8f-4191-9a23-425107c5f852] succeeded in 2.06354234007s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:37:55,698: INFO/MainProcess] Received task: tasks.test_schedule[1c337e14-c67c-4835-afc9-0736d64b2fb5]
+[2015-03-11 09:37:55,716: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,739: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,744: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,827: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-08 13:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,847: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-16 08:28:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:55,888: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,917: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,919: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:55,984: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-08 13:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,038: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-09 10:24:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,041: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-08 13:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,048: INFO/MainProcess] Task tasks.test_schedule[e8af0796-38c9-494e-9a19-d957b02cd3d1] succeeded in 2.31363139697s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:37:56,054: INFO/MainProcess] Received task: tasks.watch_packages[7b955c22-9a52-4288-9727-7a7ed17ec752]
+[2015-03-11 09:37:56,056: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,147: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,159: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,168: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-09 10:24:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,265: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,269: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-28 11:54:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,285: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-09 10:24:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,358: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-28 11:54:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,373: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,374: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,447: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,483: INFO/MainProcess] Task tasks.test_schedule[f45e2adb-47d0-4043-8f8a-ae835a5302c8] succeeded in 3.03867482301s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:37:56,496: INFO/MainProcess] Received task: tasks.test_schedule[933cdcc4-a833-461d-93ac-25de3c00caf8]
+[2015-03-11 09:37:56,512: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 11:58:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,516: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-28 11:54:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,549: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,579: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 11:58:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,612: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,614: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,661: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,667: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-08 13:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,731: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 11:58:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,753: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,788: INFO/MainProcess] Task tasks.test_schedule[c9bd0183-3500-48d6-803a-8fc84233d16c] succeeded in 3.27188232995s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:37:56,791: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,799: INFO/MainProcess] Received task: tasks.watch_packages[201e6e8e-4d3c-472c-ab12-96ead1bfc2d5]
+[2015-03-11 09:37:56,810: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,828: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:56,881: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 11:58:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,955: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-26 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,962: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-26 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:56,980: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,042: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,047: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,055: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,199: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,230: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-04 17:18:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:57,244: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-04 17:18:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:57,239: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-26 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:57,374: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-26 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:57,385: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,390: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,392: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,506: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,602: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-10 15:08:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:57,622: INFO/MainProcess] Task tasks.test_schedule[1c337e14-c67c-4835-afc9-0736d64b2fb5] succeeded in 1.56899074791s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:37:57,644: INFO/MainProcess] Received task: tasks.test_schedule[969ffebd-1cb9-4a42-9025-4c82933ee76d]
+[2015-03-11 09:37:57,667: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-10 15:08:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:57,735: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-04 17:18:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:57,780: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,781: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,770: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-04 17:18:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:57,878: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,892: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,906: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:57,996: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 17:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,005: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 17:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,050: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-10 15:08:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,052: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-10 15:08:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,058: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,074: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,141: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,166: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,380: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,383: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 11:58:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,390: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,395: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-17 09:22:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,398: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-17 09:22:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,478: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 17:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:58,517: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,576: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,586: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,591: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,688: INFO/MainProcess] Task tasks.test_schedule[933cdcc4-a833-461d-93ac-25de3c00caf8] succeeded in 1.89210295095s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:37:58,785: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:58,791: INFO/MainProcess] Received task: tasks.watch_packages[c0d3d3cd-1168-48a0-abad-7eba2b3b39d4]
+[2015-03-11 09:37:58,808: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 17:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:59,085: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,166: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:59,173: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-09 10:04:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:59,073: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,273: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-09 10:04:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:59,435: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,435: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,787: INFO/Worker-2] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,786: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,786: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,894: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:59,934: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,939: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-10 09:34:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:37:59,967: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:37:59,994: WARNING/Worker-6] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 08:40:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,021: WARNING/Worker-2] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 08:40:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,032: INFO/MainProcess] Task tasks.watch_packages[0f2cb7ac-4797-46b8-8b0e-84a14e56da7b] succeeded in 6.46129730693s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:00,069: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,075: INFO/MainProcess] Task tasks.watch_packages[da63b170-4fab-46d0-88e1-b63912ce4374] succeeded in 6.64658099401s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:00,087: INFO/MainProcess] Received task: tasks.test_schedule[21616c6c-d687-4fcb-813d-fd424e83e7d5]
+[2015-03-11 09:38:00,099: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,111: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,121: INFO/MainProcess] Received task: tasks.watch_packages[774b283f-d826-4457-9758-e55d4dd7af4a]
+[2015-03-11 09:38:00,139: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-10 09:34:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,220: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-26 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,235: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-19 13:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,267: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,274: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-08 13:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,322: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,357: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,360: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,390: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,393: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,414: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-08 13:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,418: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-19 13:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,471: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 17:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,473: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-17 09:22:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,501: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-09 10:24:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,516: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,518: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,560: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,571: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,586: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,592: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,635: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-09 10:24:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,667: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-17 09:22:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,680: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,709: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-28 11:54:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,728: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,764: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,766: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,779: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,793: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,795: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,800: INFO/MainProcess] Task tasks.test_schedule[969ffebd-1cb9-4a42-9025-4c82933ee76d] succeeded in 2.08651763597s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:00,823: INFO/MainProcess] Received task: tasks.test_schedule[05255fcd-61b7-4397-a7f3-ead16f36d535]
+[2015-03-11 09:38:00,865: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-28 11:54:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,905: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,962: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:00,966: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 10:31:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,968: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-10 09:34:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,976: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 10:31:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:00,961: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 11:58:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,076: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-10 09:34:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,078: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,084: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 11:58:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,091: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,092: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,094: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,094: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,209: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,221: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,239: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-19 13:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,259: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 10:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,326: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,344: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,346: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,348: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,391: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,476: INFO/MainProcess] Task tasks.test_schedule[21616c6c-d687-4fcb-813d-fd424e83e7d5] succeeded in 1.38672431698s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:01,489: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-05 16:53:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,495: INFO/MainProcess] Received task: tasks.watch_packages[00d835cd-d8ef-4161-9e44-f685e8fa3b11]
+[2015-03-11 09:38:01,528: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-26 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,538: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-17 09:22:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,503: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-26 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,542: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 10:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,604: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,647: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,649: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,650: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,652: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,676: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,801: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,800: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 17:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,805: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-04 17:18:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,807: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-04 17:18:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,824: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 10:31:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,837: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-05 16:53:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:01,909: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,912: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,913: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,923: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,935: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:01,969: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-09 10:04:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,059: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-10 15:08:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,068: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,080: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,096: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-10 15:08:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,102: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-28 11:54:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,188: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,210: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,214: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,215: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,216: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,269: WARNING/Worker-5] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 08:40:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,296: INFO/MainProcess] Task tasks.watch_packages[56c01304-9ce3-42d3-8993-19a1a09e77c7] succeeded in 6.59966219403s: ['The last tracking dateitme was 2015-01-16 08:28:00and the last date is 2015-01-16.', u'The status did not change for trans id...
+[2015-03-11 09:38:02,305: INFO/MainProcess] Received task: tasks.test_schedule[5becd6c4-7cd1-47a8-a60c-96ea74ed7161]
+[2015-03-11 09:38:02,317: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 17:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,344: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,351: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-16 08:28:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,361: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 11:58:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,364: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 10:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,372: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,400: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,468: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,470: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,471: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,516: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,539: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,589: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,592: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-19 13:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,596: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-09 10:24:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,604: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,635: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-05 16:53:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,708: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,709: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,718: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,723: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,728: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-09 10:04:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,778: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,832: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,850: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-08 13:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,851: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-28 11:54:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:02,905: INFO/MainProcess] Task tasks.test_schedule[05255fcd-61b7-4397-a7f3-ead16f36d535] succeeded in 1.4201904221s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:02,913: INFO/MainProcess] Received task: tasks.watch_packages[8ad8e79d-9c15-4dc4-bb26-6017fa322fbf]
+[2015-03-11 09:38:02,943: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,952: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,968: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,967: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:02,998: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,002: WARNING/Worker-7] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 08:40:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,035: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 17:17:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,077: INFO/MainProcess] Task tasks.watch_packages[52276f49-30ff-4172-9997-db66c12fed57] succeeded in 9.38929493795s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:03,088: INFO/MainProcess] Received task: tasks.test_schedule[bd5fe2d6-b8ad-41e3-a090-1400aa8b878a]
+[2015-03-11 09:38:03,131: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-16 08:28:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,148: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,152: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,157: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-09 10:04:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,157: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-27 10:31:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,174: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,226: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,235: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,259: INFO/Worker-1] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,271: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,310: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,393: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,396: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-09 10:24:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,419: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,423: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,439: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-10 15:08:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,453: WARNING/Worker-1] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 08:40:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,476: INFO/MainProcess] Task tasks.watch_packages[7b955c22-9a52-4288-9727-7a7ed17ec752] succeeded in 6.984647198s: ['The last tracking dateitme was 2015-03-08 13:41:00and the last date is 2015-03-08.', u'The status did not change for trans id...
+[2015-03-11 09:38:03,487: INFO/MainProcess] Received task: tasks.watch_packages[722ff759-45d5-4150-b774-43992187ab11]
+[2015-03-11 09:38:03,497: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,513: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,531: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,579: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-09 10:04:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,658: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-28 11:54:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,662: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-17 09:22:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,666: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,684: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,686: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,730: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,750: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,751: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,809: WARNING/Worker-4] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 08:40:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,833: INFO/MainProcess] Task tasks.watch_packages[23cadd4d-8725-46f5-8ef1-452051cad0a5] succeeded in 10.358902603s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:03,840: INFO/MainProcess] Received task: tasks.test_schedule[4c95557b-3134-41bc-8b9f-cc49152af060]
+[2015-03-11 09:38:03,856: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-10 15:08:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,871: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-02-26 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:03,880: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,893: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,911: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,920: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,941: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:03,953: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,041: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-08 13:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:04,063: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 10:00:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:04,069: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,104: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,122: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,123: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,127: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,148: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,247: INFO/MainProcess] Task tasks.test_schedule[5becd6c4-7cd1-47a8-a60c-96ea74ed7161] succeeded in 1.33627663495s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:04,260: INFO/MainProcess] Received task: tasks.watch_packages[51604dfd-8f8d-43f4-8ca4-03d4511f015c]
+[2015-03-11 09:38:04,263: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,313: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-04 17:18:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:04,322: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-05 16:53:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:04,403: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,405: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,407: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,414: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,416: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,467: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,574: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-09 10:04:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:04,578: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-16 08:28:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:04,660: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,670: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,673: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,677: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,679: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,675: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,842: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-21 11:41:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:04,848: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,853: WARNING/Worker-8] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 08:40:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:04,873: INFO/MainProcess] Task tasks.watch_packages[201e6e8e-4d3c-472c-ab12-96ead1bfc2d5] succeeded in 7.24212864204s: ['The last tracking dateitme was 2015-02-27 11:58:00and the last date is 2015-02-27.', u'The status did not change for trans id...
+[2015-03-11 09:38:04,880: INFO/MainProcess] Received task: tasks.test_schedule[34bc52d5-66e0-4efe-a524-4f0951cf705a]
+[2015-03-11 09:38:04,904: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,923: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,928: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,937: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:04,947: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,005: INFO/MainProcess] Task tasks.test_schedule[bd5fe2d6-b8ad-41e3-a090-1400aa8b878a] succeeded in 1.52163720992s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:05,016: INFO/MainProcess] Received task: tasks.watch_packages[54792611-6c0e-4d6c-b303-72b9d16348fe]
+[2015-03-11 09:38:05,056: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,087: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-04 17:18:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:05,156: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,189: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,194: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,206: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,209: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,261: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,352: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,404: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,419: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,430: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,433: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,439: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,557: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-03-09 10:24:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:05,583: INFO/MainProcess] Task tasks.watch_packages[c0d3d3cd-1168-48a0-abad-7eba2b3b39d4] succeeded in 5.54386816407s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:05,589: INFO/MainProcess] Received task: tasks.test_schedule[6bc86b3b-cc3e-463b-bd5c-62cba7a42c57]
+[2015-03-11 09:38:05,611: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,632: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,646: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,655: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,660: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,703: INFO/MainProcess] Task tasks.test_schedule[4c95557b-3134-41bc-8b9f-cc49152af060] succeeded in 1.44822772802s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:05,713: INFO/MainProcess] Received task: tasks.watch_packages[4e3df0b9-6fe8-44b2-a8f1-491bbc60885c]
+[2015-03-11 09:38:05,824: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,836: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,841: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,885: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,890: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:05,962: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-09 10:04:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:06,027: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,042: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,044: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,095: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,095: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,159: WARNING/Worker-3] /usr/lib/python2.7/dist-packages/django/db/models/fields/__init__.py:903: RuntimeWarning: DateTimeField Transaction.last_tracking_datetime received a naive datetime (2015-01-13 08:40:00) while time zone support is active.
+  RuntimeWarning)
+
+[2015-03-11 09:38:06,171: INFO/MainProcess] Task tasks.watch_packages[774b283f-d826-4457-9758-e55d4dd7af4a] succeeded in 5.36755631503s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:06,178: INFO/MainProcess] Received task: tasks.test_schedule[d9729362-0b0f-4618-ad0b-5cb2069085aa]
+[2015-03-11 09:38:06,195: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,237: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,246: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,305: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,307: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,394: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,393: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,438: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,528: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,541: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,604: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,607: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,612: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,640: INFO/MainProcess] Task tasks.test_schedule[34bc52d5-66e0-4efe-a524-4f0951cf705a] succeeded in 1.62850535696s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:06,652: INFO/MainProcess] Received task: tasks.watch_packages[b87497c1-28bb-4a45-9ee2-a53c10bd15ab]
+[2015-03-11 09:38:06,763: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,774: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,866: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,874: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,876: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:06,927: INFO/MainProcess] Task tasks.watch_packages[00d835cd-d8ef-4161-9e44-f685e8fa3b11] succeeded in 4.62536193605s: ['The last tracking dateitme was 2015-01-16 08:28:00and the last date is 2015-01-16.', u'The status did not change for trans id...
+[2015-03-11 09:38:06,934: INFO/MainProcess] Received task: tasks.test_schedule[4fc52742-abdf-467e-89bd-70063b67d8a5]
+[2015-03-11 09:38:06,992: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,003: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,062: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,076: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,078: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,203: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,221: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,275: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,279: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,282: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,311: INFO/MainProcess] Task tasks.test_schedule[6bc86b3b-cc3e-463b-bd5c-62cba7a42c57] succeeded in 1.60279341706s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:07,380: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,432: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,529: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,540: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,545: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,548: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,610: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,757: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,758: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,760: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,754: INFO/Worker-7] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,811: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,936: INFO/MainProcess] Task tasks.watch_packages[8ad8e79d-9c15-4dc4-bb26-6017fa322fbf] succeeded in 4.84814173903s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:07,996: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:07,999: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,003: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,004: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,178: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,200: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,202: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,248: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,358: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,385: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,383: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,528: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,565: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,567: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,701: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,745: INFO/MainProcess] Task tasks.test_schedule[4fc52742-abdf-467e-89bd-70063b67d8a5] succeeded in 1.43081027898s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:08,761: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,760: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,881: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,916: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,920: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,942: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:08,960: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,069: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,102: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,106: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,119: INFO/Worker-8] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,142: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,198: INFO/MainProcess] Task tasks.test_schedule[d9729362-0b0f-4618-ad0b-5cb2069085aa] succeeded in 2.55343140394s: An email was sent to test the celery beat -t he user has delivery notifications on
+[2015-03-11 09:38:09,243: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,266: INFO/MainProcess] Task tasks.watch_packages[51604dfd-8f8d-43f4-8ca4-03d4511f015c] succeeded in 4.39113735093s: ['The last tracking dateitme was 2015-02-27 11:58:00and the last date is 2015-02-27.', u'The status did not change for trans id...
+[2015-03-11 09:38:09,295: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,314: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,329: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,432: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,497: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,516: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,515: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,590: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,664: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,701: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,703: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,784: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,824: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,884: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,895: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,957: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:09,995: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,048: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,065: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,121: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,176: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,206: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,248: INFO/Worker-3] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,287: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,356: INFO/MainProcess] Task tasks.watch_packages[4e3df0b9-6fe8-44b2-a8f1-491bbc60885c] succeeded in 4.17917455302s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:10,360: INFO/Worker-6] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,369: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,456: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,527: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,626: INFO/Worker-5] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:10,729: INFO/MainProcess] Task tasks.watch_packages[b87497c1-28bb-4a45-9ee2-a53c10bd15ab] succeeded in 3.79605970904s: ['The last tracking dateitme was 2015-01-16 08:28:00and the last date is 2015-01-16.', u'The status did not change for trans id...
+[2015-03-11 09:38:11,897: INFO/MainProcess] Task tasks.watch_packages[54792611-6c0e-4d6c-b303-72b9d16348fe] succeeded in 6.30904217192s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
+[2015-03-11 09:38:11,966: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:12,139: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:12,299: INFO/Worker-4] Starting new HTTPS connection (1): api.aftership.com
+[2015-03-11 09:38:12,412: INFO/MainProcess] Task tasks.watch_packages[722ff759-45d5-4150-b774-43992187ab11] succeeded in 8.57409452798s: ['The last tracking dateitme was 2015-01-10 09:34:00and the last date is 2015-01-10.', u'The status did not change for trans id...
