@@ -1894,8 +1894,8 @@ body {
 
 .homesearch {
     background-image: url('/static/blocbox/images/homesearch.png');
-    height: 350px;
-    width: 350px;
+    height: 325px;
+    width: 325px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
@@ -1907,8 +1907,8 @@ body {
 
 .shippingentry {
     background-image: url('/static/blocbox/images/Shipping-Entry.png');
-    height: 350px;
-    width: 350px;
+    height: 325px;
+    width: 325px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
@@ -1920,8 +1920,8 @@ body {
 
 .pickup {
     background-image: url('/static/blocbox/images/pickup.png');
-    height: 350px;
-    width: 350px;
+    height: 325px;
+    width: 325px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
