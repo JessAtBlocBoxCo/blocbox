@@ -54,26 +54,23 @@
                         	
                         	{% csrf_token %} {{ form.non_field_errors }}
                         	
-                        		{{ form.old_password.errors }}
-                        		<div class=row">
+                        		{{ form.old_password.errors }}>
                             <div class="form-group paddingleft10px">
                                 <label class="textright" for="id_old_password" style="width: 115px">Old Password&nbsp;</label>
                                 <input type="password" name="old_password" class="form-control-white" id="id_old_password" placeholder="" style="margin-left: 10px">
-                            </div> </div>
+                            </div> 
 														
 														{{ form.password.errors }}
-                            <div class="row">
                             <div class="form-group paddingleft10px">
                                 <label class="textright" for="od_password" style="width: 115px">New Password&nbsp;</label>
                                 <input type="password" name="password" class="form-control-white" id="id_password" placeholder="" style="margin-left: 10px">
-                            </div> </div>
+                            </div> 
 
 														{{ form.password2.errors }}
-														<div class="row">
                             <div class="form-group paddingleft10px">
                                 <label class="textright" for="id_password2" style="width: 115px">Confirm Password&nbsp;</label>
                                 <input type="password" name="password2" class="form-control-white" id="id_password2" placeholder="" style="margin-left: 10px">
-                            </div> </div>
+                            </div> 
                         </form>
                     </div>
                 </div>
