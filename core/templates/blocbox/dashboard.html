@@ -554,8 +554,9 @@
                                 				{% if sh.trans.last_checkpoint_city %}
                                 							Last Checkpoint: {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} 
                                 				{% endif %} 
+                                		<br>
                                 		{% endif %}
-                                <br>  
+                                
                                 			{% if sh.trans.on_aftership %} Last Updated: {{ sh.aftership.last_checkpoint.checkpoint_time }} 
                                 			{% else %} {% if sh.trans.last_tracking_datetime %} Last Updated: {{ sh.trans.last_tracking_datetime }} {% endif %}
                                 			{% endif %}
