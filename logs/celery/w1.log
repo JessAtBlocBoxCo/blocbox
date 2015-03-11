@@ -1126,3 +1126,28 @@ You must only enable the serializers that you will actually use.
 [2015-03-11 16:12:00,957: WARNING/MainProcess] w1@BlocBoxonDjango ready.
 [2015-03-11 16:15:16,545: INFO/MainProcess] Received task: tasks.add[546e37a6-44b9-493a-9328-fad7d0dda9b3]
 [2015-03-11 16:15:16,588: INFO/MainProcess] Task tasks.add[546e37a6-44b9-493a-9328-fad7d0dda9b3] succeeded in 0.0417451059984s: 8
+[2015-03-11 16:27:10,140: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/apps/worker.py:161: CDeprecationWarning: 
+Starting from version 3.2 Celery will refuse to accept pickle by default.
+
+The pickle serializer is a security concern as it may give attackers
+the ability to execute any command.  It's important to secure
+your broker from unauthorized access when using pickle, so we think
+that enabling pickle should require a deliberate action and not be
+the default choice.
+
+If you depend on pickle then you should set a setting to disable this
+warning and to be sure that everything will continue working
+when you upgrade to Celery 3.2::
+
+    CELERY_ACCEPT_CONTENT = ['pickle', 'json', 'msgpack', 'yaml']
+
+You must only enable the serializers that you will actually use.
+
+
+  warnings.warn(CDeprecationWarning(W_PICKLE_DEPRECATED))
+
+[2015-03-11 16:27:10,257: INFO/MainProcess] Connected to django://localhost//
+[2015-03-11 16:27:10,305: WARNING/MainProcess] /usr/local/lib/python2.7/dist-packages/celery/fixups/django.py:254: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+
+[2015-03-11 16:27:10,305: WARNING/MainProcess] w1@BlocBoxonDjango ready.
