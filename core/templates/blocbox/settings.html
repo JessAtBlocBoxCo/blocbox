@@ -47,7 +47,7 @@
                 <div class="profileboxline"></div>
                 <div class="row paddingbottom20px" style="padding-left: 7.5%; padding-right: 7.5%">
 
-                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtop30px paddingbottom20px" style="padding-left: 25px">
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-2 paddingtop30px paddingbottom20px" style="padding-left: 25px">
                         
                         
                         <form class="form-horizontal paddingtop10px" role="form" method="post" action="." enctype="multipart/form-data">
@@ -56,20 +56,20 @@
                         	
                         		{{ form.old_password.errors }}
                             <div class="form-group paddingleft10px">
-                                <label class="textright" for="id_old_password" >Old Password&nbsp;</label> <!--style="width: 115px"-->
-                                <input type="password" name="old_password" class="form-control-white" id="id_old_password" placeholder="Old Password" style="margin-left: 10px">
+                                <label class="col-xs-3 textright" for="id_old_password" >Old Password&nbsp;</label> <!--style="width: 115px"-->
+                                <input class="col-xs-8 form-control-white" type="password" name="old_password"  id="id_old_password" placeholder="Old Password" style="margin-left: 10px">
                             </div> 
 														
 														{{ form.password.errors }}
                             <div class="form-group paddingleft10px">
-                                <label class="textright" for="id_password" >New Password&nbsp;</label>
-                                <input type="password" name="password" class="form-control-white" id="id_password" placeholder="New Password" style="margin-left: 10px">
+                                <label class="col-xs-3 textright" for="id_password" >New Password&nbsp;</label>
+                                <input class="col-xs-8 form-control-white" type="password" name="password"  id="id_password" placeholder="New Password" style="margin-left: 10px">
                             </div> 
 
 														{{ form.password2.errors }}
                             <div class="form-group paddingleft10px">
-                                <label class="textright" for="id_password2" >Confirm Password&nbsp;</label>
-                                <input type="password" name="password2" class="form-control-white" id="id_password2" placeholder="Confirm New Password" style="margin-left: 10px">
+                                <label class="col-xs-3 textright" for="id_password2" >Confirm Password&nbsp;</label>
+                                <input class="col-xs-8 form-control-white"  type="password" name="password2" id="id_password2" placeholder="Confirm New Password" style="margin-left: 10px">
                             </div> 
                         </form>
                     </div>
