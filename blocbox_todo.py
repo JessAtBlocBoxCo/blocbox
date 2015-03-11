@@ -44,6 +44,9 @@ JESS: shipment - update readme to describe navstaratshipment, et
 
 2. 
 JESS: FACEBOOK API so we have profile pics and stuff
+    
+3.
+JESS: finish the 'ast transactions for other favors wehn we built out the other favors stuff
 	
 4.
 JESS: signup - after completing sign up page, it directs to a page that thanks them and asks them to sign in. Can they go directly to their dashboard? If not, the link to sign in on the thank you page should trigger the sign in modal, not take them to a stand-alone sign in page.
