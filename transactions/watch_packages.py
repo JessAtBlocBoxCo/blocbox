@@ -63,6 +63,7 @@ def main():
         #if there wasn't a status, add it
         if current_status == None:
             trans.last_tracking_status = new_status
+            trans.save()
             responsemessage = "Tracking status was added for trans id" + str(trans.id) + ", it was previously empty"
             response_messages_list.append(responsemessage)
         #if there was a current status, see if its different
@@ -74,6 +75,7 @@ def main():
             #if status change is true then upate status and send a notificaton to the user
             if status_change == True:
                 trans.last_tracking_status = new_status
+                trans.save()
                 #send mail
                 #notify_enduser_tracking_change(request, host.id, enduser.id, trans.id)
                 #if its expired dont do anythin
@@ -118,8 +120,7 @@ def main():
                 response_messages_list.append(responsemessage)
             else:
                 responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"
-                response_messages_list.append(responsemessage)
-        trans.save()    
+                response_messages_list.append(responsemessage)   
     #return HttpResponse(response_messages_list)
     #the httpResponse produces a formatted output when called from command line but not from python shell.. when i sort this out go back to hhptResponse
     return response_messages_list
