@@ -70,8 +70,12 @@ def main():
             last_checkpoint = checkpoints[-1]
             last_checkpoint_city = last_checkpoint['city']
             last_checkpoint_state = last_checkpoint['state']
+            last_checkpoint_datetime = last_checkpoint['checkpoint_time']
+            last_checkpoint_date = last_checkpoint_datetime.date()
             trans.last_checkpoint_city = last_checkpoint_city
             trans.last_checkpoint_state = last_checkpoint_state 
+            trans.last_checkpoint_datetime = last_checkpoint_datetime
+            trans.last_checkpoitn_date = last_checkpoint_date
             trans.save()
         else:
             last_tracking_datetime = None

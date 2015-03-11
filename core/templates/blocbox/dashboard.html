@@ -285,8 +285,13 @@
                             </div>
                             <!--Status and date delivered-->
                             <div class="col-sm-4 nopaddingright">
-                                <h4 class="col-sm-11 col-sm-offset-1 nomargintopbottom">{{sh.aftership.tag}}</h4>
-                                <p class="col-sm-11 col-sm-offset-1 nomargintopbottom dashtext">{{sh.aftership.last_checkpoint.checkpoint_time }}</p>
+                                <h4 class="col-sm-11 col-sm-offset-1 nomargintopbottom">
+                                					{% if trans.on_aftership %} {{sh.aftership.tag}} 
+                                					{% else %} {{ sh.trans.last_tracking_status }} {% endif %}</h4>
+                                <p class="col-sm-11 col-sm-offset-1 nomargintopbottom dashtext">
+                                	{% if trans.on_aftership %} {{sh.aftership.last_checkpoint.checkpoint_time }}
+																	{% else %} {{ sh.trans.last_checkpoint_datetime }}  {% endif %}	                                
+                                </p>
                             </div>
                             <div class="col-sm-4">
                                 <h4 class="col-sm-11 col-sm-offset-1 nopaddingright nomargintopbottom">Delivered to</h4>

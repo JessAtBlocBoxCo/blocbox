@@ -79,6 +79,8 @@ class Transaction(models.Model):
     last_tracking_datetime = models.DateTimeField(blank=True, null=True)
     last_checkpoint_city = models.CharField(max_length=40, blank=True, null=True)
     last_checkpoint_state = models.CharField(max_length=25, blank=True, null=True)
+    last_checkpoint_datetime = models.DateTimeField(blank=True, null=True)
+    last_checkpoint_date = models.DateField(blank=True, null=True)
     #no longer in use
     dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)     
     dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)   
