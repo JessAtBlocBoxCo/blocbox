@@ -216,7 +216,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
-        'track_id': track_id,
+        'track_id': track_id, 'confirm_id': confirm_id, 'message_trans_id': message_trans_id, 'issue_id': issue_id,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'message_form': message_form, 
         'recipient_email_list': recipient_email_list,
         #shipments lists
