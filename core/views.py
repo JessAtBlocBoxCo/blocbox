@@ -201,7 +201,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         otherfavors_all_paid_notarchived = None
     tracking_form = None  #is None if no track_id (if they dont open the modal) 
     if track_id:  #if they open a tracking modal
-        dashboard_tracking_modal(request, track_id) #defined below  
+        track_id_int = track_id.strip()
+        track_id_int = int(track_id_int)
+        dashboard_tracking_modal(request, track_id) #defined below 
+    else:
+        track_id_int = None 
     package_received_form = None #is None if they dont open package recieved modal
     if confirm_id:  #if the open the package_received modal
         confirm_id_int = confirm_id.strip()
@@ -211,16 +215,25 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         confirm_id_int = None
     enduser_issue_form = None #if they dont open the report an issue modal
     if issue_id:     #if they open the EndUser Issues Modal/Button
+    	  issue_id_int = issue_id.strip()
+    	  issue_id_int = int(issue_id)
         enduser_report_issue_modal(request, issue_id)
+    else:
+        issue_id_int = None
     message_form = None 
     recipient_email_list = None
     if message_trans_id: #if they open the message host modal
-        message_host_modal(request, message_trans_id)     
+    	  message_trans_id_int = message_trans_id.strip()
+    	  message_trans_id_int = int(message_trans_id_int)
+        message_host_modal(request, message_trans_id)  
+    else:
+        message_trans_id_int = None   
     return render(request, 'blocbox/dashboard.html', {
         'enduser': enduser, 'host': host, 'datetimenow': datetimenow, 'datetoday': datetoday,
         'connections_all': connections_all, 'connections_count': connections_count,
         'hostonly': hostonly, 'request': request,  'trans': trans, 
-        'track_id': track_id, 'confirm_id': confirm_id, 'confirm_id_int': confirm_id_int, 'message_trans_id': message_trans_id, 'issue_id': issue_id, 
+        'track_id': track_id, 'track_id_int': track_id_int, 'confirm_id': confirm_id, 'confirm_id_int': confirm_id_int, 
+        'message_trans_id': message_trans_id, 'message_trans_id_int': message_trans_id_int, 'issue_id': issue_id, 'issue_id_int': issue_id_int,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'message_form': message_form, 
         'recipient_email_list': recipient_email_list,
         #shipments lists
