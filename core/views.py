@@ -396,11 +396,11 @@ def package_received_modal(request, confirm_id):
     if request.method == 'POST':
     		package_received_form = PackageReceived(request.POST) #note this is not a model form
     		if package_received_form.is_valid():
-    				trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
-    				trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
-    				trans.trans_complete = True
-    				trans.date_completed = datetoday
-    				trans.datetime_completed = datetimenow
+            trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
+            trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
+            trans.trans_complete = True
+            trans.date_completed = datetoday
+            trans.datetime_completed = datetimenow
     				#get last aftership stuff
     		    slug = str(trans.shipment_courier.lower())
             tracking = trans.tracking
