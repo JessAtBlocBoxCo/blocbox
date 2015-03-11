@@ -149,10 +149,12 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
+        shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
+        otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
         #Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
    	    #Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
-        for shipment in shipments_all_paid:  
+        for shipment in shipments_all_paid_notarchived:  
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
             shipment_tuple = {} 
             shipment_tuple['trans']=shipment #get all of the transaction variables
@@ -195,8 +197,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         connections_all = None
         connections_count = None
         hostonly=None
-        shipments_all_paid = None
-        otherfavors_all_paid = None
+        shipments_all_paid_notarchived = None
+        otherfavors_all_paid_notarchived = None
     tracking_form = None  #is None if no track_id (if they dont open the modal) 
     if track_id:  #if they open a tracking modal
         dashboard_tracking_modal(request, track_id) #defined below  
