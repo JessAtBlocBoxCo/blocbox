@@ -52,6 +52,11 @@ def main():
         datadict = api.trackings.get(slug, tracking)
         tracking_info = datadict.get(u'tracking') 
         new_status = tracking_info['tag']
+        #update time updated
+        last_tracking_datetime = tracking_info['last_updated_at']
+        trans.last_tracking_datetime = last_tracking_datetime
+        trans.last_tracking_date = last_tracking_datetime.date()
+        trans.save()
         if new_status == 'Expired':
             if trans.aftership_expired == False:
                 trans.aftership_expired = True
@@ -62,17 +67,14 @@ def main():
         checkpoints = tracking_info['checkpoints']
         if checkpoints:
             last_checkpoint = checkpoints[-1]
-            last_tracking_datetime = last_checkpoint['checkpoint_time']
             last_checkpoint_city = last_checkpoint['city']
             last_checkpoint_state = last_checkpoint['state']
-            trans.last_tracking_datetime = last_tracking_datetime
-            trans.last_tracking_date = last_tracking_datetime.date()
             trans.last_checkpoint_city = last_checkpoint_city
             trans.last_checkpoint_state = last_checkpoint_state 
             trans.save()
         else:
             last_tracking_datetime = None
-        responsemessage = "The last tracking dateitme was " + str(last_tracking_datetime) + "and the last date is " + str(trans.last_tracking_date) + "."
+        responsemessage = "The last tracking dateitme was " + str(last_tracking_datetime) + "."
         response_messages_list.append(responsemessage)
         #if there wasn't a status, add it
         if current_status == None:
