@@ -55,10 +55,11 @@ def main():
         checkpoints = tracking_info['checkpoints']
         if checkpoints:
             last_checkpoint = checkpoints[-1]
-            trans.last_tracking_datetime = last_checkpoint['checkpoint_time']
+            last_tracking_datetime = last_checkpoint['checkpoint_time']
+            trans.last_tracking_datetime = last_tracking_datetime
             trans.last_tracking_date = last_tracking_datetime.date() 
             trans.save()
-        responsemessage = "The last tracking dateitme was " + str(trans.last_tracking_datetime) + "and the last date is " + str(trans.last_tracking_date) + "."
+        responsemessage = "The last tracking dateitme was " + str(last_tracking_datetime) + "and the last date is " + str(trans.last_tracking_date) + "."
         response_messages_list.append(responsemessage)
         #if there wasn't a status, add it
         if current_status == None:
