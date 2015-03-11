@@ -299,15 +299,20 @@
                                         {% if enduser_is_connected_to_host %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Start a shipment to confirm availability. {% else %} {{ host.first_name }} guarantees to be at home to recieve your package during his posted availability. Connect with John to see a detailed view. {% endif %}
                                     </p>
                                     <div class="row paddingbottom5px" style="padding-left: 7.5%; padding-right: 7.7%">
-                                        <div class="col-sm-5 col-sm-offset-1">
+                                        <div class="col-sm-4">
                                             <p class="dashpricetext">$2</p>
                                             <h4 class="dashfont nomargintop marginbottom5px">PER PACKAGE</h4>
                                             <p class="tinytext lightweight">Pay for a Single Package</p>
                                         </div>
-                                        <div class="col-sm-5">
-                                            <p class="dashpricetext">$15</p>
-                                            <h4 class="dashfont nomargintop marginbottom5px">BUNDLED</h4>
+                                        <div class="col-sm-4">
+                                            <p class="dashpricetext">${{host.price_package_bundle10}}</p>
+                                            <h4 class="dashfont nomargintop marginbottom5px">BUNDLE OF 10</h4>
                                             <p class="tinytext lightweight">10 packages (Expires in 1 year)</p>
+                                        </div>
+                                         <div class="col-sm-4">
+                                            <p class="dashpricetext">${{host.price_package_bundle20}}</p>
+                                            <h4 class="dashfont nomargintop marginbottom5px">BUNDLE OF 20</h4>
+                                            <p class="tinytext lightweight">20 packages (Expires in 1 year)</p>
                                         </div>
                                     </div>
                                     <!--row containg pricing info-->

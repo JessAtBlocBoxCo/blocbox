@@ -99,7 +99,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     #host specific pricing
     price_package_per = models.DecimalField("Price Charged Per Package", max_digits=4, decimal_places=2, blank=True, null=True)
     price_package_bundle10 = models.DecimalField("Price Charged for Bundle of 10 Packages", max_digits=4, decimal_places=2, blank=True, null=True)
-    price_package_month20 = models.DecimalField("Price Charged for Monthly (up to 20)", max_digits=4, decimal_places=2, blank=True, null=True)
+    price_package_bundle20 = models.DecimalField("Price Charged for Monthly (up to 20)", max_digits=4, decimal_places=2, blank=True, null=True)
     price_package_annual = models.DecimalField("Price Charged for Annual Shipmetns", max_digits=5, decimal_places=2, blank=True, null=True)   
     #notification settings
     notifyuser_hostnewtask = models.BooleanField(blank=True, default=True)
