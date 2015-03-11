@@ -9,7 +9,12 @@ class UserForm(forms.ModelForm):
     password = forms.CharField(label='Password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Password Confirmation', widget=forms.PasswordInput)
     zipcode = forms.CharField(label="Zip Code")
-
+    
+    error_messages = {
+        'duplicate_username': _("A user with that username already exists."),
+        'password_mismatch': _("The two password fields didn't match."),
+    }
+    
     class Meta:
         model = UserInfo
         fields = ('email', 'password', 'password2', 'zipcode', 'hostinterest', 
@@ -19,6 +24,8 @@ class UserForm(forms.ModelForm):
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other'
             )
             #removed: 'city', 'state',
+ 
+        
     def clean_password2(self):
         password = self.cleaned_data.get("password")
         password2 = self.cleaned_data.get("password2")
