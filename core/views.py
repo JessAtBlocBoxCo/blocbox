@@ -419,7 +419,7 @@ def package_received_modal(request, confirm_id):
                 trans.last_tracking_date = last_tracking_datetime.date()
                 trans.last_checkpoint_city = last_checkpoint_city
                 trans.last_checkpoint_state = last_checkpoint_state 
-    				    trans.save()
+                trans.save()
     		else:
     				print package_received_form.errors
     else:
