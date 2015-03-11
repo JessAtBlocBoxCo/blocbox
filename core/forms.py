@@ -44,7 +44,11 @@ class ResetPassword(forms.ModelForm):
         'password_mismatch': "The two password fields didn't match.", 
         'password_incorrect': "Your old password was entered incorrectly. ",
     }
-    	
+   
+    def __init__(self, *args, **kwargs):
+        self.user = kwargs.pop('user', None)
+        super(UserForm, self).__init__(*args, **kwargs)
+        
     class Meta:
         model = UserInfo
         fields = ('password', )
@@ -52,7 +56,7 @@ class ResetPassword(forms.ModelForm):
     #check that current password is correct
     def clean_old_password(self):
         old_password = self.cleaned_data["old_password"]
-        if not user.check_password(old_password): # if not self.user.check_password(old_password):
+        if not self.user.check_password(old_password): # if not self.user.check_password(old_password):
             raise forms.ValidationError(
                 self.error_messages['password_incorrect'],
                 code='password_incorrect',
