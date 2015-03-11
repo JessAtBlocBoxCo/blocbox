@@ -55,12 +55,10 @@ def main():
         checkpoints = tracking_info['checkpoints']
         if checkpoints:
             last_checkpoint = checkpoints[-1]
-            last_tracking_datetime = last_checkpoint['checkpoint_time']
-            last_tracking_date = last_tracking_datetime.date() 
-        else:
-            last_tracking_datetime = None
-            last_tracking_date = None
-        responsemessage = "The last tracking dateitme was " + str(last_tracking_datetime) + "and the last date is " + str(last_tracking_date) + "."
+            trans.last_tracking_datetime = last_checkpoint['checkpoint_time']
+            trans.last_tracking_date = last_tracking_datetime.date() 
+            trans.save()
+        responsemessage = "The last tracking dateitme was " + str(trans.last_tracking_datetime) + "and the last date is " + str(trans.last_tracking_date) + "."
         response_messages_list.append(responsemessage)
         #if there wasn't a status, add it
         if current_status == None:
@@ -121,10 +119,6 @@ def main():
             else:
                 responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"
                 response_messages_list.append(responsemessage)
-        #Update the last tracking date
-        trans.last_tracking_datetime = trans.last_tracking_datetime
-        trans.last_tracking_date = trans.last_tracking_date
-        #save the info to the transactions table
         trans.save()    
     #return HttpResponse(response_messages_list)
     #the httpResponse produces a formatted output when called from command line but not from python shell.. when i sort this out go back to hhptResponse
