@@ -1966,11 +1966,7 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-.homesearch:hover {
-    background-image: url('/static/blocbox/images/search-ss.png');
-    height: 325px;
-    width: 425px;
-}
+
 .host-ss {
     background-image: url('/static/blocbox/images/host-ss.png');
     height: 325px;
