@@ -3766,8 +3766,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
 
     .host-ss {
         background-image: url('/static/blocbox/images/host-ss.png');
-        height: 125px;
-        width: 225px;
+        height: 225px;
+        width: 250px;
     }
 
     .shippingentry {
@@ -3783,8 +3783,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .dash-ss {
         background-image: url('/static/blocbox/images/dashbaord.png');
-        height: 125px;
-        width: 225px;
+        height: 225px;
+        width: 250px;
     }
 
     .packagehold {
@@ -3795,14 +3795,14 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
 
     .handoff {
         background-image: url('/static/blocbox/images/handoff-2.png');
-        height: 300px;
-        width: 300px;
+        height: 200px;
+        width: 200px;
     }
 
     .money {
         background-image: url('/static/blocbox/images/money-2.png');
-        height: 300px;
-        width: 300px;
+        height: 200px;
+        width: 200px;
     }
     
     .paddingtopbottom50pxnomobile {
