@@ -9,15 +9,16 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
 from django.core.management import execute_from_command_line
 import datetime
 from datetime import timedelta
+from django.utils import timezone
 today = datetime.datetime.today()
 days30 = timedelta(days=30)
-date_30days_ago = today - days30
+date_30days = today - days30
+date_30days_ago = timezone.make_aware(date_30days, timezone.get.default_timezone())
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
 from django.template import RequestContext, loader #allows it to load templates from blocbox/template
 from django.views.generic.list import ListView
-from django.utils import timezone
 #from django.template.loader import render_to_string
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
@@ -47,7 +48,9 @@ def main():
     response_messages_list = []
     #Arhives transactions if older than 30 days
     for trans in trans_completed_notarchived:
-        if trans.date_requested < date_30days_ago:
+    	  date_requested_unaware = trans.date_requested
+    		date_requested = timezone.make_aware(date_requested_unaware, timezone.get_default_timezone())
+        if date_requested < date_30days_ago:
             trans.trans_archived = True
             trans.save()
     #update shipping details
