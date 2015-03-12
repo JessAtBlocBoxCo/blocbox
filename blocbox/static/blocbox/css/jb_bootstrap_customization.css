@@ -1996,22 +1996,6 @@ body {
     width: 425px;
 }
 
-.host-ss:hover {
-display: none;
-}
-
-.host-ss:hover:after {
-    background-image: url('/static/blocbox/images/dashbaord.png');
-    height: 325px;
-    width: 325px;
-    display: block;
-    position: relative;
-    background-repeat: no-repeat;
-    background-size: contain;
-    z-index: 100;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
