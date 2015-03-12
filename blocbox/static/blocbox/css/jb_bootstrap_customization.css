@@ -2015,6 +2015,44 @@ body {
     margin-right: auto;
 }
 
+.packagehold {
+    background-image: url('/static/blocbox/images/packagehold.png');
+    height: 325px;
+    width: 325px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.handoff {
+    background-image: url('/static/blocbox/images/handoff-2.png');
+    height: 325px;
+    width: 325px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.money {
+    background-image: url('/static/blocbox/images/money-2.png');
+    height: 325px;
+    width: 325px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
