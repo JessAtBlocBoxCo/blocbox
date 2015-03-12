@@ -48,8 +48,8 @@ def main():
     response_messages_list = []
     #Arhives transactions if older than 30 days
     for trans in trans_completed_notarchived:
-    	  date_requested_unaware = trans.date_requested
-    		date_requested = timezone.make_aware(date_requested_unaware, timezone.get_default_timezone())
+        date_requested_unaware = trans.date_requested
+        date_requested = timezone.make_aware(date_requested_unaware, timezone.get_default_timezone())
         if date_requested < date_30days_ago:
             trans.trans_archived = True
             trans.save()
