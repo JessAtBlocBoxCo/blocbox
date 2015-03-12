@@ -1997,9 +1997,13 @@ body {
 }
 
 .host-ss:hover {
-    background-image: url('/static/blocbox/images/host-ss.png');
-    height: 315px;
-    width: 585px;
+display: none;
+}
+
+.host-ss:hover:after {
+    background-image: url('/static/blocbox/images/dashbaord.png');
+    height: 325px;
+    width: 325px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
@@ -2007,7 +2011,6 @@ body {
     z-index: 100;
     margin-left: auto;
     margin-right: auto;
-}
 }
 
 /*-------------------------------------------------------------*
