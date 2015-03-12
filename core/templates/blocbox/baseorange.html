@@ -98,7 +98,7 @@
         <div class="mobileonly">
             <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
                 <a class="navmenu-brand" href="/beta/">
-                    <img class="slidelogo" src={% static 'blocbox/images/Logo-and-name-white.png' %} />
+                    <img class="slidelogo" src={% static 'blocbox/images/Logo-name.png' %} />
                 </a>
                 {% if user.is_authenticated %}
                 <ul class="nav navmenu-nav">
@@ -245,7 +245,7 @@
                 <!--<a href="#top" class="logo-image"></a> -->
                 <!-- the "brand" - ultimately we should replace this with styled text rather than an image -->
                 <div class="col-sm-3 nopaddingleft">
-                    <a class="nav-blocbox-name nopaddingleft" href="#"></a>
+                    <a class="nav-blocbox-name nopaddingleft" href="/"></a>
                 </div>
                 <!-- col-->
                 {% if user.is_authenticated %}
