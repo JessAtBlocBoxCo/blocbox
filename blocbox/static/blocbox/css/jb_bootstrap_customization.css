@@ -3822,6 +3822,16 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         padding-bottom: 20px;
     }
     
+    .paddingtopbottom50px {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    
+    .paddingtopbottom100px {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
     .pro-header {
         font-size: 2.1em;
         font-weight: 400;
