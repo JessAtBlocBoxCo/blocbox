@@ -81,6 +81,7 @@ CELERYBEAT_SCHEDULE = {
         'task': 'tasks.add',
         'schedule': timedelta(seconds=30),
         'args': (10,10)
+    },
 }   
 
 
