@@ -13,7 +13,7 @@ from django.utils import timezone
 today = datetime.datetime.today()
 days30 = timedelta(days=30)
 date_30days = today - days30
-date_30days_ago = timezone.make_aware(date_30days, timezone.get.default_timezone())
+date_30days_ago = timezone.make_aware(date_30days, timezone.get_default_timezone())
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
