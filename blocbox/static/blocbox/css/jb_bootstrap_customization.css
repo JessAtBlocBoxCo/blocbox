@@ -1964,6 +1964,18 @@ body {
     height: 325px;
     width: 425px;
 }
+.host-ss {
+    background-image: url('/static/blocbox/images/host-ss.png');
+    height: 525px;
+    width: 225px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .shippingentry {
     background-image: url('/static/blocbox/images/Shipping-Entry.png');
@@ -1990,10 +2002,17 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-.pickup:hover {
+.dash-ss {
     background-image: url('/static/blocbox/images/dashbaord.png');
     height: 325px;
     width: 425px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 
