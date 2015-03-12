@@ -1,7 +1,7 @@
 <!--this is core/templates/blocbox/account.html - url is blocbox.co/contactus or blocbox.co/support. it extends base.html-->
 {% extends "blocbox/baseorange.html" %} {% load staticfiles %} {% block title %}Contact Us/Support{% endblock %} {% block headafter %} {% endblock %} {% block content %}
 
-<div class="fillviewheight ltgreenbackground content container-fluid textcenter relativediv">
+<div class="ltgreenbackground content textcenter relativediv">
     <!--this is the container that surrounds the form, too short -->
     {% load i18n %}
     <br>
@@ -31,7 +31,7 @@
 
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-group nopaddingleftright paddingbottom10px">
-                    <h4> Looks like you're not registered.  How can we reach you? </h4>
+                    <h6> Looks like you're not registered.  How can we reach you? </h6>
                     <input type="text" class="form-control input-lg inputbox margintop5px" name="reply_to_email" id="id_reply_to_email" placeholder="Please Provide a Valid Email Address ">
                 </div>
             </div>
