@@ -3804,6 +3804,11 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         height: 300px;
         width: 300px;
     }
+    
+    .paddingtopbottom50pxnomobile {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
 
 }
 /*-------------------------------------------------------------*
