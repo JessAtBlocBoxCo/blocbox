@@ -48,8 +48,8 @@ def main():
     #Arhives transactions if older than 30 days
     for trans in trans_completed_notarchived:
         if date_requested < date_30days_ago:
-        trans.trans_archived = True
-        trans.save()
+            trans.trans_archived = True
+            trans.save()
     #update shipping details
     for trans in trans_aftership_notarchived:
         slug = str(trans.shipment_courier.lower())
