@@ -68,22 +68,25 @@ CELERY_IMPORTS = ['tasks']
 CELERY_TIMEZONE = "US/Eastern"
 from datetime import timedelta
 CELERYBEAT_SCHEDULE = {
+
+		'watch_packages_every_30_minutes': {
+        'task': 'tasks.watch_packages',
+        'schedule': timedelta(minutes=30),
+    },
+    'add_every_10_minutes': {
+        'task': 'tasks.add',
+        'schedule': timedelta(minutes=10),
+        'args': (10,10)
+    },
+}   
+
+"""
    	'test_celery_beat_every_30_minutes': {
     	  'task': 'tasks.test_schedule',
     	  'schedule': timedelta(minutes=30),
     	  'args': (1,2,170)
 		},
-		'watch_packages_every_30_minutes': {
-        'task': 'tasks.watch_packages',
-        'schedule': timedelta(minutes=30),
-    },
-    'add_every_30_seconds': {
-        'task': 'tasks.add',
-        'schedule': timedelta(seconds=30),
-        'args': (10,10)
-    },
-}   
-
+"""
 
 
 
