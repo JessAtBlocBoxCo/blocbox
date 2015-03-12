@@ -1,7 +1,7 @@
-<!--this is core/templates/blocbox/account.html - url is blocbox.co/contactus or blocbox.co/support. it extends base.html-->
-{% extends "blocbox/baseorange.html" %} {% load staticfiles %} {% block title %}Contact Us/Support{% endblock %} {% block headafter %} {% endblock %} {% block content %}
+{% extends "blocbox/basewaitlist.html" %}
+<!--this is blocbox/core/templates/bocbox/waitlist-confirmation.html, url is http://www.blocbox.co/waitlistconfirmation/-->
+{% load staticfiles %} {% block title %} Join Our Waitlist {% endblock %} {% block topcontent %}
 
-<div class="ltgreenbackground content textcenter relativediv">
     <!--this is the container that surrounds the form, too short -->
     {% load i18n %}
     <br>
@@ -60,5 +60,5 @@
     </div>
 
 
-</div>
+
 {% endblock %}
