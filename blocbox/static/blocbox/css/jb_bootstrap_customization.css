@@ -3757,6 +3757,54 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         width: 75px;
         height: 75px;
     }
+    
+    .homesearch {
+        background-image: url('/static/blocbox/images/homesearch.png');
+        height: 225px;
+        width: 225px;
+    }
+
+    .host-ss {
+        background-image: url('/static/blocbox/images/host-ss.png');
+        height: 125px;
+        width: 225px;
+    }
+
+    .shippingentry {
+        background-image: url('/static/blocbox/images/Shipping-Entry.png');
+        height: 125px;
+        width: 225px;
+    }
+
+    .pickup {
+        background-image: url('/static/blocbox/images/pickup.png');
+        height: 225px;
+        width: 225px;
+    }
+    .dash-ss {
+        background-image: url('/static/blocbox/images/dashbaord.png');
+        height: 125px;
+        width: 225px;
+    }
+
+    .packagehold {
+        background-image: url('/static/blocbox/images/packagehold.png');
+        height: 200px;
+        width: 200px;
+    }
+
+    .handoff {
+        background-image: url('/static/blocbox/images/handoff-2.png');
+        height: 300px;
+        width: 300px;
+    }
+
+    .money {
+        background-image: url('/static/blocbox/images/money-2.png');
+        height: 300px;
+        width: 300px;
+    }
+
 }
 /*-------------------------------------------------------------*
 Jasny  STYLES
