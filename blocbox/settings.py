@@ -50,6 +50,7 @@ INSTALLED_APPS = (
     'billing',
     'paypal.standard.ipn',
 		'testing',
+		'django_mailbox',
 )
 
 
