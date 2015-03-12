@@ -1979,8 +1979,8 @@ body {
 
 .shippingentry {
     background-image: url('/static/blocbox/images/Shipping-Entry.png');
-    height: 425px;
-    width: 325px;
+    height: 325px;
+    width: 425px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
