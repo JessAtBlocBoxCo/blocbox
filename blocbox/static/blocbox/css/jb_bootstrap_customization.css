@@ -1966,8 +1966,8 @@ body {
 }
 .host-ss {
     background-image: url('/static/blocbox/images/host-ss.png');
-    height: 525px;
-    width: 225px;
+    height: 225px;
+    width: 525px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
