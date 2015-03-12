@@ -73,14 +73,18 @@ CELERYBEAT_SCHEDULE = {
     	  'schedule': timedelta(minutes=30),
     	  'args': (1,2,170)
 		}
-}   
-
-"""
-    'watch_packages_every_30_minutes': {
+		'watch_packages_every_30_minutes': {
         'task': 'tasks.watch_packages',
         'schedule': timedelta(minutes=30),
     },
-"""
+    'add_every_30_seconds': {
+        'task': 'tasks.add',
+        'schedule': timedelta(seconds=30),
+        'args': (10,10)
+}   
+
+
+
 
     
 # store schedule in the DB:
