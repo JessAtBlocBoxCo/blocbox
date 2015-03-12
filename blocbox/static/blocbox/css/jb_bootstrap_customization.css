@@ -618,6 +618,10 @@ footer {
 .paddingtop70px {
     padding-top: 70px;
 }
+
+.signup-padding {
+    padding-top: 140px;
+}
 /*Define Generic Border Attributes*/
 
 .borderblack3px {
@@ -3895,6 +3899,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .btn-waitlist {
         width: 200px;
 
+    }
+    
+    .signup-padding {
+        padding-top: 50px;
     }
 
 }
