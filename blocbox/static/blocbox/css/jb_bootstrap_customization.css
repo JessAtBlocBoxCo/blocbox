@@ -1961,7 +1961,7 @@ body {
 }
 .homesearch:hover {
     background-image: url('/static/blocbox/images/search-ss.png');
-    height: 425px;
+    height: 225px;
     width: 425px;
 }
 
@@ -1992,7 +1992,7 @@ body {
 }
 .pickup:hover {
     background-image: url('/static/blocbox/images/dashbaord.png');
-    height: 425px;
+    height: 225px;
     width: 425px;
 }
 
