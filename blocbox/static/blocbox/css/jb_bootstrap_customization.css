@@ -1961,8 +1961,8 @@ body {
 }
 .homesearch:hover {
     background-image: url('/static/blocbox/images/host-ss.png');
-    height: 425px;
-    width: 425px;
+    height: 525px;
+    width: 525px;
 }
 
 .shippingentry {
