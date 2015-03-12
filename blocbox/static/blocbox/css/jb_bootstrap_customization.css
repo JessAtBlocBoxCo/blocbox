@@ -1959,6 +1959,9 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.homesearch {
+    background-image: url('/static/blocbox/images/host-ss.png');
+}
 
 .shippingentry {
     background-image: url('/static/blocbox/images/Shipping-Entry.png');
