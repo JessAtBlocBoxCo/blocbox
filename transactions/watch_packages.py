@@ -8,6 +8,10 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "blocbox.settings")
 #settings.configure(DEBUG=True, TEMPLATE_DEBUG=True,TEMPLATE_DIRS=('/yourprojet/templates',))
 from django.core.management import execute_from_command_line
 import datetime
+from datetime import timedelta
+today = datetime.datetime.today()
+days30 = timedelta(days=30)
+date_30days_ago = today - days30
 from django.shortcuts import render, get_object_or_404, render_to_response, redirect
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.core.urlresolvers import reverse 
@@ -33,13 +37,20 @@ from django_messages.views import notify_user_received_message
 import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
-
 #GET A LIST OF ALL TRANSACTIONS ON AFTERHIP
 transactions_onaftership = Transaction.objects.filter(on_aftership=True)
 trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
+trans_completed = Transaction.objects.filter(trans_completed = True)
+trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
 
 def main():
     response_messages_list = []
+    #Arhives transactions if older than 30 days
+    for trans in trans_completed_notarchived:
+        if date_requested < date_30days_ago:
+        trans.trans_archived = True
+        trans.save()
+    #update shipping details
     for trans in trans_aftership_notarchived:
         slug = str(trans.shipment_courier.lower())
         tracking = trans.tracking
