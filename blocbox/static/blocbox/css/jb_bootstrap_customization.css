@@ -2024,8 +2024,8 @@ body {
 
 .packagehold {
     background-image: url('/static/blocbox/images/packagehold.png');
-    height: 325px;
-    width: 325px;
+    height: 300px;
+    width: 300px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
@@ -2037,8 +2037,8 @@ body {
 
 .handoff {
     background-image: url('/static/blocbox/images/handoff-2.png');
-    height: 325px;
-    width: 325px;
+    height: 300px;
+    width: 300px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
@@ -2050,8 +2050,8 @@ body {
 
 .money {
     background-image: url('/static/blocbox/images/money-2.png');
-    height: 325px;
-    width: 325px;
+    height: 300px;
+    width: 300px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
