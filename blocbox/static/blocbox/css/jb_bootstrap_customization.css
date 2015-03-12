@@ -1960,9 +1960,9 @@ body {
     margin-right: auto;
 }
 .homesearch:hover {
-    background-image: url('/static/blocbox/images/host-ss.png');
-    height: 525px;
-    width: 525px;
+    background-image: url('/static/blocbox/images/search-ss.png');
+    height: 425px;
+    width: 425px;
 }
 
 .shippingentry {
@@ -1989,6 +1989,11 @@ body {
     z-index: 100;
     margin-left: auto;
     margin-right: auto;
+}
+.pickup:hover {
+    background-image: url('/static/blocbox/images/dashbaord.png');
+    height: 425px;
+    width: 425px;
 }
 
 /*-------------------------------------------------------------*
