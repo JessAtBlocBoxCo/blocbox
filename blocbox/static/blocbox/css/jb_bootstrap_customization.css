@@ -3811,7 +3811,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .pro-header {
-        font-size: 1.1em;
+        font-size: 2.1em;
         font-weight: 400;
         margin-top: 0px;
         color: white;
@@ -3821,17 +3821,14 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
 
     .hiw-header {
         font-size: 2.2em;
-        font-weight: 700;
-        margin-top: 0px;
-        color: rgb(97, 183, 184);
-        line-height: 1.08;
+        text-align: center;
+
+        
     }
     .host-header {
         font-size: 2.2em;
-        font-weight: 700;
-        margin-top: 0px;
-        color: rgb(250, 250, 250);
-        line-height: 1.08;
+        text-align: center;
+
     }
 
 }
