@@ -3904,6 +3904,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .signup-padding {
         padding-top: 50px;
     }
+    
+    .paddingbottom20pxnomobile {
+        padding-bottom: 5px;
+    }
 
 }
 /*-------------------------------------------------------------*
