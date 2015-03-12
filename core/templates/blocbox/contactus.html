@@ -6,12 +6,16 @@
     {% load i18n %}
     <br>
     <br>
-    <h3 class="col-xs-12 col-sm-8 col-sm-offset-2">Contact Us</h3>
+    <h2 class="col-xs-12 col-sm-8 col-sm-offset-2">Contact Us</h2>
+    
+    <div class="form-group col-xs-12">
+        <input name="EMAIL" placeholder="EMAIL" class="form-control input-lg inputbox margintop5px" type="email">
+    </div>
 
 
     <div>
         <!--div with contact us form -->
-        <form class="form-inline" role="form" method="post" action="#openModal_contactus/Thanks" enctype="multipart/form-data">
+        <form class="" role="form" method="post" action="#openModal_contactus/Thanks" enctype="multipart/form-data">
             {% csrf_token %} {{ contactus_form.non_field_errors }} {{ contactus_form.contactus_subject.errors }}
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2 form-group nopaddingleftright paddingbottom10px">
