@@ -72,7 +72,7 @@ CELERYBEAT_SCHEDULE = {
     	  'task': 'tasks.test_schedule',
     	  'schedule': timedelta(minutes=30),
     	  'args': (1,2,170)
-		}
+		},
 		'watch_packages_every_30_minutes': {
         'task': 'tasks.watch_packages',
         'schedule': timedelta(minutes=30),
