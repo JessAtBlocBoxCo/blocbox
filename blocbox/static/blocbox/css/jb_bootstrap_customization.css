@@ -2046,7 +2046,7 @@ body {
     margin-right: auto;
 }
 .dash-ss {
-    background-image: url('/static/blocbox/images/dashbaord.png');
+    background-image: url('/static/blocbox/images/dash-ss.png');
     height: 400px;
     width: 600px;
     display: block;
