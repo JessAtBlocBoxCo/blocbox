@@ -2010,7 +2010,7 @@ body {
 .host-ss {
     background-image: url('/static/blocbox/images/host-ss.png');
     height: 400px;
-    width: 671px;
+    width: 600px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
