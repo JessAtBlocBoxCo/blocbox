@@ -2047,8 +2047,8 @@ body {
 }
 .dash-ss {
     background-image: url('/static/blocbox/images/dashbaord.png');
-    height: 325px;
-    width: 525px;
+    height: 400px;
+    width: 600px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
