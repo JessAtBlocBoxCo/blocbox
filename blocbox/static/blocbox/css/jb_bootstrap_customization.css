@@ -3933,6 +3933,17 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         height: 100vh;
         min-height: 400px;
     }
+    
+    .navbar {
+        box-shadow: none;
+    }
+    
+    .promo {
+        height: 70px;
+        width: 70px;
+        left: 5%;
+        top: 3%;
+    }
 
 }
 /*-------------------------------------------------------------*
