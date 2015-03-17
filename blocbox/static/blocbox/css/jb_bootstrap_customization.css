@@ -3600,7 +3600,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .promo {
         height: 90px;
         width: 90px;
-        left: -30%;
+        left: 0%;
         top: 3%;
     }
     .navbar {
@@ -3967,7 +3967,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .promo {
         height: 70px;
         width: 70px;
-        left: -30%;
+        left: 0%;
         top: 3%;
     }
 
