@@ -15,14 +15,14 @@
         <form class="" role="form" method="post" action="#openModal_contactus/Thanks" enctype="multipart/form-data">
             {% csrf_token %} {{ contactus_form.non_field_errors }} {{ contactus_form.contactus_subject.errors }}
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-group nopaddingleftright paddingbottom10px">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 form-group nopaddingleftright paddingbottom10px">
                     <input type="text" class="form-control input-lg inputbox margintop5px" name="contactus_subject" id="id_contactus_subject" placeholder="Enter Message Subject ">
                 </div>
             </div>
 
             {{ contactus_form.contactus_body.errors }}
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-group nopaddingleftright paddingbottom10px">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 form-group nopaddingleftright paddingbottom10px">
                     <textarea type="text" class="form-control input-lg inputbox margintop5px" rows="5" name="contactus_body" id="id_contactus_body" placeholder="Enter Message Body "></textarea>
                 </div>
             </div>
@@ -30,7 +30,7 @@
             {% if enduser.is_authenticated %} {% else %} {{ contactus_form.reply_to_email.errors }}
 
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 form-group nopaddingleftright paddingbottom10px">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 form-group nopaddingleftright paddingbottom10px">
                     <h3 class="textleft"> Looks like you're not registered. How can we reach you? </h3>
                     <input type="text" class="form-control input-lg inputbox margintop5px" name="reply_to_email" id="id_reply_to_email" placeholder="Please Provide a Valid Email Address ">
                 </div>
@@ -43,7 +43,7 @@
 
             <!--siubmit button-->
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-sm-offset-3 nopadding">
+                <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4 nopadding">
                     <button type="submit" name="submit" class="btn-waitlist">Submit</button>
                 </div>
             </div>
