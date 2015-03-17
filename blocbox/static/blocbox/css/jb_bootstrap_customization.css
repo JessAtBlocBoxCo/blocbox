@@ -2097,6 +2097,25 @@ body {
     margin-right: auto;
 }
 
+/*-----------------------------------------------------------------------
+* JOIN WAITLIST STYLES
+*-----------------------------------------------------------------------*/
+
+.promo {
+    background-image: url('/static/blocbox/images/promo.png');
+    height: 150px;
+    width: 150px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    position: absolute;
+    left: 70%;
+    top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
 *--------------------------------------------------------------*/
