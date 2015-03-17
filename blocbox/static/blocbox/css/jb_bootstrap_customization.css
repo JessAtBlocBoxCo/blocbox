@@ -2062,6 +2062,19 @@ body {
     margin-right: auto;
 }
 
+.calendar-ss {
+    background-image: url('/static/blocbox/images/calendar-ss.png');
+    height: 325px;
+    width: 425px;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .pickup {
     background-image: url('/static/blocbox/images/pickup.png');
     height: 325px;
@@ -3886,6 +3899,12 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
 
     .shippingentry {
         background-image: url('/static/blocbox/images/Shipping-Entry.png');
+        height: 225px;
+        width: 250px;
+    }
+    
+    .calendar-ss {
+        background-image: url('/static/blocbox/images/calendar-ss.png');
         height: 225px;
         width: 250px;
     }
