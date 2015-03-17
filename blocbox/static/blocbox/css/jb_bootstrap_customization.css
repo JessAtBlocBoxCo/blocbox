@@ -2065,7 +2065,7 @@ body {
 .calendar-ss {
     background-image: url('/static/blocbox/images/calendar-ss.png');
     height: 325px;
-    width: 425px;
+    width: 525px;
     display: block;
     position: relative;
     background-repeat: no-repeat;
