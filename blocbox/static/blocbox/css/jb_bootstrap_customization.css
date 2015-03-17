@@ -2103,8 +2103,8 @@ body {
 
 .promo {
     background-image: url('/static/blocbox/images/promo.png');
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     display: block;
     background-repeat: no-repeat;
     background-size: contain;
@@ -3338,14 +3338,18 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
         display: none;
     }
     
-    .promo {
-        height: 150px;
-        width: 150px;
-        left: 5%;
-        top: 25%;
-    }
     .navbar {
         box-shadow: none;
+    }
+}
+
+@media (max-width: 970px) {
+    .promo {
+        background-image: url('/static/blocbox/images/promo.png');
+        height: 120px;
+        width: 120px;
+        left: 10%;
+        top: 30%;
     }
 }
 /*-------------------------------------------------------------*
