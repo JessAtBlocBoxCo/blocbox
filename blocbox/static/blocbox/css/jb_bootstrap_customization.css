@@ -3337,6 +3337,13 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     .phoneonly {
         display: none;
     }
+    
+    .promo {
+        height: 120px;
+        width: 120px;
+        left: 5%;
+        top: 5%;
+    }
 }
 /*-------------------------------------------------------------*
 MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)
@@ -3437,6 +3444,13 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         width: 400px;
         position: absolute;
         left: 345px;
+    }
+    
+    .promo {
+        height: 120px;
+        width: 120px;
+        left: 5%;
+        top: 5%;
     }
 }
 /*-------------------------------------------------------------*
@@ -3579,6 +3593,13 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         width: 400px;
         position: absolute;
         left: 290px;
+    }
+    
+    .promo {
+        height: 90px;
+        width: 90px;
+        left: 5%;
+        top: 3%;
     }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
