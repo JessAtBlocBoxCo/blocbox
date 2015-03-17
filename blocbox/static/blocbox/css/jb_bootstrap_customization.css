@@ -3448,7 +3448,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     .promo {
         height: 120px;
         width: 120px;
-        left: 5%;
+        left: -30%;
         top: 5%;
     }
     .navbar {
@@ -3600,7 +3600,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .promo {
         height: 90px;
         width: 90px;
-        left: 5%;
+        left: -30%;
         top: 3%;
     }
     .navbar {
@@ -3967,7 +3967,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .promo {
         height: 70px;
         width: 70px;
-        left: 5%;
+        left: -30%;
         top: 3%;
     }
 
