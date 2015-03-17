@@ -170,7 +170,7 @@ footer {
 /*add anchor class to add padding - should be about the same size as the margin */
 
 .anchor {
-    padding-top:  20px;
+    margin-top:  -20px;
 }
 /*
 .anchorwithnav {
