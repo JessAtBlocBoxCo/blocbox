@@ -1749,6 +1749,7 @@ body {
     white-space: nowrap;
     width: 100%;
     text-decoration: none;
+    text-align: center;
 }
 .btn-clear:hover {
     background-color: white;
