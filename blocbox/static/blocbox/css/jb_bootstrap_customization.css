@@ -3339,10 +3339,10 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
     }
     
     .promo {
-        height: 120px;
-        width: 120px;
+        height: 150px;
+        width: 150px;
         left: 5%;
-        top: 5%;
+        top: 25%;
     }
 }
 /*-------------------------------------------------------------*
