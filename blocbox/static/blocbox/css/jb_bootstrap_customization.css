@@ -3306,7 +3306,7 @@ td > input[type="checkbox"]:checked + label span {
 h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.071em; h5 {font-size: 1.286em; h6 {font-size: 1.286em; 
 ------------------------------------------------------------------------------*/
 
-@media (max-width: 970px) {
+@media (max-width: 992px) {
     .promo {
         background-image: url('/static/blocbox/images/promo.png');
         height: 120px;
