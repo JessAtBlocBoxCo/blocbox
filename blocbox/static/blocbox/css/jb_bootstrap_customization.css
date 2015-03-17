@@ -3263,8 +3263,8 @@ td > input[type="checkbox"] + label span:hover {
     color: white;
 }
 td > input[type="checkbox"]:checked + label span {
-    border: 2px solid rgb(39, 174, 96);
-    background-color: #2ecc71;
+    border: 2px solid rgb(71, 158, 159);
+    background-color: rgb(121, 204, 205);
     color: white;
     font-weight: 700;
 }
