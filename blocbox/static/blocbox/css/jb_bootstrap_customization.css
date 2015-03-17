@@ -1743,7 +1743,8 @@ body {
     color: white;
     border: 2px solid #ffffff;
     padding: 6px 32px 6px 32px;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     cursor: pointer;
     border-radius: 3px;
     white-space: nowrap;
