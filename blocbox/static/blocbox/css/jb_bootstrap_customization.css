@@ -3448,7 +3448,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     .promo {
         height: 120px;
         width: 120px;
-        left: -10%;
+        left: -20%;
         top: 5%;
     }
     .navbar {
