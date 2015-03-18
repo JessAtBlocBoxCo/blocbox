@@ -1324,7 +1324,7 @@ footer {
 }
 
 .share-box {
-    background-color: rgb(97, 183, 184);
+    background-color: transparent;
     border: 2px solid rgb(97, 183, 184);
     border-radius: 5px;
     padding: 15px;
