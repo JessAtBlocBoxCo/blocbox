@@ -1324,8 +1324,10 @@ footer {
 }
 
 .share-box {
+    background-color: white;
     border: 2px solid white;
     border-radius: 5px;
+    padding: 15px;
 }
 /*-----------------------------------------------------------------------
 *min.css overrides
