@@ -1,53 +1,97 @@
 {% extends "blocbox/basewaitlist.html" %}
 <!--this is blocbox/core/templates/bocbox/waitlist-confirmation.html, url is http://www.blocbox.co/waitlistconfirmation/-->
-{% load staticfiles %} 
-{% block title %} Waitlist Subscription Confirmation {% endblock %}
+{% load staticfiles %} {% block title %} Waitlist Subscription Confirmation {% endblock %} {% block topcontent %}
 
-{% block topcontent %}
- 	
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
 
 
- 	<div class="row-fluid fullheight">
-  		<h1 class="nomargintop" style="padding-top: 170px">Thank You!<br>
-  				We'll be in touch</h1>
-  		<div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
-  			<h3>Your request to participate in the Blocbox beta has been received. 
-  					We'll be in touch when a Blocbox launches in your neighborhood. 
-  					In the meantime, please contact us at info@blocbox.co if you have any questions or feedback or are interested in bringing Blocbox to your neighborhood.
+<div class="row-fluid fullheight">
+    <h2 class="nomargintop" style="padding-top: 170px">Thank You!<br>
+  				We'll be in touch</h2>
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h3>Your request to participate in the Blocbox beta has been received. 
+  					We'll be in touch when a Blocbox launches in your neighborhood.
   			</h3>
-			</div>
-			
-        <div class="col-xs-12">
-            <p>Follow</p>
+    </div>
 
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h3>Be one of the first to use Blocbox by telling your friends and neighbors. In the meantime, please contact us at info@blocbox.co if you have any questions or feedback.
+            </h3>
+    </div>
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="col-xs-4">
+            <p>FACEBOOK</p>
             <div class="fb-like" data-href="https://www.facebook.com/blocboxco" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div>
-
-
-            <a href="https://twitter.com/blocboxco" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @blocboxco</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-            <script type="IN/FollowCompany" data-id="9353301"></script>
-
-            <p>Share</p>
-
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://blocbox.co" data-text="I just joined Blocbox! Check it out at blocbox.co, connect your neighborhood and stop missing packages" data-size="large" data-related="Blocboxco" data-count="none">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-
-            <script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-            <script type="IN/Share" data-url="blocbox.co"></script>
         </div>
- 	</div>
- 	
+        <div class="col-xs-4">
+            <p>TWITTER</p>
+            <div class="row">
+                <div class="col-xs-6">
+                    <a href="https://twitter.com/blocboxco" class="twitter-follow-button" data-show-count="false" data-size="large" data-show-screen-name="false">Follow @blocboxco</a>
+                    <script>
+                        ! function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0],
+                                p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + '://platform.twitter.com/widgets.js';
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, 'script', 'twitter-wjs');
+                    </script>
+                </div>
+                <div class="col-xs-6">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://blocbox.co" data-text="I just joined Blocbox! Check it out at blocbox.co, connect your neighborhood and stop missing packages" data-size="large" data-related="Blocboxco" data-count="none">Tweet</a>
+                    <script>
+                        ! function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0],
+                                p = /^http:/.test(d.location) ? 'http' : 'https';
+                            if (!d.getElementById(id)) {
+                                js = d.createElement(s);
+                                js.id = id;
+                                js.src = p + '://platform.twitter.com/widgets.js';
+                                fjs.parentNode.insertBefore(js, fjs);
+                            }
+                        }(document, 'script', 'twitter-wjs');
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <p>LINKED IN</p>
+            <div class="row">
+                <div class="col-xs-6">
+                    <script src="//platform.linkedin.com/in.js" type="text/javascript">
+                        lang: en_US
+                    </script>
+                    <script type="IN/FollowCompany" data-id="9353301"></script>
+                </div>
+                <div class="col-xs-6">
+                    <script src="//platform.linkedin.com/in.js" type="text/javascript">
+                        lang: en_US
+                    </script>
+                    <script type="IN/Share" data-url="blocbox.co"></script>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <p>CONTACT US</p>
+        </div>
+
+    </div>
+</div>
+
 
 
 {% endblock %}
-
-
-    
