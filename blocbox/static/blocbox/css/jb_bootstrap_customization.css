@@ -1322,6 +1322,11 @@ footer {
     border: 0px solid rgb(97, 183, 184);
     vertical-align: middle;
 }
+
+.share-box {
+    border: 2px solid white;
+    border-radius: 5px;
+}
 /*-----------------------------------------------------------------------
 *min.css overrides
 *-----------------------------------------------------------------------*/
