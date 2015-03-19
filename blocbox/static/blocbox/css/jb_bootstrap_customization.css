@@ -905,13 +905,13 @@ footer {
     text-decoration: none;
 }
 .orangenavbtn:hover {
-    background-color: #ffffff;
-    color: rgb(255, 195, 0);
+    background-color: rgb(255, 195, 0);
+    color: white;
     text-decoration: none;
 }
 .orangenavbtn:focus {
-    background-color: #ffffff;
-    color: rgb(255, 195, 0);
+    background-color: rgb(255, 195, 0);
+    color: white;
     text-decoration: none;
 }
 .orangenavbtn > a {
