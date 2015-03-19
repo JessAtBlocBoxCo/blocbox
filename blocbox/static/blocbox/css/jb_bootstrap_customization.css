@@ -908,11 +908,13 @@ footer {
     background-color: rgb(255, 195, 0);
     color: white;
     text-decoration: none;
+    border: 2px solid rgb(255, 195, 0);
 }
 .orangenavbtn:focus {
     background-color: rgb(255, 195, 0);
     color: white;
     text-decoration: none;
+    border: 2px solid rgb(255, 195, 0);
 }
 .orangenavbtn > a {
     color: white;
