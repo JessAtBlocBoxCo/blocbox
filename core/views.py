@@ -824,10 +824,10 @@ def confirmrequestconnect(request, host_id, user_id):
 def waitlist_almostfinished(request):
 		return render(request, 'blocbox/almost-finished.html')
     
-def joinwaitlist(request):
-    return render(request, 'blocbox/joinwaitlist.html')
+#def joinwaitlist(request):
+#    return render(request, 'blocbox/joinwaitlist.html')
 
-def joinwaitlist_referral(request, referring_user_email):	  
+def joinwaitlist(request, referring_user_email=None):	  
     return render(request, 'blocbox/joinwaitlist_referral.html', { 'referring_user_email': referring_user_email } )
         
 def waitlist_confirmation(request):
