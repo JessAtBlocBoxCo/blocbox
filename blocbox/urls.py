@@ -45,6 +45,7 @@ urlpatterns = patterns('',
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^almostfinished/$', views.waitlist_almostfinished, name='waitlist_almostfinished'),
     url(r'^joinwaitlist/$', views.joinwaitlist, name='joinwaitlist'),
+    url(r'^joinwaitlist/referredby=(?<referring_user_email>\w+)', views.joinwaitlist_referral', name='joinwaitlist_referral'),
     url(r'^waitlistconfirmation/$', views.waitlist_confirmation, name='waitlist_confirmation'),
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well
  		#the carret sasy beginning must match, the $ says end of string must match

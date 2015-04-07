@@ -825,8 +825,11 @@ def waitlist_almostfinished(request):
 		return render(request, 'blocbox/almost-finished.html')
     
 def joinwaitlist(request):
-        return render(request, 'blocbox/joinwaitlist.html')
+    return render(request, 'blocbox/joinwaitlist.html')
 
+def joinwaitlist_referral(request, referring_user_email):	  
+    return render(request, 'blocbox/joinwaitlist_referral.html', { 'referring_user_email': referring_user_email } )
+        
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
 
