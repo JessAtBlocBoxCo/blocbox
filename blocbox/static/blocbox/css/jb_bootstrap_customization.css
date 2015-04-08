@@ -3763,7 +3763,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .mobileheader {
         font-size: 1.9em;
-        font-weight: 300;
+        font-weight: 400;
         line-height: 1.38em;
     }
     .waitlistjoinbtn {
