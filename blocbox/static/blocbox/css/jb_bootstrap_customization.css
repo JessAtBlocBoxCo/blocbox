@@ -1563,7 +1563,7 @@ body {
     }
     .waitlistbody .nav-blocbox-name {
         display: block;
-        background-image: url('/static/blocbox/images/logo-name-beta.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
+        background-image: url('/static/blocbox/images/Logo-name-beta.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
         background-repeat: no-repeat;
         background-size: contain;
         height: 80px;
