@@ -111,7 +111,7 @@ a:active {
     font-weight: 400;
 }
 .pricetext {
-    font-size: 2.00em;
+    font-size: 3.30em;
     font-weight: 300;
 }
 .dashpricetext {
@@ -1281,7 +1281,7 @@ footer {
     margin: auto;
     width: 150px;
     height: 150px;
-    padding: 25px 10px 10px 10px;
+    padding: 30px 10px 10px 10px;
     line-height: 38px;
     border: 2px solid rgb(255, 195, 0);
     vertical-align: middle;
