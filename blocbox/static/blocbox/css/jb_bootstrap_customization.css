@@ -4041,6 +4041,14 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         left: 5%;
         top: 3%;
     }
+    .signuplogo {
+        display: block;
+        background-image: url('/static/blocbox/images/Logo-name-beta.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 80px;
+        width: 75%;
+    }
 
 }
 /*-------------------------------------------------------------*
