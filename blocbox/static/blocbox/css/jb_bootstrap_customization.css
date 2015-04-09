@@ -4048,6 +4048,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         background-size: contain;
         height: 80px;
         width: 75%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }
