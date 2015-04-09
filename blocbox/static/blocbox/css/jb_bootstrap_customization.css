@@ -1381,6 +1381,7 @@ body {
 }
 .slidelogo {
     max-height: 40px;
+    display: block;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
