@@ -4046,7 +4046,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         background-image: url('/static/blocbox/images/Logo-name-beta.png');
         background-repeat: no-repeat;
         background-size: contain;
-        padding-top: 30px;
+        margin-top: 30px;
         padding-bottom: 10px;
         height: 60px;
         margin-left: auto;
