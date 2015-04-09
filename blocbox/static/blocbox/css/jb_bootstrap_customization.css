@@ -4019,7 +4019,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .signup-padding {
-        padding-top: 50px;
+        padding-top: 30px;
     }
     
     .paddingbottom20pxnomobile {
@@ -4036,9 +4036,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .promo {
-        height: 70px;
-        width: 70px;
-        left: 3%;
+        height: 60px;
+        width: 60px;
+        left: 5%;
         top: 3%;
     }
 
