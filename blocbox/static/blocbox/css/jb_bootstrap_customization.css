@@ -4022,7 +4022,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     
     .fillviewheight {
         height: 100vh;
-        min-height: 400px;
+        min-height: 550px;
     }
     
     .navbar {
