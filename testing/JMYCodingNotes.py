@@ -29,7 +29,7 @@ COPY delmewaitlistusers (EMAIL_ADDRESS, first_name, last_name, zip_code)
 
 #Drop the test table
 
-# copy/UPLOAD - REAL ONE
+--#CREATE TABLE
 DROP TABLE mailchimp_waitlist;
 CREATE TABLE mailchimp_waitlist (
 		EMAIL character varying(254),
@@ -62,7 +62,7 @@ CREATE TABLE mailchimp_waitlist (
 	  NOTES character varying(250)
 );
 
-#COPY the real one
+-- #COPY the real one
 COPY mailchimp_waitlist (
 		email,  first_name ,  last_name, zipcode ,
 	  Subscribe_Date,  referred_by , Untitled1,  Untitled2,
@@ -73,7 +73,7 @@ COPY mailchimp_waitlist (
 	FROM '/home/django/blocbox/core/mailchimp_imports/mailchimp_waitlist_users_10april2015.csv'
 	WITH DELIMITER ',' CSV HEADER ;
 
-#make a hostinterest field based on "Become_a_Host" field
+--#make a hostinterest field based on "Become_a_Host" field
 ALTER TABLE mailchimp_waitlist ADD COLUMN hostinterest boolean;
 UPDATE mailchimp_waitlist SET hostinterest=True WHERE Become_A_Host is not null;
 
