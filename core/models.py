@@ -127,9 +127,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
     customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)
     customcharthree = models.CharField("Custom CharacterField third version", max_length=100, blank=True, null=True)
-    #Create manytomany connections - neighbors are those connected to
-    #neighbors = models.ManyToManyField("self", through='Connections') 
-    #neighbors = models.ManyToManyField("self")
+    #Waitlist Referred By
+    waitlist_referred_by = models.CharField("Waitlist Referred By", max_length=254, blank=True, null=True)
     
     #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined

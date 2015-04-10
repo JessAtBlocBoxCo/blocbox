@@ -64,17 +64,23 @@ CREATE TABLE mailchimp_waitlist (
 
 #COPY the real one
 COPY mailchimp_waitlist (
-		EMAIL_ADDRESS,  first_name ,  last_name, zip_code ,
-	  Subscribe_Date,  Referred_By , Untitled1,  Untitled2,
+		email,  first_name ,  last_name, zip_code ,
+	  Subscribe_Date,  waitlist_referred_by , Untitled1,  Untitled2,
 	  Website,	Image_URL,  Become_a_Host ,  Email_Opt_In ,
-	  Member_Rating,  optin_time, optin_ip, confirm_time, confirm_ip,
+	  Member_Rating,  optin_time, optin_ip, date_joined_waitlist, confirm_ip,
 	  latitude, longitude, GMTOFF,  DSTOFF, TIMEZONE, Country,  Region,
 	  Last_Changed,  LEID, EUID, NOTES )
 	FROM '/home/django/blocbox/core/mailchimp_imports/mailchimp_waitlist_users_10april2015.csv'
 	WITH DELIMITER ',' CSV HEADER ;
 
+#make a host interest field
+
 #Next - make a version of this file that maps to the core_userinfo - just the fields i want to merge
-CREATE TABLE mailchimp_waitlist_for_merge (email, first_name, zipcode
+CREATE TABLE mailchimp_waitlist_for_merge 
+ (email, first_name, zipcode, date_joined_waitlist, hostinterest, waitlist_referred_by);
+COPY mailchimp_waitlist_
+
+#date joined
 
 "MERGE components of two tables - so in this case merging the fields i want from waitlist into the user table"
 #merge the mailchimp_waitlist info into core_userinfo
