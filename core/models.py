@@ -33,7 +33,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     last_name = models.CharField('Last Name', max_length=100, blank=True)
     zipcode = models.CharField(max_length =5)
     #Indicators for whether waitlist or full user (mutually exclusive)
-    waitlistuser = models.BooleanField("Waitlist User", blank=True, default=False)
+    #waitlistuser = models.BooleanField("Waitlist User", blank=True, default=False)
     fulluser = models.BooleanField("Full User", blank=True, default=True)
     st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True)
     st_address2 = models.CharField('Street Address 2', max_length = 70, blank=True)
