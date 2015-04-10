@@ -3,7 +3,7 @@ import datetime
 from django.utils import timezone
 from django.conf import settings 
 
-class Waitlist(AbstractBaseUser): #standard fields defined below
+class Waitlist(models.Model): #standard fields defined below
     email = models.EmailField(max_length=254, unique=True)
     first_name = models.CharField('First Name',max_length=100, blank=True)    
     zipcode = models.CharField(max_length =5)
