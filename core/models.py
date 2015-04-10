@@ -124,7 +124,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)
     customcharthree = models.CharField("Custom CharacterField third version", max_length=100, blank=True, null=True)
     #Referalls Attributed to User
-    Referrals_from_user = models.CharField("Referrals", integer, blank=True, null=True)
+    Referrals_from_user = models.IntegerField("Referrals", blank=True, null=True)
     
     #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined

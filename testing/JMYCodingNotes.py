@@ -37,7 +37,7 @@ CREATE TABLE mailchimp_waitlist (
 		last_name character varying(100),
 	  zipcode character varying(5),
 	  Subscribe_Date timestamp,
-	  Waitlist_Referred_By character varying(254),
+	  Referred_By character varying(254),
 	  Untitled1 character varying(50),
 	  Untitled2 character varying(50),
 	  Website character varying(250),
@@ -65,7 +65,7 @@ CREATE TABLE mailchimp_waitlist (
 #COPY the real one
 COPY mailchimp_waitlist (
 		email,  first_name ,  last_name, zipcode ,
-	  Subscribe_Date,  waitlist_referred_by , Untitled1,  Untitled2,
+	  Subscribe_Date,  referred_by , Untitled1,  Untitled2,
 	  Website,	Image_URL,  Become_a_Host ,  Email_Opt_In ,
 	  Member_Rating,  optin_time, optin_ip, date_joined_waitlist, confirm_ip,
 	  latitude, longitude, GMTOFF,  DSTOFF, TIMEZONE, Country,  Region,
@@ -83,15 +83,15 @@ UPDATE mailchimp_waitlist SET hostinterest=True WHERE Become_A_Host is not null;
 DROP TABLE delmetest;
 CREATE TABLE delmetest
 	(EMAIL character varying(254), first_name character varying(100), zipcode character varying(5), 
-	hostinterest boolean, date_joined_waitlist timestamp, waitlist_referred_by character varying(254) );
-INSERT INTO delmetest SELECT email, zipcode, first_name, waitlist_referred_by, date_joined_waitlist, hostinterest FROM mailchimp_waitlist;
-
+	hostinterest boolean, date_joined_waitlist timestamp, referred_by character varying(254) );
+INSERT INTO delmetest (email, zipcode, first_name, referred_by, date_joined_waitlist, hostinterest)
+	SELECT email, zipcode, first_name, waitlist_referred_by, date_joined_waitlist, hostinterest FROM mailchimp_waitlist;
 DROP TABLE delmetest;
 
 #Actual
-INSERT INTO core_userinfo (email, zipcode, first_name, waitlist_referred_by, date_joined_waitlist, hostinterest)
-	SELECT email, zipcode, first_name, waitlist_referred_by, date_joined_waitlist, hostinterest
-	FROM mailchimp_waitlist;
+INSERT INTO core_userinfo (email, zipcode, first_name, referred_by, date_joined_waitlist, hostinterest)
+	SELECT email, zipcode, first_name, referred_by, date_joined_waitlist, hostinterest FROM mailchimp_waitlist;
+
 
 	  
 	  
