@@ -1,5 +1,5 @@
-##South Migraiton: How to fix/ delete taable restart when screwing up
-"for core users we dont delete because wed have to recreate all the users
+"South Migraiton: How to fix/ delete taable restart when screwing up
+for core users we dont delete because wed have to recreate all the users
 - but the migraiton history is clearly messedup, two things:
 Steps to Fix:"
 #1. deleted everything in the migraiton history folder, including the folder
@@ -10,4 +10,97 @@ Steps to Fix:"
 $ python manage.py convert_to_south core
 $ python manage.py migrate core 0001 --fake
 
-#ERROR: "core_userinfo" already exists
+
+"PSQL - INSTALLATION LOCATION"
+/etc/postgresql/9.3/main
+
+"PSQL - IMPORT CSV"
+#1. create the table (This is test table)
+$ CREATE TABLE delmewaitlistusers (
+		EMAIL_ADDRESS character varying(254), 
+		first_name character varying(100), 
+		last_name character varying(100),
+	  zip_code character varying(5) );
+#2. upload the CSV- TESTING
+COPY delmewaitlistusers (EMAIL_ADDRESS, first_name, last_name, zip_code)
+	FROM '/home/django/blocbox/core/mailchimp_imports/testcsvimport.csv'
+	WITH DELIMITER ','
+	CSV HEADER ;
+
+#Drop the test table
+$ DROP TABLE delmewaitlistusers;
+
+# copy/UPLOAD - REAL ONE
+CREATE TABLE mailchimp_waitlist (
+		EMAIL_ADDRESS character varying(254),
+	  first_name character varying(100), 
+		last_name character varying(100),
+	  zip_code character varying(5),
+	  Subscribe_Date timestamp,
+	  Referred_By character varying(254),
+	  Untitled1 character varying(50),
+	  Untitled2 character varying(50),
+	  Website character varying(250),
+	  Image_URL character varying(250),
+	  Become_a_Host character varying(100),
+	  Email_Opt_In boolean,
+	  Member_Rating numeric,
+	  optin_time timestamp,
+	  optin_ip character varying(30),
+	  confirm_time timestamp,
+	  confirm_ip character varying(30),
+	  latitude decimal,
+	  longitude decimal,
+	  GMTOFF numeric,
+	  DSTOFF numeric,
+	  TIMEZONE character varying(30),
+	  Country character varying(5),
+	  Region character varying(5),
+	  Last_Changed timestamp,
+	  LEID numeric,
+	  EUID character varying(15),
+	  NOTES character varying(250)
+);
+
+#COPY the real one
+COPY mailchimp_waitlist (
+		EMAIL_ADDRESS,  first_name ,  last_name, zip_code ,
+	  Subscribe_Date,  Referred_By , Untitled1,  Untitled2,
+	  Website,	Image_URL,  Become_a_Host ,  Email_Opt_In ,
+	  Member_Rating,  optin_time, optin_ip, confirm_time, confirm_ip,
+	  latitude, longitude, GMTOFF,  DSTOFF, TIMEZONE, Country,  Region,
+	  Last_Changed,  LEID, EUID, NOTES )
+	FROM '/home/django/blocbox/core/mailchimp_imports/mailchimp_waitlist_users_10april2015.csv'
+	WITH DELIMITER ',' CSV HEADER ;
+
+#Next - make a version of this file that maps to the core_userinfo - just the fields i want to merge
+CREATE TABLE mailchimp_waitlist_for_merge (email, first_name, zipcode
+
+"MERGE components of two tables - so in this case merging the fields i want from waitlist into the user table"
+#merge the mailchimp_waitlist info into core_userinfo
+INSERT INTO core_userinfo (email, zipcode, first_name
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+);
+	  
+EMAIL ADDRESS	First Name	Last Name	ZIP CODE	Subscribe Date	Referred By	Untitled	Untitled	Website	Image URL	BECOME A HOST	Email_Opt_In	MEMBER_RATING	OPTIN_TIME	OPTIN_IP	CONFIRM_TIME	CONFIRM_IP	LATITUDE	LONGITUDE	GMTOFF	DSTOFF	TIMEZONE	CC	REGION	LAST_CHANGED	LEID	EUID	NOTES
+
+
+FOR THE REAL ONE:
+COPY delmewaitlistusers (EMAIL_ADDRESS, first_name, last_name, zip_code)
+	FROM '/home/django/blocbox/core/mailchimp_imports/mailchimp_waitlist_users_10april2015.csv'
+	WITH DELIMITER ','
+	CSV HEADER ;
+	
+
+"FINDING LOCATION OF SOMETHING ON LINUX"
+https://www.digitalocean.com/community/tutorials/how-to-use-find-and-locate-to-search-for-files-on-a-linux-vps

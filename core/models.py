@@ -35,6 +35,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     #Indicators for whether waitlist or full user (mutually exclusive)
     waitlistuser = models.BooleanField("Waitlist Only", blank=True, default=False)
     fulluser = models.BooleanField("Full User", blank=True, default=True)
+    #Street Address
     st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True)
     st_address2 = models.CharField('Street Address 2', max_length = 70, blank=True)
     #latitude and longiutude for google maps, e.g., 420 Grand Ave is 40.686529, -73.949413, not sure if engative sing counts as digit
@@ -71,6 +72,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     is_admin = models.BooleanField('Admin User',default=False, blank=True)
     is_active = models.BooleanField('Active User',default=True, blank=True)
     date_joined = models.DateTimeField('Date Joined', default=timezone.now, blank=True, null=True) #auto_now_add auto_now_add=True
+    date_joined_waitlist = models.DateTimeField('Date Joined Waitlist', blank=True, null=True)
     about_me = models.CharField('About Me', max_length=300, blank=True)
     #add other request options
     need_storage = models.BooleanField('May Need Storage', blank=True, default=False)
