@@ -20,7 +20,7 @@ class UserInfoAdmin(admin.ModelAdmin):
     #just list 'pass' if you want it to id just the email address and then they clik on it to see other fields
     #pass
     list_display = ('id', 'email', 'zipcode', 'first_name', 'last_name', 'host')
-    list_filter = ['host', 'zipcode', 'city', 'waitlistuser', 'fulluser']
+    list_filter = ['host', 'zipcode', 'city',  'fulluser']
     search_fields = ['email', 'first_name', 'last_name']  
     
 admin.site.register(UserInfo, UserInfoAdmin)
