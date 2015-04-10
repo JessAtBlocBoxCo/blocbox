@@ -111,7 +111,7 @@ a:active {
     font-weight: 400;
 }
 .pricetext {
-    font-size: 2.00em;
+    font-size: 3.30em;
     font-weight: 300;
 }
 .dashpricetext {
@@ -509,6 +509,9 @@ footer {
 }
 .paddingleft69px {
     padding-left: 69px;
+}
+.paddingleft70px {
+    padding-left: 70px;
 }
 .paddingleft120px {
     padding-left: 120px;
@@ -1276,9 +1279,9 @@ footer {
     background-repeat: no-repeat;
     background-size: contain;
     margin: auto;
-    width: 130px;
-    height: 130px;
-    padding: 25px 10px 10px 10px;
+    width: 150px;
+    height: 150px;
+    padding: 30px 10px 10px 10px;
     line-height: 38px;
     border: 2px solid rgb(255, 195, 0);
     vertical-align: middle;
@@ -1360,7 +1363,7 @@ body {
 }
 .navbar-toggle {
     float: right;
-    margin-right: 15px;
+    margin-right: 5px;
     border: 0;
     margin-top: 15px;
     margin-bottom: 4px;
@@ -1378,6 +1381,7 @@ body {
 }
 .slidelogo {
     max-height: 40px;
+    display: block;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
@@ -1524,7 +1528,7 @@ body {
 
 .waitlistbody .nav-blocbox-name {
     display: block;
-    background-image: url('/static/blocbox/images/Logo-name.png');
+    background-image: url('/static/blocbox/images/Logo-name-beta.png');
     background-repeat: no-repeat;
     background-size: contain;
     height: 80px;
@@ -1563,7 +1567,7 @@ body {
     }
     .waitlistbody .nav-blocbox-name {
         display: block;
-        background-image: url('/static/blocbox/images/logo-name.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
+        background-image: url('/static/blocbox/images/Logo-name-beta.png'); /*http://www.blocbox.co/static/blocbox/images/Name-whited2.png*/
         background-repeat: no-repeat;
         background-size: contain;
         height: 80px;
@@ -3672,7 +3676,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         font-size: 2em;
     }
     h3 {
-        font-size: 1.143em;
+        font-size: 1.5em;
+        font-weight: 400;
         line-height: 1.38em;
     }
     h4 {
@@ -3681,9 +3686,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         line-height: 1.38em;
     }
     h5 {
-        font-size: 1.17em;
+        font-size: 1.47em;
         line-height: 1.38;
-        font-weight: 300;
+        font-weight: 400;
     }
     h6 {
         font-size: 1.27em;
@@ -3733,6 +3738,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         padding-left: 35px;
         padding-right: 35px;
     }
+    .margintop10pxmobile {
+        margin-top: 10px;
+    }
     .margintop20pxmobile {
         margin-top: 20px;
     }
@@ -3744,6 +3752,12 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .margintop50pxmobile {
         margin-top: 50px;
+    }
+    .marginbottom5pxmobile {
+        margin-bottom: 5px;
+    }
+    .form-group {
+        margin-bottom: 5px;
     }
     .lightweight {
         font-weight: 400;
@@ -3762,8 +3776,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         display: none;
     }
     .mobileheader {
-        font-size: 1.6em;
-        font-weight: 300;
+        font-size: 1.9em;
+        font-weight: 400;
         line-height: 1.38em;
     }
     .waitlistjoinbtn {
@@ -3902,7 +3916,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
 
     .host-ss {
         background-image: url('/static/blocbox/images/host-ss.png');
-        height: 225px;
+        height: 180px;
         width: 250px;
     }
 
@@ -3914,7 +3928,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     
     .calendar-ss {
         background-image: url('/static/blocbox/images/calendar-ss.png');
-        height: 225px;
+        height: 180px;
         width: 250px;
     }
 
@@ -3925,7 +3939,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .dash-ss {
         background-image: url('/static/blocbox/images/dashbaord.png');
-        height: 225px;
+        height: 180px;
         width: 250px;
     }
 
@@ -3959,8 +3973,15 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .paddingtop50px {
         padding-top: 20px;
     }
+    .paddingtop20pxmobile {
+        padding-top: 20px;
+    }
     
     .paddingbottom50px {
+        padding-bottom: 20px;
+    }
+    
+    .paddingbottom20pxmobile {
         padding-bottom: 20px;
     }
     
@@ -3979,11 +4000,11 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .pro-header {
-        font-size: 2.1em;
+        font-size: 2.3em;
         font-weight: 400;
         margin-top: 0px;
         color: white;
-        line-height: 1.08;
+        line-height: 1.18;
         text-align: center;
     }
 
@@ -4005,7 +4026,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .signup-padding {
-        padding-top: 50px;
+        padding-top: 30px;
     }
     
     .paddingbottom20pxnomobile {
@@ -4014,7 +4035,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     
     .fillviewheight {
         height: 100vh;
-        min-height: 400px;
+        min-height: 550px;
     }
     
     .navbar {
@@ -4022,10 +4043,21 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .promo {
-        height: 70px;
-        width: 70px;
-        left: 3%;
+        height: 60px;
+        width: 60px;
+        left: 5%;
         top: 3%;
+    }
+    .signuplogo {
+        display: block;
+        background-image: url('/static/blocbox/images/Logo-name-beta.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-top: 30px;
+        padding-bottom: 10px;
+        height: 60px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
 }

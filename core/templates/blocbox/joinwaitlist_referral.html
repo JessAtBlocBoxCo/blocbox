@@ -3,33 +3,35 @@
 {% load staticfiles %} {% block title %} Join Our Waitlist {% endblock %} {% block topcontent %}
 
 <div class="row-fluid fullheight">
-    
+
     <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
-        <div class="promo"></div>
-        <h2 class="nomargintop signup-padding">Sign Up</h2>
-        <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
+        <div class="promo mobilehide"></div>
+        <h2 class="nomargintop signup-padding mobilehide">Sign Up</h2>
+        <div class="col-xs-10 col-xs-offset-1 mobileonly">
+            <div class="signuplogo"></div>
+        </div>
+        <h3 class="col-xs-12 paddingbottom20pxnomobile margintop10pxmobile" style="font-size: 1.7em">Launching soon in select neighborhoods. <a href="#more">Learn more.</a></h3>
         <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate>
-            <div class="form-group col-xs-12">
+            <div class="form-group col-xs-12 marginbottom5pxmobile">
                 <input name="EMAIL" placeholder="EMAIL" class="form-control input-lg inputbox margintop5px" type="email">
             </div>
             <div class="row">
-            <div class="form-group col-xs-12">
-                <input name="FNAME" placeholder="FIRST NAME" class="form-control input-lg inputbox margintop5px" type="text">
+                <div class="form-group col-xs-12 marginbottom5pxmobile">
+                    <input name="FNAME" placeholder="FIRST NAME" class="form-control input-lg inputbox margintop5px" type="text">
+                </div>
             </div>
-            </div>
-            <div class="form-group col-xs-12">
+            <div class="form-group col-xs-12 marginbottom5pxmobile">
                 <input name="ZIPCODE" placeholder="ZIP" class="form-control input-lg inputbox margintop5px" type="text">
             </div>
-            
+
             <div class="form-group col-xs-12">
-                <input name="REFERREDBY"  class="form-control input-lg inputbox margintop5px" type="hidden"
-                	value="{{referring_user_email}}">
+                <input name="REFERREDBY" class="form-control input-lg inputbox margintop5px" type="hidden" value="{{referring_user_email}}">
             </div>
-            
-            <div class="col-xs-12 paddingtop10px nopaddingmobile waitlistcheck">
+
+            <div class="col-xs-10 col-xs-offset-1 paddingtop10px nopaddingmobile waitlistcheck">
                 <div class="checkbox checkbox-success checkbox-inline text-center">
                     <input type="checkbox" value="1" name="group[1689][1]" id="mce-group[1689]-1689-0">
-                       <label for="mce-group[1689]-1689-0">
+                    <label for="mce-group[1689]-1689-0">
                         <h6 class="nomargin textleft paddingleft10px">I'm interested in helping my neighbors and making some extra money</h6>
                     </label>
                 </div>
@@ -54,7 +56,7 @@
         <a href="#learn">
             <p class="whitetext nomargin">LEARN MORE</p>
             <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
-        </a> 
+        </a>
     </div>
 </div>
 
