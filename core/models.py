@@ -32,9 +32,6 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     first_name = models.CharField('First Name',max_length=100, blank=True)
     last_name = models.CharField('Last Name', max_length=100, blank=True)
     zipcode = models.CharField(max_length =5)
-    #Indicators for whether waitlist or full user (mutually exclusive)
-    waitlistuser = models.BooleanField("Waitlist Only", blank=True, default=False)
-    fulluser = models.BooleanField("Full User", blank=True, default=True)
     #Street Address
     st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True)
     st_address2 = models.CharField('Street Address 2', max_length = 70, blank=True)
@@ -72,7 +69,6 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     is_admin = models.BooleanField('Admin User',default=False, blank=True)
     is_active = models.BooleanField('Active User',default=True, blank=True)
     date_joined = models.DateTimeField('Date Joined', default=timezone.now, blank=True, null=True) #auto_now_add auto_now_add=True
-    date_joined_waitlist = models.DateTimeField('Date Joined Waitlist', blank=True, null=True)
     about_me = models.CharField('About Me', max_length=300, blank=True)
     #add other request options
     need_storage = models.BooleanField('May Need Storage', blank=True, default=False)
@@ -127,8 +123,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     customchar = models.CharField("Custom Character field to edit later", max_length=200, blank=True, null=True)
     customchartwo = models.CharField("Custom Character Field second version", max_length=200, blank=True, null=True)
     customcharthree = models.CharField("Custom CharacterField third version", max_length=100, blank=True, null=True)
-    #Waitlist Referred By
-    waitlist_referred_by = models.CharField("Waitlist Referred By", max_length=254, blank=True, null=True)
+    #Referalls Attributed to User
+    Referrals_from_user = models.CharField("Referrals", integer, blank=True, null=True)
     
     #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined

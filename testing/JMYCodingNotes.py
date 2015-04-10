@@ -28,16 +28,16 @@ COPY delmewaitlistusers (EMAIL_ADDRESS, first_name, last_name, zip_code)
 	CSV HEADER ;
 
 #Drop the test table
-$ DROP TABLE delmewaitlistusers;
 
 # copy/UPLOAD - REAL ONE
+DROP TABLE mailchimp_waitlist;
 CREATE TABLE mailchimp_waitlist (
-		EMAIL_ADDRESS character varying(254),
+		EMAIL character varying(254),
 	  first_name character varying(100), 
 		last_name character varying(100),
-	  zip_code character varying(5),
+	  zipcode character varying(5),
 	  Subscribe_Date timestamp,
-	  Referred_By character varying(254),
+	  Waitlist_Referred_By character varying(254),
 	  Untitled1 character varying(50),
 	  Untitled2 character varying(50),
 	  Website character varying(250),
@@ -47,7 +47,7 @@ CREATE TABLE mailchimp_waitlist (
 	  Member_Rating numeric,
 	  optin_time timestamp,
 	  optin_ip character varying(30),
-	  confirm_time timestamp,
+	  date_joined_waitlist timestamp,
 	  confirm_ip character varying(30),
 	  latitude decimal,
 	  longitude decimal,
@@ -64,7 +64,7 @@ CREATE TABLE mailchimp_waitlist (
 
 #COPY the real one
 COPY mailchimp_waitlist (
-		email,  first_name ,  last_name, zip_code ,
+		email,  first_name ,  last_name, zipcode ,
 	  Subscribe_Date,  waitlist_referred_by , Untitled1,  Untitled2,
 	  Website,	Image_URL,  Become_a_Host ,  Email_Opt_In ,
 	  Member_Rating,  optin_time, optin_ip, date_joined_waitlist, confirm_ip,
@@ -73,18 +73,26 @@ COPY mailchimp_waitlist (
 	FROM '/home/django/blocbox/core/mailchimp_imports/mailchimp_waitlist_users_10april2015.csv'
 	WITH DELIMITER ',' CSV HEADER ;
 
-#make a host interest field
-
-#Next - make a version of this file that maps to the core_userinfo - just the fields i want to merge
-CREATE TABLE mailchimp_waitlist_for_merge 
- (email, first_name, zipcode, date_joined_waitlist, hostinterest, waitlist_referred_by);
-COPY mailchimp_waitlist_
-
-#date joined
+#make a hostinterest field based on "Become_a_Host" field
+ALTER TABLE mailchimp_waitlist ADD COLUMN hostinterest boolean;
+UPDATE mailchimp_waitlist SET hostinterest=True WHERE Become_A_Host is not null;
 
 "MERGE components of two tables - so in this case merging the fields i want from waitlist into the user table"
 #merge the mailchimp_waitlist info into core_userinfo
-INSERT INTO core_userinfo (email, zipcode, first_name
+#TEST
+DROP TABLE delmetest;
+CREATE TABLE delmetest
+	(EMAIL character varying(254), first_name character varying(100), zipcode character varying(5), 
+	hostinterest boolean, date_joined_waitlist timestamp, waitlist_referred_by character varying(254) );
+INSERT INTO delmetest SELECT email, zipcode, first_name, waitlist_referred_by, date_joined_waitlist, hostinterest FROM mailchimp_waitlist;
+
+DROP TABLE delmetest;
+
+#Actual
+INSERT INTO core_userinfo (email, zipcode, first_name, waitlist_referred_by, date_joined_waitlist, hostinterest)
+	SELECT email, zipcode, first_name, waitlist_referred_by, date_joined_waitlist, hostinterest
+	FROM mailchimp_waitlist;
+
 	  
 	  
 	  
