@@ -19,7 +19,7 @@ from django.utils.encoding import force_text
 class UserInfoAdmin(admin.ModelAdmin):
     #just list 'pass' if you want it to id just the email address and then they clik on it to see other fields
     #pass
-    list_display = ('id', 'waitlistuser', 'email', 'zipcode', 'first_name', 'last_name', 'host')
+    list_display = ('id', 'email', 'zipcode', 'first_name', 'last_name', 'host')
     list_filter = ['host', 'zipcode', 'city', 'waitlistuser', 'fulluser']
     search_fields = ['email', 'first_name', 'last_name']  
     
