@@ -835,8 +835,8 @@ def joinwaitlist(request, referring_user_email=None):
         form = WaitlistForm(request.POST)       
         if waitlist_form.is_valid():       	
             waitlist = waitlist_form.save() #saves first_name, email, zipcode
-				    waitlist.hostinterest = form.cleaned_data['group[1689][1]']
-				    waitlist.referred_by = form.cleaned_data['REFERREDBY']
+            waitlist.hostinterest = form.cleaned_data['group[1689][1]']
+            waitlist.referred_by = form.cleaned_data['REFERREDBY']
             #get nearby zips and opulate the city and state
             zipcodeform = form.cleaned_data['zipcode']
             zipcode = zcdb[zipcodeform]           
