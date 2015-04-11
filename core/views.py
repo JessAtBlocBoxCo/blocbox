@@ -834,19 +834,23 @@ def joinwaitlist(request, referring_user_email=None):
     waitlistregistered = False
     if request.method == 'POST': 
         form = WaitlistForm(data=request.POST)       
-        if form.is_valid():       	
-            waitlist = waitlist_form.save() #saves first_name, email, zipcode
-            waitlist.hostinterest = form.cleaned_data['group[1689][1]']
-            waitlist.referred_by = form.cleaned_data['REFERREDBY']
+        if form.is_valid():  
+        	  email = form.cleaned_data['EMAIL']        	       
+            waitlistuser = Waitlist.objects.create(email=email)	
+            waitlistuser.save() #saves first_name, email, zipcode
+            waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
+            waitlistuser.referred_by = form.cleaned_data['REFERREDBY']
+            waitlistuser.zipcode = form.cleaned_data['ZIPCODE']
+            waitlistuser.first_name = form.cleaned_data['FIRST_NAME']
             #get nearby zips and opulate the city and state
             zipcodeform = form.cleaned_data['zipcode']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
             zipcodes_nearby_json = json.dumps(zipcodes_nearby)
-            waitlist.city = zipcode.city
-            waitlist.state = zipcode.state
-            waitlist.zipcodes_nearby = zipcodes_nearby_json
-            waitlist.save()
+            waitlistuser.city = zipcode.city
+            waitlistuser.state = zipcode.state
+            waitlistuser.zipcodes_nearby = zipcodes_nearby_json
+            waitlistuser.save()
             #add neighbors nearbyu
             add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
             waitlistregistered = True
