@@ -15,6 +15,9 @@ from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, Rese
 from core.usertasks import add_neighbors_nearby_task
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
+#Add the waitlist app
+from waitlist.models import Waitlist
+from waitlist.forms import WaitlistForm
 #Important the authentication and login functions -- not sure that i can use with custom model
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
