@@ -852,7 +852,7 @@ def joinwaitlist(request, referring_user_email=None):
     	      print form.errors           
     else: #if method is not POST
         form = WaitlistForm()
-    return render(request, 'blocbox/joinwaitlist_referral.html', { 'referring_user_email': referring_user_email, 'form': form, } )
+    return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email, 'form': form, } )
         
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
