@@ -169,3 +169,54 @@ def add_neighbors_nearby_task(userid=None):
             user.neighbors_5mileradius = json.dumps(users_5mile)
         user.save()
     return "Users were added for 1, 2, 3, 4, 5 mile radius"
+
+def add_neighbors_nearby_waitlist(waitlistid=None):
+    if waitlistid:
+	      users_list = Waitlist.objects.filter(id=waitlistid)
+    else:
+        users_list = Waitlist.objects.all()
+    for user in users_list:
+        zip = user.zipcode
+        zipcode = zcdb[zip]
+        zipcodes_1mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 1)]
+        zipcodes_2mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+        zipcodes_3mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 3)]
+        zipcodes_4mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 4)]
+        zipcodes_5mile = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 5)]
+        users_1mile = []
+        users_2mile = []
+        users_3mile = []
+        users_4mile = []
+        users_5mile = []
+        for zip in zipcodes_1mile:
+    	      userszip= UserInfo.objects.filter(zipcode=zip)
+    	      for userz in userszip:
+    	          users_1mile.append(userz.id)
+        for zip in zipcodes_2mile:
+    	      userszip = UserInfo.objects.filter(zipcode=zip)
+    	      for userz in userszip:
+    	          users_2mile.append(userz.id)
+        for zip in zipcodes_3mile:
+            userszip = UserInfo.objects.filter(zipcode=zip)
+            for userz in userszip:
+                users_3mile.append(userz.id)
+        for zip in zipcodes_4mile:
+            userszip = UserInfo.objects.filter(zipcode=zip)
+            for userz in userszip:
+                users_4mile.append(userz.id)
+        for zip in zipcodes_5mile:
+            userszip = UserInfo.objects.filter(zipcode=zip)
+            for userz in userszip:
+                users_5mile.append(userz.id)
+        if users_1mile:
+            user.neighbors_1mileradius = json.dumps(users_1mile)
+        if users_2mile:
+            user.neighbors_2mileradius = json.dumps(users_2mile)
+        if users_3mile:
+            user.neighbors_3mileradius = json.dumps(users_3mile)
+        if users_4mile:
+            user.neighbors_4mileradius = json.dumps(users_4mile)
+        if users_5mile:
+            user.neighbors_5mileradius = json.dumps(users_5mile)
+        user.save()
+    return "Users were added for 1, 2, 3, 4, 5 mile radius"

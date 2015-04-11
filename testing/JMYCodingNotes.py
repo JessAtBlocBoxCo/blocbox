@@ -75,7 +75,8 @@ COPY mailchimp_waitlist (
 
 --#make a hostinterest field based on "Become_a_Host" field
 ALTER TABLE mailchimp_waitlist ADD COLUMN hostinterest boolean;
-UPDATE mailchimp_waitlist SET hostinterest=True WHERE Become_A_Host is not null;
+UPDATE mailchimp_waitlist SET  hostinterest=True WHERE Become_A_Host is not null;
+UPDATE mailchimp_waitlist SET hostinterest=False WHERE Become_A_Host is null;
 --#update the table add a fulluser field and set iti to false so it doesn't throw those errors
 ALTER TABLE mailchimp_waitlist ADD COLUMN fulluser boolean;
 UPDATE mailchimp_waitlist SET fulluser=False;
