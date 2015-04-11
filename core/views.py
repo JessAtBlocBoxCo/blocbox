@@ -831,6 +831,7 @@ def waitlist_almostfinished(request):
 #    return render(request, 'blocbox/joinwaitlist.html')
 
 def joinwaitlist(request, referring_user_email=None):	 
+    waitlistregistered = False
     if request.method == 'POST': 
         form = WaitlistForm(request.POST)       
         if form.is_valid():       	
@@ -847,12 +848,14 @@ def joinwaitlist(request, referring_user_email=None):
             waitlist.zipcodes_nearby = zipcodes_nearby_json
             waitlist.save()
             #add neighbors nearbyu
-            add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
+            #add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
+            waitlistregistered = True
         else: 
     	      print form.errors           
     else: #if method is not POST
         form = WaitlistForm()
-    return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email, 'form': form, } )
+    return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email, 
+    	'form': form, 'waitlistregistered': waitlistregistered, } )
         
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
