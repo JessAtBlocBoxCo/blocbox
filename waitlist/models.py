@@ -5,7 +5,7 @@ from django.conf import settings
 
 class Waitlist(models.Model): #standard fields defined below
     email = models.EmailField(max_length=254, unique=True)
-    first_name = models.CharField('First Name',max_length=100, blank=True)    
+    first_name = models.CharField('First Name',max_length=100, blank=True, null=True)    
     zipcode = models.CharField(max_length =5)
     #latitude and longiutude for google maps, e.g., 420 Grand Ave is 40.686529, -73.949413, not sure if engative sing counts as digit    
     date_joined_waitlist = models.DateTimeField('Date Joined Waitlist', blank=True, null=True)
