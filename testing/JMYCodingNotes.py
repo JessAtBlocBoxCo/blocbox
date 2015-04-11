@@ -76,6 +76,9 @@ COPY mailchimp_waitlist (
 --#make a hostinterest field based on "Become_a_Host" field
 ALTER TABLE mailchimp_waitlist ADD COLUMN hostinterest boolean;
 UPDATE mailchimp_waitlist SET hostinterest=True WHERE Become_A_Host is not null;
+--#update the table add a fulluser field and set iti to false so it doesn't throw those errors
+ALTER TABLE mailchimp_waitlist ADD COLUMN fulluser boolean;
+UPDATE mailchimp_waitlist SET fulluser=False;
 
 "MERGE components of two tables - so in this case merging the fields i want from waitlist into the user table"
 #merge the mailchimp_waitlist info into core_userinfo
@@ -89,8 +92,8 @@ INSERT INTO delmetest (email, zipcode, first_name, referred_by, date_joined_wait
 DROP TABLE delmetest;
 
 #Actual
-INSERT INTO core_userinfo (email, zipcode, first_name, referred_by, date_joined_waitlist, hostinterest)
-	SELECT email, zipcode, first_name, referred_by, date_joined_waitlist, hostinterest FROM mailchimp_waitlist;
+INSERT INTO waitlist_waitlist (email, fulluser, zipcode, first_name, referred_by, date_joined_waitlist, hostinterest) 
+	SELECT email, fulluser, zipcode, first_name, referred_by, date_joined_waitlist, hostinterest FROM mailchimp_waitlist;
 
 
 	  

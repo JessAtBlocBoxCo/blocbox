@@ -15,7 +15,7 @@ class Waitlist(models.Model): #standard fields defined below
     fulluser = models.BooleanField("Full User", blank=True, default=False)
     address_latitude = models.DecimalField('Latitude Coordinate', max_digits=9, decimal_places=6, blank=True, null=True) #latitude is max-min 90, -90
     address_longitude = models.DecimalField('Longitude Coordinate', max_digits=10, decimal_places=6, blank=True, null=True) #longitude is max-min 180, -180
-    city = models.CharField(max_length=30, blank=True)
-    state = models.CharField(max_length=2, blank=True) #upate this so drop-down 
+    city = models.CharField(max_length=30, blank=True, null=True)
+    state = models.CharField(max_length=2, blank=True, null=True) #upate this so drop-down 
     #Will be blank 
-    last_name = models.CharField('Last Name', max_length=100, blank=True)
+    last_name = models.CharField('Last Name', max_length=100, blank=True, null=True)
