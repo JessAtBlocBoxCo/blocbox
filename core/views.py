@@ -835,7 +835,7 @@ def joinwaitlist(request, referring_user_email=None):
     if request.method == 'POST': 
         form = WaitlistForm(data=request.POST)       
         if form.is_valid():  
-        	  email = form.cleaned_data['EMAIL']        	       
+            email = form.cleaned_data['EMAIL']        	       
             waitlistuser = Waitlist.objects.create(email=email)	
             waitlistuser.save() #saves first_name, email, zipcode
             waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
