@@ -831,7 +831,7 @@ def waitlist_almostfinished(request):
 #    return render(request, 'blocbox/joinwaitlist.html')
 
 def joinwaitlist(request, referring_user_email=None):	 
-		if request.method == 'POST': 
+    if request.method == 'POST': 
         form = WaitlistForm(request.POST)       
         if waitlist_form.is_valid():       	
             waitlist = waitlist_form.save() #saves first_name, email, zipcode
@@ -848,7 +848,7 @@ def joinwaitlist(request, referring_user_email=None):
             waitlist.save()
             #add neighbors nearbyu
             add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
-    	  else: 
+        else: 
     	      print form.errors           
     else: #if method is not POST
         form = WaitlistForm()
