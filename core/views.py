@@ -833,7 +833,7 @@ def waitlist_almostfinished(request):
 def joinwaitlist(request, referring_user_email=None):	 
     if request.method == 'POST': 
         form = WaitlistForm(request.POST)       
-        if waitlist_form.is_valid():       	
+        if form.is_valid():       	
             waitlist = waitlist_form.save() #saves first_name, email, zipcode
             waitlist.hostinterest = form.cleaned_data['group[1689][1]']
             waitlist.referred_by = form.cleaned_data['REFERREDBY']
