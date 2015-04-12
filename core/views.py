@@ -17,7 +17,7 @@ from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
 #Add the waitlist app
 from waitlist.models import Waitlist
-from waitlist.forms import WaitlistForm
+from waitlist.forms import WaitlistFormModel, WaitlistForm
 #Important the authentication and login functions -- not sure that i can use with custom model
 from django.contrib.auth import authenticate, login, get_user_model, logout
 from django.contrib.auth.decorators import login_required
@@ -862,20 +862,48 @@ def joinwaitlist(request, referring_user_email=None):
     	'form': form, 'waitlistregistered': waitlistregistered, } )
 
 
+"""
+def joinwaitlist_testformpost(request):
+    enduser = request.user
+    if request.is_ajax():
+        response = json.loads(request.body)
+        if enduser.is_authenticated():
+            user = get_object_or_404(UserInfo, pk=enduser.id)
+            if response:
+                user.facebook_response_all = response
+                user.facebook_id = response['id']
+                user.facebook_first_name = response['first_name']
+                user.facebook_last_name = response['last_name']
+                user.facebook_email = response['email'] 
+                user.facebook_locale = response['locale']
+                user.facebook_link = response['link']
+                user.facebook_gender = response['gender']
+                user.facebook_verified = response['verified']               
+            user.save()
+            message = "Success! You posted data to the user model"
+        else:
+            message = "The user is not authenticated"
+    else:
+        message = "The request method was not Ajax"
+    return render(request, 'blocbox/joinwaitlist_formtestpost.html', { 'referring_user_email': referring_user_email, 
+    	'form': form, 'waitlistregistered': waitlistregistered, 'requestmethod': requestmethod, } )
+"""       
+
 def joinwaitlist_testform(request, referring_user_email=None):	 
     waitlistregistered = False
     if request.method == 'POST': 
         requestmethod = request.method
         form = WaitlistForm(data=request.POST)       
         if form.is_valid():  
-            #email = form.cleaned_data['EMAIL']        	       
-            #waitlistuser = Waitlist.objects.create(email=email)	 
-            waitlistuser = form.save()
-            waitlistuser.save() #saves first_name, email, zipcode            
-            #waitlistuser.zipcode = form.cleaned_data['ZIPCODE']
-            #waitlistuser.first_name = form.cleaned_data['FIRST_NAME']
+            email = form.cleaned_data['EMAIL']        	       
+            waitlistuser = Waitlist.objects.create(email=email)	 
+            #waitlistuser = form.save()
+            #waitlistuser.save() #saves first_name, email, zipcode            
+            waitlistuser.zipcode = form.cleaned_data['ZIPCODE']
+            waitlistuser.first_name = form.cleaned_data['FIRST_NAME']
+            waitlistuser.referredby = form.cleaned_data['REFERREDBY']
             #get nearby zips and opulate the city and state
-            waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
+            #waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
             #zipcodeform = form.cleaned_data['zipcode']
             #zipcode = zcdb[zipcodeform]           
             #zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
