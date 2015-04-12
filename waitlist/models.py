@@ -9,7 +9,7 @@ class Waitlist(models.Model): #standard fields defined below
     zipcode = models.CharField(max_length =5)
     #latitude and longiutude for google maps, e.g., 420 Grand Ave is 40.686529, -73.949413, not sure if engative sing counts as digit    
     date_joined_waitlist = models.DateTimeField('Date Joined Waitlist', default=timezone.now, blank=True, null=True)
-    referred_by = models.CharField("Waitlist Referred By", max_length=254, blank=True, null=True)
+    referredby = models.CharField("Waitlist Referred By", max_length=254, blank=True, null=True)
     hostinterest = models.BooleanField("Interested in Hosting", blank=True, default=False)
     #Attributes to add later/with functions
     fulluser = models.BooleanField("Full User", blank=True, default=False)

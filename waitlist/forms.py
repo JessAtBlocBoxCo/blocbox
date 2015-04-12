@@ -15,4 +15,4 @@ from django.core.validators import validate_email
 class WaitlistForm(forms.ModelForm):
 		class Meta:
 		    model = Waitlist
-		    fields = ('email', 'first_name', 'zipcode', )
+		    fields = ('email', 'first_name', 'zipcode', 'referredby' )
