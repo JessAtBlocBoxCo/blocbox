@@ -862,7 +862,7 @@ def joinwaitlist(request, referring_user_email=None):
     	'form': form, 'waitlistregistered': waitlistregistered, } )
 
 
-def joinwaitlist_formtest(request, referring_user_email=None):	 
+def joinwaitlist_testform(request, referring_user_email=None):	 
     waitlistregistered = False
     if request.method == 'POST': 
         form = WaitlistForm(data=request.POST)       
