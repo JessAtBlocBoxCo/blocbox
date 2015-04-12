@@ -1,10 +1,7 @@
 <!--this is blocbox/core/templates/blocbox/sign-up-connect.html, ULR is http://www.blocbox.co/3/signupconnect/, where 3=user ID (johnin this case) 
 		note: this is based on the generic sign-up form, in sign-up-withoutconnect.html, which extents basesignup.html
 		if you want to make overall chnages to the form,c hange basesignup.html-->
-{% extends "blocbox/sign-up-withoutconnect.html" %}
-{% load staticfiles %} 
-
-{% block signupheader %} Sign Up For BlocBox to Connect with {{host.first_name}} {% endblock %}
+{% extends "blocbox/sign-up-withoutconnect.html" %}{% load staticfiles %}{% block signupheader %} Sign Up For BlocBox to Connect with {{host.first_name}} {% endblock %}
 
 {% block signupsubtitle %} 
 	<h5 class="col-xs-12 col-sm-10 col-sm-offset-1 marginbottom20px">In order to connect, we need to ask for some basic information.</h5>
