@@ -852,7 +852,7 @@ def joinwaitlist(request, referring_user_email=None):
             waitlistuser.zipcodes_nearby = zipcodes_nearby_json
             waitlistuser.save()
             #add neighbors nearbyu
-            add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
+            #add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
             waitlistregistered = True
         else: 
     	      print form.errors           
