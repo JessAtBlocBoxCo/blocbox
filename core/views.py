@@ -865,6 +865,7 @@ def joinwaitlist(request, referring_user_email=None):
 def joinwaitlist_testform(request, referring_user_email=None):	 
     waitlistregistered = False
     if request.method == 'POST': 
+    	  requestmethod = request.method
         form = WaitlistForm(data=request.POST)       
         if form.is_valid():  
             #email = form.cleaned_data['EMAIL']        	       
@@ -890,8 +891,9 @@ def joinwaitlist_testform(request, referring_user_email=None):
     	      print form.errors           
     else: #if method is not POST
         form = WaitlistForm()
+        requestmethod = request.method
     return render(request, 'blocbox/joinwaitlist_formtest.html', { 'referring_user_email': referring_user_email, 
-    	'form': form, 'waitlistregistered': waitlistregistered, } )
+    	'form': form, 'waitlistregistered': waitlistregistered, 'requestmethod': requestmethod, } )
         
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
