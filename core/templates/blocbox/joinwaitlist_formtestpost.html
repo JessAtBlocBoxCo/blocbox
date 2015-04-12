@@ -1,0 +1,124 @@
+{% extends "blocbox/basewaitlist.html" %}
+<!--this is blocbox/core/templates/bocbox/waitlist-confirmation.html, url is http://www.blocbox.co/waitlistconfirmation/-->
+
+
+
+
+<!--
+  The Login Button social plugin. This button use the JavaScript SDK to present a graphical Login button that triggers the FB.login() function when clicked.
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fb_login_button"> Login with Facebook </fb:login-button>
+-->
+<br>
+
+<div class="row-fluid fullheight">
+   
+    <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+        <div class="promo"></div>
+        <h2 class="nomargintop signup-padding">Sign Up</h2>
+        <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
+        <!--<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
+        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate> -->
+        <form action="ajax-form-submit.php" method="post"  class="paddingsides15px" role="form"   enctype="multipart/form-data" name="ajaxform" id="ajaxform"> 
+  
+  <h3>TEST SHOW WAITLIST REGISTERED {{ waitlistregistered  }} <br>
+  		test show request method: {{ requestmethod }} </h3>
+           
+            {% csrf_token %}  
+            
+   
+            
+            	<h3> {{ form.non_field_errors }}  </h3>
+            
+            <div class="form-group col-xs-12" style="margin-bottom: 5px">
+ 							  <h3>{{ form.email.errors }} </h3>	
+                <input name="email" placeholder="EMAIL" class="form-control input-lg inputbox margintop5px" type="email">
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                	<h3> {{form.first_name.errors }} </h3>
+                <input name="first_name" placeholder="FIRST NAME" class="form-control input-lg inputbox margintop5px" type="text">
+            </div>
+            </div>
+            <div class="form-group col-xs-12">
+            		<h3> {{ form.zipcode.errors }} </h3>
+                <input name="zipcode" placeholder="ZIP" class="form-control input-lg inputbox margintop5px" type="text">
+            </div>
+            <div class="form-group col-xs-12">
+            	
+            	<h3> {{ form.referredby.errors }} </h3>
+                <input name="referredby"  class="form-control input-lg inputbox margintop5px" type="hidden"
+                	value="{{referring_user_email}}">
+            </div>
+            
+        
+            <div class="col-xs-10 col-xs-offset-1 paddingtop10px nopaddingmobile waitlistcheck">
+                <div class="checkbox checkbox-success checkbox-inline text-center">
+                    <input type="checkbox" value="1" name="hostinterest" id="mce-group[1689]-1689-0">
+                       <label for="mce-group[1689]-1689-0">
+                        <h6 class="nomargin textleft paddingleft10px">I'm interested in helping my neighbors and making some extra money</h6>
+                    </label>
+                </div>
+               
+            </div>
+
+            <div class="col-xs-12 paddingtop20px paddingtop15pxmobile">
+                <button type="submit" value="Join Waitlist" name="subscribe" class="btn-waitlist margintop5px">Join Waitlist</button>
+            </div>
+            
+            <!--
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+			-->
+            <!--row-->
+ </form>
+
+{% load staticfiles %} {% block title %} Join Our Waitlist {% endblock %} {% block topcontent %}
+
+
+
+<script>
+	//include the javascript file for override the before send thing that is causing error
+	{% include "javascript_includes/override_beforesend.js" %}
+
+
+		$("#ajaxform").submit(function(e)
+		{
+    		var PostDataPrep = $(this).serializeArray();
+    		var PostData = JSON.stringify(PostDataPrep)
+    		var formURL = $(this).attr("action");
+    		$.ajax(
+   			 	{
+        		url : formURL,
+        		type: "POST",
+            data : PostData,
+        success:function(data, textStatus, jqXHR) 
+        {
+            //data: return data from server
+        },
+        error: function(jqXHR, textStatus, errorThrown) 
+        {
+            //if fails      
+        }
+    });
+    e.preventDefault(); //STOP default action
+    e.unbind(); //unbind. to stop multiple form submit.
+});
+ 
+$("#ajaxform").submit(); //Submit  the FORM
+ 	
+</script>
+
+        <!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
+    </div>
+    <div class="text-center alignbottomdiv mobilehide">
+        <a href="#learn">
+            <p class="whitetext nomargin">LEARN MORE</p>
+            <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
+        </a> 
+    </div>
+</div>
+
+{% endblock %}
