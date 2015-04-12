@@ -818,7 +818,7 @@ footer {
 .form-control:-ms-input-placeholder { color: white; opacity: .80; }
 
 .form-control {
-    color: #ffffff;
+    color: inherit;
 }
 
 .form-control:focus {
