@@ -1,14 +1,6 @@
 {% extends "blocbox/basewaitlist.html" %}
-<!--this is blocbox/core/templates/bocbox/waitlist-confirmation.html, url is http://www.blocbox.co/waitlistconfirmation/-->
+<!--this is blocbox/core/templates/bocbox/joinwaitlist_formtestpost.html, url is http://www.blocbox.co/waitlistconfirmation/-->
 
-
-
-
-<!--
-  The Login Button social plugin. This button use the JavaScript SDK to present a graphical Login button that triggers the FB.login() function when clicked.
-
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" id="fb_login_button"> Login with Facebook </fb:login-button>
--->
 <br>
 
 <div class="row-fluid fullheight">
@@ -19,7 +11,7 @@
         <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
         <!--<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
         method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate> -->
-        <form action="ajax-form-submit.php" method="post"  class="paddingsides15px" role="form"   enctype="multipart/form-data" name="ajaxform" id="ajaxform"> 
+   <form action="ajax-form-submit.php" method="post"  class="paddingsides15px" role="form"   enctype="multipart/form-data" name="ajaxform" id="ajaxform"> 
   
   <h3>TEST SHOW WAITLIST REGISTERED {{ waitlistregistered  }} <br>
   		test show request method: {{ requestmethod }} </h3>
