@@ -1,0 +1,69 @@
+{% extends "blocbox/basewaitlist.html" %}
+<!--this is blocbox/core/templates/bocbox/waitlist-confirmation.html, url is http://www.blocbox.co/waitlistconfirmation/-->
+{% load staticfiles %} {% block title %} Join Our Waitlist {% endblock %} {% block topcontent %}
+
+<div class="row-fluid fullheight">
+    
+
+    <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
+        <div class="promo"></div>
+        <h2 class="nomargintop signup-padding">Sign Up</h2>
+        <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
+        <!--<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
+        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate> -->
+        <form action="." method="post"  class="paddingsides15px" role="form"> 
+            
+            {% csrf_token %} {{ form.non_field_errors }}
+            
+            <div class="form-group col-xs-12" style="margin-bottom: 5px">
+ 								{{ form.EMAIL.errors }}
+                <input name="EMAIL" placeholder="EMAIL" class="form-control input-lg inputbox margintop5px" type="email">
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12">
+                	{{ form.FIRST_NAME.errors }}
+                <input name="FIRST_NAME" placeholder="FIRST NAME" class="form-control input-lg inputbox margintop5px" type="text">
+            </div>
+            </div>
+            <div class="form-group col-xs-12">
+            		{{ form.ZIPCODE.errors }}
+                <input name="ZIPCODE" placeholder="ZIP" class="form-control input-lg inputbox margintop5px" type="text">
+            </div>
+            <div class="form-group col-xs-12">
+            	
+                <input name="REFERREDBY"  class="form-control input-lg inputbox margintop5px" type="hidden"
+                	value="{{referring_user_email}}">
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 paddingtop10px nopaddingmobile waitlistcheck">
+                <div class="checkbox checkbox-success checkbox-inline text-center">
+                    <input type="checkbox" value="1" name="group[1689][1]" id="mce-group[1689]-1689-0">
+                       <label for="mce-group[1689]-1689-0">
+                        <h6 class="nomargin textleft paddingleft10px">I'm interested in helping my neighbors and making some extra money</h6>
+                    </label>
+                </div>
+                <!--checkbox -->
+            </div>
+
+            <div class="col-xs-12 paddingtop20px paddingtop15pxmobile">
+                <button type="submit" value="Join Waitlist" name="subscribe" class="btn-waitlist margintop5px">Join Waitlist</button>
+            </div>
+            <!--row -->
+
+            <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+            </div>
+
+            <!--row-->
+        </form>
+        <!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
+    </div>
+    <div class="text-center alignbottomdiv mobilehide">
+        <a href="#learn">
+            <p class="whitetext nomargin">LEARN MORE</p>
+            <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
+        </a> 
+    </div>
+</div>
+
+{% endblock %}
