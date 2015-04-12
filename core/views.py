@@ -860,6 +860,40 @@ def joinwaitlist(request, referring_user_email=None):
         form = WaitlistForm()
     return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email, 
     	'form': form, 'waitlistregistered': waitlistregistered, } )
+
+
+def joinwaitlist_formtest(request, referring_user_email=None):	 
+    waitlistregistered = False
+    if request.method == 'POST': 
+        form = WaitlistForm(data=request.POST)       
+        if form.is_valid():  
+            email = form.cleaned_data['EMAIL']        	       
+            waitlistuser = Waitlist.objects.create(email=email)	
+            waitlistuser.save() #saves first_name, email, zipcode
+            waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
+            waitlistuser.referred_by = form.cleaned_data['REFERREDBY']
+            waitlistuser.zipcode = form.cleaned_data['ZIPCODE']
+            waitlistuser.first_name = form.cleaned_data['FIRST_NAME']
+            #get nearby zips and opulate the city and state
+            zipcodeform = form.cleaned_data['zipcode']
+            zipcode = zcdb[zipcodeform]           
+            zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+            zipcodes_nearby_json = json.dumps(zipcodes_nearby)
+            waitlistuser.city = zipcode.city
+            waitlistuser.state = zipcode.state
+            waitlistuser.zipcodes_nearby = zipcodes_nearby_json
+            waitlistuser.save()
+            #add neighbors nearbyu
+            #add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
+            waitlistregistered = True
+        else: 
+    	      print form.errors           
+    else: #if method is not POST
+        form = WaitlistForm()
+    return render(request, 'blocbox/joinwaitlist_formtest.html', { 'referring_user_email': referring_user_email, 
+    	'form': form, 'waitlistregistered': waitlistregistered, } )
+        
+def
         
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
