@@ -9,7 +9,7 @@ class WaitlistForm(forms.Form):
     email = forms.CharField(max_length=254, required=False)
     first_name = forms.CharField(max_length=50, required=False)
     zipcode = forms.CharField(max_length=5, required=False)
-    referred_by = forms.CharField(max_length=254, required=False)
+    referredby = forms.CharField(max_length=254, required=False)
 #    fulluser = forms.BooleanField(default=False)
     
 class WaitlistFormModel(forms.ModelForm):
