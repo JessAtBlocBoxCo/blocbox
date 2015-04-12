@@ -872,7 +872,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
             waitlistuser.save() #saves first_name, email, zipcode
             waitlistuser.hostinterest = response['hostinterest']
             waitlistuser.referred_by = response['referredby']
-            waitlistuser.zipcode = response'zipcode']
+            waitlistuser.zipcode = response['zipcode']
             waitlistuser.first_name = response['first_name']
             #get nearby zips and opulate the city and state
             #zipcodeform = form.cleaned_data['zipcode']
