@@ -5,7 +5,7 @@ from django.conf import settings
 from waitlist.models import Waitlist
 from django.core.validators import validate_email
 
-class WaitListForm(forms.Form):
+class WaitlistForm(forms.Form):
     email = forms.CharField(max_length=254, required=False)
     first_name = forms.CharField(max_length=50, required=False)
     zipcode = forms.CharField(max_length=5, required=False)
