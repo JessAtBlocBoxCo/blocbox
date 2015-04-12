@@ -865,7 +865,7 @@ def joinwaitlist(request, referring_user_email=None):
 def joinwaitlist_testform(request, referring_user_email=None):	 
     waitlistregistered = False
     if request.method == 'POST': 
-    	  requestmethod = request.method
+        requestmethod = request.method
         form = WaitlistForm(data=request.POST)       
         if form.is_valid():  
             #email = form.cleaned_data['EMAIL']        	       
