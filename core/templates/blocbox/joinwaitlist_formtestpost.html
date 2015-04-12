@@ -46,8 +46,8 @@ $("#ajaxform").submit(); //Submit  the FORM
         <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
         <!--<form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
         method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate> -->
-   <form action="ajax-form-submit.php" method="post"  class="paddingsides15px" role="form"   enctype="multipart/form-data" name="ajaxform" id="ajaxform"> 
-  
+   <form action="." method="post"  class="paddingsides15px" role="form"   enctype="multipart/form-data" name="ajaxform" id="ajaxform"> 
+  	<!--form action="ajax-form-submit.php"-->
   <h3>TEST SHOW WAITLIST REGISTERED {{ waitlistregistered  }}  </h3>
            
             {% csrf_token %}  
@@ -89,7 +89,7 @@ $("#ajaxform").submit(); //Submit  the FORM
                 <button type="submit" value="Join Waitlist" name="subscribe" class="btn-waitlist margintop5px">Join Waitlist</button>
         </div>
         
-        <br> <br> <br>    
+        <br> <br> <br>   <br> 
             <!--
             <div id="mce-responses" class="clear">
                 <div class="response" id="mce-error-response" style="display:none"></div>
@@ -100,7 +100,7 @@ $("#ajaxform").submit(); //Submit  the FORM
  </form>
 
         <!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
-    </div>
+  </div>
     <div class="text-center alignbottomdiv mobilehide">
         <a href="#learn">
             <p class="whitetext nomargin">LEARN MORE</p>
