@@ -2,6 +2,40 @@
 {% load staticfiles %} {% block title %} Join Our Waitlist {% endblock %} {% block topcontent %}
 <!--this is blocbox/core/templates/bocbox/joinwaitlist_formtestpost.html, url is http://www.blocbox.co/waitlistconfirmation/-->
 
+
+<script>
+	//include the javascript file for override the before send thing that is causing error
+	{% include "javascript_includes/override_beforesend.js" %}
+
+
+		$("#ajaxform").submit(function(e)
+		{
+    		var PostDataPrep = $(this).serializeArray();
+    		var PostData = JSON.stringify(PostDataPrep)
+    		var formURL = $(this).attr("action");
+    		$.ajax(
+   			 	{
+        		url : formURL,
+        		type: "POST",
+            data : PostData,
+        success:function(data, textStatus, jqXHR) 
+        {
+            //data: return data from server
+        },
+        error: function(jqXHR, textStatus, errorThrown) 
+        {
+            //if fails      
+        }
+    });
+    e.preventDefault(); //STOP default action
+    e.unbind(); //unbind. to stop multiple form submit.
+});
+ 
+$("#ajaxform").submit(); //Submit  the FORM
+ 	
+</script>
+
+
 <br>
 
 <div class="row-fluid fullheight">
@@ -55,7 +89,7 @@
                
             </div>
 
-            <div class="col-xs-12 paddingtop20px paddingtop15pxmobile">
+        <div class="col-xs-12 paddingtop20px paddingtop15pxmobile">
                 <button type="submit" value="Join Waitlist" name="subscribe" class="btn-waitlist margintop5px">Join Waitlist</button>
             </div>
             
@@ -80,37 +114,6 @@
 
 
 
-<script>
-	//include the javascript file for override the before send thing that is causing error
-	{% include "javascript_includes/override_beforesend.js" %}
-
-
-		$("#ajaxform").submit(function(e)
-		{
-    		var PostDataPrep = $(this).serializeArray();
-    		var PostData = JSON.stringify(PostDataPrep)
-    		var formURL = $(this).attr("action");
-    		$.ajax(
-   			 	{
-        		url : formURL,
-        		type: "POST",
-            data : PostData,
-        success:function(data, textStatus, jqXHR) 
-        {
-            //data: return data from server
-        },
-        error: function(jqXHR, textStatus, errorThrown) 
-        {
-            //if fails      
-        }
-    });
-    e.preventDefault(); //STOP default action
-    e.unbind(); //unbind. to stop multiple form submit.
-});
- 
-$("#ajaxform").submit(); //Submit  the FORM
- 	
-</script>
 
 
 
