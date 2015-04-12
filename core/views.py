@@ -874,7 +874,7 @@ def joinwaitlist_testform(request, referring_user_email=None):
             #waitlistuser.zipcode = form.cleaned_data['ZIPCODE']
             #waitlistuser.first_name = form.cleaned_data['FIRST_NAME']
             #get nearby zips and opulate the city and state
-            waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
+            #waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
             zipcodeform = form.cleaned_data['zipcode']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
