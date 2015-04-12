@@ -893,8 +893,6 @@ def joinwaitlist_formtest(request, referring_user_email=None):
     return render(request, 'blocbox/joinwaitlist_formtest.html', { 'referring_user_email': referring_user_email, 
     	'form': form, 'waitlistregistered': waitlistregistered, } )
         
-def
-        
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
 
