@@ -835,7 +835,7 @@ def joinwaitlist(request, referring_user_email=None):
     if request.method == 'POST': 
         form = WaitlistForm(data=request.POST)       
         if form.is_valid():  
-            email = form.cleaned_data['EMAIL']        	       
+            email = form.cleaned_data['email']        	       
             waitlistuser = Waitlist.objects.create(email=email)	
             waitlistuser.save() #saves first_name, email, zipcode
             waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
@@ -895,13 +895,13 @@ def joinwaitlist_testform(request, referring_user_email=None):
         requestmethod = request.method
         form = WaitlistForm(data=request.POST)       
         if form.is_valid():  
-            email = form.cleaned_data['EMAIL']        	       
+            email = form.cleaned_data['email']        	       
             waitlistuser = Waitlist.objects.create(email=email)	 
             #waitlistuser = form.save()
             #waitlistuser.save() #saves first_name, email, zipcode            
-            waitlistuser.zipcode = form.cleaned_data['ZIPCODE']
-            waitlistuser.first_name = form.cleaned_data['FIRST_NAME']
-            waitlistuser.referredby = form.cleaned_data['REFERREDBY']
+            waitlistuser.zipcode = form.cleaned_data['zipcode']
+            waitlistuser.first_name = form.cleaned_data['first_name']
+            waitlistuser.referredby = form.cleaned_data['referredby']
             #get nearby zips and opulate the city and state
             #waitlistuser.hostinterest = form.cleaned_data['group[1689][1]']
             #zipcodeform = form.cleaned_data['zipcode']
