@@ -80,15 +80,16 @@
     		 var PostDataPrep = $(this).serializeArray(),
     		 	   PostDataPrepNoArray = $(this).serialize(),
     		     PostData = {'PostDataPrep': JSON.stringify(PostDataPrep)},
-    		     PostDataStringify = JSON.stringify(PostDataPrep);
+    		     PostDataStringify = JSON.stringify(PostDataPrep),
+    		     testdata:{email: "jessica.yeats@gmail.com", zipcode: "11238", first_name="jess"}, ;
     		     formURL = $(this).attr("action");
     		 
     		$.ajax(	{
         		url : formURL,
+        		contentType: "application/json",
         		method: "POST",
             //data: PostData,
-            data: {email: "jessica.yeats@gmail.com", zipcode: "11238", first_name="jess"},
-            dataType: "json"
+            data: JSON.stringify(testdata),
 
         success:function(data, textStatus, jqXHR) 
         {	console.log( 'You successfully posted the PostData' + PostData );
