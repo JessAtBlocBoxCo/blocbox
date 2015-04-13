@@ -867,7 +867,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
     formresponsenum = None
     if request.is_ajax():
         formresponse = json.loads(request.body)
-       """ formresponse = formresponsenum[0]
+        """ 
+        formresponse = formresponsenum[0]
         if formresponse:
             email = formresponse['email']       	       
             waitlistuser = Waitlist.objects.create(email=email)	
@@ -886,10 +887,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
             #waitlistuser.zipcodes_nearby = zipcodes_nearby_json
             waitlistuser.save()
             """
-            message = "Success! You posted data to the user model"
-            
-            waitlistregistered = True
-            
+            message = "Success! You posted data to the user model"           
+            waitlistregistered = True           
         else:
             message = "There was no response variable"
             formresponse = "no response"
