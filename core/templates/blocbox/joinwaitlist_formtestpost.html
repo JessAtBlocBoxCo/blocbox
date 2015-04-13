@@ -79,15 +79,13 @@
 			//Get some values from elements on the page
 				 //var PostDataPrep = $(this),
     		 var PostDataPrep = $(this).serializeArray(),
-    		     formURL = $(this).attr("action")
-    		     thisnoarray = $(this);
+    		     formURL = $(this).attr("action");
     		 var PostData = JSON.stringify(PostDataPrep);
-    		 var thisstringify = JSON.stringify(thisnoarray);
     		 
     		$.ajax(	{
         		url : formURL,
         		method: "POST",
-            data : JSON.stringify(PostData),
+            data: PostDataPrep,
             dataType: "json",
         success:function(data, textStatus, jqXHR) 
         {	console.log( 'You successfully posted the PostData' + PostData );  },
@@ -96,8 +94,6 @@
          {
          	console.log( 'the PostDataPrep var is' + PostDataPrep );
          	console.log( 'the PostData var is' + PostData );
-         	console.log( 'thisnoarray var is' + thisnoarray );
-         	console.log( 'thisstringify var is' + thisstringify );
           console.log( 'There was an error...error variables shown below');
     			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
     			console.log( 'textStatus is:' + textStatus);
