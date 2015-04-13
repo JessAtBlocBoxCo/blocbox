@@ -878,9 +878,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
     return render(request, 'blocbox/joinwaitlist_formtestpost.html', { 'referring_user_email': referring_user_email, 
     	'waitlistregistered': waitlistregistered, 'formresponse': formresponse,  } )
 
-
-        """ 
-        formresponse = formresponsenum[0]
+""" 
+formresponse = formresponsenum[0]
         if formresponse:
             email = formresponse['email']       	       
             waitlistuser = Waitlist.objects.create(email=email)	
@@ -898,7 +897,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
             #waitlistuser.state = zipcode.state
             #waitlistuser.zipcodes_nearby = zipcodes_nearby_json
             waitlistuser.save()
-            """
+"""
             
 def joinwaitlist_testform(request, referring_user_email=None):	 
     waitlistregistered = False
