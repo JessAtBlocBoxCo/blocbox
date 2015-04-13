@@ -72,7 +72,7 @@
 <script>
 	//from: http://api.jquery.com/jQuery.post/
 	//include the javascript file for override the before send thing that is causing error
-
+{% include "javascript_includes/override_beforesend.js" %}
 	  $("#ajaxform").submit(function(event){	      
 			//stop form from submitting normally
 			event.preventDefault();
