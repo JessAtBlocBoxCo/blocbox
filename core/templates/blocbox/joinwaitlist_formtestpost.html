@@ -87,7 +87,7 @@ $(document).ready(function()
         success:function(data, textStatus, jqXHR) 
         {	console.log( 'You successfully posted the PostData' + PostData );  },
         
-        error: function(jqXHR, textStatus, errorThrown) 
+        error: function(XHR, textStatus, thrownError) 
          {
           console.log( 'There was an error...error variables shown below');
     			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
