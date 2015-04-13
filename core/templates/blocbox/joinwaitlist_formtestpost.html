@@ -6,6 +6,8 @@
 <script>
 	//include the javascript file for override the before send thing that is causing error
 	{% include "javascript_includes/override_beforesend.js" %}
+	
+// function PostData() {
 	$("#ajaxform").submit(function(e)
 		{
     		var PostData = $(this).serializeArray();
@@ -13,13 +15,14 @@
     		$.ajax(
    			 	{
         		url : formURL,
-        		type: "POST",
+        		method: "POST",
             data : JSON.stringify(PostData),
             dataType: "json",
         success:function(data, textStatus, jqXHR) 
-        {			console.log( 'You successfully posted the PostData' + PostData );  },
+        {	console.log( 'You successfully posted the PostData' + PostData );  },
+        
         error: function(jqXHR, textStatus, errorThrown) 
-        {
+         {
           console.log( 'There was an error...error variables shown below');
     			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
     			console.log( 'textStatus is:' + textStatus);
@@ -29,6 +32,7 @@
     e.preventDefault(); //STOP default action
     e.unbind(); //unbind. to stop multiple form submit.
 });
+//}
 $("#ajaxform").submit(); //Submit  the FORM
 </script>
 
