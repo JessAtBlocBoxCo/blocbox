@@ -80,6 +80,7 @@
     		 var PostDataPrep = $(this).serializeArray(),
     		 	   PostDataPrepNoArray = $(this).serialize(),
     		     PostData = {'PostDataPrep': JSON.stringify(PostDataPrep)},
+    		     PostDataStringify = JSON.stringify(PostDataPrep);
     		     formURL = $(this).attr("action");
     		 
     		$.ajax(	{
@@ -96,6 +97,7 @@
          	console.log( 'the PostDataPrepNoArray var is ' + PostDataPrepNoArray );
          	console.log( 'the PostDataPrep var is' + PostDataPrep );
          	console.log( 'the PostData var is' + PostData );
+         	console.log( 'the PostDataStringy var is ' + PostDataStringify );
           console.log( 'There was an error...error variables shown below');
     			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
     			console.log( 'textStatus is:' + textStatus);
