@@ -39,7 +39,7 @@
                         <button class="btn-orange" style="margin-top: 15px;" onClick="window.location='/startashipment/';">Send a Message</button>
                         {% else %}
                         <!--JMY editing - different if authenticated - to connect.html, which is hte connect form if already registered onClick="window.location='/connect/host{{ host.id }}/';"-->
-                        <a class="btn-orange" type="button" style="margin-top: 15px;" onClick="window.location='/connect/host{{ host.id }}/';">
+                        <a class="btn-orange" type="button" style="margin-top: 15px;" onClick="window.location='/signupconnect/host{{ host.id }}/';">
                             <i class="fa fa-user-plus"></i>&nbsp;&nbsp;Connect
                         </a>
                         {% endif %}
