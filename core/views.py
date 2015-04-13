@@ -864,7 +864,7 @@ def joinwaitlist(request, referring_user_email=None):
 
 def joinwaitlist_testformpost(request, referring_user_email=None):
     waitlistregistered = False
-    formresponse = request.body
+    formresponse = json.loads(POST['data'])
     if request.is_ajax():
         #formresponse = json.loads(request.body)
         #formresponse = request.body
