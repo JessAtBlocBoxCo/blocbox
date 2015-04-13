@@ -862,10 +862,9 @@ def joinwaitlist(request, referring_user_email=None):
     	'form': form, 'waitlistregistered': waitlistregistered, } )
 
 
-def joinwaitlist_testformpost(request, referring_user_email=None):
-    waitlistregistered = False
-    #if request.method == 'POST':
-    if request.is_ajax():
+def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregistered=False):
+    if request.method == 'POST':
+    #if request.is_ajax():
         formresponse = json.loads(request.body)
         email = formresponse['email']   
         waitlistuser = Waitlist.objects.create(email=email)	
@@ -874,8 +873,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
         waitlistuser.first_name = formresponse['first_name']
         waitlistuser.save()
         #formresponse = request.body
-        message = "Success! You posted data to the user model"           
-        waitlistregistered = True           
+        message = "Success! You posted data to the user model"                     
     else:
         message = "The request method was not Ajax"
         formresponse = "The request metho was not Ajax"
@@ -884,11 +882,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
 
 """ 
 formresponse = formresponsenum[0]
-        if formresponse:
-                	       
-           
-            
-            waitlistuser.hostinterest = formresponse['hostinterest']
+        if formresponse:                	       
+                waitlistuser.hostinterest = formresponse['hostinterest']
             waitlistuser.referred_by = formresponse['referredby']
 
             #get nearby zips and opulate the city and state
