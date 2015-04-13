@@ -77,8 +77,8 @@
 			//stop form from submitting normally
 			event.preventDefault();
 			//Get some values from elements on the page
-				 var PostDataPrep = $(this),
-    		// var PostData = $(this).serializeArray(),
+				 //var PostDataPrep = $(this),
+    		 var PostData = $(this).serializeArray(),
     		     formURL = $(this).attr("action");
     		 var PostData = JSON.stringify(PostDataPrep);
     		 
