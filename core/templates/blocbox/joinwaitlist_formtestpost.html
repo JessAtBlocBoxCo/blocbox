@@ -3,37 +3,7 @@
 <!--this is blocbox/core/templates/bocbox/joinwaitlist_formtestpost.html, url is http://www.blocbox.co/waitlistconfirmation/-->
 
 
-<script>
-	//include the javascript file for override the before send thing that is causing error
-	{% include "javascript_includes/override_beforesend.js" %}
-	
-function PostData() {
-	$("#ajaxform").submit(function(e)
-		{
-    		var PostData = $(this).serializeArray();
-    		var formURL = $(this).attr("action");
-    		$.ajax(	{
-        		url : formURL,
-        		method: "POST",
-            data : JSON.stringify(PostData),
-            dataType: "json",
-        success:function(data, textStatus, jqXHR) 
-        {	console.log( 'You successfully posted the PostData' + PostData );  },
-        
-        error: function(jqXHR, textStatus, errorThrown) 
-         {
-          console.log( 'There was an error...error variables shown below');
-    			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
-    			console.log( 'textStatus is:' + textStatus);
-    			console.log( 'thrownError is:' + thrownError);     
-        }	
-    });
-    e.preventDefault(); //STOP default action
-    e.unbind(); //unbind. to stop multiple form submit.
-});
-}
-//$("#ajaxform").submit(); //Submit  the FORM
-</script>
+
 
 <br>
 <div class="row-fluid fullheight">
@@ -48,8 +18,7 @@ function PostData() {
   	<!--form action="ajax-form-submit.php"-->
            
             {% csrf_token %}  
-                       
-            
+                                   
             <div class="form-group col-xs-12" style="margin-bottom: 5px">
  							  
                 <input name="email" placeholder="EMAIL" class="form-control input-lg inputbox margintop5px" type="email">
@@ -97,6 +66,41 @@ function PostData() {
 			
             <!--row-->
  </form>
+
+<script>
+	//http://api.jquery.com/jQuery.post/
+	//include the javascript file for override the before send thing that is causing error
+	//{% include "javascript_includes/override_beforesend.js" %}
+	$("#ajaxform").submit(function(event)	{
+			//stop form from submitting normally
+			event.preventDefault();
+			//Get some values from elements on the page
+			  //var PostData = $( this ),
+    		 var PostData = $(this).serializeArray(),
+    		    formURL = $(this).attr("action");
+    		
+    		$.ajax(	{
+        		url : formURL,
+        		method: "POST",
+            data : JSON.stringify(PostData),
+            dataType: "json",
+        success:function(data, textStatus, jqXHR) 
+        {	console.log( 'You successfully posted the PostData' + PostData );  },
+        
+        error: function(jqXHR, textStatus, errorThrown) 
+         {
+          console.log( 'There was an error...error variables shown below');
+    			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
+    			console.log( 'textStatus is:' + textStatus);
+    			console.log( 'thrownError is:' + thrownError);     
+        }	
+    });
+
+    event.unbind(); //unbind. to stop multiple form submit.
+});
+//$("#ajaxform").submit(); //Submit  the FORM
+</script>
+
 
  <h3>TEST SHOW WAITLIST REGISTERED {{ waitlistregistered  }} AND response {{ response }}  </h3>
         <!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
