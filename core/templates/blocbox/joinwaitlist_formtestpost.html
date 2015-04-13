@@ -7,7 +7,7 @@
 	//include the javascript file for override the before send thing that is causing error
 	{% include "javascript_includes/override_beforesend.js" %}
 	
-// function PostData() {
+function PostData() {
 	$("#ajaxform").submit(function(e)
 		{
     		var PostData = $(this).serializeArray();
@@ -32,8 +32,8 @@
     e.preventDefault(); //STOP default action
     e.unbind(); //unbind. to stop multiple form submit.
 });
-//}
-$("#ajaxform").submit(); //Submit  the FORM
+}
+//$("#ajaxform").submit(); //Submit  the FORM
 </script>
 
 <br>
