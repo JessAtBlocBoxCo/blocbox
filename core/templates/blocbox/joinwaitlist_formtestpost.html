@@ -12,8 +12,7 @@ function PostData() {
 		{
     		var PostData = $(this).serializeArray();
     		var formURL = $(this).attr("action");
-    		$.ajax(
-   			 	{
+    		$.ajax(	{
         		url : formURL,
         		method: "POST",
             data : JSON.stringify(PostData),
