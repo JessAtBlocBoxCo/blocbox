@@ -21,7 +21,7 @@
    
    {% else %}
    
-   <form action="waitlistregistered" method="post"  class="paddingsides15px" role="form"   enctype="multipart/form-data" name="ajaxform" id="ajaxform"> 
+   <form action="." method="post"  class="paddingsides15px" role="form"   enctype="multipart/form-data" name="ajaxform" id="ajaxform"> 
   	<!--form action="ajax-form-submit.php"-->
            
             {% csrf_token %}  
@@ -61,19 +61,15 @@
         		<input type="submit" value="Join Waitlist">
               <!--  <button type="submit" value="Join Waitlist" name="subscribe" class="btn-waitlist margintop5px">Join Waitlist</button>-->
         </div>
-       
-        <br> <br> <br>   <br> 
-      
+        <br> <br> <br>   <br>       
             <div id="mce-responses" class="clear">
                 <div class="response" id="mce-error-response" style="display:none"></div>
                 <div class="response" id="mce-success-response" style="display:none"></div>
             </div>
-			
-            <!--row-->
+
  </form>
 
-<script type="text/javascript" src="js/Ajax.js"></script><br/> 
-<script type="text/javascript" src="js/Post.js"></script><br/> 
+
 <script>
 	//from: http://api.jquery.com/jQuery.post/
 	//include the javascript file for override the before send thing that is causing error
@@ -115,7 +111,12 @@
 		//$("#ajaxform").submit();
     //event.unbind(); //unbind. to stop multiple form submit.
 });
-//$("#ajaxform").submit(); //Submit  the FORM
+
+//Test ajax
+$(document).ready(function () { 
+  $.get("/testing/ajax_test/", function(data) { alert(data); }); 
+});	
+
 </script>
 
  {% endif %}
