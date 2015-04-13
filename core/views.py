@@ -866,8 +866,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
     waitlistregistered = False
     formresponsenum = None
     if request.is_ajax():
-        formresponsenum = json.loads(request.body)
-        formresponse = formresponsenum[0]
+        formresponse = json.loads(request.body)
+       """ formresponse = formresponsenum[0]
         if formresponse:
             email = formresponse['email']       	       
             waitlistuser = Waitlist.objects.create(email=email)	
@@ -885,8 +885,11 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
             #waitlistuser.state = zipcode.state
             #waitlistuser.zipcodes_nearby = zipcodes_nearby_json
             waitlistuser.save()
+            """
             message = "Success! You posted data to the user model"
+            
             waitlistregistered = True
+            
         else:
             message = "There was no response variable"
             formresponse = "no response"
@@ -894,7 +897,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
         message = "The request method was not Ajax"
         formresponse = "The request metho was not Ajax"
     return render(request, 'blocbox/joinwaitlist_formtestpost.html', { 'referring_user_email': referring_user_email, 
-    	'waitlistregistered': waitlistregistered, 'formresponse': formresponse, 'formresponsenum': formresponsenum, } )
+    	'waitlistregistered': waitlistregistered, 'formresponse': formresponse,  } )
 
 
 def joinwaitlist_testform(request, referring_user_email=None):	 
