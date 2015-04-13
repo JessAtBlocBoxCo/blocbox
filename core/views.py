@@ -867,12 +867,14 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
     #if request.method == 'POST':
     if request.is_ajax():
         formresponse = json.loads(request.body)
+        email = formresponse['email']   
+        waitlistuser = Waitlist.objects.create(email=email)	
+        waitlistuser.save() 
+        waitlistuser.zipcode = formresponse['zipcode']
+        waitlistuser.first_name = formresponse['first_name']
         #formresponse = request.body
         message = "Success! You posted data to the user model"           
         waitlistregistered = True           
-        #else:
-        #    message = "There was no response variable"
-        #    formresponse = "no response"
     else:
         message = "The request method was not Ajax"
         formresponse = "The request metho was not Ajax"
@@ -882,13 +884,12 @@ def joinwaitlist_testformpost(request, referring_user_email=None):
 """ 
 formresponse = formresponsenum[0]
         if formresponse:
-            email = formresponse['email']       	       
-            waitlistuser = Waitlist.objects.create(email=email)	
-            waitlistuser.save() #saves first_name, email, zipcode
+                	       
+           
+            
             waitlistuser.hostinterest = formresponse['hostinterest']
             waitlistuser.referred_by = formresponse['referredby']
-            waitlistuser.zipcode = formresponse['zipcode']
-            waitlistuser.first_name = formresponse['first_name']
+
             #get nearby zips and opulate the city and state
             #zipcodeform = form.cleaned_data['zipcode']
             #zipcode = zcdb[zipcodeform]           
