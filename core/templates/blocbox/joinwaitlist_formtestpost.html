@@ -71,7 +71,7 @@
 	//from: http://api.jquery.com/jQuery.post/
 	//include the javascript file for override the before send thing that is causing error
 
-$(document).ready(function()
+$(document).ready(function() {
 	  $("#submitform").click(function(){	      
 			//stop form from submitting normally
 			//event.preventDefault();
@@ -96,7 +96,7 @@ $(document).ready(function()
     });
 		 $("#ajaxform").submit();
     //event.unbind(); //unbind. to stop multiple form submit.
-}));
+})});
 //$("#ajaxform").submit(); //Submit  the FORM
 </script>
 
