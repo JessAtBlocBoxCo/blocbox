@@ -81,7 +81,7 @@
     		 	   PostDataPrepNoArray = $(this).serialize(),
     		     PostData = {'PostDataPrep': JSON.stringify(PostDataPrep)},
     		     PostDataStringify = JSON.stringify(PostDataPrep),
-    		     testdata:{email: "jessica.yeats@gmail.com", zipcode: "11238", first_name:"jess"},
+    		     testdata = {email: "jessica.yeats@gmail.com", zipcode: "11238", first_name:"jess"},
     		     formURL = $(this).attr("action");
     		 
     		$.ajax(	{
