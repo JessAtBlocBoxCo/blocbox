@@ -77,9 +77,11 @@
 			//stop form from submitting normally
 			event.preventDefault();
 			//Get some values from elements on the page
-				 var PostData = $(this),
+				 var PostDataPrep = $(this),
     		// var PostData = $(this).serializeArray(),
     		     formURL = $(this).attr("action");
+    		 var PostData = JSON.stringify(PostDataPrep);
+    		 
     		$.ajax(	{
         		url : formURL,
         		method: "POST",
@@ -90,6 +92,8 @@
         
         error: function(xhr, textStatus, thrownError) 
          {
+         	console.log( 'the PostDataPrep var is' + PostDataPrep );
+         	console.log( 'the PostData var is' + PostData );
           console.log( 'There was an error...error variables shown below');
     			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
     			console.log( 'textStatus is:' + textStatus);
