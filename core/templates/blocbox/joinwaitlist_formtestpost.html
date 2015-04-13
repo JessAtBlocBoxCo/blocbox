@@ -48,7 +48,6 @@ $("#ajaxform").submit(); //Submit  the FORM
         method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate> -->
    <form action="." method="post"  class="paddingsides15px" role="form"   enctype="multipart/form-data" name="ajaxform" id="ajaxform"> 
   	<!--form action="ajax-form-submit.php"-->
-  <h3>TEST SHOW WAITLIST REGISTERED {{ waitlistregistered  }} AND response {{ response }}  </h3>
            
             {% csrf_token %}  
                        
@@ -99,6 +98,7 @@ $("#ajaxform").submit(); //Submit  the FORM
             <!--row-->
  </form>
 
+ <h3>TEST SHOW WAITLIST REGISTERED {{ waitlistregistered  }} AND response {{ response }}  </h3>
         <!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
   </div>
   	<br>
