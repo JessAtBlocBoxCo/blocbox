@@ -14,23 +14,23 @@
             
             {% csrf_token %} {{ form.non_field_errors }}
             
-            <div class="form-group col-xs-12" style="margin-bottom: 5px">
+            <div class="form-group col-xs-12">
  								{{ form.EMAIL.errors }}
-                <input name="EMAIL" placeholder="EMAIL" class="form-control input-lg inputbox margintop5px" type="email">
+                <input name="EMAIL" placeholder="EMAIL" class="form-control input-lg inputbox margintop5pxmobile" type="email">
             </div>
             <div class="row">
                 <div class="form-group col-xs-12">
                 	{{ form.FIRST_NAME.errors }}
-                <input name="FIRST_NAME" placeholder="FIRST NAME" class="form-control input-lg inputbox margintop5px" type="text">
+                    <input name="FIRST_NAME" placeholder="FIRST NAME" class="form-control input-lg inputbox margintop5pxmobile" type="text">
             </div>
             </div>
             <div class="form-group col-xs-12">
             		{{ form.ZIPCODE.errors }}
-                <input name="ZIPCODE" placeholder="ZIP" class="form-control input-lg inputbox margintop5px" type="text">
+                <input name="ZIPCODE" placeholder="ZIP" class="form-control input-lg inputbox margintop5pxmobile" type="text">
             </div>
             <div class="form-group col-xs-12">
             	
-                <input name="REFERREDBY"  class="form-control input-lg inputbox margintop5px" type="hidden"
+                <input name="REFERREDBY"  class="form-control input-lg inputbox margintop5pxmobile" type="hidden"
                 	value="{{referring_user_email}}">
             </div>
             <div class="col-xs-10 col-xs-offset-1 paddingtop10px nopaddingmobile waitlistcheck">
