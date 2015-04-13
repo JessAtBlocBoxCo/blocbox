@@ -865,7 +865,7 @@ def joinwaitlist(request, referring_user_email=None):
 def joinwaitlist_testformpost(request, referring_user_email=None):
     waitlistregistered = False
     if request.is_ajax():
-    	  formresponse = json.loads(POST['data'])
+        formresponse = json.loads(POST['data'])
         #formresponse = json.loads(request.body)
         #formresponse = request.body
         message = "Success! You posted data to the user model"           
