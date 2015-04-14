@@ -86,7 +86,7 @@
 
         success:function(data, textStatus, jqXHR) 
         {	console.log( 'You successfully posted the PostData' + PostData ); 
-        	console.log( 'The formURL is': formURL ) },
+        	console.log( 'The formURL is' + formURL ) },
         
         error: function(xhr, textStatus, thrownError) 
          {
@@ -103,11 +103,7 @@
     
     
     document.getElementById('PostDataPrep').innerHTML = 'PostDataPrep Var: ' + PostDataPrep;
-    //document.getElementById('PostDataPrepNoArray').innerHTML = 'PostDataPrepNoArray var:' + PostDataPrepNoArray ;
     document.getElementById('PostData').innerHTML = 'PostData var:' + PostData ;
-    document.getElementById('PostDataStringify').innerHTML = 'PostDataStringify var:' + PostDataStringify ;
-    document.getElementById('testdataprep').innerHTML = 'TestDataprep var:' + testdataprep ;
-    document.getElementById('testdata').innerHTML = 'testdata var:' + testdata ;
 
       
 		//$("#ajaxform").submit();
@@ -130,9 +126,6 @@
 		<p> Form Response/Response Object: {{ formresponse }} </p>
 		<div id="PostDataPrep"> </div> <br>
     <div id="PostData"> </div> <br>
- 		<div id="PostDataStringify"> </div> <br>
-		<div id="testdataprep"> </div> <br>
-		<div id="testdata"> </div> <br>
 
 </div>
 
