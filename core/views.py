@@ -645,6 +645,9 @@ def signupconnect(request, host_id, referring_user_email=None):
             confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, user.id)
+            #If they were referred, add the count to the user table
+            if referring_user_email:
+                attribute_referral(request, referring_user_email)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors
@@ -660,7 +663,7 @@ def signupconnect(request, host_id, referring_user_email=None):
     	      context)
    	#PASS ARGUMENTS
 		#return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
-		
+
 #Registration Form -- User
 def signupnoconnect(request, referring_user_email=None):
     context = RequestContext(request)
@@ -695,18 +698,24 @@ def signupnoconnect(request, referring_user_email=None):
             registered = True #Update our variable to tell the template registration was successful    	  		
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
-    	      print user_form.errors
-    	  
+    	      print user_form.errors    	  
     #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
     else:
-        user_form = UserForm()
-  
+        user_form = UserForm()  
     return render_to_response(
             'blocbox/sign-up-withoutconnect.html', 
     	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup, 'referring_user_email': referring_user_email, },
     	      context)
 
-
+def attribute_referral(request, referring_user_email):
+	  referringuser = UserInfo.objects.get(email=referring_user_email)
+	  oldcount = referringuser.Referrals_from_user
+	  newcount = oldcount + 1
+	  referringuser.Referrals_from_user = newcount
+	  referringuser.save()
+	  message = referring_user_email + " has been given credit for the referral. They formerly had " + oldcount + " Their new count is " + newcount
+    HttpResponse(message)
+    
 #Registration Form - Host
 #FIGURE OUT - DOES THE HOST NEED TO BE REGISTERED AS UER FIRST? CAN WE IMPORT AL THAT
 #signuphost url is www.blocbox.co/signuphost
