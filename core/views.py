@@ -878,7 +878,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         waitlistregistered = True                    
     else:
         message = "The request method was not Ajax"
-        matching_emails = Waitlist.objects.filter(email=testemail)
+        matching_emails = Waitlist.objects.filter(email=testemail).count()
         if matching_emails > 0:
             testadd = Waitlist.objects.get(email=testemail)
             formresponse = testadd.responseobject
