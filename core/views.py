@@ -867,7 +867,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
     if request.method == 'POST':
     #if request.is_ajax():
         formresponseprep = json.loads(request.body)
-        forresponse = formresponseprep[0]
+        formresponse = formresponseprep[0]
         #email = formresponse['email']          
         waitlistuser = Waitlist.objects.create(email=testemail)	
         waitlistuser.save() 
