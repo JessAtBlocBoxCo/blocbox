@@ -475,6 +475,7 @@ def jesscaltest(request, host_id=None): # calendar_slug_single = "testcalendar1"
 
 #For testing second shit to a second form..
 #used this when building the joinwatilist thing to go to maichimp AND to us
+#url(r'^test_secondform/$', views.test_secondform, name='test_secondform'),
 def test_secondform(request):
     referring_user_email = None
     if request.method == 'POST':  

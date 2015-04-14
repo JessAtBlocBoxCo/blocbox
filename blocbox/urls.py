@@ -48,7 +48,7 @@ urlpatterns = patterns('',
     
     url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)', views.joinwaitlist, name='joinwaitlist_referral'),
     url(r'^joinwaitlisttestformpost/$', views.joinwaitlist_testformpost, name='joinwaitlist_testformpost'),
-    url(r'^test_secondform/$', views.test_secondform, name='test_secondform'),
+    
     url(r'^testsendtomailchimp/user(?P<waitlistuserid>\d+)/$', views.send_form_to_mailchimp, name='test_sentomailchimp'),
     url(r'^waitlistconfirmation/$', views.waitlist_confirmation, name='waitlist_confirmation'),
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well
