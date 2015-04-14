@@ -873,7 +873,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         waitlistuser.first_name = formresponse[2]['value']
         waitlistuser.zipcode = formresponse[3]['value']
         waitlistuser.referredby = formresponse[4]['value']
-        if len(formresponse) > 4:
+        if len(formresponse) > 5:
             waitlistuser.hostinterest = formresponse[5]['value']
         else:
             waitlistuser.hostinterest = False
