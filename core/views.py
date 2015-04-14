@@ -30,6 +30,8 @@ import datetime
 datetoday = datetime.date.today()
 datetimenow = datetime.datetime.now()
 import pytz
+import urllib
+import urllib2
 from urllib import quote
 #from schedule import periods
 from schedule.periods import Month
@@ -854,11 +856,22 @@ def joinwaitlist(request, referring_user_email=None):
         waitlistuser.save()
         #add neighbors nearbyu
         add_neighbors_nearby_waitlist(waitlistid=waitlistuser.id)
+        #send_form_to_mailchimp(request, waitlistuser.id)
         message = "Success! You posted data to the user model"                  
     else:
         message = "The request method was not Ajax"
     return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email,  } )
 
+def send_form_to_mailchimp(request, waitlistuserid)
+    waitlistuser = Waitlist.objects.get(pk=waitlistuserid)
+    url = 'http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636'
+    values = {'email': waitlistuser.email, 'first_name': waitlistuser.first_name, 'zipcode': waitlistuser.zipcode, 
+    					'referredby': waitlistuser.referredby, 'hostinterest': waitlistuser.hostinterest, }
+    data = urllib.urlencode(values)
+    req = urllib2.Request(url, data)
+    response = urllib2.urlopen(req)
+    html = response.read()
+    return HttpResponse("OK")
 
 def joinwaitlist_testformpost(request, referring_user_email=None ):
     if request.method == 'POST':
