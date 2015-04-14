@@ -11,7 +11,7 @@
         <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
        <!-- <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
         	method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate> -->
-        	<form action="." method="post"  class="paddingsides15px" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" role="form">  
+        	<form action="." method="post"  class="paddingsides15px" id="ajaxform" name="ajaxform" role="form">  
             
             {% csrf_token %} {{ form.non_field_errors }}
             
@@ -59,16 +59,16 @@
 	//from: http://api.jquery.com/jQuery.post/
 	//include the javascript file for override the before send thing that is causing error
 {% include "javascript_includes/override_beforesend.js" %}
-	  $("#mc-embedded-subscribe-form").submit(function(event){	      
+	  $("#ajaxform").submit(function(event){	      
 			//stop form from submitting normally
 			event.preventDefault();
 			//Get some values from elements on the page
     		 var PostDataPrep = $(this).serializeArray(),
     		     PostData = JSON.stringify(PostDataPrep),
-    		     formURL = $(this).attr("action");;
+    		     postURL = $(this).attr("action");;
     		 
     		$.ajax(	{
-        		url : formURL,
+        		url : postURL,
         		contentType: "application/json",
         		method: "POST",
             data: PostData,
@@ -80,6 +80,7 @@
          {
          	console.log( 'the PostDataPrep var is' + PostDataPrep );
          	console.log( 'the PostData var is' + PostData );
+         	console.log( 'the PostURL var is ' + PostURL );
           console.log( 'There was an error...error variables shown below');
     			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
     			console.log( 'textStatus is:' + textStatus);
