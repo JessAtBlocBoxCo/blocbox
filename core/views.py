@@ -13,7 +13,7 @@ from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
 from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, ResetPassword
-from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist
+from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
 #Add the waitlist app
@@ -707,14 +707,7 @@ def signupnoconnect(request, referring_user_email=None):
     	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup, 'referring_user_email': referring_user_email, },
     	      context)
 
-def attribute_referral(request, referring_user_email):
-    referringuser = UserInfo.objects.get(email=referring_user_email)
-    oldcount = referringuser.Referrals_from_user
-    newcount = oldcount + 1
-    referringuser.Referrals_from_user = newcount
-    referringuser.save()
-    message = referring_user_email + " has been given credit for the referral. They formerly had " + oldcount + " Their new count is " + newcount
-    HttpResponse(message)
+
     
 #Registration Form - Host
 #FIGURE OUT - DOES THE HOST NEED TO BE REGISTERED AS UER FIRST? CAN WE IMPORT AL THAT

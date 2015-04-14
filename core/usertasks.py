@@ -221,3 +221,12 @@ def add_neighbors_nearby_waitlist(waitlistid=None):
             user.neighbors_5mileradius = json.dumps(users_5mile)
         user.save()
     return "Users were added for 1, 2, 3, 4, 5 mile radius"
+
+def attribute_referral(request, referring_user_email):
+    referringuser = UserInfo.objects.get(email=referring_user_email)
+    oldcount = referringuser.Referrals_from_user
+    newcount = oldcount + 1
+    referringuser.Referrals_from_user = newcount
+    referringuser.save()
+    message = referring_user_email + " has been given credit for the referral. They formerly had " + oldcount + " Their new count is " + newcount
+    return message
