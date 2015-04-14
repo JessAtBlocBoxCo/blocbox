@@ -116,12 +116,18 @@
         {	
         	   console.log( 'You successfully posted to Mailchimp with the PostDataMailchimp:' + PostDataMailchimp ); 
         	   //{ window.location.href = "/almostfinished/" }
-        	   var resultMessage = data.msg || "Sorry. Unable to subscribe. Please try again later."
-              if (data.result != "success") {
-                   if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-                   resultMessage = "You're already subscribed. Thank you."    }
-            	} 
-            	else {   resultMessage = "Thank you!<br>You must confirm the subscription in your inbox."); },
+        	    if (data.result != "success") {
+                   var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
+                   $resultElement.css("color", "red");
+                        if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                            message = "You're already subscribed. Thank you.";
+                            $resultElement.css("color", "black");
+                        }
+              $resultElement.html(message);
+                    } 
+              else {
+                  $resultElement.css("color", "black");
+                  $resultElement.html("Thank you!<br>You must confirm the subscription in your inbox."); }
          },
         
         error: function(xhr, textStatus, thrownError) 
