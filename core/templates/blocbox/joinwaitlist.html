@@ -14,18 +14,18 @@
         	<form action="." method="post"  class="paddingsides15px" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" role="form"
         		enctype="multipart/form-data">  
             
-            {% csrf_token %} {{ form.non_field_errors }}
+            {% csrf_token %} 
             
-            <div class="form-group col-xs-12">   {{ form.EMAIL.errors }}
+            <div class="form-group col-xs-12">   
                 <input name="EMAIL" placeholder="EMAIL" class="form-control input-lg inputbox margintop5pxmobile" type="email">
             </div>
             <div class="row">
-                <div class="form-group col-xs-12">  {{ form.FIRST_NAME.errors }}
+                <div class="form-group col-xs-12">  
                     <input name="FIRST_NAME" placeholder="FIRST NAME" class="form-control input-lg inputbox margintop5pxmobile" type="text">
             </div>
             </div>
             <div class="form-group col-xs-12">
-            		{{ form.ZIPCODE.errors }}
+            		
                 <input name="ZIPCODE" placeholder="ZIP" class="form-control input-lg inputbox margintop5pxmobile" type="text">
             </div>
             <div class="form-group col-xs-12">
@@ -80,7 +80,7 @@
          {
          	console.log( 'the PostDataPrep var is' + PostDataPrep );
          	console.log( 'the PostData var is' + PostData );
-         	console.log( 'the PostURL var is ' + PostURL );
+         	console.log( 'the PostURL var is ' + postURL );
           console.log( 'There was an error...error variables shown below');
     			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
     			console.log( 'textStatus is:' + textStatus);
