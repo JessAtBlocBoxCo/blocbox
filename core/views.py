@@ -869,18 +869,20 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         csrftoken = formresponse[0]
         email = formresponse[1]['value']      
         waitlistuser = Waitlist.objects.create(email=email)	
-        #waitlistuser.save() 
         waitlistuser.first_name = formresponse[2]['value']
-        waitlistuser.zipcode = formresponse[3]['value']
+        zipcodeform = formresponse[3]['value']
+        waitlistuser.zipcode = zipcodeform
         waitlistuser.referredby = formresponse[4]['value']
         if len(formresponse) > 5:
             waitlistuser.hostinterest = formresponse[5]['value']
         else:
             waitlistuser.hostinterest = False
-        #if hostinterestnum == 1:
-        #    waitlistuser.hostinterest = True
-        #else:
-        #    waitlistuser.hostinterest = False
+        zipcode = zcdb[zipcodeform]           
+        zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+        zipcodes_nearby_json = json.dumps(zipcodes_nearby)
+        waitlistuser.city = zipcode.city
+        waitlistuser.state = zipcode.state
+        waitlistuser.zipcodes_nearby = zipcodes_nearby_json
         waitlistuser.responseobject = formresponse
         waitlistuser.save()
         message = "Success! You posted data to the user model" 
@@ -890,22 +892,6 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
     return render(request, 'blocbox/joinwaitlist_formtestpost.html', { 'referring_user_email': referring_user_email, 
     	'waitlistregistered': waitlistregistered,   } )
 
-""" 
-formresponse = formresponsenum[0]
-        if formresponse:                	       
-                waitlistuser.hostinterest = formresponse['hostinterest']
-            waitlistuser.referred_by = formresponse['referredby']
-
-            #get nearby zips and opulate the city and state
-            #zipcodeform = form.cleaned_data['zipcode']
-            #zipcode = zcdb[zipcodeform]           
-            #zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
-            #zipcodes_nearby_json = json.dumps(zipcodes_nearby)
-            #waitlistuser.city = zipcode.city
-            #waitlistuser.state = zipcode.state
-            #waitlistuser.zipcodes_nearby = zipcodes_nearby_json
-            waitlistuser.save()
-"""
             
 def joinwaitlist_testform(request, referring_user_email=None):	 
     waitlistregistered = False
