@@ -64,10 +64,11 @@
 			event.preventDefault();
 			//Get some values from elements on the page
     		 var PostDataPrep = $(this).serializeArray(),
-    		     PostData = JSON.stringify(PostDataPrep),;
+    		     PostData = JSON.stringify(PostDataPrep),
+    		     formURL = $(this).attr("action");;
     		 
     		$.ajax(	{
-        		url : ".",
+        		url : formURL,
         		contentType: "application/json",
         		method: "POST",
             data: PostData,
