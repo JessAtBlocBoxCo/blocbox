@@ -867,13 +867,17 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
     #if request.is_ajax():
         formresponse = json.loads(request.body)
         csrftoken = formresponse[0]
-        email = formresponse[1]       
+        email = formresponse[1]['value']      
         waitlistuser = Waitlist.objects.create(email=email)	
         waitlistuser.save() 
-        waitlistuser.first_name = formresponse[2]
-        waitlistuser.zipcode = formresponse[3]
-        waitlistuser.referredby = formresponse[4]
-        waitlistuser.hostinterest = formresponse[5]
+        waitlistuser.first_name = formresponse[2]['value']
+        waitlistuser.zipcode = formresponse[3]['value']
+        waitlistuser.referredby = formresponse[4]['value']
+        hostinterestnum = formresponse[5]['value']
+        if hostinterestnum == 1:
+            waitlistuser.hostinterest = True
+        else:
+            waitlistuser.hostinterest = False
         waitlistuser.responseobject = formresponse
         waitlistuser.save()
         message = "Success! You posted data to the user model" 
