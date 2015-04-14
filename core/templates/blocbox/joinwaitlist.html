@@ -113,16 +113,16 @@
             contentType: "application/json; charset=utf-8", 
         
         success:function(data, textStatus, jqXHR) 
-        {	console.log( 'You successfully posted to Mailchimp with the PostDataMailchimp:' + PostDataMailchimp ); 
-        	 window.location.href = "/almostfinished/";
-        	 //the success response the blog wrote about -- not working for me
-        	 //   var resultMessage = data.msg || "Sorry. Unable to subscribe. Please try again later."
-            //  if (data.result != "success") {
-            //       if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-            //       resultMessage = "You're already subscribed. Thank you."    }
-           // } else {
-           //     resultMessage = "Thank you!<br>You must confirm the subscription in your inbox.");        	
-        	 },
+        {	
+        	   console.log( 'You successfully posted to Mailchimp with the PostDataMailchimp:' + PostDataMailchimp ); 
+        	   //{ window.location.href = "/almostfinished/" }
+        	   var resultMessage = data.msg || "Sorry. Unable to subscribe. Please try again later."
+              if (data.result != "success") {
+                   if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                   resultMessage = "You're already subscribed. Thank you."    }
+            	} 
+            	else {   resultMessage = "Thank you!<br>You must confirm the subscription in your inbox."); },
+         ]
         
         error: function(xhr, textStatus, thrownError) 
          {
