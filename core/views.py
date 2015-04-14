@@ -886,7 +886,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         waitlistuser.responseobject = formresponse
         waitlistuser.save()
         #add neighbors nearbyu
-        add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
+        add_neighbors_nearby_waitlist(waitlistid=waitlistuser.id)
         message = "Success! You posted data to the user model" 
         waitlistregistered = True                    
     else:
