@@ -11,7 +11,7 @@
         <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
        <!-- <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
         	method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate> -->
-        	<form action="." method="post"  class="paddingsides15px" id="ajaxform" name="ajaxform" role="form"
+        	<form action="." method="post"  class="paddingsides15px" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" role="form"
         		enctype="multipart/form-data">  
             
             {% csrf_token %} {{ form.non_field_errors }}
@@ -47,12 +47,11 @@
                 <input type="submit" value="Join Waitlist" class="btn-waitlist margintop5px"> <!--name="subscribe" -->
             </div>
             <!--row -->
-<!--
+
             <div id="mce-responses" class="clear">
                 <div class="response" id="mce-error-response" style="display:none"></div>
                 <div class="response" id="mce-success-response" style="display:none"></div>
             </div>
--->
             <!--row-->
         </form>
 
@@ -60,7 +59,7 @@
 	//from: http://api.jquery.com/jQuery.post/
 	//include the javascript file for override the before send thing that is causing error
 {% include "javascript_includes/override_beforesend.js" %}
-	  $("#ajaxform").submit(function(event){	      
+	  $("#mc-embedded-subscribe-form").submit(function(event){	      
 			//stop form from submitting normally
 			event.preventDefault();
 			//Get some values from elements on the page
