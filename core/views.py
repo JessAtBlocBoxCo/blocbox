@@ -833,7 +833,8 @@ def waitlist_almostfinished(request):
 #    return render(request, 'blocbox/joinwaitlist.html')
 
 def joinwaitlist(request, referring_user_email=None):	 
-    if request.method == 'POST':     	
+    #if request.method == 'POST':  
+    if request.is_ajax():   	
         formresponse = json.loads(request.body)
         csrftoken = formresponse[0]
         email = formresponse[1]['value']      
