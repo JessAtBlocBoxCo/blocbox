@@ -863,17 +863,17 @@ def joinwaitlist(request, referring_user_email=None):
 
 
 def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregistered=False):
-    testemail = 'withpostdatastringifynum1@gmail.com'
     if request.method == 'POST':
     #if request.is_ajax():
-        formresponseprep = json.loads(request.body)
-        formresponse = formresponseprep[0]
-        #email = formresponse['email']          
-        waitlistuser = Waitlist.objects.create(email=testemail)	
+        formresponse = json.loads(request.body)
+        csrftoken = formresponse[0]
+        email = formresponse[1]       
+        waitlistuser = Waitlist.objects.create(email=email)	
         waitlistuser.save() 
+        waitlistuser.first_name = formresponse[2]
+        waitlistuser.zipcode = formresponse[3]
+        waitlistuser.hostinterest = formresponse[4]
         waitlistuser.responseobject = formresponse
-        #waitlistuser.zipcode = formresponse['zipcode']
-        #waitlistuser.first_name = formresponse['first_name']
         waitlistuser.save()
         message = "Success! You posted data to the user model" 
         waitlistregistered = True                    
