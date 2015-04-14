@@ -871,8 +871,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         waitlistuser = Waitlist.objects.create(email=testemail)	
         waitlistuser.save() 
         waitlistuser.responseobject = formresponse
-        waitlistuser.zipcode = formresponse['zipcode']
-        waitlistuser.first_name = formresponse['first_name']
+        #waitlistuser.zipcode = formresponse['zipcode']
+        #waitlistuser.first_name = formresponse['first_name']
         waitlistuser.save()
         message = "Success! You posted data to the user model" 
         waitlistregistered = True                    
