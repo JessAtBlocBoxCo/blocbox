@@ -880,14 +880,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         waitlistregistered = True                    
     else:
         message = "The request method was not Ajax"
-        matching_emails = Waitlist.objects.filter(email=testemail).count()
-        if matching_emails > 0:
-            testadd = Waitlist.objects.get(email=testemail)
-            formresponse = testadd.responseobject
-        else:   
-            formresponse = "The request metho was not Ajax"
     return render(request, 'blocbox/joinwaitlist_formtestpost.html', { 'referring_user_email': referring_user_email, 
-    	'waitlistregistered': waitlistregistered, 'formresponse': formresponse  } )
+    	'waitlistregistered': waitlistregistered,   } )
 
 """ 
 formresponse = formresponsenum[0]
