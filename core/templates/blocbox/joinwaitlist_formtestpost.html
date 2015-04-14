@@ -95,8 +95,9 @@
         
         error: function(xhr, textStatus, thrownError) 
          {
-         	console.log( 'the PostDataPrepNoArray var is ' + PostDataPrepNoArray );
          	console.log( 'the PostDataPrep var is' + PostDataPrep );
+         	console.log( 'the PostDataPrep[0] is' + PostDataPrep[0] );
+         	console.log( 'the PostDataPrep[1] is' + PostDataPrep[1] );
          	console.log( 'the PostData var is' + PostData );
          	console.log( 'the PostDataStringy var is ' + PostDataStringify );
           console.log( 'There was an error...error variables shown below');
@@ -109,7 +110,7 @@
     
     
     document.getElementById('PostDataPrep').innerHTML = 'PostDataPrep Var: ' + PostDataPrep;
-    document.getElementById('PostDataPrepNoArray').innerHTML = 'PostDataPrepNoArray var:' + PostDataPrepNoArray ;
+    //document.getElementById('PostDataPrepNoArray').innerHTML = 'PostDataPrepNoArray var:' + PostDataPrepNoArray ;
     document.getElementById('PostData').innerHTML = 'PostData var:' + PostData ;
     document.getElementById('PostDataStringify').innerHTML = 'PostDataStringify var:' + PostDataStringify ;
     document.getElementById('testdataprep').innerHTML = 'TestDataprep var:' + testdataprep ;
@@ -134,7 +135,6 @@
  
 <div class="col-sm-5">
 		<div id="PostDataPrep"> </div> <br>
-		<div id="PostDataPrepNoArray"> </div> <br>
     <div id="PostData"> </div> <br>
  		<div id="PostDataStringify"> </div> <br>
 		<div id="testdataprep"> </div> <br>
