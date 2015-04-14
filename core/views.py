@@ -656,7 +656,7 @@ def signupconnect(request, host_id, referring_user_email=None):
     return render_to_response(
             'blocbox/sign-up-connect.html', #formerly registeruser.html
     	      {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup,
-    	      	'referring_user_email', referring_user_email, },
+    	      	'referring_user_email': referring_user_email, },
     	      context)
    	#PASS ARGUMENTS
 		#return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
@@ -703,7 +703,7 @@ def signupnoconnect(request, referring_user_email=None):
   
     return render_to_response(
             'blocbox/sign-up-withoutconnect.html', 
-    	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup, 'referring_user_email', referring_user_email, },
+    	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup, 'referring_user_email': referring_user_email, },
     	      context)
 
 
