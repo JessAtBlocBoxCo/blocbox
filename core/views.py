@@ -648,16 +648,15 @@ def signupconnect(request, host_id, referring_user_email=None):
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors
-    	  
     #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
     else:
         user_form = UserForm()
-    	  
     #Render the template depending on the context
     #the template is here: /home/django/blocbox/core/templates/blocbox/blocbox.html
     return render_to_response(
             'blocbox/sign-up-connect.html', #formerly registeruser.html
-    	      {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup },
+    	      {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup,
+    	      	'referring_user_email', referring_user_email, },
     	      context)
    	#PASS ARGUMENTS
 		#return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
