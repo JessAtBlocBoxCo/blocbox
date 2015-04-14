@@ -647,7 +647,7 @@ def signupconnect(request, host_id, referring_user_email=None):
             requesthasbeensent(request, host.id, user.id)
             #If they were referred, add the count to the user table
             if referring_user_email:
-                attribute_referral(request, referring_user_email)
+                attribute_referral(referring_user_email)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors
