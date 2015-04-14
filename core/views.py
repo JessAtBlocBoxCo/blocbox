@@ -862,7 +862,7 @@ def joinwaitlist(request, referring_user_email=None):
         message = "The request method was not Ajax"
     return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email,  } )
 
-def send_form_to_mailchimp(request, waitlistuserid)
+def send_form_to_mailchimp(request, waitlistuserid):
     waitlistuser = Waitlist.objects.get(pk=waitlistuserid)
     url = 'http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636'
     values = {'email': waitlistuser.email, 'first_name': waitlistuser.first_name, 'zipcode': waitlistuser.zipcode, 
