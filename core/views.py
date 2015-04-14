@@ -662,7 +662,7 @@ def signupconnect(request, host_id, referring_user_email=None):
 		#return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
 		
 #Registration Form -- User
-def signupnoconnect(request):
+def signupnoconnect(request, referring_user_email=None):
     context = RequestContext(request)
     #a bollean value for telling the template whether the registraiton was successful
     #set to false initially; code changes value to True when registraiont succeeds
@@ -703,7 +703,7 @@ def signupnoconnect(request):
   
     return render_to_response(
             'blocbox/sign-up-withoutconnect.html', 
-    	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup },
+    	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup, 'referring_user_email', referring_user_email, },
     	      context)
 
 
