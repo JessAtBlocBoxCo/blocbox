@@ -869,11 +869,14 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         csrftoken = formresponse[0]
         email = formresponse[1]['value']      
         waitlistuser = Waitlist.objects.create(email=email)	
-        waitlistuser.save() 
+        #waitlistuser.save() 
         waitlistuser.first_name = formresponse[2]['value']
         waitlistuser.zipcode = formresponse[3]['value']
         waitlistuser.referredby = formresponse[4]['value']
-        waitlistuser.hostinterest = formresponse[5]['value']
+        if len(formresponse) > 4:
+            waitlistuser.hostinterest = formresponse[5]['value']
+        else:
+            waitlistuser.hostinterest = False
         #if hostinterestnum == 1:
         #    waitlistuser.hostinterest = True
         #else:
