@@ -68,10 +68,11 @@
 			//Get some values from elements on the page
     		 var PostDataPrep = $(this).serializeArray(),
     		     PostData = JSON.stringify(PostDataPrep),
-    		     postURL = ".";
+    		     URL1 = "."
+    		     URL2 = "test_secondform";
     		 
     		$.ajax(	{
-        		url : postURL,
+        		url : URL1,
         		contentType: "application/json",
         		method: "POST",
             data: PostData,
@@ -83,7 +84,28 @@
          {
          	console.log( 'the PostDataPrep var is' + PostDataPrep );
          	console.log( 'the PostData var is' + PostData );
-         	console.log( 'the PostURL var is ' + postURL );
+         	console.log( 'the URL1 var is ' + URL1 );
+          console.log( 'There was an error...error variables shown below');
+    			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
+    			console.log( 'textStatus is:' + textStatus);
+    			console.log( 'thrownError is:' + thrownError);     
+        }, 
+    });
+    
+      $.ajax(	{
+        		url : URL2,
+        		contentType: "application/json",
+        		method: "POST",
+            data: PostData,
+
+        success:function(data, textStatus, jqXHR) 
+        {	console.log( 'You successfully posted the PostData' + PostData );  },
+        
+        error: function(xhr, textStatus, thrownError) 
+         {
+         	console.log( 'the PostDataPrep var is' + PostDataPrep );
+         	console.log( 'the PostData var is' + PostData );
+         	console.log( 'the URL1 var is ' + URL1 );
           console.log( 'There was an error...error variables shown below');
     			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
     			console.log( 'textStatus is:' + textStatus);

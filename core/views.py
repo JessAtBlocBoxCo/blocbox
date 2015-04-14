@@ -865,6 +865,39 @@ def joinwaitlist(request, referring_user_email=None):
         message = "The request method was not Ajax"
     return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email,  } )
 
+def test_secondform(request):
+    referring_user_email = None
+    if request.method == 'POST':  
+    #if request.is_ajax():   	
+        #formresponse = QueryDict(request.body)
+        formresponse = json.loads(request.body)
+        csrftoken = formresponse[0]
+        email = 'testemailone@gmail.com'      
+        waitlistuser = Waitlist.objects.create(email=email)	
+        waitlistuser.first_name = formresponse[2]['value']
+        zipcodeform = formresponse[3]['value']
+        waitlistuser.zipcode = zipcodeform
+        waitlistuser.referredby = formresponse[4]['value']
+        if len(formresponse) > 5:
+            waitlistuser.hostinterest = formresponse[5]['value']
+        else:
+            waitlistuser.hostinterest = False
+        zipcode = zcdb[zipcodeform]           
+        zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+        zipcodes_nearby_json = json.dumps(zipcodes_nearby)
+        waitlistuser.city = zipcode.city
+        waitlistuser.state = zipcode.state
+        waitlistuser.zipcodes_nearby = zipcodes_nearby_json
+        waitlistuser.responseobject = formresponse
+        waitlistuser.save()
+        #add neighbors nearbyu
+        add_neighbors_nearby_waitlist(waitlistid=waitlistuser.id)
+        #send_form_to_mailchimp(request, waitlistuser.id)
+        message = "Success! You posted data to the user model"                  
+    else:
+        message = "The request method was not Ajax"
+    return HttpResponse(message)
+ 
 
 def send_form_to_mailchimp(request, waitlistuserid):
     waitlistuser = Waitlist.objects.get(pk=waitlistuserid)
