@@ -36,6 +36,7 @@ urlpatterns = patterns('',
  		url(r'^transactions/', include('transactions.urls', namespace='transactions')), #because of the namepsac,e need to reeverse with reverse(payment:)
     url(r'^admin/', include(admin.site.urls)), 
     url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect'),
+    url(r'^signupconnect/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)', views.signupconnect, name='signupconnect_referral'),    
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
     url(r'^signup/$', views.signupnoconnect, name='signupnoconnect'), 
     url(r'^signuphost/$', views.signuphost, name='signuphost'),
@@ -46,9 +47,7 @@ urlpatterns = patterns('',
     url(r'^almostfinished/$', views.waitlist_almostfinished, name='waitlist_almostfinished'),
     url(r'^joinwaitlist/$', views.joinwaitlist, name='joinwaitlist'),
     
-    url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)', views.joinwaitlist, name='joinwaitlist_referral'),
-    url(r'^joinwaitlisttestformpost/$', views.joinwaitlist_testformpost, name='joinwaitlist_testformpost'),
-    
+    url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)', views.joinwaitlist, name='joinwaitlist_referral'),    
     url(r'^testsendtomailchimp/user(?P<waitlistuserid>\d+)/$', views.send_form_to_mailchimp, name='test_sentomailchimp'),
     url(r'^waitlistconfirmation/$', views.waitlist_confirmation, name='waitlist_confirmation'),
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well

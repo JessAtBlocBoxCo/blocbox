@@ -120,7 +120,7 @@
         	    if (data.result != "success") {
                    var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
                         if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-                            message = "You're already subscribed to the Blocbox Waitlist! If you think this is a mistake please contact us at info@blocbox.co";
+                            message = "You're already subscribed to the Blocbox Waitlist! <br> If you think this is a mistake please contact us at info@blocbox.co";
                         }
               alert(message);   } 
               else  { window.location.href = "/almostfinished/" }

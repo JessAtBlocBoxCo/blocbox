@@ -19,6 +19,7 @@ urlpatterns = patterns('',
  		url(r'^styletest/$', 'testing.views.styletest', name='styletest'),
  		url(r'^aftership/$', 'testing.views.aftership', name='aftership_test'),
  		url(r'^bootstraptest/$', 'testing.views.bootstraptest', name='bootstraptest'),
+ 		#url(r'^joinwaitlisttestformpost/$', views.joinwaitlist_testformpost, name='joinwaitlist_testformpost'),
 )
 
 """EXAMPLE OF HOW TO CALL SAME VIEW WITH DIFFERENT ARGS -- USE KWARGS
