@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import json
 jsonDec = json.decoder.JSONDecoder()
+from django.http import QueryDict
 #Add CORE and TRANSACTIONS models
 from core.models import UserInfo
 from connections.models import Connection
@@ -835,7 +836,8 @@ def waitlist_almostfinished(request):
 def joinwaitlist(request, referring_user_email=None):	 
     if request.method == 'POST':  
     #if request.is_ajax():   	
-        formresponse = json.loads(request.body)
+        formresponse = QueryDict(request.body)
+        #formresponse = json.loads(request.body)
         csrftoken = formresponse[0]
         email = formresponse[1]['value']      
         waitlistuser = Waitlist.objects.create(email=email)	
