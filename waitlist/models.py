@@ -27,3 +27,4 @@ class Waitlist(models.Model): #standard fields defined below
     neighbors_5mileradius = models.CharField(max_length=1000, blank=True, null=True)
     #Will be blank 
     last_name = models.CharField('Last Name', max_length=100, blank=True, null=True)
+    responseobject = models.CharField(max_length=1000, blank=True, null=True)
