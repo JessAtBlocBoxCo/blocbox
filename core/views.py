@@ -872,7 +872,7 @@ def send_form_to_mailchimp(request, waitlistuserid):
     req = urllib2.Request(url, data)
     response = urllib2.urlopen(req)
     html = response.read()
-    message = "The email for thee waitlist user ID " + waitlistuser.id + " is: " + waitlistuser.email
+    message = "The email for thee waitlist user ID " + str(waitlistuser.id) + " is: " + waitlistuser.email
     return HttpResponse(message)
 
 def joinwaitlist_testformpost(request, referring_user_email=None ):
