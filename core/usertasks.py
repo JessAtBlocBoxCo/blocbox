@@ -20,6 +20,7 @@ from django.contrib.auth.decorators import login_required
 #from core and TRANSACTION models
 from core.models import UserInfo
 from transactions.models import Transaction
+from waitlist.models import Waitlist
 ##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
