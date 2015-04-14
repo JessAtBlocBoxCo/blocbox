@@ -82,7 +82,8 @@
     		 	   PostDataPrepNoArray = $(this).serialize(),
     		     PostData = {'PostDataPrep': JSON.stringify(PostDataPrep)},
     		     PostDataStringify = JSON.stringify(PostDataPrep),
-    		     testdata = {email: "testit@gmail.com", zipcode: "11238", first_name:"jess"},
+    		     testdataprep = {email: "testit@gmail.com", zipcode: "11238", first_name:"jess"}
+    		     testdata = JSON.stringify(testdata),
     		     formURL = $(this).attr("action");
     		 
     		$.ajax(	{
@@ -90,7 +91,7 @@
         		contentType: "application/json",
         		method: "POST",
             //data: PostData,
-            data: JSON.stringify(testdata),
+            data: testdata,
 
         success:function(data, textStatus, jqXHR) 
         {	console.log( 'You successfully posted the PostData' + PostData );
@@ -109,6 +110,15 @@
         },
         
     });
+    
+    document.getElementById('PostDataPrep').innerHTML = 'PostDataPrep Var: ' + PostDataPrep;
+    document.getElementById('PostDataPrepNoArray').innerHTML = 'PostDataPrepNoArray:' + PostDataPrepNoArray ;
+    document.getElementById('PostData').innerHTML = 'PostData:' + PostData ;
+    document.getElementbyId('PostDataStringify').innerHTML = 'PostDataStringify:' + PostDataStringify ;
+    document.getElementById('testdataprep').innerHTML = 'TestDataprep var:' + testdataprep ;
+    document.getElementById('testdata').innerHTML = 'testdata var:' + testdata ;
+
+      
 		//$("#ajaxform").submit();
     //event.unbind(); //unbind. to stop multiple form submit.
 });
@@ -122,7 +132,17 @@
 
  {% endif %}
  
- <h3>TEST SHOW WAITLIST REGISTERED {{ waitlistregistered  }} AND formresponse {{ formresponse }} AND formresponse[0] {{ formresponse.0}}  </h3>
+<h3>Show individual response objecs</h3>
+		<div id="PostDataPrep"> </div> <br>
+		<div id="PostDataPrepNoArray"> </div> <br>
+    <div id="PostData"> </div> <br>
+ 		<div id="PostDataStringify"> </div> <br>
+		<div id="testdataprep"> </div> <br>
+		<div id="testdata"></div> <br>
+
+
+
+  
         <!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
   </div>
   	<br>
