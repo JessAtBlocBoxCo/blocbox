@@ -232,5 +232,5 @@ def attribute_referral(referring_user_email):
         oldcount = 0
     referringuser.Referrals_from_user = newcount
     referringuser.save()
-    message = referring_user_email + " has been given credit for the referral. They formerly had " + oldcount + " Their new count is " + newcount
+    message = referring_user_email + " has been given credit for the referral. They formerly had " + str(oldcount) + " Their new count is " + str(newcount)
     return message
