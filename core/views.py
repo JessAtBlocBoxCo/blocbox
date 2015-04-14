@@ -872,7 +872,7 @@ def test_secondform(request):
         #formresponse = QueryDict(request.body)
         formresponse = json.loads(request.body)
         csrftoken = formresponse[0]
-        email = 'testemailone@gmail.com'      
+        email = 'testemailsecondfunction@gmail.com'      
         waitlistuser = Waitlist.objects.create(email=email)	
         waitlistuser.first_name = formresponse[2]['value']
         zipcodeform = formresponse[3]['value']
