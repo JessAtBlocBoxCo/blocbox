@@ -9,9 +9,16 @@
         <div class="promo"></div>
         <h2 class="nomargintop signup-padding">Sign Up</h2>
         <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
+        <!--new tip from: http://pocketproduct.com/2014/a-better-mailchimp-signup/
+        	update form aciton to go to subscribe/post-json rather than subscribe-post 
        <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
         	method="post"   enctype="multipart/form-data" name="mc-embedded-subscribe-form" 
         	id="mc-embedded-subscribe-form"  class="paddingsides15px" target="_blank" novalidate> -->
+       
+       <form action="http://blocbox.us8.list-manage.com/subscribe/post-json?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
+        	method="post"   enctype="multipart/form-data" name="mc-embedded-subscribe-form" 
+        	id="mc-embedded-subscribe-form"  class="paddingsides15px" target="_blank" novalidate>
+        	 	
         <!--	<form action="." method="post"  class="paddingsides15px"  role="form"
         		enctype="multipart/form-data" name="mc-embedded-subscribe-form"  id="mc-embedded-subscribe-form">  -->
             
@@ -94,13 +101,19 @@
         }, 
     });
     
+    
+    //guide: http://pocketproduct.com/2014/a-better-mailchimp-signup/
+    
       $.ajax(	{
-        		url : URLmailchimp,
-        		dataType: 'json',
-            contentType: "application/json; charset=utf-8",
+        		url : URLmailchimp,       		
         		type: "GET",
+        		cache: false,
             data: PostDataMailchimp,
-
+            cache: false,
+            dataType: "jsonp",
+            jsonp: "c",
+            contentType: "application/json; charset=utf-8", 
+        
         success:function(data, textStatus, jqXHR) 
         {	console.log( 'You successfully posted the PostData' + PostData );  },
         
