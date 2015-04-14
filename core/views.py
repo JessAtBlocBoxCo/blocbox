@@ -873,11 +873,11 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         waitlistuser.first_name = formresponse[2]['value']
         waitlistuser.zipcode = formresponse[3]['value']
         waitlistuser.referredby = formresponse[4]['value']
-        hostinterestnum = formresponse[5]['value']
-        if hostinterestnum == 1:
-            waitlistuser.hostinterest = True
-        else:
-            waitlistuser.hostinterest = False
+        waitlistuser.hostinterest = formresponse[5]['value']
+        #if hostinterestnum == 1:
+        #    waitlistuser.hostinterest = True
+        #else:
+        #    waitlistuser.hostinterest = False
         waitlistuser.responseobject = formresponse
         waitlistuser.save()
         message = "Success! You posted data to the user model" 
