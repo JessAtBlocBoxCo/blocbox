@@ -885,6 +885,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         waitlistuser.zipcodes_nearby = zipcodes_nearby_json
         waitlistuser.responseobject = formresponse
         waitlistuser.save()
+        #add neighbors nearbyu
+        add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
         message = "Success! You posted data to the user model" 
         waitlistregistered = True                    
     else:
@@ -892,41 +894,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
     return render(request, 'blocbox/joinwaitlist_formtestpost.html', { 'referring_user_email': referring_user_email, 
     	'waitlistregistered': waitlistregistered,   } )
 
-            
-def joinwaitlist_testform(request, referring_user_email=None):	 
-    waitlistregistered = False
-    if request.method == 'POST': 
-        requestmethod = request.method
-        form = WaitlistForm(data=request.POST)       
-        if form.is_valid():  
-            email = form.cleaned_data['email']        	       
-            waitlistuser = Waitlist.objects.create(email=email)	 
-            #waitlistuser = form.save()
-            #waitlistuser.save() #saves first_name, email, zipcode            
-            waitlistuser.zipcode = form.cleaned_data['zipcode']
-            waitlistuser.first_name = form.cleaned_data['first_name']
-            waitlistuser.referredby = form.cleaned_data['referredby']
-            #get nearby zips and opulate the city and state
-            waitlistuser.hostinterest = form.cleaned_data['hostinterest']
-            #zipcodeform = form.cleaned_data['zipcode']
-            #zipcode = zcdb[zipcodeform]           
-            #zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
-            #zipcodes_nearby_json = json.dumps(zipcodes_nearby)
-            #waitlistuser.city = zipcode.city
-            #waitlistuser.state = zipcode.state
-            #waitlistuser.zipcodes_nearby = zipcodes_nearby_json
-            waitlistuser.save()
-            #add neighbors nearbyu
-            #add_neighbors_nearby_waitlist(waitlistid=waitlist.id)
-            waitlistregistered = True
-        else: 
-    	      print form.errors           
-    else: #if method is not POST
-        form = WaitlistForm()
-        requestmethod = request.method
-    return render(request, 'blocbox/joinwaitlist_formtest.html', { 'referring_user_email': referring_user_email, 
-    	'form': form, 'waitlistregistered': waitlistregistered, 'requestmethod': requestmethod, } )
-        
+     
 def waitlist_confirmation(request):
 		return render(request, 'blocbox/waitlist-confirmation.html')
 
