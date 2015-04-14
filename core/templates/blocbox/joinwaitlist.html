@@ -55,7 +55,43 @@
 
             <!--row-->
         </form>
-        <!-- <a href="privacy-policy.html">By Signing Up, I Agree to Blocbox's Privacy Policy</a> -->
+
+<script>
+	//from: http://api.jquery.com/jQuery.post/
+	//include the javascript file for override the before send thing that is causing error
+{% include "javascript_includes/override_beforesend.js" %}
+	  $("#ajaxform").submit(function(event){	      
+			//stop form from submitting normally
+			event.preventDefault();
+			//Get some values from elements on the page
+    		 var PostDataPrep = $(this).serializeArray(),
+    		     PostData = JSON.stringify(PostDataPrep),;
+    		 
+    		$.ajax(	{
+        		url : ".",
+        		contentType: "application/json",
+        		method: "POST",
+            data: PostData,
+
+        success:function(data, textStatus, jqXHR) 
+        {	console.log( 'You successfully posted the PostData' + PostData );  },
+        
+        error: function(xhr, textStatus, thrownError) 
+         {
+         	console.log( 'the PostDataPrep var is' + PostDataPrep );
+         	console.log( 'the PostData var is' + PostData );
+          console.log( 'There was an error...error variables shown below');
+    			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
+    			console.log( 'textStatus is:' + textStatus);
+    			console.log( 'thrownError is:' + thrownError);     
+        }, 
+    });
+      
+		//$("#ajaxform").submit();
+    //event.unbind(); //unbind. to stop multiple form submit.
+});
+
+
     </div>
     <div class="text-center alignbottomdiv mobilehide">
         <a href="#learn">
