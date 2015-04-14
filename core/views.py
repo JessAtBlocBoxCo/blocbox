@@ -878,7 +878,7 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         message = "Success! You posted data to the user model"                     
     else:
         message = "The request method was not Ajax"
-        testadd = get_object_or_404(WaitlistUser, email=testemail)
+        testadd = get_object_or_404(Waitlist, email=testemail)
         if testadd:
             formresponse = testadd.responseobject
         else:   
