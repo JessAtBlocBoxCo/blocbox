@@ -863,7 +863,7 @@ def joinwaitlist(request, referring_user_email=None):
 
 
 def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregistered=False):
-    testemail = 'withpostdata@gmail.com'
+    testemail = 'withpostdatastringify@gmail.com'
     if request.method == 'POST':
     #if request.is_ajax():
         formresponse = json.loads(request.body)
