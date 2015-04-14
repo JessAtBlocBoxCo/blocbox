@@ -225,7 +225,11 @@ def add_neighbors_nearby_waitlist(waitlistid=None):
 def attribute_referral(referring_user_email):
     referringuser = UserInfo.objects.get(email=referring_user_email)
     oldcount = referringuser.Referrals_from_user
-    newcount = oldcount + 1
+    if oldcount:
+        newcount = oldcount + 1
+    else:
+        newcount = 1
+        oldcount = 0
     referringuser.Referrals_from_user = newcount
     referringuser.save()
     message = referring_user_email + " has been given credit for the referral. They formerly had " + oldcount + " Their new count is " + newcount
