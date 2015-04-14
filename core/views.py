@@ -878,8 +878,8 @@ def joinwaitlist_testformpost(request, referring_user_email=None, waitlistregist
         waitlistregistered = True                    
     else:
         message = "The request method was not Ajax"
-        if waitlistregistered:
-            testadd = get_object_or_404(Waitlist, email=testemail)
+        testadd = Waitlist.objects.get(email=testemail)
+        if testadd:
             formresponse = testadd.responseobject
         else:   
             formresponse = "The request metho was not Ajax"
