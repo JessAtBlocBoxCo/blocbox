@@ -836,8 +836,8 @@ def waitlist_almostfinished(request):
 def joinwaitlist(request, referring_user_email=None):	 
     if request.method == 'POST':  
     #if request.is_ajax():   	
-        formresponse = QueryDict(request.body)
-        #formresponse = json.loads(request.body)
+        #formresponse = QueryDict(request.body)
+        formresponse = json.loads(request.body)
         csrftoken = formresponse[0]
         email = formresponse[1]['value']      
         waitlistuser = Waitlist.objects.create(email=email)	
