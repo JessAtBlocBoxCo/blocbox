@@ -608,6 +608,62 @@ def user_logout(request):
     return HttpResponseRedirect('/beta/')
 
 #Registration Form -- Simple
+
+#Registration Form -- User 
+def signup(request, host_id=None, referring_user_email=None, templatename = 'sign-up-connect'):
+    if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+    context = RequestContext(request)
+    templateloc = 'blocbox/' + templatename + '.html'
+    #a bollean value for telling the template whether the registraiton was successful
+    #set to false initially; code changes value to True when registraiont succeeds
+    registered = False 
+    hostsignup = False
+    usersignup = True
+    if request.method == 'POST': 
+        #if its HTTP post, we're interested in processing form data
+    	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
+    	  user_form = UserForm(data=request.POST)  
+    	  if user_form.is_valid(): # Check if the form is valid
+            # Save the user's form data to the database
+            user = user_form.save()
+            # Now we hash the password with the set_passworth method
+            # Once hashed, we ca update the user object
+            user.set_password(user.password)	
+            #get nearby zips and opulate the city and state
+            zipcodeform = user_form.cleaned_data['zipcode']
+            zipcode = zcdb[zipcodeform]           
+            zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
+            zipcodes_nearby_json = json.dumps(zipcodes_nearby)
+            user.city = zipcode.city
+            user.state = zipcode.state
+            user.zipcodes_nearby = zipcodes_nearby_json
+            #give all users 1 package credit. if they sign up with a referred by link, give 3 packages credit
+            user.account_balance_packages = 1
+            if referring_user_email:
+                user.account_balance_packages = 3
+            user.save()
+            #add neighbors nearbyu
+            add_neighbors_nearby_task(userid=user.id)
+            #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
+            #if 'picture' in request.FILES:
+            #profile.picture = request.FILES['picture']       	      
+            registered = True #Update our variable to tell the template registration was successful        
+            #send an email to the host askig them to confirm the connection
+            if host_id:
+                confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
+                notifyadmin_usersignup(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
+                requesthasbeensent(request, host.id, user.id)
+            else:
+                notifyadmin_usersignup_noconnect(request, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
+            if referring_user_email:
+                attribute_referral(referring_user_email)
+    	  else: 
+    	      print user_form.errors
+    else:
+        user_form = UserForm()
+    return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup,
+    	      	'referring_user_email': referring_user_email, }, context)
  
 
 #Registration Form -- User 
@@ -649,8 +705,6 @@ def signupconnect(request, host_id, referring_user_email=None, templatename = 's
             #if 'picture' in request.FILES:
             #profile.picture = request.FILES['picture']       	      
             registered = True #Update our variable to tell the template registration was successful        
-            #send an email to the host askig them to confirm the connection
-            confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
             notifyadmin_usersignup(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, user.id)

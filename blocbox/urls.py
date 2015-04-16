@@ -36,14 +36,15 @@ urlpatterns = patterns('',
  		url(r'^transactions/', include('transactions.urls', namespace='transactions')), #because of the namepsac,e need to reeverse with reverse(payment:)
     url(r'^admin/', include(admin.site.urls)), 
 
-    url(r'^signupsimple/host(?P<host_id>\d+)/$', views.signupconnect, {'templatename': 'sign-up-simple'}, name='signupsimple', ),
-    url(r'^signupsimple/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signupconnect,  {'templatename': 'sign-up-simple'}, name='signupsimple_ref', ),
-    url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect'),
-    url(r'^signupconnect/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signupconnect, name='signupconnect_ref',),     
+    url(r'^signupsimple/host(?P<host_id>\d+)/$', views.signup, {'templatename': 'sign-up-simple'}, name='signupsimple', ),
+    url(r'^signupsimple/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup,  {'templatename': 'sign-up-simple'}, name='signupsimple_ref', ),
+    url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signup, name='signupconnect'),
+    url(r'^signupconnect/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, name='signupconnect_ref',),     
+    
+    url(r'^signup/$', views.signup, {'templatename': 'sign-up-withoutconnect' }, name='signupnoconnect'), 
+    url(r'^signup/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, {'templatename': 'sign-up-withoutconnect' }, name='signupnoconnect_referral'),    
     
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
-    url(r'^signup/$', views.signupnoconnect, name='signupnoconnect'), 
-    url(r'^signup/referredby=(?P<referring_user_email>[^/]+)/$', views.signupnoconnect, name='signupnoconnect_referral'),    
     url(r'^signuphost/$', views.signuphost, name='signuphost'),
     url(r'^abouthosting/', views.abouthosting, name='abouthosting'),
     url(r'^nudgeaneighbor/', views.nudgeaneighbor, name='nudgeaneighbor'),
