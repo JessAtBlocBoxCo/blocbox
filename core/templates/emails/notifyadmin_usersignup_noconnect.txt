@@ -1,0 +1,12 @@
+
+A new user has signed up using the generic sign up form (not connecting to a host).
+
+User Information:  {{firstname}} {{ lastname}} [{{ useremail }}].
+
+The neighbor's request to connect included the following message: {{ emailgreeting }} 
+
+Time of day they would like to pick up packages: {{ pickup_time }} 
+
+
+Thanks!
+The BlocBox Team

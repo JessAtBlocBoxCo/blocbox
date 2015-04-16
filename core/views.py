@@ -643,6 +643,7 @@ def signupconnect(request, host_id, referring_user_email=None):
             registered = True #Update our variable to tell the template registration was successful        
             #send an email to the host askig them to confirm the connection
             confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
+            notifyadmin_usersignup(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, user.id)
             #If they were referred, add the count to the user table
@@ -694,6 +695,7 @@ def signupnoconnect(request, referring_user_email=None):
             add_neighbors_nearby_task(userid=user.id)
             if referring_user_email:
                 attribute_referral(referring_user_email)
+            notifyadmin_usersignup_noconnect(request, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
             registered = True #Update our variable to tell the template registration was successful    	  		
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
@@ -793,6 +795,24 @@ def confirmconnect_mail(request, hostid, userid, messagetohost, useremail, first
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to request to connect.")
 
+def notifyadmin_usersignup(request, hostid, userid, messagetohost, useremail, firstname, lastname):
+    host = get_object_or_404(UserInfo, pk=hostid)
+    enduser = get_object_or_404(UserInfo, pk=userid)
+    message = render_to_string('emails/notifyadmin_usersignup.txt', { 'host': host, 'enduser': enduser, 'emailgreeting': messagetohost, 
+    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname,})
+    subject = "A New User Has Registered (Full User) - With Request to Connect "
+    send_mail(subject, message, 'Blocbox User Registration <admin@blocbox.co>', ['admin@blocbox.co',]) 
+    return HttpResponse("An email has been sent to admin@blocbox.co notifying the blocbox team of the new user.")
+
+def notifyadmin_usersignup_noconnect(request, userid, messagetohost, useremail, firstname, lastname):
+    enduser = get_object_or_404(UserInfo, pk=userid)
+    message = render_to_string('emails/notifyadmin_usersignup_noconnect.txt', { 'enduser': enduser, 'emailgreeting': messagetohost, 
+    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname,})
+    subject = "A New User Has Registered (Full User) - No Request to Connect"
+    send_mail(subject, message, 'Blocbox User Registration <admin@blocbox.co>', ['admin@blocbox.co',]) 
+    return HttpResponse("An email has been sent to admin@blocbox.co notifying the blocbox team of the new user.")
+
+
 #send an email to the user that requested to connect
 def requesthasbeensent(request, hostid, userid):
     host = get_object_or_404(UserInfo, pk=hostid)
@@ -807,8 +827,7 @@ def notifyconnectionconfirmed(request, hostid, userid):
     message = render_to_string('emails/notifyconnectionconfirmed.txt', {'host': host, 'enduser': enduser,})
     subject = "Your request to connect was confirmed!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
-#return render_to_response(
-# 'blocbox/sign-up-connect.html', {'user_form': user_form, 'registered': registered, 'host':host },context)
+
 
 #-----------------------------------------------------------
 # Confirm or deny requests to connect
