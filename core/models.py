@@ -31,6 +31,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     email = models.EmailField(max_length=254, unique=True)
     first_name = models.CharField('First Name',max_length=100, blank=True)
     last_name = models.CharField('Last Name', max_length=100, blank=True)
+    full_name = models.CharField('Full Name', max_length=200, blank=True)
     zipcode = models.CharField(max_length =5)
     #Street Address
     st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True)
