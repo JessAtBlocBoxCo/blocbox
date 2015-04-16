@@ -814,6 +814,8 @@ def notifyadmin_usersignup_noconnect(request, userid, messagetohost, useremail, 
     referredby = enduser.referredby
     if referredby:
         ref_message = "The User was referred by " + referredby + "."
+    else:
+        ref_message = None
     message = render_to_string('emails/notifyadmin_usersignup_noconnect.txt', { 'enduser': enduser, 'emailgreeting': messagetohost, 
     	'useremail': useremail, 'firstname':firstname, 'lastname':lastname, 'ref_message': ref_message, })
     subject = "A New User Has Registered (Full User) - No Request to Connect"
