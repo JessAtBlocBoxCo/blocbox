@@ -613,6 +613,8 @@ def user_logout(request):
 def signup(request, host_id=None, referring_user_email=None, templatename = 'sign-up-connect'):
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+        host = None
     context = RequestContext(request)
     templateloc = 'blocbox/' + templatename + '.html'
     #a bollean value for telling the template whether the registraiton was successful
