@@ -30,7 +30,7 @@
             {% csrf_token %} 
             
             <div class="row">
-            	<div class="form-group col-xs-12 col-sm-6">   
+            	<div class="form-group col-xs-12 col-sm-5 col-sm-offset-1">   
             		{{ user_form.email.errors|striptags}}
                 <input name="email" placeholder="YOU@EXAMPLE.COM" class="form-control input-lg inputbox margintop5pxmobile" type="email">
             	</div>
@@ -41,7 +41,7 @@
            	</div>
            	
            	<div class="row">
-						<div class="form-group col-xs-12 col-sm-6">
+						<div class="form-group col-xs-12 col-sm-5 col-sm-offset-1">
             		{{ user_form.st_address1.errors|striptags}}
                 <input name="st_address1" placeholder="STREET ADDRESS" class="form-control input-lg inputbox margintop5pxmobile" type="text">
             </div>
