@@ -47,7 +47,7 @@ urlpatterns = patterns('',
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^almostfinished/$', views.waitlist_almostfinished, name='waitlist_almostfinished'),
     url(r'^joinwaitlist/$', views.joinwaitlist, name='joinwaitlist'),
-    
+    url(r'^joinwaitlist_noajax/$', views.joinwaitlist_noajax, name='joinwaitlist_noajax'),
     url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)/$', views.joinwaitlist, name='joinwaitlist_referral'),    
     url(r'^testsendtomailchimp/user(?P<waitlistuserid>\d+)/$', views.send_form_to_mailchimp, name='test_sentomailchimp'),
     url(r'^waitlistconfirmation/$', views.waitlist_confirmation, name='waitlist_confirmation'),
