@@ -29,14 +29,18 @@
         
             {% csrf_token %} 
             
-            <div class="col-xs-12 col-sm-offset-1">
-            	<div class="form-group col-xs-12 col-sm-6">   
+            <div class="row">
+            	<div class="col-xs-12 col-sm-5 col-sm-offset-1">
+            		<div class="form-group">   
             		{{ user_form.email.errors|striptags}}
                 <input name="email" placeholder="YOU@EXAMPLE.COM" class="form-control input-lg inputbox margintop5pxmobile" type="email">
+            		</div>
             	</div>
-             	<div class="form-group col-xs-12 col-sm-6">  
+            	<div class="col-xs-12 col-sm-6">
+             		<div class="form-group col-xs-12 col-sm-6">  
                 	{{ user_form.full_name.errors|striptags}}
                     <input name="full_name" placeholder="FULL NAME" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+           			</div>
            		</div>
            	</div>
            	
