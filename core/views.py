@@ -861,7 +861,7 @@ def joinwaitlist(request, referring_user_email=None):
         add_neighbors_nearby_waitlist(waitlistid=waitlistuser.id)
         #Attribute the referral
         if referring_user_email:
-            attribute_referral(referring_user_email)
+            attribute_referral_waitlist(referring_user_email)
         #send_form_to_mailchimp(request, waitlistuser.id)
         message = "Success! You posted data to the user model"                  
     else:
