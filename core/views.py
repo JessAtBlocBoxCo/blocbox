@@ -607,10 +607,14 @@ def user_logout(request):
     # Take the user back to the homepage.
     return HttpResponseRedirect('/beta/')
 
+#Registration Form -- Simple
+ 
+
 #Registration Form -- User 
-def signupconnect(request, host_id, referring_user_email=None):
+def signupconnect(request, host_id, referring_user_email=None, templatename = 'sign-up-connect'):
     host = get_object_or_404(UserInfo, pk=host_id)
     context = RequestContext(request)
+    templateloc = 'blocbox/' + templatename + '.html'
     #a bollean value for telling the template whether the registraiton was successful
     #set to false initially; code changes value to True when registraiont succeeds
     registered = False 
@@ -657,13 +661,12 @@ def signupconnect(request, host_id, referring_user_email=None):
         user_form = UserForm()
     #Render the template depending on the context
     #the template is here: /home/django/blocbox/core/templates/blocbox/blocbox.html
-    return render_to_response(
-            'blocbox/sign-up-connect.html', #formerly registeruser.html
-    	      {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup,
+    return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup,
     	      	'referring_user_email': referring_user_email, },
     	      context)
    	#PASS ARGUMENTS
 		#return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
+
 
 #Registration Form -- User
 def signupnoconnect(request, referring_user_email=None):
@@ -684,6 +687,7 @@ def signupnoconnect(request, referring_user_email=None):
     	      # Once hashed, we ca update the user object
             user.set_password(user.password)
             zipcodeform = user_form.cleaned_data['zipcode']
+            referredby = user_form.cleaned_data['referredby']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
             zipcodes_nearby_json = json.dumps(zipcodes_nearby)
@@ -696,7 +700,9 @@ def signupnoconnect(request, referring_user_email=None):
     	      #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
     	      #if 'picture' in request.FILES:
     	      #    profile.picture = request.FILES['picture']  	      
-            registered = True #Update our variable to tell the template registration was successful    	  		
+            registered = True #Update our variable to tell the template registration was successful  
+            if referredby:
+                attribute_referral(referredby)  	  		
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors    	  

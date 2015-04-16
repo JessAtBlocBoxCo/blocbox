@@ -35,8 +35,9 @@ urlpatterns = patterns('',
     #the transactions subdomain includes all of the start a shipment / start a favor and payment views
  		url(r'^transactions/', include('transactions.urls', namespace='transactions')), #because of the namepsac,e need to reeverse with reverse(payment:)
     url(r'^admin/', include(admin.site.urls)), 
-    url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect'),
-    url(r'^signupconnect/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)', views.signupconnect, name='signupconnect_referral'),    
+    url(r'^signupsimple/host(?P<host_id>\d+)/$', views.signupconnect, name='signupsimple', {'templatename': 'sign-up-simple'} ),
+    url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect' ),
+    url(r'^signupconnect/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)', views.signupconnect, name='signupconnect_referral',),    
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
     url(r'^signup/$', views.signupnoconnect, name='signupnoconnect'), 
     url(r'^signup/referredby=(?P<referring_user_email>[^/]+)', views.signupnoconnect, name='signupnoconnect_referral'),    
