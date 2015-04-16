@@ -616,9 +616,6 @@ def signupconnect(request, host_id, referring_user_email=None):
     registered = False 
     hostsignup = False
     usersignup = True
-    attributeuser = False
-    if referring_user_email:
-        attributeuser = True
     if request.method == 'POST': 
         #if its HTTP post, we're interested in processing form data
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
@@ -649,8 +646,8 @@ def signupconnect(request, host_id, referring_user_email=None):
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, user.id)
             #If they were referred, add the count to the user table
-            if attributeuser:
-                attribute_referral(referredby)
+            if referring_user_email:
+                attribute_referral(referring_user_email)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors
