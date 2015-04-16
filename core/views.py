@@ -13,7 +13,7 @@ from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
 from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, ResetPassword
-from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral
+from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral, attribute_referral_waitlist
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
 #Add the waitlist app
@@ -632,13 +632,16 @@ def signupconnect(request, host_id, referring_user_email=None, templatename = 's
             user.set_password(user.password)	
             #get nearby zips and opulate the city and state
             zipcodeform = user_form.cleaned_data['zipcode']
-            referredby = user_form.cleaned_data['referredby']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
             zipcodes_nearby_json = json.dumps(zipcodes_nearby)
             user.city = zipcode.city
             user.state = zipcode.state
             user.zipcodes_nearby = zipcodes_nearby_json
+            #give all users 1 package credit. if they sign up with a referred by link, give 3 packages credit
+            user.account_balance_packages = 1
+            if referring_user_email:
+                user.account_balance_packages = 3
             user.save()
             #add neighbors nearbyu
             add_neighbors_nearby_task(userid=user.id)
@@ -648,11 +651,12 @@ def signupconnect(request, host_id, referring_user_email=None, templatename = 's
             registered = True #Update our variable to tell the template registration was successful        
             #send an email to the host askig them to confirm the connection
             confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
+            notifyadmin_usersignup(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, user.id)
             #If they were referred, add the count to the user table
-            if referredby:
-                attribute_referral(referredby)
+            if referring_user_email:
+                attribute_referral(referring_user_email)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
     	      print user_form.errors
@@ -694,16 +698,16 @@ def signupnoconnect(request, referring_user_email=None):
             user.city = zipcode.city
             user.state = zipcode.state
             user.zipcodes_nearby = zipcodes_nearby_json
+            user.account_balance_packages = 1
+            if referring_user_email:
+                user.account_balance_packages = 3
             user.save()
             #get neighbors nearby
-            add_neighbors_nearby_task(userid=user.id)
-    	      #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
-    	      #if 'picture' in request.FILES:
-    	      #    profile.picture = request.FILES['picture']  	      
+            add_neighbors_nearby_task(userid=user.id)      
             registered = True #Update our variable to tell the template registration was successful  
-            if referredby:
-                attribute_referral(referredby)  	  		
-    	  #Invalid form or forms - print problems to the terminal so they're show to user
+            if referring_user_email:
+                attribute_referral(referring_user_email)
+            notifyadmin_usersignup_noconnect(request, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
     	  else: 
     	      print user_form.errors    	  
     #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
@@ -801,6 +805,34 @@ def confirmconnect_mail(request, hostid, userid, messagetohost, useremail, first
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to request to connect.")
 
+def notifyadmin_usersignup(request, hostid, userid, messagetohost, useremail, firstname, lastname):
+    host = get_object_or_404(UserInfo, pk=hostid)
+    enduser = get_object_or_404(UserInfo, pk=userid)
+    referredby = enduser.referredby
+    if referredby:
+    	  ref_message = "The User was referred by " + referredby + "."
+    else:
+      ref_message = None
+    message = render_to_string('emails/notifyadmin_usersignup.txt', { 'host': host, 'enduser': enduser, 'emailgreeting': messagetohost, 
+    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname, 'ref_message': ref_message, })
+    subject = "A New User Has Registered (Full User) - With Request to Connect "
+    send_mail(subject, message, 'Blocbox User Registration <admin@blocbox.co>', ['admin@blocbox.co',]) 
+    return HttpResponse("An email has been sent to admin@blocbox.co notifying the blocbox team of the new user.")
+
+def notifyadmin_usersignup_noconnect(request, userid, messagetohost, useremail, firstname, lastname):
+    enduser = get_object_or_404(UserInfo, pk=userid)
+    referredby = enduser.referredby
+    if referredby:
+        ref_message = "The User was referred by " + referredby + "."
+    else:
+        ref_message = None
+    message = render_to_string('emails/notifyadmin_usersignup_noconnect.txt', { 'enduser': enduser, 'emailgreeting': messagetohost, 
+    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname, 'ref_message': ref_message, })
+    subject = "A New User Has Registered (Full User) - No Request to Connect"
+    send_mail(subject, message, 'Blocbox User Registration <admin@blocbox.co>', ['admin@blocbox.co',]) 
+    return HttpResponse("An email has been sent to admin@blocbox.co notifying the blocbox team of the new user.")
+
+
 #send an email to the user that requested to connect
 def requesthasbeensent(request, hostid, userid):
     host = get_object_or_404(UserInfo, pk=hostid)
@@ -815,8 +847,7 @@ def notifyconnectionconfirmed(request, hostid, userid):
     message = render_to_string('emails/notifyconnectionconfirmed.txt', {'host': host, 'enduser': enduser,})
     subject = "Your request to connect was confirmed!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
-#return render_to_response(
-# 'blocbox/sign-up-connect.html', {'user_form': user_form, 'registered': registered, 'host':host },context)
+
 
 #-----------------------------------------------------------
 # Confirm or deny requests to connect
@@ -838,8 +869,6 @@ def confirmrequestconnect(request, host_id, user_id):
 def waitlist_almostfinished(request):
 		return render(request, 'blocbox/almost-finished.html')
     
-#def joinwaitlist(request):
-#    return render(request, 'blocbox/joinwaitlist.html')
 
 def joinwaitlist(request, referring_user_email=None):	 
     if request.method == 'POST':  
@@ -867,6 +896,9 @@ def joinwaitlist(request, referring_user_email=None):
         waitlistuser.save()
         #add neighbors nearbyu
         add_neighbors_nearby_waitlist(waitlistid=waitlistuser.id)
+        #Attribute the referral
+        if referring_user_email:
+            attribute_referral_waitlist(referring_user_email)
         #send_form_to_mailchimp(request, waitlistuser.id)
         message = "Success! You posted data to the user model"                  
     else:
@@ -874,6 +906,8 @@ def joinwaitlist(request, referring_user_email=None):
     return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email,  } )
 
 
+def joinwaitlist_noajax(request):
+    return render(request, 'blocbox/joinwaitlist_noajax.html')
  
 
 def send_form_to_mailchimp(request, waitlistuserid):

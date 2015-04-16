@@ -9,15 +9,15 @@
         <div class="promo"></div>
         <h2 class="nomargintop signup-padding">Sign Up</h2>
         <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
-        <!--new tip from: http://pocketproduct.com/2014/a-better-mailchimp-signup/
-        	update form aciton to go to subscribe/post-json rather than subscribe-post 
+        
        <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
         	method="post"   enctype="multipart/form-data" name="mc-embedded-subscribe-form" 
         	id="mc-embedded-subscribe-form"  class="paddingsides15px" target="_blank" novalidate> -->
-       
+       <!--  new tip from: http://pocketproduct.com/2014/a-better-mailchimp-signup/
+        	update form aciton to go to subscribe/post-json rather than subscribe-post
        <form action="http://blocbox.us8.list-manage.com/subscribe/post-json?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
         	method="post"   enctype="multipart/form-data" name="mc-embedded-subscribe-form" 
-        	id="mc-embedded-subscribe-form"  class="paddingsides15px" target="_blank" novalidate>
+        	id="mc-embedded-subscribe-form"  class="paddingsides15px" target="_blank" novalidate> -->
         	 	
         <!--	<form action="." method="post"  class="paddingsides15px"  role="form"
         		enctype="multipart/form-data" name="mc-embedded-subscribe-form"  id="mc-embedded-subscribe-form">  -->
@@ -54,7 +54,7 @@
             </div>
 
             <div class="col-xs-12 paddingtop20px paddingtop15pxmobile">
-                <input type="submit" value="Join Waitlist" name="subscribe" class="btn-waitlist margintop5px"> <!--name="subscribe" -->
+                <input type="submit" value="Join Waitlist" name="subscribe" class="btn-waitlist margintop5px"> 
             </div>
             <!--row -->
 
@@ -65,84 +65,6 @@
             <!--row-->
         </form>
 
-<script>
-	//from: http://api.jquery.com/jQuery.post/
-	//include the javascript file for override the before send thing that is causing error
-{% include "javascript_includes/override_beforesend.js" %}
-	  $("#mc-embedded-subscribe-form").submit(function(event){	      
-			//stop form from submitting normally
-			event.preventDefault();
-			//Get some values from elements on the page
-    		 var PostDataPrep = $(this).serializeArray(),
-    		     PostData = JSON.stringify(PostDataPrep),
-    		     PostDataMailchimp = $(this).serialize(),
-    		     URLbb = ".",
-    		     URLmailchimp = $(this).attr("action"),
-    		     URLtest = "/test_secondform/";
-    		 
-    		$.ajax(	{
-        		url : URLbb,
-        		contentType: "application/json",
-        		method: "POST",
-            data: PostData,
-
-        success:function(data, textStatus, jqXHR) 
-        {	console.log( 'You successfully posted the PostData' + PostData );  },
-        
-        error: function(xhr, textStatus, thrownError) 
-         {
-         	console.log( 'the PostDataPrep var is' + PostDataPrep );
-         	console.log( 'the PostData var is' + PostData );
-         	console.log( 'the URLbb var is ' + URLbb );
-         	console.log( 'the URLmailchimp var is ' + URLmailchimp );
-          console.log( 'There was an error...error variables shown below');
-    			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
-    			console.log( 'textStatus is:' + textStatus);
-    			console.log( 'thrownError is:' + thrownError);     
-        }, 
-    });
-     
-    //guide: http://pocketproduct.com/2014/a-better-mailchimp-signup/  
-      $.ajax(	{
-        		url : URLmailchimp,       		
-        		type: "GET",
-        		cache: false,
-            data: PostDataMailchimp,
-            cache: false,
-            dataType: "jsonp",
-            jsonp: "c",
-            contentType: "application/json; charset=utf-8", 
-        
-        success:function(data, textStatus, jqXHR) 
-        {	
-        	   console.log( 'You successfully posted to Mailchimp with the PostDataMailchimp:' + PostDataMailchimp ); 
-        	   console.log( 'The data.msg is: ' + data.msg );
-        	   
-        	    if (data.result != "success") {
-                   var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
-                        if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-                            message = "You're already subscribed to the Blocbox Waitlist! <br> If you think this is a mistake please contact us at info@blocbox.co";
-                        }
-              alert(message);   } 
-              else  { window.location.href = "/almostfinished/" }
-         },
-        
-        error: function(xhr, textStatus, thrownError) 
-         {
-         	console.log( 'the PostDataMailchimp var is' + PostDataMailchimp );
-         	console.log( 'the URLmailchimp var is ' + URLmailchimp );
-          console.log( 'There was an error...error variables shown below');
-    			console.log( 'XHR responseText is: ' + xhr.responseText ) ;
-    			console.log( 'textStatus is:' + textStatus);
-    			console.log( 'thrownError is:' + thrownError);     
-        }, 
-    });
-      
-		//$("#ajaxform").submit();
-    //event.unbind(); //unbind. to stop multiple form submit.
-});
-
-</script>
 
  </div>
     <div class="text-center alignbottomdiv mobilehide">

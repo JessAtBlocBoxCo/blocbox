@@ -35,12 +35,15 @@ urlpatterns = patterns('',
     #the transactions subdomain includes all of the start a shipment / start a favor and payment views
  		url(r'^transactions/', include('transactions.urls', namespace='transactions')), #because of the namepsac,e need to reeverse with reverse(payment:)
     url(r'^admin/', include(admin.site.urls)), 
+
     url(r'^signupsimple/host(?P<host_id>\d+)/$', views.signupconnect, name='signupsimple', {'templatename': 'sign-up-simple'} ),
-    url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect' ),
-    url(r'^signupconnect/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)', views.signupconnect, name='signupconnect_referral',),    
+    url(r'^signupsimple/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signupconnect, name='signupsimple_ref', {'templatename': 'sign-up-simple'} ),
+    url(r'^signupconnect/host(?P<host_id>\d+)/$', views.signupconnect, name='signupconnect'),
+    url(r'^signupconnect/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signupconnect, name='signupconnect_ref',),     
+    
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
     url(r'^signup/$', views.signupnoconnect, name='signupnoconnect'), 
-    url(r'^signup/referredby=(?P<referring_user_email>[^/]+)', views.signupnoconnect, name='signupnoconnect_referral'),    
+    url(r'^signup/referredby=(?P<referring_user_email>[^/]+)/$', views.signupnoconnect, name='signupnoconnect_referral'),    
     url(r'^signuphost/$', views.signuphost, name='signuphost'),
     url(r'^abouthosting/', views.abouthosting, name='abouthosting'),
     url(r'^nudgeaneighbor/', views.nudgeaneighbor, name='nudgeaneighbor'),
@@ -48,8 +51,8 @@ urlpatterns = patterns('',
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^almostfinished/$', views.waitlist_almostfinished, name='waitlist_almostfinished'),
     url(r'^joinwaitlist/$', views.joinwaitlist, name='joinwaitlist'),
-    
-    url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)', views.joinwaitlist, name='joinwaitlist_referral'),    
+    url(r'^joinwaitlist_noajax/$', views.joinwaitlist_noajax, name='joinwaitlist_noajax'),
+    url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)/$', views.joinwaitlist, name='joinwaitlist_referral'),    
     url(r'^testsendtomailchimp/user(?P<waitlistuserid>\d+)/$', views.send_form_to_mailchimp, name='test_sentomailchimp'),
     url(r'^waitlistconfirmation/$', views.waitlist_confirmation, name='waitlist_confirmation'),
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well

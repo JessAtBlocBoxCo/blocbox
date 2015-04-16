@@ -31,6 +31,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     email = models.EmailField(max_length=254, unique=True)
     first_name = models.CharField('First Name',max_length=100, blank=True)
     last_name = models.CharField('Last Name', max_length=100, blank=True)
+    full_name = models.CharField('Full Name', max_length=200, blank=True)
     zipcode = models.CharField(max_length =5)
     #Street Address
     st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True)
@@ -125,7 +126,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     customcharthree = models.CharField("Custom CharacterField third version", max_length=100, blank=True, null=True)
     #Referalls Attributed to User
     referredby = models.CharField("Referred By", max_length=254, blank=True, null=True)
-    Referrals_from_user = models.IntegerField("Referrals", blank=True, null=True)
+    Referrals_from_user = models.IntegerField("Referrals Attributed to User - Full Users", blank=True, null=True)
+    Referrals_from_user_waitlist = models.IntegerField("Referrals Attributed to User - Waitlist Only", blank=True, null=True)
     
     #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined

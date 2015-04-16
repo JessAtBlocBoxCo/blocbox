@@ -232,5 +232,18 @@ def attribute_referral(referring_user_email):
         oldcount = 0
     referringuser.Referrals_from_user = newcount
     referringuser.save()
-    message = referring_user_email + " has been given credit for the referral. They formerly had " + str(oldcount) + " Their new count is " + str(newcount)
+    message = referring_user_email + " has been given credit for the full user add. They formerly had " + str(oldcount) + " Their new count is " + str(newcount)
+    return message
+
+def attribute_referral_waitlist(referring_user_email):
+    referringuser = UserInfo.objects.get(email=referring_user_email)
+    oldcount = referringuser.Referrals_from_user_waitlist
+    if oldcount:
+        newcount = oldcount + 1
+    else:
+        newcount = 1
+        oldcount = 0
+    referringuser.Referrals_from_user_waitlist = newcount
+    referringuser.save()
+    message = referring_user_email + " has been given credit for the waitlist add. They formerly had " + str(oldcount) + " Their new count is " + str(newcount)
     return message
