@@ -634,6 +634,10 @@ def signupconnect(request, host_id, referring_user_email=None):
             user.city = zipcode.city
             user.state = zipcode.state
             user.zipcodes_nearby = zipcodes_nearby_json
+            #give all users 1 package credit. if they sign up with a referred by link, give 3 packages credit
+            user.account_balance_packages = 1
+            if referring_user_email:
+                user.account_balance_packages = 3
             user.save()
             #add neighbors nearbyu
             add_neighbors_nearby_task(userid=user.id)
@@ -690,6 +694,9 @@ def signupnoconnect(request, referring_user_email=None):
             user.city = zipcode.city
             user.state = zipcode.state
             user.zipcodes_nearby = zipcodes_nearby_json
+            user.account_balance_packages = 1
+            if referring_user_email:
+                user.account_balance_packages = 3
             user.save()
             #get neighbors nearby
             add_neighbors_nearby_task(userid=user.id)
