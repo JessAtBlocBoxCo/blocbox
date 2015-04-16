@@ -13,7 +13,7 @@ from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
 from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, ResetPassword
-from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral
+from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral, attribute_referral_waitlist
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
 #Add the waitlist app
@@ -859,6 +859,9 @@ def joinwaitlist(request, referring_user_email=None):
         waitlistuser.save()
         #add neighbors nearbyu
         add_neighbors_nearby_waitlist(waitlistid=waitlistuser.id)
+        #Attribute the referral
+        if referring_user_email:
+            attribute_referral(referring_user_email)
         #send_form_to_mailchimp(request, waitlistuser.id)
         message = "Success! You posted data to the user model"                  
     else:
