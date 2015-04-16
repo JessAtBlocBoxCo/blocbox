@@ -5,10 +5,24 @@
 <div class="row-fluid fullheight">
     
 <div class="row">
+	
+{% if registered %}
+	
+	<h2 class="nomargintop signup-padding">Thank you for Registering! <h2>
+      		
+	<h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">  
+				You'll receive a notification when {{ host.first_name }} confirms your request to connect. <br>
+      	In the meantime, <a href="/login/">login to your account</a> to visit your dashboard and update your account preferences and user information.
+	</h3>
+
+
+{% else %}
     <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3 col-lg-4 col-lg-offset-4">
         <div class="promo"></div>
-        <h2 class="nomargintop signup-padding">Sign Up</h2>
-        <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
+        <h2 class="nomargintop signup-padding">Sign Up for Blocbox in {{ host.neighborhood }} </h2>
+        <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">
+            Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood }} Blocbox host.
+        </h3>
 
  				<form class="form-horizontal" role="form" method="post" action="." enctype="multipart/form-data">
         
@@ -16,16 +30,16 @@
             
             <div class="form-group col-xs-12">   
             		{{ user_form.email.errors|striptags}}
-                <input name="email" placeholder="you@example.com" class="form-control input-lg inputbox margintop5pxmobile" type="email">
+                <input name="email" placeholder="YOU@EXAMPLE.COM" class="form-control input-lg inputbox margintop5pxmobile" type="email">
             </div>
              <div class="form-group col-xs-12">  
                 	{{ user_form.full_name.errors|striptags}}
-                    <input name="full_name" placeholder="Full Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    <input name="full_name" placeholder="FULL NAME" class="form-control input-lg inputbox margintop5pxmobile" type="text">
            	</div>
            	
 						<div class="form-group col-xs-12">
             		{{ user_form.st_address1.errors|striptags}}
-                <input name="st_address1" placeholder="Street Address" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                <input name="st_address1" placeholder="STREET ADDRESS" class="form-control input-lg inputbox margintop5pxmobile" type="text">
             </div>
             
             <div class="form-group col-xs-12">
