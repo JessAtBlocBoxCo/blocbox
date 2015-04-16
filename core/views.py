@@ -616,6 +616,9 @@ def signupconnect(request, host_id, referring_user_email=None):
     registered = False 
     hostsignup = False
     usersignup = True
+    attributeuser = False
+    if referring_user_email:
+        attributeuser = True
     if request.method == 'POST': 
         #if its HTTP post, we're interested in processing form data
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
@@ -628,7 +631,6 @@ def signupconnect(request, host_id, referring_user_email=None):
             user.set_password(user.password)	
             #get nearby zips and opulate the city and state
             zipcodeform = user_form.cleaned_data['zipcode']
-            referredby = user_form.cleaned_data['referredby']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
             zipcodes_nearby_json = json.dumps(zipcodes_nearby)
@@ -647,7 +649,7 @@ def signupconnect(request, host_id, referring_user_email=None):
             #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
             requesthasbeensent(request, host.id, user.id)
             #If they were referred, add the count to the user table
-            if referredby:
+            if attributeuser:
                 attribute_referral(referredby)
     	  #Invalid form or forms - print problems to the terminal so they're show to user
     	  else: 
