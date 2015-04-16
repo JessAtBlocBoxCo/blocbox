@@ -9,52 +9,45 @@
         <div class="promo"></div>
         <h2 class="nomargintop signup-padding">Sign Up</h2>
         <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
-        <!--new tip from: http://pocketproduct.com/2014/a-better-mailchimp-signup/
-        	update form aciton to go to subscribe/post-json rather than subscribe-post 
-       <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
-        	method="post"   enctype="multipart/form-data" name="mc-embedded-subscribe-form" 
-        	id="mc-embedded-subscribe-form"  class="paddingsides15px" target="_blank" novalidate> -->
-       
-       <form action="http://blocbox.us8.list-manage.com/subscribe/post-json?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
-        	method="post"   enctype="multipart/form-data" name="mc-embedded-subscribe-form" 
-        	id="mc-embedded-subscribe-form"  class="paddingsides15px" target="_blank" novalidate>
-        	 	
-        <!--	<form action="." method="post"  class="paddingsides15px"  role="form"
-        		enctype="multipart/form-data" name="mc-embedded-subscribe-form"  id="mc-embedded-subscribe-form">  -->
-            
+
+ 				<form class="form-horizontal" role="form" method="post" action="." enctype="multipart/form-data">
+        
             {% csrf_token %} 
             
             <div class="form-group col-xs-12">   
-                <input name="EMAIL" placeholder="EMAIL" class="form-control input-lg inputbox margintop5pxmobile" type="email">
+            		{{ user_form.email.errors|striptags}}
+                <input name="email" placeholder="you@example.com" class="form-control input-lg inputbox margintop5pxmobile" type="email">
             </div>
-            <div class="row">
-                <div class="form-group col-xs-12">  
-                    <input name="FIRST_NAME" placeholder="FIRST NAME" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+             <div class="form-group col-xs-12">  
+                	{{ user_form.full_name.errors|striptags}}
+                    <input name="full_name" placeholder="Full Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+           	</div>
+           	
+						<div class="form-group col-xs-12">
+            		{{ user_form.st_address1.errors|striptags}}
+                <input name="st_address1" placeholder="Street Address" class="form-control input-lg inputbox margintop5pxmobile" type="text">
             </div>
-            </div>
+            
             <div class="form-group col-xs-12">
-            		
+            		{{ user_form.zipcode.errors|striptags}}
                 <input name="ZIPCODE" placeholder="ZIP" class="form-control input-lg inputbox margintop5pxmobile" type="text">
             </div>
-            <div class="form-group col-xs-12">
-            	
+            <div class="form-group col-xs-12">            	
                 <input name="referredby"  class="form-control input-lg inputbox margintop5pxmobile" type="hidden"
                 	value="{{referring_user_email}}">
             </div>
+            
             <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop10px nopaddingmobile waitlistcheck">
                 <div class="checkbox checkbox-success checkbox-inline text-center">
-                		<!--<input type="checkbox" value="1" name="hostinterest" id="id_hostinterest"> -->
-                    <input type="checkbox" value="1" name="group[1689][1]" id="mce-group[1689]-1689-0">
-                       <label for="mce-group[1689]-1689-0"> 
-
+                    <input type="checkbox" name="hostinterest" id="id_hostinterest">
+                       <label for="id_hostinterest"> 
                         <h6 class="nomargin textleft paddingleft10px">I'm interested in helping my neighbors and making some extra money</h6>
                     </label>
                 </div>
-                <!--checkbox -->
             </div>
 
             <div class="col-xs-12 paddingtop20px paddingtop15pxmobile">
-                <input type="submit" value="Join Waitlist" name="subscribe" class="btn-waitlist margintop5px"> <!--name="subscribe" -->
+                <input type="submit" value="Sign Up and Request to Connect" name="submit" class="btn-waitlist margintop5px"> <!--name="subscribe" -->
             </div>
             <!--row -->
 

@@ -629,11 +629,11 @@ def signup(request, host_id=None, referring_user_email=None, templatename = 'sig
     	  if user_form.is_valid(): # Check if the form is valid
             # Save the user's form data to the database
             user = user_form.save()
-            # Now we hash the password with the set_passworth method
-            # Once hashed, we ca update the user object
+            # Now we hash the password with the set_passworth method; Once hashed, we ca update the user object
             user.set_password(user.password)	
             #get nearby zips and opulate the city and state
             zipcodeform = user_form.cleaned_data['zipcode']
+            fullname = user_form.cleaned_data['fullname']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
             zipcodes_nearby_json = json.dumps(zipcodes_nearby)
@@ -644,6 +644,13 @@ def signup(request, host_id=None, referring_user_email=None, templatename = 'sig
             user.account_balance_packages = 1
             if referring_user_email:
                 user.account_balance_packages = 3
+            #Get full name
+            names = fullname.strip(" ")
+            user.first_name = names[0]
+            if len(names) > 1:
+                user.last_name = names[1]
+            if len(names) > 2:
+                user.last_name = names[1] + " " + names[2]
             user.save()
             #add neighbors nearbyu
             add_neighbors_nearby_task(userid=user.id)
@@ -666,119 +673,9 @@ def signup(request, host_id=None, referring_user_email=None, templatename = 'sig
         user_form = UserForm()
     return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup,
     	      	'referring_user_email': referring_user_email, }, context)
- 
-
-#Registration Form -- User 
-def signupconnect(request, host_id, referring_user_email=None, templatename = 'sign-up-connect'):
-    host = get_object_or_404(UserInfo, pk=host_id)
-    context = RequestContext(request)
-    templateloc = 'blocbox/' + templatename + '.html'
-    #a bollean value for telling the template whether the registraiton was successful
-    #set to false initially; code changes value to True when registraiont succeeds
-    registered = False 
-    hostsignup = False
-    usersignup = True
-    if request.method == 'POST': 
-        #if its HTTP post, we're interested in processing form data
-    	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
-    	  user_form = UserForm(data=request.POST)  
-    	  if user_form.is_valid(): # Check if the form is valid
-            # Save the user's form data to the database
-            user = user_form.save()
-            # Now we hash the password with the set_passworth method
-            # Once hashed, we ca update the user object
-            user.set_password(user.password)	
-            #get nearby zips and opulate the city and state
-            zipcodeform = user_form.cleaned_data['zipcode']
-            zipcode = zcdb[zipcodeform]           
-            zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
-            zipcodes_nearby_json = json.dumps(zipcodes_nearby)
-            user.city = zipcode.city
-            user.state = zipcode.state
-            user.zipcodes_nearby = zipcodes_nearby_json
-            #give all users 1 package credit. if they sign up with a referred by link, give 3 packages credit
-            user.account_balance_packages = 1
-            if referring_user_email:
-                user.account_balance_packages = 3
-            user.save()
-            #add neighbors nearbyu
-            add_neighbors_nearby_task(userid=user.id)
-            #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
-            #if 'picture' in request.FILES:
-            #profile.picture = request.FILES['picture']       	      
-            registered = True #Update our variable to tell the template registration was successful        
-            notifyadmin_usersignup(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
-            #send a email to the enduser/ person requesting to connect thakign them for registering and telling them the request was sent
-            requesthasbeensent(request, host.id, user.id)
-            #If they were referred, add the count to the user table
-            if referring_user_email:
-                attribute_referral(referring_user_email)
-    	  #Invalid form or forms - print problems to the terminal so they're show to user
-    	  else: 
-    	      print user_form.errors
-    #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
-    else:
-        user_form = UserForm()
-    #Render the template depending on the context
-    #the template is here: /home/django/blocbox/core/templates/blocbox/blocbox.html
-    return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup,
-    	      	'referring_user_email': referring_user_email, },
-    	      context)
-   	#PASS ARGUMENTS
-		#return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
-
-
-#Registration Form -- User
-def signupnoconnect(request, referring_user_email=None):
-    context = RequestContext(request)
-    #a bollean value for telling the template whether the registraiton was successful
-    #set to false initially; code changes value to True when registraiont succeeds
-    registered = False 
-    hostsignup = False
-    usersignup = True
-    if request.method == 'POST': 
-        #if its HTTP post, we're interested in processing form data
-    	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
-    	  user_form = UserForm(data=request.POST)  
-    	  if user_form.is_valid(): # Check if the form is valid
-    	      # Save the user's form data to the database
-            user = user_form.save()
-    	      # Now we hash the password with the set_passworth method
-    	      # Once hashed, we ca update the user object
-            user.set_password(user.password)
-            zipcodeform = user_form.cleaned_data['zipcode']
-            referredby = user_form.cleaned_data['referredby']
-            zipcode = zcdb[zipcodeform]           
-            zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
-            zipcodes_nearby_json = json.dumps(zipcodes_nearby)
-            user.city = zipcode.city
-            user.state = zipcode.state
-            user.zipcodes_nearby = zipcodes_nearby_json
-            user.account_balance_packages = 1
-            if referring_user_email:
-                user.account_balance_packages = 3
-            user.save()
-            #get neighbors nearby
-            add_neighbors_nearby_task(userid=user.id)      
-            registered = True #Update our variable to tell the template registration was successful  
-            if referring_user_email:
-                attribute_referral(referring_user_email)
-            notifyadmin_usersignup_noconnect(request, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
-    	  else: 
-    	      print user_form.errors    	  
-    #If Not a HTTP POST, so we render our form using ModelForm instances - these forms will be blank, ready for user input
-    else:
-        user_form = UserForm()  
-    return render_to_response(
-            'blocbox/sign-up-withoutconnect.html', 
-    	      {'user_form': user_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup, 'referring_user_email': referring_user_email, },
-    	      context)
-
 
     
-#Registration Form - Host
-#FIGURE OUT - DOES THE HOST NEED TO BE REGISTERED AS UER FIRST? CAN WE IMPORT AL THAT
-#signuphost url is www.blocbox.co/signuphost
+
 def signuphost(request):
     context = RequestContext(request)
     registered = False 

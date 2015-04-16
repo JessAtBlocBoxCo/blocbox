@@ -16,12 +16,12 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = UserInfo
         fields = ('email', 'password', 'password2', 'zipcode', 'hostinterest', 'referredby',
-            'first_name', 'last_name', 'zipcode', 'st_address1', 'st_address2', 
+            'full_name', 'first_name', 'last_name', 'zipcode', 'st_address1', 'st_address2',
             'about_me', 'intro_message', 'pickup_time', 'FBlink', 'imageurl', 'userrating', 'host',
             'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other'
             )
-            #removed: 'city', 'state',
+            #removed: 'city', 'state','first_name', 'last_name', 'st_address2'
  
         
     def clean_password2(self):
