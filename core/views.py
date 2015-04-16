@@ -798,16 +798,24 @@ def confirmconnect_mail(request, hostid, userid, messagetohost, useremail, first
 def notifyadmin_usersignup(request, hostid, userid, messagetohost, useremail, firstname, lastname):
     host = get_object_or_404(UserInfo, pk=hostid)
     enduser = get_object_or_404(UserInfo, pk=userid)
+    referredby = enduser.referredby
+    if referredby:
+    	  ref_message = "The User was referred by " + referredby + "."
+    else:
+      ref_message = None
     message = render_to_string('emails/notifyadmin_usersignup.txt', { 'host': host, 'enduser': enduser, 'emailgreeting': messagetohost, 
-    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname,})
+    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname, 'ref_message': ref_message, })
     subject = "A New User Has Registered (Full User) - With Request to Connect "
     send_mail(subject, message, 'Blocbox User Registration <admin@blocbox.co>', ['admin@blocbox.co',]) 
     return HttpResponse("An email has been sent to admin@blocbox.co notifying the blocbox team of the new user.")
 
 def notifyadmin_usersignup_noconnect(request, userid, messagetohost, useremail, firstname, lastname):
     enduser = get_object_or_404(UserInfo, pk=userid)
+    referredby = enduser.referredby
+    if referredby:
+        ref_message = "The User was referred by " + referredby + "."
     message = render_to_string('emails/notifyadmin_usersignup_noconnect.txt', { 'enduser': enduser, 'emailgreeting': messagetohost, 
-    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname,})
+    	'useremail': useremail, 'firstname':firstname, 'lastname':lastname, 'ref_message': ref_message, })
     subject = "A New User Has Registered (Full User) - No Request to Connect"
     send_mail(subject, message, 'Blocbox User Registration <admin@blocbox.co>', ['admin@blocbox.co',]) 
     return HttpResponse("An email has been sent to admin@blocbox.co notifying the blocbox team of the new user.")
