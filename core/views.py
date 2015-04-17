@@ -633,7 +633,7 @@ def signup(request, host_id=None, referring_user_email=None, templatename = 'sig
             user.set_password(user.password)	
             #get nearby zips and opulate the city and state
             zipcodeform = user_form.cleaned_data['zipcode']
-            fullname = user_form.cleaned_data['fullname']
+            fullname = user_form.cleaned_data['full_name']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
             zipcodes_nearby_json = json.dumps(zipcodes_nearby)
