@@ -645,7 +645,7 @@ def signup(request, host_id=None, referring_user_email=None, templatename = 'sig
             if referring_user_email:
                 user.account_balance_packages = 3
             #Get full name
-            names = fullname.strip(" ")
+            names = fullname.split(" ")
             user.first_name = names[0]
             if len(names) > 1:
                 user.last_name = names[1]
