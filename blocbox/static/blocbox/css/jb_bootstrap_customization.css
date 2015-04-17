@@ -1047,7 +1047,7 @@ footer {
     border-radius: 100px;
     text-align: center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: auto;
    min-width:  40px;
     min-height: 40px;
     cursor: pointer;
