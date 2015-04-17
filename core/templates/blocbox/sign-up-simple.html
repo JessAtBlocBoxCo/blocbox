@@ -27,11 +27,12 @@
 				
  				<form class="form-horizontal" role="form" method="post" action="." enctype="multipart/form-data">
         
-            {% csrf_token %}  {{ user_form.non_field_errors }}
+            {% csrf_token %}  
             
           <div class="row">
             	<div class="col-xs-12 col-sm-6">
             		<div class="form-group">   
+            			{{ user_form.non_field_errors }}
             				{{ user_form.email.errors|striptags}}
                 		<input name="email" placeholder="YOU@EXAMPLE.COM" class="form-control input-lg inputbox margintop5pxmobile" type="email">
             		</div> </div>
