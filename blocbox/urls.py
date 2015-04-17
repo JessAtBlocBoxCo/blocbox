@@ -36,12 +36,14 @@ urlpatterns = patterns('',
  		url(r'^transactions/', include('transactions.urls', namespace='transactions')), #because of the namepsac,e need to reeverse with reverse(payment:)
     url(r'^admin/', include(admin.site.urls)), 
 
+
+    url(r'^signup/$', views.signup, {'templatename': 'sign-up-simple' }, name='signupsimple_noconnect'), 
     url(r'^signup/host(?P<host_id>\d+)/$', views.signup, {'templatename': 'sign-up-simple'}, name='signupsimple', ),
     url(r'^signup/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup,  {'templatename': 'sign-up-simple'}, name='signupsimple_ref', ),
-    url(r'^signuplong/host(?P<host_id>\d+)/$', views.signup, name='signupconnect'),
-    url(r'^signuplong/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, name='signupconnect_ref',),     
     
     url(r'^signuplong/$', views.signup, {'templatename': 'sign-up-withoutconnect' }, name='signupnoconnect'), 
+    url(r'^signuplong/host(?P<host_id>\d+)/$', views.signup, name='signupconnect'),
+    url(r'^signuplong/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, name='signupconnect_ref',),         
     url(r'^signuplong/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, {'templatename': 'sign-up-withoutconnect' }, name='signupnoconnect_referral'),    
     
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
