@@ -1047,9 +1047,10 @@ footer {
     border-radius: 100px;
     text-align: center;
     background-repeat: no-repeat;
-    background-size: auto;
-   min-width:  40px;
-    min-height: 40px;
+    background-size: contain;
+    width:  40px;
+    height: 40px;
+    max-width: 40px;
     cursor: pointer;
     border: 2px solid rgb(255, 255, 255);
     vertical-align: middle;
