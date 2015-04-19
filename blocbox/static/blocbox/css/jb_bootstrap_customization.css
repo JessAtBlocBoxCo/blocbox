@@ -3491,7 +3491,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         font-size: 1.1em;
     }
     .inputbox {
-        border: 2px solid #ffffff;
+        border: 1px solid #ffffff;
         background-color: transparent;
     }
     .content {
