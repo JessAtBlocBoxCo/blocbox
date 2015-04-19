@@ -3,12 +3,12 @@
 {% load staticfiles %} {% block title %} Sign Up for Blocbox {% endblock %} {% block topcontent %}
 
 <div class="row-fluid fullheight">
-    
-<div class="row">
-	
-{% if registered %}
-	
-	<h2 class="nomargintop signup-padding">Thank you for Registering! <h2>
+
+    <div class="row">
+
+        {% if registered %}
+
+        <h2 class="nomargintop signup-padding">Thank you for Registering! <h2>
       		
 	<h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">  
 				You'll receive a notification when {{ host.first_name }} confirms your request to connect. <br>
@@ -23,70 +23,79 @@
         <h3 class="col-xs-12 col-sm-10 col-sm-offset-1 nomargintopbottom paddingbottom20pxnomobile" style="font-size: 1.7em;">
             Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood }} Blocbox host.
         </h3>
-				
-				
- 				<form class="form-horizontal" role="form" method="post" action="." enctype="multipart/form-data">
-        
-            {% csrf_token %}  
-            
-          <div class="row margintop10px">
-              <div class="col-xs-12 col-sm-6"> <div class="form-group col-padd margintopbottom5px">   
-            			{{ user_form.non_field_errors }}
-            				{{ user_form.email.errors|striptags}}
-                		<input name="email" placeholder="You@Example.com" class="form-control input-lg inputbox margintop5pxmobile" type="email">
-            		</div> </div>
-              <div class="col-xs-12 col-sm-6"> 	<div class="form-group col-padd margintopbottom5px">  
-                	{{ user_form.full_name.errors|striptags}}
-                    <input name="full_name" placeholder="Full Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
-           			</div>  </div>
-         </div>
-         
-         
-         <div class="row">         
-             <div class="col-xs-12 col-sm-6"> <div class="form-group col-padd margintopbottom5px">
-                 {{ user_form.password.errors|striptags }}
-                  <input type="password" class="form-control input-lg inputbox margintop5pxmobile" name="password" id="id_password" placeholder="Password">
-          	 </div> </div>             
-             <div class="col-xs-12 col-sm-6"> <div class="form-group col-padd margintopbottom5px">
-									{{ user_form.password2.errors|striptags }}
-                   <input type="password" class="form-control input-lg inputbox margintop5pxmobile" name="password2" id="id_password2" placeholder="Confirm Your Password">
-             </div>  </div>        
-         </div>
-         
-         
-           	
-         <div class="row">
-             <div class="col-xs-12 col-sm-6">
-                 <div class="form-group col-padd margintopbottom5px">
-            		{{ user_form.st_address1.errors|striptags}}
-                <input name="st_address1" placeholder="Street Address" class="form-control input-lg inputbox margintop5pxmobile" type="text">
-            </div> </div>
-            
-            <div class="col-xs-12 col-sm-6">
-                <div class="form-group col-padd margintopbottom5px">
-            		{{ user_form.zipcode.errors|striptags}}
-                <input name="zipcode" placeholder="Zip" class="form-control input-lg inputbox margintop5pxmobile" type="text">
-            </div> </div>
-        </div>
-          <div class="row">
-            <div class="form-group col-xs-12 nomargin">            	
-                <input name="referredby"  class="form-control input-lg inputbox margintop5pxmobile" type="hidden"
-                	value="{{referring_user_email}}">
-            </div>
-            
-              <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0  margintopbottom5px nopaddingmobile waitlistcheck">
-                <div class="checkbox checkbox-success checkbox-inline text-center">
-                    <input type="checkbox" name="hostinterest" id="id_hostinterest">
-                       <label for="id_hostinterest"> 
-                        <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in helping my neighbors and making some extra money</h6>
-                    </label>
+
+
+        <form class="form-horizontal" role="form" method="post" action="." enctype="multipart/form-data">
+
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.non_field_errors }} {{ user_form.email.errors|striptags}}
+                        <input name="email" placeholder="You@Example.com" class="form-control input-lg inputbox margintop5pxmobile" type="email">
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.full_name.errors|striptags}}
+                        <input name="full_name" placeholder="Full Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    </div>
                 </div>
             </div>
 
-              <div class="col-xs-12 col-sm-6  margintopbottom5px paddingtop15pxmobile">
-                <input type="submit" value="SIGN UP AND REQUEST TO CONNECT" name="submit" class="btn-waitlist margintop5px"> <!--name="subscribe" -->
-            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.password.errors|striptags }}
+                        <input type="password" class="form-control input-lg inputbox margintop5pxmobile" name="password" id="id_password" placeholder="Password">
                     </div>
+                </div>
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.password2.errors|striptags }}
+                        <input type="password" class="form-control input-lg inputbox margintop5pxmobile" name="password2" id="id_password2" placeholder="Confirm Your Password">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.st_address1.errors|striptags}}
+                        <input name="st_address1" placeholder="Street Address" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.zipcode.errors|striptags}}
+                        <input name="zipcode" placeholder="Zip" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-xs-12 nomargin">
+                    <input name="referredby" class="form-control input-lg inputbox margintop5pxmobile" type="hidden" value="{{referring_user_email}}">
+                </div>
+
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0  margintopbottom5px nopaddingmobile waitlistcheck">
+                    <div class="checkbox checkbox-success checkbox-inline text-center">
+                        <input type="checkbox" name="hostinterest" id="id_hostinterest">
+                        <label for="id_hostinterest">
+                            <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in helping my neighbors and making some extra money</h6>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6  margintopbottom5px paddingtop15pxmobile">
+                    <input type="submit" value="SIGN UP AND REQUEST TO CONNECT" name="submit" class="btn-waitlist margintop5px">
+                    <!--name="subscribe" -->
+                </div>
+            </div>
             <!--row -->
 
             <div id="mce-responses" class="clear">
@@ -96,18 +105,22 @@
             <!--row-->
         </form>
 
-			</div>
-
-{% endif %}
- </div>
-    
-    <div class="row text-center mobilehide"> <!--alignbottomdiv  -->
-        <a href="#learn">
-        		<br> <br> <br> <br>
-            <p class="whitetext nomargin">LEARN MORE</p>
-            <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
-        </a> 
     </div>
+
+    {% endif %}
+</div>
+
+<div class="row text-center mobilehide">
+    <!--alignbottomdiv  -->
+    <a href="#learn">
+        <br>
+        <br>
+        <br>
+        <br>
+        <p class="whitetext nomargin">LEARN MORE</p>
+        <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
+    </a>
+</div>
 </div>
 
 {% endblock %}
