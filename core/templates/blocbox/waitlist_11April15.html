@@ -13,7 +13,6 @@
 </div>
 
 <div class="row text-center mobilehide" style="padding-top: 120px; margin-bottom: -5px">
-{% if host %}  <h1 class="nomarginbottom">Introducting Blocbox {{ host.neighborhood }} </h1> {% endif %}
     <h1 class="nomarginbottom">Neighbors Helping Neighbors</h1>
 </div>
 
@@ -50,18 +49,7 @@
 <div class="row">
     <!--br class="fontsizehalf">-->
     <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 paddingtop15px margintop30pxnomobile">
-    {% if referring_user_email %}
-    		<!--NOTE THIS MEANS THAT THEY WILL ALWAYS REDIRECT TO SIGNING UP TO CONNECT DO JOHN - WE WILL WANT TO CHANGE THIS WHEN
-    		WE HAVE REFERRALS TO NEW HOSTS -->
-    	{% if host %}  <a type="button" href="/signup/host{{host.id}}/referredby={{referring_user_email}}/" 	class="btn-get-started margintop20pxmobile">Get Started</a> 
-    	{% else %}   <a type="button" href="/signup/host2/referredby={{referring_user_email}}/" class="btn-get-started margintop20pxmobile">Get Started</a>
-      {% endif %}
-    
-    {% else %}
-    	{% if host %} 	<a type="button" href="/signup/host{{host.id}}/" class="btn-get-started margintop20pxmobile">Get Started</a>
-   		{% else %}  <a type="button" href="/joinwaitlist/" class="btn-get-started margintop20pxmobile">Get Started</a>
-   		{% endif %}
-   	{% endif %}
+        <a type="button" href="/joinwaitlist/" class="btn-get-started margintop20pxmobile">Get Started</a>
     </div>
 
 
