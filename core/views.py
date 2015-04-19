@@ -71,8 +71,18 @@ def get_item(dictionary, key):
 #-------------------------------------------------------------------------
 #Waitlist, beta, getting started, about and dashboard/profile pages
 #-------------------------------------------------------------------------
-def waitlist(request):
-    return render(request, 'blocbox/waitlist.html') #loads blocbox/templates/blocbox/waitlist.html 
+
+#NOTE THIS REFERRAL LINK PROGRAM IS BUILT INTO THE WAITLIST PAGE SUCH THAT IT REDIRECT TO JOHN - SIGNUP/HOST2/ - IN FUTURE WILL WANT
+#TO UPDATE THIS IF WE WANT REFERALLS TO HOSTS OTHER THAN JOHN -- SO WE WILL HAVE TO KNOW WHAT HOST THE SUER IS REFERRING TO 
+def waitlist(request, referring_user_email=None, neighborhood=None):
+	  if neighborhood == "clintonhill": 
+        host_id = 2 
+    if host_id:
+        host = get_object_or_404(UserInfo, pk=host_id)
+    else:
+        host = None
+    return render(request, 'blocbox/waitlist.html', { 
+    		'referring_user_email': referring_user_email, 'neighborhood': neighborhood, 'host': host, } ) #loads blocbox/templates/blocbox/waitlist.html 
 
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
@@ -610,7 +620,9 @@ def user_logout(request):
 #Registration Form -- Simple
 
 #Registration Form -- User 
-def signup(request, host_id=None, referring_user_email=None, templatename = 'sign-up-connect'):
+def signup(request, host_id=None, referring_user_email=None, neighborhood=None, templatename = 'sign-up-connect'):
+    if neighborhood == 'clintonhill':
+        host_id = 2 
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
