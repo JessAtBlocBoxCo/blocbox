@@ -157,6 +157,11 @@ a:active {
 }
 /*Style the footer class - fix to bottom of page, make font slightly smaller */
 
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
 .contentbottomonly {
     padding-bottom: 200px;
 }
