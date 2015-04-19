@@ -3537,6 +3537,13 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         left: -20%;
         top: 5%;
     }
+    
+    .promo-3 {
+        height: 120px;
+        width: 120px;
+        left: -20%;
+        top: 5%;
+    }
     .navbar {
         box-shadow: none;
     }
@@ -3684,6 +3691,13 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .promo {
+        height: 90px;
+        width: 90px;
+        left: 3%;
+        top: 3%;
+    }
+    
+    .promo-3 {
         height: 90px;
         width: 90px;
         left: 3%;
@@ -4077,6 +4091,12 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .promo {
+        height: 60px;
+        width: 60px;
+        left: 5%;
+        top: 3%;
+    }
+    .promo-3 {
         height: 60px;
         width: 60px;
         left: 5%;
