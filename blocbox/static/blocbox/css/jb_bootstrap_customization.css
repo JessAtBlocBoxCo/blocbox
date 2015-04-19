@@ -2192,8 +2192,8 @@ body {
     background-size: contain;
     z-index: 100;
     position: absolute;
-    left: -30%;
-    top: 30%;
+    left: -25%;
+    top: 25%;
     margin-left: auto;
     margin-right: auto;
 }
