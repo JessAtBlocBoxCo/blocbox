@@ -4098,7 +4098,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         font-size: 1.3em;
     }
     
-    .col-padd { margin: 0px; padding: 0px; }
+    .col-padd { margin: 0px; padding: 5px; }
 
 }
 /*-------------------------------------------------------------*
