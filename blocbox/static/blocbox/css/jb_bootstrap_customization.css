@@ -1760,6 +1760,10 @@ body {
     color: rgb(255, 203, 19);
 }
 
+.waitsubtext {
+    font-size: 1.7em;
+}
+
 .btn-clear {
     background-color: transparent;
     font-size: 1.10em;
@@ -4088,6 +4092,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         height: 60px;
         margin-left: auto;
         margin-right: auto;
+    }
+    
+    .waitsubtext {
+        font-size: 1.3em;
     }
 
 }
