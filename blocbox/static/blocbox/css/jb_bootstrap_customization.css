@@ -162,6 +162,9 @@ a:active {
     margin: 0 auto;
 }
 
+.col-padd { margin:10px; padding:10px; }
+
+
 .contentbottomonly {
     padding-bottom: 200px;
 }
