@@ -640,6 +640,9 @@ footer {
 .signup-padding {
     padding-top: 110px;
 }
+.register-padding {
+    padding-top: 200px;
+}
 /*Define Generic Border Attributes*/
 
 .borderblack3px {
@@ -4079,6 +4082,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     
     .signup-padding {
         padding-top: 30px;
+    }
+    .register-padding {
+        padding-top: 100px;
     }
     
     .paddingbottom20pxnomobile {
