@@ -77,6 +77,8 @@ def get_item(dictionary, key):
 def waitlist(request, referring_user_email=None, neighborhood=None):
     if neighborhood == "clintonhill": 
         host_id = 2 
+    else:
+        host_id = None
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
