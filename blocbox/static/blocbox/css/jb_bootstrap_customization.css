@@ -561,6 +561,9 @@ footer {
 .paddingbottom100px {
     padding-bottom: 100px;
 }
+.paddingbottom100pxnomobile {
+    padding-bottom: 100px;
+}
 .padding5px {
     padding: 5px;
 }
@@ -3706,6 +3709,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .navbar {
         box-shadow: none;
     }
+    .paddingbottom100pxnomobile {
+        padding-bottom: 0px;
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -3788,6 +3794,9 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     .margintop20pxmobile {
         margin-top: 20px;
+    }
+    .paddingbottom100pxnomobile {
+        padding-bottom: 0px;
     }
     .paddingtop50pxmobile {
         padding-top: 50px;
