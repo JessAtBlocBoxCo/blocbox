@@ -9,7 +9,7 @@ urlpatterns = patterns('',
 		url(r'^$', views.waitlist, name='waitlist'),    #this currently grabs index.html which is the waitlist
 	  url(r'^/referredby=(?P<referring_user_email>[^/]+)/$', views.waitlist, name='waitlist_ref'),
 		url(r'^/bloc=(?P<neighborhood>\w+)/$', views.waitlist, name='waitlist_bloc'),
-		url(r'^/bloc=(?P<neighborhood>\w+)/$', views.waitlist, name='waitlist_ref_bloc'),
+		url(r'^/bloc=(?P<neighborhood>\w+)/referredby=(?<referring_user_email>[^/]+)/$', views.waitlist, name='waitlist_ref_bloc'),
 		url(r'^waitlist/', views.waitlist, name='waitlist'), #also goes to the waitlist
     
     url(r'beta/$', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
