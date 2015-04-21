@@ -2,7 +2,7 @@
 {% extends "blocbox/basewaitlist.html" %}
 
 
-{% load staticfiles %} {% block title %} Introducing Blocbox {% endblock %}
+{% load staticfiles %} {% block title %} Introducing Blocbox {% if host %} {{ host.neighborhood }} {% endif %} {% endblock %}
 
 {% block topcontent %}
 
@@ -13,7 +13,6 @@
 </div>
 
 <div class="row text-center mobilehide" style="padding-top: 120px; margin-bottom: -5px">
-{% if host %}  <h1 class="nomarginbottom">Introducting Blocbox {{ host.neighborhood }} </h1> {% endif %}
     <h1 class="nomarginbottom">Neighbors Helping Neighbors</h1>
 </div>
 
@@ -30,7 +29,9 @@
 <div class="row mobilehide">
     <div class="col-md-8 col-md-offset-2">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 paddingsides20px">
-            <h3 class="nomargin margintop20px" style="font-size: 2.1em">Blocbox lets you reliably receive packages by enlisting your neighborhood to help</h3>	
+            <h3 class="nomargin margintop20px" style="font-size: 2.1em">
+            	Blocbox lets you reliably receive packages by enlisting your neighbors to help. 
+            	{% if host %} Launching soon in {{ host.neighborhood }}. </h3>	
         </div>
         <!--nested col-xs-12 col-sm-10 col-sm-offset-1 -->
     </div>
