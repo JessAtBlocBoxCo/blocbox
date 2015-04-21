@@ -49,7 +49,7 @@ INSTALLED_APPS = (
     'connections',
     'billing',
     'paypal.standard.ipn',
-    'paypaladaptive',
+    #'paypaladaptive',
 		'testing',
 		'waitlist',
 		'django_mailbox',
