@@ -3715,6 +3715,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .paddingbottom100pxnomobile {
         padding-bottom: 0px;
     }
+    .fillviewheight {
+        height: 100vh;
+        min-height: 750px;
+    }
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -4093,7 +4097,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     
     .fillviewheight {
         height: 100vh;
-        min-height: 500;
+        min-height: 750;
     }
     
     .navbar {
