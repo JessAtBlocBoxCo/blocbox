@@ -150,8 +150,12 @@
                                 <label>
                                     <input type="radio" name="payment_option" id="id_bundle" value="bundle10">&nbsp; BUNDLE OF 10</label>
                             </td>
-                            <td>    <p>10 packages (expires in 1 year)</p> </td>
-                            <td>    <p>${{host.price_package_bundle10}}</p>   </td>
+                            <td>
+                                <p>10 packages (expires in 1 year)</p>
+                            </td>
+                            <td>
+                                <p>${{host.price_package_bundle10}}</p>
+                            </td>
                         </tr>
                         <!--bundle10 checkbox-->
 
@@ -161,8 +165,12 @@
                                 <label>
                                     <input type="radio" name="payment_option" id="id_monthly" value="bundle20">&nbsp; BUNDLE OF 20</label>
                             </td>
-                            <td>    <p>20 packages (expires in 1 year)</p> </td>
-                            <td>   <p>${{host.price_package_bundle20}}</p> </td>
+                            <td>
+                                <p>20 packages (expires in 1 year)</p>
+                            </td>
+                            <td>
+                                <p>${{host.price_package_bundle20}}</p>
+                            </td>
                         </tr>
                         <!--monthly checkbox-->
 
@@ -294,10 +302,10 @@
 
         </div>
         <!--row with the calendar-->
-        <div class="col-xs-7"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} 
-					<!--NOTE TO JOHN: THE SUBMIT BUTTON IS ON THAT SUBTEMPLATE -- NEEDS TO BE -->
-        </div>   
-                
+        <div class="col-xs-7"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}
+            <!--NOTE TO JOHN: THE SUBMIT BUTTON IS ON THAT SUBTEMPLATE -- NEEDS TO BE -->
+        </div>
+
         <!-- <p class="col-xs-12 textcenter">Red cells = conflict with package delivery window; grey = host unavailable; blue = package arrival window</p> -->
 
     </div>
