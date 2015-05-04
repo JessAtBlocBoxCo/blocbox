@@ -27,9 +27,9 @@
         </div>
         <!--row-->
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 margintop30px paddingbottom20px">
-   
-   			{% if user.is_authenticated %}
-   						
+
+            {% if user.is_authenticated %}
+
 
             <div class="profilebox">
                 <p class="bluegreytext centerboxheader">Notification Settings</p>
@@ -39,142 +39,140 @@
                         <h6 class="darkgreytext">Email me when:</h6>
                         <p class="greytext">Disable any at anytime</p>
                     </div>
-           					
-                    
-                    
+
+
+
                     <div class="col-sm-9 col-xs-12  paddingtop30px">
-                    	
-                    <!--THE FORM FOR NOTIFICATINO SETTINGS -->
-            				<form role="form" method="post" action="." enctype="multipart/form-data">
-            					
-            					{% csrf_token %} {{ form.non_field_errors }}
-            						
-                        <p class="dashfont darkgreytext marginbottom5px">MY BLOCK</p>
-  
-          
-              		
-              		{{ form.zipcodes_nearby_mileradius.errors }}
-                   <div class="row"> <p class="col-xs-8 col-sm-8 nomargin">When there's a new host in my neighborhood within a:</p>
-                                                       
-   
-                   ``	<div class="col-xs-3 col-sm-3 dropdown margintop5px marginbottom20px nomargintopmobile" id="bs-example-navbar-collapse-1">
-		                    		<select class="form-control-white" name="zipcodes_nearby_mileradius">
-                    		
-                        		<option value="1"> 1 Mile Radius</option> 
-                        		<option selected value="2"> 2 Mile Radius </option>
-                        		<option value="3"> 3 Mile Radius</option>
-                        		<option value="4"> 4 Mile Radius</option>
-                        		<option value="5"> 5 Mile Radius</option>
-                        		<option value="0"> Do Not Notify Me </option>                         
-                    		</select>
-                    	</div>
-                					
-    								</div> <!-- row - notify new host in hood -->
-    					
-    											{{ form.notifyuser_hostnewtask.errors}}
-                        <div class="row">
-                            <p class="col-xs-10 nomargin">When a connected host offers a new task</p>
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox5" type="checkbox" name="notifyuser_hostnewtask" value="True" 
-                                {% if enduser.notifyuser_hostnewtask %} checked {% endif %} > <!--  -->
- 																<label for="inlineCheckbox5"> &nbsp </label>
-                            </div>
-                        </div>
 
-								
-                        <p class="dashfont darkgreytext paddingtop10px marginbottom5px">MESSAGES</p>
-                        <div class="row">
-                        			{{ form.notifyuser_message.errors }}
-                            <p class="col-xs-10 nomargin">When I receive a message from another person on Blocbox</p>
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox7" type="checkbox" name="notifyuser_message" value="True" 
-                                	{% if enduser.notifyuser_message %} checked {% endif %} >
-                                <label for="inlineCheckbox7"> &nbsp </label>
-                            </div>
-        
-                        </div>
+                        <!--THE FORM FOR NOTIFICATINO SETTINGS -->
+                        <form role="form" method="post" action="." enctype="multipart/form-data">
 
-                        <p class="dashfont darkgreytext paddingtop10px marginbottom5px">TRACKING</p>
-                       
-                        
-                        <div class="row">                        	
-                        					{{ form.notifyuser_packagereceived.errors }}  						
-                            <p class="col-xs-10 nomargin">When my package is recieved by my host</p>
-                                                      
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox13" type="checkbox" name="notifyuser_packagereceived" value="True" 
-                                	{% if enduser.notifyuser_packagereceived %} checked {% endif %}>
-                                <label for="inlineCheckbox13"> &nbsp </label>
-                                 
+                            {% csrf_token %} {{ form.non_field_errors }}
+
+                            <p class="dashfont darkgreytext marginbottom5px">MY BLOCK</p>
+
+
+
+                            {{ form.zipcodes_nearby_mileradius.errors }}
+                            <div class="row">
+                                <p class="col-xs-8 col-sm-8 nomargin">When there's a new host in my neighborhood within a:</p>
+
+
+                                ``
+                                <div class="col-xs-3 col-sm-3 dropdown margintop5px marginbottom20px nomargintopmobile" id="bs-example-navbar-collapse-1">
+                                    <select class="form-control-white" name="zipcodes_nearby_mileradius">
+
+                                        <option value="1"> 1 Mile Radius</option>
+                                        <option selected value="2"> 2 Mile Radius </option>
+                                        <option value="3"> 3 Mile Radius</option>
+                                        <option value="4"> 4 Mile Radius</option>
+                                        <option value="5"> 5 Mile Radius</option>
+                                        <option value="0"> Do Not Notify Me </option>
+                                    </select>
+                                </div>
+
                             </div>
-                        </div>
-                                          
-                       
-                        <div class="row">		{{ form.notifyuser_packageships.errors }}
-    			
-                            <p class="col-xs-10 nomargin">When my package ships</p>
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox9" type="checkbox" name="notifyuser_packageships" value="True" 
-                                {% if enduser.notifyuser_packageships %} checked {% endif %} >
-                                <label for="inlineCheckbox9"> &nbsp </label>
-                                
+                            <!-- row - notify new host in hood -->
+
+                            {{ form.notifyuser_hostnewtask.errors}}
+                            <div class="row">
+                                <p class="col-xs-10 nomargin">When a connected host offers a new task</p>
+                                <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                    <input id="inlineCheckbox5" type="checkbox" name="notifyuser_hostnewtask" value="True" {% if enduser.notifyuser_hostnewtask %} checked {% endif %}>
+                                    <!--  -->
+                                    <label for="inlineCheckbox5"> &nbsp </label>
+                                </div>
                             </div>
-                          
-                        </div>
-                       
-           
-                       
-                        
-                        
-                        <div class="row">
-                        	
-                        			{{ form.notifyuser_packageissue.errors }}
-    		
-    						
-                            <p class="col-xs-10 nomargin">When there's a delivery exception</p>
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox11" type="checkbox" name="notifyuser_deliveryexception" value="True" 
-                                		{% if enduser.notifyuser_deliveryexception %} checked {% endif %} >
-                                <label for="inlineCheckbox11"> &nbsp </label>
+
+
+                            <p class="dashfont darkgreytext paddingtop10px marginbottom5px">MESSAGES</p>
+                            <div class="row">
+                                {{ form.notifyuser_message.errors }}
+                                <p class="col-xs-10 nomargin">When I receive a message from another person on Blocbox</p>
+                                <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                    <input id="inlineCheckbox7" type="checkbox" name="notifyuser_message" value="True" {% if enduser.notifyuser_message %} checked {% endif %}>
+                                    <label for="inlineCheckbox7"> &nbsp </label>
+                                </div>
+
                             </div>
-                        </div>
-                        
-                        
-                        
-     
-												
-													
-                        <p class="dashfont darkgreytext paddingtop10px marginbottom5px">GENERAL</p>
-                        <div class="row">
-                        	
-                        		{{ form.notifyuser_blocboxnews.errors }}
-                        		
-                            <p class="col-xs-10 nomargin">About general promotions, updates, and news about Blocbox, along with user surveys and assorted forms of love from Blocbox</p>
-                            <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
-                                <input id="inlineCheckbox15" type="checkbox" name="notifyuser_blocboxnews" value="True" 
-                                	{% if enduser.notifyuser_blocboxnews %} checked {% endif %}>
-                                <label for="inlineCheckbox15"> &nbsp </label>
-                                
+
+                            <p class="dashfont darkgreytext paddingtop10px marginbottom5px">TRACKING</p>
+
+
+                            <div class="row">
+                                {{ form.notifyuser_packagereceived.errors }}
+                                <p class="col-xs-10 nomargin">When my package is recieved by my host</p>
+
+                                <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                    <input id="inlineCheckbox13" type="checkbox" name="notifyuser_packagereceived" value="True" {% if enduser.notifyuser_packagereceived %} checked {% endif %}>
+                                    <label for="inlineCheckbox13"> &nbsp </label>
+
+                                </div>
                             </div>
-                        </div>
-                        
-                        <!--SAVE BUTTON-->
-                         <div>
-                         			<br>
-              							  <button type="submit" name="submit" class="bluebutton marginsides15px">Update Preferences</button>
-            							</div>
-            
-                    </form>
-                    
-                    
+
+
+                            <div class="row"> {{ form.notifyuser_packageships.errors }}
+
+                                <p class="col-xs-10 nomargin">When my package ships</p>
+                                <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                    <input id="inlineCheckbox9" type="checkbox" name="notifyuser_packageships" value="True" {% if enduser.notifyuser_packageships %} checked {% endif %}>
+                                    <label for="inlineCheckbox9"> &nbsp </label>
+
+                                </div>
+
+                            </div>
+
+
+
+
+
+                            <div class="row">
+
+                                {{ form.notifyuser_packageissue.errors }}
+
+
+                                <p class="col-xs-10 nomargin">When there's a delivery exception</p>
+                                <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                    <input id="inlineCheckbox11" type="checkbox" name="notifyuser_deliveryexception" value="True" {% if enduser.notifyuser_deliveryexception %} checked {% endif %}>
+                                    <label for="inlineCheckbox11"> &nbsp </label>
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <p class="dashfont darkgreytext paddingtop10px marginbottom5px">GENERAL</p>
+                            <div class="row">
+
+                                {{ form.notifyuser_blocboxnews.errors }}
+
+                                <p class="col-xs-10 nomargin">About general promotions, updates, and news about Blocbox, along with user surveys and assorted forms of love from Blocbox</p>
+                                <div class="col-xs-1 col-xs-offset-1 checkbox checkbox-info checkbox-inline checkbox-circle active paddingbottom5px bluegreytext">
+                                    <input id="inlineCheckbox15" type="checkbox" name="notifyuser_blocboxnews" value="True" {% if enduser.notifyuser_blocboxnews %} checked {% endif %}>
+                                    <label for="inlineCheckbox15"> &nbsp </label>
+
+                                </div>
+                            </div>
+
+                            <!--SAVE BUTTON-->
+                            <div>
+                                <br>
+                                <button type="submit" name="submit" class="bluebutton marginsides15px">Update Preferences</button>
+                            </div>
+
+                        </form>
+
+
                     </div>
-                    
-                                       
+
+
                 </div>
             </div>
         </div>
-       
-       	{% else %}
+
+        {% else %}
         <!--if user is not authenticated-->
         <div class="col-xs-12 col-sm-10 col-sm-offset-1">
             <div class="col-xs-12 dashbox">
@@ -191,8 +189,8 @@
             </div>
             <!--col-xs12 dashbox-->
         </div>
-     		<!--close if user is not authenticated-->
-      {% endif %}
+        <!--close if user is not authenticated-->
+        {% endif %}
     </div>
 </div>
 {% endblock %}
