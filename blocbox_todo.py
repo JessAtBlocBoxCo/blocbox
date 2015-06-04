@@ -1,9 +1,12 @@
 
 "PRIORITIES: MUST HAPPEN BEFORE JOHN-ONLY BETA"
 1. Jess makes new urls 
-2. Jess makes list of minimal site tasks
-3. John writes email
-4. 
+2. Jess needs to fix the dashboard
+3. Jess makes list of minimal site tasks
+3. John sends email
+4. John drafts nextdoor
+5. John sends nextdoor
+
 
 
 
