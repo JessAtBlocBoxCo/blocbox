@@ -31,7 +31,10 @@
         <div class="col-xs-12 col-sm-12  col-lg-10 col-lg-offset-1 paddingsides20px">
             <h3 class="nomargin margintop20px" style="font-size: 2em">
             	Blocbox lets you reliably receive packages by enlisting your neighbors to help. 
-            	{% if host %} Launching soon in {{ host.neighborhood }}. {% endif %} </h3>	
+            	{% if neighborhood_text %} Launching soon in {{ neighborhood_text }}. 
+                {% else %}   
+                     {% if host_id %} Launching soon in {{ host.neighborhood }}.
+                {% endif %} </h3>	
         </div>
         <!--nested col-xs-12 col-sm-10 col-sm-offset-1 -->
     </div>

@@ -83,8 +83,15 @@ def waitlist(request, referring_user_email=None, neighborhood=None):
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
         host = None
+    if neighborhood == "clintonhill":
+        neighborhood_text = "Clinton Hill"
+    elif neighborhood == "brooklyn":
+        neighborhood_text = "Brooklyn, NY"
+    else:
+        neighborhood_text = None
     return render(request, 'blocbox/waitlist.html', { 
-    		'referring_user_email': referring_user_email, 'neighborhood': neighborhood, 'host': host, } ) #loads blocbox/templates/blocbox/waitlist.html 
+    		'referring_user_email': referring_user_email, 'neighborhood_text': neighborhood_text, 
+            'neighborhood': neighborhood, 'host': host, } ) #loads blocbox/templates/blocbox/waitlist.html 
 
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
