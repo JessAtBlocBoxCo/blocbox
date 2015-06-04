@@ -1,7 +1,15 @@
-www.
+
 "PRIORITIES: MUST HAPPEN BEFORE JOHN-ONLY BETA"
+1. Jess makes new urls 
+2. Jess makes list of minimal site tasks
+3. John writes email
+4. 
+
+
+
+3.
 2. NEXT DOOR POST. 
-3. BODEGA - APPROACH SOME -- tomorow en route out of how / 
+
 4. BRAINSTORMING next step for user acquisition: handing out at post office
 1. LANDING/SIGN IN
 2. SHIPMENT PROCESS AND PAYMENT PROCESS
