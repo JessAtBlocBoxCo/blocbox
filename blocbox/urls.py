@@ -10,7 +10,6 @@ urlpatterns = patterns('',
 	  url(r'^referredby=(?P<referring_user_email>[^/]+)/$', views.waitlist, name='waitlist_ref'),
 		url(r'^bloc=(?P<neighborhood>\w+)/$', views.waitlist, name='waitlist_bloc'),
 		url(r'^bloc=(?P<neighborhood>\w+)/referredby=(?P<referring_user_email>[^/]+)/$', views.waitlist, name='waitlist_ref_bloc'),
-        url(r'^bloc=brooklyn/$', views.waitlist, {'host_id': 2}, name='waitlist_brooklyn'),
 		url(r'^waitlist/', views.waitlist, name='waitlist'), #also goes to the waitlist
     # url(r'^signup/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup,  {'template
     
