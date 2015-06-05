@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'core',
     'transactions',
-    'south',   
+    #'south',   
     #'djcelery',
     #'kombu.transport.django',
     'password_reset',
