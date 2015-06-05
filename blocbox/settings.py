@@ -205,5 +205,5 @@ MEDIA_URL = '/static/user_uploads/'
 
 
 #import celery and set it up - should be at very bottom of settings file
-import djcelery
-djcelery.setup_loader()
+#import djcelery
+#djcelery.setup_loader()
