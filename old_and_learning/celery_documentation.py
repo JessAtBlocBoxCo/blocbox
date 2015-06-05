@@ -11,13 +11,25 @@
 	blocbox/blocbox/settings.py - CELERYBEAT_SCHEDULE
 
 #CHECK VERSION OF CELERYT
-
+celery --VERSION #3.1.17 -- the newest is 3.1.17
+#UPGRADING CELERYT
+pip install -U celery
 
 #START THE CELERY BEAT
 $ celery -A blocbox beat #START THE SCHEDULER, I THINK THIS MIGHT BE THE SAME AS $celerybeat
 #START NEW TERIMANL;start a worker in another terminal
 python manage.py celery worker --loglevel=INFO
 
+#runnign as daemon - i created thes tthree configures - THIS STARTS THE SCHEDULER, 
+#but it doesn't actually start a worker
+$ su jess #NEED TO RUN AS JESS
+$ cd /etc/default
+$ celeryd  #/etc/default/celeryd
+
+
+#STOPPING IT
+/etc/init.d/celerybeat stop #stop it
+/etc/init.d/celeryd stop
 
 #CHECK IF ITS RUNNING
 /run/celery/beat.pid/
@@ -32,11 +44,7 @@ python manage.py celery worker --loglevel=INFO
 
 #RUNNING CELERBYEAT AND WORKER AS DEAMON - THESE DO NOT APPEAR TO EXIT
 
-#runnign as daemon - i created thes tthree configures - THIS STARTS THE SCHEDULER, 
-#but it doesn't actually start a worker
-$ su jess #NEED TO RUN AS JESS
-$ cd /etc/default
-$ celeryd  #/etc/default/celeryd
+
 
 
 
@@ -46,7 +54,7 @@ $ celeryd  #/etc/default/celeryd
 /etc/init.d/celeryd start
 /etc/init.d/celerybeat start #start it
 /etc/init.d/celerybeat stop #stop it
-
+/etc/init.d/celeryd stop
 #STOPPING IT
 /etc/init.d/celerybeat stop #stop it
 
