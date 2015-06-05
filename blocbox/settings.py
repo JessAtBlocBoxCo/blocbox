@@ -38,7 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'core',
     'transactions',
-    #'django_cron',
+    'django_cron',
     #'south',   
     #'djcelery',
     #'kombu.transport.django',
