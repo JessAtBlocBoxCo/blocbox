@@ -1,0 +1,46 @@
+/*	this is blocbox/static/blocbox/css/jb_boostrap_customization.css
+		to override the settings in bower_components/bootstrap/dist/css/boostrap.css
+		for guidancce, see: 	http://bootstrapbay.com/blog/customize-bootstrap/
+		
+		Some notes on customization
+		1. we need to load the customized CSS sheet after we load boostrap.min.css to enable the overrides (e.g., in the head of the html file)
+		2. to customize the style, just re-define the style here. dont add your own style names - use the boostrap style names, with customized properties
+				e.g., the following lines of code will remove the border-radius around ".btn" but keep everythign else the same 
+				
+				.btn {
+						border-radius: 0px;
+				}
+		
+		3. i've started some customizations below
+		
+*/
+
+html {
+  font-family: brandon-grotesque;
+}
+
+
+body {
+  background-color: rgb(250, 250, 250);
+  font: 300 1.125em/1.38 brandon-grotesque;
+  color: rgb(71, 82, 93);
+}
+
+/*	JMY adding background colors - can add this on to any div/container 
+		to save space i'm doing these on one line, but you can expand to multi-line if want to add other attriobutes
+*/
+
+.orangebackground {background-color: rgb(255, 203, 19);} /*Hex Equiv:  #FFCB13 */
+
+.bluebackground {	background-color: rgb(52, 152, 219);	} /*HEX Equiv: #3498DB, starts before 'stop missing packages" */
+
+.darkbluebackground {	background-color: rgb(41, 128, 185);	} /*HEX Equiv: #2980B9, the color that starts before "beyond packages"*/
+
+.greenbackground { background-color: #2ecc71;} /*become a blocbox host, etc */
+
+.offwhitebackground { background-color: rgb(250, 250, 250);	} /*Hex equiv: #FAFAFA */
+
+.whitebackgroud { background-color: rgb(255, 255, 255); } /*HEX equiv: #FFFFFF*
+
+}
+
