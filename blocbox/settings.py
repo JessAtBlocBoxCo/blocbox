@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'transactions',
     'south',   
     'djcelery',
-    'django_cron',
+    #'django_cron',
     'kombu.transport.django',
     'password_reset',
     'django_messages',
