@@ -1,3 +1,67 @@
+#TO FORCE IT TO RUN
+
+
+#TASK SETS
+1. core/usertasks.py -- these are tasks to updat ethe user model mostly
+	CALL WITH - e.g., python; from core import usertasks; usertasks.get_zipcodes_nearby(2)
+2. transactions/watchpackages.py -- key one - the function we're intersted in is "main"
+	CALL MAIN WITH python; from transactions import watch_packages; watch_packages.main()
+
+#WHERE I TELL CELERY WHAT TASKS TO RUN:
+	blocbox/blocbox/settings.py - CELERYBEAT_SCHEDULE
+
+#CHECK VERSION OF CELERYT
+
+
+#START THE CELERY BEAT
+$ celery -A blocbox beat #START THE SCHEDULER, I THINK THIS MIGHT BE THE SAME AS $celerybeat
+#START NEW TERIMANL;start a worker in another terminal
+python manage.py celery worker --loglevel=INFO
+
+
+#CHECK IF ITS RUNNING
+/run/celery/beat.pid/
+/var/run/celery/beat.pid/
+/var/log/celery/beat.log/
+/var/log/celery/w1.log/
+
+#DEALING WITH PIDBOX IN USE ISSUE
+
+
+
+
+#RUNNING CELERBYEAT AND WORKER AS DEAMON - THESE DO NOT APPEAR TO EXIT
+
+#runnign as daemon - i created thes tthree configures - THIS STARTS THE SCHEDULER, 
+#but it doesn't actually start a worker
+$ su jess #NEED TO RUN AS JESS
+$ cd /etc/default
+$ celeryd  #/etc/default/celeryd
+
+
+
+/etc/default/celerybeat #but dont need this - just combine with celeryd
+/etc/conf.d/celery
+
+/etc/init.d/celeryd start
+/etc/init.d/celerybeat start #start it
+/etc/init.d/celerybeat stop #stop it
+
+#STOPPING IT
+/etc/init.d/celerybeat stop #stop it
+
+
+#PSLQ
+tables: task state (on admin) = celery_taskmeta on the PSQL DJANGO back end
+#I GOT A FLOOD OF TASKS - HOW TO DELETE HELLA TASKS FROM THAT TASK_STATES EMAIL
+django; DELETE FROM celery_taskmeta WHERE id>6000; #etc... #result is 20 for add task
+
+#WHERE AM I DESIGNING THEA DMIN PANEL FOR DJCELERY - THOSE TABLES?
+
+#TO RUN THE SCHEDULER IN BACKGROUND
+#ON THE ADMIN PANEL
+task states is the importantone
+
 #url
 https://pypi.python.org/pypi/django-celery
 	
@@ -69,6 +133,7 @@ In a production environment you will want to run the worker in the background as
 see Running the worker as a daemon - but for testing and development it is useful to be able to start a worker instance by using the celery worker manage command, much as you would use Django’s runserver:
 
 $ celery -A blocbox worker -l info  #thats an "L" lowercase not a 1
+
 
 
 
@@ -244,3 +309,4 @@ var/run/celery
 
 /etc/init.d/celerybeat_d start #start it
 /etc/init.d/celerybeat_d stop #stop it
+
