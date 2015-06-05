@@ -40,7 +40,7 @@ INSTALLED_APPS = (
     'transactions',
     'south',   
     #'djcelery',
-    'kombu.transport.django',
+    #'kombu.transport.django',
     'password_reset',
     'django_messages',
     'dateutil',
