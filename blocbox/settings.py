@@ -76,6 +76,11 @@ CELERYBEAT_SCHEDULE = {
         'task': 'tasks.watch_packages',
         'schedule': timedelta(minutes=30),
     },
+       'add_every_30_minutes': {
+        'task': 'tasks.add',
+        'schedule': timedelta(minutes=30),
+        'args': (10,10) 
+    },
 }   
 
 """
@@ -86,10 +91,7 @@ CELERYBEAT_SCHEDULE = {
     	  'schedule': timedelta(minutes=30),
     	  'args': (1,2,170)
 		},
-   'add_every_10_minutes': {
-        'task': 'tasks.add',
-        'schedule': timedelta(minutes=10),
-        'args': (10,10) },
+
 
 """
 
