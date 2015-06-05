@@ -48,7 +48,8 @@ INSTALLED_APPS = (
     'schedule',
     'calendar_homebrew',
     'connections',
-    'billing',
+    #JMy removing billin on 5 July 2015 - not really using it and throwing errors
+    #'billing',
     'paypal.standard.ipn',
     #'paypaladaptive',
 		'testing',
