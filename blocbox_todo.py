@@ -1,12 +1,17 @@
 
 "PRIORITIES: MUST HAPPEN BEFORE JOHN-ONLY BETA"
-1. Jess makes new urls 
-2. Jess needs to fix the dashboard
 3. Jess makes list of minimal site tasks
-3. John sends email
-4. John drafts nextdoor
-5. John sends nextdoor
+4. John Fixes sign up
+5. John restarts FB ads
+6. John makes/prints flyer to attach to notices
+7. John tests FB ads
 
+"JESS LIST OF MINIMAL TASKS NEED TO BE DONE BEFORE SEND PACKAGES"
+1. Fix search page
+2. payment
+3. Celery: Make sure it is automatically checking and sending emails for tracking updates
+4. should be more responsive
+5. Production Environment (???)
 
 
 
