@@ -2207,6 +2207,20 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
+.promo-free {
+    background-image: url('/static/blocbox/images/promo-free.png');
+    height: 120px;
+    width: 120px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 100;
+    position: absolute;
+    left: -15%;
+    top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 /*-------------------------------------------------------------*
 * SEARCH PAGE STYLES
