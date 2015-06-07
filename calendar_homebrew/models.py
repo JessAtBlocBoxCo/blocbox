@@ -9,7 +9,8 @@ from django.core.urlresolvers import reverse
 from django.utils.translation import ugettext_lazy as _
 from django.template.defaultfilters import slugify
 import datetime
-from schedule.utils import EventListManager
+#JMY removing reference to the schedule app - moved to old on 7 June 2015
+#from schedule.utils import EventListManager
 from django.utils import timezone
 from django.conf import settings
 
