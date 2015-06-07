@@ -58,13 +58,22 @@
     {% if referring_user_email %}
     		<!--NOTE THIS MEANS THAT THEY WILL ALWAYS REDIRECT TO SIGNING UP TO CONNECT DO JOHN - WE WILL WANT TO CHANGE THIS WHEN
     		WE HAVE REFERRALS TO NEW HOSTS -->
-    	{% if host %}  <a type="button" href="/signup/host{{host.id}}/referredby={{referring_user_email}}/" 	class="btn-get-started margintop20pxmobile">Get Started</a> 
-    	{% else %}   <a type="button" href="/signup/host2/referredby={{referring_user_email}}/" class="btn-get-started margintop20pxmobile">Get Started</a>
+    	{% if neighborhood %}  
+                 <a type="button" href="/joinwaitlist/{{ neighborhood }}/referredby={{referring_user_email}}/"   class="btn-get-started margintop20pxmobile">Get Started</a> 
+        <!-- <a type="button" href="/signup/host{{host.id}}/referredby={{referring_user_email}}/" 	class="btn-get-started margintop20pxmobile">Get Started</a> --> 
+
+    	{% else %}   
+             <a type="button" href="/joinwaitlist/referredby={{referring_user_email}}/" class="btn-get-started margintop20pxmobile">Get Started</a> -->
+                <!-- <a type="button" href="/signup/host2/referredby={{referring_user_email}}/" class="btn-get-started margintop20pxmobile">Get Started</a> -->
       {% endif %}
     
     {% else %}
-    	{% if host %} 	<a type="button" href="/signup/host{{host.id}}/" class="btn-get-started margintop20pxmobile">Get Started</a>
-   		{% else %}  <a type="button" href="/joinwaitlist/" class="btn-get-started margintop20pxmobile">Get Started</a>
+    	{% if neighborhood %} 	
+            <a type="button" href="/joinwaitlist/{{ neighborhood }}/" class="btn-get-started margintop20pxmobile">Get Started</a> -->
+        <!-- FORMERLY - IF HOST <a type="button" href="/signup/host{{host.id}}/" class="btn-get-started margintop20pxmobile">Get Started</a> -->
+   		{% else %} 
+                <a type="button" href="/joinwaitlist/" class="btn-get-started margintop20pxmobile">Get Started</a> 
+            <!-- FORMERLY -IF HOST - WENT TO FULL SIGN UJP <a type="button" href="/joinwaitlist/" class="btn-get-started margintop20pxmobile">Get Started</a> -->
    		{% endif %}
    	{% endif %}
     </div>
