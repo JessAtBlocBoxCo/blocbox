@@ -202,7 +202,7 @@ class PayPalStandardBase(Model):
 
     # JMY updating ipaddress field per django telling me - this field will be deprecated in Django 1.9
     #ipaddress = models.IPAddressField(blank=True)
-    ipaddress = models.GenericIPAddressField(blank=True)
+    ipaddress = models.GenericIPAddressField(null=True, blank=True)
     flag = models.BooleanField(default=False, blank=True)
     flag_code = models.CharField(max_length=16, blank=True)
     flag_info = models.TextField(blank=True)
