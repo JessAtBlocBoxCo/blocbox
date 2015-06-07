@@ -7,6 +7,8 @@
 6. John makes/prints flyer to attach to notices
 7. John tests FB ads
 
+JOHN JOB SEARCHES EACH DAY BEFORE SITE WORK
+
 "JESS LIST OF MINIMAL TASKS NEED TO BE DONE BEFORE SEND PACKAGES"
 1. Fix search page
 2. payment
