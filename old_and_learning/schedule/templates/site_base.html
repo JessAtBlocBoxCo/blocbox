@@ -1,0 +1,65 @@
+<!--this is /schedule/templates.site_base.html, it extends blocbox/base.html, ULR  is www.blocbox.co/scheduling
+		it is extended by /schedule/templates/schedule/base.html-->
+{% extends "blocbox/base.html" %}
+{% load i18n %}
+{% block title %}Scheduling Site Base{% endblock %}
+
+<!--commenting this stuff out from the origin site_base.html 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{% if site_name %}{{ site_name }} : {% endif %}{% block head_title %}{% endblock %}</title>
+ -->           
+       
+               
+{% block headafter %}	 <!--this stuff was in the origin site_base.html file that came with the django_scheduler package, may not be needed -->
+        {% if LANGUAGE_BIDI %}
+        <style type="text/css" media="screen">
+            div.right_panel {  float: left; /* hotfix for sidebar */ }
+        </style>
+        {% endif %}
+        {% block extra_head %}
+        {% endblock %} 
+       <!--[if IE]><style>
+            div {
+                zoom: 1; /* trigger hasLayout */
+            }
+        </style><![endif]-->       
+{% endblock %}
+    
+{% block content %}
+		
+		<br>
+
+		<div class="container-fluid content"> <!--this is divider in templates/site_base.html-->
+        	<div class="row"> <!--row div in templates/site_base.html-->
+            {% if messages %}
+                <ul id="messages">
+                    {% for message in messages %}
+                    		<li id="message_{{ forloop.counter }}">
+                    				<a href="#" onclick="$('#message_{{ forloop.counter }}').fadeOut(); return false;">
+                    				<small>{% trans "clear" %}</small>
+                    				</a> {{ message }}
+                    		</li>
+                    {% endfor %} <!--for message in messages-->
+                </ul>
+            {% endif %} <!--if messages-->
+
+            {% block body %}
+            	<!--this is filled in by the templates in schedule/templates/shedule directory -->
+            {% endblock %}
+
+				</div> <!--row-->
+				
+				<!--adding empty rows to block footer 
+				<h2><br><br><br> <br><br><br><br></h2>
+				-->
+					
+
+					
+		</div> <!--end div in templates/site_base.html-->
+
+
+
+{% endblock %} <!--end content block -->

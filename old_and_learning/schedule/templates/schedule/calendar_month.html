@@ -1,0 +1,44 @@
+<!--this is /schedule/templates/schedule/calendar_month.html, it extends schedule/base.html, url is www.blocbox.co/scheduling/calendar/month/[calendarname] -->
+
+{% extends "schedule/calendarbase.html" %}
+{% load scheduletags i18n %}
+{% include "schedule/_dialogs.html" %}
+
+{% block title %} Calendar - Monthly View {% endblock %}
+
+	
+
+	
+
+
+{% block calendarcontent %}
+			<div class="tablewrapper">
+						<h3 align="center">{{ calendar.name }}</h4>			  		
+			  		{% month_table calendar periods.month "regular" %}
+			</div> <!--tablewrapper-->
+{% endblock %}
+
+	
+{% block bottomnavcalendar %} 
+
+  		<a href="{% url "bi_month_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+  		  {% trans "Bi-Monthly Calendar" %}
+  		</a>
+  		<a>&nbsp;</a>
+  		<a href="{% url "year_calendar" calendar.slug %}{% querystring_for_date periods.month.start 1 True %}">
+  		  {% trans "Full Year Calendar" %}
+  		</a>
+  		
+  		<!--for testing/code reference - delete when live-->
+  		<br><br>
+  		<h4>[Here for Testing in the calendar_month.html template]: Calendar Period: 
+  			<!--prevnext defined in scheduletags.py, calls _prevnext.html template, syntax:
+  					syntax: def prevnext(target, slug, period, fmt=None), so month_calendar - target, calendar.slug is the slug, periods.month is the period -->
+  			{% prevnext "month_calendar" calendar.slug periods.month "F Y" %}  
+  			Periods.Month: {{ periods.month }} <br> <!--defined in views.calendar_by_periods-->
+				Date.Year: {{ date.year }} <br>
+				Month.Start: {{ month.start }} <br> <!--defined in scheduletags.month_table-->
+				Month.Year:  <br> <!--defined in scheduletags.month_table THIS WORKDS - shows 2014-->
+  		</h4>
+  		
+{% endblock %} <!--bottomnavcalendar-->

@@ -1,0 +1,36 @@
+<!--this is _daily_table.html, JMY surgery on 19 Dec 2014, its rendered by calendar_day.html to populate each cell
+		the view is defined in scheduletags.dailytable-->
+{% load scheduletags %}
+  <div class="col-xs-12 slots">
+    {% for slot in slots %} <!--the way i am defining it there is only one slot each time its called -->
+    		<div class="row">
+    				<!--the time is wrong here - if put in "16/4PM it registers as 8AM"
+    					JMY edited this by adding the timedinwo_name argumetn to avoid the UTC issue - the time windows are defined in calendar_day.hjtml-->
+						{% if timewindow_name %} <span>  {{ timewindow_name }}  </span> {% endif %} <!-- {{ slot.start|time:"G:i" }} -->
+						<!--this link calls the _creat_event_options.html template that i've edited to say "Enter an Availability Conflict"-->
+      			{% if addable %} 	{% create_event_url calendar slot.start %}	{% endif %}
+    		</div> <!--row-->
+    {% endfor %}
+  </div> <!--col containing all slots-->
+  
+  <div class="col-xs-12 occs">
+  	<br>
+
+  {% if occurrences %}
+  	{% for occ in occurrences %}
+      	<div href="#{% hash_occurrence occ %}" class="occ type{{occ.cls}}{% if occ.cancelled %} cancelled{% endif %}" onclick="openDetail(this);">
+      				<!-- style="top:{{occ.top}}px;left:{{occ.left}}px;width:{{occ.width}}px;height:{{occ.height}}px;">-->
+      	
+       				<!--	this the title of the current event and the 'options' tag which loads 'edit event' 'delete evet' etc
+       					the options stuff is defined in -->
+       				<p> Current Conflict:  {% title occ %} {% options occ %}  </p>
+      	</div> <!--href-->
+      
+      
+      	<!--this div lists full event details - the display: none style tag hides it -->
+      	<div id="{% hash_occurrence occ %}" style="display:none;" >   {% include 'schedule/_detail.html' with occurrence=occ %} </div>
+      
+  	{% endfor %} <!--end for each occurence-->
+  {% else %} <div><p> You have not entered any conflicts and are currently shown as available to receive packages on {% prevnext "day_calendar" calendar.slug periods.day "l, F d, Y" %}  </p></div> 
+  {% endif %}	
+  </div> <!--col-->
