@@ -22,7 +22,8 @@ from connections.models import Connection
 from core.forms import UserForm, HostForm
 from transactions.models import Transaction
 #billing and payment stuff to import
-from billing import gateway, CreditCard
+#bIilling was removed
+#from billing import gateway, CreditCard
 from paypal.standard.forms import PayPalPaymentsForm
 #from paypal.standard.ipn import views
 #import new homebrew calendar jazz
