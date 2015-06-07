@@ -1,5 +1,7 @@
 import os
 import sys
+import django
+django.setup()
 from django.conf import settings
 path = '/home/django/blocbox'
 if path not in sys.path:
