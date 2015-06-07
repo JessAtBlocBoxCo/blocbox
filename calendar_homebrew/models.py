@@ -1,7 +1,8 @@
 #This is blocbox.calendar_homeless.models.py
 from django.db import models
 import pytz
-from django.contrib.contenttypes import generic
+#JMY removing line 'from django.contrib.contenttypes improt generic - because will be deprecated in Django 1.9 and not used'
+#from django.contrib.contenttypes import generic
 from django.db import models
 from django.db.models import Q
 from django.contrib.contenttypes.models import ContentType
