@@ -844,7 +844,12 @@ def waitlist_almostfinished(request):
 		return render(request, 'blocbox/almost-finished.html')
     
 
-def joinwaitlist(request, referring_user_email=None, neighborhood=None):	 
+def joinwaitlist(request, referring_user_email=None, neighborhood=None):	
+    neighborhood_text = None
+    if neighborhood == 'clintonhill':
+       neighborhood_text = "Clinton Hill"
+    if neighborhood == 'brooklyn':
+        neighborhood_text = "Brooklyn"
     if request.method == 'POST':  
     #if request.is_ajax():   	
         #formresponse = QueryDict(request.body)
@@ -877,7 +882,8 @@ def joinwaitlist(request, referring_user_email=None, neighborhood=None):
         message = "Success! You posted data to the user model"                  
     else:
         message = "The request method was not Ajax"
-    return render(request, 'blocbox/joinwaitlist.html', { 'referring_user_email': referring_user_email, 'neighborhood': neighborhood  } )
+    return render(request, 'blocbox/joinwaitlist.html', { 
+        'referring_user_email': referring_user_email, 'neighborhood': neighborhood, 'neighborhood_text': neighborhood_text  } )
 
 
 def joinwaitlist_noajax(request):
