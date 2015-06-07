@@ -17,6 +17,16 @@ urlpatterns = patterns('',
 		url(r'^waitlist/', views.waitlist, name='waitlist'), #also goes to the waitlist
     # url(r'^signup/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup,  {'template
     
+    url(r'^joinwaitlist/$', views.joinwaitlist, name='joinwaitlist'),
+    url(r'^joinwaitlist_noajax/$', views.joinwaitlist_noajax, name='joinwaitlist_noajax'),
+    url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)/$', views.joinwaitlist, name='joinwaitlist_referral'), 
+    
+    url(r'^joinwaitlist/clintonhill/$', views.joinwaitlist, {'neighborhood': 'clintonhill'}, name='joinwaitlist_ch')
+    url(r'^joinwaitlist/brooklyn/$', views.joinwaitlist, {'neighborhood': 'brooklyn'}, name='joinwaitlist_bk')
+    url(r'^joinwaitlist/clintonhill/referredby=(?P<referring_user_email>[^/]+)/$',  views.joinwaitlist, {'neighborhood': 'clintonhill'}, name='joinwaitlist_ref_ch')
+    url(r'^joinwaitlist/brooklyn/referredby=(?P<referring_user_email>[^/]+)/$',  views.joinwaitlist, {'neighborhood': 'brooklyn'}, name='joinwaitlist_ref_bk')
+
+
     url(r'beta/$', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
     url(r'^search/', views.search, name='search'),   
     url(r'^about/$', views.aboutblocbox, name='about'),
@@ -67,9 +77,7 @@ urlpatterns = patterns('',
     url(r'^login/', views.userlogin, name='login'), # add this for the registration form
     url(r'^logout/$', views.user_logout, name='logout'),
     url(r'^almostfinished/$', views.waitlist_almostfinished, name='waitlist_almostfinished'),
-    url(r'^joinwaitlist/$', views.joinwaitlist, name='joinwaitlist'),
-    url(r'^joinwaitlist_noajax/$', views.joinwaitlist_noajax, name='joinwaitlist_noajax'),
-    url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)/$', views.joinwaitlist, name='joinwaitlist_referral'),    
+   
     url(r'^testsendtomailchimp/user(?P<waitlistuserid>\d+)/$', views.send_form_to_mailchimp, name='test_sentomailchimp'),
     url(r'^waitlistconfirmation/$', views.waitlist_confirmation, name='waitlist_confirmation'),
  		#NOTE - removing the caret ^ before register so blocbox/register calls this as well
