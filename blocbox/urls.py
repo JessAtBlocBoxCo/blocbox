@@ -21,10 +21,10 @@ urlpatterns = patterns('',
     url(r'^joinwaitlist_noajax/$', views.joinwaitlist_noajax, name='joinwaitlist_noajax'),
     url(r'^joinwaitlist/referredby=(?P<referring_user_email>[^/]+)/$', views.joinwaitlist, name='joinwaitlist_referral'), 
     
-    url(r'^joinwaitlist/clintonhill/$', views.joinwaitlist, {'neighborhood': 'clintonhill'}, name='joinwaitlist_ch')
-    url(r'^joinwaitlist/brooklyn/$', views.joinwaitlist, {'neighborhood': 'brooklyn'}, name='joinwaitlist_bk')
-    url(r'^joinwaitlist/clintonhill/referredby=(?P<referring_user_email>[^/]+)/$',  views.joinwaitlist, {'neighborhood': 'clintonhill'}, name='joinwaitlist_ref_ch')
-    url(r'^joinwaitlist/brooklyn/referredby=(?P<referring_user_email>[^/]+)/$',  views.joinwaitlist, {'neighborhood': 'brooklyn'}, name='joinwaitlist_ref_bk')
+    url(r'^joinwaitlist/clintonhill/$', views.joinwaitlist, {'neighborhood': 'clintonhill'}, name='joinwaitlist_ch'),
+    url(r'^joinwaitlist/brooklyn/$', views.joinwaitlist, {'neighborhood': 'brooklyn'}, name='joinwaitlist_bk'),
+    url(r'^joinwaitlist/clintonhill/referredby=(?P<referring_user_email>[^/]+)/$',  views.joinwaitlist, {'neighborhood': 'clintonhill'}, name='joinwaitlist_ref_ch'),
+    url(r'^joinwaitlist/brooklyn/referredby=(?P<referring_user_email>[^/]+)/$',  views.joinwaitlist, {'neighborhood': 'brooklyn'}, name='joinwaitlist_ref_bk'),
 
 
     url(r'beta/$', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
