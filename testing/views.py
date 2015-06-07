@@ -19,14 +19,15 @@ from core.models import UserInfo
 from connections.models import Connection
 from core.forms import UserForm, HostForm
 from transactions.models import Transaction
+#JMY removing reference to schedule app (moved to old dir) on 7 June 2015
 #from schedule import periods
-from schedule.periods import Month
-from schedule.periods import weekday_names
-from schedule.conf.settings import GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT
-from schedule.forms import EventForm, OccurrenceForm
-from schedule.models import Calendar, Occurrence, Event
-from schedule.models.calendars import CalendarRelation
-from schedule.utils import check_event_permissions, coerce_date_dict
+#from schedule.periods import Month
+#from schedule.periods import weekday_names
+#from schedule.conf.settings import GET_EVENTS_FUNC, OCCURRENCE_CANCEL_REDIRECT
+#from schedule.forms import EventForm, OccurrenceForm
+#from schedule.models import Calendar, Occurrence, Event
+#from schedule.models.calendars import CalendarRelation
+#from schedule.utils import check_event_permissions, coerce_date_dict
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
 #import new homebrew calendar
