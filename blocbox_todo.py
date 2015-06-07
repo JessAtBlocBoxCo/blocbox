@@ -3,6 +3,7 @@
 3. Jess makes list of minimal site tasks
 4. John Fixes sign up
 5. John restarts FB ads
+6. John responds to Tech article
 6. John makes/prints flyer to attach to notices
 7. John tests FB ads
 
