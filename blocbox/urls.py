@@ -85,12 +85,12 @@ urlpatterns = patterns('',
  		#email stuff
  		url(r'^email/(?P<userinfo_id>\d+)/sendconfirmrequest/$', views.confirmconnect_mail, name='sendrequestconnect'),
     url(r'^(?P<host_id>\d+)/requestconnectconfirm/(?P<user_id>\d+)/$', views.confirmrequestconnect, name='confirmrequestconnect'), 		
- 		url(r'^testing/', include('testing.urls')),
- 		url(r'^scheduling/', include('schedule.urls')),
- 		url(r'^passwordreset/',include('password_reset.urls')),
- 		url(r'^messages/', include('django_messages.urls')),
- 		url(r'^scheduling/', include('schedule.urls')),
- 		#url(r'^datascience/', include('datasci.urls')),
+ 	url(r'^testing/', include('testing.urls')),
+ 	
+    #url(r'^scheduling/', include('schedule.urls')),
+ 	url(r'^passwordreset/',include('password_reset.urls')),
+ 	url(r'^messages/', include('django_messages.urls')),
+ 	#url(r'^datascience/', include('datasci.urls')),
     url(r'^editprofile/$', views.editprofile, name='editprofile'),
     url(r'^addinterest/$', views.addinterest, name='addinterest'),
  		
