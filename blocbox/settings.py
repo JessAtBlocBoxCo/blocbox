@@ -45,7 +45,8 @@ INSTALLED_APPS = (
     'password_reset',
     'django_messages',
     'dateutil',
-    'schedule',
+    #JMY removing schedule from list of installed apps on 7 June 2015
+    #'schedule',
     'calendar_homebrew',
     'connections',
     #JMy removing billin on 5 July 2015 - not really using it and throwing errors
