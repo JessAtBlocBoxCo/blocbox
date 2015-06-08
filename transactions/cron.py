@@ -13,7 +13,7 @@ class Watch_Packages_Cron(CronJobBase):
         #pass    # do your thing here
 
 class Test_Mail_Cron(CronJobBase):
-    RUN_EVERY_MINS = 1 # mintes - right now do 5 minutes, eventually update to 30
+    RUN_EVERY_MINS = 360 # 6 hours- make sure its running
 
     schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
     code = 'transactions.cron.Test_Mail_Cron'
