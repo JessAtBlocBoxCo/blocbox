@@ -42,8 +42,8 @@ class CronJobLogAdmin(admin.ModelAdmin):
 
     def get_readonly_fields(self, request, obj=None):
         #JMY updating due to error - there is no is_superuser on userInfo object
+        #if not request.user.is_superuser and obj is not None:
         if obj is not None:
-        if not request.user.is_superuser and obj is not None:
             names = [f.name for f in CronJobLog._meta.fields if f.name != 'id']
             return self.readonly_fields + tuple(names)
         return self.readonly_fields
