@@ -67,16 +67,17 @@
         {% endif %}
 
         
-        //define info window
-        //var infowindow {{ host.id }} = new google.maps.InfoWindow({ content: hostcontentString  });    
+    //define info window
+        var infowindow {{ host.id }} = new google.maps.InfoWindow({ content: hostcontentString  });    
             //define lat long for each host host.address_latitude, host.address_longitude 
-        //var HostLatLong {{  host.id }} = new google.maps.LatLng({{   host.address_latitude }}, {{  host.address_longitude }});
+        var HostLatLong {{  host.id }} = new google.maps.LatLng({{   host.address_latitude }}, {{  host.address_longitude }});
 
-     //   var infowindow {{ host.id }} = new google.maps.InfoWindow({ content: hostcontentString, maxWidth: 400});
+        var infowindow {{ host.id }} = new google.maps.InfoWindow({ content: hostcontentString, maxWidth: 400});
 
         //add a new marker with infowindow
-       // var HostMarker {{ host.id }} = new google.maps.Marker({ position: HostLatLong {{ host.id }},  map: map,  title: "{{ host.first_name }}" });
+        var HostMarker {{ host.id }} = new google.maps.Marker({ position: HostLatLong {{ host.id }},  map: map,  title: "{{ host.first_name }}" });
 
+        google.maps.event.addListener(HostMarker {{  host.id }}, 'click', function () { infowindow {{ host.id }}.open(map, HostMarker {{ host.id }}); });
     {% endfor %}  
 
     google.maps.event.addDomListener(window, 'load', initialize);
