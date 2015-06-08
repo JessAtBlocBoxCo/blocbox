@@ -64,12 +64,11 @@
 
 
 
-                {% endif %}
+        {% endif %}
 
         
         //define info window
-        var infowindow {{ host.id }} = new google.maps.InfoWindow({
-            content: hostcontentString  });
+        var infowindow {{ host.id }} = new google.maps.InfoWindow({ content: hostcontentString  });
     
     {% endfor %}  
 
@@ -80,6 +79,7 @@
 
 <body>
 <h1> TEST THIS IS DELMESEARCH - MAP SHOULD APPEAR BELOW </h1>
+<p> TEST HOST LIST ONLY JB {{hosts_list_onlyjb }} </p>
  <div id="map-canvas">   </div>
 </body>
 </html>
