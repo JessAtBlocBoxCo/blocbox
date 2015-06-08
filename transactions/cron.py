@@ -11,6 +11,7 @@ class Watch_Packages_Cron(CronJobBase):
     def do(self):
     	watch_packages.main()
         #pass    # do your thing here
+        message = 'This is Watch_Packages_Cron - should run every 20 minutes on the hour - wondering why its executing twice'
 
 class Test_Mail_Cron(CronJobBase):
     RUN_EVERY_MINS = 360 # 6 hours- make sure its running
@@ -24,4 +25,17 @@ class Test_Mail_Cron(CronJobBase):
     	test_send_email(1,2,184)
         #watch_packages.main()
         #pass    # do your thing here
+        message = 'This is test_send_mail - should run every 6 hours'
+
+class Test_Every_Minute(CronJobBase):
+    RUN_EVERY_MINS = 1 # 6 hours- make sure its running
+
+    schedule = Schedule(run_every_mins=RUN_EVERY_MINS)
+    code = 'transactions.cron.Test_Every_Minute'
+
+    #code = 'transactions.watch_packages.test_send_email(1,2,184)'    # a unique code
+
+    def do(self):
+        message = 'This is Test_Every_Minute - curious to see if it is also running twice'
+
         
