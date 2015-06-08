@@ -99,7 +99,7 @@ GOOGLE MAP EMBED SCRIPT - START
         var infowindow{{ host.id }} = new google.maps.InfoWindow({ content: hostcontentString, maxWidth: 400  });
 
         //add a new marker with infowindow
-        var HostMarker{{ host.id }} = new google.maps.Marker({ position: HostLatLong {{ host.id }}, map: map, title: "{{ host.first_name }}"  });
+        var HostMarker{{ host.id }} = new google.maps.Marker({ position: HostLatLong{{ host.id }}, map: map, title: "{{ host.first_name }}"  });
 
         //it keeps opening the info window of last host.. 
         google.maps.event.addListener(HostMarker{{  host.id }}, 'click', function () { infowindow{{ host.id }}.open(map, HostMarker{{ host.id }}); });
