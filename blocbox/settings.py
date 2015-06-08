@@ -63,7 +63,7 @@ INSTALLED_APPS = (
 CRON_CLASSES = [
     "transactions.cron.Watch_Packages_Cron",
     "transactions.cron.Test_Mail_Cron",
-    "transactions.cron.Test_Every_Minute",
+    #"transactions.cron.Test_Every_Minute",
     "django_cron.cron.FailedRunsNotificationCronJob",
 ]
 
