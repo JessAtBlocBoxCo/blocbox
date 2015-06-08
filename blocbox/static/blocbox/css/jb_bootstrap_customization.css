@@ -2216,8 +2216,8 @@ body {
     background-size: contain;
     z-index: 100;
     position: absolute;
-    left: -15%;
-    top: 25%;
+    left: -30%;
+    top: 30%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -3558,6 +3558,13 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         top: 5%;
     }
     
+    .promo-free {
+        height: 120px;
+        width: 120px;
+        left: -20%;
+        top: 5%;
+    }
+    
     .promo-3 {
         height: 120px;
         width: 120px;
@@ -3711,6 +3718,13 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .promo {
+        height: 90px;
+        width: 90px;
+        left: 3%;
+        top: 3%;
+    }
+    
+    .promo-free {
         height: 90px;
         width: 90px;
         left: 3%;
@@ -4119,6 +4133,12 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .promo {
+        height: 60px;
+        width: 60px;
+        left: 5%;
+        top: 3%;
+    }
+    .promo-free {
         height: 60px;
         width: 60px;
         left: 5%;
