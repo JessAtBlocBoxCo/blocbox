@@ -4139,10 +4139,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         top: 3%;
     }
     .promo-free {
-        height: 60px;
-        width: 60px;
-        left: 5%;
-        top: 3%;
+display: none;
     }
     .promo-3 {
        display: none;
