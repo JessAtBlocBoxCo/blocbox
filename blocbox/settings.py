@@ -61,7 +61,7 @@ INSTALLED_APPS = (
 
 #CRON JOBS
 CRON_CLASSES = [
-    "transactions.cron_tasks",
+    "transactions.crons.Watch_Packages_Cron",
     # ...
 ]
 
