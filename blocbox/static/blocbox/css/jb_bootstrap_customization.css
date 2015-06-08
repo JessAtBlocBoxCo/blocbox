@@ -164,7 +164,6 @@ a:active {
 
 .col-padd { margin:10px; padding:10px; }
 
-
 .contentbottomonly {
     padding-bottom: 200px;
 }
@@ -3725,10 +3724,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     }
     
     .promo-free {
-        height: 90px;
-        width: 90px;
-        left: 3%;
-        top: 3%;
+    display: none;
     }
     
     .promo-3 {
