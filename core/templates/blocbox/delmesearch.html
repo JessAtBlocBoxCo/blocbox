@@ -68,7 +68,7 @@
 
         
     //define info window
-        var infowindow {{ host.id }} = new google.maps.InfoWindow({ content: hostcontentString  });    
+        //var infowindow {{ host.id }} = new google.maps.InfoWindow({ content: hostcontentString  });    
             //define lat long for each host host.address_latitude, host.address_longitude 
         var HostLatLong {{  host.id }} = new google.maps.LatLng({{   host.address_latitude }}, {{  host.address_longitude }});
 
