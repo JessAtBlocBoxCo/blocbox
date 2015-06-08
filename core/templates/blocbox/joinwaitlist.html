@@ -1,175 +1,178 @@
 <!--this is blocbox/core/templates/bocbox/joinwaitlist.html, url is http://www.blocbox.co/waitlistconfirmation/-->
-{% extends "blocbox/basewaitlist.html" %}
-{% load staticfiles %} {% block title %} Join Our Waitlist {% endblock %} {% block topcontent %}
+{% extends "blocbox/basewaitlist.html" %} {% load staticfiles %} {% block title %} Join Our Waitlist {% endblock %} {% block topcontent %}
 
 <head>
     <!-- Facebook Conversion Code for John Burgeson -->
-    <script>(function() {
-    var _fbq = window._fbq || (window._fbq = []);
-    if (!_fbq.loaded) {
-        var fbds = document.createElement('script');
-        fbds.async = true;
-        fbds.src = '//connect.facebook.net/en_US/fbds.js';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(fbds, s);
-        _fbq.loaded = true;
-    }
-})();
+    <script>
+        (function () {
+            var _fbq = window._fbq || (window._fbq = []);
+            if (!_fbq.loaded) {
+                var fbds = document.createElement('script');
+                fbds.async = true;
+                fbds.src = '//connect.facebook.net/en_US/fbds.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(fbds, s);
+                _fbq.loaded = true;
+            }
+        })();
         window._fbq = window._fbq || [];
-        window._fbq.push(['track', '6021838820852', {'value':'0.01','currency':'USD'}]);
+        window._fbq.push(['track', '6021838820852', {
+            'value': '0.01',
+            'currency': 'USD'
+        }]);
     </script>
-    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021838820852&amp;cd[value]=0.01&amp;cd[currency]=USD&amp;noscript=1" /></noscript>
-    
+    <noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?ev=6021838820852&amp;cd[value]=0.01&amp;cd[currency]=USD&amp;noscript=1" />
+    </noscript>
+
 </head>
 
 <div class="row-fluid fullheight">
 
+    <div class="col-xs-12 col-md-10 col-md-offset-2">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3">
 
-    <div class="col-xs-12 col-xs-offset-0 col-sm-6 col-sm-offset-3">
-
-    {% if neighborhood %}
-        <div class="promo-free"></div>
-        <h2 class="nomargintop signup-padding text-center">Blocbox in {{ neighborhood_text }}</h2>
-        <h3 class="paddingbottom20pxnomobile text-center" style="font-size: 1.6em;">
-             Sign up now for free package receiving and delivery during our beta program </h3>
-    {% else %}
-        <div class="promo"></div>
-        <h2 class="nomargintop signup-padding">Sign Up</h2>
-        <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3>
-    {% endif %}
-        <!--new tip from: http://pocketproduct.com/2014/a-better-mailchimp-signup/
+            {% if neighborhood %}
+            <div class="promo-free"></div>
+            <h2 class="nomargintop signup-padding text-center">Blocbox in {{ neighborhood_text }}</h2>
+            <h3 class="paddingbottom20pxnomobile text-center" style="font-size: 1.6em;">
+             Sign up now for free package receiving and delivery during our beta program </h3> {% else %}
+            <div class="promo"></div>
+            <h2 class="nomargintop signup-padding">Sign Up</h2>
+            <h3 class="paddingbottom20pxnomobile" style="font-size: 1.7em">Launching soon in select neighborhoods</h3> {% endif %}
+            <!--new tip from: http://pocketproduct.com/2014/a-better-mailchimp-signup/
         	update form aciton to go to subscribe/post-json rather than subscribe-post 
        <form action="http://blocbox.us8.list-manage.com/subscribe/post?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" 
         	method="post"   enctype="multipart/form-data" name="mc-embedded-subscribe-form" 
         	id="mc-embedded-subscribe-form"  class="paddingsides15px" target="_blank" novalidate> -->
 
-        <form action="http://blocbox.us8.list-manage.com/subscribe/post-json?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" method="post" enctype="multipart/form-data" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate>
+            <form action="http://blocbox.us8.list-manage.com/subscribe/post-json?u=a7a534bd9460b420e502241f0&amp;id=a442e04636" method="post" enctype="multipart/form-data" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" class="paddingsides15px" target="_blank" novalidate>
 
-            <!--	<form action="." method="post"  class="paddingsides15px"  role="form"
+                <!--	<form action="." method="post"  class="paddingsides15px"  role="form"
         		enctype="multipart/form-data" name="mc-embedded-subscribe-form"  id="mc-embedded-subscribe-form">  -->
 
-            {% csrf_token %}
+                {% csrf_token %}
 
-            <div class="form-group col-xs-12">
-                <input name="EMAIL" placeholder="you@example.com" class="form-control input-lg inputbox margintop5pxmobile" type="email">
-            </div>
-            <div class="row">
                 <div class="form-group col-xs-12">
-                    <input name="FIRST_NAME" placeholder="First Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    <input name="EMAIL" placeholder="you@example.com" class="form-control input-lg inputbox margintop5pxmobile" type="email">
                 </div>
-            </div>
-            <div class="form-group col-xs-12">
-
-                <input name="ZIPCODE" placeholder="Zip Code" class="form-control input-lg inputbox margintop5pxmobile" type="text">
-            </div>
-            <div class="form-group col-xs-12 nomarginbottom">
-
-                <input name="referredby" class="form-control input-lg inputbox margintop5pxmobile" type="hidden" value="{{referring_user_email}}">
-            </div>
-            <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop10px nopaddingmobile waitlistcheck">
-                <div class="checkbox checkbox-success checkbox-inline text-center">
-                    <!--<input type="checkbox" value="1" name="hostinterest" id="id_hostinterest"> -->
-                    <input type="checkbox" value="1" name="group[1689][1]" id="mce-group[1689]-1689-0">
-                    <label for="mce-group[1689]-1689-0">
-
-                        <h6 class="nomargin textleft paddingleft10px">I'm interested in helping my neighbors and making some extra money</h6>
-                    </label>
+                <div class="row">
+                    <div class="form-group col-xs-12">
+                        <input name="FIRST_NAME" placeholder="First Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    </div>
                 </div>
-                <!--checkbox -->
-            </div>
+                <div class="form-group col-xs-12">
 
-            <div class="col-xs-12 paddingtop20px paddingtop15pxmobile">
-                <input type="submit" value="JOIN WAITLIST" name="subscribe" class="btn-waitlist margintop5px">
-                <!--name="subscribe" -->
-            </div>
-            <!--row -->
+                    <input name="ZIPCODE" placeholder="Zip Code" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                </div>
+                <div class="form-group col-xs-12 nomarginbottom">
 
-            <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-            </div>
-            <!--row-->
-        </form>
+                    <input name="referredby" class="form-control input-lg inputbox margintop5pxmobile" type="hidden" value="{{referring_user_email}}">
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-12 col-sm-offset-0 paddingtop10px nopaddingmobile waitlistcheck">
+                    <div class="checkbox checkbox-success checkbox-inline text-center">
+                        <!--<input type="checkbox" value="1" name="hostinterest" id="id_hostinterest"> -->
+                        <input type="checkbox" value="1" name="group[1689][1]" id="mce-group[1689]-1689-0">
+                        <label for="mce-group[1689]-1689-0">
 
-        <script>
-            //from: http://api.jquery.com/jQuery.post/
-            //include the javascript file for override the before send thing that is causing error
-            { % include "javascript_includes/override_beforesend.js" %
-            }
-            $("#mc-embedded-subscribe-form").submit(function (event) {
-                //stop form from submitting normally
-                event.preventDefault();
-                //Get some values from elements on the page
-                var PostDataPrep = $(this).serializeArray(),
-                    PostData = JSON.stringify(PostDataPrep),
-                    PostDataMailchimp = $(this).serialize(),
-                    URLbb = ".",
-                    URLmailchimp = $(this).attr("action"),
-                    URLtest = "/test_secondform/";
+                            <h6 class="nomargin textleft paddingleft10px">I'm interested in helping my neighbors and making some extra money</h6>
+                        </label>
+                    </div>
+                    <!--checkbox -->
+                </div>
 
-                $.ajax({
-                    url: URLbb,
-                    contentType: "application/json",
-                    method: "POST",
-                    data: PostData,
+                <div class="col-xs-12 paddingtop20px paddingtop15pxmobile">
+                    <input type="submit" value="JOIN WAITLIST" name="subscribe" class="btn-waitlist margintop5px">
+                    <!--name="subscribe" -->
+                </div>
+                <!--row -->
 
-                    success: function (data, textStatus, jqXHR) {
-                        console.log('You successfully posted the PostData' + PostData);
-                    },
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>
+                <!--row-->
+            </form>
 
-                    error: function (xhr, textStatus, thrownError) {
-                        console.log('the PostDataPrep var is' + PostDataPrep);
-                        console.log('the PostData var is' + PostData);
-                        console.log('the URLbb var is ' + URLbb);
-                        console.log('the URLmailchimp var is ' + URLmailchimp);
-                        console.log('There was an error...error variables shown below');
-                        console.log('XHR responseText is: ' + xhr.responseText);
-                        console.log('textStatus is:' + textStatus);
-                        console.log('thrownError is:' + thrownError);
-                    },
-                });
+            <script>
+                //from: http://api.jquery.com/jQuery.post/
+                //include the javascript file for override the before send thing that is causing error
+                { % include "javascript_includes/override_beforesend.js" %
+                }
+                $("#mc-embedded-subscribe-form").submit(function (event) {
+                    //stop form from submitting normally
+                    event.preventDefault();
+                    //Get some values from elements on the page
+                    var PostDataPrep = $(this).serializeArray(),
+                        PostData = JSON.stringify(PostDataPrep),
+                        PostDataMailchimp = $(this).serialize(),
+                        URLbb = ".",
+                        URLmailchimp = $(this).attr("action"),
+                        URLtest = "/test_secondform/";
 
-                //guide: http://pocketproduct.com/2014/a-better-mailchimp-signup/  
-                $.ajax({
-                    url: URLmailchimp,
-                    type: "GET",
-                    cache: false,
-                    data: PostDataMailchimp,
-                    cache: false,
-                    dataType: "jsonp",
-                    jsonp: "c",
-                    contentType: "application/json; charset=utf-8",
+                    $.ajax({
+                        url: URLbb,
+                        contentType: "application/json",
+                        method: "POST",
+                        data: PostData,
 
-                    success: function (data, textStatus, jqXHR) {
-                        console.log('You successfully posted to Mailchimp with the PostDataMailchimp:' + PostDataMailchimp);
-                        console.log('The data.msg is: ' + data.msg);
+                        success: function (data, textStatus, jqXHR) {
+                            console.log('You successfully posted the PostData' + PostData);
+                        },
 
-                        if (data.result != "success") {
-                            var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
-                            if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
-                                message = "You're already subscribed to the Blocbox Waitlist! <br> If you think this is a mistake please contact us at info@blocbox.co";
+                        error: function (xhr, textStatus, thrownError) {
+                            console.log('the PostDataPrep var is' + PostDataPrep);
+                            console.log('the PostData var is' + PostData);
+                            console.log('the URLbb var is ' + URLbb);
+                            console.log('the URLmailchimp var is ' + URLmailchimp);
+                            console.log('There was an error...error variables shown below');
+                            console.log('XHR responseText is: ' + xhr.responseText);
+                            console.log('textStatus is:' + textStatus);
+                            console.log('thrownError is:' + thrownError);
+                        },
+                    });
+
+                    //guide: http://pocketproduct.com/2014/a-better-mailchimp-signup/  
+                    $.ajax({
+                        url: URLmailchimp,
+                        type: "GET",
+                        cache: false,
+                        data: PostDataMailchimp,
+                        cache: false,
+                        dataType: "jsonp",
+                        jsonp: "c",
+                        contentType: "application/json; charset=utf-8",
+
+                        success: function (data, textStatus, jqXHR) {
+                            console.log('You successfully posted to Mailchimp with the PostDataMailchimp:' + PostDataMailchimp);
+                            console.log('The data.msg is: ' + data.msg);
+
+                            if (data.result != "success") {
+                                var message = data.msg || "Sorry. Unable to subscribe. Please try again later.";
+                                if (data.msg && data.msg.indexOf("already subscribed") >= 0) {
+                                    message = "You're already subscribed to the Blocbox Waitlist! <br> If you think this is a mistake please contact us at info@blocbox.co";
+                                }
+                                alert(message);
+                            } else {
+                                window.location.href = "/almostfinished/"
                             }
-                            alert(message);
-                        } else {
-                            window.location.href = "/almostfinished/"
-                        }
-                    },
+                        },
 
-                    error: function (xhr, textStatus, thrownError) {
-                        console.log('the PostDataMailchimp var is' + PostDataMailchimp);
-                        console.log('the URLmailchimp var is ' + URLmailchimp);
-                        console.log('There was an error...error variables shown below');
-                        console.log('XHR responseText is: ' + xhr.responseText);
-                        console.log('textStatus is:' + textStatus);
-                        console.log('thrownError is:' + thrownError);
-                    },
+                        error: function (xhr, textStatus, thrownError) {
+                            console.log('the PostDataMailchimp var is' + PostDataMailchimp);
+                            console.log('the URLmailchimp var is ' + URLmailchimp);
+                            console.log('There was an error...error variables shown below');
+                            console.log('XHR responseText is: ' + xhr.responseText);
+                            console.log('textStatus is:' + textStatus);
+                            console.log('thrownError is:' + thrownError);
+                        },
+                    });
+
+                    //$("#ajaxform").submit();
+                    //event.unbind(); //unbind. to stop multiple form submit.
                 });
+            </script>
 
-                //$("#ajaxform").submit();
-                //event.unbind(); //unbind. to stop multiple form submit.
-            });
-        </script>
-
+        </div>
     </div>
     <div class="text-center alignbottomdiv mobilehide">
         <a href="#learn">
