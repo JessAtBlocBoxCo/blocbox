@@ -64,7 +64,8 @@ CRON_CLASSES = [
     "transactions.cron.Watch_Packages_Cron",
     "transactions.cron.Test_Mail_Cron",
 ]
-FAILED_RUNS_CRONJOB_EMAIL_PREFIX = “[Server check]: ” FailedRunsNotificationCronJob checks every cron from CRON_CLASSES
+
+FAILED_RUNS_CRONJOB_EMAIL_PREFIX = “[Server check]: ” #FailedRunsNotificationCronJob checks every cron from CRON_CLASSES
 
 #set the broker url
 #BROKER_URL = "amqp://jess:goodhood@localhost:5672/blocbox"
