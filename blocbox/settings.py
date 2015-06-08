@@ -63,6 +63,7 @@ INSTALLED_APPS = (
 CRON_CLASSES = [
     "transactions.cron.Watch_Packages_Cron",
     "transactions.cron.Test_Mail_Cron",
+    "django_cron.cron.FailedRunsNotificationCronJob"
 ]
 
 FAILED_RUNS_CRONJOB_EMAIL_PREFIX = '[Server check]:' #FailedRunsNotificationCronJob checks every cron from CRON_CLASSES
