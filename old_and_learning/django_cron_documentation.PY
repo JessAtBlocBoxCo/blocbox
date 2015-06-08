@@ -1,6 +1,27 @@
 http://django-cron.readthedocs.org/en/latest/installation.html
 http://django-cron.readthedocs.org/en/latest/
 
+#TO MAKE IT WORK HAVE TO EDIT CRONTABBL FILE
+https://www.digitalocean.com/community/tutorials/how-to-use-cron-to-automate-tasks-on-a-vps
+locatied at: CD /var/spool/cron/crontab
+$ crontab -e #opens it up
+
+#HOW TO SCHEDULE IT: THE COMMAND
+python /home/django/blocbox/manage.py runcrons
+#ADDED THE FOLLOWING
+* * * * * /home/django/blocbox/manage.py runcrons #every minute
+#HOW TO SCHEDULE PERIODICALY
+12 * * * * #To run a command every 12th minute on the hour:
+0,15,30,45 * * * * #You can also use different options for each placeholder. To run a command every 15 minutes:
+
+#THE LOG OF THE TASKS
+/var/log/crontab_runcrons.log
+
+#CHECK IF CRON DAEMON IS RUNNING
+$ ps -ax|grep cron
+$ ps ax|grep cron
+
+
 #CRON TASSKS
 blocbox/transactions/cron.py -CALLS transactions/watch_packages.py
 #RUN IT - this should run all the crons
