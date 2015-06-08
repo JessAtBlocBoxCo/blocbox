@@ -31,16 +31,12 @@ GOOGLE MAP EMBED SCRIPT - START
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 
 
-        { %
-            for host in hosts_list_onlyjb %
-        }
+        {%  for host in hosts_list_onlyjb %}
 
         //Content STring for the InfoWindow - 
         //removing id="firstHeading" after h1, removing '<div id="siteNotice">'+'</div>'+
 
-        { %
-            if host.profile_pic_uploaded %
-        }
+        {%     if host.profile_pic_uploaded %}
 
         var hostcontentString = '<div id="content">' +
             '<div class="row">' +
@@ -60,9 +56,7 @@ GOOGLE MAP EMBED SCRIPT - START
             '</div> ' +
             '</div>';
 
-        { %
-            else %
-        }
+        {%   else %}
 
         var hostcontentString = '<div id="content">' +
             '<img class="blockpic margintop20px nopadding col-xs-3" alt="" />' +
@@ -77,8 +71,7 @@ GOOGLE MAP EMBED SCRIPT - START
 
 
 
-        { % endif %
-        }
+        {% endif %}
 
         //define info window
         var infowindow {
@@ -145,8 +138,7 @@ GOOGLE MAP EMBED SCRIPT - START
             });
         });
 
-        { % endfor %
-        }
+        {% endfor %}
 
         // Create the search box 
         var input = /** @type {HTMLInputElement} */ (document.getElementById('search-box'));
@@ -223,7 +215,7 @@ GOOGLE MAP - END
 
 <div class="offwhitebackground paddingbottom15px">
      <!--this line adds the map per id=map-canvas-->
-    <div class="container-fluid offwhitebackground" id="map-canvas">  TEST TEST SHOULD BE MAP CANVAS </div>
+    <div class="container-fluid offwhitebackground" id="map-canvas">   </div>
     <!--container-fluid offwhitebackground -->
 </div>
 
