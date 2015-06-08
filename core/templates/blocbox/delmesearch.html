@@ -64,9 +64,15 @@
 
 
 
-        {% endif %}
+                {% endif %}
 
-     {% endfor %}  
+        {% endfor %}  
+
+        //define info window
+        var infowindow {
+            {     host.id   }   } = new google.maps.InfoWindow({
+            content: hostcontentString
+        });
 
         google.maps.event.addDomListener(window, 'load', initialize);
     //window.onload = initialize;
