@@ -29,6 +29,7 @@ urlpatterns = patterns('',
 
     url(r'beta/$', views.beta, name='beta'), #Removing the caret so easier to hyperlink to
     url(r'^search/', views.search, name='search'),   
+    url(r'^delmesearch/', views.delmesearch, name='delmesearch'),
     url(r'^about/$', views.aboutblocbox, name='about'),
     url(r'^aboutblocbox/$', views.aboutblocbox, name='aboutblocbox'), 
     url(r'^contactus/$', views.contactus, name='contactus'),

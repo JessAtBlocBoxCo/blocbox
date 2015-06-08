@@ -97,6 +97,15 @@ def waitlist(request, referring_user_email=None, neighborhood=None):
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
+def delmesearch(request):
+    enduser = request.user
+    users_all = UserInfo.objects.all
+    hosts_all = UserInfo.objects.filter(host=1)
+    hosts_list_onlyjb = hosts_all.filter(id=2)
+    return render(request, 'blocbox/delmesearch.html', {
+        'enduser': enduser, 'hosts_all': hosts_all, 'users_all': users_all, 'hosts_list_onlyjb': hosts_list_onlyjb,   
+    })
+
 def search(request):
     enduser = request.user
     users_all = UserInfo.objects.all
