@@ -29,8 +29,6 @@ GOOGLE MAP EMBED SCRIPT - START
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?client=&v=3.20"> </script> -->
 
-<
-
 
 <!-- Initialize the map - place markers and so forth
 -->
@@ -40,7 +38,8 @@ GOOGLE MAP EMBED SCRIPT - START
             //higher/closer zoom is closer
             zoom: 13,
             //Center it at 420 Grand Ave, Brookly, NY 11238, 40.686529, -73.949413, approx grand and gates 
-            center: new google.maps.LatLng(40.686529, -73.949413)
+           // center: new google.maps.LatLng(40.686529, -73.949413)
+           center: { lat: -34.397, lng: 150.644},
         };
 
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
