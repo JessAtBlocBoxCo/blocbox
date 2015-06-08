@@ -171,8 +171,8 @@ def test_send_email(enduserid, hostid, transid):
     trans = Transaction.objects.get(pk=transid)
     enduser = UserInfo.objects.get(pk=enduserid)
     host = UserInfo.objects.get(pk=hostid)
-    message_body = "this is a test of celery beat - send every 30 minues if the user has delivery notifications on"
-    subject = "Testing scheduled celery tasks"
+    message_body = "this is a test of Django Cron - in transactions.watch_packages.test_send_email"
+    subject = "Testing Django Cron Task Scheduler"
     message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,'message_body': message_body, })
     if enduser.notifyuser_packagereceived == True:
         send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
