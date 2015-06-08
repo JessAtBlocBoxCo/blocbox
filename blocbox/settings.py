@@ -59,6 +59,11 @@ INSTALLED_APPS = (
 )
 
 
+#CRON JOBS
+CRON_CLASSES = [
+    "transactions.cron_tasks",
+    # ...
+]
 
 #set the broker url
 #BROKER_URL = "amqp://jess:goodhood@localhost:5672/blocbox"
