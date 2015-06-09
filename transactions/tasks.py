@@ -167,7 +167,7 @@ def watch_packages():
     #the httpResponse produces a formatted output when called from command line but not from python shell.. when i sort this out go back to hhptResponse
         subject_test = "Testing Watch_Packages"
         message_body_test = "Testing Watch Packages Function called by Cron"
-        message_test = render_to_string('email/notify_enduser_trackingupdate.txt', {'host': 'test_host', 'enduser': 'test_enduser', 'trans': 'test_trans'})
+        message_test = render_to_string('emails/notify_enduser_trackingupdate.txt', {'host': 'test_host', 'enduser': 'test_enduser', 'trans': 'test_trans'})
         send_mail(subject_test, message_test, 'Blocbox Testing <admin@blocbox.co>', ["jessica.yeats@gmail.com",])
     return response_messages_list
 
