@@ -1,6 +1,6 @@
 from django_cron import CronJobBase, Schedule
-from transactions import watch_packages
-from transactions.watch_packages import test_send_email
+from transactions.tasks import watch_packages
+from transactions.tasks import test_send_email
 
 class Watch_Packages_Cron(CronJobBase):
     RUN_EVERY_MINS = 20 # mintes - right now do 5 minutes, eventually update to 30
@@ -9,9 +9,9 @@ class Watch_Packages_Cron(CronJobBase):
     code = 'transactions.cron.Watch_Packages_Cron'    # a unique code
 
     def do(self):
-    	watch_packages.main()
+    	watch_packages()
         #pass    # do your thing here
-        message = 'This is Watch_Packages_Cron - should run every 20 minutes on the hour - wondering why its executing twice'
+        message = ''
 
 class Test_Mail_Cron(CronJobBase):
     RUN_EVERY_MINS = 360 # 6 hours- make sure its running

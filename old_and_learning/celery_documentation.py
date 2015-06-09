@@ -1,3 +1,31 @@
+
+#CELERY STUFF REMOVED FROM SETTINGS FILE
+#set the broker url
+#BROKER_URL = "amqp://jess:goodhood@localhost:5672/blocbox"
+BROKER_URL = 'django://'
+CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
+#CELERY_RESULT_BACKEND = "database"
+CELERY_RESULT_DBURI="postgresql://django:OgdDdrmVUF@localhost/django" 
+ 
+#TRY CELERY IMPORTS
+CELERY_IMPORTS = ['tasks']
+
+#SET CELERY TIMEZONE AND SCHEDULE TASKS
+CELERY_TIMEZONE = "US/Eastern"
+from datetime import timedelta
+CELERYBEAT_SCHEDULE = {
+
+		'watch_packages_every_30_minutes': {
+        'task': 'tasks.watch_packages',
+        'schedule': timedelta(minutes=30),
+    },
+       'add_every_30_minutes': {
+        'task': 'tasks.add',
+        'schedule': timedelta(minutes=30),
+        'args': (10,10) 
+    },
+}   
+
 #TO FORCE IT TO RUN
 
 #REMOVIMG CELERY
