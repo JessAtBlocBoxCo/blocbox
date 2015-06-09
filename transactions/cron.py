@@ -9,7 +9,7 @@ class Watch_Packages_Cron(CronJobBase):
     code = 'transactions.cron.Watch_Packages_Cron'    # a unique code
 
     def do(self):
-    	watch_packages
+    	watch_packages()
         #pass    # do your thing here
         message = ''
 
