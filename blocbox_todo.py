@@ -1,7 +1,6 @@
 
 "PRIORITIES: MUST HAPPEN BEFORE JOHN-ONLY BETA"
 3. Jess makes list of minimal site tasks
-6. John makes/prints flyer to attach to notices
 7. John tests FB ads
 
 JOHN JOB SEARCHES EACH DAY BEFORE SITE WORK
@@ -9,6 +8,7 @@ JOHN JOB SEARCHES EACH DAY BEFORE SITE WORK
 "JESS LIST OF MINIMAL TASKS NEED TO BE DONE BEFORE SEND PACKAGES"
 1. payment
 2. Celery: Make sure it is automatically checking and sending emails for tracking updates
+3. jess update waitlist to post json    
 3. should be more responsive
 4. Production Environment (???)
 
