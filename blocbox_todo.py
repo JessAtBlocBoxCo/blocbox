@@ -1,21 +1,21 @@
 
 "PRIORITIES: MUST HAPPEN BEFORE JOHN-ONLY BETA"
-3. Jess makes list of minimal site tasks
+1. John approaches Bodega as official host
+2. John inquires about advertising rates on neighborhood blogs
+3. amp post signs and coffee shop hand outs
+5. Jess meets with LA tech contacts
+6. Jess makes list of minimal site tasks
 7. John tests FB ads
 
 JOHN JOB SEARCHES EACH DAY BEFORE SITE WORK
 
 "JESS LIST OF MINIMAL TASKS NEED TO BE DONE BEFORE SEND PACKAGES"
-1. payment
-2. Celery: Make sure it is automatically checking and sending emails for tracking updates
+1. Celery: Make sure it is automatically checking and sending emails for tracking updates 
+2. payment
 3. jess update waitlist to post json    
 3. should be more responsive
 4. Production Environment (???)
 
-
-
-3.
-2. NEXT DOOR POST. 
 
 4. BRAINSTORMING next step for user acquisition: handing out at post office
 1. LANDING/SIGN IN
