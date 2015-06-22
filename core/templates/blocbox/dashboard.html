@@ -371,12 +371,20 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                <h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
+                                			<h4 class="nomargin">Order {{sh.trans.id }} placed on</h4>
                                 <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
-                                <!--row-->
-                            </div>
-                            <!--end  shipment details: waiting to be picke dup packages -->
-
+                              
+                            <div class="row paddingtop10px"> <!--Delivery Method??-->
+                            
+                   
+                                    <h4 class="nomargin">Delivery Method</h4>
+                                    <p class="nomargin">
+                                        {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} You expected it to arrive {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} {% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; {% endif %} {% endif %}
+                                    </p>
+                            </div> <!--ROW WITH DELIVERY METHOD -->
+                        </div> <!--COL S-4 WITH ORDERED AND DELIVERY METHOD -->
+                                
+                       </div> <!--ROW: end  shipment details: waiting to be picke dup packages -->
                             <!--UNDER MIDDLE COLUMN WITH TRUCK: host name and information (waiting ot be picked up)-->
                             <div class="col-xs-12 col-sm-4">
                                 <!--neigbor name-->
@@ -411,17 +419,7 @@
                         </div> 
                           
                      
-                        <div class="row">
-                            <!--Delivery Method??-->
-                            <div class="row paddingtop10px">
-                                <div class="col-sm-4">
-                                    <h4 class="nomargin">Delivery Method</h4>
-                                    <p class="nomargin">
-                                        {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} You expected it to arrive {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} {% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; {% endif %} {% endif %}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+
                            </div>
                     </div>
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
