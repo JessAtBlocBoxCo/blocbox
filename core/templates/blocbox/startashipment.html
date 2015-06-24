@@ -1,5 +1,5 @@
 {% extends "blocbox/base.html" %} {% load staticfiles %}
-<!--this is blocbox/templates/startashipment.html -- URL is www.blocbox.co/transactions/startashipment -->
+<!--this is blocbox/templates/startashipment.html -- URL is www.blocbox.co/transactions/startashipment, the view is in the transactions app -->
 
 <!--load the scheduling tags-->
 {% block title %}Start a Shipment{% endblock %} {% block headafter %}
@@ -229,6 +229,10 @@
             <input type="hidden" name="arrivalwindow_day7string" value="{{packagedays_string.6}}"> {% endif %}
 
 
+			{% if free %}  
+			
+			{% else %}
+
             <!-- if payment is needed then go to paypal page -->
             {% if payment_needed %}
             <!--NEED TO MAKE IT SKIP THE PAYMENT OPTIONS IF THEY HAVE AN ACCOUNT BALANCE -- GO STRAIGHT TO PAYEMTN PAGE-->
@@ -262,7 +266,9 @@
             </div>
 
 
-            {% endif %}
+            {% endif %}  <!--end if paymetn needed -->
+        
+      {% endif %} <!-- end if free -->
         </form>
 
 
