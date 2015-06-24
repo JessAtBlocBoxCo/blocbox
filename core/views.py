@@ -448,9 +448,9 @@ def package_received_modal(request, confirm_id):
             trans.date_completed = datetoday
             trans.datetime_completed = datetimenow
             trans.save()
-    				#get last aftership stuff
-    		    courier = trans.shipment_courier
-    		    if courier:
+            #get last aftership stuff
+            courier = trans.shipment_courier
+            if courier:
                 slug = str(trans.shipment_courier.lower())
                 tracking = trans.tracking
                 datadict = api.trackings.get(slug, tracking)
