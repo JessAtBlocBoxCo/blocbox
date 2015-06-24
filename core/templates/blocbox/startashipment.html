@@ -230,6 +230,26 @@
 
 
 			{% if free %}  
+					<table class="table col-sm-10 col-sm-offset-1">
+                <tr>
+                    <td>TEST TEST - THIS IS FREE </td>
+                    <td> TEST TEST - FREE SECOND COLUMN </td>
+                </tr>
+                <tr>
+                    <td>Total due </td>
+                    <td> ${{ amount_due }} </td>
+                </tr>
+                <tr>
+                    <td>Remaining Balance</td>
+                    <td> {{ remaining_balance }} Packages </td>
+                </tr>
+            </table>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2 paddingtopbottom30px">
+                    <button type="submit" name="submit" class="bluebutton"> Apply Account Balance </button>
+                </div>
+            </div>
 			
 			{% else %}
 
