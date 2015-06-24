@@ -46,6 +46,11 @@ trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=Tr
 trans_completed = Transaction.objects.filter(trans_complete = True)
 trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
 
+#JMY NOTES - FOR CALLING THIS FROM PYTHONG BASH
+#NEED TO COPY AND PASTE THE DEFINITIOSN INTO PYTHONG, THEN
+# E.G., PRINT TRANS_AFTERSHIP_NOTARCHIVED[1].ID will print the ID for the first in the list,
+# PRINT TRANS_AFTERSHIP_NOTARCHIVED[1].tracking_info
+
 def watch_packages():
     response_messages_list = []
     #Arhives transactions if older than 30 days
