@@ -125,10 +125,20 @@
                 <!--Payment option: row with the checkboxes-->
 
 
-                <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
-                    {% if enduser.account_balance_packages %}
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
+                 
+            {% if free %}    
+               
+               <p> TEST TEST - THIS IS FREE FOR BETA USERS - JOHN FIX TEXT </p>
+               
+             {% else %} <!-- if not free -->
+             	
+                  {% if enduser.account_balance_packages %}
                     <p> You have an account balance of {{enduser.account_balance_packages }} packages </p>
-                    {% endif %} {{ trans_form_package.non_field_errors }} {% if transaction_form_submitted %} {{ trans_form_package.payment_option.errors }} {% endif %} {% if payment_needed %}
+                  {% endif %} 
+            {% endif %} <!-- if free -->
+            	       
+                   {{ trans_form_package.non_field_errors }} {% if transaction_form_submitted %} {{ trans_form_package.payment_option.errors }} {% endif %} {% if payment_needed %}
                     <table class="table">
                         <tr>
                             <td>
@@ -287,7 +297,7 @@
 
 
             {% endif %}  <!--end if paymetn needed -->
-        
+       
       {% endif %} <!-- end if free -->
         </form>
 
