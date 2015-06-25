@@ -242,8 +242,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                <h4 class="col-sm-10 col-sm-offset-2 nomargintopbottom">Order ID {{sh.trans.id }} <br> Placed on</h4>
-                                <p class="col-sm-10 col-sm-offset-2 nomargintopbottom dashtext">{{ sh.trans.date_requested_notime }}</p>
+                                <h4 class="col-sm-10 col-sm-offset-2 nomargintopbottom">Order ID: {{sh.trans.id }} 
+                                	 <br> Invoice: {{ sh.trans.invoice }}  <br> Placed on: {{ sh.trans.date_requested_notime }}</h4>
                             </div>
                             <!--end  shipment details: waiting to be picke dup packages -->
 
@@ -375,8 +375,9 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                			<h4 class="nomargin">Order ID {{sh.trans.id }} <br> Placed on</h4>
-                                <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
+                                			<h4 class="nomargin"> Order ID: {{sh.trans.id }} 
+                                				 <br> Invoice: {{ sh.trans.invoice }} <br> Placed on: {{ sh.trans.date_requested_notime }}
+                                		  </h4>
                               
                             <div class="row paddingtop10px"> <!--Delivery Method??-->
                             
@@ -499,8 +500,8 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                <h4 class="nomargin">Order ID {{sh.trans.id }} <br> Placed on</h4>
-                                <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
+                                <h4 class="nomargin">Order ID: {{sh.trans.id }} <br> Invoice: {{ sh.trans.invoice }} <br> Placed on: {{ sh.trans.date_requested_notime }}</h4>
+                                
                                 <!--row-->
                             </div>
                             <!--end  shipment details: waiting to be picke dup packages -->
@@ -649,7 +650,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                <h4 class="nomargin">Order ID {{sh.trans.id }} <br> Placed on</h4>  <p class="nomargin dashtext">{{ sh.trans.date_requested_notime }}</p>
+                                <h4 class="nomargin">Order ID: {{sh.trans.id }} <br> Invoice: {{ sh.trans.invoice }} <br> Placed on: {{ sh.trans.date_requested_notime }}</h4>
                             </div>
                             <!--end  shipment details: waiting to be picke dup packages -->
 
