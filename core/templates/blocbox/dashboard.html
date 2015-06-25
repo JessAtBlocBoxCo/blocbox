@@ -202,7 +202,7 @@
                                 <div class="package-i" style="width: 30px; height: 30px"></div>
                             </div>
                             <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
-                            	      {% else %} No Title: Invoice {{ sh.trans.invoice }} {% endif %} 
+                            	      {% else %} No Title {% endif %} 
                              </h3>
                         </div>
                         <p class="greytext paddingtop5px">Click the package received button when you've picked up the package</p>
@@ -242,8 +242,10 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                <h4 class="col-sm-10 col-sm-offset-2 nomargintopbottom">Order ID: {{sh.trans.id }} 
-                                	 <br> Invoice: {{ sh.trans.invoice }}  <br> Placed on: {{ sh.trans.date_requested_notime }}</h4>
+                                <h4 class="col-sm-10 col-sm-offset-2 nomargintopbottom">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
+                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
+                                	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
+                                </h4>
                             </div>
                             <!--end  shipment details: waiting to be picke dup packages -->
 
@@ -375,8 +377,11 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                			<h4 class="nomargin"> Order ID: <b> {{sh.trans.id }} </b> 
-                                				 <br> Invoice: <b> {{ sh.trans.invoice }} </b> <br> Placed on:<b> {{ sh.trans.date_requested_notime }} </b>
+                                			<h4 class="nomargin"> Order ID: <span style="font-weight:normal;">  {{sh.trans.id }} </span> 
+                                				 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
+                                				 <br> Placed on:  <span style="font-weight:normal;"> {{ sh.trans.date_requested_notime }} </span>
+                                		 
+                                		 
                                 		  </h4>
                               
                             <div class="row paddingtop10px"> <!--Delivery Method??-->
@@ -500,7 +505,10 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                <h4 class="nomargin">Order ID: {{sh.trans.id }} <br> Invoice: {{ sh.trans.invoice }} <br> Placed on: {{ sh.trans.date_requested_notime }}</h4>
+                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
+                                	  <br> Invoice: <span style="font-weight:normal;"> {{ sh.trans.invoice }} </span> 
+                                	  <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
+                                </h4>
                                 
                                 <!--row-->
                             </div>
@@ -650,7 +658,10 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-4">
                                 <p class="textcenter">ORDERED</p>
-                                <h4 class="nomargin">Order ID: {{sh.trans.id }} <br> Invoice: {{ sh.trans.invoice }} <br> Placed on: {{ sh.trans.date_requested_notime }}</h4>
+                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;">   {{sh.trans.id }} </span>
+                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span>
+                                	 <br> Placed on: <span style="font-weight:normal;"> {{ sh.trans.date_requested_notime }} </span>
+                                </h4>
                             </div>
                             <!--end  shipment details: waiting to be picke dup packages -->
 
