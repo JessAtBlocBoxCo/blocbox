@@ -178,7 +178,7 @@
 
 
 						<!--SHIPMENTS WAITING TO BE PICKED UP -- OUTER CONTAINER CONTAINING ALL -- NOT SURE WHY WE NEED... -->
-						<div class="col-xs-12 col-sm-12 nopaddingleftright">
+						<!-- <div class="col-xs-12 col-sm-12 nopaddingleftright"> -->
 							
               {% for sh in shipments_with_tracking_notcomplete_delivered %}
                 
@@ -304,9 +304,9 @@
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
                 </div>
                 <!--close div containint this shipmet: waiting to be picked up-->
-                {% endfor %}
-            </div>
-            <!--END SHIPMENTS WAITIN GTO BE PICKED UP -->
+                {% endfor %} <!--END LOOP THROUGH ALL SHIPMENTS WAITING TO BE PICKED UP -->
+           
+            <!--</div> -END SHIPMENTS WAITIN GTO BE PICKED UP -->
 
 
 
