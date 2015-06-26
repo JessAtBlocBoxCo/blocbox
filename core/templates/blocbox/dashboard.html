@@ -257,13 +257,22 @@
                             <div class="col-xs-12 col-sm-4">
                                 <!--neigbor name-->
                                 <p class="textcenter">DELIVERED</p>
-                                {% if sh.trans.tracking %}
-                                <h4 class="col-sm-11 col-sm-offset-1 nomargintopbottom">Tracking Number</h4>
-                                <p class="col-sm-11 col-sm-offset-1 dashtext"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a>
-                                </p>
-                                {% endif %}
-                            </div>
-                            <!--End Neighbor Column (packages waiting to be picked up) -->
+                                
+                                <h4 class="col-sm-11 col-sm-offset-1 nomargintopbottom">
+                                	   {% if sh.trans.tracking %}
+                                	      Tracking Number
+                                        <br>  <span style="font-weight:normal;"> 	<a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a> </span>
+                                     {% endif %}
+                                    <!--Status and date delivered-->
+                                    <br>
+                                					{% if trans.on_aftership %} {{sh.aftership.tag}} :
+                                					{% else %} {{ sh.trans.last_tracking_status }} :
+                                				  {% endif %}
+                                    <span style="font-weight:normal;"> 
+                                	       {% if trans.on_aftership %} {{sh.aftership.last_checkpoint.checkpoint_time }}
+																	     {% else %} {{ sh.trans.last_checkpoint_datetime }}  {% endif %}	  </span>                              
+                                </h4>
+                            </div> <!--End Neighbor Column (packages waiting to be picked up) -->
 
                             <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
                             <div class="col-xs-12 col-sm-4">
@@ -286,16 +295,7 @@
                         <!--Second row of details-->
                         <div class="row paddingtop5px">
 
-                            <!--Status and date delivered-->
-                            <div class="col-sm-4 nopaddingright">
-                                <h4 class="col-sm-11 col-sm-offset-1 nomargintopbottom">
-                                					{% if trans.on_aftership %} {{sh.aftership.tag}} 
-                                					{% else %} {{ sh.trans.last_tracking_status }} {% endif %}</h4>
-                                <p class="col-sm-11 col-sm-offset-1 nomargintopbottom dashtext">
-                                	{% if trans.on_aftership %} {{sh.aftership.last_checkpoint.checkpoint_time }}
-																	{% else %} {{ sh.trans.last_checkpoint_datetime }}  {% endif %}	                                
-                                </p>
-                            </div>
+
 
                         </div>
                     </div>
