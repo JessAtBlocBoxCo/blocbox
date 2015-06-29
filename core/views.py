@@ -244,6 +244,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         connections_count = None
         hostonly=None
         shipments_all_paid_notarchived = None
+        otherfavors_all_paid = None
         otherfavors_all_paid_notarchived = None
     tracking_form = None  #is None if no track_id (if they dont open the modal) 
     if track_id:  #if they open a tracking modal
