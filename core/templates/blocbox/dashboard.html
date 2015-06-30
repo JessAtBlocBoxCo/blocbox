@@ -215,16 +215,18 @@
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     
-                    <!--ICON/IMAGES FOR PACKAGES WAITING TO BE PICKED UP -->
+                    
                     <div class="col-sm-9" style="padding-top: 6px; padding-left: 0px;">
-                        <div class="row">
+                    	
+                    	
+                    	 <!--ROW WITH ICON/IMAGES FOR PACKAGES WAITING TO BE PICKED UP -->
+                       <div class="row">
+                        	
                             <div class="col-sm-5  marginbottom10px">
                                 <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>  </div>
                             </div>
                             
-													<!--                            
-                            <div>    <div class="col-sm-2 shipline"></div> </div>
-                            
+													<!--  <div>    <div class="col-sm-2 shipline"></div> </div>                           
                             <div class="col-sm-2 marginbottom10px">
                                 <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>  </div>
                             </div> -->
@@ -237,7 +239,7 @@
 
 
                         <div class="row">
-                        	  <!--FIRST COLUMN: order id, invoice, placed on, delivery method -->
+                        	  <!--FIRST COLUMN: Packages Waiting to be Picked Up-->
                             <div class="col-xs-12 col-sm-5 col-lg-4">
                                 <p class="textcenter">ORDERED</p>
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
@@ -257,7 +259,7 @@
                                 <!--neigbor name-->
                                 <p class="textcenter">DELIVERED</p>
                                 
-                                <h4 class="col-sm-11 col-sm-offset-1 nomargintopbottom">
+                                <h4 class="nomargintopbottom">
                                 	   {% if sh.trans.tracking %}
                                 	      Tracking Number: 
                                           <span style="font-weight:normal;"> 	<a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a> </span>
@@ -329,8 +331,10 @@
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
 	
 	
-	                   <!-- ICON IMAGES FOR PACKAGES AWAITING TRACKING -->
+	                   
                     <div class="col-sm-9" style="padding-top: 6px;">
+                        
+                        <!-- ROW WITH ICON IMAGES FOR PACKAGES AWAITING TRACKING -->
                         <div class="row">
                             <div class="col-sm-4 marginbottom10px">
                                 <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>  </div>
