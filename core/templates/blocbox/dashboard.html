@@ -215,37 +215,36 @@
                             Report an Issue</button>
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
+                    
+                    <!--ICON/IMAGES FOR PACKAGES WAITING TO BE PICKED UP -->
                     <div class="col-sm-9" style="padding-top: 6px; padding-left: 0px;">
                         <div class="row">
                             <div class="col-sm-5  marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
-                                </div>
+                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>  </div>
                             </div>
                             
 													<!--                            
                             <div>    <div class="col-sm-2 shipline"></div> </div>
                             
                             <div class="col-sm-2 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
-                                </div>
+                                <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>  </div>
                             </div> -->
                             <div>   <div class="col-sm-1 shiparrow"></div>   </div>
                             
                             <div class="col-sm-4 marginbottom10px">
-                                <div class="statusorange" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
-                                </div>
+                                <div class="statusorange" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>  </div>
                             </div>
                         </div>
 
 
                         <div class="row">
                         	  <!--FIRST COLUMN: order id, invoice, placed on, delivery method -->
-                            <div class="col-xs-12 col-sm-5">
+                            <div class="col-xs-12 col-sm-5 col-lg-4">
                                 <p class="textcenter">ORDERED</p>
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
                                 	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
                                 	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
-                                   <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>
+                                   <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
                                        <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                                                 {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} 
                                                 <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
@@ -330,43 +329,42 @@
 
                     </div> <!--end left column -->
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
-
+	
+	
+	                   <!-- ICON IMAGES FOR PACKAGES AWAITING TRACKING -->
                     <div class="col-sm-9" style="padding-top: 6px;">
                         <div class="row">
-                            <div class="col-sm-2 col-sm-offset-1 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>
-                                </div>
+                            <div class="col-sm-4 col-sm-offset-1 marginbottom10px">
+                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i>  </div>
                             </div>
-                            <div>
-                                <div class="col-sm-2 shipdash"></div>
+                            
+                            <div> <div class="col-sm-2 shipdash"></div>  </div>
+                            
+                            <div class="col-sm-5 marginbottom10px">
+                                <div class="statusorange" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>  </div>
                             </div>
+                            
+                            <!--
+                            <div>  <div class="col-sm-2 shipdash"></div>  </div>
                             <div class="col-sm-2 marginbottom10px">
-                                <div class="statusorange" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
-                                </div>
-                            </div>
-                            <div>
-                                <div class="col-sm-2 shipdash"></div>
-                            </div>
-                            <div class="col-sm-2 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
-                                </div>
-                            </div>
+                                <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
+                            </div> -->
                         </div>
 
                         <div class="row">
-                            <div class="col-xs-12 col-sm-4">
+                        	
+                        	  <div class="col-xs-12 col-sm-5 col-lg-4">
                                 <p class="textcenter">ORDERED</p>
-                                			<h4 class="nomargin"> Order ID: <span style="font-weight:normal;">  {{sh.trans.id }} </span> 
-                                				 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
-                                				 <br> Placed on:  <span style="font-weight:normal;"> {{ sh.trans.date_requested_notime }} </span>
-                                         <br>Delivery Method: <span style="font-weight:normal;">  
-                                    	     {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }}
-                                    	     {% else %} You expected it to arrive {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
-                                    	     	    {% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; {% endif %} 
-                                    	     {% endif %}  </span>
-                                      </h4>
-                           <!-- </div> ROW WITH DELIVERY METHOD -->
-                        </div> <!--COL S-4 WITH ORDERED AND DELIVERY METHOD -->
+                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
+                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
+                                	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
+                                   <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
+                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} 
+                                                <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                                             </a> </span>
+                                </h4>
+                            </div>
                                 
                        
                             <!--UNDER MIDDLE COLUMN WITH TRUCK: host name and information (waiting ot be picked up)-->
@@ -461,6 +459,8 @@
                     </div>
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
 
+
+										
                     <div class="col-sm-9">
                         <div class="row">
                             <div class="col-sm-2 col-sm-offset-1 marginbottom10px">
@@ -471,15 +471,12 @@
                                 <div class="col-sm-2 shiparrow"></div>
                             </div>
                             <div class="col-sm-2 marginbottom10px">
-                                <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i>
-                                </div>
+                                <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
                             </div>
-                            <div>
-                                <div class="col-sm-2 shipdash"></div>
-                            </div>
+                            <div> <div class="col-sm-2 shipdash"></div>  </div>
+                            
                             <div class="col-sm-2 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>
-                                </div>
+                                <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>  </div>
                             </div>
                         </div>
 
