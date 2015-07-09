@@ -319,23 +319,22 @@
                         
                         <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
                         
-                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
+                        <button type="button" <!-- name="package_received" --> </button> class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
                             Add Tracking #</button>
                        
-                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button" <!-- name="package_received" -->  class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>
                         
-                        <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" 
-                        	      onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
-                                Message {{ sh.trans.host.first_name }}</button>
+
                                   
                             
-                    </div> <!--end left column -->
+                    </div> <!--end left column with the tbuttons, packages awaiting tracking -->
+
                     <!--END SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
 	
 	
 	                   
-                    <div class="col-sm-9" style="padding-top: 6px;">
+                    <div class="col-sm-9" style="padding-top: 6px;"> <!--second column in that row - with the icons -->
                         
                         <!-- ROW WITH ICON IMAGES FOR PACKAGES AWAITING TRACKING -->
                         <div class="row">
@@ -355,7 +354,7 @@
                             <div class="col-sm-2 marginbottom10px">
                                 <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
                             </div> -->
-                        </div>
+                        </div> <!--end row with icons -->
 
                         
                         	                        	
@@ -371,15 +370,11 @@
                                                 {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} ,
                                                  {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                              </a> </span>
-                                </h4>
-                                <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
-                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
-                             					Report an Issue</button>
-                             					
-                            </div>
+                                </h4>			
+                            </div> <!--end firt col with ORDERED, packages awaiting trackin -->
                                 
                        
-                            <!--AWAITING TRACKING: Middle Column, Packages Awaiting Tracking-->
+                            <!--AWAITING TRACKING: Final Colum, Packages Awaiting Tracking-->
                             <div class="col-xs-12 col-sm-5 col-sm-offset-2">
                                 <p class="textcenter">AWAITING TRACKING #</p>
                                  <h4 class="nomargin">Tracking Number</h4>
@@ -388,16 +383,27 @@
                                       <!--display or enter tracking info -->
                                       <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
                                       <p> &nbsp </p>
-                                    </div>
-                                                           
-
-                                                            
-                            </div>
-                          
-                     
-
+                                    </div>                                                          
+                            </div> <!-- end div for final column, packages awaiting tracking -->
+                         
                     </div> <!--end row -->
-                 </div>
+                  </div> <!--end top row -->
+                     
+                  <div class="row"> <!--second row for the buttons on the bottom -->
+                       <div class="col-sm-3" style="padding-left: 5px;"> <!--first column - message host -->
+                         <button type="button"  class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
+                                  Message {{ sh.trans.host.first_name }}</button>
+                       </div>
+                            
+                                <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                             					Report an Issue</button>
+                    
+                  </div>
+                    
+                    
+                
                     <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
                     <!--close div containint this shipmet: waiting to be picked up-->
                 </div>
