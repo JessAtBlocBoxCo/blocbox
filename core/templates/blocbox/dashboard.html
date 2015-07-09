@@ -249,7 +249,7 @@
                                    <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
                                        <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
                                                 {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} 
-                                                <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                                                 {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                              </a> </span>
                                 </h4>
                             </div>
@@ -368,10 +368,14 @@
                                 	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
                                    <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
                                        <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} 
-                                                <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} ,
+                                                 {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                              </a> </span>
                                 </h4>
+                                <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                             					Report an Issue</button>
+                             					
                             </div>
                                 
                        
@@ -386,9 +390,7 @@
                                       <p> &nbsp </p>
                                     </div>
                                                            
-                                <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
-                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
-                             					Report an Issue</button>
+
                                                             
                             </div>
                           
@@ -474,8 +476,8 @@
                                 	  <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
                                 	  <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
                                        <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} 
-                                                <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} , 
+                                                 {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                              </a> </span>
                                 </h4>
                                 
