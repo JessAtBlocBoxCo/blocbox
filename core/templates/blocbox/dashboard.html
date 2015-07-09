@@ -299,41 +299,34 @@
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_notcomplete_notrackingno %}
 
-                  <div class="row dashinfobox dashfont" style="padding-right: 5px;">
+              <div class="row dashinfobox dashfont" style="padding-right: 5px;">
 
                   {% ifequal confirm_id_int sh.trans.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
                  	{% ifequal issue_id_int sh.trans.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
                 	{% ifequal message_trans_id_int sh.trans.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %}  {% endifequal %}
                 	{% ifequal track_id_int sh.trans.id %}   {% include "dashboard_subtemplates/enter_tracking_modal.html" %} {% endifequal %}
 
-
+               <div class="row"> <!--top row in dash box - excludes bottom two buttons - delete this is revert to old format -->
+               	
 										<!--Title and Button Column: Packages Awaiting Tracking  -->
                     <div class="col-sm-3" style="padding-left: 5px;">
                         <div class="row">                       	
                             <div class="col-xs-2 userbg nopaddingleft">  
-                            	<div class="package-i" style="width: 30px; height: 30px"></div>  </div>
-                          
+                            	<div class="package-i" style="width: 30px; height: 30px"></div>  </div>                          
                             <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	{% else %} No Title  {% endif %}  </h3>
-                        </div>
-                        
+                        </div>                        
                         <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
                         
                         <button type="button" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
                             Add Tracking #</button>
                        
                         <button type="button"  class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
-                            I got my package!</button>
-                        
-
-                                  
-                            
+                            I got my package!</button>                          
                     </div> <!--end left column with the tbuttons, packages awaiting tracking -->
 
                     <!--END SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
-	
-	
-	                   
+                   
                     <div class="col-sm-9" style="padding-top: 6px;"> <!--second column in that row - with the icons -->
                         
                         <!-- ROW WITH ICON IMAGES FOR PACKAGES AWAITING TRACKING -->
@@ -386,21 +379,24 @@
                                     </div>                                                          
                             </div> <!-- end div for final column, packages awaiting tracking -->
                          
-                    </div> <!--end row -->
-                  </div> <!--end top row -->
+                     </div> <!--end row with ORDERED nd AWAITING TRACKING  -->
+                  </div> <!--end COL-SM-3 -->
+               </div> <!-- end row above the row with the bottom buttons-->
                      
-                  <div class="row"> <!--second row for the buttons on the bottom -->
+              <div class="row"> <!--second row for the buttons on the bottom -->
                        <div class="col-sm-3" style="padding-left: 5px;"> <!--first column - message host -->
                          <button type="button"  class="greybutton" style="height: 40px; margin-top: 10px;" 
                         	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                                   Message {{ sh.trans.host.first_name }}</button>
                        </div>
-                            
+                       
+                     <div class="col-sm-4">     
                                 <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
                         	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                              					Report an Issue</button>
-                    
-                  </div>
+                     </div> 
+                     
+              </div> <!--end second row with two buttons -->
                     
                     
                 
