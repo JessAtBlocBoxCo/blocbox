@@ -535,7 +535,7 @@
                                                                
                                 			{% if sh.trans.on_aftership %} 
                                 				  {% if sh.aftership.last_tracking_datetime %} 
-                                				      Last Updated: <span style="font-weight:normal;"> { {{ sh.aftership.last_tracking_datetime }} {% endif %} </span>
+                                				      Last Updated: <span style="font-weight:normal;"> {{ sh.aftership.last_tracking_datetime }} {% endif %} </span>
                                 			{% else %} 
                                 				  {% if sh.trans.last_tracking_datetime %} 
                                 				  	  Last Updated:  <span style="font-weight:normal;"> {{ sh.trans.last_tracking_datetime }} {% endif %} </span>
@@ -543,14 +543,14 @@
                             <!--</div>
                             <div class="col-sm-4">
                                 <h4 class="nomargin"> -->
-                                <br> Scheduled Delivery: 
+                                <br> Scheduled Delivery: <span style="font-weight:normal;">
                                     {% if sh.aftership.expected_delivery %} 
                                     		{{ sh.aftership.expected_delivery_notime }} 
                                     {% else %} You expected it to arrive 
                                     		{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
                                     		{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; 
                                     		{% endif %} 
-                                    {% endif %}
+                                    {% endif %}  </span>
                                 </h4>
                             </div>
                         </div>
