@@ -530,12 +530,15 @@
                                 				{% if sh.trans.last_checkpoint_city %}
                                 							Last Checkpoint: <span style="font-weight:normal;"> {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} </span>
                                 				{% endif %} 
-                                		<br>
                                 		{% endif %}
-                                
-                                			{% if sh.trans.on_aftership %} {% if sh.aftership.last_tracking_datetime %} 
-                                				   Last Updated: <span style="font-weight:normal;"> { {{ sh.aftership.last_tracking_datetime }} {% endif %} </span>
-                                			{% else %} {% if sh.trans.last_tracking_datetime %} Last Updated:  <span style="font-weight:normal;"> {{ sh.trans.last_tracking_datetime }} {% endif %} </span>
+                           <br>
+                                                               
+                                			{% if sh.trans.on_aftership %} 
+                                				  {% if sh.aftership.last_tracking_datetime %} 
+                                				      Last Updated: <span style="font-weight:normal;"> { {{ sh.aftership.last_tracking_datetime }} {% endif %} </span>
+                                			{% else %} 
+                                				  {% if sh.trans.last_tracking_datetime %} 
+                                				  	  Last Updated:  <span style="font-weight:normal;"> {{ sh.trans.last_tracking_datetime }} {% endif %} </span>
                                 			{% endif %}
                             <!--</div>
                             <div class="col-sm-4">
