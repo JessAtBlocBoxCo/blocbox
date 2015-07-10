@@ -561,6 +561,10 @@
                 {% endfor %}
             </div>
             <!--col, shipments container -IN TRANSIT-->
+            
+            
+            
+            
 
             <!--COMPLETED SHIPMENTS Container-->
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
@@ -614,68 +618,42 @@
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;">   {{sh.trans.id }} </span>
                                 	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span>
                                 	 <br> Placed on: <span style="font-weight:normal;"> {{ sh.trans.date_requested_notime }} </span>
-                                	 <br> Delivery Method: <span style="font-weight:normal;"> 
+                                	 <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
+                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} , 
+                                                 {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
+                                             </a> </span>
+                                             
+                                </h4>
+                            </div>
+                            <!--end  shipment details: waiting to be picke dup packages -->
+
+                          <!--SECOND COLUMN, COMPLETED SHHIPMENTS-->
+                          <div class="col-xs-12 col-sm-5 col-lg-offset-2">
+                            <p class="textcenter">COMPLETED</p>
+                            <h4 class="nomargin">
+                              Tracking Number: <span style="font-weight:normal;">  <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a> </p>
+															<br> Delivery Method: <span style="font-weight:normal;"> 
                                     {% if sh.trans.on_aftership %} 
                                     			{% if sh.aftership.shipment_type %}  {{ sh.aftership.shipment_type }} 
                                     			{% else %} {{ sh.trans.shipment_courier }} 
-                                    			{% endif%} 
+                                    		  {% endif%} 
                                    	{% else %} <!--if not on aftership -->
                                    			{% if sh.trans.shipment_courier %} 
                                    						{{ sh.trans.shipment_courier }} 
-                                    		{% else %} You expected it to arrive 
+                                    		{% else %} You expected it to arrive
                                     					{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
                                     					{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; 
                                     					{% endif %}
                                     		{% endif %} 
                                     {% endif %}  </span>
-                                </h4>
-                            </div>
-                            <!--end  shipment details: waiting to be picke dup packages -->
-
-                            <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
-                            <div class="col-xs-12 col-sm-4">
-                                <!--neigbor name-->
-                                <p class="textcenter">DELIVERED</p>
-                                <h4 class="nomargin">Tracking Number</h4>
-                                <div class="row nomargin">
-                                    <p class="nomargin"><a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a> </p>
-                                </div>
-                            </div>
-                            <!--End Neighbor Column (packages waiting to be picked up) -->
-
-                            <!--COL WITH BUTTON TO CONFIRM/REVIEW OR REPORT AND ISSUE (waiting to be picked up)-->
-                            <div class="col-xs-12 col-sm-4">
-                                <p class="textcenter">COMPLETED</p>
-                                <div class="row">
-                                    <h4 class="nomargin">Sent to<a href="">&nbsp;{{sh.trans.host.first_name}}</a></h4>
-                                    <!--neibhors address-->
-                                    <p class="nomargin dashtext">
-                                        <!--linking to a new page, the target="_blank" attribute makes it a new tab-->
-                                        <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
-                                            {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} <br> {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row paddingtop5px">
-                            <div class="col-sm-4">
-                                <!--Status and shipment type-->
-                                <h4 class="nomargin">{{sh.trans.last_tracking_status}}</h4>
-                                <p class="nomargin">{{sh.trans.last_checkpoint_date }}</p>
-                            </div>
-                            <div class="col-sm-4">
-                                <h4 class="nomargin">Order Completed</h4>
-                                <p class="nomargin">{{ sh.trans.date_completed }} </p>
-                            </div>
-                            <div class="col-sm-4">
-                                <h4 class="nomargin">Your Rating</h4>
-                                <p class="nomargin">{{ sh.trans.host.first_name}} {{sh.trans.enduser_rating}} / 5.0</p>
-                            </div>
-                        </div>
+                              <br> {{sh.trans.last_tracking_status}}: <span style="font-weight:normal;"> {{sh.trans.last_checkpoint_date }} </span>
+                              <br>  Order Completed: <span style="font-weight:normal;"> {{ sh.trans.date_completed }} </span>
+                              <br>  Your Rating: <span style="font-weight:normal;"> {{ sh.trans.host.first_name}} {{sh.trans.enduser_rating}} / 5.0 </span>
+                            </h4>
+                           </div> <!--end second column, COMPLETED PAKAGES -->
                     </div>
-                    <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE (waiting to be picked up) -->
+                    <!--END COL TO CONFIRM/REVIEW AND TO REPORT AND ISSUE, COMPLETED PACKAGES-->
                     <!--close div containint this shipmet: waiting to be picked up-->
                 </div>
                 {% endfor %}
