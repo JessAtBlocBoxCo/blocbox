@@ -566,21 +566,19 @@
             
             
 
-            <!--COMPLETED SHIPMENTS Container-->
-            <div class="col-xs-12 col-sm-12 nopaddingleftright">
-                {% for sh in shipments_with_tracking_complete %}
+          <!--COMPLETED SHIPMENTS Container-->
+          <div class="col-xs-12 col-sm-12 nopaddingleftright">
+            {% for sh in shipments_with_tracking_complete %}
                 <!--divider defining the whole current shipments part -->
 
                 <!--INCLUD ALL OF THE MODAL SUBTEMPLATES - JUST FOR REPORT AN ISSUE -->
               {% ifequal issue_id_int sh.trans.id %}    {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
                 <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
 
-                <div class="row dashinfobox dashfont" style="padding-right: 5px;">
-                    <div class="col-sm-3" style="padding-left: 5px;">
+             <div class="row dashinfobox dashfont" style="padding-right: 5px;">
+                 <div class="col-sm-3" style="padding-left: 5px;">
                         <div class="row">
-                            <div class="col-xs-2 userbg nopaddingleft">
-                                <div class="package-i" style="width: 30px; height: 30px"></div>
-                            </div>
+                            <div class="col-xs-2 userbg nopaddingleft">  <div class="package-i" style="width: 30px; height: 30px"></div> </div>
                             <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	   
                             	   	{% else %} No Title  {% endif %}  
@@ -594,27 +592,18 @@
                         <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                             Report an Issue</button>
 
-                    </div>
-                    <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
+                 </div> <!-- END COL-SM-3 CONTAINING TITLE AND BUTTONS TO ARCHIVE SHIPMENT, ETC - COMPLETED SHIPMENTS -->
+                    
+                 <div class="col-sm-9">
+                   <div class="row">
+                       <div class="col-sm-5 marginbottom10px"> <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i> </div>  </div>
+                      <!-- <div>   <div class="col-sm-2 shipline"></div>  </div>
+                            <div class="col-sm-2 marginbottom10px">  <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div> </div> -->                             
+                       <div>  <div class="col-sm-2 shipline"></div> </div>
+                       <div class="col-sm-5 marginbottom10px">  <div class="statusgreen" style="padding: 9px 5px;"><i class="fa fa-check fa-fw fa-3x statusicon"></i> </div> </div> 
+                  </div> <!--end row containing icons -->
 
-                    <div class="col-sm-9">
-                        <div class="row">
-                            <div class="col-sm-5 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i> </div>
-                            </div>
-                            <!--
-                            <div>   <div class="col-sm-2 shipline"></div>  </div>
-                            <div class="col-sm-2 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
-                            </div> --> 
-                            
-                            <div>  <div class="col-sm-2 shipline"></div> </div>
-                            <div class="col-sm-5 marginbottom10px">
-                                <div class="statusgreen" style="padding: 9px 5px;"><i class="fa fa-check fa-fw fa-3x statusicon"></i> </div>
-                            </div>
-                        </div>
-
-                    <div class="row">
+                  <div class="row"> <!--ROW CONTAINING COLUMNS, COMPLETED SHIPMENTS -->
                     	
                     			<!--first column-- COMPLETED shipments -->
                           <div class="col-xs-12 col-sm-4">
@@ -630,8 +619,8 @@
                                 </h4>
                           </div> <!--end  shipment details: waiting to be picke dup packages -->
 
-                         <!--SECOND COLUMN, COMPLETED SHHIPMENTS-->
-                         <div class="col-xs-12 col-sm-5 col-lg-offset-2">
+                          <!--SECOND COLUMN, COMPLETED SHHIPMENTS-->
+                          <div class="col-xs-12 col-sm-5 col-lg-offset-2">
                             <p class="textcenter">COMPLETED</p>
                             <h4 class="nomargin">
                               Tracking Number: <span style="font-weight:normal;">  <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a> </p>
@@ -654,14 +643,14 @@
                               <br>  Your Rating: <span style="font-weight:normal;"> {{ sh.trans.host.first_name}} {{sh.trans.enduser_rating}} / 5.0 </span>
                             </h4>
                           </div> <!--end second column, COMPLETED PAKAGES -->
-                      </div> <!--END ROW - COPMLETED PACAGS -->
+                          
+                  </div> <!--END ROW - INCLUDING FIRST AND SECOND COLUMN, COPMLETED PACAGS -->
                     
-                </div> <!--close div, completed shipments -->
+                 </div> <!--close COL-SM-9 CONTAINING ICON ROW AND ROW containing first and second column, completed shipments -->
                 
-                      
-            {% endfor %}
-                       
-            </div> <!--end completed shipmetns -->
+             </div> <!--end dashinfo box - completed shipments -->       
+           {% endfor %} <!--end for each shipment (completed) -->                       
+          </div> <!--end completed shipmetns -->
 
 
         </div>
