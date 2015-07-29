@@ -3460,11 +3460,7 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)
 *--------------------------------------------------------------*/
 
-@media (max-width: 767px) {
-	.xshide { display: none; }
-}
 
-/*TEST TEST EDITING THE CSS PAGE */
 
 @media (max-width: 800px) {
     body {
@@ -4643,7 +4639,13 @@ Jasny  STYLES
     .offcanvas-xs.in {
         display: block;
     }
+    
+	.xshide { display: none; }
+
 }
+
+/*TEST TEST EDITING THE CSS PAGE */
+
 @media (max-width: 991px) {
     .offcanvas-sm {
         display: none;
