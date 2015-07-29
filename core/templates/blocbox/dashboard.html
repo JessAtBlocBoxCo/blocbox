@@ -242,7 +242,7 @@
                         <div class="row">
                         	  <!--FIRST COLUMN: Packages Waiting to be Picked Up-->
                             <div class="col-xs-12 col-sm-5">
-                                <p class="textcenter">ORDERED</p>
+                                <p class="textcenter xshide">ORDERED</p>
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
                                 	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
                                 	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
@@ -259,7 +259,7 @@
                             <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                             <div class="col-xs-12 col-sm-5 col-lg-offset-2">
                                 <!--neigbor name-->
-                                <p class="textcenter">DELIVERED</p>
+                                <p class="textcenter xshide">DELIVERED</p>
                                 
                                 <h4 class="nomargintopbottom">
                                 	   {% if sh.trans.tracking %}
@@ -354,7 +354,7 @@
                        <!--ORDERED COLUMN: Packages Awaiting Tracking -->
                        <div class="row">
                         	  <div class="col-xs-12 col-sm-5">
-                                <p class="textcenter">ORDERED</p>
+                                <p class="textcenter xshide">ORDERED</p>
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
                                 	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
                                 	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
@@ -369,7 +369,7 @@
                        
                             <!--AWAITING TRACKING: Final Colum, Packages Awaiting Tracking-->
                             <div class="col-xs-12 col-sm-5 col-lg-offset-2">
-                                <p class="textcenter">AWAITING TRACKING #</p>
+                                <p class="textcenter xshide">AWAITING TRACKING #</p>
                                  <h4 class="nomargin">Tracking Number</h4>
                                     <!--Enter Tracking -->
                                     <div class="row nomargin">
@@ -471,7 +471,7 @@
                         <div class="row">
                         		<!--FIRST COLUMN: PACKAGES IN TRANSIT -->
                             <div class="col-xs-12 col-sm-5">
-                                <p class="textcenter">ORDERED</p>
+                                <p class="textcenter xshide">ORDERED</p>
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
                                 	  <br> Invoice: <span style="font-weight:normal;"> {{ sh.trans.invoice }} </span> 
                                 	  <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
@@ -486,10 +486,9 @@
                             </div>
                             <!--end  shipment details: waiting to be picke dup packages -->
 
-                            <!--NEIGHBOR: host name and information (waiting ot be picked up)-->
                            <div class="col-xs-12 col-sm-5 col-lg-offset-2">
                                <!--neigbor name-->
-                               <p class="textcenter">IN TRANSIT</p>
+                               <p class="textcenter xshide">IN TRANSIT</p>
                                <h4 class="nomargin">Tracking Number:
                                 	 
                                 	  <span style="font-weight:normal;">  
@@ -608,7 +607,7 @@
                     	
                     			<!--first column-- COMPLETED shipments -->
                           <div class="col-xs-12 col-sm-5">
-                                <p class="textcenter">ORDERED</p>
+                                <p class="textcenter xshide">ORDERED</p>
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;">   {{sh.trans.id }} </span>
                                 	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span>
                                 	 <br> Placed on: <span style="font-weight:normal;"> {{ sh.trans.date_requested_notime }} </span>
@@ -624,7 +623,7 @@
                                	
                           <!--SECOND COLUMN, COMPLETED SHHIPMENTS-->
                           <div class="col-xs-12 col-sm-5 col-lg-offset-2">
-                            <p class="textcenter">COMPLETED</p>
+                            <p class="textcenter xshide">COMPLETED</p>
                             <h4 class="nomargin">
                                    Tracking Number: <span style="font-weight:normal;">  <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a> </span>
 															<br> Delivery Method: <span style="font-weight:normal;"> 
