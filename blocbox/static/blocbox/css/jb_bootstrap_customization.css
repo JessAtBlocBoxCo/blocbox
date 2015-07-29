@@ -3463,7 +3463,9 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
 @media (max-width: 767px) {
 	.xshide { display: none; }
 }
-	
+
+/*TEST TEST EDITING THE CSS PAGE */
+
 @media (max-width: 800px) {
     body {
         padding-left: 0px;
