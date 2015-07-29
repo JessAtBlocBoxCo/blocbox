@@ -242,7 +242,10 @@
                         	  <!--FIRST COLUMN: Packages Waiting to be Picked Up-->
                             <div class="col-xs-12 col-sm-5">
                                 <p class="textcenter xshide">ORDERED</p>
-                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
+                                <p class="smallanduphide"><br></p>
+                                
+                                <h4 class="nomargin">
+                                	      Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
                                 	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
                                 	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
                                    <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
