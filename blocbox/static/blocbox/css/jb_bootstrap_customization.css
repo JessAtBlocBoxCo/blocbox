@@ -1584,6 +1584,9 @@ body {
 /*Restrictions specific to larger screens - Have a floating logo and so forth for min-width 768 - make the navbar not float */
 
 @media (min-width: 768px) {
+	
+	  .smallanduphide { display: none; }
+	  
     .waitlistbody .navbar-default {
         margin-bottom: 0px;
     }
