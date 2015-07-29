@@ -174,6 +174,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     shipments_with_tracking_notcomplete_delivered = []   
     shipments_with_tracking_notcomplete_notdelivered = []
     shipments_with_tracking_notcomplete_notrackingno = []
+    shipments_complete_fordash = [] #all ocmplete shipments
+    shipments_no_tracking_complete = [] #shipments marked as ocmplete that never had trcking
     #variables requiring authentication
     if enduser.is_authenticated():
         connections_all = Connection.objects.filter(end_user=enduser) 
@@ -226,6 +228,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     shipment_tuple['aftership']['last_checkpoint'] = checkpoints[-1] #-nth to last.. so -1 is the last element     
                 if shipment.trans_complete ==True:
                     shipments_with_tracking_complete.append(shipment_tuple)
+                    shipments_complete_fordash.append(shipment_tuple)
                 else:
                     shipments_with_tracking_notcomplete.append(shipment_tuple)
                     tag = shipment_tuple['aftership']['tag']
@@ -238,6 +241,10 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 shipment_tuple['tracking']=None
                 if shipment.trans_complete == False:
                     shipments_with_tracking_notcomplete_notrackingno.append(shipment_tuple)
+                #shipmetns marked as complete even though tracking never aded
+                else:
+                    shipments_no_tracking_complete.append(shipment_tuple)
+                    shipments_complete_fordash.append(shipment_tuple)
             shipments_with_tracking_allpaid.append(shipment_tuple)
     else: #if not authenticated set these to None
         connections_all = None
@@ -287,7 +294,12 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
         'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 
         'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_notdelivered,
+        #shipmetns that need tracking
         'shipments_with_tracking_notcomplete_notrackingno': shipments_with_tracking_notcomplete_notrackingno,
+        #shipments marked as complete that never had tracking
+        'shipments_no_tracking_complete': shipments_no_tracking_complete,
+        #all completeshipmetns
+        'shipments_complete_fordash': shipments_complete_fordash,
         #other favors lists
         'otherfavors_all_paid': otherfavors_all_paid, 
     })
