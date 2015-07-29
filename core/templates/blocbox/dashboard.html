@@ -521,24 +521,24 @@
    
                                 <h4 class="nomargin"> -->
                            <br> Status: <span style="font-weight:normal;">  {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} {{ sh.trans.last_tracking_status }} {% endif %} </span>
-                           <br> 
+                            
                                 		{% if sh.trans.on_aftership %} 
                                 				{% if sh.aftership.last_checkpoint.city %} 
-                                							Last Checkpoint: <span style="font-weight:normal;"> {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }} </span>
+                                					<br>		Last Checkpoint: <span style="font-weight:normal;"> {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }} </span>
                                 				{% endif %}
                                 		{% else %} <!--if not on aftership b/c expired get from our tables -->			
                                 				{% if sh.trans.last_checkpoint_city %}
-                                							Last Checkpoint: <span style="font-weight:normal;"> {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} </span>
+                                					<br>		Last Checkpoint: <span style="font-weight:normal;"> {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} </span>
                                 				{% endif %} 
                                 		{% endif %}
-                           <br>
+                           
                                                                
                                 			{% if sh.trans.on_aftership %} 
                                 				  {% if sh.aftership.last_tracking_datetime %} 
-                                				      Last Updated: <span style="font-weight:normal;"> {{ sh.aftership.last_tracking_datetime }} {% endif %} </span>
+                                				    <br>  Last Updated: <span style="font-weight:normal;"> {{ sh.aftership.last_tracking_datetime }} {% endif %} </span>
                                 			{% else %} 
                                 				  {% if sh.trans.last_tracking_datetime %} 
-                                				  	  Last Updated:  <span style="font-weight:normal;"> {{ sh.trans.last_tracking_datetime }} {% endif %} </span>
+                                				  	 <br> Last Updated:  <span style="font-weight:normal;"> {{ sh.trans.last_tracking_datetime }} {% endif %} </span>
                                 			{% endif %}
                             <!--</div>
                             <div class="col-sm-4">
