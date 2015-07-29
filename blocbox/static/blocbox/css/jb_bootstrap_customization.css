@@ -3461,7 +3461,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
 *--------------------------------------------------------------*/
 
 @media (max-width: 767px) {
-	.xshide { display: none }
+	.xshide { display: none; }
 }
 	
 @media (max-width: 800px) {
