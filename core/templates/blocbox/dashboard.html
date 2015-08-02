@@ -347,12 +347,17 @@
                             </h3>
                             	                                               
                             <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
+                        
+                            <!--mobile only-->
+                            <button type="button" class="bluebutton smallanduphide" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
+                            Add Tracking #</button>
+                            
                         </div> <!--end div-xs-6 col-sm-12 with title and icon and text -->
                    
                     <!--div with buttons -- packages awaiting tracking -->
                     <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                     	                        
-                        <button type="button" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
+                        <button type="button" class="bluebutton xshide" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
                             Add Tracking #</button>
                        
                         <button type="button"  class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
