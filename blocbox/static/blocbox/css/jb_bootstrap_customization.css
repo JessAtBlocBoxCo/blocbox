@@ -4649,6 +4649,8 @@ Jasny  STYLES
 	.xsnopadding { padding: 0; }
 	
 	.xspaddingleft5 {padding-left: 5px; }
+	
+	.xspaddingsides5 {padding-left: 5px; padding-right: 5px; }
 
 }
 
