@@ -409,7 +409,7 @@
                             <!--AWAITING TRACKING: Final Colum, Packages Awaiting Tracking-->
                             <div class="col-xs-12 col-sm-5 col-lg-offset-2 xsnopadding">
                                 <p class="textcenter xshide">AWAITING TRACKING #</p>
-                                 <h4 class="nomargin">Tracking Number: 
+                                 <h4 class="nomargin">Tracking: 
                                       <!--display or enter tracking info -->
                                       <span style="font-weight:normal;">
                                          <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
@@ -439,7 +439,7 @@
                   
                   <!--second column for buttons - mobile only -->
                   <div class="col-xs-6 xsonly xspaddingleft5 xsnopadding">
-                        <button type="button"  class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        <button type="button"  class="greybutton" style="height: 40px; " <!--margin-top: 10px--> 
                         	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                                   Message {{ sh.trans.host.first_name }}</button>
    
