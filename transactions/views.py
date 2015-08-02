@@ -108,7 +108,9 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     #if host/no host - get caklendar_homebrew created fields
     if host:
         transcount = Transaction.objects.filter(host=host).count() + 1 #counts transactions that this receiver_email has received (could change to host email)
-        invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) + "R" + str(random3digits) #h2u14N13D112210R123 = transaciton between host2, user14, host's 13th transaction
+        #invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) + "R" + str(random3digits) #h2u14N13D112210R123 = transaciton between host2, user14, host's 13th transaction
+        #JMY updating invoice algorithm - removing date to make it smaller
+        invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) + "R" + str(random3digits) #h2u14N13D112210R123 = transaciton between host2, user14, host's 13th transaction
         conflicts = HostConflicts.objects.filter(host=host)
         for conflict in conflicts:  
             start_month = conflict.date_from.month #date_from.month, this is an integer
