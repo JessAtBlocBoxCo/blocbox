@@ -204,8 +204,8 @@
                    			    
                    			    <!--mobile version -->
                    			   <h3 class="col-xs-12 ltbluetext nomargin smallanduphide xsnopadding" style="padding-top: 5px; font-weight: 400">
-                   			    	          <b> {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} </b>
-                   			    	          <br> Delivered
+                   			    	          {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} 
+                   			    	          <br> <b> Delivered </b>
                    			    </h3>
                    			    
                    			    <!--non-mobile ersion -->
