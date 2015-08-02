@@ -203,14 +203,15 @@
                    			    </h3>
                    			    
                    			    <!--mobile version -->
-                   			   <h3 class="col-xs-12 ltbluetext nomargin smallanduphide" style="padding-top: 5px; font-weight: 400">
-                   			    	          Delivered: {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} 
+                   			   <h3 class="col-xs-12 ltbluetext nomargin smallanduphide xsnopadding" style="padding-top: 5px; font-weight: 400">
+                   			    	          <b> {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} </b>
+                   			    	          <br> Delivered
                    			    </h3>
                    			    
                    			    <!--non-mobile ersion -->
                    			    <p class="greytext paddingtop5px xshide">Click the package received button when you've picked up the package</p>              			
                    			    <!--mobile version -->
-                   			    <p class="greytext paddingtop5px smallanduphide">Your package is ready to be picked up from {{host.first_name }}:
+                   			    <p class="greytext paddingtop5px smallanduphide">Your package is ready to be picked up from {{sh.trans.host.first_name }}:
                    			    	 Click the package received button when you've picked up the package</p>
                    			
                    			</div> <!--end title row -->
