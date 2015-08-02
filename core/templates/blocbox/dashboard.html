@@ -337,10 +337,10 @@
                             </div> <!--end image-->
                             
                             <!-- non-mobile version -->
-                            <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            <h3 class="col-xs-12 ltbluetext nomargin paddingleft15px xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	{% else %} No Title  {% endif %}  </h3>
  														<!-- mobile version -->
-                            <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px xsonly xsnopadding" 
+                            <h3 class="col-xs-12 ltbluetext nomargin paddingleft15px xsonly xsnopadding" 
                             	  style="padding-top: 5px; font-weight: 400">
                             	    {% if sh.trans.title %}  {{ sh.trans.title }} {% else %} No Title  {% endif %}  
                                   <br> <b> Needs Tracking Info</b>
@@ -418,18 +418,8 @@
                             </div> <!-- end div for final column, packages awaiting tracking -->
               
                       </div> <!--end row with shipping details -->
-
-                      <!--second column for buttons - mobile only -->
-                      <div class="col-xs-6 xsonly">
-                        <button type="button"  class="greybutton" style="height: 40px; margin-top: 10px;" 
-                        	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
-                                  Message {{ sh.trans.host.first_name }}</button>
-   
-                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
-                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
-                             					Report an Issue</button>
-                      </div>
-                           					                     
+                      
+                      <!--second row with buttons - non-mobile only --> 					                     
                       <div class="row xshide"> <!--second row for the buttons on the bottom -->
                          <div class="col-sm-3" style="padding-left: 5px;"> <!--first column - message host -->
                             <button type="button"  class="greybutton" style="height: 40px; margin-top: 10px;" 
@@ -444,8 +434,19 @@
                           </div>                      
                       </div> <!--end second row with two buttons -->
                        
-                  </div> <!--end COL-xs-12 col-sm-9 with all the shipping details and icons-->
+                  </div> <!--end COL-xs-6 col-sm-9 with all the shipping details and icons-->
                   
+                  <!--second column for buttons - mobile only -->
+                  <div class="col-xs-6 xsonly">
+                        <button type="button"  class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
+                                  Message {{ sh.trans.host.first_name }}</button>
+   
+                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                             					Report an Issue</button>
+                   </div> <!--end col-xs-6 xsonly colume for buttons - mobile only -->
+                      
                </div> <!-- end dashinfobox-->
                      
 
