@@ -191,7 +191,8 @@
                         
                 <!--for each shipmetn waiting to be picked up - outer div containing all info -->
                  <div class="row dashinfobox dashfont smallmobilepaddingsides5 " style="padding-right: 5px;">
-                    <div class="col-xs-12 col-sm-3 xspaddingleft5" style="padding-left: 5px;">
+                   
+                    <div class="col-xs-12 col-sm-3" style="padding-left: 5px;">
 
                    			<div class="col-xs-6 col-sm-12 xsnopadding"> <!--title -->
                    			    <div class="col-xs-2 userbg nopaddingleft xshide">   
@@ -214,7 +215,7 @@
                    			    <p class="greytext paddingtop5px smallanduphide">Your package is ready to be picked up from {{sh.trans.host.first_name }}:
                    			    	 Click the package received button when you've picked up the package</p>
                    			
-                   			</div> <!--end title row -->
+                   			</div> <!--end col xs-6 col-sm12 containing title -->
                    	    <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                    			  <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                    			   I got my package!</button>
@@ -230,8 +231,7 @@
                     
                     
                     <div class="col-xs-12 col-sm-9 xspaddingleft5 xsnopadding" style="padding-top: 6px "> <!-- padding-left: 0px; -->
-                    	
-                    	
+                    	          	
                     	 <!--ROW WITH ICON/IMAGES FOR PACKAGES WAITING TO BE PICKED UP -->
                        <div class="row xshide">                       	
                             <div class="col-sm-5  marginbottom10px">
@@ -320,35 +320,51 @@
             <div class="col-xs-12 col-sm-12 nopaddingleftright">
                 {% for sh in shipments_with_tracking_notcomplete_notrackingno %}
 
-              <div class="row dashinfobox dashfont" style="padding-right: 5px;">
-
                   {% ifequal confirm_id_int sh.trans.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
                  	{% ifequal issue_id_int sh.trans.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
                 	{% ifequal message_trans_id_int sh.trans.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %}  {% endifequal %}
                 	{% ifequal track_id_int sh.trans.id %}   {% include "dashboard_subtemplates/enter_tracking_modal.html" %} {% endifequal %}
 
-               <div class="row"> <!--top row in dash box - excludes bottom two buttons - delete this is revert to old format -->
+
+              <div class="row dashinfobox dashfont smallmobilepaddingsides5" style="padding-right: 5px;">
+
+
+               <div class="col-xs-12 col-sm-3" style="padding-left: 5px;"> 
                	
 										<!--Title and Button Column: Packages Awaiting Tracking  -->
-                    <div class="col-sm-3" style="padding-left: 5px;">
-                        <div class="row">                       	
-                            <div class="col-xs-2 userbg nopaddingleft">  
+                    <div class="col-xs-6 col-sm-12 xsnopadding">                      	
+                            <!--image - hidden in mobile -->
+                            <div class="col-xs-2 userbg nopaddingleft xshide">  
                             	<div class="package-i" style="width: 30px; height: 30px"></div>  </div>                          
-                            <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            </div> <!--end image-->
+                            
+                            <!-- non-mobile version -->
+                            <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	{% else %} No Title  {% endif %}  </h3>
-                        </div>                        
-                        <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
-                        
+ 														<!-- mobile version -->
+                            <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px smallanduphide xsnopadding" 
+                            	  style="padding-top: 5px; font-weight: 400">
+                            	    {% if sh.trans.title %}  {{ sh.trans.title }} {% else %} No Title  {% endif %}  
+                                  <br> <b> Needs Tracking Info</b>
+                            </h3>
+                            	                                               
+                            <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
+                        </div> <!--end div-xs-6 col-sm-12 with title and icon and text -->
+                   
+                    <!--div with buttons -- packages awaiting tracking -->
+                    <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
+                    	                        
                         <button type="button" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
                             Add Tracking #</button>
                        
                         <button type="button"  class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>                          
-                    </div> <!--end left column with the tbuttons, packages awaiting tracking -->
-
-                    <!--END SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
-                   
-                    <div class="col-sm-9" style="padding-top: 6px;"> <!--second column in that row - with the icons -->
+                    </div> <!-- end col-xs-6 col-sm-12 with buttons -->
+                    
+              </div> <!--end col-xs-12 col-sm-3 with title and buttons-->
+               	
+              <!--SHIPMETN DETAILS - AWAITING TRACKING -->
+              <div class="col-xs-12 col-sm-9" xspaddingleft5 xsnopadding"> 
                         
                         <!-- ROW WITH ICON IMAGES FOR PACKAGES AWAITING TRACKING -->
                         <div class="row xshide">
@@ -369,12 +385,10 @@
                                 <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
                             </div> -->
                         </div> <!--end row with icons -->
-
-                        
                         	                        	
                        <!--ORDERED COLUMN: Packages Awaiting Tracking -->
                        <div class="row">
-                        	  <div class="col-xs-12 col-sm-5">
+                        	  <div class="col-xs-12 col-sm-5 xsnopadding">
                                 <p class="textcenter xshide">ORDERED</p>
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
                                 	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
@@ -389,7 +403,7 @@
                                 
                        
                             <!--AWAITING TRACKING: Final Colum, Packages Awaiting Tracking-->
-                            <div class="col-xs-12 col-sm-5 col-lg-offset-2">
+                            <div class="col-xs-12 col-sm-5 col-lg-offset-2 xsnopadding">
                                 <p class="textcenter xshide">AWAITING TRACKING #</p>
                                  <h4 class="nomargin">Tracking Number</h4>
                                     <!--Enter Tracking -->
