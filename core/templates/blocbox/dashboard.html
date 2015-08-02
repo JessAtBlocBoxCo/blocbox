@@ -278,10 +278,16 @@
                                 					{% if trans.on_aftership %} {{sh.aftership.tag}} :
                                 					{% else %} {{ sh.trans.last_tracking_status }} :
                                 				  {% endif %}
-                                        <span style="font-weight:normal;"> 
+                                      <span style="font-weight:normal;"> 
                                 	       {% if trans.on_aftership %} {{sh.aftership.last_checkpoint.checkpoint_time }}
-																	       {% else %} {{ sh.trans.last_checkpoint_datetime }}  {% endif %}	  </span> 
-																	  <br> Delivered to: <span style="font-weight:normal;"> {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}</span>
+																	       {% else %}  {{ sh.trans.last_checkpoint_datetime }}     
+																	       {% endif %}
+																	          
+																	      <!--where delivered -->
+																	        {% if sh.aftership.last_checkpoint.city %}  
+																	        	  to  {{sh.aftership.last_checkpoint.city}}, {{sh.aftership.last_checkpoint.state }}
+																	        {% endif %}	
+																	    </span>
 																	                               
                                 </h4>
                             </div> <!--End Neighbor Column (packages waiting to be picked up) -->
