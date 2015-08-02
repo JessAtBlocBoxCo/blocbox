@@ -191,32 +191,33 @@
                         
                 <!--for each shipmetn waiting to be picked up - outer div containing all info -->
                  <div class="row dashinfobox dashfont" style="padding-right: 5px;">
-                    <div class="col-xs-6 col-sm-3" style="padding-left: 5px;">
+                    <div class="col-xs-12 col-sm-3" style="padding-left: 5px;">
 
-                   			<div class="row"> <!--title -->
+                   			<div class="col-xs-6 col-sm-12"> <!--title -->
                    			    <div class="col-xs-2 userbg nopaddingleft">   
                    			         	<div class="package-i" style="width: 30px; height: 30px"></div> 
                    			    </div>                  			         
                    			    <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                    			         	      {% else %} No Title {% endif %} 
                    			    </h3>
+                   			                  			
+                   			  <p class="greytext paddingtop5px">Click the package received button when you've picked up the package</p>
                    			</div> <!--end title row -->
-                   			
-                   			<p class="greytext paddingtop5px">Click the package received button when you've picked up the package</p>
-                   			
-                   			<button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                   	    <div class="col-xs-6 col-sm-12">
+                   			  <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                    			   I got my package!</button>
                    			
-                   			<button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
+                   			  <button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                    			   Message {{ sh.trans.host.first_name }}</button>
                    			
-                   			<button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                   			  <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                    			         Report an Issue</button>
+                   			</div> <!--col with buttons-->
                     </div> <!--end col-sm-3 -->
                     <!--SHIPMENT DETAILS: ORDER DATE, TITLE, SHIPPING SPEED, AND TRACKING INFORMATION (waiting to be pickd up) -->
                     
                     
-                    <div class="col-xs-6 col-sm-9" style="padding-top: 6px "> <!-- padding-left: 0px; -->
+                    <div class="col-xs-12 col-sm-9" style="padding-top: 6px "> <!-- padding-left: 0px; -->
                     	
                     	
                     	 <!--ROW WITH ICON/IMAGES FOR PACKAGES WAITING TO BE PICKED UP -->
