@@ -357,12 +357,22 @@
                        
                         <button type="button"  class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>                          
+                    
+                        <!--following two buttons are in a different location for non-mobile -->
+                        <button type="button"  class="greybutton smallanduphide" style="height: 40px; margin-top: 10px;" 
+                        	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
+                                  Message {{ sh.trans.host.first_name }}</button>
+   
+                        <button type="button" class="greybutton smallanduphide" style="height: 40px; margin-top: 10px;" 
+                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                             					Report an Issue</button>
+                    
                     </div> <!-- end col-xs-6 col-sm-12 with buttons -->
                     
               </div> <!--end col-xs-12 col-sm-3 with title and buttons-->
                	
               <!--SHIPMETN DETAILS - AWAITING TRACKING -->
-              <div class="col-xs-12 col-sm-9" xspaddingleft5 xsnopadding"> 
+              <div class="col-xs-12 col-sm-9 xspaddingleft5 xsnopadding"> 
                         
                         <!-- ROW WITH ICON IMAGES FOR PACKAGES AWAITING TRACKING -->
                         <div class="row xshide">
@@ -411,27 +421,28 @@
                                       <p> &nbsp </p>
                                   </h4>                                                         
                             </div> <!-- end div for final column, packages awaiting tracking -->
-                         
-                       </div> <!--end row with shipping details -->
+              
+                      </div> <!--end row with shipping details -->
                      
+                      <div class="row xshide"> <!--second row for the buttons on the bottom -->
+                         <div class="col-sm-3" style="padding-left: 5px;"> <!--first column - message host -->
+                            <button type="button"  class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
+                                  Message {{ sh.trans.host.first_name }}</button>
+                            </div>
+                       
+                          <div class="col-sm-4 col-lg-3">     
+                                <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                             					Report an Issue</button>
+                          </div>                      
+                      </div> <!--end second row with two buttons -->
+                       
                   </div> <!--end COL-xs-12 col-sm-9 with all the shipping details and icons-->
                   
                </div> <!-- end dashinfobox-->
                      
-              <div class="row"> <!--second row for the buttons on the bottom -->
-                       <div class="col-sm-3" style="padding-left: 5px;"> <!--first column - message host -->
-                         <button type="button"  class="greybutton" style="height: 40px; margin-top: 10px;" 
-                        	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
-                                  Message {{ sh.trans.host.first_name }}</button>
-                       </div>
-                       
-                     <div class="col-sm-4 col-lg-3">     
-                                <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
-                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
-                             					Report an Issue</button>
-                     </div> 
-                     
-              </div> <!--end second row with two buttons -->
+
                     
         {% endfor %} <!--END SHIPMETNS WAITING FOR TRACKING NUMBER -->
 
