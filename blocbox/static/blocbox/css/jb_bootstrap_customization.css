@@ -1585,7 +1585,7 @@ body {
 
 @media (min-width: 768px) {
 	
-	  .smallanduphide { display: none; }
+	  .xsonly { display: none; }
 	  
     .waitlistbody .navbar-default {
         margin-bottom: 0px;
