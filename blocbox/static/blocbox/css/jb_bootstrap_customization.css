@@ -4645,6 +4645,8 @@ Jasny  STYLES
     }
     
 	.xshide { display: none; }
+	
+	.xsnopadding { padding: 0; }
 
 }
 
