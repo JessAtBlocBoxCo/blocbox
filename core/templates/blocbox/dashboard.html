@@ -192,11 +192,8 @@
             <!--for each shipmetn waiting to be picked up - outer div containing all info -->
             <div class="row dashinfobox dashfont smallmobilepaddingsides5 " style="padding-right: 5px;">
                    
-                    <div class="col-xs-12 col-sm-3" style="padding-left: 5px;">
-
-                   			<div class="col-xs-6 col-sm-12 xsnopadding"> <!--title -->
-                   				
-                   				<div class="row nopadding">
+                 <!--run title and icon across top -->
+                 <div class="row nopadding">
                    			     <div class="col-xs-2 userbg nopaddingleft xshide">   
                    			         	<div class="package-i" style="width: 30px; height: 30px"></div> 
                    			     </div>         
@@ -210,7 +207,13 @@
                    			    	          {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} 
                    			    	          <br> <b> Delivered </b>
                    			      </h3>
-                   			  </div> <!--end row containing icon and title -->
+                 </div> <!--end row containing icon and title -->
+                   			  
+                    <!--div continaing icon, title and buttons - to right in desktop -->
+                    <div class="col-xs-12 col-sm-3" style="padding-left: 5px;">
+
+                   			<div class="col-xs-6 col-sm-12 xsnopadding"> <!--title -->
+                   			
                    			  
                    			  <div class="row nopadding">                   			    
                    			     <!--non-mobile ersion -->
