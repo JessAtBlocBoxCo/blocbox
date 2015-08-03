@@ -216,8 +216,8 @@
                    			     <!--non-mobile ersion -->
                    			     <p class="greytext paddingtop5px xshide">Click the package received button when you've picked up the package</p>              			
                    			     <!--mobile version -->
-                   			     <p class="greytext paddingtop5px xsonly">Your package is ready to be picked up from {{sh.trans.host.first_name }}:
-                   			    	 Click the package received button when you've picked up the package</p>
+                   			     <p class="greytext paddingtop5px xsonly">Your package is ready to be picked up from {{sh.trans.host.first_name }}.
+                   			    	 Click the button to the right after you've received the package</p>
                    			  </div>
                    			</div> <!--end col xs-6 col-sm12 containing title -->
                    	    <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
@@ -333,7 +333,8 @@
                <div class="col-xs-12 col-sm-3" style="padding-left: 5px;"> 
                	
 										<!--Title and Button Column: Packages Awaiting Tracking  -->
-                    <div class="col-xs-6 col-sm-12 xsnopadding">                      	
+                    <div class="col-xs-6 col-sm-12 xsnopadding"> 
+                    	<div class="row nopadding">                    	
                             <!--image - hidden in mobile -->
                             <div class="col-xs-2 userbg nopaddingleft xshide">  
                             	<div class="package-i" style="width: 30px; height: 30px">  </div>                          
@@ -349,9 +350,10 @@
                             	    {% if sh.trans.title %}  {{ sh.trans.title }} {% else %} No Title  {% endif %}  
                                   <br> <b> Need Tracking Info</b>
                             </h3>
-                            	                                               
+                        </div> 
+                        <div class="row nopadding">                         	                                               
                             <p class="greytext paddingtop10px">Enter your shipment's tracking info once you receive it from your sender</p>
-                        
+                         </div>
                             
                         </div> <!--end div-xs-6 col-sm-12 with title and icon and text -->
                    
@@ -477,6 +479,7 @@
                         
                       <!--Title and Button Column: Packages AWaiting Tracking -->                          
                       <div class="col-xs-6 col-sm-12 xsnopadding">
+                      	<div class="row nopadding">
                             <div class="col-xs-2 userbg nopaddingleft xshide">
                                 <div class="package-i" style="width: 30px; height: 30px"></div>
                             </div>
@@ -491,10 +494,12 @@
                                	{% else %} No Title  {% endif %} 
                                	<br> <b> In Transit </b>
                             </h3>
-                            
+                         </div> <!--end div with icon and title-->
+                         <div class="row nopadding">
                            <p class="greytext paddingtop10px">Use the button to the right to see full tracking details. 
                            	  You will be notified when {{ sh.trans.host.first_name }} receives your package. </p>
-                     
+                         </div>
+                         
                       </div> <!--end col-xs-6 col-sm-12 title and text -->
                       
                       <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
@@ -626,18 +631,22 @@
                             
                             <div class="col-xs-2 userbg nopaddingleft xshide">  <div class="package-i" style="width: 30px; height: 30px"></div> </div>
                             
-                            <!--title non-mobile version -->
-                            <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
-                            	   	{% else %} No Title  {% endif %}                             
-                            </h3>
+                              <div class="row nopadding">
+                              <!--title non-mobile version -->
                             
-                            <!--title - mobile version -->
-                            <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopaddingsu" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                               <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            	   	{% else %} No Title  {% endif %}                             
+                               </h3>
+                            
+                               <!--title - mobile version -->
+                               <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopaddingsu" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	   	{% else %} No Title  {% endif %} 
                             	   	<br> <b> Completed </b>                            
-                            </h3>
-                            
-                            <p class="greytext paddingtop10px">Archived shipments can be found in the past transactions section of your account page</p>
+                               </h3>
+                            </div>
+                            <div class="row nopadding">
+                              <p class="greytext paddingtop10px">Archived shipments can be found in the past transactions section of your account page</p>
+                            </div>
                        </div> <!-- end col-xs-6 col-sm-12, col with title and icon -->
                         
                        <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
