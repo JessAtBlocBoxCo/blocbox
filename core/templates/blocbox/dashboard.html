@@ -616,20 +616,29 @@
              <div class="row dashinfobox dashfont" style="padding-right: 5px;">
                  <div class="col-sm-3" style="padding-left: 5px;">
                         <div class="row">
-                            <div class="col-xs-2 userbg nopaddingleft">  <div class="package-i" style="width: 30px; height: 30px"></div> </div>
-                            <h3 class="col-xs-10 ltbluetext nomargin paddingleft15px" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
-                            	   
-                            	   	{% else %} No Title  {% endif %}  
+                            <div class="col-xs-2 userbg nopaddingleft xshide">  <div class="package-i" style="width: 30px; height: 30px"></div> </div>
                             
+                            <!--title non-mobile version -->
+                            <h3 class="col-xs-12 ltbluetext nomargin paddingleft15px xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            	   	{% else %} No Title  {% endif %}                             
                             </h3>
-                        </div>
-                        <p class="greytext paddingtop10px">Archived shipments can be found in the past transactions section of your account page</p>
-                        <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
-                        	onclick="window.location='/dashboard/archive_id{{sh.trans.id}}';"> Archive Shipment</button>
-                        <!--JMY REMOVED 'MESSAGE JOHN' - NOT ESSENTIAL HERE - AND THE MORE WE CAN REMOVE THE FASTER IT WILL LOAD -->
-                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
-                            Report an Issue</button>
-
+                            
+                            <!--title - mobile version -->
+                            <h3 class="col-xs-12 ltbluetext nomargin paddingleft15px xsonly" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            	   	{% else %} No Title  {% endif %} 
+                            	   	<br> <b> Completed </b>                            
+                            </h3>
+                            
+                            <p class="greytext paddingtop10px">Archived shipments can be found in the past transactions section of your account page</p>
+                         </div>
+                        
+                        <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
+                           <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
+                        	   onclick="window.location='/dashboard/archive_id{{sh.trans.id}}';"> Archive Shipment</button>
+                           <!--JMY REMOVED 'MESSAGE JOHN' - NOT ESSENTIAL HERE - AND THE MORE WE CAN REMOVE THE FASTER IT WILL LOAD -->
+                           <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                               Report an Issue</button>
+												</div>
                  </div> <!-- END COL-SM-3 CONTAINING TITLE AND BUTTONS TO ARCHIVE SHIPMENT, ETC - COMPLETED SHIPMENTS -->
                     
                  <div class="col-sm-9">
