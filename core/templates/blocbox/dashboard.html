@@ -285,7 +285,6 @@
                                        {% if sh.trans.on_aftership %} 
                                        	    {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%} {% else %} You expected it to arrive {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} {% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; {% endif %} 
                                        {% endif %} </span>
-                                    <!--Status and date delivered-->
                                     <br>
                                 					{% if trans.on_aftership %} {{sh.aftership.tag}} :
                                 					{% else %} {{ sh.trans.last_tracking_status }} :
@@ -556,20 +555,26 @@
                                      	  <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a>
                                         <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
 																		</span>
-                               <br> Status: <span style="font-weight:normal;">  {% if sh.trans.on_aftership %} {{sh.aftership.tag}} {% else %} {{ sh.trans.last_tracking_status }} {% endif %} </span>
                             
                                 		{% if sh.trans.on_aftership %} 
                                 				{% if sh.aftership.last_checkpoint.city %} 
                                 					<br>		Last Checkpoint: <span style="font-weight:normal;"> {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }} </span>
-                                				{% endif %}
+                                				{% else %}
+                                				  <br> Status: <span style="font-weight:normal;">  
+                               	              {% if sh.trans.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.trans.last_tracking_status }} 
+                               	        {% endif %} </span>
                                 		{% else %} <!--if not on aftership b/c expired get from our tables -->			
                                 				{% if sh.trans.last_checkpoint_city %}
-                                					<br>		Last Checkpoint: <span style="font-weight:normal;"> {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} </span>
+                                					<br> Last Checkpoint: <span style="font-weight:normal;"> {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} </span>
+                                				{% else %}                                					
+                                					<br> Status: <span style="font-weight:normal;">  
+                               	              {% if sh.trans.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.trans.last_tracking_status }} 
+                               	                                       				
                                 				{% endif %} 
                                 		{% endif %}
                            
-                                                               
-                                			{% if sh.trans.on_aftership %} 
+                                    <!--last updated -->                           
+                                	  {% if sh.trans.on_aftership %} 
                                 				  {% if sh.aftership.last_tracking_datetime %} 
                                 				    <br>  Last Updated: <span style="font-weight:normal;"> {{ sh.aftership.last_tracking_datetime }} {% endif %} </span>
                                 			{% else %} 
