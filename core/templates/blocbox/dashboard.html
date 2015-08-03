@@ -483,14 +483,14 @@
                             </h3>
                             
                             <!--mobile version - title -->
-                             <h3 class="col-xs-12 ltbluetext nomargin paddingleft15px xsonly" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            <h3 class="col-xs-12 ltbluetext nomargin paddingleft15px xsonly" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                                	{% else %} No Title  {% endif %} 
                                	<br> <b> In Transit </b>
                             </h3>
                             
+                           <p class="greytext paddingtop10px">You will be notified when {{ sh.trans.host.first_name }} receives your package. </p>
+                     
                       </div> <!--end col-xs-6 col-sm-12 title and text -->
-                        
-                      <p class="greytext paddingtop10px">You will be notified when {{ sh.trans.host.first_name }} receives your package. </p>
                       
                       <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                         	<button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
