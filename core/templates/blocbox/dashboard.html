@@ -561,8 +561,8 @@
                                 					<br>		Last Checkpoint: <span style="font-weight:normal;"> {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }} </span>
                                 				{% else %}
                                 				  <br> Status: <span style="font-weight:normal;">  
-                               	              {% if sh.trans.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.trans.last_tracking_status }} 
-                               	        {% endif %} </span>
+                               	              {% if sh.trans.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.trans.last_tracking_status }}  {% endif %} </span>
+                                				{% endif %}
                                 		{% else %} <!--if not on aftership b/c expired get from our tables -->			
                                 				{% if sh.trans.last_checkpoint_city %}
                                 					<br> Last Checkpoint: <span style="font-weight:normal;"> {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} </span>
@@ -571,7 +571,7 @@
                                	              {% if sh.trans.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.trans.last_tracking_status }} 
                                	                                       				
                                 				{% endif %} 
-                                		{% endif %}
+                                	{% endif %} <!--end if on aftership -->
                            
                                     <!--last updated -->                           
                                 	  {% if sh.trans.on_aftership %} 
