@@ -4673,8 +4673,8 @@ Jasny  STYLES
   .xsheight30px {height: 30px; }
 }
 
-/*Stuff specidifict to boostrap SMALL column cinfirmation */
-@media (max-width: 992px) {
+/*Stuff specidifict to boostrap SMALL column cinfirmation, md = 992  */
+@media (max-width: 991px) {
 	
 	.smallhide { display: none; }
 	
