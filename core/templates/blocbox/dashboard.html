@@ -20,7 +20,7 @@
             <div class="profileboxline100 margintop10px"></div>
         </div>
     </div>
-    <!--emd top row-->
+    <!--end top row-->
 
 
     <div class="row nopaddingleftright">
@@ -28,7 +28,7 @@
 
         {% if user.is_authenticated %}
         <!--sidebar-->
-        <div class="col-md-3 col-lg-2 col-lg-offset-1 xshide">
+        <div class="col-sm-3 col-lg-2 col-lg-offset-1 xshide">
             <div class="dashpiccontainer">
                 {% if user.facebook_id %}
                 <img class="dashpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %} {% if user.profile_pic_uploaded %}
@@ -48,7 +48,7 @@
 
 
             <!--Find a new host button-->
-            <div class="col-md-10 col-md-offset-1 col-lg-12 marginbottom15px nopadding">
+            <div class="col-sm-10 col-sm-offset-1 col-lg-12 marginbottom15px nopadding">
                 <div class="row">
                     <div class="col-sm-2 nopadding">
                         <button class="searchbtn" type="button" onclick="window.location='/search';">
@@ -152,7 +152,7 @@
 
 
 		<!--div encompassing all shipments -->
-    <div class="col-xs-12 col-md-9 col-lg-8 nopaddingsidesmobile nopaddingright">
+    <div class="col-xs-12 col-sm-9 col-lg-8 nopaddingsidesmobile nopaddingright">
 
 
 						<!--SHIPMENTS WAITING TO BE PICKED UP -- OUTER CONTAINER CONTAINING ALL -- NOT SURE WHY WE NEED... -->
