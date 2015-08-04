@@ -3689,6 +3689,7 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         display: block;
     }
     .mobilehide {
+    	/*JMY NOTE: I THINK WE SHOULD DEFER TO XSHIDE INSTEAD OF MOBILE HIDE TO CORRESPOND WITH BOOTSTRAP CONFIG */
         display: none;
     }
     .orangebars {
