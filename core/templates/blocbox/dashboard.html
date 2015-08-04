@@ -447,13 +447,13 @@
                       <!--second row with buttons - non-mobile only --> 					                     
                       <div class="row xshide "> <!--second row for the buttons on the bottom -->
                          <div class="col-sm-3" style="padding-left: 5px;"> <!--first column - message host -->
-                            <button type="button"  class="greybutton xsheight30px sheight40px" style="height: 40px; margin-top: 10px;" 
+                            <button type="button"  class="greybutton sheight40px" style="margin-top: 10px;" 
                         	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                                   Message {{ sh.trans.host.first_name }}</button>
                             </div>
                        
                           <div class="col-sm-4 col-lg-3">     
-                                <button type="button" class="greybutton xsheight30px sheight40px" style="height: 40px; margin-top: 10px;" 
+                                <button type="button" class="greybutton sheight40px" style="margin-top: 10px;" 
                         	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                              					Report an Issue</button>
                           </div>                      
@@ -463,11 +463,11 @@
                   
                   <!--second column for buttons - mobile only -->
                   <div class="col-xs-6 xsonly xspaddingsides5 xsnopadding">
-                        <button type="button"  class="greybutton" style="height: 40px;" 
+                        <button type="button"  class="greybutton xsheight30px"  
                         	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
                                   Message {{ sh.trans.host.first_name }}</button>
    
-                        <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" 
+                        <button type="button" class="greybutton xsheight30px" style="margin-top: 10px;" 
                         	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                              					Report an Issue</button>
                    </div> <!--end col-xs-6 xsonly colume for buttons - mobile only -->
