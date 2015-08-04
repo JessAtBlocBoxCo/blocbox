@@ -4648,6 +4648,8 @@ Jasny  STYLES
 	
  }
 
+
+/*Stuff specificit to the bootstrap XS (EXTRA-SMALL column configuration */
 @media (max-width: 767px) {
     .offcanvas-xs {
         display: none;
@@ -4669,6 +4671,13 @@ Jasny  STYLES
 	.xspaddingsides5 {padding-left: 5px; padding-right: 5px; }
   
   .xsheight30px {height: 30px; }
+}
+
+/*Stuff specidifict to boostrap SMALL column cinfirmation */
+@media (max-width: 992px) {
+	
+	.smallhide { display: none; }
+	
 }
 
 
