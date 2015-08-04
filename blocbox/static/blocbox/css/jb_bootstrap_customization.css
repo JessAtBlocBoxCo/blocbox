@@ -1587,6 +1587,8 @@ body {
 	
 	  .xsonly { display: none; }
 	  
+	  .sheight40px { height: 40px ; }
+	  
     .waitlistbody .navbar-default {
         margin-bottom: 0px;
     }
