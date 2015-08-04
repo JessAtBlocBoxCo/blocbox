@@ -192,30 +192,29 @@
             <!--for each shipmetn waiting to be picked up - outer div containing all info -->
             <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px" style="padding-right: 5px;">
                    
-                 <!--run title and icon across top -->
-                 <div class="row nopadding">
-                   			     <div class="col-xs-1 userbg nopaddingleft xshide">   
-                   			         	<div class="package-i" style="width: 30px; height: 30px"></div> 
-                   			     </div>         
-                   			     <!--non-mobile version -- hide the imagine -->         			         
-                   			     <h3 class="col-xs-11 ltbluetext nomargin xshide nopaddingleftright" style="padding-top: 5px; font-weight: 400"> <!--paddingleft15px -->
+                <!--run title and icon across top -->
+                <div class="row nopadding">
+                   	<div class="col-xs-1 userbg nopaddingleft xshide">   
+                   		 	<div class="package-i" style="width: 30px; height: 30px"></div> 
+                    </div>         
+                   <!--non-mobile version -- hide the imagine -->         			         
+                   <h3 class="col-xs-11 ltbluetext nomargin xshide nopaddingleftright" style="padding-top: 5px; font-weight: 400"> <!--paddingleft15px -->
                    			    	          {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} 
-                   			     </h3>
+                   </h3>
                    			    
-                   			     <!--mobile version -->
-                   			     <h3 class="col-xs-12 ltbluetext nomargin xsonly" style="padding-top: 5px; padding-left: 5px; font-weight: 400">
+                   <!--mobile version -->
+                   <h3 class="col-xs-12 ltbluetext nomargin xsonly" style="padding-left: 5px; font-weight: 400">
                    			    	          {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} 
-                   			    	         <!-- <br> <b> Delivered </b> -->
-                   			      </h3>
-                 </div> <!--end row containing icon and title -->
+                   </h3>
+                </div> <!--end row containing icon and title -->
                    			  
-                 <!--div continaing icon, title and buttons - to right in desktop -->
-                 <div class="col-xs-12 col-sm-4" style="padding-left: 5px;">
+                <!--div continaing icon, title and buttons - to right in desktop -->
+                <div class="col-xs-12 col-sm-4" style="padding-left: 5px;">
 
-                   			<div class="col-xs-6 col-sm-12 xsnopadding"> <!--title -->
+                   	<div class="col-xs-6 col-sm-12 xsnopadding"> <!--title -->
                    			
                    			  
-                   			  <div class="row nopadding">  
+                   			<div class="row nopadding">  
                    			  	                 			    
                    			     <!--non-mobile ersion -->
                    			     <p class="greytext paddingtop5px xshide">Click the package received button when you've picked up the package</p>              			
@@ -225,9 +224,9 @@
                    			     </h3>
                    			     <p class="greytext paddingtop5px paddingright5px xsonly">Your package is ready to be picked up from {{sh.trans.host.first_name }}.
                    			    	 Click the button to the right after you've received the package</p>
-                   			  </div>
-                   			</div> <!--end col xs-6 col-sm12 containing title -->
-                   	    <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
+                   	    </div>
+                   	</div> <!--end col xs-6 col-sm12 containing title -->
+                   	<div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                    	    	
                    			  <button type="button" name="package_received" class="bluebutton xsheight30px sheight40px" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                    			   I got my package!</button>
@@ -337,7 +336,7 @@
 
 
 					<!--outer div for each shipment waiting tracking -->
-          <div class="row dashinfobox dashfont smallmobilepaddingsides5" style="padding-right: 5px;">
+          <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px" style="padding-right: 5px;">
 
 
                 <div class="row nopadding">                    	
@@ -347,12 +346,12 @@
                             </div> <!--end image-->
                             
                             <!-- non-mobile version -->
-                            <h3 class="col-xs-10 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            <h3 class="col-xs-10 ltbluetext nomargin nopaddingleftright xshide" style="font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	{% else %} No Title  {% endif %}  </h3>
                             		
  														<!-- mobile version -->
                             <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" 
-                            	  style="padding-top: 5px; font-weight: 400">
+                            	  style="font-weight: 400">
                             	    {% if sh.trans.title %}  {{ sh.trans.title }} {% else %} No Title  {% endif %}  
                                   <br> <b> Need Tracking Info</b>
                             </h3>
@@ -374,10 +373,10 @@
                  <!--div with buttons -- packages awaiting tracking -->
                  <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                     	                        
-                        <button type="button" class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
+                        <button type="button" class="bluebutton xsheight30px sheight40px" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
                             Add Tracking #</button>
                        
-                        <button type="button"  class="bluebutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
+                        <button type="button"  class="bluebutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>                          
                                    
                     </div> <!-- end col-xs-6 col-sm-12 with buttons -->
@@ -486,8 +485,8 @@
               	{% ifequal message_trans_id_int sh.trans.id %}	{% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
               	{% ifequal track_id_int sh.trans.id %} {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}
 
-            <!--divider defining the whole current shipments part -->
-            <div class="row dashinfobox dashfont smallmobilepaddingsides5" style="padding-right: 5px;">                   
+            <!--outer div of each shipment in transit container -->
+            <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px" style="padding-right: 5px;">                   
 
                   <div class="row nopadding">
                             <div class="col-xs-2 userbg nopaddingleft xshide">
@@ -520,15 +519,15 @@
                       </div> <!--end col-xs-6 col-sm-12 title and text -->
                       
                       <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
-                        	<button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
+                        	<button type="button" name="package_received" class="bluebutton xsheight30px sheight40px" 
                         			onclick="window.open('https://blocbox.aftership.com/{{ sh.trans.tracking }}')"	>
                               Check Shipping Details</button>
 
                         	<!--message modal -->
-                        	<button type="button" name="package_received" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}/#{{sh.trans.id}}';">
+                        	<button type="button" name="package_received" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}/#{{sh.trans.id}}';">
                               Message {{ sh.trans.host.first_name }}</button>
 
-                          <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                          <button type="button" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                               Report an Issue</button>
                        
                      </div> <!-- end col-xs-6 col-sm-12 buttons -- packages in transit -->
@@ -640,7 +639,7 @@
               {% ifequal issue_id_int sh.trans.id %}    {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
                 <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
 
-             <div class="row dashinfobox dashfont smallmobilepaddingsides5" style="padding-right: 5px;">
+             <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px" style="padding-right: 5px;">
                  
                   <div class="row nopadding">
                               <!--title non-mobile version -->
@@ -669,10 +668,10 @@
                        </div> <!-- end col-xs-6 col-sm-12, col with title and icon -->
                         
                        <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
-                           <button type="button" name="package_received" class="bluebutton" style="height: 40px; margin-top: 10px;" 
+                           <button type="button" class="bluebutton xsheight30px sheight40px"  
                         	   onclick="window.location='/dashboard/archive_id{{sh.trans.id}}';"> Archive Shipment</button>
                            <!--JMY REMOVED 'MESSAGE JOHN' - NOT ESSENTIAL HERE - AND THE MORE WE CAN REMOVE THE FASTER IT WILL LOAD -->
-                           <button type="button" class="greybutton" style="height: 40px; margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
+                           <button type="button" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                                Report an Issue</button>
 												</div> <!--end col-xs-6 col-sm-12, col with buttons -->
 												
