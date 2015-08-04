@@ -341,12 +341,12 @@
 
                 <div class="row nopadding">                    	
                        <!--image - hidden in mobile -->
-                            <div class="col-xs-2 userbg nopaddingleft xshide">  
+                            <div class="col-xs-1 userbg nopaddingleft xshide">  
                             	<div class="package-i" style="width: 30px; height: 30px">  </div>                          
                             </div> <!--end image-->
                             
                             <!-- non-mobile version -->
-                            <h3 class="col-xs-10 ltbluetext nomargin nopaddingleftright xshide" style="font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	{% else %} No Title  {% endif %}  </h3>
                             		
  														<!-- mobile version -->
@@ -495,12 +495,12 @@
             <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px" style="padding-right: 5px;">                   
 
                   <div class="row nopadding">
-                            <div class="col-xs-2 userbg nopaddingleft xshide">
+                            <div class="col-xs-1 userbg nopaddingleft xshide">
                                 <div class="package-i" style="width: 30px; height: 30px"></div>
                             </div>
                             
                             <!--non-mobile version--->
-                            <h3 class="col-xs-10 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                                	{% else %} No Title  {% endif %} 
                             </h3>
                             
@@ -649,28 +649,39 @@
                  
                   <div class="row nopadding">
                               <!--title non-mobile version -->
+                       <div class="col-xs-1 userbg nopaddingleft xshide">  
+                            	 <div class="package-i" style="width: 30px; height: 30px"></div> 
+                        </div>
                             
-                               <h3 class="col-xs-10 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                        <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	   	{% else %} No Title  {% endif %}                             
-                               </h3>
+                        </h3>
                             
-                               <!--title - mobile version -->
-                               <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
-                            	   	{% else %} No Title  {% endif %} 
-                            	   	<br> <b> Completed </b>                            
-                               </h3>
+                        <!--title - mobile version -->
+                        <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="font-weight: 400; padding-left: 5px; ">{% if sh.trans.title %}  {{ sh.trans.title }} 
+                            	   	{% else %} No Title  {% endif %}                             
+                        </h3>
                  </div>
                             
                  <div class="col-xs-12 col-sm-4" style="padding-left: 5px;">
                       
-                      <div class="col-xs-6 col-sm-12 xsnopadding">
-                            
-                            <div class="col-xs-2 userbg nopaddingleft xshide">  <div class="package-i" style="width: 30px; height: 30px"></div> </div>
-                            
-
+                      <div class="col-xs-6 col-sm-12 xsnopadding">                            
+                                                       
+														
                             <div class="row nopadding">
-                              <p class="greytext paddingtop10px">Archived shipments can be found in the past transactions section of your account page</p>
+                            	 <!--non-mobile verison-->
+                               <p class="greytext paddingtop10px xshide">Archived shipments can be found in the past transactions section of your account page</p>
+                            
+                               <!--mobile version-->
+                               <h3 class="ltbluetext nomargin xsonly xsnopadding" style="font-weight: 400">
+                   			          <b> Completed </b>
+                   			       </h3>
+                               <p class="greytext paddingtop5px paddingright5px xsonly">Archived shipments can be found in the past transactions section of your account page</p>
+                                
                             </div>
+                            
+                            
+                            
                        </div> <!-- end col-xs-6 col-sm-12, col with title and icon -->
                         
                        <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
