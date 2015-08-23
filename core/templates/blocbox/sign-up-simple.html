@@ -2,11 +2,16 @@
 
 {% extends "blocbox/basewaitlist.html" %}
 <!--this is blocbox/core/templates/bocbox/waitlist-confirmation.html, url is http://www.blocbox.co/waitlistconfirmation/-->
-{% load staticfiles %} {% block title %} Sign Up for Blocbox {% endblock %} {% block topcontent %}
+{% load staticfiles %} 
+{% block title %} Sign Up for Blocbox {% endblock %} 
+
+{% block topcontent %}
 
 <div class="row-fluid fullheight">
 
     <div class="row">
+
+{% if hostsignup %} TESTING - HOST SIGN-UP {% endif %}
 
         {% if registered %}
 
@@ -17,7 +22,7 @@
 	</h3>
 
 
-{% else %}
+       {% else %}
     <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
         <div class="promo-3"></div>
 

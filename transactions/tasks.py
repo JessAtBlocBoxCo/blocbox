@@ -168,13 +168,6 @@ def watch_packages():
             else:
                 responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"
                 response_messages_list.append(responsemessage)   
-    #return HttpResponse(response_messages_list)
-    #the httpResponse produces a formatted output when called from command line but not from python shell.. when i sort this out go back to hhptResponse
-        #TEST THAT ITS WORKING
-        #subject_test = "Testing Watch_Packages"
-        #message_body_test = "Testing Watch Packages Function called by Cron"
-        #message_test = render_to_string('emails/notify_enduser_trackingupdate.txt', {'host': 'test_host', 'enduser': 'test_enduser', 'trans': 'test_trans'})
-        #send_mail(subject_test, message_test, 'Blocbox Testing <admin@blocbox.co>', ["jessica.yeats@gmail.com",])
     return response_messages_list
 
 def test_send_email(enduserid, hostid, transid):
@@ -182,7 +175,7 @@ def test_send_email(enduserid, hostid, transid):
     enduser = UserInfo.objects.get(pk=enduserid)
     host = UserInfo.objects.get(pk=hostid)
     message_body = "this is a test of Django Cron - in transactions.watch_packages.test_send_email"
-    subject = "Testing Django Cron Task Scheduler"
+    subject = "Testing Django Cron Task Scheduler - Now Once Every 2.5 Days"
     message = render_to_string('emails/notify_enduser_trackingupdate.txt', { 'host': host, 'enduser': enduser, 'trans': trans,'message_body': message_body, })
     if enduser.notifyuser_packagereceived == True:
         send_mail(subject, message, 'Blocbox Tracking <admin@blocbox.co>', [enduser.email,])
