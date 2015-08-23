@@ -96,17 +96,45 @@
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="form-group col-xs-12 nomargin">
-                    <input name="referredby" class="form-control input-lg inputbox margintop5pxmobile" type="hidden" value="{{referring_user_email}}">
+
+
+ 						{% if hostsignup %}
+ 							
+              <div class="row">
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.st_address1.errors|striptags}}
+                        <input name="st_address1" placeholder="Street Address" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    </div>
                 </div>
 
- 
-
+                <div class="col-xs-12 col-sm-6">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.st_address1.errors|striptags}}
+                        <input name="st_address1" placeholder="Street Address" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    </div>
+                </div>
                 
+              </div> <!--end row-->
+              
+              <div class="row">  <div class="col-xs-12">
+                    <div class="form-group col-padd margintopbottom5px">
+                        {{ user_form.host_aboutme.errors|striptags}}
+                        <input name="host_aboutme" placeholder="Introduce Yourself to your Neighbors (Optional)" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    </div>
+               </div>  </div> 		<!--end col-xs-12, end row-->						
+ 						
+ 						{% endif %}
+ 						 	
+
+               
+               
+            <div class="row">
+                <div class="form-group col-xs-12 nomargin">     
+                	 <input name="referredby" class="form-control input-lg inputbox margintop5pxmobile" type="hidden" value="{{referring_user_email}}">
+                </div> 
 						
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0  margintopbottom5px nopaddingmobile waitlistcheck">
-                    <!-- host interest checkbox -->
                     
                     <div class="checkbox checkbox-success checkbox-inline text-center">
                         	{% if hostsignup %}

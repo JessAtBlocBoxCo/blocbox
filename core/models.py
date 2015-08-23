@@ -89,6 +89,22 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     need_autocare=models.BooleanField('May Need Letting Auto Care', blank=True, default=False)
     need_other=models.BooleanField('May Need Other Task/REquests', blank=True, default=False)
     
+    #Add host service offerings
+    offers_storage = models.BooleanField('Offers Storage', blank=True, default=False)
+    offers_petcare = models.BooleanField('Offers Petcare', blank=True, default=False)
+    offers_housesitting = models.BooleanField('Offers  HouseSitting', blank=True, default=False)
+    offers_rentals = models.BooleanField('Offers Party/Equipment Rentals', blank=True, default=False)
+    offers_laundry = models.BooleanField('Offers Laundry', blank=True, default=False)
+    offers_letin = models.BooleanField('Offers Letting Maintenance Person Into Home', blank=True, default=False)
+    offers_childcare=models.BooleanField('Offers Childcare', blank=True, default=False)
+    offers_plantcare=models.BooleanField('Offers Plantcare', blank=True, default=False)
+    offers_lawn=models.BooleanField('Offers Letting Lawn Care', blank=True, default=False)
+    offers_carsharing=models.BooleanField('Offers Car Sharing', blank=True, default=False)
+    offers_housemaint=models.BooleanField('Offers House Maintenance', blank=True, default=False) 	 	
+    offers_autocare=models.BooleanField('Offers Letting Auto Care', blank=True, default=False)
+    offers_userdefined=models.BooleanField('User Defined Offers', blank=True, default=False)
+    
+    #Neighborhood
     neighborhood = models.CharField("Neighborhood Name", max_length=100, blank=True, null=True)
     neighborhood_extended = models.CharField("Broader Neighborhood", max_length=100, blank=True, null=True)
     phone_number = models.CharField("Phone Number", max_length=12, blank=True, null=True)
