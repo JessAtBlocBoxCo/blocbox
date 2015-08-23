@@ -657,7 +657,7 @@ def user_logout(request):
 #Registration Form -- Simple
 
 #Registration Form -- User 
-def signup(request, host_id=None, referring_user_email=None, neighborhood=None, templatename = 'sign-up-simple'):
+def signup(request, host_id=None, referring_user_email=None, neighborhood=None, hostsignup = False, templatename = 'sign-up-simple'):
     if neighborhood == 'clintonhill':
         host_id = 2 
     if host_id:
@@ -669,7 +669,6 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
     #a bollean value for telling the template whether the registraiton was successful
     #set to false initially; code changes value to True when registraiont succeeds
     registered = False 
-    hostsignup = False
     usersignup = True
     if request.method == 'POST': 
         #if its HTTP post, we're interested in processing form data
@@ -724,7 +723,7 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
     	      	'referring_user_email': referring_user_email, }, context)
 
     
-
+#OBE - NEED TO REMOVE
 def signuphost(request):
     context = RequestContext(request)
     registered = False 
@@ -752,7 +751,7 @@ def signuphost(request):
         host_form = HostForm()
 
     return render_to_response(
-            'blocbox/sign-up-host.html',
+            'blocbox/signuplong/sign-up-host.html',
     	      {'host_form': host_form, 'registered': registered, 'hostsignup': hostsignup, 'usersignup': usersignup},
     	      context)
 
