@@ -112,14 +112,17 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     #Add more host-specific fields
     #!!! Note - maybe move this to host table that is linked to user table - may make it easeri to connect
     hostrating = models.DecimalField('Host Rating', max_digits=3, decimal_places=2, blank=True, null=True)
-    services_offered = models.CharField('UPDATE TO CHOICES - SERVICES\q OFFERED', max_length=250, blank=True)
-    host_aboutme = models.CharField("About Me (Host)",max_length=350,blank=True)
-    host_availability_writein = models.CharField("Host Availability - Write In", max-length=250, blank=True)
-    host_unavailability_writein = models.CharField("Host Unavailability - Write In", max-length=250, blank=True)
-    availability = models.CharField("Availability (Write-In)",max_length=250,blank=True)
-    whenimhome_days = models.CharField("When I'm Home: Days of the Week (Write-In)",max_length=250,blank=True)
-    whenimhome_hours = models.CharField("When I'm Home: Hours (Write-In)",max_length=250,blank=True)
+    
+    host_aboutme = models.CharField('Host Intro Message',max_length=350,blank=True)
+    host_availability_writein = models.CharField(max_length=250, blank=True)
+    host_unavailability_writein = models.CharField(max_length=250, blank=True)
+    availability = models.CharField(max_length=250,blank=True)
+    whenimhome_days = models.CharField('Host Availability Days of Week',max_length=250,blank=True)
+    whenimhome_hours = models.CharField('Host Availability Hours of Day',max_length=250,blank=True)
+    
     address_approx = models.CharField("Approximate Address for Visitors to See", max_length=100, blank=True, null=True) 
+    
+    services_offered = models.CharField('Update to Choices Services Offered', max_length=250, blank=True)
     #host specific pricing
     price_package_per = models.DecimalField("Price Charged Per Package", max_digits=4, decimal_places=2, blank=True, null=True)
     price_package_bundle10 = models.DecimalField("Price Charged for Bundle of 10 Packages", max_digits=4, decimal_places=2, blank=True, null=True)
