@@ -657,7 +657,7 @@ def user_logout(request):
 #Registration Form -- Simple
 
 #Registration Form -- User 
-def signup(request, host_id=None, referring_user_email=None, neighborhood=None, templatename = 'sign-up-connect'):
+def signup(request, host_id=None, referring_user_email=None, neighborhood=None, templatename = 'sign-up-simple'):
     if neighborhood == 'clintonhill':
         host_id = 2 
     if host_id:
