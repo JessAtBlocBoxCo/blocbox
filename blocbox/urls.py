@@ -15,7 +15,6 @@ urlpatterns = patterns('',
         url(r'^brooklyn/$', views.waitlist, {'neighborhood': 'brooklyn'}, name='waitlist_bk'),
         url(r'^brooklyn/referredby=(?P<referring_user_email>[^/]+)/$', views.waitlist, {'neighborhood': 'brooklyn'}, name='waitlist_ref_bloc'),
 		url(r'^waitlist/', views.waitlist, name='waitlist'), #also goes to the waitlist
-    # url(r'^signup/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup,  {'template
     
     url(r'^joinwaitlist/$', views.joinwaitlist, name='joinwaitlist'),
     url(r'^joinwaitlist_noajax/$', views.joinwaitlist_noajax, name='joinwaitlist_noajax'),
@@ -57,22 +56,26 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)), 
 
 
-    url(r'^signup/$', views.signup, {'templatename': 'sign-up-simple' }, name='signupsimple_noconnect'), 
-    url(r'^signup/host(?P<host_id>\d+)/$', views.signup, {'templatename': 'sign-up-simple'}, name='signupsimple', ),
-    url(r'^signup/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup,  {'templatename': 'sign-up-simple'}, name='signupsimple_ref', ),
-    url(r'^signup/bloc=(?P<neighborhood>\w+)/$', views.signup, {'templatename': 'sign-up-simple' }, name='signupsimplebloc', ),
-    url(r'^signup/bloc=(?P<neighborhood>\w+)/$', views.signup, {'templatename': 'sign-up-simple' }, name='signupsimplebloc_ref', ),
-    	
-    	
-    url(r'^signuplong/$', views.signup, {'templatename': 'sign-up-withoutconnect' }, name='signupnoconnect'), 
-    url(r'^signuplong/host(?P<host_id>\d+)/$', views.signup, name='signupconnect'),
-    url(r'^signuplong/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, name='signupconnect_ref',),         
-    url(r'^signuplong/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, {'templatename': 'sign-up-withoutconnect' }, name='signupnoconnect_referral'),    
-    url(r'^signuplong/bloc=(?P<neighborhood>\w+)/$', views.signup, name='signupconnectbloc', ),
-    url(r'^signuplong/bloc=(?P<neighborhood>\w+)/$', views.signup, name='signupconnectbloc_ref', ),
+    #short sign-up
+    url(r'^signup/$', views.signup, name='signupsimple_noconnect'), 
+    url(r'^signup/host(?P<host_id>\d+)/$', views.signup, name='signupsimple', ),
+    url(r'^signup/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, name='signupsimple_ref', ),
+    url(r'^signup/bloc=(?P<neighborhood>\w+)/$', views.signup, name='signupsimplebloc', ),
+    url(r'^signup/bloc=(?P<neighborhood>\w+)/$', views.signup, name='signupsimplebloc_ref', ),
+    
+    #Host sign up - based on simple sign up	
+    url(r'^signuphost/$', views.signuphost, name='signuphost'),
+    
+    #OBE - long - sign up no connect
+    url(r'^signuplong/$', views.signup, {'templatename': 'signuplong/sign-up-withoutconnect' }, name='signupnoconnect'), 
+    url(r'^signuplong/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, {'templatename': 'sign-up-withoutconnect' }, name='signupnoconnect_referral'), 
+    #OBE - long - sign up connect - via host or via bloc		
+    url(r'^signuplong/host(?P<host_id>\d+)/$', views.signup, {'templatename': 'signuplong/sign-up-connect' }, name='signupconnect'),
+    url(r'^signuplong/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, {'templatename': 'signuplong/sign-up-connect' }, name='signupconnect_ref',),            
+    url(r'^signuplong/bloc=(?P<neighborhood>\w+)/$', views.signup, {'templatename': 'signuplong/sign-up-connect' }, name='signupconnectbloc', ),
+    url(r'^signuplong/bloc=(?P<neighborhood>\w+)/$', views.signup, {'templatename': 'signuplong/sign-up-connect' }, name='signupconnectbloc_ref', ),
     
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
-    url(r'^signuphost/$', views.signuphost, name='signuphost'),
     url(r'^abouthosting/', views.abouthosting, name='abouthosting'),
     url(r'^nudgeaneighbor/', views.nudgeaneighbor, name='nudgeaneighbor'),
     url(r'^login/', views.userlogin, name='login'), # add this for the registration form
