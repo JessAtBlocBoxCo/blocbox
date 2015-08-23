@@ -56,15 +56,15 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)), 
 
 
-    #short sign-up
+    #Simple sign up (in use)
     url(r'^signup/$', views.signup, name='signupsimple_noconnect'), 
     url(r'^signup/host(?P<host_id>\d+)/$', views.signup, name='signupsimple', ),
     url(r'^signup/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, name='signupsimple_ref', ),
     url(r'^signup/bloc=(?P<neighborhood>\w+)/$', views.signup, name='signupsimplebloc', ),
     url(r'^signup/bloc=(?P<neighborhood>\w+)/$', views.signup, name='signupsimplebloc_ref', ),
-    
-    #Host sign up - based on simple sign up	
-    url(r'^signuphost/$', views.signuphost, name='signuphost'),
+    #Simple sign up for host
+    url(r'^signuphost/$', views.signup, {'hostsignup': True }, name='signupsimple_host'), 
+
     
     #OBE - long - sign up no connect
     url(r'^signuplong/$', views.signup, {'templatename': 'signuplong/sign-up-withoutconnect' }, name='signupnoconnect'), 
@@ -74,6 +74,8 @@ urlpatterns = patterns('',
     url(r'^signuplong/host(?P<host_id>\d+)/referredby=(?P<referring_user_email>[^/]+)/$', views.signup, {'templatename': 'signuplong/sign-up-connect' }, name='signupconnect_ref',),            
     url(r'^signuplong/bloc=(?P<neighborhood>\w+)/$', views.signup, {'templatename': 'signuplong/sign-up-connect' }, name='signupconnectbloc', ),
     url(r'^signuplong/bloc=(?P<neighborhood>\w+)/$', views.signup, {'templatename': 'signuplong/sign-up-connect' }, name='signupconnectbloc_ref', ),
+    #OBE - Host sign up - based on simple sign up	
+    url(r'^signuplonghost/$', views.signuplong_host, name='signuphost'),
     
     url(r'^connect/host(?P<host_id>\d+)/$', views.connectnewhost, name='connectnewhost'),
     url(r'^abouthosting/', views.abouthosting, name='abouthosting'),

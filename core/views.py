@@ -669,7 +669,6 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
     #a bollean value for telling the template whether the registraiton was successful
     #set to false initially; code changes value to True when registraiont succeeds
     registered = False 
-    usersignup = True
     if request.method == 'POST': 
         #if its HTTP post, we're interested in processing form data
     	  # Note that we make user of both userform and UserProfileFrom and HostProfileForm
@@ -719,12 +718,12 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
     	      print user_form.errors
     else:
         user_form = UserForm()
-    return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup, 'usersignup': usersignup,
+    return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup,
     	      	'referring_user_email': referring_user_email, }, context)
 
     
 #OBE - NEED TO REMOVE
-def signuphost(request):
+def signuplong_host(request):
     context = RequestContext(request)
     registered = False 
     hostsignup = True
@@ -733,12 +732,6 @@ def signuphost(request):
         host_form = HostForm(data=request.POST)
         if host_form.is_valid():
             host = host_form.save() #save the hosts form data to the database
-        
-            #dont need this if the hos tinfo includes all of the user info
-            #FILL THIS IN LATER - NEED TO INSTALL THE PIL THING AND ADD A PICTURE FIELD
-    	      #if 'picture' in request.FILES:
-    	      #    profile.picture = request.FILES['picture']
-    	      #host.user = user #same.. what does this do?.. not sure we need it
             host.save() #Save the HostProfile model instance
             registered = True   	  
     	          
