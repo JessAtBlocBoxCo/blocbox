@@ -11,9 +11,6 @@
 
     <div class="row">
 
-{{ hostsignup }}
-
-{% if hostsignup %} TESTING - HOST SIGN-UP {% endif %}
 
         {% if registered %}
 
@@ -27,16 +24,26 @@
        {% else %}
     <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
         <div class="promo-3"></div>
-
-    {% if host.neighborhood_extended %}
+    
+    {% if hostsignup %}
+        <h2 class="nomargintop signup-padding">Sign Up to be a Blocbox Host <br> in {{ host.neighborhood}} </h2>
+        <h3 class="col-xs-12 col-sm-10 col-sm-offset-1 nomargintopbottom paddingbottom20pxnomobile waitsubtext">
+            Complete this form to start earning extra cash serving as a Blocbox host.  </h3>  		
+  		
+    {% else %}  	
+      
+      {% if host.neighborhood_extended %}
         <h2 class="nomargintop signup-padding">Sign Up for Blocbox <br> in {{ host.neighborhood_extended}} </h2>
         <h3 class="col-xs-12 col-sm-10 col-sm-offset-1 nomargintopbottom paddingbottom20pxnomobile waitsubtext">
             Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood_extended }} Blocbox host. </h3>
-    {% else %}
-     <h2 class="nomargintop signup-padding">Sign Up for Blocbox <br> in {{ host.neighborhood}} </h2>
+      {% else %}
+        <h2 class="nomargintop signup-padding">Sign Up for Blocbox <br> in {{ host.neighborhood}} </h2>
         <h3 class="col-xs-12 col-sm-10 col-sm-offset-1 nomargintopbottom paddingbottom20pxnomobile waitsubtext">
             Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood }} Blocbox host.  </h3>
-    {% endif %}
+      {% endif %}
+    
+    {% endif %} <!--if hostsignup -->
+    	
         <form class="form-horizontal" role="form" method="post" action="." enctype="multipart/form-data">
 
             {% csrf_token %}
