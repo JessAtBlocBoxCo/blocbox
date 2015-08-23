@@ -114,6 +114,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     hostrating = models.DecimalField('Host Rating', max_digits=3, decimal_places=2, blank=True, null=True)
     services_offered = models.CharField('UPDATE TO CHOICES - SERVICES\q OFFERED', max_length=250, blank=True)
     host_aboutme = models.CharField("About Me (Host)",max_length=350,blank=True)
+    host_availability_writein = models.CharField("Host Availability - Write In", max-length=250, blank=True)
+    host_unavailability_writein = models.CharField("Host Unavailability - Write In", max-length=250, blank=True)
     availability = models.CharField("Availability (Write-In)",max_length=250,blank=True)
     whenimhome_days = models.CharField("When I'm Home: Days of the Week (Write-In)",max_length=250,blank=True)
     whenimhome_hours = models.CharField("When I'm Home: Hours (Write-In)",max_length=250,blank=True)
