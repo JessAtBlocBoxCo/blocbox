@@ -9,20 +9,20 @@
 
 <div class="row-fluid fullheight">
 
-    <div class="row">
+  <div class="row">
 
 
-        {% if registered %}
+    {% if registered %}
 
         <h2 class="nomargintop register-padding">Thank you for Registering! <h2>
       		
             <h3 class="col-xs-12 col-sm-6 col-sm-offset-3 paddingbottom100pxnomobile" style="font-size: 1.7em">  
-				You'll receive a notification when {{ host.first_name }} confirms your request to connect. In the meantime, <a href="/login/">login to your account</a> to visit your dashboard and update your account preferences and user information.
-	</h3>
+				       You'll receive a notification when {{ host.first_name }} confirms your request to connect. In the meantime, <a href="/login/">login to your account</a> to visit your dashboard and update your account preferences and user information.
+	          </h3>
 
 
        {% else %}
-    <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3">
         <div class="promo-3"></div>
     
     {% if hostsignup %}
@@ -101,25 +101,38 @@
                     <input name="referredby" class="form-control input-lg inputbox margintop5pxmobile" type="hidden" value="{{referring_user_email}}">
                 </div>
 
-
-								
+ 
+	           {% if hostsignup %}
+	           
+	               <div class="col-xs-12  margintopbottom5px paddingtop15pxmobile">
+                    <input type="submit" value="SIGN UP AND REQUEST TO CONNECT" name="submit" class="btn-waitlist margintop5px">
+                    <!--name="subscribe" -->
+                 </div>
+                
+	           {% else %}							
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0  margintopbottom5px nopaddingmobile waitlistcheck">
                     <!-- host interest checkbox -->
-                    {% if not hostsignup %}
+                    
                     <div class="checkbox checkbox-success checkbox-inline text-center">
                         <input type="checkbox" name="hostinterest" id="id_hostinterest">
                         <label for="id_hostinterest">
                             <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in helping my neighbors and making some extra money</h6>
                         </label>
                     </div>
-                   {% endif %}
+                   
                 </div>
 
                 <div class="col-xs-12 col-sm-6  margintopbottom5px paddingtop15pxmobile">
                     <input type="submit" value="SIGN UP AND REQUEST TO CONNECT" name="submit" class="btn-waitlist margintop5px">
                     <!--name="subscribe" -->
                 </div>
-            </div>
+         
+              {% endif %}
+             	
+             	
+             	
+            </div> <!--end row -->
+            
             <!--row -->
 
             <div id="mce-responses" class="clear">
@@ -131,7 +144,9 @@
 
     </div>
 
-    {% endif %}
+    {% endif %} <!-- if registered -->
+    	
+    	
 </div>
 
 <div class="row text-center mobilehide paddingtop30px">
