@@ -6,6 +6,8 @@ from django.conf import settings
 #from django.contrib.auth.models import User #need to include this b/c we reference that table (auth_user in django db)
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
+#NOTE ON MIGRATION IN NEW DJANGO VERSION:
+#
 
 #NEED TO CREATE A MANAGER FOR THE USER MODEL
 class MyUserManager(BaseUserManager):
@@ -56,6 +58,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     facebook_response_all = models.CharField(max_length = 500, blank=True)
     host = models.BooleanField(blank=True, default=False) #boolean can't be null if want null need NullBooleanField
     hostinterest = models.BooleanField('Interested in Hosting', blank=True, default=False)
+    hostuserinterest = models.BooleanField('Host Interested in Using Blocbox', blank=True, default=False)
     userrating = models.DecimalField('User Rating',max_digits=3,decimal_places=2, blank=True, null=True)
     favorscompleted = models.IntegerField('Favors Completed',blank=True, null=True)
     favorsrequested = models.IntegerField('Favors Requested',blank=True, null=True)

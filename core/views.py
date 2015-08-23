@@ -698,6 +698,10 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
                 user.last_name = names[1]
             if len(names) > 2:
                 user.last_name = names[1] + " " + names[2]
+            #if hostsignup assign user as host
+            if hostsignup:
+            	user.host = True
+            	user.hostinterest = True
             user.save()
             #add neighbors nearbyu
             add_neighbors_nearby_task(userid=user.id)

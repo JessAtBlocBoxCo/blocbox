@@ -102,28 +102,37 @@
                 </div>
 
  
-	           {% if hostsignup %}
-	           
-	               <div class="col-xs-12  margintopbottom5px paddingtop15pxmobile">
-                    <input type="submit" value="SIGN UP AND REQUEST TO CONNECT" name="submit" class="btn-waitlist margintop5px">
-                    <!--name="subscribe" -->
-                 </div>
+
                 
-	           {% else %}							
+						
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0  margintopbottom5px nopaddingmobile waitlistcheck">
                     <!-- host interest checkbox -->
                     
                     <div class="checkbox checkbox-success checkbox-inline text-center">
                         <input type="checkbox" name="hostinterest" id="id_hostinterest">
                         <label for="id_hostinterest">
-                            <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in helping my neighbors and making some extra money</h6>
+                        	{% if hostsignup %}
+                        		<input type="checkbox" name="hostuserinterest" id="id_hostuserinterest"> <label for="id_hostuserinterest">
+                        		 <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in using Blocbox as a customer. Please connect me to other hosts in my neighborhood.</h6>
+                            </label>
+                          {% else %}
+                        	   <input type="checkbox" name="hostinterest" id="id_hostinterest"> <label for="id_hostinterest">
+                              <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in helping my neighbors and making some extra money</h6>
+                            </label>
+                          {% endif %}
                         </label>
                     </div>
                    
                 </div>
 
                 <div class="col-xs-12 col-sm-6  margintopbottom5px paddingtop15pxmobile">
-                    <input type="submit" value="SIGN UP AND REQUEST TO CONNECT" name="submit" class="btn-waitlist margintop5px">
+                    <input type="submit" 
+                      {% if hostsignup %}
+                        value="SIGN UP TO SERVE AS A BLOCBOX HOST"
+                      {% else %}
+                        value="SIGN UP AND REQUEST TO CONNECT" 
+                      {% endif %}  
+                        name="submit" class="btn-waitlist margintop5px">
                     <!--name="subscribe" -->
                 </div>
          
