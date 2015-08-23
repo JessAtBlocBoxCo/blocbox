@@ -7,7 +7,7 @@ from django.conf import settings
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 #NOTE ON MIGRATION IN NEW DJANGO VERSION:
-#
+#$ python manage.py makemigrations;  python manage.py migrate
 
 #NEED TO CREATE A MANAGER FOR THE USER MODEL
 class MyUserManager(BaseUserManager):
