@@ -117,18 +117,35 @@
 2015/08/23 17:50:27 [error] 28321#0: *94 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
 2015/08/23 17:51:06 [error] 28321#0: *98 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 100.43.91.29, server: _, request: "GET /myblock/signuphost/contactus/signuphost/privacy/privacy/contactus/ HTTP/1.1", upstream: "http://127.0.0.1:9000/myblock/signuphost/contactus/signuphost/privacy/privacy/contactus/", host: "blocbox.co"
 2015/08/23 17:53:11 [error] 931#0: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co"
-2015/08/23 17:53:14 [error] 931#0: *1 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
+2015/08/23 17:53:14 [error] 931#0: *1 recv() failed (104: Connection reset by peer) while reading response header from upstream, 
+client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", 
+upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
 2015/08/23 17:54:12 [error] 931#0: *6 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 180.76.15.138, server: _, request: "GET /search/js/privacy/signuphost/js/ HTTP/1.1", upstream: "http://127.0.0.1:9000/search/js/privacy/signuphost/js/", host: "blocbox.co"
 2015/08/23 17:54:26 [error] 931#0: *8 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 23.241.53.67, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "107.170.128.21"
 2015/08/23 17:54:27 [error] 931#0: *8 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 23.241.53.67, server: _, request: "GET /favicon.ico HTTP/1.1", upstream: "http://127.0.0.1:9000/favicon.ico", host: "107.170.128.21", referrer: "http://107.170.128.21/"
 2015/08/23 17:55:02 [error] 931#0: *12 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co"
 2015/08/23 17:55:04 [error] 931#0: *12 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
-2015/08/23 17:58:40 [error] 931#0: *16 connect() failed (111: Connection refused) while connecting to upstream, client: 188.165.15.209, server: _, request: "GET /myblock/signuphost/privacy/signuphost/contactus/ HTTP/1.1", upstream: "http://127.0.0.1:9000/myblock/signuphost/privacy/signuphost/contactus/", host: "blocbox.co"
+
+2015/08/23 17:58:40 [error] 931#0: *16 connect() failed (111: Connection refused) 
+	while connecting to upstream, client: 188.165.15.209, server: _, 
+	request: "GET /myblock/signuphost/privacy/signuphost/contactus/ HTTP/1.1", 
+	upstream: "http://127.0.0.1:9000/myblock/signuphost/privacy/signuphost/contactus/", host: "blocbox.co"
+
+
 2015/08/23 17:59:33 [error] 931#0: *18 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 100.43.91.4, server: _, request: "GET /myblock/signuphost/privacy/privacy/privacy/signuphost/contactus/contactus/ HTTP/1.1", upstream: "http://127.0.0.1:9000/myblock/signuphost/privacy/privacy/privacy/signuphost/contactus/contactus/", host: "blocbox.co"
 2015/08/23 18:01:40 [error] 931#0: *20 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co"
 2015/08/23 18:01:43 [error] 931#0: *20 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
-2015/08/23 18:04:44 [error] 931#0: *24 connect() failed (111: Connection refused) while connecting to upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co"
-2015/08/23 18:04:47 [error] 931#0: *24 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
+
+
+2015/08/23 18:04:44 [error] 931#0: *24 connect() failed 
+	(111: Connection refused) while connecting to upstream, 
+		client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co"
+
+2015/08/23 18:04:47 [error] 931#0: *24 recv() failed (104: C
+	onnection reset by peer) while reading response header from upstream, 
+	client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
+
+
 2015/08/23 18:04:48 [error] 931#0: *24 connect() failed (111: Connection refused) while connecting to upstream, client: 64.234.95.252, server: _, request: "GET /signup HTTP/1.1", upstream: "http://127.0.0.1:9000/signup", host: "www.blocbox.co"
 2015/08/23 18:04:50 [error] 931#0: *24 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET /signup HTTP/1.1", upstream: "http://127.0.0.1:9000/signup", host: "www.blocbox.co", referrer: "http://www.blocbox.co/signup"
 2015/08/23 18:05:27 [error] 931#0: *30 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 188.165.15.209, server: _, request: "GET /myblock/contactus/signuphost/privacy/contactus/signuphost/ HTTP/1.1", upstream: "http://127.0.0.1:9000/myblock/contactus/signuphost/privacy/contactus/signuphost/", host: "blocbox.co"
@@ -136,15 +153,38 @@
 2015/08/23 18:08:29 [error] 931#0: *34 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET /signup HTTP/1.1", upstream: "http://127.0.0.1:9000/signup", host: "www.blocbox.co"
 2015/08/23 18:08:32 [error] 931#0: *34 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET /signup HTTP/1.1", upstream: "http://127.0.0.1:9000/signup", host: "www.blocbox.co", referrer: "http://www.blocbox.co/signup"
 2015/08/23 18:10:04 [error] 931#0: *38 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 188.165.15.209, server: _, request: "GET /nudgeaneighbor/contactus/signuphost/contactus/privacy/signuphost/privacy/ HTTP/1.1", upstream: "http://127.0.0.1:9000/nudgeaneighbor/contactus/signuphost/contactus/privacy/signuphost/privacy/", host: "blocbox.co"
-2015/08/23 18:10:08 [error] 931#0: *40 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET /signup HTTP/1.1", upstream: "http://127.0.0.1:9000/signup", host: "www.blocbox.co"
-2015/08/23 18:10:11 [error] 931#0: *40 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET /signup HTTP/1.1", upstream: "http://127.0.0.1:9000/signup", host: "www.blocbox.co", referrer: "http://www.blocbox.co/signup"
-2015/08/23 18:14:51 [error] 931#0: *44 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co"
-2015/08/23 18:14:55 [error] 931#0: *44 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
-2015/08/23 18:16:53 [error] 931#0: *48 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 141.8.143.216, server: _, request: "GET /search/signuphost/privacy/contactus/privacy/privacy/ HTTP/1.1", upstream: "http://127.0.0.1:9000/search/signuphost/privacy/contactus/privacy/privacy/", host: "blocbox.co"
+
+2015/08/23 18:10:08 [error] 931#0: *40 recv() failed 
+    (104: Connection reset by peer) while reading response header from upstream, 
+    client: 64.234.95.252, server: _, request: "GET /signup HTTP/1.1", upstream: "http://127.0.0.1:9000/signup", host: "www.blocbox.co"
+
+
+2015/08/23 18:10:11 [error] 931#0: *40 recv() failed 
+(104: Connection reset by peer) while reading response header from upstream, 
+client: 64.234.95.252, server: _, request: "GET /signup HTTP/1.1", 
+upstream: "http://127.0.0.1:9000/signup", host: "www.blocbox.co", referrer: "http://www.blocbox.co/signup"
+
+2015/08/23 18:14:51 [error] 931#0: *44 recv() failed (104: Connection reset by peer) while reading response header from upstream, 
+	client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co"
+2015/08/23 18:14:55 [error] 931#0: *44 recv() failed (104: Connection reset by peer) 
+	while reading response header from upstream, client: 64.234.95.252, server: _, request: 
+	"GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
+
+2015/08/23 18:16:53 [error] 931#0: *48 recv() failed 
+		(104: Connection reset by peer) while reading response header from upstream, 
+		client: 141.8.143.216, server: _, request: "GET /search/signuphost/privacy/contactus/privacy/privacy/ HTTP/1.1", upstream: "http://127.0.0.1:9000/search/signuphost/privacy/contactus/privacy/privacy/", host: "blocbox.co"
+
 2015/08/23 18:17:26 [error] 931#0: *50 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 188.165.15.209, server: _, request: "GET /nudgeaneighbor/privacy/contactus/navmenu-push/privacy/signuphost/contactus/signuphost/ HTTP/1.1", upstream: "http://127.0.0.1:9000/nudgeaneighbor/privacy/contactus/navmenu-push/privacy/signuphost/contactus/signuphost/", host: "blocbox.co"
-2015/08/23 18:20:31 [error] 931#0: *52 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 180.76.15.20, server: _, request: "GET /nudgeaneighbor/js/signuphost/privacy/ HTTP/1.1", upstream: "http://127.0.0.1:9000/nudgeaneighbor/js/signuphost/privacy/", host: "www.blocbox.co"
+
+
+2015/08/23 18:20:31 [error] 931#0: *52 recv() failed (104: 
+		Connection reset by peer) while reading response header from upstream, client: 180.76.15.20, 
+		server: _, request: "GET /nudgeaneighbor/js/signuphost/privacy/ HTTP/1.1", upstream: "http://127.0.0.1:9000/nudgeaneighbor/js/signuphost/privacy/", host: "www.blocbox.co"
+
 2015/08/23 18:24:12 [error] 931#0: *54 connect() failed (111: Connection refused) while connecting to upstream, client: 180.76.15.156, server: _, request: "GET /search/contactus/contactus/signuphost/ HTTP/1.1", upstream: "http://127.0.0.1:9000/search/contactus/contactus/signuphost/", host: "blocbox.co"
 2015/08/23 18:25:40 [error] 931#0: *56 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 100.43.81.149, server: _, request: "GET /myblock/signuphost/privacy/privacy/contactus/privacy/signuphost/privacy/ HTTP/1.1", upstream: "http://127.0.0.1:9000/myblock/signuphost/privacy/privacy/contactus/privacy/signuphost/privacy/", host: "blocbox.co"
 2015/08/23 18:25:53 [error] 931#0: *58 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 37.59.232.247, server: _, request: "POST /xmlrpc.php HTTP/1.1", upstream: "http://127.0.0.1:9000/xmlrpc.php", host: "107.170.128.21"
 2015/08/23 18:27:40 [error] 931#0: *60 recv() failed (104: Connection reset by peer) while reading response header from upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co"
-2015/08/23 18:27:43 [error] 931#0: *60 connect() failed (111: Connection refused) while connecting to upstream, client: 64.234.95.252, server: _, request: "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
+2015/08/23 18:27:43 [error] 931#0: *60 connect() failed (111: Connection refused) 
+  while connecting to upstream, client: 64.234.95.252, server: _, request: 
+  "GET / HTTP/1.1", upstream: "http://127.0.0.1:9000/", host: "www.blocbox.co", referrer: "http://www.blocbox.co/"
