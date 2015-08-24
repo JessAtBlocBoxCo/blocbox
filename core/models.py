@@ -117,7 +117,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     
     #host_availability_writein = models.CharField(max_length=250, blank=True)
     #host_unavailability_writein = models.CharField(max_length=250, blank=True)
-    
+    #Add Beta User - Freed
+    #betauser_free = models.BooleanField(blank=True, default=True)
     availability = models.CharField(max_length=250,blank=True)
     whenimhome_days = models.CharField('Host Availability Days of Week',max_length=250,blank=True)
     whenimhome_hours = models.CharField('Host Availability Hours of Day',max_length=250,blank=True)
@@ -155,8 +156,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     referredby = models.CharField("Referred By", max_length=254, blank=True, null=True)
     Referrals_from_user = models.IntegerField("Referrals Attributed to User - Full Users", blank=True, null=True)
     Referrals_from_user_waitlist = models.IntegerField("Referrals Attributed to User - Waitlist Only", blank=True, null=True)
-    #Add Beta User - Freed
-    betauser_free = models.BooleanField(blank=True, default=True)
+    
     #Fields i am adding that were in AUTH user that we should have and populate later 
     """	fields that are on the AbstractBaseUser, is_active is_superuser last_login date_joined
     		however, is_active, is_superuser and date_joined are not showing up
