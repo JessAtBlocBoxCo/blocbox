@@ -53,7 +53,7 @@
 
         
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                     <div class="form-group col-padd margintop10px marginbottom5px">
                         {{ user_form.non_field_errors }} {{ user_form.email.errors|striptags}}
                         <input name="email" placeholder="You@Example.com" class="form-control input-lg inputbox margintop5pxmobile" type="email">
@@ -62,7 +62,7 @@
 
             </div>
             <div class="row">
-            <div class="col-xs-12">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                 <div class="form-group col-padd margintop5px marginbottom5px">
                     {{ user_form.full_name.errors|striptags}}
                     <input name="full_name" placeholder="Full Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
@@ -71,13 +71,13 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-4 col-sm-offset-2">
                     <div class="form-group col-padd margintopbottom5px">
                         {{ user_form.password.errors|striptags }}
                         <input type="password" class="form-control input-lg inputbox margintop5pxmobile" name="password" id="id_password" placeholder="Password">
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-6">
+                <div class="col-xs-12 col-sm-4">
                     <div class="form-group col-padd margintopbottom5px">
                         {{ user_form.password2.errors|striptags }}
                         <input type="password" class="form-control input-lg inputbox margintop5pxmobile" name="password2" id="id_password2" placeholder="Confirm Your Password">
@@ -86,14 +86,8 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <div class="form-group col-padd margintopbottom5px">
-                        {{ user_form.st_address1.errors|striptags}}
-                        <input name="st_address1" placeholder="Street Address" class="form-control input-lg inputbox margintop5pxmobile" type="text">
-                    </div>
-                </div>
 
-                <div class="col-xs-12">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                     <div class="form-group col-padd margintopbottom5px">
                         {{ user_form.zipcode.errors|striptags}}
                         <input name="zipcode" placeholder="Zip" class="form-control input-lg inputbox margintop5pxmobile" type="text">
