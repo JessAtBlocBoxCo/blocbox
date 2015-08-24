@@ -94,6 +94,18 @@
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2  margintopbottom5px paddingtop15pxmobile">
+                    <input type="submit" 
+                           {% if hostsignup %}
+                           value="SIGN UP TO SERVE AS A BLOCBOX HOST"
+                           {% else %}
+                           value="SIGN UP AND REQUEST TO CONNECT" 
+                           {% endif %}  
+                           name="submit" class="btn-waitlist margintop5px">
+                    <!--name="subscribe" -->
+                </div>
+            </div>
 
             <!--End of Simple Sign Up -->
             <!--Address to be moved to second page of sign up --     
