@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('auth', '0004_alter_user_email_max_length'),
+        ('auth', '0005_alter_user_email_max_length'),
     ]
 
     # No database changes; modifies validators and error_messages (#13147).
