@@ -90,19 +90,19 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     need_other=models.BooleanField('May Need Other Task/REquests', blank=True, default=False)
     
     #Add host service offerings
-    #offers_storage = models.BooleanField('Offers Storage', blank=True, default=False)
-    #offers_petcare = models.BooleanField('Offers Petcare', blank=True, default=False)
-    #offers_housesitting = models.BooleanField('Offers  HouseSitting', blank=True, default=False)
-    #offers_rentals = models.BooleanField('Offers Party/Equipment Rentals', blank=True, default=False)
-    #offers_laundry = models.BooleanField('Offers Laundry', blank=True, default=False)
-    #offers_letin = models.BooleanField('Offers Letting Maintenance Person Into Home', blank=True, default=False)
-    #offers_childcare=models.BooleanField('Offers Childcare', blank=True, default=False)
-    #offers_plantcare=models.BooleanField('Offers Plantcare', blank=True, default=False)
-    #offers_lawn=models.BooleanField('Offers Letting Lawn Care', blank=True, default=False)
-    #offers_carsharing=models.BooleanField('Offers Car Sharing', blank=True, default=False)
-    #offers_housemaint=models.BooleanField('Offers House Maintenance', blank=True, default=False) 	 	
-    #offers_autocare=models.BooleanField('Offers Letting Auto Care', blank=True, default=False)
-    #offers_userdefined=models.BooleanField('User Defined Offers', blank=True, default=False)
+    offers_storage = models.BooleanField('Offers Storage', blank=True, default=False)
+    offers_petcare = models.BooleanField('Offers Petcare', blank=True, default=False)
+    offers_housesitting = models.BooleanField('Offers  HouseSitting', blank=True, default=False)
+    offers_rentals = models.BooleanField('Offers Party/Equipment Rentals', blank=True, default=False)
+    offers_laundry = models.BooleanField('Offers Laundry', blank=True, default=False)
+    offers_letin = models.BooleanField('Offers Letting Maintenance Person Into Home', blank=True, default=False)
+    offers_childcare=models.BooleanField('Offers Childcare', blank=True, default=False)
+    offers_plantcare=models.BooleanField('Offers Plantcare', blank=True, default=False)
+    offers_lawn=models.BooleanField('Offers Letting Lawn Care', blank=True, default=False)
+    offers_carsharing=models.BooleanField('Offers Car Sharing', blank=True, default=False)
+    offers_housemaint=models.BooleanField('Offers House Maintenance', blank=True, default=False) 	 	
+    offers_autocare=models.BooleanField('Offers Letting Auto Care', blank=True, default=False)
+    offers_userdefined=models.BooleanField('User Defined Offers', blank=True, default=False)
     
     #Neighborhood
     neighborhood = models.CharField("Neighborhood Name", max_length=100, blank=True, null=True)
@@ -115,11 +115,12 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     
     host_aboutme = models.CharField('Host Intro Message',max_length=350,blank=True)
     
-    #host_availability_writein = models.CharField(max_length=250, blank=True)
-    #host_unavailability_writein = models.CharField(max_length=250, blank=True)
-    #Add Beta User - Freed
-    #betauser_free = models.BooleanField(blank=True, default=True)
-    #hostuserinterest = models.BooleanField('Host Interested in Using Blocbox', blank=True, default=False)
+    host_availability_writein = models.CharField(max_length=250, blank=True)
+    host_unavailability_writein = models.CharField(max_length=250, blank=True)
+    #Add Beta User - Freed - 23 aug
+    betauser_free = models.BooleanField(blank=True, default=True)
+    #Add host interested in being custerom field - 23 aug
+    hostuserinterest = models.BooleanField('Host Interested in Using Blocbox', blank=True, default=False)
     
     availability = models.CharField(max_length=250,blank=True)
     whenimhome_days = models.CharField('Host Availability Days of Week',max_length=250,blank=True)
