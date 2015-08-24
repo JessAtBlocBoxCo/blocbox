@@ -27,9 +27,9 @@
         <!--<div class="promo-3"></div> -->
     
     {% if hostsignup %}
-        <h2 class="nomargintop signup-padding">Sign Up to be a Blocbox Host </h2>
-        <h3 class="col-xs-12 col-sm-10 col-sm-offset-1 nomargintopbottom paddingbottom20pxnomobile waitsubtext">
-            Complete this form to start earning extra cash serving as a Blocbox host.  </h3>  		
+        <h2 class="nomargintop signup-padding" style="font-size: 2.3em; font-weight: 500;">Sign Up to be a Blocbox Host </h2>
+        <!-- <h3 class="col-xs-12 col-sm-10 col-sm-offset-1 nomargintopbottom paddingbottom20pxnomobile waitsubtext">
+            Complete this form to start earning extra cash serving as a Blocbox host.  </h3> -->  		
   		
     {% else %}  	
       
@@ -71,18 +71,18 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-4 col-sm-offset-2">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                     <div class="form-group col-padd nomargintopbottom">
                         {{ user_form.password.errors|striptags }}
                         <input type="password" class="form-control input-lg inputbox margintop5pxmobile" name="password" id="id_password" placeholder="Password">
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-4">
+                <!-- <div class="col-xs-12 col-sm-4">
                     <div class="form-group col-padd nomargintopbottom">
                         {{ user_form.password2.errors|striptags }}
                         <input type="password" class="form-control input-lg inputbox margintop5pxmobile" name="password2" id="id_password2" placeholder="Confirm Your Password">
                     </div>
-                </div>
+                </div> -->
             </div>
 
             <div class="row">
