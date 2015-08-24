@@ -64,10 +64,18 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-8 col-sm-offset-2">
                     <div class="form-group col-padd nomargintopbottom">
-                    {{ user_form.full_name.errors|striptags}}
-                    <input name="full_name" placeholder="Full Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    {{ user_form.first_name.errors|striptags}}
+                    <input name="first_name" placeholder="First Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
                 </div>
             </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+                    <div class="form-group col-padd nomargintopbottom">
+                        {{ user_form.last_name.errors|striptags}}
+                        <input name="last_name" placeholder="Last Name" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                    </div>
+                </div>
             </div>
 
             <div class="row">
