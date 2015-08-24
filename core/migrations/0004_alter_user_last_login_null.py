@@ -13,7 +13,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='user',
+            model_name='userinfo',
             name='last_login',
             field=models.DateTimeField(null=True, verbose_name='last login', blank=True),
         ),
