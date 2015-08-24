@@ -115,12 +115,12 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     
     host_aboutme = models.CharField('Host Intro Message',max_length=350,blank=True)
     
-    host_availability_writein = models.CharField(max_length=250, blank=True)
-    host_unavailability_writein = models.CharField(max_length=250, blank=True)
+    #host_availability_writein = models.CharField(max_length=250, blank=True)
+    #host_unavailability_writein = models.CharField(max_length=250, blank=True)
     #Add Beta User - Freed - 23 aug
-    betauser_free = models.BooleanField(blank=True, default=True)
+    #betauser_free = models.BooleanField(blank=True, default=True)
     #Add host interested in being custerom field - 23 aug
-    hostuserinterest = models.BooleanField('Host Interested in Using Blocbox', blank=True, default=False)
+    #hostuserinterest = models.BooleanField('Host Interested in Using Blocbox', blank=True, default=False)
     
     availability = models.CharField(max_length=250,blank=True)
     whenimhome_days = models.CharField('Host Availability Days of Week',max_length=250,blank=True)
