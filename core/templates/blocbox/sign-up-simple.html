@@ -26,14 +26,19 @@
             Blocbox lets you make money by helping your neighbors.</h3>
              {% else %} 
              
-             {% if host.neighborhood_extended %}
-            <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up in {{ host.neighborhood_extended}} </h2>
+          {% if host.neighborhood_extended %}
+            <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up for Blocbox in {{ host.neighborhood_extended}} </h2>
             <h3 class="col-xs-12 col-sm-8 col-sm-offset-2 nomargintop marginbottom15px paddingbottom20pxnomobile waitsubtext">
             Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood_extended }} Blocbox host. </h3> 
-            {% else %}
-            <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up in {{ host.neighborhood}} </h2>
+          {% if host.neighborhood %}
+            <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up for Blocbox in {{ host.neighborhood}} </h2>
             <h3 class="col-xs-12 col-sm-8 col-sm-offset-2 nomargintop marginbottom15px paddingbottom20pxnomobile waitsubtext">
             Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood }} Blocbox host.  </h3> {% endif %} {% endif %}
+          {% else %}
+          	 <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up for Blocbox </h2>
+          
+          {% endif %}
+            
             <!--if hostsignup -->
 
             <!--Simple Sign Up -->
