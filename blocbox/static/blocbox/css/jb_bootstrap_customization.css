@@ -448,7 +448,7 @@ footer {
     min-height: 675px;
 }
 .fillviewheight .hostsignupform {
-    height: 1500px;
+    height: 120vh;
 }
 .fullheight {
     height: 100%;
