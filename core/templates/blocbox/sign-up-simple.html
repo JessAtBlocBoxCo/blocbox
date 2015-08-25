@@ -14,7 +14,7 @@
 
     {% if registered %}
 
-        <h2 class="nomargintop register-padding">Thank you for Registering! <h2>
+        <h2 class="nomargintop register-padding">Thank you for Registering! </h2>
       		
             <h3 class="col-xs-12 col-sm-6 col-sm-offset-3 paddingbottom100pxnomobile" style="font-size: 1.7em">  
 				       You'll receive a notification when {{ host.first_name }} confirms your request to connect. In the meantime, <a href="/login/">login to your account</a> to visit your dashboard and update your account preferences and user information.
@@ -115,19 +115,6 @@
 
             <!--End of Simple Sign Up -->
             
-            <div class="text-center alignbottomdiv">
-                {% if hostsignup %}
-                <a href="#hosting">
-                    <p class="whitetext nomargin mobilehide">LEARN MORE ABOUT HOSTING</p>
-                    <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
-                </a>
-                {% else %}
-                <a href="#learn">
-                    <p class="whitetext nomargin mobilehide">LEARN MORE</p>
-                    <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
-                </a>
-                {% endif %}
-            </div>
             <!--Address to be moved to second page of sign up --     
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
@@ -301,15 +288,21 @@
     {% endif %} <!-- if registered -->
     	
     	
-</div>
+    </div>
 
-<div class="row text-center mobilehide paddingtop30px">
-    <!--alignbottomdiv  -->
-    <a href="#learn">
-        <p class="whitetext nomargin">LEARN MORE</p>
-        <img src="{% static 'blocbox/images/arrow-white.png' %}" height="40" width="50" />
-    </a>
-</div>
+    <div class="text-center alignbottomdiv">
+        {% if hostsignup %}
+        <a href="#hosting">
+            <p class="whitetext nomargin mobilehide">LEARN MORE ABOUT HOSTING</p>
+            <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
+        </a>
+        {% else %}
+        <a href="#learn">
+            <p class="whitetext nomargin mobilehide">LEARN MORE</p>
+            <img src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
+        </a>
+        {% endif %}
+    </div>
 </div>
 
 {% endblock %}
