@@ -35,13 +35,19 @@
     {% else %}  	
       
       {% if host.neighborhood_extended %}
+        
         <h2 class="nomargintop signup-padding">Sign Up for Blocbox <br> in {{ host.neighborhood_extended}} </h2>
         <h3 class="col-xs-12 col-sm-10 col-sm-offset-1 nomargintopbottom paddingbottom20pxnomobile waitsubtext">
             Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood_extended }} Blocbox host. </h3>
-      {% else %}
+      
+      {% if host.neighborhood %}
+      	
         <h2 class="nomargintop signup-padding">Sign Up for Blocbox <br> in {{ host.neighborhood}} </h2>
         <h3 class="col-xs-12 col-sm-10 col-sm-offset-1 nomargintopbottom paddingbottom20pxnomobile waitsubtext">
             Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood }} Blocbox host.  </h3>
+      	
+      {% else %}
+        <h2 class="nomargintop signup-padding">Sign Up for Blocbox </h2>
       {% endif %}
     
     {% endif %} <!--if hostsignup -->
