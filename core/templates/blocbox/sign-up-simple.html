@@ -112,24 +112,23 @@
                             <input name="st_address1" placeholder="Street Address" class="form-control input-lg inputbox margintop5pxmobile" type="text">
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group col-padd margintopbottom5px">
-                            {{ user_form.host_availability_writein.errors|striptags}}
-                            <input name="host_availability_writein" placeholder="When are you typically availability to receive packages during the week? Briefly Describe." class="form-control input-lg inputbox margintop5pxmobile" type="text">
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="form-group col-padd margintopbottom5px">
-                            {{ user_form.host_availability_writein.errors|striptags}}
-                            <input name="host_availability_writein" placeholder="When are you typically availability to receive packages during the week? Briefly Describe." class="form-control input-lg inputbox margintop5pxmobile" type="text">
-                        </div>
-                    </div>
-
                     <div class="col-xs-12 col-sm-6">
+                        <div class="form-group col-padd margintopbottom5px">
+                            {{ user_form.city.errors|striptags}}
+                            <input name="city" placeholder="City" class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group col-padd margintopbottom5px">
+                            {{ user_form.host_availability_writein.errors|striptags}}
+                            <input name="host_availability_writein" placeholder="When are you typically availability to receive packages during the week? Briefly Describe." class="form-control input-lg inputbox margintop5pxmobile" type="text">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
                         <div class="form-group col-padd margintopbottom5px">
                             {{ user_form.host_unavailability_writein.errors|striptags}}
                             <input name="host_unavailability_writein" placeholder="Are there any days or times that you're unavailable to receive packages? Briefly Describe." class="form-control input-lg inputbox margintop5pxmobile" type="text">
