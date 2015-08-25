@@ -447,6 +447,9 @@ footer {
     height: 100vh;
     min-height: 675px;
 }
+.fillviewheight .hostsignupform {
+    height: auto;
+}
 .fullheight {
     height: 100%;
     min-height: 100%;
@@ -3753,10 +3756,6 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .fillviewheight {
         height: 100vh;
         min-height: 750px;
-    }
-    
-    .hostsignupform {
-        height: 1000px;
     }
     
 }
