@@ -21,7 +21,7 @@
             <!--<div class="promo-3"></div> -->
 
             {% if hostsignup %}
-            <h2 class="nomargintop signup-padding" style="font-size: 2.3em; font-weight: 500;">Sign Up to be a Host </h2>
+            <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up to be a Host </h2>
             <h3 class="col-xs-12 col-sm-8 col-sm-offset-2 nomargintop marginbottom15px paddingbottom20pxnomobile waitsubtext" style="font-size: 1.16em">
             Blocbox lets you make money by helping your neighbors.  </h3> {% else %} {% if host.neighborhood_extended %}
             <h2 class="nomargintop signup-padding">Sign Up for Blocbox <br> in {{ host.neighborhood_extended}} </h2>
@@ -284,12 +284,12 @@
         {% if hostsignup %}
         <a href="#hosting">
             <p class="whitetext nomargin mobilehide">LEARN MORE ABOUT HOSTING</p>
-            <img style="margin-top: -5;" src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="50" />
+            <img style="margin-top: -5;" src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
         </a>
         {% else %}
         <a href="#learn">
             <p class="whitetext nomargin mobilehide">LEARN MORE</p>
-            <img style="margin-top: -5;" src="{% static 'blocbox/images/arrow-white.png' %}" height="30" width="50" />
+            <img style="margin-top: -5;" src="{% static 'blocbox/images/arrow-white.png' %}" height="50" width="50" />
         </a>
         {% endif %}
     </div>
