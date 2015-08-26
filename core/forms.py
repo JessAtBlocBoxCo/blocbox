@@ -20,7 +20,7 @@ class UserForm(forms.ModelForm):
             'about_me', 'intro_message', 'pickup_time', 'FBlink', 'imageurl', 'userrating', 'host',
             'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other',
-    				'host_aboutme', 'host_unavailability_writein', 'host_availability_writein',
+    				'host_aboutme', 'host_unavailability_writein', 'host_availability_writein', 'hostuserinterest',
     				'offers_storage', 'offers_petcare', 'offers_housesitting', 'offers_rentals', 'offers_laundry', 'offers_childcare',
 						'offers_plantcare', 'offers_lawn', 'offers_carsharing', 'offers_housemaint', 'offers_autocare', 'offers_userdefined',
             )

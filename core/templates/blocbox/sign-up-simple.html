@@ -168,54 +168,66 @@
                         <tbody>
                             <tr>
                                <td>
+                               	   {{ user_form.offers_storage.errors|striptags}}
                                    <input type="checkbox" name="offers_storage" id="id_offers_storage" style="padding-bottom: 15px"><label  for="id_offers_storage"><span class="btn-check" style="padding: 5px">Storage</span>
                                    </label>
                                 </td>
                                 <td>
+                                	  {{ user_form.offers_petcare.errors|striptags}}
                                     <input type="checkbox" name="offers_petcare" id="id_offers_petcare" style="padding-bottom: 15px"><label for="id_offers_petcare"><span class="btn-check" style="padding: 5px">Pet Care</span>
                                     </label>
                                 </td>
                                 <td>
+                                	  {{ user_form.offers_housesitting.errors|striptags}}
                                     <input type="checkbox" name="offers_housesitting" id="id_offers_housesitting" style="padding-bottom: 15px"><label for="id_offers_housesitting"><span class="btn-check" style="padding: 5px">House Sitting</span>
                                     </label>
                                 </td>
                                 <td>
+                                	  {{ user_form.offers_laundry.errors|striptags}}
                                     <input type="checkbox" name="offers_laundry" id="id_offers_laundry" style="padding-bottom: 15px"><label for="id_offers_laundry"><span class="btn-check" style="padding: 5px">Laundry</span>
                                     </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
+                                	   {{ user_form.offers_rentals.errors|striptags}}
                                     <input type="checkbox" name="offers_rentals" id="id_offers_rentals" style="padding-bottom: 15px"><label  for="id_offers_rentals"><span class="btn-check" style="padding: 5px">Equipment Rental</span>
                                     </label>
                                 </td>
                                 <td>
+                                	  {{ user_form.offers_plantcare.errors|striptags}}  
                                     <input type="checkbox" name="offers_plantcare" id="id_offers_plantcare" style="padding-bottom: 15px"><label  for="id_offers_plantcare"><span class="btn-check" style="padding: 5px">Plant Care</span>
                                     </label>
                                 </td>
                                 <td>
+                                	  {{ user_form.offers_meals.errors|striptags}}
                                     <input type="checkbox" name="offers_meals" id="id_offers_meals" style="padding-bottom: 15px"><label  for="id_offers_meals"><span class="btn-check" style="padding: 5px">Community Meals</span>
                                     </label>
                                 </td>
                                 <td>
+                                	  {{ user_form.offers_housemaint.errors|striptags}}
                                     <input type="checkbox" name="offers_housemaint" id="id_offers_housemaint" style="padding-bottom: 15px"><label  for="id_offers_housemaint"><span class="btn-check" style="padding: 5px">House Maintenance</span>
                                     </label>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
+                                	  {{ user_form.offers_childcare.errors|striptags}}
                                     <input type="checkbox" name="offers_childcare" id="id_offers_childcare" style="padding-bottom: 15px"><label  for="id_offers_childcare"><span class="btn-check" style="padding: 5px">Child Care</span>
                                     </label>
                                 </td>
                                 <td>
+                                	  {{ user_form.offers_letin.errors|striptags}}
                                     <input type="checkbox" name="offers_letin" id="id_offers_letin" style="padding-bottom: 15px"><label  for="id_offers_letin"><span class="btn-check" style="padding: 5px">Let Repairperson In</span>
                                     </label>
                                 </td>
                                 <td>
+                                	  {{ user_form.offers_lawn.errors|striptags}}
                                     <input type="checkbox" name="offers_lawn" id="id_offers_lawn" style="padding-bottom: 15px"><label  for="id_offers_lawn"><span class="btn-check" style="padding: 5px">Lawn Care</span>
                                     </label>
                                 </td>
-                                <td>
+                                <td> 
+                                	   {{ user_form.offers_carsharing.errors|striptags}}
                                     <input type="checkbox" name="offers_carsharing" id="id_offers_carsharing" style="padding-bottom: 15px"><label  for="id_offers_carsharing"><span class="btn-check" style="padding: 5px">Car Sharing</span>
                                     </label>
                                 </td>
@@ -316,11 +328,13 @@
                         <div class="checkbox checkbox-success checkbox-inline text-center">
                             {% if hostsignup %}
                             <input type="checkbox" name="hostuserinterest" id="id_hostuserinterest">
+                            {{ user_form.hostuserinterest.errors|striptags}}
                             <label for="id_hostuserinterest">
                                 <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in using Blocbox as a customer. Please connect me to other hosts in my neighborhood.</h6>
                             </label>
                             {% else %}
                             <input type="checkbox" name="hostinterest" id="id_hostinterest">
+                            {{ user_form.hostinterest.errors|striptags}}
                             <label for="id_hostinterest">
                                 <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in helping my neighbors and making some extra money</h6>
                             </label>
@@ -330,7 +344,8 @@
                     </div>
                     <div class="row paddingbottom100px">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2 margintopbottom5px paddingtop15pxmobile" style="padding-left: 10px; padding-right: 10px;">
-                            <input type="submit" {% if hostsignup %} value="APPLY TO BECOME A HOST" {% else %} value="SIGN UP AND REQUEST TO CONNECT" {% endif %} name="submit" class="btn-lg btn-waitlist margintop5px">
+                            <input type="submit" {% if hostsignup %} value="APPLY TO BECOME A HOST" {% else %} value="SIGN UP AND REQUEST TO CONNECT" {% endif %} 
+                            	name="submit" class="btn-lg btn-waitlist margintop5px">
                             <!--name="subscribe" -->
                         </div>
                     </div>
