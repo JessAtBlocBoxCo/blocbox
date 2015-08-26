@@ -678,9 +678,9 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
             user = user_form.save()
             # Now we hash the password with the set_passworth method; Once hashed, we ca update the user object
             user.set_password(user.password)	
+            user.save()
             #get nearby zips and opulate the city and state
             zipcodeform = user_form.cleaned_data['zipcode']
-            fullname = user_form.cleaned_data['full_name']
             zipcode = zcdb[zipcodeform]           
             zipcodes_nearby = [z.zip for z in zcdb.get_zipcodes_around_radius(zipcode.zip, 2)]
             zipcodes_nearby_json = json.dumps(zipcodes_nearby)
@@ -691,13 +691,14 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
             user.account_balance_packages = 1
             if referring_user_email:
                 user.account_balance_packages = 3
-            #Get full name
-            names = fullname.split(" ")
-            user.first_name = names[0]
-            if len(names) > 1:
-                user.last_name = names[1]
-            if len(names) > 2:
-                user.last_name = names[1] + " " + names[2]
+            #Get naes from full names - comment this out
+            #fullname = user_form.cleaned_data['full_name']
+            #names = fullname.split(" ")
+            #user.first_name = names[0]
+            #if len(names) > 1:
+            #    user.last_name = names[1]
+            #if len(names) > 2:
+            #    user.last_name = names[1] + " " + names[2]
             #if hostsignup assign user as host
             if hostsignup:
             	user.host = True
