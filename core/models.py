@@ -33,7 +33,7 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     email = models.EmailField(max_length=254, unique=True)
     first_name = models.CharField('First Name',max_length=100, blank=True)
     last_name = models.CharField('Last Name', max_length=100, blank=True)
-    full_name = models.CharField('Full Name', max_length=200, blank=True)
+    full_name = models.CharField('Full Name', max_length=200, blank=True, null=True)
     zipcode = models.CharField(max_length =5)
     #Street Address
     st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True)
@@ -53,8 +53,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     facebook_gender = models.CharField(max_length=15, blank=True)
     facebook_link = models.URLField(blank=True)
     facebook_verified = models.BooleanField(blank=True, default=False)
-    facebook_first_name = models.CharField(max_length=30, blank=True)
-    facebook_last_name = models.CharField(max_length =30, blank=True)
+    facebook_first_name = models.CharField(max_length=30, blank=True, null=True)
+    facebook_last_name = models.CharField(max_length =30, blank=True, null=True)
     facebook_response_all = models.CharField(max_length = 500, blank=True)
     host = models.BooleanField(blank=True, default=False) #boolean can't be null if want null need NullBooleanField
     hostinterest = models.BooleanField('Interested in Hosting', blank=True, default=False)
@@ -62,9 +62,9 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     userrating = models.DecimalField('User Rating',max_digits=3,decimal_places=2, blank=True, null=True)
     favorscompleted = models.IntegerField('Favors Completed',blank=True, null=True)
     favorsrequested = models.IntegerField('Favors Requested',blank=True, null=True)
-    FBlink = models.URLField('Facebook Profile Link', blank=True)
-    intro_message = models.CharField(max_length=350, blank=True) #Intro Message to Host
-    pickup_time = models.CharField(max_length=150, blank=True) 
+    FBlink = models.URLField('Facebook Profile Link', blank=True, null=True)
+    intro_message = models.CharField(max_length=350, blank=True, null=True) #Intro Message to Host
+    pickup_time = models.CharField(max_length=150, blank=True, null=True) 
     #account balane - amount of money left if bought bundled
     #account_balance = models.DecimalField("Account Balance", max_digits=6, decimal_places=2, blank=True, null=True)
     account_balance_packages = models.IntegerField(blank=True, null=True)
