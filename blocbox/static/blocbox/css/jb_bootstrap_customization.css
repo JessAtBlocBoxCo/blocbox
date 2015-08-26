@@ -3368,8 +3368,8 @@ td > input[type="checkbox"] + label span, .btn-check {
     height:20px;
     vertical-align:middle;
     cursor:pointer;
-    border: 2px solid rgb(240, 240, 240);
-    border-radius: 100%;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
     color: rgb(127, 140, 141);
     font-weight: 400;
 }
