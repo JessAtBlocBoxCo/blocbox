@@ -36,8 +36,8 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     full_name = models.CharField('Full Name', max_length=200, blank=True, null=True)
     zipcode = models.CharField(max_length =5)
     #Street Address
-    st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True)
-    st_address2 = models.CharField('Street Address 2', max_length = 70, blank=True)
+    st_address1 = models.CharField('Street Address 1', max_length = 70, blank=True, null=True)
+    st_address2 = models.CharField('Street Address 2', max_length = 70, blank=True, null=True)
     #latitude and longiutude for google maps, e.g., 420 Grand Ave is 40.686529, -73.949413, not sure if engative sing counts as digit
     address_latitude = models.DecimalField('Latitude Coordinate', max_digits=9, decimal_places=6, blank=True, null=True) #latitude is max-min 90, -90
     address_longitude = models.DecimalField('Longitude Coordinate', max_digits=10, decimal_places=6, blank=True, null=True) #longitude is max-min 180, -180
@@ -115,12 +115,12 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
     
     host_aboutme = models.CharField('Host Intro Message',max_length=350,blank=True)
     
-    host_availability_writein = models.CharField(max_length=250, blank=True)
-    host_unavailability_writein = models.CharField(max_length=250, blank=True)
+    host_availability_writein = models.CharField(max_length=250, blank=True, null=True)
+    host_unavailability_writein = models.CharField(max_length=250, blank=True, null=True)
     #Add Beta User - Freed - 23 aug
-    betauser_free = models.BooleanField(blank=True, default=True)
+    betauser_free = models.BooleanField(blank=True, default=True, null=True)
     #Add host interested in being custerom field - 23 aug
-    hostuserinterest = models.BooleanField('Host Interested in Using Blocbox', blank=True, default=False)
+    hostuserinterest = models.BooleanField('Host Interested in Using Blocbox', blank=True, default=False, null=True)
     
     availability = models.CharField(max_length=250,blank=True)
     whenimhome_days = models.CharField('Host Availability Days of Week',max_length=250,blank=True)

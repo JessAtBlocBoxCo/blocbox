@@ -54,6 +54,7 @@
                 <div class="row">
                     <div class="col-xs-12">
                         <div class="form-group col-padd nomargintopbottom">
+                        	  {{ form.errors }}
                             {{ user_form.non_field_errors }} {{ user_form.email.errors|striptags}}
                             <input name="email" placeholder="You@Example.com" class="form-control input-lg inputbox margintop5pxmobile" type="email">
                         </div>
