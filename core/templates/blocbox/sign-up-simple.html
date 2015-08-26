@@ -109,12 +109,12 @@
                 </div>
                     <div class="row">
                     <div class="col-xs-12 col-sm-6">
-                        <div class="form-group col-padd margintopbottom5px">
+                        <div class="form-group col-padd nomargintopbottom">
                             {{ user_form.city.errors|striptags}}
                             <input name="city" placeholder="City" class="form-control input-lg inputbox margintop5pxmobile" type="text">
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-10 col-sm-6">
+                    <div class="col-xs-12 col-sm-6">
                         <div class="form-group col-padd nomargintopbottom">
                             {{ user_form.zipcode.errors|striptags}}
                             <input name="zipcode" placeholder="Zip" class="form-control input-lg inputbox margintop5pxmobile" type="text">
@@ -326,7 +326,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-12 col-sm-8 col-sm-offset-2 margintopbottom5px paddingtop15pxmobile" style="padding-left: 10px; padding-right: 10px;">
-                            <input type="submit" {% if hostsignup %} value="BECOME A HOST" {% else %} value="SIGN UP AND REQUEST TO CONNECT" {% endif %} name="submit" class="btn-lg btn-waitlist margintop5px">
+                            <input type="submit" {% if hostsignup %} value="APPLY TO BECOME A HOST" {% else %} value="SIGN UP AND REQUEST TO CONNECT" {% endif %} name="submit" class="btn-lg btn-waitlist margintop5px">
                             <!--name="subscribe" -->
                         </div>
                     </div>
