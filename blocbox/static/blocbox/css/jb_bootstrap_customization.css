@@ -3364,8 +3364,8 @@ td > input[type="checkbox"]:checked + label span {
 
 td > input[type="checkbox"] + label span, .btn-check {
     display:inline-block;
-    width: 80%;
-    height: 40px;
+    width: 95%;
+    height: 32px;
     vertical-align:middle;
     cursor:pointer;
     border: 1px solid rgb(255, 255, 255);
