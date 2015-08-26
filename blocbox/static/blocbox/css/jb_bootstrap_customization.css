@@ -3362,7 +3362,7 @@ td > input[type="checkbox"]:checked + label span {
     font-weight: 700;
 }
 
-td > input[type="checkbox"] + label, .btn-check, span {
+td > input[type="checkbox"] + label span, .btn-check {
     display:inline-block;
     width: 95%;
     height: 35px;
