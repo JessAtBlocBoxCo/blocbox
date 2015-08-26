@@ -3371,7 +3371,7 @@ td > input[type="checkbox"] + label span, .btn-check {
     border: 1px solid rgb(255, 255, 255);
     border-radius: 10px;
     color: white;
-    background-color: rgb(71, 158, 159);
+    background-color: transparent;
     font-weight: 300;
 }
 td > input[type="checkbox"] + label span:hover, .btn-check {
@@ -3381,7 +3381,7 @@ td > input[type="checkbox"] + label span:hover, .btn-check {
 }
 td > input[type="checkbox"]:checked + label span, .btn-check {
     border: 1px solid rgb(71, 158, 159);
-    background-color: rrgb(71, 158, 159);
+    background-color: rgb(71, 158, 159);
     color: white;
     font-weight: 500;
 }
