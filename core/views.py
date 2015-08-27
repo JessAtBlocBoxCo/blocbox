@@ -732,7 +732,7 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
     else:
         user_form = UserForm()
     if registered == True:
-        return HttpResponseRedirect('/editprofile/')
+        return HttpResponseRedirect('/editprofilefromsignup/')
     else:	
         return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup,
     	      	'referring_user_email': referring_user_email, }, context)
