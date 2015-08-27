@@ -304,6 +304,10 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'otherfavors_all_paid': otherfavors_all_paid, 
     })
 
+def dashboard_host(request):
+    enduser = request.user
+    return render(request, 'blocbox/dashboard-host.html', {'enduser':enduser,})
+
 def enduser_report_issue_modal(request, issue_id):
     trans = Transaction.objects.get(pk=issue_id)
     if request.method == 'POST':
