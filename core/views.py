@@ -511,11 +511,11 @@ def profile(request):
 
 def editprofile(request, from_page=None):
     enduser=request.user
-    if from_page = 'signup':
+    if from_page == 'signup':
         fromsignup = True
-        else:
-            fromsignup = False
-            return render(request, 'blocbox/editprofile.html', {'enduser': enduser,  'fromsignup': fromsignup, 'from_page': from_page})
+    else:
+        fromsignup = False
+    return render(request, 'blocbox/editprofile.html', {'enduser': enduser,  'fromsignup': fromsignup, 'from_page': from_page})
 
 def addinterest(request):
     enduser=request.user
