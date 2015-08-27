@@ -723,8 +723,13 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
     	      print user_form.errors
     else:
         user_form = UserForm()
-    return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup,
+    if registered == True:
+        return HttpResponseRedirect('/editprofile/')
+    else:	
+        return render_to_response(templateloc, {'user_form': user_form, 'registered': registered, 'host':host, 'hostsignup': hostsignup,
     	      	'referring_user_email': referring_user_email, }, context)
+    	      		
+   
 
     
 #OBE - NEED TO REMOVE
