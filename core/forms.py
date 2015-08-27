@@ -103,7 +103,11 @@ class ConnectForm(forms.ModelForm):
         fields = ('about_me', 'intro_message', 'pickup_time', 'FBlink', 'imageurl', 'userrating', 'host',
             'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other',)
-
+        
+class EditProfile(forms.ModelForm):
+    class Meta:
+        model = UserInfo
+        fields = ('first_name', 'last_name', 'zip_code')
 
 #NotificationSettings form
 class NotificationSettings(forms.ModelForm):
