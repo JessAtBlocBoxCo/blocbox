@@ -511,7 +511,7 @@ def profile(request):
 
 def editprofile(request, from_page=None):
     enduser=request.user
-    if from_page == 'signup':
+    if from_page = 'signup':
         fromsignup = True
         else:
             fromsignup = False
