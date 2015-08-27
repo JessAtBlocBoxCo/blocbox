@@ -55,7 +55,7 @@ urlpatterns = patterns('',
  		url(r'^transactions/', include('transactions.urls', namespace='transactions')), #because of the namepsac,e need to reeverse with reverse(payment:)
     url(r'^admin/', include(admin.site.urls)), 
                        
-    url(r'^hostdashboard/',views.dashboard_host, name='host_dashboard')
+    url(r'^hostdashboard/',views.dashboard_host, name='host_dashboard'),
 
 
     #Simple sign up (in use)
