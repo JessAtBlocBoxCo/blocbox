@@ -12,7 +12,7 @@ from core.models import UserInfo
 from connections.models import Connection
 from transactions.models import Transaction
 #from django.contrib.auth.models import User #dont need this because not using User - maybe why it create table..
-from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, ResetPassword
+from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, ResetPassword, Editprofile
 from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral, attribute_referral_waitlist
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
@@ -515,7 +515,20 @@ def editprofile(request, from_page=None):
         fromsignup = True
     else:
         fromsignup = False
-    return render(request, 'blocbox/editprofile.html', {'enduser': enduser,  'fromsignup': fromsignup, 'from_page': from_page})
+    user = get_object_or_404(UserInfo, pk=enduser.id)
+    if request.method == 'POST':
+        editprofile_form  = EditProfile(request.POST, instance=user) 
+    if editprofile_form.is_valid():
+        user = editprofile_form.save() #saves the form
+        user.save() #never understood function of this line may not be necessary
+        #you can add other lines here to modify form input - like if they put a zipcode in and you want to perform operations
+        #and create new variables - se eother examples of form views on core.views.py
+    else:
+        print editprofile_form.errors
+    else:
+        editprofile_form = ResetPassword(instance=user)
+        return render(request, 'blocbox/editprofile.html', {'enduser': enduser,  'fromsignup': fromsignup, 'from_page': from_page, 
+        'editprofile_form': editprofile_form})
 
 def addinterest(request):
     enduser=request.user
