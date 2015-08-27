@@ -56,6 +56,8 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)), 
                        
     url(r'^hostdashboard/',views.dashboard_host, name='host_dashboard'),
+                       
+    
 
 
     #Simple sign up (in use)
@@ -100,6 +102,7 @@ urlpatterns = patterns('',
  	url(r'^messages/', include('django_messages.urls')),
  	#url(r'^datascience/', include('datasci.urls')),
     url(r'^editprofile/$', views.editprofile, name='editprofile'),
+        url(r'^editprofilefrom(?P<from_page>\w+)/$', views.editprofile, name='editprofile_from_page', ),
     url(r'^addinterest/$', views.addinterest, name='addinterest'),
  		
 )

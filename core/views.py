@@ -509,7 +509,7 @@ def profile(request):
     enduser = request.user
     return render(request, 'blocbox/profile.html', {'enduser':enduser,})
 
-def editprofile(request):
+def editprofile(request, from_page=None):
     enduser=request.user
     return render(request, 'blocbox/editprofile.html', {'enduser': enduser})
 
