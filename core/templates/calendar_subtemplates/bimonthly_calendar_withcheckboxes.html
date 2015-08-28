@@ -59,9 +59,9 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
 
                                   <!--TODAY: make class active -->
                                   {% if day = today_dayofmonth_num %}
-                                  <td class="active">
+                                  <td> <!--class="active"-->
                                   	  <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" >
-                                      <label for="id_month1day{{day}}" class="activecircle"><span style="padding: 8px 9px">{{ day }}</span> </label>
+                                      <label for="id_month1day{{day}}"><span style="padding: 8px 9px">{{ day }}</span> </label>
                                       <!-- <label for="id_month1day{{day}}" class="activecircle" style="padding: 9px 9px;">{{ day }}</label> -->
                                   </td>
                                   {% else %}
