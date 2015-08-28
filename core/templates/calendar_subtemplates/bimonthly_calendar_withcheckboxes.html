@@ -61,7 +61,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                                   {% if day = today_dayofmonth_num %}
                                   <td> <!--class="active"-->
                                   	  <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" >
-                                      <label for="id_month1day{{day}}"><span style="padding: 8px 9px">{{ day }}</span> </label>
+                                      <label for="id_month1day{{day}}" class="activecircle"><span style="padding: 8px 9px">{{ day }}</span> </label>
                                       <!-- <label for="id_month1day{{day}}" class="activecircle" style="padding: 9px 9px;">{{ day }}</label> -->
                                   </td>
                                   {% else %}
@@ -69,14 +69,12 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                                      {% if day in days_withconflicts_thismonth %}
                                      <td class="danger"><span class="dangercircle" style="padding: 10px 9px">{{ day }}</span></td>
                                      {% else %}
-                                     <td> 
-                                    	   {% if day = 0 %} <!--blank if zero -->
-                                         {% else %}
-                                         <!-- if no conflict, day not zero -->
-
-
-                                        <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}">
-                                        <label for="id_month1day{{day}}"><span style="padding: 8px 9px">{{ day }}</span> </label>
+                                          <td> 
+                                    	      {% if day = 0 %} <!--blank if zero -->
+                                            <!--regular days ahead-->
+                                            {% else %}
+                                              <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}">
+                                              <label for="id_month1day{{day}}"><span style="padding: 8px 9px">{{ day }}</span> </label>
 
                                         {% endif %}
                                     </td>
