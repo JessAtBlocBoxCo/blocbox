@@ -104,7 +104,7 @@ class ConnectForm(forms.ModelForm):
             'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
     				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other',)
         
-class EditProfile(forms.ModelForm):
+class Editprofile(forms.ModelForm):
     class Meta:
         model = UserInfo
         fields = ('first_name', 'last_name',)
