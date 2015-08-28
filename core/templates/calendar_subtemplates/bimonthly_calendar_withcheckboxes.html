@@ -74,6 +74,7 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                                      {% else %}
                                           <td> 
                                     	      {% if day = 0 %} <!--blank if zero -->
+                                    	      <td style="display: none;"></td>
                                             <!--regular days ahead-->
                                             {% else %}
                                               <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}">
