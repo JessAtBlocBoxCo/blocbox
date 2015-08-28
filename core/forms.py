@@ -107,7 +107,7 @@ class ConnectForm(forms.ModelForm):
 class EditProfile(forms.ModelForm):
     class Meta:
         model = UserInfo
-        fields = ('first_name', 'last_name', 'zip_code')
+        fields = ('first_name', 'last_name',)
 
 #NotificationSettings form
 class NotificationSettings(forms.ModelForm):
