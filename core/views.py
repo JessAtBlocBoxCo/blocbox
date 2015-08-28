@@ -527,7 +527,7 @@ def editprofile(request, from_page=None):
     else:
         print editprofile_form.errors
     else:
-        editprofile_form = ResetPassword(instance=user)
+        editprofile_form = EditProfile(instance=user)
     return render(request, 'blocbox/editprofile.html', {'enduser': enduser,  'fromsignup': fromsignup, 'from_page': from_page, 
         'editprofile_form': editprofile_form})
 
