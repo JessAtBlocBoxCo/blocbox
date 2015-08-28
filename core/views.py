@@ -517,13 +517,13 @@ def editprofile(request, from_page=None):
         fromsignup = False
     user = get_object_or_404(UserInfo, pk=enduser.id)
     if request.method == 'POST':
-        editprofile_form  = EditProfile(request.POST, instance=user) 
+        editprofile_form  = Editprofile(request.POST, instance=user) 
         if editprofile_form.is_valid():
             user = editprofile_form.save()
         else:
             print editprofile_form.errors
     else:
-        editprofile_form = EditProfile(instance=user)
+        editprofile_form = Editprofile(instance=user)
     return render(request, 'blocbox/editprofile.html', {'enduser': enduser,  'fromsignup': fromsignup, 'from_page': from_page, 
         'editprofile_form': editprofile_form})
 
