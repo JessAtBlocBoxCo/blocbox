@@ -181,7 +181,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     #packagedays_count = None
     #cal_form_submitted = False
     if cal_form_submitted == False:   
-    	  transaction_form_submitted_tried = False  
+        transaction_form_submitted_tried = False  
         trans_form_package = None 
         packagedays = []  
         packagedays_string = []
