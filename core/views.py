@@ -410,6 +410,8 @@ def dashboard_tracking_modal(request, track_id):
                     #    notifyemails = [trans.enduser.email, trans.host.email]
                     #else:
                     notifyemails = [trans.host.email]
+                    #send an email to the host telling them tracking info has been added to shipment
+                    notifyhost_tracking_added(request, hostid, userid, trans_id)
                     try:
                         api.trackings.post(tracking=dict(
     		                    slug=slug_detected, tracking_number=tracking_no_to_add,  
@@ -875,6 +877,13 @@ def notifyconnectionconfirmed(request, hostid, userid):
     subject = "Your request to connect was confirmed!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
 
+def notifyhost_tracking_added(request, hostid, userid, trans_id):
+    host = get_object_or_404(UserInfo, pk=hostid)
+    enduser = get_object_or_404(UserInfo, pk=userid)
+    trans = get_object_or_404(Transaction, pk=trans_id)
+    message = render_to_string('emails/notify_host_tracking_added.txt', {'host': host, 'enduser': enduser, 'trans': trans})
+    subject = "Neighbor has added tracking to an incoming delivery!"
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,])
 
 #-----------------------------------------------------------
 # Confirm or deny requests to connect
