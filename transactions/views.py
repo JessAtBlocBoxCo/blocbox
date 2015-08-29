@@ -180,7 +180,8 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     #transaction_form_submitted = False
     #packagedays_count = None
     #cal_form_submitted = False
-    if cal_form_submitted == False:     
+    if cal_form_submitted == False:   
+    	  transaction_form_submitted_tried = False  
         trans_form_package = None 
         packagedays = []  
         packagedays_string = []
@@ -319,10 +320,13 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string) + ", or " + str(day7string)               
                 trans.save() 
                 transaction_form_submitted = True
+                transaction_form_submitted_tried = True
             else:
                 print trans_form_package.errors 
+                transaction_form_submitted_tried = True
         else: 
             trans_form_package = CreatePackageTransaction()
+            transaction_form_submitted_tried = False
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
         cal_form = None 
@@ -353,7 +357,8 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_string': packagedays_string, 'packagedays_count': packagedays_count, 
         	  'cal_form_submitted': cal_form_submitted,
         	  #payment stuff once the calendar checkboxes are checked
-        	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits,
+        	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 
+        	  'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits, 'transaction_form_submitted_tried': transaction_form_submitted_tried,
 		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'free': free,
 		    })
 

@@ -31,6 +31,8 @@
     	 	DELME - TESTING THE CALFORMSUBMITTED {{cal_form_submitted}} <br>
     	 	DELME - TESTING PACKAGEDAYS_COUNT {{packagedays_count }} <br>
     	 	DELME - TESTING TRANS FORM SUBMITTED {{ transaction_form_submitted }} <br>
+    	 	DELME - TESTING TRY TO SUBMIT TRANS FORM {{ transaction_form_submitted_tried }} <br>
+    	 	
     	 Complete the following steps to verify shipping destination, notify your Blocbox host, and complete payment</p>
     <div class="row mobilehide">
         <div class="col-xs-8 col-xs-offset-2 nopadding">
@@ -144,7 +146,7 @@
                   {% endif %} 
             {% endif %} <!-- end if free -->
             
-            <p>DELME - THIS IS THE NON-FIELD-ERRORS </p>	       
+       
             {{ trans_form_package.non_field_errors }} 
             
                    {% if transaction_form_submitted %} 
