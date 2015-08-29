@@ -143,11 +143,13 @@
                     <p> You have an account balance of {{enduser.account_balance_packages }} packages </p>
                   {% endif %} 
             {% endif %} <!-- end if free -->
-            	       
+            
+            <p>DELME - THIS IS THE NON-FIELD-ERRORS </p>	       
             {{ trans_form_package.non_field_errors }} 
-                   { % if transaction_form_submitted % } 
+            
+                   {% if transaction_form_submitted %} 
             {{ trans_form_package.payment_option.errors }} 
-                  	{ % endif % }  
+                  	{% endif %}  
                    		
             {% if payment_needed and not free %}
                     <table class="table">
