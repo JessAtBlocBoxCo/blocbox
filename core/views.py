@@ -729,6 +729,11 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
             #if 'picture' in request.FILES:
             #profile.picture = request.FILES['picture']       	      
             registered = True #Update our variable to tell the template registration was successful        
+            #JMY ADDING THESE LINES ON 8/28 TO LOG THEM IN AUTOMATICALLY
+            email_entered = user_form.cleaned_data['email']
+            password_entered = user_form.cleaned_data['password']
+            user_auth_details = authenticate(email=email_entered, password=password_entered)
+            login(request, user_auth_details)
             #send an email to the host askig them to confirm the connection
             if host_id:
                 confirmconnect_mail(request, host.id, user.id, user.intro_message, user.email, user.first_name, user.last_name) #send a request to connect to the host
@@ -763,7 +768,6 @@ def signuplong_host(request):
             host = host_form.save() #save the hosts form data to the database
             host.save() #Save the HostProfile model instance
             registered = True   	  
-    	          
     	  #Invalid form or forms - print problems to the terminal so they're show to user
         else: 
     	      print host_form.errors
