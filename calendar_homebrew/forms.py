@@ -138,37 +138,7 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
         month2day30 = self.cleaned_data.get("month2day30")          
         month2day31 = self.cleaned_data.get("month2day31")      
         #Now the if-then statement if all are false      
-        if NOT ( month1day1  OR month1day2 OR \       
-    		    month1day2  OR month2day2  OR \ 
-    		    month1day3  OR month2day3  OR \ 
-    		    month1day4  OR month2day4  OR \ 
-    		    month1day5  OR month2day5  OR \ 
-    		    month1day6  OR month2day6  OR \ 
-    		    month1day7  OR month2day7  OR \ 
-    		    month1day8  OR month2day8  OR \ 
-    		    month1day9  OR month2day9  OR \ 
-    		    month1day10 OR month2day10 OR \ 
-    		    month1day11 OR month2day11 OR \ 
-    		    month1day12 OR month2day12 OR \ 
-    		    month1day13 OR month2day13 OR \ 
-    		    month1day14 OR month2day14 OR \ 
-    		    month1day15 OR month2day15 OR \ 
-    		    month1day16 OR month2day16 OR \ 
-    		    month1day17 OR month2day17 OR \ 
-    		    month1day18 OR month2day18 OR \ 
-    		    month1day19 OR month2day19 OR \ 
-    		    month1day20 OR month2day20 OR \ 
-    		    month1day21 OR month2day21 OR \ 
-    		    month1day22 OR month2day22 OR \ 
-    		    month1day23 OR month2day23 OR \ 
-    		    month1day24 OR month2day24 OR \ 
-    		    month1day25 OR month2day25 OR \ 
-    		    month1day26 OR month2day26 OR \ 
-    		    month1day27 OR month2day27 OR \ 
-    		    month1day28 OR month2day28 OR \ 
-    		    month1day29 OR month2day29 OR \ 
-            month1day30 OR month2day30 OR \ 
-            month1day31 OR month2day31 ) :
+        if NOT ( month1day1 OR month2day1 ):
             raise forms.ValidationError(
                 self.error_messages['no_dates_selected'],
                 code='no_dates_selected',
