@@ -143,4 +143,4 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
                 self.error_messages['no_dates_selected'],
                 code='no_dates_selected',
             )
-        return month1day1
+        return month1day29
