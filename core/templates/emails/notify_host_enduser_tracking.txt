@@ -1,0 +1,9 @@
+Hello {{ host.first_name }},
+
+Your neighbor, {{enduser.first_name}} {{ enduser.last_name}} [{{ enduser.email }}], has entered tracking information for order {{trans.id}} placed on {{trans.date_requested_notime }}.
+
+Tracking updates will now be availble on your dashboard. 
+
+
+Thanks!
+The BlocBox Team
