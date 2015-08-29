@@ -137,7 +137,7 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
         month2day29 = self.cleaned_data.get("month2day29")          
         month2day30 = self.cleaned_data.get("month2day30")          
         month2day31 = self.cleaned_data.get("month2day31")      
- 		    #Now the if-then statement if all are false      
+        #Now the if-then statement if all are false      
         if ( month1day1   == False            AND month2day1 == False            
     		    AND month1day2  == False            AND month2day2  == False   
     		    AND month1day3  == False            AND month2day3  == False   
