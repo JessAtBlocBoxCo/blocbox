@@ -138,7 +138,11 @@
                   {% endif %} 
             {% endif %} <!-- if free -->
             	       
-                   {{ trans_form_package.non_field_errors }} {% if transaction_form_submitted %} {{ trans_form_package.payment_option.errors }} {% endif %} {% if payment_needed %}
+                   {{ trans_form_package.non_field_errors }} 
+                    {% if transaction_form_submitted %} {{ trans_form_package.payment_option.errors }} 
+                   	{% endif %} 
+                   		
+            {% if payment_needed AND NOT free %}
                     <table class="table">
                         <tr>
                             <td>
@@ -202,7 +206,8 @@
 
                     <!--if payment is not needed make it hidden and automatically apply per package -->
                     {% else %}
-                    <input type="hidden" name="payment_option" value="perpackage"> {% endif %}
+                       <input type="hidden" name="payment_option" value="perpackage"> 
+                    {% endif %}  <!--end if payment needed -->
                     <!--table containg payment options -->
                 </div>
                 <!--col-sm-10 with all the checkboxes-->
