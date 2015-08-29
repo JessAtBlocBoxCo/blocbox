@@ -215,6 +215,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     else:
         cal_form = CalendarCheckBoxes()
         packagedays = None
+        packagedays_string = None
     trans_form_submitted = False
     if cal_form_submitted == True:
         trans = Transaction()
