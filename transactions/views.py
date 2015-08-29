@@ -181,7 +181,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     #packagedays_count = None
     #cal_form_submitted = False
     if cal_form_submitted == False:   
-        transaction_form_submitted_tried = False  
         trans_form_package = None 
         packagedays = []  
         packagedays_string = []
@@ -327,6 +326,8 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         else: 
             trans_form_package = CreatePackageTransaction()
             transaction_form_submitted_tried = False
+    else:
+        transaction_form_submitted_tried = False
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
         cal_form = None 
