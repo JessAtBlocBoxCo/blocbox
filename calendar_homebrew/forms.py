@@ -34,7 +34,7 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
     month1day26 = forms.BooleanField(required=False)
     month1day27 = forms.BooleanField(required=False)
     month1day28 = forms.BooleanField(required=False)
-    month1day29 = forms.BooleanField(required=False)
+    month1day29 = forms.BooleanField(required=True)
     month1day30 = forms.BooleanField(required=False)
     month1day31 = forms.BooleanField(required=False)
     month2day1  = forms.BooleanField(required=False)
