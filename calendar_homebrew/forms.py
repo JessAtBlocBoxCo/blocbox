@@ -77,6 +77,7 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
     #THIS IS COMPLICATED BECAUSE ITS ACTUALLY DEPENDENT ON THE VALUES FOR SEVERAL FIELDS
     #IN THIS INSTANCE WE USE THE CLEAN() METHOD BECAUSE IT APPLIES TO MULTIPLE FIELDS
     def clean(self):
+    	  #The first part of the funciton defines each of the fields to be checked - before we run the validation thing - ths will make sense later
         month1day1 	 = self.cleaned_data.get("month1day1") 		    
         month1day2   = self.cleaned_data.get("month1day2")        
         month1day3   = self.cleaned_data.get("month1day3")        
@@ -139,6 +140,8 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
         month2day29 = self.cleaned_data.get("month2day29")          
         month2day30 = self.cleaned_data.get("month2day30")          
         month2day31 = self.cleaned_data.get("month2day31")       
+        #the second part of the function actually does the checking - this is one long if-then statement
+        #it says - if none of the above defined variables are true (e.g., checked) then you throw the error - will documen thtat beelow
         if not ( month1day29 or month1day30 or \
             month1day2  or month2day2  or \
             month1day3  or month2day3  or \
@@ -170,6 +173,8 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
             month1day29 or month2day29 or \
             month1day30 or month2day30 or \
             month1day31 or month2day31 ) : 
+            #this bottom part is what happens if none of them are true. it throws VAlidationError, and the error message 
+            #is defined as no_dates_selected, which is defined above
             raise forms.ValidationError(
                 self.error_messages['no_dates_selected'],
                 code='no_dates_selected',
