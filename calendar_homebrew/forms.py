@@ -136,8 +136,7 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
         month2day28 = self.cleaned_data.get("month2day28")          
         month2day29 = self.cleaned_data.get("month2day29")          
         month2day30 = self.cleaned_data.get("month2day30")          
-        month2day31 = self.cleaned_data.get("month2day31")      
-        #Now the if-then statement if all are false      
+        month2day31 = self.cleaned_data.get("month2day31")       
         if NOT month1day1:
             raise forms.ValidationError(
                 self.error_messages['no_dates_selected'],
