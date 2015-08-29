@@ -183,6 +183,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     #cal_form_submitted = False
     if cal_form_submitted == False:   
         trans_form_package = None 
+        trans_form_submitted = False
         packagedays = []  
         packagedays_string = []
         if request.method == 'POST':
@@ -218,7 +219,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         packagedays = None
         packagedays_string = None
         trans_form_package = None
-    trans_form_submitted = False
     if cal_form_submitted == True:
         trans = Transaction()
         if request.method == 'POST': 
@@ -323,13 +323,16 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 transaction_form_submitted_tried = True
             else:
                 print trans_form_package.errors 
+                trans_form_submitted = False
                 transaction_form_submitted_tried = True
                 errors_on_trans_form = 'There are errors on teh trans form'
         else: 
             trans_form_package = CreatePackageTransaction()
+            trans_form_submitted = False
             transaction_form_submitted_tried = False
     else:
         transaction_form_submitted_tried = False
+        trans_form_submitted = False
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
         cal_form = None 
