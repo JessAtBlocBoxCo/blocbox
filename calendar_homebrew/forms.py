@@ -73,8 +73,9 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
     #FIRST - I DEFINE THE ERROR MESSAGE
     error_messages = {  'no_dates_selected': "You have not selected any dates. Please select at least one approximate date on which you think the package may arrive.", }
     
-    
-    def clean_month1day30(self):
+    #NOTE -- IF YOU WANT TO WRITE A CUSTOM VALIDATION IT HAS TO BE CLEAN_(FIELD NAME) -- SEE https://docs.djangoproject.com/en/1.8/ref/forms/validation/
+    #THIS IS COMPLICATED BECAUSE ITS ACTUALLY DEPENDENT ON THE VALUES FOR SEVERAL FIELDS
+    def clean_month1day1(self):
         month1day1 	 = self.cleaned_data.get("month1day1") 		    
         month1day2   = self.cleaned_data.get("month1day2")        
         month1day3   = self.cleaned_data.get("month1day3")        
@@ -142,4 +143,4 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
                 self.error_messages['no_dates_selected'],
                 code='no_dates_selected',
             )
-        return month1day29
+        return month1day1
