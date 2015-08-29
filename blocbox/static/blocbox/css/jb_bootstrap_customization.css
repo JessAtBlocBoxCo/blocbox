@@ -1561,7 +1561,7 @@ body {
 }
 .inputbox {
     border: 1px solid #ffffff;
-    background-color: transparent;
+    background-color: #61b7b8;
 }
 
 /*Make the navbar fixed if its mobile */
