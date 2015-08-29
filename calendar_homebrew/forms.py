@@ -74,7 +74,7 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
     error_messages = {  'no_dates_selected': "You have not selected any dates. Please select at least one approximate date on which you think the package may arrive.", }
     
     
-    def check_if_dates_provided(self):
+    def clean_month1day30(self):
         month1day1 	 = self.cleaned_data.get("month1day1") 		    
         month1day2   = self.cleaned_data.get("month1day2")        
         month1day3   = self.cleaned_data.get("month1day3")        
