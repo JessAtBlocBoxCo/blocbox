@@ -34,8 +34,8 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
     month1day26 = forms.BooleanField(required=False)
     month1day27 = forms.BooleanField(required=False)
     month1day28 = forms.BooleanField(required=False)
-    month1day29 = forms.BooleanField(required=True)
-    month1day30 = forms.BooleanField(required=False)
+    month1day29 = forms.BooleanField(required=False)
+    month1day30 = forms.BooleanField(required=True)
     month1day31 = forms.BooleanField(required=False)
     month2day1  = forms.BooleanField(required=False)
     month2day2  = forms.BooleanField(required=False)
@@ -137,7 +137,7 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
         month2day29 = self.cleaned_data.get("month2day29")          
         month2day30 = self.cleaned_data.get("month2day30")          
         month2day31 = self.cleaned_data.get("month2day31")       
-        if month1day29 == "True":
+        if month1day29:
             raise forms.ValidationError(
                 self.error_messages['no_dates_selected'],
                 code='no_dates_selected',
