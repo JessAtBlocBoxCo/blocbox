@@ -178,7 +178,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     #do payment variables/ transaction form stuff once they've checked the calendar day
     favortype='package'
     #transaction_form_submitted = False
-    packagedays_count = None
+    #packagedays_count = None
     #cal_form_submitted = False
     if cal_form_submitted == False:     
         trans_form_package = None 
@@ -350,7 +350,8 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'days_package_may_come_thismonth': days_package_may_come_thismonth, 'days_package_may_come_nextmonth': days_package_may_come_nextmonth,
         	  'host_package_conflict': host_package_conflict,
         	  #Calendar check boxes form
-        	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_string': packagedays_string, 'packagedays_count': packagedays_count, 'cal_form_submitted': cal_form_submitted,
+        	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_string': packagedays_string, 'packagedays_count': packagedays_count, 
+        	  'cal_form_submitted': cal_form_submitted,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits,
 		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'free': free,
