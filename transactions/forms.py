@@ -33,7 +33,6 @@ class TrackingForm(forms.ModelForm):
         model = Transaction
         fields = ('tracking',)
 
-
 class ModifyTransaction(forms.ModelForm):
     class Meta:
         model = Transaction
