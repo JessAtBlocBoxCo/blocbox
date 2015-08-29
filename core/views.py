@@ -410,8 +410,6 @@ def dashboard_tracking_modal(request, track_id):
                     #    notifyemails = [trans.enduser.email, trans.host.email]
                     #else:
                     notifyemails = [trans.host.email]
-                    #send an email to the host telling them tracking info has been added to shipment
-                    notifyhost_tracking_added(request, hostid, userid, trans_id)
                     try:
                         api.trackings.post(tracking=dict(
     		                    slug=slug_detected, tracking_number=tracking_no_to_add,  
@@ -440,6 +438,8 @@ def dashboard_tracking_modal(request, track_id):
                     trans.shipment_courier = slug_detected.upper()
                     trans.last_tracking_status = tag
                     trans.save()
+                    #send an email to the host telling them tracking info has been added to shipment
+                    notifyhost_tracking_added(request, hostid, userid, trans_id)
             else: #if they entered nothing delete it       
                 api.trackings.delete(courier_on_trans, tracking_on_trans)
                 trans.tracking = None
