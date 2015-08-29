@@ -142,7 +142,7 @@
                     {% if transaction_form_submitted %} {{ trans_form_package.payment_option.errors }} 
                    	{% endif %} 
                    		
-            {% if payment_needed AND free == False %}
+            {% if payment_needed AND free == 'False' %}
                     <table class="table">
                         <tr>
                             <td>
