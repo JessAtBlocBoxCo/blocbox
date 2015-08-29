@@ -26,19 +26,7 @@ class CreatePackageTransaction(forms.Form): #Note this is NOT a modelForm, the v
     arrivalwindow_day5string = forms.CharField(max_length=30, required=False)
     arrivalwindow_day6string = forms.CharField(max_length=30, required=False)
     arrivalwindow_day7string = forms.CharField(max_length=30, required=False)   
-    
-    #JOHN - I ADDED THE TEXT FROM THIS POINT AND BELOW ON 8/28/2015 TO UPDATE IT TO THROW AND ERROR IF THE USER DID NOT SELECT ANY DATES ON THE CALENDAR
-    #FIRST - I DEFINE THE ERROR MESSAGE
-    error_messages = {  'no_dates_selected': "You have not selected any dates. Please select at least one approximate date on which you think the package may arrive.", }
-    
-    def check_if_dates_provided(self):
-        firstday = self.cleaned_data.get("arrivalwindow_day1")
-        if not password:
-            raise forms.ValidationError(
-                self.error_messages['no_dates_selected'],
-                code='no_dates_selected',
-            )
-        return "OK"
+   
         
 class TrackingForm(forms.ModelForm):
     class Meta:
