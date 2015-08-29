@@ -29,7 +29,7 @@
     <p class="darkgreytext textcenter margintop30px marginbottom20px">
     	 
     	 	DELME - TESTING THE CALFORMSUBMITTED {{cal_form_submitted}} <br>
-    	 	
+    	 	DELME - TESTING PACKAGEDAYS_COUNT {{packagedays_count }} <br>
     	 Complete the following steps to verify shipping destination, notify your Blocbox host, and complete payment</p>
     <div class="row mobilehide">
         <div class="col-xs-8 col-xs-offset-2 nopadding">
@@ -95,15 +95,16 @@
     <!--end div_text_container-->
 
     <!--confirming availabiility-->
-    {% if host %} {% if transaction_form_submitted %}
+    {% if host %} 
+    	{% if transaction_form_submitted %}
 
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
-        <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
-       										   Transaction Form Submitted. should redirect...
-       										    	
-       										 </h6>
-    </div>
-    {% else %} {% if cal_form_submitted %}
+          <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
+               <h6 class=" col-xs-12 col-sm-8 whitetext margintop15px marginsides3pct nopadding">
+       										   Transaction Form Submitted. should redirect...	 </h6>
+   				 </div>
+    {% else %} <!--if transaction form is not submitted-->
+    	 
+    	 {% if cal_form_submitted %}
     <!--IF CALENDARD CHECKBOXES - SELECT PAYMETN OPTIONS -->
 
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 bluebackground">
@@ -117,12 +118,10 @@
     </div>
 
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2 profilebox marginbottom60px">
+    	
+    		<!--this is the actual transaction form - submits it/ shoudl create transaction table entry -->
         <form action="/transactions/startashipment/host{{host.id}}/cal_form_submittedTrue/invoice{{invoice}}/packagedays_count{{packagedays_count}}/" role="form" method="post">
 
-            <!-- action="/transactions/startashipment/host{{host.id}}/cal_form_submittedTrue/invoice{{invoice}}/" 
-											      action="/transactions/startashipment/host{{host.id}}/trans_submittedTrue/invoice{{invoice}}/" 
-															action="/transactions/startashipment/host{{host.id}}/packagedays_count{{packagedays_count}}/"  
-															action="/transactions/payment/host{{host.id}}/invoice{{invoice}}/favortype{{favortype}}/" -->
 
             {% csrf_token %}
 
@@ -142,11 +141,12 @@
                   {% if enduser.account_balance_packages %}
                     <p> You have an account balance of {{enduser.account_balance_packages }} packages </p>
                   {% endif %} 
-            {% endif %} <!-- if free -->
+            {% endif %} <!-- end if free -->
             	       
-                   {{ trans_form_package.non_field_errors }} 
-                    {% if transaction_form_submitted %} {{ trans_form_package.payment_option.errors }} 
-                   	{% endif %} 
+            {{ trans_form_package.non_field_errors }} 
+                   <!-- { % if transaction_form_submitted % } --> 
+            {{ trans_form_package.payment_option.errors }} 
+                 <!--  	{ % endif % }  --> 
                    		
             {% if payment_needed and not free %}
                     <table class="table">
