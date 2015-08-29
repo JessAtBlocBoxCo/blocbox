@@ -138,37 +138,37 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
         month2day30 = self.cleaned_data.get("month2day30")          
         month2day31 = self.cleaned_data.get("month2day31")      
         #Now the if-then statement if all are false      
-        if  month1day1   == False            AND month2day1 == False    \       
-    		    AND month1day2  == False            AND month2day2  == False \ 
-    		    AND month1day3  == False            AND month2day3  == False \ 
-    		    AND month1day4  == False            AND month2day4  == False \ 
-    		    AND month1day5  == False            AND month2day5  == False \ 
-    		    AND month1day6  == False            AND month2day6  == False \ 
-    		    AND month1day7  == False            AND month2day7  == False \ 
-    		    AND month1day8  == False            AND month2day8  == False \ 
-    		    AND month1day9  == False            AND month2day9  == False \ 
-    		    AND month1day10 == False            AND month2day10 == False \ 
-    		    AND month1day11 == False            AND month2day11 == False \ 
-    		    AND month1day12 == False            AND month2day12 == False \ 
-    		    AND month1day13 == False            AND month2day13 == False \ 
-    		    AND month1day14 == False            AND month2day14 == False \ 
-    		    AND month1day15 == False            AND month2day15 == False \ 
-    		    AND month1day16 == False            AND month2day16 == False \ 
-    		    AND month1day17 == False            AND month2day17 == False \ 
-    		    AND month1day18 == False            AND month2day18 == False \ 
-    		    AND month1day19 == False            AND month2day19 == False \ 
-    		    AND month1day20 == False            AND month2day20 == False \ 
-    		    AND month1day21 == False            AND month2day21 == False \ 
-    		    AND month1day22 == False            AND month2day22 == False \ 
-    		    AND month1day23 == False            AND month2day23 == False \ 
-    		    AND month1day24 == False            AND month2day24 == False \ 
-    		    AND month1day25 == False            AND month2day25 == False \ 
-    		    AND month1day26 == False            AND month2day26 == False \ 
-    		    AND month1day27 == False            AND month2day27 == False \ 
-    		    AND month1day28 == False            AND month2day28 == False \ 
-    		    AND month1day29 == False            AND month2day29 == False \ 
-            AND month1day30 == False            AND month2day30 == False \ 
-            AND month1day31 == False            AND month2day31 == False :
+        if  month1day1   == False            AND month2day1 == False AND \       
+    		    month1day2  == False            AND month2day2  == False AND \ 
+    		    month1day3  == False            AND month2day3  == False AND \ 
+    		    month1day4  == False            AND month2day4  == False AND \ 
+    		    month1day5  == False            AND month2day5  == False AND \ 
+    		    month1day6  == False            AND month2day6  == False AND \ 
+    		    month1day7  == False            AND month2day7  == False AND \ 
+    		    month1day8  == False            AND month2day8  == False AND \ 
+    		    month1day9  == False            AND month2day9  == False AND \ 
+    		    month1day10 == False            AND month2day10 == False AND \ 
+    		    month1day11 == False            AND month2day11 == False AND \ 
+    		    month1day12 == False            AND month2day12 == False AND \ 
+    		    month1day13 == False            AND month2day13 == False AND \ 
+    		    month1day14 == False            AND month2day14 == False AND \ 
+    		    month1day15 == False            AND month2day15 == False AND \ 
+    		    month1day16 == False            AND month2day16 == False AND \ 
+    		    month1day17 == False            AND month2day17 == False AND \ 
+    		    month1day18 == False            AND month2day18 == False AND \ 
+    		    month1day19 == False            AND month2day19 == False AND \ 
+    		    month1day20 == False            AND month2day20 == False AND \ 
+    		    month1day21 == False            AND month2day21 == False AND \ 
+    		    month1day22 == False            AND month2day22 == False AND \ 
+    		    month1day23 == False            AND month2day23 == False AND \ 
+    		    month1day24 == False            AND month2day24 == False AND \ 
+    		    month1day25 == False            AND month2day25 == False AND \ 
+    		    month1day26 == False            AND month2day26 == False AND \ 
+    		    month1day27 == False            AND month2day27 == False AND \ 
+    		    month1day28 == False            AND month2day28 == False AND \ 
+    		    month1day29 == False            AND month2day29 == False AND \ 
+            month1day30 == False            AND month2day30 == False AND \ 
+            month1day31 == False            AND month2day31 == False:
             raise forms.ValidationError(
                 self.error_messages['no_dates_selected'],
                 code='no_dates_selected',
