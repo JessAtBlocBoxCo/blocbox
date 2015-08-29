@@ -35,7 +35,7 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
     month1day27 = forms.BooleanField(required=False)
     month1day28 = forms.BooleanField(required=False)
     month1day29 = forms.BooleanField(required=False)
-    month1day30 = forms.BooleanField(required=True)
+    month1day30 = forms.BooleanField(required=False)
     month1day31 = forms.BooleanField(required=False)
     month2day1  = forms.BooleanField(required=False)
     month2day2  = forms.BooleanField(required=False)
@@ -75,7 +75,8 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
     
     #NOTE -- IF YOU WANT TO WRITE A CUSTOM VALIDATION IT HAS TO BE CLEAN_(FIELD NAME) -- SEE https://docs.djangoproject.com/en/1.8/ref/forms/validation/
     #THIS IS COMPLICATED BECAUSE ITS ACTUALLY DEPENDENT ON THE VALUES FOR SEVERAL FIELDS
-    def clean_month1day1(self):
+    #IN THIS INSTANCE WE USE THE CLEAN() METHOD BECAUSE IT APPLIES TO MULTIPLE FIELDS
+    def clean(self):
         month1day1 	 = self.cleaned_data.get("month1day1") 		    
         month1day2   = self.cleaned_data.get("month1day2")        
         month1day3   = self.cleaned_data.get("month1day3")        
@@ -143,4 +144,3 @@ class CalendarCheckBoxes(forms.Form): #note this is not a model form
                 self.error_messages['no_dates_selected'],
                 code='no_dates_selected',
             )
-        return month1day29
