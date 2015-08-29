@@ -36,7 +36,7 @@ class TrackingForm(forms.ModelForm):
 class ModifyTransaction(forms.ModelForm):
     class Meta:
         model = Transaction
-        fields = ('status',)   
+        fields = ('status',)
 
 #rewriting this not based on the model because its not updating
 class PackageReceived(forms.Form): 
