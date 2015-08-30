@@ -285,20 +285,16 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                     trans.arrivalwindow_string = str(day1string) + ", " + str(day2string) + ", " + str(day3string) + ", " + str(day4string) + ", " + str(day5string) + ", " + str(day6string) + ", or " + str(day7string)               
                 trans.save() 
                 transaction_form_submitted = True
-                transaction_form_submitted_tried = True
             else:
                 print trans_form_package.errors 
                 transaction_form_submitted = False
-                transaction_form_submitted_tried = True
                 errors_on_trans_form = 'There are errors on the transaction form'
         else: 
             trans_form_package = CreatePackageTransaction()
             transaction_form_submitted = False
-            transaction_form_submitted_tried = False
             errors_on_trans_form = 'Method is not POST'
     #if cal_form_submitted is false
     else:
-        transaction_form_submitted_tried = False
         transaction_form_submitted = False
         errors_on_trans_form = 'Cal_form was not submitted'  
         trans_form_package = None 
@@ -365,7 +361,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'cal_form_submitted': cal_form_submitted,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'errors_on_trans_form': errors_on_trans_form,
-        	  'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits, 'transaction_form_submitted_tried': transaction_form_submitted_tried,
+        	  'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits, 
 		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'free': free, 'request': request,
 		    })
 
