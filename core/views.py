@@ -156,6 +156,15 @@ def abouthosting(request):
     enduser = request.user
     return render(request, 'blocbox/abouthosting.html', {'enduser':enduser,})
 
+#define the function to send an email to the host that the user has added tracking
+def notifyhost_tracking_added(request, thisvariableacceptsthehostinfo, thisvariableacceptstheuserinfo, thisvariableacceptstransactioninfo):
+    host = get_object_or_404(UserInfo, pk=thisvariableacceptsthehostinfo)
+    enduser = get_object_or_404(UserInfo, pk=thisvariableacceptstheuserinfo)
+    trans = get_object_or_404(Transaction, pk=thisvariableacceptstransactioninfo)
+    message = render_to_string('emails/notify_host_tracking_added.txt', {'host': host, 'enduser': enduser, 'trans': trans})
+    subject = "Your neighbor has added tracking to an incoming delivery!"
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,])
+    
 def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None): #modify_id=None
     enduser = request.user
     if host_id:
@@ -877,13 +886,7 @@ def notifyconnectionconfirmed(request, hostid, userid):
     subject = "Your request to connect was confirmed!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
 
-def notifyhost_tracking_added(request, thisvariableacceptsthehostinfo, thisvariableacceptstheuserinfo, thisvariableacceptstransactioninfo):
-    host = get_object_or_404(UserInfo, pk=thisvariableacceptsthehostinfo)
-    enduser = get_object_or_404(UserInfo, pk=thisvariableacceptstheuserinfo)
-    trans = get_object_or_404(Transaction, pk=thisvariableacceptstransactioninfo)
-    message = render_to_string('emails/notify_host_tracking_added.txt', {'host': host, 'enduser': enduser, 'trans': trans})
-    subject = "Your neighbor has added tracking to an incoming delivery!"
-    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,])
+
 
 #-----------------------------------------------------------
 # Confirm or deny requests to connect
