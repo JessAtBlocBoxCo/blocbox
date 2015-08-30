@@ -62,6 +62,19 @@ import pyzipcode
 from pyzipcode import ZipCodeDatabase
 zcdb = ZipCodeDatabase()
 
+
+#DEFINIGN SOME LIST VARSIABLES USED BY SEVERAL VIEWS BELOW
+shipments_with_tracking_allpaid = []                 
+shipments_with_tracking_complete = []                
+shipments_with_tracking_notcomplete = []             
+shipments_with_tracking_notcomplete_delivered = []   
+shipments_with_tracking_notcomplete_notdelivered = []
+shipments_with_tracking_notcomplete_notrackingno = []
+shipments_complete_fordash = [] #all ocmplete shipments
+shipments_no_tracking_complete = [] #shipments marked as ocmplete that never had trcking
+    
+    
+    
 #Write a custom template filter:
 from django.template.defaulttags import register
 @register.filter
@@ -165,6 +178,8 @@ def notifyhost_tracking_added(request, thisvariableacceptsthehostinfo, thisvaria
     subject = "Your neighbor has added tracking to an incoming delivery!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,])
     
+    
+#The dashboard function    
 def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None): #modify_id=None
     enduser = request.user
     if host_id:
@@ -176,15 +191,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         trans = get_object_or_404(Transaction, pk=archive_id)
         trans.trans_archived=True
         trans.save()
-    #Vars that do not depend on authentication
-    shipments_with_tracking_allpaid = []                 
-    shipments_with_tracking_complete = []                
-    shipments_with_tracking_notcomplete = []             
-    shipments_with_tracking_notcomplete_delivered = []   
-    shipments_with_tracking_notcomplete_notdelivered = []
-    shipments_with_tracking_notcomplete_notrackingno = []
-    shipments_complete_fordash = [] #all ocmplete shipments
-    shipments_no_tracking_complete = [] #shipments marked as ocmplete that never had trcking
     #variables requiring authentication
     if enduser.is_authenticated():
         connections_all = Connection.objects.filter(end_user=enduser) 
