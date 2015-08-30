@@ -331,6 +331,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
             trans_form_package = CreatePackageTransaction()
             trans_form_submitted = False
             transaction_form_submitted_tried = False
+            errors_on_trans_form = 'Method is not POST'
     else:
         transaction_form_submitted_tried = False
         trans_form_submitted = False
