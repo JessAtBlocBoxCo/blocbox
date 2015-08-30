@@ -48,9 +48,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         host = None  
     #Determine if payment is needed or balance will suffice
     balance = enduser.account_balance_packages
-    free = False
-    if enduser.betauser_free == True:
-        free = True
     if balance > 0:
         payment_needed = False
         amount_due = 0.00
@@ -362,7 +359,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'errors_on_trans_form': errors_on_trans_form,
         	  'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits, 
-		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'free': free, 'request': request,
+		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'request': request,
 		    })
 
 

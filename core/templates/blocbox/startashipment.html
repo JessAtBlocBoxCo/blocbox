@@ -31,9 +31,8 @@
     	 	DELME - TESTING THE CALFORMSUBMITTED {{cal_form_submitted}} <br>
     	 	DELME - TESTING PACKAGEDAYS_COUNT {{packagedays_count }} <br>
     	 	DELME - TESTING TRANS FORM SUBMITTED {{ transaction_form_submitted }} <br>
-    	 	DELME - TESTING TRY TO SUBMIT TRANS FORM {{ transaction_form_submitted_tried }} <br>
     	 	DELME - ERRORS ON TRANS FORM {{ errors_on_trans_form }} <br>
-    	 	DELME - REQUEST METHOD {{ request.method }} <br>
+    	  DELME - TEST FREE USER {{ enduser.betauser_free }} <br>
     	 	
     	 Complete the following steps to verify shipping destination, notify your Blocbox host, and complete payment</p>
     <div class="row mobilehide">
@@ -137,7 +136,7 @@
 
             <div class="col-xs-12 col-sm-10 col-sm-offset-1 paddingtop20px">
                  
-            {% if free %}    
+            {% if enduser.betauser_free %}    
                
                <h3> Blocbox is free for beta users!  No payment is needed. <br> </h3>
                
@@ -155,7 +154,7 @@
             {{ trans_form_package.payment_option.errors }} 
                   	{% endif %}  
                    		
-            {% if payment_needed and not free %}
+            {% if payment_needed and not enduser.betauser_free %}
                     <table class="table">
                         <tr>
                             <td>
@@ -257,7 +256,7 @@
             <input type="hidden" name="arrivalwindow_day7string" value="{{packagedays_string.6}}"> {% endif %}
 
 
-			{% if free %}  
+			{% if enduser.betauser_free %}  
 				<!--
 					<table class="table col-sm-10 col-sm-offset-1">
                 <tr>
