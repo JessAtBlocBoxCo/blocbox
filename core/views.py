@@ -877,10 +877,10 @@ def notifyconnectionconfirmed(request, hostid, userid):
     subject = "Your request to connect was confirmed!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
 
-def notifyhost_tracking_added(request, shitfuck, userid, trans_id):
-    host = get_object_or_404(UserInfo, pk=shitfuck)
-    enduser = get_object_or_404(UserInfo, pk=userid)
-    trans = get_object_or_404(Transaction, pk=trans_id)
+def notifyhost_tracking_added(request, thisvariableacceptsthehostinfo, thisvariableacceptstheuserinfo, thisvariableacceptstransactioninfo):
+    host = get_object_or_404(UserInfo, pk=thisvariableacceptsthehostinfo)
+    enduser = get_object_or_404(UserInfo, pk=thisvariableacceptstheuserinfo)
+    trans = get_object_or_404(Transaction, pk=thisvariableacceptstransactioninfo)
     message = render_to_string('emails/notify_host_tracking_added.txt', {'host': host, 'enduser': enduser, 'trans': trans})
     subject = "Neighbor has added tracking to an incoming delivery!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,])
