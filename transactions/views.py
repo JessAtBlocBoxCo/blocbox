@@ -54,7 +54,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         remaining_balance = balance - 1
     else:
         if enduser.betauser_free:
-    	      payment_needed = Fase
+    	      payment_needed = False
         else:
             payment_needed = True
         amount_due = None #this is processed on the payment page if they aren't applying account balance
