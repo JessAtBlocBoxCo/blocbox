@@ -439,7 +439,7 @@ def dashboard_tracking_modal(request, track_id):
                     trans.last_tracking_status = tag
                     trans.save()
                     #send an email to the host telling them tracking info has been added to shipment
-                    notifyhost_tracking_added(request, hostid, userid, trans_id)
+                    notifyhost_tracking_added(request, host.id, user.id, trans.id)
             else: #if they entered nothing delete it       
                 api.trackings.delete(courier_on_trans, tracking_on_trans)
                 trans.tracking = None
@@ -877,8 +877,8 @@ def notifyconnectionconfirmed(request, hostid, userid):
     subject = "Your request to connect was confirmed!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,])
 
-def notifyhost_tracking_added(request, hostid, userid, trans_id):
-    host = get_object_or_404(UserInfo, pk=hostid)
+def notifyhost_tracking_added(request, shitfuck, userid, trans_id):
+    host = get_object_or_404(UserInfo, pk=shitfuck)
     enduser = get_object_or_404(UserInfo, pk=userid)
     trans = get_object_or_404(Transaction, pk=trans_id)
     message = render_to_string('emails/notify_host_tracking_added.txt', {'host': host, 'enduser': enduser, 'trans': trans})
