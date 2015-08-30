@@ -3950,8 +3950,8 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     *-----------------------------------------------------------------------*/
 
     .signupheader {
-        padding-top: 30px;
-        font-size: 1.9em;
+        padding-top: 50px;
+        font-size: 1.6em;
         font-weight: 500;
     }
     
