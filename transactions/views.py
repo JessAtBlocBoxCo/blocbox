@@ -288,21 +288,21 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 transaction_form_submitted_tried = True
             else:
                 print trans_form_package.errors 
-                trans_form_submitted = False
+                transaction_form_submitted = False
                 transaction_form_submitted_tried = True
                 errors_on_trans_form = 'There are errors on the transaction form'
         else: 
             trans_form_package = CreatePackageTransaction()
-            trans_form_submitted = False
+            transaction_form_submitted = False
             transaction_form_submitted_tried = False
             errors_on_trans_form = 'Method is not POST'
     #if cal_form_submitted is false
     else:
         transaction_form_submitted_tried = False
-        trans_form_submitted = False
+        transaction_form_submitted = False
         errors_on_trans_form = 'Cal_form was not submitted'  
         trans_form_package = None 
-        trans_form_submitted = False
+        transaction_form_submitted = False
         packagedays = []  
         packagedays_string = []
         #do the cal_form submission stuff
