@@ -40,7 +40,6 @@ from django.template.loader import render_to_string
 
 #The Start a shipment process
 def startashipment(request, host_id=None, transaction_form_submitted=False, invoice=None, cal_form_submitted=False, packagedays_count = None, ):
-    errors_on_trans_form = None
     random3digits = random.randint(100,999)
     enduser = request.user
     if host_id:
@@ -335,6 +334,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     else:
         transaction_form_submitted_tried = False
         trans_form_submitted = False
+        errors_on_trans_form = 'Cal_form was not submitted'
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
         cal_form = None 
