@@ -2285,6 +2285,12 @@ body {
     border-radius: 10px;
 }
 
+.signupheader {
+    padding-top: 130px;
+    font-size-adjust: 2.3em;
+    font-weight: 500;
+}
+
 /*-------------------------------------------------------------*
 * HOST PROFILE VISITOR PAGE STYLES
 *--------------------------------------------------------------*/
@@ -3938,6 +3944,21 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .mobileonly {
         display: block;
     }
+    
+    /*-----------------------------------------------------------------------
+    * SIGN UP STYLES
+    *-----------------------------------------------------------------------*/
+
+    .signupheader {
+        padding-top: 30px;
+        font-size-adjust: 1.9em;
+        font-weight: 500;
+    }
+    
+    /*-----------------------------------------------------------------------
+    * PROFILE STYLES
+    *-----------------------------------------------------------------------*/
+    
     .profilepic {
         position: absolute;
         max-width: 125px;
