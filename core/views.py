@@ -73,7 +73,7 @@ shipments_with_tracking_notcomplete_notrackingno = []
 shipments_complete_fordash = [] #all ocmplete shipments
 shipments_no_tracking_complete = [] #shipments marked as ocmplete that never had trcking
     
-    
+
     
 #Write a custom template filter:
 from django.template.defaulttags import register
@@ -320,8 +320,14 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     })
 
 def dashboard_host(request):
-    enduser = request.user
-    return render(request, 'blocbox/dashboard-host.html', {'enduser':enduser,})
+    host = request.user
+        transactions_all = Transaction.objects.filter(host=host) #custom is the field for user email
+        transactions_all_paid = transactions_all.filter(payment_processed=True)
+        shipments_all_paid = transactions_all_paid.filter(favortype="package")
+        shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
+        otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
+        otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
+    return render(request, 'blocbox/dashboard-host.html', {'host':host,})
 
 def enduser_report_issue_modal(request, issue_id):
     trans = Transaction.objects.get(pk=issue_id)
