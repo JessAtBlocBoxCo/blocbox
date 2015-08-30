@@ -182,25 +182,25 @@ def notifyhost_tracking_added(request, thisvariableacceptsthehostinfo, thisvaria
 #The dashboard function    
 def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None): #modify_id=None
     enduser = request.user
-    if host_id:
+    if host_id: #JB - old host authentification or is it host connection?
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
         host = None
     #if archive_id archive the shipments
-    if archive_id:
+    if archive_id: #JB - send shipments to archive
         trans = get_object_or_404(Transaction, pk=archive_id)
         trans.trans_archived=True
         trans.save()
     #variables requiring authentication
-    if enduser.is_authenticated():
-        connections_all = Connection.objects.filter(end_user=enduser) 
-        connections_count = connections_all.count() #count them,removing status=0 after host_user=host
+    if enduser.is_authenticated(): #JB - user authentication
+        connections_all = Connection.objects.filter(end_user=enduser) #JB - displays hosts connected to
+        connections_count = connections_all.count() #count them,removing status=0 after host_user=host #JB - displays number of connections (to hosts)
         #determine whether they are only connected to one host for pupose of 'start a shipment' link
-        if connections_count==1:
+        if connections_count==1: #JB - if only one host is connected then it displays the host info
             hostonly=connections_all[0].host_user
         else:
             hostonly=None 
-        transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
+        transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email #JB - below is list of catagories and states for shipments
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
@@ -208,12 +208,12 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
         #Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
    	    #Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
-        for shipment in shipments_all_paid_notarchived:  
-            tracking_no = str(shipment.tracking) #the str function removes the preceding u'
+        for shipment in shipments_all_paid_notarchived:  #JB - all shipments 
+            tracking_no = str(shipment.tracking) #the str function removes the preceding u' #not sure what this is
             shipment_tuple = {} 
             shipment_tuple['trans']=shipment #get all of the transaction variables
             shipment_tuple['aftership']={}  
-            if shipment.on_aftership: 
+            if shipment.on_aftership: #if the shipment has tracking info entered into aftership
                 #populate the aftership_tracking sub-tuble                 
                 courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
                 courier_list = courier_allfields.get(u'couriers')
@@ -227,27 +227,27 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                 last_tracking_unicode = shipment_tuple['aftership']['last_updated_at']
                 last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
                 last_tracking_date = last_tracking_datetime.date()
-                if last_tracking_datetime:
+                if last_tracking_datetime: #JB - last time tracking updated
                     shipment_tuple['aftership']['last_tracking_datetime'] = last_tracking_datetime
                     shipment_tuple['aftership']['last_tracking_date'] = last_tracking_date
-                else:
+                else: #JB - if not updated don't show anything
                     shipment_tuple['aftership']['last_tracking_datetime'] = None
                     shipment_tuple['aftership']['last_tracking_date'] = None
-                if expected_delivery:
+                if expected_delivery: #JB - if user has entered expected delivery display it
                     shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()
                 else:
                     shipment_tuple['aftership']['expected_delivery_notime']=None  
                 checkpoints = shipment_tuple['aftership']['checkpoints']
-                if checkpoints:
+                if checkpoints: #JB - thinink this updates the current location of package
                     shipment_tuple['aftership']['checkpoints'] = checkpoints
                     shipment_tuple['aftership']['last_checkpoint'] = checkpoints[-1] #-nth to last.. so -1 is the last element     
-                if shipment.trans_complete ==True:
+                if shipment.trans_complete ==True: #JB - determines if shipment has arrived to mark as complete
                     shipments_with_tracking_complete.append(shipment_tuple)
                     shipments_complete_fordash.append(shipment_tuple)
                 else:
                     shipments_with_tracking_notcomplete.append(shipment_tuple)
                     tag = shipment_tuple['aftership']['tag']
-                    if tag == "Delivered":
+                    if tag == "Delivered": #JB - if aftership labels shipment as delivered mark shipment as delivered but not complete
                         shipments_with_tracking_notcomplete_delivered.append(shipment_tuple)
                     else:
                         shipments_with_tracking_notcomplete_notdelivered.append(shipment_tuple)
@@ -276,7 +276,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     else:
         track_id_int = None 
     package_received_form = None #is None if they dont open package recieved modal
-    if confirm_id:  #if the open the package_received modal
+    if confirm_id:  #if the open the package_received modal #JB - confirming what?
         confirm_id_int = confirm_id.strip()
         confirm_id_int = int(confirm_id_int)
         package_received_modal(request, confirm_id) 	
