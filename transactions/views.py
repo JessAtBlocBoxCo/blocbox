@@ -179,46 +179,11 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     favortype='package'
     #transaction_form_submitted = False
     #packagedays_count = None
-    #cal_form_submitted = False
-    if cal_form_submitted == False:   
-        trans_form_package = None 
-        trans_form_submitted = False
-        packagedays = []  
-        packagedays_string = []
-        if request.method == 'POST':
-            cal_form = CalendarCheckBoxes(data=request.POST)
-            if cal_form.is_valid():  
-                for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
-                    daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
-                    if daycheckedmonth1:
-                    	  #checked day needs to be in YYYY-MM-DD  format
-                        checked_day = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
-                        checked_day_string = str(thismonth) + " " + str(daynumber)
-                        packagedays.append(checked_day)
-                        packagedays_string.append(checked_day_string)
-                        days_package_may_come_thismonth.append(daynumber)
-                for daynumber in range(1,32): 
-                    daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
-                    if daycheckedmonth2:
-                        checked_day = str(thisyear) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
-                        checked_day_string = str(nextmonth) + " " + str(daynumber)
-                        packagedays.append(checked_day)
-                        packagedays_string.append(checked_day_string)
-                        days_package_may_come_nextmonth.append(daynumber)                                   
-                month1days_count = len(days_package_may_come_thismonth)
-                month2days_count = len(days_package_may_come_nextmonth)
-                cal_form_submitted = True
-            else:
-                print cal_form.errors
-        else:
-            cal_form = CalendarCheckBoxes()    
-        packagedays_count = len(packagedays) 
-    else:
+    if cal_form_submitted == True:
         cal_form = CalendarCheckBoxes()
         packagedays = None
         packagedays_string = None
         trans_form_package = None
-    if cal_form_submitted == True:
         trans = Transaction()
         request.method = 'GET'
         if request.method == 'POST': 
@@ -331,10 +296,44 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
             trans_form_submitted = False
             transaction_form_submitted_tried = False
             errors_on_trans_form = 'Method is not POST'
+    #if cal_form_submitted is false
     else:
         transaction_form_submitted_tried = False
         trans_form_submitted = False
-        errors_on_trans_form = 'Cal_form was not submitted'
+        errors_on_trans_form = 'Cal_form was not submitted'  
+        trans_form_package = None 
+        trans_form_submitted = False
+        packagedays = []  
+        packagedays_string = []
+        #do the cal_form submission stuff
+        if request.method == 'POST':
+            cal_form = CalendarCheckBoxes(data=request.POST)
+            if cal_form.is_valid():  
+                for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31   	     
+                    daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
+                    if daycheckedmonth1:
+                    	  #checked day needs to be in YYYY-MM-DD  format
+                        checked_day = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
+                        checked_day_string = str(thismonth) + " " + str(daynumber)
+                        packagedays.append(checked_day)
+                        packagedays_string.append(checked_day_string)
+                        days_package_may_come_thismonth.append(daynumber)
+                for daynumber in range(1,32): 
+                    daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
+                    if daycheckedmonth2:
+                        checked_day = str(thisyear) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
+                        checked_day_string = str(nextmonth) + " " + str(daynumber)
+                        packagedays.append(checked_day)
+                        packagedays_string.append(checked_day_string)
+                        days_package_may_come_nextmonth.append(daynumber)                                   
+                month1days_count = len(days_package_may_come_thismonth)
+                month2days_count = len(days_package_may_come_nextmonth)
+                cal_form_submitted = True
+            else:
+                print cal_form.errors
+        else:
+            cal_form = CalendarCheckBoxes()    
+        packagedays_count = len(packagedays) 
     #if the transaction form has been submitted redirect to new page
     if transaction_form_submitted == True:
         cal_form = None 
