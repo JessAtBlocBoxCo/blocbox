@@ -323,7 +323,7 @@ def dashboard_host(request):
     enduser = request.user
     if enduser.is_authenticated():
         if enduser.host == True:
-            transactions_all = Transaction.objects.filter(host=host) #custom is the field for user email
+            transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
             transactions_all_paid = transactions_all.filter(payment_processed=True)
             shipments_all_paid = transactions_all_paid.filter(favortype="package")
             shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
