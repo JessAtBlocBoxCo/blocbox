@@ -325,7 +325,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 print trans_form_package.errors 
                 trans_form_submitted = False
                 transaction_form_submitted_tried = True
-                errors_on_trans_form = 'There are errors on teh trans form'
+                errors_on_trans_form = 'There are errors on the transaction form'
         else: 
             trans_form_package = CreatePackageTransaction()
             trans_form_submitted = False
@@ -365,7 +365,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'errors_on_trans_form': errors_on_trans_form,
         	  'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits, 'transaction_form_submitted_tried': transaction_form_submitted_tried,
-		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'free': free,
+		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'free': free, 'request': request,
 		    })
 
 
