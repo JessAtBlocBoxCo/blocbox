@@ -24,6 +24,7 @@
         <!--contains most of page-->
 
         {% if user.is_authenticated %}
+        {% if enduser.host %}
         <!--sidebar-->
         <div class="col-md-3 xshide smallhide">
             <div class="dashpiccontainer">
@@ -95,7 +96,9 @@
                 
             </div>
         </div>
-
+        {% else %}
+        <h2>Message to non host</h2>
+        {% endif %}
         {% else %}
         <!--if user is not authenticated-->
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 nopadding">
