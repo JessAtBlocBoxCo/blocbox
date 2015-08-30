@@ -3501,10 +3501,8 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 }
 
 /*-------------------------------------------------------------*
-MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)
+SMALL TABLET LANDSCAPE 
 *--------------------------------------------------------------*/
-
-
 
 @media (max-width: 800px) {
     body {
@@ -3627,6 +3625,19 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         box-shadow: none;
     }
 }
+
+/*-------------------------------------------------------------*
+SMALL TABLET PORTRAIT- 
+*--------------------------------------------------------------*/
+
+@media (max-width: 600px) {
+    
+    .signupheader {
+        padding-top: 50px;
+    }
+    
+}
+
 /*-------------------------------------------------------------*
 MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why 
 *--------------------------------------------------------------*/
