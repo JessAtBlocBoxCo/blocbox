@@ -28,12 +28,12 @@
           	
             {% if host.neighborhood_extended %}
               <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up for Blocbox in {{ host.neighborhood_extended}} </h2>
-              <h3 class="col-xs-12 col-sm-8 col-sm-offset-2 nomargintop marginbottom15px paddingbottom20pxnomobile waitsubtext">
+              <h3 class="col-xs-12 nomargintop marginbottom15px paddingbottom20pxnomobile waitsubtext">
                 Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood_extended }} Blocbox host. </h3> 
             {% else %}
                    {% if host.neighborhood %}
                      <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up for Blocbox in {{ host.neighborhood}} </h2>
-                     <h3 class="col-xs-12 col-sm-8 col-sm-offset-2 nomargintop marginbottom15px paddingbottom20pxnomobile waitsubtext">
+                     <h3 class="col-xs-12 nomargintop marginbottom15px paddingbottom20pxnomobile waitsubtext">
                        Complete this form to sign up for Blocbox and request to connect to {{ host.first_name }}, your {{ host.neighborhood }} Blocbox host.  </h3>  
                    {% else %}
           	          <h2 class="nomargintop" style="font-size: 2.3em; font-weight: 500; padding-top: 130px">Sign Up for Blocbox </h2>
@@ -324,7 +324,7 @@
                         <input name="referredby" class="form-control input-lg inputbox margintop5pxmobile" type="hidden" value="{{referring_user_email}}">
                     </div>
 
-                    <div class="col-xs-10 col-xs-offset-1  margintopbottom5px nopaddingmobile waitlistcheck">
+                    <div class="col-xs-2  marginbottom5px nopaddingmobile waitlistcheck">
 
                         <div class="checkbox checkbox-success checkbox-inline text-center">
                             {% if hostsignup %}
@@ -337,7 +337,7 @@
                             <input type="checkbox" name="hostinterest" id="id_hostinterest">
                             {{ user_form.hostinterest.errors|striptags}}
                             <label for="id_hostinterest">
-                                <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in helping my neighbors and making some extra money</h6>
+                                <h6 class="nomargin textleft paddingleft10px" style="font-size: 1.25em">I'm interested in making some extra money and receiving packages as a Blocbox host</h6>
                             </label>
                             {% endif %}
 
