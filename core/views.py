@@ -882,7 +882,7 @@ def notifyhost_tracking_added(request, thisvariableacceptsthehostinfo, thisvaria
     enduser = get_object_or_404(UserInfo, pk=thisvariableacceptstheuserinfo)
     trans = get_object_or_404(Transaction, pk=thisvariableacceptstransactioninfo)
     message = render_to_string('emails/notify_host_tracking_added.txt', {'host': host, 'enduser': enduser, 'trans': trans})
-    subject = "Neighbor has added tracking to an incoming delivery!"
+    subject = "Your neighbor has added tracking to an incoming delivery!"
     send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,])
 
 #-----------------------------------------------------------
