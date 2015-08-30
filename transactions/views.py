@@ -221,6 +221,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         trans_form_package = None
     if cal_form_submitted == True:
         trans = Transaction()
+        request.method = 'GET'
         if request.method == 'POST': 
             trans_form_package = CreatePackageTransaction(request.POST)            
             if trans_form_package.is_valid():
