@@ -1774,7 +1774,7 @@ body {
 }
 
 .waitsubtext {
-    font-size: 1.7em;
+    font-size: 1.3em;
 }
 
 .btn-clear {
@@ -2283,6 +2283,12 @@ body {
 .btn-check {
     border: 1px solid rgb(235, 235, 235);
     border-radius: 10px;
+}
+
+.signupheader {
+    padding-top: 130px;
+    font-size: 2.3em;
+    font-weight: 500;
 }
 
 /*-------------------------------------------------------------*
@@ -3495,10 +3501,8 @@ h1 {font-size: 6em;  h2 {font-size: 4em; h3 {font-size: 2em; h4 {font-size: 1.07
 }
 
 /*-------------------------------------------------------------*
-MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet landscape (800)
+SMALL TABLET LANDSCAPE 
 *--------------------------------------------------------------*/
-
-
 
 @media (max-width: 800px) {
     body {
@@ -3576,7 +3580,7 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
     }
     .inputbox {
         border: 1px solid #ffffff;
-        background-color: transparent;
+        background-color: #61b7b8;
     }
     .content {
         padding-top: 80px;
@@ -3621,6 +3625,19 @@ MOBILE - Between landscape-mobile and tablet portrati (768) and small tablet lan
         box-shadow: none;
     }
 }
+
+/*-------------------------------------------------------------*
+SMALL TABLET PORTRAIT- 
+*--------------------------------------------------------------*/
+
+@media (max-width: 600px) {
+    
+    .signupheader {
+        padding-top: 50px;
+    }
+    
+}
+
 /*-------------------------------------------------------------*
 MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is just applying at mobile portrati and below not sure why 
 *--------------------------------------------------------------*/
@@ -3792,6 +3809,10 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
         min-height: 750px;
     }
     
+    .signupheader {
+        padding-top: 50px;
+    }
+    
 }
 /* Landscape phones and down - but its not working properly, mobile landscape is shifting up*/
 
@@ -3938,6 +3959,21 @@ MOBILE - add a max-width 550 to apply to mobile landscape - the max-with 480 is 
     .mobileonly {
         display: block;
     }
+    
+    /*-----------------------------------------------------------------------
+    * SIGN UP STYLES
+    *-----------------------------------------------------------------------*/
+
+    .signupheader {
+        padding-top: 50px;
+        font-size: 1.6em;
+        font-weight: 500;
+    }
+    
+    /*-----------------------------------------------------------------------
+    * PROFILE STYLES
+    *-----------------------------------------------------------------------*/
+    
     .profilepic {
         position: absolute;
         max-width: 125px;
@@ -4215,7 +4251,7 @@ display: none;
     }
     
     .waitsubtext {
-        font-size: 1.3em;
+        font-size: 1.1em;
     }
     
     .col-padd { margin: 0px; padding: 5px; }
