@@ -285,7 +285,6 @@ def dashboard_host(request):
             shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
             otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
             otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
-        else:
     else: #if not authenticated set these to None
         transactions_all = None
         transactions_all_paid = None
