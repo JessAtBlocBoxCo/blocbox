@@ -57,7 +57,7 @@ def watch_packages(specificuser_id = None):
         enduser = UserInfo.objects.get(pk=specificuser_id)
         trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
         trans_aftership_notarchived = trans_aftership_notarchived.filter(enduser=enduser)
-        trans_completed = trans_complete.filter(enduser=enduser)
+        trans_completed = trans_completed.filter(enduser=enduser)
         trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
     #else:
     #    transactions_onaftership = Transaction.objects.filter(on_aftership=True)
