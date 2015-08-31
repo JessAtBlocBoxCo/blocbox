@@ -294,7 +294,12 @@ def dashboard_host(request):
         shipments_all_paid_notarchived = None
         otherfavors_all_paid = None
         otherfavors_all_paid_notarchived = None   
-    return render(request, 'blocbox/dashboard-host.html', {'enduser':enduser,})
+    return render(request, 'blocbox/dashboard-host.html', {
+            'enduser':enduser,
+            #shipments all
+            'shipments_all_paid': shipments_all_paid, 
+            'shipments_all_paid_notarchived': shipments_all_paid_notarchived,
+        })
 
 def enduser_report_issue_modal(request, issue_id):
     trans = Transaction.objects.get(pk=issue_id)
