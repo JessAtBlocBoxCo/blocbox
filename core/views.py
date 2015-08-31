@@ -277,20 +277,20 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
 
 def dashboard_host(request):
     enduser = request.user
-        if enduser.host == True:
-            transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
-            transactions_all_paid = transactions_all.filter(payment_processed=True)
-            shipments_all_paid = transactions_all_paid.filter(favortype="package")
-            shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
-            otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
-            otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
-        else: #if not authenticated set these to None
-            transactions_all = None
-            transactions_all_paid = None
-            shipments_all_paid = None
-            shipments_all_paid_notarchived = None
-            otherfavors_all_paid = None
-            otherfavors_all_paid_notarchived = None
+    if enduser.host == True:
+        transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
+        transactions_all_paid = transactions_all.filter(payment_processed=True)
+        shipments_all_paid = transactions_all_paid.filter(favortype="package")
+        shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
+        otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
+        otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
+    else: #if not authenticated set these to None
+        transactions_all = None
+        transactions_all_paid = None
+        shipments_all_paid = None
+        shipments_all_paid_notarchived = None
+        otherfavors_all_paid = None
+        otherfavors_all_paid_notarchived = None
     return render(request, 'blocbox/dashboard-host.html', {'enduser':enduser,})
 
 def enduser_report_issue_modal(request, issue_id):
