@@ -218,9 +218,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipments_onaftership_notcomplete_notrackingno = shipments_all_paid_notarchived_notcomplete.filter(on_aftership=False)
         #WAiting for pickup: Create list of shipments that are not archived and not complete
         shipments_onaftership_notarchived_notcomplete = shipments_all_paid_notarchived_notcomplete.filter(on_aftership=True)
-        shipments_onaftership_notcomplete_delivered = shipments_onaftership_notarchived_notcomplete.filter(status="Delivered")
+        shipments_onaftership_notcomplete_delivered = shipments_onaftership_notarchived_notcomplete.filter(last_tracking_status="Delivered")
         #shipments in transit/not delivered
-        shipments_onaftership_notcomplete_notdelivered = shipments_onaftership_notarchived_notcomplete.exclude(status="Delivered")
+        shipments_onaftership_notcomplete_notdelivered = shipments_onaftership_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
     else: #if not authenticated set these to None
         connections_all = None
         connections_count = None
@@ -270,7 +270,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'message_form': message_form, 
         'recipient_email_list': recipient_email_list,
         #shipments lists
-        'shipments_onaftership_notcomplete_delivered': shipments_onaftership_notcomplete_delivered, 'shipments_onaftership_notcomplete_notdelivered': shipments_onaftership_notcomplete_notdelivered,
+        'shipments_onaftership_notcomplete_delivered': shipments_onaftership_notcomplete_delivered, 
+        'shipments_onaftership_notcomplete_notdelivered': shipments_onaftership_notcomplete_notdelivered,
         #shipmetns that need tracking
         'shipments_onaftership_notcomplete_notrackingno': shipments_onaftership_notcomplete_notrackingno,
         #all completeshipmetns
