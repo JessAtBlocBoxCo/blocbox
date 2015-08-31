@@ -26,7 +26,7 @@
         {% if user.is_authenticated %}
         {% if enduser.host %}
         <!--sidebar-->
-        <div class="col-md-3 xshide smallhide">
+        <div class="col-md-3 xshide smallhide profilebox">
             <div class="dashpiccontainer">
                 {% if user.facebook_id %}
                 <img class="dashpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %} {% if user.profile_pic_uploaded %}
