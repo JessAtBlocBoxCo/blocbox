@@ -209,11 +209,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
-        shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.filter(complete=False)
+        shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.filter(trans_complete=False)
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
         otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
         #Create lists restricted to shipmetns that are on aftership
-        shipments_complete_fordash = shipments_all_paid_notarchived.filter(complete=True)
+        shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
         #Waiting for Tracking - Shipments that are not archived and not on aftership
         shipments_onaftership_notcomplete_notrackingno = shipments_all_paid_notarchived_notcomplete.filter(on_aftership=False)
         #WAiting for pickup: Create list of shipments that are not archived and not complete
