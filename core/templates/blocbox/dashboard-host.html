@@ -63,6 +63,7 @@
         
         
         <div class="col-xs-6">
+            <div class="profilebox">
         
         <!--INCOMING SHIPMENTS-->
         {% for sh in shipments_all_paid_notarchived %} 
@@ -74,8 +75,6 @@
         <!-- need to create subtemplate for next specific to host -->
         {% ifequal issue_id_int sh.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}  {% endifequal %} 
 
-
-            <div class="profilebox">
                 <!--non-mobile version--->
                 <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
                     {% else %} No Title  {% endif %} 
