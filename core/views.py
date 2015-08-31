@@ -112,8 +112,6 @@ def waitlist(request, referring_user_email=None, neighborhood=None):
 def beta(request):
     return render(request, 'blocbox/beta.html') #load the blocbox/templates/blocbox/beta.html 
 
-
-
 def search(request):
     enduser = request.user
     users_all = UserInfo.objects.all
