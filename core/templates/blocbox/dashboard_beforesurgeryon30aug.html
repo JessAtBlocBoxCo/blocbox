@@ -163,10 +163,10 @@
         {% for sh in shipments_onaftership_notcomplete_delivered %}
                 
                       <!--INCLUD ALL OF THE MODAL SUBTEMPLATES - only if that URL is called - to save memroy-->                    
-                      {% ifequal confirm_id_int sh.id %}    {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}                    	  	
-                      {% ifequal issue_id_int sh.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}                   	
-                    	{% ifequal message_trans_id_int sh.id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}                        
-                      {% ifequal track_id_int sh.id %}  {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}                       	
+                      {% ifequal confirm_id_int sh.trans.id %}    {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}                    	  	
+                      {% ifequal issue_id_int sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}                   	
+                    	{% ifequal message_trans_id_int sh.trans.id %}  {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}                        
+                      {% ifequal track_id_int sh.trans.id %}  {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}                       	
                       <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
                         
             <!--for each shipmetn waiting to be picked up - outer div containing all info -->
@@ -179,12 +179,12 @@
                     </div>         
                    <!--non-mobile version -- hide the imagine -->         			         
                    <h3 class="col-xs-11 ltbluetext nomargin xshide nopaddingleftright" style="padding-top: 5px; font-weight: 400"> <!--paddingleft15px -->
-                   			    	          {% if sh.title %}  {{ sh.title }}  {% else %} No Title {% endif %} 
+                   			    	          {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} 
                    </h3>
                    			    
                    <!--mobile version -->
                    <h3 class="col-xs-12 ltbluetext nomargin xsonly" style="padding-left: 5px; font-weight: 400">
-                   			    	          {% if sh.title %}  {{ sh.title }}  {% else %} No Title {% endif %} 
+                   			    	          {% if sh.trans.title %}  {{ sh.trans.title }}  {% else %} No Title {% endif %} 
                    </h3>
                 </div> <!--end row containing icon and title -->
                    			  
@@ -202,19 +202,19 @@
                    			     <h3 class="ltbluetext nomargin xsonly xsnopadding" style="font-weight: 400">
                    			       <b> Delivered </b>
                    			     </h3>
-                   			     <p class="greytext paddingtop5px paddingright5px xsonly">Your package is ready to be picked up from {{sh.host.first_name }}.
+                   			     <p class="greytext paddingtop5px paddingright5px xsonly">Your package is ready to be picked up from {{sh.trans.host.first_name }}.
                    			    	 Click the button to the right after you've received the package</p>
                    	    </div>
                    	</div> <!--end col xs-6 col-sm12 containing title -->
                    	<div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                    	    	
-                   			  <button type="button" name="package_received" class="bluebutton xsheight30px sheight40px" style="margin-top: 10px;"  onclick="window.location='/dashboard/confirm_id{{sh.id}}/#openModal_package_received_id{{sh.id}}';">
+                   			  <button type="button" name="package_received" class="bluebutton xsheight30px sheight40px" style="margin-top: 10px;"  onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                    			   I got my package!</button>
                    			
-                   			  <button type="button" name="package_received" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.id}}/#openModal_message_id{{sh.id}}';">
-                   			   Message {{ sh.host.first_name }}</button>
+                   			  <button type="button" name="package_received" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
+                   			   Message {{ sh.trans.host.first_name }}</button>
                    			
-                   			  <button type="button" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.id}}/#openModal_enduser_issue_id{{sh.id}}';">
+                   			  <button type="button" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                    			         Report an Issue</button>
                    			         
                    			         
@@ -251,13 +251,13 @@
                                
                                 
                                 <h4 class="nomargin">
-                                	      Order ID: <span style="font-weight:normal;"> {{sh.id }} </span>
-                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.invoice }} </span> 
-                                	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span>
-                                   <br> Sent to <a href="">&nbsp;{{sh.host.first_name}}</a>:
-                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.host.st_address1}}+{{sh.host.city}}+{{sh.host.state}}+{{sh.host.zipcode}}" target="_blank" class="nomargin">
-                                                {{ sh.host.st_address1 }}, {{ sh.host.st_address2 }}, 
-                                                 {{ sh.host.city }}, {{ sh.host.state }} {{sh.host.zipcode}}
+                                	      Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
+                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
+                                	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
+                                   <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
+                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }}, 
+                                                 {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                              </a> </span>
                                 </h4>
                             </div>
@@ -270,21 +270,21 @@
                                 <p class="textcenter xshide">DELIVERED</p>
                                 
                                 <h4 class="nomargintopbottom">
-                                	   {% if sh.tracking %}
+                                	   {% if sh.trans.tracking %}
                                 	      Tracking Number: 
-                                          <span style="font-weight:normal;"> 	<a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }}</a> </span>
+                                          <span style="font-weight:normal;"> 	<a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }}</a> </span>
                                      {% endif %}
                                      <br> Delivery Method: <span style="font-weight:normal;">                                 
-                                       {% if sh.on_aftership %} 
-                                       	    {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.shipment_courier }} {% endif%} {% else %} You expected it to arrive {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} {% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; {% endif %} 
+                                       {% if sh.trans.on_aftership %} 
+                                       	    {% if sh.aftership.shipment_type %} {{ sh.aftership.shipment_type }} {% else %} {{ sh.trans.shipment_courier }} {% endif%} {% else %} You expected it to arrive {% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} {% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; {% endif %} 
                                        {% endif %} </span>
                                     <br>
                                 					{% if trans.on_aftership %} {{sh.aftership.tag}} :
-                                					{% else %} {{ sh.last_tracking_status }} :
+                                					{% else %} {{ sh.trans.last_tracking_status }} :
                                 				  {% endif %}
                                       <span style="font-weight:normal;"> 
                                 	       {% if trans.on_aftership %} {{sh.aftership.last_checkpoint.checkpoint_time }}
-																	       {% else %}  {{ sh.last_checkpoint_datetime }}     
+																	       {% else %}  {{ sh.trans.last_checkpoint_datetime }}     
 																	       {% endif %}
 																	          
 																	      <!--where delivered -->
@@ -309,10 +309,10 @@
         <!--shipments that need tracking -->
         {% for sh in shipments_onaftership_notcomplete_notrackingno %}
 
-                  {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
-                 	{% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
-                	{% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %}  {% endifequal %}
-                	{% ifequal track_id_int sh.id %}   {% include "dashboard_subtemplates/enter_tracking_modal.html" %} {% endifequal %}
+                  {% ifequal confirm_id_int sh.trans.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
+                 	{% ifequal issue_id_int sh.trans.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+                	{% ifequal message_trans_id_int sh.trans.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %}  {% endifequal %}
+                	{% ifequal track_id_int sh.trans.id %}   {% include "dashboard_subtemplates/enter_tracking_modal.html" %} {% endifequal %}
 
 
 					<!--outer div for each shipment waiting tracking -->
@@ -326,12 +326,12 @@
                             </div> <!--end image-->
                             
                             <!-- non-mobile version -->
-                            <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                            <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	{% else %} No Title  {% endif %}  </h3>
                             		
  														<!-- mobile version -->
                             <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">
-                            	    {% if sh.title %}  {{ sh.title }} {% else %} No Title  {% endif %}  
+                            	    {% if sh.trans.title %}  {{ sh.trans.title }} {% else %} No Title  {% endif %}  
                             	    <br> <b>Need Tracking Info</b>
                             </h3>
                </div>
@@ -358,19 +358,19 @@
                  <!--div with buttons -- packages awaiting tracking -->
                  <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                     	                        
-                        <button type="button" class="bluebutton xsheight30px sheight40px" onclick="window.location='/dashboard/track_id{{sh.id}}/#openModal_entertracking_id{{sh.id}}';">
+                        <button type="button" class="bluebutton xsheight30px sheight40px" onclick="window.location='/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}';">
                             Add Tracking #</button>
                        
-                        <button type="button"  class="bluebutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.id}}/#openModal_package_received_id{{sh.id}}';">
+                        <button type="button"  class="bluebutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/confirm_id{{sh.trans.id}}/#openModal_package_received_id{{sh.trans.id}}';">
                             I got my package!</button>  
                         
                         <!--next two buttons are non-mobile only - the mobile versions are coded below -->
                         <button type="button"  class="greybutton sheight40px xshide" style="margin-top: 10px;" 
-                        	        onclick="window.location='/dashboard/message_id{{sh.id}}/#openModal_message_id{{sh.id}}';">
-                                  Message {{ sh.host.first_name }}</button>
+                        	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
+                                  Message {{ sh.trans.host.first_name }}</button>
                          
                         <button type="button" class="greybutton sheight40px xshide" style="margin-top: 10px;" 
-                        	  			 ="window.location='/dashboard/issue_id{{sh.id}}/#openModal_enduser_issue_id{{sh.id}}';">
+                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                              					Report an Issue</button>
                        
                                    
@@ -405,13 +405,13 @@
                        <div class="row">
                         	  <div class="col-xs-12 col-sm-5 xsnopadding">
                                 <p class="textcenter xshide">ORDERED</p>
-                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.id }} </span>
-                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.invoice }} </span> 
-                                	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span>
-                                   <br> Sent to <a href="">&nbsp;{{sh.host.first_name}}</a>:
-                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.host.st_address1}}+{{sh.host.city}}+{{sh.host.state}}+{{sh.host.zipcode}}" target="_blank" class="nomargin">
-                                                {{ sh.host.st_address1 }}, {{ sh.host.st_address2 }} ,
-                                                 {{ sh.host.city }}, {{ sh.host.state }} {{sh.host.zipcode}}
+                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
+                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span> 
+                                	 <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
+                                   <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
+                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} ,
+                                                 {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                              </a> </span>
                                 </h4>			
                             </div> <!--end firt col with ORDERED, packages awaiting trackin -->
@@ -422,7 +422,7 @@
                                  <h4 class="nomargin">Tracking: 
                                       <!--display or enter tracking info -->
                                       <span style="font-weight:normal;">
-                                         <a href="/dashboard/track_id{{sh.id}}/#openModal_entertracking_id{{sh.id}}" class="nomargin textcenter">Enter Tracking #</a>
+                                         <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_entertracking_id{{sh.trans.id}}" class="nomargin textcenter">Enter Tracking #</a>
                                       </span>
                                       <p> &nbsp </p>
                                   </h4>                                                         
@@ -434,11 +434,11 @@
                   <!--second column for buttons - mobile only -->
                   <div class="col-xs-6 xsonly xspaddingleft5 xsnopadding">
                         <button type="button"  class="greybutton xsheight30px" style="margin-top: 10px;"  
-                        	        onclick="window.location='/dashboard/message_id{{sh.id}}/#openModal_message_id{{sh.id}}';">
-                                  Message {{ sh.host.first_name }}</button>
+                        	        onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}';">
+                                  Message {{ sh.trans.host.first_name }}</button>
    
                         <button type="button" class="greybutton xsheight30px" style="margin-top: 10px;" 
-                        	  			 ="window.location='/dashboard/issue_id{{sh.id}}/#openModal_enduser_issue_id{{sh.id}}';">
+                        	  			 ="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                              					Report an Issue</button>
                    </div> <!--end col-xs-6 xsonly colume for buttons - mobile only -->
            		
@@ -457,10 +457,10 @@
         <!--SHIPMENTS IN TRANSIT-->
         {% for sh in shipments_onaftership_notcomplete_notdelivered %} 
                 	
-                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
-                {% ifequal issue_id_int sh.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}  {% endifequal %} 
-              	{% ifequal message_trans_id_int sh.id %}	{% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
-              	{% ifequal track_id_int sh.id %} {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}
+                {% ifequal confirm_id_int sh.trans.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
+                {% ifequal issue_id_int sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}  {% endifequal %} 
+              	{% ifequal message_trans_id_int sh.trans.id %}	{% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+              	{% ifequal track_id_int sh.trans.id %} {% include "dashboard_subtemplates/edit_tracking_modal.html" %}  {% endifequal %}
 
             <!--outer div of each shipment in transit container -->
             <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px" style="padding-right: 5px;">                   
@@ -471,12 +471,12 @@
                             </div>
                             
                             <!--non-mobile version--->
-                            <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                            <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                                	{% else %} No Title  {% endif %} 
                             </h3>
                             
                             <!--mobile version - title -->
-                            <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                            <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                                	{% else %} No Title  {% endif %} 
                                	<!--<br> <b> In Transit </b> -->
                             </h3>
@@ -492,7 +492,7 @@
                          	
                          	 <!--non-mobile version-->
                            <p class="greytext paddingtop5px xshide">Use the button to the right to see full tracking details. 
-                           	  You will be notified when {{ sh.host.first_name }} receives your package. </p>
+                           	  You will be notified when {{ sh.trans.host.first_name }} receives your package. </p>
                            
                            <!--mobile version-->
                             <h3 class="ltbluetext nomargin xsonly xsnopadding" style="font-weight: 400">
@@ -508,14 +508,14 @@
                       
                       <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                         	<button type="button" name="package_received" class="bluebutton xsheight30px sheight40px" style="margin-top: 10px;" 
-                        			onclick="window.open('https://blocbox.aftership.com/{{ sh.tracking }}')"	>
+                        			onclick="window.open('https://blocbox.aftership.com/{{ sh.trans.tracking }}')"	>
                               Check Shipping Details</button>
 
                         	<!--message modal -->
-                        	<button type="button" name="package_received" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.id}}/#openModal_message_id{{sh.id}}/#{{sh.id}}';">
-                              Message {{ sh.host.first_name }}</button>
+                        	<button type="button" name="package_received" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/message_id{{sh.trans.id}}/#openModal_message_id{{sh.trans.id}}/#{{sh.trans.id}}';">
+                              Message {{ sh.trans.host.first_name }}</button>
 
-                          <button type="button" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.id}}/#openModal_enduser_issue_id{{sh.id}}';">
+                          <button type="button" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                               Report an Issue</button>
                        
                      </div> <!-- end col-xs-6 col-sm-12 buttons -- packages in transit -->
@@ -548,13 +548,13 @@
                         <div class="row">
                            <div class="col-xs-12 col-sm-5 xsnopadding">
                                 <p class="textcenter xshide">ORDERED</p>
-                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.id }} </span>
-                                	  <br> Invoice: <span style="font-weight:normal;"> {{ sh.invoice }} </span> 
-                                	  <br> Placed on: <span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span>
-                                	  <br> Sent to <a href="">&nbsp;{{sh.host.first_name}}</a>:
-                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.host.st_address1}}+{{sh.host.city}}+{{sh.host.state}}+{{sh.host.zipcode}}" target="_blank" class="nomargin">
-                                                {{ sh.host.st_address1 }}, {{ sh.host.st_address2 }} , 
-                                                 {{ sh.host.city }}, {{ sh.host.state }} {{sh.host.zipcode}}
+                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.trans.id }} </span>
+                                	  <br> Invoice: <span style="font-weight:normal;"> {{ sh.trans.invoice }} </span> 
+                                	  <br> Placed on: <span style="font-weight:normal;">  {{ sh.trans.date_requested_notime }} </span>
+                                	  <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
+                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} , 
+                                                 {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                              </a> </span>
                                 </h4>
                                 
@@ -566,42 +566,42 @@
                                <h4 class="nomargin">Tracking Number:
                                 	 
                                 	  <span style="font-weight:normal;">  
-                                     	  <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
-                                        <a href="/dashboard/track_id{{sh.id}}/#openModal_edittracking_id{{sh.id}}" class="nomargin textcenter">[Edit]</a>
+                                     	  <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a>
+                                        <a href="/dashboard/track_id{{sh.trans.id}}/#openModal_edittracking_id{{sh.trans.id}}" class="nomargin textcenter">[Edit]</a>
 																		</span>
                             
-                                		{% if sh.on_aftership %} 
+                                		{% if sh.trans.on_aftership %} 
                                 				{% if sh.aftership.last_checkpoint.city %} 
                                 					<br>		Last Checkpoint: <span style="font-weight:normal;"> {{sh.aftership.last_checkpoint.city }}, {{ sh.aftership.last_checkpoint.state }} </span>
                                 				{% else %}
                                 				  <br> Status: <span style="font-weight:normal;">  
-                               	              {% if sh.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.last_tracking_status }}  {% endif %} </span>
+                               	              {% if sh.trans.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.trans.last_tracking_status }}  {% endif %} </span>
                                 				{% endif %}
                                 		{% else %} <!--if not on aftership b/c expired get from our tables -->			
-                                				{% if sh.last_checkpoint_city %}
-                                					<br> Last Checkpoint: <span style="font-weight:normal;"> {{ sh.last_checkpoint_city }}, {{ sh.last_checkpoint_state }} </span>
+                                				{% if sh.trans.last_checkpoint_city %}
+                                					<br> Last Checkpoint: <span style="font-weight:normal;"> {{ sh.trans.last_checkpoint_city }}, {{ sh.trans.last_checkpoint_state }} </span>
                                 				{% else %}                                					
                                 					<br> Status: <span style="font-weight:normal;">  
-                               	              {% if sh.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.last_tracking_status }} {% endif %} </span>
+                               	              {% if sh.trans.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.trans.last_tracking_status }} {% endif %} </span>
                                	                                       				
                                 				{% endif %} 
                                 	{% endif %} <!--end if on aftership -->
                            
                                     <!--last updated -->                           
-                                	  {% if sh.on_aftership %} 
+                                	  {% if sh.trans.on_aftership %} 
                                 				  {% if sh.aftership.last_tracking_datetime %} 
                                 				    <br>  Last Updated: <span style="font-weight:normal;"> {{ sh.aftership.last_tracking_datetime }} {% endif %} </span>
                                 			{% else %} 
-                                				  {% if sh.last_tracking_datetime %} 
-                                				  	 <br> Last Updated:  <span style="font-weight:normal;"> {{ sh.last_tracking_datetime }} {% endif %} </span>
+                                				  {% if sh.trans.last_tracking_datetime %} 
+                                				  	 <br> Last Updated:  <span style="font-weight:normal;"> {{ sh.trans.last_tracking_datetime }} {% endif %} </span>
                                 			{% endif %}
 
                                 <br> Scheduled Delivery: <span style="font-weight:normal;">
                                     {% if sh.aftership.expected_delivery %} 
                                     		{{ sh.aftership.expected_delivery_notime }} 
                                     {% else %} You expected it to arrive 
-                                    		{% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
-                                    		{% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; 
+                                    		{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    		{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; 
                                     		{% endif %} 
                                     {% endif %}  </span>
                                 </h4>
@@ -624,7 +624,7 @@
                 <!--divider defining the whole current shipments part -->
 
                 <!--INCLUD ALL OF THE MODAL SUBTEMPLATES - JUST FOR REPORT AN ISSUE -->
-              {% ifequal issue_id_int sh.id %}    {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+              {% ifequal issue_id_int sh.trans.id %}    {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
                 <!--CONTAINER WITH ALL OF THE TRANSACTIONS-->
 
              <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px" style="padding-right: 5px;">
@@ -635,12 +635,12 @@
                             	 <div class="package-i" style="width: 30px; height: 30px"></div> 
                         </div>
                             
-                        <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                        <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	   	{% else %} No Title  {% endif %}                             
                         </h3>
                             
                         <!--title - mobile version -->
-                        <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="font-weight: 400; padding-left: 5px; ">{% if sh.title %}  {{ sh.title }} 
+                        <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="font-weight: 400; padding-left: 5px; ">{% if sh.trans.title %}  {{ sh.trans.title }} 
                             	   	{% else %} No Title  {% endif %}                             
                         </h3>
                  </div>
@@ -668,9 +668,9 @@
                         
                        <div class="col-xs-6 col-sm-12 xspaddingleft5 xsnopadding">
                            <button type="button" class="bluebutton xsheight30px sheight40px" style="margin-top: 10px;"  
-                        	   onclick="window.location='/dashboard/archive_id{{sh.id}}';"> Archive Shipment</button>
+                        	   onclick="window.location='/dashboard/archive_id{{sh.trans.id}}';"> Archive Shipment</button>
                            <!--JMY REMOVED 'MESSAGE JOHN' - NOT ESSENTIAL HERE - AND THE MORE WE CAN REMOVE THE FASTER IT WILL LOAD -->
-                           <button type="button" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.id}}/#openModal_enduser_issue_id{{sh.id}}';">
+                           <button type="button" class="greybutton xsheight30px sheight40px" style="margin-top: 10px;" onclick="window.location='/dashboard/issue_id{{sh.trans.id}}/#openModal_enduser_issue_id{{sh.trans.id}}';">
                                Report an Issue</button>
 												</div> <!--end col-xs-6 col-sm-12, col with buttons -->
 												
@@ -692,13 +692,13 @@
                     			<!--first column-- COMPLETED shipments -->
                           <div class="col-xs-12 col-sm-5 xsnopadding">
                                 <p class="textcenter xshide">ORDERED</p>
-                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;">   {{sh.id }} </span>
-                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.invoice }} </span>
-                                	 <br> Placed on: <span style="font-weight:normal;"> {{ sh.date_requested_notime }} </span>
-                                	 <br> Sent to <a href="">&nbsp;{{sh.host.first_name}}</a>:
-                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.host.st_address1}}+{{sh.host.city}}+{{sh.host.state}}+{{sh.host.zipcode}}" target="_blank" class="nomargin">
-                                                {{ sh.host.st_address1 }}, {{ sh.host.st_address2 }} , 
-                                                 {{ sh.host.city }}, {{ sh.host.state }} {{sh.host.zipcode}}
+                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;">   {{sh.trans.id }} </span>
+                                	 <br> Invoice: <span style="font-weight:normal;">  {{ sh.trans.invoice }} </span>
+                                	 <br> Placed on: <span style="font-weight:normal;"> {{ sh.trans.date_requested_notime }} </span>
+                                	 <br> Sent to <a href="">&nbsp;{{sh.trans.host.first_name}}</a>:
+                                       <span style="font-weight:normal;"> <a class="nomargin" href="https://www.google.com/maps/place/{{sh.trans.host.st_address1}}+{{sh.trans.host.city}}+{{sh.trans.host.state}}+{{sh.trans.host.zipcode}}" target="_blank" class="nomargin">
+                                                {{ sh.trans.host.st_address1 }}, {{ sh.trans.host.st_address2 }} , 
+                                                 {{ sh.trans.host.city }}, {{ sh.trans.host.state }} {{sh.trans.host.zipcode}}
                                              </a> </span>                                             
                                 </h4>
                           </div> <!--end  shipment details: completed -->
@@ -709,24 +709,24 @@
                           <div class="col-xs-12 col-sm-5 col-lg-offset-2 xsnopadding">
                             <p class="textcenter xshide">COMPLETED</p>
                             <h4 class="nomargin">
-                                   Tracking Number: <span style="font-weight:normal;">  <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a> </span>
+                                   Tracking Number: <span style="font-weight:normal;">  <a href="https://blocbox.aftership.com/{{ sh.trans.tracking }}" target="_blank">{{ sh.trans.tracking }} </a> </span>
 															<br> Delivery Method: <span style="font-weight:normal;"> 
-                                    {% if sh.on_aftership %} 
+                                    {% if sh.trans.on_aftership %} 
                                     			{% if sh.aftership.shipment_type %}  {{ sh.aftership.shipment_type }} 
-                                    			{% else %} {{ sh.shipment_courier }} 
+                                    			{% else %} {{ sh.trans.shipment_courier }} 
                                     		  {% endif%} 
                                    	{% else %} <!--if not on aftership -->
-                                   			{% if sh.shipment_courier %} 
-                                   						{{ sh.shipment_courier }} 
+                                   			{% if sh.trans.shipment_courier %} 
+                                   						{{ sh.trans.shipment_courier }} 
                                     		{% else %} You expected it to arrive
-                                    					{% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
-                                    					{% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; 
+                                    					{% if sh.trans.arrivalwindow_days_count == 1 %} on {{ sh.trans.arrivalwindow_day1 }} 
+                                    					{% else %} {{ sh.trans.arrivalwindow_day1 }} - {{ sh.trans.arrivalwindow_lastday }} &nbsp; 
                                     					{% endif %}
                                     		{% endif %} 
                                     {% endif %}  </span>
-                              <br> {{sh.last_tracking_status}}: <span style="font-weight:normal;"> {{sh.last_checkpoint_date }} </span>
-                              <br>  Order Completed: <span style="font-weight:normal;"> {{ sh.date_completed }} </span>
-                              <br>  Your Rating: <span style="font-weight:normal;"> {{ sh.host.first_name}} {{sh.enduser_rating}} / 5.0 </span>
+                              <br> {{sh.trans.last_tracking_status}}: <span style="font-weight:normal;"> {{sh.trans.last_checkpoint_date }} </span>
+                              <br>  Order Completed: <span style="font-weight:normal;"> {{ sh.trans.date_completed }} </span>
+                              <br>  Your Rating: <span style="font-weight:normal;"> {{ sh.trans.host.first_name}} {{sh.trans.enduser_rating}} / 5.0 </span>
                             </h4>
                           </div> <!--end second column, COMPLETED PAKAGES -->
                           
