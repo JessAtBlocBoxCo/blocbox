@@ -296,9 +296,15 @@ def dashboard_host(request):
         otherfavors_all_paid_notarchived = None   
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':enduser,
+            #transactions all
+            'transactions_all': transactions_all 
+            ' transactions_all_paid':  transactions_all_paid,
             #shipments all
             'shipments_all_paid': shipments_all_paid, 
             'shipments_all_paid_notarchived': shipments_all_paid_notarchived,
+            #otherfavors all
+            'otherfavors_all_paid': otherfavors_all_paid, 
+            'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
         })
 
 def enduser_report_issue_modal(request, issue_id):
