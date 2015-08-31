@@ -59,11 +59,6 @@ def watch_packages(specificuser_id = None):
         trans_aftership_notarchived = trans_aftership_notarchived.filter(enduser=enduser)
         trans_completed = trans_completed.filter(enduser=enduser)
         trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
-    #else:
-    #    transactions_onaftership = Transaction.objects.filter(on_aftership=True)
-    #    trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
-    #    trans_completed = Transaction.objects.filter(trans_complete = True)
-    #    trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
     #Arhives transactions if older than 30 days
     for trans in trans_completed_notarchived:
         date_requested = trans.date_requested
