@@ -49,17 +49,21 @@ api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 
 def watch_packages(specificuser_id = None):
     response_messages_list = []    
+    transactions_onaftership = Transaction.objects.filter(on_aftership=True)
+    trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
+    trans_completed = Transaction.objects.filter(trans_complete = True)
+    trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
     if specificuser_id:
         enduser = UserInfo.objects.get(pk=specificuser_id)
         trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
         trans_aftership_notarchived = trans_aftership_notarchived.filter(enduser=enduser)
         trans_completed = trans_complete.filter(enduser=enduser)
         trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
-    else:
-        transactions_onaftership = Transaction.objects.filter(on_aftership=True)
-        trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
-        trans_completed = Transaction.objects.filter(trans_complete = True)
-        trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
+    #else:
+    #    transactions_onaftership = Transaction.objects.filter(on_aftership=True)
+    #    trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
+    #    trans_completed = Transaction.objects.filter(trans_complete = True)
+    #    trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
     #Arhives transactions if older than 30 days
     for trans in trans_completed_notarchived:
         date_requested = trans.date_requested
