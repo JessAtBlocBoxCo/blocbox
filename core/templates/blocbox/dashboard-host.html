@@ -72,17 +72,17 @@
         {% ifequal issue_id_int sh.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}  {% endifequal %} 
 
         <div class="col-xs-6">
-        <div class="profilebox">
-            <!--non-mobile version--->
-            <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
-                {% else %} No Title  {% endif %} 
-            </h3>
+            <div class="profilebox">
+                <!--non-mobile version--->
+                <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                    {% else %} No Title  {% endif %} 
+                </h3>
 
-            <!--mobile version - title -->
-            <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
-                {% else %} No Title  {% endif %} 
-                <!--<br> <b> In Transit </b> -->
-            </h3>
+                <!--mobile version - title -->
+                <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                    {% else %} No Title  {% endif %} 
+                    <!--<br> <b> In Transit </b> -->
+                </h3>
             </div> <!--end div with icon and title-->
             
         
@@ -174,14 +174,14 @@
 
         </div> <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
         {% endfor %} <!--end looping through shipments in transit-->
-
         </div>
-    </div>
+      
         <div class="col-xs-3">
             <div class="profilebox">
                 
             </div>
         </div>
+    </div>
         {% else %}
         <h2>Message to non host</h2>
         {% endif %}
