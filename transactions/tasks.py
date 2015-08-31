@@ -51,8 +51,14 @@ trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
 # E.G., PRINT TRANS_AFTERSHIP_NOTARCHIVED[1].ID will print the ID for the first in the list,
 # PRINT TRANS_AFTERSHIP_NOTARCHIVED[1].tracking_info
 
-def watch_packages():
+def watch_packages(specificuser_id = None):
     response_messages_list = []
+    if specificuser_id:
+        enduser = UserInfo.objects.get(pk=specificuser_id)
+        trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
+        trans_aftership_notarchived = trans_aftership_notarchived.filter(enduser=enduser)
+        trans_completed = trans_complete.filter(enduser=enduser)
+        trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
     #Arhives transactions if older than 30 days
     for trans in trans_completed_notarchived:
         date_requested = trans.date_requested
@@ -169,6 +175,9 @@ def watch_packages():
                 responsemessage = "The status did not change for trans id " + str(trans.id) + "; the status is: " + new_status + "\n"
                 response_messages_list.append(responsemessage)   
     return response_messages_list
+
+
+
 
 def test_send_email(enduserid, hostid, transid):
     trans = Transaction.objects.get(pk=transid)
