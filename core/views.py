@@ -16,6 +16,8 @@ from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, Rese
 from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral, attribute_referral_waitlist
 from connections.forms import ConnectForm
 from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
+#adding transactions watch_packages task on 8/30 to update dashboard function
+from transactions.tasks import watch_packages
 #Add the waitlist app
 from waitlist.models import Waitlist
 from waitlist.forms import WaitlistFormModel, WaitlistForm
