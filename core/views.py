@@ -202,67 +202,25 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
             hostonly=connections_all[0].host_user
         else:
             hostonly=None 
+        #First - Call the watch_packages task int ransactions.tasks just for this user
+        watch_packages(specificuser_id=enduser.id)
+        #Now, load
         transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email #JB - below is list of catagories and states for shipments
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
+        shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.filter(complete=False)
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
         otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
-        #Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
-   	    #Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
-        for shipment in shipments_all_paid_notarchived:  #JB - all shipments 
-            tracking_no = str(shipment.tracking) #the str function removes the preceding u' #not sure what this is
-            shipment_tuple = {} 
-            shipment_tuple['trans']=shipment #get all of the transaction variables
-            shipment_tuple['aftership']={}  
-            if shipment.on_aftership: #if the shipment has tracking info entered into aftership
-                #populate the aftership_tracking sub-tuble                 
-                courier_allfields = api.couriers.detect.post(tracking=dict(tracking_number=tracking_no))
-                courier_list = courier_allfields.get(u'couriers')
-                courier_list_first = courier_list[0]
-                slug_to_detect_u = courier_list_first.get(u'slug')
-                slug_to_detect = str(slug_to_detect_u)
-                datadict = api.trackings.get(slug_to_detect, tracking_no)
-                shipment_tuple['aftership'] = datadict.get(u'tracking') 
-                #extract date-only form of expected delivery 
-                expected_delivery = shipment_tuple['aftership']['expected_delivery']
-                last_tracking_unicode = shipment_tuple['aftership']['last_updated_at']
-                last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
-                last_tracking_date = last_tracking_datetime.date()
-                if last_tracking_datetime: #JB - last time tracking updated
-                    shipment_tuple['aftership']['last_tracking_datetime'] = last_tracking_datetime
-                    shipment_tuple['aftership']['last_tracking_date'] = last_tracking_date
-                else: #JB - if not updated don't show anything
-                    shipment_tuple['aftership']['last_tracking_datetime'] = None
-                    shipment_tuple['aftership']['last_tracking_date'] = None
-                if expected_delivery: #JB - if user has entered expected delivery display it
-                    shipment_tuple['aftership']['expected_delivery_notime']=expected_delivery.date()
-                else:
-                    shipment_tuple['aftership']['expected_delivery_notime']=None  
-                checkpoints = shipment_tuple['aftership']['checkpoints']
-                if checkpoints: #JB - thinink this updates the current location of package
-                    shipment_tuple['aftership']['checkpoints'] = checkpoints
-                    shipment_tuple['aftership']['last_checkpoint'] = checkpoints[-1] #-nth to last.. so -1 is the last element     
-                if shipment.trans_complete ==True: #JB - determines if shipment has arrived to mark as complete
-                    shipments_onaftersihp_complete.append(shipment_tuple)
-                    shipments_complete_fordash.append(shipment_tuple)
-                else: #if shipment is not complete but is on aftership
-                    shipments_onaftersihp_notcomplete.append(shipment_tuple)
-                    tag = shipment_tuple['aftership']['tag']
-                    if tag == "Delivered": #JB - if aftership labels shipment as delivered mark shipment as delivered but not complete
-                        shipments_onaftersihp_notcomplete_delivered.append(shipment_tuple)
-                    else:
-                        shipments_onaftersihp_notcomplete_notdelivered.append(shipment_tuple)
-            else: #if not on aftership
-                shipment_tuple['aftership']=None
-                shipment_tuple['tracking']=None
-                if shipment.trans_complete == False:
-                    shipments_onaftersihp_notcomplete_notrackingno.append(shipment_tuple)
-                #shipmetns marked as complete even though tracking never aded
-                else:
-                    shipments_no_tracking_complete.append(shipment_tuple)
-                    shipments_complete_fordash.append(shipment_tuple)
-            shipments_onaftersihp_allpaid.append(shipment_tuple)
+        #Create lists restricted to shipmetns that are on aftership
+        shipments_complete_fordash = shipments_all_paid_notarchived.filter(complete=True)
+        #Waiting for Tracking - Shipments that are not archived and not on aftership
+        shipments_onaftership_notcomplete_notrackingno = shipments_all_paid_notarchived_notcomplete.filter(on_aftership=False)
+        #WAiting for pickup: Create list of shipments that are not archived and not complete
+        shipments_onaftership_notarchived_notcomplete = shipments_all_paid_notarchived_notcomplete.filter(on_aftership=True)
+        shipments_onaftership_notcomplete_delivered = shipments_onaftership_notarchived_notcomplete.filter(status="Delivered")
+        #shipments in transit/not delivered
+        shipments_onaftership_notcomplete_notdelivered = shipments_onaftership_notarchived_notcomplete.exclude(status="Delivered")
     else: #if not authenticated set these to None
         connections_all = None
         connections_count = None
@@ -308,13 +266,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'message_form': message_form, 
         'recipient_email_list': recipient_email_list,
         #shipments lists
-        'shipments_onaftersihp_allpaid': shipments_onaftersihp_allpaid, 'shipments_onaftersihp_complete': shipments_onaftersihp_complete, 
-        'shipments_onaftersihp_notcomplete': shipments_onaftersihp_notcomplete, 
-        'shipments_onaftersihp_notcomplete_delivered': shipments_onaftersihp_notcomplete_delivered, 'shipments_onaftersihp_notcomplete_notdelivered': shipments_onaftersihp_notcomplete_notdelivered,
+        'shipments_onaftership_notcomplete_delivered': shipments_onaftership_notcomplete_delivered, 'shipments_onaftership_notcomplete_notdelivered': shipments_onaftership_notcomplete_notdelivered,
         #shipmetns that need tracking
-        'shipments_onaftersihp_notcomplete_notrackingno': shipments_onaftersihp_notcomplete_notrackingno,
-        #shipments marked as complete that never had tracking
-        'shipments_no_tracking_complete': shipments_no_tracking_complete,
+        'shipments_onaftership_notcomplete_notrackingno': shipments_onaftership_notcomplete_notrackingno,
         #all completeshipmetns
         'shipments_complete_fordash': shipments_complete_fordash,
         #other favors lists
