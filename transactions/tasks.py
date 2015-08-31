@@ -40,11 +40,7 @@ from django_messages.views import notify_user_received_message
 import aftership
 AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
 api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
-#GET A LIST OF ALL TRANSACTIONS ON AFTERHIP
-transactions_onaftership = Transaction.objects.filter(on_aftership=True)
-trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
-trans_completed = Transaction.objects.filter(trans_complete = True)
-trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
+
 
 #JMY NOTES - FOR CALLING THIS FROM PYTHONG BASH
 #NEED TO COPY AND PASTE THE DEFINITIOSN INTO PYTHONG, THEN
@@ -52,13 +48,18 @@ trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
 # PRINT TRANS_AFTERSHIP_NOTARCHIVED[1].tracking_info
 
 def watch_packages(specificuser_id = None):
-    response_messages_list = []
-    #if specificuser_id:
-    #    enduser = UserInfo.objects.get(pk=specificuser_id)
-    #    trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
-    #    trans_aftership_notarchived = trans_aftership_notarchived.filter(enduser=enduser)
-    #    trans_completed = trans_complete.filter(enduser=enduser)
-    #    trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
+    response_messages_list = []    
+    if specificuser_id:
+        enduser = UserInfo.objects.get(pk=specificuser_id)
+        trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
+        trans_aftership_notarchived = trans_aftership_notarchived.filter(enduser=enduser)
+        trans_completed = trans_complete.filter(enduser=enduser)
+        trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
+    else:
+        transactions_onaftership = Transaction.objects.filter(on_aftership=True)
+        trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
+        trans_completed = Transaction.objects.filter(trans_complete = True)
+        trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
     #Arhives transactions if older than 30 days
     for trans in trans_completed_notarchived:
         date_requested = trans.date_requested
