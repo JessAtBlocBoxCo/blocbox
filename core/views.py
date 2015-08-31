@@ -297,7 +297,7 @@ def dashboard_host(request):
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':enduser,
             #transactions all
-            'transactions_all': transactions_all 
+            'transactions_all': transactions_all, 
             ' transactions_all_paid':  transactions_all_paid,
             #shipments all
             'shipments_all_paid': shipments_all_paid, 
