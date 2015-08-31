@@ -53,12 +53,12 @@ trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
 
 def watch_packages(specificuser_id = None):
     response_messages_list = []
-    if specificuser_id:
-        enduser = UserInfo.objects.get(pk=specificuser_id)
-        trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
-        trans_aftership_notarchived = trans_aftership_notarchived.filter(enduser=enduser)
-        trans_completed = trans_complete.filter(enduser=enduser)
-        trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
+    #if specificuser_id:
+    #    enduser = UserInfo.objects.get(pk=specificuser_id)
+    #    trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
+    #    trans_aftership_notarchived = trans_aftership_notarchived.filter(enduser=enduser)
+    #    trans_completed = trans_complete.filter(enduser=enduser)
+    #    trans_completed_notarchived = trans_completed_notarchived.filter(enduser=enduser)
     #Arhives transactions if older than 30 days
     for trans in trans_completed_notarchived:
         date_requested = trans.date_requested
