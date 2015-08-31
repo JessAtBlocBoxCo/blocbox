@@ -293,7 +293,7 @@ def dashboard_host(request):
         shipments_all_paid = None
         shipments_all_paid_notarchived = None
         otherfavors_all_paid = None
-        otherfavors_all_paid_notarchived = None
+        otherfavors_all_paid_notarchived = None   
     return render(request, 'blocbox/dashboard-host.html', {'enduser':enduser,})
 
 def enduser_report_issue_modal(request, issue_id):
