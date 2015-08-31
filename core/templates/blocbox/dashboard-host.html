@@ -40,31 +40,6 @@
             <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
             <p class="darkgreytext margintop5px tinytext textcenter">VIEW PROFILE</p>
 
-            <!--start a shipment/start a favor buttons-->
-            <div class="profileboxline margintop20px marginbottom20px"></div>
-
-            <!--Find a new host button-->
-            <div class="col-sm-10 col-sm-offset-1 col-lg-12 marginbottom15px nopadding">
-                <div class="row">
-                    <div class="col-sm-2 nopadding">
-                        <button class="searchbtn" type="button" onclick="window.location='/search';">
-                        </button>
-                    </div>
-                    <p class="col-sm-10 darkgreytext" style="padding-top: 7px; padding-left: 25px">Find a New Host</p>
-                </div>
-            </div>
-
-            <!--Account Balance-->
-            {% if user.account_balance %}
-            <div class="profileboxline margintop20px marginbottom20px"></div>
-            <div class="col-xs-12">
-                <p class="darkgreytext tinytext textcenter">ACCOUNT BALANCE</p>
-                <p class="pricetext textcenter">${{ user.account_balance }}
-                    <!-- {% if connections_count = 1 %} neighbor {% else %} neighbors {% endif %} -->
-                </p>
-            </div>
-            {% endif %}
-
             <!--neighborhood connections-->
             <div class="profileboxline margintop20px marginbottom20px"></div>
             <div class="col-xs-12">
@@ -110,7 +85,7 @@
             </h3>
             </div> <!--end div with icon and title-->
             
-        </div>
+        
         <div class="col-xs-12 col-sm-8 xspaddingleft5 xsnopadding" style="padding-top: 6px">
 
             <div class="row xshide"> <!--ICON/IMAGES FOR PACKAGES IN TRANSIT -->
@@ -201,6 +176,7 @@
         {% endfor %} <!--end looping through shipments in transit-->
 
         </div>
+
         <div class="col-xs-3">
             <div class="profilebox">
                 
