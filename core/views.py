@@ -279,9 +279,9 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
     })
 
 def dashboard_host(request):
-    enduser = request.user
+    thepersonviewingthepage = request.user
     if enduser.host == True:
-        transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
+        transactions_all = Transaction.objects.filter(enduser=thepersonviewingthepage) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
@@ -295,12 +295,11 @@ def dashboard_host(request):
         otherfavors_all_paid = None
         otherfavors_all_paid_notarchived = None   
     return render(request, 'blocbox/dashboard-host.html', {
-            'enduser':enduser,
+            'enduser':thepersonviewingthepage,
             #transactions all
             'transactions_all': transactions_all, 
             ' transactions_all_paid':  transactions_all_paid,
             #shipments all
-            'shipments_all_paid': shipments_all_paid, 
             'shipments_all_paid_notarchived': shipments_all_paid_notarchived,
             #otherfavors all
             'otherfavors_all_paid': otherfavors_all_paid, 
