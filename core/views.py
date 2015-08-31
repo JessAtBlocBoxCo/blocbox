@@ -280,7 +280,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
 
 def dashboard_host(request):
     thepersonviewingthepage = request.user
-    if enduser.host == True:
+    if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
