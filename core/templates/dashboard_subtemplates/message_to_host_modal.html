@@ -2,13 +2,13 @@
 		which is called on dashboard.html 
 					
 -->
-				<div id="openModal_message_id{{sh.trans.id}}" class="modalDialog">
+				<div id="openModal_message_id{{sh.id}}" class="modalDialog">
 						{% load i18n %}
 							<div>
 									<a href="/dashboard" title="Close" class="close">X</a>																																	
 										<div class="row margintopbottom30px">
-												<h4 class="ltbluetext">Send a message to {{sh.trans.host.first_name}} about shipment {{sh.trans.id}} </h4>
-										   	<form action="/dashboard/message_id{{sh.trans.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
+												<h4 class="ltbluetext">Send a message to {{sh.host.first_name}} about shipment {{sh.id}} </h4>
+										   	<form action="/dashboard/message_id{{sh.id}}/#openModal_message/Thanks" method="post" class="text-left"> 
 										        		{% csrf_token %} 
 										        				{{ compose_form.non_field_errors }}
 					   												{{ compose_form.body.errors }}
@@ -21,9 +21,9 @@
 	 														
 	 														<!--HIDDEN FIELDS-->
 	 														{{ compose_form.subject.errors }}
-	 														<input type="hidden" name="subject"   value="Re: Transaction ID {{ sh.trans.id }}">  
+	 														<input type="hidden" name="subject"   value="Re: Transaction ID {{ sh.id }}">  
 	 														{{ compose_form.recipient.errors }}
-	 														<input type="hidden" name="recipient" value="{{sh.trans.host.email}}">
+	 														<input type="hidden" name="recipient" value="{{sh.host.email}}">
 	 														<!--SUBMIT BUTON-->
               								<div class="row paddingbottom10px"> 
                        					<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
