@@ -244,25 +244,25 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
                     shipment_tuple['aftership']['checkpoints'] = checkpoints
                     shipment_tuple['aftership']['last_checkpoint'] = checkpoints[-1] #-nth to last.. so -1 is the last element     
                 if shipment.trans_complete ==True: #JB - determines if shipment has arrived to mark as complete
-                    shipments_with_tracking_complete.append(shipment_tuple)
+                    shipments_onaftersihp_complete.append(shipment_tuple)
                     shipments_complete_fordash.append(shipment_tuple)
-                else:
-                    shipments_with_tracking_notcomplete.append(shipment_tuple)
+                else: #if shipment is not complete but is on aftership
+                    shipments_onaftersihp_notcomplete.append(shipment_tuple)
                     tag = shipment_tuple['aftership']['tag']
                     if tag == "Delivered": #JB - if aftership labels shipment as delivered mark shipment as delivered but not complete
-                        shipments_with_tracking_notcomplete_delivered.append(shipment_tuple)
+                        shipments_onaftersihp_notcomplete_delivered.append(shipment_tuple)
                     else:
-                        shipments_with_tracking_notcomplete_notdelivered.append(shipment_tuple)
+                        shipments_onaftersihp_notcomplete_notdelivered.append(shipment_tuple)
             else: #if not on aftership
                 shipment_tuple['aftership']=None
                 shipment_tuple['tracking']=None
                 if shipment.trans_complete == False:
-                    shipments_with_tracking_notcomplete_notrackingno.append(shipment_tuple)
+                    shipments_onaftersihp_notcomplete_notrackingno.append(shipment_tuple)
                 #shipmetns marked as complete even though tracking never aded
                 else:
                     shipments_no_tracking_complete.append(shipment_tuple)
                     shipments_complete_fordash.append(shipment_tuple)
-            shipments_with_tracking_allpaid.append(shipment_tuple)
+            shipments_onaftersihp_allpaid.append(shipment_tuple)
     else: #if not authenticated set these to None
         connections_all = None
         connections_count = None
@@ -308,11 +308,11 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'tracking_form': tracking_form, 'package_received_form': package_received_form, 'enduser_issue_form': enduser_issue_form, 'message_form': message_form, 
         'recipient_email_list': recipient_email_list,
         #shipments lists
-        'shipments_with_tracking_allpaid': shipments_with_tracking_allpaid, 'shipments_with_tracking_complete': shipments_with_tracking_complete, 
-        'shipments_with_tracking_notcomplete': shipments_with_tracking_notcomplete, 
-        'shipments_with_tracking_notcomplete_delivered': shipments_with_tracking_notcomplete_delivered, 'shipments_with_tracking_notcomplete_notdelivered': shipments_with_tracking_notcomplete_notdelivered,
+        'shipments_onaftersihp_allpaid': shipments_onaftersihp_allpaid, 'shipments_onaftersihp_complete': shipments_onaftersihp_complete, 
+        'shipments_onaftersihp_notcomplete': shipments_onaftersihp_notcomplete, 
+        'shipments_onaftersihp_notcomplete_delivered': shipments_onaftersihp_notcomplete_delivered, 'shipments_onaftersihp_notcomplete_notdelivered': shipments_onaftersihp_notcomplete_notdelivered,
         #shipmetns that need tracking
-        'shipments_with_tracking_notcomplete_notrackingno': shipments_with_tracking_notcomplete_notrackingno,
+        'shipments_onaftersihp_notcomplete_notrackingno': shipments_onaftersihp_notcomplete_notrackingno,
         #shipments marked as complete that never had tracking
         'shipments_no_tracking_complete': shipments_no_tracking_complete,
         #all completeshipmetns

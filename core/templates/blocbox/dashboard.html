@@ -160,7 +160,7 @@
 						<!--SHIPMENTS WAITING TO BE PICKED UP -- OUTER CONTAINER CONTAINING ALL -- NOT SURE WHY WE NEED... -->
 						<!-- <div class="col-xs-12 col-sm-12 nopaddingleftright"> -->
 							
-        {% for sh in shipments_with_tracking_notcomplete_delivered %}
+        {% for sh in shipments_onaftersihp_notcomplete_delivered %}
                 
                       <!--INCLUD ALL OF THE MODAL SUBTEMPLATES - only if that URL is called - to save memroy-->                    
                       {% ifequal confirm_id_int sh.trans.id %}    {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}                    	  	
@@ -307,7 +307,7 @@
 
 
         <!--shipments that need tracking -->
-        {% for sh in shipments_with_tracking_notcomplete_notrackingno %}
+        {% for sh in shipments_onaftersihp_notcomplete_notrackingno %}
 
                   {% ifequal confirm_id_int sh.trans.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
                  	{% ifequal issue_id_int sh.trans.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
@@ -455,7 +455,7 @@
 
 
         <!--SHIPMENTS IN TRANSIT-->
-        {% for sh in shipments_with_tracking_notcomplete_notdelivered %} 
+        {% for sh in shipments_onaftersihp_notcomplete_notdelivered %} 
                 	
                 {% ifequal confirm_id_int sh.trans.id %} {% include "dashboard_subtemplates/package_received_modal.html" %}  {% endifequal %}
                 {% ifequal issue_id_int sh.trans.id %}  {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %}  {% endifequal %} 
