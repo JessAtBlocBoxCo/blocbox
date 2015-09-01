@@ -72,6 +72,36 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
+                    <!--non-mobile version--->
+                    <div class="row">
+                        <div class="col-xs-1 nopaddingleftright">
+                            <div class="messpiccontainer">
+                                {% if user.facebook_id %}
+                                <img class="messpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %} 
+                                {% if user.profile_pic_uploaded %}
+                                <img class="messpic" src="{{user.profile_pic_uploaded.url}}" /> 
+                                {% else %}
+                                <div>
+                                    <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-user fa-flip-horizontal fa-fw fa-lg statusicon" style="padding-bottom: 9px;"></i> </div>
+                                </div>
+                                {% endif %} {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-xs-7"  style="padding: 3px 5px 0px 5px;">
+                            <h3 class="darkgreytext nomargin xshide" style="font-weight: 400; font-size: 1.0em"> New message from your neigbor&nbsp;<span class="darkbluegreentext " style="font-weight: 500;">{{user.first_name}}&nbsp;{{user.last_name}}</span>
+                            </h3>
+                            <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">regarding package #37</h3>
+                        </div>
+                        <div class="row paddingtop15px">
+                            <div class="col-xs-4">
+                                <button>See Message</button>
+                                <button>Archive</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!--INCOMING SHIPMENTS-->
                 <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
