@@ -3072,7 +3072,6 @@ a > .offercard:focus {
     height: 60px;
 }
 .statusgreen{
-    background-image: url('/static/blocbox/images/status-green.png');
     background-color: rgb(71, 158, 159);
     border-radius: 100px;
     text-align: center;
