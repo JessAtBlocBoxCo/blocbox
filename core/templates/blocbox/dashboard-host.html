@@ -83,14 +83,22 @@
                        <div class="col-xs-1">
                            <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-lg statusicon" style="padding-bottom: 9px;"></i> </div>
                        </div>
-                        <h3 class="col-xs-11 darkbluegreentext nomargin xshide" style="padding-top: 3px; font-weight: 400; font-size: 1.4em"> Incoming Package for <span style="font-weight: 500;">{{enduser.first_name}} </span>
+                        <h3 class="col-xs-8 darkbluegreentext nomargin xshide" style="padding-top: 3px; font-weight: 400; font-size: 1.4em"> Incoming Package for <span style="font-weight: 500;">{{user.first_name}} </span>
                 </h3>
 
                         <!--mobile version - title -->
-                        <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                        <h3 class="col-xs-12 darkbluegreentext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
                     {% else %} No Title  {% endif %} 
                     <!--<br> <b> In Transit </b> -->
                 </h3>
+                        <h3 class="col-md-3 redtext" style="padding-top: 3px; font-weight: 400; font-size: 1.4em">Arriving: <span style="font-weight: 500;">
+                            {% if sh.aftership.expected_delivery %} 
+                            {{ sh.aftership.expected_delivery_notime }} 
+                            {% else %} You expected it to arrive 
+                            {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
+                            {% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; 
+                            {% endif %} 
+                            {% endif %}  </span></h3>
                     </div>
                     <div class="col-xs-12 xspaddingleft5 xsnopadding" style="padding-top: 6px">
 
