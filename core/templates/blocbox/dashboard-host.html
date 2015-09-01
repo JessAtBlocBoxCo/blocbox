@@ -191,6 +191,150 @@
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
                 </div>
                 {% endfor %}
+                
+                <!--PACKAGES AWAITING PICKUP-->
+                <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
+<br>  {{ shipments_all_paid_notarchived}} </h4> -->
+
+                {% for sh in shipments_all_paid_notarchived %}
+
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+
+                <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
+                    <!--non-mobile version--->
+                    <div class="row">
+                        <div class="col-xs-1 nopaddingleft">
+                            <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-lg statusicon" style="padding-bottom: 9px;"></i> </div>
+                        </div>
+                        <h3 class="col-xs-6 darkbluegreentext nomargin xshide" style="padding: 7px 15px 0px 5px; font-weight: 400; font-size: 1.2em"> Incoming Package for<span style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
+                        </h3>
+
+                        <!--mobile version - title -->
+                        <h3 class="col-xs-12 darkbluegreentext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                            {% else %} No Title  {% endif %} 
+                            <!--<br> <b> In Transit </b> -->
+                        </h3>
+                        <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 7px; font-weight: 400; font-size: 1.0em">Delivery:&nbsp;<span style="font-weight: 500;">3-4 Days</span></h3>
+                    </div>
+                    <div style="padding: 10px 0px">
+                        <div class="profileboxline100"></div>
+                    </div>
+                    <div class="col-xs-12 xspaddingleft5 xsnopadding">
+                        <!--row with shipmen info, shipments in transit-->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 xsnopadding">
+                                <h4 class="margintopbottom5px">For {{sh.enduser.first_name}}&nbsp;{{sh.enduser.last_name}}</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">{{sh.enduser.st_address1}}.</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Delivery Requested</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintop5px nopaddingbottom">Placed on:<span style="font-weight:normal;">  {{sh.date_requested_notime }} </span></h4>
+                            </div>
+                            <!--end col-xs-12 col-sm-5, col with ORDERED info -->
+
+                            <div class="col-xs-12 col-sm-6 xsnopadding">
+                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  
+                                    {% if sh.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.last_tracking_status }}  {% endif %} </span></h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Carrier: UPS</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Tracking Number:<span style="font-weight:normal;">  
+                                    <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
+                                    </span> </h4>
+                            </div>
+                            <!-- end col-xs-12 col-sm-5, second col with shipping info -->
+                        </div>
+                        <!--end row with shipping info, shipments in transit-->
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-5">
+                            <button>Recieved</button>
+                            <button>Message&nbsp;{{sh.enduser.first_name}}</button>
+                            <button>Report an Issue</button>
+                        </div>
+                    </div>
+                    <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
+                </div>
+                {% endfor %}
+                
+                <!--COMPLETED SHIPMENTS-->
+                <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
+<br>  {{ shipments_all_paid_notarchived}} </h4> -->
+
+                {% for sh in shipments_all_paid_notarchived %}
+
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+
+                <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
+                    <!--non-mobile version--->
+                    <div class="row">
+                        <div class="col-xs-1 nopaddingleft">
+                            <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-lg statusicon" style="padding-bottom: 9px;"></i> </div>
+                        </div>
+                        <h3 class="col-xs-6 darkbluegreentext nomargin xshide" style="padding: 7px 15px 0px 5px; font-weight: 400; font-size: 1.2em"> Incoming Package for<span style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
+                        </h3>
+
+                        <!--mobile version - title -->
+                        <h3 class="col-xs-12 darkbluegreentext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                            {% else %} No Title  {% endif %} 
+                            <!--<br> <b> In Transit </b> -->
+                        </h3>
+                        <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 7px; font-weight: 400; font-size: 1.0em">Delivery:&nbsp;<span style="font-weight: 500;">3-4 Days</span></h3>
+                    </div>
+                    <div style="padding: 10px 0px">
+                        <div class="profileboxline100"></div>
+                    </div>
+                    <div class="col-xs-12 xspaddingleft5 xsnopadding">
+                        <!--row with shipmen info, shipments in transit-->
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 xsnopadding">
+                                <h4 class="margintopbottom5px">For {{sh.enduser.first_name}}&nbsp;{{sh.enduser.last_name}}</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">{{sh.enduser.st_address1}}.</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Delivery Requested</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintop5px nopaddingbottom">Placed on:<span style="font-weight:normal;">  {{sh.date_requested_notime }} </span></h4>
+                            </div>
+                            <!--end col-xs-12 col-sm-5, col with ORDERED info -->
+
+                            <div class="col-xs-12 col-sm-6 xsnopadding">
+                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  
+                                    {% if sh.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.last_tracking_status }}  {% endif %} </span></h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Carrier: UPS</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Tracking Number:<span style="font-weight:normal;">  
+                                    <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
+                                    </span> </h4>
+                            </div>
+                            <!-- end col-xs-12 col-sm-5, second col with shipping info -->
+                        </div>
+                        <!--end row with shipping info, shipments in transit-->
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-5">
+                            <button>Recieved</button>
+                            <button>Message&nbsp;{{sh.enduser.first_name}}</button>
+                            <button>Report an Issue</button>
+                        </div>
+                    </div>
+                    <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
+                </div>
+                {% endfor %}
+
+
 
                 <!--end looping through shipments in transit-->
             </div>
