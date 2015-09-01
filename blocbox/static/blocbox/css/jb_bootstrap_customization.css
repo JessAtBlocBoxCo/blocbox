@@ -2364,13 +2364,13 @@ body {
     border-radius: 4px;
 }
 .profileboxred {
-    background-color: rgb(241, 102, 100);
+    background-color: rgb(255, 255, 255);
     overflow: visible;
     min-height: 100%;
     min-height: 150px;
     padding: 15px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
-    border: 1px solid rgb(236, 240, 241);
+    border: 1px solid rgb(241, 102, 100);
     border-radius: 4px;
 }
 .profileboxgreen {
