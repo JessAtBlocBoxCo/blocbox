@@ -780,10 +780,6 @@ footer {
 .marginright40px {
     margin-right: 40px;
 }
-.marginsidesneg15px {
-    margin-right: -15;
-    margin-left: -15;
-}
 .marginsides3pct {
     margin-right: 3%;
     margin-left: 3%;
@@ -2936,8 +2932,8 @@ a > .offercard:focus {
 
 .by {
     width: 85%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: -15;
+    margin-right: -15;
     padding-left: 15px;
     padding-right: 15px;
     
