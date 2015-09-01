@@ -67,7 +67,7 @@
                 <!--INCOMING SHIPMENTS-->
                 <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
         	   <br>  {{ shipments_all_paid_notarchived}} </h4> -->
-            <div class="profilebox">
+            
                 {% for sh in shipments_all_paid_notarchived %}
 
                 <!-- need to create subtemplate for next specific to host -->
@@ -76,7 +76,7 @@
                 {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
-
+                <div class="profilebox">
                 <!--non-mobile version--->
                 <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
                     {% else %} No Title  {% endif %} 
