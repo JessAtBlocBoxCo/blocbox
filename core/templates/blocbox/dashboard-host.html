@@ -64,7 +64,6 @@
 
 
             <div class="col-xs-6">
-                <div class="profilebox">
 
                     <!--INCOMING SHIPMENTS-->
                    <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
@@ -189,7 +188,6 @@
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
                     {% endfor %}
                     <!--end looping through shipments in transit-->
-                </div>
             </div>
 
             <div class="col-xs-3">
@@ -199,9 +197,10 @@
             </div>
         </div>
     </div>
+    
     {% else %}
+    <!--if user is not a host-->
     <h2>Message to non host</h2> {% endif %} {% else %}
-    <!--if user is not authenticated-->
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 nopadding">
         <div class="col-xs-12 dashbox">
             <h3 class="margintop10px nopadding"> <a href="/login">Login to your account </a> to access your dashboard. </h3>
