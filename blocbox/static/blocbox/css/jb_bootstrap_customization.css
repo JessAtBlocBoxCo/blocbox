@@ -3164,7 +3164,7 @@ a > .offercard:focus {
 .ratingcircle{
     background-color: rgb(71, 158, 159);
     border-radius: 100px;
-    border: 5px solid rgb(255, 195, 0);
+    border: 5px solid rgb(121, 204, 205);
     text-align: center;
     line-height: 38px;
     margin: auto;
