@@ -69,9 +69,9 @@
                     <div class="row">
                         <div class="col-xs-2 nopaddingleftright">
                             <div class="messpiccontainer">
-                                {% if sh.enduser.facebook_id %}
+                                {% if enduser.facebook_id %}
                                 <img class="messpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %} 
-                                {% if sh.enduser.profile_pic_uploaded %}
+                                {% if enduser.profile_pic_uploaded %}
                                 <img class="messpic" src="{{user.profile_pic_uploaded.url}}" /> 
                                 {% else %}
                                 <div>
