@@ -91,42 +91,16 @@
                     {% else %} No Title  {% endif %} 
                     <!--<br> <b> In Transit </b> -->
                 </h3>
-                        <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 3px; font-weight: 400; font-size: 1.4em">Delivery: <span style="font-weight: 500;">
-                            3-4 Days
-                            <!--{% if sh.aftership.expected_delivery %} 
-                            {{ sh.aftership.expected_delivery_notime }} 
-                            {% else %} You expected it to arrive 
-                            {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
-                            {% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; 
-                            {% endif %} 
-                            {% endif %}-->  </span></h3>
+                        <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 3px; font-weight: 400; font-size: 1.4em">Delivery:&nbsp;<span style="font-weight: 500;">3-4 Days</span></h3>
                     </div>
                     <div style="padding: 10px 0px">
                         <div class="profileboxline100"></div>
                     </div>
                     <div class="col-xs-12 xspaddingleft5 xsnopadding">
-
-                        <!--ICON/IMAGES FOR PACKAGES IN TRANSIT -->
-                        <!--       <div class="row xshide">
-                            <div class="col-sm-5 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i> </div>
-                            </div>
-
-                            <div>
-                                <div class="col-sm-2 shiparrow"></div>
-                            </div>
-
-                            <div class="col-sm-5 marginbottom10px">
-                                <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
-                            </div>
-                        </div> -->
-                        <!--end row with icons, packages in transit -->
-
-
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4 class="margintopbottom5px">For {{user.first_name}} {{user.last_name}}</h4>
+                                <h4 class="margintopbottom5px">For {{user.first_name}}&nbsp;{{user.last_name}}</h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">420 Grand Ave.</h4>
                                 <div class="profileboxline100"></div>
@@ -149,6 +123,17 @@
                             <!-- end col-xs-12 col-sm-5, second col with shipping info -->
                         </div>
                         <!--end row with shipping info, shipments in transit-->
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <button>Recieved</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button>Message&nbsp;{{user.first_name}}</button>
+                        </div>
+                        <div class="col-sm-4">
+                            <button>Report an Issue</button>
+                        </div>
                     </div>
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
                 </div>
