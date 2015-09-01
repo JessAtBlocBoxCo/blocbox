@@ -126,7 +126,11 @@
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <p class="textcenter xshide">ORDERED</p>
+                                <p>For {{user.first_name}}</p>
+                                <p>{{ user_address1 }}, {{ user_address2 }}</p>
+                                <p>Delivery Requested</p>
+                                <p>Placed on:<span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span></p>
+                                <!-- <p class="textcenter xshide">ORDERED</p>
                                 <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.id }} </span>
                         <br> Invoice: <span style="font-weight:normal;"> {{ sh.invoice }} </span> 
                         <br> Placed on: <span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span>
@@ -135,7 +139,7 @@
                             {{ sh.host.st_address1 }}, {{ sh.host.st_address2 }} , 
                             {{ sh.host.city }}, {{ sh.host.state }} {{sh.host.zipcode}}
                             </a> </span>
-                    </h4>
+                    </h4> -->
 
                                 <!--row-->
                             </div>
