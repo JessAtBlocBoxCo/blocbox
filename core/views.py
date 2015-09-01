@@ -285,8 +285,16 @@ def dashboard_host(request):
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
+        shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.exclude(trans_complete=True)
+        
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
         otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
+        #Create lists restricted to shipmetns that are on aftership
+        shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
+        #Shipments in transit
+        shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
+        #Shipments awaiting pickup
+        shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
     else: #if not authenticated set these to None
         transactions_all = None
         transactions_all_paid = None
@@ -294,16 +302,21 @@ def dashboard_host(request):
         shipments_all_paid_notarchived = None
         otherfavors_all_paid = None
         otherfavors_all_paid_notarchived = None   
+        shipments_complete_fordash = None
+        shipments_in_transit = None
+        shipments_waiting_pickup = None
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
             'transactions_all': transactions_all, 
-            ' transactions_all_paid':  transactions_all_paid,
-            #shipments all
-            'shipments_all_paid_notarchived': shipments_all_paid_notarchived,
+            'transactions_all_paid':  transactions_all_paid,
+            'shipments_complete_fordash': shipments_complete_fordash,
+            'shipments_in_transit': shipments_in_transit,
+            'shipments_waiting_pickup': shipments_waiting_pickup,
             #otherfavors all
             'otherfavors_all_paid': otherfavors_all_paid, 
             'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
+            
         })
 
 def enduser_report_issue_modal(request, issue_id):
