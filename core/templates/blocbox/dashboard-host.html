@@ -34,8 +34,7 @@
                         <br>
                         <br>
                         <p class="textcenter"> <a href='.'> Upload a <br> profile picture! </a> </p>
-                        {% endif %} 
-                        {% endif %}
+                        {% endif %} {% endif %}
                     </div>
                     <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
                     <p class="darkgreytext margintop5px tinytext textcenter">VIEW PROFILE</p>
@@ -57,7 +56,7 @@
                             <br>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}
                         </p>
                     </div>
-                {% endfor %}
+                    {% endfor %}
                 </div>
             </div>
             <!--end sidebar-->
@@ -65,62 +64,62 @@
 
             <div class="col-xs-6">
 
-                    <!--INCOMING SHIPMENTS-->
-                   <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
+                <!--INCOMING SHIPMENTS-->
+                <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
         	   <br>  {{ shipments_all_paid_notarchived}} </h4> -->
-                    
-                    {% for sh in shipments_all_paid_notarchived %}
 
-                    <!-- need to create subtemplate for next specific to host -->
-                    {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}
-                    <!-- need to create subtemplate for next specific to host -->
-                    {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
-                    <!-- need to create subtemplate for next specific to host -->
-                    {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+                {% for sh in shipments_all_paid_notarchived %}
 
-                    <!--non-mobile version--->
-                    <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+                <!-- need to create subtemplate for next specific to host -->
+                {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+
+                <!--non-mobile version--->
+                <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
                     {% else %} No Title  {% endif %} 
                 </h3>
 
-                    <!--mobile version - title -->
-                    <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
+                <!--mobile version - title -->
+                <h3 class="col-xs-12 ltbluetext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
                     {% else %} No Title  {% endif %} 
                     <!--<br> <b> In Transit </b> -->
                 </h3>
 
 
 
-                    <div class="col-xs-12 xspaddingleft5 xsnopadding" style="padding-top: 6px">
+                <div class="col-xs-12 xspaddingleft5 xsnopadding" style="padding-top: 6px">
 
-                        <div class="row xshide">
-                            <!--ICON/IMAGES FOR PACKAGES IN TRANSIT -->
-                            <div class="col-sm-5 marginbottom10px">
-                                <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i> </div>
-                            </div>
+                    <div class="row xshide">
+                        <!--ICON/IMAGES FOR PACKAGES IN TRANSIT -->
+                        <div class="col-sm-5 marginbottom10px">
+                            <div class="statusgrey" style="padding: 9px 4px;"><i class="fa fa-shopping-cart fa-fw fa-3x statusicon"></i> </div>
+                        </div>
 
-                            <div>
-                                <div class="col-sm-2 shiparrow"></div>
-                            </div>
+                        <div>
+                            <div class="col-sm-2 shiparrow"></div>
+                        </div>
 
-                            <div class="col-sm-5 marginbottom10px">
-                                <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
-                            </div>
+                        <div class="col-sm-5 marginbottom10px">
+                            <div class="statusgreen" style="padding: 9px 6px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-3x statusicon"></i> </div>
+                        </div>
 
 
-                            <!-- <div> <div class="col-sm-2 shipdash"></div>  </div>                           
+                        <!-- <div> <div class="col-sm-2 shipdash"></div>  </div>                           
 <div class="col-sm-2 marginbottom10px">
 <div class="statusgrey" style="padding: 9px 5px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-3x statusicon"></i>  </div>
 </div> -->
-                        </div>
-                        <!--end row with icons, packages in transit -->
+                    </div>
+                    <!--end row with icons, packages in transit -->
 
 
-                        <!--row with shipmen info, shipments in transit-->
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <p class="textcenter xshide">ORDERED</p>
-                                <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.id }} </span>
+                    <!--row with shipmen info, shipments in transit-->
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 xsnopadding">
+                            <p class="textcenter xshide">ORDERED</p>
+                            <h4 class="nomargin">Order ID: <span style="font-weight:normal;"> {{sh.id }} </span>
                         <br> Invoice: <span style="font-weight:normal;"> {{ sh.invoice }} </span> 
                         <br> Placed on: <span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span>
                         <br> Sent to <a href="">&nbsp;{{sh.host.first_name}}</a>:
@@ -130,13 +129,13 @@
                             </a> </span>
                     </h4>
 
-                                <!--row-->
-                            </div>
-                            <!--end col-xs-12 col-sm-5, col with ORDERED info -->
+                            <!--row-->
+                        </div>
+                        <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
-                            <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <p class="textcenter xshide">IN TRANSIT</p>
-                                <h4 class="nomargin">Tracking Number:
+                        <div class="col-xs-12 col-sm-6 xsnopadding">
+                            <p class="textcenter xshide">IN TRANSIT</p>
+                            <h4 class="nomargin">Tracking Number:
 
                         <span style="font-weight:normal;">  
                             <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
@@ -178,16 +177,16 @@
                         {% endif %} 
                         {% endif %}  </span>
                     </h4>
-                            </div>
-                            <!-- end col-xs-12 col-sm-5, second col with shipping info -->
-
                         </div>
-                        <!--end row with shipping info, shipments in transit-->
+                        <!-- end col-xs-12 col-sm-5, second col with shipping info -->
 
                     </div>
-                    <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
-                    {% endfor %}
-                    <!--end looping through shipments in transit-->
+                    <!--end row with shipping info, shipments in transit-->
+
+                </div>
+                <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
+                {% endfor %}
+                <!--end looping through shipments in transit-->
             </div>
 
             <div class="col-xs-3">
@@ -197,7 +196,7 @@
             </div>
         </div>
     </div>
-    
+
     {% else %}
     <!--if user is not a host-->
     <h2>Message to non host</h2> {% endif %} {% else %}
