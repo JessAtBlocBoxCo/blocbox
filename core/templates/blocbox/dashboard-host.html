@@ -126,22 +126,22 @@
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4>For {{user.first_name}} {{user.last_name}}</h4>
-                                <h4>420 Grand Ave.</h4>
+                                <h4 class="margintopbottom5px">For {{user.first_name}} {{user.last_name}}</h4>
+                                <h4 class="margintopbottom5px">420 Grand Ave.</h4>
                                 <div class="profileboxline100"></div>
-                                <h4>Delivery Requested</h4>
+                                <h4 class="margintopbottom5px">Delivery Requested</h4>
                                 <div class="profileboxline100"></div>
-                                <h4>Placed on:<span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span></p>
+                                <h4 class="margintopbottom5px">Placed on:<span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span></p>
                             </div>
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4>Status: <span style="font-weight:normal;">  
+                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  
                                     {% if sh.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.last_tracking_status }}  {% endif %} </span></h4>
                                     <div class="profileboxline100"></div>
-                                <h4>Carrier: UPS</p>
+                                <h4 class="margintopbottom5px">Carrier: UPS</p>
                                 <div class="profileboxline100"></div>
-                                <h4 class="nomargin">Tracking Number:<span style="font-weight:normal;">  
+                                <h4 class="margintopbottom5px">Tracking Number:<span style="font-weight:normal;">  
                                         <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
                                     </span> </h4>
                             </div>
