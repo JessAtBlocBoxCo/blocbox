@@ -333,7 +333,7 @@ read about this herea; http://getbootstrap.com/components/#navbar
                     </div>
                     <!--col-->
                     {% if user.is_authenticated %}
-                    <div class="col-sm-3  col-sm-offset-3">
+                    <div class="col-sm-3  col-sm-offset-4">
                         <div class="dropdown textright paddingleft120px">
                             <!--class="collapse navbar-collapse"  id="bs-example-navbar-collapse-1"-->
                             <!--button for navbar - displays user's name or Sign In - but it inside row and columens to right-align -->
@@ -368,11 +368,9 @@ read about this herea; http://getbootstrap.com/components/#navbar
                         <!--dropdown -->
                     </div>
 
-                    <div class="col-sm-3">
-                       <div class="row">
-                       <div class="col-sm-12">
+                    <div class="col-sm-2">
                         <!--col containing ddropdown button-->
-                        <div class="paddingsides10px">
+                        <div class="col-xs-2 col-sm-4 paddingsides10px">
                             <div class="dropdown textcenter">
                                 <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn btn-start-green" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
                                     <div class="">
@@ -403,7 +401,7 @@ read about this herea; http://getbootstrap.com/components/#navbar
                         </div>
 
                         <!--drop down menu if logged in-->
-                        <div class="paddingsides10px">
+                        <div class="col-xs-2 col-sm-4 paddingsides10px">
                             <div class="dropdown textcenter">
                                 <button class="dropdown-toggle bbbasenavbar btn-inbox-red nopaddingsides" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu2" data-toggle="dropdown">
                                     <div>{% load inbox %}{% inbox_count %}</div>
@@ -427,7 +425,7 @@ read about this herea; http://getbootstrap.com/components/#navbar
                             </div>
                         </div>
 
-                        <div class="paddingsides10px">
+                        <div class="col-xs-2 col-sm-4 paddingsides10px">
                             <div class="dropdown textcenter">
                                 <button class="dropdown-toggle bbbasenavbar bbbasenavbarbtn btn-info-org" style="margin-top: 16px; padding-bottom: 0px; margin-bottom: 0px;" type="button" id="dropdownMenu3" data-toggle="dropdown">
                                     <div>
@@ -498,10 +496,6 @@ read about this herea; http://getbootstrap.com/components/#navbar
                                 </div>
                             </div>
                         </div>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
                         <!--row containing full navbar-->
                         {% endif %}
                     </div>
