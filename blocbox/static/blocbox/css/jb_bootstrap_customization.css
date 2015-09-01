@@ -1263,6 +1263,7 @@ footer {
     margin-left: 0;
     min-height: 50px;
     transform: none;
+    border-radius: 0;
 
 
 }
