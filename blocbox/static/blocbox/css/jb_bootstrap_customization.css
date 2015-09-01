@@ -2971,7 +2971,7 @@ a > .offercard:focus {
     border: 1px solid rgb(236, 240, 241);
     border-radius: 4px;
     overflow: visible;
-    padding: 20px;
+    padding: 15px 20px;
     margin-bottom: 30px;
     text-align: left;
 }
