@@ -2344,6 +2344,7 @@ body {
     min-height: 100%;
     min-height: 150px;
     padding: 15px;
+    border: 1px black solid;
 }
 .profileboxlong {
     background-color: rgb(255, 255, 255);
