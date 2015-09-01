@@ -215,7 +215,9 @@
                     </ul> -->
 
                 </div>
+                
                 <div class="profilebox">
+                    {% for connection in connections_all %}
                     <h4 class="nomargintop">Helping {{ connections_count }} Neighbors&nbsp;<a style="font-weight: 300;">•&nbsp;view all</a></h4>
                    <div class="row">
                         <div class="col-xs-3 nopaddingleftright">
@@ -233,7 +235,7 @@
                     </div>
                     <div class="col-sm-9">
                        <div class="row">
-                        <h3 class="col-xs-6 darkgreytext nomargin xshide" style="padding: 7px 15px 0px 5px; font-weight: 500; font-size: 1.0em">{{user.first_name}}&nbsp;{{user.last_name}}
+                           <h3 class="col-xs-6 darkgreytext nomargin xshide" style="padding: 7px 15px 0px 5px; font-weight: 500; font-size: 1.0em">{{ connection.host_user.first_name }}&nbsp;{{ connection.host_user.first_name }}
                         </h3>
                        </div>
                         <div class="row">
@@ -241,6 +243,7 @@
                         </div>
                     </div>
                     </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
