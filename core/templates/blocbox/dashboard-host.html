@@ -69,9 +69,9 @@
                     <div class="row">
                         <div class="col-xs-2 nopaddingleftright">
                             <div class="messpiccontainer">
-                                {% if user.facebook_id %}
+                                {% if sh.enduser.facebook_id %}
                                 <img class="messpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %} 
-                                {% if user.profile_pic_uploaded %}
+                                {% if sh.enduser.profile_pic_uploaded %}
                                 <img class="messpic" src="{{user.profile_pic_uploaded.url}}" /> 
                                 {% else %}
                                 <div>
@@ -81,7 +81,7 @@
                             </div>
                         </div>
                         <div class="col-xs-7"  style="padding: 8px 5px 0px 0px;">
-                            <h3 class="darkgreytext nomargin xshide" style="font-weight: 400; font-size: 1.0em"> Your neigbor&nbsp;<span class="darkbluegreentext " style="font-weight: 500;">{{user.first_name}}&nbsp;{{user.last_name}}</span>&nbsp;would like to connect
+                            <h3 class="darkgreytext nomargin xshide" style="font-weight: 400; font-size: 1.0em"> Your neigbor&nbsp;<span class="darkbluegreentext " style="font-weight: 500;">{{sh.enduser.first_name}}&nbsp;{{sh.enduser.last_name}}</span>&nbsp;would like to connect
                         </h3>
                             <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">at 420 Grand Ave. #2, Brooklyn</h3>
                         </div>
@@ -97,9 +97,9 @@
                     <div class="row">
                         <div class="col-xs-2 nopaddingleftright">
                             <div class="messpiccontainer">
-                                {% if user.facebook_id %}
+                                {% if sh.enduser.facebook_id %}
                                 <img class="messpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %} 
-                                {% if user.profile_pic_uploaded %}
+                                {% if sh.enduser.profile_pic_uploaded %}
                                 <img class="messpic" src="{{user.profile_pic_uploaded.url}}" /> 
                                 {% else %}
                                 <div>
@@ -109,7 +109,7 @@
                             </div>
                         </div>
                         <div class="col-xs-7"  style="padding: 8px 5px 0px 5px;">
-                            <h3 class="darkgreytext nomargin xshide" style="font-weight: 400; font-size: 1.0em"> New message from your neigbor&nbsp;<span class="darkbluegreentext " style="font-weight: 500;">{{user.first_name}}&nbsp;{{user.last_name}}</span>
+                            <h3 class="darkgreytext nomargin xshide" style="font-weight: 400; font-size: 1.0em"> New message from your neigbor&nbsp;<span class="darkbluegreentext " style="font-weight: 500;">{{sh.enduser.first_name}}&nbsp;{{sh.enduser.last_name}}</span>
                             </h3>
                             <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">RE: Package #37</h3>
                         </div>
@@ -156,13 +156,13 @@
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4 class="margintopbottom5px">For {{user.first_name}}&nbsp;{{user.last_name}}</h4>
+                                <h4 class="margintopbottom5px">For {{sh.enduser.first_name}}&nbsp;{{sh.enduser.last_name}}</h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">420 Grand Ave.</h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Delivery Requested</h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintop5px nopaddingbottom">Placed on:<span style="font-weight:normal;">  {{ sh.date_requested_notime }} </span></h4>
+                                <h4 class="margintop5px nopaddingbottom">Placed on:<span style="font-weight:normal;">  {{sh.date_requested_notime }} </span></h4>
                             </div>
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
@@ -183,7 +183,7 @@
                     <div class="row">
                         <div class="col-sm-7 col-sm-offset-5">
                             <button>Recieved</button>
-                            <button>Message&nbsp;{{user.first_name}}</button>
+                            <button>Message&nbsp;{{sh.enduser.first_name}}</button>
                             <button>Report an Issue</button>
                         </div>
                     </div>
