@@ -780,6 +780,10 @@ footer {
 .marginright40px {
     margin-right: 40px;
 }
+.marginsidesneg15px {
+    margin-right: -15;
+    margin-left: -15;
+}
 .marginsides3pct {
     margin-right: 3%;
     margin-left: 3%;
