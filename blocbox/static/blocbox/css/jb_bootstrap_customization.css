@@ -1243,7 +1243,7 @@ footer {
 
 .navbar {
     border: 0px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0;
     <!-- background-image: linear-gradient(to bottom, #fff 0px, #FFFFFF 100%);
     --> z-index: 1000;
     margin-bottom: 0;
@@ -1252,6 +1252,19 @@ footer {
 .navbar-default {
     background-image: none;
     background-color: transparent;
+}
+.navbar-green {
+    background-color: rgb(97, 183, 184);
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1030;
+    margin-left: 0;
+    min-height: 50px;
+    transform: none;
+
+
 }
 .navbar-orange {
     position: absolute;
@@ -1417,6 +1430,7 @@ body {
     body {
         padding: 0;
     }
+
     .navbar {
         background: #ffffff repeat scroll 0 0 rgba(0, 0, 0, 0);
         border: medium none;

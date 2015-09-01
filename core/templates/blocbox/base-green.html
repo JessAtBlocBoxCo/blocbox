@@ -122,15 +122,15 @@ return false;
 
 
 <body class="fullheight mainsite">
-<div id="bbpage">
-{% include "base_subtemplates/login_modal.html" %}
-<div class="mobileonly">
-<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
-<a class="navmenu-brand" href="/beta/">
-<img class="slidelogo" src={% static 'blocbox/images/Logo-and-name-white.png' %} />
-</a>
-<ul class="nav navmenu-nav">
-{% if user.is_authenticated %}
+    <div id="bbpage">
+    {% include "base_subtemplates/login_modal.html" %}
+        <div class="mobileonly">
+            <nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-right offcanvas" role="navigation">
+                <a class="navmenu-brand" href="/beta/">
+                    <img class="slidelogo" src={% static 'blocbox/images/Logo-and-name-white.png' %} />
+                </a>
+                <ul class="nav navmenu-nav">
+                {% if user.is_authenticated %}
 <li class="active">
 <a href='/dashboard/'><i class="fa fa-list fa-fw fa-lg"></i>&nbsp; Dashboard</a>
 </li>
@@ -323,8 +323,8 @@ read about this herea; http://getbootstrap.com/components/#navbar
 
 
 
-    <nav class="navbar navbar-fixed-top bluegreendiv desktoponly" role="navigation">
-        <div class="container-fluid bluegreendiv nopaddingright">
+        <nav class="navbar navbar-green desktoponly" role="navigation">
+        <div class="by">
 <div class="row">
 
 <!--the "brand" - ultimately we should replace this with styled text rather than an image -->
