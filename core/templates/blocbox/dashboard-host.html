@@ -26,7 +26,8 @@
         {% if user.is_authenticated %}
         {% if enduser.host %}
         <!--sidebar-->
-        <div class="col-md-3 xshide smallhide profilebox">
+        <div class="col-md-3 xshide smallhide">
+           <div class="profilebox">
             <div class="dashpiccontainer">
                 {% if user.facebook_id %}
                 <img class="dashpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %} {% if user.profile_pic_uploaded %}
@@ -56,6 +57,7 @@
                     <br>{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}
                     <br>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}
                 </p>
+            </div>
             </div>
             {% endfor %}
         </div>
