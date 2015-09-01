@@ -76,6 +76,7 @@
                 {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+                <div>
                 <div class="profilebox">
                 <!--non-mobile version--->
                 <h3 class="col-xs-11 ltbluetext nomargin nopaddingleftright xshide" style="padding-top: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
@@ -177,12 +178,11 @@
                     </h4>
                         </div>
                         <!-- end col-xs-12 col-sm-5, second col with shipping info -->
-
                     </div>
                     <!--end row with shipping info, shipments in transit-->
-
                 </div>
                 <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
+                </div>
                 </div>
                 {% endfor %}
             
