@@ -67,7 +67,7 @@
                 <!--INCOMING SHIPMENTS-->
                 <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
         	   <br>  {{ shipments_all_paid_notarchived}} </h4> -->
-
+            <div class="profilebox">
                 {% for sh in shipments_all_paid_notarchived %}
 
                 <!-- need to create subtemplate for next specific to host -->
@@ -87,8 +87,6 @@
                     {% else %} No Title  {% endif %} 
                     <!--<br> <b> In Transit </b> -->
                 </h3>
-
-
 
                 <div class="col-xs-12 xspaddingleft5 xsnopadding" style="padding-top: 6px">
 
@@ -186,6 +184,7 @@
                 </div>
                 <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
                 {% endfor %}
+            </div>
                 <!--end looping through shipments in transit-->
             </div>
 
