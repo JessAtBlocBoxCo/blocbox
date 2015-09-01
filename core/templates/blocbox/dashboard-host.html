@@ -27,36 +27,13 @@
             <!--sidebar-->
             <div class="col-md-3 xshide smallhide">
                 <div class="profilebox">
-                    <div class="dashpiccontainer">
-                        {% if user.facebook_id %}
-                        <img class="dashpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %} {% if user.profile_pic_uploaded %}
-                        <img class="dashpic" src="{{user.profile_pic_uploaded.url}}" /> {% else %}
-                        <br>
-                        <br>
-                        <p class="textcenter"> <a href='.'> Upload a <br> profile picture! </a> </p>
-                        {% endif %} {% endif %}
-                    </div>
-                    <h3 class="margintop10px nomarginbottom textcenter">{{ user.first_name }}</h3>
-                    <p class="darkgreytext margintop5px tinytext textcenter">VIEW PROFILE</p>
-
-                    <!--neighborhood connections-->
-                    <div class="profileboxline margintop20px marginbottom20px"></div>
-                    <div class="col-xs-12">
-                        <p class="darkgreytext tinytext textcenter">NEIGHBORHOOD CONNECTIONS</p>
-                        <p class="pricetext textcenter">{{ connections_count }}
-                            <!-- {% if connections_count = 1 %} neighbor {% else %} neighbors {% endif %} -->
-                        </p>
-                    </div>
-                    <div class="profileboxline margintop20px marginbottom20px"></div>
-                    <!--put the address of each connection here-->
-                    {% for connection in connections_all %}
-                    <div class="col-xs-12 paddingtopbottom20px">
-                        <p class="nomargin"> <a href="/hostprofile/host{{connection.host_user.id}}">{{ connection.host_user.first_name }} {{ connection.host_user.last_name }} </a>
-                            <br>{{ connection.host_user.st_address1 }} {{ connection.host_user.st_address2 }}
-                            <br>{{ connection.host_user.city }}, {{ connection.host_user.state }} {{ connection.host_user.zipcode }}
-                        </p>
-                    </div>
-                    {% endfor %}
+                 <h3>3 days untill next package</h3>
+                </div>
+                <div class="profilebox">
+                    <h3>5 incoming packages</h3>
+                </div>
+                <div class="profilebox">
+                    <h3>2 packages being held for pickup</h3>
                 </div>
             </div>
             <!--end sidebar-->
