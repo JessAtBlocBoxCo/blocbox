@@ -3161,6 +3161,20 @@ a > .offercard:focus {
     vertical-align: middle;
     color: white;
 }
+.ratingcircle{
+    background-color: rgb(71, 158, 159);
+    border-radius: 100px;
+    border: 10px solid rgb(255, 195, 0);
+    text-align: center;
+    line-height: 38px;
+    margin: auto;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+}
 .shiparrow {
     background-image: url('/static/blocbox/images/ship-arrow.png');
     height: 60px;
