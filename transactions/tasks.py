@@ -84,9 +84,10 @@ def watch_packages(specificuser_id = None):
         #update time updated, its formatted like this in api: 'last_updated_at': u'2015-03-10T16:43:41+00:00'
         last_tracking_unicode = tracking_info['last_updated_at']
         deliverydate_tracking = tracking_info['expected_delivery']
+        deliverydate_tracking_dateonly = deliverydate_tracking.date()
         #JMY adding days until delivery
         todaydate = datetime.date.today()
-        days_until_delivery_delta = deliverydate_tracking - todaydate
+        days_until_delivery_delta = deliverydate_tracking_dateonly - todaydate
         days_until_delivery =  days_until_delivery_delta.days
         last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
         trans.last_tracking_datetime = last_tracking_datetime
