@@ -58,6 +58,8 @@ class Transaction(models.Model):
     deliverydatenotracking_rangeend = models.DateField("Delivered By (No Tracking)", blank=True, null=True)
     deliverydate_tracking = models.DateField("Expected Delivery Date Pulled from Tracking Information", blank=True, null=True)
     days_until_delivery = models.IntegerField("Days Until Delivery", blank=True, null=True)
+    days_until_delivery_est_start = models.IntegerField(blank=True, null=True)
+    days_until_delivery_est_end = models.IntegerField(blank=True, null=True)
     testfieldagain = models.CharField("test field", max_length=50, blank=True, null=True)
     #End user Complete Transaction and rating
     trans_complete = models.BooleanField("Complete?", default=False) #Boolean fields cannot be null
@@ -85,7 +87,8 @@ class Transaction(models.Model):
     last_checkpoint_message = models.CharField(max_length=100, blank=True, null=True)
     #no longer in use
     dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)     
-    dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)   
+    dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)
+    
 
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
     #define transaciton type choices
