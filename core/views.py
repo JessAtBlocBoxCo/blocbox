@@ -283,6 +283,7 @@ def dashboard_host(request):
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
+        transactions_count = Transaction.objects.filter(host=host).count() #count all of the transactions
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
         shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.exclude(trans_complete=True)
@@ -295,7 +296,8 @@ def dashboard_host(request):
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
         connections_all = Connection.objects.filter(host=thepersonviewingthepage) #JB - displays hosts connected to
-        connections_count = Connection.objects.filter(host=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host   
+        connections_count = Connection.objects.filter(host=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
+        
     else: #if not authenticated set these to None
         transactions_all = None
         transactions_all_paid = None
@@ -320,6 +322,7 @@ def dashboard_host(request):
             'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
             'connections_all': connections_all,
             'connections_count': connections_count,
+            'transactions_count': transactions_count,
         })
 
 def enduser_report_issue_modal(request, issue_id):
