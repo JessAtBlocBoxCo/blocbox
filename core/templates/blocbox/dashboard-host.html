@@ -177,6 +177,14 @@
                                 <h4 class="margintopbottom5px">Tracking Number:<span style="font-weight:normal;">  
                                         <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
                                     </span> </h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Expected Delivery Date:  {% if sh.deliverydate_tracking %}    {{ sh.deliverydate_tracking }} 
+                                    {% else %} 
+                                    You expected it to arrive 
+                                    {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
+                                    {% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; 
+                                    {% endif %} 
+                                    {% endif %}</h4>
                             </div>
                             <!-- end col-xs-12 col-sm-5, second col with shipping info -->
                         </div>
@@ -247,6 +255,9 @@
                                 <h4 class="margintopbottom5px">Tracking Number:<span style="font-weight:normal;">  
                                     <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
                                     </span> </h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Expected Delivery Date: </h4>
+                                
                             </div>
                             <!-- end col-xs-12 col-sm-5, second col with shipping info -->
                         </div>
