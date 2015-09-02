@@ -49,6 +49,7 @@ api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 
 def watch_packages(specificuser_id = None):
     response_messages_list = []    
+    todaydate = datetime.date.today()
     transactions_onaftership = Transaction.objects.filter(on_aftership=True)
     trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
     trans_completed = Transaction.objects.filter(trans_complete = True)
@@ -66,6 +67,14 @@ def watch_packages(specificuser_id = None):
         #date_requested = timezone.make_aware(date_requested_unaware, timezone.get_default_timezone())
         if date_requested < date_30days_ago:
             trans.trans_archived = True
+            trans.save()
+        if deliverydatenotracking_rangestart:
+            days_until_delivery_delta1 = deliverydatenotracking_rangestart - todaydate
+            days_until_delivery_delta2 = deliverydatenotracking_rangeend - todaydate
+            days_until_delivery_est_start = days_until_delivery_delta1.days
+            days_until_delivery_est_end = days_until_delivery_delta2.days
+            trans.days_until_delivery_est_start = days_until_delivery_est_start
+            trans.days_until_delivery_est_end = days_until_delivery_est_end
             trans.save()
     #update shipping details
     for trans in trans_aftership_notarchived:
@@ -88,7 +97,6 @@ def watch_packages(specificuser_id = None):
         last_tracking_unicode = tracking_info['last_updated_at']
         deliverydate_tracking = tracking_info['expected_delivery']
         #JMY adding days until delivery
-        todaydate = datetime.date.today()
         if deliverydate_tracking:
             deliverydate_tracking_dateonly = deliverydate_tracking.date()
             days_until_delivery_delta = deliverydate_tracking_dateonly - todaydate
