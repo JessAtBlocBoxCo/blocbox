@@ -19,6 +19,7 @@ from core.models import UserInfo
 from connections.models import Connection
 from core.forms import UserForm, HostForm
 from transactions.models import Transaction
+from transactions.tasks import watch_packages
 #JMY removing reference to schedule app (moved to old dir) on 7 June 2015
 #from schedule import periods
 #from schedule.periods import Month
@@ -131,12 +132,12 @@ def ajax_test(request):
     else:
         message = "Not ajax -- ajax test failed"
     return HttpResponse(message)
- 
- 
+
 
 def aftership(request):
     enduser = request.user
     if enduser.is_authenticated():
+        watch_packages(specificuser_id=enduser.id)
         transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
