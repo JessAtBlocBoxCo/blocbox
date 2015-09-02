@@ -449,13 +449,14 @@ def dashboard_tracking_modal(request, track_id):
                             	  'suggested_return_url': 'dashboard', 'suggested_return_message': "Return to your Dashboard"})
                     #Get the information from the API (is it posted yet?)
                     #JMY updating this to just reference watch_packages on 9/2/2015 to update all info including for the tracking they just added
+                    trans.on_aftership = True
+                    trans.save()
                     watch_packages(specificuser_id=enduser.id)
                     #datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
                     #tracking_info = datadict_added.get(u'tracking') 
                     #tag = tracking_info['tag']
                     #deliverydate_tracking = tracking_info['expected_delivery']
                     #Save this information to trans table
-                    #trans.on_aftership = True
                     #trans.shipment_courier = slug_detected.upper()
                     #trans.last_tracking_status = tag
                     #trans.deliverydate_tracking = deliverydate_tracking
