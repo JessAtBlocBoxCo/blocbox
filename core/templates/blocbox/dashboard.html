@@ -555,6 +555,7 @@
                                                 {{ sh.host.st_address1 }}, {{ sh.host.st_address2 }} , 
                                                  {{ sh.host.city }}, {{ sh.host.state }} {{sh.host.zipcode}}
                                              </a> </span>
+                                    {% if sh.last_tracking_status %} <br> Status: <span style="font-weight:normal;">  {{ sh.last_tracking_status }}  </span> {% endif %}
                                 </h4>
                                 
                                 <!--row-->
@@ -577,8 +578,8 @@
                         {% endif %}
                            
                         <!--last updated -->                           
-                        {% if sh.last_tracking_datetime %} 	 
-                                   <br> Last Updated:  <span style="font-weight:normal;"> {{ sh.last_tracking_datetime }} </span> 
+                        {% if sh.last_checkpoint_datetime %} 	 
+                                   <br> Last Updated:  <span style="font-weight:normal;"> {{ sh.last_checkpoint_datetime }} </span> 
                         {% endif %} 
 
                     <br> Scheduled Delivery: <span style="font-weight:normal;">
