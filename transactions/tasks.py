@@ -49,6 +49,7 @@ api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 
 def watch_packages(specificuser_id = None):
     response_messages_list = []    
+    today = datetime.datetime.today()
     transactions_onaftership = Transaction.objects.filter(on_aftership=True)
     trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
     trans_completed = Transaction.objects.filter(trans_complete = True)
@@ -84,9 +85,11 @@ def watch_packages(specificuser_id = None):
         #update time updated, its formatted like this in api: 'last_updated_at': u'2015-03-10T16:43:41+00:00'
         last_tracking_unicode = tracking_info['last_updated_at']
         deliverydate_tracking = tracking_info['expected_delivery']
+        days_until_delivery = deliverydate_tracking - today
         last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
         trans.last_tracking_datetime = last_tracking_datetime
         trans.last_tracking_date = last_tracking_datetime.date()
+        trans.days_until_delivery = days_until_delivery
         trans.save()
         if new_status == 'Expired':
             if trans.aftership_expired == False:
