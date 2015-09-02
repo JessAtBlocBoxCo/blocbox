@@ -283,7 +283,7 @@ def dashboard_host(request):
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
-        transactions_count = Transaction.objects.filter(host=host).count() #count all of the transactions
+        transactions_count = Transaction.objects.filter(host=thepersonviewingthepage).count() #count all of the transactions
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
         shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.exclude(trans_complete=True)
