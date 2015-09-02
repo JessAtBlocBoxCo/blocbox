@@ -51,6 +51,7 @@ def watch_packages(specificuser_id = None):
     response_messages_list = []    
     todaydate = datetime.date.today()
     transactions_onaftership = Transaction.objects.filter(on_aftership=True)
+    transactions_notcompleted = Transaction.objects.exclude(trans_complete=True)
     trans_aftership_notarchived = transactions_onaftership.exclude(trans_archived=True)
     trans_completed = Transaction.objects.filter(trans_complete = True)
     trans_completed_notarchived = trans_completed.exclude(trans_archived=True)
@@ -68,6 +69,7 @@ def watch_packages(specificuser_id = None):
         if date_requested < date_30days_ago:
             trans.trans_archived = True
             trans.save()
+    for trans in transactions_notcompleted:
         if trans.arrivalwindow_day1:
             days_until_delivery_delta1 = trans.arrivalwindow_day1 - todaydate
             trans.days_until_delivery_est_start = days_until_delivery_delta1.days
