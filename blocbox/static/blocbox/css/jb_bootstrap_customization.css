@@ -3146,14 +3146,17 @@ a > .offercard:focus {
     height: 32px;
 }
 .statusorange{
-    background-image: url('/static/blocbox/images/status-orange.png');
+    background-color: rgb(255, 195, 0);
+    border-radius: 100px;
+    text-align: center;
+    line-height: 38px;
     margin: auto;
     display: block;
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 60px;
-    height: 60px;
+    width: 32px;
+    height: 32px;
 }
 .statusicon {
     margin: auto;
