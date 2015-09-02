@@ -309,6 +309,7 @@ def dashboard_host(request):
         shipments_waiting_pickup = None
         connections_all = None
         connections_count = None
+        transactions_count = None
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
