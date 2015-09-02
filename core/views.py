@@ -451,10 +451,12 @@ def dashboard_tracking_modal(request, track_id):
                     datadict_added = api.trackings.get(slug_detected, tracking_no_to_add)
                     tracking_info = datadict_added.get(u'tracking') 
                     tag = tracking_info['tag']
+                    deliverydate_tracking = tracking_info['expected_delivery']
                     #Save this information to trans table
                     trans.on_aftership = True
                     trans.shipment_courier = slug_detected.upper()
                     trans.last_tracking_status = tag
+                    trans.deliverydate_tracking = deliverydate_tracking
                     trans.save()
                     #send an email to the host telling them tracking info has been added to shipment
                     notifyhost_tracking_added(request, trans.host.id, trans.user.id, trans.id)
