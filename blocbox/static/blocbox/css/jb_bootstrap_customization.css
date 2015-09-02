@@ -3053,8 +3053,8 @@ a > .offercard:focus {
     border-radius: 100%;
     max-width: 100%;
     max-height: 100%;
-    height: 50px;
-    width: 50px;
+    height: 32px;
+    width: 32px;
     position: relative;
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
@@ -3142,8 +3142,8 @@ a > .offercard:focus {
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
 }
 .statusorange{
     background-color: rgb(255, 195, 0);
