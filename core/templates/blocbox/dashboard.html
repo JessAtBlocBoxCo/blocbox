@@ -282,8 +282,7 @@
                                                 {% endif %} 
                                        {% endif %} </span>
                                     <br>
-                                        {{ sh.last_tracking_status }} :
-                                      <span style="font-weight:normal;">   {{ sh.last_checkpoint_datetime }}     
+                                        {{ sh.last_tracking_status }} :     <span style="font-weight:normal;">   {{ sh.last_checkpoint_datetime }}     
 											
 																	          
 																	      <!--where delivered -->
@@ -555,7 +554,7 @@
                                                 {{ sh.host.st_address1 }}, {{ sh.host.st_address2 }} , 
                                                  {{ sh.host.city }}, {{ sh.host.state }} {{sh.host.zipcode}}
                                              </a> </span>
-                                    {% if sh.last_tracking_status %} <br> Status: <span style="font-weight:normal;">  {{ sh.last_tracking_status }}  </span> {% endif %}
+                                    {% if sh.last_checkpoint_message %} <br> Status: <span style="font-weight:normal;">  {{ sh.last_checkpoint_message }}  </span> {% endif %}
                                 </h4>
                                 
                                 <!--row-->
@@ -574,7 +573,7 @@
                         {% if sh.last_checkpoint_city %} 
                                <br>	Last Checkpoint: <span style="font-weight:normal;"> {{sh.last_checkpoint_city }}, {{ sh.last_checkpoint_state }} </span>
                         {% else %}
-                                   {% if sh.last_tracking_status %}    <br> Status: <span style="font-weight:normal;"> {{ sh.last_tracking_status }}  </span>	{% endif %}
+                                   {% if sh.last_checkpoint_message %}    <br> Status: <span style="font-weight:normal;"> {{ sh.last_checkpoint_message }}  </span>	{% endif %}
                         {% endif %}
                            
                         <!--last updated -->                           
