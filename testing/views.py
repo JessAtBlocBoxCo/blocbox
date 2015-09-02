@@ -141,10 +141,11 @@ def aftership(request):
         transactions_all = Transaction.objects.filter(enduser=enduser) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
+        shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
         #Merge the shipments table dta with the aftership API data in lists called 'shipmetns_with_tracking'
    	    #Noet that with_trackign means it has tracking information appended - does not mean it is on aftership or has a trackin gnumber, that could be empty      
-        for shipment in shipments_all_paid:  
+        for shipment in shipments_all_paid_notarchived:  
             tracking_no = str(shipment.tracking) #the str function removes the preceding u'
             shipment_tuple = {} 
             shipment_tuple['trans']=shipment #get all of the transaction variables
