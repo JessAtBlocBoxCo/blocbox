@@ -3142,8 +3142,8 @@ a > .offercard:focus {
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 32px;
-    height: 32px;
+    width: 50px;
+    height: 50px;
 }
 .statusorange{
     background-color: rgb(255, 195, 0);
