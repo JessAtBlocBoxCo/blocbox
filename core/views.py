@@ -459,7 +459,7 @@ def dashboard_tracking_modal(request, track_id):
                     trans.deliverydate_tracking = deliverydate_tracking
                     trans.save()
                     #send an email to the host telling them tracking info has been added to shipment
-                    notifyhost_tracking_added(request, trans.host.id, trans.user.id, trans.id)
+                    notifyhost_tracking_added(request, trans.host.id, trans.enduser.id, trans.id)
             else: #if they entered nothing delete it       
                 api.trackings.delete(courier_on_trans, tracking_on_trans)
                 trans.tracking = None
