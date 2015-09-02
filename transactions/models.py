@@ -57,6 +57,7 @@ class Transaction(models.Model):
     deliverydatenotracking_rangestart = models.DateField("Expected Delivery Date Range Start, Before Tracking Information Entered", blank=True, null=True)
     deliverydatenotracking_rangeend = models.DateField("Delivered By (No Tracking)", blank=True, null=True)
     deliverydate_tracking = models.DateField("Expected Delivery Date Pulled from Tracking Information", blank=True, null=True)
+    days_until_delivery = models.IntegerField("Days Until Delivery", blank=True, null=True)
     testfieldagain = models.CharField("test field", max_length=50, blank=True, null=True)
     #End user Complete Transaction and rating
     trans_complete = models.BooleanField("Complete?", default=False) #Boolean fields cannot be null
