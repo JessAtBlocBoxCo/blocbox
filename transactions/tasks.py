@@ -68,14 +68,14 @@ def watch_packages(specificuser_id = None):
         if date_requested < date_30days_ago:
             trans.trans_archived = True
             trans.save()
-        if trans.deliverydatenotracking_rangestart:
-            days_until_delivery_delta1 = trans.deliverydatenotracking_rangestart - todaydate
-            days_until_delivery_delta2 = trans.deliverydatenotracking_rangeend - todaydate
-            days_until_delivery_est_start = days_until_delivery_delta1.days
-            days_until_delivery_est_end = days_until_delivery_delta2.days
-            trans.days_until_delivery_est_start = days_until_delivery_est_start
-            trans.days_until_delivery_est_end = days_until_delivery_est_end
-            trans.save()
+        if trans.arrivalwindow_day1:
+            days_until_delivery_delta1 = trans.arrivalwindow_day1 - todaydate
+            trans.days_until_delivery_est_start = days_until_delivery_delta1.days
+            trans.save
+            if trans.arrivalwindow_days_count > 1:           
+                days_until_delivery_delta2 = trans.arrivalwindow_lastday - todaydate      
+                trans.days_until_delivery_est_end = days_until_delivery_delta2.days
+                trans.save()
     #update shipping details
     for trans in trans_aftership_notarchived:
         if trans.shipment_courier:
