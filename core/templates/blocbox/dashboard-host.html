@@ -144,7 +144,12 @@
                     {% else %} No Title  {% endif %} 
                     <!--<br> <b> In Transit </b> -->
                 </h3>
-                        <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 7px; font-weight: 400; font-size: 1.0em">Delivery:&nbsp;<span style="font-weight: 500;">3-4 Days</span></h3>
+                        <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 7px; font-weight: 400; font-size: 1.0em">Delivery:&nbsp;<span style="font-weight: 500;"> 
+                        {% if sh.deliverydate_tracking %} {{sh.days_until_delivery}} 
+                        {% else %}
+                            {{sh.days_until_delivery_est_start}}&nbsp;-&nbsp;{{sh.days_until_delivery_est_end}} 
+                            {% endif %}&nbsp;-&nbsp;
+                        </span></h3>
                     </div>
                     <div style="padding: 10px 0px">
                         <div class="profileboxline100"></div>
