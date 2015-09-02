@@ -294,6 +294,7 @@ def dashboard_host(request):
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
+        connections_count = Connection.objects.filter(host_user=host).count() #count them,removing status=0 after host_user=host   
     else: #if not authenticated set these to None
         transactions_all = None
         transactions_all_paid = None
@@ -304,6 +305,7 @@ def dashboard_host(request):
         shipments_complete_fordash = None
         shipments_in_transit = None
         shipments_waiting_pickup = None
+        connections_count = None
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
@@ -315,6 +317,7 @@ def dashboard_host(request):
             #otherfavors all
             'otherfavors_all_paid': otherfavors_all_paid, 
             'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
+            'connection_count': connection_count,
             
         })
 
