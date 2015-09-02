@@ -325,6 +325,7 @@
             </div>
 
             <div class="col-xs-3">
+                {% for transactions in transactions_count %}
                 <div class="profilebox marginbottom20px">
                     <h4 class="nomargintop">Your Rating</h4>
                     <div class="ratingcircle">
@@ -344,7 +345,7 @@
                             </a>
                         </li>
                     </ul> -->
-
+                    {% endfor %}
                 </div>
 
                 <div class="profilebox">
