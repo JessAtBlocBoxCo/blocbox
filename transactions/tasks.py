@@ -71,7 +71,7 @@ def watch_packages(specificuser_id = None):
     for trans in trans_aftership_notarchived:
         if trans.shipment_courier:
             slug = str(trans.shipment_courier.lower())
-        else
+        else:
             slug = None
         tracking = trans.tracking
         host = trans.host
