@@ -69,7 +69,10 @@ def watch_packages(specificuser_id = None):
             trans.save()
     #update shipping details
     for trans in trans_aftership_notarchived:
-        slug = str(trans.shipment_courier.lower())
+        if trans.shipment_courier:
+            slug = str(trans.shipment_courier.lower())
+        else
+            slug = None
         tracking = trans.tracking
         host = trans.host
         enduser = trans.enduser
