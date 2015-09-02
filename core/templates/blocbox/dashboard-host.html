@@ -190,7 +190,7 @@
                 <!--PACKAGES AWAITING PICKUP-->
                 <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
 <br>  {{ shipments_all_paid_notarchived}} </h4> -->
-                
+
                 {% for sh in shipments_waiting_pickup %}
 
                 <!-- need to create subtemplate for next specific to host -->
@@ -204,7 +204,7 @@
                     <!--non-mobile version--->
                     <div class="row">
                         <div class="col-xs-1 nopaddingleft">
-                            <div class="statusorange" style="padding: 0px 1px 0px 0px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 10px; padding-left: 1px;"></i>  </div>
+                            <div class="statusorange" style="padding: 0px 1px 0px 0px;"><i class="fa fa-home fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 10px; padding-left: 1px;"></i> </div>
                         </div>
                         <h3 class="col-xs-6 darkgreytext nomargin xshide" style="padding: 7px 15px 0px 5px; font-weight: 400; font-size: 1.2em"> Holding Package for<span class= "yellowtext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
                         </h3>
@@ -255,10 +255,7 @@
                     </div>
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
                 </div>
-                {% endfor %}
-
-
-                {% for sh in shipments_complete_fordash %}
+                {% endfor %} {% for sh in shipments_complete_fordash %}
 
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}
@@ -331,7 +328,7 @@
                 <div class="profilebox marginbottom20px">
                     <h4 class="nomargintop">Your Rating</h4>
                     <div class="ratingcircle">
-                    <h4>{{ transactions_count }}</h4>
+                        <h4>{{ transactions_count }}</h4>
                     </div>
                     <!-- <ul class="aoi">
                         <li class="aoj">
@@ -371,11 +368,10 @@
                         </h3>
                             </div>
                             <div class="row">
-                                <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">@ {{ user.st_address1 }}</h3>
+                                <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">@&nbsp;{{ user.st_address1}}</h3>
                             </div>
                         </div>
                     </div>
-                    {% endfor %}
                     {% endfor %}
                 </div>
             </div>
