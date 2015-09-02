@@ -83,6 +83,7 @@ def watch_packages(specificuser_id = None):
         new_status = tracking_info['tag']
         #update time updated, its formatted like this in api: 'last_updated_at': u'2015-03-10T16:43:41+00:00'
         last_tracking_unicode = tracking_info['last_updated_at']
+        deliverydate_tracking = tracking_info['expected_delivery']
         last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
         trans.last_tracking_datetime = last_tracking_datetime
         trans.last_tracking_date = last_tracking_datetime.date()
@@ -105,10 +106,11 @@ def watch_packages(specificuser_id = None):
             trans.last_checkpoint_state = last_checkpoint_state 
             trans.last_checkpoint_datetime = last_checkpoint_datetime
             trans.last_checkpoint_date = last_checkpoint_date
+            trans.deliverydate_tracking = deliverydate_tracking
             trans.save()
         else:
             last_tracking_datetime = None
-        responsemessage = "The last tracking dateitme was " + str(last_tracking_datetime) + "."
+        responsemessage = "The last tracking datetime was " + str(last_tracking_datetime) + ".  and the expected delivery is " + str(deliverydate_tracking)
         response_messages_list.append(responsemessage)
         #if there wasn't a status, add it
         if current_status == None:
