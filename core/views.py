@@ -317,8 +317,7 @@ def dashboard_host(request):
             #otherfavors all
             'otherfavors_all_paid': otherfavors_all_paid, 
             'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
-            'connection_count': connection_count,
-            
+            'connections_count': connection_count,
         })
 
 def enduser_report_issue_modal(request, issue_id):
