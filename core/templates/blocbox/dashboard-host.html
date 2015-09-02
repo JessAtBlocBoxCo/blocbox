@@ -164,8 +164,7 @@
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  
-                                    {% if sh.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.last_tracking_status }}  {% endif %} </span></h4>
+                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">   {{ sh.last_tracking_status }}  </span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Carrier: UPS</h4>
                                 <div class="profileboxline100"></div>
@@ -191,7 +190,7 @@
                 <!--PACKAGES AWAITING PICKUP-->
                 <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
 <br>  {{ shipments_all_paid_notarchived}} </h4> -->
-                <h3>DELME: TESTING SHIPMENTS_COMPLETE_FORDASH {{ shipments_waiting_pickup }} </h3>
+                
                 {% for sh in shipments_waiting_pickup %}
 
                 <!-- need to create subtemplate for next specific to host -->
@@ -235,8 +234,7 @@
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  
-                                    {% if sh.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.last_tracking_status }}  {% endif %} </span></h4>
+                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  {{ sh.last_tracking_status }}  </span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Carrier: UPS</h4>
                                 <div class="profileboxline100"></div>
@@ -259,10 +257,7 @@
                 </div>
                 {% endfor %}
 
-                <!--COMPLETED SHIPMENTS-->
-                <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
-<br>  {{ shipments_all_paid_notarchived}} </h4> -->
-            <h3>DELME: TESTING SHIPMENTS_COMPLETE_FORDASH {{ shipments_complete_fordash }} </h3>
+
                 {% for sh in shipments_complete_fordash %}
 
                 <!-- need to create subtemplate for next specific to host -->
@@ -306,8 +301,7 @@
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  
-                                    {% if sh.on_aftership %} {{sh.aftership.tag}}  {% else %} {{ sh.last_tracking_status }}  {% endif %} </span></h4>
+                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  {{ sh.last_tracking_status }}  </span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Carrier: UPS</h4>
                                 <div class="profileboxline100"></div>

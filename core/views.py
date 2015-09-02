@@ -286,7 +286,6 @@ def dashboard_host(request):
         shipments_all_paid = transactions_all_paid.filter(favortype="package")
         shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
         shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.exclude(trans_complete=True)
-        
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
         otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
         #Create lists restricted to shipmetns that are on aftership
