@@ -130,9 +130,9 @@
                     <!--non-mobile version--->
                     <div class="row">
                         <div class="col-xs-1 nopaddingleft">
-                            <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 3px;"></i> </div>
+                            <div class="statusred" style="padding: 0px 1px 0px 4px;"><i class="fa fa-exclamation fa-fw fa-2x statusicon" style="padding-bottom: 3px;"></i> </div>
                         </div>
-                        <h3 class="col-xs-6 darkgreytext nomargin xshide" style="padding: 10px 15px 0px 10px; font-weight: 400; font-size: 1.2em">Incoming Package for<span class= "darkbluegreentext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
+                        <h3 class="col-xs-6 darkgreytext nomargin xshide" style="padding: 10px 15px 0px 10px; font-weight: 400; font-size: 1.2em">Issue with Package for<span class= "darkbluegreentext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
                         </h3>
 
                         <!--mobile version - title -->
@@ -141,23 +141,7 @@
                             <!--<br> <b> In Transit </b> -->
                         </h3>
                         <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 11px; font-weight: 400; font-size: 1.0em">Delivery:&nbsp;<span style="font-weight: 500;"> 
-                            {% if sh.deliverydate_tracking %}
-                            {% if sh.days_until_delivery == 0 %} 
-                            Today
-                            {% endif %}
-                            {% endif %}
-                            {% if sh.deliverydate_tracking %}
-                            {% if sh.days_until_delivery == 1 %} 
-                            Tomorrow
-                            {% endif %}
-                            {% endif %}
-                            {% if sh.deliverydate_tracking %}
-                            {% if sh.days_until_delivery > 1 %} 
-                            {{sh.days_until_delivery}} days
-                            {% endif %}      
-                            {% else %}
-                            About&nbsp;{{sh.days_until_delivery_est_start}}&nbsp;-&nbsp;{{sh.days_until_delivery_est_end}}&nbsp;days
-                            {% endif %}
+                            Unknown
                             </span></h3>
                     </div>
                     <div style="padding: 10px 0px">
