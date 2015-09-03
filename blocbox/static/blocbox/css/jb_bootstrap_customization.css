@@ -3147,6 +3147,19 @@ a > .offercard:focus {
     width: 40px;
     height: 40px;
 }
+.statusltgreen{
+    background-color: rgb(121, 204, 205);
+    border-radius: 100px;
+    text-align: center;
+    line-height: 38px;
+    margin: auto;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+}
 .statusorange{
     background-color: rgb(255, 195, 0);
     border-radius: 100px;
