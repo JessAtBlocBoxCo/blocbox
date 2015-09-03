@@ -184,14 +184,11 @@
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">   {{ sh.last_tracking_status }}  </span></h4>
+                                <h4 class="margintopbottom5px">Status:&nbsp;<span style="font-weight:normal;">{{ sh.last_tracking_status }}</span></h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Carrier: <span style="font-weight:normal;">                                 
-                                    {% if sh.shipment_courier %}    {{ sh.shipment_courier }} 
-                                    {% else %} You expected it to arrive 
-                                    {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }}
-                                    {% else %} {{ sh.arrivalwindow_day1 }}&nbsp;-&nbsp;{{ sh.arrivalwindow_lastday }}&nbsp; 
-                                    {% endif %} 
+                                <h4 class="margintopbottom5px">Carrier:&nbsp;<span style="font-weight:normal;">                                 
+                                    {% if sh.shipment_courier %}{{ sh.shipment_courier }} 
+                                    {% else %}Not Provided
                                     {% endif %} </span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Tracking Number:<span style="font-weight:normal;">  
