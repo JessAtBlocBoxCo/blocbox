@@ -3648,6 +3648,18 @@ SMALL TABLET LANDSCAPE
         margin-left: auto;
         margin-right: auto;
     }
+    .logowhite-dash {
+        display: block;
+        position: relative;
+        background-image: url('/static/blocbox/images/Logo-white.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 35px;
+        width: 35px;
+        z-index: inherit;
+        margin-left: auto;
+        margin-right: auto;
+    }
     .mobilename {
         display: block;
         position: relative;
