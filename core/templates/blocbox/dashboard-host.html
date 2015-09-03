@@ -473,7 +473,8 @@
                     <h4 class="nomargintop">Helping&nbsp;{{ connections_count }}&nbsp;Neighbors&nbsp;<a style="font-weight: 300;">•&nbsp;view all</a></h4>
                     <div class="row">
                         {% for connection in connections_all %}
-                           <div class="row paddingtopbottom10px">
+                           <ul class="marginbottom10px">
+                           <li>
                             <div class="col-xs-3 nopaddingleftright">
                                     {% if connection.end_user.facebook_id %}
                                     <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" /> {% else %} {% if connection.end_user.profile_pic_uploaded %}
@@ -491,7 +492,8 @@
                                     <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">@&nbsp;</h3>
                                 </div>
                             </div>
-                        </div>
+                               </li>
+                        </ul>
                         {% endfor %}
                     </div>
                 </div>
