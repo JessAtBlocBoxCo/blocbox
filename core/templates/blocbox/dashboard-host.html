@@ -141,7 +141,7 @@
                             <!--<br> <b> In Transit </b> -->
                         </h3>
                         <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 11px; font-weight: 400; font-size: 1.0em">Delivery:&nbsp;<span style="font-weight: 500;"> 
-                            Unknown
+                            Failed Attempt
                             </span></h3>
                     </div>
                     <div style="padding: 10px 0px">
@@ -164,7 +164,11 @@
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
                             <div class="col-xs-12 col-sm-6 xsnopadding">
-                                <h4 class="margintopbottom5px">Status:&nbsp;<span style="font-weight:normal;">{{ sh.last_tracking_status }}</span></h4>
+                                <h4 class="margintopbottom5px">Status:&nbsp;<span style="font-weight:normal;">
+                                    {% if last_tracking_status == AttemptFail %}
+                                    Failed Delivery Attempt
+                                    {% endif %}
+                                </span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Carrier:&nbsp;<span style="font-weight:normal;">                                 
                                     {% if sh.shipment_courier %}{{ sh.shipment_courier }} 
