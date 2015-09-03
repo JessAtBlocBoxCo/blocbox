@@ -210,7 +210,7 @@
                 <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
         	   <br>  {{ shipments_all_paid_notarchived}} </h4> -->
 
-                {% for sh in shipments_in_transit %}
+                {% for sh in shipments_in_transit_no_fails %}
 
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}

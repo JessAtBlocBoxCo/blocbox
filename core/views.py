@@ -296,7 +296,8 @@ def dashboard_host(request):
         #Create lists restricted to shipmetns that are on aftership
         shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
         #Shipments in transit
-        shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered", "AttemptFail")
+        shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered",)
+        shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
         shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
         shipments_in_transit_count = shipments_in_transit.count()
         #Shipments awaiting pickup
@@ -314,6 +315,7 @@ def dashboard_host(request):
         shipments_complete_fordash = None
         shipments_in_transit = None
         shipments_in_transit_count = None
+        shipments_in_transit_no_fails = None
         shipment_fail = None
         shipments_waiting_pickup = None
         connections_all = None
@@ -327,6 +329,7 @@ def dashboard_host(request):
             'shipments_complete_fordash': shipments_complete_fordash,
             'shipments_in_transit': shipments_in_transit,
             'shipments_in_transit_count': shipments_in_transit_count,
+            'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
             'shipment_fail': shipment_fail,
             'shipments_waiting_pickup': shipments_waiting_pickup,
             'shipments_waiting_pickup_count': shipments_waiting_pickup_count,
