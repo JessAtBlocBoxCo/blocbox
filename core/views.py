@@ -293,7 +293,7 @@ def dashboard_host(request):
         shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
         #Shipments in transit
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
-        shipments_in_transit_count = shipmments_in_transit.count()
+        shipments_in_transit_count = shipments_in_transit.count()
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
         shipments_waiting_pickup_count = shipments_waiting_pickup.count()
