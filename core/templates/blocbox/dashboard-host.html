@@ -149,15 +149,18 @@
                                {% if sh.days_until_delivery == 0 %} 
                                      Today
                                 {% endif %}
+                        {% endif %}
                         {% if sh.deliverydate_tracking %}
                                 {% if sh.days_until_delivery == 1 %} 
                                      Tomorrow
                                 {% endif %}
+                        {% endif %}
                         {% if sh.deliverydate_tracking %}
                             {% if sh.days_until_delivery > 1 %} 
                                 {{sh.days_until_delivery}}
                             {% else %}
-                                {{sh.days_until_delivery_est_start}}&nbsp;-&nbsp;{{sh.days_until_delivery_est_end}}&nbsp;days     
+                                {{sh.days_until_delivery_est_start}}&nbsp;-&nbsp;{{sh.days_until_delivery_est_end}}&nbsp;days
+                            {% endif %}     
                         {% endif %}
                         </span></h3>
                     </div>
