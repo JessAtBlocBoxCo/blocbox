@@ -3125,7 +3125,7 @@ a > .offercard:focus {
     visibility: visible;
 }
 .statusgrey{
-    background-color: rgb(223, 226, 226);
+    background-color: #dfe2e2;
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
