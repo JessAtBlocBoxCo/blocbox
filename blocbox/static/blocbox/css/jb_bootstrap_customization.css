@@ -3125,14 +3125,17 @@ a > .offercard:focus {
     visibility: visible;
 }
 .statusgrey{
-    background-image: url('/static/blocbox/images/status-grey.png');
+    background-color: rgb(103, 114, 119);
+    border-radius: 100px;
+    text-align: center;
+    line-height: 38px;
     margin: auto;
     display: block;
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 60px;
-    height: 60px;
+    width: 32px;
+    height: 32px;
 }
 .statusgreen{
     background-color: rgb(71, 158, 159);
