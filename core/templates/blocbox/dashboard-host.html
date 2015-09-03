@@ -147,7 +147,7 @@
                     <div style="padding: 10px 0px">
                         <div class="profileboxline100"></div>
                     </div>
-                    <div class="col-xs-12 xspaddingleft5 xsnopadding">
+                    <div class="xspaddingleft5 xsnopadding">
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 xsnopadding">
@@ -258,7 +258,7 @@
                     <div style="padding: 10px 0px">
                         <div class="profileboxline100"></div>
                     </div>
-                    <div class="col-xs-12 xspaddingleft5 xsnopadding">
+                    <div class="xspaddingleft5 xsnopadding">
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 xsnopadding">
@@ -317,8 +317,6 @@
                 {% endfor %}
 
                 <!--PACKAGES AWAITING PICKUP-->
-                <!-- <h4>DELME - TESTING THE PARAMETERS YOU'VE SENT
-<br>  {{ shipments_all_paid_notarchived}} </h4> -->
 
                 {% for sh in shipments_waiting_pickup %}
 
@@ -348,7 +346,7 @@
                     <div style="padding: 10px 0px">
                         <div class="profileboxline100"></div>
                     </div>
-                    <div class="col-xs-12 xspaddingleft5 xsnopadding">
+                    <div class="xspaddingleft5 xsnopadding">
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 xsnopadding">
@@ -394,6 +392,8 @@
                     </div>
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
                 </div>
+                
+                <!-- Completed Shipments -->
                 {% endfor %} {% for sh in shipments_complete_fordash %}
 
                 <!-- need to create subtemplate for next specific to host -->
