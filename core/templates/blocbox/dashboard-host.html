@@ -412,20 +412,20 @@
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 paddingright10px xsnopadding">
-                                <h4 class="margintopbottom5px">{% if sh.shipment_courier %}{{ sh.shipment_courier }} 
-                                    {% else %}Carrier Not Provided
-                                    {% endif %}:&nbsp;<span style="font-weight:normal;">{{ sh.last_tracking_status }}</span></h4>
+                                <h4 class="margintopbottom5px">For {{sh.enduser.first_name}}&nbsp;{{sh.enduser.last_name}}</h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Delivery Requested to:&nbsp;{{sh.enduser.st_address1}}</h4>
+                                <h4 class="margintopbottom5px">Delivery Requested to:&nbsp;{{sh.enduser.st_address1}}.</h4>
+                                <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px"></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintop5px nopaddingbottom">Order&nbsp;<span style="font-weight:normal;">{{sh.id }}</span>&nbsp;placed on:<span style="font-weight:normal;">{{sh.date_requested_notime }}</span></h4>
                             </div>
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
                             <div class="col-xs-12 col-sm-6 paddingleft10px xsnopadding">
-                                <h4 class="margintopbottom5px">Status: <span style="font-weight:normal;">  {{ sh.last_tracking_status }}  </span></h4>
-                                <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Carrier: UPS</h4>
+                                <h4 class="margintopbottom5px">{% if sh.shipment_courier %}{{ sh.shipment_courier }} 
+                                    {% else %}Carrier Not Provided
+                                    {% endif %}:&nbsp;<span style="font-weight:normal;">{{ sh.last_tracking_status }}</span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Tracking:<span style="font-weight:normal;">  
                                     <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
