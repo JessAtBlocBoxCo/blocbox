@@ -190,7 +190,7 @@
                                     {% if sh.shipment_courier %}    {{ sh.shipment_courier }} 
                                     {% else %} You expected it to arrive 
                                     {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }}
-                                    {% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; 
+                                    {% else %} {{ sh.arrivalwindow_day1 }}&nbsp;-&nbsp;{{ sh.arrivalwindow_lastday }}&nbsp; 
                                     {% endif %} 
                                     {% endif %} </span></h4>
                                 <div class="profileboxline100"></div>
@@ -198,13 +198,13 @@
                                         <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
                                     </span> </h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Expected Delivery:  {% if sh.deliverydate_tracking %}    {{ sh.deliverydate_tracking }} 
+                                <h4 class="margintopbottom5px">Expected Delivery:<span style="font-weight:normal;">{% if sh.deliverydate_tracking %}{{ sh.deliverydate_tracking }} 
                                     {% else %} 
                                     You expected it to arrive 
-                                    {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
+                                    {% if sh.arrivalwindow_days_count == 1 %}&nbsp;on&nbsp;{{ sh.arrivalwindow_day1 }} 
                                     {% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; 
                                     {% endif %} 
-                                    {% endif %}</h4>
+                                    {% endif %}</span></h4>
                             </div>
                             <!-- end col-xs-12 col-sm-5, second col with shipping info -->
                         </div>
@@ -278,13 +278,13 @@
                                     <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
                                     </span> </h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Expected Delivery:  {% if sh.deliverydate_tracking %}    {{ sh.deliverydate_tracking }} 
+                                <h4 class="margintopbottom5px">Expected Delivery:&nbsp;<span style="font-weight:normal;">{% if sh.deliverydate_tracking %}{{ sh.deliverydate_tracking }} 
                                     {% else %} 
                                     You expected it to arrive 
                                     {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
-                                    {% else %} {{ sh.arrivalwindow_day1 }} - {{ sh.arrivalwindow_lastday }} &nbsp; 
+                                    {% else %} {{ sh.arrivalwindow_day1 }}&nbsp;-&nbsp;{{ sh.arrivalwindow_lastday }}&nbsp; 
                                     {% endif %} 
-                                    {% endif %}</h4>
+                                    {% endif %}</span></h4>
                             </div>
                             <!-- end col-xs-12 col-sm-5, second col with shipping info -->
                         </div>
