@@ -145,9 +145,12 @@
                     <!--<br> <b> In Transit </b> -->
                 </h3>
                         <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 7px; font-weight: 400; font-size: 1.0em">Delivery:&nbsp;<span style="font-weight: 500;"> 
-                        {% if sh.deliverydate_tracking %} {{sh.days_until_delivery}} 
+                        {% if sh.deliverydate_tracking %}
                         {% if sh.days_until_delivery=0} Today
+                        {% else %}
                         {% if sh.days_until_delivery=1} Tomorrow
+                        {% else %}
+                        {{sh.days_until_delivery}}
                         {% else %}
                             {{sh.days_until_delivery_est_start}}&nbsp;-&nbsp;{{sh.days_until_delivery_est_end}}&nbsp;days
                              
