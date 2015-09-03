@@ -535,7 +535,7 @@ def package_received_modal(request, confirm_id):
 def myblock(request):
     return render(request, 'blocbox/myblock.html')
         
-def profile(request):
+def profile(request, user_id):
     enduser = request.user
     return render(request, 'blocbox/profile.html', {'enduser':enduser,})
 
