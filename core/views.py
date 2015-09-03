@@ -293,8 +293,10 @@ def dashboard_host(request):
         shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
         #Shipments in transit
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
+        shipments_in_transit_count = shipmments_in_transit.count()
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
+        shipments_waiting_pickup_count = shipments_waiting_pickup.count()
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
         connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
     else: #if not authenticated set these to None
@@ -306,6 +308,7 @@ def dashboard_host(request):
         otherfavors_all_paid_notarchived = None   
         shipments_complete_fordash = None
         shipments_in_transit = None
+        shipments_in_transit_count = None
         shipments_waiting_pickup = None
         connections_all = None
         connections_count = None
@@ -317,7 +320,9 @@ def dashboard_host(request):
             'transactions_all_paid':  transactions_all_paid,
             'shipments_complete_fordash': shipments_complete_fordash,
             'shipments_in_transit': shipments_in_transit,
+            'shipments_in_transit_count': shipments_in_transit_count,
             'shipments_waiting_pickup': shipments_waiting_pickup,
+            'shipments_waiting_pickup_count': shipments_waiting_pickup_count,
             #otherfavors all
             'otherfavors_all_paid': otherfavors_all_paid, 
             'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
