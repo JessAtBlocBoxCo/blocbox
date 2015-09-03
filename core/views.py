@@ -219,6 +219,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipments_onaftership_notcomplete_delivered = shipments_onaftership_notarchived_notcomplete.filter(last_tracking_status="Delivered")
         #shipments in transit/not delivered
         shipments_onaftership_notcomplete_notdelivered = shipments_onaftership_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
+        #shipments with attempt fail
+        shipments_onaftership_notcomplete_notdelivered_fail = shipments_onaftership_notcomplete_notdelivered.filter(last_tracking_status="AttemptFail")
     else: #if not authenticated set these to None
         connections_all = None
         connections_count = None
@@ -230,6 +232,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         shipments_onaftership_notcomplete_notdelivered = None
         shipments_onaftership_notcomplete_notrackingno = None
         shipments_complete_fordash = None
+        shipments_onaftership_notcomplete_notdelivered_fail = None
     tracking_form = None  #is None if no track_id (if they dont open the modal) 
     if track_id:  #if they open a tracking modal
         track_id_int = track_id.strip()
@@ -275,7 +278,8 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         #all completeshipmetns
         'shipments_complete_fordash': shipments_complete_fordash,
         #other favors lists
-        'otherfavors_all_paid': otherfavors_all_paid, 
+        'otherfavors_all_paid': otherfavors_all_paid,
+        'shipments_onaftership_notcomplete_notdelivered_fail': shipments_onaftership_notcomplete_notdelivered_fail,    
     })
 
 def dashboard_host(request):
@@ -293,6 +297,7 @@ def dashboard_host(request):
         shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
         #Shipments in transit
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
+        shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
         shipments_in_transit_count = shipments_in_transit.count()
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
@@ -309,6 +314,7 @@ def dashboard_host(request):
         shipments_complete_fordash = None
         shipments_in_transit = None
         shipments_in_transit_count = None
+        shipment_fail = None
         shipments_waiting_pickup = None
         connections_all = None
         connections_count = None
@@ -321,6 +327,7 @@ def dashboard_host(request):
             'shipments_complete_fordash': shipments_complete_fordash,
             'shipments_in_transit': shipments_in_transit,
             'shipments_in_transit_count': shipments_in_transit_count,
+            'shipment_fail': shipment_fail,
             'shipments_waiting_pickup': shipments_waiting_pickup,
             'shipments_waiting_pickup_count': shipments_waiting_pickup_count,
             #otherfavors all
