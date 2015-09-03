@@ -168,7 +168,7 @@
                                     {% endif %}
                                 </span></h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Tracking #:<span style="font-weight:normal;">  
+                                <h4 class="margintopbottom5px">Tracking:<span style="font-weight:normal;">  
                                     <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">
                                         {% if sh.tracking == None %}
                                         Not Provided
@@ -270,7 +270,7 @@
                                     {% else %}Carrier Not Provided
                                     {% endif %}:&nbsp;<span style="font-weight:normal;">{{ sh.last_tracking_status }}</span></h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Tracking #:<span style="font-weight:normal;">  
+                                <h4 class="margintopbottom5px">Tracking:<span style="font-weight:normal;">  
                                         <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">
                                         {% if sh.tracking == None %}
                                             Not Provided
@@ -351,7 +351,7 @@
                                     {% else %}Carrier Not Provided
                                     {% endif %}: <span style="font-weight:normal;">  {{ sh.last_tracking_status }}  </span></h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Tracking #:<span style="font-weight:normal;">  
+                                <h4 class="margintopbottom5px">Tracking:<span style="font-weight:normal;">  
                                     <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
                                     </span> </h4>
                                 <div class="profileboxline100"></div>
@@ -412,7 +412,9 @@
                         <!--row with shipmen info, shipments in transit-->
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 paddingright10px xsnopadding">
-                                <h4 class="margintopbottom5px">For {{sh.enduser.first_name}}&nbsp;{{sh.enduser.last_name}}</h4>
+                                <h4 class="margintopbottom5px">{% if sh.shipment_courier %}{{ sh.shipment_courier }} 
+                                    {% else %}Carrier Not Provided
+                                    {% endif %}:&nbsp;<span style="font-weight:normal;">{{ sh.last_tracking_status }}</span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Delivery Requested to:&nbsp;{{sh.enduser.st_address1}}.</h4>
                                 <div class="profileboxline100"></div>
@@ -427,7 +429,7 @@
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Carrier: UPS</h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Tracking #:<span style="font-weight:normal;">  
+                                <h4 class="margintopbottom5px">Tracking:<span style="font-weight:normal;">  
                                     <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
                                     </span> </h4>
                             </div>
