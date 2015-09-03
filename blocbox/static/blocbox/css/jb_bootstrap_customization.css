@@ -3651,6 +3651,7 @@ SMALL TABLET LANDSCAPE
     .logowhite-dash {
         display: block;
         position: relative;
+        background-image: url('/static/blocbox/images/Logo-white.png');
         background-repeat: no-repeat;
         background-size: contain;
         height: 35px;
