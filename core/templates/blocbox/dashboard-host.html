@@ -192,7 +192,14 @@
                                     {% endif %} </span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Tracking Number:<span style="font-weight:normal;">  
-                                        <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
+                                        <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">
+                                        {% if sh.tracking == None %}
+                                            Not Provided
+                                        {% endif %}
+                                        {% if sh.tracking != None %}
+                                        {{ sh.tracking }} 
+                                        {% endif %}
+                                        </a>
                                     </span> </h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Expected Delivery:&nbsp;<span style="font-weight:normal;">{% if sh.deliverydate_tracking %}{{ sh.deliverydate_tracking }} 
