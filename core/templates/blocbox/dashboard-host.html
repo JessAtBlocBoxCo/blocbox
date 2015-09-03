@@ -95,13 +95,13 @@
                     <!--non-mobile version--->
                     <div class="row">
                         <div class="col-xs-2 nopaddingleftright">
-                                {% if enduser.facebook_id %}
-                                <img class="messpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %}{% if enduser.profile_pic_uploaded %}
-                                <img class="messpic" src="{{user.profile_pic_uploaded.url}}" /> {% else %}
-                                <div>
-                                    <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-user fa-flip-horizontal fa-fw fa-lg statusicon" style="padding-bottom: 9px;"></i></div>
-                                </div>
-                                {% endif %} {% endif %}
+                            {% if enduser.facebook_id %}
+                            <img class="messpic" src="http://graph.facebook.com/{{user.facebook_id}}/picture?type=large" /> {% else %}{% if enduser.profile_pic_uploaded %}
+                            <img class="messpic" src="{{user.profile_pic_uploaded.url}}" /> {% else %}
+                            <div>
+                                <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-user fa-flip-horizontal fa-fw fa-lg statusicon" style="padding-bottom: 9px;"></i></div>
+                            </div>
+                            {% endif %} {% endif %}
                         </div>
                         <div class="col-xs-7" style="padding: 8px 5px 0px 5px;">
                             <h3 class="darkgreytext nomargin xshide" style="font-weight: 400; font-size: 1.0em"> New message from your neigbor&nbsp;<span class="darkbluegreentext " style="font-weight: 500;">{{enduser.first_name}}&nbsp;{{enduser.last_name}}</span>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!--EXEMPTION SHIPMENTS-->
 
                 {% for sh in shipment_fail %}
@@ -376,7 +376,7 @@
                     </div>
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
                 </div>
-                
+
                 <!-- Completed Shipments -->
                 {% endfor %} {% for sh in shipments_complete_fordash %}
 
@@ -392,7 +392,7 @@
                     <div class="row">
                         <div class="col-xs-1 nopaddingleft">
                             <div class="statusltgreen">
-                                <i class="fa fa-check fa-fw fa-lg statusicon" style="padding-bottom: 10px;"></i> 
+                                <i class="fa fa-check fa-fw fa-lg statusicon" style="padding-bottom: 10px;"></i>
                             </div>
                         </div>
                         <h3 class="col-xs-6 darkgreytext nomargin xshide" style="padding: 7px 5px 0px 5px; font-weight: 400; font-size: 1.2em"> Successful delivery for<span class= "darkbluegreentext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
@@ -473,9 +473,9 @@
                     <h4 class="nomargintop">Helping&nbsp;{{ connections_count }}&nbsp;Neighbors&nbsp;<a style="font-weight: 300;">•&nbsp;view all</a></h4>
                     <div class="row">
                         {% for connection in connections_all %}
-                           <ul class="marginbottom10px">
-                           <li>
-                            <a class="nopaddingleftright">
+                        <ul class="marginbottom10px">
+                            <li>
+                                <a class="nopaddingleftright">
                                     {% if connection.end_user.facebook_id %}
                                     <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" /> {% else %} {% if connection.end_user.profile_pic_uploaded %}
                                     <img class="messpic" src="{{connection.end_user.profile_pic_uploaded.url}}" /> {% else %}
@@ -483,16 +483,16 @@
                                         <div class="statusgrey"><i class="fa fa-user fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 3px;"></i> </div>
                                     </div>
                                     {% endif %} {% endif %}
-                            </a>
-                            <div class="">
-                                <div class="row">
-                                    <h3 class="darkgreytext nomargin xshide" style="font-weight: 500; font-size: 1.0em">{{ connection.end_user.first_name }}&nbsp;{{ connection.end_user.last_name }}</h3>
+                                </a>
+                                <div class="">
+                                    <div class="row">
+                                        <h3 class="darkgreytext nomargin xshide" style="font-weight: 500; font-size: 1.0em">{{ connection.end_user.first_name }}&nbsp;{{ connection.end_user.last_name }}</h3>
+                                    </div>
+                                    <div class="row">
+                                        <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">@&nbsp;</h3>
+                                    </div>
                                 </div>
-                                <div class="row">
-                                    <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">@&nbsp;</h3>
-                                </div>
-                            </div>
-                               </li>
+                            </li>
                         </ul>
                         {% endfor %}
                     </div>
