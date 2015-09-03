@@ -270,11 +270,6 @@
                                     {% else %}Carrier Not Provided
                                     {% endif %}:&nbsp;<span style="font-weight:normal;">{{ sh.last_tracking_status }}</span></h4>
                                 <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Carrier:&nbsp;<span style="font-weight:normal;">                                 
-                                    {% if sh.shipment_courier %}{{ sh.shipment_courier }} 
-                                    {% else %}Not Provided
-                                    {% endif %} </span></h4>
-                                <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Tracking #:<span style="font-weight:normal;">  
                                         <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">
                                         {% if sh.tracking == None %}
