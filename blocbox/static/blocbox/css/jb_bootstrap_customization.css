@@ -3207,7 +3207,7 @@ a > .offercard:focus {
     color: white;
 }
 .rating-outline{
-    background-image: url('/static/blocbox/images/ship-arrow.png');
+    background-image: url('/static/blocbox/images/rating-outline.png');
     text-align: center;
     line-height: 38px;
     margin: auto;
