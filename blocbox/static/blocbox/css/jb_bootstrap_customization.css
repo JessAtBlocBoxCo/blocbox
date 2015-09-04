@@ -2401,6 +2401,17 @@ body {
     padding: 15px 0px 15px 0px;
     /* min-height: 300px; */
 }
+.ratingsbox {
+    background-color: rgb(121, 204, 205);
+    color: white;
+    overflow: visible;
+    min-height: 100%;
+    min-height: 225px;
+    padding: 15px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(236, 240, 241);
+    border-radius: 4px;
+}
 .hostname {
     font-size: 2.5em;
     font-weight: 400;
