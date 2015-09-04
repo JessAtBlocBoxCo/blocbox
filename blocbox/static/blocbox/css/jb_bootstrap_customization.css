@@ -3206,10 +3206,8 @@ a > .offercard:focus {
     vertical-align: middle;
     color: white;
 }
-.ratingcircle{
-    background-color: rgb(71, 158, 159);
-    border-radius: 100px;
-    border: 5px solid rgb(121, 204, 205);
+.rating-outline{
+    background-image: url('/static/blocbox/images/ship-arrow.png');
     text-align: center;
     line-height: 38px;
     margin: auto;
@@ -3217,8 +3215,8 @@ a > .offercard:focus {
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
 }
 .shiparrow {
     background-image: url('/static/blocbox/images/ship-arrow.png');
