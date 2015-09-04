@@ -2402,7 +2402,7 @@ body {
     /* min-height: 300px; */
 }
 .ratingsbox {
-    background-color: rgb(235, 235, 235);
+    background-color: white;
     overflow: visible;
     min-height: 100%;
     min-height: 225px;
