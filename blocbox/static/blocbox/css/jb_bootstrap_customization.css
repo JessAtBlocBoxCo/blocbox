@@ -3215,8 +3215,8 @@ a > .offercard:focus {
     position: relative;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
 }
 .shiparrow {
     background-image: url('/static/blocbox/images/ship-arrow.png');
