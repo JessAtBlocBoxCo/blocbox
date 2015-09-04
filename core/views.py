@@ -299,6 +299,7 @@ def dashboard_host(request):
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered",)
         shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
         shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
+        shipment_fail_count = shipment_fail.count()
         shipments_in_transit_count = shipments_in_transit.count()
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
@@ -317,6 +318,7 @@ def dashboard_host(request):
         shipments_in_transit_count = None
         shipments_in_transit_no_fails = None
         shipment_fail = None
+        shipment_fail_count = None
         shipments_waiting_pickup = None
         connections_all = None
         connections_count = None
@@ -339,6 +341,7 @@ def dashboard_host(request):
             'connections_all': connections_all,
             'connections_count': connections_count,
             'transactions_count': transactions_count,
+            'shipment_fail_count':  shipment_fail_count,
         })
 
 def enduser_report_issue_modal(request, issue_id):
