@@ -475,7 +475,7 @@
                         <ul class="nopaddingleft">
                         {% for connection in connections_all %}
                             <li class="marginbottom10px">
-                               <div class="col-xs-2">
+                               <div class="col-xs-3">
                                 <a class="nopaddingleftright">
                                     {% if connection.end_user.facebook_id %}
                                     <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" /> {% else %} {% if connection.end_user.profile_pic_uploaded %}
@@ -486,7 +486,7 @@
                                     {% endif %} {% endif %}
                                 </a>
                                 </div>
-                                <div class="col-xs-10">
+                                <div class="col-xs-9">
                                     <div class="row">
                                         <h3 class="darkgreytext nomargin xshide" style="font-weight: 500; font-size: 1.0em">{{ connection.end_user.first_name }}&nbsp;{{ connection.end_user.last_name }}</h3>
                                     </div>
