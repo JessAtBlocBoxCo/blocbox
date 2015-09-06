@@ -1823,9 +1823,9 @@ body {
 }
 
 .btn-small-green {
-    background-color: transparent;
+    background-color: rgb(71, 158, 159);
     height: 24px;
-    color: rgb(71, 158, 159);
+    color: white;
     border: 1px solid rgb(71, 158, 159);
     padding: 3px 5px 3px 5px;
     margin-left: auto;
@@ -1838,15 +1838,15 @@ body {
     text-align: center;
 }
 .btn-small-green:hover {
-    background-color: rgb(71, 158, 159);
-    color: white;
+    background-color: transparent;
+    color: rgb(71, 158, 159);
 }
 
 .btn-small-grey {
-    background-color: transparent;
+    background-color: rgb(223, 226, 226);
     height: 24px;
     color: rgb(127, 140, 141);
-    border: 1px solid rgb(127, 140, 141);
+    border: 1px solid rgb(223, 226, 226);
     padding: 3px 5px 3px 5px;
     margin-left: auto;
     margin-right: auto;
@@ -1858,8 +1858,8 @@ body {
     text-align: center;
 }
 .btn-small-grey:hover {
-    background-color: rgb(127, 140, 141);
-    color: white;
+    background-color: transparent;
+    color: rgb(127, 140, 141);
 }
 
 .findhostbtn {
