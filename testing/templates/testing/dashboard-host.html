@@ -18,9 +18,6 @@
         </div>
     </div> <!--end top row-->
 
-
-      </div>  <!--end top row-->
-
     
 
 
@@ -537,10 +534,10 @@
         
         <!--NOTE - THIS IS WHERE THE ELSE MESSAGE TO HOST SHOULD APPER -->
        {% else %} <!--if the user is not a host -->
-       <!--if user is not a host-->
-       <h2>Message to non host</h2> 
-       {% endif %} 
-  {% else %}
+          <!--if user is not a host-->
+          <h2>Message to non host</h2> 
+       {% endif %} <!--end if user is not host -->
+    {% else %}
        <div class="col-xs-12 col-sm-10 col-sm-offset-1 nopadding">
         <div class="col-xs-12 dashbox">
             <h3 class="margintop10px nopadding"> <a href="/login">Login to your account </a> to access your dashboard. </h3>
@@ -555,9 +552,8 @@
                 </h6>
         </div>
         <!--col-xs12 dashbox-->
-       </div> <!-- end col-s-12 00>
-       <!--close if user is not authenticated-->
-    {% endif %}
+       </div> <!-- end col-s-12 00>  <!--close if user is not authenticated-->
+    {% endif %} <!--if not authenticated - end if -->
 
   </div> <!--end div class=row on line 31 -->
 </div> <!--end div class=by -->
