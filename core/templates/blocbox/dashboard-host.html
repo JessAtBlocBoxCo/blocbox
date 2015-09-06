@@ -228,7 +228,7 @@
                 {% for sh in shipments_in_transit_no_fails %}
 
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}
+                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/host_received_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
