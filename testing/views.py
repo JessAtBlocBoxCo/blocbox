@@ -345,7 +345,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         host_received_modal(request, confirm_id)    
     else:
         confirm_id_int = None
-    return render(request, 'blocbox/dashboard-host.html', {
+    return render(request, 'testing/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
             'transactions_all': transactions_all, 
