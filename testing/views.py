@@ -53,7 +53,7 @@ couriers = api.couriers.all.get()
 #################33
 #THE FOLLOWING SHIT IS NEEDED FOR THE HOST AVAILABIITY CLANEDAR -- JESS EDITING ON 9/6/2015 E
 #import new homebrew calendar
-from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_OldVersion, HostWeeklyDefaultSchedule
 #Import the HostConflictsForm -- i just created this in calendar_homebrew.forms.py
 from calendar_homebrew.forms import HostConflictsForm_OldVersion
 #Define lots of generic date fields that will be accessed by several functions - note that some of these may already be defined in core.views etc
