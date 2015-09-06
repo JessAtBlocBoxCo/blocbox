@@ -83,7 +83,7 @@ class HostConflicts(models.Model):
 	
 #Define a conflicts model - conflicts populate the availability model?
 class HostConflicts_OldVersion(models.Model):
-    host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict', blank=True, null=True) #this shows up as payer_id
+    host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict_oldversion', blank=True, null=True) #this shows up as payer_id
     #date_from is the same as 'date' if its only one day
     date_from = models.DateField(null=True) #Remember, blank determines whether or not it can be blank on forms - null is whether required o model
     date_to = models.DateField(blank=True, null=True)
