@@ -23,16 +23,22 @@
 
     
 
-    <!--TEST HOLD AVAILABILITY CALENDAR HERE - AND THEN MOVE TO DASHBOARD-HOST.HTML -->
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}
-            <!--NOTE TO JOHN: THE SUBMIT BUTTON IS ON THAT SUBTEMPLATE -- NEEDS TO BE -->
-    </div>
+
 
 
     <div class="by">
         <!--contains most of page-->
         <div class="row" style="margin-right: -15px; margin-left: -15px;">
             {% if user.is_authenticated %} {% if enduser.host %}
+
+
+
+     <!--TEST HOLD AVAILABILITY CALENDAR HERE - AND THEN MOVE TO DASHBOARD-HOST.HTML -->
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2"> {% include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %}
+            <!--NOTE TO JOHN: THE SUBMIT BUTTON IS ON THAT SUBTEMPLATE -- NEEDS TO BE -->
+    </div>
+
+
             <!--sidebar-->
             <div class="col-md-3 xshide smallhide">
                 <div class="profilebox" style="min-height: 1px; margin-bottom: 5px">
