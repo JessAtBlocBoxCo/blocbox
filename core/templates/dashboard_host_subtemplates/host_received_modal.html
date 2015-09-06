@@ -1,0 +1,44 @@
+<!--this is core/templates/dashboard_host_subtemplates/host_received_modal.html, it is called within modaltags.py - the tracking_modal def
+which is called on dashboard.html -->
+
+<!--PACKAGE RECEIVED BY HOST MODAL-->							
+<div id="openModal_host_received_id{{sh.id}}" class="modalDialog">                                 
+    <div>	
+        <a href="/hostdashboard" title="Close" class="close">X</a>
+        <h4 class="ltbluetext">Confirm Package Receipt</h4>   
+
+        <form class="form-inline" role="form" method="post" action="/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received/Thanks" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ package_received_form.non_field_errors }}
+            {{ package_received_form.enduser_rating.errors }}
+
+            <h6>How would you rate this transaction?</h6>
+            <div class="col-xs-12 nopaddingleftright paddingbottom10px">					   															 																												   		
+                <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=1 > 1 	</label> 	</div>
+                <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=2 > 2 	</label> 	</div>
+                <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=3 > 3 	</label> 	</div>
+                <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=4 > 4 	</label> 	</div>
+                <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=5 > 5 	</label> 	</div>
+            </div> <!--end div with radios -->	
+
+            <!--end user comments -->
+            <h6>Provide Feedback or Comments about this Transaction</h6>
+            {{ package_received_form.enduser_comments.errors }}
+            <div class="row"> <input type="text" class="col-xs-12" name="enduser_comments" id="id_enduser_comments" 
+                                     placeholder="Comments about your experience (optional)">  </div>
+
+
+            <!--hidden input to mark complete-->
+            {{ package_received_form.trans_complete.errors }}
+            <input type="hidden" name="trans_complete" value=True>
+            {{ package_received_form.date_completed.errors }}
+            <input type="hidden" name="date_completed" value= {{ datetoday }}>
+            {{ package_received_form.datetime_completed.errors }}
+            <input type="hidden" name="datetime_completed" value= {{ datetimenow }}>
+            <!--siubmit button-->
+            <div class="row paddingbottom10px"> 
+                <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+            </div>                
+        </form>
+    </div> 
+</div>   <!--END DIV ID FOR PACKAGE RECEIVED MODAL.--> 
