@@ -247,7 +247,7 @@
                                 {% endif %}
                         {% endif %}
                         {% if sh.deliverydate_tracking %}
-                            {% if sh.days_until_delivery gt1 %} 
+                            {% if sh.days_until_delivery gt 1 %} 
                                 {{sh.days_until_delivery}} days
                             {% endif %}
                             % if sh.days_until_delivery lt 0 %}
