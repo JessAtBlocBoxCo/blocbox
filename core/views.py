@@ -327,8 +327,8 @@ def dashboard_host(request):
         confirm_id_int = confirm_id.strip()
         confirm_id_int = int(confirm_id_int)
         host_received_modal(request, confirm_id) 	
-        else:
-            confirm_id_int = None
+    else:
+        confirm_id_int = None
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
@@ -348,6 +348,8 @@ def dashboard_host(request):
             'connections_count': connections_count,
             'transactions_count': transactions_count,
             'shipment_fail_count':  shipment_fail_count,
+            'confirm_id': confirm_id, 
+            'confirm_id_int': confirm_id_int,
         })
 
 def enduser_report_issue_modal(request, issue_id):
