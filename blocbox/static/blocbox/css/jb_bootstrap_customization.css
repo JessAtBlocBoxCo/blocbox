@@ -1822,12 +1822,8 @@ body {
     text-decoration: none;
 }
 
-.btn-select-green {
+.btn-add-user {
     background-color: rgb(71, 158, 159);
-    font-size: .993em;
-    font-weight: 500;
-    line-height: 1.38em;
-    letter-spacing: .5px;
     height: 24px;
     color: white;
     border: 1px solid rgb(71, 158, 159);
@@ -1835,9 +1831,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 100%;
     white-space: nowrap;
-    width: 100%;
+    width: 24px;
     text-decoration: none;
     text-align: center;
 }
