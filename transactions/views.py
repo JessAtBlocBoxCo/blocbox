@@ -40,7 +40,7 @@ from django.template.loader import render_to_string
 
 #DEFINING DATE VARIABLES AT TOP OF VIEW INSTEAD OF IN STARTASHIPMETN SO CAN BE REFERENCED BY OTHER VIEWS
 #Get date fields
-local_timezone = request.session.setdefault('django_timezone', 'UTC')
+#local_timezone = request.session.setdefault('django_timezone', 'UTC')
 local_timezone = pytz.timezone(local_timezone) 
 date_today = datetime.date.today()
 datetime_now = datetime.datetime.now()         
