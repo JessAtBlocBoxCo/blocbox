@@ -65,14 +65,14 @@ nextyear = date_today.year + 1
 thisyear_isleap = calendar.isleap(thisyear)
 nextyear_isleap = calendar.isleap(nextyear)
 thismonth_num = date_today.month  
-thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
-nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
 if thismonth_num == 12:
     nextmonth_num = 1
     nextmonth_calendar_year = nextyear
 else:
     nextmonth_num = date_today.month + 1
     nextmonth_calendar_year = thisyear
+thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
 thismonth = calendar.month_name[thismonth_num]
 nextmonth = calendar.month_name[nextmonth_num]
 monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
