@@ -80,6 +80,33 @@ shipments_with_tracking_notcomplete_notrackingno = []
 #import json
 import json
 
+#Get date fields
+date_today = datetime.date.today()
+datetime_now = datetime.datetime.now()         
+time = datetime.datetime.time(datetime_now)
+#Year variables
+thisyear = date_today.year
+nextyear = date_today.year + 1
+thisyear_isleap = calendar.isleap(thisyear)
+nextyear_isleap = calendar.isleap(nextyear)
+#Month Variables
+thismonth_num = date_today.month      
+if thismonth_num == 12:
+    nextmonth_num = 1
+    nextmonth_calendar_year = nextyear
+else:
+    nextmonth_num = date_today.month + 1
+    nextmonth_calendar_year = thisyear
+thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
+thismonth = calendar.month_name[thismonth_num]
+nextmonth = calendar.month_name[nextmonth_num]
+monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
+monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
+days_in_thismonth = monthrange_thismonth[1]
+days_in_nextmonth = monthrange_nextmonth[1] 
+today_dayofmonth_num = date_today.day 
+
 #Define get_item function
 @register.filter
 def get_item(dictionary, key):
@@ -299,6 +326,9 @@ def homebrew_cal(request):
 
 def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
     thepersonviewingthepage = request.user
+    #set timezone
+    local_timezone = request.session.setdefault('django_timezone', 'UTC')
+    local_timezone = pytz.timezone(local_timezone) 
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
@@ -366,6 +396,12 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
             'shipment_fail_count':  shipment_fail_count,
             'confirm_id': confirm_id, 
             'confirm_id_int': confirm_id_int,
+            #Calendar and date variables
+            'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
+            'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
+            'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
+            'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
+            'today_dayofmonth_num': today_dayofmonth_num, 'nextmonth_calendar_year': nextmonth_calendar_year,
         })
 
 
