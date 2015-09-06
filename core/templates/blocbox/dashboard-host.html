@@ -79,7 +79,7 @@
 
             <div class="col-xs-6">
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
-                    <!--non-mobile version--->
+                    <!--non-mobile version-->
                     <div class="row">
                         <div class="col-xs-1 nopaddingleftright">
                             <div class="messpiccontainer">
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
-                    <!--non-mobile version--->
+                    <!--non-mobile version -->
                     <div class="row">
                         <div class="col-xs-1 nopaddingleftright">
                             {% if enduser.facebook_id %}
@@ -134,14 +134,14 @@
                 {% for sh in shipment_fail %}
 
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/host_received_modal.html" %} {% endifequal %}
+                {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_received_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_host_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+                {% ifequal issue_id_int sh.id %} {% include "dashboard_host_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
 
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
-                    <!--non-mobile version--->
+                    <!--non-mobile version-->
                     <div class="row">
                         <div class="col-xs-1 nopaddingleft">
                             <div class="statusred" style="padding: 0px 1px 0px 3px;"><span class="whitetext" style="font-size: 1.9em; font-weight: 700; line-height: 1.28em">!</span> </div>
@@ -228,14 +228,14 @@
                 {% for sh in shipments_in_transit_no_fails %}
 
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/host_received_modal.html" %} {% endifequal %}
+                {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_received_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_host_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+                {% ifequal issue_id_int sh.id %} {% include "dashboard_host_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
 
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
-                    <!--non-mobile version--->
+                    <!--non-mobile version-->
                     <div class="row">
                         <div class="col-xs-1 nopaddingleft">
                             <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-lg statusicon" style="padding-bottom: 14px;"></i> </div>
@@ -334,14 +334,14 @@
                 {% for sh in shipments_waiting_pickup %}
 
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}
+                    {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/package_received_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+                    {% ifequal message_trans_id_int sh.id %} {% include "dashboard_host_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+                    {% ifequal issue_id_int sh.id %} {% include "dashboard_host_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
 
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
-                    <!--non-mobile version--->
+                    <!--non-mobile version-->
                     <div class="row">
                         <div class="col-xs-1 nopaddingleft">
                             <div class="statusorange"><i class="fa fa-home fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 14px; padding-left: 5px;"></i> </div>
@@ -413,7 +413,7 @@
                 {% ifequal issue_id_int sh.id %} {% include "dashboard_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
 
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
-                    <!--non-mobile version--->
+                    <!--non-mobile version-->
                     <div class="row">
                         <div class="col-xs-1 nopaddingleft">
                             <div class="statusltgreen">
