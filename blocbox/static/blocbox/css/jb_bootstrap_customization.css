@@ -3175,7 +3175,8 @@ a > .offercard:focus {
     visibility: visible;
 }
 .statusgrey{
-    background-color: #dfe2e2;
+    background-color: transparent;
+    border: 2px solid #dfe2e2;
     border-radius: 100px;
     color: white;
     text-align: center;
@@ -3204,8 +3205,9 @@ a > .offercard:focus {
     height: 32px;
 }
 .statusltgreen{
-    background-color: rgb(121, 204, 205);
-    color: white;
+    background-color: transparent;
+    color: rgb(121, 204, 205);
+    border: 2px solid rgb(121, 204, 205);
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
@@ -3218,8 +3220,9 @@ a > .offercard:focus {
     height: 32px;
 }
 .statusorange{
-    background-color: rgb(255, 195, 0);
-    color: white;
+    background-color: transparent;
+    color: rgb(255, 195, 0);
+    border: 2px solid rgb(255, 195, 0);
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
@@ -3232,8 +3235,9 @@ a > .offercard:focus {
     height: 32px;
 }
 .statusred{
-    background-color: rgb(241, 102, 100);
-    color: white;
+    background-color: transparent;
+    color: rgb(241, 102, 100);
+    border: 2px solid rgb(241, 102, 100);
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
