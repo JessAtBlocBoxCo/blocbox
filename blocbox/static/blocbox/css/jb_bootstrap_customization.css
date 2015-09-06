@@ -3243,8 +3243,8 @@ a > .offercard:focus {
     margin: auto;
     text-align: center;
     vertical-align: middle;
-    color: white;
 }
+
 .rating-outline{
     background-image: url('/static/blocbox/images/rating-outline.png');
     text-align: center;
