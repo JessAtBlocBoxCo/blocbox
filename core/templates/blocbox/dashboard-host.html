@@ -247,10 +247,10 @@
                                 {% endif %}
                         {% endif %}
                         {% if sh.deliverydate_tracking %}
-                            {% if sh.days_until_delivery gt=1 %} 
+                            {% if sh.days_until_delivery > 1 %} 
                                 {{sh.days_until_delivery}} days
                             {% endif %}
-                            % if sh.days_until_delivery lt=0 %}
+                            % if sh.days_until_delivery < 0 %}
                                 Past Due
                             {% endif %}
                         {% else %}
