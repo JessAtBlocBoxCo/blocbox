@@ -1,5 +1,5 @@
 from django.contrib import admin
-from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_OldVersion, HostWeeklyDefaultSchedule
 
 class ConflictsAdmin(admin.ModelAdmin): 
     list_display = ('id', 'host', 'label', 'date_from', 'date_to', 'duration', 'allday',)
