@@ -10,7 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
 		url(r'^$', 'testing.views.jesscaltest', name='testingbase'),   #default view is calendar test 		
  		url(r'^dashboard/$', 'testing.views.dashboard_test', name='dashboard_test'),
-        url(r'^hostdashboard/$', 'testing.views.dashboard_host_test', name='dashboard_host_test')
+        url(r'^hostdashboard/$', 'testing.views.dashboard_host_test', name='dashboard_host_test'),
  		url(r'^jesstest/$', 'testing.views.jesscaltest', name='jesstestnohost'), 	
  		url(r'^homebrewcal/', 'testing.views.homebrew_cal', name='homebrew_cal'),	
  		url(r'^facebook/', 'testing.views.facebook', name='test_facebook'),
