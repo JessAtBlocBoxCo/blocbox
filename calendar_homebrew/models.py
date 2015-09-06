@@ -15,9 +15,8 @@ import datetime
 from django.utils import timezone
 from django.conf import settings
 
-
 #Define new HostConflicts model - a field per day
-def HostConflicts(models.Model):
+class HostConflicts(models.Model):
     host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict', blank=True, null=True) #this shows up as payer_id
     thismonthday1  = forms.BooleanField(required=False)
     thismonthday2  = forms.BooleanField(required=False)
