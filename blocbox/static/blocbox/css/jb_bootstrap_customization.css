@@ -1822,10 +1822,10 @@ body {
     text-decoration: none;
 }
 
-.btn-add-user {
-    background-color: rgb(71, 158, 159);
+.btn-small-green {
+    background-color: transparent;
     height: 24px;
-    color: white;
+    color: rgb(71, 158, 159);
     border: 1px solid rgb(71, 158, 159);
     padding: 3px 5px 3px 5px;
     margin-left: auto;
@@ -1836,6 +1836,30 @@ body {
     width: 24px;
     text-decoration: none;
     text-align: center;
+}
+.btn-small-green:hover {
+    background-color: rgb(71, 158, 159);
+    color: white;
+}
+
+.btn-small-grey {
+    background-color: transparent;
+    height: 24px;
+    color: rgb(127, 140, 141);
+    border: 1px solid rgb(127, 140, 141);
+    padding: 3px 5px 3px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 100%;
+    white-space: nowrap;
+    width: 24px;
+    text-decoration: none;
+    text-align: center;
+}
+.btn-small-grey: hover {
+    background-color: rgb(127, 140, 141);
+    color: white;
 }
 
 .findhostbtn {
