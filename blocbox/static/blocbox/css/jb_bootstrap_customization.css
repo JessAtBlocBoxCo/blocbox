@@ -144,11 +144,11 @@ a:active {
 .subnavtextcurrent {
     font-size: 1.00em;
     font-weight: 700;
-    color: rgb(40, 88, 88);
+    color: rgb(71, 158, 159);
     text-shadow: 0px 2px 5px rgb(236, 240, 241);
 }
 .subnavtextcurrent:hover {
-    color: rgb(71, 158, 159);
+    color: rgb(40, 88, 88);
     text-shadow: 0px 2px 5px rgb(236, 240, 241);
     text-decoration: none;
 }
