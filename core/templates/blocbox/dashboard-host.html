@@ -296,9 +296,9 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-5">
-                            <button>Received</button>
-                            <button>Message&nbsp;{{sh.enduser.first_name}}</button>
-                            <button>Report an Issue</button>
+                            <button class="btn-small-yellow" style="padding-left: 3px;" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';"><i class="fa fa-check fa-fw fa-lg statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-yellow" style="padding-left: 3px;" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';"><i class="fa fa-envelope fa-fw fa-lg statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-yellow" style="padding-left: 3px;" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';"><i class="fa fa-flag fa-fw fa-lg statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                     </div>
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
