@@ -282,7 +282,7 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'shipments_onaftership_notcomplete_notdelivered_fail': shipments_onaftership_notcomplete_notdelivered_fail,    
     })
 
-def dashboard_host(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
+def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
     thepersonviewingthepage = request.user
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
