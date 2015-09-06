@@ -1824,7 +1824,7 @@ body {
 
 .btn-small-green {
     background-color: rgb(71, 158, 159);
-    height: 24px;
+    height: 28px;
     color: white;
     border: 1px solid rgb(71, 158, 159);
     padding: 3px 5px 3px 5px;
@@ -1833,7 +1833,7 @@ body {
     cursor: pointer;
     border-radius: 100%;
     white-space: nowrap;
-    width: 24px;
+    width: 28px;
     text-decoration: none;
     text-align: center;
 }
@@ -1844,7 +1844,7 @@ body {
 
 .btn-small-grey {
     background-color: rgb(223, 226, 226);
-    height: 24px;
+    height: 28px;
     color: rgb(127, 140, 141);
     border: 1px solid rgb(223, 226, 226);
     padding: 3px 5px 3px 5px;
@@ -1853,7 +1853,7 @@ body {
     cursor: pointer;
     border-radius: 100%;
     white-space: nowrap;
-    width: 24px;
+    width: 28px;
     text-decoration: none;
     text-align: center;
 }
