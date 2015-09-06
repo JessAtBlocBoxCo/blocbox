@@ -247,9 +247,12 @@
                                 {% endif %}
                         {% endif %}
                         {% if sh.deliverydate_tracking %}
-                            {% if sh.days_until_delivery > 1 %} 
+                            {% if sh.days_until_delivery &gt;1 %} 
                                 {{sh.days_until_delivery}} days
-                            {% endif %}      
+                            {% endif %}
+                            % if sh.days_until_delivery &lt;0 %}
+                                Past Due
+                            {% endif %}
                         {% else %}
                             About&nbsp;{{sh.days_until_delivery_est_start}}&nbsp;-&nbsp;{{sh.days_until_delivery_est_end}}&nbsp;days
                         {% endif %}
