@@ -28,16 +28,14 @@
 
     <div class="by">
         <!--contains most of page-->
-        <div class="row" style="margin-right: -15px; margin-left: -15px;">
-            {% if user.is_authenticated %} {% if enduser.host %}
+      <div class="row" style="margin-right: -15px; margin-left: -15px;">
+            {% if user.is_authenticated %} 
+            {% if enduser.host %}
 
      <!--TEST HOLD AVAILABILITY CALENDAR HERE - AND THEN MOVE TO DASHBOARD-HOST.HTML -->
      <!--
     <div class="col-xs-12 col-sm-8 col-sm-offset-2"> { % include "calendar_subtemplates/bimonthly_calendar_withcheckboxes.html" %} 
-    </div>
--->
-
-
+    </div>  -->
             <!--sidebar-->
             <div class="col-md-3 xshide smallhide">
                 <div class="profilebox" style="min-height: 1px; margin-bottom: 5px">
@@ -89,7 +87,6 @@
                     <h4>{{ host.whenimhome_hours }}</h4>
                 </div> <!--end div class profilebox -->
             </div>  <!--end sidebar-->
-
 
             <div class="col-xs-6">
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
@@ -531,16 +528,15 @@
       
                 </div>
             </div>
-        </div> <!--end div class=row on line 31 -->
-    </div> <!--end div class=by -->
-
-    {% else %}
-    <!--if user is not a host-->
-    <h2>Message to non host</h2> {% endif %} {% else %}
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1 nopadding">
+        
+        <!--NOTE - THIS IS WHERE THE ELSE MESSAGE TO HOST SHOULD APPER -->
+       {% else %} <!--if the user is not a host -->
+       <!--if user is not a host-->
+       <h2>Message to non host</h2> {% endif %} {% else %}
+       <div class="col-xs-12 col-sm-10 col-sm-offset-1 nopadding">
         <div class="col-xs-12 dashbox">
             <h3 class="margintop10px nopadding"> <a href="/login">Login to your account </a> to access your dashboard. </h3>
-            <h6 class="nomargin">  <br>         	 	
+            <h6 class="nomargin">  <br>                 
                     <br> If you don't have an account, get started by <a href="/search/"> searching for a host in your neighborhood.</a> 
                     <br> If you can't find a host, <a href="/waitlist/">join our waitlist </a> to be notified when Blocbox comes to your neighborhood. 
 
@@ -551,9 +547,19 @@
                 </h6>
         </div>
         <!--col-xs12 dashbox-->
-    </div>
-    <!--close if user is not authenticated-->
-    {% endif %}
+       </div> <!-- end col-s-12 00>
+       <!--close if user is not authenticated-->
+        {% endif %}
+
+    {% else %} <!-- if user is not authenticated -->
+
+       <h3> ADD A MESSAGE TO USERS THAT HAVE NOT SIGNED UP FOR BLOCBOX</h3>
+
+   {% endif %}
+  </div> <!--end div class=row on line 31 -->
+</div> <!--end div class=by -->
+
+    
 </div>
 
 
