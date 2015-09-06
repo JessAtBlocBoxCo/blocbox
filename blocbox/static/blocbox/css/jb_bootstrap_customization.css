@@ -1822,6 +1822,25 @@ body {
     text-decoration: none;
 }
 
+.btn-select-green {
+    background-color: rgb(71, 158, 159);
+    font-size: .733em;
+    font-weight: 500;
+    line-height: 1.38em;
+    height: 32px;
+    color: white;
+    border: 1px solid rgb(71, 158, 159);
+    padding: 6px 15px 6px 15px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 3px;
+    white-space: nowrap;
+    width: 100%;
+    text-decoration: none;
+    text-align: center;
+}
+
 .findhostbtn {
     border-radius: 3px;
     font-size: 1.27em;
