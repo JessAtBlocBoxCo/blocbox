@@ -56,7 +56,7 @@ INSTALLED_APPS = (
 		'testing',
 		'waitlist',
 		'django_mailbox',
-        'pollsjb',
+    'pollsjb',
 )
 
 
