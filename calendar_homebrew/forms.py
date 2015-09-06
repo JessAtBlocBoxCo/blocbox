@@ -3,10 +3,22 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.conf import settings
 import datetime
-from calendar_homebrew import HostConflicts, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
 
 
 #Hots Conflicts form
+class HostConflictsForm(forms.ModelForm):
+    class Meta:
+        model = HostConflicts
+        fields = ('email', 'password', 'password2', 'zipcode', 'hostinterest', 'referredby',
+            'first_name', 'last_name', 'st_address1', 'st_address2',
+            'about_me', 'intro_message', 'pickup_time', 'FBlink', 'imageurl', 'userrating', 'host',
+            'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
+                    'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other',
+                    'host_aboutme', 'host_unavailability_writein', 'host_availability_writein', 'hostuserinterest',
+                    'offers_storage', 'offers_petcare', 'offers_housesitting', 'offers_rentals', 'offers_laundry', 'offers_childcare',
+                        'offers_plantcare', 'offers_lawn', 'offers_carsharing', 'offers_housemaint', 'offers_autocare', 'offers_userdefined',
+            )
 
 
 #calendar check boxes form
