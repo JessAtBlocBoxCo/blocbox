@@ -54,6 +54,8 @@ couriers = api.couriers.all.get()
 #THE FOLLOWING SHIT IS NEEDED FOR THE HOST AVAILABIITY CLANEDAR -- JESS EDITING ON 9/6/2015 E
 #import new homebrew calendar
 from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+#Import the HostConflictsForm -- i just created this in calendar_homebrew.forms.py
+from calendar_homebrew.forms import HostConflictsForm
 #Define lots of generic date fields that will be accessed by several functions - note that some of these may already be defined in core.views etc
 import calendar 
 calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday    
@@ -356,6 +358,38 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         host_received_modal(request, confirm_id)    
     else:
         confirm_id_int = None
+    #Define the host availability form shit
+    #first define empty list variables
+    unavailable_days = []  
+    unavailable_days_thismonth = []
+    unavailable_days_nextmonth = []
+    month1days_count = None
+    month2days_count = None
+    cal_form_submitted = False
+    #then do the stuff if the form is posted
+    if request.method == 'POST':
+        cal_form = HostConflictsForm(data=request.POST)
+        if cal_form.is_valid():  
+            for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31         
+                daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
+                if daycheckedmonth1:
+                    #checked day needs to be in YYYY-MM-DD  format
+                    checked_day = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
+                    unavailable_days.append(checked_day)
+                    unavailable_days_thismonth.append(daynumber)
+            for daynumber in range(1,32): 
+                daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
+                if daycheckedmonth2:
+                    checked_day = str(thisyear) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
+                    unavailable_days.append(checked_day)
+                    unavailable_days_nextmonth.append(daynumber)                                   
+            month1days_count = len(unavailable_days_thismonth)
+            month2days_count = len(unavailable_days_nextmonth)
+            cal_form_submitted = True
+        else:
+            print cal_form.errors
+    else:
+        cal_form = HostConflictsForm()   
     return render(request, 'testing/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
@@ -377,6 +411,8 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
             'shipment_fail_count':  shipment_fail_count,
             'confirm_id': confirm_id, 
             'confirm_id_int': confirm_id_int,
+            #JMY ADDED THE FOLLOWING VARIABLES TO PASS TO THE TEMPLATE ON 9/6/2015 TO PUT THE HOST AVAILBILITY CALENDAR INTO THE HOST DASHBOARD
+            'cal_form': cal_form,
             #Calendar and date variables
             'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
             'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
