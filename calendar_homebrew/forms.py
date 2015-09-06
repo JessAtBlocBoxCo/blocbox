@@ -3,13 +3,13 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.conf import settings
 import datetime
-from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_OldVersion, HostWeeklyDefaultSchedule
 
 
 #Hots Conflicts form
-class HostConflictsForm(forms.ModelForm):
+class HostConflictsForm_OldVersion(forms.ModelForm):
     class Meta:
-        model = HostConflicts
+        model = HostConflicts_OldVersion
         fields = ('host', 'date_from', 'date_to', 'duration', 'allday', 'am', 'pm', 'time_from', 'time_to', 'datetime_added', 'date_added',
             'note', 'label',
             )

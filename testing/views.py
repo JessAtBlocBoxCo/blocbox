@@ -55,7 +55,7 @@ couriers = api.couriers.all.get()
 #import new homebrew calendar
 from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
 #Import the HostConflictsForm -- i just created this in calendar_homebrew.forms.py
-from calendar_homebrew.forms import HostConflictsForm
+from calendar_homebrew.forms import HostConflictsForm_OldVersion
 #Define lots of generic date fields that will be accessed by several functions - note that some of these may already be defined in core.views etc
 import calendar 
 calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday    
@@ -368,7 +368,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
     cal_form_submitted = False
     #then do the stuff if the form is posted
     if request.method == 'POST':
-        cal_form = HostConflictsForm(data=request.POST)
+        cal_form = HostConflictsForm_OldVersion(data=request.POST)
         if cal_form.is_valid():  
             for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31         
                 daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
@@ -389,7 +389,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         else:
             print cal_form.errors
     else:
-        cal_form = HostConflictsForm()   
+        cal_form = HostConflictsForm_OldVersion()   
     return render(request, 'testing/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all

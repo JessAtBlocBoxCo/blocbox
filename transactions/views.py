@@ -27,7 +27,7 @@ from transactions.models import Transaction
 from paypal.standard.forms import PayPalPaymentsForm
 #from paypal.standard.ipn import views
 #import new homebrew calendar jazz
-from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_OldVersion, HostWeeklyDefaultSchedule
 from calendar_homebrew.forms import CalendarCheckBoxes
 import calendar 
 calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
@@ -115,7 +115,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         #invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) + "R" + str(random3digits) #h2u14N13D112210R123 = transaciton between host2, user14, host's 13th transaction
         #JMY updating invoice algorithm - removing date to make it smaller
         invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) + "R" + str(random3digits) #h2u14N13D112210R123 = transaciton between host2, user14, host's 13th transaction
-        conflicts = HostConflicts.objects.filter(host=host)
+        conflicts = HostConflicts_OldVersion.objects.filter(host=host)
         for conflict in conflicts:  
             start_month = conflict.date_from.month #date_from.month, this is an integer
             if conflict.date_to:
