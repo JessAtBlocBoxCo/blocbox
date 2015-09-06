@@ -3178,7 +3178,7 @@ a > .offercard:focus {
     background-color: transparent;
     border: 2px solid #dfe2e2;
     border-radius: 100px;
-    color: white;
+    color: #dfe2e2;
     text-align: center;
     line-height: 38px;
     margin: auto;
