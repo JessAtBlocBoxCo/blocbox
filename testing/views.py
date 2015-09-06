@@ -295,7 +295,79 @@ def homebrew_cal(request):
         'today_dayofmonth_num': today_dayofmonth_num, 'today_dayofweek_num': today_dayofweek_num, 'today_dayofweek_name': today_dayofweek_name, 
         'today_dayofweek_abbr': today_dayofweek_abbr,        
     })  
-    	
+
+
+def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
+    thepersonviewingthepage = request.user
+    if thepersonviewingthepage.host == True:
+        transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
+        transactions_all_paid = transactions_all.filter(payment_processed=True)
+        transactions_count = Transaction.objects.filter(host=thepersonviewingthepage).count() #count all of the transactions
+        shipments_all_paid = transactions_all_paid.filter(favortype="package")
+        shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
+        shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.exclude(trans_complete=True)
+        otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
+        otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
+        #Create lists restricted to shipmetns that are on aftership
+        shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
+        #Shipments in transit
+        shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered",)
+        shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
+        shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
+        shipment_fail_count = shipment_fail.count()
+        shipments_in_transit_count = shipments_in_transit.count()
+        #Shipments awaiting pickup
+        shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
+        shipments_waiting_pickup_count = shipments_waiting_pickup.count()
+        connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
+        connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
+    else: #if not authenticated set these to None
+        transactions_all = None
+        transactions_all_paid = None
+        shipments_all_paid = None
+        shipments_all_paid_notarchived = None
+        otherfavors_all_paid = None
+        otherfavors_all_paid_notarchived = None   
+        shipments_complete_fordash = None
+        shipments_in_transit = None
+        shipments_in_transit_count = None
+        shipments_in_transit_no_fails = None
+        shipment_fail = None
+        shipment_fail_count = None
+        shipments_waiting_pickup = None
+        connections_all = None
+        connections_count = None
+        transactions_count = None
+    if confirm_id:  #if the open the package_received modal #JB - confirming what?
+        confirm_id_int = confirm_id.strip()
+        confirm_id_int = int(confirm_id_int)
+        host_received_modal(request, confirm_id)    
+    else:
+        confirm_id_int = None
+    return render(request, 'blocbox/dashboard-host.html', {
+            'enduser':thepersonviewingthepage,
+            #transactions all
+            'transactions_all': transactions_all, 
+            'transactions_all_paid':  transactions_all_paid,
+            'shipments_complete_fordash': shipments_complete_fordash,
+            'shipments_in_transit': shipments_in_transit,
+            'shipments_in_transit_count': shipments_in_transit_count,
+            'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
+            'shipment_fail': shipment_fail,
+            'shipments_waiting_pickup': shipments_waiting_pickup,
+            'shipments_waiting_pickup_count': shipments_waiting_pickup_count,
+            #otherfavors all
+            'otherfavors_all_paid': otherfavors_all_paid, 
+            'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
+            'connections_all': connections_all,
+            'connections_count': connections_count,
+            'transactions_count': transactions_count,
+            'shipment_fail_count':  shipment_fail_count,
+            'confirm_id': confirm_id, 
+            'confirm_id_int': confirm_id_int,
+        })
+
+
 #define the dashboard test
 def dashboard_test(request, host_id=None):
     enduser = request.user
