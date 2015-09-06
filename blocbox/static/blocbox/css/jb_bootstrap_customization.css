@@ -1857,7 +1857,7 @@ body {
     text-decoration: none;
     text-align: center;
 }
-.btn-small-grey: hover {
+.btn-small-grey:hover {
     background-color: rgb(127, 140, 141);
     color: white;
 }
@@ -3177,6 +3177,7 @@ a > .offercard:focus {
 .statusgrey{
     background-color: #dfe2e2;
     border-radius: 100px;
+    color: white;
     text-align: center;
     line-height: 38px;
     margin: auto;
@@ -3189,6 +3190,7 @@ a > .offercard:focus {
 }
 .statusgreen{
     background-color: rgb(71, 158, 159);
+    color: white;
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
@@ -3202,6 +3204,7 @@ a > .offercard:focus {
 }
 .statusltgreen{
     background-color: rgb(121, 204, 205);
+    color: white;
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
@@ -3215,6 +3218,7 @@ a > .offercard:focus {
 }
 .statusorange{
     background-color: rgb(255, 195, 0);
+    color: white;
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
@@ -3228,6 +3232,7 @@ a > .offercard:focus {
 }
 .statusred{
     background-color: rgb(241, 102, 100);
+    color: white;
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
