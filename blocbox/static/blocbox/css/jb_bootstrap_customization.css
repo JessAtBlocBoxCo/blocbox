@@ -1822,7 +1822,7 @@ body {
     text-decoration: none;
 }
 
-.btn-small-green {
+.btn-small-yellow {
     background-color: rgb(255, 195, 0);
     height: 28px;
     color: white;
@@ -1837,7 +1837,7 @@ body {
     text-decoration: none;
     text-align: center;
 }
-.btn-small-green:hover {
+.btn-small-yellow:hover {
     background-color: transparent;
     color: rgb(255, 195, 0);
 }
