@@ -1854,8 +1854,7 @@ body {
     text-align: center;
 }
 .btn-small-ltgreen:hover {
-    background-color: transparent;
-    color: rgb(71, 158, 159);
+    background-color: rgb(71, 158, 159);
 }
 
 .btn-small-yellow:hover {
