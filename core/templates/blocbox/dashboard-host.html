@@ -134,7 +134,7 @@
                 {% for sh in shipment_fail %}
 
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/package_received_modal.html" %} {% endifequal %}
+                {% ifequal confirm_id_int sh.id %} {% include "dashboard_subtemplates/host_received_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal message_trans_id_int sh.id %} {% include "dashboard_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
@@ -207,7 +207,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-1 col-sm-offset-9">
-                            <button class="btn-small-ltgreen" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mark as Received"><i class="fa fa-check fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-ltgreen" onclick="window.location='/dashboard/confirm_id{{sh.id}}/#openModal_host_received_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mark as Received"><i class="fa fa-check fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                         <div class="col-sm-1">
                             <button class="btn-small-grey" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mesage {{sh.enduser.first_name}}"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
