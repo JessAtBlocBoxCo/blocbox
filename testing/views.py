@@ -31,26 +31,48 @@ from transactions.tasks import watch_packages
 #from schedule.utils import check_event_permissions, coerce_date_dict
 #Import Payment Stuff
 from paypal.standard.ipn.models import PayPalIPN
-#import new homebrew calendar
-from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
-import calendar #REMEMBER TO DO THIS!!
-calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
 #Write a custom template filter:
 from django.template.defaulttags import register
-#Define general date vars to use in lots of functions
+#import json
+import json
+
+#Create empty list variab les
+shipments_with_tracking_allpaid = []                 
+shipments_with_tracking_complete = []                
+shipments_with_tracking_notcomplete = []             
+shipments_with_tracking_notcomplete_delivered = []   
+shipments_with_tracking_notcomplete_notdelivered = []
+shipments_with_tracking_notcomplete_notrackingno = []
+
+#AFTERSHIP API STUFF
+import aftership
+AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
+api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
+couriers = api.couriers.all.get()
+
+#################33
+#THE FOLLOWING SHIT IS NEEDED FOR THE HOST AVAILABIITY CLANEDAR -- JESS EDITING ON 9/6/2015 E
+#import new homebrew calendar
+from calendar_homebrew.models import HostConflicts, HostWeeklyDefaultSchedule
+#Define lots of generic date fields that will be accessed by several functions - note that some of these may already be defined in core.views etc
+import calendar 
+calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday    
 date_today = datetime.date.today()
 datetime_now = datetime.datetime.now()
+time = datetime.datetime.time(datetime_now)
 thisyear = date_today.year
 nextyear = date_today.year + 1
 thisyear_isleap = calendar.isleap(thisyear)
 nextyear_isleap = calendar.isleap(nextyear)
 thismonth_num = date_today.month  
 thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
 if thismonth_num == 12:
     nextmonth_num = 1
+    nextmonth_calendar_year = nextyear
 else:
     nextmonth_num = date_today.month + 1
-nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
+    nextmonth_calendar_year = thisyear
 thismonth = calendar.month_name[thismonth_num]
 nextmonth = calendar.month_name[nextmonth_num]
 monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
@@ -65,47 +87,6 @@ today_dayofmonth_num = date_today.day
 today_dayofweek_num = date_today.weekday()
 today_dayofweek_name =  calendar.day_name[today_dayofweek_num] #day name is san array 
 today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
-#AFTERSHIP API STUFF
-import aftership
-AFTERSHIP_API_KEY = settings.AFTERSHIP_API_KEY #DEFINED IN SETTINGS.PY
-api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
-couriers = api.couriers.all.get()
-#Create empty list variab les
-shipments_with_tracking_allpaid = []                 
-shipments_with_tracking_complete = []                
-shipments_with_tracking_notcomplete = []             
-shipments_with_tracking_notcomplete_delivered = []   
-shipments_with_tracking_notcomplete_notdelivered = []
-shipments_with_tracking_notcomplete_notrackingno = []
-#import json
-import json
-
-#Get date fields
-date_today = datetime.date.today()
-datetime_now = datetime.datetime.now()         
-time = datetime.datetime.time(datetime_now)
-#Year variables
-thisyear = date_today.year
-nextyear = date_today.year + 1
-thisyear_isleap = calendar.isleap(thisyear)
-nextyear_isleap = calendar.isleap(nextyear)
-#Month Variables
-thismonth_num = date_today.month      
-if thismonth_num == 12:
-    nextmonth_num = 1
-    nextmonth_calendar_year = nextyear
-else:
-    nextmonth_num = date_today.month + 1
-    nextmonth_calendar_year = thisyear
-thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
-nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
-thismonth = calendar.month_name[thismonth_num]
-nextmonth = calendar.month_name[nextmonth_num]
-monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
-monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
-days_in_thismonth = monthrange_thismonth[1]
-days_in_nextmonth = monthrange_nextmonth[1] 
-today_dayofmonth_num = date_today.day 
 
 #Define get_item function
 @register.filter
