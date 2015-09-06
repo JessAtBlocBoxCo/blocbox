@@ -1824,9 +1824,10 @@ body {
 
 .btn-select-green {
     background-color: rgb(71, 158, 159);
-    font-size: .733em;
+    font-size: .993em;
     font-weight: 500;
     line-height: 1.38em;
+    letter-spacing: 1.2em;
     height: 24px;
     color: white;
     border: 1px solid rgb(71, 158, 159);
