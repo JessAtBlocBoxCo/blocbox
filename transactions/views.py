@@ -38,6 +38,37 @@ from transactions.forms import CreatePackageTransaction
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 
+#DEFINING DATE VARIABLES AT TOP OF VIEW INSTEAD OF IN STARTASHIPMETN SO CAN BE REFERENCED BY OTHER VIEWS
+#Get date fields
+local_timezone = request.session.setdefault('django_timezone', 'UTC')
+local_timezone = pytz.timezone(local_timezone) 
+date_today = datetime.date.today()
+datetime_now = datetime.datetime.now()         
+time = datetime.datetime.time(datetime_now)
+#Year variables
+thisyear = date_today.year
+nextyear = date_today.year + 1
+thisyear_isleap = calendar.isleap(thisyear)
+nextyear_isleap = calendar.isleap(nextyear)
+#Month Variables
+thismonth_num = date_today.month      
+if thismonth_num == 12:
+    nextmonth_num = 1
+    nextmonth_calendar_year = nextyear
+else:
+    nextmonth_num = date_today.month + 1
+    nextmonth_calendar_year = thisyear
+thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
+thismonth = calendar.month_name[thismonth_num]
+nextmonth = calendar.month_name[nextmonth_num]
+monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
+monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
+days_in_thismonth = monthrange_thismonth[1]
+days_in_nextmonth = monthrange_nextmonth[1] 
+today_dayofmonth_num = date_today.day 
+
+
 #The Start a shipment process
 def startashipment(request, host_id=None, transaction_form_submitted=False, invoice=None, cal_form_submitted=False, packagedays_count = None, ):
     random3digits = random.randint(100,999)
@@ -60,34 +91,6 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         amount_due = None #this is processed on the payment page if they aren't applying account balance
         remaining_balance = None 
     connections_all = Connection.objects.filter(end_user=enduser) 
-    #Get date fields
-    local_timezone = request.session.setdefault('django_timezone', 'UTC')
-    local_timezone = pytz.timezone(local_timezone) 
-    date_today = datetime.date.today()
-    datetime_now = datetime.datetime.now()         
-    time = datetime.datetime.time(datetime_now)
-    #Year variables
-    thisyear = date_today.year
-    nextyear = date_today.year + 1
-    thisyear_isleap = calendar.isleap(thisyear)
-    nextyear_isleap = calendar.isleap(nextyear)
-    #Month Variables
-    thismonth_num = date_today.month      
-    if thismonth_num == 12:
-        nextmonth_num = 1
-        nextmonth_calendar_year = nextyear
-    else:
-        nextmonth_num = date_today.month + 1
-        nextmonth_calendar_year = thisyear
-    thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
-    nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
-    thismonth = calendar.month_name[thismonth_num]
-    nextmonth = calendar.month_name[nextmonth_num]
-    monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
-    monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
-    days_in_thismonth = monthrange_thismonth[1]
-    days_in_nextmonth = monthrange_nextmonth[1] 
-    today_dayofmonth_num = date_today.day 
     #Empty variables for availability/ conflict stuff
     days_package_may_come_thismonth = []
     days_package_may_come_nextmonth = []
