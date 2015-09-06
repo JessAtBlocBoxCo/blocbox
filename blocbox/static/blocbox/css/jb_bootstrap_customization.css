@@ -1823,10 +1823,10 @@ body {
 }
 
 .btn-small-green {
-    background-color: rgb(40, 88, 88);
+    background-color: rgb(255, 195, 0);
     height: 28px;
     color: white;
-    border: 1px solid rgb(71, 158, 159);
+    border: 1px solid rgb(255, 195, 0);
     padding: 3px 5px 3px 5px;
     margin-left: auto;
     margin-right: auto;
@@ -1839,7 +1839,7 @@ body {
 }
 .btn-small-green:hover {
     background-color: transparent;
-    color: rgb(71, 158, 159);
+    color: rgb(255, 195, 0);
 }
 
 .btn-small-grey {
