@@ -1837,6 +1837,21 @@ body {
     text-decoration: none;
     text-align: center;
 }
+.btn-small-ltgreen {
+    background-color: rgb(121, 204, 205);
+    height: 28px;
+    color: white;
+    border: 1px solid rgb(255, 195, 0);
+    padding: 3px 5px 3px 5px;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 100%;
+    white-space: nowrap;
+    width: 28px;
+    text-decoration: none;
+    text-align: center;
+}
 .btn-small-yellow:hover {
     background-color: transparent;
     color: rgb(255, 195, 0);
