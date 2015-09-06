@@ -1853,6 +1853,12 @@ body {
     text-decoration: none;
     text-align: center;
 }
+.btn-small-ltgreen:hover {
+    background-color: transparent;
+    padding-top: 7px;
+    color: rgb(121, 204, 205);
+}
+
 .btn-small-yellow:hover {
     background-color: transparent;
     color: rgb(255, 195, 0);
