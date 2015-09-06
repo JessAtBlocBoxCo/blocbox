@@ -1823,7 +1823,7 @@ body {
 }
 
 .btn-small-green {
-    background-color: transparent;
+    background-color: rgb(121, 204, 205);
     height: 28px;
     color: rgb(71, 158, 159);
     border: 1px solid rgb(121, 204, 205);
