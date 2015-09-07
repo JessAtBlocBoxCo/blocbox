@@ -16,6 +16,6 @@ class WeeklyScheduleAdmin(admin.ModelAdmin):
     list_filter = ['host',]
     search_fields = ['host',  ] 
     
-admin.site.register(HostConflicts, ConflictsAdmin)
+admin.site.register(HostConflicts_BooleanVersion, ConflictsAdmin_BooleanVersion)
 admin.site.register(HostConflicts_OldVersion, ConflictsAdmin_OldVersion)
 admin.site.register(HostWeeklyDefaultSchedule, WeeklyScheduleAdmin)
