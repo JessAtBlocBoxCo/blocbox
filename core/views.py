@@ -590,26 +590,26 @@ def host_received_modal(request, confirm_id):
 def host_report_issue_modal(request, issue_id):
     trans = Transaction.objects.get(pk=issue_id)
     if request.method == 'POST':
-        enduser_issue_form = EndUserIssue(request.POST, instance=trans)
-        if enduser_issue_form.is_valid():
-            issue = enduser_issue_form.save()
+        host_issue_form = HostIssue(request.POST, instance=trans)
+        if host_issue_form.is_valid():
+            issue = host_issue_form.save()
             issue.save()
-            notify_host_enduser_issue(request, trans.id)
-            notify_admin_enduser_issue(request, trans.id)
+            notify_enduser__host_issue(request, trans.id)
+            notify_admin_host_issue(request, trans.id)
         else: 
-            print enduser_issue_form.errors
+            print enduser_host_form.errors
     else:
-        enduser_issue_form = EndUserIssue(instance=trans)
+        host_issue_form = HostIssue(instance=trans)
     return HttpResponse("OK")
 
 def notify_enduser_host_issue(request, trans_id):
     trans = get_object_or_404(Transaction, pk=trans_id)
     host = trans.host
     enduser = trans.enduser
-    message = render_to_string('emails/notify_host_enduser_issue.txt', 
+    message = render_to_string('emails/notify_enduser_host_issue.txt', 
         { 'host': host, 'enduser': enduser, 'trans': trans})
-    subject = "Your Neighbor " + str(enduser.first_name) + " has reported an issue with Order " + str(trans.id)
-    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
+    subject = "Your Host" + str(host.first_name) + " has reported an issue with Order " + str(trans.id)
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [enduser.email,]) #last is the to-email
     return HttpResponse("An email has been sent to the host to notify them about this issue.")
 
 def notify_admin_host_issue(request, trans_id):
