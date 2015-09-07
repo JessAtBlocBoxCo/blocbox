@@ -1,5 +1,5 @@
 from django.contrib import admin
-from calendar_homebrew.models import HostConflicts_DateVersion_OneTable, HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_DateVersion, HostConflicts_DateVersion_OneTable, HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
 
 class ConflictsAdmin_DateVersion(admin.ModelAdmin): 
     list_display = ('id', 'host', )
