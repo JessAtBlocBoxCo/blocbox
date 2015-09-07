@@ -27,7 +27,7 @@ from transactions.models import Transaction
 from paypal.standard.forms import PayPalPaymentsForm
 #from paypal.standard.ipn import views
 #import new homebrew calendar jazz
-from calendar_homebrew.models import HostConflicts_OldVersion, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_DateVersion, HostConflicts_OldVersion, HostWeeklyDefaultSchedule
 from calendar_homebrew.forms import CalendarCheckBoxes
 import calendar 
 calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday
