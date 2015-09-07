@@ -520,13 +520,13 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         connections_all = None
         connections_count = None
         transactions_count = None
+    host_received_form = None
     if confirm_id:  #if the open the package_received modal #JB - confirming what?
         confirm_id_int = confirm_id.strip()
         confirm_id_int = int(confirm_id_int)
         host_received_modal(request, confirm_id) 	
     else:
         confirm_id_int = None
-        host_received_form = None
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
