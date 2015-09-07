@@ -17,8 +17,8 @@ from django.conf import settings
 
 class HostConflicts_DateVersion(models.Model):
     host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict_dateversion') 
-    day = models.IntegerField("Conflict Day")
     month = models.IntegerField("Conflict Month")
+    day = models.IntegerField("Conflict Day")
     year = models.IntegerField("Conflict Year")
     date = models.DateField("Conflict Date", blank=True, null=True)
 

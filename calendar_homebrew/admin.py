@@ -2,7 +2,7 @@ from django.contrib import admin
 from calendar_homebrew.models import HostConflicts_DateVersion, HostConflicts_DateVersion_OneTable, HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
 
 class ConflictsAdmin_DateVersion(admin.ModelAdmin): 
-    list_display = ('id', 'host', )
+    list_display = ('id', 'host',  'month', 'day', 'year')
     list_filter = ['host',  ]
     search_fields = ['host', ]  
 
