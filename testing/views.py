@@ -383,6 +383,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
                 daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
                 if daycheckedmonth1:
                     #add the conflicts monty, day and year - conflict in this month
+                    conflict_new.host = thepersonviewingthepage
                     conflict_new.month = thismonth_num
                     conflict_new.day = daynumber
                     conflict_new.year = thisyear
@@ -392,6 +393,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
                 daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
                 if daycheckedmonth2:
                     #add the conflicts monty, day and year - conflict in this month
+                    conflict_new.host = thepersonviewingthepage
                     conflict_new.month = nextmonth_num
                     conflict_new.day = daynumber
                     conflict_new.year = thisyear
