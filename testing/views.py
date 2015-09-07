@@ -340,7 +340,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
         connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
         #Get all of the host conflicts - JMY ADDING ON 9/7/2016
-        conflicts = HostConflicts_DateVersion.objects.filter(host=host)
+        conflicts = HostConflicts_DateVersion.objects.filter(host=thepersonviewingthepage)
         for conflict in conflicts:
             conflict_month = conflict.month
             conflict_day = conflict.day
