@@ -31,9 +31,9 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                         </div>
                                
 
-                        <table class="table marginbottom5px">
-                            <!--first row: weekday names -->
-                            <tr>
+                <table class="table marginbottom5px">
+                        <!--first row: weekday names -->
+                        <tr>
                                 <th class="textcenter daytext">Sun</th>
                                 <th class="textcenter daytext">Mon</th>
                                 <th class="textcenter daytext">Tue</th>
@@ -41,64 +41,52 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                                 <th class="textcenter daytext">Thur</th>
                                 <th class="textcenter daytext">Fri</th>
                                 <th class="textcenter daytext">Sat</th>
-                            </tr>
+                        </tr>
 
-                            {% for week in thismonth_calendar %}
-                            <tr class="datetext">
+                    {% for week in thismonth_calendar %}
+                    <tr class="datetext">
 
-                             {% for day in week %}
+                        {% for day in week %}
 
-                               <!--BEFORE TODAY: grey it out -- using INFO class JB needs to style  -->
-
-                               {% if day < today_dayofmonth_num %} 
+                            <!--BEFORE TODAY: grey it out -- using INFO class JB needs to style  -->
+                            {% if day < today_dayofmonth_num %} 
                                	   <td class="warning marginbottom5px">
-                                      {% if day = 0 %} <!--nothing if day = 0 !-->
-                                         <span class="warningcircle" style="padding: 8px 9px"> </span>
-                                      {% else %}
-                                     
-                                          <span class="warningcircle" style="padding: 8px 9px">{{ day }}</span>
-                                      
+                                      {% if day = 0 %}  <span class="warningcircle" style="padding: 8px 9px"> </span>
+                                      {% else %}        <span class="warningcircle" style="padding: 8px 9px">{{ day }}</span>                                      
                                       {% endif %}
                                     </td>
-                               {% else %}
-
+                            {% else %} 
 
                                   <!--TODAY: make class active -->
-                                  {% if day = today_dayofmonth_num %}
+                                {% if day = today_dayofmonth_num %}
                                   <td> <!--class="active"-->
                                   	  <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}" >
                                       <label for="id_month1day{{day}}" class="activecircle"><span style="padding: 8px 9px">{{ day }}</span> </label>
                                       <!-- <label for="id_month1day{{day}}" class="activecircle" style="padding: 9px 9px;">{{ day }}</label> -->
                                   </td>
-                                  {% else %}
+                                {% else %}
                                      <!--conflict days FOR JB DO WE EANT CLASS IS DANGER OR WARNING?? WE NO LONGER NEEE BOTH SINCE THEY CANT CHECK BIX IF CONFLICT SO ONKY CONFLICT WARNING -->
                                      {% if day in days_withconflicts_thismonth %}
                                      <td class="danger"><span class="dangercircle" style="padding: 10px 9px">{{ day }}</span></td>
                                      {% else %}
-                                          <td> 
-                                    	      {% if day = 0 %} <!--blank if zero -->
+                                        <td> 
+                                            {% if day = 0 %} <!--blank if zero -->
                                             <!--regular days ahead-->
                                             {% else %}
-                                              <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}">
-                                              <label for="id_month1day{{day}}"><span style="padding: 8px 9px">{{ day }}</span> </label>
+                                                <input type="checkbox" name="month1day{{day}}" id="id_month1day{{day}}">
+                                                <label for="id_month1day{{day}}"><span style="padding: 8px 9px">{{ day }}</span> </label>
+                                            {% endif %}
+                                        </td>
+                                    {% endif %} <!--end if conflict -->
+                                {% endif %} <!--end if today-->
 
-                                        {% endif %}
-                                    </td>
-                                    {% endif %}
-                                    <!--conflict -->
-                                    {% endif %}
-                                    <!--today-->
+                            {% endif %}  <!--end if before today -->
 
-                                    {% endif %}
-                                    <!--before today -->
-
-
-                                    {% endfor %}
-                                    <!--day in week-->
-                            </tr>
-                            {% endfor %}
-                            <!--week in month-->
-                        </table>
+                        {% endfor %}  <!--end for day in week-->
+                    
+                    </tr> <!--end tr class=datetext -->
+                    {% endfor %}  <!-- end for week in month-->
+                </table>  <!--end table -->
                         
                       <!--Error Messages for Each Field -->
                       <h4>
@@ -126,10 +114,6 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
             <!--table for this month-->
 
 
-
-
-
-
             <!--NEXT MONTH CALENDAR-->
             <div class="item">
                 <div class="col-xs-12">
@@ -148,9 +132,6 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                             <h4 class="col-xs-4 textcenter monthtext">{{nextmonth}} </h4>
                         </div>
                         
-                        
-                        
-                        {{ cal_form.month2day1.errors }} {{ cal_form.month2day2.errors }} {{ cal_form.month2day3.errors }} {{ cal_form.month2day4.errors }} {{ cal_form.month2day5.errors }} {{ cal_form.month2day6.errors }} {{ cal_form.month2day7.errors }} {{ cal_form.month2day8.errors }} {{ cal_form.month2day9.errors }} {{ cal_form.month2day10.errors }}
 
                         <table class="table marginbottom5px">
                             <!--first row: weekday names -->
@@ -168,31 +149,52 @@ note, bootstratp td classes: active, success, danger, warning, info -- usettttt 
                             <tr class="datetext">
                                 {% for day in week %}
 
-                                <!--conflict days JB NEED TO STYKE CLASS-->
-                                {% if day in days_withconflicts_nextmonth %}
-                                <td class="danger">{{ day }}</td>
-                                {% else %}
-                                <td> {% if day = 0 %}
-                                    <!--blank if zero -->
+                                    <!--conflict days JB NEED TO STYKE CLASS-->
+                                    {% if day in days_withconflicts_nextmonth %}
+                                    <td class="danger"><span class="dangercircle" style="padding: 10px 9px">{{ day }}</span></td>
+                                    
                                     {% else %}
-                                    <!-- if not zero -->
-                                    <input type="checkbox" name="month2day{{day}}" id="id_month2day{{day}}">
-                                    <label for="id_month2day{{day}}"><span style="padding: 7px 9px">{{ day }}</span>
-                                    </label>
+                                    <td> 
+                                        {% if day = 0 %}
+                                        <!--blank if zero -->
+                                        {% else %}
+                                        <!-- if not zero -->
+                                        <input type="checkbox" name="month2day{{day}}" id="id_month2day{{day}}">
+                                        <label for="id_month2day{{day}}"><span style="padding: 7px 9px">{{ day }}</span> </label>
+                                        {% endif %}
+                                        <!-- if zero -->
 
-                                    {% endif %}
-                                    <!-- if zero -->
+                                    </td>
+                                    {% endif %} <!--endif conflict -->
 
-                                </td>
-                                {% endif %}
-                                <!--endif conflict -->
-
-                                {% endfor %}
-                                <!--end for day in week -->
+                                {% endfor %}  <!--end for day in week -->
                             </tr>
-                            {% endfor %}
+                            {% endfor %} <!--end for week in nextmonth_clanedar -->
 
                         </table>
+
+                        <!--Error Messages for Each Field -->
+                        <h4>
+                            {{ cal_form.non_field_errors }}
+                            {{ cal_form.month1day1.errors }}                {{ cal_form.month1day16.errors }} 
+                            {{ cal_form.month1day2.errors }}        {{ cal_form.month1day17.errors }} 
+                            {{ cal_form.month1day3.errors }}        {{ cal_form.month1day18.errors }} 
+                            {{ cal_form.month1day4.errors }}        {{ cal_form.month1day19.errors }} 
+                            {{ cal_form.month1day5.errors }}        {{ cal_form.month1day20.errors }} 
+                            {{ cal_form.month1day6.errors }}        {{ cal_form.month1day21.errors }}
+                            {{ cal_form.month1day7.errors }}        {{ cal_form.month1day22.errors }}
+                            {{ cal_form.month1day8.errors }}        {{ cal_form.month1day23.errors }}
+                            {{ cal_form.month1day9.errors }}        {{ cal_form.month1day24.errors }}
+                            {{ cal_form.month1day10.errors }}       {{ cal_form.month1day25.errors }}
+                            {{ cal_form.month1day11.errors }}       {{ cal_form.month1day26.errors }}
+                            {{ cal_form.month1day12.errors }}       {{ cal_form.month1day27.errors }}
+                            {{ cal_form.month1day13.errors }}       {{ cal_form.month1day28.errors }}
+                            {{ cal_form.month1day14.errors }}       {{ cal_form.month1day29.errors }}
+                            {{ cal_form.month1day15.errors }}       {{ cal_form.month1day30.errors }}
+                                                                {{ cal_form.month1day31.errors }}
+                         </h4>     
+
+
                     </div>
                 </div>
                 <!--div for next month -->
