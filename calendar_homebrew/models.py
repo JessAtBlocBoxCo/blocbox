@@ -15,9 +15,77 @@ import datetime
 from django.utils import timezone
 from django.conf import settings
 
-#Define new HostConflicts model - a field per day
+
 class HostConflicts(models.Model):
-    host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict', blank=True, null=True) #this shows up as payer_id
+    host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict_dateversion', blank=True, null=True) #this shows up as payer_id
+    #make 62 conflicts for two months
+    thimonthconflict1  = models.DateField(blank=True)
+    thimonthconflict2  = models.DateField(blank=True)
+    thimonthconflict3  = models.DateField(blank=True)
+    thimonthconflict4  = models.DateField(blank=True)
+    thimonthconflict5  = models.DateField(blank=True)
+    thimonthconflict6  = models.DateField(blank=True)
+    thimonthconflict7  = models.DateField(blank=True)
+    thimonthconflict8  = models.DateField(blank=True)
+    thimonthconflict9  = models.DateField(blank=True)
+    thimonthconflict10 = models.DateField(blank=True)
+    thimonthconflict11 = models.DateField(blank=True)
+    thimonthconflict12 = models.DateField(blank=True)
+    thimonthconflict13 = models.DateField(blank=True)
+    thimonthconflict14 = models.DateField(blank=True)
+    thimonthconflict15 = models.DateField(blank=True)
+    thimonthconflict16 = models.DateField(blank=True)
+    thimonthconflict17 = models.DateField(blank=True)
+    thimonthconflict18 = models.DateField(blank=True)
+    thimonthconflict19 = models.DateField(blank=True)
+    thimonthconflict20 = models.DateField(blank=True)
+    thimonthconflict21 = models.DateField(blank=True)
+    thimonthconflict22 = models.DateField(blank=True)
+    thimonthconflict23 = models.DateField(blank=True)
+    thimonthconflict24 = models.DateField(blank=True)
+    thimonthconflict25 = models.DateField(blank=True)
+    thimonthconflict26 = models.DateField(blank=True)
+    thimonthconflict27 = models.DateField(blank=True)
+    thimonthconflict28 = models.DateField(blank=True)
+    thimonthconflict29 = models.DateField(blank=True)
+    thimonthconflict30 = models.DateField(blank=True)
+    thimonthconflict31 = models.DateField(blank=True)
+    nextmonthconflict1  = models.DateField(blank=True)
+    nextmonthconflict2  = models.DateField(blank=True)
+    nextmonthconflict3  = models.DateField(blank=True)
+    nextmonthconflict4  = models.DateField(blank=True)
+    nextmonthconflict5  = models.DateField(blank=True)
+    nextmonthconflict6  = models.DateField(blank=True)
+    nextmonthconflict7  = models.DateField(blank=True)
+    nextmonthconflict8  = models.DateField(blank=True)
+    nextmonthconflict9  = models.DateField(blank=True)
+    nextmonthconflict10 = models.DateField(blank=True)
+    nextmonthconflict11 = models.DateField(blank=True)
+    nextmonthconflict12 = models.DateField(blank=True)
+    nextmonthconflict13 = models.DateField(blank=True)
+    nextmonthconflict14 = models.DateField(blank=True)
+    nextmonthconflict15 = models.DateField(blank=True)
+    nextmonthconflict16 = models.DateField(blank=True)
+    nextmonthconflict17 = models.DateField(blank=True)
+    nextmonthconflict18 = models.DateField(blank=True)
+    nextmonthconflict19 = models.DateField(blank=True)
+    nextmonthconflict20 = models.DateField(blank=True)
+    nextmonthconflict21 = models.DateField(blank=True)
+    nextmonthconflict22 = models.DateField(blank=True)
+    nextmonthconflict23 = models.DateField(blank=True)
+    nextmonthconflict24 = models.DateField(blank=True)
+    nextmonthconflict25 = models.DateField(blank=True)
+    nextmonthconflict26 = models.DateField(blank=True)
+    nextmonthconflict27 = models.DateField(blank=True)
+    nextmonthconflict28 = models.DateField(blank=True)
+    nextmonthconflict29 = models.DateField(blank=True)
+    nextmonthconflict30 = models.DateField(blank=True)
+    nextmonthconflict31 = models.DateField(blank=True)
+
+
+#Define new HostConflicts model - a field per day
+class HostConflicts_Boolean(models.Model):
+    host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflicts_boolean', blank=True, null=True) #this shows up as payer_id
     thismonthday1  = models.BooleanField(default=False, blank=True)
     thismonthday2  = models.BooleanField(default=False, blank=True)
     thismonthday3  = models.BooleanField(default=False, blank=True)
@@ -80,7 +148,8 @@ class HostConflicts(models.Model):
     nextmonthday29 = models.BooleanField(default=False, blank=True)
     nextmonthday30 = models.BooleanField(default=False, blank=True)
     nextmonthday31 = models.BooleanField(default=False, blank=True)
-	
+
+
 #Define a conflicts model - conflicts populate the availability model?
 class HostConflicts_OldVersion(models.Model):
     host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict_oldversion', blank=True, null=True) #this shows up as payer_id
