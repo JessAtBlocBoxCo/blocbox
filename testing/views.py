@@ -56,7 +56,7 @@ couriers = api.couriers.all.get()
 #NOTE - HOSTCONFLICTS_DATEVERSIO IS THE ONE CURRENTLY IN USE
 from calendar_homebrew.models import HostConflicts_DateVersion, HostConflicts_DateVersion_OneTable, HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
 #Import the HostConflictsForm -- i just created this in calendar_homebrew.forms.py
-from calendar_homebrew.forms import HostConflictsForm_DateVersion, HostConflictsForm_OldVersion
+from calendar_homebrew.forms import HostConflictsForm_DateVersion, HostConflictsForm_OldVersion, CalendarCheckBoxes
 #Define lots of generic date fields that will be accessed by several functions - note that some of these may already be defined in core.views etc
 import calendar 
 calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday    
