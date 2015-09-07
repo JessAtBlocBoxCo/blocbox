@@ -84,7 +84,7 @@ class HostConflicts_DateVersion(models.Model):
 
 
 #Define new HostConflicts model - a field per day
-class HostConflicts_Boolean(models.Model):
+class HostConflicts_BooleanVersion(models.Model):
     host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflicts_boolean', blank=True, null=True) #this shows up as payer_id
     thismonthday1  = models.BooleanField(default=False, blank=True)
     thismonthday2  = models.BooleanField(default=False, blank=True)
