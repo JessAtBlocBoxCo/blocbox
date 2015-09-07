@@ -314,8 +314,8 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
     local_timezone = pytz.timezone(local_timezone) 
     #define empty list and other variables used for the availabiility and conflict functions
     #may not nbeed these
-    unavailable_days_thismonth = []
-    unavailable_days_nextmonth = []
+    days_withconflicts_thismonth = []
+    days_withconflicts_nextmonth = []
     cal_form_submitted = False
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
@@ -345,9 +345,9 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
             conflict_month = conflict.month
             conflict_day = conflict.day
             if conflict_month == thismonth_num:
-                unavailable_days_thismonth.append(conflict_day)
+                days_withconflicts_thismonth.append(conflict_day)
             if conflict_month == nextmonth_num:
-                unavailable_days_nextmonth.append(conflict_day)
+                days_withconflicts_nextmonth.append(conflict_day)
     else: #if not authenticated set these to None
         transactions_all = None
         transactions_all_paid = None
@@ -425,7 +425,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
             'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
             'today_dayofmonth_num': today_dayofmonth_num, 'nextmonth_calendar_year': nextmonth_calendar_year,
             #Unavailable days
-            'unavailable_days_thismonth': unavailable_days_thismonth, 'unavailable_days_nextmonth': unavailable_days_nextmonth,
+            'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,
         })
 
 
