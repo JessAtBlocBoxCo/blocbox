@@ -43,13 +43,6 @@ class PackageReceived(forms.Form):
     enduser_rating=forms.IntegerField(max_value=5, required=False)
     enduser_comments=forms.CharField(max_length=200, required=False)
 
-"""
-class PackageReceived(forms.ModelForm):
-	  class Meta:
-	  		model = Transaction
-	  		fields = ('trans_complete', 'enduser_rating', 'enduser_comments', 'date_completed', 'datetime_completed',)
-"""
-
 class EndUserIssue(forms.ModelForm):
 		class Meta:
 				model = Transaction
@@ -57,14 +50,8 @@ class EndUserIssue(forms.ModelForm):
 
 class MessageHost(forms.Form):
     message_body = forms.CharField(max_length=700, required=False)
-"""
-  
-#connect form for useres that are already registered, still works off of userinfo 
-class ConnectForm(forms.ModelForm):
-    class Meta:
-        model = UserInfo
-        fields = ('about_me', 'intro_message', 'pickup_time', 'FBlink', 'imageurl', 'userrating', 'host',
-            'need_storage', 'need_petcare', 'need_housesitting', 'need_rentals', 'need_laundry', 'need_letin',
-    				'need_childcare', 'need_plantcare', 'need_lawn', 'need_carsharing', 'need_housemaint', 'need_autocare', 'need_other'
-            )
-"""
+    
+class HostReceived(forms.Form):
+    host_comments=forms.CharField(max_length=200, required=False)
+
+    

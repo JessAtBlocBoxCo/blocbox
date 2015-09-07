@@ -15,7 +15,7 @@ from transactions.models import Transaction
 from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, ResetPassword, Editprofile
 from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral, attribute_referral_waitlist
 from connections.forms import ConnectForm
-from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost
+from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost, HostReceived
 #adding transactions watch_packages task on 8/30 to update dashboard function
 from transactions.tasks import watch_packages
 #Add the waitlist app
@@ -63,6 +63,7 @@ api = aftership.APIv4(AFTERSHIP_API_KEY) #Defined in settings.py
 import pyzipcode
 from pyzipcode import ZipCodeDatabase
 zcdb = ZipCodeDatabase()
+
 
 
 #DEFINIGN SOME LIST VARSIABLES USED BY SEVERAL VIEWS BELOW
@@ -551,10 +552,10 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
 def host_received_modal(request, confirm_id):
     trans = Transaction.objects.get(pk=confirm_id)
     if request.method == 'POST':
-        host_received_form = PackageReceived(request.POST) #note this is not a model form
-        if package_received_form.is_valid():
-            trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
-            trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
+        host_received_form = HostReceived(request.POST) #note this is not a model form
+        if host_received_form.is_valid():
+            trans.enduser_rating = host_received_form.cleaned_data['enduser_rating']
+            trans.enduser_comments = host_received_form.cleaned_data['enduser_comments']
             trans.trans_complete = True
             trans.date_completed = datetoday
             trans.datetime_completed = datetimenow

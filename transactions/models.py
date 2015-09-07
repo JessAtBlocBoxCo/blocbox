@@ -88,6 +88,7 @@ class Transaction(models.Model):
     #no longer in use
     dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)     
     dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)
+    host_received = models.BooleanField(default=False)
     
 
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
