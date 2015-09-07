@@ -116,57 +116,13 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         #invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) +"D" + str(date_today.month) + str(date_today.day) + str(time.hour) + "R" + str(random3digits) #h2u14N13D112210R123 = transaciton between host2, user14, host's 13th transaction
         #JMY updating invoice algorithm - removing date to make it smaller
         invoice = "H" + str(host.id) + "U" + str(enduser.id) + "N" +str(transcount) + "R" + str(random3digits) #h2u14N13D112210R123 = transaciton between host2, user14, host's 13th transaction
-        conflicts = HostConflicts_OldVersion.objects.filter(host=host)
-        for conflict in conflicts:  
-            start_month = conflict.date_from.month #date_from.month, this is an integer
-            if conflict.date_to:
-                end_month = conflict.date_to.month
-            else:
-                end_month = None
-            conflicts_startmonths.append(start_month) 
-            if start_month == thismonth_num:
-                conflicts_startthismonth.append(conflict)
-                if start_month == end_month:
-                    conflicts_startandend_thismonth.append(conflict)
-                else:
-                    if end_month == start_month + 1:
-                        conflicts_startthismonth_endnextmonth.append(conflict)
-                    else:
-                        conflicts_startthismonth_endlater.append(conflict)
-            if start_month == nextmonth_num:
-                conflicts_startnextmonth.append(conflict)
-                if start_month == end_month:
-                    conflicts_startandend_nextmonth.append(conflict)
-                else:
-                    conflicts_startnextmonth_endlater.append(conflict)
-        #define days with conflicts
-        for conflict in conflicts_startthismonth:
-            #append the first day
-            days_withconflicts_thismonth.append(conflict.date_from.day)   
-            #append the days after the first day for multi-day conflicts 	  
-            if conflict.duration > 1:
-                duration_less1 = conflict.duration - 1
-                for day in range(duration_less1):
-                    conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
-                    if conflict_day <= days_in_thismonth:
-                        days_withconflicts_thismonth.append(conflict_day)
-                    else:
-                        conflict_day_spillover = conflict_day - days_in_thismonth
-                        days_withconflicts_nextmonth.append(conflict_day_spillover)
-        for conflict in conflicts_startnextmonth:
-        	  #append the first day
-            days_withconflicts_nextmonth.append(conflict.date_from.day)   
-            #append the days after the first day for multi-day conflicts 	  
-            if conflict.duration > 1:
-                duration_less1 = conflict.duration - 1
-                for day in range(duration_less1):
-                    conflict_day = conflict.date_from.day + day + 1 #range starts at zero so have to add 1
-                    if conflict_day <= days_in_nextmonth:
-                        days_withconflicts_nextmonth.append(conflict_day)
-                    else:
-                        conflict_day_spillover = conflict_day - days_in_nextmonth
-                        days_withconflicts_later.append(conflict_day_spillover)
-        #remove duplciates - hopefully they dont exist but the might          
+        conflicts = HostConflicts_DateVersion.objects.filter(host=host)
+        for conflict in conflicts:
+            if conflict.month == thismonth_num:
+                days_withconflicts_thismonth.append(conflict.day)
+            if conflict.month == nextmonth_num:
+                days_withconflicts_nextmonth.append(conflict.day)
+        #i think i do this to remove duplicates
         days_withconflicts_thismonth = list(set(days_withconflicts_thismonth))
         days_withconflicts_nextmonth = list(set(days_withconflicts_nextmonth))
         #determine if there is a conflict
@@ -322,7 +278,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
                 for daynumber in range(1,32): 
                     daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
                     if daycheckedmonth2:
-                        checked_day = str(thisyear) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
+                        checked_day = str(nextmonth_calendar_year) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
                         checked_day_string = str(nextmonth) + " " + str(daynumber)
                         packagedays.append(checked_day)
                         packagedays_string.append(checked_day_string)
