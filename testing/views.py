@@ -345,9 +345,9 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         conflicts = HostConflicts_DateVersion.objects.filter(host=thepersonviewingthepage)
         for conflict in conflicts:
             if conflict.month == thismonth_num:
-                days_withconflicts_thismonth.append(conflict_day)
+                days_withconflicts_thismonth.append(conflict.day)
             if conflict.month == nextmonth_num:
-                days_withconflicts_nextmonth.append(conflict_day)
+                days_withconflicts_nextmonth.append(conflict.day)
     else: #if not authenticated set these to None
         transactions_all = None
         transactions_all_paid = None
