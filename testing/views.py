@@ -311,14 +311,14 @@ def homebrew_cal(request):
 def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
     thepersonviewingthepage = request.user
     #set timezone
-    local_timezone = request.session.setdefault('django_timezone', 'UTC')
-    local_timezone = pytz.timezone(local_timezone) 
+    local_timezone = request.session.setdefault('django_timezone', 'UTC') #added 
+    local_timezone = pytz.timezone(local_timezone) #added 
     #define empty list and other variables used for the availabiility and conflict functions
     #may not nbeed these
-    days_withconflicts_thismonth = []
-    days_withconflicts_nextmonth = []
-    calendar_submit_button_text = "Submit Updated Availability"
-    cal_form_submitted = False
+    days_withconflicts_thismonth = [] #added
+    days_withconflicts_nextmonth = [] #added
+    calendar_submit_button_text = "Submit Updated Availability" #added
+    cal_form_submitted = False #added
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
@@ -342,7 +342,6 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
         connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
         #Get all of the host conflicts - JMY ADDING ON 9/7/2016
-        conflicts_test = "this is test of conflicts_test var"
         conflicts = HostConflicts_DateVersion.objects.filter(host=thepersonviewingthepage)
         for conflict in conflicts:
             if conflict.month == thismonth_num:
@@ -438,8 +437,6 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
             #Unavailable days
             'conflicts': conflicts, 'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,
             'calendar_submit_button_text': calendar_submit_button_text,
-            #DELETE ME - TESTING
-            'conflicts_test': conflicts_test,
         })
 
 
