@@ -282,76 +282,6 @@ def dashboard(request, host_id=None, trans=None, track_id=None, confirm_id=None,
         'shipments_onaftership_notcomplete_notdelivered_fail': shipments_onaftership_notcomplete_notdelivered_fail,    
     })
 
-def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
-    thepersonviewingthepage = request.user
-    if thepersonviewingthepage.host == True:
-        transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
-        transactions_all_paid = transactions_all.filter(payment_processed=True)
-        transactions_count = Transaction.objects.filter(host=thepersonviewingthepage).count() #count all of the transactions
-        shipments_all_paid = transactions_all_paid.filter(favortype="package")
-        shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
-        shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.exclude(trans_complete=True)
-        otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
-        otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
-        #Create lists restricted to shipmetns that are on aftership
-        shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
-        #Shipments in transit
-        shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered",)
-        shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
-        shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
-        shipment_fail_count = shipment_fail.count()
-        shipments_in_transit_count = shipments_in_transit.count()
-        #Shipments awaiting pickup
-        shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
-        shipments_waiting_pickup_count = shipments_waiting_pickup.count()
-        connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
-        connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
-    else: #if not authenticated set these to None
-        transactions_all = None
-        transactions_all_paid = None
-        shipments_all_paid = None
-        shipments_all_paid_notarchived = None
-        otherfavors_all_paid = None
-        otherfavors_all_paid_notarchived = None   
-        shipments_complete_fordash = None
-        shipments_in_transit = None
-        shipments_in_transit_count = None
-        shipments_in_transit_no_fails = None
-        shipment_fail = None
-        shipment_fail_count = None
-        shipments_waiting_pickup = None
-        connections_all = None
-        connections_count = None
-        transactions_count = None
-    if confirm_id:  #if the open the package_received modal #JB - confirming what?
-        confirm_id_int = confirm_id.strip()
-        confirm_id_int = int(confirm_id_int)
-        host_received_modal(request, confirm_id) 	
-    else:
-        confirm_id_int = None
-    return render(request, 'blocbox/dashboard-host.html', {
-            'enduser':thepersonviewingthepage,
-            #transactions all
-            'transactions_all': transactions_all, 
-            'transactions_all_paid':  transactions_all_paid,
-            'shipments_complete_fordash': shipments_complete_fordash,
-            'shipments_in_transit': shipments_in_transit,
-            'shipments_in_transit_count': shipments_in_transit_count,
-            'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
-            'shipment_fail': shipment_fail,
-            'shipments_waiting_pickup': shipments_waiting_pickup,
-            'shipments_waiting_pickup_count': shipments_waiting_pickup_count,
-            #otherfavors all
-            'otherfavors_all_paid': otherfavors_all_paid, 
-            'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
-            'connections_all': connections_all,
-            'connections_count': connections_count,
-            'transactions_count': transactions_count,
-            'shipment_fail_count':  shipment_fail_count,
-            'confirm_id': confirm_id, 
-            'confirm_id_int': confirm_id_int,
-        })
-
 def enduser_report_issue_modal(request, issue_id):
     trans = Transaction.objects.get(pk=issue_id)
     if request.method == 'POST':
@@ -386,7 +316,6 @@ def notify_admin_enduser_issue(request, trans_id):
     subject = "[ENDUSER_ISSUE]: User " + str(enduser.email) + " has reported an issue with Order " + str(trans.id)
     send_mail(subject, message, 'BlocBox EndUser Issues <admin@blocbox.co>', ['john@blocbox.co', 'admin@blocbox.co',]) #last is the to-email
     return HttpResponse("An email has been sent to the BlocBox team to notify them about this issue.")
-
     
 def message_host_modal(request, message_trans_id):
     trans = Transaction.objects.get(pk=message_trans_id)
@@ -409,9 +338,6 @@ def message_host_modal(request, message_trans_id):
         compose_form = ComposeForm(recipient_filter=None)
     return HttpResponse("OK")
     
-    
-    
-
 
 def dashboard_tracking_modal(request, track_id):
     trans = Transaction.objects.get(pk=track_id)  
@@ -501,10 +427,6 @@ def dashboard_tracking_modal(request, track_id):
     return HttpResponse("OK")       
 
 
-
-
-
-
 def package_received_modal(request, confirm_id):
     trans = Transaction.objects.get(pk=confirm_id)
     if request.method == 'POST':
@@ -548,10 +470,180 @@ def package_received_modal(request, confirm_id):
     	  package_received_form = PackageReceived()
     return HttpResponse("OK")
 
-
-
-
 #END DASHBOARD DEFS
+
+#HOST DASHBOARD DEFS
+
+def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
+    thepersonviewingthepage = request.user
+    if thepersonviewingthepage.host == True:
+        transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
+        transactions_all_paid = transactions_all.filter(payment_processed=True)
+        transactions_count = Transaction.objects.filter(host=thepersonviewingthepage).count() #count all of the transactions
+        shipments_all_paid = transactions_all_paid.filter(favortype="package")
+        shipments_all_paid_notarchived = shipments_all_paid.exclude(trans_archived=True)
+        shipments_all_paid_notarchived_notcomplete = shipments_all_paid_notarchived.exclude(trans_complete=True)
+        otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
+        otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
+        #Create lists restricted to shipmetns that are on aftership
+        shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
+        #Shipments in transit
+        shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered",)
+        shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
+        shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
+        shipment_fail_count = shipment_fail.count()
+        shipments_in_transit_count = shipments_in_transit.count()
+        #Shipments awaiting pickup
+        shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
+        shipments_waiting_pickup_count = shipments_waiting_pickup.count()
+        connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
+        connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
+    else: #if not authenticated set these to None
+        transactions_all = None
+        transactions_all_paid = None
+        shipments_all_paid = None
+        shipments_all_paid_notarchived = None
+        otherfavors_all_paid = None
+        otherfavors_all_paid_notarchived = None   
+        shipments_complete_fordash = None
+        shipments_in_transit = None
+        shipments_in_transit_count = None
+        shipments_in_transit_no_fails = None
+        shipment_fail = None
+        shipment_fail_count = None
+        shipments_waiting_pickup = None
+        connections_all = None
+        connections_count = None
+        transactions_count = None
+    if confirm_id:  #if the open the package_received modal #JB - confirming what?
+        confirm_id_int = confirm_id.strip()
+        confirm_id_int = int(confirm_id_int)
+        host_received_modal(request, confirm_id) 	
+    else:
+        confirm_id_int = None
+    return render(request, 'blocbox/dashboard-host.html', {
+            'enduser':thepersonviewingthepage,
+            #transactions all
+            'transactions_all': transactions_all, 
+            'transactions_all_paid':  transactions_all_paid,
+            'shipments_complete_fordash': shipments_complete_fordash,
+            'shipments_in_transit': shipments_in_transit,
+            'shipments_in_transit_count': shipments_in_transit_count,
+            'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
+            'shipment_fail': shipment_fail,
+            'shipments_waiting_pickup': shipments_waiting_pickup,
+            'shipments_waiting_pickup_count': shipments_waiting_pickup_count,
+            #otherfavors all
+            'otherfavors_all_paid': otherfavors_all_paid, 
+            'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
+            'connections_all': connections_all,
+            'connections_count': connections_count,
+            'transactions_count': transactions_count,
+            'shipment_fail_count':  shipment_fail_count,
+            'confirm_id': confirm_id, 
+            'confirm_id_int': confirm_id_int,
+})
+
+def host_received_modal(request, confirm_id):
+    trans = Transaction.objects.get(pk=confirm_id)
+    if request.method == 'POST':
+        package_received_form = PackageReceived(request.POST) #note this is not a model form
+        if package_received_form.is_valid():
+            trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
+            trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
+            trans.trans_complete = True
+            trans.date_completed = datetoday
+            trans.datetime_completed = datetimenow
+            trans.save()
+            #get last aftership stuff
+            courier = trans.shipment_courier
+            if courier:
+                slug = str(trans.shipment_courier.lower())
+                tracking = trans.tracking
+                datadict = api.trackings.get(slug, tracking)
+                tracking_info = datadict.get(u'tracking') 
+                new_status = tracking_info['tag']
+                trans.last_tracking_status = new_status            
+                last_tracking_unicode = tracking_info['last_updated_at']
+                last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
+                trans.last_tracking_datetime = last_tracking_datetime
+                trans.last_tracking_date = last_tracking_datetime.date()
+                trans.save()
+                checkpoints = tracking_info['checkpoints']
+                if checkpoints:
+                    last_checkpoint = checkpoints[-1]
+                    last_checkpoint_city = last_checkpoint['city']
+                    last_checkpoint_state = last_checkpoint['state']
+                    last_checkpoint_datetime = last_checkpoint['checkpoint_time']
+                    last_checkpoint_date = last_checkpoint_datetime.date()
+                    trans.last_checkpoint_city = last_checkpoint_city
+                    trans.last_checkpoint_state = last_checkpoint_state 
+                    trans.last_checkpoint_datetime = last_checkpoint_datetime
+                    trans.last_checkpoint_date = last_checkpoint_date
+                    trans.save()
+        else:
+                    print package_received_form.errors
+    else:
+        package_received_form = PackageReceived()
+    return HttpResponse("OK")
+
+def host_report_issue_modal(request, issue_id):
+    trans = Transaction.objects.get(pk=issue_id)
+    if request.method == 'POST':
+        enduser_issue_form = EndUserIssue(request.POST, instance=trans)
+        if enduser_issue_form.is_valid():
+            issue = enduser_issue_form.save()
+            issue.save()
+            notify_host_enduser_issue(request, trans.id)
+            notify_admin_enduser_issue(request, trans.id)
+        else: 
+            print enduser_issue_form.errors
+    else:
+        enduser_issue_form = EndUserIssue(instance=trans)
+    return HttpResponse("OK")
+
+def notify_enduser_host_issue(request, trans_id):
+    trans = get_object_or_404(Transaction, pk=trans_id)
+    host = trans.host
+    enduser = trans.enduser
+    message = render_to_string('emails/notify_host_enduser_issue.txt', 
+        { 'host': host, 'enduser': enduser, 'trans': trans})
+    subject = "Your Neighbor " + str(enduser.first_name) + " has reported an issue with Order " + str(trans.id)
+    send_mail(subject, message, 'The BlocBox Team <admin@blocbox.co>', [host.email,]) #last is the to-email
+    return HttpResponse("An email has been sent to the host to notify them about this issue.")
+
+def notify_admin_host_issue(request, trans_id):
+    trans = get_object_or_404(Transaction, pk=trans_id)
+    host = trans.host
+    enduser = trans.enduser
+    message = render_to_string('emails/notify_admin_enduser_issue.txt', 
+        { 'host': host, 'enduser': enduser, 'trans': trans})
+    subject = "[HOST_ISSUE]: User " + str(host.email) + " has reported an issue with Order " + str(trans.id)
+    send_mail(subject, message, 'BlocBox Host Issues <admin@blocbox.co>', ['john@blocbox.co', 'admin@blocbox.co',]) #last is the to-email
+    return HttpResponse("An email has been sent to the BlocBox team to notify them about this issue.")
+
+def message_enduser_modal(request, message_trans_id):
+    trans = Transaction.objects.get(pk=message_trans_id)
+    recipient_email = trans.host.email
+    recipient_email_list = []
+    recipient_email_list.append(recipient_email)
+    sender = request.user
+    if request.method == 'POST':
+        compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id        
+        #Add recipient here?
+        if compose_form.is_valid(): 
+            body = compose_form.cleaned_data['body']
+            subject = compose_form.cleaned_data['subject']
+            compose_form.save(sender=request.user)            
+            for recipient in recipient_email_list:
+                notify_user_received_message(request, sender.id, recipient_email, subject, body) 
+        else:
+            rint compose_form.errors
+    else:
+        compose_form = ComposeForm(recipient_filter=None)
+    return HttpResponse("OK")
+
+#END HOST DASHBOARD DEFS
     
 def myblock(request):
     return render(request, 'blocbox/myblock.html')
