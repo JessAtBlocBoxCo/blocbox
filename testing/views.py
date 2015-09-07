@@ -376,26 +376,34 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         confirm_id_int = None
     #then do the stuff if the form is posted
     if request.method == 'POST':
-        cal_form = HostConflictsForm_DateVersion(data=request.POST)
+        conflict_new = HostConflicts_DateVersion()
+        cal_form = CalendarCheckBoxes(data=request.POST)
         if cal_form.is_valid():  
             for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31         
                 daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
                 if daycheckedmonth1:
-                    #checked day needs to be in YYYY-MM-DD  format
-                    checked_day = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
-                    unavailable_days.append(checked_day)
-                    unavailable_days_thismonth.append(daynumber)
+                    #add the conflicts monty, day and year - conflict in this month
+                    conflict_new.month = thismonth_num
+                    conflict_new.day = daynumber
+                    conflict_new.year = thisyear
+                    conflict_new.date = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
+                    conflict_new.save()
             for daynumber in range(1,32): 
                 daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
                 if daycheckedmonth2:
-                    checked_day = str(thisyear) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
-                    unavailable_days.append(checked_day)
-                    unavailable_days_nextmonth.append(daynumber)                                   
+                    #add the conflicts monty, day and year - conflict in this month
+                    conflict_new.month = nextmonth_num
+                    conflict_new.day = daynumber
+                    conflict_new.year = thisyear
+                    conflict_new.date = str(nextmonth_calendar_year) + "-" + str(thismonth_num) + "-" + str(daynumber)  
+                    conflict_new.save()                              
             cal_form_submitted = True
+            conflict_new.month = 
         else:
             print cal_form.errors
     else:
-        cal_form = HostConflictsForm_OldVersion()   
+        cal_form = CalendarCheckBoxes()   
+        conflict_new = None
     return render(request, 'testing/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
