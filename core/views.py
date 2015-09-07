@@ -630,7 +630,7 @@ def message_enduser_modal(request, message_trans_id):
     sender = request.user
     if request.method == 'POST':
         compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id        
-        #Add recipient here?
+            #Add recipient here?
         if compose_form.is_valid(): 
             body = compose_form.cleaned_data['body']
             subject = compose_form.cleaned_data['subject']
@@ -638,7 +638,7 @@ def message_enduser_modal(request, message_trans_id):
             for recipient in recipient_email_list:
                 notify_user_received_message(request, sender.id, recipient_email, subject, body) 
         else:
-            rint compose_form.errors
+            print compose_form.errors
     else:
         compose_form = ComposeForm(recipient_filter=None)
     return HttpResponse("OK")
