@@ -501,6 +501,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
         shipments_waiting_pickup_count = shipments_waiting_pickup.count()
+        #Host connections
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
         connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
     else: #if not authenticated set these to None
