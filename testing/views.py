@@ -317,6 +317,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
     #may not nbeed these
     days_withconflicts_thismonth = []
     days_withconflicts_nextmonth = []
+    calendar_submit_button_text = "Submit Updated Availability"
     cal_form_submitted = False
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
@@ -426,6 +427,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
             'today_dayofmonth_num': today_dayofmonth_num, 'nextmonth_calendar_year': nextmonth_calendar_year,
             #Unavailable days
             'conflicts': conflicts, 'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,
+            'calendar_submit_button_text': calendar_submit_button_text,
             #DELETE ME - TESTING
             'conflicts_test': conflicts_test,
         })

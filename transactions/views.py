@@ -74,6 +74,7 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
     local_timezone = request.session.setdefault('django_timezone', 'UTC')
     local_timezone = pytz.timezone(local_timezone) 
     enduser = request.user
+    calendar_submit_button_text = "Select Dates and Proceed to Payment"
     if host_id:
         host = get_object_or_404(UserInfo, pk=host_id)
     else:
@@ -362,11 +363,11 @@ def startashipment(request, host_id=None, transaction_form_submitted=False, invo
         	  'host_package_conflict': host_package_conflict,
         	  #Calendar check boxes form
         	  'cal_form': cal_form,  'packagedays': packagedays, 'packagedays_string': packagedays_string, 'packagedays_count': packagedays_count, 
-        	  'cal_form_submitted': cal_form_submitted,
+        	  'cal_form_submitted': cal_form_submitted, 'calendar_submit_button_text': calendar_submit_button_text,
         	  #payment stuff once the calendar checkboxes are checked
         	  'trans_form_package': trans_form_package, 'invoice': invoice, 'favortype': favortype, 'errors_on_trans_form': errors_on_trans_form,
         	  'transaction_form_submitted': transaction_form_submitted, 'random3digits': random3digits, 
-		    		'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'request': request,
+		    'payment_needed': payment_needed, 'amount_due': amount_due, 'remaining_balance': remaining_balance, 'request': request,
 		    })
 
 
