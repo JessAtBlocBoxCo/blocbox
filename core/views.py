@@ -64,6 +64,46 @@ import pyzipcode
 from pyzipcode import ZipCodeDatabase
 zcdb = ZipCodeDatabase()
 
+#################33
+#THE FOLLOWING SHIT IS NEEDED FOR THE HOST AVAILABIITY CLANEDAR -- JESS EDITING ON 9/6/2015 E
+#import new homebrew calendar
+#NOTE - HOSTCONFLICTS_DATEVERSIO IS THE ONE CURRENTLY IN USE
+from calendar_homebrew.models import HostConflicts_DateVersion, HostConflicts_DateVersion_OneTable, HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
+#Import the HostConflictsForm -- i just created this in calendar_homebrew.forms.py
+from calendar_homebrew.forms import HostConflictsForm_DateVersion, HostConflictsForm_OldVersion, CalendarCheckBoxes
+#Define lots of generic date fields that will be accessed by several functions - note that some of these may already be defined in core.views etc
+import calendar 
+calendar.setfirstweekday(6) #Set first weekday: 6 is sunday, 0 is monday, default is 0/monday    
+date_today = datetime.date.today()
+datetime_now = datetime.datetime.now()
+time = datetime.datetime.time(datetime_now)
+thisyear = date_today.year
+nextyear = date_today.year + 1
+thisyear_isleap = calendar.isleap(thisyear)
+nextyear_isleap = calendar.isleap(nextyear)
+thismonth_num = date_today.month  
+if thismonth_num == 12:
+    nextmonth_num = 1
+    nextmonth_calendar_year = nextyear
+    else:
+        nextmonth_num = date_today.month + 1
+        nextmonth_calendar_year = thisyear
+        thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+        nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
+        thismonth = calendar.month_name[thismonth_num]
+        nextmonth = calendar.month_name[nextmonth_num]
+        monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
+        monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
+        days_in_thismonth = monthrange_thismonth[1]
+        days_in_nextmonth = monthrange_nextmonth[1]
+        firstweekday_num = calendar.firstweekday()
+        firstweekday = calendar.day_name[firstweekday_num]
+        weekheader_chars = 3
+        weekheaders = calendar.weekheader(weekheader_chars) #(n) specifies the width in characgters for one weekday 
+        today_dayofmonth_num = date_today.day
+        today_dayofweek_num = date_today.weekday()
+        today_dayofweek_name =  calendar.day_name[today_dayofweek_num] #day name is san array 
+        today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
 
 
 #DEFINIGN SOME LIST VARSIABLES USED BY SEVERAL VIEWS BELOW
@@ -481,6 +521,12 @@ def dashboard_host_nothing(request, confirm_id=None):
     
 def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
     thepersonviewingthepage = request.user
+    local_timezone = request.session.setdefault('django_timezone', 'UTC')
+    local_timezone = pytz.timezone(local_timezone)
+    days_withconflicts_thismonth = []
+    days_withconflicts_nextmonth = []
+    calendar_submit_button_text = "Submit Updated Availability"
+    cal_form_submitted = False
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
@@ -504,6 +550,12 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         #Host connections
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
         connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
+        conflicts = HostConflicts_DateVersion.objects.filter(host=thepersonviewingthepage)
+        for conflict in conflicts:
+            if conflict.month == thismonth_num:
+                days_withconflicts_thismonth.append(conflict.day)
+                if conflict.month == nextmonth_num:
+                    days_withconflicts_nextmonth.append(conflict.day)
     else: #if not authenticated set these to None
         transactions_all = None
         transactions_all_paid = None
@@ -521,6 +573,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         connections_all = None
         connections_count = None
         transactions_count = None
+        conflicts = None
     host_received_form = None
     if confirm_id:  #if the open the package_received modal #JB - confirming what?
         confirm_id_int = confirm_id.strip()
@@ -528,6 +581,37 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         host_received_modal(request, confirm_id) 	
     else:
         confirm_id_int = None
+    if request.method == 'POST':
+        cal_form = CalendarCheckBoxes(data=request.POST)
+        if cal_form.is_valid():  
+            for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31 
+                conflict_new = HostConflicts_DateVersion()        
+                daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
+                if daycheckedmonth1:
+                    #add the conflicts monty, day and year - conflict in this month
+                    conflict_new.host = thepersonviewingthepage
+                    conflict_new.month = thismonth_num
+                    conflict_new.day = daynumber
+                    conflict_new.year = thisyear
+                    conflict_new.date = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
+                    conflict_new.save()
+                    for daynumber in range(1,32): 
+                        conflict_new = HostConflicts_DateVersion()
+                        daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
+                        if daycheckedmonth2:
+                            #add the conflicts monty, day and year - conflict in this month
+                            conflict_new.host = thepersonviewingthepage
+                            conflict_new.month = nextmonth_num
+                            conflict_new.day = daynumber
+                            conflict_new.year = thisyear
+                            conflict_new.date = str(nextmonth_calendar_year) + "-" + str(thismonth_num) + "-" + str(daynumber)  
+                            conflict_new.save()                              
+                            cal_form_submitted = True
+                            #test whether line 401 has error
+        else: #if not valid/if there are errors
+            print cal_form.errors
+    else: #if the method is not POST
+        cal_form = CalendarCheckBoxes()   
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
@@ -550,6 +634,16 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'confirm_id': confirm_id, 
             'confirm_id_int': confirm_id_int,
             'host_received_form': host_received_form,
+            'cal_form': cal_form,
+            #Calendar and date variables
+            'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  
+            'thisyear': thisyear, 'nextyear': nextyear, 'thisyeaer_isleap': thisyear_isleap, 'nextyear_isleap': nextyear_isleap,
+            'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
+            'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
+            'today_dayofmonth_num': today_dayofmonth_num, 'nextmonth_calendar_year': nextmonth_calendar_year,
+            #Unavailable days
+            'conflicts': conflicts, 'days_withconflicts_thismonth': days_withconflicts_thismonth, 'days_withconflicts_nextmonth': days_withconflicts_nextmonth,
+            'calendar_submit_button_text': calendar_submit_button_text,
 })
 
 def host_received_modal(request, confirm_id):
