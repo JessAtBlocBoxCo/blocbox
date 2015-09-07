@@ -526,6 +526,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         host_received_modal(request, confirm_id) 	
     else:
         confirm_id_int = None
+        host_received_form = None
     return render(request, 'blocbox/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
@@ -547,6 +548,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'shipment_fail_count':  shipment_fail_count,
             'confirm_id': confirm_id, 
             'confirm_id_int': confirm_id_int,
+            'host_received_form': host_received_form,
 })
 
 def host_received_modal(request, confirm_id):
@@ -554,42 +556,13 @@ def host_received_modal(request, confirm_id):
     if request.method == 'POST':
         host_received_form = HostReceived(request.POST) #note this is not a model form
         if host_received_form.is_valid():
-            trans.enduser_rating = host_received_form.cleaned_data['enduser_rating']
-            trans.enduser_comments = host_received_form.cleaned_data['enduser_comments']
-            trans.trans_complete = True
-            trans.date_completed = datetoday
-            trans.datetime_completed = datetimenow
+            trans.host_received_comments = host_received_form.cleaned_data['host_comments']
+            trans.host_received = True
             trans.save()
-            #get last aftership stuff
-            courier = trans.shipment_courier
-            if courier:
-                slug = str(trans.shipment_courier.lower())
-                tracking = trans.tracking
-                datadict = api.trackings.get(slug, tracking)
-                tracking_info = datadict.get(u'tracking') 
-                new_status = tracking_info['tag']
-                trans.last_tracking_status = new_status            
-                last_tracking_unicode = tracking_info['last_updated_at']
-                last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
-                trans.last_tracking_datetime = last_tracking_datetime
-                trans.last_tracking_date = last_tracking_datetime.date()
-                trans.save()
-                checkpoints = tracking_info['checkpoints']
-                if checkpoints:
-                    last_checkpoint = checkpoints[-1]
-                    last_checkpoint_city = last_checkpoint['city']
-                    last_checkpoint_state = last_checkpoint['state']
-                    last_checkpoint_datetime = last_checkpoint['checkpoint_time']
-                    last_checkpoint_date = last_checkpoint_datetime.date()
-                    trans.last_checkpoint_city = last_checkpoint_city
-                    trans.last_checkpoint_state = last_checkpoint_state 
-                    trans.last_checkpoint_datetime = last_checkpoint_datetime
-                    trans.last_checkpoint_date = last_checkpoint_date
-                    trans.save()
         else:
-                    print package_received_form.errors
+                    print host_received_form.errors
     else:
-        package_received_form = PackageReceived()
+        host_received_form = HostReceived()
     return HttpResponse("OK")
 
 def host_report_issue_modal(request, issue_id):
