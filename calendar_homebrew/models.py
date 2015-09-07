@@ -16,7 +16,7 @@ from django.utils import timezone
 from django.conf import settings
 
 
-class HostConflicts_DateVersion(models.Model):
+class HostConflicts_DateVersion_OneTable(models.Model):
     host = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='host_conflict_dateversion', blank=True) #this shows up as payer_id
     #make 62 conflicts for two months
     thimonthconflict1  = models.DateField(blank=True, null=True)

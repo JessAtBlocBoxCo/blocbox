@@ -53,7 +53,7 @@ couriers = api.couriers.all.get()
 #################33
 #THE FOLLOWING SHIT IS NEEDED FOR THE HOST AVAILABIITY CLANEDAR -- JESS EDITING ON 9/6/2015 E
 #import new homebrew calendar
-from calendar_homebrew.models import HostConflicts_DateVersion, HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_DateVersion_OneTable, HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
 #Import the HostConflictsForm -- i just created this in calendar_homebrew.forms.py
 from calendar_homebrew.forms import HostConflictsForm_OldVersion
 #Define lots of generic date fields that will be accessed by several functions - note that some of these may already be defined in core.views etc
@@ -341,7 +341,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
         #Get all of the host conflicts - JMY ADDING ON 9/7/2016
         conflicts_test = "this is test of conflicts_test var"
-        conflicts = HostConflicts_DateVersion.objects.filter(host=thepersonviewingthepage)
+        conflicts = HostConflicts_DateVersion_OneTable.objects.filter(host=thepersonviewingthepage)
         for conflict in conflicts:
             conflict_month = conflict.month
             conflict_day = conflict.day
