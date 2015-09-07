@@ -1,7 +1,7 @@
 from django.contrib import admin
-from calendar_homebrew.models import HostConflicts, HostConflicts_OldVersion, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
 
-class ConflictsAdmin(admin.ModelAdmin): 
+class ConflictsAdmin_BooleanVersion(admin.ModelAdmin): 
     list_display = ('id', 'host', )
     list_filter = ['host',  ]
     search_fields = ['host', ]  
