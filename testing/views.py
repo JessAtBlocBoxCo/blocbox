@@ -398,6 +398,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
                     conflict_new.date = str(nextmonth_calendar_year) + "-" + str(thismonth_num) + "-" + str(daynumber)  
                     conflict_new.save()                              
             cal_form_submitted = True
+            #test whether line 401 has error
         else:
             print cal_form.errors
     else:
