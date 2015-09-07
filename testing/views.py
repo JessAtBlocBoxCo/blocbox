@@ -53,7 +53,7 @@ couriers = api.couriers.all.get()
 #################33
 #THE FOLLOWING SHIT IS NEEDED FOR THE HOST AVAILABIITY CLANEDAR -- JESS EDITING ON 9/6/2015 E
 #import new homebrew calendar
-from calendar_homebrew.models import HostConflicts_OldVersion, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_DateVersion, HostConflicts_OldVersion, HostConflicts_BooleanVersion, HostWeeklyDefaultSchedule
 #Import the HostConflictsForm -- i just created this in calendar_homebrew.forms.py
 from calendar_homebrew.forms import HostConflictsForm_OldVersion
 #Define lots of generic date fields that will be accessed by several functions - note that some of these may already be defined in core.views etc
@@ -216,7 +216,7 @@ def aftership(request):
 def homebrew_cal(request):
     host = request.user
     #Get calendar_homebrew created fields
-    conflicts = HostConflicts.objects.filter(host=host)
+    conflicts = HostConflicts_BooleanVersion.objects.filter(host=host)
     conflicts_date_from = []
     conflicts_startmonths = []
     conflicts_startthismonth = []
@@ -312,6 +312,11 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
     #set timezone
     local_timezone = request.session.setdefault('django_timezone', 'UTC')
     local_timezone = pytz.timezone(local_timezone) 
+    #define empty list and other variables used for the availabiility and conflict functions
+    #may not nbeed these
+    unavailable_days_thismonth = []
+    unavailable_days_nextmonth = []
+    cal_form_submitted = False
     if thepersonviewingthepage.host == True:
         transactions_all = Transaction.objects.filter(host=thepersonviewingthepage) #custom is the field for user email
         transactions_all_paid = transactions_all.filter(payment_processed=True)
@@ -334,6 +339,15 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         shipments_waiting_pickup_count = shipments_waiting_pickup.count()
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
         connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
+        #Get all of the host conflicts - JMY ADDING ON 9/7/2016
+        conflicts = HostConflicts_DateVersion.objects.filter(host=host)
+        for conflict in conflicts:
+            conflict_month = conflict.month
+            conflict_day = conflict.day
+            if conflict_month == thismonth_num:
+                unavailable_days_thismonth.append(conflict_day)
+            if conflict_month == nextmonth_num:
+                unavailable_days_nextmonth.append(conflict_day)
     else: #if not authenticated set these to None
         transactions_all = None
         transactions_all_paid = None
@@ -352,20 +366,13 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         connections_count = None
         transactions_count = None
         shipments_waiting_pickup_count = None
+        conflicts = None
     if confirm_id:  #if the open the package_received modal #JB - confirming what?
         confirm_id_int = confirm_id.strip()
         confirm_id_int = int(confirm_id_int)
         host_received_modal(request, confirm_id)    
     else:
         confirm_id_int = None
-    #Define the host availability form shit
-    #first define empty list variables
-    unavailable_days = []  
-    unavailable_days_thismonth = []
-    unavailable_days_nextmonth = []
-    month1days_count = None
-    month2days_count = None
-    cal_form_submitted = False
     #then do the stuff if the form is posted
     if request.method == 'POST':
         cal_form = HostConflictsForm_OldVersion(data=request.POST)
@@ -383,8 +390,6 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
                     checked_day = str(thisyear) + "-" + str(nextmonth_num) + "-" + str(daynumber) 
                     unavailable_days.append(checked_day)
                     unavailable_days_nextmonth.append(daynumber)                                   
-            month1days_count = len(unavailable_days_thismonth)
-            month2days_count = len(unavailable_days_nextmonth)
             cal_form_submitted = True
         else:
             print cal_form.errors
@@ -419,6 +424,8 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
             'thismonth': thismonth,  'nextmonth': nextmonth, 'thismonth_calendar': thismonth_calendar, 'nextmonth_calendar': nextmonth_calendar,
             'monthrange_thismonth': monthrange_thismonth, 'monthrange_nextmonth': monthrange_nextmonth, 'days_in_thismonth': days_in_thismonth, 'days_in_nextmonth': days_in_nextmonth, 
             'today_dayofmonth_num': today_dayofmonth_num, 'nextmonth_calendar_year': nextmonth_calendar_year,
+            #Unavailable days
+            'unavailable_days_thismonth': unavailable_days_thismonth, 'unavailable_days_nextmonth': unavailable_days_nextmonth,
         })
 
 
