@@ -376,10 +376,10 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
         confirm_id_int = None
     #then do the stuff if the form is posted
     if request.method == 'POST':
-        conflict_new = HostConflicts_DateVersion()
         cal_form = CalendarCheckBoxes(data=request.POST)
         if cal_form.is_valid():  
-            for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31         
+            for daynumber in range(1,32):  #starts at zero otherwise so this will stop at 31 
+                conflict_new = HostConflicts_DateVersion()        
                 daycheckedmonth1 = cal_form.cleaned_data['month1day'+str(daynumber)]    
                 if daycheckedmonth1:
                     #add the conflicts monty, day and year - conflict in this month
@@ -390,6 +390,7 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
                     conflict_new.date = str(thisyear) + "-" + str(thismonth_num) + "-" + str(daynumber)
                     conflict_new.save()
             for daynumber in range(1,32): 
+                conflict_new = HostConflicts_DateVersion()
                 daycheckedmonth2 = cal_form.cleaned_data['month2day'+str(daynumber)] 
                 if daycheckedmonth2:
                     #add the conflicts monty, day and year - conflict in this month
@@ -405,7 +406,6 @@ def dashboard_host_test(request, host_id=None, trans=None, track_id=None, confir
             print cal_form.errors
     else:
         cal_form = CalendarCheckBoxes()   
-        conflict_new = None
     return render(request, 'testing/dashboard-host.html', {
             'enduser':thepersonviewingthepage,
             #transactions all
