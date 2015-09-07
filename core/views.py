@@ -85,25 +85,25 @@ thismonth_num = date_today.month
 if thismonth_num == 12:
     nextmonth_num = 1
     nextmonth_calendar_year = nextyear
-    else:
-        nextmonth_num = date_today.month + 1
-        nextmonth_calendar_year = thisyear
-        thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
-        nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
-        thismonth = calendar.month_name[thismonth_num]
-        nextmonth = calendar.month_name[nextmonth_num]
-        monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
-        monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
-        days_in_thismonth = monthrange_thismonth[1]
-        days_in_nextmonth = monthrange_nextmonth[1]
-        firstweekday_num = calendar.firstweekday()
-        firstweekday = calendar.day_name[firstweekday_num]
-        weekheader_chars = 3
-        weekheaders = calendar.weekheader(weekheader_chars) #(n) specifies the width in characgters for one weekday 
-        today_dayofmonth_num = date_today.day
-        today_dayofweek_num = date_today.weekday()
-        today_dayofweek_name =  calendar.day_name[today_dayofweek_num] #day name is san array 
-        today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
+else:
+    nextmonth_num = date_today.month + 1
+    nextmonth_calendar_year = thisyear
+    thismonth_calendar = calendar.monthcalendar(thisyear, thismonth_num)
+    nextmonth_calendar = calendar.monthcalendar(thisyear, nextmonth_num)
+    thismonth = calendar.month_name[thismonth_num]
+    nextmonth = calendar.month_name[nextmonth_num]
+    monthrange_thismonth = calendar.monthrange(thisyear, thismonth_num)
+    monthrange_nextmonth = calendar.monthrange(thisyear, nextmonth_num)
+    days_in_thismonth = monthrange_thismonth[1]
+    days_in_nextmonth = monthrange_nextmonth[1]
+    firstweekday_num = calendar.firstweekday()
+    firstweekday = calendar.day_name[firstweekday_num]
+    weekheader_chars = 3
+    weekheaders = calendar.weekheader(weekheader_chars) #(n) specifies the width in characgters for one weekday 
+    today_dayofmonth_num = date_today.day
+    today_dayofweek_num = date_today.weekday()
+    today_dayofweek_name =  calendar.day_name[today_dayofweek_num] #day name is san array 
+    today_dayofweek_abbr = calendar.day_abbr[today_dayofweek_num] 
 
 
 #DEFINIGN SOME LIST VARSIABLES USED BY SEVERAL VIEWS BELOW
