@@ -244,10 +244,6 @@
                 {% ifequal message_trans_id_int sh.id %} {% include "dashboard_host_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal issue_id_int sh.id %} {% include "dashboard_host_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
-                
-                <p>delme testing confirm id int {{confirm_id_int}}</p>
-                <p>delme testing confirm id {{confirm_id}}</p>
-                <p>delme testing sh.id {{sh.id}}</p>
 
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
                     <!--non-mobile version-->
