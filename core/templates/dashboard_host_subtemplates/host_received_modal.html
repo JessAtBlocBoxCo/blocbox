@@ -1,26 +1,25 @@
 <!--this is core/templates/dashboard_host_subtemplates/host_received_modal.html, it is called within modaltags.py - the tracking_modal def
 which is called on dashboard.html -->
 
-<!--PACKAGE RECEIVED BY HOST MODAL-->							
-<div id="openModal_host_received_id{{sh.id}}" class="modalDialog">                                 
-    <div>	
+<!--PACKAGE RECEIVED BY HOST MODAL-->
+<div id="openModal_host_received_id{{sh.id}}" class="modalDialog">
+    <div>
         <a href="/hostdashboard" title="Close" class="close">X</a>
-        <h4 class="ltbluetext">Confirm Package Receipt</h4>   
+        <h4 class="ltbluetext">Confirm Package Receipt</h4>
 
         <form class="form-inline" role="form" method="post" action="/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received/Thanks" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ host_received_form.non_field_errors }}
-            {{ host_received_form.host_comments.errors }}
-            
+            {% csrf_token %} {{ host_received_form.non_field_errors }} {{ host_received_form.host_comments.errors }}
+
             <!--end user comments -->
             <h6>Provide Feedback or Comments about this Transaction</h6>
-            <div class="row"> <input type="text" class="col-xs-12" name="host_comments" id="id_host_comments" 
-                                     placeholder="Comments about your experience (optional)">  </div>
+            <div class="row">
+                <input type="text" class="col-xs-12" name="host_comments" id="id_host_comments" placeholder="Comments about your experience (optional)"> </div>
 
             <!--submit button-->
-            <div class="row paddingbottom10px"> 
+            <div class="row paddingbottom10px">
                 <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Confirm Package Receipt</button>
-            </div>                
+            </div>
         </form>
-    </div> 
-</div>   <!--END DIV ID FOR PACKAGE RECEIVED MODAL.--> 
+    </div>
+</div>
+<!--END DIV ID FOR PACKAGE RECEIVED MODAL.-->
