@@ -3,7 +3,15 @@ from django.core.exceptions import ValidationError
 from django.utils import timezone
 from django.conf import settings
 import datetime
-from calendar_homebrew.models import HostConflicts_OldVersion, HostWeeklyDefaultSchedule
+from calendar_homebrew.models import HostConflicts_DateVersion, HostConflicts_OldVersion, HostWeeklyDefaultSchedule
+
+
+#Hots Conflicts form - version in use
+class HostConflictsForm_DateVersion(forms.ModelForm):
+    class Meta:
+        model = HostConflicts_DateVersion
+        fields = ('host', 'month', 'day', 'year', 'date', )
+
 
 
 #Hots Conflicts form
