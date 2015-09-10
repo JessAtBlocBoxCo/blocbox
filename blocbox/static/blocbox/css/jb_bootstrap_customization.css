@@ -1898,6 +1898,7 @@ body {
     padding: 3px 5px 3px 5px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 10px;
     cursor: pointer;
     border-radius: 100%;
     white-space: nowrap;
