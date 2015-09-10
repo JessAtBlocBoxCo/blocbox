@@ -1840,7 +1840,7 @@ body {
 }
 .btn-small-yellow:hover {
     margin-top: 5px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 
 .btn-small-ltgreen {
@@ -1848,7 +1848,7 @@ body {
     height: 28px;
     color: white;
     border: 1px solid rgb(121, 204, 205);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.02), 0 2px 4px rgba(0, 0, 0, 0.9);
     padding: 3px 5px 3px 5px;
     margin-top: 10px;
     margin-left: auto;
@@ -1863,7 +1863,7 @@ body {
 
 .btn-small-ltgreen:hover {
     margin-top: 9px;
-    box-shadow: 0 0 3px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 .btn-small-ltgreen:active {
     background-color: rgb(71, 158, 159);
