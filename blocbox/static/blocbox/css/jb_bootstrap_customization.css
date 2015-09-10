@@ -1855,7 +1855,7 @@ body {
 }
 
 .btn-small-ltgreen:hover {
-    margin-bottom:  2px;
+    padding-bottom:  7px;
 }
 .btn-small-ltgreen:active {
     background-color: rgb(71, 158, 159);
