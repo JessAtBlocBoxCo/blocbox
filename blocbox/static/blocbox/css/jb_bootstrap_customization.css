@@ -1863,6 +1863,8 @@ body {
 .btn-small-ltgreen:hover {
     margin-top: 9px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.18);
+    height: 29px;
+    width: 29px;
 }
 .btn-small-ltgreen:active {
     background-color: rgb(71, 158, 159);
