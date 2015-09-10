@@ -1872,7 +1872,6 @@ body {
     background-color: rgb(71, 158, 159);
 }
 
-
 .btn-small-clear {
     background-color: transparent;
     border: none;
@@ -1907,8 +1906,10 @@ body {
     text-align: center;
 }
 .btn-small-grey:hover {
-    background-color: transparent;
-    color: rgb(127, 140, 141);
+        margin-top: 9px;
+        box-shadow: 0 0 2px rgba(0, 0, 0, 0.04), 0 2px 4px rgba(0, 0, 0, 0.18);
+        height: 28.5px;
+        width: 28.5px;
 }
 
 .findhostbtn {
