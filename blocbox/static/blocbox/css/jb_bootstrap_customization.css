@@ -1837,6 +1837,11 @@ body {
     text-decoration: none;
     text-align: center;
 }
+.btn-small-yellow:hover {
+    background-color: transparent;
+    color: rgb(255, 195, 0);
+}
+
 .btn-small-ltgreen {
     background-color: rgb(121, 204, 205);
     height: 28px;
@@ -1863,10 +1868,6 @@ body {
     background-color: rgb(71, 158, 159);
 }
 
-.btn-small-yellow:hover {
-    background-color: transparent;
-    color: rgb(255, 195, 0);
-}
 
 .btn-small-clear {
     background-color: transparent;
