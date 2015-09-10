@@ -1855,10 +1855,10 @@ body {
 }
 
 .btn-small-ltgreen:hover {
-    background-color: rgb(71, 158, 159);
-    padding-top: 4px;
+    padding-bottom: 4px;
 }
 .btn-small-ltgreen:active {
+    background-color: rgb(71, 158, 159);
 }
 
 .btn-small-yellow:hover {
