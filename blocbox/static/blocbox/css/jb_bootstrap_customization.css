@@ -1867,6 +1867,8 @@ body {
 }
 
 .btn-small-clear {
+    background-color: transparent;
+    border: none;
     height: 28px;
     color: rgb(127, 140, 141);
     padding: 3px 5px 3px 5px;
