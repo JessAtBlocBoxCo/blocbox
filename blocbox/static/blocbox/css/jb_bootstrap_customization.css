@@ -1858,6 +1858,8 @@ body {
     background-color: rgb(71, 158, 159);
     padding-top: 4px;
 }
+.btn-small-ltgreen:active {
+}
 
 .btn-small-yellow:hover {
     background-color: transparent;
