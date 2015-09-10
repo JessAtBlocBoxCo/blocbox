@@ -1854,6 +1854,9 @@ body {
     text-align: center;
 }
 .btn-small-ltgreen:hover {
+    padding-bottom: 4px;
+}
+.btn-small-ltgreen:focus {
     background-color: rgb(71, 158, 159);
     padding-top: 4px;
 }
