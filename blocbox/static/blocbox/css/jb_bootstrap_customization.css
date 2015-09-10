@@ -1881,7 +1881,7 @@ body {
     text-align: center;
 }
 .btn-small-clear:hover {
-    color: rgb(103, 114, 119);
+    color: #333;
 }
 
 .btn-small-grey {
