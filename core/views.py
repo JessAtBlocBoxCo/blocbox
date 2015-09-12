@@ -641,6 +641,8 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'shipment_fail_count':  shipment_fail_count,
             'confirm_id': confirm_id, 
             'confirm_id_int': confirm_id_int,
+            'issue_id': issue_id,
+            'issue_id_int': issue_id_int,
             'host_received_form': host_received_form,
             'cal_form': cal_form,
             #Calendar and date variables
