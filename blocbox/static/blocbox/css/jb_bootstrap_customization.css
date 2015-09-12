@@ -2783,15 +2783,18 @@ a > .offercard:focus {
     width: 40px;
     margin: auto;
 }
-.bluebutton {
-    background-color: rgb(89,171,227);
+.height30px {
+    height: 30px
+}
+
+.btn-lg-gr {
+    background-color: rgb(71, 158, 159);
     font-size: 1.143em;
     font-weight: 500;
     color: white;
-    border-color: (255, 255, 255);
     height: 50px;
     width: 100%;
-    border: 0 solid rgb(89,171,227);
+    border: 0 solid rgb(71, 158, 159);
     margin-left: auto;
     margin-right: auto;
     padding-left: 10px;
@@ -2802,15 +2805,12 @@ a > .offercard:focus {
     border-radius: 5px;
     margin-top: 5px;
 }
-.height30px {
-    height: 30px
-}
-.bluebutton:hover {
+.btn-lg-gr:hover {
     background-color: white;
-    color: rgb(89,171,227);
-    border: 2px solid rgb(89,171,227);
+    color: rgb(71, 158, 159);
+    border: 2px solid rgb(71, 158, 159)
 }
-.bluebutton:active {
+.btn-lg-gr:active {
     top: 1px;
 }
 .btn-orange {

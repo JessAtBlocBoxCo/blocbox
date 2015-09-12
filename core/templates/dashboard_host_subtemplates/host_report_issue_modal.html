@@ -6,7 +6,7 @@
     <div>
         <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
         <h4 class="darkgreytext nomarginbottom" style="padding-top: 15px; font-weight: 400; font-size: 1.2em;">Report an issue with shipment {{sh.id}} </h4>
-        <h4 class="darkgreytext nomargintop" style="padding-top: 5px; font-weight: 300; font-size: 1.0em;">Package delayed, or have a concern about this shipment? Let us know. </h4>
+        <h4 class="darkgreytext nomargintop" style="padding-top: 5px; font-weight: 300; font-size: 1.0em;">Have a concern about this shipment? Let us know. </h4>
         <form class="form-inline" role="form" method="post" action="/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue/Thanks" enctype="multipart/form-data">
             {% csrf_token %} {{ host_issue_form.non_field_errors }} {{ host_issue_form.enduser_issue.errors }}
             <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
@@ -14,7 +14,7 @@
             </div>
             <!--siubmit button-->
             <div class="row paddingbottom10px">
-                <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
+                <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 btn-lg-gr">Submit</button>
             </div>
         </form>
     </div>
