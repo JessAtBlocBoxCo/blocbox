@@ -3199,9 +3199,9 @@ a > .offercard:focus {
     color: #606061;
     line-height: 20px;
     position: absolute;
-    right: 20px;
+    right: 10px;
     text-align: center;
-    top: 20px;
+    top: 10px;
     width: 25px;
     text-decoration: none;
 }
