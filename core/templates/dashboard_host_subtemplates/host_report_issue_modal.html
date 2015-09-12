@@ -5,7 +5,7 @@
 <div id="openModal_host_issue_id{{sh.id}}" class="modalDialog">
     <div>
         <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
-        <h4 class="darkgreytext" style="padding-top: 15px; font-weight: 400;">Report an issue, delay or other concern with shipment {{sh.id}} </h4>
+        <h4 class="darkgreytext" style="padding-top: 15px; font-weight: 400; font-size: 1.2em;">Report an issue, delay or other concern with shipment {{sh.id}} </h4>
         <form class="form-inline" role="form" method="post" action="/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue/Thanks" enctype="multipart/form-data">
             {% csrf_token %} {{ host_issue_form.non_field_errors }} {{ host_issue_form.enduser_issue.errors }}
             <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
