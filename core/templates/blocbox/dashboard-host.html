@@ -112,7 +112,7 @@
                             <button class="btn-small-ltgreen" style="margin-top: 6px;" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Add Neighbor"><i class="fa fa-user-plus fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                         <div class="col-xs-1 paddingsides10px" style="padding-top: 6px;">
-                            <button class="btn-small-clear" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Ignore Neighbor"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-clear" onclick="xxx" data-toggle="tooltip" data-placement="top" title="Ignore Neighbor"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                     </div>
                 </div>
@@ -135,10 +135,10 @@
                             <h3 class="greytext nomargin xshide" style="font-weight: 300; font-size: 1.0em">RE: Package #37</h3>
                         </div>
                         <div class="col-xs-1 paddingsides10px">
-                            <button class="btn-small-ltgreen" style="margin-top: 0px;" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="View Message"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-ltgreen" style="margin-top: 6px;" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="View Message"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                         <div class="col-xs-1 paddingsides10px" style="padding-top: 6px;">
-                            <button class="btn-small-clear" onclick="window.location='/dashboard-host/confirm_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Dismiss"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-clear" onclick="xxx" data-toggle="tooltip" data-placement="top" title="Dismiss"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                     </div>
                 </div>
@@ -246,7 +246,7 @@
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal message_trans_id_int sh.id %} {% include "dashboard_host_subtemplates/message_to_host_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal issue_id_int sh.id %} {% include "dashboard_host_subtemplates/enduser_report_issue_modal.html" %} {% endifequal %}
+                {% ifequal issue_id_int sh.id %} {% include "dashboard_host_subtemplates/host_report_issue_modal.html" %} {% endifequal %}
 
                 <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
                     <!--non-mobile version-->

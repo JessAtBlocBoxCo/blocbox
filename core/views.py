@@ -581,6 +581,14 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         host_received_modal(request, confirm_id) 	
     else:
         confirm_id_int = None
+    if issue_id:     #if they open the Host Issues Modal/Button
+        issue_id_int = issue_id.strip()
+        issue_id_int = int(issue_id)
+        host_report_issue_modal(request, issue_id)
+    else:
+        issue_id_int = None
+        message_form = None
+        recipient_email_list = None
     if request.method == 'POST':
         cal_form = CalendarCheckBoxes(data=request.POST)
         if cal_form.is_valid():  
@@ -667,7 +675,7 @@ def host_report_issue_modal(request, issue_id):
         if host_issue_form.is_valid():
             issue = host_issue_form.save()
             issue.save()
-            notify_enduser__host_issue(request, trans.id)
+            notify_enduser_host_issue(request, trans.id)
             notify_admin_host_issue(request, trans.id)
         else: 
             print enduser_host_form.errors
