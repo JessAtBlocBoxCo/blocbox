@@ -3,7 +3,7 @@
 <div id="openModal_message_id{{sh.id}}" class="modalDialog">
     {% load i18n %}
     <div>
-        <a href="/dashboard" title="Close" class="close">X</a>
+        <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
         <div class="row margintopbottom30px">
             <h4 class="ltbluetext">Send a message to {{sh.enduser.first_name}} about shipment {{sh.id}} </h4>
             <form action="/dashboard/message_id{{sh.id}}/#openModal_message/Thanks" method="post" class="text-left">
