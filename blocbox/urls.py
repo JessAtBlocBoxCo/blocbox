@@ -57,7 +57,8 @@ urlpatterns = patterns('',
                        
     url(r'^hostdashboard/$',views.dashboard_host, name='host_dashboard'),
     url(r'^hostdashboard/confirm_id(?P<confirm_id>\d+)/',views.dashboard_host, name='host_dashboard'),
-    url(r'^hostdashboard/issue_id(?P<issue_id>\d+)/', views.dashboard_host, name='host_dashboard'),   
+    url(r'^hostdashboard/issue_id(?P<issue_id>\d+)/', views.dashboard_host, name='host_dashboard'),
+    url(r'^hostdashboard/message_id(?P<message_trans_id>\d+)/', views.dashboard_host, name='host_dashboard'),
                        
     
 

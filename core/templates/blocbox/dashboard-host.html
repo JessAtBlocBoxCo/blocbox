@@ -228,8 +228,8 @@
                         <div class="col-sm-1">
                             <button class="btn-small-grey" onclick="window.location='/dashboard/message_id{{sh.id}}/#openModal_message_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mesage {{sh.enduser.first_name}}"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
-                        <div class="col-sm-1">
-                            <button class="btn-small-grey" onclick="window.location='/dashboard/issue_id{{sh.id}}/#openModal_enduser_issue_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Report an Issure"><i class="fa fa-flag fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                        <div class="col-sm-1 margintop10px">
+                            <button class="btn-small-clear" onclick="window.location='/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Report an Issue"><i class="fa fa-flag fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                     </div>
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
@@ -244,7 +244,7 @@
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_received_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
-                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_host_subtemplates/message_to_host_modal.html" %} {% endifequal %}
+                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_host_subtemplates/message_to_enduser_modal.html" %} {% endifequal %}
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal issue_id_int sh.id %} {% include "dashboard_host_subtemplates/host_report_issue_modal.html" %} {% endifequal %}
 
@@ -417,7 +417,7 @@
                             <button class="btn-small-clear" onclick="window.location='/hostdashboard/message_id{{sh.id}}/#openModal_host_message_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mesage {{sh.enduser.first_name}}"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                         <div class="col-sm-1 margintop10px">
-                            <button class="btn-small-clear" onclick="window.location='/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Report an Issure"><i class="fa fa-flag fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-clear" onclick="window.location='/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Report an Issue"><i class="fa fa-flag fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                     </div>
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
@@ -488,7 +488,7 @@
                             <button class="btn-small-clear" onclick="window.location='/hostdashboard/message_id{{sh.id}}/#openModal_host_message_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mesage {{sh.enduser.first_name}}"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                         <div class="col-sm-1 margintop10px">
-                            <button class="btn-small-clear" onclick="window.location='/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Report an Issure"><i class="fa fa-flag fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-clear" onclick="window.location='/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Report an Issue"><i class="fa fa-flag fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                     </div>
                     <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->

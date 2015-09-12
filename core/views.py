@@ -15,7 +15,7 @@ from transactions.models import Transaction
 from core.forms import UserForm, HostForm, ContactUs, NotificationSettings, ResetPassword, Editprofile
 from core.usertasks import add_neighbors_nearby_task, add_neighbors_nearby_waitlist, attribute_referral, attribute_referral_waitlist
 from connections.forms import ConnectForm
-from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost, HostReceived, HostIssue
+from transactions.forms import TrackingForm, ModifyTransaction, PackageReceived, EndUserIssue, MessageHost, HostReceived, HostIssue, MessageUser
 #adding transactions watch_packages task on 8/30 to update dashboard function
 from transactions.tasks import watch_packages
 #Add the waitlist app
@@ -589,6 +589,12 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         issue_id_int = None
         message_form = None
         recipient_email_list = None
+    if message_trans_id: #if they open the message host modal
+        message_trans_id_int = message_trans_id.strip()
+        message_trans_id_int = int(message_trans_id_int)
+        message_host_modal(request, message_trans_id)  
+    else:
+        message_trans_id_int = None
     if request.method == 'POST':
         cal_form = CalendarCheckBoxes(data=request.POST)
         if cal_form.is_valid():  
@@ -644,6 +650,8 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'issue_id': issue_id,
             'issue_id_int': issue_id_int,
             'host_received_form': host_received_form,
+            'message_trans_id': message_trans_id,
+            'message_trans_id_int': message_trans_id_int,
             'cal_form': cal_form,
             #Calendar and date variables
             'local_timezone': local_timezone, 'date_today': date_today, 'datetime_now': datetime_now,  

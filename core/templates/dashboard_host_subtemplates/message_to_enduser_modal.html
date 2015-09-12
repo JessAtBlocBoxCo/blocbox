@@ -5,8 +5,8 @@
     <div>
         <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
         <div class="row margintopbottom30px">
-            <h4 class="ltbluetext">Send a message to {{sh.enduser.first_name}} about shipment {{sh.id}} </h4>
-            <form action="/dashboard/message_id{{sh.id}}/#openModal_message/Thanks" method="post" class="text-left">
+            <h4 class="darkgreytext nomarginbottom" style="padding-top: 15px; font-weight: 400; font-size: 1.2em;">Send a message to {{sh.enduser.first_name}} about shipment {{sh.id}} </h4>
+            <form action="/hostdashboard/message_id{{sh.id}}/#openModal_host_message/Thanks" method="post" class="text-left">
                 {% csrf_token %} {{ compose_form.non_field_errors }} {{ compose_form.body.errors }}
                 <!--{{ message_form.as_table }} -->
                 <!--compose form has recipient, subject, body -->
