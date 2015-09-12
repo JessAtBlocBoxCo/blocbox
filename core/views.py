@@ -592,7 +592,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
     if message_trans_id: #if they open the message host modal
         message_trans_id_int = message_trans_id.strip()
         message_trans_id_int = int(message_trans_id_int)
-        message_host_modal(request, message_trans_id)  
+        message_enduser_modal(request, message_trans_id)  
     else:
         message_trans_id_int = None
     if request.method == 'POST':
