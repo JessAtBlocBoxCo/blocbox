@@ -54,10 +54,10 @@ class MessageHost(forms.Form):
 class HostReceived(forms.Form):
     host_comments=forms.CharField(max_length=200, required=False)
     
-class HostUserIssue(forms.ModelForm):
+class HostIssue(forms.ModelForm):
     class Meta:
         model = Transaction
-        fields = ('Host_issue',)
+        fields = ('host_issue',)
 
 class MessageUser(forms.Form):
     message_body = forms.CharField(max_length=700, required=False)
