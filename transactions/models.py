@@ -90,6 +90,8 @@ class Transaction(models.Model):
     dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)
     host_received = models.BooleanField(default=False)
     host_received_comments = models.CharField(max_length=300, blank=True, null=True)
+    #Report an issue
+    host_issue = models.CharField("EndUser Issue", max_length=300, blank=True, null=True)
     
 
 """Remove the transaction type choices field - could add these back later, now will  link to other defs 
