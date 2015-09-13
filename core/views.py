@@ -715,6 +715,8 @@ def notify_admin_host_issue(request, trans_id):
 
 def message_enduser_modal(request, message_trans_id):
     trans = Transaction.objects.get(pk=message_trans_id)
+    host = trans.host
+    enduser = trans.enduser
     recipient_email = trans.enduser.email
     recipient_email_list = []
     recipient_email_list.append(recipient_email)
