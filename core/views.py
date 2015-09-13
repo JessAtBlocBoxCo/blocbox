@@ -718,7 +718,7 @@ def message_enduser_modal(request, message_trans_id):
     recipient_email = trans.enduser.email
     recipient_email_list = []
     recipient_email_list.append(recipient_email)
-    sender = request.host
+    sender = trans.host
     if request.method == 'POST':
         compose_form = ComposeForm(request.POST, recipient_filter=None) #maybe update recipient filter so it goes to the host in question, or can just use trans.host.id        
             #Add recipient here?
