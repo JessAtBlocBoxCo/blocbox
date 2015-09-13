@@ -9,8 +9,8 @@
                 <div class="col-sm-2 nopaddingleft">
                     <a class="nopaddingleftright">
                         {% if enduser.facebook_id %}
-                       <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" />
-                       {% else %} 
+                        <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" />
+                        {% else %} 
                             {% if enduser.profile_pic_uploaded %}
                                 <img class="messpic" src="{{connection.end_user.profile_pic_uploaded.url}}" />
                             {% else %}
