@@ -2,6 +2,7 @@
 
 <div id="openModal_host_message_id{{sh.id}}" class="modalDialog">
     {% load i18n %}
+    {% if user.is_authenticated %} {% if enduser.host %}
     <div>
         <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
         <div class="row margintopbottom20px">
@@ -45,5 +46,6 @@
             </form>
         </div>
     </div>
+    {% endif %} {% endif %}
 </div>
 <!-- END MESSAGING MODAL -->
