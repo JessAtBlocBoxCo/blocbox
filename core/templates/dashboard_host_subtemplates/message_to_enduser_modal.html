@@ -2,17 +2,17 @@
 
 <div id="openModal_host_message_id{{sh.id}}" class="modalDialog">
     {% load i18n %}
-    {% if user.is_authenticated %} {% if enduser.host %}
     <div>
         <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
         <div class="row margintopbottom20px">
             <div class="row">
                 <div class="col-sm-2 nopaddingleft">
+                    {% for connection in connections_all %}
                     <a class="nopaddingleftright">
-                        {% if enduser.facebook_id %}
+                        {% if connection.end_user.facebook_id %}
                         <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" />
                         {% else %} 
-                            {% if enduser.profile_pic_uploaded %}
+                            {% if connection.end_user.profile_pic_uploaded %}
                                 <img class="messpic" src="{{connection.end_user.profile_pic_uploaded.url}}" />
                             {% else %}
                                <div>
@@ -20,6 +20,7 @@
                                </div>
                        {% endif %} {% endif %}
                    </a>
+                   {% endfor %}
                 </div>
                 <div class="col-sm-10 nopaddingleft">
                     <h4 class="darkgreytext nomargintop" style="font-weight: 400; font-size: 1.2em;">Send a message to {{sh.enduser.first_name}} about shipment {{sh.id}} </h4>
@@ -46,6 +47,5 @@
             </form>
         </div>
     </div>
-    {% endif %} {% endif %}
 </div>
 <!-- END MESSAGING MODAL -->
