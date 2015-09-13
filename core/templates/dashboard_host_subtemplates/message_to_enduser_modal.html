@@ -4,16 +4,16 @@
     {% load i18n %}
     <div>
         <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
-        <div class="row margintopbottom30px">
+        <div class="row margintopbottom20px">
             <div class="row">
                 <div class="col-sm-2 nopaddingleft">
                     <a class="nopaddingleftright">
-                       {% if connection.end_user.facebook_id %}
+                        {% if enduser.facebook_id %}
                        <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" />
                        {% else %} 
-                           {% if connection.end_user.profile_pic_uploaded %}
+                            {% if enduser.profile_pic_uploaded %}
                                 <img class="messpic" src="{{connection.end_user.profile_pic_uploaded.url}}" />
-                           {% else %}
+                            {% else %}
                                <div>
                                    <div class="statusgrey"><i class="fa fa-user fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 7px; padding-left: 1px;"></i> </div>
                                </div>
