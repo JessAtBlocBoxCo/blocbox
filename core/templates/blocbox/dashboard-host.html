@@ -523,14 +523,14 @@
                     <div class="row" style="margin-bottom: 15px;">
                         <div class="col-xs-3 nopaddingleft">
                             <a class="nopaddingleftright">
-                                    {% if connection.end_user.facebook_id %}
-                                    <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" /> {% else %} {% if connection.end_user.profile_pic_uploaded %}
-                                    <img class="messpic" src="{{connection.end_user.profile_pic_uploaded.url}}" /> {% else %}
-                                    <div>
-                                        <div class="statusgrey"><i class="fa fa-user fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 7px; padding-left: 1px;"></i> </div>
-                                    </div>
-                                    {% endif %} {% endif %}
-                                </a>
+                                {% if connection.end_user.facebook_id %}
+                                <img class="messpic" src="http://graph.facebook.com/{{connection.end_user.facebook_id}}/picture?type=large" /> {% else %} {% if connection.end_user.profile_pic_uploaded %}
+                                <img class="messpic" src="{{connection.end_user.profile_pic_uploaded.url}}" /> {% else %}
+                                <div>
+                                    <div class="statusgrey"><i class="fa fa-user fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 7px; padding-left: 1px;"></i> </div>
+                                </div>
+                                {% endif %} {% endif %}
+                            </a>
                         </div>
                         <div class="col-xs-9 nopaddingleft">
                             <div class="row">
