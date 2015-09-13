@@ -37,7 +37,7 @@
                 <!--HIDDEN FIELDS-->
                 {{ compose_form.subject.errors }}
                 <input type="hidden" name="subject" value="Re: Transaction ID {{ sh.id }}"> {{ compose_form.recipient.errors }}
-                <input type="hidden" name="recipient" value="{{sh.host.email}}">
+                <input type="hidden" name="recipient" value="{{sh.enduser.email}}">
                 <!--SUBMIT BUTON-->
                 <div class="row paddingbottom10px">
                     <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 btn-lg-gr">Send Message</button>
