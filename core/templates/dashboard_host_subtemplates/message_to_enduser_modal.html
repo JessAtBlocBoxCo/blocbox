@@ -8,11 +8,11 @@
             <div class="row">
                 <div class="col-sm-2 nopaddingleft">
                     <a class="nopaddingleftright">
-                        {% if sh.end_user.facebook_id %}
-                        <img class="messpic" src="http://graph.facebook.com/{{sh.end_user.facebook_id}}/picture?type=large" />
+                        {% if sh.enduser.facebook_id %}
+                        <img class="messpic" src="http://graph.facebook.com/{{sh.enduser.facebook_id}}/picture?type=large" />
                         {% else %} 
                             {% if sh.end_user.profile_pic_uploaded %}
-                                <img class="messpic" src="{{sh.end_user.profile_pic_uploaded.url}}" />
+                                <img class="messpic" src="{{sh.enduser.profile_pic_uploaded.url}}" />
                             {% else %}
                                <div>
                                    <div class="statusgrey"><i class="fa fa-user fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 7px; padding-left: 1px;"></i> </div>
