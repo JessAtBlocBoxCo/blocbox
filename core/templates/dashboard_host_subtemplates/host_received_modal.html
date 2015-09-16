@@ -4,8 +4,8 @@ which is called on dashboard.html -->
 <!--PACKAGE RECEIVED BY HOST MODAL-->
 <div id="openModal_host_received_id{{sh.id}}" class="modalDialog">
     <div>
-        <a href="/hostdashboard" title="Close" class="close">X</a>
-        <h4 class="ltbluetext">Confirm Package Receipt</h4>
+        <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
+        <h4 class="darkgreytext nomarginbottom" style="padding-top: 15px; font-weight: 400; font-size: 1.2em;">Confirm Package Receipt</h4>
 
         <form class="form-inline" role="form" method="post" action="/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received/Thanks" enctype="multipart/form-data">
             {% csrf_token %} {{ host_received_form.non_field_errors }} {{ host_received_form.host_comments.errors }}
@@ -17,7 +17,7 @@ which is called on dashboard.html -->
 
             <!--submit button-->
             <div class="row paddingbottom10px">
-                <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Confirm Package Receipt</button>
+                <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 btn-lg-gr">I got it!</button>
             </div>
         </form>
     </div>
