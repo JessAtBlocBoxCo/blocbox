@@ -287,12 +287,12 @@
                         <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 8px; font-weight: 400; font-size: 1.0em">Delivery:&nbsp;<span style="font-weight: 500;"> 
                         {% if sh.deliverydate_tracking %}
                                {% if sh.days_until_delivery == 0 %} 
-                                     Today
+                                     TODAY
                                 {% endif %}
                         {% endif %}
                         {% if sh.deliverydate_tracking %}
                                 {% if sh.days_until_delivery == 1 %} 
-                                     Tomorrow
+                                     TOMORROW
                                 {% endif %}
                         {% endif %}
                         {% if sh.deliverydate_tracking %}
@@ -300,7 +300,7 @@
                                 {{sh.days_until_delivery}} days
                             {% endif %}
                             {% if sh.days_until_delivery < 0 %}
-                                Past Due
+                                PAST DUE
                             {% endif %}
                         {% else %}
                             About&nbsp;{{sh.days_until_delivery_est_start}}&nbsp;-&nbsp;{{sh.days_until_delivery_est_end}}&nbsp;days
