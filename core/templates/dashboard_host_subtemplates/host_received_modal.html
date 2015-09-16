@@ -6,14 +6,15 @@ which is called on dashboard.html -->
     <div>
         <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
         <h4 class="darkgreytext nomarginbottom" style="padding-top: 15px; font-weight: 400; font-size: 1.2em;">Confirm Package Receipt</h4>
+        <h4 class="darkgreytext nomargintop" style="padding-top: 5px; font-weight: 300; font-size: 1.0em;">Provide Feedback or Comments about this Transaction</h4>
+
 
         <form class="form-inline" role="form" method="post" action="/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received/Thanks" enctype="multipart/form-data">
             {% csrf_token %} {{ host_received_form.non_field_errors }} {{ host_received_form.host_comments.errors }}
 
             <!--end user comments -->
-            <h6>Provide Feedback or Comments about this Transaction</h6>
             <div class="row">
-                <input type="text" class="col-xs-12" name="host_comments" id="id_host_comments" placeholder="Comments about your experience (optional)"> </div>
+                <input type="text" class="col-xs-12" name="host_comments" id="id_host_comments" rows="4" placeholder="Comments about your experience (optional)"> </div>
 
             <!--submit button-->
             <div class="row paddingbottom10px">
