@@ -3257,7 +3257,6 @@ a > .offercard:focus {
 .statusltgreen{
     background-color: transparent;
     color: rgb(121, 204, 205);
-    border: 2px solid rgb(121, 204, 205);
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
@@ -3272,7 +3271,6 @@ a > .offercard:focus {
 .statusorange{
     background-color: transparent;
     color: rgb(255, 195, 0);
-    border: 2px solid rgb(255, 195, 0);
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
@@ -3287,7 +3285,6 @@ a > .offercard:focus {
 .statusred{
     background-color: transparent;
     color: rgb(241, 102, 100);
-    border: 2px solid rgb(241, 102, 100);
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
