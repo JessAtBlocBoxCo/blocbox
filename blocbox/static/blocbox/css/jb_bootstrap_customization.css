@@ -3106,6 +3106,16 @@ a > .offercard:focus {
     margin-bottom: 20px;
     text-align: left;
 }
+.dashinfoboxgreen {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgb(121, 204, 205);
+    border-radius: 4px;
+    overflow: visible;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
 .dashpiccontainer {
     border-radius: 50%;
     border: 7px solid rgb(255, 255, 255);
