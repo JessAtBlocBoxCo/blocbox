@@ -3243,7 +3243,6 @@ a > .offercard:focus {
 .statusgreen{
     background-color: transparent;
     color: rgb(71, 158, 159);
-    border: 2px solid rgb(71, 158, 159);
     border-radius: 100px;
     text-align: center;
     line-height: 38px;
