@@ -538,6 +538,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
         #Create lists restricted to shipmetns that are on aftership
         shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
+        shipments_complete_fordash_count = shipments_complete_fordash.count()
         #Shipments in transit
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered",)
         shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
@@ -564,6 +565,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         otherfavors_all_paid = None
         otherfavors_all_paid_notarchived = None   
         shipments_complete_fordash = None
+        shipments_complete_fordash_count = None
         shipments_in_transit = None
         shipments_in_transit_count = None
         shipments_in_transit_no_fails = None
@@ -632,6 +634,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'transactions_all': transactions_all, 
             'transactions_all_paid':  transactions_all_paid,
             'shipments_complete_fordash': shipments_complete_fordash,
+            'shipments_complete_fordash_count': shipments_complete_fordash_count,
             'shipments_in_transit': shipments_in_transit,
             'shipments_in_transit_count': shipments_in_transit_count,
             'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
