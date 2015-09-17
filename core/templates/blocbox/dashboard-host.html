@@ -183,7 +183,7 @@
                         <div class="col-xs-1 nopaddingleft">
                             <div class="statusred" style="padding: 0px 1px 0px 3px;"><span class="whitetext" style="font-size: 1.9em; font-weight: 700; line-height: 1.28em">!</span> </div>
                         </div>
-                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 7px 5px 0px 5px; font-weight: 400; font-size: 1.2em">Issue with Package for<span class= "redtext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
+                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 5px 5px 0px 0px; font-weight: 400; font-size: 1.2em">Issue with Package for<span class= "redtext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
                         </h3>
 
                         <!--mobile version - title -->
@@ -277,7 +277,7 @@
                         <div class="col-xs-1 nopaddingleft">
                             <div class="statusgreen" style="padding: 0px 1px 0px 4px;"><i class="fa fa-truck fa-flip-horizontal fa-fw fa-2x statusicon" style="padding-bottom: 14px;"></i> </div>
                         </div>
-                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 7px 5px 0px 5px; font-weight: 400; font-size: 1.2em">Incoming Package for<span class= "darkbluegreentext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span></h3>
+                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 5px 5px 0px 0px; font-weight: 400; font-size: 1.2em">Incoming Package for<span class= "darkbluegreentext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span></h3>
 
                         <!--mobile version - title -->
                         <h3 class="col-xs-12 darkbluegreentext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
@@ -386,7 +386,7 @@
                         <div class="col-xs-1 nopaddingleft">
                             <div class="statusorange"><i class="fa fa-home fa-fw fa-2x statusicon" style="padding-bottom: 14px; padding-left: 1px;"></i> </div>
                         </div>
-                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 7px 5px 0px 5px; font-weight: 400; font-size: 1.2em"> Holding Package for<span class= "yellowtext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
+                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 5px 5px 0px 0px; font-weight: 400; font-size: 1.2em"> Holding Package for<span class= "yellowtext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
                         </h3>
 
                         <!--mobile version - title -->
@@ -434,7 +434,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-1 col-sm-offset-9">
-                            <button class="btn-small-ltgreen" onclick="window.location='/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mark as Picked Up"><i class="fa fa-check fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-ltgreen" onclick="window.location='/hostdashboard/confirm_id{{sh.id}}/#openModal_host_handoff_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mark as Picked Up"><i class="fa fa-check fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                         <div class="col-sm-1 margintop10px">
                             <button class="btn-small-clear" onclick="window.location='/hostdashboard/message_id{{sh.id}}/#openModal_host_message_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mesage {{sh.enduser.first_name}}"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
@@ -465,7 +465,7 @@
                                 <i class="fa fa-check fa-fw fa-2x statusicon" style="padding-bottom: 10px;"></i>
                             </div>
                         </div>
-                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 7px 5px 0px 5px; font-weight: 400; font-size: 1.2em"> Successful delivery for<span class= "darkbluegreentext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
+                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 5px 5px 0px 0px; font-weight: 400; font-size: 1.2em"> Successful delivery for<span class= "darkbluegreentext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
                         </h3>
 
                         <!--mobile version - title -->
@@ -505,7 +505,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-1 col-sm-offset-9">
-                            <button class="btn-small-grey" onclick="window.location='/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mark as Received"><i class="fa fa-archive fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
+                            <button class="btn-small-grey" onclick="window.location='/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Archive Shipment"><i class="fa fa-archive fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
                         </div>
                         <div class="col-sm-1 margintop10px">
                             <button class="btn-small-clear" onclick="window.location='/hostdashboard/message_id{{sh.id}}/#openModal_host_message_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mesage {{sh.enduser.first_name}}"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
