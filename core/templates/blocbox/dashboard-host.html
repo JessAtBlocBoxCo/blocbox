@@ -262,7 +262,7 @@
 
                 <!--INCOMING SHIPMENTS-->
 
-                {% for sh in shipments_in_transit_no_fails %}
+                {% for sh in shipments_in_transit_no_fails_not_received %}
 
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_received_modal.html" %} {% endifequal %}
@@ -371,7 +371,7 @@
 
                 <!--PACKAGES AWAITING PICKUP-->
 
-                {% for sh in shipments_waiting_pickup %}
+                    {% for sh in shipments_waiting_pickup_received %}
 
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_received_modal.html" %} {% endifequal %}

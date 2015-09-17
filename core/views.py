@@ -540,14 +540,17 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
         shipments_complete_fordash_count = shipments_complete_fordash.count()
         #Shipments in transit
-        shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered",)
+        shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
+        shipments_in_transit_not_received = shipments_in_transit.exclude(host_received=True)
         shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
+        shipments_in_transit_no_fails_not_received = shipments_in_transit_no_fails.exclude(host_received=True)
         shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
         shipment_fail_count = shipment_fail.count()
-        shipments_in_transit_count = shipments_in_transit.count()
+        shipments_in_transit_not_received_count = shipments_in_transit_not_received.count()
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
-        shipments_waiting_pickup_count = shipments_waiting_pickup.count()
+        shipments_waiting_pickup_received = shipments_waiting_pickup.filter(host_received=True)
+        shipments_waiting_pickup_received_count = shipments_waiting_pickup_received.count()
         #Host connections
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
         connections_count = Connection.objects.filter(host_user=thepersonviewingthepage).count() #count them,removing status=0 after host_user=host
@@ -567,11 +570,14 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         shipments_complete_fordash = None
         shipments_complete_fordash_count = None
         shipments_in_transit = None
-        shipments_in_transit_count = None
+        shipments_in_transit_not_received_count = None
         shipments_in_transit_no_fails = None
+        shipments_in_transit_no_fails_not_received = None
         shipment_fail = None
         shipment_fail_count = None
         shipments_waiting_pickup = None
+        shipments_waiting_pickup_received = None
+        shipments_waiting_pickup_received_count = None
         connections_all = None
         connections_count = None
         transactions_count = None
@@ -636,11 +642,13 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'shipments_complete_fordash': shipments_complete_fordash,
             'shipments_complete_fordash_count': shipments_complete_fordash_count,
             'shipments_in_transit': shipments_in_transit,
-            'shipments_in_transit_count': shipments_in_transit_count,
+            'shipments_in_transit_not_received_count': shipments_in_transit_not_received_count,
             'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
+            'shipments_in_transit_no_fails_not_received': shipments_in_transit_no_fails_not_received,
             'shipment_fail': shipment_fail,
             'shipments_waiting_pickup': shipments_waiting_pickup,
-            'shipments_waiting_pickup_count': shipments_waiting_pickup_count,
+            'shipments_waiting_pickup_received': shipments_waiting_pickup_received,
+            'shipments_waiting_pickup_received_count': shipments_waiting_pickup_received_count,
             #otherfavors all
             'otherfavors_all_paid': otherfavors_all_paid, 
             'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
