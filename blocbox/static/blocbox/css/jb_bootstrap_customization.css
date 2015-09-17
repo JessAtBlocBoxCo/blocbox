@@ -2535,10 +2535,10 @@ body {
     clear: both;
     z-index: 6;
     width: 100%;
-    height: 0.063em;
+    height: 0.083em;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgb(225, 231, 233);
+    background-color: rgb(236, 240, 241);
 }
 .offercard {
     text-decoration: none;
