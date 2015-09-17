@@ -2530,6 +2530,16 @@ body {
     margin-right: auto;
     background-color: rgb(236, 240, 241);
 }
+.profileboxline100dark {
+    position: relative;
+    clear: both;
+    z-index: 6;
+    width: 100%;
+    height: 0.063em;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(225, 231, 233);
+}
 .offercard {
     text-decoration: none;
     background-color: rgb(255, 255, 255);
