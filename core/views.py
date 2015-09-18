@@ -549,7 +549,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         shipments_in_transit_not_received_count = shipments_in_transit_not_received.count()
         #Shipments awaiting pickup
         shipments_waiting_pickup = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
-        shipments_waiting_pickup_received = shipments_waiting_pickup.filter(host_received=True)
+        shipments_waiting_pickup_received = shipments_all_paid_notarchived_notcomplete.filter(host_received=True)
         shipments_waiting_pickup_received_count = shipments_waiting_pickup_received.count()
         #Host connections
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
