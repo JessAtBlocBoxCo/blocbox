@@ -684,7 +684,7 @@ def host_received_modal(request, confirm_id):
             trans.host_received = True
             trans.save()
         else:
-                    print host_received_form.errors
+            print host_received_form.errors
     else:
         host_received_form = HostReceived()
     return HttpResponse("OK")
