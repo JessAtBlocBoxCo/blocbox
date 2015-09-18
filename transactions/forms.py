@@ -53,6 +53,9 @@ class MessageHost(forms.Form):
     
 class HostReceived(forms.Form):
     host_comments=forms.CharField(max_length=200, required=False)
+
+class HostHandoff(forms.Form):
+    host_handoff_comments=forms.CharField(max_length=200, required=False)    
     
 class HostIssue(forms.ModelForm):
     class Meta:

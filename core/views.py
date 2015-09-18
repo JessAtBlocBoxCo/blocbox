@@ -694,6 +694,7 @@ def host_handoff_modal(request, confirm_id):
     if request.method == 'POST':
         package_received_form = PackageReceived(request.POST) #note this is not a model form
         if package_received_form.is_valid():
+            trans.host_handoff_comments = host_handoff_form.cleaned_data['host_handoff_comments']
             trans.trans_complete = True
             trans.date_completed = datetoday
             trans.datetime_completed = datetimenow

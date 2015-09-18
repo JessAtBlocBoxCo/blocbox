@@ -9,7 +9,7 @@
 
 
         <form class="form-inline" role="form" method="post" action="/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received/Thanks" enctype="multipart/form-data">
-            {% csrf_token %} {{ host_received_form.non_field_errors }} {{ host_received_form.host_comments.errors }}
+            {% csrf_token %} {{ package_received_form.non_field_errors }} {{ host_handoff_form.host__handoff_comments.errors }}
 
             <!--end user comments -->
 
