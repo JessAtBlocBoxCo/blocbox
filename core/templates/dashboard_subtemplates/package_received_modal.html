@@ -1,46 +1,55 @@
-<!--this is core/templates/dashboard_subtampltes/package_received_modal.html, it is called within modaltags.py - the tracking_modal def
-		which is called on dashboard.html 
-					
--->
+<!--this is core/templates/dashboard_subtampltes/package_received_modal.html -->
 
-							<!--PACKAGE RECEIVED MODAL-->							
-							<div id="openModal_package_received_id{{sh.id}}" class="modalDialog">                                 
-                 <div>	
-                     <a href="/dashboard" title="Close" class="close">X</a>
-        								<h4 class="ltbluetext">Confirm and Review Package Receipt</h4>   
+<!--PACKAGE RECEIVED MODAL-->
+<div id="openModal_package_received_id{{sh.id}}" class="modalDialog">
+    <div>
+        <a href="/hostdashboard" title="Close" class="close"><i class="fa fa-times fa-fw statusicon" style="padding-bottom: 4px;"></i></a>
+        <h4 class="darkgreytext nomarginbottom" style="padding-top: 15px; font-weight: 400; font-size: 1.2em;">Confirm and Review Package Receipt</h4>
+        <h4 class="darkgreytext nomargintop" style="padding-top: 5px; font-weight: 300; font-size: 1.0em;">How would you rate this transaction?</h4>
 
-                       	 <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{sh.id}}/#openModal_package_received/Thanks" enctype="multipart/form-data">
-					   									{% csrf_token %}
-					   											{{ package_received_form.non_field_errors }}
-					   											{{ package_received_form.enduser_rating.errors }}
-					   									
-					   									<h6>How would you rate this transaction?</h6>
-					   									<div class="col-xs-12 nopaddingleftright paddingbottom10px">					   															 																												   		
-					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=1 > 1 	</label> 	</div>
-					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=2 > 2 	</label> 	</div>
-					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=3 > 3 	</label> 	</div>
-					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=4 > 4 	</label> 	</div>
-					   									 	  <div class="radio"> <label> 	<input type="radio" name="enduser_rating" value=5 > 5 	</label> 	</div>
-	 														</div> <!--end div with radios -->	
-	 														
-	 														<!--end user comments -->
-	 														<h6>Provide Feedback or Comments about this Transaction</h6>
-	 														{{ package_received_form.enduser_comments.errors }}
-	 														<div class="row"> <input type="text" class="col-xs-12" name="enduser_comments" id="id_enduser_comments" 
-	 															placeholder="Comments about your experience (optional)">  </div>
-	 															
-	 														
-	 														 	<!--hidden input to mark complete-->
-	 															{{ package_received_form.trans_complete.errors }}
-	 															<input type="hidden" name="trans_complete" value=True>
-	 															{{ package_received_form.date_completed.errors }}
-	 															<input type="hidden" name="date_completed" value= {{ datetoday }}>
-	 															{{ package_received_form.datetime_completed.errors }}
-	 															<input type="hidden" name="datetime_completed" value= {{ datetimenow }}>
-                     			<!--siubmit button-->
-                     			<div class="row paddingbottom10px"> 
-                     				<button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 bluebutton">Submit</button>
-					   								</div>                
-               					</form>
-               			</div> 
-               	</div>   <!--END DIV ID FOR PACKAGE RECEIVED MODAL.--> 
+        <form class="form-inline" role="form" method="post" action="/dashboard/confirm_id{{sh.id}}/#openModal_package_received/Thanks" enctype="multipart/form-data">
+            {% csrf_token %} {{ package_received_form.non_field_errors }} {{ package_received_form.enduser_rating.errors }}
+
+            <div class="col-xs-12 nopaddingleftright paddingbottom10px">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="enduser_rating" value=1> 1 </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="enduser_rating" value=2> 2 </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="enduser_rating" value=3> 3 </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="enduser_rating" value=4> 4 </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="enduser_rating" value=5> 5 </label>
+                </div>
+            </div>
+            <!--end div with radios -->
+
+            <!--end user comments -->
+            <h4 class="darkgreytext nomargintop" style="padding-top: 5px; font-weight: 300; font-size: 1.0em;">Provide Feedback or Comments about this Transaction</h4> {{ package_received_form.enduser_comments.errors }}
+            <div class="row">
+                <input type="text" class="col-xs-12" name="enduser_comments" id="id_enduser_comments" placeholder="Comments about your experience (optional)"> </div>
+
+
+            <!--hidden input to mark complete-->
+            {{ package_received_form.trans_complete.errors }}
+            <input type="hidden" name="trans_complete" value=True> {{ package_received_form.date_completed.errors }}
+            <input type="hidden" name="date_completed" value={ { datetoday }}> {{ package_received_form.datetime_completed.errors }}
+            <input type="hidden" name="datetime_completed" value={ { datetimenow }}>
+            <!--siubmit button-->
+            <div class="row paddingbottom10px">
+                <button type="submit" name="submit" class="col-xs-5 col-xs-offset-7 btn-lg-gr">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--END DIV ID FOR PACKAGE RECEIVED MODAL.-->

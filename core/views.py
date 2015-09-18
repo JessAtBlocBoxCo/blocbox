@@ -506,7 +506,7 @@ def package_received_modal(request, confirm_id):
                     trans.last_checkpoint_date = last_checkpoint_date
                     trans.save()
         else:
-    				print package_received_form.errors
+            print package_received_form.errors
     else:
     	  package_received_form = PackageReceived()
     return HttpResponse("OK")
@@ -687,6 +687,49 @@ def host_received_modal(request, confirm_id):
                     print host_received_form.errors
     else:
         host_received_form = HostReceived()
+    return HttpResponse("OK")
+
+def host_handoff_modal(request, confirm_id):
+    trans = Transaction.objects.get(pk=confirm_id)
+    if request.method == 'POST':
+        package_received_form = PackageReceived(request.POST) #note this is not a model form
+        if package_received_form.is_valid():
+            trans.enduser_rating = package_received_form.cleaned_data['enduser_rating']
+            trans.enduser_comments = package_received_form.cleaned_data['enduser_comments']
+            trans.trans_complete = True
+            trans.date_completed = datetoday
+            trans.datetime_completed = datetimenow
+            trans.save()
+            #get last aftership stuff
+            courier = trans.shipment_courier
+            if courier:
+                slug = str(trans.shipment_courier.lower())
+                tracking = trans.tracking
+                datadict = api.trackings.get(slug, tracking)
+                tracking_info = datadict.get(u'tracking') 
+                new_status = tracking_info['tag']
+                trans.last_tracking_status = new_status            
+                last_tracking_unicode = tracking_info['last_updated_at']
+                last_tracking_datetime = datetime.datetime.strptime(last_tracking_unicode, '%Y-%m-%dT%H:%M:%S+00:00')
+                trans.last_tracking_datetime = last_tracking_datetime
+                trans.last_tracking_date = last_tracking_datetime.date()
+                trans.save()
+                checkpoints = tracking_info['checkpoints']
+                if checkpoints:
+                    last_checkpoint = checkpoints[-1]
+                    last_checkpoint_city = last_checkpoint['city']
+                    last_checkpoint_state = last_checkpoint['state']
+                    last_checkpoint_datetime = last_checkpoint['checkpoint_time']
+                    last_checkpoint_date = last_checkpoint_datetime.date()
+                    trans.last_checkpoint_city = last_checkpoint_city
+                    trans.last_checkpoint_state = last_checkpoint_state 
+                    trans.last_checkpoint_datetime = last_checkpoint_datetime
+                    trans.last_checkpoint_date = last_checkpoint_date
+                    trans.save()
+        else:
+            print package_received_form.errors
+    else:
+        package_received_form = PackageReceived()
     return HttpResponse("OK")
 
 def host_report_issue_modal(request, issue_id):
