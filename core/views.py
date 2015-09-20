@@ -550,7 +550,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         #Shipments awaiting pickup
         shipments_waiting_pickup_delivered = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
         shipments_waiting_pickup_received = shipments_all_paid_notarchived_notcomplete.filter(host_received=True)
-        shipments_waiting = shipments_waiting_pickup_delivered + shipments_waiting_pickup_received
+        shipments_waiting = list(chain(shipments_waiting_pickup_delivered, shipments_waiting_pickup_received))
         shipments_waiting_pickup_received_count = shipments_waiting_pickup_received.count()
         #Host connections
         connections_all = Connection.objects.filter(host_user=thepersonviewingthepage) #JB - displays hosts connected to
@@ -578,6 +578,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         shipment_fail_count = None
         shipments_waiting_pickup = None
         shipments_waiting_pickup_received = None
+        shipments_waiting = None
         shipments_waiting_pickup_received_count = None
         connections_all = None
         connections_count = None
@@ -650,6 +651,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'shipments_waiting_pickup': shipments_waiting_pickup,
             'shipments_waiting_pickup_received': shipments_waiting_pickup_received,
             'shipments_waiting_pickup_received_count': shipments_waiting_pickup_received_count,
+            'shipments_waiting': shipments_waiting,
             #otherfavors all
             'otherfavors_all_paid': otherfavors_all_paid, 
             'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,

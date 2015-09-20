@@ -371,7 +371,7 @@
 
                 <!--PACKAGES AWAITING PICKUP-->
 
-                    {% for sh in shipments_waiting %}
+                {% for sh in shipments_waiting %}
 
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_received_modal.html" %} {% endifequal %}
