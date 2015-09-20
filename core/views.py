@@ -35,7 +35,7 @@ datetimenow = datetime.datetime.now()
 import pytz
 import urllib
 import urllib2
-from core.models import chain
+from itertools import chain
 from urllib import quote
 #Removing reference to the scheuld app
 #from schedule import periods
