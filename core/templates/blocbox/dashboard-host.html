@@ -371,7 +371,7 @@
 
                 <!--PACKAGES AWAITING PICKUP-->
 
-                {% for sh in shipments_waiting_pickup_received %}
+                    {% for sh in shipments_waiting %}
 
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_received_modal.html" %} {% endifequal %}
@@ -447,81 +447,6 @@
                 </div>
                 {% endfor %}
                 
-                {% for sh in shipments_waiting_pickup %}
-
-                <!-- need to create subtemplate for next specific to host -->
-                {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_handoff_modal.html" %} {% endifequal %}
-                <!-- need to create subtemplate for next specific to host -->
-                {% ifequal message_trans_id_int sh.id %} {% include "dashboard_host_subtemplates/message_to_enduser_modal.html" %} {% endifequal %}
-                <!-- need to create subtemplate for next specific to host -->
-                {% ifequal issue_id_int sh.id %} {% include "dashboard_host_subtemplates/host_report_issue_modal.html" %} {% endifequal %}
-
-                <div class="row dashinfobox dashfont smallmobilepaddingsides5 paddingbottom10px">
-                    <!--non-mobile version-->
-                    <div class="row">
-                        <div class="col-xs-1 nopaddingleft">
-                            <div class="statusorange"><i class="fa fa-home fa-fw fa-2x statusicon" style="padding-bottom: 14px; padding-left: 1px;"></i> </div>
-                        </div>
-                        <h3 class="col-xs-6 darkergreytext nomargin xshide" style="padding: 5px 5px 0px 0px; font-weight: 400; font-size: 1.2em"> Holding Package for<span class= "yellowtext" style="font-weight: 500;">&nbsp;{{sh.enduser.first_name}} </span>
-                        </h3>
-
-                        <!--mobile version - title -->
-                        <h3 class="col-xs-12 darkbluegreentext nomargin xsonly xsnopadding" style="padding-left: 5px; font-weight: 400">{% if sh.title %}  {{ sh.title }} 
-                            {% else %} No Title  {% endif %} 
-                            <!--<br> <b> In Transit </b> -->
-                        </h3>
-                        <h3 class="col-md-5 redtext nomargin textright nopaddingright" style="padding-top: 8px; font-weight: 400; font-size: 1.0em"><span style="font-weight: 500;">Awaiting Pickip</span></h3>
-                    </div>
-                    <div style="padding: 10px 0px">
-                        <div class="profileboxline100dark"></div>
-                    </div>
-                    <div class="xspaddingleft5 xsnopadding">
-                        <!--row with shipmen info, shipments in transit-->
-                        <div class="row">
-                            <div class="col-xs-12 col-sm-6 paddingright10px xsnopadding">
-                                <h4 class="margintopbottom5px">For&nbsp;<span style="font-weight:normal;">{{sh.enduser.first_name}}&nbsp;{{sh.enduser.last_name}}</span></h4>
-                                <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Delivery Requested:&nbsp;<span style="font-weight:normal;">{{sh.enduser.st_address1}}</span></h4>
-                                <div class="profileboxline100"></div>
-                                <h4 class="margintop5px nopaddingbottom">Order&nbsp;<span style="font-weight:normal;">{{sh.id }}</span>&nbsp;placed on&nbsp;<span style="font-weight:normal;">{{sh.date_requested_notime }}</span></h4>
-                            </div>
-                            <!--end col-xs-12 col-sm-5, col with ORDERED info -->
-
-                            <div class="col-xs-12 col-sm-6 paddingleft10px xsnopadding">
-                                <h4 class="margintopbottom5px">{% if sh.shipment_courier %}{{ sh.shipment_courier }} 
-                                    {% else %}Carrier Not Provided
-                                    {% endif %}: <span style="font-weight:normal;">  {{ sh.last_checkpoint_message }}  </span></h4>
-                                <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Tracking:<span style="font-weight:normal;">  
-                                    <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
-                                    </span> </h4>
-                                <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Expected Delivery:&nbsp;<span style="font-weight:normal;">{% if sh.deliverydate_tracking %}{{ sh.deliverydate_tracking }} 
-                                    {% else %} 
-                                    You expected it to arrive 
-                                    {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
-                                    {% else %} {{ sh.arrivalwindow_day1 }}&nbsp;-&nbsp;{{ sh.arrivalwindow_lastday }}&nbsp; 
-                                    {% endif %} 
-                                    {% endif %}</span></h4>
-                            </div>
-                            <!-- end col-xs-12 col-sm-5, second col with shipping info -->
-                        </div>
-                        <!--end row with shipping info, shipments in transit-->
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-1 col-sm-offset-9">
-                            <button class="btn-small-ltgreen" onclick="window.location='/hostdashboard/confirm_id{{sh.id}}/#openModal_host_handoff_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mark as Picked Up"><i class="fa fa-check fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
-                        </div>
-                        <div class="col-sm-1 margintop10px">
-                            <button class="btn-small-clear" onclick="window.location='/hostdashboard/message_id{{sh.id}}/#openModal_host_message_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Mesage {{sh.enduser.first_name}}"><i class="fa fa-envelope fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
-                        </div>
-                        <div class="col-sm-1 margintop10px">
-                            <button class="btn-small-clear" onclick="window.location='/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue_id{{sh.id}}';" data-toggle="tooltip" data-placement="top" title="Report an Issue"><i class="fa fa-flag fa-fw statusicon" style="padding-bottom: 4px;"></i></button>
-                        </div>
-                    </div>
-                    <!--end col-xs-12 col-sm-9, with icons and shipping info, shipmetns in transi -->
-                </div>
-                {% endfor %}
 
                 <!-- Completed Shipments -->
                 {% for sh in shipments_complete_fordash %}
