@@ -577,7 +577,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         shipments_in_transit_no_fails_not_received = None
         shipment_fail = None
         shipment_fail_count = None
-        shipments_waiting_pickup = None
+        shipments_waiting_pickup_delivered = None
         shipments_waiting_pickup_received = None
         shipments_waiting = None
         shipments_waiting_pickup_received_count = None
@@ -649,7 +649,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
             'shipments_in_transit_no_fails_not_received': shipments_in_transit_no_fails_not_received,
             'shipment_fail': shipment_fail,
-            'shipments_waiting_pickup': shipments_waiting_pickup,
+            'shipments_waiting_pickup_delivered': shipments_waiting_pickup_delivered,
             'shipments_waiting_pickup_received': shipments_waiting_pickup_received,
             'shipments_waiting_pickup_received_count': shipments_waiting_pickup_received_count,
             'shipments_waiting': shipments_waiting,
