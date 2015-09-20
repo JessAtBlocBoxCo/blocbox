@@ -194,6 +194,12 @@ class UserInfo(AbstractBaseUser): #standard fields defined below
         "Does the user have permissions to view the app `app_label`?"
         # Simplest possible answer: Yes, always
         return True
+    
+    def chain(*iterables):
+        # chain('ABC', 'DEF') --> A B C D E F
+        for it in iterables:
+            for element in it:
+                yield element
 
     @property
     def is_staff(self):
