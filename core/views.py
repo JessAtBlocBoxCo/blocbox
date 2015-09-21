@@ -588,7 +588,6 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         transactions_count = None
         conflicts = None
     host_received_form = None
-    host_handoff_form = None
     if confirm_id:  #if the open the package_received modal #JB - confirming what?
         confirm_id_int = confirm_id.strip()
         confirm_id_int = int(confirm_id_int)
@@ -676,7 +675,6 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'issue_id': issue_id,
             'issue_id_int': issue_id_int,
             'host_received_form': host_received_form,
-            'host_handoff_form'; host_handoff_form,
             'message_trans_id': message_trans_id,
             'message_trans_id_int': message_trans_id_int,
             'cal_form': cal_form,
