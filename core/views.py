@@ -599,8 +599,8 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         handoff_id_int = handoff_id.strip()
         handoff_id_int = int(handoff_id_int)
         host_handoff_modal(request, handoff_id) 	
-        else:
-            handoff_id_int = None
+    else:
+        handoff_id_int = None
     if issue_id:     #if they open the Host Issues Modal/Button
         issue_id_int = issue_id.strip()
         issue_id_int = int(issue_id)
