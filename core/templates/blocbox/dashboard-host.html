@@ -495,8 +495,7 @@
                             <!--end col-xs-12 col-sm-5, col with ORDERED info -->
 
                             <div class="col-xs-12 col-sm-6 paddingleft10px xsnopadding">
-                                <h4 class="margintopbottom5px">Completed: {% if sh.datetime_completed %}{{ sh.datetime_completed }}
-                                    {% endif %}:&nbsp;<span style="font-weight:normal;">{{ sh.last_checkpoint_message }}</span></h4>
+                                <h4 class="margintopbottom5px">Completed:&nbsp;<span style="font-weight:normal;">{% if sh.datetime_completed %}{{ sh.datetime_completed }} {% endif %}</span></h4>
                                 <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">{% if sh.shipment_courier %}{{ sh.shipment_courier }} 
                                     {% else %}Carrier Not Provided
