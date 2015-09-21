@@ -327,6 +327,18 @@
                                     {% else %}Carrier Not Provided
                                     {% endif %}:&nbsp;<span style="font-weight:normal;">{{ sh.last_checkpoint_message }}</span></h4>
                                 <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Expected Delivery:&nbsp;<span style="font-weight:normal;">
+                                    {% if sh.deliverydate_tracking %}
+                                    {{ sh.deliverydate_tracking }} 
+                                    {% else %} 
+                                    {{sh.enduser.first_name}} estimated 
+                                    {% if sh.arrivalwindow_days_count == 1 %}
+                                    &nbsp;on&nbsp;{{ sh.arrivalwindow_day1 }} 
+                                    {% else %} 
+                                    {{ sh.arrivalwindow_day1 }}&nbsp;-&nbsp;{{ sh.arrivalwindow_lastday }} &nbsp; 
+                                    {% endif %} 
+                                    {% endif %}</span></h4>
+                                <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Tracking:<span style="font-weight:normal;">  
                                         <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">
                                         {% if sh.tracking == None %}
@@ -337,18 +349,6 @@
                                         {% endif %}
                                         </a>
                                     </span> </h4>
-                                <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Expected Delivery:&nbsp;<span style="font-weight:normal;">
-                                    {% if sh.deliverydate_tracking %}
-                                        {{ sh.deliverydate_tracking }} 
-                                    {% else %} 
-                                        {{sh.enduser.first_name}} estimated 
-                                        {% if sh.arrivalwindow_days_count == 1 %}
-                                            &nbsp;on&nbsp;{{ sh.arrivalwindow_day1 }} 
-                                        {% else %} 
-                                            {{ sh.arrivalwindow_day1 }}&nbsp;-&nbsp;{{ sh.arrivalwindow_lastday }} &nbsp; 
-                                        {% endif %} 
-                                    {% endif %}</span></h4>
                             </div>
                             <!-- end col-xs-12 col-sm-5, second col with shipping info -->
                         </div>
@@ -416,17 +416,19 @@
                                     {% else %}Carrier Not Provided
                                     {% endif %}: <span style="font-weight:normal;">  {{ sh.last_checkpoint_message }}  </span></h4>
                                 <div class="profileboxline100"></div>
+                                <h4 class="margintopbottom5px">Delivered On:&nbsp;<span style="font-weight:normal;">
+                                    {% if sh.last_tracking_datetime %}
+                                       {{ sh.last_tracking_datetime }}
+                                    {% endif %}
+                                    {% if sh.host_received_datetime %}
+                                        {{ sh.host_received_datetime }} 
+                                    {% endif %}</span></h4>
+                                <div class="profileboxline100"></div>
                                 <h4 class="margintopbottom5px">Tracking:<span style="font-weight:normal;">  
                                     <a href="https://blocbox.aftership.com/{{ sh.tracking }}" target="_blank">{{ sh.tracking }} </a>
                                     </span> </h4>
-                                <div class="profileboxline100"></div>
-                                <h4 class="margintopbottom5px">Expected Delivery:&nbsp;<span style="font-weight:normal;">{% if sh.deliverydate_tracking %}{{ sh.deliverydate_tracking }} 
-                                    {% else %} 
-                                    You expected it to arrive 
-                                    {% if sh.arrivalwindow_days_count == 1 %} on {{ sh.arrivalwindow_day1 }} 
-                                    {% else %} {{ sh.arrivalwindow_day1 }}&nbsp;-&nbsp;{{ sh.arrivalwindow_lastday }}&nbsp; 
-                                    {% endif %} 
-                                    {% endif %}</span></h4>
+
+ 
                             </div>
                             <!-- end col-xs-12 col-sm-5, second col with shipping info -->
                         </div>
