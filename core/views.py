@@ -582,7 +582,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         shipments_waiting_pickup_delivered = None
         shipments_waiting_pickup_received = None
         shipments_waiting = None
-        shipments_waiting_pickup_received_count = None
+        shipments_waiting_count = None
         connections_all = None
         connections_count = None
         transactions_count = None
@@ -653,8 +653,8 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'shipment_fail': shipment_fail,
             'shipments_waiting_pickup_delivered': shipments_waiting_pickup_delivered,
             'shipments_waiting_pickup_received': shipments_waiting_pickup_received,
-            'shipments_waiting_pickup_received_count': shipments_waiting_pickup_received_count,
             'shipments_waiting': shipments_waiting,
+            'shipments_waiting_count': shipments_waiting_count,
             #otherfavors all
             'otherfavors_all_paid': otherfavors_all_paid, 
             'otherfavors_all_paid_notarchived': otherfavors_all_paid_notarchived,
