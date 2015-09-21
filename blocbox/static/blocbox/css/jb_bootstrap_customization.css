@@ -3274,6 +3274,20 @@ a > .offercard:focus {
     width: 32px;
     height: 32px;
 }
+.statusdarkgrey{
+    background-color: transparent;
+    color: rgb(127, 140, 141);
+    border-radius: 100px;
+    text-align: center;
+    line-height: 38px;
+    margin: auto;
+    display: block;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+}
 .statusltgreen{
     background-color: transparent;
     color: rgb(121, 204, 205);
