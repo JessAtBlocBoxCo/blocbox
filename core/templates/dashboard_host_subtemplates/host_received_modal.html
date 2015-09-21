@@ -10,12 +10,12 @@ which is called on dashboard.html -->
 
 
         <form class="form-inline" role="form" method="post" action="/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received/Thanks" enctype="multipart/form-data">
-            {% csrf_token %} {{ host_received_form.non_field_errors }} {{ host_received_form.host_comments.errors }}
+            {% csrf_token %} {{ host_received_form.non_field_errors }} {{ host_received_form.host_received_comments.errors }}
 
             <!--end user comments -->
             
             <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
-                <textarea class="form-control" name="host_issue" id="id_host_issue" rows="4" style="width: 100%;" placeholder="Comments about your experience (optional)"> </textarea>
+                <textarea class="form-control" name="host_recieved" id="id_host_received" rows="4" style="width: 100%;" placeholder="Comments about your experience (optional)"> </textarea>
             </div>
             <!--submit button-->
             <div class="row paddingbottom10px">

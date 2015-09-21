@@ -89,7 +89,7 @@ class Transaction(models.Model):
     dayrangestart = models.IntegerField("Min. Shipping Days", blank=True, null=True)     
     dayrangeend = models.IntegerField("Max. Shipping Days", blank=True, null=True)
     host_received_datetime = models.DateField(blank=True, null=True)
-    #host_received_comments = models.CharField(max_length=300, blank=True, null=True)
+    host_received_comments = models.CharField(max_length=300, blank=True, null=True)
     host_handoff_comments = models.CharField(max_length=300, blank=True, null=True)
     #Report an issue
     host_issue = models.CharField("Host Issue", max_length=300, blank=True, null=True)
