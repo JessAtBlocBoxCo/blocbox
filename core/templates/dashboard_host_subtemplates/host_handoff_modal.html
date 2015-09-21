@@ -8,7 +8,7 @@
         <h4 class="darkgreytext nomargintop" style="padding-top: 5px; font-weight: 300; font-size: 1.0em;">Provide feedback about this transaction (optional)</h4>
 
 
-        <form class="form-inline" role="form" method="post" action="/hostdashboard/confirm_id{{sh.id}}/#openModal_host_received/Thanks" enctype="multipart/form-data">
+        <form class="form-inline" role="form" method="post" action="/hostdashboard/confirm_id{{sh.id}}/#openModal_host_handoff/Thanks" enctype="multipart/form-data">
             {% csrf_token %} {{ host_handoff_form.non_field_errors }} {{ host_handoff_form.host_handoff_comments.errors }}
 
             <!--end user comments -->
