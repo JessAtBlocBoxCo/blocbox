@@ -51,8 +51,8 @@ class EndUserIssue(forms.ModelForm):
 class MessageHost(forms.Form):
     message_body = forms.CharField(max_length=700, required=False)
     
-#class HostReceived(forms.Form):
-    #host_comments=forms.CharField(max_length=200, required=False)
+class HostReceived(forms.Form):
+    host_comments=forms.CharField(max_length=200, required=False)
 
 class HostHandoff(forms.Form):
     host_handoff_comments=forms.CharField(max_length=200, required=False)    
