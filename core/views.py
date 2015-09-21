@@ -700,7 +700,7 @@ def host_handoff_modal(request, confirm_id):
     trans = Transaction.objects.get(pk=confirm_id)
     if request.method == 'POST':
         host_handoff_form = HostHandoff(request.POST) #note this is not a model form
-        if package_received_form.is_valid():
+        if host_handoff_form.is_valid():
             trans.host_handoff_comments = host_handoff_form.cleaned_data['host_handoff_comments']
             trans.trans_complete = True
             trans.date_completed = datetoday
@@ -733,9 +733,9 @@ def host_handoff_modal(request, confirm_id):
                     trans.last_checkpoint_date = last_checkpoint_date
                     trans.save()
         else:
-            print package_received_form.errors
+            print host_handoff_form.errors
     else:
-        package_received_form = PackageReceived()
+        host_handoff_form = HostHandoff()
     return HttpResponse("OK")
 
 def host_report_issue_modal(request, issue_id):
