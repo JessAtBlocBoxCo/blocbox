@@ -540,7 +540,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         otherfavors_all_paid = transactions_all_paid.exclude(favortype="package")
         otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
         #Create lists restricted to shipmetns that are on aftership
-        shipments_complete_fordash = sorted(shipments_all_paid_notarchived.filter(trans_complete=True), reverse=Ture)
+        shipments_complete_fordash = sorted(shipments_all_paid_notarchived.filter(trans_complete=True), reverse=True)
         shipments_complete_fordash_count = shipments_complete_fordash.count()
         #Shipments in transit
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
