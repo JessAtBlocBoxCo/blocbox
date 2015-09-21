@@ -543,15 +543,15 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         shipments_complete_fordash_count = shipments_complete_fordash.count()
         #Shipments in transit
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
-        shipments_in_transit_not_received = shipments_in_transit.exclude(host_received=True)
+        shipments_in_transit_not_received = shipments_in_transit.filter(host_received_datetime=None)
         shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
-        shipments_in_transit_no_fails_not_received = shipments_in_transit_no_fails.exclude(host_received=True)
+        shipments_in_transit_no_fails_not_received = shipments_in_transit_no_fails.filter(host_received_datetime=None)
         shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
         shipment_fail_count = shipment_fail.count()
         shipments_in_transit_not_received_count = shipments_in_transit_not_received.count()
         #Shipments awaiting pickup
         shipments_waiting_pickup_delivered = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
-        shipments_waiting_pickup_received = shipments_all_paid_notarchived_notcomplete.filter(host_received=True)
+        shipments_waiting_pickup_received = shipments_all_paid_notarchived_notcomplete.exclude(host_received_datetime=None)
         shipments_waiting = sorted(chain(shipments_waiting_pickup_delivered, shipments_waiting_pickup_received), key=attrgetter('last_tracking_date'))
         shipments_waiting_pickup_received_count = shipments_waiting_pickup_received.count()
         #Host connections
@@ -686,7 +686,7 @@ def host_received_modal(request, confirm_id):
         host_received_form = HostReceived(request.POST) #note this is not a model form
         if host_received_form.is_valid():
             trans.host_received_comments = host_received_form.cleaned_data['host_comments']
-            trans.host_received = True
+            trans.host_received_datetime = datetimenow
             trans.save()
         else:
             print host_received_form.errors
