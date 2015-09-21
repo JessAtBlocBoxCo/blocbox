@@ -541,7 +541,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         otherfavors_all_paid_notarchived = otherfavors_all_paid.exclude(trans_archived=True)
         #Create lists restricted to shipmetns that are on aftership
         shipments_complete_fordash = shipments_all_paid_notarchived.filter(trans_complete=True)
-        shipments_complete_fordash_sorted = sorted(shipments_all_paid_notarchived.filter(trans_complete=True), key=attrgetter('datetime_completed'), reverse=True)
+        shipments_complete_fordash_sorted = sorted((shipments_all_paid_notarchived.filter(trans_complete=True)), key=attrgetter('datetime_completed'), reverse=True)
         shipments_complete_fordash_count = shipments_complete_fordash.count()
         #Shipments in transit
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
@@ -580,6 +580,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         shipments_in_transit_not_received_count = None
         shipments_in_transit_no_fails = None
         shipments_in_transit_no_fails_not_received = None
+        shipments_in_transit_no_fails_not_received_sorted = None
         shipment_fail = None
         shipment_fail_count = None
         shipments_waiting_pickup_delivered = None
@@ -660,6 +661,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
             'shipments_in_transit_not_received_count': shipments_in_transit_not_received_count,
             'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
             'shipments_in_transit_no_fails_not_received': shipments_in_transit_no_fails_not_received,
+            'shipments_in_transit_no_fails_not_received_sorted': shipments_in_transit_no_fails_not_received_sorted,
             'shipment_fail': shipment_fail,
             'shipments_waiting_pickup_delivered': shipments_waiting_pickup_delivered,
             'shipments_waiting_pickup_received': shipments_waiting_pickup_received,
