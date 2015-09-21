@@ -686,7 +686,7 @@ def host_received_modal(request, confirm_id):
     if request.method == 'POST':
         host_received_form = HostReceived(request.POST) #note this is not a model form
         if host_received_form.is_valid():
-            trans.host_received_comments = host_received_form.cleaned_data['host_comments']
+            trans.host_received_comments = host_received_form.cleaned_data['host_received_comments']
             trans.host_received_datetime = datetimenow
             trans.last_tracking_datetime = datetimenow
             trans.save()
