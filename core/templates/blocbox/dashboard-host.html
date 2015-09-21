@@ -452,7 +452,7 @@
                 
 
                 <!-- Completed Shipments -->
-                {% for sh in shipments_complete_fordash %}
+                {% for sh in shipments_complete_fordash_sorted %}
 
                 <!-- need to create subtemplate for next specific to host -->
                 {% ifequal confirm_id_int sh.id %} {% include "dashboard_host_subtemplates/host_received_modal.html" %} {% endifequal %}
