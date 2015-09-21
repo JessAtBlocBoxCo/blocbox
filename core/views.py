@@ -702,6 +702,7 @@ def host_handoff_modal(request, confirm_id):
         host_handoff_form = HostHandoff(request.POST) #note this is not a model form
         if host_handoff_form.is_valid():
             trans.host_handoff_comments = host_handoff_form.cleaned_data['host_handoff_comments']
+            trans.host_handoff_datetime = datetimenow
             trans.trans_complete = True
             trans.date_completed = datetoday
             trans.datetime_completed = datetimenow
