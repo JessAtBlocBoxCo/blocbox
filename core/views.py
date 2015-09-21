@@ -573,6 +573,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         otherfavors_all_paid = None
         otherfavors_all_paid_notarchived = None   
         shipments_complete_fordash = None
+        shipments_complete_fordash_sorted = None
         shipments_complete_fordash_count = None
         shipments_in_transit = None
         shipments_in_transit_not_received_count = None
@@ -652,6 +653,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
             'transactions_all': transactions_all, 
             'transactions_all_paid':  transactions_all_paid,
             'shipments_complete_fordash': shipments_complete_fordash,
+            'shipments_complete_fordash_sorted': shipments_complete_fordash_sorted,
             'shipments_complete_fordash_count': shipments_complete_fordash_count,
             'shipments_in_transit': shipments_in_transit,
             'shipments_in_transit_not_received_count': shipments_in_transit_not_received_count,
