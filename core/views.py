@@ -588,12 +588,19 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
         transactions_count = None
         conflicts = None
     host_received_form = None
+    host_handoff_form = None
     if confirm_id:  #if the open the package_received modal #JB - confirming what?
         confirm_id_int = confirm_id.strip()
         confirm_id_int = int(confirm_id_int)
         host_received_modal(request, confirm_id) 	
     else:
         confirm_id_int = None
+    if handoff_id:  #if the open the package_received modal #JB - confirming what?
+        handoff_id_int = handoff_id.strip()
+        handoff_id_int = int(handoff_id_int)
+        host_handoff_modal(request, handoff_id) 	
+        else:
+            handoff_id_int = None
     if issue_id:     #if they open the Host Issues Modal/Button
         issue_id_int = issue_id.strip()
         issue_id_int = int(issue_id)
@@ -664,9 +671,12 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id
             'shipment_fail_count':  shipment_fail_count,
             'confirm_id': confirm_id, 
             'confirm_id_int': confirm_id_int,
+            'handoff_id': handoff_id,
+            'handoff_id_int': handoff_id_int,
             'issue_id': issue_id,
             'issue_id_int': issue_id_int,
             'host_received_form': host_received_form,
+            'host_handoff_form'; host_handoff_form,
             'message_trans_id': message_trans_id,
             'message_trans_id_int': message_trans_id_int,
             'cal_form': cal_form,
@@ -696,8 +706,8 @@ def host_received_modal(request, confirm_id):
         host_received_form = HostReceived()
     return HttpResponse("OK")
 
-def host_handoff_modal(request, confirm_id):
-    trans = Transaction.objects.get(pk=confirm_id)
+def host_handoff_modal(request, handoff_id):
+    trans = Transaction.objects.get(pk=handoff_id)
     if request.method == 'POST':
         host_handoff_form = HostHandoff(request.POST) #note this is not a model form
         if host_handoff_form.is_valid():

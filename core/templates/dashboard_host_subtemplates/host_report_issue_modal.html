@@ -8,7 +8,7 @@
         <h4 class="darkgreytext nomarginbottom" style="padding-top: 15px; font-weight: 400; font-size: 1.2em;">Report an issue with shipment {{sh.id}} </h4>
         <h4 class="darkgreytext nomargintop" style="padding-top: 5px; font-weight: 300; font-size: 1.0em;">Have a concern about this shipment? Let us know. </h4>
         <form class="form-inline" role="form" method="post" action="/hostdashboard/issue_id{{sh.id}}/#openModal_host_issue/Thanks" enctype="multipart/form-data">
-            {% csrf_token %} {{ host_issue_form.non_field_errors }} {{ host_issue_form.enduser_issue.errors }}
+            {% csrf_token %} {{ host_issue_form.non_field_errors }} {{ host_issue_form.host_issue.errors }}
             <div class="col-xs-12 form-group nopaddingleftright paddingbottom10px">
                 <textarea class="form-control" name="host_issue" id="id_host_issue" rows="4" style="width: 100%;"> </textarea>
             </div>
