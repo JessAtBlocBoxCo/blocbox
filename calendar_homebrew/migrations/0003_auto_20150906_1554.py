@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models, migrations
+from django.conf import settings
+
+
+class Migration(migrations.Migration):
+
+    dependencies = [
+        migrations.swappable_dependency(settings.AUTH_USER_MODEL),
+        ('calendar_homebrew', '0002_auto_20150906_1544'),
+    ]
+
+    operations = [
+        migrations.CreateModel(
+            name='HostConflicts',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('thismonthday1', models.BooleanField(default=False)),
+                ('thismonthday2', models.BooleanField(default=False)),
+                ('thismonthday3', models.BooleanField(default=False)),
+                ('thismonthday4', models.BooleanField(default=False)),
+                ('thismonthday5', models.BooleanField(default=False)),
+                ('thismonthday6', models.BooleanField(default=False)),
+                ('thismonthday7', models.BooleanField(default=False)),
+                ('thismonthday8', models.BooleanField(default=False)),
+                ('thismonthday9', models.BooleanField(default=False)),
+                ('thismonthday10', models.BooleanField(default=False)),
+                ('thismonthday11', models.BooleanField(default=False)),
+                ('thismonthday12', models.BooleanField(default=False)),
+                ('thismonthday13', models.BooleanField(default=False)),
+                ('thismonthday14', models.BooleanField(default=False)),
+                ('thismonthday15', models.BooleanField(default=False)),
+                ('thismonthday16', models.BooleanField(default=False)),
+                ('thismonthday17', models.BooleanField(default=False)),
+                ('thismonthday18', models.BooleanField(default=False)),
+                ('thismonthday19', models.BooleanField(default=False)),
+                ('thismonthday20', models.BooleanField(default=False)),
+                ('thismonthday21', models.BooleanField(default=False)),
+                ('thismonthday22', models.BooleanField(default=False)),
+                ('thismonthday23', models.BooleanField(default=False)),
+                ('thismonthday24', models.BooleanField(default=False)),
+                ('thismonthday25', models.BooleanField(default=False)),
+                ('thismonthday26', models.BooleanField(default=False)),
+                ('thismonthday27', models.BooleanField(default=False)),
+                ('thismonthday28', models.BooleanField(default=False)),
+                ('thismonthday29', models.BooleanField(default=False)),
+                ('thismonthday30', models.BooleanField(default=False)),
+                ('thismonthday31', models.BooleanField(default=False)),
+                ('nextmonthday1', models.BooleanField(default=False)),
+                ('nextmonthday2', models.BooleanField(default=False)),
+                ('nextmonthday3', models.BooleanField(default=False)),
+                ('nextmonthday4', models.BooleanField(default=False)),
+                ('nextmonthday5', models.BooleanField(default=False)),
+                ('nextmonthday6', models.BooleanField(default=False)),
+                ('nextmonthday7', models.BooleanField(default=False)),
+                ('nextmonthday8', models.BooleanField(default=False)),
+                ('nextmonthday9', models.BooleanField(default=False)),
+                ('nextmonthday10', models.BooleanField(default=False)),
+                ('nextmonthday11', models.BooleanField(default=False)),
+                ('nextmonthday12', models.BooleanField(default=False)),
+                ('nextmonthday13', models.BooleanField(default=False)),
+                ('nextmonthday14', models.BooleanField(default=False)),
+                ('nextmonthday15', models.BooleanField(default=False)),
+                ('nextmonthday16', models.BooleanField(default=False)),
+                ('nextmonthday17', models.BooleanField(default=False)),
+                ('nextmonthday18', models.BooleanField(default=False)),
+                ('nextmonthday19', models.BooleanField(default=False)),
+                ('nextmonthday20', models.BooleanField(default=False)),
+                ('nextmonthday21', models.BooleanField(default=False)),
+                ('nextmonthday22', models.BooleanField(default=False)),
+                ('nextmonthday23', models.BooleanField(default=False)),
+                ('nextmonthday24', models.BooleanField(default=False)),
+                ('nextmonthday25', models.BooleanField(default=False)),
+                ('nextmonthday26', models.BooleanField(default=False)),
+                ('nextmonthday27', models.BooleanField(default=False)),
+                ('nextmonthday28', models.BooleanField(default=False)),
+                ('nextmonthday29', models.BooleanField(default=False)),
+                ('nextmonthday30', models.BooleanField(default=False)),
+                ('nextmonthday31', models.BooleanField(default=False)),
+                ('host', models.ForeignKey(related_name='host_conflict', blank=True, to=settings.AUTH_USER_MODEL, null=True)),
+            ],
+        ),
+        migrations.AlterField(
+            model_name='hostconflicts_oldversion',
+            name='host',
+            field=models.ForeignKey(related_name='host_conflict_oldversion', blank=True, to=settings.AUTH_USER_MODEL, null=True),
+        ),
+    ]
