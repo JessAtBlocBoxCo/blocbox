@@ -522,7 +522,7 @@ def dashboard_host_nothing(request, confirm_id=None):
     thepersonviewingthepage = request.user
     return HttpResponse("this is the dashboard_host_nothing def - delete this")
     
-def dashboard_host(request, trans=None, track_id=None, confirm_id=None, issue_id=None, message_trans_id=None, archive_id=None):
+def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_id=None, issue_id=None, message_trans_id=None, archive_id=None):
     thepersonviewingthepage = request.user
     local_timezone = request.session.setdefault('django_timezone', 'UTC')
     local_timezone = pytz.timezone(local_timezone)
