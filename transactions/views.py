@@ -37,6 +37,7 @@ from transactions.forms import CreatePackageTransaction
 ##Adding email functionality (http://catherinetenajeros.blogspot.com/2013/03/send-mail.html)
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
+from itertools import islice
 
 #DEFINING DATE VARIABLES AT TOP OF VIEW INSTEAD OF IN STARTASHIPMETN SO CAN BE REFERENCED BY OTHER VIEWS
 #Get date fields
@@ -345,7 +346,9 @@ def nav_startashipment(request, host=None):
     return render(request, templatename, {
         'enduser': enduser, 'host': host, 'connections_all': connections_all, 'connections_count': connections_count,})
 
-
+def take(n, iterable):
+    "Return first n items of the iterable as a list"
+    return list(islice(iterable, n))
 
 
 

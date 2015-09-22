@@ -528,6 +528,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
     local_timezone = pytz.timezone(local_timezone)
     days_withconflicts_thismonth = []
     days_withconflicts_nextmonth = []
+    days_until_delivery_all = []
     calendar_submit_button_text = "Submit Updated Availability"
     cal_form_submitted = False
     if thepersonviewingthepage.host == True:
@@ -552,6 +553,15 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
         shipment_fail_count = shipment_fail.count()
         shipments_in_transit_not_received_count = shipments_in_transit_not_received.count()
+        
+        transactions_with_daysuntil = Transaction.objects.exclude(days_until_delivery=None)
+        for transactions in trans_with_daysuntil:
+            days_until_delivery_all.append(tr.days_until_delivery)
+        days_until_next_package = min(days_until_delivery_all)
+            
+        
+        
+        #days_until_next package = sorted((shipments_in_transit_no_fails_not_received), key=attrgetter('days_until_delivery'), reverse=True)
         #Shipments awaiting pickup
         shipments_waiting_pickup_delivered = shipments_all_paid_notarchived_notcomplete.filter(last_tracking_status="Delivered")
         shipments_waiting_pickup_received = shipments_all_paid_notarchived_notcomplete.exclude(host_received_datetime=None)
