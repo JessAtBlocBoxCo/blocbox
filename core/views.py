@@ -554,12 +554,14 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
         shipment_fail_count = shipment_fail.count()
         
-        transactions_with_daysuntil = Transaction.objects.exclude(days_until_delivery=None)
+        transactions_with_daysuntil = shipments_in_transit.exclude(days_until_delivery=None)
         for transactions in transactions_with_daysuntil:
             days_until_delivery_all.append(transactions.days_until_delivery)
         days_until_next_package = min(days_until_delivery_all)
-        else:
+            if days_until_delivery_all = []
             days_until_next_package = None
+                
+
             
         
         
