@@ -547,12 +547,12 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         #Shipments in transit
         shipments_in_transit = shipments_all_paid_notarchived_notcomplete.exclude(last_tracking_status="Delivered")
         shipments_in_transit_not_received = shipments_in_transit.filter(host_received_datetime=None)
+        shipments_in_transit_count = shipments_in_transit.count()
         shipments_in_transit_no_fails = shipments_in_transit.exclude(last_tracking_status="AttemptFail")
         shipments_in_transit_no_fails_not_received = shipments_in_transit_no_fails.filter(host_received_datetime=None)
         shipments_in_transit_no_fails_not_received_sorted = sorted((shipments_in_transit_no_fails_not_received), key=attrgetter('arrivalwindow_day1'), reverse=True)
         shipment_fail = shipments_in_transit.filter(last_tracking_status="AttemptFail")
         shipment_fail_count = shipment_fail.count()
-        shipments_in_transit_not_received_count = shipments_in_transit_not_received.count()
         
         transactions_with_daysuntil = Transaction.objects.exclude(days_until_delivery=None)
         for transactions in transactions_with_daysuntil:
@@ -587,7 +587,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         shipments_complete_fordash_sorted = None
         shipments_complete_fordash_count = None
         shipments_in_transit = None
-        shipments_in_transit_not_received_count = None
+        shipments_in_transit_count = None
         shipments_in_transit_no_fails = None
         shipments_in_transit_no_fails_not_received = None
         shipments_in_transit_no_fails_not_received_sorted = None
@@ -671,7 +671,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
             'shipments_complete_fordash_count': shipments_complete_fordash_count,
             # in transit
             'shipments_in_transit': shipments_in_transit,
-            'shipments_in_transit_not_received_count': shipments_in_transit_not_received_count,
+            'shipments_in_transit_count': shipments_in_transit_count,
             'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
             'shipments_in_transit_no_fails_not_received': shipments_in_transit_no_fails_not_received,
             'shipments_in_transit_no_fails_not_received_sorted': shipments_in_transit_no_fails_not_received_sorted,
