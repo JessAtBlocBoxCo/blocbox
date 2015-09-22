@@ -558,7 +558,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         for transactions in transactions_with_daysuntil:
             days_until_delivery_all.append(transactions.days_until_delivery)
         days_until_next_package = min(days_until_delivery_all)
-            if days_until_delivery_all = []
+        if days_until_delivery_all = []
             days_until_next_package = None
                 
 
