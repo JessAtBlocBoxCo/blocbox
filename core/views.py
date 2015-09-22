@@ -557,10 +557,7 @@ def dashboard_host_nothing(request, confirm_id=None):
         transactions_with_daysuntil = shipments_in_transit.exclude(days_until_delivery=None)
         for transactions in transactions_with_daysuntil:
             days_until_delivery_all.append(transactions.days_until_delivery)
-        if days_until_next_package:
-            days_until_next_package = min(days_until_delivery_all)
-        else:    
-            days_until_next_package = None
+
             
         
         
@@ -607,6 +604,10 @@ def dashboard_host_nothing(request, confirm_id=None):
         transactions_count = None
         conflicts = None
     host_received_form = None
+    if days_until_next_package:
+        days_until_next_package = min(days_until_delivery_all)
+    else:    
+        days_until_next_package = None
     if confirm_id:  #if the open the package_received modal #JB - confirming what?
         confirm_id_int = confirm_id.strip()
         confirm_id_int = int(confirm_id_int)
