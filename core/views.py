@@ -1070,7 +1070,7 @@ def signup(request, host_id=None, referring_user_email=None, neighborhood=None, 
                 notifyadmin_usersignup_noconnect(request, user.id, user.intro_message, user.email, user.first_name, user.last_name) 
             if referring_user_email:
                 attribute_referral(referring_user_email)
-    	  else: 
+    	    else: 
     	      print user_form.errors
     else:
         user_form = UserForm()
