@@ -555,7 +555,7 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         shipments_in_transit_not_received_count = shipments_in_transit_not_received.count()
         
         transactions_with_daysuntil = Transaction.objects.exclude(days_until_delivery=None)
-        for transactions in trans_with_daysuntil:
+        for transactions in transactions_with_daysuntil:
             days_until_delivery_all.append(tr.days_until_delivery)
         days_until_next_package = min(days_until_delivery_all)
             
@@ -593,6 +593,8 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
         shipments_in_transit_no_fails_not_received_sorted = None
         shipment_fail = None
         shipment_fail_count = None
+        transactions_with_daysuntil = None
+        days_until_next_package = None
         shipments_waiting_pickup_delivered = None
         shipments_waiting_pickup_received = None
         shipments_waiting = None
@@ -667,12 +669,16 @@ def dashboard_host(request, trans=None, track_id=None, confirm_id=None, handoff_
             'shipments_complete_fordash': shipments_complete_fordash,
             'shipments_complete_fordash_sorted': shipments_complete_fordash_sorted,
             'shipments_complete_fordash_count': shipments_complete_fordash_count,
+            # in transit
             'shipments_in_transit': shipments_in_transit,
             'shipments_in_transit_not_received_count': shipments_in_transit_not_received_count,
             'shipments_in_transit_no_fails': shipments_in_transit_no_fails,
             'shipments_in_transit_no_fails_not_received': shipments_in_transit_no_fails_not_received,
             'shipments_in_transit_no_fails_not_received_sorted': shipments_in_transit_no_fails_not_received_sorted,
             'shipment_fail': shipment_fail,
+            'transactions_with_daysuntil': transactions_with_daysuntil,
+            'days_until_next_package': days_until_next_package,
+            # waiting
             'shipments_waiting_pickup_delivered': shipments_waiting_pickup_delivered,
             'shipments_waiting_pickup_received': shipments_waiting_pickup_received,
             'shipments_waiting': shipments_waiting,
